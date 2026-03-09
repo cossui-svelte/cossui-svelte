@@ -1,0 +1,51 @@
+{
+  "name": "@coss/ui-svelte",
+  "version": "0.0.0",
+  "type": "module",
+  "license": "AGPL-3.0-or-later",
+  "scripts": {
+    "build": "vite build",
+    "check": "biome check .",
+    "check:svelte": "svelte-check --tsconfig ./tsconfig.json",
+    "clean": "rm -rf node_modules dist",
+    "dev": "vite",
+    "format": "biome format --write .",
+    "lint": "biome lint --write src",
+    "lint:check": "biome lint src",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "svelte": "^5.0.0"
+  },
+  "dependencies": {
+    "bits-ui": "^2.16.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-svelte": "^0.577.0",
+    "svelte-sonner": "^1.0.8",
+    "tailwind-merge": "^3.5.0"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-auto": "^7.0.1",
+    "@sveltejs/enhanced-img": "^0.10.3",
+    "@sveltejs/kit": "^2.16.0",
+    "@sveltejs/vite-plugin-svelte": "^6.2.4",
+    "@tailwindcss/postcss": "^4.2.1",
+    "@tailwindcss/vite": "^4.2.1",
+    "@types/node": "^25.3.5",
+    "postcss": "^8.5.8",
+    "svelte": "^5.25.0",
+    "svelte-check": "^4.1.4",
+    "tailwindcss": "^4.1.17",
+    "typescript": "^5.9.3",
+    "vite": "^6.4.1",
+    "vitest": "^4.0.18"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp"
+    ]
+  },
+  "packageManager": "pnpm@10.31.0"
+}

@@ -1,0 +1,5 @@
+node_modules/
+.vscode
+dist
+.svelte-kit/
+!.vscode/settings.json.svelte-kit

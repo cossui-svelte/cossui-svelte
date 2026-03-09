@@ -1,0 +1,22 @@
+<script lang="ts">
+  import { Switch } from "bits-ui";
+  import { cn } from "../utils.js";
+
+  type Props = Switch.RootProps;
+
+  let { class: className, ...restProps }: Props = $props();
+</script>
+
+<Switch.Root
+  class={cn(
+    "inline-flex h-[calc(var(--thumb-size)+2px)] w-[calc(var(--thumb-size)*2-2px)] shrink-0 items-center rounded-full p-px outline-none transition-[background-color,box-shadow] duration-200 [--thumb-size:--spacing(5)] focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background data-[state=checked]:bg-primary data-[state=unchecked]:bg-input data-disabled:opacity-64 sm:[--thumb-size:--spacing(4)]",
+    className,
+  )}
+  data-slot="switch"
+  {...restProps}
+>
+  <Switch.Thumb
+    class="pointer-events-none block aspect-square h-full origin-left rounded-[var(--thumb-size)] bg-background shadow-sm/5 will-change-transform [transition:translate_.15s,border-radius_.15s,scale_.1s_.1s,transform-origin_.15s] data-[state=checked]:origin-[var(--thumb-size)_50%] data-[state=checked]:translate-x-[calc(var(--thumb-size)-4px)]"
+    data-slot="switch-thumb"
+  />
+</Switch.Root>

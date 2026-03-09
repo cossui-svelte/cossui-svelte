@@ -1,0 +1,19 @@
+<script lang="ts">
+  import type { Snippet } from "svelte";
+  import type { HTMLAttributes } from "svelte/elements";
+  import { cn } from "../utils.js";
+
+  interface Props extends HTMLAttributes<HTMLDivElement> {
+    children?: Snippet;
+  }
+
+  let { class: className, children, ...restProps }: Props = $props();
+</script>
+
+<div
+  class={cn("relative flex flex-col rounded-2xl bg-muted/72 p-1", className)}
+  data-slot="frame"
+  {...restProps}
+>
+  {@render children?.()}
+</div>
