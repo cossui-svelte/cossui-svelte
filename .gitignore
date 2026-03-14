@@ -3,3 +3,4 @@ node_modules/
 dist
 .svelte-kit/
 !.vscode/settings.json.svelte-kit
+.DS_Store
