@@ -1,9 +1,13 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.4.6/schema.json",
-  "vcs": {
-    "enabled": true,
-    "clientKind": "git",
-    "useIgnoreFile": true
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on",
+        "useSortedKeys": "on"
+      }
+    },
+    "enabled": true
   },
   "files": {
     "includes": [
@@ -19,62 +23,53 @@
     ]
   },
   "formatter": {
+    "attributePosition": "auto",
     "enabled": true,
     "formatWithErrors": false,
     "indentStyle": "space",
     "indentWidth": 2,
     "lineEnding": "lf",
-    "lineWidth": 100,
-    "attributePosition": "auto"
+    "lineWidth": 100
   },
-  "assist": {
-    "enabled": true,
-    "actions": {
-      "source": {
-        "organizeImports": "on",
-        "useSortedKeys": "on"
-      }
+  "javascript": {
+    "formatter": {
+      "arrowParentheses": "always",
+      "bracketSameLine": false,
+      "bracketSpacing": true,
+      "quoteStyle": "single",
+      "semicolons": "always",
+      "trailingCommas": "none"
     }
   },
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true,
       "complexity": {
-        "noUselessTypeConstraint": "error",
-        "noForEach": "off"
+        "noForEach": "off",
+        "noUselessTypeConstraint": "error"
       },
       "correctness": {
         "noUnusedImports": "warn",
         "noUnusedVariables": "warn",
         "useExhaustiveDependencies": "off"
       },
+      "recommended": true,
       "style": {
         "noNonNullAssertion": "warn",
-        "useImportType": "error",
+        "noParameterAssign": "error",
         "useConsistentArrayType": {
           "level": "error",
           "options": {
             "syntax": "shorthand"
           }
         },
-        "useTemplate": "error",
-        "noParameterAssign": "error"
+        "useImportType": "error",
+        "useTemplate": "error"
       },
       "suspicious": {
-        "noExplicitAny": "warn",
-        "noConsole": "warn"
+        "noConsole": "warn",
+        "noExplicitAny": "warn"
       }
-    }
-  },
-  "javascript": {
-    "formatter": {
-      "quoteStyle": "single",
-      "trailingCommas": "none",
-      "semicolons": "always",
-      "arrowParentheses": "always",
-      "bracketSpacing": true,
-      "bracketSameLine": false
     }
   },
   "overrides": [
@@ -88,5 +83,10 @@
         }
       }
     }
-  ]
+  ],
+  "vcs": {
+    "clientKind": "git",
+    "enabled": true,
+    "useIgnoreFile": true
+  }
 }

@@ -1,4 +1,6 @@
 // Components
+
+export { buttonVariants } from './button-variants.js';
 export { default as Accordion } from './cossui-components/accordion.svelte';
 export { default as AccordionItem } from './cossui-components/accordion-item.svelte';
 export { default as AccordionPanel } from './cossui-components/accordion-panel.svelte';
@@ -6,7 +8,6 @@ export { default as AccordionTrigger } from './cossui-components/accordion-trigg
 export { default as Alert } from './cossui-components/alert.svelte';
 export { default as AlertAction } from './cossui-components/alert-action.svelte';
 export { default as AlertDescription } from './cossui-components/alert-description.svelte';
-export { default as AlertTitle } from './cossui-components/alert-title.svelte';
 export { default as AlertDialog } from './cossui-components/alert-dialog.svelte';
 export { default as AlertDialogClose } from './cossui-components/alert-dialog-close.svelte';
 export { default as AlertDialogDescription } from './cossui-components/alert-dialog-description.svelte';
@@ -15,6 +16,7 @@ export { default as AlertDialogHeader } from './cossui-components/alert-dialog-h
 export { default as AlertDialogPopup } from './cossui-components/alert-dialog-popup.svelte';
 export { default as AlertDialogTitle } from './cossui-components/alert-dialog-title.svelte';
 export { default as AlertDialogTrigger } from './cossui-components/alert-dialog-trigger.svelte';
+export { default as AlertTitle } from './cossui-components/alert-title.svelte';
 export { default as Avatar } from './cossui-components/avatar.svelte';
 export { default as AvatarFallback } from './cossui-components/avatar-fallback.svelte';
 export { default as AvatarImage } from './cossui-components/avatar-image.svelte';
@@ -112,6 +114,30 @@ export { default as Sheet } from './cossui-components/sheet.svelte';
 export { default as SheetFooter } from './cossui-components/sheet-footer.svelte';
 export { default as SheetHeader } from './cossui-components/sheet-header.svelte';
 export { default as SheetPopup } from './cossui-components/sheet-popup.svelte';
+export { default as Sidebar } from './cossui-components/sidebar.svelte';
+export { default as SidebarContent } from './cossui-components/sidebar-content.svelte';
+export { getSidebarContext } from './cossui-components/sidebar-context.js';
+export { default as SidebarFooter } from './cossui-components/sidebar-footer.svelte';
+export { default as SidebarGroup } from './cossui-components/sidebar-group.svelte';
+export { default as SidebarGroupAction } from './cossui-components/sidebar-group-action.svelte';
+export { default as SidebarGroupContent } from './cossui-components/sidebar-group-content.svelte';
+export { default as SidebarGroupLabel } from './cossui-components/sidebar-group-label.svelte';
+export { default as SidebarHeader } from './cossui-components/sidebar-header.svelte';
+export { default as SidebarInput } from './cossui-components/sidebar-input.svelte';
+export { default as SidebarInset } from './cossui-components/sidebar-inset.svelte';
+export { default as SidebarMenu } from './cossui-components/sidebar-menu.svelte';
+export { default as SidebarMenuAction } from './cossui-components/sidebar-menu-action.svelte';
+export { default as SidebarMenuBadge } from './cossui-components/sidebar-menu-badge.svelte';
+export { default as SidebarMenuButton } from './cossui-components/sidebar-menu-button.svelte';
+export { default as SidebarMenuItem } from './cossui-components/sidebar-menu-item.svelte';
+export { default as SidebarMenuSkeleton } from './cossui-components/sidebar-menu-skeleton.svelte';
+export { default as SidebarMenuSub } from './cossui-components/sidebar-menu-sub.svelte';
+export { default as SidebarMenuSubButton } from './cossui-components/sidebar-menu-sub-button.svelte';
+export { default as SidebarMenuSubItem } from './cossui-components/sidebar-menu-sub-item.svelte';
+export { default as SidebarProvider } from './cossui-components/sidebar-provider.svelte';
+export { default as SidebarRail } from './cossui-components/sidebar-rail.svelte';
+export { default as SidebarSeparator } from './cossui-components/sidebar-separator.svelte';
+export { default as SidebarTrigger } from './cossui-components/sidebar-trigger.svelte';
 export { default as Skeleton } from './cossui-components/skeleton.svelte';
 export { default as Slider } from './cossui-components/slider.svelte';
 export { default as Spinner } from './cossui-components/spinner.svelte';
@@ -134,7 +160,5 @@ export { default as Tooltip } from './cossui-components/tooltip.svelte';
 export { default as TooltipPopup } from './cossui-components/tooltip-popup.svelte';
 export { default as TooltipProvider } from './cossui-components/tooltip-provider.svelte';
 export { default as TooltipTrigger } from './cossui-components/tooltip-trigger.svelte';
-
 // Utilities
 export { cn } from './utils.js';
-export { buttonVariants } from './button-variants.js';
