@@ -1,10 +1,16 @@
 /// <reference types="vitest" />
 
+import path from 'node:path';
 import { enhancedImages } from '@sveltejs/enhanced-img';
 import { sveltekit } from '@sveltejs/kit/vite';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  plugins: [tailwindcss(), enhancedImages(), sveltekit()]
+  plugins: [tailwindcss(), enhancedImages(), sveltekit()],
+  resolve: {
+    alias: {
+      $lib: path.resolve('./src/lib')
+    }
+  }
 });

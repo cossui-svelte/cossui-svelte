@@ -1,4 +1,4 @@
-@import "@lib/cossui-components/cossui.css";
+@import "$lib/cossui-components/cossui.css";
 
 @layer base {
   @supports (font: -apple-system-body) and (-webkit-appearance: none) {
