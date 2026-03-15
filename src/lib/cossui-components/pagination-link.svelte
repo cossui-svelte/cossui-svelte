@@ -1,8 +1,9 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import type { HTMLAnchorAttributes } from "svelte/elements";
-  import { buttonVariants } from "./button.svelte";
+ 
   import { cn } from "../utils.js";
+    import { buttonVariants } from "$lib/button-variants.js";
 
   interface Props extends HTMLAnchorAttributes {
     isActive?: boolean;
