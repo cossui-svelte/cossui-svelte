@@ -1,10 +1,11 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import type { HTMLAnchorAttributes, HTMLButtonAttributes } from "svelte/elements";
+  import type { Snippet, SvelteComponent } from "svelte";
+  import type { HTMLButtonAttributes } from "svelte/elements";
   import { cn } from "../utils.js";
   import { buttonVariants, type ButtonVariants } from "$lib/button-variants.js";
 
   interface ButtonProps extends HTMLButtonAttributes {
+    ref: HTMLButtonElement | HTMLAnchorElement | null
     variant?: ButtonVariants["variant"];
     size?: ButtonVariants["size"];
     href?: string;
@@ -14,6 +15,7 @@
   let {
     class: className,
     variant,
+    ref = $bindable(null),
     size,
     href,
     children,
@@ -21,12 +23,13 @@
   }: ButtonProps = $props();
 
   // svelte-ignore state_referenced_locally
-    const tag = href ? "a" : "button";
+  const tag = href ? "a" : "button";
 </script>
 
 <svelte:element
   this={tag}
   {href}
+  bind:this={ref}
   class={cn(buttonVariants({ className, size, variant }))}
   data-slot="button"
   type={!href ? "button" : undefined}
