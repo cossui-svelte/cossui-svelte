@@ -16,14 +16,14 @@
   {#if children}
     {@render children()}
   {:else}
-    <Progress.Track
+    <div
       class="block h-1.5 w-full overflow-hidden rounded-full bg-input"
       data-slot="progress-track"
     >
-      <Progress.Indicator
+      <div
         class="bg-primary transition-all duration-500"
         data-slot="progress-indicator"
       />
-    </Progress.Track>
+    </div>
   {/if}
 </Progress.Root>

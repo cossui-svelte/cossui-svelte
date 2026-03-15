@@ -3,12 +3,14 @@
   import { cn } from "../utils.js";
 
   interface Props extends Omit<HTMLInputAttributes, "size"> {
+    ref: HTMLInputElement | null;
     size?: "sm" | "default" | "lg" | number;
     unstyled?: boolean;
   }
 
   let {
     class: className,
+    ref = $bindable(null),
     size = "default",
     unstyled = false,
     type,
@@ -39,6 +41,7 @@
 >
   <input
     class={inputClassName}
+    bind:this={ref}
     data-slot="input"
     {type}
     size={typeof size === "number" ? size : undefined}

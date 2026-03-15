@@ -41,8 +41,8 @@
   }
 
   let { class: className, variant, size, href, children, ...restProps }: Props = $props();
-
   const tag = href ? "a" : "span";
+  
 </script>
 
 <svelte:element
