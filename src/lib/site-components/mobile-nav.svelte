@@ -4,8 +4,8 @@
   import { Menu } from "lucide-svelte";
   import Button from "../cossui-components/button.svelte";
   import Badge from "../cossui-components/badge.svelte";
-  import Sheet from "../cossui-components/sheet.svelte";
-  import SheetPopup from "../cossui-components/sheet-popup.svelte";
+  import Sheet from "../cossui-components/sheet/sheet.svelte";
+  import SheetPopup from "../cossui-components/sheet/sheet-popup.svelte";
 
   interface PageNode {
     type: "page";

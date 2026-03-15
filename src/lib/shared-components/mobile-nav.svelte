@@ -21,8 +21,8 @@
   import { Menu } from "lucide-svelte";
   import { cn } from "../utils.js";
   import Button from "../cossui-components/button.svelte";
-  import Sheet from "../cossui-components/sheet.svelte";
-  import SheetPopup from "../cossui-components/sheet-popup.svelte";
+  import Sheet from "../cossui-components/sheet/sheet.svelte";
+  import SheetPopup from "../cossui-components/sheet/sheet-popup.svelte";
 
   interface Props {
     tree?: NavTree;

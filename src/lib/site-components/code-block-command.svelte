@@ -3,10 +3,10 @@
   import { Tooltip } from "bits-ui";
   import { Terminal, Copy, Check } from "lucide-svelte";
   import { buttonVariants } from "../button-variants.js";
-  import Tabs from "../cossui-components/tabs.svelte";
-  import TabsList from "../cossui-components/tabs-list.svelte";
-  import TabsTab from "../cossui-components/tabs-tab.svelte";
-  import TabsPanel from "../cossui-components/tabs-panel.svelte";
+  import Tabs from "../cossui-components/tabs/tabs.svelte";
+  import TabsList from "../cossui-components/tabs/tabs-list.svelte";
+  import TabsTab from "../cossui-components/tabs/tabs-tab.svelte";
+  import TabsPanel from "../cossui-components/tabs/tabs-panel.svelte";
   import ScrollArea from "../cossui-components/scroll-area.svelte";
 
   interface Props {

@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
-  import Tabs from "../cossui-components/tabs.svelte";
+  import Tabs from "../cossui-components/tabs/tabs.svelte";
 
   interface Props {
     children?: Snippet;
