@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { HTMLInputAttributes } from "svelte/elements";
-  import { cn } from "../utils.js";
+  import { cn } from "../../utils.js";
 
   interface Props extends Omit<HTMLInputAttributes, "size"> {
     ref: HTMLInputElement | null;

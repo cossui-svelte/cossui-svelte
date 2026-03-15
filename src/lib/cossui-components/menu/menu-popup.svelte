@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import { DropdownMenu } from "bits-ui";
-  import { cn } from "../utils.js";
+  import { cn } from "../../utils.js";
 
   interface Props extends DropdownMenu.ContentProps {
     children?: Snippet;

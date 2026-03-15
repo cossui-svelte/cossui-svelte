@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Select } from "bits-ui";
-  import { cn } from "../utils.js";
+  import { cn } from "../../utils.js";
 
   type Props = Select.SeparatorProps;
 

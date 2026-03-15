@@ -2,7 +2,7 @@
   import type { Snippet } from "svelte";
   import type { HTMLAttributes } from "svelte/elements";
   import { cva, type VariantProps } from "class-variance-authority";
-  import { cn } from "../utils.js";
+  import { cn } from "../../utils.js";
 
   const inputGroupAddonVariants = cva(
     "[&_svg]:-mx-0.5 flex h-auto cursor-text select-none items-center justify-center gap-2 leading-none [&>kbd]:rounded-[calc(var(--radius)-5px)] not-has-[button]:**:[svg:not([class*='opacity-'])]:opacity-80",

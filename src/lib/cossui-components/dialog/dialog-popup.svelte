@@ -2,7 +2,7 @@
   import type { Snippet } from "svelte";
   import { Dialog } from "bits-ui";
   import { X } from "lucide-svelte";
-  import { cn } from "../utils.js";
+  import { cn } from "../../utils.js";
 
   interface Props extends Dialog.ContentProps {
     children?: Snippet;

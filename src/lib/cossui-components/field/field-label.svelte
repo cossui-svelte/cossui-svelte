@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import type { HTMLLabelAttributes } from "svelte/elements";
-  import { cn } from "../utils.js";
+  import { cn } from "../../utils.js";
 
   interface Props extends HTMLLabelAttributes {
     children?: Snippet;
