@@ -15,7 +15,7 @@
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
-    "svelte": "^5.53.8"
+    "svelte": "^5.53.12"
   },
   "dependencies": {
     "bits-ui": "^2.16.3",
@@ -27,18 +27,18 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^7.0.1",
-    "@sveltejs/enhanced-img": "^0.10.3",
-    "@sveltejs/kit": "^2.53.4",
+    "@sveltejs/enhanced-img": "^0.10.4",
+    "@sveltejs/kit": "^2.55.0",
     "@sveltejs/vite-plugin-svelte": "^7.0.0",
     "@tailwindcss/vite": "^4.2.1",
-    "@types/node": "^25.3.5",
+    "@types/node": "^25.5.0",
     "postcss": "^8.5.8",
-    "svelte": "^5.53.8",
+    "svelte": "^5.53.12",
     "svelte-check": "^4.4.5",
     "tailwindcss": "^4.2.1",
     "typescript": "^5.9.3",
     "vite": "^8.0.0",
-    "vitest": "^4.0.18"
+    "vitest": "^4.1.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
