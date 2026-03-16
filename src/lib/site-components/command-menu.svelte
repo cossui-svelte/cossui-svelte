@@ -4,7 +4,7 @@
   import { Search, CornerDownLeft, Atom, BookOpen } from "lucide-svelte";
   import { buttonVariants } from "../button-variants.js";
   import Kbd from "../cossui-components/kbd.svelte";
-  import KbdGroup from "../cossui-components/kbd-group.svelte";
+  import KbdGroup from "../cossui-components/kbd/kbd-group.svelte";
 
   interface PageItem {
     value: string;

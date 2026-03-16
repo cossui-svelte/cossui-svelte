@@ -66,15 +66,15 @@ export { default as FieldLabel } from './cossui-components/field/field-label.sve
 export { default as Fieldset } from './cossui-components/field/fieldset.svelte';
 export { default as FieldsetLegend } from './cossui-components/field/fieldset-legend.svelte';
 export { default as Form } from './cossui-components/form.svelte';
+export { default as Frame } from './cossui-components/frame/frame.svelte';
 export { default as FramePanel } from './cossui-components/frame/frame-panel.svelte';
-export { default as Frame } from './cossui-components/frame.svelte';
 export { default as Group } from './cossui-components/group.svelte';
 export { default as GroupSeparator } from './cossui-components/group-separator.svelte';
 export { default as Input } from './cossui-components/input/input.svelte';
 export { default as InputGroup } from './cossui-components/input/input-group.svelte';
 export { default as InputGroupAddon } from './cossui-components/input/input-group-addon.svelte';
 export { default as Kbd } from './cossui-components/kbd.svelte';
-export { default as KbdGroup } from './cossui-components/kbd-group.svelte';
+export { default as KbdGroup } from './cossui-components/kbd/kbd-group.svelte';
 export { default as Label } from './cossui-components/label.svelte';
 export { default as Menu } from './cossui-components/menu/menu.svelte';
 export { default as MenuGroup } from './cossui-components/menu/menu-group.svelte';
@@ -101,7 +101,7 @@ export { default as PopoverClose } from './cossui-components/popover/popover-clo
 export { default as PopoverPopup } from './cossui-components/popover/popover-popup.svelte';
 export { default as PopoverTrigger } from './cossui-components/popover/popover-trigger.svelte';
 export { default as Progress } from './cossui-components/progress.svelte';
-export { default as Radio } from './cossui-components/radio.svelte';
+export { default as Radio } from './cossui-components/radio-group/radio.svelte';
 export { default as RadioGroup } from './cossui-components/radio-group.svelte';
 export { default as ScrollArea } from './cossui-components/scroll-area.svelte';
 export { default as Select } from './cossui-components/select/select.svelte';
