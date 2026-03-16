@@ -1,14 +1,19 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import type { HTMLButtonAttributes } from "svelte/elements";
-  import { cn } from "../../utils.js";
+  import { cn } from "$lib/utils.js";
 
   interface Props extends HTMLButtonAttributes {
     showOnHover?: boolean;
     children?: Snippet;
   }
 
-  let { class: className, showOnHover = false, children, ...restProps }: Props = $props();
+  let {
+    class: className,
+    showOnHover = false,
+    children,
+    ...restProps
+  }: Props = $props();
 </script>
 
 <button

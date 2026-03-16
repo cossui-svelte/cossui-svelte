@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { HTMLAttributes } from "svelte/elements";
   import Skeleton from "../skeleton.svelte";
-  import { cn } from "../../utils.js";
+  import { cn } from "$lib/utils.js";
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
     showIcon?: boolean;

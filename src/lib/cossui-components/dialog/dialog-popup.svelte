@@ -2,7 +2,7 @@
   import type { Snippet } from "svelte";
   import { Dialog } from "bits-ui";
   import { X } from "lucide-svelte";
-  import { cn } from "../../utils.js";
+  import { cn } from "$lib/utils.js";
 
   interface Props extends Dialog.ContentProps {
     children?: Snippet;
@@ -29,7 +29,8 @@
   <div
     class={cn(
       "fixed inset-0 z-50 grid grid-rows-[1fr_auto_3fr] justify-items-center p-4",
-      bottomStickOnMobile && "max-sm:grid-rows-[1fr_auto] max-sm:p-0 max-sm:pt-12",
+      bottomStickOnMobile &&
+        "max-sm:grid-rows-[1fr_auto] max-sm:p-0 max-sm:pt-12",
     )}
     data-slot="dialog-viewport"
   >

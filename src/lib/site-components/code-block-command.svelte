@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { cn } from "../utils.js";
+  import { cn } from "$lib/utils.js";
   import { Tooltip } from "bits-ui";
   import { Terminal, Copy, Check } from "lucide-svelte";
   import { buttonVariants } from "../button-variants.js";
@@ -48,10 +48,13 @@
 <div class="relative">
   <Tabs
     class="gap-0"
-    onValueChange={(value) => (packageManager = value as "pnpm" | "npm" | "yarn" | "bun")}
+    onValueChange={(value) =>
+      (packageManager = value as "pnpm" | "npm" | "yarn" | "bun")}
     value={packageManager}
   >
-    <div class="flex items-center gap-2 border-border/64 border-b px-4 py-1 font-mono">
+    <div
+      class="flex items-center gap-2 border-border/64 border-b px-4 py-1 font-mono"
+    >
       <Terminal class="size-5 text-code-foreground sm:size-4" strokeWidth={2} />
       <TabsList
         class="bg-transparent p-0 *:data-[slot=tab-indicator]:rounded-lg *:data-[slot=tab-indicator]:bg-accent *:data-[slot=tab-indicator]:shadow-none"
@@ -63,13 +66,15 @@
         {/each}
       </TabsList>
     </div>
-    <ScrollArea class="**:data-[slot=scroll-area-scrollbar]:data-[orientation=horizontal]:mx-2 **:data-[slot=scroll-area-scrollbar]:data-[orientation=vertical]:my-2">
+    <ScrollArea
+      class="**:data-[slot=scroll-area-scrollbar]:data-[orientation=horizontal]:mx-2 **:data-[slot=scroll-area-scrollbar]:data-[orientation=vertical]:my-2"
+    >
       {#each Object.entries(tabs) as [key, value]}
         <TabsPanel class="mt-0 w-max px-4 py-3.5" value={key}>
           <pre><code
               class="relative font-mono text-[.8125rem] leading-none"
-              data-language="bash"
-            >{value}</code></pre>
+              data-language="bash">{value}</code
+            ></pre>
         </TabsPanel>
       {/each}
     </ScrollArea>

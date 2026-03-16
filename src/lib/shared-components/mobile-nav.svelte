@@ -19,7 +19,7 @@
 <script lang="ts">
   import { Dialog } from "bits-ui";
   import { Menu } from "lucide-svelte";
-  import { cn } from "../utils.js";
+  import { cn } from "$lib/utils.js";
   import Button from "../cossui-components/button.svelte";
   import Sheet from "../cossui-components/sheet/sheet.svelte";
   import SheetPopup from "../cossui-components/sheet/sheet-popup.svelte";
@@ -60,7 +60,11 @@
         <div class="flex flex-col gap-2">
           <a class="text-muted-foreground" href="/" onclick={closeNav}>Home</a>
           {#each items as item (item.label)}
-            <a class="text-muted-foreground" href={item.href} onclick={closeNav}>
+            <a
+              class="text-muted-foreground"
+              href={item.href}
+              onclick={closeNav}
+            >
               {item.label}
             </a>
           {/each}
@@ -75,7 +79,11 @@
                 <div class="flex flex-col gap-2">
                   {#each group.children as item}
                     {#if item.type === "page"}
-                      <a class="text-muted-foreground" href={item.url} onclick={closeNav}>
+                      <a
+                        class="text-muted-foreground"
+                        href={item.url}
+                        onclick={closeNav}
+                      >
                         {item.name}
                       </a>
                     {/if}

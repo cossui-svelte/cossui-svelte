@@ -2,7 +2,7 @@
   import type { Snippet } from "svelte";
   import { Accordion } from "bits-ui";
   import { ChevronDown } from "lucide-svelte";
-  import { cn } from "../../utils.js";
+  import { cn } from "$lib/utils.js";
 
   type Props = Accordion.TriggerProps & { children?: Snippet };
 

@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import { Combobox } from "bits-ui";
-  import { cn } from "../../utils.js";
+  import { cn } from "$lib/utils.js";
 
   interface Props extends Combobox.ContentProps {
     children?: Snippet;
@@ -19,7 +19,9 @@
     data-slot="combobox-popup"
     {...restProps}
   >
-    <div class="flex max-h-[23rem] flex-1 flex-col overflow-y-auto p-1 text-foreground">
+    <div
+      class="flex max-h-[23rem] flex-1 flex-col overflow-y-auto p-1 text-foreground"
+    >
       {@render children?.()}
     </div>
   </Combobox.Content>

@@ -1,11 +1,11 @@
 <script lang="ts">
   import type { Snippet, SvelteComponent } from "svelte";
   import type { HTMLButtonAttributes } from "svelte/elements";
-  import { cn } from "../utils.js";
+  import { cn } from "$lib/utils.js";
   import { buttonVariants, type ButtonVariants } from "$lib/button-variants.js";
 
   interface ButtonProps extends HTMLButtonAttributes {
-    ref: HTMLButtonElement | HTMLAnchorElement | null
+    ref: HTMLButtonElement | HTMLAnchorElement | null;
     variant?: ButtonVariants["variant"];
     size?: ButtonVariants["size"];
     href?: string;

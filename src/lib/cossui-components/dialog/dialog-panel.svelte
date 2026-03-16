@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import type { HTMLAttributes } from "svelte/elements";
-  import { cn } from "../../utils.js";
+  import { cn } from "$lib/utils.js";
   import ScrollArea from "../scroll-area.svelte";
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
@@ -9,7 +9,12 @@
     scrollFade?: boolean;
   }
 
-  let { class: className, children, scrollFade = true, ...restProps }: Props = $props();
+  let {
+    class: className,
+    children,
+    scrollFade = true,
+    ...restProps
+  }: Props = $props();
 </script>
 
 <ScrollArea {scrollFade}>

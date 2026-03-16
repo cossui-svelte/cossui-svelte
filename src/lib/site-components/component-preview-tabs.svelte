@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
-  import { cn } from "../utils.js";
+  import { cn } from "$lib/utils.js";
   import Tabs from "../cossui-components/tabs/tabs.svelte";
   import TabsList from "../cossui-components/tabs/tabs-list.svelte";
   import TabsTab from "../cossui-components/tabs/tabs-tab.svelte";

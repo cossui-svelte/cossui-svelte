@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { cn } from "../utils.js";
+  import { cn } from "$lib/utils.js";
   import { Tooltip } from "bits-ui";
   import { Check } from "lucide-svelte";
   import { buttonVariants } from "../button-variants.js";

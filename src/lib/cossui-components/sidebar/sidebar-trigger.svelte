@@ -4,7 +4,7 @@
   import { PanelLeft } from "lucide-svelte";
   import Button from "../button.svelte";
   import { getSidebarContext } from "./sidebar-context.js";
-  import { cn } from "../../utils.js";
+  import { cn } from "$lib/utils.js";
 
   interface Props extends HTMLButtonAttributes {
     children?: Snippet;
@@ -14,7 +14,9 @@
 
   const ctx = getSidebarContext();
 
-  function handleClick(event: MouseEvent & { currentTarget: EventTarget & HTMLButtonElement }) {
+  function handleClick(
+    event: MouseEvent & { currentTarget: EventTarget & HTMLButtonElement },
+  ) {
     onclick?.(event);
     ctx.toggleSidebar();
   }

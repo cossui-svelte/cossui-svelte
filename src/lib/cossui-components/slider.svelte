@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import { Slider } from "bits-ui";
-  import { cn } from "../utils.js";
+  import { cn } from "$lib/utils.js";
 
   interface Props extends Slider.RootProps {
     children?: Snippet;

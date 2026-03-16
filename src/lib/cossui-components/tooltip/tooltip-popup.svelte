@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import { Tooltip } from "bits-ui";
-  import { cn } from "../../utils.js";
+  import { cn } from "$lib/utils.js";
 
   interface Props extends Tooltip.ContentProps {
     children?: Snippet;
@@ -26,7 +26,10 @@
     data-slot="tooltip-popup"
     {...restProps}
   >
-    <div class="relative size-full overflow-clip px-2 py-1" data-slot="tooltip-viewport">
+    <div
+      class="relative size-full overflow-clip px-2 py-1"
+      data-slot="tooltip-viewport"
+    >
       {@render children?.()}
     </div>
   </Tooltip.Content>

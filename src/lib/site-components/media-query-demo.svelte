@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { cn } from "../utils.js";
+  import { cn } from "$lib/utils.js";
   import Badge from "../cossui-components/badge.svelte";
 
   interface Row {
@@ -44,13 +44,25 @@
       { q: "(max-width: 639px)", set: (v) => (maxSm = v) },
       { q: "(max-width: 799px)", set: (v) => (maxMd = v) },
       { q: "(max-width: 1023px)", set: (v) => (maxLg = v) },
-      { q: "(min-width: 640px) and (max-width: 799px)", set: (v) => (smToMd = v) },
-      { q: "(min-width: 800px) and (max-width: 1023px)", set: (v) => (mdToLg = v) },
-      { q: "(min-width: 1024px) and (max-width: 1279px)", set: (v) => (lgToXl = v) },
+      {
+        q: "(min-width: 640px) and (max-width: 799px)",
+        set: (v) => (smToMd = v),
+      },
+      {
+        q: "(min-width: 800px) and (max-width: 1023px)",
+        set: (v) => (mdToLg = v),
+      },
+      {
+        q: "(min-width: 1024px) and (max-width: 1279px)",
+        set: (v) => (lgToXl = v),
+      },
       { q: "(pointer: coarse)", set: (v) => (pointerCoarse = v) },
       { q: "(pointer: fine)", set: (v) => (pointerFine = v) },
       { q: "(prefers-color-scheme: dark)", set: (v) => (darkMode = v) },
-      { q: "(prefers-reduced-motion: reduce)", set: (v) => (reducedMotion = v) },
+      {
+        q: "(prefers-reduced-motion: reduce)",
+        set: (v) => (reducedMotion = v),
+      },
     ];
 
     const mqList = mqConfig.map(({ q, set }) => {
@@ -62,7 +74,9 @@
     });
 
     return () => {
-      mqList.forEach(({ mq, handler }) => mq.removeEventListener("change", handler));
+      mqList.forEach(({ mq, handler }) =>
+        mq.removeEventListener("change", handler),
+      );
     };
   });
 </script>
@@ -82,7 +96,9 @@
           </div>
           <div class="flex items-center gap-2">
             {#if row.description}
-              <span class="ms-2 text-muted-foreground text-xs">{row.description}</span>
+              <span class="ms-2 text-muted-foreground text-xs"
+                >{row.description}</span
+              >
             {/if}
             <Badge
               class={cn(
@@ -114,17 +130,41 @@
   {@render section({
     title: "Max-width (below breakpoint)",
     rows: [
-      { description: "< 640px", label: `useMediaQuery("max-sm")`, value: maxSm },
-      { description: "< 800px", label: `useMediaQuery("max-md")`, value: maxMd },
-      { description: "< 1024px", label: `useMediaQuery("max-lg")`, value: maxLg },
+      {
+        description: "< 640px",
+        label: `useMediaQuery("max-sm")`,
+        value: maxSm,
+      },
+      {
+        description: "< 800px",
+        label: `useMediaQuery("max-md")`,
+        value: maxMd,
+      },
+      {
+        description: "< 1024px",
+        label: `useMediaQuery("max-lg")`,
+        value: maxLg,
+      },
     ],
   })}
   {@render section({
     title: "Ranges",
     rows: [
-      { description: "640 - 799px", label: `useMediaQuery("sm:max-md")`, value: smToMd },
-      { description: "800 - 1023px", label: `useMediaQuery("md:max-lg")`, value: mdToLg },
-      { description: "1024 - 1279px", label: `useMediaQuery("lg:max-xl")`, value: lgToXl },
+      {
+        description: "640 - 799px",
+        label: `useMediaQuery("sm:max-md")`,
+        value: smToMd,
+      },
+      {
+        description: "800 - 1023px",
+        label: `useMediaQuery("md:max-lg")`,
+        value: mdToLg,
+      },
+      {
+        description: "1024 - 1279px",
+        label: `useMediaQuery("lg:max-xl")`,
+        value: lgToXl,
+      },
     ],
   })}
   {@render section({
@@ -140,8 +180,14 @@
         label: `useMediaQuery({ pointer: "fine" })`,
         value: pointerFine,
       },
-      { label: `useMediaQuery("(prefers-color-scheme: dark)")`, value: darkMode },
-      { label: `useMediaQuery("(prefers-reduced-motion: reduce)")`, value: reducedMotion },
+      {
+        label: `useMediaQuery("(prefers-color-scheme: dark)")`,
+        value: darkMode,
+      },
+      {
+        label: `useMediaQuery("(prefers-reduced-motion: reduce)")`,
+        value: reducedMotion,
+      },
     ],
   })}
 </div>

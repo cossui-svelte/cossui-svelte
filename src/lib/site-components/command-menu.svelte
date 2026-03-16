@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { cn } from "../utils.js";
+  import { cn } from "$lib/utils.js";
   import { Dialog } from "bits-ui";
   import { Search, CornerDownLeft, Atom, BookOpen } from "lucide-svelte";
   import { buttonVariants } from "../button-variants.js";
@@ -189,7 +189,10 @@
     {#snippet child({ props })}
       <button
         {...props}
-        class={cn(buttonVariants({ variant: "outline" }), "gap-2 text-muted-foreground")}
+        class={cn(
+          buttonVariants({ variant: "outline" }),
+          "gap-2 text-muted-foreground",
+        )}
         type="button"
       >
         <Search class="size-4" strokeWidth={2} />
@@ -203,7 +206,9 @@
   </Dialog.Trigger>
 
   <Dialog.Portal>
-    <Dialog.Overlay class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm data-[state=closed]:animate-out data-[state=open]:animate-in data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
+    <Dialog.Overlay
+      class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm data-[state=closed]:animate-out data-[state=open]:animate-in data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
+    />
     <Dialog.Content
       class="fixed top-[10%] left-1/2 z-50 w-full max-w-lg -translate-x-1/2 overflow-hidden rounded-2xl border bg-popover shadow-xl data-[state=closed]:animate-out data-[state=open]:animate-in data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95"
     >
@@ -228,7 +233,9 @@
         {:else}
           {#each filteredGroups as group (group.value)}
             <div class="mb-2">
-              <div class="px-2 py-1.5 text-muted-foreground text-xs font-medium">
+              <div
+                class="px-2 py-1.5 text-muted-foreground text-xs font-medium"
+              >
                 {group.value}
               </div>
               {#each group.items as item (item.value)}
@@ -255,7 +262,9 @@
       </div>
 
       <!-- Footer -->
-      <div class="flex items-center justify-between border-t px-4 py-2 text-muted-foreground text-xs">
+      <div
+        class="flex items-center justify-between border-t px-4 py-2 text-muted-foreground text-xs"
+      >
         <div class="flex items-center gap-2">
           <span class="whitespace-nowrap">Go to Page</span>
           <Kbd>

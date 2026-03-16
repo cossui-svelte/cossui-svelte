@@ -1,14 +1,19 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import type { HTMLAttributes } from "svelte/elements";
-  import { cn } from "../../utils.js";
+  import { cn } from "$lib/utils.js";
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
     variant?: "default" | "bare";
     children?: Snippet;
   }
 
-  let { class: className, variant = "default", children, ...restProps }: Props = $props();
+  let {
+    class: className,
+    variant = "default",
+    children,
+    ...restProps
+  }: Props = $props();
 </script>
 
 <div

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { DropdownMenu } from "bits-ui";
   import { ChevronDown } from "lucide-svelte";
-  import { cn } from "../utils.js";
+  import { cn } from "$lib/utils.js";
   import Badge from "../cossui-components/badge.svelte";
   import Button from "../cossui-components/button.svelte";
   import Menu from "../cossui-components/menu.svelte";
@@ -22,7 +22,10 @@
   const gatewayOrigin: string = import.meta.env.VITE_COSS_URL ?? "";
   const uiGatewayOrigin: string = import.meta.env.VITE_COSS_UI_URL ?? "";
 
-  function getLinkHref(item: ProductItem): { href: string; isExternal: boolean } {
+  function getLinkHref(item: ProductItem): {
+    href: string;
+    isExternal: boolean;
+  } {
     const isHomePage = item.href === "/";
     if (gatewayOrigin && !isHomePage) {
       return { href: `${gatewayOrigin}${item.href}`, isExternal: true };
@@ -57,7 +60,9 @@
             class={cn(menuItemClass, "group justify-between")}
             target={isExternal ? "_self" : undefined}
           >
-            <span class="font-heading in-data-highlighted:text-foreground text-muted-foreground">
+            <span
+              class="font-heading in-data-highlighted:text-foreground text-muted-foreground"
+            >
               {item.label}
             </span>
             {#if item.upcoming}

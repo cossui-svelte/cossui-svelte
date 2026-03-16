@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import { Accordion } from "bits-ui";
-  import { cn } from "../../utils.js";
+  import { cn } from "$lib/utils.js";
 
   type Props = Accordion.RootProps & { children?: Snippet };
 
@@ -9,7 +9,10 @@
 </script>
 
 <Accordion.Root
-  class={cn("flex flex-col gap-2 data-[orientation=vertical]:flex-row", className)}
+  class={cn(
+    "flex flex-col gap-2 data-[orientation=vertical]:flex-row",
+    className,
+  )}
   data-slot="accordion"
   {...restProps}
 >

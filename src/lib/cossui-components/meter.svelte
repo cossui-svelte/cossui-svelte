@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import type { HTMLAttributes } from "svelte/elements";
-  import { cn } from "../utils.js";
+  import { cn } from "$lib/utils.js";
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
     value?: number;
@@ -10,8 +10,14 @@
     children?: Snippet;
   }
 
-  let { class: className, value = 0, min = 0, max = 100, children, ...restProps }: Props =
-    $props();
+  let {
+    class: className,
+    value = 0,
+    min = 0,
+    max = 100,
+    children,
+    ...restProps
+  }: Props = $props();
 
   const percentage = $derived(((value - min) / (max - min)) * 100);
 </script>

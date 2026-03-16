@@ -1,13 +1,20 @@
 <script lang="ts">
   import { Tooltip } from "bits-ui";
   import { Check, Copy } from "lucide-svelte";
-  import { cn } from "../utils.js";
+  import { cn } from "$lib/utils.js";
   import { buttonVariants } from "../button-variants.js";
 
   interface Props {
     value: string;
     class?: string;
-    variant?: "ghost" | "outline" | "default" | "secondary" | "destructive" | "link" | "destructive-outline";
+    variant?:
+      | "ghost"
+      | "outline"
+      | "default"
+      | "secondary"
+      | "destructive"
+      | "link"
+      | "destructive-outline";
   }
 
   let { value, class: className, variant = "ghost" }: Props = $props();

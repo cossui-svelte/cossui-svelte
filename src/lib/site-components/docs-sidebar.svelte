@@ -19,7 +19,7 @@
 </script>
 
 <script lang="ts">
-  import { cn } from "../utils.js";
+  import { cn } from "$lib/utils.js";
   import { page } from "$app/state";
   import Badge from "../cossui-components/badge.svelte";
 

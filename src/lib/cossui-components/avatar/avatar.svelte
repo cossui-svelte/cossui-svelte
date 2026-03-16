@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import { Avatar } from "bits-ui";
-  import { cn } from "../../utils.js";
+  import { cn } from "$lib/utils.js";
 
   type Props = Avatar.RootProps & { children?: Snippet };
 

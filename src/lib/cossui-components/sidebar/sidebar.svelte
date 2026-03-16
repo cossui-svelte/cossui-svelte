@@ -5,7 +5,7 @@
   import Sheet from "../sheet/sheet.svelte";
   import SheetPopup from "../sheet/sheet-popup.svelte";
   import { getSidebarContext } from "./sidebar-context.js";
-  import { cn } from "../../utils.js";
+  import { cn } from "$lib/utils.js";
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
     side?: "left" | "right";
@@ -51,7 +51,9 @@
       style="--sidebar-width: 18rem;"
     >
       <Dialog.Title class="sr-only">Sidebar</Dialog.Title>
-      <Dialog.Description class="sr-only">Displays the mobile sidebar.</Dialog.Description>
+      <Dialog.Description class="sr-only"
+        >Displays the mobile sidebar.</Dialog.Description
+      >
       <div class="flex h-full w-full flex-col">
         {@render children?.()}
       </div>

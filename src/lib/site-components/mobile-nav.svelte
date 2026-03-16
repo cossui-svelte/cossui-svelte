@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { cn } from "../utils.js";
+  import { cn } from "$lib/utils.js";
   import { Dialog } from "bits-ui";
   import { Menu } from "lucide-svelte";
   import Button from "../cossui-components/button.svelte";
@@ -59,7 +59,11 @@
       <div class="flex flex-col gap-3">
         <div class="font-medium text-sm">Menu</div>
         <div class="flex flex-col gap-1">
-          <a class="flex items-center gap-2 py-1.5 text-muted-foreground" href="/" onclick={closeNav}>
+          <a
+            class="flex items-center gap-2 py-1.5 text-muted-foreground"
+            href="/"
+            onclick={closeNav}
+          >
             Home
           </a>
           {#each items as item (item.label)}

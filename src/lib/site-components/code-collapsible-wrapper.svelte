@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import { Collapsible } from "bits-ui";
-  import { cn } from "../utils.js";
+  import { cn } from "$lib/utils.js";
   import { buttonVariants } from "../button-variants.js";
   import CollapsiblePanel from "../cossui-components/collapsible-panel.svelte";
   import Separator from "../cossui-components/separator.svelte";
@@ -26,7 +26,10 @@
       {#snippet child({ props })}
         <button
           {...props}
-          class={cn(buttonVariants({ variant: "ghost" }), "text-muted-foreground")}
+          class={cn(
+            buttonVariants({ variant: "ghost" }),
+            "text-muted-foreground",
+          )}
           type="button"
         >
           {isOpened ? "Collapse" : "Expand"}

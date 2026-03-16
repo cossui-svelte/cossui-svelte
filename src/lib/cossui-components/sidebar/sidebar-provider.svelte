@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import type { HTMLAttributes } from "svelte/elements";
-  import { cn } from "../../utils.js";
+  import { cn } from "$lib/utils.js";
   import { setSidebarContext } from "./sidebar-context.js";
 
   const SIDEBAR_COOKIE_NAME = "sidebar_state";
@@ -32,7 +32,9 @@
   let _open: boolean = $state(defaultOpen);
 
   let open: boolean = $derived(openProp !== undefined ? openProp : _open);
-  let sidebarState: "expanded" | "collapsed" = $derived(open ? "expanded" : "collapsed");
+  let sidebarState: "expanded" | "collapsed" = $derived(
+    open ? "expanded" : "collapsed",
+  );
 
   $effect(() => {
     const mq = window.matchMedia("(max-width: 767px)");
@@ -71,7 +73,10 @@
 
   $effect(() => {
     const handleKeyDown = (event: KeyboardEvent): void => {
-      if (event.key === SIDEBAR_KEYBOARD_SHORTCUT && (event.metaKey || event.ctrlKey)) {
+      if (
+        event.key === SIDEBAR_KEYBOARD_SHORTCUT &&
+        (event.metaKey || event.ctrlKey)
+      ) {
         event.preventDefault();
         toggleSidebar();
       }

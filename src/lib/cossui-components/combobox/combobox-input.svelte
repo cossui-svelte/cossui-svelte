@@ -2,14 +2,19 @@
   import type { Snippet } from "svelte";
   import { Combobox } from "bits-ui";
   import { ChevronsUpDown } from "lucide-svelte";
-  import { cn } from "../../utils.js";
+  import { cn } from "$lib/utils.js";
 
   interface Props extends Combobox.InputProps {
     showTrigger?: boolean;
     children?: Snippet;
   }
 
-  let { class: className, showTrigger = true, children, ...restProps }: Props = $props();
+  let {
+    class: className,
+    showTrigger = true,
+    children,
+    ...restProps
+  }: Props = $props();
 </script>
 
 <div class="relative w-full text-foreground has-disabled:opacity-64">

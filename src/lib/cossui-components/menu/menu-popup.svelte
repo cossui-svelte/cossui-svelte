@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import { DropdownMenu } from "bits-ui";
-  import { cn } from "../../utils.js";
+  import { cn } from "$lib/utils.js";
 
   interface Props extends DropdownMenu.ContentProps {
     children?: Snippet;
@@ -35,7 +35,9 @@
     data-slot="menu-popup"
     {...restProps}
   >
-    <div class="max-h-[var(--radix-dropdown-menu-content-available-height)] w-full overflow-y-auto p-1">
+    <div
+      class="max-h-[var(--radix-dropdown-menu-content-available-height)] w-full overflow-y-auto p-1"
+    >
       {@render children?.()}
     </div>
   </DropdownMenu.Content>

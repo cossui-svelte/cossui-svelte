@@ -1,14 +1,19 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import { Tabs } from "bits-ui";
-  import { cn } from "../../utils.js";
+  import { cn } from "$lib/utils.js";
 
   interface Props extends Tabs.ListProps {
     variant?: "default" | "underline";
     children?: Snippet;
   }
 
-  let { class: className, variant = "default", children, ...restProps }: Props = $props();
+  let {
+    class: className,
+    variant = "default",
+    children,
+    ...restProps
+  }: Props = $props();
 </script>
 
 <Tabs.List

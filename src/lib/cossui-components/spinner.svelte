@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Loader2 } from "lucide-svelte";
   import type { ComponentProps } from "svelte";
-  import { cn } from "../utils.js";
+  import { cn } from "$lib/utils.js";
 
   interface Props extends ComponentProps<typeof Loader2> {}
 

@@ -2,7 +2,7 @@
   import type { Snippet } from "svelte";
   import type { HTMLAttributes } from "svelte/elements";
   import { cva, type VariantProps } from "class-variance-authority";
-  import { cn } from "../utils.js";
+  import { cn } from "$lib/utils.js";
 
   const groupVariants = cva(
     "flex w-fit *:focus-visible:z-1 *:has-focus-visible:z-1",
@@ -26,7 +26,12 @@
     children?: Snippet;
   }
 
-  let { class: className, orientation, children, ...restProps }: Props = $props();
+  let {
+    class: className,
+    orientation,
+    children,
+    ...restProps
+  }: Props = $props();
 </script>
 
 <div

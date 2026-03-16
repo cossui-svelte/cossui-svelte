@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { cn } from "../utils.js";
+  import { cn } from "$lib/utils.js";
   import {
     AlertCircle,
     Calendar,
@@ -41,7 +41,10 @@
 <!-- ── Primitive snippets ──────────────────────────────────────────────────── -->
 
 {#snippet iconSnip(IconComp: any, cls?: string)}
-  <svelte:component this={IconComp} class={cn("size-4 text-muted-foreground/88", cls)} />
+  <svelte:component
+    this={IconComp}
+    class={cn("size-4 text-muted-foreground/88", cls)}
+  />
 {/snippet}
 
 {#snippet textSnip(cls?: string, variant: "main" | "secondary" = "main")}
@@ -306,12 +309,20 @@
   </div>
 {:else if slug === "combobox"}
   <div class={cardCls("[--radius-2xl:14px]", false)}>
-    <div class={cpCls("flex items-center gap-2 px-3 py-[calc(--spacing(2.5)-1px)]")}>
-      <div class="flex h-5 items-center gap-1 rounded-sm bg-muted-foreground/8 py-0.5 ps-2 pe-1">
+    <div
+      class={cpCls(
+        "flex items-center gap-2 px-3 py-[calc(--spacing(2.5)-1px)]",
+      )}
+    >
+      <div
+        class="flex h-5 items-center gap-1 rounded-sm bg-muted-foreground/8 py-0.5 ps-2 pe-1"
+      >
         {@render textSnip("w-6")}
         {@render iconSnip(X)}
       </div>
-      <div class="flex h-5 items-center gap-1 rounded-sm bg-muted-foreground/8 py-0.5 ps-2 pe-1">
+      <div
+        class="flex h-5 items-center gap-1 rounded-sm bg-muted-foreground/8 py-0.5 ps-2 pe-1"
+      >
         {@render textSnip("w-6")}
         {@render iconSnip(X)}
       </div>
@@ -355,7 +366,11 @@
     </div>
   </div>
 {:else if slug === "empty"}
-  <div class={cardCls("border-input border-dashed bg-none shadow-none before:hidden")}>
+  <div
+    class={cardCls(
+      "border-input border-dashed bg-none shadow-none before:hidden",
+    )}
+  >
     <div class={cpCls("flex flex-col items-center gap-2")}>
       <div class="size-8 rounded-full bg-muted-foreground/20"></div>
       {@render textSnip("w-[60%]")}
@@ -427,12 +442,20 @@
 {:else if slug === "kbd"}
   <div class="flex items-center justify-center gap-2">
     <div class={cardCls("size-10 [--radius-2xl:10px]")}>
-      <div class={cpCls("flex items-center justify-center p-0 text-muted-foreground/88 leading-none")}>
+      <div
+        class={cpCls(
+          "flex items-center justify-center p-0 text-muted-foreground/88 leading-none",
+        )}
+      >
         ⌘
       </div>
     </div>
     <div class={cardCls("size-10 [--radius-2xl:10px]")}>
-      <div class={cpCls("flex items-center justify-center p-0 text-muted-foreground/88 leading-none")}>
+      <div
+        class={cpCls(
+          "flex items-center justify-center p-0 text-muted-foreground/88 leading-none",
+        )}
+      >
         K
       </div>
     </div>
@@ -560,13 +583,17 @@
         {@render textSnip("w-[90%]", "secondary")}
         {@render textSnip("w-[80%]", "secondary")}
       </div>
-      <div class="absolute top-2 right-1 h-8 w-1 rounded-full bg-muted-foreground/40"></div>
+      <div
+        class="absolute top-2 right-1 h-8 w-1 rounded-full bg-muted-foreground/40"
+      ></div>
     </div>
   </div>
 {:else if slug === "select"}
   <div class={cardCls("[--radius-2xl:14px]", false)}>
     <div class={cpCls("flex gap-2 p-0")}>
-      <div class="flex flex-1 items-center justify-between gap-2 py-2.5 ps-4 pe-2.5">
+      <div
+        class="flex flex-1 items-center justify-between gap-2 py-2.5 ps-4 pe-2.5"
+      >
         {@render textSnip("w-[60%]")}
         {@render iconSnip(ChevronDown)}
       </div>
@@ -701,7 +728,9 @@
         {@render textSnip()}
       </div>
     </div>
-    <div class={cardCls("max-w-12 shadow-none [--radius-2xl:14px] before:hidden")}>
+    <div
+      class={cardCls("max-w-12 shadow-none [--radius-2xl:14px] before:hidden")}
+    >
       <div class={cpCls("rounded-[inherit] bg-muted-foreground/8 p-4")}>
         <div class="h-1.5 rounded-full bg-primary"></div>
       </div>
