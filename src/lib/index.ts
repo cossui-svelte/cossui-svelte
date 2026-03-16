@@ -66,8 +66,8 @@ export { default as FieldLabel } from './cossui-components/field/field-label.sve
 export { default as Fieldset } from './cossui-components/field/fieldset.svelte';
 export { default as FieldsetLegend } from './cossui-components/field/fieldset-legend.svelte';
 export { default as Form } from './cossui-components/form.svelte';
+export { default as FramePanel } from './cossui-components/frame/frame-panel.svelte';
 export { default as Frame } from './cossui-components/frame.svelte';
-export { default as FramePanel } from './cossui-components/frame-panel.svelte';
 export { default as Group } from './cossui-components/group.svelte';
 export { default as GroupSeparator } from './cossui-components/group-separator.svelte';
 export { default as Input } from './cossui-components/input/input.svelte';
