@@ -2,7 +2,7 @@
   import { cn } from "$lib/utils.js";
   import { Tooltip } from "bits-ui";
   import { Terminal, Copy, Check } from "lucide-svelte";
-  import { buttonVariants } from "../button-variants.js";
+  import { buttonVariants } from "../cossui-components/button-variants.js";
   import Tabs from "../cossui-components/tabs/tabs.svelte";
   import TabsList from "../cossui-components/tabs/tabs-list.svelte";
   import TabsTab from "../cossui-components/tabs/tabs-tab.svelte";

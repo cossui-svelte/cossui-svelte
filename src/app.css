@@ -1,4 +1,37 @@
-@import "$lib/cossui-components/cossui.css";
+@import "$lib/cossui-components/global.css";
+
+/* Mono */
+@font-face {
+  font-family: "PaperMono";
+  src: url("$lib/fonts/PaperMono-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Sans (Variable Font) */
+@font-face {
+  font-family: "CalSansUI";
+  src: url("$lib/fonts/CalSansUI[MODE,wght].woff2") format("woff2");
+  font-weight: 300 700; /* variable range */
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-mono: "PaperMono", monospace;
+  --font-sans: "CalSansUI", sans-serif;
+  --font-heading: "CalSansHeading", sans-serif;
+}
+
+/* Heading */
+@font-face {
+  font-family: "CalSansHeading";
+  src: url("$lib/fonts/CalSans-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
 
 @layer base {
   @supports (font: -apple-system-body) and (-webkit-appearance: none) {

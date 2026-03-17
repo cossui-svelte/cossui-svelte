@@ -4,11 +4,18 @@
   import { cn } from "$lib/utils.js";
 
   type Props = RadioGroup.RootProps & { children?: Snippet };
-
-  let { class: className, children, ...restProps }: Props = $props();
+  let {
+    class: className,
+    children,
+    ref = $bindable(null),
+    value = $bindable(undefined),
+    ...restProps
+  }: Props = $props();
 </script>
 
 <RadioGroup.Root
+  bind:ref
+  bind:value
   class={cn("flex flex-col gap-3", className)}
   data-slot="radio-group"
   {...restProps}

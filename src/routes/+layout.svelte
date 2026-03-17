@@ -1,28 +1,35 @@
 <script lang="ts">
-  import type { LayoutData } from './$types';
-  import type { Snippet } from 'svelte';
+  import type { LayoutData } from "./$types";
+  import type { Snippet } from "svelte";
 
-  import '../app.css';
+  import "../app.css";
 
-  import ToastProvider from '$lib/cossui-components/toast-provider.svelte';
+  import ToastProvider from "$lib/cossui-components/toast-provider.svelte";
+
   // TODO: import SiteHeader from '$lib/site-components/site-header.svelte'; (needs Svelte port)
 
   let { children, data }: { children: Snippet; data: LayoutData } = $props();
 </script>
 
 <svelte:head>
-  <title>coss ui - A new, modern UI component library built on top of Base UI. Built for developers and AI.</title>
+  <title
+    >coss ui - A new, modern UI component library built on top of Base UI. Built
+    for developers and AI.</title
+  >
   <meta
     name="description"
     content="coss ui is a collection of accessible, and composable React components. Built on top of Base UI and styled with Tailwind CSS,"
   />
 </svelte:head>
 
+<!-- <body class="relative bg-sidebar font-sans text-foreground antialiased"> -->
 <!-- Equivalent of ThemeProvider is handled via app.html dark-mode class toggling -->
 <!-- ToastProvider in Svelte renders the Toaster alongside content (no children slot needed) -->
-<ToastProvider />
+<!-- <ToastProvider /> -->
 
-<div class="relative isolate flex min-h-svh flex-col overflow-clip [--header-height:4rem]">
+<div
+  class="relative isolate flex min-h-svh flex-col overflow-clip [--header-height:4rem]"
+>
   <!-- Static column border lines -->
   <div
     aria-hidden="true"

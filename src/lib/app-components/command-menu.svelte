@@ -2,7 +2,7 @@
   import { cn } from "$lib/utils.js";
   import { Dialog } from "bits-ui";
   import { Search, CornerDownLeft, Atom, BookOpen } from "lucide-svelte";
-  import { buttonVariants } from "../button-variants.js";
+  import { buttonVariants } from "../cossui-components/button-variants.js";
   import Kbd from "../cossui-components/kbd.svelte";
   import KbdGroup from "../cossui-components/kbd/kbd-group.svelte";
 

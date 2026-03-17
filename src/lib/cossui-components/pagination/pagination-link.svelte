@@ -3,7 +3,7 @@
   import type { HTMLAnchorAttributes } from "svelte/elements";
 
   import { cn } from "$lib/utils.js";
-  import { buttonVariants } from "$lib/button-variants.js";
+  import { buttonVariants } from "$lib/cossui-components/button-variants.js";
 
   interface Props extends HTMLAnchorAttributes {
     isActive?: boolean;

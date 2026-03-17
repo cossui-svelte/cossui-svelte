@@ -1,6 +1,6 @@
 // Components
 
-export { buttonVariants } from './button-variants.js';
+export { buttonVariants } from './cossui-components/button-variants.js';
 export { default as Accordion } from './cossui-components/accordion/accordion.svelte';
 export { default as AccordionItem } from './cossui-components/accordion/accordion-item.svelte';
 export { default as AccordionPanel } from './cossui-components/accordion/accordion-panel.svelte';
@@ -29,13 +29,7 @@ export { default as BreadcrumbList } from './cossui-components/breadcrumb/breadc
 export { default as BreadcrumbPage } from './cossui-components/breadcrumb/breadcrumb-page.svelte';
 export { default as BreadcrumbSeparator } from './cossui-components/breadcrumb/breadcrumb-separator.svelte';
 export { default as Button } from './cossui-components/button.svelte';
-export { default as Card } from './cossui-components/card/card.svelte';
-export { default as CardAction } from './cossui-components/card/card-action.svelte';
-export { default as CardDescription } from './cossui-components/card/card-description.svelte';
-export { default as CardFooter } from './cossui-components/card/card-footer.svelte';
-export { default as CardHeader } from './cossui-components/card/card-header.svelte';
-export { default as CardPanel } from './cossui-components/card/card-panel.svelte';
-export { default as CardTitle } from './cossui-components/card/card-title.svelte';
+export { default as Card } from './cossui-components/card/Card.svelte';
 export { default as Checkbox } from './cossui-components/checkbox/checkbox.svelte';
 export { default as CheckboxGroup } from './cossui-components/checkbox/checkbox-group.svelte';
 export { default as Collapsible } from './cossui-components/collapsible.svelte';
@@ -73,7 +67,7 @@ export { default as GroupSeparator } from './cossui-components/group-separator.s
 export { default as Input } from './cossui-components/input/input.svelte';
 export { default as InputGroup } from './cossui-components/input/input-group.svelte';
 export { default as InputGroupAddon } from './cossui-components/input/input-group-addon.svelte';
-export { default as Kbd } from './cossui-components/kbd.svelte';
+export { default as Kbd } from './cossui-components/kbd/kbd.svelte';
 export { default as KbdGroup } from './cossui-components/kbd/kbd-group.svelte';
 export { default as Label } from './cossui-components/label.svelte';
 export { default as Menu } from './cossui-components/menu/menu.svelte';
@@ -101,8 +95,7 @@ export { default as PopoverClose } from './cossui-components/popover/popover-clo
 export { default as PopoverPopup } from './cossui-components/popover/popover-popup.svelte';
 export { default as PopoverTrigger } from './cossui-components/popover/popover-trigger.svelte';
 export { default as Progress } from './cossui-components/progress.svelte';
-export { default as Radio } from './cossui-components/radio-group/radio.svelte';
-export { default as RadioGroup } from './cossui-components/radio-group.svelte';
+export { Radio, RadioGroup } from './cossui-components/radio-group';
 export { default as ScrollArea } from './cossui-components/scroll-area.svelte';
 export { default as Select } from './cossui-components/select/select.svelte';
 export { default as SelectItem } from './cossui-components/select/select-item.svelte';

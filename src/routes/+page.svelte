@@ -1,9 +1,9 @@
 <script lang="ts">
-  import Badge from '$lib/cossui-components/badge.svelte';
-  import Button from '$lib/cossui-components/button.svelte';
-  import Card from '$lib/cossui-components/card/card.svelte';
-  import CardPanel from '$lib/cossui-components/card/card-panel.svelte';
-  import SiteFooter from '$lib/site-components/site-footer.svelte';
+  import Badge from "$lib/cossui-components/badge.svelte";
+  import Button from "$lib/cossui-components/button.svelte";
+  import Card from "$lib/cossui-components/card/Card.svelte";
+  import CardPanel from "$lib/cossui-components/card/CardPanel.svelte";
+  import SiteFooter from "$lib/app-components/site-footer.svelte";
 
   type Category = {
     slug: string;
@@ -11,7 +11,7 @@
     description?: string;
   };
 
-  const description = 'Built for developers and AI.';
+  const description = "Built for developers and AI.";
 
   // TODO: Import from actual config once available
   const categories: Category[] = [];
@@ -24,7 +24,9 @@
 </script>
 
 <svelte:head>
-  <title>A new, modern UI component library built on top of Base UI - coss ui</title>
+  <title
+    >A new, modern UI component library built on top of Base UI - coss ui</title
+  >
   <meta name="description" content={description} />
 </svelte:head>
 
@@ -35,7 +37,10 @@
     class="after:-inset-[5px] after:-z-1 relative flex w-full flex-col rounded-2xl bg-muted/72 p-1 after:pointer-events-none after:absolute after:rounded-[calc(var(--radius-xl)+4px)] after:border after:border-border/64"
     data-slot="card-frame"
   >
-    <div class="static grid grid-rows-[auto_1fr] p-3" data-slot="card-frame-header">
+    <div
+      class="static grid grid-rows-[auto_1fr] p-3"
+      data-slot="card-frame-header"
+    >
       <div
         class="font-heading text-base font-semibold leading-none"
         data-slot="card-frame-title"
@@ -48,7 +53,7 @@
         class="text-muted-foreground line-clamp-2 text-sm sm:h-[2lh]"
         data-slot="card-frame-description"
       >
-        {desc || '\u00A0'}
+        {desc || "\u00A0"}
       </div>
     </div>
     <Card
@@ -85,18 +90,26 @@
   </header>
 </div>
 
-<div class="relative before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-border/64">
+<div
+  class="relative before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-border/64"
+>
   <div
     aria-hidden="true"
     class="before:-left-[11.5px] before:-ml-1 after:-right-[11.5px] after:-mr-1 container pointer-events-none absolute inset-0 z-50 before:absolute before:top-[-3.5px] before:z-1 before:size-2 before:rounded-[2px] before:border before:border-border before:bg-popover before:bg-clip-padding before:shadow-xs after:absolute after:top-[-3.5px] after:z-1 after:size-2 after:rounded-[2px] after:border after:border-border after:bg-background after:bg-clip-padding after:shadow-xs dark:after:bg-clip-border dark:before:bg-clip-border"
   ></div>
   <div class="container w-full">
-    <div class="grid gap-6 pt-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 xl:grid-cols-4">
+    <div
+      class="grid gap-6 pt-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 xl:grid-cols-4"
+    >
       {#each categories as category (category.slug)}
-        {@render categoryCard(category.slug, category.name, category.description)}
+        {@render categoryCard(
+          category.slug,
+          category.name,
+          category.description,
+        )}
       {/each}
     </div>
   </div>
 </div>
 
-<SiteFooter />
+<!-- <SiteFooter /> -->
