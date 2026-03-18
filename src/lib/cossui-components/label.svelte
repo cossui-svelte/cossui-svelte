@@ -18,4 +18,6 @@
     className,
   )}
   {...restProps}
-/>
+>
+  {@render children?.()}
+</LabelPrimitive.Root>

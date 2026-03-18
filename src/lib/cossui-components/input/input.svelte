@@ -3,7 +3,7 @@
   import { cn } from "$lib/utils.js";
 
   interface Props extends Omit<HTMLInputAttributes, "size"> {
-    ref: HTMLInputElement | null;
+    ref?: HTMLInputElement | null;
     size?: "sm" | "default" | "lg" | number;
     unstyled?: boolean;
   }

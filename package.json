@@ -15,7 +15,7 @@
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
-    "svelte": "^5.53.12"
+    "svelte": "^5.53.13"
   },
   "dependencies": {
     "bits-ui": "^2.16.3",
@@ -33,7 +33,6 @@
     "@tailwindcss/vite": "^4.2.1",
     "@types/node": "^25.5.0",
     "postcss": "^8.5.8",
-    "svelte": "^5.53.12",
     "svelte-check": "^4.4.5",
     "tailwindcss": "^4.2.1",
     "typescript": "^5.9.3",
