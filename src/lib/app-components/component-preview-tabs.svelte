@@ -1,9 +1,9 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import { cn } from "$lib/utils.js";
-  import Tabs from "../cossui-components/tabs/tabs.svelte";
-  import TabsList from "../cossui-components/tabs/tabs-list.svelte";
-  import TabsTab from "../cossui-components/tabs/tabs-tab.svelte";
+  import Tabs from "$lib/components/ui/tabs/tabs.svelte";
+  import TabsList from "$lib/components/ui/tabs/tabs-list.svelte";
+  import TabsTab from "$lib/components/ui/tabs/tabs-tab.svelte";
 
   interface Props {
     class?: string;

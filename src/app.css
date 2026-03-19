@@ -32,7 +32,7 @@
   --font-heading: "CalSansHeading", sans-serif;
 }
 
-@import "$lib/cossui-components/global.css";
+@import "$lib/components/ui/global.css";
 
 @layer base {
   @supports (font: -apple-system-body) and (-webkit-appearance: none) {

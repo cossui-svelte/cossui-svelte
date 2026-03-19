@@ -1,11 +1,15 @@
 <script lang="ts">
-	import Spinner from '$lib/cossui-components/spinner.svelte';
-  import Button from "$lib/cossui-components/button.svelte";
+  import Spinner from "$lib/components/ui/spinner.svelte";
+  import Button from "$lib/components/ui/button.svelte";
   import { DownloadIcon } from "lucide-svelte";
 </script>
 
-<div class="flex min-h-screen flex-col items-center justify-center gap-6 bg-background p-8">
-  <h1 class="text-foreground text-2xl font-semibold">Button Component Preview</h1>
+<div
+  class="flex min-h-screen flex-col items-center justify-center gap-6 bg-background p-8"
+>
+  <h1 class="text-foreground text-2xl font-semibold">
+    Button Component Preview
+  </h1>
 
   <div class="flex flex-wrap items-center justify-center gap-3">
     <Button>Default</Button>
@@ -27,7 +31,7 @@
   <div class="flex flex-wrap items-center justify-center gap-3">
     <Button disabled>Disabled</Button>
     <Button variant="outline" disabled>Outline Disabled</Button>
-       <Button disabled>
+    <Button disabled>
       <Spinner />
       Loading...
     </Button>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ScrollArea from "../cossui-components/scroll-area.svelte";
+  import ScrollArea from "$lib/components/ui/scroll-area.svelte";
   import CopyButton from "./copy-button.svelte";
   import LanguageIcon from "./language-icon.svelte";
 

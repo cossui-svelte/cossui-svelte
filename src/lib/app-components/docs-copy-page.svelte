@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Check, Copy } from "lucide-svelte";
-  import Button from "../cossui-components/button.svelte";
+  import Button from "$lib/components/ui/button.svelte";
 
   interface Props {
     page: string;

@@ -2,9 +2,9 @@
   import type { Snippet } from "svelte";
   import { Collapsible } from "bits-ui";
   import { cn } from "$lib/utils.js";
-  import { buttonVariants } from "../cossui-components/button-variants.js";
-  import CollapsiblePanel from "../cossui-components/collapsible/collapsible-panel.svelte";
-  import Separator from "../cossui-components/separator.svelte";
+  import { buttonVariants } from "$lib/components/ui/button-variants.js";
+  import CollapsiblePanel from "$lib/components/ui/collapsible/collapsible-panel.svelte";
+  import Separator from "$lib/components/ui/separator.svelte";
 
   interface Props {
     class?: string;

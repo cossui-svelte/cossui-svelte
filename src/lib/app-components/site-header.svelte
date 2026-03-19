@@ -1,6 +1,6 @@
 <script lang="ts">
   import SiteHeaderBase from "../shared-components/site-header.svelte";
-  import Separator from "../cossui-components/separator.svelte";
+  import Separator from "$lib/components/ui/separator.svelte";
   import CommandMenu from "./command-menu.svelte";
   import MainNav from "./main-nav.svelte";
   import MobileNav from "./mobile-nav.svelte";
@@ -35,7 +35,12 @@
     products?: ProductItem[];
   }
 
-  let { navItems = [], tree, currentProduct = "ui", products = [] }: Props = $props();
+  let {
+    navItems = [],
+    tree,
+    currentProduct = "ui",
+    products = [],
+  }: Props = $props();
 </script>
 
 <SiteHeaderBase {currentProduct} {products}>

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { cn } from "$lib/utils.js";
-  import Badge from "../cossui-components/badge.svelte";
+  import Badge from "$lib/components/ui/badge.svelte";
 
   interface Row {
     label: string;

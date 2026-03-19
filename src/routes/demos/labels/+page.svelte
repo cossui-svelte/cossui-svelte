@@ -7,8 +7,8 @@
 </script>
 
 <script>
-    import Input from "$lib/cossui-components/input/input.svelte";
-    import Label from "$lib/cossui-components/label.svelte";
+    import { Input } from "$lib/components/ui/input";
+    import { Label } from "$lib/components/ui/label";
 
     const id = useId();
 </script>

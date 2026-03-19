@@ -2,9 +2,9 @@
   import { cn } from "$lib/utils.js";
   import { Dialog } from "bits-ui";
   import { Search, CornerDownLeft, Atom, BookOpen } from "lucide-svelte";
-  import { buttonVariants } from "../cossui-components/button-variants.js";
-  import Kbd from "../cossui-components/kbd.svelte";
-  import KbdGroup from "../cossui-components/kbd/kbd-group.svelte";
+  import { buttonVariants } from "$lib/components/ui/button-variants.js";
+  import Kbd from "$lib/components/ui/kbd.svelte";
+  import KbdGroup from "$lib/components/ui/kbd/kbd-group.svelte";
 
   interface PageItem {
     value: string;

@@ -1,7 +1,7 @@
 <script>
-    import Label from "$lib/cossui-components/label.svelte";
-    import Radio from "$lib/cossui-components/radio-group/Radio.svelte";
-    import RadioGroup from "$lib/cossui-components/radio-group/RadioGroup.svelte";
+    import Label from "$lib/components/ui/label/label.svelte";
+    import Radio from "$lib/components/ui/radio-group/Radio.svelte";
+    import RadioGroup from "$lib/components/ui/radio-group/RadioGroup.svelte";
 </script>
 
 <RadioGroup value="next">

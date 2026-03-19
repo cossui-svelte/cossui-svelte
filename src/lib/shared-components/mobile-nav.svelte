@@ -20,9 +20,9 @@
   import { Dialog } from "bits-ui";
   import { Menu } from "lucide-svelte";
   import { cn } from "$lib/utils.js";
-  import Button from "../cossui-components/button.svelte";
-  import Sheet from "../cossui-components/sheet/sheet.svelte";
-  import SheetPopup from "../cossui-components/sheet/sheet-popup.svelte";
+  import Button from "$lib/components/ui/button.svelte";
+  import Sheet from "$lib/components/ui/sheet/sheet.svelte";
+  import SheetPopup from "$lib/components/ui/sheet/sheet-popup.svelte";
 
   interface Props {
     tree?: NavTree;

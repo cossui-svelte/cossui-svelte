@@ -1,8 +1,8 @@
 <script lang="ts">
-  import Badge from "$lib/cossui-components/badge.svelte";
-  import Button from "$lib/cossui-components/button.svelte";
-  import Card from "$lib/cossui-components/card/Card.svelte";
-  import CardPanel from "$lib/cossui-components/card/CardPanel.svelte";
+  import Badge from "$lib/components/ui/badge.svelte";
+  import Button from "$lib/components/ui/button.svelte";
+  import Card from "$lib/components/ui/card/Card.svelte";
+  import CardPanel from "$lib/components/ui/card/CardPanel.svelte";
   import SiteFooter from "$lib/app-components/site-footer.svelte";
 
   type Category = {

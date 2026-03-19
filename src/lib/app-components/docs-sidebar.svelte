@@ -21,7 +21,7 @@
 <script lang="ts">
   import { cn } from "$lib/utils.js";
   import { page } from "$app/state";
-  import Badge from "../cossui-components/badge.svelte";
+  import Badge from "$lib/components/ui/badge.svelte";
 
   interface Props {
     tree: NavTree;

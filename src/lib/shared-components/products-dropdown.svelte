@@ -2,10 +2,10 @@
   import { DropdownMenu } from "bits-ui";
   import { ChevronDown } from "lucide-svelte";
   import { cn } from "$lib/utils.js";
-  import Badge from "../cossui-components/badge.svelte";
-  import Button from "../cossui-components/button.svelte";
-  import Menu from "../cossui-components/menu.svelte";
-  import MenuPopup from "../cossui-components/menu-popup.svelte";
+  import Badge from "$lib/components/ui/badge.svelte";
+  import Button from "$lib/components/ui/button.svelte";
+  import Menu from "$lib/components/ui/menu.svelte";
+  import MenuPopup from "$lib/components/ui/menu-popup.svelte";
 
   interface ProductItem {
     href: string;

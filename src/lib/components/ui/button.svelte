@@ -5,7 +5,7 @@
   import {
     buttonVariants,
     type ButtonVariants,
-  } from "$lib/cossui-components/button-variants.js";
+  } from "$lib/components/ui/button-variants.js";
 
   interface ButtonProps extends HTMLButtonAttributes {
     ref?: HTMLButtonElement | HTMLAnchorElement | null;
