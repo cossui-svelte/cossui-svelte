@@ -1,6 +1,5 @@
 // Components
 
-export { buttonVariants } from './cossui-components/button-variants.js';
 export { default as Accordion } from './cossui-components/accordion/accordion.svelte';
 export { default as AccordionItem } from './cossui-components/accordion/accordion-item.svelte';
 export { default as AccordionPanel } from './cossui-components/accordion/accordion-panel.svelte';
@@ -29,12 +28,13 @@ export { default as BreadcrumbList } from './cossui-components/breadcrumb/breadc
 export { default as BreadcrumbPage } from './cossui-components/breadcrumb/breadcrumb-page.svelte';
 export { default as BreadcrumbSeparator } from './cossui-components/breadcrumb/breadcrumb-separator.svelte';
 export { default as Button } from './cossui-components/button.svelte';
+export { buttonVariants } from './cossui-components/button-variants.js';
 export { default as Card } from './cossui-components/card/Card.svelte';
 export { default as Checkbox } from './cossui-components/checkbox/checkbox.svelte';
 export { default as CheckboxGroup } from './cossui-components/checkbox/checkbox-group.svelte';
-export { default as Collapsible } from './cossui-components/collapsible.svelte';
-export { default as CollapsiblePanel } from './cossui-components/collapsible-panel.svelte';
-export { default as CollapsibleTrigger } from './cossui-components/collapsible-trigger.svelte';
+export { default as CollapsiblePanel } from './cossui-components/collapsible/collapsible-panel.svelte';
+export { default as Collapsible } from './cossui-components/collapsible/collapsible.svelte';
+export { default as CollapsibleTrigger } from './cossui-components/collapsible/collapsible-trigger.svelte';
 export { default as Combobox } from './cossui-components/combobox/combobox.svelte';
 export { default as ComboboxEmpty } from './cossui-components/combobox/combobox-empty.svelte';
 export { default as ComboboxInput } from './cossui-components/combobox/combobox-input.svelte';
@@ -95,7 +95,8 @@ export { default as PopoverClose } from './cossui-components/popover/popover-clo
 export { default as PopoverPopup } from './cossui-components/popover/popover-popup.svelte';
 export { default as PopoverTrigger } from './cossui-components/popover/popover-trigger.svelte';
 export { default as Progress } from './cossui-components/progress.svelte';
-export { Radio, RadioGroup } from './cossui-components/radio-group';
+export { default as Radio } from './cossui-components/radio-group/Radio.svelte';
+export { default as RadioGroup } from './cossui-components/radio-group/RadioGroup.svelte';
 export { default as ScrollArea } from './cossui-components/scroll-area.svelte';
 export { default as Select } from './cossui-components/select/select.svelte';
 export { default as SelectItem } from './cossui-components/select/select-item.svelte';

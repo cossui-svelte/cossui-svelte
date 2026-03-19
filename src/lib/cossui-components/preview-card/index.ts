@@ -10,10 +10,10 @@ import type PreviewCardPopup from './preview-card-popup.svelte';
 import PreviewCardTrigger from './preview-card-trigger.svelte';
 
 export {
-    PreviewCard,
-    PreviewCard as HoverCard,
-    PreviewCardTrigger,
-    PreviewCardTrigger as HoverCardTrigger,
-    type PreviewCardPopup,
-    type PreviewCardPopup as HoverCardContent,
+  PreviewCard,
+  PreviewCard as HoverCard,
+  type PreviewCardPopup,
+  type PreviewCardPopup as HoverCardContent,
+  PreviewCardTrigger,
+  PreviewCardTrigger as HoverCardTrigger
 };

@@ -1,16 +1,19 @@
-<script lang="ts">
-  import type { Snippet } from "svelte";
+<script lang="ts" module>
   import { RadioGroup } from "bits-ui";
+
+  export const RadioGroupItem = RadioGroup.Item;
+</script>
+
+<script lang="ts">
   import { cn } from "$lib/utils.js";
 
-  type Props = RadioGroup.RootProps & { children?: Snippet };
   let {
-    class: className,
     children,
+    class: className,
     ref = $bindable(null),
     value = $bindable(undefined),
     ...restProps
-  }: Props = $props();
+  }: RadioGroup.RootProps = $props();
 </script>
 
 <RadioGroup.Root

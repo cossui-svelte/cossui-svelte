@@ -3,7 +3,7 @@
   import { Collapsible } from "bits-ui";
   import { cn } from "$lib/utils.js";
   import { buttonVariants } from "../cossui-components/button-variants.js";
-  import CollapsiblePanel from "../cossui-components/collapsible-panel.svelte";
+  import CollapsiblePanel from "../cossui-components/collapsible/collapsible-panel.svelte";
   import Separator from "../cossui-components/separator.svelte";
 
   interface Props {

@@ -12,10 +12,11 @@
     "format": "biome format --write .",
     "lint": "biome lint --write src",
     "lint:check": "biome lint src",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "mrproper": "rm -rf node_modules dist build .svelte-kit"
   },
   "peerDependencies": {
-    "svelte": "^5.53.13"
+    "svelte": "^5.54.0"
   },
   "dependencies": {
     "bits-ui": "^2.16.3",
@@ -30,11 +31,11 @@
     "@sveltejs/enhanced-img": "^0.10.4",
     "@sveltejs/kit": "^2.55.0",
     "@sveltejs/vite-plugin-svelte": "^7.0.0",
-    "@tailwindcss/vite": "^4.2.1",
+    "@tailwindcss/vite": "^4.2.2",
     "@types/node": "^25.5.0",
     "postcss": "^8.5.8",
     "svelte-check": "^4.4.5",
-    "tailwindcss": "^4.2.1",
+    "tailwindcss": "^4.2.2",
     "typescript": "^5.9.3",
     "vite": "^8.0.0",
     "vitest": "^4.1.0"

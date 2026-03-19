@@ -13,18 +13,18 @@ import type CardPanel from './CardPanel.svelte';
 import type CardTitle from './CardTitle.svelte';
 
 export type {
-    Card,
-    CardFrame,
-    CardFrameHeader,
-    CardFrameTitle,
-    CardFrameDescription,
-    CardFrameAction,
-    CardFrameFooter,
-    CardAction,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardPanel,
-    CardPanel as CardContent,
-    CardTitle
+  Card,
+  CardAction,
+  CardDescription,
+  CardFooter,
+  CardFrame,
+  CardFrameAction,
+  CardFrameDescription,
+  CardFrameFooter,
+  CardFrameHeader,
+  CardFrameTitle,
+  CardHeader,
+  CardPanel,
+  CardPanel as CardContent,
+  CardTitle
 };
