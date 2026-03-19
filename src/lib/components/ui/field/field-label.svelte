@@ -1,21 +1,23 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import type { HTMLLabelAttributes } from "svelte/elements";
+  import { Label } from "$lib/components/ui/label/index.js";
   import { cn } from "$lib/utils.js";
+  import type { ComponentProps } from "svelte";
 
-  interface Props extends HTMLLabelAttributes {
-    children?: Snippet;
-  }
-
-  let { class: className, children, ...restProps }: Props = $props();
+  let {
+    ref = $bindable(null),
+    class: className,
+    children,
+    ...restProps
+  }: ComponentProps<typeof Label> = $props();
 </script>
 
 <label
+  bind:ref
+  data-slot="field-label"
   class={cn(
     "inline-flex items-center gap-2 font-medium text-base/4.5 text-foreground sm:text-sm/4",
     className,
   )}
-  data-slot="field-label"
   {...restProps}
 >
   {@render children?.()}

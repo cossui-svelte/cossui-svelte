@@ -1,14 +1,21 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import type { HTMLAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils.js";
+  import { cn, type WithElementRef } from "$lib/utils.js";
 
-  interface Props extends HTMLAttributes<HTMLDivElement> {
-    name?: string;
-    children?: Snippet;
-  }
+  // interface Props extends HTMLAttributes<HTMLDivElement> {
+  //   name?: string;
+  //   children?: Snippet;
+  // }
 
-  let { class: className, name, children, ...restProps }: Props = $props();
+  // let { class: className, name, children, ...restProps }: Props = $props();
+
+  let {
+    ref = $bindable(null),
+    class: className,
+    children,
+    ...restProps
+  }: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();
 </script>
 
 <div

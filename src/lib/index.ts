@@ -58,7 +58,7 @@ export { default as FieldDescription } from '$lib/components/ui/field/field-desc
 export { default as FieldError } from '$lib/components/ui/field/field-error.svelte';
 export { default as FieldLabel } from '$lib/components/ui/field/field-label.svelte';
 export { default as Fieldset } from '$lib/components/ui/field/fieldset.svelte';
-export { default as FieldsetLegend } from '$lib/components/ui/field/fieldset-legend.svelte';
+export { default as FieldsetLegend } from '$lib/components/ui/fieldset/fieldset-legend.svelte';
 export { default as Form } from '$lib/components/ui/form.svelte';
 export { default as Frame } from '$lib/components/ui/frame/frame.svelte';
 export { default as FramePanel } from '$lib/components/ui/frame/frame-panel.svelte';
@@ -147,7 +147,7 @@ export { default as Tabs } from '$lib/components/ui/tabs/tabs.svelte';
 export { default as TabsList } from '$lib/components/ui/tabs/tabs-list.svelte';
 export { default as TabsPanel } from '$lib/components/ui/tabs/tabs-panel.svelte';
 export { default as TabsTab } from '$lib/components/ui/tabs/tabs-tab.svelte';
-export { default as Textarea } from '$lib/components/ui/textarea.svelte';
+export { default as Textarea } from '$lib/components/ui/textarea/textarea.svelte';
 export { default as ToastProvider } from '$lib/components/ui/toast-provider.svelte';
 export { default as Toggle } from '$lib/components/ui/toggle.svelte';
 export { default as Tooltip } from '$lib/components/ui/tooltip/tooltip.svelte';
