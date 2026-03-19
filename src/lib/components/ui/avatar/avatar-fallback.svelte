@@ -1,20 +1,20 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import { Avatar } from "bits-ui";
+  import { Avatar as AvatarPrimitive } from "bits-ui";
   import { cn } from "$lib/utils.js";
 
-  type Props = Avatar.FallbackProps & { children?: Snippet };
-
-  let { class: className, children, ...restProps }: Props = $props();
+  let {
+    ref = $bindable(null),
+    class: className,
+    ...restProps
+  }: AvatarPrimitive.FallbackProps = $props();
 </script>
 
-<Avatar.Fallback
+<AvatarPrimitive.Fallback
+  bind:ref
   class={cn(
-    "flex size-full items-center justify-center rounded-full bg-muted",
+    "flex size-full items-center justify-center rounded-[inherit] bg-secondary text-xs",
     className,
   )}
   data-slot="avatar-fallback"
   {...restProps}
->
-  {@render children?.()}
-</Avatar.Fallback>
+></AvatarPrimitive.Fallback>
