@@ -1,16 +1,17 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
+  import { cn, type WithElementRef } from "$lib/utils.js";
   import type { HTMLAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils.js";
 
-  interface Props extends HTMLAttributes<HTMLParagraphElement> {
-    children?: Snippet;
-  }
-
-  let { class: className, children, ...restProps }: Props = $props();
+  let {
+    ref = $bindable(null),
+    class: className,
+    children,
+    ...restProps
+  }: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();
 </script>
 
 <div
+  bind:this={ref}
   class={cn(
     "text-muted-foreground text-sm [&>a:hover]:text-primary [&>a]:underline [&>a]:underline-offset-4 [[data-slot=empty-title]+&]:mt-1",
     className,
