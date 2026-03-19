@@ -10,7 +10,7 @@
 
 <Collapsible.Content
   class={cn(
-    "overflow-hidden data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down",
+    "h-(--collapsible-panel-height) overflow-hidden transition-[height] duration-200 data-ending-style:h-0 data-starting-style:h-0",
     className,
   )}
   data-slot="collapsible-panel"
