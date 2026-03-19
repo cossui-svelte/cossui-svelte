@@ -57,7 +57,7 @@ export { default as Field } from '$lib/components/ui/field/field.svelte';
 export { default as FieldDescription } from '$lib/components/ui/field/field-description.svelte';
 export { default as FieldError } from '$lib/components/ui/field/field-error.svelte';
 export { default as FieldLabel } from '$lib/components/ui/field/field-label.svelte';
-export { default as Fieldset } from '$lib/components/ui/field/fieldset.svelte';
+export { default as Fieldset } from '$lib/components/ui/fieldset/fieldset.svelte';
 export { default as FieldsetLegend } from '$lib/components/ui/fieldset/fieldset-legend.svelte';
 export { default as Form } from '$lib/components/ui/form.svelte';
 export { default as Frame } from '$lib/components/ui/frame/frame.svelte';

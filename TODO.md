@@ -1,0 +1,1 @@
+* Add avatar badges
