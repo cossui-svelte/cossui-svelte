@@ -4,9 +4,9 @@ import AccordionPanel from './accordion-panel.svelte';
 import AccordionTrigger from './accordion-trigger.svelte';
 
 export {
-    Accordion,
-    AccordionItem,
-    AccordionTrigger,
-    AccordionPanel,
-    AccordionPanel as AccordionContent,
+  Accordion,
+  AccordionItem,
+  AccordionPanel,
+  AccordionPanel as AccordionContent,
+  AccordionTrigger
 };

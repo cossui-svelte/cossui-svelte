@@ -1,9 +1,6 @@
-<script lang="ts">
-  import type { Snippet } from "svelte";
-  import type { HTMLAttributes } from "svelte/elements";
-  import { cva, type VariantProps } from "class-variance-authority";
-  import { cn } from "$lib/utils.js";
 
+<script lang="ts" module>
+  import { cva, type VariantProps } from "class-variance-authority";
   const alertVariants = cva(
     "relative grid w-full items-start gap-x-2 gap-y-0.5 rounded-xl border px-3.5 py-3 text-card-foreground text-sm has-[>svg]:has-data-[slot=alert-action]:grid-cols-[calc(var(--spacing)*4)_1fr_auto] has-[>svg]:grid-cols-[calc(var(--spacing)*4)_1fr] has-data-[slot=alert-action]:grid-cols-[1fr_auto] has-[>svg]:gap-x-2 [&>svg]:h-lh [&>svg]:w-4",
     {
@@ -22,14 +19,23 @@
     },
   );
 
+
   type AlertVariants = VariantProps<typeof alertVariants>;
 
-  interface Props extends HTMLAttributes<HTMLDivElement> {
-    variant?: AlertVariants["variant"];
-    children?: Snippet;
-  }
+</script>
+<script lang="ts">
+ 	import type { HTMLAttributes } from "svelte/elements";
+	import { cn, type WithElementRef } from "$lib/utils.js";
 
-  let { class: className, variant, children, ...restProps }: Props = $props();
+	let {
+		ref = $bindable(null),
+		class: className,
+		variant = "default",
+		children,
+		...restProps
+	}: WithElementRef<HTMLAttributes<HTMLDivElement>> & {
+		variant?: AlertVariant;
+	} = $props();
 </script>
 
 <div

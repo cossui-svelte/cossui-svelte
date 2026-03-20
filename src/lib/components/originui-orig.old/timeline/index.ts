@@ -1,5 +1,6 @@
 /* eslint-disable perfectionist/sort-named-exports */
 
+import Timeline from './timeline.svelte';
 import Content from './timeline-content.svelte';
 import Date from './timeline-date.svelte';
 import Header from './timeline-header.svelte';
@@ -7,23 +8,22 @@ import Indicator from './timeline-indicator.svelte';
 import Item from './timeline-item.svelte';
 import Separator from './timeline-separator.svelte';
 import Title from './timeline-title.svelte';
-import Timeline from './timeline.svelte';
 
 export {
-	Timeline,
-	Content,
-	Date,
-	Header,
-	Indicator,
-	Item,
-	Title,
-	Separator,
-	//
-	Content as TimelineContent,
-	Separator as TimelineSeparator,
-	Date as TimelineDate,
-	Header as TimelineHeader,
-	Indicator as TimelineIndicator,
-	Title as TimelineTitle,
-	Item as TimelineItem
+  Content,
+  //
+  Content as TimelineContent,
+  Date,
+  Date as TimelineDate,
+  Header,
+  Header as TimelineHeader,
+  Indicator,
+  Indicator as TimelineIndicator,
+  Item,
+  Item as TimelineItem,
+  Separator,
+  Separator as TimelineSeparator,
+  Timeline,
+  Title,
+  Title as TimelineTitle
 };

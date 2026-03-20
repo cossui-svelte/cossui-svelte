@@ -6,11 +6,11 @@ const Trigger = CollapsiblePrimitive.Trigger;
 const Content = CollapsiblePrimitive.Content;
 
 export {
-	Root,
-	Content,
-	Trigger,
-	//
-	Root as Collapsible,
-	Content as CollapsibleContent,
-	Trigger as CollapsibleTrigger
+  Content,
+  Content as CollapsibleContent,
+  Root,
+  //
+  Root as Collapsible,
+  Trigger,
+  Trigger as CollapsibleTrigger
 };

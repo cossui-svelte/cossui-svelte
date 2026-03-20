@@ -24,11 +24,14 @@ const config = {
       handleMissingId: 'ignore'
     }
   },
-  preprocess: vitePreprocess(),
+  preprocess: vitePreprocess()
 
-  vitePlugin: {
-    exclude: [/.*\.old($|\/)/]
-  }
+  // vitePlugin: {
+  //   exclude: [
+  //     /\.old$/,        // files ending in .old
+  //     /\.old\//        // folders ending in .old
+  //   ]
+  // }
 };
 
 export default config;
