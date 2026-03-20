@@ -5,19 +5,19 @@ import AlertDialogTrigger from './alert-dialog-trigger.svelte';
 import AlertDialogViewport from './alert-dialog-viewport.svelte';
 
 export {
-    type AlertDialogCreateHandle,
-    AlertDialog,
-    AlertDialogPortal,
-    AlertDialogBackdrop,
-    AlertDialogBackdrop as AlertDialogOverlay,
-    AlertDialogTrigger,
-    type AlertDialogPopup,
-    type AlertDialogPopup as AlertDialogContent,
-    type AlertDialogHeader,
-    type AlertDialogFooter,
-    type AlertDialogTitle,
-    type AlertDialogDescription,
-    type AlertDialogClose,
-    AlertDialogViewport,
-    type AlertDialogPrimitive
+  type AlertDialogCreateHandle,
+  AlertDialog,
+  AlertDialogPortal,
+  AlertDialogBackdrop,
+  AlertDialogBackdrop as AlertDialogOverlay,
+  AlertDialogTrigger,
+  type AlertDialogPopup,
+  type AlertDialogPopup as AlertDialogContent,
+  type AlertDialogHeader,
+  type AlertDialogFooter,
+  type AlertDialogTitle,
+  type AlertDialogDescription,
+  type AlertDialogClose,
+  AlertDialogViewport,
+  type AlertDialogPrimitive
 };
