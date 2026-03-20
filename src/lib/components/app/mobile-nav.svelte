@@ -3,7 +3,7 @@
   import { Dialog } from "bits-ui";
   import { Menu } from "lucide-svelte";
   import Button from "$lib/components/ui/button.svelte";
-  import Badge from "$lib/components/ui/badge.svelte";
+  import Badge from "$lib/components/ui/badge/badge.svelte";
   import Sheet from "$lib/components/ui/sheet/sheet.svelte";
   import SheetPopup from "$lib/components/ui/sheet/sheet-popup.svelte";
 

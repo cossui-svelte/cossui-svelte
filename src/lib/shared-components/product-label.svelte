@@ -1,6 +1,6 @@
 <script lang="ts">
   import { page } from "$app/state";
-  import Badge from "$lib/components/ui/badge.svelte";
+  import Badge from "$lib/components/ui/badge/badge.svelte";
 
   interface ProductItem {
     href: string;
