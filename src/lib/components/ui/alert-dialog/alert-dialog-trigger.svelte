@@ -1,12 +1,7 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import { AlertDialog } from "bits-ui";
+	import { AlertDialog as AlertDialogPrimitive } from "bits-ui";
 
-  type Props = AlertDialog.TriggerProps & { children?: Snippet };
-
-  let { children, ...restProps }: Props = $props();
+	let { ref = $bindable(null), ...restProps }: AlertDialogPrimitive.TriggerProps = $props();
 </script>
 
-<AlertDialog.Trigger data-slot="alert-dialog-trigger" {...restProps}>
-  {@render children?.()}
-</AlertDialog.Trigger>
+<AlertDialogPrimitive.Trigger bind:ref data-slot="alert-dialog-trigger" {...restProps} />

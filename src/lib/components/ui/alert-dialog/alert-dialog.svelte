@@ -1,12 +1,7 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import { AlertDialog } from "bits-ui";
+	import { AlertDialog as AlertDialogPrimitive } from "bits-ui";
 
-  type Props = AlertDialog.RootProps & { children?: Snippet };
-
-  let { children, ...restProps }: Props = $props();
+	let { open = $bindable(false), ...restProps }: AlertDialogPrimitive.RootProps = $props();
 </script>
 
-<AlertDialog.Root {...restProps}>
-  {@render children?.()}
-</AlertDialog.Root>
+<AlertDialogPrimitive.Root bind:open {...restProps} />
