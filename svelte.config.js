@@ -24,8 +24,11 @@ const config = {
       handleMissingId: 'ignore'
     }
   },
+  preprocess: vitePreprocess(),
 
-  preprocess: vitePreprocess()
+  vitePlugin: {
+    exclude: [/.*\.old($|\/)/]
+  }
 };
 
 export default config;

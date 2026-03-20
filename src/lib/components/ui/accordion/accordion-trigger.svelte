@@ -1,12 +1,15 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
   import { Accordion } from "bits-ui";
   import { ChevronDown } from "lucide-svelte";
-  import { cn } from "$lib/utils.js";
 
-  type Props = Accordion.TriggerProps & { children?: Snippet };
+  import { cn, type WithoutChild } from "$lib/utils.js";
 
-  let { class: className, children, ...restProps }: Props = $props();
+  let {
+    ref = $bindable(null),
+    class: className,
+    children,
+    ...restProps
+  }: WithoutChild<Accordion.TriggerProps> = $props();
 </script>
 
 <Accordion.Header class="flex">
