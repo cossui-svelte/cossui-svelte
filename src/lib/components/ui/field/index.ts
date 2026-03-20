@@ -4,4 +4,3 @@ import type FieldError from './field-error.svelte';
 import type FieldLabel from './field-label.svelte';
 
 export type { Field, FieldDescription, FieldError, FieldLabel };
-

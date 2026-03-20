@@ -19,7 +19,7 @@ export { default as AlertTitle } from '$lib/components/ui/alert/alert-title.svel
 export { default as Avatar } from '$lib/components/ui/avatar/avatar.svelte';
 export { default as AvatarFallback } from '$lib/components/ui/avatar/avatar-fallback.svelte';
 export { default as AvatarImage } from '$lib/components/ui/avatar/avatar-image.svelte';
-export { default as Badge } from '$lib/components/ui/badge.svelte';
+export { default as Badge } from '$lib/components/ui/badge/badge.svelte';
 export { default as Breadcrumb } from '$lib/components/ui/breadcrumb/breadcrumb.svelte';
 export { default as BreadcrumbEllipsis } from '$lib/components/ui/breadcrumb/breadcrumb-ellipsis.svelte';
 export { default as BreadcrumbItem } from '$lib/components/ui/breadcrumb/breadcrumb-item.svelte';
@@ -27,8 +27,8 @@ export { default as BreadcrumbLink } from '$lib/components/ui/breadcrumb/breadcr
 export { default as BreadcrumbList } from '$lib/components/ui/breadcrumb/breadcrumb-list.svelte';
 export { default as BreadcrumbPage } from '$lib/components/ui/breadcrumb/breadcrumb-page.svelte';
 export { default as BreadcrumbSeparator } from '$lib/components/ui/breadcrumb/breadcrumb-separator.svelte';
+export { buttonVariants } from '$lib/components/ui/button/button-variants.js';
 export { default as Button } from '$lib/components/ui/button.svelte';
-export { buttonVariants } from '$lib/components/ui/button-variants.js';
 export { default as Card } from '$lib/components/ui/card/Card.svelte';
 export { default as Checkbox } from '$lib/components/ui/checkbox/checkbox.svelte';
 export { default as CheckboxGroup } from '$lib/components/ui/checkbox/checkbox-group.svelte';
@@ -62,8 +62,8 @@ export { default as FieldsetLegend } from '$lib/components/ui/fieldset/fieldset-
 export { default as Form } from '$lib/components/ui/form.svelte';
 export { default as Frame } from '$lib/components/ui/frame/frame.svelte';
 export { default as FramePanel } from '$lib/components/ui/frame/frame-panel.svelte';
+export { default as GroupSeparator } from '$lib/components/ui/group/group-separator.svelte';
 export { default as Group } from '$lib/components/ui/group.svelte';
-export { default as GroupSeparator } from '$lib/components/ui/group-separator.svelte';
 export { default as Input } from '$lib/components/ui/input/input.svelte';
 export { default as InputGroup } from '$lib/components/ui/input/input-group.svelte';
 export { default as InputGroupAddon } from '$lib/components/ui/input/input-group-addon.svelte';

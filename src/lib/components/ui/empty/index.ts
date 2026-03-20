@@ -6,17 +6,17 @@ import Media from './empty-media.svelte';
 import Title from './empty-title.svelte';
 
 export {
-    Root,
-    Header,
-    Media,
-    Title,
-    Description,
-    Content,
-    //
-    Root as Empty,
-    Header as EmptyHeader,
-    Media as EmptyMedia,
-    Title as EmptyTitle,
-    Description as EmptyDescription,
-    Content as EmptyContent
+  Content,
+  Content as EmptyContent,
+  Description,
+  Description as EmptyDescription,
+  Header,
+  Header as EmptyHeader,
+  Media,
+  Media as EmptyMedia,
+  Root,
+  //
+  Root as Empty,
+  Title,
+  Title as EmptyTitle
 };

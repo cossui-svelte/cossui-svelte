@@ -6,4 +6,3 @@ import TabsTab from './tabs-tab.svelte';
 export type TabsVariant = 'default' | 'underline';
 
 export { Tabs, TabsList, TabsPanel, TabsPanel as TabsContent, TabsTab, TabsTab as TabsTrigger };
-

@@ -11,7 +11,7 @@
   }: ComponentProps<typeof Label> = $props();
 </script>
 
-<label
+<Label
   bind:ref
   data-slot="field-label"
   class={cn(
@@ -21,4 +21,4 @@
   {...restProps}
 >
   {@render children?.()}
-</label>
+</Label>
