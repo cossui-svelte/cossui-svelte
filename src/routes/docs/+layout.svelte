@@ -1,6 +1,6 @@
 <script lang="ts">
     // import { source } from "@/lib/source";
-    import { SidebarProvider } from "$lib/index.js";
+
     // import DocsSidebar from "$lib/site-components/docs-sidebar.svelte";
     import type { Snippet } from "svelte";
 
