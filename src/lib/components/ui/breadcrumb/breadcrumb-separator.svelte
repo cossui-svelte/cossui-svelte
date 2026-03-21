@@ -1,17 +1,18 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import type { HTMLAttributes } from "svelte/elements";
+  import { cn, type WithElementRef } from "$lib/utils.js";
   import { ChevronRight } from "lucide-svelte";
-  import { cn } from "$lib/utils.js";
+  import type { HTMLAttributes } from "svelte/elements";
 
-  interface Props extends HTMLAttributes<HTMLLIElement> {
-    children?: Snippet;
-  }
-
-  let { class: className, children, ...restProps }: Props = $props();
+  let {
+    ref = $bindable(null),
+    class: className,
+    children,
+    ...restProps
+  }: WithElementRef<HTMLAttributes<HTMLLIElement>> = $props();
 </script>
 
 <li
+  bind:this={ref}
   aria-hidden="true"
   class={cn("opacity-80 [&>svg]:size-4", className)}
   data-slot="breadcrumb-separator"

@@ -5,11 +5,4 @@ import EmptyHeader from './empty-header.svelte';
 import EmptyMedia from './empty-media.svelte';
 import EmptyTitle from './empty-title.svelte';
 
-export {
-  Empty,
-  EmptyContent,
-  EmptyDescription,
-  EmptyHeader,
-  EmptyMedia,
-  EmptyTitle
-};
+export { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle };

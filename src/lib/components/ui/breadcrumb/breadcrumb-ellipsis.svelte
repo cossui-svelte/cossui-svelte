@@ -1,20 +1,24 @@
 <script lang="ts">
+  import { cn, type WithElementRef } from "$lib/utils.js";
+  import { Ellipsis } from "lucide-svelte";
   import type { HTMLAttributes } from "svelte/elements";
-  import { MoreHorizontal } from "lucide-svelte";
-  import { cn } from "$lib/utils.js";
 
-  interface Props extends HTMLAttributes<HTMLSpanElement> {}
-
-  let { class: className, ...restProps }: Props = $props();
+  let {
+    ref = $bindable(null),
+    class: className,
+    children,
+    ...restProps
+  }: WithElementRef<HTMLAttributes<HTMLSpanElement>> = $props();
 </script>
 
 <span
+  bind:this={ref}
   aria-hidden="true"
   class={cn(className)}
   data-slot="breadcrumb-ellipsis"
   role="presentation"
   {...restProps}
 >
-  <MoreHorizontal class="size-4" />
+  <Ellipsis class="size-4" />
   <span class="sr-only">More</span>
 </span>

@@ -1,20 +1,20 @@
 <script lang="ts">
-  import { cn, type WithElementRef } from "$lib/utils.js";
   import type { HTMLAttributes } from "svelte/elements";
+  import { cn, type WithElementRef } from "$lib/utils.js";
 
   let {
     ref = $bindable(null),
     class: className,
     children,
     ...restProps
-  }: WithElementRef<HTMLAttributes<HTMLLIElement>> = $props();
+  }: WithElementRef<HTMLAttributes<HTMLParagraphElement>> = $props();
 </script>
 
-<li
+<div
   bind:this={ref}
-  class={cn("inline-flex items-center gap-1.5", className)}
-  data-slot="breadcrumb-item"
+  class={cn("text-muted-foreground text-sm", className)}
+  data-slot="card-description"
   {...restProps}
 >
   {@render children?.()}
-</li>
+</div>

@@ -1,16 +1,17 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import type { HTMLAnchorAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils.js";
+  import { cn, type WithElementRef } from "$lib/utils.js";
+  import type { HTMLAttributes } from "svelte/elements";
 
-  interface Props extends HTMLAnchorAttributes {
-    children?: Snippet;
-  }
-
-  let { class: className, children, href, ...restProps }: Props = $props();
+  let {
+    ref = $bindable(null),
+    class: className,
+    children,
+    ...restProps
+  }: WithElementRef<HTMLAttributes<HTMLAnchorElement>> = $props();
 </script>
 
 <a
+  bind:this={ref}
   {href}
   class={cn("transition-colors hover:text-foreground", className)}
   data-slot="breadcrumb-link"

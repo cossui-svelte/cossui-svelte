@@ -7,17 +7,14 @@
     class: className,
     children,
     ...restProps
-  }: WithElementRef<HTMLAttributes<HTMLOListElement>> = $props();
+  }: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();
 </script>
 
-<ol
+<div
   bind:this={ref}
-  class={cn(
-    "wrap-break-word flex flex-wrap items-center gap-1.5 text-muted-foreground text-sm sm:gap-2.5",
-    className,
-  )}
-  data-slot="breadcrumb-list"
+  class={cn("font-semibold text-sm", className)}
+  data-slot="card-frame-title"
   {...restProps}
 >
   {@render children?.()}
-</ol>
+</div>

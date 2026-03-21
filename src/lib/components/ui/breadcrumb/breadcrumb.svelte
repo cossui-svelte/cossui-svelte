@@ -1,14 +1,20 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
+  import { cn, type WithElementRef } from "$lib/utils.js";
   import type { HTMLAttributes } from "svelte/elements";
 
-  interface Props extends HTMLAttributes<HTMLElement> {
-    children?: Snippet;
-  }
-
-  let { children, ...restProps }: Props = $props();
+  let {
+    ref = $bindable(null),
+    class: className,
+    children,
+    ...restProps
+  }: WithElementRef<HTMLAttributes<HTMLElement>> = $props();
 </script>
 
-<nav aria-label="breadcrumb" data-slot="breadcrumb" {...restProps}>
+<nav
+  bind:this={ref}
+  aria-label="breadcrumb"
+  data-slot="breadcrumb"
+  {...restProps}
+>
   {@render children?.()}
 </nav>
