@@ -13,6 +13,7 @@
     ref = $bindable(null),
     size = "default",
     unstyled = false,
+
     type,
     ...restProps
   }: Props = $props();
