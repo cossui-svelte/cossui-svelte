@@ -1,6 +1,5 @@
 <script lang="ts">
   import { cn } from "$lib/utils.js";
-
   import { RadioGroup as RadioGroupPrimitive } from "bits-ui";
 
   let {
@@ -9,8 +8,6 @@
     value = $bindable(""),
     ...restProps
   }: RadioGroupPrimitive.ItemProps = $props();
-
-  export { className as class };
 </script>
 
 <RadioGroupPrimitive.Item
