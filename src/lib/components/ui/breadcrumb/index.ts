@@ -8,10 +8,10 @@ import type BreadcrumbSeparator from './breadcrumb-separator.svelte';
 
 export {
   Breadcrumb,
-  type BreadcrumbList,
+  type BreadcrumbEllipsis,
   type BreadcrumbItem,
   type BreadcrumbLink,
+  type BreadcrumbList,
   type BreadcrumbPage,
-  type BreadcrumbSeparator,
-  type BreadcrumbEllipsis
+  type BreadcrumbSeparator
 };

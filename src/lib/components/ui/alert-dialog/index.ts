@@ -9,18 +9,19 @@ import AlertDialogPortal from './alert-dialog-portal.svelte';
 import AlertDialogTitle from './alert-dialog-title.svelte';
 import AlertDialogTrigger from './alert-dialog-trigger.svelte';
 import AlertDialogViewport from './alert-dialog-viewport.svelte';
+
 export {
   AlertDialog,
-  AlertDialogPortal,
   AlertDialogBackdrop,
   AlertDialogBackdrop as AlertDialogOverlay,
-  AlertDialogTrigger,
+  AlertDialogClose,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
   AlertDialogPopup,
   AlertDialogPopup as AlertDialogContent,
-  AlertDialogHeader,
-  AlertDialogFooter,
+  AlertDialogPortal,
   AlertDialogTitle,
-  AlertDialogDescription,
-  AlertDialogClose,
+  AlertDialogTrigger,
   AlertDialogViewport
 };

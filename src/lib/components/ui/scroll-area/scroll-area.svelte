@@ -1,54 +1,52 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import { ScrollArea } from "bits-ui";
-  import { cn } from "$lib/utils.js";
+    import { ScrollArea as ScrollAreaPrimitive } from "bits-ui";
+    import { Scrollbar } from "./index";
+    import { cn, type WithoutChild } from "$lib/utils.js";
 
-  type Props = ScrollArea.RootProps & {
-    children?: Snippet;
-    scrollFade?: boolean;
-    scrollbarGutter?: boolean;
-  };
-
-  let {
-    class: className,
-    children,
-    scrollFade = false,
-    scrollbarGutter = false,
-    ...restProps
-  }: Props = $props();
+    let {
+        ref = $bindable(null),
+        viewportRef = $bindable(null),
+        class: className,
+        orientation = "vertical",
+        scrollbarXClasses = "",
+        scrollbarYClasses = "",
+        children,
+        scrollFade = false,
+        scrollbarGutter = false,
+        ...restProps
+    }: WithoutChild<ScrollAreaPrimitive.RootProps> & {
+        orientation?: "vertical" | "horizontal" | "both" | undefined;
+        scrollbarXClasses?: string | undefined;
+        scrollbarYClasses?: string | undefined;
+        viewportRef?: HTMLElement | null;
+        scrollFade?: boolean;
+        scrollbarGutter?: boolean;
+    } = $props();
 </script>
 
-<ScrollArea.Root class={cn("size-full min-h-0", className)} {...restProps}>
-  <ScrollArea.Viewport
-    class={cn(
-      "h-full rounded-[inherit] outline-none",
-      scrollFade &&
-        "mask-t-from-[calc(100%-min(var(--fade-size),var(--scroll-area-overflow-y-start)))] mask-b-from-[calc(100%-min(var(--fade-size),var(--scroll-area-overflow-y-end)))] [--fade-size:1.5rem]",
-      scrollbarGutter && "data-[scroll-area-overflow-y]:pe-2.5",
-    )}
-    data-slot="scroll-area-viewport"
-  >
-    {@render children?.()}
-  </ScrollArea.Viewport>
-  <ScrollArea.Scrollbar
-    class="m-1 flex opacity-0 transition-opacity delay-300 data-[orientation=horizontal]:h-1.5 data-[orientation=vertical]:w-1.5 data-[orientation=horizontal]:flex-col data-[state=visible]:opacity-100 data-[state=visible]:delay-0 data-[state=visible]:duration-100"
-    data-slot="scroll-area-scrollbar"
-    orientation="vertical"
-  >
-    <ScrollArea.Thumb
-      class="relative flex-1 rounded-full bg-foreground/20"
-      data-slot="scroll-area-thumb"
-    />
-  </ScrollArea.Scrollbar>
-  <ScrollArea.Scrollbar
-    class="m-1 flex opacity-0 transition-opacity delay-300 data-[orientation=horizontal]:h-1.5 data-[orientation=vertical]:w-1.5 data-[orientation=horizontal]:flex-col data-[state=visible]:opacity-100 data-[state=visible]:delay-0 data-[state=visible]:duration-100"
-    data-slot="scroll-area-scrollbar"
-    orientation="horizontal"
-  >
-    <ScrollArea.Thumb
-      class="relative flex-1 rounded-full bg-foreground/20"
-      data-slot="scroll-area-thumb"
-    />
-  </ScrollArea.Scrollbar>
-  <ScrollArea.Corner data-slot="scroll-area-corner" />
-</ScrollArea.Root>
+<ScrollAreaPrimitive.Root
+    bind:ref
+    data-slot="scroll-area"
+    class={cn("relative", className)}
+    {...restProps}
+>
+    <ScrollAreaPrimitive.Viewport
+        class={cn(
+            "h-full rounded-[inherit] outline-none transition-shadows focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background data-has-overflow-y:overscroll-y-contain data-has-overflow-x:overscroll-x-contain",
+            scrollFade &&
+                "mask-t-from-[calc(100%-min(var(--fade-size),var(--scroll-area-overflow-y-start)))] mask-b-from-[calc(100%-min(var(--fade-size),var(--scroll-area-overflow-y-end)))] mask-l-from-[calc(100%-min(var(--fade-size),var(--scroll-area-overflow-x-start)))] mask-r-from-[calc(100%-min(var(--fade-size),var(--scroll-area-overflow-x-end)))] [--fade-size:1.5rem]",
+            scrollbarGutter &&
+                "data-has-overflow-y:pe-2.5 data-has-overflow-x:pb-2.5",
+        )}
+        data-slot="scroll-area-viewport"
+    >
+        {@render children?.()}
+    </ScrollAreaPrimitive.Viewport>
+    {#if orientation === "vertical" || orientation === "both"}
+        <Scrollbar orientation="vertical" class={scrollbarYClasses} />
+    {/if}
+    {#if orientation === "horizontal" || orientation === "both"}
+        <Scrollbar orientation="horizontal" class={scrollbarXClasses} />
+    {/if}
+    <ScrollAreaPrimitive.Corner data-slot="scroll-area-corner" />
+</ScrollAreaPrimitive.Root>
