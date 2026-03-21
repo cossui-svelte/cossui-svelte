@@ -1,28 +1,23 @@
 <script lang="ts">
-  import type { HTMLAttributes } from "svelte/elements";
+  import { Separator } from "bits-ui";
   import { cn } from "$lib/utils.js";
 
-  interface Props extends HTMLAttributes<HTMLDivElement> {
-    orientation?: "horizontal" | "vertical";
-    decorative?: boolean;
-  }
-
   let {
+    ref = $bindable(null),
     class: className,
     orientation = "horizontal",
-    decorative = true,
     ...restProps
-  }: Props = $props();
+  }: Separator.RootProps & {
+    orientation?: "horizontal" | "vertical";
+  } = $props();
 </script>
 
-<div
-  aria-orientation={decorative ? undefined : orientation}
+<Separator.Root
   class={cn(
     "shrink-0 bg-border data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px data-[orientation=vertical]:not-[[class^='h-']]:not-[[class*='_h-']]:self-stretch",
     className,
   )}
-  data-orientation={orientation}
   data-slot="separator"
-  role={decorative ? "none" : "separator"}
+  {orientation}
   {...restProps}
-></div>
+/>
