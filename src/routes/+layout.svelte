@@ -4,7 +4,7 @@
 
   import "../app.css";
 
-  import ToastProvider from "$lib/components/ui/toast-provider.svelte";
+  import ToastProvider from "$lib/components/ui/toast/toast-provider.svelte";
 
   // TODO: import SiteHeader from '$lib/site-components/site-header.svelte'; (needs Svelte port)
 

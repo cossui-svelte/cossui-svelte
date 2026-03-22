@@ -1,9 +1,8 @@
 <script lang="ts">
-  import Badge from "$lib/components/ui/badge/badge.svelte";
-  import Button from "$lib/components/ui/button.svelte";
-  import Card from "$lib/components/ui/card/card.svelte";
-  import CardPanel from "$lib/components/ui/card/card-panel.svelte";
-  import SiteFooter from "$lib/app-components/site-footer.svelte";
+  import { Badge } from "$lib/components/ui/badge";
+  import { Button } from "$lib/components/ui/button";
+  import { Card, CardPanel } from "$lib/components/ui/card";
+  import SiteFooter from "$lib/components/app/site-footer.svelte";
 
   type Category = {
     slug: string;

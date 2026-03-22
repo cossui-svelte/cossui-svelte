@@ -1,7 +1,7 @@
 <script lang="ts">
   import { getContext } from "svelte";
   import { SunMoon } from "lucide-svelte";
-  import Button from "$lib/components/ui/button.svelte";
+  import { Button } from "$lib/components/ui/button";
   import {
     THEME_CONTEXT_KEY,
     type ThemeContextType,

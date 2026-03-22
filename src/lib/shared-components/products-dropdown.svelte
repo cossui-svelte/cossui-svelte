@@ -2,8 +2,8 @@
   import { DropdownMenu } from "bits-ui";
   import { ChevronDown } from "lucide-svelte";
   import { cn } from "$lib/utils.js";
-  import Badge from "$lib/components/ui/badge/badge.svelte";
-  import Button from "$lib/components/ui/button.svelte";
+  import { Badge } from "$lib/components/ui/badge";
+  import { Button } from "$lib/components/ui/button";
   import Menu from "$lib/components/ui/menu.svelte";
   import MenuPopup from "$lib/components/ui/menu-popup.svelte";
 

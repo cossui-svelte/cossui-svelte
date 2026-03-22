@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Spinner from "$lib/components/ui/spinner.svelte";
-  import Button from "$lib/components/ui/button.svelte";
+  import { Spinner } from "$lib/components/ui/spinner";
+  import { Button } from "$lib/components/ui/button";
   import { DownloadIcon } from "lucide-svelte";
 </script>
 

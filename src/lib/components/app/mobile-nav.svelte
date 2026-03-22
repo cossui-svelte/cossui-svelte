@@ -2,8 +2,8 @@
   import { cn } from "$lib/utils.js";
   import { Dialog } from "bits-ui";
   import { Menu } from "lucide-svelte";
-  import Button from "$lib/components/ui/button.svelte";
-  import Badge from "$lib/components/ui/badge/badge.svelte";
+  import { Button } from "$lib/components/ui/button";
+  import { Badge } from "$lib/components/ui/badge";
   import Sheet from "$lib/components/ui/sheet/sheet.svelte";
   import SheetPopup from "$lib/components/ui/sheet/sheet-popup.svelte";
 
