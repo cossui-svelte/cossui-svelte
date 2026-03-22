@@ -1,27 +1,23 @@
 <script lang="ts">
-  import type { HTMLAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils.js";
-
-  interface Props extends HTMLAttributes<HTMLDivElement> {
-    orientation?: "horizontal" | "vertical";
-  }
+  import { cn, type WithElementRef } from "$lib/utils.js";
+  import { Separator } from "$lib/components/ui/separator";
 
   let {
+    ref = $bindable(null),
     class: className,
     orientation = "vertical",
     ...restProps
-  }: Props = $props();
+  }: WithElementRef<Separator> & {
+    class?: string;
+    orientation?: "horizontal" | "vertical";
+  } = $props();
 </script>
 
-<div
-  aria-orientation={orientation}
+<Separator
   class={cn(
-    "pointer-events-none relative z-2 bg-input before:absolute before:inset-0 dark:before:bg-input/32",
-    orientation === "vertical" ? "w-px self-stretch" : "h-px w-full",
+    "[[data-slot=input-control]:focus-within+&,[data-slot=input-group]:focus-within+&,[data-slot=select-trigger]:focus-visible+*+&,[data-slot=number-field]:focus-within+input+&]:-translate-x-px pointer-events-none relative z-2 bg-input before:absolute before:inset-0 has-[+[data-slot=input-control]:focus-within,+[data-slot=input-group]:focus-within,+[data-slot=select-trigger]:focus-visible+*,+[data-slot=number-field]:focus-within]:translate-x-px has-[+[data-slot=input-control]:focus-within,+[data-slot=input-group]:focus-within,+[data-slot=select-trigger]:focus-visible+*,+[data-slot=number-field]:focus-within]:bg-ring dark:before:bg-input/32 [[data-slot=input-control]:focus-within+&,[data-slot=input-group]:focus-within+&,[data-slot=select-trigger]:focus-visible+*+&,[data-slot=number-field]:focus-within+&,[data-slot=number-field]:focus-within+input+&]:bg-ring",
     className,
   )}
-  data-orientation={orientation}
-  data-slot="separator"
-  role="separator"
+  {orientation}
   {...restProps}
-></div>
+/>
