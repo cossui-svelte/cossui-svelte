@@ -1,0 +1,38 @@
+import Menu from './menu.svelte';
+import MenuTrigger from './menu-trigger.svelte';
+
+export {
+    type MenuCreateHandle,
+    type MenuCreateHandle as DropdownMenuCreateHandle,
+    Menu,
+    Menu as DropdownMenu,
+    type MenuPortal,
+    type MenuPortal as DropdownMenuPortal,
+    MenuTrigger,
+    MenuTrigger as DropdownMenuTrigger,
+    type MenuPopup,
+    type MenuPopup as DropdownMenuContent,
+    type MenuGroup,
+    type MenuGroup as DropdownMenuGroup,
+    type MenuItem,
+    type MenuItem as DropdownMenuItem,
+    type MenuCheckboxItem,
+    type MenuCheckboxItem as DropdownMenuCheckboxItem,
+    type MenuRadioGroup,
+    type MenuRadioGroup as DropdownMenuRadioGroup,
+    type MenuRadioItem,
+    type MenuRadioItem as DropdownMenuRadioItem,
+    type MenuGroupLabel,
+    type MenuGroupLabel as DropdownMenuLabel,
+    type MenuSeparator,
+    type MenuSeparator as DropdownMenuSeparator,
+    type MenuShortcut,
+    type MenuShortcut as DropdownMenuShortcut,
+    type MenuSub,
+    type MenuSub as DropdownMenuSub,
+    type MenuSubTrigger,
+    type MenuSubTrigger as DropdownMenuSubTrigger,
+    type MenuSubPopup,
+    type MenuSubPopup as DropdownMenuSubContent,
+    type MenuPrimitive
+};

@@ -11,6 +11,7 @@
 
   import { Group, GroupSeparator } from "$lib/components/ui/group";
   import { Menu } from "$lib/components/ui/menu";
+  import { Button } from "$lib/components/ui/button";
 </script>
 
 <Group aria-label="File actions">
