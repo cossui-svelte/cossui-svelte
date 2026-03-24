@@ -1,12 +1,11 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import { Tooltip } from "bits-ui";
+  import { Tooltip as TooltipPrimitive } from "bits-ui";
+  import TooltipProvider from "./tooltip-provider.svelte";
 
-  type Props = Tooltip.RootProps & { children?: Snippet };
-
-  let { children, ...restProps }: Props = $props();
+  let { open = $bindable(false), ...restProps }: TooltipPrimitive.RootProps =
+    $props();
 </script>
 
-<Tooltip.Root {...restProps}>
-  {@render children?.()}
-</Tooltip.Root>
+<TooltipProvider>
+  <TooltipPrimitive.Root bind:open {...restProps} />
+</TooltipProvider>

@@ -1,12 +1,8 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import { Tooltip } from "bits-ui";
+  import { Tooltip as TooltipPrimitive } from "bits-ui";
 
-  type Props = Tooltip.TriggerProps & { children?: Snippet };
-
-  let { children, ...restProps }: Props = $props();
+  let { ref = $bindable(null), ...restProps }: TooltipPrimitive.TriggerProps =
+    $props();
 </script>
 
-<Tooltip.Trigger data-slot="tooltip-trigger" {...restProps}>
-  {@render children?.()}
-</Tooltip.Trigger>
+<TooltipPrimitive.Trigger bind:ref data-slot="tooltip-trigger" {...restProps} />

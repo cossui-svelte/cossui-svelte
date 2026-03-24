@@ -1,7 +1,7 @@
 <script lang="ts">
   import {
     ArchiveIcon,
-    EditIcon,
+    Pencil,
     EllipsisIcon,
     FilesIcon,
     FilmIcon,
@@ -10,7 +10,12 @@
   } from "lucide-svelte";
 
   import { Group, GroupSeparator } from "$lib/components/ui/group";
-  import { Menu } from "$lib/components/ui/menu";
+  import {
+    Menu,
+    MenuTrigger,
+    MenuItem,
+    MenuPopup,
+  } from "$lib/components/ui/menu";
   import { Button } from "$lib/components/ui/button";
 </script>
 
@@ -32,7 +37,7 @@
     </MenuTrigger>
     <MenuPopup align="end">
       <MenuItem>
-        <EditIcon aria-hidden="true" />
+        <Pencil aria-hidden="true" />
         Edit
       </MenuItem>
       <MenuItem>

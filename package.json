@@ -16,13 +16,13 @@
     "mrproper": "rm -rf node_modules dist build .svelte-kit"
   },
   "peerDependencies": {
-    "svelte": "^5.54.0"
+    "svelte": "^5.55.0"
   },
   "dependencies": {
     "bits-ui": "^2.16.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "lucide-svelte": "^0.577.0",
+    "lucide-svelte": "^1.0.1",
     "svelte-sonner": "^1.1.0",
     "tailwind-merge": "^3.5.0"
   },
@@ -35,11 +35,11 @@
     "@types/node": "^25.5.0",
     "postcss": "^8.5.8",
     "svelte-check": "^4.4.5",
-    "tailwindcss": "^4.2.2",
     "tailwind-variants": "^3.2.2",
-    "typescript": "^5.9.3",
-    "vite": "^8.0.1",
-    "vitest": "^4.1.0"
+    "tailwindcss": "^4.2.2",
+    "typescript": "^6.0.2",
+    "vite": "^8.0.2",
+    "vitest": "^4.1.1"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
@@ -47,5 +47,5 @@
       "sharp"
     ]
   },
-  "packageManager": "pnpm@10.32.1"
+  "packageManager": "pnpm@10.33.0"
 }
