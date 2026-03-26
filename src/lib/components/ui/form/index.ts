@@ -1,2 +1,2 @@
-import Form from "./form.svelte"
-export { Form }
+import Form from './form.svelte';
+export { Form };

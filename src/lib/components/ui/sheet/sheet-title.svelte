@@ -6,12 +6,12 @@
 		ref = $bindable(null),
 		class: className,
 		...restProps
-	}: SheetPrimitive.DescriptionProps = $props();
+	}: SheetPrimitive.TitleProps = $props();
 </script>
 
-<SheetPrimitive.Description
+<SheetPrimitive.Title
 	bind:ref
-	data-slot="sheet-description"
-	class={cn("text-muted-foreground text-sm", className)}
+	data-slot="sheet-title"
+	class={cn("font-heading font-semibold text-xl leading-none", className)}
 	{...restProps}
 />

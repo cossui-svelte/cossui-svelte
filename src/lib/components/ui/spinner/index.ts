@@ -1,4 +1,3 @@
-
-import Spinner from "./spinner.svelte"
+import Spinner from './spinner.svelte';
 
 export { Spinner };
