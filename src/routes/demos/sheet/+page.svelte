@@ -1,5 +1,5 @@
 <script>
-    import { Button } from "$lib/components/ui/button";
+    import { Button, buttonVariants } from "$lib/components/ui/button";
     import { Field, FieldLabel } from "$lib/components/ui/field";
     import { Form } from "$lib/components/ui/form";
     import { Input } from "$lib/components/ui/input";
@@ -17,8 +17,8 @@
 </script>
 
 <Sheet>
-    <SheetTrigger>
-        <Button variant="outline">Open Sheet</Button>
+    <SheetTrigger class={buttonVariants({ variant: "outline" })}>
+        Open Sheet
     </SheetTrigger>
     <SheetPopup>
         <Form class="contents">
