@@ -1,14 +1,13 @@
 <script lang="ts">
     import { cn, type WithElementRef } from "$lib/utils.js";
-    import type { HTMLAttributes } from "svelte/elements";
     import { Separator } from "$lib/components/ui/separator";
 
     let {
-        ref = $bindable(null),
         class: className,
         orientation = "vertical",
         ...restProps
-    }: WithElementRef<HTMLAttributes<HTMLDivElement>> & {
+    }: Separator & {
+        class: string;
         orientation?: "horizontal" | "vertical";
     } = $props();
 </script>

@@ -19,4 +19,4 @@ import Toggle, {
   toggleVariants
 } from './toggle.svelte';
 
-export { Toggle, toggleVariants, type ToggleVariants, type ToggleVariant, type ToggleSize };
+export { Toggle, type ToggleSize, type ToggleVariant, type ToggleVariants, toggleVariants };

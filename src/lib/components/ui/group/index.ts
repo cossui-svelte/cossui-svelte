@@ -6,9 +6,9 @@ import { groupVariants } from './groupVariants';
 export {
   Group,
   Group as ButtonGroup,
-  GroupText,
-  GroupText as ButtonGroupText,
   GroupSeparator,
   GroupSeparator as ButtonGroupSeparator,
+  GroupText,
+  GroupText as ButtonGroupText,
   groupVariants
 };

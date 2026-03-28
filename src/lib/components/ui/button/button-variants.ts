@@ -38,8 +38,6 @@
 //   }
 // );
 
-
-
 import { tv, type VariantProps } from 'tailwind-variants';
 
 export const buttonVariants = tv({
@@ -89,6 +87,6 @@ export const buttonVariants = tv({
   }
 });
 
-export type ButtonVariant = VariantProps<typeof buttonVariants>["variant"];
-export type ButtonSize = VariantProps<typeof buttonVariants>["size"];
+export type ButtonVariant = VariantProps<typeof buttonVariants>['variant'];
+export type ButtonSize = VariantProps<typeof buttonVariants>['size'];
 export type ButtonVariants = VariantProps<typeof buttonVariants>;

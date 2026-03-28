@@ -27,15 +27,18 @@
 		ref = $bindable(null),
 		value = $bindable(),
 		class: className,
+		children,
 		size = "default",
 		spacing = 0,
 		orientation = "horizontal",
 		variant = "default",
+		// type = "single",
 		...restProps
 	}: ToggleGroupPrimitive.RootProps &
 		ToggleVariants & {
 			spacing?: number;
 			orientation?: "horizontal" | "vertical";
+			// type?: "single" | "nultiple";
 		} = $props();
 
 	setToggleGroupCtx({
@@ -67,9 +70,12 @@ get along, so we shut typescript up by casting `value` to `never`.
 	data-size={size}
 	data-spacing={spacing}
 	style={`--gap: ${spacing}`}
+	// {type}
 	class={cn(
 		"cn-toggle-group group/toggle-group flex w-fit flex-row items-center gap-[--spacing(var(--gap))] data-vertical:flex-col data-vertical:items-stretch",
 		className,
 	)}
 	{...restProps}
-/>
+>
+	{@render children?.()}
+</ToggleGroupPrimitive.Root>

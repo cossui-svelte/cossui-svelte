@@ -11,14 +11,14 @@ import SheetTrigger from './sheet-trigger.svelte';
 
 export {
   Sheet,
-  SheetTrigger,
   // type SheetPortal,
   SheetClose,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetPanel,
   SheetPopup,
   SheetPopup as SheetContent,
-  SheetHeader,
-  SheetFooter,
   SheetTitle,
-  SheetDescription,
-  SheetPanel
+  SheetTrigger
 };

@@ -4,4 +4,4 @@ import FieldError from './field-error.svelte';
 import FieldItem from './field-item.svelte';
 import FieldLabel from './field-label.svelte';
 
-export { Field, FieldItem, FieldDescription, FieldError, FieldLabel };
+export { Field, FieldDescription, FieldError, FieldItem, FieldLabel };

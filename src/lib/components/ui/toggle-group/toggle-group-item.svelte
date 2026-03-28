@@ -1,4 +1,4 @@
-<script lang="ts">
+<!-- <script lang="ts">
 	import { ToggleGroup as ToggleGroupPrimitive } from "bits-ui";
 	import { getToggleGroupCtx } from "./toggle-group.svelte";
 	import { cn } from "$lib/utils.js";
@@ -35,4 +35,38 @@
 	)}
 	{value}
 	{...restProps}
-/>
+/> -->
+<script lang="ts">
+	import {
+		Toggle as ToggleComponent,
+		type toggleVariants,
+	} from "$lib/components/ui/toggle";
+
+	import { getToggleGroupCtx } from "./toggle-group.svelte";
+
+	let {
+		ref = $bindable(null),
+		value = $bindable(),
+		children,
+		class: className,
+		size,
+		variant,
+		...restProps
+	} = $props();
+
+	const context = getToggleGroupCtx();
+
+	const resolvedVariant = context.variant || variant;
+	const resolvedSize = context.size || size;
+</script>
+
+<ToggleComponent
+	class={className}
+	data-size={resolvedSize}
+	data-variant={resolvedVariant}
+	size={resolvedSize}
+	variant={resolvedVariant}
+	{...restProps}
+>
+	{@render children?.()}
+</ToggleComponent>
