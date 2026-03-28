@@ -31,7 +31,7 @@
   this={tag}
   {href}
   bind:this={ref}
-  class={cn(buttonVariants({ className, size, variant }))}
+  class={cn(buttonVariants({ variant, size }), className)}
   data-slot="button"
   type={!href ? "button" : undefined}
   {...restProps}
