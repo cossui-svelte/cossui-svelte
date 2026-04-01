@@ -12,34 +12,6 @@ import DialogTitle from './dialog-title.svelte';
 import DialogTrigger from './dialog-trigger.svelte';
 import DialogViewport from './dialog-viewport.svelte';
 
-// const Root = DialogPrimitive.Root;
-// const Trigger = DialogPrimitive.Trigger;
-// const Portal = DialogPrimitive.Portal;
-// const Close = DialogPrimitive.Close;
-
-// export {
-//   Close,
-//   Close as DialogClose,
-//   Content,
-//   Content as DialogContent,
-//   Description,
-//   Description as DialogDescription,
-//   Footer,
-//   Footer as DialogFooter,
-//   Header,
-//   Header as DialogHeader,
-//   Overlay,
-//   Overlay as DialogOverlay,
-//   Portal,
-//   Portal as DialogPortal,
-//   Root,
-//   Root as DialogRoot,
-//   Title,
-//   Title as DialogTitle,
-//   Trigger,
-//   Trigger as DialogTrigger
-// };
-
 const Dialog = DialogPrimitive.Root;
 // const DialogTrigger = DialogPrimitive.Trigger;
 const DialogPortal = DialogPrimitive.Portal;
