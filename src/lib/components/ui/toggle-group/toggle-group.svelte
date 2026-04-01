@@ -29,14 +29,14 @@
 		class: className,
 		children,
 		size = "default",
-		spacing = 0,
+		// spacing = 0,
 		orientation = "horizontal",
 		variant = "default",
 		// type = "single",
 		...restProps
 	}: ToggleGroupPrimitive.RootProps &
 		ToggleVariants & {
-			spacing?: number;
+			// spacing?: number;
 			orientation?: "horizontal" | "vertical";
 			// type?: "single" | "nultiple";
 		} = $props();
@@ -48,9 +48,9 @@
 		get size() {
 			return size;
 		},
-		get spacing() {
-			return spacing;
-		},
+		// get spacing() {
+		// 	return spacing;
+		// },
 		get orientation() {
 			return orientation;
 		},
@@ -68,11 +68,19 @@ get along, so we shut typescript up by casting `value` to `never`.
 	data-slot="toggle-group"
 	data-variant={variant}
 	data-size={size}
-	data-spacing={spacing}
-	style={`--gap: ${spacing}`}
+	// data-spacing={spacing}
+	// style={`--gap: ${spacing}`}
 	// {type}
 	class={cn(
-		"cn-toggle-group group/toggle-group flex w-fit flex-row items-center gap-[--spacing(var(--gap))] data-vertical:flex-col data-vertical:items-stretch",
+		"flex w-fit *:focus-visible:z-10 dark:*:[[data-slot=separator]:has(+[data-slot=toggle]:hover)]:before:bg-input/64 dark:*:[[data-slot=separator]:has(+[data-slot=toggle][data-pressed])]:before:bg-input dark:*:[[data-slot=toggle]:hover+[data-slot=separator]]:before:bg-input/64 dark:*:[[data-slot=toggle][data-pressed]+[data-slot=separator]]:before:bg-input",
+		orientation === "horizontal"
+			? "*:pointer-coarse:after:min-w-auto"
+			: "*:pointer-coarse:after:min-h-auto",
+		variant === "default"
+			? "gap-0.5"
+			: orientation === "horizontal"
+				? "*:not-first:not-data-[slot=separator]:before:-start-[0.5px] *:not-last:not-data-[slot=separator]:before:-end-[0.5px] *:not-first:rounded-s-none *:not-last:rounded-e-none *:not-first:border-s-0 *:not-last:border-e-0 *:not-first:before:rounded-s-none *:not-last:before:rounded-e-none"
+				: "*:not-first:not-data-[slot=separator]:before:-top-[0.5px] *:not-last:not-data-[slot=separator]:before:-bottom-[0.5px] flex-col *:not-first:rounded-t-none *:not-last:rounded-b-none *:not-first:border-t-0 *:not-last:border-b-0 *:not-first:before:rounded-t-none *:not-last:before:rounded-b-none *:data-[slot=toggle]:not-last:before:hidden dark:*:last:before:hidden dark:*:first:before:block",
 		className,
 	)}
 	{...restProps}

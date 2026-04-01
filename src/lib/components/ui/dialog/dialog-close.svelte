@@ -1,12 +1,8 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import { Dialog } from "bits-ui";
-
-  type Props = Dialog.CloseProps & { children?: Snippet };
-
-  let { children, ...restProps }: Props = $props();
+    import { Dialog as DialogPrimitive } from "bits-ui";
+    const props = $props();
 </script>
 
-<Dialog.Close data-slot="dialog-close" {...restProps}>
-  {@render children?.()}
-</Dialog.Close>
+<DialogPrimitive.Close data-slot="dialog-close" {...props}>
+    {@render props.children?.()}
+</DialogPrimitive.Close>

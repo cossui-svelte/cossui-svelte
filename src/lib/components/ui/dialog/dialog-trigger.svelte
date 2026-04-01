@@ -1,12 +1,8 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import { Dialog } from "bits-ui";
-
-  type Props = Dialog.TriggerProps & { children?: Snippet };
-
-  let { children, ...restProps }: Props = $props();
+    import { Dialog as DialogPrimitive } from "bits-ui";
+    const props = $props();
 </script>
 
-<Dialog.Trigger data-slot="dialog-trigger" {...restProps}>
-  {@render children?.()}
-</Dialog.Trigger>
+<DialogPrimitive.Trigger data-slot="dialog-trigger" {...props}>
+    {@render props.children?.()}
+</DialogPrimitive.Trigger>

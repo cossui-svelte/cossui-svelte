@@ -2,7 +2,7 @@
     import { Tabs } from "bits-ui";
     import { onMount } from "svelte";
 
-    let activeElement: HTMLElement = null;
+    let activeElement: HTMLElement | null = null;
 </script>
 
 <Tabs.Root class="relative w-full" bind:value let:value>

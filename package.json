@@ -16,10 +16,10 @@
     "mrproper": "rm -rf node_modules dist build .svelte-kit"
   },
   "peerDependencies": {
-    "svelte": "^5.55.0"
+    "svelte": "^5.55.1"
   },
   "dependencies": {
-    "bits-ui": "^2.16.4",
+    "bits-ui": "^2.16.5",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-svelte": "^1.0.1",
@@ -34,7 +34,7 @@
     "@tailwindcss/vite": "^4.2.2",
     "@types/node": "^25.5.0",
     "postcss": "^8.5.8",
-    "svelte-check": "^4.4.5",
+    "svelte-check": "^4.4.6",
     "tailwind-variants": "^3.2.2",
     "tailwindcss": "^4.2.2",
     "typescript": "^6.0.2",
