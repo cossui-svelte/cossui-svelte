@@ -1,7 +1,6 @@
 <script lang="ts">
-	import { cn } from '$lib/utils.js';
-
-	import { Dialog as DialogPrimitive } from 'bits-ui';
+	import { cn } from "$lib/utils.js";
+	import { Dialog as DialogPrimitive } from "bits-ui";
 
 	let {
 		class: className,
@@ -13,8 +12,9 @@
 <DialogPrimitive.Overlay
 	bind:ref
 	class={cn(
-		'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/80',
-		className
+		"fixed inset-0 z-50 bg-black/32 backdrop-blur-sm transition-all duration-200 data-ending-style:opacity-0 data-starting-style:opacity-0",
+		className,
 	)}
+	data-slot="dialog-backdrop"
 	{...restProps}
 />
