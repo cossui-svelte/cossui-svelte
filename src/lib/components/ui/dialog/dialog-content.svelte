@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Snippet } from "svelte";
 
-	import DialogOverlay from "./dialog-overlay.svelte";
+	import DialogOverlay from "./dialog-backdrop.svelte";
 	import { cn } from "$lib/utils.js";
 
 	import { X } from "lucide-svelte";
