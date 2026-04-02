@@ -27,7 +27,7 @@
     ];
 </script>
 
-<Accordion class="w-full" value={["3"]}>
+<Accordion class="w-full" type="multiple" value={["3"]}>
     {#each items as item}
         <AccordionItem value={item.id}>
             <AccordionTrigger>{item.title}</AccordionTrigger>
