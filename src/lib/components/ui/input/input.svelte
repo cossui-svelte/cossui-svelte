@@ -44,6 +44,7 @@
     class={inputClassName}
     bind:this={ref}
     data-slot="input"
+    {value}
     {type}
     size={typeof size === "number" ? size : undefined}
     {...restProps}
