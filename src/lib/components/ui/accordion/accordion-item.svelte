@@ -10,7 +10,7 @@
 </script>
 
 <Accordion.Item
-  class={cn("cn-accordion-item", className)}
+  class={cn("border-b last:border-b-0", className)}
   data-slot="accordion-item"
   {...restProps}
 />
