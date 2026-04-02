@@ -5,9 +5,12 @@
   let {
     ref = $bindable(null),
     class: className,
+    href,
     children,
     ...restProps
-  }: WithElementRef<HTMLAttributes<HTMLAnchorElement>> = $props();
+  }: WithElementRef<HTMLAttributes<HTMLAnchorElement>> & {
+    href?: string;
+  } = $props();
 </script>
 
 <a
