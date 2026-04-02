@@ -1,11 +1,12 @@
 <script lang="ts">
 	import type { Snippet } from "svelte";
 
-	import DialogOverlay from "./dialog-backdrop.svelte";
+	import { DialogBackdrop } from ".";
 	import { cn } from "$lib/utils.js";
 
 	import { X } from "lucide-svelte";
 	import { Dialog as DialogPrimitive, type WithoutChild } from "bits-ui";
+	import Button from "../button/button.svelte";
 
 	let {
 		children,
@@ -20,7 +21,7 @@
 </script>
 
 <DialogPrimitive.Portal {...portalProps}>
-	<DialogOverlay />
+	<DialogBackdrop />
 	<DialogPrimitive.Content
 		bind:ref
 		class={cn(
@@ -33,11 +34,13 @@
 		<DialogPrimitive.Close
 			class="group focus-visible:border-ring focus-visible:ring-ring/50 absolute top-3 right-3 flex size-7 items-center justify-center rounded transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:pointer-events-none"
 		>
-			<X
-				size={16}
-				class="opacity-60 transition-opacity group-hover:opacity-100"
-			/>
-			<span class="sr-only">Close</span>
+			<Button size="icon" variant="ghost">
+				<X
+					size={16}
+					class="opacity-60 transition-opacity group-hover:opacity-100"
+				/>
+				<span class="sr-only">Close</span>
+			</Button>
 		</DialogPrimitive.Close>
 	</DialogPrimitive.Content>
 </DialogPrimitive.Portal>
