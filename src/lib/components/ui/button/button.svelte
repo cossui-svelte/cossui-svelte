@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Snippet, SvelteComponent } from "svelte";
+  import type { Snippet } from "svelte";
   import type { HTMLButtonAttributes } from "svelte/elements";
   import { cn } from "$lib/utils";
   import { buttonVariants } from "./button-variants";

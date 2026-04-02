@@ -1,9 +1,7 @@
 <script lang="ts">
 	import type { Snippet } from "svelte";
-
 	import { DialogBackdrop } from ".";
 	import { cn } from "$lib/utils.js";
-
 	import { X } from "lucide-svelte";
 	import { Dialog as DialogPrimitive, type WithoutChild } from "bits-ui";
 	import Button from "../button/button.svelte";
@@ -30,11 +28,19 @@
 		class={cn(
 			"fixed inset-0 z-50 grid grid-rows-[1fr_auto_3fr] justify-items-center p-4",
 			bottomStickOnMobile &&
-				"max-sm:grid-rows-[1fr_auto] max-sm:p-0 max-sm:pt-12",
+				"max-sm:grid-rows-[1fr_auto] max-sm:p-0 max-sm:pt-12 ",
 			className,
 		)}
 		data-slot="dialog-viewport"
 	>
+		<span
+			data-type="inside"
+			aria-hidden="true"
+			tabindex="0"
+			data-base-ui-focus-guard=""
+			style="clip-path: inset(50%); overflow: hidden; white-space: nowrap; border: 0px; padding: 0px; width: 1px; height: 1px; margin: -1px; position: fixed; top: 0px; left: 0px;"
+			data-base-ui-inert=""
+		></span>
 		<DialogPrimitive.Content
 			bind:ref
 			class={cn(
