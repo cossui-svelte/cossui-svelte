@@ -32,14 +32,11 @@
 	>
 		{@render children?.()}
 		<DialogPrimitive.Close
+			aria-label="Close"
 			class="group focus-visible:border-ring focus-visible:ring-ring/50 absolute top-3 right-3 flex size-7 items-center justify-center rounded transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:pointer-events-none"
 		>
 			<Button size="icon" variant="ghost">
-				<X
-					size={16}
-					class="opacity-60 transition-opacity group-hover:opacity-100"
-				/>
-				<span class="sr-only">Close</span>
+				<X />
 			</Button>
 		</DialogPrimitive.Close>
 	</DialogPrimitive.Content>
