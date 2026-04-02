@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { cn } from '$lib/utils.js';
+	import { cn } from "$lib/utils.js";
 
-	import { Dialog as DialogPrimitive } from 'bits-ui';
+	import { Dialog as DialogPrimitive } from "bits-ui";
 
 	let {
 		class: className,
@@ -12,6 +12,7 @@
 
 <DialogPrimitive.Description
 	bind:ref
-	class={cn('text-muted-foreground text-sm', className)}
+	class={cn("text-muted-foreground text-sm", className)}
+	data-slot="dialog-description"
 	{...restProps}
 />

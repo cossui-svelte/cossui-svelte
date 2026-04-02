@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { WithElementRef } from "bits-ui";
-	import type { HTMLAttributes } from "svelte/elements";
+	import type { WithElementRef } from 'bits-ui';
+	import type { HTMLAttributes } from 'svelte/elements';
 
-	import { cn } from "$lib/utils.js";
+	import { cn } from '$lib/utils.js';
 
 	let {
 		children,
@@ -11,13 +11,6 @@
 	}: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();
 </script>
 
-<div
-	class={cn(
-		"flex flex-col gap-2 p-6 in-[[data-slot=dialog-popup]:has([data-slot=dialog-panel])]:pb-3 max-sm:pb-4",
-		className,
-	)}
-	data-slot="dialog-header"
-	{...restProps}
->
+<div class={cn('flex flex-col space-y-1.5 text-center sm:text-left', className)} {...restProps}>
 	{@render children?.()}
 </div>
