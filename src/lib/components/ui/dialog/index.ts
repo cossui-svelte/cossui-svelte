@@ -15,22 +15,23 @@ import DialogViewport from './dialog-viewport.svelte';
 const Dialog = DialogPrimitive.Root;
 // const DialogTrigger = DialogPrimitive.Trigger;
 const DialogPortal = DialogPrimitive.Portal;
+
 // const DialogClose = DialogPrimitive.Close;
 
 export {
   Dialog,
-  DialogTrigger,
-  DialogPortal,
-  DialogClose,
   DialogBackdrop,
   DialogBackdrop as DialogOverlay,
+  DialogClose,
+  DialogDescription,
+  DialogFooter,
   DialogHeader,
+  DialogPanel,
   DialogPopup,
   DialogPopup as DialogContent,
-  DialogFooter,
+  DialogPortal,
+  DialogPrimitive,
   DialogTitle,
-  DialogDescription,
-  DialogPanel,
-  DialogViewport,
-  DialogPrimitive
+  DialogTrigger,
+  DialogViewport
 };

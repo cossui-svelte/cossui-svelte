@@ -1,2 +1,3 @@
-import Slider from "./slider.svelte"
+import Slider from './slider.svelte';
+
 export { Slider };
