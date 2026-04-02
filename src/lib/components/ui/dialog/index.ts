@@ -1,37 +1,31 @@
 /* eslint-disable perfectionist/sort-named-exports */
 
 import { Dialog as DialogPrimitive } from 'bits-ui';
-import Content from './dialog-content.svelte';
-import Description from './dialog-description.svelte';
-import Footer from './dialog-footer.svelte';
-import Header from './dialog-header.svelte';
-import Overlay from './dialog-overlay.svelte';
-import Title from './dialog-title.svelte';
+import DialogPopup from './dialog-content.svelte';
+import DialogDescription from './dialog-description.svelte';
+import DialogFooter from './dialog-footer.svelte';
+import DialogHeader from './dialog-header.svelte';
+import DialogBackdrop from './dialog-overlay.svelte';
+import DialogPanel from './dialog-panel.svelte';
+import DialogTitle from './dialog-title.svelte';
 
-const Root = DialogPrimitive.Root;
-const Trigger = DialogPrimitive.Trigger;
-const Portal = DialogPrimitive.Portal;
-const Close = DialogPrimitive.Close;
+const Dialog = DialogPrimitive.Root;
+const DialogTrigger = DialogPrimitive.Trigger;
+const DialogPortal = DialogPrimitive.Portal;
+const DialogClose = DialogPrimitive.Close;
 
 export {
-  Close,
-  Close as DialogClose,
-  Content,
-  Content as DialogContent,
-  Description,
-  Description as DialogDescription,
-  Footer,
-  Footer as DialogFooter,
-  Header,
-  Header as DialogHeader,
-  Overlay,
-  Overlay as DialogOverlay,
-  Portal,
-  Portal as DialogPortal,
-  Root,
-  Root as DialogRoot,
-  Title,
-  Title as DialogTitle,
-  Trigger,
-  Trigger as DialogTrigger
+  Dialog,
+  DialogTrigger,
+  DialogPortal,
+  DialogClose,
+  DialogBackdrop,
+  DialogBackdrop as DialogOverlay,
+  DialogHeader,
+  DialogPopup,
+  DialogFooter,
+  DialogTitle,
+  DialogDescription,
+  DialogPanel,
+  DialogPrimitive
 };
