@@ -4,15 +4,13 @@
   import type { HTMLAttributes } from "svelte/elements";
   import { cn, type WithElementRef } from "$lib/utils.js";
 
-  interface Props extends HTMLAttributes<HTMLParagraphElement> {
-    children?: Snippet;
-  }
-
   let {
     class: className,
     children,
     ...restProps
-  }: Props & WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();
+  }: {
+    children?: Snippet;
+  } & WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();
 </script>
 
 <Field.Error

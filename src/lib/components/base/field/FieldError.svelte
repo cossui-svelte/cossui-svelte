@@ -187,16 +187,16 @@
   // Derived data attributes
   // ---------------------------------------------------------------------------
 
-  const state = $derived(ctx?.state);
+  const fieldState = $derived(ctx?.state);
 
   const dataAttrs = $derived({
-    ...(state?.disabled ? { "data-disabled": "" } : {}),
-    ...(state?.touched ? { "data-touched": "" } : {}),
-    ...(state?.dirty ? { "data-dirty": "" } : {}),
-    ...(state?.filled ? { "data-filled": "" } : {}),
-    ...(state?.focused ? { "data-focused": "" } : {}),
-    ...(state?.valid === true ? { "data-valid": "" } : {}),
-    ...(state?.valid === false ? { "data-invalid": "" } : {}),
+    ...(fieldState?.disabled ? { "data-disabled": "" } : {}),
+    ...(fieldState?.touched ? { "data-touched": "" } : {}),
+    ...(fieldState?.dirty ? { "data-dirty": "" } : {}),
+    ...(fieldState?.filled ? { "data-filled": "" } : {}),
+    ...(fieldState?.focused ? { "data-focused": "" } : {}),
+    ...(fieldState?.valid === true ? { "data-valid": "" } : {}),
+    ...(fieldState?.valid === false ? { "data-invalid": "" } : {}),
     ...(entering ? { "data-entering": "" } : {}),
     ...(exiting ? { "data-exiting": "" } : {}),
   });

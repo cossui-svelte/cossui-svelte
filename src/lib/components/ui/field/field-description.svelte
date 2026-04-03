@@ -1,4 +1,5 @@
 <script lang="ts">
+  import * as Field from "$lib/components/base/field";
   import type { HTMLAttributes } from "svelte/elements";
   import { cn, type WithElementRef } from "$lib/utils.js";
 
@@ -7,13 +8,15 @@
     class: className,
     children,
     ...restProps
-  }: WithElementRef<HTMLAttributes<HTMLParagraphElement>> = $props();
+  }: WithElementRef<HTMLAttributes<HTMLParagraphElement>> &
+    Field.DescriptionProps = $props();
 </script>
 
-<p
+<Field.Description
+  bind:this={ref}
   class={cn("text-muted-foreground text-xs", className)}
   data-slot="field-description"
   {...restProps}
 >
   {@render children?.()}
-</p>
+</Field.Description>
