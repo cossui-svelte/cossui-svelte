@@ -1,25 +1,21 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import { cn } from "$lib/utils.js";
-  import Tabs from "$lib/components/ui/tabs/tabs.svelte";
-  import TabsList from "$lib/components/ui/tabs/tabs-list.svelte";
-  import TabsTab from "$lib/components/ui/tabs/tabs-tab.svelte";
-
-  interface Props {
-    class?: string;
-    align?: "center" | "start" | "end";
-    hideCode?: boolean;
-    component: Snippet;
-    source: Snippet;
-  }
+  import { Tabs, TabsList, TabsTab } from "$lib/components/ui/tabs";
 
   let {
     class: className,
     align = "center",
-    hideCode = false,
-    component,
+    hideCode = true,
+    children,
     source,
-  }: Props = $props();
+  }: {
+    class?: string;
+    align?: "center" | "start" | "end";
+    hideCode?: boolean;
+    children?: Snippet;
+    source?: Snippet;
+  } = $props();
 
   let tab = $state("preview");
 </script>
@@ -47,7 +43,7 @@
         data-align={align}
       >
         <div data-slot="preview">
-          {@render component()}
+          {@render children?.()}
         </div>
       </div>
     </div>
@@ -56,7 +52,7 @@
       data-active={tab === "code"}
       data-slot="code"
     >
-      {@render source()}
+      {@render source?.()}
     </div>
   </div>
 </div>
