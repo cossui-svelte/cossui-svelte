@@ -7,9 +7,9 @@
 
     // const loading, setLoading = useState(false);
 
-    const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    const onSubmit = async (e: Event) => {
         e.preventDefault();
-        const formData = new FormData(e.currentTarget);
+        const formData = new FormData(e.currentTarget as HTMLFormElement);
         alert(`Email: ${formData.get("email") || ""}`);
     };
 </script>

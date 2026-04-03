@@ -1,15 +1,14 @@
 <script lang="ts">
   import * as Field from "$lib/components/base/field";
   import type { HTMLAttributes } from "svelte/elements";
-  import { cn, type WithElementRef } from "$lib/utils.js";
+  import { cn } from "$lib/utils.js";
 
   let {
     ref = $bindable(null),
     class: className,
     children,
     ...restProps
-  }: WithElementRef<Field.LabelProps> &
-    HTMLAttributes<HTMLDivElement> = $props();
+  }: Field.LabelProps & HTMLAttributes<HTMLDivElement> = $props();
 </script>
 
 <Field.Label

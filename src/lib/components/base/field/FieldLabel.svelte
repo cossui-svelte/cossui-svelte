@@ -15,6 +15,7 @@
   // ---------------------------------------------------------------------------
 
   export interface Props {
+    ref?: HTMLLabelElement | null;
     /**
      * Explicit ID for this label element.
      * Auto-generated when omitted — the control uses this for `aria-labelledby`.
@@ -27,6 +28,7 @@
   }
 
   let {
+    ref = $bindable(null),
     id: idProp,
     class: className,
     style,
@@ -86,6 +88,7 @@
   `id` is this element's own ID, used by the control for `aria-labelledby`.
 -->
 <label
+  bind:this={ref}
   {id}
   for={ctx?.controlId}
   class={className}

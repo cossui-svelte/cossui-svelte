@@ -29,6 +29,7 @@
   // ---------------------------------------------------------------------------
 
   export interface Props {
+    ref?: HTMLDivElement | null;
     /**
      * Identifies the field when a form is submitted.
      * Takes precedence over the `name` prop on `<Field.Control>`.
@@ -84,6 +85,7 @@
   }
 
   let {
+    ref = $bindable(null),
     name,
     disabled: disabledProp = false,
     invalid: invalidProp = false,
@@ -440,6 +442,6 @@
   setContext(FIELD_CONTEXT_KEY, ctx);
 </script>
 
-<div class={className} {style} {...dataAttrs} {...restProps}>
+<div bind:this={ref} class={className} {style} {...dataAttrs} {...restProps}>
   {@render children?.()}
 </div>
