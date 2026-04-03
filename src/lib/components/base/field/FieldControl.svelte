@@ -48,7 +48,7 @@
      * Auto-focuses this control on mount.
      * @default false
      */
-    autoFocus?: boolean;
+    // autoFocus?: boolean;
     class?: string;
     style?: string;
     /**
@@ -100,16 +100,16 @@
   const disabled = $derived(!!(ctx?.disabled || disabledProp));
 
   /** Current field state for data attributes. */
-  const state = $derived(ctx?.state);
+  const fieldState = $derived(ctx?.state);
 
   const dataAttrs = $derived({
-    ...(state?.disabled ? { "data-disabled": "" } : {}),
-    ...(state?.touched ? { "data-touched": "" } : {}),
-    ...(state?.dirty ? { "data-dirty": "" } : {}),
-    ...(state?.filled ? { "data-filled": "" } : {}),
-    ...(state?.focused ? { "data-focused": "" } : {}),
-    ...(state?.valid === true ? { "data-valid": "" } : {}),
-    ...(state?.valid === false ? { "data-invalid": "" } : {}),
+    ...(fieldState?.disabled ? { "data-disabled": "" } : {}),
+    ...(fieldState?.touched ? { "data-touched": "" } : {}),
+    ...(fieldState?.dirty ? { "data-dirty": "" } : {}),
+    ...(fieldState?.filled ? { "data-filled": "" } : {}),
+    ...(fieldState?.focused ? { "data-focused": "" } : {}),
+    ...(fieldState?.valid === true ? { "data-valid": "" } : {}),
+    ...(fieldState?.valid === false ? { "data-invalid": "" } : {}),
   });
 
   /** `aria-describedby` — space-separated IDs of description + error nodes. */
@@ -119,7 +119,7 @@
 
   /** `aria-invalid` — only set when the field is explicitly invalid. */
   const ariaInvalid = $derived<true | undefined>(
-    state?.valid === false ? true : undefined,
+    fieldState?.valid === false ? true : undefined,
   );
 
   // ---------------------------------------------------------------------------
@@ -244,7 +244,6 @@
   {id}
   {name}
   {disabled}
-  {autoFocus}
   value={valueProp ?? defaultValue}
   class={className}
   {style}
