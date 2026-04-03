@@ -1,6 +1,5 @@
 <script lang="ts">
   import * as Field from "$lib/components/base/field";
-  import type { Snippet } from "svelte";
   import type { HTMLAttributes } from "svelte/elements";
   import { cn } from "$lib/utils.js";
 
@@ -9,9 +8,7 @@
     class: className,
     children,
     ...restProps
-  }: {
-    children?: Snippet;
-  } & HTMLAttributes<HTMLDivElement> = $props();
+  }: Field.ErrorProps & HTMLAttributes<HTMLDivElement> = $props();
 </script>
 
 <Field.Error

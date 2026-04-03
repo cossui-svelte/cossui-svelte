@@ -32,7 +32,7 @@
     "@sveltejs/kit": "^2.55.0",
     "@sveltejs/vite-plugin-svelte": "^7.0.0",
     "@tailwindcss/vite": "^4.2.2",
-    "@types/node": "^25.5.0",
+    "@types/node": "^25.5.2",
     "postcss": "^8.5.8",
     "svelte-check": "^4.4.6",
     "tailwind-variants": "^3.2.2",

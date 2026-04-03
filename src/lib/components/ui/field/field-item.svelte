@@ -8,7 +8,7 @@
     class: className,
     children,
     ...restProps
-  }: Field.LabelProps & HTMLAttributes<HTMLDivElement> = $props();
+  }: Field.ItemProps & HTMLAttributes<HTMLDivElement> = $props();
 </script>
 
 <Field.Item
