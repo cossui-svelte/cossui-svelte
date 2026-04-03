@@ -1,18 +1,19 @@
 <script lang="ts">
-  import { Label } from "$lib/components/ui/label/index.js";
-  import { cn } from "$lib/utils.js";
-  import type { ComponentProps } from "svelte";
+  import * as Field from "$lib/components/base/field";
+  import type { HTMLAttributes } from "svelte/elements";
+  import { cn, type WithElementRef } from "$lib/utils.js";
 
   let {
     ref = $bindable(null),
     class: className,
     children,
     ...restProps
-  }: ComponentProps<typeof Label> = $props();
+  }: WithElementRef<Field.LabelProps> &
+    HTMLAttributes<HTMLDivElement> = $props();
 </script>
 
-<Label
-  bind:ref
+<Field.Label
+  bind:this={ref}
   data-slot="field-label"
   class={cn(
     "inline-flex items-center gap-2 font-medium text-base/4.5 text-foreground sm:text-sm/4",
@@ -21,4 +22,4 @@
   {...restProps}
 >
   {@render children?.()}
-</Label>
+</Field.Label>

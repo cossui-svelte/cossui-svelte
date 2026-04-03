@@ -1,4 +1,5 @@
 <script lang="ts">
+  import * as Field from "$lib/components/base/field";
   import type { HTMLAttributes } from "svelte/elements";
   import { cn, type WithElementRef } from "$lib/utils.js";
 
@@ -7,13 +8,16 @@
     class: className,
     children,
     ...restProps
-  }: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();
+  }: WithElementRef<
+    Field.RootProps & HTMLAttributes<HTMLDivElement>
+  > = $props();
 </script>
 
-<div
-  class={cn("flex flex-col items-start gap-2", className)}
+<Field.Root
+  bind:this={ref}
   data-slot="field"
+  class={cn("flex flex-col items-start gap-2", className)}
   {...restProps}
 >
   {@render children?.()}
-</div>
+</Field.Root>
