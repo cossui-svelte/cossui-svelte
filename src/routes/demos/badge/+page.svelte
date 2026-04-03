@@ -1,5 +1,8 @@
 <script>
+    import ComponentPreviewTabs from "$lib/components/app/ComponentPreviewTabs.svelte";
     import { Badge } from "$lib/components/ui/badge";
 </script>
 
-<Badge>Badge</Badge>
+<ComponentPreviewTabs>
+    <Badge>Badge</Badge>
+</ComponentPreviewTabs>

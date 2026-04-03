@@ -1,22 +1,19 @@
-import fs from 'node:fs';
-import path from 'node:path';
-import { error } from '@sveltejs/kit';
+import fs from "node:fs";
+import path from "node:path";
 
-const BASE_DIR = './Folders'; // Change to your root directory
+const DEMOS_DIR = path.resolve("src/routes/demos");
 
-export async function load({ params }) {
-  const relativePath = params.path ? params.path.join('/') : '';
-  const fullPath = path.join(BASE_DIR, relativePath);
+export async function load() {
+  const items = fs.readdirSync(DEMOS_DIR, { withFileTypes: true });
 
-  if (!fs.existsSync(fullPath)) {
-    throw error(404, 'Folder not found');
-  }
+  const folders = items
+    .filter(
+      (item) =>
+        item.isDirectory() &&
+        fs.existsSync(path.join(DEMOS_DIR, item.name, "+page.svelte")),
+    )
+    .map((item) => item.name)
+    .sort();
 
-  const items = fs.readdirSync(fullPath, { withFileTypes: true });
-
-  return {
-    // currentPath: relativePath,
-    // files: items.filter((item) => item.isFile()).map((item) => item.name),
-    folders: items.filter((item) => item.isDirectory()).map((item) => item.name)
-  };
+  return { folders };
 }

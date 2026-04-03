@@ -1,4 +1,5 @@
 <script>
+    import ComponentPreviewTabs from "$lib/components/app/ComponentPreviewTabs.svelte";
     import {
         Alert,
         AlertDescription,
@@ -6,9 +7,11 @@
     } from "$lib/components/ui/alert";
 </script>
 
-<Alert>
-    <AlertTitle>Heads up!</AlertTitle>
-    <AlertDescription>
-        <p>Describe what can be done about it here.</p>
-    </AlertDescription>
-</Alert>
+<ComponentPreviewTabs>
+    <Alert>
+        <AlertTitle>Heads up!</AlertTitle>
+        <AlertDescription>
+            <p>Describe what can be done about it here.</p>
+        </AlertDescription>
+    </Alert>
+</ComponentPreviewTabs>

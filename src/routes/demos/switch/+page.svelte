@@ -1,9 +1,12 @@
 <script lang="ts">
+    import ComponentPreviewTabs from "$lib/components/app/ComponentPreviewTabs.svelte";
     import { Label } from "$lib/components/ui/label";
     import { Switch } from "$lib/components/ui/switch";
 </script>
 
-<Label>
-    <Switch />
-    Marketing emails
-</Label>
+<ComponentPreviewTabs>
+    <Label>
+        <Switch />
+        Marketing emails
+    </Label>
+</ComponentPreviewTabs>
