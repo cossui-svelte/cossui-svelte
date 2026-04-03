@@ -21,40 +21,40 @@
      * The label's `for` attribute and `aria-labelledby` on this element are
      * wired automatically — you generally do not need to provide an ID.
      */
-    id?: string | undefined;
+    id?: string;
     /**
      * `name` attribute for form submission.
      * Overridden by `name` on `<Field.Root>` when that is set.
      */
-    name?: string | undefined;
+    name?: string;
     /**
      * Controlled value.  When provided, the input reflects this value on
      * every render.  Combine with `oninput`/`onValueChange` to update state.
      *
      * Omit for uncontrolled usage (the browser manages the value).
      */
-    value?: string | undefined;
+    value?: string;
     /**
      * Initial value for uncontrolled usage.
      * Ignored when `value` is provided.
      */
-    defaultValue?: string | undefined;
+    defaultValue?: string;
     /**
      * Disables the control.  Overridden by `disabled` on `<Field.Root>`.
      * @default false
      */
-    disabled?: boolean | undefined;
+    disabled?: boolean;
     /**
      * Auto-focuses this control on mount.
      * @default false
      */
-    autoFocus?: boolean | undefined;
-    class?: string | undefined;
-    style?: string | undefined;
+    autoFocus?: boolean;
+    class?: string;
+    style?: string;
     /**
      * Called whenever the input value changes (mirrors React's `onValueChange`).
      */
-    onValueChange?: ((value: string) => void) | undefined;
+    onValueChange?: (value: string) => void;
     [key: string]: unknown;
   }
 

@@ -22,7 +22,7 @@
      * Explicit ID for this error element.
      * Auto-generated when omitted.
      */
-    id?: string | undefined;
+    id?: string;
     /**
      * Controls when this error element is shown:
      * - `undefined` – show whenever `validityData.state.valid === false`.
@@ -30,9 +30,9 @@
      * - A `ValidityState` key such as `'valueMissing'` – show when that
      *   specific native constraint is violated.
      */
-    match?: boolean | keyof ValidityState | undefined;
-    class?: string | undefined;
-    style?: string | undefined;
+    match?: boolean | keyof ValidityState;
+    class?: string;
+    style?: string;
     /** Optional custom content.  Falls back to the error string(s) from context. */
     children?: Snippet;
     [key: string]: unknown;

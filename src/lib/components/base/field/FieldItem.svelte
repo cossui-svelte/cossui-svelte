@@ -27,9 +27,9 @@
      * `<Field.Root disabled>` takes precedence over this prop.
      * @default false
      */
-    disabled?: boolean | undefined;
-    class?: string | undefined;
-    style?: string | undefined;
+    disabled?: boolean;
+    class?: string;
+    style?: string;
     children?: Snippet;
     [key: string]: unknown;
   }

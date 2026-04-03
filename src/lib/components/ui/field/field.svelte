@@ -8,9 +8,8 @@
     class: className,
     children,
     ...restProps
-  }: WithElementRef<
-    Field.RootProps & HTMLAttributes<HTMLDivElement>
-  > = $props();
+  }: Field.RootProps &
+    WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();
 </script>
 
 <Field.Root

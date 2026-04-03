@@ -40,7 +40,7 @@ export type { Props as DescriptionProps } from './FieldDescription.svelte';
 export { default as Description } from './FieldDescription.svelte';
 export type { Props as ErrorProps } from './FieldError.svelte';
 // `Error` shadows the global — use the alias `FieldError` for named imports.
-export { default as Error, default as FieldError } from './FieldError.svelte';
+export { default as Error } from './FieldError.svelte';
 export type { Props as ItemProps } from './FieldItem.svelte';
 export { default as Item } from './FieldItem.svelte';
 export type { Props as LabelProps } from './FieldLabel.svelte';

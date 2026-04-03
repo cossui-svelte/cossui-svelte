@@ -19,9 +19,9 @@
      * Explicit ID for this label element.
      * Auto-generated when omitted — the control uses this for `aria-labelledby`.
      */
-    id?: string | undefined;
-    class?: string | undefined;
-    style?: string | undefined;
+    id?: string;
+    class?: string;
+    style?: string;
     children?: Snippet;
     [key: string]: unknown;
   }

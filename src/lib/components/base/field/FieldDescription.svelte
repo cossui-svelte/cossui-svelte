@@ -19,9 +19,9 @@
      * Explicit ID for this description element.
      * Auto-generated when omitted.
      */
-    id?: string | undefined;
-    class?: string | undefined;
-    style?: string | undefined;
+    id?: string;
+    class?: string;
+    style?: string;
     children?: Snippet;
     [key: string]: unknown;
   }
