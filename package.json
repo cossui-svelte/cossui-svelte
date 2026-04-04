@@ -16,12 +16,13 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "bits-ui": "^2.16.5",
+    "bits-ui": "^2.17.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "formsnap": "^2.0.1",
     "lucide-svelte": "^1.0.1",
     "svelte-sonner": "^1.1.0",
+    "vaul-svelte": "1.0.0-next.7",
     "tailwind-merge": "^3.5.0"
   },
   "devDependencies": {
