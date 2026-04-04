@@ -5,7 +5,7 @@
         AlignRightIcon,
         DollarSignIcon,
         PercentIcon,
-    } from "lucide-react";
+    } from "lucide-svelte";
     import { Button } from "$lib/components/ui/button";
     import {
         Select,
@@ -40,7 +40,7 @@
 
 <TooltipProvider>
     <Toolbar>
-        <ToggleGroup className="border-none p-0" defaultValue={["left"]}>
+        <ToggleGroup class="border-none p-0" defaultValue={["left"]}>
             <Tooltip>
                 <TooltipTrigger>
                     <ToolbarButton aria-label="Align left">
@@ -103,7 +103,7 @@
         </ToolbarGroup>
         <ToolbarSeparator />
         <ToolbarGroup>
-            <Select defaultValue="helvetica" {items}>
+            <Select value={["helvetica"]} {items}>
                 <Tooltip>
                     <TooltipTrigger>
                         <ToolbarButton>
