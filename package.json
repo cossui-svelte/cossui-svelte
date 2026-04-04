@@ -1,8 +1,8 @@
 {
   "name": "@coss/ui-svelte",
   "version": "0.1.0",
-  "type": "module",
   "license": "AGPL-3.0-or-later",
+  "type": "module",
   "scripts": {
     "build": "vite build",
     "check": "biome check .",
@@ -12,16 +12,14 @@
     "format": "biome format --write .",
     "lint": "biome lint --write src",
     "lint:check": "biome lint src",
-    "typecheck": "tsc --noEmit",
-    "mrproper": "rm -rf node_modules dist build .svelte-kit"
-  },
-  "peerDependencies": {
-    "svelte": "^5.55.1"
+    "mrproper": "rm -rf node_modules dist build .svelte-kit",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "bits-ui": "^2.16.5",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "formsnap": "^2.0.1",
     "lucide-svelte": "^1.0.1",
     "svelte-sonner": "^1.1.0",
     "tailwind-merge": "^3.5.0"
@@ -29,7 +27,7 @@
   "devDependencies": {
     "@sveltejs/adapter-auto": "^7.0.1",
     "@sveltejs/enhanced-img": "^0.10.4",
-    "@sveltejs/kit": "^2.55.0",
+    "@sveltejs/kit": "^2.56.1",
     "@sveltejs/vite-plugin-svelte": "^7.0.0",
     "@tailwindcss/vite": "^4.2.2",
     "@types/node": "^25.5.2",
@@ -41,11 +39,14 @@
     "vite": "^8.0.3",
     "vitest": "^4.1.2"
   },
+  "peerDependencies": {
+    "svelte": "^5.55.1"
+  },
+  "packageManager": "pnpm@10.33.0",
   "pnpm": {
     "onlyBuiltDependencies": [
       "esbuild",
       "sharp"
     ]
-  },
-  "packageManager": "pnpm@10.33.0"
+  }
 }

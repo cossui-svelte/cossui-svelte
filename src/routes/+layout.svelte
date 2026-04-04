@@ -43,6 +43,7 @@
   ></div>
 
   <!-- TODO: <SiteHeader /> - requires porting site-header.tsx to Svelte -->
-
+  <!-- <div class="isolate relative flex min-h-svh flex-col"> -->
   {@render children()}
+  <!-- </div> -->
 </div>
