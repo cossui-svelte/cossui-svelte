@@ -34,8 +34,9 @@
     <GroupSeparator />
     <Menu>
       <MenuTrigger>
-        <Button aria-label="Menu" size="icon" variant="outline" />
-        <EllipsisIcon className="size-4" />
+        <Button aria-label="Menu" size="icon" variant="outline">
+          <EllipsisIcon className="size-4" /></Button
+        >
       </MenuTrigger>
       <MenuPopup align="end">
         <MenuItem>
