@@ -29,12 +29,18 @@ importers:
       svelte-sonner:
         specifier: ^1.1.0
         version: 1.1.0(svelte@5.55.1)
+      sveltekit-superforms:
+        specifier: ^2.30.1
+        version: 2.30.1(@sveltejs/kit@2.56.1(@sveltejs/vite-plugin-svelte@7.0.0(svelte@5.55.1)(vite@8.0.3(@types/node@25.5.2)(jiti@2.6.1)))(svelte@5.55.1)(typescript@6.0.2)(vite@8.0.3(@types/node@25.5.2)(jiti@2.6.1)))(svelte@5.55.1)(typescript@6.0.2)
       tailwind-merge:
         specifier: ^3.5.0
         version: 3.5.0
       vaul-svelte:
         specifier: 1.0.0-next.7
         version: 1.0.0-next.7(svelte@5.55.1)
+      zod:
+        specifier: ^4.3.6
+        version: 4.3.6
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^7.0.1
@@ -2551,5 +2557,4 @@ snapshots:
       zod: 4.3.6
     optional: true
 
-  zod@4.3.6:
-    optional: true
+  zod@4.3.6: {}

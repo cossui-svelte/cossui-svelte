@@ -7,7 +7,7 @@
   import DrawerBackdrop from "./drawer-backdrop.svelte";
   import DrawerViewport from "./drawer-viewport.svelte";
   import DrawerBar from "./drawer-bar.svelte";
-  import Button from "../button/button.svelte";
+  import Button from "../button/button.svelte.old";
 
   type DrawerPosition = "right" | "left" | "top" | "bottom";
 
@@ -29,7 +29,9 @@
     ...restProps
   }: Props = $props();
 
-  const ctx = getContext<{ position: () => DrawerPosition } | undefined>("drawer-position");
+  const ctx = getContext<{ position: () => DrawerPosition } | undefined>(
+    "drawer-position",
+  );
   const position = $derived(positionProp ?? ctx?.position() ?? "bottom");
 </script>
 
@@ -51,7 +53,8 @@
           "w-[calc(100%--(--spacing(12)))] max-w-md border-s data-[state=open]:translate-x-0 data-[state=closed]:translate-x-full has-data-[slot=drawer-bar]:ps-2",
         variant !== "straight" &&
           cn(
-            position === "bottom" && "rounded-t-2xl before:rounded-t-[calc(var(--radius-2xl)-1px)]",
+            position === "bottom" &&
+              "rounded-t-2xl before:rounded-t-[calc(var(--radius-2xl)-1px)]",
             position === "top" &&
               "rounded-b-2xl before:rounded-b-[calc(var(--radius-2xl)-1px)] **:data-[slot=drawer-footer]:rounded-b-[calc(var(--radius-2xl)-1px)]",
             position === "left" &&

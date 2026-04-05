@@ -1,40 +1,29 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
-  import type { HTMLButtonAttributes } from "svelte/elements";
+  import { Button } from "bits-ui";
   import { cn } from "$lib/utils";
-  import { buttonVariants } from "./button-variants";
-  import { type ButtonVariants } from "./button-variants";
+  import { buttonVariants, type ButtonVariants } from "./button-variants";
 
-  interface ButtonProps extends HTMLButtonAttributes {
-    ref?: HTMLButtonElement | HTMLAnchorElement | null;
+  interface ButtonProps {
     variant?: ButtonVariants["variant"];
     size?: ButtonVariants["size"];
-    href?: string;
+    class?: string;
     children?: Snippet;
   }
 
   let {
     class: className,
     variant,
-    ref = $bindable(null),
     size,
-    href,
     children,
     ...restProps
-  }: ButtonProps = $props();
-
-  // svelte-ignore state_referenced_locally
-  const tag = href ? "a" : "button";
+  }: Button.RootProps & ButtonProps = $props();
 </script>
 
-<svelte:element
-  this={tag}
-  {href}
-  bind:this={ref}
+<Button.Root
   class={cn(buttonVariants({ variant, size }), className)}
   data-slot="button"
-  type={!href ? "button" : undefined}
   {...restProps}
 >
   {@render children?.()}
-</svelte:element>
+</Button.Root>
