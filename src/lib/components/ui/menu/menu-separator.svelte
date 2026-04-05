@@ -2,9 +2,7 @@
   import { DropdownMenu } from "bits-ui";
   import { cn } from "$lib/utils.js";
 
-  type Props = DropdownMenu.SeparatorProps;
-
-  let { class: className, ...restProps }: Props = $props();
+  let { class: className, ...restProps }: DropdownMenu.SeparatorProps = $props();
 </script>
 
 <DropdownMenu.Separator

@@ -2,7 +2,9 @@
   import type { Snippet } from "svelte";
   import { DropdownMenu } from "bits-ui";
 
-  type Props = DropdownMenu.RadioGroupProps & { children?: Snippet };
+  interface Props extends DropdownMenu.RadioGroupProps {
+    children?: Snippet;
+  }
 
   let { children, ...restProps }: Props = $props();
 </script>

@@ -4,19 +4,19 @@
   import { cn } from "$lib/utils.js";
 
   interface Props extends DropdownMenu.GroupHeadingProps {
-    inset?: boolean;
     children?: Snippet;
+    inset?: boolean;
   }
 
-  let { class: className, inset, children, ...restProps }: Props = $props();
+  let { children, class: className, inset, ...restProps }: Props = $props();
 </script>
 
 <DropdownMenu.GroupHeading
   class={cn(
-    "px-2 py-1.5 font-medium text-muted-foreground text-xs",
-    inset && "ps-9 sm:ps-8",
+    "px-2 py-1.5 font-medium text-muted-foreground text-xs data-inset:ps-9 sm:data-inset:ps-8",
     className,
   )}
+  data-inset={inset}
   data-slot="menu-label"
   {...restProps}
 >

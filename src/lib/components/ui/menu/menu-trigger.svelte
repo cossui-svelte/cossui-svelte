@@ -2,9 +2,11 @@
   import type { Snippet } from "svelte";
   import { DropdownMenu } from "bits-ui";
 
-  type Props = DropdownMenu.TriggerProps & { children?: Snippet };
+  interface Props extends DropdownMenu.TriggerProps {
+    children?: Snippet;
+  }
 
-  let { class: className, children, ...restProps }: Props = $props();
+  let { children, class: className, ...restProps }: Props = $props();
 </script>
 
 <DropdownMenu.Trigger class={className} data-slot="menu-trigger" {...restProps}>
