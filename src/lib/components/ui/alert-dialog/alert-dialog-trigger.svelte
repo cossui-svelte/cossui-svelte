@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { AlertDialog as AlertDialogPrimitive } from "bits-ui";
-
-	let { ref = $bindable(null), ...restProps }: AlertDialogPrimitive.TriggerProps = $props();
+	const props = $props();
 </script>
 
-<AlertDialogPrimitive.Trigger bind:ref data-slot="alert-dialog-trigger" {...restProps} />
+<AlertDialogPrimitive.Trigger data-slot="alert-dialog-trigger" {...props}>
+	{@render props.children?.()}
+</AlertDialogPrimitive.Trigger>

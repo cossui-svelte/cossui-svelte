@@ -1,12 +1,8 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import { AlertDialog } from "bits-ui";
-
-  type Props = AlertDialog.CancelProps & { children?: Snippet };
-
-  let { children, ...restProps }: Props = $props();
+	import { AlertDialog as AlertDialogPrimitive } from "bits-ui";
+	const props = $props();
 </script>
 
-<AlertDialog.Cancel data-slot="alert-dialog-close" {...restProps}>
-  {@render children?.()}
-</AlertDialog.Cancel>
+<AlertDialogPrimitive.Cancel data-slot="alert-dialog-close" {...props}>
+	{@render props.children?.()}
+</AlertDialogPrimitive.Cancel>

@@ -1,22 +1,22 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import type { HTMLAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils.js";
+	import type { WithElementRef } from "bits-ui";
+	import type { HTMLAttributes } from "svelte/elements";
+	import { cn } from "$lib/utils.js";
 
-  interface Props extends HTMLAttributes<HTMLDivElement> {
-    children?: Snippet;
-  }
-
-  let { class: className, children, ...restProps }: Props = $props();
+	let {
+		children,
+		class: className,
+		...restProps
+	}: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();
 </script>
 
 <div
-  class={cn(
-    "flex flex-col gap-2 p-6 text-center max-sm:pb-4 sm:text-left",
-    className,
-  )}
-  data-slot="alert-dialog-header"
-  {...restProps}
+	class={cn(
+		"flex flex-col gap-2 p-6 text-center in-[[data-slot=alert-dialog-popup]:has([data-slot=alert-dialog-panel])]:pb-3 max-sm:pb-4 sm:text-left",
+		className,
+	)}
+	data-slot="alert-dialog-header"
+	{...restProps}
 >
-  {@render children?.()}
+	{@render children?.()}
 </div>

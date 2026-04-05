@@ -1,17 +1,17 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import { AlertDialog } from "bits-ui";
-  import { cn } from "$lib/utils.js";
+	import { cn } from "$lib/utils.js";
+	import { AlertDialog as AlertDialogPrimitive } from "bits-ui";
 
-  type Props = AlertDialog.DescriptionProps & { children?: Snippet };
-
-  let { class: className, children, ...restProps }: Props = $props();
+	let {
+		class: className,
+		ref = $bindable(null),
+		...restProps
+	}: AlertDialogPrimitive.DescriptionProps = $props();
 </script>
 
-<AlertDialog.Description
-  class={cn("text-muted-foreground text-sm", className)}
-  data-slot="alert-dialog-description"
-  {...restProps}
->
-  {@render children?.()}
-</AlertDialog.Description>
+<AlertDialogPrimitive.Description
+	bind:ref
+	class={cn("text-muted-foreground text-sm", className)}
+	data-slot="alert-dialog-description"
+	{...restProps}
+/>
