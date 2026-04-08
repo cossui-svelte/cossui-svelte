@@ -7,7 +7,7 @@
   import DrawerBackdrop from "./drawer-backdrop.svelte";
   import DrawerViewport from "./drawer-viewport.svelte";
   import DrawerBar from "./drawer-bar.svelte";
-  import Button from "../button/button.svelte.old";
+  import Button from "../button/button.svelte";
 
   type DrawerPosition = "right" | "left" | "top" | "bottom";
 

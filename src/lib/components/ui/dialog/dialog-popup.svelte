@@ -4,7 +4,7 @@
 	import { cn } from "$lib/utils.js";
 	import { X } from "lucide-svelte";
 	import { Dialog as DialogPrimitive, type WithoutChild } from "bits-ui";
-	import Button from "../button/button.svelte.old";
+	import Button from "../button/button.svelte";
 
 	let {
 		children,
