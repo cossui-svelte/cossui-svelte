@@ -1,14 +1,11 @@
 <script lang="ts">
-  import { Loader2 } from "lucide-svelte";
-  import type { ComponentProps } from "svelte";
+  import { LoaderCircle } from "lucide-svelte";
   import { cn } from "$lib/utils.js";
 
-  interface Props extends ComponentProps<typeof Loader2> {}
-
-  let { class: className, ...restProps }: Props = $props();
+  let { class: className, ...restProps } = $props();
 </script>
 
-<Loader2
+<LoaderCircle
   aria-label="Loading"
   class={cn("animate-spin", className)}
   role="status"
