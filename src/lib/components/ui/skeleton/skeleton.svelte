@@ -1,17 +1,16 @@
 <script lang="ts">
-  import type { HTMLAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils.js";
+  import "@aejkatappaja/phantom-ui";
+  import { type PhantomUiAttributes } from "@aejkatappaja/phantom-ui";
+  import type { Snippet } from "svelte";
 
-  interface Props extends HTMLAttributes<HTMLDivElement> {}
-
-  let { class: className, ...restProps }: Props = $props();
+  let {
+    children,
+    ...restProps
+  }: PhantomUiAttributes & {
+    children: Snippet;
+  } = $props();
 </script>
 
-<div
-  class={cn(
-    "animate-skeleton rounded-sm [--skeleton-highlight:--alpha(var(--color-white)/64%)] [background:linear-gradient(120deg,transparent_40%,var(--skeleton-highlight),transparent_60%)_var(--color-muted)_0_0/200%_100%_fixed] dark:[--skeleton-highlight:--alpha(var(--color-white)/4%)]",
-    className,
-  )}
-  data-slot="skeleton"
-  {...restProps}
-></div>
+<phantom-ui data-slot="skeleton" {...restProps}>
+  {@render children?.()}
+</phantom-ui>
