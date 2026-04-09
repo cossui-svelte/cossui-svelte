@@ -2,7 +2,7 @@
   import { LoaderCircle } from "lucide-svelte";
   import { cn } from "$lib/utils.js";
 
-  let { class: className, ...restProps } = $props();
+  let { class: className, ...restProps }: { class?: string } = $props();
 </script>
 
 <LoaderCircle
