@@ -1,18 +1,29 @@
-import type { FormPath as _FormPath } from "sveltekit-superforms";
-import type { FieldProps } from "./types.js";
+import type { FormPath as _FormPath } from 'sveltekit-superforms';
+import type { FieldProps } from './types.js';
 declare class __sveltets_Render<T extends Record<string, unknown>, U extends _FormPath<T>> {
-    props(): FieldProps<T, U>;
-    events(): {};
-    slots(): {};
-    bindings(): "";
-    exports(): {};
+  props(): FieldProps<T, U>;
+  events(): {};
+  slots(): {};
+  bindings(): '';
+  exports(): {};
 }
 interface $$IsomorphicComponent {
-    new <T extends Record<string, unknown>, U extends _FormPath<T>>(options: import('svelte').ComponentConstructorOptions<ReturnType<__sveltets_Render<T, U>['props']>>): import('svelte').SvelteComponent<ReturnType<__sveltets_Render<T, U>['props']>, ReturnType<__sveltets_Render<T, U>['events']>, ReturnType<__sveltets_Render<T, U>['slots']>> & {
-        $$bindings?: ReturnType<__sveltets_Render<T, U>['bindings']>;
-    } & ReturnType<__sveltets_Render<T, U>['exports']>;
-    <T extends Record<string, unknown>, U extends _FormPath<T>>(internal: unknown, props: ReturnType<__sveltets_Render<T, U>['props']> & {}): ReturnType<__sveltets_Render<T, U>['exports']>;
-    z_$$bindings?: ReturnType<__sveltets_Render<any, any>['bindings']>;
+  new <T extends Record<string, unknown>, U extends _FormPath<T>>(
+    options: import('svelte').ComponentConstructorOptions<
+      ReturnType<__sveltets_Render<T, U>['props']>
+    >
+  ): import('svelte').SvelteComponent<
+    ReturnType<__sveltets_Render<T, U>['props']>,
+    ReturnType<__sveltets_Render<T, U>['events']>,
+    ReturnType<__sveltets_Render<T, U>['slots']>
+  > & {
+    $$bindings?: ReturnType<__sveltets_Render<T, U>['bindings']>;
+  } & ReturnType<__sveltets_Render<T, U>['exports']>;
+  <T extends Record<string, unknown>, U extends _FormPath<T>>(
+    internal: unknown,
+    props: ReturnType<__sveltets_Render<T, U>['props']> & {}
+  ): ReturnType<__sveltets_Render<T, U>['exports']>;
+  z_$$bindings?: ReturnType<__sveltets_Render<any, any>['bindings']>;
 }
 /**
  * ## Field
@@ -30,5 +41,7 @@ interface $$IsomorphicComponent {
  * @param {FormPath<T>} name - The name of the field.
  */
 declare const Field: $$IsomorphicComponent;
-type Field<T extends Record<string, unknown>, U extends _FormPath<T>> = InstanceType<typeof Field<T, U>>;
+type Field<T extends Record<string, unknown>, U extends _FormPath<T>> = InstanceType<
+  typeof Field<T, U>
+>;
 export default Field;

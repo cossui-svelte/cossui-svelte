@@ -1,2 +1,2 @@
-export { useFormField, useFormControl, getFormField, getFormControl } from "./formsnap.svelte.js";
-export * from "./components/index.js";
+export { useFormField, useFormControl, getFormField, getFormControl } from './formsnap.svelte.js';
+export * from './components/index.js';

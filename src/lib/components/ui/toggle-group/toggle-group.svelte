@@ -1,26 +1,32 @@
 <script lang="ts" module>
 	import { getContext, setContext } from "svelte";
 	import type { VariantProps } from "tailwind-variants";
-	import { toggleVariants } from "$lib/components/ui/toggle";
+	import {
+		toggleVariants,
+		type ToggleVariant,
+		type ToggleSize,
+	} from "$lib/components/ui/toggle";
 
-	type ToggleVariants = VariantProps<typeof toggleVariants>;
-
-	interface ToggleGroupContext extends ToggleVariants {
-		spacing?: number;
-		orientation?: "horizontal" | "vertical";
+	interface ToggleGroupProps {
+		variant?: ToggleVariant;
+		size?: ToggleSize;
+		orientation?: Orientation;
 	}
 
-	export function setToggleGroupCtx(props: ToggleGroupContext) {
+	export function setToggleGroupCtx(props: ToggleGroupProps) {
 		setContext("toggleGroup", props);
 	}
 
 	export function getToggleGroupCtx() {
-		return getContext<Required<ToggleGroupContext>>("toggleGroup");
+		return getContext<Required<ToggleGroupProps>>("toggleGroup");
 	}
 </script>
 
 <script lang="ts">
-	import { ToggleGroup as ToggleGroupPrimitive } from "bits-ui";
+	import {
+		ToggleGroup as ToggleGroupPrimitive,
+		type Orientation,
+	} from "bits-ui";
 	import { cn } from "$lib/utils.js";
 
 	let {
@@ -29,17 +35,11 @@
 		class: className,
 		children,
 		size = "default",
-		// spacing = 0,
 		orientation = "horizontal",
 		variant = "default",
-		// type = "single",
+		//	type = "single",
 		...restProps
-	}: ToggleGroupPrimitive.RootProps &
-		ToggleVariants & {
-			// spacing?: number;
-			orientation?: "horizontal" | "vertical";
-			// type?: "single" | "nultiple";
-		} = $props();
+	}: ToggleGroupPrimitive.RootProps & ToggleGroupProps = $props();
 
 	setToggleGroupCtx({
 		get variant() {
@@ -48,9 +48,6 @@
 		get size() {
 			return size;
 		},
-		// get spacing() {
-		// 	return spacing;
-		// },
 		get orientation() {
 			return orientation;
 		},
@@ -70,7 +67,6 @@ get along, so we shut typescript up by casting `value` to `never`.
 	data-size={size}
 	// data-spacing={spacing}
 	// style={`--gap: ${spacing}`}
-	// {type}
 	class={cn(
 		"flex w-fit *:focus-visible:z-10 dark:*:[[data-slot=separator]:has(+[data-slot=toggle]:hover)]:before:bg-input/64 dark:*:[[data-slot=separator]:has(+[data-slot=toggle][data-pressed])]:before:bg-input dark:*:[[data-slot=toggle]:hover+[data-slot=separator]]:before:bg-input/64 dark:*:[[data-slot=toggle][data-pressed]+[data-slot=separator]]:before:bg-input",
 		orientation === "horizontal"

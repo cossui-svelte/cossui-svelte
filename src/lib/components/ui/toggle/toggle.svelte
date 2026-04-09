@@ -27,6 +27,11 @@
 	export type ToggleVariant = VariantProps<typeof toggleVariants>["variant"];
 	export type ToggleSize = VariantProps<typeof toggleVariants>["size"];
 	export type ToggleVariants = VariantProps<typeof toggleVariants>;
+
+	export type ToggleProps = TogglePrimitive.RootProps & {
+		variant?: ToggleVariant;
+		size?: ToggleSize;
+	};
 </script>
 
 <script lang="ts">
@@ -40,10 +45,7 @@
 		size = "default",
 		variant = "default",
 		...restProps
-	}: TogglePrimitive.RootProps & {
-		variant?: ToggleVariant;
-		size?: ToggleSize;
-	} = $props();
+	}: ToggleProps = $props();
 </script>
 
 <TogglePrimitive.Root

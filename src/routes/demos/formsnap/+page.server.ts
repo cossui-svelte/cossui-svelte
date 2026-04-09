@@ -4,7 +4,7 @@ import type { PageServerLoad } from './$types';
 import { schema } from './schema';
 
 export const load: PageServerLoad = async () => {
-    return {
-        form: await superValidate(zod4(schema))
-    };
+  return {
+    form: await superValidate(zod4(schema))
+  };
 };

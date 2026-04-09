@@ -41,5 +41,5 @@ export {
   MenuSubTrigger,
   MenuSubTrigger as DropdownMenuSubTrigger,
   MenuSubPopup,
-  MenuSubPopup as DropdownMenuSubContent,
+  MenuSubPopup as DropdownMenuSubContent
 };

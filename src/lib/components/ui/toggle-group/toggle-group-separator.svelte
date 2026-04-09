@@ -1,15 +1,19 @@
 <script lang="ts">
     import { cn, type WithElementRef } from "$lib/utils.js";
     import { Separator } from "$lib/components/ui/separator";
+    import { getToggleGroupCtx } from "./toggle-group.svelte";
 
     let {
         class: className,
-        orientation = "vertical",
         ...restProps
     }: Separator & {
         class: string;
-        orientation?: "horizontal" | "vertical";
     } = $props();
+
+    let orientation = getToggleGroupCtx()?.orientation;
+
+    if (orientation === "vertical") orientation = "horizontal";
+    else orientation = "vertical";
 </script>
 
 <Separator

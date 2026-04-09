@@ -37,11 +37,7 @@
 	{...restProps}
 /> -->
 <script lang="ts">
-	import {
-		Toggle as ToggleComponent,
-		type toggleVariants,
-	} from "$lib/components/ui/toggle";
-
+	import { Toggle as ToggleComponent } from "$lib/components/ui/toggle";
 	import { getToggleGroupCtx } from "./toggle-group.svelte";
 
 	let {

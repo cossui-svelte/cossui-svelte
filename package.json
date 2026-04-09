@@ -16,35 +16,35 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "bits-ui": "^2.17.0",
+    "@aejkatappaja/phantom-ui": "^0.6.0",
+    "bits-ui": "^2.17.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "formsnap": "^2.0.1",
     "lucide-svelte": "^1.0.1",
     "svelte-sonner": "^1.1.0",
-    "vaul-svelte": "1.0.0-next.7",
+    "sveltekit-superforms": "^2.30.1",
     "tailwind-merge": "^3.5.0",
-    "zod":"^4.3.6",
-    "sveltekit-superforms":"^2.30.1"
-
+    "vaul-svelte": "1.0.0-next.7",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^7.0.1",
     "@sveltejs/enhanced-img": "^0.10.4",
-    "@sveltejs/kit": "^2.56.1",
+    "@sveltejs/kit": "^2.57.0",
     "@sveltejs/vite-plugin-svelte": "^7.0.0",
     "@tailwindcss/vite": "^4.2.2",
     "@types/node": "^25.5.2",
-    "postcss": "^8.5.8",
+    "postcss": "^8.5.9",
     "svelte-check": "^4.4.6",
     "tailwind-variants": "^3.2.2",
     "tailwindcss": "^4.2.2",
     "typescript": "^6.0.2",
-    "vite": "^8.0.3",
-    "vitest": "^4.1.2"
+    "vite": "^8.0.8",
+    "vitest": "^4.1.4"
   },
   "peerDependencies": {
-    "svelte": "^5.55.1"
+    "svelte": "^5.55.2"
   },
   "packageManager": "pnpm@10.33.0",
   "pnpm": {

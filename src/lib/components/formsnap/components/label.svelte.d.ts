@@ -1,4 +1,4 @@
-import type { LabelProps } from "./types.js";
+import type { LabelProps } from './types.js';
 /**
  * ## Label
  * A component that renders a label element associated with a form control, and must be used within a [Control](https://formsnap.dev/docs/components/control) component.
@@ -20,5 +20,5 @@ import type { LabelProps } from "./types.js";
  *
  * @param {boolean} [asChild=false] - Whether to opt out of rendering the label element. [[asChild Docs](https://formsnap.dev/docs/composition/aschild)]
  */
-declare const Label: import("svelte").Component<LabelProps, {}, "ref">;
+declare const Label: import('svelte').Component<LabelProps, {}, 'ref'>;
 export default Label;

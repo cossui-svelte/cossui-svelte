@@ -1,4 +1,3 @@
-
 import ToastProvider from './toast-provider.svelte';
 
 export type ToastPosition =

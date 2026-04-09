@@ -1,4 +1,4 @@
-import type { FieldErrorsProps } from "./types.js";
+import type { FieldErrorsProps } from './types.js';
 /**
  * ## FieldErrors
  * A component that renders the container for validation errors for a [Field](https://formsnap.dev/docs/components/field), [Fieldset](https://formsnap.dev/docs/components/fieldset), or [ElementField](https://formsnap.dev/docs/components/element-field).
@@ -12,5 +12,5 @@ import type { FieldErrorsProps } from "./types.js";
  *
  * @param {string} [id] - The id of the field errors container.
  */
-declare const FieldErrors: import("svelte").Component<FieldErrorsProps, {}, "ref">;
+declare const FieldErrors: import('svelte').Component<FieldErrorsProps, {}, 'ref'>;
 export default FieldErrors;
