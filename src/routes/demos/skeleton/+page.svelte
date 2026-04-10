@@ -9,7 +9,7 @@
     import { Skeleton } from "$lib/components/ui/skeleton";
     import { UserRoundPlusIcon, UsersRoundIcon } from "lucide-svelte";
 
-    let loading = true;
+    let loading = $state(true);
 
     const users = [
         {
@@ -39,6 +39,10 @@
     ];
 
     const user = users[0];
+
+    setTimeout(() => {
+        loading = false;
+    }, 4000);
 </script>
 
 <ComponentPreviewTab>
