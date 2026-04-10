@@ -11,7 +11,7 @@
 
 <AvatarPrimitive.Image
   bind:ref
-  class={cn("aspect-square size-full", className)}
+  class={cn("aspect-square size-full object-cover", className)}
   data-slot="avatar-image"
   {...restProps}
 />
