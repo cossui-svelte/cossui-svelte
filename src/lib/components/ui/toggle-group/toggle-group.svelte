@@ -1,8 +1,6 @@
 <script lang="ts" module>
 	import { getContext, setContext } from "svelte";
-	import type { VariantProps } from "tailwind-variants";
 	import {
-		toggleVariants,
 		type ToggleVariant,
 		type ToggleSize,
 	} from "$lib/components/ui/toggle";
@@ -33,7 +31,6 @@
 		ref = $bindable(null),
 		value = $bindable(),
 		class: className,
-		children,
 		size = "default",
 		orientation = "horizontal",
 		variant = "default",
@@ -59,14 +56,12 @@ Discriminated Unions + Destructing (required for bindable) do not
 get along, so we shut typescript up by casting `value` to `never`.
 -->
 <ToggleGroupPrimitive.Root
-	bind:value={value as never}
+	bind:value
 	bind:ref
 	{orientation}
 	data-slot="toggle-group"
 	data-variant={variant}
 	data-size={size}
-	// data-spacing={spacing}
-	// style={`--gap: ${spacing}`}
 	class={cn(
 		"flex w-fit *:focus-visible:z-10 dark:*:[[data-slot=separator]:has(+[data-slot=toggle]:hover)]:before:bg-input/64 dark:*:[[data-slot=separator]:has(+[data-slot=toggle][data-pressed])]:before:bg-input dark:*:[[data-slot=toggle]:hover+[data-slot=separator]]:before:bg-input/64 dark:*:[[data-slot=toggle][data-pressed]+[data-slot=separator]]:before:bg-input",
 		orientation === "horizontal"
@@ -80,6 +75,4 @@ get along, so we shut typescript up by casting `value` to `never`.
 		className,
 	)}
 	{...restProps}
->
-	{@render children?.()}
-</ToggleGroupPrimitive.Root>
+/>

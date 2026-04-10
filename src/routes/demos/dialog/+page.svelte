@@ -1,6 +1,6 @@
 <script lang="ts">
     import ComponentPreviewTabs from "$lib/components/app/ComponentPreviewTabs.svelte";
-    import { Button } from "$lib/components/ui/button";
+    import { Button, buttonVariants } from "$lib/components/ui/button";
     import {
         Dialog,
         DialogClose,
@@ -20,8 +20,9 @@
 
 <ComponentPreviewTabs>
     <Dialog>
-        <DialogTrigger>
-            <Button variant="outline">Open Dialog</Button>
+        <DialogTrigger class={buttonVariants({ variant: "outline" })}>
+            <!-- <Button variant="outline">Open Dialog</Button> -->
+            Open Dialog
         </DialogTrigger>
         <DialogPopup class="sm:max-w-sm">
             <Form class="contents">

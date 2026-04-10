@@ -16,7 +16,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@aejkatappaja/phantom-ui": "^0.6.0",
+    "@aejkatappaja/phantom-ui": "^0.8.1",
     "bits-ui": "^2.17.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -31,10 +31,10 @@
   "devDependencies": {
     "@sveltejs/adapter-auto": "^7.0.1",
     "@sveltejs/enhanced-img": "^0.10.4",
-    "@sveltejs/kit": "^2.57.0",
+    "@sveltejs/kit": "^2.57.1",
     "@sveltejs/vite-plugin-svelte": "^7.0.0",
     "@tailwindcss/vite": "^4.2.2",
-    "@types/node": "^25.5.2",
+    "@types/node": "^25.6.0",
     "postcss": "^8.5.9",
     "svelte-check": "^4.4.6",
     "tailwind-variants": "^3.2.2",

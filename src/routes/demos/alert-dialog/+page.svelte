@@ -9,12 +9,14 @@
         AlertDialogTitle,
         AlertDialogTrigger,
     } from "$lib/components/ui/alert-dialog";
-    import { Button } from "$lib/components/ui/button";
+    import { Button, buttonVariants } from "$lib/components/ui/button";
 </script>
 
 <AlertDialog>
-    <AlertDialogTrigger>
-        <Button variant="destructive-outline">Delete Account</Button>
+    <AlertDialogTrigger
+        class={buttonVariants({ variant: "destructive-outline" })}
+    >
+        Delete Account
     </AlertDialogTrigger>
     <AlertDialogPopup>
         <AlertDialogHeader>
