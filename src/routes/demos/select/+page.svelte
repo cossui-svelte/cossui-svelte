@@ -1,4 +1,5 @@
 <script lang="ts">
+    import ComponentPreviewTabs from "$lib/components/app/ComponentPreviewTabs.svelte";
     import { Label } from "$lib/components/ui/label";
     import {
         Select,
@@ -21,18 +22,20 @@
     const uid = $props.id();
 </script>
 
-<div class="space-y-2">
-    <Label for={uid}>Simple select with default value</Label>
-    <Select type="single" bind:value>
-        <SelectTrigger id={uid}>
-            {selected?.label ?? "Select a framework"}
-        </SelectTrigger>
-        <SelectContent>
-            {#each items as item (item.value)}
-                <SelectItem value={item.value}>
-                    {item.label}
-                </SelectItem>
-            {/each}
-        </SelectContent>
-    </Select>
-</div>
+<ComponentPreviewTabs>
+    <div class="space-y-2">
+        <Label for={uid}>Simple select with default value</Label>
+        <Select type="single" bind:value>
+            <SelectTrigger id={uid}>
+                {selected?.label ?? "Select a framework"}
+            </SelectTrigger>
+            <SelectContent>
+                {#each items as item (item.value)}
+                    <SelectItem value={item.value}>
+                        {item.label}
+                    </SelectItem>
+                {/each}
+            </SelectContent>
+        </Select>
+    </div>
+</ComponentPreviewTabs>
