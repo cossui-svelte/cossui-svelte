@@ -23,12 +23,17 @@
     >
       <ChevronUp class="relative size-4.5 sm:size-4" />
     </Select.ScrollUpButton>
+
     <Select.Viewport
-      class={cn("max-h-[var(--bits-select-content-available-height)] overflow-y-auto p-1", className)}
+      class={cn(
+        "max-h-[var(--bits-select-content-available-height)] overflow-y-auto p-1",
+        className,
+      )}
       data-slot="select-list"
     >
       {@render children?.()}
     </Select.Viewport>
+
     <Select.ScrollDownButton
       class="bottom-0 z-50 flex h-6 w-full cursor-default items-center justify-center before:pointer-events-none before:absolute before:inset-x-px before:bottom-px before:h-[200%] before:rounded-b-[calc(var(--radius-lg)-1px)] before:bg-linear-to-t before:from-50% before:from-popover"
       data-slot="select-scroll-down-button"

@@ -13,7 +13,7 @@
         SelectPopup,
         SelectTrigger,
         SelectValue,
-    } from "$lib/components/ui/select";
+    } from "$lib/components/ui/select/gen.old";
     import {
         ToggleGroup,
         ToggleGroupItem,

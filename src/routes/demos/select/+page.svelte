@@ -1,32 +1,38 @@
 <script lang="ts">
-    import ComponentPreviewTabs from "$lib/components/app/ComponentPreviewTabs.svelte";
-
+    import { Label } from "$lib/components/ui/label";
     import {
         Select,
-        SelectItem,
-        SelectPopup,
         SelectTrigger,
-        SelectValue,
+        SelectContent,
+        SelectItem,
     } from "$lib/components/ui/select";
 
     const items = [
-        { label: "Next.js", value: "next" },
-        { label: "Vite", value: "vite" },
-        { label: "Astro", value: "astro" },
+        { label: "Svelte", value: "s1" },
+        { label: "Next.js", value: "s2" },
+        { label: "Astro", value: "s3" },
+        { label: "Gatsby", value: "s4" },
     ];
+
+    let value = $state("s1");
+
+    const selected = $derived(items.find((i) => i.value === value));
+
+    const uid = $props.id();
 </script>
 
-<ComponentPreviewTabs>
-    <Select aria-label="Select framework" defaultValue="next" {items}>
-        <SelectTrigger>
-            <SelectValue />
+<div class="space-y-2">
+    <Label for={uid}>Simple select with default value</Label>
+    <Select type="single" bind:value>
+        <SelectTrigger id={uid}>
+            {selected?.label ?? "Select a framework"}
         </SelectTrigger>
-        <SelectPopup>
-            {#each items as item}
-                <SelectItem key={item.value} value={item.value}>
+        <SelectContent>
+            {#each items as item (item.value)}
+                <SelectItem value={item.value}>
                     {item.label}
                 </SelectItem>
             {/each}
-        </SelectPopup>
+        </SelectContent>
     </Select>
-</ComponentPreviewTabs>
+</div>

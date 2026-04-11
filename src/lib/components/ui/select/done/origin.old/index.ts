@@ -1,13 +1,13 @@
 /* eslint-disable perfectionist/sort-named-exports */
 
 import { Select as SelectPrimitive } from 'bits-ui';
-import Content from './select-content.svelte';
-import GroupHeading from './select-group-heading.svelte';
-import Item from './select-item.svelte';
-import ScrollDownButton from './select-scroll-down-button.svelte';
-import ScrollUpButton from './select-scroll-up-button.svelte';
-import Separator from './select-separator.svelte';
-import Trigger from './select-trigger.svelte';
+import Content from './origin.old/select-content.svelte';
+import GroupHeading from './origin.old/select-group-heading.svelte';
+import Item from './origin.old/select-item.svelte';
+import ScrollDownButton from './origin.old/select-scroll-down-button.svelte';
+import ScrollUpButton from './origin.old/select-scroll-up-button.svelte';
+import Separator from './origin.old/select-separator.svelte';
+import Trigger from './origin.old/select-trigger.svelte';
 
 const Root = SelectPrimitive.Root;
 const Group = SelectPrimitive.Group;

@@ -1,21 +1,27 @@
-import Select from './select.svelte';
-import SelectGroup from './select-group.svelte';
-import SelectGroupLabel from './select-group-label.svelte';
-import SelectItem from './select-item.svelte';
-import SelectPopup from './select-popup.svelte';
-import SelectSeparator from './select-separator.svelte';
-import SelectTrigger, { selectTriggerVariants } from './select-trigger.svelte';
-import SelectValue from './select-value.svelte';
+/* eslint-disable perfectionist/sort-named-exports */
+
+import { Select as SelectPrimitive } from 'bits-ui';
+import Content from './select-content.svelte';
+import GroupHeading from './select-group-label.svelte';
+import Item from './select-item.svelte';
+import ScrollDownButton from './select-scroll-down-button.svelte';
+import ScrollUpButton from './select-scroll-up-button.svelte';
+import Separator from './select-separator.svelte';
+import Trigger, { selectTriggerVariants } from './select-trigger.svelte';
+
+const Root = SelectPrimitive.Root;
+const Group = SelectPrimitive.Group;
 
 export {
-  Select,
-  SelectGroup,
-  SelectGroupLabel,
-  SelectItem,
-  SelectPopup,
-  SelectPopup as SelectContent,
-  SelectSeparator,
-  SelectTrigger,
-  SelectValue,
-  selectTriggerVariants
+  Content as SelectContent,
+  Group as SelectGroup,
+  GroupHeading as SelectGroupLabel,
+  Item as SelectItem,
+  Root as Select,
+  ScrollDownButton as SelectScrollDownButton,
+  ScrollUpButton as SelectScrollUpButton,
+  SelectPrimitive,
+  Separator as SelectSeparator,
+  selectTriggerVariants,
+  Trigger as SelectTrigger
 };
