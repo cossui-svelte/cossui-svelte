@@ -37,10 +37,7 @@
                 </TooltipTrigger>
                 <TooltipContent side="top" class="px-2 py-1 text-xs">
                     Pan top
-                    <KbdGroup>
-                        <Kbd>⌘</Kbd>
-                        <Kbd>T</Kbd>
-                    </KbdGroup>
+                    <Kbd>⌘T</Kbd>
                 </TooltipContent>
             </Tooltip>
         </TooltipProvider>
@@ -61,10 +58,7 @@
                 </TooltipTrigger>
                 <TooltipContent side="left" class="px-2 py-1 text-xs">
                     Pan left
-                    <KbdGroup>
-                        <Kbd>⌘</Kbd>
-                        <Kbd>L</Kbd>
-                    </KbdGroup>
+                    <Kbd>⌘L</Kbd>
                 </TooltipContent>
             </Tooltip>
         </TooltipProvider>
@@ -87,11 +81,7 @@
                 </TooltipTrigger>
                 <TooltipContent side="right" class="px-2 py-1 text-xs">
                     Pan right
-
-                    <KbdGroup>
-                        <Kbd>⌘</Kbd>
-                        <Kbd>R</Kbd>
-                    </KbdGroup>
+                    <Kbd>⌘R</Kbd>
                 </TooltipContent>
             </Tooltip>
         </TooltipProvider>
@@ -112,10 +102,8 @@
                 </TooltipTrigger>
                 <TooltipContent side="bottom" class="px-2 py-1 text-xs">
                     Pan bottom
-                    <KbdGroup>
-                        <Kbd>⌘</Kbd>
-                        <Kbd>B</Kbd>
-                    </KbdGroup>
+
+                    <Kbd>⌘B</Kbd>
                 </TooltipContent>
             </Tooltip>
         </TooltipProvider>
