@@ -10,10 +10,10 @@
     let { class: className, children, ...restProps }: Props = $props();
 </script>
 
-<div
+<header
     class={cn("flex flex-col px-5 py-4", className)}
     data-slot="frame-panel-header"
     {...restProps}
 >
     {@render children?.()}
-</div>
+</header>
