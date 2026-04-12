@@ -1,1 +1,2 @@
-* Add avatar badges
+* GROUP bug
+* 
