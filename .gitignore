@@ -4,3 +4,4 @@ dist
 .svelte-kit/
 !.vscode/settings.json.svelte-kit
 .DS_Store
+.claude
