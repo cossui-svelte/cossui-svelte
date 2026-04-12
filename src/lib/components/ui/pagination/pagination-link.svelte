@@ -1,36 +1,45 @@
+<script module lang="ts">
+	import type { WithElementRef } from "bits-ui";
+	import type { Snippet } from "svelte";
+	import type { HTMLAnchorAttributes } from "svelte/elements";
+
+	import {
+		type ButtonProps,
+		buttonVariants,
+	} from "$lib/components/ui/button";
+
+	export type Props = WithElementRef<HTMLAnchorAttributes> & {
+		children: Snippet;
+		isActive?: boolean;
+		isDisabled?: boolean;
+	} & Pick<ButtonProps, "size">;
+</script>
+
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import type { HTMLAnchorAttributes } from "svelte/elements";
+	import { cn } from "$lib/utils.js";
 
-  import { cn } from "$lib/utils.js";
-  import { buttonVariants } from "$lib/components/ui/button-variants.js";
-
-  interface Props extends HTMLAnchorAttributes {
-    isActive?: boolean;
-    size?: "default" | "icon" | "sm" | "lg";
-    children?: Snippet;
-  }
-
-  let {
-    class: className,
-    isActive,
-    size = "icon",
-    children,
-    href,
-    ...restProps
-  }: Props = $props();
+	let {
+		children,
+		class: className,
+		isActive = false,
+		ref = $bindable(null),
+		size = "icon",
+		...restProps
+	}: Props = $props();
 </script>
 
 <a
-  {href}
-  aria-current={isActive ? "page" : undefined}
-  class={cn(
-    buttonVariants({ size, variant: isActive ? "outline" : "ghost" }),
-    className,
-  )}
-  data-active={isActive}
-  data-slot="pagination-link"
-  {...restProps}
+	aria-current={isActive ? "page" : undefined}
+	class={cn(
+		buttonVariants({
+			size,
+			variant: isActive ? "outline" : "ghost",
+		}),
+		className,
+	)}
+	data-active={isActive}
+	data-slot="pagination-link"
+	{...restProps}
 >
-  {@render children?.()}
+	{@render children()}
 </a>

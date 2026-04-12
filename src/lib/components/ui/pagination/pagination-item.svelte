@@ -1,14 +1,14 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import type { HTMLAttributes } from "svelte/elements";
+	import type { WithElementRef } from "bits-ui";
+	import type { HTMLLiAttributes } from "svelte/elements";
 
-  interface Props extends HTMLAttributes<HTMLLIElement> {
-    children?: Snippet;
-  }
-
-  let { children, ...restProps }: Props = $props();
+	let {
+		children,
+		ref = $bindable(null),
+		...restProps
+	}: WithElementRef<HTMLLiAttributes> = $props();
 </script>
 
-<li data-slot="pagination-item" {...restProps}>
-  {@render children?.()}
+<li bind:this={ref} data-slot="pagination-item" {...restProps}>
+	{@render children?.()}
 </li>
