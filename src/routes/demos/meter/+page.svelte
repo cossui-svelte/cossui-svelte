@@ -1,4 +1,5 @@
 <script>
+    import ComponentPreviewTabs from "$lib/components/app/ComponentPreviewTabs.svelte";
     import {
         Meter,
         MeterIndicator,
@@ -8,12 +9,14 @@
     } from "$lib/components/ui/meter";
 </script>
 
-<Meter value={75}>
-    <div class="flex items-center justify-between gap-2">
-        <MeterLabel>Storage usage</MeterLabel>
-        <MeterValue />
-    </div>
-    <MeterTrack>
-        <MeterIndicator />
-    </MeterTrack>
-</Meter>
+<ComponentPreviewTabs>
+    <Meter value={75}>
+        <div class="flex items-center justify-between gap-2">
+            <MeterLabel>Storage usage</MeterLabel>
+            <MeterValue />
+        </div>
+        <MeterTrack>
+            <MeterIndicator />
+        </MeterTrack>
+    </Meter>
+</ComponentPreviewTabs>
