@@ -1,15 +1,16 @@
-import { box, useOnChange, useRefById } from 'svelte-toolbelt';
-import { fromStore } from 'svelte/store';
 import { getContext, setContext } from 'svelte';
-import { extractErrorArray } from './internal/utils/errors.js';
-import { getValueAtPath } from './internal/utils/path.js';
+import { fromStore } from 'svelte/store';
+import { box, useOnChange, useRefById } from 'svelte-toolbelt';
 import {
   getAriaDescribedBy,
   getAriaInvalid,
   getAriaRequired,
   getDataFsError
 } from './internal/utils/attributes.js';
+import { extractErrorArray } from './internal/utils/errors.js';
 import { useId } from './internal/utils/id.js';
+import { getValueAtPath } from './internal/utils/path.js';
+
 class FormFieldState {
   #name;
   #formErrors;
@@ -52,10 +53,10 @@ class FormFieldState {
     });
   }
   snippetProps = $derived.by(() => ({
-    value: this.#formData.current[this.#name.current],
+    constraints: this.constraints,
     errors: this.errors,
     tainted: this.tainted,
-    constraints: this.constraints
+    value: this.#formData.current[this.#name.current]
   }));
 }
 class ElementFieldState {
@@ -121,12 +122,12 @@ class ElementFieldState {
     );
   }
   snippetProps = $derived.by(() => ({
-    value: this.#formData.current[this.#name.current],
-    errors: this.errors,
-    tainted: this.tainted,
     constraints:
       // @ts-expect-error - this type is wonky
-      this.#formConstraints.current[this.#name.current] ?? {}
+      this.#formConstraints.current[this.#name.current] ?? {},
+    errors: this.errors,
+    tainted: this.tainted,
+    value: this.#formData.current[this.#name.current]
   }));
 }
 class FieldErrorsState {
@@ -140,25 +141,25 @@ class FieldErrorsState {
     this.field = field;
     useRefById({
       id: this.#id,
-      ref: this.#ref,
       onRefChange: (node) => {
         this.field.errorNode = node;
-      }
+      },
+      ref: this.#ref
     });
   }
   snippetProps = $derived.by(() => ({
-    errors: this.field.errors,
-    errorProps: this.errorProps
+    errorProps: this.errorProps,
+    errors: this.field.errors
   }));
   fieldErrorsProps = $derived.by(() => ({
-    id: this.#id.current,
+    'aria-live': 'assertive',
     'data-fs-error': this.#errorAttr,
     'data-fs-field-errors': '',
-    'aria-live': 'assertive'
+    id: this.#id.current
   }));
   errorProps = $derived.by(() => ({
-    'data-fs-field-error': '',
-    'data-fs-error': this.#errorAttr
+    'data-fs-error': this.#errorAttr,
+    'data-fs-field-error': ''
   }));
 }
 class DescriptionState {
@@ -171,16 +172,16 @@ class DescriptionState {
     this.field = field;
     useRefById({
       id: this.#id,
-      ref: this.#ref,
       onRefChange: (node) => {
         this.field.descriptionNode = node;
-      }
+      },
+      ref: this.#ref
     });
   }
   props = $derived.by(() => ({
-    id: this.#id.current,
+    'data-fs-description': '',
     'data-fs-error': getDataFsError(this.field.errors),
-    'data-fs-description': ''
+    id: this.#id.current
   }));
 }
 class ControlState {
@@ -199,23 +200,23 @@ class ControlState {
     );
   }
   props = $derived.by(() => ({
-    id: this.id,
-    name: this.field.name,
-    'data-fs-error': getDataFsError(this.field.errors),
     'aria-describedby': getAriaDescribedBy({
-      fieldErrorsId: this.field.errorId,
       descriptionId: this.field.descriptionId,
-      errors: this.field.errors
+      errors: this.field.errors,
+      fieldErrorsId: this.field.errorId
     }),
     'aria-invalid': getAriaInvalid(this.field.errors),
     'aria-required': getAriaRequired(this.field.constraints),
-    'data-fs-control': ''
+    'data-fs-control': '',
+    'data-fs-error': getDataFsError(this.field.errors),
+    id: this.id,
+    name: this.field.name
   }));
   labelProps = $derived.by(() => ({
-    id: this.labelId.current,
-    'data-fs-label': '',
     'data-fs-error': getDataFsError(this.field.errors),
-    for: this.id
+    'data-fs-label': '',
+    for: this.id,
+    id: this.labelId.current
   }));
 }
 class LabelState {
@@ -250,9 +251,9 @@ class LegendState {
     });
   }
   props = $derived.by(() => ({
-    id: this.#id.current,
     'data-fs-error': getDataFsError(this.field.errors),
-    'data-fs-legend': ''
+    'data-fs-legend': '',
+    id: this.#id.current
   }));
 }
 const FORM_FIELD_CTX = Symbol.for('formsnap.form-field');
@@ -315,24 +316,24 @@ export function useFormField(props) {
     }
   );
   return {
-    form,
-    get name() {
-      return fieldState.name;
+    get constraints() {
+      return fieldState.constraints;
+    },
+    get descriptionId() {
+      return fieldState.descriptionId;
     },
     get errors() {
       return fieldState.errors;
     },
-    get constraints() {
-      return fieldState.constraints;
-    },
-    get tainted() {
-      return fieldState.tainted;
-    },
     get errorsId() {
       return fieldState.errorId;
     },
-    get descriptionId() {
-      return fieldState.descriptionId;
+    form,
+    get name() {
+      return fieldState.name;
+    },
+    get tainted() {
+      return fieldState.tainted;
     }
   };
 }

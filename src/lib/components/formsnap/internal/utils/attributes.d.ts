@@ -33,4 +33,3 @@ export declare function getAriaInvalid(errors: string[] | undefined): 'true' | u
  * given the current validation errors.
  */
 export declare function getDataFsError(errors: string[] | undefined): string | undefined;
-export {};

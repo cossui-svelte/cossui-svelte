@@ -1,4 +1,5 @@
 import { getContext as getSvelteContext, hasContext, setContext as setSvelteContext } from 'svelte';
+
 function setContext(key, value) {
   return setSvelteContext(key, value);
 }
