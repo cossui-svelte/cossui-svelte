@@ -1,14 +1,21 @@
+<script lang="ts" module>
+  export interface MeterContext {
+    readonly value: number;
+    readonly min: number;
+    readonly max: number;
+    readonly percentage: number;
+  }
+
+  export const METER_CONTEXT_KEY = Symbol.for("cossui:meter");
+</script>
+
 <script lang="ts">
   import type { Snippet } from "svelte";
-  import type { HTMLAttributes } from "svelte/elements";
+  import { setContext } from "svelte";
+  import { Meter as MeterPrimitive } from "bits-ui";
   import { cn } from "$lib/utils.js";
 
-  interface Props extends HTMLAttributes<HTMLDivElement> {
-    value?: number;
-    min?: number;
-    max?: number;
-    children?: Snippet;
-  }
+  type Props = MeterPrimitive.RootProps & { children?: Snippet };
 
   let {
     class: className,
@@ -19,15 +26,30 @@
     ...restProps
   }: Props = $props();
 
-  const percentage = $derived(((value - min) / (max - min)) * 100);
+  let percentage = $derived(((value - min) / (max - min)) * 100);
+
+  setContext<MeterContext>(METER_CONTEXT_KEY, {
+    get value() {
+      return value;
+    },
+    get min() {
+      return min;
+    },
+    get max() {
+      return max;
+    },
+    get percentage() {
+      return percentage;
+    },
+  });
 </script>
 
-<div
-  aria-valuenow={value}
-  aria-valuemin={min}
-  aria-valuemax={max}
+<MeterPrimitive.Root
   class={cn("flex w-full flex-col gap-2", className)}
-  role="meter"
+  data-slot="meter"
+  {value}
+  {min}
+  {max}
   {...restProps}
 >
   {#if children}
@@ -44,4 +66,4 @@
       ></div>
     </div>
   {/if}
-</div>
+</MeterPrimitive.Root>
