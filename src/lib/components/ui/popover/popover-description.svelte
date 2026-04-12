@@ -1,0 +1,20 @@
+<script lang="ts">
+  import type { Snippet } from "svelte";
+  import { cn } from "$lib/utils.js";
+
+  interface Props {
+    class?: string;
+    children?: Snippet;
+    [key: string]: unknown;
+  }
+
+  let { class: className, children, ...restProps }: Props = $props();
+</script>
+
+<div
+  class={cn("text-muted-foreground text-sm", className)}
+  data-slot="popover-description"
+  {...restProps}
+>
+  {@render children?.()}
+</div>
