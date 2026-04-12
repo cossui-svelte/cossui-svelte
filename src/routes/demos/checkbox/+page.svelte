@@ -2,11 +2,15 @@
     import ComponentPreviewTabs from "$lib/components/app/ComponentPreviewTabs.svelte";
     import { Checkbox } from "$lib/components/ui/checkbox";
     import { Label } from "$lib/components/ui/label";
+
+    let checked = $state(false);
+
+    const uid = $props.id();
 </script>
 
 <ComponentPreviewTabs>
-    <Label>
-        <Checkbox />
-        Accept terms and conditions
-    </Label>
+    <div class="flex items-center gap-2">
+        <Checkbox id={uid} bind:checked indeterminate />
+        <Label for={uid}>Indeterminate checkbox</Label>
+    </div>
 </ComponentPreviewTabs>
