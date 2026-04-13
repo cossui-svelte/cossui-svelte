@@ -11,7 +11,10 @@
 </script>
 
 <div
-  class={cn("block h-2 w-full overflow-hidden bg-input", className)}
+  class={cn(
+    "block rounded-full h-2 w-full overflow-hidden bg-input",
+    className,
+  )}
   data-slot="meter-track"
   {...restProps}
 >
