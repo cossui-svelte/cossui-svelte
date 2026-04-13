@@ -8,6 +8,7 @@
     TriangleAlertIcon,
   } from "lucide-svelte";
   import type { ToastPosition } from "./toast-manager.svelte.js";
+  import { cn } from "$lib/utils.js";
 
   interface Props {
     position?: ToastPosition;
@@ -32,6 +33,8 @@
     theme = "system",
     ...restProps
   }: Props = $props();
+
+  const isTop = position.startsWith("top");
 </script>
 
 {#snippet errorIcon()}<CircleAlertIcon />{/snippet}

@@ -12,6 +12,7 @@ export type {
   ToastSide,
   ToastType
 } from './toast-manager.svelte.js';
+
 export { anchoredToastManager, toastManager } from './toast-manager.svelte.js';
 
 export { AnchoredToastProvider, ToastProvider };

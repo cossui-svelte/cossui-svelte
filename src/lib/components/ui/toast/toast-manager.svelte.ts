@@ -71,10 +71,10 @@ function adaptAction(
 
 function buildSonnerOptions(options: AddStandardToastOptions): SonnerOptions {
   return {
-    id: options.id,
+    action: adaptAction(options.action),
     description: options.description,
     duration: options.duration,
-    action: adaptAction(options.action),
+    id: options.id
   };
 }
 
@@ -99,23 +99,18 @@ export const toastManager = {
   },
 
   dismiss: (id?: string | number) => sonner.dismiss(id),
+  error: (title: string, options?: Omit<SonnerOptions, 'id'>) => sonner.error(title, options),
+  info: (title: string, options?: Omit<SonnerOptions, 'id'>) => sonner.info(title, options),
+  loading: (title: string, options?: Omit<SonnerOptions, 'id'>) => sonner.loading(title, options),
 
-  success: (title: string, options?: Omit<SonnerOptions, 'id'>) =>
-    sonner.success(title, options),
-  error: (title: string, options?: Omit<SonnerOptions, 'id'>) =>
-    sonner.error(title, options),
-  info: (title: string, options?: Omit<SonnerOptions, 'id'>) =>
-    sonner.info(title, options),
-  warning: (title: string, options?: Omit<SonnerOptions, 'id'>) =>
-    sonner.warning(title, options),
-  loading: (title: string, options?: Omit<SonnerOptions, 'id'>) =>
-    sonner.loading(title, options),
+  success: (title: string, options?: Omit<SonnerOptions, 'id'>) => sonner.success(title, options),
+  warning: (title: string, options?: Omit<SonnerOptions, 'id'>) => sonner.warning(title, options)
 };
 
 // ─── Anchored toast manager (reactive $state) ────────────────────────────────
 
 function createAnchoredToastManager() {
-  let toasts = $state<AnchoredToastData[]>([]);
+  const toasts = $state<AnchoredToastData[]>([]);
   const timers = new Map<string, ReturnType<typeof setTimeout>>();
 
   function add(options: AddAnchoredToastOptions): string {
@@ -147,12 +142,12 @@ function createAnchoredToastManager() {
   }
 
   return {
+    add,
+    dismiss,
     get toasts() {
       return toasts;
     },
-    add,
-    dismiss,
-    update,
+    update
   };
 }
 
