@@ -1,11 +1,12 @@
-import { cva } from 'class-variance-authority';
+import { tv } from 'tailwind-variants';
 
 /**
- * CVA definition for the main toast container element.
+ * TV definition for the main toast container element.
  * Handles positioning logic (absolute/fixed positioning coordinates)
  * and base theming (colors based on variant).
  */
-export const toastContainerVariants = cva('pointer-events-auto fixed will-change-transform', {
+export const toastContainerVariants = tv({
+  base: 'pointer-events-auto fixed will-change-transform',
   defaultVariants: {
     position: 'bottom-center',
     variant: 'default'
@@ -41,11 +42,12 @@ export const toastContainerVariants = cva('pointer-events-auto fixed will-change
 });
 
 /**
- * CVA definition for the inner content wrapper of the toast.
+ * TV definition for the inner content wrapper of the toast.
  * Useful for applying styles specific to the content area (e.g. overflow, padding overrides)
  * separate from the structural container.
  */
-export const toastContentVariants = cva('relative overflow-hidden rounded-vs-lg', {
+export const toastContentVariants = tv({
+  base: 'relative overflow-hidden rounded-vs-lg',
   defaultVariants: {
     variant: 'default'
   },

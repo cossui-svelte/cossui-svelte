@@ -1,5 +1,5 @@
-import type { VariantProps } from 'class-variance-authority';
 import type { Component } from 'svelte'; // Use Component
+import type { VariantProps } from 'tailwind-variants';
 import type { ToastPosition } from './positions';
 import type { SwipeAxis, SwipeDirection } from './swipe';
 import type { toastContainerVariants } from './variants';
