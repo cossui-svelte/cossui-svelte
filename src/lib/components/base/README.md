@@ -1,1 +1,0 @@
-The components in this folder are coming from BaseUI and were translated by Claude
