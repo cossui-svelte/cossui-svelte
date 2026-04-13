@@ -21,7 +21,6 @@
     "clsx": "^2.1.1",
     "formsnap": "^2.0.1",
     "lucide-svelte": "^1.0.1",
-    "svelte-sonner": "^1.1.0",
     "sveltekit-superforms": "^2.30.1",
     "tailwind-merge": "^3.5.0",
     "vaul-svelte": "1.0.0-next.7",
