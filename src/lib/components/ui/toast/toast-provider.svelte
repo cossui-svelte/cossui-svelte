@@ -7,7 +7,7 @@
     LoaderCircleIcon,
     TriangleAlertIcon,
   } from "lucide-svelte";
-  import type { ToastPosition } from ".";
+  import type { ToastPosition } from "./toast-manager.svelte.js";
 
   interface Props {
     position?: ToastPosition;
@@ -32,24 +32,26 @@
     theme = "system",
     ...restProps
   }: Props = $props();
-
-  const icons = {
-    error: CircleAlertIcon,
-    info: InfoIcon,
-    loading: LoaderCircleIcon,
-    success: CircleCheckIcon,
-    warning: TriangleAlertIcon,
-  };
 </script>
+
+{#snippet errorIcon()}<CircleAlertIcon />{/snippet}
+{#snippet infoIcon()}<InfoIcon />{/snippet}
+{#snippet loadingIcon()}<LoaderCircleIcon />{/snippet}
+{#snippet successIcon()}<CircleCheckIcon />{/snippet}
+{#snippet warningIcon()}<TriangleAlertIcon />{/snippet}
 
 <Toaster
   {closeButton}
   {duration}
   {expand}
-  {icons}
   {position}
   {richColors}
   {theme}
   {visibleToasts}
+  {errorIcon}
+  {infoIcon}
+  {loadingIcon}
+  {successIcon}
+  {warningIcon}
   {...restProps}
 />
