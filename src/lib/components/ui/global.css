@@ -55,10 +55,22 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --animate-skeleton: skeleton 2s -1s infinite linear;
+  --animate-indeterminate-progress: indeterminate-progress 1.5s ease-in-out infinite;
   --tw-shadow-color: #000;
   @keyframes skeleton {
     to {
       background-position: -200% 0;
+    }
+  }
+  @keyframes indeterminate-progress {
+    0% {
+      transform: translateX(-100%) scaleX(0.5);
+    }
+    50% {
+      transform: translateX(0%) scaleX(0.4);
+    }
+    100% {
+      transform: translateX(100%) scaleX(0.5);
     }
   }
 }
