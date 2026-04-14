@@ -17,7 +17,7 @@
   data-slot="field-label"
   class={cn(
     "inline-flex items-center gap-2 font-medium text-base/4.5 text-foreground sm:text-sm/4",
-    "has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col",
+    // "has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col",
     className,
   )}
   {...restProps}

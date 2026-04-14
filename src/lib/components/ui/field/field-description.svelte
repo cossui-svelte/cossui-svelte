@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { HTMLAttributes } from "svelte/elements";
+  import { Description, type DescriptionProps } from "formsnap";
   import { cn, type WithElementRef } from "$lib/utils.js";
 
   let {
@@ -7,14 +7,14 @@
     class: className,
     children,
     ...restProps
-  }: WithElementRef<HTMLAttributes<HTMLParagraphElement>> = $props();
+  }: WithElementRef<DescriptionProps> = $props();
 </script>
 
-<p
-  bind:this={ref}
+<Description
+  bind:ref
   data-slot="field-description"
   class={cn("text-muted-foreground text-xs", className)}
   {...restProps}
 >
   {@render children?.()}
-</p>
+</Description>

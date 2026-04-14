@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Label } from "$lib/components/ui/label";
-  import { cn, type WithElementRef } from "$lib/utils.js";
+  import { Legend } from "formsnap";
+  import { cn } from "$lib/utils.js";
   import type { ComponentProps } from "svelte";
 
   let {
@@ -8,14 +8,14 @@
     class: className,
     children,
     ...restProps
-  }: ComponentProps<typeof Label> = $props();
+  }: ComponentProps<typeof Legend> = $props();
 </script>
 
-<Label
+<Legend
   bind:ref
   data-slot="fieldset-legend"
   class={cn("font-semibold text-foreground", className)}
   {...restProps}
 >
   {@render children?.()}
-</Label>
+</Legend>

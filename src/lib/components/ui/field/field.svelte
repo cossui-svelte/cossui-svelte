@@ -1,21 +1,47 @@
-<script lang="ts">
-  import { cn, type WithElementRef } from "$lib/utils.js";
-  import type { HTMLAttributes } from "svelte/elements";
+<script lang="ts" module>
+  import type { FormPath } from "sveltekit-superforms";
 
-  let {
-    ref = $bindable(null),
-    class: className,
-    children,
-    ...restProps
-  }: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();
+  // the form object
+  type T = Record<string, unknown>;
+  // the path/name of the field in the form object
+  type U = unknown;
 </script>
 
-<div
-  bind:this={ref}
-  role="group"
-  data-slot="field"
-  class={cn("flex flex-col items-start gap-2", className)}
-  {...restProps}
+<script
+  lang="ts"
+  generics="T extends Record<string, unknown>, U extends FormPath<T>"
 >
-  {@render children?.()}
-</div>
+  import { Field, type FieldProps } from "formsnap";
+  import { cn } from "$lib/utils.js";
+
+  let {
+    class: className,
+    form,
+    name,
+    children: childrenProp,
+    ...restProps
+  }: FieldProps<T, U> & { class: string } = $props();
+
+  // let {
+  //   class: className,
+  //   children,
+  //   ...restProps
+  // }: ComponentProps<typeof Field> & {
+  //   class: string;
+  //   "data-slot"?: string;
+  //   children?: Snippet;
+  // } = $props();
+</script>
+
+<Field {form} {name}>
+  {#snippet children(snippetProps)}
+    <div
+      role="group"
+      data-slot="field"
+      class={cn("flex flex-col items-start gap-2", className)}
+      {...restProps}
+    >
+      {@render childrenProp?.(snippetProps)}
+    </div>
+  {/snippet}
+</Field>
