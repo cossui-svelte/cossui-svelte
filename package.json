@@ -16,7 +16,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@aejkatappaja/phantom-ui": "^0.8.1",
+    "@aejkatappaja/phantom-ui": "^0.9.0",
     "bits-ui": "^2.17.3",
     "clsx": "^2.1.1",
     "formsnap": "^2.0.1",

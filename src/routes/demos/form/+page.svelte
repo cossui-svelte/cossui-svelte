@@ -16,9 +16,14 @@
 
 <ComponentPreviewTabs>
     <Form class="max-w-64" onsubmit={onSubmit}>
-        <Field name="email">
+        <Field>
             <FieldLabel>Email</FieldLabel>
-            <Input placeholder="you@example.com" required type="email" />
+            <Input
+                name="email"
+                placeholder="you@example.com"
+                required
+                type="email"
+            />
             <FieldError>Please enter a valid email.</FieldError>
         </Field>
         <Button type="submit">Submit</Button>

@@ -1,23 +1,21 @@
 <script lang="ts">
+  import { Label } from "$lib/components/ui/label";
   import { cn, type WithElementRef } from "$lib/utils.js";
-  import type { HTMLAttributes } from "svelte/elements";
+  import type { ComponentProps } from "svelte";
 
   let {
     ref = $bindable(null),
     class: className,
-    variant = "legend",
     children,
     ...restProps
-  }: WithElementRef<HTMLAttributes<HTMLDivElement>> & {
-    variant?: "legend" | "label";
-  } = $props();
+  }: ComponentProps<typeof Label> = $props();
 </script>
 
-<div
-  bind:this={ref}
+<Label
+  bind:ref
   data-slot="fieldset-legend"
   class={cn("font-semibold text-foreground", className)}
   {...restProps}
 >
   {@render children?.()}
-</div>
+</Label>
