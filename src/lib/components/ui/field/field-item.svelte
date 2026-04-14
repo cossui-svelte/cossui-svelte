@@ -1,6 +1,6 @@
 <script lang="ts">
-  import * as Field from "$lib/components/base/field";
   import { cn } from "$lib/utils.js";
+  import type { WithElementRef } from "bits-ui";
   import type { HTMLAttributes } from "svelte/elements";
 
   let {
@@ -8,14 +8,14 @@
     class: className,
     children,
     ...restProps
-  }: Field.ItemProps & HTMLAttributes<HTMLDivElement> = $props();
+  }: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();
 </script>
 
-<Field.Item
+<div
   bind:this={ref}
   class={cn("flex", className)}
   data-slot="field-item"
   {...restProps}
 >
   {@render children?.()}
-</Field.Item>
+</div>
