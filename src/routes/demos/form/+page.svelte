@@ -4,26 +4,28 @@
     import { Field, FieldError, FieldLabel } from "$lib/components/ui/field";
     import { Form } from "$lib/components/ui/form";
     import { Input } from "$lib/components/ui/input";
+    import { defaults, superForm } from "sveltekit-superforms";
+    import { zod4, zod4Client } from "sveltekit-superforms/adapters";
+    import { z } from "zod/v4";
 
-    // const loading, setLoading = useState(false);
+    export const schema = z.object({
+        email: z.string().email("Please enter a valid email."),
+    });
 
-    const onSubmit = async (e: Event) => {
-        e.preventDefault();
-        const formData = new FormData(e.currentTarget as HTMLFormElement);
-        alert(`Email: ${formData.get("email") || ""}`);
-    };
+    const formConfig = superForm(defaults(zod4(schema)), {
+        validators: zod4Client(schema),
+        SPA: true,
+        onUpdate: ({ form: f }) => {
+            alert(`Email: ${f.data.email}`);
+        },
+    });
 </script>
 
 <ComponentPreviewTabs>
-    <Form class="max-w-64" onsubmit={onSubmit}>
-        <Field>
+    <Form form={formConfig} class="max-w-64">
+        <Field name="email">
             <FieldLabel>Email</FieldLabel>
-            <Input
-                name="email"
-                placeholder="you@example.com"
-                required
-                type="email"
-            />
+            <Input placeholder="you@example.com" required type="email" />
             <FieldError>Please enter a valid email.</FieldError>
         </Field>
         <Button type="submit">Submit</Button>

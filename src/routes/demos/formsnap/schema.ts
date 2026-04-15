@@ -1,4 +1,4 @@
-import { z } from 'zod';
+import { z } from 'zod/v4';
 
 export const themes = ['light', 'dark'] as const;
 export const languages = ['en', 'es', 'fr'] as const;

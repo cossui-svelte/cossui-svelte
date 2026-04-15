@@ -12,6 +12,12 @@
     import { defaults, superForm } from "sveltekit-superforms";
     import { zod4, zod4Client } from "sveltekit-superforms/adapters";
     import { Button } from "$lib/components/ui/button";
+    import { Input } from "$lib/components/ui/input";
+    import { Textarea } from "$lib/components/ui/textarea";
+    import Checkbox from "$lib/components/ui/checkbox/checkbox.svelte";
+    import CheckboxGroup from "$lib/components/ui/checkbox-group/checkbox-group.svelte";
+    import { Radio } from "$lib/components/ui/radio-group/index.js";
+    import RadioGroup from "$lib/components/ui/radio-group/radio-group.svelte";
 
     const formConfig = superForm(defaults(zod4(schema)), {
         validators: zod4Client(schema),
@@ -30,7 +36,7 @@
         <FieldControl>
             {#snippet children({ props })}
                 <FieldLabel>Email</FieldLabel>
-                <input {...props} type="email" bind:value={$formData.email} />
+                <Input {...props} type="email" bind:value={$formData.email} />
             {/snippet}
         </FieldControl>
         <FieldDescription>Company email is preferred</FieldDescription>
@@ -40,7 +46,7 @@
         <FieldControl>
             {#snippet children({ props })}
                 <FieldLabel>Bio</FieldLabel>
-                <textarea {...props} bind:value={$formData.bio} />
+                <Textarea {...props} bind:value={$formData.bio} />
             {/snippet}
         </FieldControl>
         <FieldDescription>Tell us a bit about yourself.</FieldDescription>
@@ -62,19 +68,20 @@
     </Field>
     <Fieldset name="theme">
         <FieldsetLegend>Select your theme</FieldsetLegend>
-        {#each themes as theme}
-            <FieldControl>
-                {#snippet children({ props })}
-                    <FieldLabel>{theme}</FieldLabel>
-                    <input
-                        {...props}
-                        type="radio"
-                        value={theme}
-                        bind:group={$formData.theme}
-                    />
-                {/snippet}
-            </FieldControl>
-        {/each}
+        <RadioGroup>
+            {#each themes as theme}
+                <FieldControl>
+                    {#snippet children({ props })}
+                        <FieldLabel>{theme}</FieldLabel>
+                        <Radio
+                            {...props}
+                            value={theme}
+                            // bind:group={$formData.theme}
+                        />
+                    {/snippet}
+                </FieldControl>
+            {/each}
+        </RadioGroup>
         <FieldDescription
             >We prefer dark mode, but the choice is yours.</FieldDescription
         >
@@ -83,11 +90,7 @@
     <Field name="marketingEmails">
         <FieldControl>
             {#snippet children({ props })}
-                <input
-                    {...props}
-                    type="checkbox"
-                    bind:checked={$formData.marketingEmails}
-                />
+                <Checkbox {...props} bind:checked={$formData.marketingEmails} />
                 <FieldLabel>I want to receive marketing emails</FieldLabel>
             {/snippet}
         </FieldControl>
@@ -98,19 +101,20 @@
     </Field>
     <Fieldset name="allergies">
         <FieldsetLegend>Food allergies</FieldsetLegend>
-        {#each allergies as allergy}
-            <FieldControl>
-                {#snippet children({ props })}
-                    <input
-                        {...props}
-                        type="checkbox"
-                        bind:group={$formData.allergies}
-                        value={allergy}
-                    />
-                    <FieldLabel>{allergy}</FieldLabel>
-                {/snippet}
-            </FieldControl>
-        {/each}
+        <CheckboxGroup aria-label="Select frameworks" value={["next"]}>
+            {#each allergies as allergy}
+                <FieldControl>
+                    {#snippet children({ props })}
+                        <Checkbox
+                            {...props}
+                            // bind:group={$formData.allergies}
+                            value={allergy}
+                        />
+                        <FieldLabel>{allergy}</FieldLabel>
+                    {/snippet}
+                </FieldControl>
+            {/each}
+        </CheckboxGroup>
         <FieldDescription
             >When we provide lunch, we'll accommodate your needs.</FieldDescription
         >

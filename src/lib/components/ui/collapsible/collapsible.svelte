@@ -4,9 +4,14 @@
 
   type Props = Collapsible.RootProps & { children?: Snippet };
 
-  let { children, ...restProps }: Props = $props();
+  let {
+    ref = $bindable(null),
+    open = $bindable(false),
+    children,
+    ...restProps
+  }: Props = $props();
 </script>
 
-<Collapsible.Root data-slot="collapsible" {...restProps}>
+<Collapsible.Root bind:ref bind:open data-slot="collapsible" {...restProps}>
   {@render children?.()}
 </Collapsible.Root>
