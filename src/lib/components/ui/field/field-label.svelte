@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Label } from "$lib/components/ui/label";
+  import { Label } from "formsnap";
   import type { HTMLAttributes } from "svelte/elements";
   import { cn } from "$lib/utils.js";
   import type { LabelRootProps } from "bits-ui";

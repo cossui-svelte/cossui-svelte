@@ -1,6 +1,5 @@
 <script lang="ts">
-  import type { FormPath } from "sveltekit-superforms";
-  import { Field, type FieldProps, type FsSuperForm } from "formsnap";
+  import { Field } from "formsnap";
   import { cn } from "$lib/utils.js";
   import { type ComponentProps } from "svelte";
   import { getFormContext } from "../form/form-context.svelte";
