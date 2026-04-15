@@ -1,36 +1,20 @@
-<script lang="ts" module>
+<script lang="ts">
   import type { FormPath } from "sveltekit-superforms";
-
-  // the form object
-  type T = Record<string, unknown>;
-  // the path/name of the field in the form object
-  type U = unknown;
-</script>
-
-<script
-  lang="ts"
-  generics="T extends Record<string, unknown>, U extends FormPath<T>"
->
-  import { Field, type FieldProps } from "formsnap";
+  import { Field, type FieldProps, type FsSuperForm } from "formsnap";
   import { cn } from "$lib/utils.js";
+  import { type ComponentProps } from "svelte";
+  import { getFormContext } from "../form/form-context.svelte";
 
   let {
     class: className,
-    form,
     name,
     children: childrenProp,
     ...restProps
-  }: FieldProps<T, U> & { class: string } = $props();
+  }: Omit<ComponentProps<typeof Field>, "form"> & {
+    class?: string;
+  } = $props();
 
-  // let {
-  //   class: className,
-  //   children,
-  //   ...restProps
-  // }: ComponentProps<typeof Field> & {
-  //   class: string;
-  //   "data-slot"?: string;
-  //   children?: Snippet;
-  // } = $props();
+  const form = getFormContext();
 </script>
 
 <Field {form} {name}>

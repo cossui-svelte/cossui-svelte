@@ -1,67 +1,71 @@
 <script lang="ts">
-    import { superForm } from "sveltekit-superforms";
     import {
         Field,
-        Control,
-        Label,
-        Description,
-        FieldErrors,
-        Fieldset,
-        Legend,
-    } from "formsnap";
-    import { zodClient } from "sveltekit-superforms/adapters";
+        FieldControl,
+        FieldLabel,
+        FieldDescription,
+        FieldError,
+    } from "$lib/components/ui/field";
+    import { Fieldset, FieldsetLegend } from "$lib/components/ui/fieldset";
     import { allergies, schema, themes } from "./schema.js";
-    import SuperDebug from "sveltekit-superforms";
+    import { Form, FormDebug } from "$lib/components/ui/form";
+    import { defaults, superForm } from "sveltekit-superforms";
+    import { zod4, zod4Client } from "sveltekit-superforms/adapters";
+    import { Button } from "$lib/components/ui/button";
 
-    let { data } = $props();
-
-    const form = superForm(data.form, {
-        validators: zodClient(schema),
+    const formConfig = superForm(defaults(zod4(schema)), {
+        validators: zod4Client(schema),
+        SPA: true,
+        onUpdate: ({ form: f }) => {
+            console.log(f.valid);
+        },
     });
-    const { form: formData, enhance } = form;
+
+    // get the formData store
+    const { form: formData } = formConfig;
 </script>
 
-<form use:enhance class="mx-auto flex max-w-md flex-col" method="POST">
-    <Field {form} name="email">
-        <Control>
+<Form form={formConfig} class="mx-auto flex max-w-md flex-col" method="POST">
+    <Field name="email">
+        <FieldControl>
             {#snippet children({ props })}
-                <Label>Email</Label>
+                <FieldLabel>Email</FieldLabel>
                 <input {...props} type="email" bind:value={$formData.email} />
             {/snippet}
-        </Control>
-        <Description>Company email is preferred</Description>
-        <FieldErrors />
+        </FieldControl>
+        <FieldDescription>Company email is preferred</FieldDescription>
+        <FieldError />
     </Field>
-    <Field {form} name="bio">
-        <Control>
+    <Field name="bio">
+        <FieldControl>
             {#snippet children({ props })}
-                <Label>Bio</Label>
+                <FieldLabel>Bio</FieldLabel>
                 <textarea {...props} bind:value={$formData.bio} />
             {/snippet}
-        </Control>
-        <Description>Tell us a bit about yourself.</Description>
-        <FieldErrors />
+        </FieldControl>
+        <FieldDescription>Tell us a bit about yourself.</FieldDescription>
+        <FieldError />
     </Field>
-    <Field {form} name="language">
-        <Control>
+    <Field name="language">
+        <FieldControl>
             {#snippet children({ props })}
-                <Label>Language</Label>
+                <FieldLabel>Language</FieldLabel>
                 <select {...props} bind:value={$formData.language}>
                     <option value="fr">French</option>
                     <option value="es">Spanish</option>
                     <option value="en">English</option>
                 </select>
             {/snippet}
-        </Control>
-        <Description>Help us address you properly.</Description>
-        <FieldErrors />
+        </FieldControl>
+        <FieldDescription>Help us address you properly.</FieldDescription>
+        <FieldError />
     </Field>
-    <Fieldset {form} name="theme">
-        <Legend>Select your theme</Legend>
+    <Fieldset name="theme">
+        <FieldsetLegend>Select your theme</FieldsetLegend>
         {#each themes as theme}
-            <Control>
+            <FieldControl>
                 {#snippet children({ props })}
-                    <Label>{theme}</Label>
+                    <FieldLabel>{theme}</FieldLabel>
                     <input
                         {...props}
                         type="radio"
@@ -69,31 +73,33 @@
                         bind:group={$formData.theme}
                     />
                 {/snippet}
-            </Control>
+            </FieldControl>
         {/each}
-        <Description>We prefer dark mode, but the choice is yours.</Description>
-        <FieldErrors />
+        <FieldDescription
+            >We prefer dark mode, but the choice is yours.</FieldDescription
+        >
+        <FieldError />
     </Fieldset>
-    <Field {form} name="marketingEmails">
-        <Control>
+    <Field name="marketingEmails">
+        <FieldControl>
             {#snippet children({ props })}
                 <input
                     {...props}
                     type="checkbox"
                     bind:checked={$formData.marketingEmails}
                 />
-                <Label>I want to receive marketing emails</Label>
+                <FieldLabel>I want to receive marketing emails</FieldLabel>
             {/snippet}
-        </Control>
-        <Description
-            >Stay up to date with our latest news and offers.</Description
+        </FieldControl>
+        <FieldDescription
+            >Stay up to date with our latest news and offers.</FieldDescription
         >
-        <FieldErrors />
+        <FieldError />
     </Field>
-    <Fieldset {form} name="allergies">
-        <Legend>Food allergies</Legend>
+    <Fieldset name="allergies">
+        <FieldsetLegend>Food allergies</FieldsetLegend>
         {#each allergies as allergy}
-            <Control>
+            <FieldControl>
                 {#snippet children({ props })}
                     <input
                         {...props}
@@ -101,15 +107,15 @@
                         bind:group={$formData.allergies}
                         value={allergy}
                     />
-                    <Label>{allergy}</Label>
+                    <FieldLabel>{allergy}</FieldLabel>
                 {/snippet}
-            </Control>
+            </FieldControl>
         {/each}
-        <Description
-            >When we provide lunch, we'll accommodate your needs.</Description
+        <FieldDescription
+            >When we provide lunch, we'll accommodate your needs.</FieldDescription
         >
-        <FieldErrors />
+        <FieldError />
     </Fieldset>
-    <button>Submit</button>
-</form>
-<SuperDebug data={$formData} />
+    <Button>Submit</Button>
+</Form>
+<FormDebug {formData} />
