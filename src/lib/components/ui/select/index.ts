@@ -8,12 +8,14 @@ import ScrollDownButton from './select-scroll-down-button.svelte';
 import ScrollUpButton from './select-scroll-up-button.svelte';
 import Separator from './select-separator.svelte';
 import Trigger, { selectTriggerVariants } from './select-trigger.svelte';
+import Value from './select-value.svelte';
 
 const Root = SelectPrimitive.Root;
 const Group = SelectPrimitive.Group;
 
 export {
   Content as SelectContent,
+  Content as SelectPopup,
   Group as SelectGroup,
   GroupHeading as SelectGroupLabel,
   Item as SelectItem,
@@ -23,5 +25,6 @@ export {
   SelectPrimitive,
   Separator as SelectSeparator,
   selectTriggerVariants,
-  Trigger as SelectTrigger
+  Trigger as SelectTrigger,
+  Value as SelectValue
 };

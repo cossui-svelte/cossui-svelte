@@ -25,7 +25,7 @@
     const { form: formData } = formConfig;
 </script>
 
-<Form form={formConfig} class="mx-auto flex max-w-md flex-col" method="POST">
+<Form form={formConfig} class="mx-auto flex max-w-md flex-col" method="post">
     <Field name="email">
         <FieldControl>
             {#snippet children({ props })}

@@ -1,5 +1,5 @@
-<script lang="ts">
-  import type { HTMLAttributes } from "svelte/elements";
+<script lang="ts" generics="T extends Record<string, unknown>">
+  import type { HTMLFormAttributes } from "svelte/elements";
   import { cn, type WithElementRef } from "$lib/utils.js";
   import { setFormContext } from "./form-context.svelte";
   import { type SuperForm } from "sveltekit-superforms";
@@ -11,8 +11,8 @@
     form,
     ...restProps
   }: WithElementRef<
-    HTMLAttributes<HTMLFormElement> & {
-      form: SuperForm<Record<string, unknown>>;
+    HTMLFormAttributes & {
+      form: SuperForm<T>;
     }
   > = $props();
 

@@ -1,8 +1,8 @@
 <script lang="ts">
     import {
-        AlignCenterIcon,
-        AlignLeftIcon,
-        AlignRightIcon,
+        TextAlignCenter,
+        TextAlignStart,
+        TextAlignEnd,
         DollarSignIcon,
         PercentIcon,
     } from "lucide-svelte";
@@ -13,7 +13,7 @@
         SelectPopup,
         SelectTrigger,
         SelectValue,
-    } from "$lib/components/ui/select/gen.old";
+    } from "$lib/components/ui/select";
     import {
         ToggleGroup,
         ToggleGroupItem,
@@ -40,12 +40,12 @@
 
 <TooltipProvider>
     <Toolbar>
-        <ToggleGroup class="border-none p-0" defaultValue={["left"]}>
+        <ToggleGroup class="border-none p-0" value={["left"]}>
             <Tooltip>
                 <TooltipTrigger>
                     <ToolbarButton aria-label="Align left">
                         <ToggleGroupItem value="left" />
-                        <AlignLeftIcon />
+                        <TextAlignStart />
                     </ToolbarButton>
                 </TooltipTrigger>
                 <TooltipPopup sideOffset={8}>Align left</TooltipPopup>
@@ -58,9 +58,8 @@
                             value="center"
                         />
 
-                        <AlignCenterIcon />
+                        <TextAlignCenter />
                     </ToolbarButton>
-                    }
                 </TooltipTrigger>
                 <TooltipPopup sideOffset={8}>Align center</TooltipPopup>
             </Tooltip>
@@ -71,7 +70,7 @@
                             aria-label="Toggle right"
                             value="right"
                         >
-                            <AlignRightIcon /></ToggleGroupItem
+                            <TextAlignEnd /></ToggleGroupItem
                         >
                     </ToolbarButton>
                 </TooltipTrigger>
