@@ -16,14 +16,16 @@
     import { Textarea } from "$lib/components/ui/textarea";
     import Checkbox from "$lib/components/ui/checkbox/checkbox.svelte";
     import CheckboxGroup from "$lib/components/ui/checkbox-group/checkbox-group.svelte";
-    import { Radio } from "$lib/components/ui/radio-group/index.js";
-    import RadioGroup from "$lib/components/ui/radio-group/radio-group.svelte";
+    import { Radio, RadioGroup } from "$lib/components/ui/radio-group/index.js";
 
     const formConfig = superForm(defaults(zod4(schema)), {
         validators: zod4Client(schema),
         SPA: true,
         onUpdate: ({ form: f }) => {
             console.log(f.valid);
+        },
+        onChange: (e) => {
+            console.log("changed", e);
         },
     });
 

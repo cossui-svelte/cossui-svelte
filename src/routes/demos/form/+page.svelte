@@ -11,37 +11,42 @@
     import { Input } from "$lib/components/ui/input";
     import { defaults, superForm } from "sveltekit-superforms";
     import { zod4, zod4Client } from "sveltekit-superforms/adapters";
-    import { z } from "zod/v4";
-
-    export const schema = z.object({
-        email: z.string().email("Please enter a valid email HEHE."),
-    });
+    import { schema } from "./schema";
 
     const formConfig = superForm(defaults(zod4(schema)), {
-        validators: zod4Client(schema),
         SPA: true,
+        validators: zod4Client(schema),
+        validationMethod: "oninput",
         onUpdate: ({ form: f }) => {
-            if (f.valid) alert(`Email: ${f.data.email}`);
+            if (f.valid) console.log(`Email: ${f.data.email}`);
+            else console.log("Form is invalid! " + f.data.email);
         },
     });
-    const { form: formData } = formConfig;
+
+    const { form: formData, enhance } = formConfig;
 </script>
 
 <ComponentPreviewTabs>
     <Form form={formConfig} class="max-w-64">
-        <Field name="email">
-            <FieldControl>
-                {#snippet children({ props })}
-                    <FieldLabel>Email</FieldLabel>
-                    <Input
-                        {...props}
-                        type="email"
-                        bind:value={$formData.email}
-                    />
-                {/snippet}
-            </FieldControl>
-            <FieldError />
-        </Field>
-        <Button type="submit">Submit</Button>
-    </Form>
+        <form use:enhance>
+            <Field name="email">
+                <FieldControl>
+                    {#snippet children({ props })}
+                        <FieldLabel>Email</FieldLabel>
+                        <input
+                            type="email"
+                            onchange={() => {
+                                console.log("onchange");
+                                formConfig.validate("email");
+                            }}
+                            bind:value={$formData.email}
+                            {...props}
+                        />
+                    {/snippet}
+                </FieldControl>
+                <FieldError />
+            </Field>
+            <Button type="submit">Submit</Button>
+        </form></Form
+    >
 </ComponentPreviewTabs>
