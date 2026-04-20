@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Description, type DescriptionProps } from "formsnap";
+  import { Description, type DescriptionProps } from "$lib/formsnap";
   import { cn, type WithElementRef } from "$lib/utils.js";
 
   let {

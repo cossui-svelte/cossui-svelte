@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { FieldErrors, type FieldErrorsProps } from "formsnap";
+  import { FieldErrors, type FieldErrorsProps } from "$lib/formsnap";
   import { cn, type WithElementRef } from "$lib/utils.js";
 
   let {

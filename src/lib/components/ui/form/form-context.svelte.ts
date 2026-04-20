@@ -10,7 +10,9 @@ export function setFormContext<T extends Record<string, unknown>>(form: SuperFor
 export function getFormContext<T extends Record<string, unknown>>(): SuperForm<T> {
   const ctx = getContext<SuperForm<T>>(FORM_KEY);
   if (!ctx) {
-    throw new Error('Cossui Form context not found. Make sure to wrap your component with a <Form> provider.');
+    throw new Error(
+      'Cossui Form context not found. Make sure to wrap your component with a <Form> provider.'
+    );
   }
   return ctx;
 }

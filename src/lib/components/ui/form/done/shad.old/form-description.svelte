@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as FormPrimitive from "formsnap";
+	import * as FormPrimitive from "$lib/formsnap";
 	import { cn, type WithoutChild } from "$lib/utils.js";
 
 	let {

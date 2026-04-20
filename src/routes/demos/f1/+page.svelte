@@ -1,5 +1,11 @@
 <script lang="ts">
-    import { Field, Control, Label, FieldErrors, Description } from "formsnap";
+    import {
+        Field,
+        Control,
+        Label,
+        FieldErrors,
+        Description,
+    } from "$lib/formsnap";
     import { signupFormSchema } from "./schema.js";
     import { zodClient } from "sveltekit-superforms/adapters";
     import { superForm } from "sveltekit-superforms";

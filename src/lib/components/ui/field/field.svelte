@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Field } from "formsnap";
+  import { Field } from "$lib/formsnap";
   import { cn } from "$lib/utils.js";
   import { type ComponentProps } from "svelte";
   import { getFormContext } from "../form/form-context.svelte";

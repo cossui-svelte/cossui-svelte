@@ -1,6 +1,6 @@
 <script lang="ts" generics="T extends Record<string, unknown>">
   import type { FormPath } from "sveltekit-superforms";
-  import { Fieldset } from "formsnap";
+  import { Fieldset } from "$lib/formsnap";
   import { cn } from "$lib/utils.js";
   import type { ComponentProps, Snippet } from "svelte";
   import { getFormContext } from "../form/form-context.svelte";

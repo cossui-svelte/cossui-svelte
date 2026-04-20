@@ -1,127 +1,149 @@
 <script lang="ts">
-    import {
-        Field,
-        FieldControl,
-        FieldLabel,
-        FieldDescription,
-        FieldError,
-    } from "$lib/components/ui/field";
-    import { Fieldset, FieldsetLegend } from "$lib/components/ui/fieldset";
-    import { allergies, schema, themes } from "./schema.js";
-    import { Form, FormDebug } from "$lib/components/ui/form";
-    import { defaults, superForm } from "sveltekit-superforms";
-    import { zod4, zod4Client } from "sveltekit-superforms/adapters";
-    import { Button } from "$lib/components/ui/button";
-    import { Input } from "$lib/components/ui/input";
-    import { Textarea } from "$lib/components/ui/textarea";
-    import Checkbox from "$lib/components/ui/checkbox/checkbox.svelte";
-    import CheckboxGroup from "$lib/components/ui/checkbox-group/checkbox-group.svelte";
-    import { Radio, RadioGroup } from "$lib/components/ui/radio-group/index.js";
+    import { superForm } from "sveltekit-superforms";
+    import { valibotClient } from "sveltekit-superforms/adapters";
+    import { Field, Control, Label, FieldErrors } from "$lib/formsnap";
+    import { userSchema } from "./schema";
+    import type { PageData } from "./$types";
 
-    const formConfig = superForm(defaults(zod4(schema)), {
-        validators: zod4Client(schema),
+    export let data: PageData;
+
+    const sf = superForm(data.form, {
         SPA: true,
-        onUpdate: ({ form: f }) => {
-            console.log(f.valid);
-        },
-        onChange: (e) => {
-            console.log("changed", e);
+        validators: valibotClient(userSchema),
+        validationMethod: "oninput",
+        scrollToError: "smooth",
+        resetForm: true,
+        onUpdated({ form }) {
+            if (form.valid) {
+                alert("Form submitted successfully!");
+            }
         },
     });
 
-    // get the formData store
-    const { form: formData } = formConfig;
+    const { form, enhance, submitting, delayed } = sf;
 </script>
 
-<Form form={formConfig} class="mx-auto flex max-w-md flex-col" method="post">
-    <Field name="email">
-        <FieldControl>
-            {#snippet children({ props })}
-                <FieldLabel>Email</FieldLabel>
-                <Input {...props} type="email" bind:value={$formData.email} />
-            {/snippet}
-        </FieldControl>
-        <FieldDescription>Company email is preferred</FieldDescription>
-        <FieldError />
-    </Field>
-    <Field name="bio">
-        <FieldControl>
-            {#snippet children({ props })}
-                <FieldLabel>Bio</FieldLabel>
-                <Textarea {...props} bind:value={$formData.bio} />
-            {/snippet}
-        </FieldControl>
-        <FieldDescription>Tell us a bit about yourself.</FieldDescription>
-        <FieldError />
-    </Field>
-    <Field name="language">
-        <FieldControl>
-            {#snippet children({ props })}
-                <FieldLabel>Language</FieldLabel>
-                <select {...props} bind:value={$formData.language}>
-                    <option value="fr">French</option>
-                    <option value="es">Spanish</option>
-                    <option value="en">English</option>
-                </select>
-            {/snippet}
-        </FieldControl>
-        <FieldDescription>Help us address you properly.</FieldDescription>
-        <FieldError />
-    </Field>
-    <Fieldset name="theme">
-        <FieldsetLegend>Select your theme</FieldsetLegend>
-        <RadioGroup>
-            {#each themes as theme}
-                <FieldControl>
-                    {#snippet children({ props })}
-                        <FieldLabel>{theme}</FieldLabel>
-                        <Radio
-                            {...props}
-                            value={theme}
-                            // bind:group={$formData.theme}
-                        />
-                    {/snippet}
-                </FieldControl>
-            {/each}
-        </RadioGroup>
-        <FieldDescription
-            >We prefer dark mode, but the choice is yours.</FieldDescription
-        >
-        <FieldError />
-    </Fieldset>
-    <Field name="marketingEmails">
-        <FieldControl>
-            {#snippet children({ props })}
-                <Checkbox {...props} bind:checked={$formData.marketingEmails} />
-                <FieldLabel>I want to receive marketing emails</FieldLabel>
-            {/snippet}
-        </FieldControl>
-        <FieldDescription
-            >Stay up to date with our latest news and offers.</FieldDescription
-        >
-        <FieldError />
-    </Field>
-    <Fieldset name="allergies">
-        <FieldsetLegend>Food allergies</FieldsetLegend>
-        <CheckboxGroup aria-label="Select frameworks" value={["next"]}>
-            {#each allergies as allergy}
-                <FieldControl>
-                    {#snippet children({ props })}
-                        <Checkbox
-                            {...props}
-                            // bind:group={$formData.allergies}
-                            value={allergy}
-                        />
-                        <FieldLabel>{allergy}</FieldLabel>
-                    {/snippet}
-                </FieldControl>
-            {/each}
-        </CheckboxGroup>
-        <FieldDescription
-            >When we provide lunch, we'll accommodate your needs.</FieldDescription
-        >
-        <FieldError />
-    </Fieldset>
-    <Button>Submit</Button>
-</Form>
-<FormDebug {formData} />
+<main>
+    <h1>Register</h1>
+
+    <form method="POST" use:enhance novalidate>
+        <Field form={sf} name="name">
+            <Control>
+                {#snippet children({ props })}
+                    <Label>Name</Label>
+                    <input type="text" bind:value={$form.name} {...props} />
+                {/snippet}
+            </Control>
+            <FieldErrors />
+        </Field>
+
+        <Field form={sf} name="email">
+            <Control>
+                {#snippet children({ props })}
+                    <Label>Email</Label>
+                    <input type="email" bind:value={$form.email} {...props} />
+                {/snippet}
+            </Control>
+            <FieldErrors />
+        </Field>
+
+        <Field form={sf} name="age">
+            <Control>
+                {#snippet children({ props })}
+                    <Label>Age</Label>
+                    <input type="number" bind:value={$form.age} {...props} />
+                {/snippet}
+            </Control>
+            <FieldErrors />
+        </Field>
+
+        <Field form={sf} name="password">
+            <Control>
+                {#snippet children({ props })}
+                    <Label>Password</Label>
+                    <input
+                        type="password"
+                        bind:value={$form.password}
+                        {...props}
+                    />
+                {/snippet}
+            </Control>
+            <FieldErrors />
+        </Field>
+
+        <Field form={sf} name="confirmPassword">
+            <Control>
+                {#snippet children({ props })}
+                    <Label>Confirm Password</Label>
+                    <input
+                        type="password"
+                        bind:value={$form.confirmPassword}
+                        {...props}
+                    />
+                {/snippet}
+            </Control>
+            <FieldErrors />
+        </Field>
+
+        <button type="submit" disabled={$submitting}>
+            {$delayed ? "Submitting…" : "Submit"}
+        </button>
+    </form>
+</main>
+
+<style>
+    main {
+        max-width: 480px;
+        margin: 3rem auto;
+        font-family: sans-serif;
+        padding: 0 1rem;
+    }
+
+    h1 {
+        margin-bottom: 1.5rem;
+    }
+
+    :global([data-fs-field]) {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        margin-bottom: 1.25rem;
+    }
+
+    :global([data-fs-label]) {
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+
+    input {
+        padding: 0.5rem 0.75rem;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 1rem;
+    }
+
+    input[aria-invalid="true"] {
+        border-color: crimson;
+    }
+
+    :global([data-fs-field-errors]) {
+        color: crimson;
+        font-size: 0.82rem;
+    }
+
+    button {
+        margin-top: 0.5rem;
+        padding: 0.6rem 1.5rem;
+        background: #4f46e5;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+
+    button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+</style>

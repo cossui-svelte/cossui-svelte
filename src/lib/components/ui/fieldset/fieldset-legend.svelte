@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Legend } from "formsnap";
+  import { Legend } from "$lib/formsnap";
   import { cn } from "$lib/utils.js";
   import type { ComponentProps } from "svelte";
 

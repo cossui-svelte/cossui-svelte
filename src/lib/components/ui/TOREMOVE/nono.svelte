@@ -11,7 +11,7 @@
     lang="ts"
     generics="T extends Record<string, unknown>, U extends FormPath<T>"
 >
-    import { Field, type FieldProps, FieldErrors } from "formsnap";
+    import { Field, type FieldProps, FieldErrors } from "$lib/formsnap";
     import type { SuperForm } from "sveltekit-superforms";
 
     let { form, name, children: childrenProp }: FieldProps<T, U> = $props();

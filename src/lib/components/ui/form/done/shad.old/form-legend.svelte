@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as FormPrimitive from "formsnap";
+	import * as FormPrimitive from "$lib/formsnap";
 	import { cn, type WithoutChild } from "$lib/utils.js";
 
 	let {
@@ -11,6 +11,9 @@
 
 <FormPrimitive.Legend
 	bind:ref
-	class={cn("data-[fs-error]:text-destructive text-sm leading-none font-medium", className)}
+	class={cn(
+		"data-[fs-error]:text-destructive text-sm leading-none font-medium",
+		className,
+	)}
 	{...restProps}
 />
