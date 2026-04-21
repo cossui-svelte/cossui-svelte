@@ -38,6 +38,17 @@ A component that renders a label element associated with a form control, and mus
 		<input type="text" name="first_name" {...props} bind:value={$formData.first_name} />
 	{/snippet}
 </Control>
+
+// or
+
+<Field name="f1">
+	<Label>First Name</Label>
+	<Control>
+		{#snippet children({ props })}
+			<input type="text" name="first_name" {...props} bind:value={$formData.first_name} />
+		{/snippet}
+	</Control>
+</Field>
 ```
 
 ### `child` Snippet Props

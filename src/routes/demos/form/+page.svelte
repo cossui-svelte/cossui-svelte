@@ -38,14 +38,13 @@
 
 <ComponentPreviewTabs>
     <Form form={formConfig} class="max-w-64">
+        <FieldLabel>Email</FieldLabel>
         <Field name="email">
             <FieldControl>
                 {#snippet children({ props })}
-                    <FieldLabel>Email</FieldLabel>
                     <Input
                         type="email"
                         onchange={() => {
-                            console.log("onchange");
                             formConfig.validate("email");
                         }}
                         bind:value={$formData.email}
