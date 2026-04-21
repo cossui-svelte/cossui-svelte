@@ -40,7 +40,7 @@ export type ControlAttrs = {
  */
 export type LabelAttrs = {
 	/** The ID of the control, used for label association. */
-	for: string;
+	for: string | undefined;
 
 	/** Present when a validation error exists on the field. */
 	"data-fs-error": string | undefined;

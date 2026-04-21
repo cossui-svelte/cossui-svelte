@@ -9,7 +9,7 @@ import {
 import { fromStore } from "svelte/store";
 import type { FormPath, InputConstraint, InputConstraints } from "sveltekit-superforms";
 import type { FormPathArrays, TaintedFields, ValidationErrors } from "sveltekit-superforms/client";
-import { getContext, setContext } from "svelte";
+import { getContext, hasContext, setContext } from "svelte";
 import { extractErrorArray } from "./internal/utils/errors.js";
 import { getValueAtPath } from "./internal/utils/path.js";
 import {
@@ -75,6 +75,7 @@ class FormFieldState<T extends Record<string, unknown>, U extends FormPath<T>> {
 	descriptionNode = $state<HTMLElement | null>(null);
 	errorId = $state<string>();
 	descriptionId = $state<string>();
+	controlId = $state<string | undefined>();
 
 	constructor(props: FormFieldStateProps<T, U>) {
 		this.#name = props.name;
@@ -143,6 +144,9 @@ class ElementFieldState<T extends Record<string, unknown>, U extends FormPath<T>
 	);
 	errorNode = $state<HTMLElement | null>(null);
 	descriptionNode = $state<HTMLElement | null>(null);
+	errorId = $state<string>();
+	descriptionId = $state<string>();
+	controlId = $state<string | undefined>();
 	// fall back to the parent field's description node if one for
 	// this specific element doesn't exist.
 	derivedDescriptionNode = $derived.by(() => {
@@ -156,8 +160,6 @@ class ElementFieldState<T extends Record<string, unknown>, U extends FormPath<T>
 			U
 		>;
 	});
-	errorId = $state<string>();
-	descriptionId = $state<string>();
 
 	constructor(props: ElementFieldStateProps<T, U>, field: FieldState<T, U>) {
 		this.#name = props.name;
@@ -297,6 +299,10 @@ class ControlState {
 				this.id = v;
 			}
 		);
+
+		$effect(() => {
+			field.controlId = this.id;
+		});
 	}
 
 	props = $derived.by(
@@ -332,14 +338,22 @@ type LabelStateProps = WithRefProps;
 class LabelState {
 	#ref: LabelStateProps["ref"];
 	#id: LabelStateProps["id"];
-	control: ControlState;
+	control: ControlState | undefined;
+	field: FieldState<Record<string, unknown>, string> | undefined;
 
-	constructor(props: LabelStateProps, control: ControlState) {
+	constructor(
+		props: LabelStateProps,
+		control: ControlState | undefined,
+		field?: FieldState<Record<string, unknown>, string>
+	) {
 		this.#ref = props.ref;
 		this.#id = props.id;
-		// TODO: to me the bug is here... it should reference field, not control
 		this.control = control;
-		this.control.labelId = this.#id;
+		this.field = field;
+
+		if (control) {
+			control.labelId = this.#id;
+		}
 
 		useRefById({
 			id: this.#id,
@@ -347,8 +361,17 @@ class LabelState {
 		});
 	}
 
-	get props() {
-		return this.control.labelProps;
+	get props(): LabelAttrs {
+		if (this.control) {
+			return this.control.labelProps;
+		}
+		const field = this.field!;
+		return {
+			id: this.#id.current,
+			"data-fs-label": "",
+			"data-fs-error": getDataFsError(field.errors),
+			for: field.controlId,
+		};
 	}
 }
 
@@ -422,10 +445,10 @@ export function _getFormControl() {
 	return getContext<ControlState>(FORM_CONTROL_CTX);
 }
 
-// TODO: Le ptoblem est la ----- 
-//  ca reference Control, ca devrait referencer Field
 export function useLabel(props: LabelStateProps) {
-	return new LabelState(props, _getFormControl());
+	const control = hasContext(FORM_CONTROL_CTX) ? getContext<ControlState>(FORM_CONTROL_CTX) : undefined;
+	const field = control ? undefined : getField();
+	return new LabelState(props, control, field);
 }
 
 export function useLegend(props: LegendStateProps) {
