@@ -68,7 +68,7 @@ class FormFieldState<T extends Record<string, unknown>, U extends FormPath<T>> {
 	tainted = $derived.by(() =>
 		this.#formTainted.current
 			? getValueAtPath(this.#name.current, structuredClone(this.#formTainted.current)) ===
-				true
+			true
 			: false
 	);
 	errorNode = $state<HTMLElement | null>(null);
@@ -337,6 +337,7 @@ class LabelState {
 	constructor(props: LabelStateProps, control: ControlState) {
 		this.#ref = props.ref;
 		this.#id = props.id;
+		// TODO: to me the bug is here... it should reference field, not control
 		this.control = control;
 		this.control.labelId = this.#id;
 
@@ -421,6 +422,8 @@ export function _getFormControl() {
 	return getContext<ControlState>(FORM_CONTROL_CTX);
 }
 
+// TODO: Le ptoblem est la ----- 
+//  ca reference Control, ca devrait referencer Field
 export function useLabel(props: LabelStateProps) {
 	return new LabelState(props, _getFormControl());
 }

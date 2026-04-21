@@ -19,13 +19,13 @@
   setFormContext(form);
 </script>
 
-<!-- <form
+<form
   novalidate
   bind:this={ref}
   use:form.enhance
   class={cn("flex w-full flex-col gap-4", className)}
   data-slot="form"
   {...restProps}
-> -->
-{@render children?.()}
-<!-- </form> -->
+>
+  {@render children?.()}
+</form>

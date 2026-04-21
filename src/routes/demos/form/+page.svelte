@@ -13,6 +13,8 @@
     import { zod4, zod4Client } from "sveltekit-superforms/adapters";
     import { schema } from "./schema";
 
+    let loading = $state(false);
+
     const formConfig = superForm(defaults(zod4(schema)), {
         SPA: true,
         validators: zod4Client(schema),
@@ -24,29 +26,35 @@
     });
 
     const { form: formData, enhance } = formConfig;
+
+    function onsubmit() {
+        loading = true;
+        setTimeout(() => {
+            loading = false;
+            alert(`valid Email: ${$formData.email || ""}`);
+        }, 1000);
+    }
 </script>
 
 <ComponentPreviewTabs>
     <Form form={formConfig} class="max-w-64">
-        <form use:enhance>
-            <Field name="email">
-                <FieldControl>
-                    {#snippet children({ props })}
-                        <FieldLabel>Email</FieldLabel>
-                        <input
-                            type="email"
-                            onchange={() => {
-                                console.log("onchange");
-                                formConfig.validate("email");
-                            }}
-                            bind:value={$formData.email}
-                            {...props}
-                        />
-                    {/snippet}
-                </FieldControl>
-                <FieldError />
-            </Field>
-            <Button type="submit">Submit</Button>
-        </form></Form
-    >
+        <Field name="email">
+            <FieldControl>
+                {#snippet children({ props })}
+                    <FieldLabel>Email</FieldLabel>
+                    <Input
+                        type="email"
+                        onchange={() => {
+                            console.log("onchange");
+                            formConfig.validate("email");
+                        }}
+                        bind:value={$formData.email}
+                        {...props}
+                    />
+                {/snippet}
+            </FieldControl>
+            <FieldError />
+        </Field>
+        <Button {loading} type="submit" {onsubmit}>Submit</Button>
+    </Form>
 </ComponentPreviewTabs>

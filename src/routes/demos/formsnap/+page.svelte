@@ -28,9 +28,9 @@
 
     <form method="POST" use:enhance novalidate>
         <Field form={sf} name="name">
+            <Label>Name</Label>
             <Control>
                 {#snippet children({ props })}
-                    <Label>Name</Label>
                     <input type="text" bind:value={$form.name} {...props} />
                 {/snippet}
             </Control>
