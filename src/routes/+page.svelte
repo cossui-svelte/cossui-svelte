@@ -81,7 +81,7 @@
       {description}
     </p>
     <div class="mt-2 flex gap-2">
-      <Button href="/docs" size="lg">Get started</Button>
+      <Button href="/demos" size="lg">Get started</Button>
       <Button href="/particles" size="lg" variant="outline">
         Browse {particleCount} particles
       </Button>

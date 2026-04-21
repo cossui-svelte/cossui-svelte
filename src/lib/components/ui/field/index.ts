@@ -1,4 +1,4 @@
-import { Control as FieldControl } from 'formsnap';
+import { Control as FieldControl } from '$lib/formsnap';
 import Field from './field.svelte';
 import FieldDescription from './field-description.svelte';
 import FieldError from './field-error.svelte';
