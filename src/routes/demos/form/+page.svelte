@@ -38,8 +38,8 @@
 
 <ComponentPreviewTabs>
     <Form form={formConfig} class="max-w-64">
-        <FieldLabel>Email</FieldLabel>
         <Field name="email">
+            <FieldLabel>Email</FieldLabel>
             <FieldControl>
                 {#snippet children({ props })}
                     <Input

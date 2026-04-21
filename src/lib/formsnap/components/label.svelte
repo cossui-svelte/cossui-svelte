@@ -2,7 +2,11 @@
 	import { box, mergeProps } from "svelte-toolbelt";
 	import type { LabelProps } from "./types.js";
 	import { useId } from "$lib/formsnap/internal/utils/id.js";
-	import { useLabel } from "$lib/formsnap/formsnap.svelte.js";
+	import {
+		getField,
+		getFormControl2,
+		useLabel,
+	} from "$lib/formsnap/formsnap.svelte.js";
 
 	let {
 		id = useId(),
@@ -11,6 +15,14 @@
 		child,
 		...restProps
 	}: LabelProps = $props();
+
+	const formField = getField();
+	const control = getFormControl2();
+	if (!formField && !control) {
+		throw new Error(
+			"Label must be used within a Field or Control component",
+		);
+	}
 
 	const labelState = useLabel({
 		id: box.with(() => id),

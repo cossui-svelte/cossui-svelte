@@ -526,6 +526,10 @@ export type UseFormControlProps = {
 	id?: Getter<string | undefined | null>;
 };
 
+export function getFormControl2() {
+	return getContext<ControlState>(FORM_CONTROL_CTX);
+}
+
 export function useFormControl(props: UseFormControlProps) {
 	const controlState = getContext<ControlState>(FORM_CONTROL_CTX);
 	const id = $derived(props.id ? props.id() : undefined);
