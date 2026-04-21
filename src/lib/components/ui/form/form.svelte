@@ -20,11 +20,11 @@
 </script>
 
 <form
-  novalidate
   bind:this={ref}
   use:form.enhance
   class={cn("flex w-full flex-col gap-4", className)}
   data-slot="form"
+  novalidate
   {...restProps}
 >
   {@render children?.()}
