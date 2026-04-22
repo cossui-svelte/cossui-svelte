@@ -24,7 +24,7 @@
 
 <svelte:head>
   <title
-    >A new, modern UI component library built on top of Base UI - coss ui</title
+    >A new, modern UI component library built on top of Bits UI - coss ui-svelte</title
   >
   <meta name="description" content={description} />
 </svelte:head>

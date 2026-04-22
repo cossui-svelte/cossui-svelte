@@ -13,12 +13,12 @@
 
 <svelte:head>
   <title
-    >coss ui - A new, modern UI component library built on top of Base UI. Built
-    for developers and AI.</title
+    >coss ui-svelte - A new, modern UI component library built on top of Bits
+    UI. Built for developers and AI.</title
   >
   <meta
     name="description"
-    content="coss ui is a collection of accessible, and composable React components. Built on top of Base UI and styled with Tailwind CSS,"
+    content="coss ui-svelte is a collection of accessible, and composable React components. Built on top of Bits UI and styled with Tailwind CSS,"
   />
 </svelte:head>
 
