@@ -1,31 +1,31 @@
 <script lang="ts">
     import ComponentPreviewTabs from "$lib/components/app/ComponentPreviewTabs.svelte";
     import { Button } from "$lib/components/ui/button";
-    import {
-        Field,
-        FieldControl,
-        FieldError,
-        FieldLabel,
-    } from "$lib/components/ui/field";
+    import { Field, FieldError, FieldLabel } from "$lib/components/ui/field";
     import { Form } from "$lib/components/ui/form";
     import { Input } from "$lib/components/ui/input";
-    import { defaults, superForm } from "sveltekit-superforms";
-    import { zod4, zod4Client } from "sveltekit-superforms/adapters";
+    import { superForm } from "sveltekit-superforms";
+    import { valibotClient } from "sveltekit-superforms/adapters";
     import { schema } from "./schema";
+
+    let { data } = $props();
 
     let loading = $state(false);
 
-    const formConfig = superForm(defaults(zod4(schema)), {
+    const formConfig = superForm(data.form, {
         SPA: true,
-        validators: zod4Client(schema),
+        validators: valibotClient(schema),
         validationMethod: "oninput",
-        onUpdate: ({ form: f }) => {
-            if (f.valid) console.log(`Email: ${f.data.email}`);
-            else console.log("Form is invalid! " + f.data.email);
+        scrollToError: "smooth",
+        resetForm: true,
+        onUpdated({ form }) {
+            if (form.valid) {
+                alert("Form submitted successfully!");
+            }
         },
     });
 
-    const { form: formData, enhance } = formConfig;
+    const { form: formData, submitting, delayed } = formConfig;
 
     function onsubmit() {
         loading = true;
@@ -40,20 +40,11 @@
     <Form form={formConfig} class="max-w-64">
         <Field name="email">
             <FieldLabel>Email</FieldLabel>
-            <FieldControl>
-                {#snippet children({ props })}
-                    <Input
-                        type="email"
-                        onchange={() => {
-                            formConfig.validate("email");
-                        }}
-                        bind:value={$formData.email}
-                        {...props}
-                    />
-                {/snippet}
-            </FieldControl>
+            <Input type="email" bind:value={$formData.email} />
             <FieldError />
         </Field>
-        <Button {loading} type="submit" {onsubmit}>Submit</Button>
+        <Button type="submit" disabled={$submitting} loading={$submitting}>
+            {$delayed ? "Submitting…" : "Submit"}
+        </Button>
     </Form>
 </ComponentPreviewTabs>

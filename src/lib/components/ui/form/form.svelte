@@ -22,6 +22,7 @@
 <form
   bind:this={ref}
   use:form.enhance
+  method="POST"
   class={cn("flex w-full flex-col gap-4", className)}
   data-slot="form"
   novalidate

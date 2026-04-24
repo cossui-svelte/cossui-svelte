@@ -1,6 +1,8 @@
 <script lang="ts">
   import type { HTMLInputAttributes } from "svelte/elements";
   import { cn } from "$lib/utils.js";
+  import { Control } from "$lib/formsnap";
+  import { getField } from "$lib/formsnap/formsnap.svelte";
 
   interface Props extends Omit<HTMLInputAttributes, "size"> {
     ref?: HTMLInputElement | null;
@@ -40,13 +42,29 @@
   data-size={size}
   data-slot="input-control"
 >
-  <input
-    class={inputClassName}
-    bind:this={ref}
-    data-slot="input"
-    {value}
-    {type}
-    size={typeof size === "number" ? size : undefined}
-    {...restProps}
-  />
+  {#if getField()}
+    <Control>
+      {#snippet children({ props })}
+        <input
+          class={inputClassName}
+          bind:this={ref}
+          data-slot="input"
+          {value}
+          {type}
+          size={typeof size === "number" ? size : undefined}
+          {...props}
+        />
+      {/snippet}
+    </Control>
+  {:else}
+    <input
+      class={inputClassName}
+      bind:this={ref}
+      data-slot="input"
+      {value}
+      {type}
+      size={typeof size === "number" ? size : undefined}
+      {...restProps}
+    />
+  {/if}
 </span>

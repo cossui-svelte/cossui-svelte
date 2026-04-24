@@ -51,7 +51,7 @@ A component that renders a label element associated with a form control, and mus
 	{/snippet}
 </Control>
 
-// or
+// or (modified for cossui compatibility)
 
 <Field name="f1">
 	<Label>First Name</Label>

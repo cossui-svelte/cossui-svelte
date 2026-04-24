@@ -17,5 +17,5 @@ export const userSchema = v.pipe(v.object({
   )
 );
 
-export type UserSchema = v.InferOutput<typeof userSchema>
+// export type UserSchema = v.InferOutput<typeof userSchema>
 

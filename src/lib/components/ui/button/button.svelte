@@ -21,7 +21,7 @@
   {...restProps}
 >
   {#if loading === true}
-    <Spinner />
+    <Spinner /> {@render children?.()}
   {:else}
     {@render children?.()}
   {/if}

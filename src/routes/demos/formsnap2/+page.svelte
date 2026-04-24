@@ -26,59 +26,11 @@
     <h1>Register</h1>
 
     <form method="POST" use:enhance novalidate>
-        <Field form={sf} name="name">
-            <Label>Name</Label>
-            <Control>
-                {#snippet children({ props })}
-                    <input type="text" bind:value={$form.name} {...props} />
-                {/snippet}
-            </Control>
-            <FieldErrors />
-        </Field>
-
         <Field form={sf} name="email">
             <Control>
                 {#snippet children({ props })}
                     <Label>Email</Label>
                     <input type="email" bind:value={$form.email} {...props} />
-                {/snippet}
-            </Control>
-            <FieldErrors />
-        </Field>
-
-        <Field form={sf} name="age">
-            <Control>
-                {#snippet children({ props })}
-                    <Label>Age</Label>
-                    <input type="number" bind:value={$form.age} {...props} />
-                {/snippet}
-            </Control>
-            <FieldErrors />
-        </Field>
-
-        <Field form={sf} name="password">
-            <Control>
-                {#snippet children({ props })}
-                    <Label>Password</Label>
-                    <input
-                        type="password"
-                        bind:value={$form.password}
-                        {...props}
-                    />
-                {/snippet}
-            </Control>
-            <FieldErrors />
-        </Field>
-
-        <Field form={sf} name="confirmPassword">
-            <Control>
-                {#snippet children({ props })}
-                    <Label>Confirm Password</Label>
-                    <input
-                        type="password"
-                        bind:value={$form.confirmPassword}
-                        {...props}
-                    />
                 {/snippet}
             </Control>
             <FieldErrors />
