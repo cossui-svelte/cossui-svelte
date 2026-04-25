@@ -8,20 +8,20 @@
     ref = $bindable(null),
     class: className,
     children,
-    form,
+    config,
     ...restProps
   }: WithElementRef<
     HTMLFormAttributes & {
-      form: SuperForm<T>;
+      config: SuperForm<T>;
     }
   > = $props();
 
-  setFormContext(form);
+  setFormContext(config);
 </script>
 
 <form
   bind:this={ref}
-  use:form.enhance
+  use:config.enhance
   method="POST"
   class={cn("flex w-full flex-col gap-4", className)}
   data-slot="form"

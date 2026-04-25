@@ -1,16 +1,16 @@
 <script lang="ts">
     import ComponentPreviewTabs from "$lib/components/app/ComponentPreviewTabs.svelte";
+
     import { Button } from "$lib/components/ui/button";
     import { Field, FieldError, FieldLabel } from "$lib/components/ui/field";
     import { Form } from "$lib/components/ui/form";
     import { Input } from "$lib/components/ui/input";
+
     import { superForm } from "sveltekit-superforms";
     import { valibotClient } from "sveltekit-superforms/adapters";
     import { schema } from "./schema";
 
     let { data } = $props();
-
-    // let loading = $state(false);
 
     const formConfig = superForm(data.form, {
         SPA: true,
@@ -20,8 +20,9 @@
         validationMethod: "oninput",
         scrollToError: "smooth",
         resetForm: true,
-        onUpdated({ form }) {
+        async onUpdated({ form }) {
             if (form.valid) {
+                await sleep(1000);
                 // alert("Form submitted successfully!");
             }
         },
@@ -39,7 +40,7 @@
 </script>
 
 <ComponentPreviewTabs>
-    <Form form={formConfig} class="max-w-64">
+    <Form config={formConfig} class="max-w-64">
         <Field name="email">
             <FieldLabel>Email</FieldLabel>
             <Input type="email" bind:value={$formData.email} />

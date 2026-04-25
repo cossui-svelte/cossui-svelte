@@ -12,7 +12,7 @@
 <ComponentPreviewTabs>
     <Fieldset>
         <FieldsetLegend>Billing Details</FieldsetLegend>
-        <Field>
+        <Field name="company">
             <FieldLabel>Company</FieldLabel>
             <Input placeholder="Enter company name" type="text" />
             <FieldDescription>
@@ -20,7 +20,7 @@
             </FieldDescription>
         </Field>
 
-        <Field>
+        <Field name="taxId">
             <FieldLabel>Tax ID</FieldLabel>
             <Input placeholder="Enter tax identification number" type="text" />
             <FieldDescription>
