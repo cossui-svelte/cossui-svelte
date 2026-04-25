@@ -10,17 +10,19 @@
 
     let { data } = $props();
 
-    let loading = $state(false);
+    // let loading = $state(false);
 
     const formConfig = superForm(data.form, {
         SPA: true,
+        delayMs: 500,
+        timeoutMs: 8000,
         validators: valibotClient(schema),
         validationMethod: "oninput",
         scrollToError: "smooth",
         resetForm: true,
         onUpdated({ form }) {
             if (form.valid) {
-                alert("Form submitted successfully!");
+                // alert("Form submitted successfully!");
             }
         },
     });

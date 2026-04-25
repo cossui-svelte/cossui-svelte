@@ -1,15 +1,15 @@
-import type { ReadableBox, WritableBox } from "svelte-toolbelt";
+import type { ReadableBox, WritableBox } from 'svelte-toolbelt';
 
 export type PrimitiveFromIndex<
-	T extends Record<string, unknown>,
-	U extends string,
+  T extends Record<string, unknown>,
+  U extends string
 > = U extends `${infer K}[${string}]`
-	? K extends keyof T
-		? NonNullable<T[K]> extends Array<infer G>
-			? G
-			: never
-		: never
-	: never;
+  ? K extends keyof T
+    ? NonNullable<T[K]> extends Array<infer G>
+      ? G
+      : never
+    : never
+  : never;
 
 export type Box<T> = ReadableBox<T> | WritableBox<T>;
 
@@ -19,4 +19,4 @@ export type Box<T> = ReadableBox<T> | WritableBox<T>;
  * children to allow for custom children snippet props. We extend `style` to allow
  * for either a `StyleProperties` object or a string of CSS properties.
  */
-export type Primitive<T> = Omit<T, "id" | "children"> & { id?: string };
+export type Primitive<T> = Omit<T, 'id' | 'children'> & { id?: string };

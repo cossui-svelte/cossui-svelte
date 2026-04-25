@@ -6,4 +6,3 @@ export const load = async () => {
   const form = await superValidate(valibot(schema));
   return { form };
 };
-

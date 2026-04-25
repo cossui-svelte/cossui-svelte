@@ -50,7 +50,6 @@
           data-slot="input"
           bind:this={ref}
           bind:value
-          {type}
           size={typeof size === "number" ? size : undefined}
           {...props}
         />
@@ -61,8 +60,7 @@
       class={inputClassName}
       bind:this={ref}
       data-slot="input"
-      {value}
-      {type}
+      bind:value
       size={typeof size === "number" ? size : undefined}
       {...restProps}
     />

@@ -2,14 +2,14 @@
  * Parameters for the `getAriaDescribedBy` function.
  */
 type AriaDescribedByParams = {
-	/** The ID of the validation element for the field. */
-	fieldErrorsId: string | undefined;
+  /** The ID of the validation element for the field. */
+  fieldErrorsId: string | undefined;
 
-	/** The ID of the description element for the field. */
-	descriptionId: string | undefined;
+  /** The ID of the description element for the field. */
+  descriptionId: string | undefined;
 
-	/** The current validation errors for the field. */
-	errors: string[];
+  /** The current validation errors for the field. */
+  errors: string[];
 };
 
 /**
@@ -17,19 +17,19 @@ type AriaDescribedByParams = {
  * given the existence of a description and/or validation message.
  */
 export function getAriaDescribedBy({
-	fieldErrorsId = undefined,
-	descriptionId = undefined,
-	errors,
+  fieldErrorsId = undefined,
+  descriptionId = undefined,
+  errors
 }: AriaDescribedByParams) {
-	let describedBy = "";
+  let describedBy = '';
 
-	if (descriptionId) {
-		describedBy += `${descriptionId} `;
-	}
-	if (errors.length && fieldErrorsId) {
-		describedBy += fieldErrorsId;
-	}
-	return describedBy ? describedBy.trim() : undefined;
+  if (descriptionId) {
+    describedBy += `${descriptionId} `;
+  }
+  if (errors.length && fieldErrorsId) {
+    describedBy += fieldErrorsId;
+  }
+  return describedBy ? describedBy.trim() : undefined;
 }
 
 /**
@@ -37,8 +37,8 @@ export function getAriaDescribedBy({
  * control given the constraints for the field.
  */
 export function getAriaRequired(constraints: Record<string, unknown>) {
-	if (!("required" in constraints)) return undefined;
-	return constraints.required ? ("true" as const) : undefined;
+  if (!('required' in constraints)) return undefined;
+  return constraints.required ? ('true' as const) : undefined;
 }
 
 /**
@@ -46,7 +46,7 @@ export function getAriaRequired(constraints: Record<string, unknown>) {
  * control given the current validation errors.
  */
 export function getAriaInvalid(errors: string[] | undefined) {
-	return errors && errors.length ? "true" : undefined;
+  return errors && errors.length ? 'true' : undefined;
 }
 
 /**
@@ -54,5 +54,5 @@ export function getAriaInvalid(errors: string[] | undefined) {
  * given the current validation errors.
  */
 export function getDataFsError(errors: string[] | undefined): string | undefined {
-	return errors && errors.length ? "" : undefined;
+  return errors && errors.length ? '' : undefined;
 }
