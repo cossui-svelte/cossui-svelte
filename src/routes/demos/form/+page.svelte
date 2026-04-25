@@ -27,13 +27,13 @@
 
     const { form: formData, submitting, delayed } = formConfig;
 
-    function onsubmit() {
-        loading = true;
-        setTimeout(() => {
-            loading = false;
-            alert(`valid Email: ${$formData.email || ""}`);
-        }, 1000);
-    }
+    // function onsubmit() {
+    //     loading = true;
+    //     setTimeout(() => {
+    //         loading = false;
+    //         alert(`valid Email: ${$formData.email || ""}`);
+    //     }, 1000);
+    // }
 </script>
 
 <ComponentPreviewTabs>

@@ -47,9 +47,9 @@
       {#snippet children({ props })}
         <input
           class={inputClassName}
-          bind:this={ref}
           data-slot="input"
-          {value}
+          bind:this={ref}
+          bind:value
           {type}
           size={typeof size === "number" ? size : undefined}
           {...props}
