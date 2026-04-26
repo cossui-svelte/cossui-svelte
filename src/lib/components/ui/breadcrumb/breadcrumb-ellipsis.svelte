@@ -14,7 +14,7 @@
 <span
   bind:this={ref}
   aria-hidden="true"
-  class={cn(className)}
+  class={className}
   data-slot="breadcrumb-ellipsis"
   role="presentation"
   {...restProps}

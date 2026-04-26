@@ -8,6 +8,9 @@
     FilmIcon,
     ShareIcon,
     TrashIcon,
+    ZoomInIcon,
+    ZoomOutIcon,
+    QrCodeIcon,
   } from "lucide-svelte";
 
   import { Group, GroupSeparator } from "$lib/components/ui/group";
@@ -57,5 +60,25 @@
         </MenuItem>
       </MenuPopup>
     </Menu>
+  </Group>
+</ComponentPreviewTabs>
+<ComponentPreviewTabs>
+  <Group aria-label="Zoom controls" orientation="vertical">
+    <Button aria-label="Zoom in" size="icon" variant="outline">
+      <ZoomInIcon />
+    </Button>
+    <GroupSeparator orientation="horizontal" />
+    <Button aria-label="Zoom Out" size="icon" variant="outline">
+      <ZoomOutIcon />
+    </Button>
+  </Group>
+</ComponentPreviewTabs>
+<ComponentPreviewTabs>
+  <Group>
+    <Button aria-label="QR code" size="icon">
+      <QrCodeIcon aria-hidden="true" />
+    </Button>
+    <GroupSeparator class="bg-primary/72" />
+    <Button>Sign in</Button>
   </Group>
 </ComponentPreviewTabs>
