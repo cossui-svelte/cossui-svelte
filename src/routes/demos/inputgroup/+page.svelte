@@ -129,12 +129,12 @@
             type="email"
         />
         <InputGroupAddon align="block-start">
-            <Label class="text-foreground" htmlFor="email-1">Email</Label>
+            <Label class="text-foreground" for="email-1">Email</Label>
             <Popover>
                 <PopoverTrigger class="ml-auto" openOnHover>
                     <Button class="-m-1" size="icon-xs" variant="ghost">
-                        <InfoIcon /></Button
-                    >
+                        <InfoIcon />
+                    </Button>
                 </PopoverTrigger>
                 <PopoverPopup side="top" tooltipStyle>
                     <p>We&apos;ll use this to send you notifications</p>
