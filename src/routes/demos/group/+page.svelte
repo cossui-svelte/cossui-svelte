@@ -11,6 +11,7 @@
     ZoomInIcon,
     ZoomOutIcon,
     QrCodeIcon,
+    AudioWaveformIcon,
   } from "lucide-svelte";
 
   import { Group, GroupSeparator } from "$lib/components/ui/group";
@@ -23,6 +24,24 @@
   import { Button } from "$lib/components/ui/button";
 </script>
 
+<ComponentPreviewTabs>
+  <Group aria-label="File actions">
+    <Button variant="outline">
+      <FilesIcon aria-hidden="true" />
+      Files
+    </Button>
+    <GroupSeparator />
+    <Button variant="outline">
+      <FilmIcon aria-hidden="true" />
+      Media
+    </Button>
+    <GroupSeparator />
+    <Button variant="outline">
+      <AudioWaveformIcon aria-hidden="true" />
+      Audio
+    </Button>
+  </Group>
+</ComponentPreviewTabs>
 <ComponentPreviewTabs>
   <Group aria-label="File actions">
     <Button variant="outline">
