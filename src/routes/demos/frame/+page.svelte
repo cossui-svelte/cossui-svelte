@@ -1,4 +1,5 @@
 <script>
+    import ComponentPreview from "$lib/components/app/component-preview.svelte";
     import ComponentPreviewTabs from "$lib/components/app/ComponentPreviewTabs.svelte";
     import {
         Frame,
@@ -25,5 +26,23 @@
         <FrameFooter>
             <p class="text-muted-foreground text-sm">Footer</p>
         </FrameFooter>
+    </Frame>
+</ComponentPreviewTabs>
+<ComponentPreviewTabs>
+    <Frame class="w-full">
+        <FrameHeader>
+            <FrameTitle>Section header</FrameTitle>
+            <FrameDescription
+                >Brief description about the section</FrameDescription
+            >
+        </FrameHeader>
+        <FramePanel>
+            <h2 class="font-semibold text-sm">Separated panel</h2>
+            <p class="text-muted-foreground text-sm">Section description</p>
+        </FramePanel>
+        <FramePanel>
+            <h2 class="font-semibold text-sm">Separated panel</h2>
+            <p class="text-muted-foreground text-sm">Section description</p>
+        </FramePanel>
     </Frame>
 </ComponentPreviewTabs>
