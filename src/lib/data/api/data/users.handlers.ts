@@ -1,4 +1,4 @@
-// import type { RequestHandler as DataUsersRequestHandler } from '../../../../routes/(api)/api/v1/data/users/$types';
+import type { RequestHandler as DataUsersRequestHandler } from '../../../../routes/(api)/api/v1/data/users/$types';
 
 import type { TypedResponse } from '../helpers/types';
 
