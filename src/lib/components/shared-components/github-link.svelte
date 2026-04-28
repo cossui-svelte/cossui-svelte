@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Github } from "lucide-svelte";
-  import Skeleton from "$lib/components/ui/skeleton.svelte";
-  import { buttonVariants } from "$lib/components/ui/button-variants.js";
+  import { Skeleton } from "$lib/components/ui/skeleton";
+  import { buttonVariants } from "$lib/components/ui/button";
   import { cn } from "$lib/utils.js";
 
   const githubRepo = "cosscom/coss";

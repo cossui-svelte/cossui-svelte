@@ -2,7 +2,7 @@
   import { cn } from "$lib/utils.js";
   import { Tooltip } from "bits-ui";
   import { Check } from "lucide-svelte";
-  import { buttonVariants } from "$lib/components/ui/button-variants.js";
+  import { buttonVariants } from "$lib/components/ui/button";
   import { Icons } from "../shared-components/icons.js";
 
   interface Props {

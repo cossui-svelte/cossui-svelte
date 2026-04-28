@@ -4,8 +4,7 @@
   import { cn } from "$lib/utils.js";
   import { Badge } from "$lib/components/ui/badge";
   import { Button } from "$lib/components/ui/button";
-  import Menu from "$lib/components/ui/menu.svelte";
-  import MenuPopup from "$lib/components/ui/menu-popup.svelte";
+  import { Menu, MenuPopup } from "$lib/components/ui/menu";
 
   interface ProductItem {
     href: string;

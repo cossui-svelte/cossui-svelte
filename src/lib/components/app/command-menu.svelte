@@ -2,8 +2,8 @@
   import { cn } from "$lib/utils.js";
   import { Dialog } from "bits-ui";
   import { Search, CornerDownLeft, Atom, BookOpen } from "lucide-svelte";
-  import { buttonVariants } from "$lib/components/ui/button-variants.js";
-  import Kbd from "$lib/components/ui/kbd.svelte";
+  import { buttonVariants } from "$lib/components/ui/button";
+  import { Kbd } from "$lib/components/ui/kbd";
   import KbdGroup from "$lib/components/ui/kbd/kbd-group.svelte";
 
   interface PageItem {

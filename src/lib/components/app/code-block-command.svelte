@@ -2,12 +2,12 @@
   import { cn } from "$lib/utils.js";
   import { Tooltip } from "bits-ui";
   import { Terminal, Copy, Check } from "lucide-svelte";
-  import { buttonVariants } from "$lib/components/ui/button-variants.js";
+  import { buttonVariants } from "$lib/components/ui/button";
   import Tabs from "$lib/components/ui/tabs/tabs.svelte";
   import TabsList from "$lib/components/ui/tabs/tabs-list.svelte";
   import TabsTab from "$lib/components/ui/tabs/tabs-tab.svelte";
   import TabsPanel from "$lib/components/ui/tabs/tabs-panel.svelte";
-  import ScrollArea from "$lib/components/ui/scroll-area.svelte";
+  import { ScrollArea } from "$lib/components/ui/scroll-area";
 
   interface Props {
     __npm__?: string;

@@ -1,7 +1,5 @@
 <script lang="ts">
 
-
-
 type CategoryCardProps = {
   slug: string;
   name: string;
