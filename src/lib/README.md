@@ -3,3 +3,5 @@ lib/components/shared + lib/components/app - will eventually merge into lib/comp
 lib/fonts - the fonts that get embedded
 lib/formsnap - a modified version of formsnap to all positioning the Label outside a Control
 lib/varsel - a toast implementation, to check if I need to bundle it
+
+lib/params - is used for Param Matchers, which allow you to define custom validation rules for dynamic route segments
