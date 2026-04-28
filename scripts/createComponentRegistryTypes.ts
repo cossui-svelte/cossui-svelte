@@ -400,7 +400,7 @@ export type OUIReadyComponents = {
 }[keyof ${TYPES.objectTypeName}];
 
 // Get ready components by directory
-export type OUIDirectoryReadyComponents = {
+export type COSSUIDirectoryReadyComponents = {
   [K in keyof ${TYPES.objectTypeName}]: {
     directory: K;
     components: OUIReadyComponent<K>[];
@@ -411,7 +411,7 @@ export type OUIDirectoryReadyComponents = {
 		function generateComponentCountTypes(): string {
 			return `
 // Component Count Types
-export type OUIDirectoryComponentCounts = {
+export type COSSUIDirectoryComponentCounts = {
   [K in keyof ${TYPES.objectTypeName}]: {
     directory: K;
     total: number;
@@ -431,7 +431,7 @@ export type OUIDirectoriesWithTodo = {
 		function generateComponentMetadata(): string {
 			return `
 // Component Metadata
-export type OUIComponentMetadata = {
+export type COSSUIComponentMetadata = {
   [K in keyof ${TYPES.objectTypeName}]: {
     directory: K;
     name: ${TYPES.objectTypeName}[K]['name'];
@@ -453,7 +453,7 @@ export type OUITodoComponents = {
 }[keyof ${TYPES.objectTypeName}];
 
 // Get todo components by directory
-export type OUIDirectoryTodoComponents = {
+export type COSSUIDirectoryTodoComponents = {
   [K in keyof ${TYPES.objectTypeName}]: {
     directory: K;
     components: OUITodoComponent<K>[];

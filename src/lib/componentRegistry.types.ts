@@ -34,7 +34,7 @@ export type OUITodoComponents = {
 }[keyof COSSUIDirectories];
 
 // Get todo components by directory
-export type OUIDirectoryTodoComponents = {
+export type COSSUIDirectoryTodoComponents = {
   [K in keyof COSSUIDirectories]: {
     directory: K;
     components: OUITodoComponent<K>[];
@@ -53,7 +53,7 @@ export type OUIReadyComponents = {
 }[keyof COSSUIDirectories];
 
 // Get ready components by directory
-export type OUIDirectoryReadyComponents = {
+export type COSSUIDirectoryReadyComponents = {
   [K in keyof COSSUIDirectories]: {
     directory: K;
     components: OUIReadyComponent<K>[];
@@ -61,7 +61,7 @@ export type OUIDirectoryReadyComponents = {
 };
 
 // Component Count Types
-export type OUIDirectoryComponentCounts = {
+export type COSSUIDirectoryComponentCounts = {
   [K in keyof COSSUIDirectories]: {
     directory: K;
     total: number;
@@ -72,12 +72,12 @@ export type OUIDirectoryComponentCounts = {
 // Directory Status Filters
 export type OUIDirectoriesWithTodo = {
   [K in keyof COSSUIDirectories as COSSUIDirectories[K]['status']['todo'] extends 0
-    ? never
-    : K]: COSSUIDirectories[K];
+  ? never
+  : K]: COSSUIDirectories[K];
 };
 
 // Component Metadata
-export type OUIComponentMetadata = {
+export type COSSUIComponentMetadata = {
   [K in keyof COSSUIDirectories]: {
     directory: K;
     name: COSSUIDirectories[K]['name'];
