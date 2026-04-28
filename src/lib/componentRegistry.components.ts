@@ -9,31 +9,30 @@
  */
 export const COSSUI_DIRECTORIES = {
   BUTTONS: {
-    directory: "buttons",
-    name: "Buttons",
+    directory: 'buttons',
+    name: 'Buttons',
     components: [
-      "button-01.svelte",
-      "button-02.svelte",
-      "button-03.svelte",
-      "button-04.svelte",
-      "button-05.svelte",
-      "button-06.svelte",
-      "button-07.svelte",
-      "button-08.svelte",
-      "button-09.svelte",
-      "button-10.svelte",
+      'button-01.svelte',
+      'button-02.svelte',
+      'button-03.svelte',
+      'button-04.svelte',
+      'button-05.svelte',
+      'button-06.svelte',
+      'button-07.svelte',
+      'button-08.svelte',
+      'button-09.svelte',
+      'button-10.svelte'
     ],
     status: {
       todo: 0,
-      ready: 10,
-    },
-  },
+      ready: 10
+    }
+  }
 } as const;
 export type COSSUIDirectories = typeof COSSUI_DIRECTORIES;
 export const COMPONENT_STATES = {
-  TODO: "todo",
-  READY: "ready",
+  TODO: 'todo',
+  READY: 'ready'
 } as const;
 
-export type ComponentState =
-  (typeof COMPONENT_STATES)[keyof typeof COMPONENT_STATES];
+export type ComponentState = (typeof COMPONENT_STATES)[keyof typeof COMPONENT_STATES];

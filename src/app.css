@@ -1,4 +1,3 @@
-
 /* Mono */
 @font-face {
   font-family: "PaperMono";
@@ -12,7 +11,8 @@
 @font-face {
   font-family: "CalSansUI";
   src: url("$lib/fonts/CalSansUI[MODE,wght].woff2") format("woff2");
-  font-weight: 300 700; /* variable range */
+  font-weight: 300 700;
+  /* variable range */
   font-style: normal;
   font-display: swap;
 }

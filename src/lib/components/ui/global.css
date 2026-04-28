@@ -64,145 +64,158 @@
       background-position: -200% 0;
     }
   }
+
   @keyframes indeterminate-progress {
     0% {
       transform: translateX(-100%) scaleX(0.5);
     }
+
     50% {
       transform: translateX(0%) scaleX(0.4);
     }
+
     100% {
       transform: translateX(100%) scaleX(0.5);
     }
   }
-}
 
-@theme inline {
-	--animate-accordion-down: accordion-down 0.2s ease-out;
-	--animate-accordion-up: accordion-up 0.2s ease-out;
-	--animate-caret-blink: caret-blink 1s ease-out infinite;
-	--animate-scale-in: scale-in 0.2s ease;
-	--animate-scale-out: scale-out 0.15s ease;
-	--animate-fade-in: fade-in 0.2s ease;
-	--animate-fade-out: fade-out 0.15s ease;
-	--animate-enter-from-left: enter-from-left 0.2s ease;
-	--animate-enter-from-right: enter-from-right 0.2s ease;
-	--animate-exit-to-left: exit-to-left 0.2s ease;
-	--animate-exit-to-right: exit-to-right 0.2s ease;
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-caret-blink: caret-blink 1s ease-out infinite;
+  --animate-scale-in: scale-in 0.2s ease;
+  --animate-scale-out: scale-out 0.15s ease;
+  --animate-fade-in: fade-in 0.2s ease;
+  --animate-fade-out: fade-out 0.15s ease;
+  --animate-enter-from-left: enter-from-left 0.2s ease;
+  --animate-enter-from-right: enter-from-right 0.2s ease;
+  --animate-exit-to-left: exit-to-left 0.2s ease;
+  --animate-exit-to-right: exit-to-right 0.2s ease;
 
-	@keyframes accordion-down {
-		from {
-			height: 0;
-		}
-		to {
-			height: var(--bits-accordion-content-height);
-		}
-	}
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
 
-	@keyframes accordion-up {
-		from {
-			height: var(--bits-accordion-content-height);
-		}
-		to {
-			height: 0;
-		}
-	}
+    to {
+      height: var(--bits-accordion-content-height);
+    }
+  }
 
-	@keyframes caret-blink {
-		0%,
-		70%,
-		100% {
-			opacity: 1;
-		}
-		20%,
-		50% {
-			opacity: 0;
-		}
-	}
+  @keyframes accordion-up {
+    from {
+      height: var(--bits-accordion-content-height);
+    }
 
-	@keyframes enter-from-right {
-		from {
-			opacity: 0;
-			transform: translateX(200px);
-		}
-		to {
-			opacity: 1;
-			transform: translateX(0);
-		}
-	}
+    to {
+      height: 0;
+    }
+  }
 
-	@keyframes enter-from-left {
-		from {
-			opacity: 0;
-			transform: translateX(-200px);
-		}
-		to {
-			opacity: 1;
-			transform: translateX(0);
-		}
-	}
+  @keyframes caret-blink {
 
-	@keyframes exit-to-right {
-		from {
-			opacity: 1;
-			transform: translateX(0);
-		}
-		to {
-			opacity: 0;
-			transform: translateX(200px);
-		}
-	}
+    0%,
+    70%,
+    100% {
+      opacity: 1;
+    }
 
-	@keyframes exit-to-left {
-		from {
-			opacity: 1;
-			transform: translateX(0);
-		}
-		to {
-			opacity: 0;
-			transform: translateX(-200px);
-		}
-	}
+    20%,
+    50% {
+      opacity: 0;
+    }
+  }
 
-	@keyframes scale-in {
-		from {
-			opacity: 0;
-			transform: rotateX(-10deg) scale(0.9);
-		}
-		to {
-			opacity: 1;
-			transform: rotateX(0deg) scale(1);
-		}
-	}
+  @keyframes enter-from-right {
+    from {
+      opacity: 0;
+      transform: translateX(200px);
+    }
 
-	@keyframes scale-out {
-		from {
-			opacity: 1;
-			transform: rotateX(0deg) scale(1);
-		}
-		to {
-			opacity: 0;
-			transform: rotateX(-10deg) scale(0.95);
-		}
-	}
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 
-	@keyframes fade-in {
-		from {
-			opacity: 0;
-		}
-		to {
-			opacity: 1;
-		}
-	}
+  @keyframes enter-from-left {
+    from {
+      opacity: 0;
+      transform: translateX(-200px);
+    }
 
-	@keyframes fade-out {
-		from {
-			opacity: 1;
-		}
-		to {
-			opacity: 0;
-		}
-	}
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes exit-to-right {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    to {
+      opacity: 0;
+      transform: translateX(200px);
+    }
+  }
+
+  @keyframes exit-to-left {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    to {
+      opacity: 0;
+      transform: translateX(-200px);
+    }
+  }
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: rotateX(-10deg) scale(0.9);
+    }
+
+    to {
+      opacity: 1;
+      transform: rotateX(0deg) scale(1);
+    }
+  }
+
+  @keyframes scale-out {
+    from {
+      opacity: 1;
+      transform: rotateX(0deg) scale(1);
+    }
+
+    to {
+      opacity: 0;
+      transform: rotateX(-10deg) scale(0.95);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
 }
 
 
@@ -220,11 +233,9 @@
   --secondary: --alpha(var(--color-black) / 4%);
   --secondary-foreground: var(--color-neutral-800);
   --muted: --alpha(var(--color-black) / 4%);
-  --muted-foreground: color-mix(
-    in srgb,
-    var(--color-neutral-500) 90%,
-    var(--color-black)
-  );
+  --muted-foreground: color-mix(in srgb,
+      var(--color-neutral-500) 90%,
+      var(--color-black));
   --accent: --alpha(var(--color-black) / 4%);
   --accent-foreground: var(--color-neutral-800);
   --destructive: var(--color-red-500);
@@ -244,11 +255,9 @@
   --chart-4: var(--color-amber-400);
   --chart-5: var(--color-amber-500);
   --sidebar: var(--color-neutral-50);
-  --sidebar-foreground: color-mix(
-    in srgb,
-    var(--color-neutral-800) 64%,
-    var(--sidebar)
-  );
+  --sidebar-foreground: color-mix(in srgb,
+      var(--color-neutral-800) 64%,
+      var(--sidebar));
   --sidebar-primary: var(--color-neutral-800);
   --sidebar-primary-foreground: var(--color-neutral-50);
   --sidebar-accent: --alpha(var(--color-black) / 4%);
@@ -261,11 +270,9 @@
 }
 
 .dark {
-  --background: color-mix(
-    in srgb,
-    var(--color-neutral-950) 96%,
-    var(--color-white)
-  );
+  --background: color-mix(in srgb,
+      var(--color-neutral-950) 96%,
+      var(--color-white));
   --foreground: var(--color-neutral-100);
   --card: color-mix(in srgb, var(--background) 98%, var(--color-white));
   --card-foreground: var(--color-neutral-100);
@@ -276,18 +283,14 @@
   --secondary: --alpha(var(--color-white) / 4%);
   --secondary-foreground: var(--color-neutral-100);
   --muted: --alpha(var(--color-white) / 4%);
-  --muted-foreground: color-mix(
-    in srgb,
-    var(--color-neutral-500) 90%,
-    var(--color-white)
-  );
+  --muted-foreground: color-mix(in srgb,
+      var(--color-neutral-500) 90%,
+      var(--color-white));
   --accent: --alpha(var(--color-white) / 4%);
   --accent-foreground: var(--color-neutral-100);
-  --destructive: color-mix(
-    in srgb,
-    var(--color-red-500) 90%,
-    var(--color-white)
-  );
+  --destructive: color-mix(in srgb,
+      var(--color-red-500) 90%,
+      var(--color-white));
   --destructive-foreground: var(--color-red-400);
   --info: var(--color-blue-500);
   --info-foreground: var(--color-blue-400);
@@ -303,16 +306,12 @@
   --chart-3: var(--color-amber-500);
   --chart-4: var(--color-purple-500);
   --chart-5: var(--color-rose-500);
-  --sidebar: color-mix(
-    in srgb,
-    var(--color-neutral-950) 97%,
-    var(--color-white)
-  );
-  --sidebar-foreground: color-mix(
-    in srgb,
-    var(--color-neutral-100) 64%,
-    var(--sidebar)
-  );
+  --sidebar: color-mix(in srgb,
+      var(--color-neutral-950) 97%,
+      var(--color-white));
+  --sidebar-foreground: color-mix(in srgb,
+      var(--color-neutral-100) 64%,
+      var(--sidebar));
   --sidebar-primary: var(--color-neutral-100);
   --sidebar-primary-foreground: var(--color-neutral-800);
   --sidebar-accent: --alpha(var(--color-white) / 4%);
