@@ -7,60 +7,60 @@ let highlighterInstance: HighlighterCore | null = null;
 let highlighterPromise: null | Promise<HighlighterCore> = null;
 
 export async function highlighterSvelte(
-	code: string,
-	options: Omit<Partial<CodeToHastOptions>, 'lang' | 'theme' | 'themes'> = {}
+  code: string,
+  options: Omit<Partial<CodeToHastOptions>, 'lang' | 'theme' | 'themes'> = {}
 ) {
-	const instance = await createHighlighterInstance();
+  const instance = await createHighlighterInstance();
 
-	const html = instance.codeToHtml(code, {
-		lang: 'svelte',
-		meta: {
-			'data-lang': 'svelte'
-		},
-		themes: {
-			dark: 'github-dark-default',
-			light: 'github-light-default'
-		},
-		...options
-	});
+  const html = instance.codeToHtml(code, {
+    lang: 'svelte',
+    meta: {
+      'data-lang': 'svelte'
+    },
+    themes: {
+      dark: 'github-dark-default',
+      light: 'github-light-default'
+    },
+    ...options
+  });
 
-	return html;
+  return html;
 }
 
 export async function highlighterZsh(
-	code: string,
-	options: Omit<Partial<CodeToHastOptions>, 'lang' | 'theme' | 'themes'> = {}
+  code: string,
+  options: Omit<Partial<CodeToHastOptions>, 'lang' | 'theme' | 'themes'> = {}
 ) {
-	const instance = await createHighlighterInstance();
-	return instance.codeToHtml(code, {
-		lang: 'zsh',
-		meta: {
-			'data-lang': 'zsh'
-		},
-		themes: {
-			dark: 'github-dark-default',
-			light: 'github-light-default'
-		},
-		...options
-	});
+  const instance = await createHighlighterInstance();
+  return instance.codeToHtml(code, {
+    lang: 'zsh',
+    meta: {
+      'data-lang': 'zsh'
+    },
+    themes: {
+      dark: 'github-dark-default',
+      light: 'github-light-default'
+    },
+    ...options
+  });
 }
 
 async function createHighlighterInstance() {
-	// Return existing instance if available
-	if (highlighterInstance) return highlighterInstance;
+  // Return existing instance if available
+  if (highlighterInstance) return highlighterInstance;
 
-	// Return in-progress initialization if one exists
-	if (highlighterPromise) return highlighterPromise;
+  // Return in-progress initialization if one exists
+  if (highlighterPromise) return highlighterPromise;
 
-	// Create new initialization promise
-	highlighterPromise = createHighlighterCore({
-		engine: createOnigurumaEngine(import('shiki/wasm')),
-		langs: [import('shiki/langs/svelte.mjs'), import('shiki/langs/zsh.mjs')],
-		themes: [githubDarkDefault, githubLightDefault]
-	}).then((instance) => {
-		highlighterInstance = instance;
-		return instance;
-	});
+  // Create new initialization promise
+  highlighterPromise = createHighlighterCore({
+    engine: createOnigurumaEngine(import('shiki/wasm')),
+    langs: [import('shiki/langs/svelte.mjs'), import('shiki/langs/zsh.mjs')],
+    themes: [githubDarkDefault, githubLightDefault]
+  }).then((instance) => {
+    highlighterInstance = instance;
+    return instance;
+  });
 
-	return highlighterPromise;
+  return highlighterPromise;
 }

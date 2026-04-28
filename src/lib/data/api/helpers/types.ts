@@ -1,3 +1,3 @@
 export interface TypedResponse<P> extends Response {
-	json(): Promise<P>;
+  json(): Promise<P>;
 }

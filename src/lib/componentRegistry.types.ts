@@ -72,8 +72,8 @@ export type COSSUIDirectoryComponentCounts = {
 // Directory Status Filters
 export type OUIDirectoriesWithTodo = {
   [K in keyof COSSUIDirectories as COSSUIDirectories[K]['status']['todo'] extends 0
-  ? never
-  : K]: COSSUIDirectories[K];
+    ? never
+    : K]: COSSUIDirectories[K];
 };
 
 // Component Metadata
