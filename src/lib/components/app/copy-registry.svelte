@@ -3,7 +3,7 @@
   import { Tooltip } from "bits-ui";
   import { Check } from "lucide-svelte";
   import { buttonVariants } from "$lib/components/ui/button";
-  import { Icons } from "../shared-components/icons.js";
+  import { Icons } from "$lib/components/shared-components/icons.ts";
 
   interface Props {
     value: string;

@@ -1,6 +1,6 @@
 <script lang="ts">
   import SiteHeaderBase from "../shared-components/site-header.svelte";
-  import Separator from "$lib/components/ui/separator.svelte";
+  import { Separator } from "$lib/components/ui/separator";
   import CommandMenu from "./command-menu.svelte";
   import MainNav from "./main-nav.svelte";
   import MobileNav from "./mobile-nav.svelte";

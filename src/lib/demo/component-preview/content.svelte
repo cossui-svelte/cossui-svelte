@@ -1,20 +1,20 @@
 <script lang="ts">
-	import type { AvailableOUIComponent } from '$data/api/components/components.handler';
-	import type { HTMLAttributes } from 'svelte/elements';
+	import type { AvailableOUIComponent } from "$data/api/components/components.handler";
+	import type { HTMLAttributes } from "svelte/elements";
 
-	import CodePreview from '../code-preview.svelte';
-	import ComponentDependency from '../component-dependency.svelte';
-	import GotoComponentButton from '../component-goto-button.svelte';
-	import CopyButton from '../copy-button.svelte';
-	import ShareButton from '../share-button.svelte';
+	import CodePreview from "../code-preview.svelte";
+	import ComponentDependency from "../component-dependency.svelte";
+	import GotoComponentButton from "../component-goto-button.svelte";
+	import CopyButton from "../copy-button.svelte";
+	import ShareButton from "../share-button.svelte";
 
-	import Box from '@lucide/svelte/icons/box';
-	import Code from '@lucide/svelte/icons/code';
-	import Folder from '@lucide/svelte/icons/folder';
-	import FolderTree from '@lucide/svelte/icons/folder-tree';
-	import { page } from '$app/state';
-	import * as Tab from '$lib/components/ui/tabs';
-	import { tick } from 'svelte';
+	import { Box, Code, Folder, FolderTree } from "lucide-svelte";
+	// import Code from '@lucide/svelte/icons/code';
+	// import Folder from '@lucide/svelte/icons/folder';
+	// import FolderTree from '@lucide/svelte/icons/folder-tree';
+	import { page } from "$app/state";
+	import * as Tab from "$lib/components/ui/tabs";
+	import { tick } from "svelte";
 
 	type PropsComponentPreview = HTMLAttributes<HTMLDivElement> & {
 		component: AvailableOUIComponent;
@@ -30,7 +30,12 @@
 
 	type Props = PropsComponentPreview | PropsSinglePage;
 
-	let { component, isSinglePage = false, onGotoComponent, ...restProps }: Props = $props();
+	let {
+		component,
+		isSinglePage = false,
+		onGotoComponent,
+		...restProps
+	}: Props = $props();
 
 	let dialogRef: HTMLDivElement | null = $state(null);
 	let wrapperRef: HTMLDivElement | null = $state(null);
@@ -57,14 +62,24 @@
 		</div>
 		<div class="flex flex-col gap-1">
 			<div class="text-sm text-muted-foreground">
-				<Folder class="inline-block" size={16} stroke-width={2} aria-hidden="true" />
+				<Folder
+					class="inline-block"
+					size={16}
+					stroke-width={2}
+					aria-hidden="true"
+				/>
 				<span>Directory:</span>
 				<span>
 					{component.directory}
 				</span>
 			</div>
 			<div class="text-sm text-muted-foreground">
-				<FolderTree class="inline-block" size={16} stroke-width={2} aria-hidden="true" />
+				<FolderTree
+					class="inline-block"
+					size={16}
+					stroke-width={2}
+					aria-hidden="true"
+				/>
 				<span>Path:</span>
 				<span>
 					{component.path}
@@ -74,7 +89,9 @@
 	</div>
 
 	{#if isSinglePage}
-		<div class="flex scale-90 flex-col items-center gap-4 rounded-lg border bg-background p-6">
+		<div
+			class="flex scale-90 flex-col items-center gap-4 rounded-lg border bg-background p-6"
+		>
 			<component.Component />
 		</div>
 	{/if}
@@ -83,12 +100,22 @@
 		<Tab.Tabs value="code" onValueChange={handleTabChange}>
 			<Tab.TabsList>
 				<Tab.TabsTrigger value="code">
-					<Code class="-ms-0.5 me-1.5 opacity-60" size={16} stroke-width={2} aria-hidden="true" />
+					<Code
+						class="-ms-0.5 me-1.5 opacity-60"
+						size={16}
+						stroke-width={2}
+						aria-hidden="true"
+					/>
 					Code
 				</Tab.TabsTrigger>
 				{#if component.componentDependencies.list.length > 0}
 					<Tab.TabsTrigger value="dependencies">
-						<Box class="-ms-0.5 me-1.5 opacity-60" size={16} stroke-width={2} aria-hidden="true" />
+						<Box
+							class="-ms-0.5 me-1.5 opacity-60"
+							size={16}
+							stroke-width={2}
+							aria-hidden="true"
+						/>
 						Dependencies
 					</Tab.TabsTrigger>
 				{/if}
@@ -99,7 +126,10 @@
 			>
 				<div bind:this={dialogRef}>
 					<Tab.TabsContent value="code" class="relative pt-4">
-						<CopyButton class="absolute right-2 top-4" code={component.code.raw.content} />
+						<CopyButton
+							class="absolute right-2 top-4"
+							code={component.code.raw.content}
+						/>
 						<CodePreview
 							class="overflow-y-auto rounded-lg bg-muted py-4 data-[component=false]:[&_pre]:max-h-[440px] data-[component=true]:[&_pre]:max-h-[calc(100svh-25rem)]"
 							code={component.code.highlighted.content}

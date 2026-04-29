@@ -4,9 +4,9 @@ import type {
   COSSUIDirectoryToComponent
 } from '$lib/componentRegistry.types';
 
-import { type ComponentState, OUI_DIRECTORIES } from '$lib/componentRegistry.components';
+import { type ComponentState, COSSUI_DIRECTORIES } from '$lib/componentRegistry.components';
 
-import { GITHUB_REPO_URL } from './constants';
+import { GITHUB_REPO_URL } from './constants.js';
 
 interface ComponentMetadata {
   githubUrl: string;
@@ -108,10 +108,10 @@ class ComponentRegistry {
     return Array.from(this.#components.keys());
   }
 
-  getDirectories<T extends keyof typeof OUI_DIRECTORIES>(
+  getDirectories<T extends keyof typeof COSSUI_DIRECTORIES>(
     directories: T[]
-  ): (typeof OUI_DIRECTORIES)[T]['directory'][] {
-    return directories.map((directory) => OUI_DIRECTORIES[directory].directory);
+  ): (typeof COSSUI_DIRECTORIES)[T]['directory'][] {
+    return directories.map((directory) => COSSUI_DIRECTORIES[directory].directory);
   }
 
   getFiles<T extends COSSUIDirectory>(directories: T[]): COSSUIDirectoryToComponent[T][] {
@@ -122,10 +122,10 @@ class ComponentRegistry {
     const metadata: RegistryMetadata = {
       directoriesBreakdown: {} as Record<COSSUIDirectory, DirectoryMetadata>,
       totalComponents: 0,
-      totalDirectories: Object.keys(OUI_DIRECTORIES).length
+      totalDirectories: Object.keys(COSSUI_DIRECTORIES).length
     };
 
-    Object.values(OUI_DIRECTORIES).forEach((directoryConfig) => {
+    Object.values(COSSUI_DIRECTORIES).forEach((directoryConfig) => {
       const directory = directoryConfig.directory;
       const directoryPath = `src/lib/components/${directory}`;
       const components = this.#components.get(directory);

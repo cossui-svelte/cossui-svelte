@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Github } from "lucide-svelte";
+  // import { Github } from "lucide-svelte";
   import { Skeleton } from "$lib/components/ui/skeleton";
   import { buttonVariants } from "$lib/components/ui/button";
   import { cn } from "$lib/utils.js";
