@@ -1,4 +1,5 @@
 <script lang="ts">
+    import SidebarProvider from "$lib/components/ui/sidebar/sidebar-provider.svelte";
     // import { source } from "@/lib/source";
 
     // import DocsSidebar from "$lib/site-components/docs-sidebar.svelte";
