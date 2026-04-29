@@ -445,18 +445,18 @@ export type COSSUIComponentMetadata = {
 		function generateStatusTypeHelpers(): string {
 			return `
 // Status Type Helpers
-export type OUITodoComponent<T extends keyof ${TYPES.objectTypeName}> = Extract<${TYPES.objectTypeName}[T]['components'][number], \`\${string}${CONSTANTS.COMPONENT_STATES.TODO}${CONSTANTS.FILE_EXTENSIONS.SVELTE}\`>;
+export type COSSUITodoComponent<T extends keyof ${TYPES.objectTypeName}> = Extract<${TYPES.objectTypeName}[T]['components'][number], \`\${string}${CONSTANTS.COMPONENT_STATES.TODO}${CONSTANTS.FILE_EXTENSIONS.SVELTE}\`>;
 
 // Get all todo components
-export type OUITodoComponents = {
-  [K in keyof ${TYPES.objectTypeName}]: OUITodoComponent<K>
+export type COSSUITodoComponents = {
+  [K in keyof ${TYPES.objectTypeName}]: COSSUITodoComponent<K>
 }[keyof ${TYPES.objectTypeName}];
 
 // Get todo components by directory
 export type COSSUIDirectoryTodoComponents = {
   [K in keyof ${TYPES.objectTypeName}]: {
     directory: K;
-    components: OUITodoComponent<K>[];
+    components: COSSUITodoComponent<K>[];
   }
 };`;
 		}

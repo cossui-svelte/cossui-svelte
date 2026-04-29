@@ -1,9 +1,8 @@
+import { getComponentDirectories } from '$lib/componentRegistry';
 import type {
   EntryGenerator as LLMSEntryGenerator,
   RequestHandler as LLMSRequestHandler
 } from '../../../routes/(llms.txt)/llms/[directory=componentDirectory].txt/$types';
-
-import { getComponentDirectories } from '$lib/componentRegistry';
 
 import type { ComponentAPIResponseJSON } from './components/components.handler';
 

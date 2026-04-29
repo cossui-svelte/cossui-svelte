@@ -1,6 +1,5 @@
-import type { RequestHandler as MetaRequestHandler } from '../../../../../routes/(api)/api/v1/components/_meta.json/$types';
-
 import { getComponentRegistry } from '$lib/componentRegistry';
+import type { RequestHandler as MetaRequestHandler } from '../../../../../routes/(api)/api/v1/components/_meta.json/$types';
 
 import type { TypedResponse } from '../../helpers/types';
 

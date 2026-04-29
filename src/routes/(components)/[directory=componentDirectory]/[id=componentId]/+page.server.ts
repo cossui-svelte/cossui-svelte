@@ -1,6 +1,5 @@
-import type { PageServerLoad } from './$types.js';
-
 import { fetchComponentFromAPI } from '$data/api/components/components.js';
+import type { PageServerLoad } from './$types.js';
 
 export const load = (async ({ fetch, params }) => {
   const { directory, id } = params;

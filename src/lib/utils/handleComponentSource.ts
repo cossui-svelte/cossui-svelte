@@ -1,12 +1,11 @@
-import type { COSSUIComponent, COSSUIDirectory } from '$lib/componentRegistry.types.js';
 import type { Component } from 'svelte';
-
-import { highlighterSvelte, highlighterZsh } from './codePreview.js';
+import type { COSSUIComponent, COSSUIDirectory } from '$lib/componentRegistry.types.js';
 import {
   ENHANCED_IMAGE_REGEX,
   POSSIBLE_DEPENDENCIES,
   type PossibleDependency
 } from '$lib/constants.js';
+import { highlighterSvelte, highlighterZsh } from './codePreview.js';
 
 const IMPORTS_REGEX =
   /(?<=(?:import|export)[^`'"]*from\s+[`'"])(?<path1>[^`'"]+)(?=[`'"])|(?:import|export)(?:\s+|\s*\(\s*)[`'"](?<path2>[|'"`])/g;

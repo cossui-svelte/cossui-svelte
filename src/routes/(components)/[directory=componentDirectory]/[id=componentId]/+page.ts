@@ -1,8 +1,7 @@
-import type { PageLoad } from './$types';
+import { error } from '@sveltejs/kit';
 
 import type { Component } from 'svelte';
-
-import { error } from '@sveltejs/kit';
+import type { PageLoad } from './$types';
 
 export const load = (async ({ data }) => {
   const { componentMetadata: serverComponentMetadata } = data;

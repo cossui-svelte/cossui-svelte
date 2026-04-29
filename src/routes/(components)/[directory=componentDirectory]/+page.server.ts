@@ -1,10 +1,8 @@
-import type { PageServerLoad } from './$types';
-
-import type { ComponentAPIResponseJSON } from '$data/api/components/components.handler';
-
 import { dev } from '$app/environment';
 import { fetchComponentsFromAPI } from '$data/api/components/components';
+import type { ComponentAPIResponseJSON } from '$data/api/components/components.handler';
 import { PROJECT_NAME, SEO_DELIMITER } from '$lib/config';
+import type { PageServerLoad } from './$types';
 
 function generatePageHeader(
   directory: string,

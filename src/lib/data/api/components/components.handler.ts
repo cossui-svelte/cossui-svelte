@@ -1,12 +1,11 @@
+import type { Component } from 'svelte';
+import { getComponentDirectories, getComponentFileNames } from '$lib/componentRegistry';
+import { getComponentSource } from '$lib/utils/handleComponentSource';
 import type {
   EntryGenerator as DirectoryEntryGenerator,
   RequestHandler as DirectoryRequestHandler
 } from '../../../../routes/(api)/api/v1/components/[directory=componentDirectory].json/$types';
 
-import type { Component } from 'svelte';
-
-import { getComponentDirectories, getComponentFileNames } from '$lib/componentRegistry';
-import { getComponentSource } from '$lib/utils/handleComponentSource';
 
 import type { TypedResponse } from '../helpers/types';
 

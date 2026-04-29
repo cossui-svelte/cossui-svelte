@@ -459,8 +459,8 @@ export type User = (typeof USERS_DATA)[number];
 export const API_V1_USERS_ENDPOINT_HANDLER = {
   GET: (async ({ setHeaders }) => {
     setHeaders({
-      'cache-control': 'public, max-age=31536000, immutable, stale-while-revalidate=86400',
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'cache-control': 'public, max-age=31536000, immutable, stale-while-revalidate=86400'
     });
     return Response.json(USERS_DATA) as TypedResponse<typeof USERS_DATA>;
   }) satisfies DataUsersRequestHandler

@@ -1,10 +1,9 @@
+import { COSSUI_DIRECTORIES, type ComponentState } from '$lib/componentRegistry.components';
 import type {
   COSSUIComponent,
   COSSUIDirectory,
   COSSUIDirectoryToComponent
 } from '$lib/componentRegistry.types';
-
-import { type ComponentState, COSSUI_DIRECTORIES } from '$lib/componentRegistry.components';
 
 import { GITHUB_REPO_URL } from './constants.js';
 

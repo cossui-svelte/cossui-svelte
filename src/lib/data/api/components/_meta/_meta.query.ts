@@ -1,4 +1,4 @@
-import { RequestClient } from '$data/api/helpers/RequestClient';
+import type { RequestClient } from '$data/api/helpers/RequestClient';
 
 import type { ComponentMetaAPIResponseJSON } from './_meta.handler';
 

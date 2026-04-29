@@ -1,6 +1,5 @@
-import type { PageLoad } from './$types';
-
 import type { Component } from 'svelte';
+import type { PageLoad } from './$types';
 
 export const load = (async ({ data }) => {
   const { componentsData: serverComponentsData, ...rest } = data;

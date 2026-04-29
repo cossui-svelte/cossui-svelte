@@ -1,6 +1,5 @@
-import type { UsersAPIResponseJSON } from './users.handlers';
-
 import { createRequestClient } from '../helpers/RequestClient';
+import type { UsersAPIResponseJSON } from './users.handlers';
 import { API_V1_USERS_ROUTE } from './users.routes';
 
 export const fetchUsers = async () => {
