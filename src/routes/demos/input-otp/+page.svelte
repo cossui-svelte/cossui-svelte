@@ -5,7 +5,7 @@
         InputOTPGroup,
         InputOTPSeparator,
         InputOTPSlot,
-    } from "$lib/components/ui/input-otp";
+    } from "$lib/components/ui/otp-field";
     import { Label } from "$lib/components/ui/label";
 
     let value = $state("");
