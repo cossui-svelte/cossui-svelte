@@ -10,6 +10,9 @@ export default defineConfig({
   plugins: [tailwindcss(), enhancedImages(), sveltekit()],
   resolve: {
     alias: {
+      $assets: path.resolve('./src/lib/assets'),
+      $data: path.resolve('./src/lib/data'),
+      $helpers: path.resolve('./src/lib/helpers'),
       $lib: path.resolve('./src/lib')
     }
   }

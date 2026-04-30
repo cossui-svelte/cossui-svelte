@@ -6,7 +6,6 @@ import type {
   RequestHandler as DirectoryRequestHandler
 } from '../../../../routes/(api)/api/v1/components/[directory=componentDirectory].json/$types';
 
-
 import type { TypedResponse } from '../helpers/types';
 
 export class ComponentAPIError extends Error {
