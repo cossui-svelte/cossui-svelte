@@ -1,13 +1,13 @@
 <script lang="ts">
-	import Cta from '$lib/demo/cta.svelte';
+	import Cta from "$lib/demo/cta.svelte";
 
-	import * as ComponentDialog from '$lib/demo/component-preview';
-	import { mode } from 'mode-watcher';
-	import { Toaster } from 'svelte-sonner';
+	import * as ComponentDialog from "$lib/demo/component-preview";
+	import { mode } from "mode-watcher";
+	import { Toaster } from "svelte-sonner";
 	let { children } = $props();
 </script>
 
-<Toaster position="top-right" theme={$mode} />
+<Toaster position="top-right" theme={mode.current} />
 
 <ComponentDialog.DialogContextProvider>
 	<main class="flex-grow">
