@@ -71,7 +71,7 @@ class ComponentRegistry {
       const [, directory, filename] = match as [string, COSSUIDirectory, COSSUIComponent];
 
       if (!componentMap.has(directory)) {
-        console.log("Adding directory to component map: " + directory);
+        console.log('Adding directory to component map: ' + directory);
         componentMap.set(directory, new Set());
       }
       componentMap.get(directory)?.add(filename);
@@ -97,7 +97,7 @@ class ComponentRegistry {
   }
 
   #getFile<T extends COSSUIDirectory>(directory: T): COSSUIDirectoryToComponent[T][] {
-    console.log("Getting files for directory: " + directory);
+    console.log('Getting files for directory: ' + directory);
     const components = this.#components.get(directory);
     if (!components?.size) {
       throw new Error(`Components ${directory} not found in components/${directory}`);

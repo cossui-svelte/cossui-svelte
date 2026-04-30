@@ -1,15 +1,15 @@
 <script lang="ts">
-	import { getComponentDialogCtx } from './component-dialog-context.svelte';
-	import Content from './content.svelte';
-	import * as Dialog from '$lib/demo/ui/dialog/index.js';
-	import * as Drawer from '$lib/demo/ui/drawer/index.js';
+	import { getComponentDialogCtx } from "./component-dialog-context.svelte";
+	import Content from "./content.svelte";
+	import * as Dialog from "$lib/components/ui/dialog";
+	import * as Drawer from "$lib/components/ui/drawer";
 
-	import { pushState, replaceState } from '$app/navigation';
-	import { page } from '$app/state';
-	import { untrack } from 'svelte';
-	import { MediaQuery } from 'svelte/reactivity';
+	import { pushState, replaceState } from "$app/navigation";
+	import { page } from "$app/state";
+	import { untrack } from "svelte";
+	import { MediaQuery } from "svelte/reactivity";
 
-	const screen = new MediaQuery('(min-width: 768px)');
+	const screen = new MediaQuery("(min-width: 768px)");
 	const componentDialogCtx = getComponentDialogCtx();
 	const originalPath = page.url.pathname;
 
@@ -17,7 +17,7 @@
 	let statePushed = $state(false);
 
 	const targetPath = $derived.by(
-		() => `${page.url.pathname}/${componentDialogCtx.component?.name}`
+		() => `${page.url.pathname}/${componentDialogCtx.component?.name}`,
 	);
 	$effect(() => {
 		// eslint-disable-next-line @typescript-eslint/no-unused-expressions
@@ -58,7 +58,9 @@
 {:else}
 	<Drawer.Root bind:open onOpenChange={handleOpenChange}>
 		<Drawer.Content class="overflow-hidden after:![all:unset]">
-			<div class="block h-auto max-h-[calc(80svh)] overflow-y-auto sm:max-w-2xl">
+			<div
+				class="block h-auto max-h-[calc(80svh)] overflow-y-auto sm:max-w-2xl"
+			>
 				<Content
 					component={componentDialogCtx.component!}
 					onGotoComponent={() => {

@@ -1,8 +1,8 @@
 type Options = {
-    /** The time before the copied status is reset. */
-    delay: number;
-    /** Whether to reset the copied status after a delay. */
-    reset: boolean;
+  /** The time before the copied status is reset. */
+  delay: number;
+  /** Whether to reset the copied status after a delay. */
+  reset: boolean;
 };
 
 /** Use this hook to copy text to the clipboard and show a copied state.
@@ -28,82 +28,82 @@ type Options = {
  *
  */
 export class UseClipboard {
-    #copiedStatus = $state<"success" | "failure">();
-    delay: number;
-    reset: boolean;
-    timeout: ReturnType<typeof setTimeout> | undefined = undefined;
-    #lastCopied = $state<string | undefined>(undefined);
-    constructor({ delay = 2000, reset = true }: Partial<Options> = {}) {
-        this.delay = delay;
-        this.reset = reset;
+  #copiedStatus = $state<'success' | 'failure'>();
+  delay: number;
+  reset: boolean;
+  timeout: ReturnType<typeof setTimeout> | undefined = undefined;
+  #lastCopied = $state<string | undefined>(undefined);
+  constructor({ delay = 2000, reset = true }: Partial<Options> = {}) {
+    this.delay = delay;
+    this.reset = reset;
+  }
+
+  /** Copies the given text to the users clipboard.
+   *
+   * ## Usage
+   * ```ts
+   * clipboard.copy('Hello, World!');
+   * ```
+   *
+   * @param text
+   * @returns
+   */
+  async copy(text: string | number): Promise<'success' | 'failure'> {
+    if (this.timeout) {
+      this.#copiedStatus = undefined;
+      clearTimeout(this.timeout);
     }
 
-    /** Copies the given text to the users clipboard.
-     *
-     * ## Usage
-     * ```ts
-     * clipboard.copy('Hello, World!');
-     * ```
-     *
-     * @param text
-     * @returns
-     */
-    async copy(text: string | number): Promise<"success" | "failure"> {
-        if (this.timeout) {
-            this.#copiedStatus = undefined;
-            clearTimeout(this.timeout);
-        }
+    this.#copiedStatus = await copyText(text.toString());
 
-        this.#copiedStatus = await copyText(text.toString());
+    this.timeout = setTimeout(() => {
+      this.#copiedStatus = undefined;
+    }, this.delay);
 
-        this.timeout = setTimeout(() => {
-            this.#copiedStatus = undefined;
-        }, this.delay);
+    return this.#copiedStatus;
+  }
 
-        return this.#copiedStatus;
-    }
+  /** True when the user has just copied to the clipboard. */
+  get copied(): boolean {
+    return this.#copiedStatus === 'success';
+  }
 
-    /** True when the user has just copied to the clipboard. */
-    get copied(): boolean {
-        return this.#copiedStatus === "success";
-    }
+  /**	Indicates whether a copy has occurred
+   * and gives a status of either `success` or `failure`. */
+  get status(): 'success' | 'failure' | undefined {
+    return this.#copiedStatus;
+  }
 
-    /**	Indicates whether a copy has occurred
-     * and gives a status of either `success` or `failure`. */
-    get status(): "success" | "failure" | undefined {
-        return this.#copiedStatus;
-    }
-
-    /**
-     * The last copied text.
-     */
-    get lastCopied(): string | undefined {
-        return this.#lastCopied;
-    }
+  /**
+   * The last copied text.
+   */
+  get lastCopied(): string | undefined {
+    return this.#lastCopied;
+  }
 }
 
-export async function copyText(text: string): Promise<"success" | "failure"> {
-    try {
-        if (navigator.clipboard && window.isSecureContext) {
-            await navigator.clipboard.writeText(text);
-            return "success";
-        }
-
-        // when navigator.clipboard is unavailable we fallback to this for wider browser compatibility
-        const textArea = document.createElement("textarea");
-        textArea.value = text;
-        textArea.style.position = "fixed";
-        textArea.style.top = "0";
-        textArea.style.left = "0";
-        document.body.appendChild(textArea);
-        textArea.select();
-
-        const successful = document.execCommand("copy");
-
-        document.body.removeChild(textArea);
-
-        return successful ? "success" : "failure";
-    } catch {
-        return "failure";
+export async function copyText(text: string): Promise<'success' | 'failure'> {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return 'success';
     }
+
+    // when navigator.clipboard is unavailable we fallback to this for wider browser compatibility
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.top = '0';
+    textArea.style.left = '0';
+    document.body.appendChild(textArea);
+    textArea.select();
+
+    const successful = document.execCommand('copy');
+
+    document.body.removeChild(textArea);
+
+    return successful ? 'success' : 'failure';
+  } catch {
+    return 'failure';
+  }
 }
