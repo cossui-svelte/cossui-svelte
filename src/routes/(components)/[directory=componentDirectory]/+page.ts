@@ -7,7 +7,7 @@ export const load = (async ({ data }) => {
   const componentPromises = serverComponentsData.components.map(async (componentData) => {
     try {
       const Component = (await import(
-        `$lib/components/${componentData.directory}/${componentData.id}.svelte`
+        `$lib/components/examples/${componentData.directory}/${componentData.id}.svelte`
       ).then((module) => module.default)) as Component;
 
       return {
