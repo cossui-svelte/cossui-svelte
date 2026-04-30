@@ -1,10 +1,10 @@
 <script lang="ts">
-	import type { AvailableOUIComponent } from '$data/api/components/components.handler';
+	import type { AvailableCOSSUIComponent } from "$data/api/components/components.handler";
 
-	import { PROJECT_NAME, SEO_DELIMITER } from '$lib/config';
+	import { PROJECT_NAME, SEO_DELIMITER } from "$lib/config";
 
 	type Props = {
-		component: AvailableOUIComponent;
+		component: AvailableCOSSUIComponent;
 	};
 
 	let { component }: Props = $props();

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { AvailableOUIComponent } from "$data/api/components/components.handler";
+	import type { AvailableCOSSUIComponent } from "$data/api/components/components.handler";
 	import type { HTMLAttributes } from "svelte/elements";
 
 	import CodePreview from "../code-preview.svelte";
@@ -17,13 +17,13 @@
 	import { tick } from "svelte";
 
 	type PropsComponentPreview = HTMLAttributes<HTMLDivElement> & {
-		component: AvailableOUIComponent;
+		component: AvailableCOSSUIComponent;
 		isSinglePage?: false;
 		onGotoComponent?: (e: MouseEvent) => void;
 	};
 
 	type PropsSinglePage = HTMLAttributes<HTMLDivElement> & {
-		component: AvailableOUIComponent;
+		component: AvailableCOSSUIComponent;
 		isSinglePage: true;
 		onGotoComponent?: never;
 	};

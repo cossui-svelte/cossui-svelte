@@ -1,10 +1,10 @@
 import { getContext, setContext } from 'svelte';
-import type { AvailableOUIComponent } from '$data/api/components/components.handler';
+import type { AvailableCOSSUIComponent } from '$data/api/components/components.handler';
 
 const COMPONENT_DIALOG_CTX_KEY = Symbol('ctx:component-dialog');
 
 type ComponentDialogProps = {
-  component?: AvailableOUIComponent;
+  component?: AvailableCOSSUIComponent;
 };
 
 class ComponentDialog {
@@ -22,7 +22,7 @@ class ComponentDialog {
     this.#component = undefined;
   }
 
-  setComponent(component: AvailableOUIComponent) {
+  setComponent(component: AvailableCOSSUIComponent) {
     this.#component = component;
   }
 }

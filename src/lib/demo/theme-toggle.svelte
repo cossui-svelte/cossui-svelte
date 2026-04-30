@@ -1,13 +1,13 @@
 <script lang="ts">
-	import RiMoonClearLine from '~icons/ri/moon-clear-line';
-	import RiSunLine from '~icons/ri/sun-line';
-	import { mode, setMode } from 'mode-watcher';
+	import RiMoonClearLine from "~icons/ri/moon-clear-line";
+	import RiSunLine from "~icons/ri/sun-line";
+	import { mode, setMode } from "mode-watcher";
 
 	function handleModeChange() {
-		if ($mode === 'light') {
-			setMode('dark');
+		if (mode.current === "light") {
+			setMode("dark");
 		} else {
-			setMode('light');
+			setMode("light");
 		}
 	}
 </script>
@@ -18,7 +18,7 @@
 		name="theme-toggle"
 		id="theme-toggle"
 		class="peer sr-only"
-		checked={$mode === 'light'}
+		checked={mode.current === "light"}
 		onchange={handleModeChange}
 		aria-label="Toggle dark mode"
 	/>
