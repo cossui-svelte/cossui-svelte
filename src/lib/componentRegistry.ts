@@ -65,12 +65,13 @@ class ComponentRegistry {
     const paths = Object.keys(files);
 
     for (const path of paths) {
-      const match = path.match(/\/components\/([^/]+)\/([^/]+)\.svelte$/);
+      const match = path.match(/\/components\/examples\/([^/]+)\/([^/]+)\.svelte$/);
       if (!match) continue;
 
       const [, directory, filename] = match as [string, COSSUIDirectory, COSSUIComponent];
 
       if (!componentMap.has(directory)) {
+        console.log("Adding directory to component map: " + directory);
         componentMap.set(directory, new Set());
       }
       componentMap.get(directory)?.add(filename);
@@ -91,11 +92,12 @@ class ComponentRegistry {
    * Gets the GitHub URL for a directory or component
    */
   #generateGithubUrl(directory: COSSUIDirectory, filename?: string): string {
-    const basePath = `${GITHUB_REPO_URL}/tree/main/src/lib/components/${directory}`;
+    const basePath = `${GITHUB_REPO_URL}/tree/main/src/lib/components/examples/${directory}`;
     return filename ? `${basePath}/${filename}.svelte` : basePath;
   }
 
   #getFile<T extends COSSUIDirectory>(directory: T): COSSUIDirectoryToComponent[T][] {
+    console.log("Getting files for directory: " + directory);
     const components = this.#components.get(directory);
     if (!components?.size) {
       throw new Error(`Components ${directory} not found in components/${directory}`);
@@ -126,7 +128,7 @@ class ComponentRegistry {
 
     Object.values(COSSUI_DIRECTORIES).forEach((directoryConfig) => {
       const directory = directoryConfig.directory;
-      const directoryPath = `src/lib/components/${directory}`;
+      const directoryPath = `src/lib/components/examples/${directory}`;
       const components = this.#components.get(directory);
       const componentsMetadata: ComponentMetadata[] = [];
       const stateBreakdown = {

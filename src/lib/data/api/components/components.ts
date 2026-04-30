@@ -30,6 +30,9 @@ export const fetchComponentFromAPI = async (
   fetch: typeof globalThis.fetch,
   { directory, id }: { directory: COSSUIDirectory; id: COSSUIComponent }
 ) => {
+
+  console.log("directory " + directory)
+
   const { components } = await fetchFromAPI<ComponentAPIResponseJSON>(fetch, directory);
   const [component] = components.filter((c): c is AvailableCOSSUIComponent => {
     if (c.id !== id) return false;

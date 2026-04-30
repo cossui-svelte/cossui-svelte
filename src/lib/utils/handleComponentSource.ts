@@ -18,14 +18,14 @@ interface ComponentImports {
 const getImports = (): ComponentImports => {
   return {
     compiled: import.meta.glob(
-      ['/src/lib/components/**/*.svelte', '!/src/lib/components/ui/**/*.svelte'],
+      ['/src/lib/components/examples/**/*.svelte', '!/src/lib/components/ui/**/*.svelte'],
       {
         eager: false,
         import: 'default'
       }
     ) as Record<string, () => Promise<Component>>,
     source: import.meta.glob(
-      ['/src/lib/components/**/*.svelte', '!/src/lib/components/ui/**/*.svelte'],
+      ['/src/lib/components/examples/**/*.svelte', '!/src/lib/components/ui/**/*.svelte'],
       {
         eager: false,
         import: 'default',
@@ -39,6 +39,7 @@ export async function getComponentSource(
   directory: COSSUIDirectory,
   componentName: COSSUIComponent
 ) {
+  console.log(`Getting source for component: ${directory}/${componentName}`);
   const path = buildComponentPath(directory, componentName);
   const imports = getImports();
   const importFn = imports.source[path];
@@ -74,8 +75,8 @@ export async function getComponentSource(
 function buildComponentPath(
   directory: string,
   componentName: string
-): `/src/lib/components/${string}/${string}.svelte` {
-  return `/src/lib/components/${directory}/${componentName}.svelte`;
+): `/src/lib/components/examples/${string}/${string}.svelte` {
+  return `/src/lib/components/examples/${directory}/${componentName}.svelte`;
 }
 
 function getDependencies(source: string): PossibleDependency[] {
