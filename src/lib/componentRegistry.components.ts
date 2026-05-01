@@ -2,37 +2,38 @@
 /**
  * !!!!!!!!!!
  * This file is auto-generated. Do not edit manually
- * Last generated at: 4/30/2026, 11:16:27 PM
+ * Last generated at: 5/1/2026, 9:03:15 AM
  * To update, run: pnpm generate:registry --format
  * @version 0.1.0
  * !!!!!!!!!!
  */
 export const COSSUI_DIRECTORIES = {
   BUTTONS: {
+    directory: "buttons",
+    name: "Buttons",
     components: [
-      'button-01.svelte',
-      'button-02.svelte',
-      'button-03.svelte',
-      'button-04.svelte',
-      'button-05.svelte',
-      'button-06.svelte',
-      'button-07.svelte',
-      'button-08.svelte',
-      'button-09.svelte',
-      'button-10.svelte'
+      "button-01.svelte",
+      "button-02.svelte",
+      "button-03.svelte",
+      "button-04.svelte",
+      "button-05.svelte",
+      "button-06.svelte",
+      "button-07.svelte",
+      "button-08.svelte",
+      "button-09.svelte",
+      "button-10.svelte",
     ],
-    directory: 'buttons',
-    name: 'Buttons',
     status: {
+      todo: 0,
       ready: 10,
-      todo: 0
-    }
-  }
+    },
+  },
 } as const;
 export type COSSUIDirectories = typeof COSSUI_DIRECTORIES;
 export const COMPONENT_STATES = {
-  READY: 'ready',
-  TODO: 'todo'
+  TODO: "todo",
+  READY: "ready",
 } as const;
 
-export type ComponentState = (typeof COMPONENT_STATES)[keyof typeof COMPONENT_STATES];
+export type ComponentState =
+  (typeof COMPONENT_STATES)[keyof typeof COMPONENT_STATES];
