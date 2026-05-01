@@ -2,7 +2,7 @@
 /**
  * !!!!!!!!!!
  * This file is auto-generated. Do not edit manually
- * Last generated at: 4/30/2026, 10:30:57 AM
+ * Last generated at: 4/30/2026, 11:16:27 PM
  * To update, run: pnpm generate:registry --format
  * @version 0.1.0
  * !!!!!!!!!!
@@ -42,21 +42,21 @@ export type COSSUIDirectoryTodoComponents = {
 };
 
 // Ready Component Helpers
-export type OUIReadyComponent<T extends keyof COSSUIDirectories> = Exclude<
+export type COSSUIReadyComponent<T extends keyof COSSUIDirectories> = Exclude<
   COSSUIDirectories[T]['components'][number],
   `${string}todo.svelte`
 >;
 
 // Get all ready components
-export type OUIReadyComponents = {
-  [K in keyof COSSUIDirectories]: OUIReadyComponent<K>;
+export type COSSUIReadyComponents = {
+  [K in keyof COSSUIDirectories]: COSSUIReadyComponent<K>;
 }[keyof COSSUIDirectories];
 
 // Get ready components by directory
 export type COSSUIDirectoryReadyComponents = {
   [K in keyof COSSUIDirectories]: {
     directory: K;
-    components: OUIReadyComponent<K>[];
+    components: COSSUIReadyComponent<K>[];
   };
 };
 
@@ -70,7 +70,7 @@ export type COSSUIDirectoryComponentCounts = {
 };
 
 // Directory Status Filters
-export type OUIDirectoriesWithTodo = {
+export type COSSUIDirectoriesWithTodo = {
   [K in keyof COSSUIDirectories as COSSUIDirectories[K]['status']['todo'] extends 0
     ? never
     : K]: COSSUIDirectories[K];

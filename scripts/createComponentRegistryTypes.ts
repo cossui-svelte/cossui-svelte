@@ -389,21 +389,21 @@ export type ComponentState = (typeof COMPONENT_STATES)[keyof typeof COMPONENT_ST
 		function generateReadyComponentHelpers(): string {
 			return `
 // Ready Component Helpers
-export type OUIReadyComponent<T extends keyof ${TYPES.objectTypeName}> = Exclude<
+export type COSSUIReadyComponent<T extends keyof ${TYPES.objectTypeName}> = Exclude<
   ${TYPES.objectTypeName}[T]['components'][number],
   \`\${string}${CONSTANTS.COMPONENT_STATES.TODO}${CONSTANTS.FILE_EXTENSIONS.SVELTE}\`
 >;
 
 // Get all ready components
-export type OUIReadyComponents = {
-  [K in keyof ${TYPES.objectTypeName}]: OUIReadyComponent<K>
+export type COSSUIReadyComponents = {
+  [K in keyof ${TYPES.objectTypeName}]: COSSUIReadyComponent<K>
 }[keyof ${TYPES.objectTypeName}];
 
 // Get ready components by directory
 export type COSSUIDirectoryReadyComponents = {
   [K in keyof ${TYPES.objectTypeName}]: {
     directory: K;
-    components: OUIReadyComponent<K>[];
+    components: COSSUIReadyComponent<K>[];
   }
 };`;
 		}
@@ -423,7 +423,7 @@ export type COSSUIDirectoryComponentCounts = {
 		function generateDirectoryStatusFilters(): string {
 			return `
 // Directory Status Filters
-export type OUIDirectoriesWithTodo = {
+export type COSSUIDirectoriesWithTodo = {
   [K in keyof ${TYPES.objectTypeName} as ${TYPES.objectTypeName}[K]['status']['todo'] extends 0 ? never : K]: ${TYPES.objectTypeName}[K]
 };`;
 		}

@@ -434,9 +434,9 @@ export function useControl(props: ControlStateProps) {
   return setContext(FORM_CONTROL_CTX, new ControlState(props, getField()));
 }
 
-export function _getFormControl() {
-  return getContext<ControlState>(FORM_CONTROL_CTX);
-}
+// export function _getFormControl() {
+//   return getContext<ControlState>(FORM_CONTROL_CTX);
+// }
 
 export function useLabel(props: LabelStateProps) {
   const control = hasContext(FORM_CONTROL_CTX)
@@ -551,14 +551,14 @@ export function useFormControl(props: UseFormControlProps) {
   };
 }
 
-/**
- * Use `useFormControl` instead.
- * @deprecated
- */
-export const getFormControl = useFormControl;
+// /**
+//  * Use `useFormControl` instead.
+//  * @deprecated
+//  */
+// export const getFormControl = useFormControl;
 
-/**
- * Use `useFormField` instead.
- * @deprecated
- */
-export const getFormField = useFormField;
+// /**
+//  * Use `useFormField` instead.
+//  * @deprecated
+//  */
+// export const getFormField = useFormField;

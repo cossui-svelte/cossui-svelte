@@ -1,8 +1,8 @@
 import type { ParamMatcher } from '@sveltejs/kit';
 import { COSSUI_DIRECTORIES } from '$lib/componentRegistry.components';
-import type { OUIReadyComponents } from '$lib/componentRegistry.types';
+import type { COSSUIReadyComponents } from '$lib/componentRegistry.types';
 
-export const match = ((param: string): param is OUIReadyComponents => {
+export const match = ((param: string): param is COSSUIReadyComponents => {
   return Object.values(COSSUI_DIRECTORIES).some((route) =>
     route.components.some((componentId) => {
       const componentName = componentId.split('.');

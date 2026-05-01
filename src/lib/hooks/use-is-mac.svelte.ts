@@ -8,11 +8,11 @@ export function useIsMac(): {
   const isMac = $derived(browser ? navigator.userAgent.includes('Mac') : false);
 
   return {
-    get current(): boolean {
-      return isMac;
-    },
     get cmdOrCtrl(): string {
       return isMac ? '⌘' : 'Ctrl';
+    },
+    get current(): boolean {
+      return isMac;
     },
     get optionOrAlt(): string {
       return isMac ? '⌥' : 'Alt';

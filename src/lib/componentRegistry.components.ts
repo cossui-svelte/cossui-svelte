@@ -2,15 +2,13 @@
 /**
  * !!!!!!!!!!
  * This file is auto-generated. Do not edit manually
- * Last generated at: 4/30/2026, 10:30:57 AM
+ * Last generated at: 4/30/2026, 11:16:27 PM
  * To update, run: pnpm generate:registry --format
  * @version 0.1.0
  * !!!!!!!!!!
  */
 export const COSSUI_DIRECTORIES = {
   BUTTONS: {
-    directory: 'buttons',
-    name: 'Buttons',
     components: [
       'button-01.svelte',
       'button-02.svelte',
@@ -23,16 +21,18 @@ export const COSSUI_DIRECTORIES = {
       'button-09.svelte',
       'button-10.svelte'
     ],
+    directory: 'buttons',
+    name: 'Buttons',
     status: {
-      todo: 0,
-      ready: 10
+      ready: 10,
+      todo: 0
     }
   }
 } as const;
 export type COSSUIDirectories = typeof COSSUI_DIRECTORIES;
 export const COMPONENT_STATES = {
-  TODO: 'todo',
-  READY: 'ready'
+  READY: 'ready',
+  TODO: 'todo'
 } as const;
 
 export type ComponentState = (typeof COMPONENT_STATES)[keyof typeof COMPONENT_STATES];
