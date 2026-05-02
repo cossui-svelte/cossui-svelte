@@ -1,70 +1,33 @@
 <script lang="ts">
 
-  /**
-   * TabsIndicator.svelte — Svelte 5 port of TabsIndicator.tsx
-   *
-   * A visual indicator that can be styled to match the position of the currently
-   * active tab. Renders a `<span>` element.
-   *
-   * This component reads two contexts that **must** be provided by ancestor
-   * components (TabsRoot.svelte and TabsList.svelte).  For the context values
-   * to be reactive, the parent must expose each property through a getter that
-   * is backed by a `$state` variable, for example:
-   *
-   * ```svelte
-   * <!-- TabsRoot.svelte -->
-   * <script lang="ts">
-   *   import { setContext } from 'svelte';
-   *   import { TABS_ROOT_CONTEXT_KEY } from './TabsIndicator.svelte';
-   *
-   *   let value = $state(0);
-   *   let orientation = $state<'horizontal' | 'vertical'>('horizontal');
-   *   let tabActivationDirection = $state<TabActivationDirection>('none');
-   *
-   *   setContext(TABS_ROOT_CONTEXT_KEY, {
-   *     get value()                  { return value; },
-   *     get orientation()            { return orientation; },
-   *     get tabActivationDirection() { return tabActivationDirection; },
-   *     getTabElementBySelectedValue,
-   *   });
-   * </script>
-   * ```
-   *
-   * ```svelte
-   * <!-- TabsList.svelte -->
-   * <script lang="ts">
-   *   import { setContext } from 'svelte';
-   *   import { TABS_LIST_CONTEXT_KEY } from './TabsIndicator.svelte';
-   *
-   *   let tabsListElement = $state<HTMLElement | null>(null);
-   *
-   *   setContext(TABS_LIST_CONTEXT_KEY, {
-   *     get tabsListElement() { return tabsListElement; },
-   *     registerIndicatorUpdateListener,
-   *   });
-   * </script>
-   * ```
-   *
-   * CSS custom properties set on the indicator span:
-   *   --active-tab-left    Distance (px) from the list's left edge to the active tab
-   *   --active-tab-right   Distance (px) from the active tab to the list's right edge
-   *   --active-tab-top     Distance (px) from the list's top edge to the active tab
-   *   --active-tab-bottom  Distance (px) from the active tab to the list's bottom edge
-   *   --active-tab-width   Width (px) of the active tab
-   *   --active-tab-height  Height (px) of the active tab
-   *
-   * Documentation: https://base-ui.com/react/components/tabs
-   */
+  // TabsIndicator.svelte — Svelte 5 port of TabsIndicator.tsx
+  //
+  // A visual indicator that can be styled to match the position of the currently
+  // active tab. Renders a `<span>` element.
+  //
+  // Requires TabsRootContextValue from a TabsRoot ancestor and
+  // TabsListContextValue from a TabsList ancestor. Context values must be
+  // exposed as getters backed by `$state` to remain reactive.
+  //
+  // CSS custom properties set on the indicator span:
+  //   --active-tab-left    Distance (px) from the list's left edge to the active tab
+  //   --active-tab-right   Distance (px) from the active tab to the list's right edge
+  //   --active-tab-top     Distance (px) from the list's top edge to the active tab
+  //   --active-tab-bottom  Distance (px) from the active tab to the list's bottom edge
+  //   --active-tab-width   Width (px) of the active tab
+  //   --active-tab-height  Height (px) of the active tab
+  //
+  // Documentation: https://base-ui.com/react/components/tabs
   import { getContext, onMount } from 'svelte';
 
   import type { Snippet } from 'svelte';
 
   // ─── Context keys ─────────────────────────────────────────────────────────────
 
-  /** Context key for the value provided by the TabsRoot ancestor. */
+  // Context key for the value provided by the TabsRoot ancestor.
   export const TABS_ROOT_CONTEXT_KEY = Symbol.for('base-ui:tabs-root');
 
-  /** Context key for the value provided by the TabsList ancestor. */
+  // Context key for the value provided by the TabsList ancestor.
   export const TABS_LIST_CONTEXT_KEY = Symbol.for('base-ui:tabs-list');
 
   // ─── Exported types ───────────────────────────────────────────────────────────
@@ -84,55 +47,45 @@
     height: number;
   }
 
-  /**
-   * Shape of the context object that must be provided by `TabsRoot.svelte`.
-   * All mutable properties should be implemented as getters backed by `$state`
-   * so that downstream consumers (including this component) react to changes.
-   */
+  // Shape of the context object that must be provided by `TabsRoot.svelte`.
+  // All mutable properties should be implemented as getters backed by `$state`
+  // so that downstream consumers (including this component) react to changes.
   export interface TabsRootContextValue {
-    /** The currently active tab value (`null` when no tab is selected). */
+    // The currently active tab value (`null` when no tab is selected).
     readonly value: unknown;
-    /** Layout orientation of the tabs widget. */
+    // Layout orientation of the tabs widget.
     readonly orientation: TabsOrientation;
-    /** Direction the active tab moved relative to the previously active tab. */
+    // Direction the active tab moved relative to the previously active tab.
     readonly tabActivationDirection: TabActivationDirection;
-    /**
-     * Returns the DOM element of the tab whose effective value equals
-     * `selectedValue`, or `null` when not found.
-     */
+    // Returns the DOM element of the tab whose effective value equals
+    // `selectedValue`, or `null` when not found.
     getTabElementBySelectedValue(selectedValue: unknown): HTMLElement | null;
   }
 
-  /**
-   * Shape of the context object that must be provided by `TabsList.svelte`.
-   */
+  // Shape of the context object that must be provided by `TabsList.svelte`.
   export interface TabsListContextValue {
-    /** The `<div role="tablist">` element, or `null` before it mounts. */
+    // The `<div role="tablist">` element, or `null` before it mounts.
     readonly tabsListElement: HTMLElement | null;
-    /**
-     * Registers a callback that will be called whenever the indicator needs to
-     * recalculate its position (e.g. after a tab resizes or the list scrolls).
-     * Returns an unsubscribe function.
-     */
+    // Registers a callback that will be called whenever the indicator needs to
+    // recalculate its position (e.g. after a tab resizes or the list scrolls).
+    // Returns an unsubscribe function.
     registerIndicatorUpdateListener(listener: () => void): () => void;
   }
 
   // ─── Component props ──────────────────────────────────────────────────────────
 
   interface Props {
-    /** CSS class forwarded to the `<span>` element. */
+    // CSS class forwarded to the `<span>` element.
     class?: string;
-    /**
-     * When `true`, an inline `<script>` is injected immediately after the
-     * `<span>` during server-side rendering so the indicator is positioned
-     * before the JavaScript bundle loads, eliminating the layout shift that
-     * would otherwise occur on first hydration.
-     * @default false
-     */
+    // When `true`, an inline `<script>` is injected immediately after the
+    // `<span>` during server-side rendering so the indicator is positioned
+    // before the JavaScript bundle loads, eliminating the layout shift that
+    // would otherwise occur on first hydration.
+    // @default false
     renderBeforeHydration?: boolean;
-    /** Slot content (the indicator is usually self-closing). */
+    // Slot content (the indicator is usually self-closing).
     children?: Snippet;
-    /** Any extra HTML attributes are forwarded to the underlying `<span>`. */
+    // Any extra HTML attributes are forwarded to the underlying `<span>`.
     [key: string]: unknown;
   }
 
@@ -150,10 +103,8 @@
 
   // ─── Mount tracking ───────────────────────────────────────────────────────────
 
-  /**
-   * Becomes `true` after the component mounts on the client.
-   * Used to suppress the pre-hydration script once the client has taken over.
-   */
+  // Becomes `true` after the component mounts on the client.
+  // Used to suppress the pre-hydration script once the client has taken over.
   let isMounted = $state(false);
 
   onMount(() => {
@@ -173,11 +124,9 @@
 
   // ─── Helpers ──────────────────────────────────────────────────────────────────
 
-  /**
-   * Returns the CSS `width` and `height` of `element`, falling back to
-   * `offsetWidth`/`offsetHeight` when the two disagree (which happens when a
-   * CSS transform scales the element).
-   */
+  // Returns the CSS `width` and `height` of `element`, falling back to
+  // `offsetWidth`/`offsetHeight` when the two disagree (which happens when a
+  // CSS transform scales the element).
   function getCssDimensions(element: Element): { width: number; height: number } {
     const css = getComputedStyle(element);
     // SVG elements may return empty strings → parseFloat returns NaN → fallback 0
@@ -193,11 +142,9 @@
     return { width: w, height: h };
   }
 
-  /**
-   * Reads DOM layout information and updates the position `$state` variables.
-   * Called both reactively (via `$effect`) and imperatively (from the
-   * `registerIndicatorUpdateListener` callback).
-   */
+  // Reads DOM layout information and updates the position `$state` variables.
+  // Called both reactively (via `$effect`) and imperatively (from the
+  // `registerIndicatorUpdateListener` callback).
   function measurePosition(): void {
     const value = rootCtx?.value;
     const tabsListElement = listCtx?.tabsListElement;
@@ -253,12 +200,10 @@
 
   // ─── Effects ──────────────────────────────────────────────────────────────────
 
-  /**
-   * Re-measure whenever the active value or the list element changes.
-   * Reading `rootCtx.value` and `listCtx.tabsListElement` here registers them
-   * as reactive dependencies (works when the context exposes them as getters
-   * backed by `$state`).
-   */
+  // Re-measure whenever the active value or the list element changes.
+  // Reading `rootCtx.value` and `listCtx.tabsListElement` here registers them
+  // as reactive dependencies (works when the context exposes them as getters
+  // backed by `$state`).
   $effect(() => {
     // Explicit reads so Svelte tracks these as dependencies.
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
@@ -268,10 +213,8 @@
     measurePosition();
   });
 
-  /**
-   * Subscribe to the list's internal "indicator needs update" signal.
-   * This fires after a tab resizes (via ResizeObserver) or the list scrolls.
-   */
+  // Subscribe to the list's internal "indicator needs update" signal.
+  // This fires after a tab resizes (via ResizeObserver) or the list scrolls.
   $effect(() => {
     if (!listCtx?.registerIndicatorUpdateListener) {
       return;
@@ -282,7 +225,7 @@
 
   // ─── Derived values ───────────────────────────────────────────────────────────
 
-  /** Inline style string containing the six CSS custom properties. */
+  // Inline style string containing the six CSS custom properties.
   let styleString = $derived(
     isTabSelected
       ? [
@@ -296,16 +239,14 @@
       : '',
   );
 
-  /**
-   * The indicator is hidden until it has non-zero dimensions, preventing a
-   * flash of a mis-positioned element while the layout settles.
-   */
+  // The indicator is hidden until it has non-zero dimensions, preventing a
+  // flash of a mis-positioned element while the layout settles.
   let displayIndicator = $derived(isTabSelected && width > 0 && height > 0);
 
   let orientationAttr = $derived(rootCtx?.orientation ?? 'horizontal');
   let activationDirectionAttr = $derived(rootCtx?.tabActivationDirection ?? 'none');
 
-  /** Only render the indicator when a tab value is selected. */
+  // Only render the indicator when a tab value is selected.
   let hasValue = $derived(rootCtx?.value != null);
 
   // ─── Pre-hydration script ─────────────────────────────────────────────────────

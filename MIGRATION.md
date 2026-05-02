@@ -45,3 +45,5 @@ Special cases:
 <GroupText>
     <Label aria-label="Domain" htmlFor="domain">https://</Label>
 </GroupText>
+
+no funky <> </> -> just ignore
