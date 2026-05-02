@@ -1,32 +1,40 @@
 <script lang="ts">
-  import { getContext } from "svelte";
-  import { SunMoon } from "lucide-svelte";
-  import { Button } from "$lib/components/ui/button";
-  import {
-    THEME_CONTEXT_KEY,
-    type ThemeContextType,
-  } from "./theme-provider.svelte.old";
+      import { Button } from "$lib/components/ui/button";
+      import { cn } from "$lib/utils";
+      import { toggleMode } from "mode-watcher";
 
-  const themeCtx = getContext<ThemeContextType | undefined>(THEME_CONTEXT_KEY);
+      type Props = {
+            class?: string;
+      };
 
-  function toggleTheme() {
-    if (themeCtx) {
-      themeCtx.setTheme(themeCtx.resolvedTheme === "dark" ? "light" : "dark");
-    } else if (typeof document !== "undefined") {
-      // Fallback: toggle dark class directly
-      const isDark = document.documentElement.classList.toggle("dark");
-      document.documentElement.style.colorScheme = isDark ? "dark" : "light";
-    }
-  }
+      let { class: className }: Props = $props();
 </script>
 
 <Button
-  class="relative size-8"
-  onclick={toggleTheme}
-  size="icon"
-  title="Toggle theme"
-  variant="ghost"
+      class={cn("relative size-8", className)}
+      onclick={toggleMode}
+      size="icon"
+      title="Toggle theme"
+      variant="ghost"
 >
-  <SunMoon class="-rotate-45 size-4" strokeWidth={2} />
-  <span class="sr-only">Toggle theme</span>
+      <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="size-4.5"
+      >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+            <path d="M12 3l0 18" />
+            <path d="M12 9l4.65 -4.65" />
+            <path d="M12 14.3l7.37 -7.37" />
+            <path d="M12 19.6l8.85 -8.85" />
+      </svg>
+      <span class="sr-only">Toggle theme</span>
 </Button>
