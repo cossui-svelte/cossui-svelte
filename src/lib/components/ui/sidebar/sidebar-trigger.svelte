@@ -2,9 +2,10 @@
   import type { Snippet } from "svelte";
   import type { HTMLButtonAttributes } from "svelte/elements";
   import { PanelLeft } from "lucide-svelte";
-  import Button from "../button.svelte";
+
   import { getSidebarContext } from "./sidebar-context.js";
   import { cn } from "$lib/utils.js";
+  import { Button } from "$lib/components/ui/button";
 
   interface Props extends HTMLButtonAttributes {
     children?: Snippet;

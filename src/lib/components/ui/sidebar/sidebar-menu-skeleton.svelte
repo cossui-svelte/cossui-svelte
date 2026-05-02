@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { HTMLAttributes } from "svelte/elements";
-  import Skeleton from "../skeleton.svelte";
+  import { Skeleton } from "$lib/components/ui/skeleton";
   import { cn } from "$lib/utils.js";
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
@@ -20,9 +20,9 @@
   {...restProps}
 >
   {#if showIcon}
-    <Skeleton class="size-4 rounded-lg" data-sidebar="menu-skeleton-icon" />
+    <div class="size-4 rounded-lg" data-sidebar="menu-skeleton-icon" />
   {/if}
-  <Skeleton
+  <div
     class="h-4 max-w-(--skeleton-width) flex-1"
     data-sidebar="menu-skeleton-text"
     style="--skeleton-width: {width};"
