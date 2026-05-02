@@ -5,7 +5,7 @@
   import {
     THEME_CONTEXT_KEY,
     type ThemeContextType,
-  } from "./theme-provider.svelte";
+  } from "./theme-provider.svelte.old";
 
   const themeCtx = getContext<ThemeContextType | undefined>(THEME_CONTEXT_KEY);
 

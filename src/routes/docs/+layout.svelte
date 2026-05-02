@@ -1,8 +1,5 @@
 <script lang="ts">
     import SidebarProvider from "$lib/components/ui/sidebar/sidebar-provider.svelte";
-    // import { source } from "@/lib/source";
-
-    // import DocsSidebar from "$lib/site-components/docs-sidebar.svelte";
     import type { Snippet } from "svelte";
 
     let { children }: { children: Snippet } = $props();
@@ -12,7 +9,6 @@
     <SidebarProvider
         class="container min-h-min flex-1 items-start px-0 [--sidebar-width:220px] [--top-spacing:0] lg:grid lg:grid-cols-[var(--sidebar-width)_minmax(0,1fr)] lg:[--sidebar-width:240px] lg:[--top-spacing:calc(var(--spacing)*4)]"
     >
-        <!-- <DocsSidebar tree={source.pageTree} /> -->
         <div class="h-full w-full">{@render children()}</div>
     </SidebarProvider>
 </main>

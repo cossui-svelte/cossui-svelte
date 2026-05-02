@@ -1,14 +1,36 @@
 <script lang="ts">
-	import { page } from '$app/state';
+	import { page } from "$app/state";
+	import PageHeaderDescription from "$lib/components/shared-components/page-header-description.svelte";
+	import PageHeaderHeading from "$lib/components/shared-components/page-header-heading.svelte";
+	import PageHeader from "$lib/components/shared-components/page-header.svelte";
+	import { Button } from "$lib/components/ui/button";
+	import { RiArrowLeftLine } from "svelte-remixicon";
 </script>
 
 <svelte:head>
-	<title>{page.status}: {page.error?.message}</title>
+	<title>Page Not Found {page.status}: {page.error?.message}</title>
+	<description>
+		The page you're looking for doesn't exist or may have been moved.
+	</description>
 </svelte:head>
 
-<div class="flex h-[calc(100vh-16rem)] flex-col items-center justify-center gap-4">
-	<h3 class="text-svelte scroll-m-20 text-2xl font-semibold tracking-tight">{page.status}</h3>
-	<h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-		{page.error?.message}
-	</h1>
+<div class="container w-full">
+	<PageHeader>
+		<PageHeaderHeading>Page Not Found</PageHeaderHeading>
+		<PageHeaderDescription>
+			The page you&apos;re looking for doesn&apos;t exist or may have been
+			moved.
+		</PageHeaderDescription>
+		<div class="mt-4">
+			<Button class="group" size="lg">
+				<a href="/">
+					<RiArrowLeftLine
+						aria-hidden="true"
+						class="-ms-1 group-hover:-translate-x-0.5 opacity-60 transition-transform"
+					/>
+					Back to Home
+				</a>
+			</Button>
+		</div>
+	</PageHeader>
 </div>

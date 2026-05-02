@@ -9,9 +9,6 @@
 	import ShareButton from "../share-button.svelte";
 
 	import { Box, Code, Folder, FolderTree } from "lucide-svelte";
-	// import Code from '@lucide/svelte/icons/code';
-	// import Folder from '@lucide/svelte/icons/folder';
-	// import FolderTree from '@lucide/svelte/icons/folder-tree';
 	import { page } from "$app/state";
 	import * as Tab from "$lib/components/ui/tabs";
 	import { tick } from "svelte";

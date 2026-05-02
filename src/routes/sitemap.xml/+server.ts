@@ -28,11 +28,9 @@ const STATIC_URLS: Array<{
     changefreq: string;
     priority: string;
 }> = [
-        { slug: '', changefreq: 'daily', priority: '1.0' }, // home
-        { slug: 'about', changefreq: 'monthly', priority: '0.7' },
-        { slug: 'contact', changefreq: 'monthly', priority: '0.6' },
-        { slug: 'pricing', changefreq: 'weekly', priority: '0.8' },
-        { slug: 'blog', changefreq: 'daily', priority: '0.9' },
+        { slug: '', changefreq: 'monthly', priority: '1.0' }, // home
+        { slug: 'particles', changefreq: 'monthly', priority: '0.9' },
+        { slug: 'docs', changefreq: 'monthly', priority: '0.8' },
     ];
 
 export const GET: RequestHandler = ({ url }) => {
