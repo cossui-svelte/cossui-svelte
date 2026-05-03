@@ -81,7 +81,7 @@
 <div class="container w-full">
   <PageHeader class="max-w-2xl *:items-start *:text-left">
     <PageHeaderHeading>
-      A new, modern UI component library built on top of Base UI.
+      A new, modern UI component library built on top of Bits UI.
     </PageHeaderHeading>
     <PageHeaderDescription>{description}</PageHeaderDescription>
     <div class="mt-2 flex gap-2">
