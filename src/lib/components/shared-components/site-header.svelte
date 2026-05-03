@@ -8,7 +8,6 @@
   interface ProductItem {
     href: string;
     label: string;
-    upcoming?: boolean;
   }
 
   interface Props {
@@ -36,9 +35,9 @@
       class="-mt-0.5 flex shrink-0 items-center gap-1.5 font-heading text-2xl sm:text-[1.625em]"
     >
       {#if isExternal}
-        <a aria-label="Home" href={gatewayHome}>coss.com</a>
+        <a aria-label="Home" href={gatewayHome}>coss.ui</a>
       {:else}
-        <a aria-label="Home" href={gatewayHome}>coss.com</a>
+        <a aria-label="Home" href={gatewayHome}>coss.ui</a>
       {/if}
       <ProductLabel {currentProduct} items={products} />
     </div>

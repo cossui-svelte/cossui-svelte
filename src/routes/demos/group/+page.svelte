@@ -114,12 +114,7 @@
       <Label aria-label="Domain" for="domain">https://</Label>
     </GroupText>
     <GroupSeparator />
-    <Input
-      aria-label="Domain"
-      defaultValue="coss.com"
-      id="domain"
-      type="text"
-    />
+    <Input aria-label="Domain" defaultValue="coss.ui" id="domain" type="text" />
   </Group>
 </ComponentPreviewTabs>
 <ComponentPreviewTabs>

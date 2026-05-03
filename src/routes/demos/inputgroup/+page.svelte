@@ -78,7 +78,7 @@
             type="text"
         />
         <InputGroupAddon align="inline-end">
-            <InputGroupText>@coss.com</InputGroupText>
+            <InputGroupText>@coss.ui</InputGroupText>
         </InputGroupAddon>
     </InputGroup>
 </ComponentPreviewTabs>
@@ -123,11 +123,7 @@
 
 <ComponentPreviewTabs>
     <InputGroup>
-        <InputGroupInput
-            id="email-1"
-            placeholder="team@coss.com"
-            type="email"
-        />
+        <InputGroupInput id="email-1" placeholder="team@coss.ui" type="email" />
         <InputGroupAddon align="block-start">
             <Label class="text-foreground" for="email-1">Email</Label>
             <Popover>
