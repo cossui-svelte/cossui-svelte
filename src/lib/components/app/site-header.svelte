@@ -45,7 +45,8 @@
 
 <SiteHeaderBase {currentProduct} {products}>
   {#snippet mobileNav()}
-    <MobileNav class="flex lg:hidden" items={navItems} {tree} />
+    <!--  BUG TODO: If you activate this line, the page is unresponsive
+  <MobileNav class="flex lg:hidden" items={navItems} {tree} /> -->
   {/snippet}
 
   <MainNav class="hidden lg:flex" items={navItems} />
