@@ -6,12 +6,23 @@
     class="before:-left-[11.5px] before:-ml-1 after:-right-[11.5px] after:-mr-1 container pointer-events-none absolute inset-0 z-50 before:absolute before:top-[-3.5px] before:z-1 before:size-2 before:rounded-[2px] before:border before:border-border before:bg-popover before:bg-clip-padding before:shadow-xs after:absolute after:top-[-3.5px] after:z-1 after:size-2 after:rounded-[2px] after:border after:border-border after:bg-background after:bg-clip-padding after:shadow-xs dark:after:bg-clip-border dark:before:bg-clip-border"
   ></div>
   <div
-    class="container flex w-full items-center justify-center gap-2 px-4 sm:px-6"
+    class="container flex w-full flex-col items-center justify-center gap-2 px-4 sm:px-6"
   >
     <p>
-      © {new Date().getFullYear()}
-      <a class="font-heading text-foreground text-lg" href="/">coss.ui</a>
+      Built by
+      <a class="font-heading text-foreground text-lg" href="/">coss.ui</a>.
+      Ported to Svelte by
+      <a
+        class="font-heading text-foreground text-lg"
+        href="https://github.com/orefalo">orefalo</a
+      >
       – open source, open heart, open mind.
+    </p>
+    <p class="italic">
+      This project would have not been posible without <a
+        class="font-heading text-foreground text-lg"
+        href="/credits">full credits</a
+      >
     </p>
   </div>
 </footer>

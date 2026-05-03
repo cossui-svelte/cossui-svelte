@@ -4,6 +4,7 @@
   import CommandMenu from "./command-menu.svelte";
   import MainNav from "./main-nav.svelte";
   import MobileNav from "./mobile-nav.svelte";
+  import { Button } from "$lib/components/ui/button";
 
   interface PageNode {
     type: "page";
@@ -48,6 +49,15 @@
     <!--  BUG TODO: If you activate this line, the page is unresponsive
   <MobileNav class="flex lg:hidden" items={navItems} {tree} /> -->
   {/snippet}
+
+  <div class="mt-2 flex gap-2">
+    <Button variant="ghost">
+      <a href="/docs">Docs</a>
+    </Button>
+    <Button variant="ghost">
+      <a href="/particles">Particles</a>
+    </Button>
+  </div>
 
   <MainNav class="hidden lg:flex" items={navItems} />
 

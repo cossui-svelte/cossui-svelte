@@ -3,8 +3,8 @@
   import { Dialog } from "bits-ui";
   import { Search, CornerDownLeft, Atom, BookOpen } from "lucide-svelte";
   import { buttonVariants } from "$lib/components/ui/button";
-  import { Kbd } from "$lib/components/ui/kbd";
-  import KbdGroup from "$lib/components/ui/kbd/kbd-group.svelte";
+  import { Kbd, KbdGroup } from "$lib/components/ui/kbd";
+  import { useIsMac } from "$lib/hooks/use-is-mac.svelte";
 
   interface PageItem {
     value: string;
@@ -49,12 +49,7 @@
   let copyPayload = $state("");
 
   // Detect macOS
-  let isMac = $state(false);
-  $effect(() => {
-    if (typeof navigator !== "undefined") {
-      isMac = /Mac|iPhone|iPad/.test(navigator.platform);
-    }
-  });
+  let isMac = useIsMac();
 
   // Build grouped items from tree
   const groupedItems = $derived<PageGroup[]>(
@@ -198,7 +193,7 @@
         <Search class="size-4" strokeWidth={2} />
         <span class="hidden sm:inline">Search documentation…</span>
         <KbdGroup class="gap-1">
-          <Kbd>{isMac ? "⌘" : "Ctrl"}</Kbd>
+          <Kbd>{isMac.cmdOrCtrl}</Kbd>
           <Kbd class="aspect-square">K</Kbd>
         </KbdGroup>
       </button>
@@ -275,7 +270,7 @@
           <div class="flex min-w-0 items-center gap-2">
             <span class="truncate font-mono">{copyPayload}</span>
             <KbdGroup>
-              <Kbd>{isMac ? "⌘" : "Ctrl"}</Kbd>
+              <Kbd>{isMac.cmdOrCtrl}</Kbd>
               <Kbd>C</Kbd>
             </KbdGroup>
           </div>

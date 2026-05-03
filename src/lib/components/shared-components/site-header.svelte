@@ -18,10 +18,6 @@
   }
 
   let { products, mobileNav, children, currentProduct }: Props = $props();
-
-  const gatewayOrigin: string = import.meta.env.VITE_COSS_URL ?? "";
-  const gatewayHome = gatewayOrigin ? `${gatewayOrigin}/` : "/";
-  const isExternal = !!gatewayOrigin;
 </script>
 
 <header
@@ -34,11 +30,11 @@
     <div
       class="-mt-0.5 flex shrink-0 items-center gap-1.5 font-heading text-2xl sm:text-[1.625em]"
     >
-      {#if isExternal}
-        <a aria-label="Home" href={gatewayHome}>coss.ui</a>
-      {:else}
-        <a aria-label="Home" href={gatewayHome}>coss.ui</a>
-      {/if}
+      <a aria-label="Home" href="www.coss.ui"
+        >coss<span class="text-muted-foreground/64">.ui</span>
+        <span class="text-rose-400">svelte</span>
+      </a>
+
       <ProductLabel {currentProduct} items={products} />
     </div>
     <div class="ms-auto flex items-center gap-2 md:flex-1 md:justify-end">
