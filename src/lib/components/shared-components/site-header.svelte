@@ -30,7 +30,7 @@
     <div
       class="-mt-0.5 flex shrink-0 items-center gap-1.5 font-heading text-2xl sm:text-[1.625em]"
     >
-      <a aria-label="Home" href="www.coss.ui"
+      <a aria-label="Home" href="/"
         >coss<span class="text-muted-foreground/64">.ui</span>
         <span class="text-rose-400">svelte</span>
       </a>
