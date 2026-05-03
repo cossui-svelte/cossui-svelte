@@ -1,6 +1,6 @@
 <script lang="ts">
     import { Button } from "$lib/components/ui/button";
-    import ComponentPreviewTabs from "$lib/components/app/ComponentPreviewTabs.svelte";
+    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
 
     import {
         Circle,

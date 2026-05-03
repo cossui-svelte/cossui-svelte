@@ -1,13 +1,12 @@
 <script lang="ts">
-  import ComponentPreviewTabs from '$lib/components/app/ComponentPreviewTabs.svelte';
-  import { Button } from '$lib/components/ui/button';
+  import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
+  import { Button } from "$lib/components/ui/button";
   import {
     AnchoredToastProvider,
     ToastProvider,
     anchoredToastManager,
     toastManager,
-  } from '$lib/components/ui/toast';
-
+  } from "$lib/components/ui/toast";
 </script>
 
 <!-- Standard toast viewport (rendered once at layout level) -->
@@ -23,8 +22,8 @@
       variant="outline"
       onclick={() =>
         toastManager.add({
-          title: 'Event has been created',
-          description: 'Monday, January 3rd at 6:00 pm',
+          title: "Event has been created",
+          description: "Monday, January 3rd at 6:00 pm",
         })}
     >
       Default
@@ -33,8 +32,8 @@
     <Button
       variant="outline"
       onclick={() =>
-        toastManager.success('Saved successfully', {
-          description: 'Your changes have been saved.',
+        toastManager.success("Saved successfully", {
+          description: "Your changes have been saved.",
         })}
     >
       Success
@@ -43,8 +42,8 @@
     <Button
       variant="outline"
       onclick={() =>
-        toastManager.error('Something went wrong', {
-          description: 'Please try again later.',
+        toastManager.error("Something went wrong", {
+          description: "Please try again later.",
         })}
     >
       Error
@@ -53,8 +52,8 @@
     <Button
       variant="outline"
       onclick={() =>
-        toastManager.warning('Subscription ending', {
-          description: 'Your trial expires in 3 days.',
+        toastManager.warning("Subscription ending", {
+          description: "Your trial expires in 3 days.",
         })}
     >
       Warning
@@ -63,8 +62,8 @@
     <Button
       variant="outline"
       onclick={() =>
-        toastManager.info('New version available', {
-          description: 'Refresh to get the latest features.',
+        toastManager.info("New version available", {
+          description: "Refresh to get the latest features.",
         })}
     >
       Info
@@ -72,7 +71,8 @@
 
     <Button
       variant="outline"
-      onclick={() => toastManager.loading('Uploading file…', { duration: 3000 })}
+      onclick={() =>
+        toastManager.loading("Uploading file…", { duration: 3000 })}
     >
       Loading
     </Button>
@@ -84,12 +84,12 @@
       variant="outline"
       onclick={() =>
         toastManager.add({
-          title: 'File deleted',
-          description: 'report-q4.pdf has been removed.',
-          type: 'error',
+          title: "File deleted",
+          description: "report-q4.pdf has been removed.",
+          type: "error",
           action: {
-            label: 'Undo',
-            onclick: () => toastManager.info('Deletion undone'),
+            label: "Undo",
+            onclick: () => toastManager.info("Deletion undone"),
           },
         })}
     >
@@ -100,12 +100,12 @@
       variant="outline"
       onclick={() =>
         toastManager.add({
-          title: 'Meeting scheduled',
-          description: 'Thursday at 2:00 pm',
-          type: 'success',
+          title: "Meeting scheduled",
+          description: "Thursday at 2:00 pm",
+          type: "success",
           action: {
-            label: 'View',
-            onclick: () => toastManager.info('Opening calendar…'),
+            label: "View",
+            onclick: () => toastManager.info("Opening calendar…"),
           },
         })}
     >
@@ -120,10 +120,10 @@
       onclick={(e: MouseEvent) => {
         const btn = e.currentTarget as HTMLElement;
         anchoredToastManager.add({
-          title: 'Anchored toast',
-          description: 'This toast is positioned relative to the button.',
-          type: 'info',
-          positionerProps: { anchor: btn, side: 'top', sideOffset: 8 },
+          title: "Anchored toast",
+          description: "This toast is positioned relative to the button.",
+          type: "info",
+          positionerProps: { anchor: btn, side: "top", sideOffset: 8 },
         });
       }}
     >
@@ -135,9 +135,9 @@
       onclick={(e: MouseEvent) => {
         const btn = e.currentTarget as HTMLElement;
         anchoredToastManager.add({
-          title: 'Below the button',
-          type: 'success',
-          positionerProps: { anchor: btn, side: 'bottom', sideOffset: 8 },
+          title: "Below the button",
+          type: "success",
+          positionerProps: { anchor: btn, side: "bottom", sideOffset: 8 },
         });
       }}
     >
@@ -149,9 +149,9 @@
       onclick={(e: MouseEvent) => {
         const btn = e.currentTarget as HTMLElement;
         anchoredToastManager.add({
-          title: 'Tooltip style',
+          title: "Tooltip style",
           tooltipStyle: true,
-          positionerProps: { anchor: btn, side: 'top', sideOffset: 6 },
+          positionerProps: { anchor: btn, side: "top", sideOffset: 6 },
         });
       }}
     >
@@ -163,13 +163,18 @@
       onclick={(e: MouseEvent) => {
         const btn = e.currentTarget as HTMLElement;
         anchoredToastManager.add({
-          title: 'Action required',
-          description: 'Please confirm before proceeding.',
-          type: 'warning',
-          positionerProps: { anchor: btn, side: 'bottom', align: 'start', sideOffset: 8 },
+          title: "Action required",
+          description: "Please confirm before proceeding.",
+          type: "warning",
+          positionerProps: {
+            anchor: btn,
+            side: "bottom",
+            align: "start",
+            sideOffset: 8,
+          },
           action: {
-            label: 'Confirm',
-            onclick: () => toastManager.success('Confirmed!'),
+            label: "Confirm",
+            onclick: () => toastManager.success("Confirmed!"),
           },
         });
       }}

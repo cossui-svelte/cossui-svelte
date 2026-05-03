@@ -1,5 +1,5 @@
 <script lang="ts">
-    import ComponentPreviewTab from "$lib/components/app/ComponentPreviewTabs.svelte";
+    import ComponentPreviewTab from "$lib/components/app/component-preview-tabs.svelte";
     import {
         Avatar,
         AvatarFallback,

@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import { cn } from "$lib/utils.js";
-  import ComponentPreviewTabs from "./ComponentPreviewTabs.svelte";
+  import ComponentPreviewTabs from "./component-preview-tabs.svelte";
 
   /**
    * In SvelteKit the component registry lookup happens in the server load

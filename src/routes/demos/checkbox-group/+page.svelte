@@ -6,7 +6,7 @@
     } from "$lib/components/ui/checkbox-group/checkbox-tree.svelte";
     import { Checkbox } from "$lib/components/ui/checkbox";
     import { Label } from "$lib/components/ui/label";
-    import ComponentPreviewTabs from "$lib/components/app/ComponentPreviewTabs.svelte";
+    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
 
     const initialTree: TreeNode = {
         children: [

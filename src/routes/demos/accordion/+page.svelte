@@ -42,7 +42,7 @@
 <!-- 
 <ComponentPreviewTabs> -->
 <script lang="ts">
-    import ComponentPreviewTabs from "$lib/components/app/ComponentPreviewTabs.svelte";
+    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
     import {
         Accordion,
         AccordionContent,

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { cn } from "$lib/utils.js";
   import {
-    AlertCircle,
+    CircleAlert,
     Calendar,
     ChevronDown,
     ChevronLeft,
@@ -161,7 +161,7 @@
 {:else if slug === "alert"}
   <div class={cardCls()}>
     <div class={cpCls("flex items-center gap-2 p-3")}>
-      {@render iconSnip(AlertCircle)}
+      {@render iconSnip(CircleAlert)}
       {@render textSnip("w-[70%]", "secondary")}
     </div>
   </div>
@@ -713,7 +713,7 @@
     </div>
     <div class={cardCls()}>
       <div class={cpCls("flex items-start gap-2 p-3")}>
-        {@render iconSnip(AlertCircle)}
+        {@render iconSnip(CircleAlert)}
         <div class="flex flex-1 flex-col gap-2">
           {@render textSnip("w-[40%]")}
           {@render textSnip("w-[70%]", "secondary")}
