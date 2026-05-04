@@ -8,6 +8,11 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   plugins: [tailwindcss(), enhancedImages(), sveltekit()],
+  server: {
+    watch: {
+      ignored: ['**/*.old', '**/*.old/**']
+    }
+  },
   resolve: {
     alias: {
       $assets: path.resolve('./src/lib/assets'),
