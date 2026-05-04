@@ -1,0 +1,44 @@
+<script lang="ts">
+	import { Checkbox } from "$lib/components/ui/checkbox";
+	import { Label } from "$lib/components/ui/label";
+
+	import { Brush, Eraser, Scissors, SwatchBook } from "lucide-svelte";
+
+	const items = [
+		{
+			defaultChecked: true,
+			Icon: SwatchBook,
+			id: "checkbox-16-c1",
+			label: "Palette",
+			value: "c1",
+		},
+		{ Icon: Brush, id: "checkbox-16-c2", label: "Brush", value: "c2" },
+		{ Icon: Eraser, id: "checkbox-16-c3", label: "Eraser", value: "c3" },
+		{ Icon: Scissors, id: "checkbox-16-c4", label: "Cut", value: "c4" },
+	];
+</script>
+
+<div class="grid grid-cols-2 gap-3">
+	{#each items as item (item.id)}
+		<label
+			class="relative flex cursor-pointer flex-col gap-4 rounded-lg border border-input p-4 shadow-sm shadow-black/4 has-data-[state=checked]:border-ring"
+			for={item.id}
+		>
+			<div class="flex justify-between gap-2">
+				<Checkbox
+					id={item.id}
+					value={item.value}
+					class="order-1 h-4 w-4 after:absolute after:inset-0"
+					checked={item.defaultChecked}
+				/>
+				<item.Icon
+					class="opacity-60"
+					size={16}
+					stroke-width={2}
+					aria-hidden="true"
+				/>
+			</div>
+			<Label for={item.id}>{item.label}</Label>
+		</label>
+	{/each}
+</div>
