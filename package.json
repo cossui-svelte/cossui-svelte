@@ -18,19 +18,19 @@
     "generate:registry": "tsx scripts/createComponentRegistryTypes.ts"
   },
   "devDependencies": {
-    "@aejkatappaja/phantom-ui": "^0.9.0",
+    "@aejkatappaja/phantom-ui": "^0.10.0",
     "@sveltejs/adapter-auto": "^7.0.1",
     "@sveltejs/enhanced-img": "^0.10.4",
-    "@sveltejs/kit": "^2.58.0",
+    "@sveltejs/kit": "^2.59.0",
     "@sveltejs/vite-plugin-svelte": "^7.0.0",
     "@tailwindcss/vite": "^4.2.4",
     "@types/node": "^25.6.0",
-    "bits-ui": "^2.18.0",
+    "bits-ui": "^2.18.1",
     "clsx": "^2.1.1",
-    "knip": "^6.9.0",
+    "knip": "^6.11.0",
     "lucide-svelte": "^1.0.1",
     "mode-watcher": "^1.1.0",
-    "postcss": "^8.5.13",
+    "postcss": "^8.5.14",
     "shiki": "^4.0.2",
     "svelte-check": "^4.4.7",
     "svelte-remixicon": "^2.10.0",
@@ -47,7 +47,7 @@
     "vaul-svelte": "1.0.0-next.7",
     "vite": "^8.0.10",
     "vitest": "^4.1.5",
-    "zod": "^4.4.1"
+    "zod": "^4.4.3"
   },
   "peerDependencies": {
     "svelte": "^5.55.5"
