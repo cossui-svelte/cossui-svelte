@@ -1,6 +1,10 @@
-import { exec } from 'node:child_process';
+/// <reference types="node" />
+import { exec as execCallback } from 'node:child_process';
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { promisify } from 'node:util';
+
+const exec = promisify(execCallback);
 
 // =========================================
 // Constants and Configuration
@@ -72,7 +76,6 @@ interface ComponentDirectory {
 	readonly componentCount: number;
 	readonly dir: string;
 	readonly files: string[];
-	readonly firstFile: string;
 	readonly status: ComponentStatus;
 }
 
@@ -288,7 +291,6 @@ class ComponentRegistryGenerator {
 				componentCount: svelteFiles.length,
 				dir,
 				files: svelteFiles,
-				firstFile: svelteFiles[0].split('-')[0],
 				status: this.#getComponentStatus(svelteFiles)
 			};
 
@@ -319,7 +321,7 @@ class ComponentRegistryGenerator {
 `;
 	}
 
-	async #getComponents(): Promise<ComponentDirectory[]> {
+	#getComponents(): ComponentDirectory[] {
 		return Array.from(this.#dirComponentSet).sort((a, b) => a.dir.localeCompare(b.dir));
 	}
 
@@ -327,8 +329,8 @@ class ComponentRegistryGenerator {
 	// Components Object Generation
 	// =========================================
 
-	async #generateComponentsObject(): Promise<string> {
-		const components = await this.#getComponents();
+	#generateComponentsObject(): string {
+		const components = this.#getComponents();
 
 		function directoryObject() {
 			let output = `export const ${TYPES.objectName} = {`;
@@ -353,8 +355,8 @@ class ComponentRegistryGenerator {
 		return directoryObject();
 	}
 
-	async #generateComponentsObjectFile(): Promise<string> {
-		const componentsObject = await this.#generateComponentsObject();
+	#generateComponentsObjectFile(): string {
+		const componentsObject = this.#generateComponentsObject();
 		const componentsObjectType = `\nexport type ${TYPES.objectTypeName} = typeof ${TYPES.objectName};`;
 		const componentStates = `
 export const COMPONENT_STATES = {
@@ -370,8 +372,8 @@ export type ComponentState = (typeof COMPONENT_STATES)[keyof typeof COMPONENT_ST
 	// Type Definition Generation
 	// =========================================
 
-	async #generateTypeDefinitions(): Promise<string> {
-		const components = await this.#getComponents();
+	#generateTypeDefinitions(): string {
+		const components = this.#getComponents();
 
 		function generateDirName(dir: string): string {
 			const formattedDir = dir.replace(/[^a-zA-Z]/g, '');
@@ -541,10 +543,8 @@ ${directoryToComponent()}
 
 			await Promise.all(directories.map((dir) => this.#validateDirectoryComponents(dir)));
 
-			const [componentsObject, typesContent] = await Promise.all([
-				this.#generateComponentsObjectFile(),
-				this.#generateTypeDefinitions()
-			]);
+			const componentsObject = this.#generateComponentsObjectFile();
+			const typesContent = this.#generateTypeDefinitions();
 
 			await Promise.all([
 				fs.writeFile(CONFIG.dirs.object.output, componentsObject),
