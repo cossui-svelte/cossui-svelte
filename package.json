@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@aejkatappaja/phantom-ui": "^0.10.0",
+    "@lucide/svelte": "^1.14.0",
     "@sveltejs/adapter-auto": "^7.0.1",
     "@sveltejs/enhanced-img": "^0.10.4",
     "@sveltejs/kit": "^2.59.0",
@@ -28,7 +29,6 @@
     "bits-ui": "^2.18.1",
     "clsx": "^2.1.1",
     "knip": "^6.11.0",
-    "lucide-svelte": "^1.0.1",
     "mode-watcher": "^1.1.0",
     "postcss": "^8.5.14",
     "shiki": "^4.0.2",
@@ -52,7 +52,7 @@
   "peerDependencies": {
     "svelte": "^5.55.5"
   },
-  "packageManager": "pnpm@10.33.2",
+  "packageManager": "pnpm@10.33.3",
   "pnpm": {
     "onlyBuiltDependencies": [
       "esbuild",
