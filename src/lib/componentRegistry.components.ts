@@ -2,65 +2,135 @@
 /**
  * !!!!!!!!!!
  * This file is auto-generated. Do not edit manually
- * Last generated at: 5/4/2026, 11:07:56 PM
+ * Last generated at: 5/5/2026, 1:06:13 PM
  * To update, run: pnpm generate:registry --format
  * @version 0.1.0
  * !!!!!!!!!!
  */
 export const COSSUI_DIRECTORIES = {
   BUTTONS: {
+    directory: "buttons",
+    name: "Buttons",
     components: [
-      'button-01.svelte',
-      'button-02.svelte',
-      'button-03.svelte',
-      'button-04.svelte',
-      'button-05.svelte',
-      'button-06.svelte',
-      'button-07.svelte',
-      'button-08.svelte',
-      'button-09.svelte',
-      'button-10.svelte'
+      "button-01.svelte",
+      "button-02.svelte",
+      "button-03.svelte",
+      "button-04.svelte",
+      "button-05.svelte",
+      "button-06.svelte",
+      "button-07.svelte",
+      "button-08.svelte",
+      "button-09.svelte",
+      "button-10.svelte",
     ],
-    directory: 'buttons',
-    name: 'Buttons',
     status: {
+      todo: 0,
       ready: 10,
-      todo: 0
-    }
+    },
   },
   CHECKBOXES: {
+    directory: "checkboxes",
+    name: "Checkboxes",
     components: [
-      'checkbox-01.svelte',
-      'checkbox-02.svelte',
-      'checkbox-03.svelte',
-      'checkbox-04.svelte',
-      'checkbox-05.svelte',
-      'checkbox-06.svelte',
-      'checkbox-07.svelte',
-      'checkbox-08.svelte',
-      'checkbox-09.svelte',
-      'checkbox-10.svelte',
-      'checkbox-11.svelte',
-      'checkbox-12.svelte',
-      'checkbox-13.svelte',
-      'checkbox-14.svelte',
-      'checkbox-15.svelte',
-      'checkbox-16.svelte',
-      'checkbox-17.svelte',
-      'checkbox-18.svelte'
+      "checkbox-01.svelte",
+      "checkbox-02.svelte",
+      "checkbox-03.svelte",
+      "checkbox-04.svelte",
+      "checkbox-05.svelte",
+      "checkbox-06.svelte",
+      "checkbox-07.svelte",
+      "checkbox-08.svelte",
+      "checkbox-09.svelte",
+      "checkbox-10.svelte",
+      "checkbox-11.svelte",
+      "checkbox-12.svelte",
+      "checkbox-13.svelte",
+      "checkbox-14.svelte",
+      "checkbox-15.svelte",
+      "checkbox-16.svelte",
+      "checkbox-17.svelte",
+      "checkbox-18.svelte",
     ],
-    directory: 'checkboxes',
-    name: 'Checkboxes',
     status: {
+      todo: 0,
       ready: 18,
-      todo: 0
-    }
-  }
+    },
+  },
+  INPUTS: {
+    directory: "inputs",
+    name: "Inputs",
+    components: [
+      "input-01.svelte",
+      "input-02.svelte",
+      "input-03.svelte",
+      "input-04.svelte",
+      "input-05.svelte",
+      "input-06.svelte",
+      "input-07.svelte",
+      "input-08.svelte",
+      "input-09.svelte",
+      "input-10.svelte",
+      "input-11.svelte",
+      "input-12.svelte",
+      "input-13.svelte",
+      "input-14.svelte",
+      "input-15.svelte",
+      "input-16.svelte",
+      "input-17.svelte",
+      "input-18.svelte",
+      "input-19.svelte",
+      "input-20.svelte",
+      "input-21.svelte",
+      "input-22.svelte",
+      "input-23.svelte",
+      "input-24.svelte",
+      "input-25.svelte",
+      "input-26.svelte",
+      "input-27.svelte",
+      "input-28.svelte",
+      "input-29.svelte",
+      "input-30.svelte",
+      "input-31.svelte",
+      "input-32.svelte",
+      "input-33.svelte",
+      "input-34.svelte",
+      "input-35.svelte",
+      "input-36.svelte",
+      "input-37.todo.svelte",
+      "input-38.todo.svelte",
+      "input-39.todo.svelte",
+      "input-40.todo.svelte",
+      "input-41.todo.svelte",
+      "input-42.svelte",
+      "input-43.svelte",
+      "input-44.svelte",
+      "input-45.svelte",
+      "input-46.svelte",
+      "input-47.todo.svelte",
+      "input-48.todo.svelte",
+      "input-49.todo.svelte",
+      "input-50.todo.svelte",
+      "input-51.svelte",
+      "input-52.svelte",
+      "input-53.svelte",
+      "input-54.svelte",
+      "input-55.svelte",
+      "input-56.svelte",
+      "input-57.todo.svelte",
+      "input-58.todo.svelte",
+      "input-59.todo.svelte",
+    ],
+    status: {
+      todo: 12,
+      ready: 47,
+    },
+  },
 } as const;
 export type COSSUIDirectories = typeof COSSUI_DIRECTORIES;
 export const COMPONENT_STATES = {
-  READY: 'ready',
-  TODO: 'todo'
+  TODO: "todo",
+  READY: "ready",
 } as const;
 
-export type ComponentState = (typeof COMPONENT_STATES)[keyof typeof COMPONENT_STATES];
+export type ComponentState =
+  (typeof COMPONENT_STATES)[keyof typeof COMPONENT_STATES];

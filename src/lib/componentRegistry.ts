@@ -187,3 +187,9 @@ export const getComponentDirectories = async () =>
 export const getComponentFileNames = async <T extends COSSUIDirectory>(
   directory: T
 ): Promise<COSSUIDirectoryToComponent[T][]> => (await getComponentRegistry()).getFiles([directory]);
+
+export function* iterateDirectories(): Generator<
+  (typeof COSSUI_DIRECTORIES)[keyof typeof COSSUI_DIRECTORIES]
+> {
+  yield* Object.values(COSSUI_DIRECTORIES);
+}
