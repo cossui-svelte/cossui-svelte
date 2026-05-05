@@ -2,7 +2,7 @@
   import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
   import { Spinner } from "$lib/components/ui/spinner";
   import { Button } from "$lib/components/ui/button";
-  import { DownloadIcon } from "lucide-svelte";
+  import { DownloadIcon } from "@lucide/svelte";
 </script>
 
 <ComponentPreviewTabs>

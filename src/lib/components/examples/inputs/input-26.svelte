@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Input from '$lib/components/ui/input.svelte';
-	import Label from '$lib/components/ui/label.svelte';
+	import { Input } from "$lib/components/ui/input";
+	import { Label } from "$lib/components/ui/label";
 
-	import ArrowRight from '@lucide/svelte/icons/arrow-right';
-	import Search from '@lucide/svelte/icons/search';
+	import ArrowRight from "@lucide/svelte/icons/arrow-right";
+	import Search from "@lucide/svelte/icons/search";
 
 	const uid = $props.id();
 </script>
@@ -11,7 +11,12 @@
 <div class="space-y-2">
 	<Label for={uid}>Search input with icon and button</Label>
 	<div class="relative">
-		<Input id={uid} class="peer pe-9 ps-9" placeholder="Search..." type="search" />
+		<Input
+			id={uid}
+			class="peer pe-9 ps-9"
+			placeholder="Search..."
+			type="search"
+		/>
 		<div
 			class="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-muted-foreground/80 peer-disabled:opacity-50"
 		>

@@ -6,7 +6,7 @@
     InfoIcon,
     LoaderCircleIcon,
     TriangleAlertIcon,
-  } from "lucide-svelte";
+  } from "@lucide/svelte";
   import type { ToastPosition } from "./toast-manager.svelte.js";
   import { cn } from "$lib/utils.js";
 

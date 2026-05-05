@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Label from '$lib/components/ui/label.svelte';
-	import { useLocale } from '$lib/hooks/use-locale.svelte';
+	import { Label } from "$lib/components/ui/label";
+	import { useLocale } from "$lib/hooks/use-locale.svelte";
 
-	import { DateField } from 'bits-ui';
+	import { DateField } from "bits-ui";
 
 	const localeCtx = useLocale();
 </script>
@@ -26,7 +26,11 @@
 			{/snippet}
 		</DateField.Input>
 	</DateField.Root>
-	<p class="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
+	<p
+		class="mt-2 text-xs text-muted-foreground"
+		role="region"
+		aria-live="polite"
+	>
 		Built with <a
 			class="underline hover:text-foreground"
 			href="https://next.bits-ui.com/docs/components/date-field"

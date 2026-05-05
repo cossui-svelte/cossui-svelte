@@ -1,16 +1,16 @@
 <script lang="ts">
-	import Input from '$lib/components/ui/input.svelte';
-	import Label from '$lib/components/ui/label.svelte';
+	import { Input } from "$lib/components/ui/input";
+	import { Label } from "$lib/components/ui/label";
 
-	import Inputmask from 'inputmask';
+	import Inputmask from "inputmask";
 
 	let inputElement = $state<HTMLInputElement | null>(null);
 
 	$effect(() => {
 		if (!inputElement) return;
-		const im = new Inputmask('AA99 AAA', {
-			placeholder: '',
-			showMaskOnHover: false
+		const im = new Inputmask("AA99 AAA", {
+			placeholder: "",
+			showMaskOnHover: false,
 		}).mask(inputElement);
 
 		return () => im.remove();
@@ -21,8 +21,17 @@
 
 <div class="space-y-2">
 	<Label for={uid}>Input with mask</Label>
-	<Input id={uid} placeholder="AB12 CDE" type="text" bind:ref={inputElement} />
-	<p class="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
+	<Input
+		id={uid}
+		placeholder="AB12 CDE"
+		type="text"
+		bind:ref={inputElement}
+	/>
+	<p
+		class="mt-2 text-xs text-muted-foreground"
+		role="region"
+		aria-live="polite"
+	>
 		Built with <a
 			class="underline hover:text-foreground"
 			href="https://github.com/RobinHerbots/inputmask"

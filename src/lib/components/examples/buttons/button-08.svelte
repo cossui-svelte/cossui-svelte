@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Button } from "$lib/components/ui/button";
-	import { ArrowLeftIcon } from "lucide-svelte";
+	import { ArrowLeftIcon } from "@lucide/svelte";
 </script>
 
 <Button variant="outline">

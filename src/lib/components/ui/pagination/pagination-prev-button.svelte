@@ -4,7 +4,7 @@
 	} from "./pagination-link.svelte";
 	import { cn } from "$lib/utils.js";
 
-	import { ChevronLeft } from "lucide-svelte";
+	import { ChevronLeft } from "@lucide/svelte";
 
 	let {
 		class: className,

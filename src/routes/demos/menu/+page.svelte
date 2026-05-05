@@ -6,7 +6,7 @@
         SkipBackIcon,
         SkipForwardIcon,
         TrashIcon,
-    } from "lucide-svelte";
+    } from "@lucide/svelte";
     import { Button } from "$lib/components/ui/button";
     import {
         Menu,

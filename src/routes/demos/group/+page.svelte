@@ -17,7 +17,7 @@
     DownloadIcon,
     ChevronDownIcon,
     SquarePenIcon,
-  } from "lucide-svelte";
+  } from "@lucide/svelte";
 
   import { Group, GroupSeparator, GroupText } from "$lib/components/ui/group";
   import {

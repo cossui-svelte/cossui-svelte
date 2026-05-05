@@ -10,7 +10,7 @@
 	} from "$lib/components/ui/tooltip/index.js";
 	import { cn } from "$lib/utils.js";
 
-	import { ExternalLink, Package } from "lucide-svelte";
+	import { ExternalLink, Package } from "@lucide/svelte";
 
 	let {
 		class: className,

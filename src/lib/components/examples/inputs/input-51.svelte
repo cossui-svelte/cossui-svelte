@@ -1,13 +1,13 @@
 <script lang="ts">
-	import Input from '$lib/components/ui/input.svelte';
-	import Label from '$lib/components/ui/label.svelte';
-	import { usePasswordStrength } from '$lib/hooks/use-password-strength.svelte';
-	import { cn } from '$lib/utils.js';
+	import { Input } from "$lib/components/ui/input";
+	import { Label } from "$lib/components/ui/label";
+	import { usePasswordStrength } from "$lib/hooks/use-password-strength.svelte";
+	import { cn } from "$lib/utils.js";
 
-	import Check from '@lucide/svelte/icons/check';
-	import Eye from '@lucide/svelte/icons/eye';
-	import EyeOff from '@lucide/svelte/icons/eye-off';
-	import X from '@lucide/svelte/icons/x';
+	import Check from "@lucide/svelte/icons/check";
+	import Eye from "@lucide/svelte/icons/eye";
+	import EyeOff from "@lucide/svelte/icons/eye-off";
+	import X from "@lucide/svelte/icons/x";
 
 	const uid = $props.id();
 	const passwordStrength = usePasswordStrength({ id: uid });
@@ -22,7 +22,7 @@
 				id={passwordStrength.id}
 				class="pe-9"
 				placeholder="Password"
-				type={passwordStrength.isVisible ? 'text' : 'password'}
+				type={passwordStrength.isVisible ? "text" : "password"}
 				bind:value={passwordStrength.password}
 				aria-invalid={passwordStrength.strengthScore < 4}
 				aria-describedby={passwordStrength.id}
@@ -31,7 +31,9 @@
 				class="absolute inset-y-px end-px flex h-full w-9 items-center justify-center rounded-e-lg text-muted-foreground/80 transition-shadow hover:text-foreground focus-visible:border focus-visible:border-ring focus-visible:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
 				type="button"
 				onclick={passwordStrength.toggleVisibility}
-				aria-label={passwordStrength.isVisible ? 'Hide password' : 'Show password'}
+				aria-label={passwordStrength.isVisible
+					? "Hide password"
+					: "Show password"}
 				aria-pressed={passwordStrength.isVisible}
 				aria-controls={passwordStrength.id}
 			>
@@ -54,7 +56,10 @@
 		aria-label="Password strength"
 	>
 		<div
-			class={cn(`h-full transition-all duration-500 ease-out`, passwordStrength.strengthColor)}
+			class={cn(
+				`h-full transition-all duration-500 ease-out`,
+				passwordStrength.strengthColor,
+			)}
 			style:width="{(passwordStrength.strengthScore / 4) * 100}%"
 		></div>
 	</div>
@@ -69,14 +74,26 @@
 		{#each passwordStrength.strength as req (req.text)}
 			<li class="flex items-center space-x-2">
 				{#if req.met}
-					<Check size={16} class="text-emerald-500" aria-hidden="true" />
+					<Check
+						size={16}
+						class="text-emerald-500"
+						aria-hidden="true"
+					/>
 				{:else}
-					<X size={16} class="text-muted-foreground/80" aria-hidden="true" />
+					<X
+						size={16}
+						class="text-muted-foreground/80"
+						aria-hidden="true"
+					/>
 				{/if}
-				<span class={`text-xs ${req.met ? 'text-emerald-600' : 'text-muted-foreground'}`}>
+				<span
+					class={`text-xs ${req.met ? "text-emerald-600" : "text-muted-foreground"}`}
+				>
 					{req.text}
 					<span class="sr-only">
-						{req.met ? ' - Requirement met' : ' - Requirement not met'}
+						{req.met
+							? " - Requirement met"
+							: " - Requirement not met"}
 					</span>
 				</span>
 			</li>

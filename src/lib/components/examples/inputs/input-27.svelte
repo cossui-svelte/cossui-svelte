@@ -1,15 +1,15 @@
 <script lang="ts">
-	import type { EventHandler } from 'svelte/elements';
+	import type { EventHandler } from "svelte/elements";
 
-	import Input from '$lib/components/ui/input.svelte';
-	import Label from '$lib/components/ui/label.svelte';
+	import { Input } from "$lib/components/ui/input";
+	import { Label } from "$lib/components/ui/label";
 
-	import LoaderCircle from '@lucide/svelte/icons/loader-circle';
-	import Mic from '@lucide/svelte/icons/mic';
-	import Search from '@lucide/svelte/icons/search';
-	import { onDestroy } from 'svelte';
+	import LoaderCircle from "@lucide/svelte/icons/loader-circle";
+	import Mic from "@lucide/svelte/icons/mic";
+	import Search from "@lucide/svelte/icons/search";
+	import { onDestroy } from "svelte";
 
-	let inputValue = $state('');
+	let inputValue = $state("");
 	let isLoading = $state(false);
 	let timer: null | ReturnType<typeof setTimeout> = $state(null);
 

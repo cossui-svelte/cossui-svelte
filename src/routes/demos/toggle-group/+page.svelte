@@ -1,6 +1,6 @@
 <script lang="ts">
     import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
-    import { BoldIcon, ItalicIcon, UnderlineIcon } from "lucide-svelte";
+    import { BoldIcon, ItalicIcon, UnderlineIcon } from "@lucide/svelte";
     import {
         ToggleGroupItem,
         ToggleGroup,

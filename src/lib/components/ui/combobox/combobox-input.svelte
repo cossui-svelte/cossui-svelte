@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import { Combobox } from "bits-ui";
-  import { ChevronsUpDown } from "lucide-svelte";
+  import { ChevronsUpDown } from "@lucide/svelte";
   import { cn } from "$lib/utils.js";
 
   interface Props extends Combobox.InputProps {

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Input from '$lib/components/ui/input.svelte';
-	import Label from '$lib/components/ui/label.svelte';
-	import { useCharacterLimit } from '$lib/hooks/use-character-limit.svelte';
+	import { Input } from "$lib/components/ui/input";
+	import { Label } from "$lib/components/ui/label";
+	import { useCharacterLimit } from "$lib/hooks/use-character-limit.svelte";
 
 	const maxLength = 8;
 	const characterLimit = useCharacterLimit(maxLength);
@@ -17,8 +17,14 @@
 		maxlength={characterLimit.maxLength}
 		aria-describedby={uid}
 	/>
-	<p id={uid} class="mt-2 text-xs text-muted-foreground" role="status" aria-live="polite">
-		<span class="tabular-nums">{characterLimit.maxLength - characterLimit.characterCount}</span> characters
-		left
+	<p
+		id={uid}
+		class="mt-2 text-xs text-muted-foreground"
+		role="status"
+		aria-live="polite"
+	>
+		<span class="tabular-nums"
+			>{characterLimit.maxLength - characterLimit.characterCount}</span
+		> characters left
 	</p>
 </div>

@@ -4,7 +4,7 @@
 	import { Button } from "$lib/components/ui/button";
 	import * as Tooltip from "$lib/components/ui/tooltip/index.js";
 
-	import { SquareArrowOutUpRight as Link } from "lucide-svelte";
+	import { SquareArrowOutUpRight as Link } from "@lucide/svelte";
 
 	type Props = ComponentProps<typeof Tooltip.TooltipTrigger> & {
 		description: string;

@@ -1,24 +1,7 @@
 {
-  "name": "coss-ui-svelte",
-  "version": "0.1.0",
-  "license": "AGPL-3.0-or-later",
-  "type": "module",
-  "scripts": {
-    "build": "vite build",
-    "check": "biome check .",
-    "check:svelte": "svelte-check --tsconfig ./tsconfig.json",
-    "clean": "rm -rf node_modules dist",
-    "dev": "vite",
-    "format": "biome format --write .",
-    "lint": "biome lint --write src",
-    "lint:check": "biome lint src",
-    "lint:deadcode": "pnpx knip --max-show-issues 10",
-    "mrproper": "rm -rf node_modules dist build .svelte-kit",
-    "typecheck": "tsc --noEmit",
-    "generate:registry": "tsx scripts/createComponentRegistryTypes.ts"
-  },
   "devDependencies": {
     "@aejkatappaja/phantom-ui": "^0.10.0",
+    "@internationalized/date": "^3.12.1",
     "@lucide/svelte": "^1.14.0",
     "@sveltejs/adapter-auto": "^7.0.1",
     "@sveltejs/enhanced-img": "^0.10.4",
@@ -28,6 +11,7 @@
     "@types/node": "^25.6.0",
     "bits-ui": "^2.18.1",
     "clsx": "^2.1.1",
+    "inputmask": "^5.0.9",
     "knip": "^6.11.0",
     "mode-watcher": "^1.1.0",
     "postcss": "^8.5.14",
@@ -49,14 +33,32 @@
     "vitest": "^4.1.5",
     "zod": "^4.4.3"
   },
+  "license": "AGPL-3.0-or-later",
+  "name": "coss-ui-svelte",
+  "packageManager": "pnpm@10.33.3",
   "peerDependencies": {
     "svelte": "^5.55.5"
   },
-  "packageManager": "pnpm@10.33.3",
   "pnpm": {
     "onlyBuiltDependencies": [
       "esbuild",
       "sharp"
     ]
-  }
+  },
+  "scripts": {
+    "build": "vite build",
+    "check": "biome check .",
+    "check:svelte": "svelte-check --tsconfig ./tsconfig.json",
+    "clean": "rm -rf node_modules dist",
+    "dev": "vite",
+    "format": "biome format --write .",
+    "generate:registry": "tsx scripts/createComponentRegistryTypes.ts",
+    "lint": "biome lint --write src",
+    "lint:check": "biome lint src",
+    "lint:deadcode": "pnpx knip --max-show-issues 10",
+    "mrproper": "rm -rf node_modules dist build .svelte-kit",
+    "typecheck": "tsc --noEmit"
+  },
+  "type": "module",
+  "version": "0.1.0"
 }

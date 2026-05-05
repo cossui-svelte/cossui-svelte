@@ -1,14 +1,14 @@
 <script lang="ts">
-	import Input from '$lib/components/ui/input.svelte';
-	import Label from '$lib/components/ui/label.svelte';
+	import { Input } from "$lib/components/ui/input";
+	import { Label } from "$lib/components/ui/label";
 
-	import CircleX from '@lucide/svelte/icons/circle-x';
+	import CircleX from "@lucide/svelte/icons/circle-x";
 
-	let inputValue = $state('Click to clear');
+	let inputValue = $state("Click to clear");
 	let inputElement = $state<HTMLInputElement | null>(null)!;
 
 	function handleClearInput() {
-		inputValue = '';
+		inputValue = "";
 	}
 
 	const uid = $props.id();

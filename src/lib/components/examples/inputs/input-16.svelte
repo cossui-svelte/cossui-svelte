@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Input from '$lib/components/ui/input.svelte';
-	import Label from '$lib/components/ui/label.svelte';
+	import { Input } from "$lib/components/ui/input";
+	import { Label } from "$lib/components/ui/label";
 
 	const uid = $props.id();
 </script>
@@ -13,7 +13,12 @@
 		>
 			€
 		</span>
-		<Input id={uid} class="-me-px rounded-e-none ps-6 shadow-none" placeholder="0.00" type="text" />
+		<Input
+			id={uid}
+			class="-me-px rounded-e-none ps-6 shadow-none"
+			placeholder="0.00"
+			type="text"
+		/>
 		<span
 			class="-z-10 inline-flex items-center rounded-e-lg border border-input bg-background px-3 text-sm text-muted-foreground"
 		>

@@ -5,7 +5,7 @@
 	import { Button } from "$lib/components/ui/button";
 	import * as Tooltip from "$lib/components/ui/tooltip/index.js";
 
-	import { Share2 as Share } from "lucide-svelte";
+	import { Share2 as Share } from "@lucide/svelte";
 	import { page } from "$app/state";
 
 	type Props = ComponentProps<typeof Tooltip.TooltipTrigger> & {

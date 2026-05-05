@@ -1,13 +1,13 @@
 <script lang="ts">
-	import type { CountryCode, E164Number } from 'svelte-tel-input/types';
-	import type { ChangeEventHandler } from 'svelte/elements';
+	import type { CountryCode, E164Number } from "svelte-tel-input/types";
+	import type { ChangeEventHandler } from "svelte/elements";
 
-	import Label from '$lib/components/ui/label.svelte';
+	import { Label } from "$lib/components/ui/label";
 
-	import ChevronDown from '@lucide/svelte/icons/chevron-down';
-	import Phone from '@lucide/svelte/icons/phone';
-	import { normalizedCountries, TelInput } from 'svelte-tel-input';
-	import 'svelte-tel-input/styles/flags.css';
+	import ChevronDown from "@lucide/svelte/icons/chevron-down";
+	import Phone from "@lucide/svelte/icons/phone";
+	import { normalizedCountries, TelInput } from "svelte-tel-input";
+	import "svelte-tel-input/styles/flags.css";
 
 	let selectedCountry = $state<CountryCode | null>(null);
 	let value = $state<E164Number | null>(null);
@@ -22,15 +22,17 @@
 
 <div class="space-y-2" dir="ltr">
 	<Label for={uid}>Phone number input</Label>
-	<div class="flex rounded-lg shadow-sm shadow-black/[.04]">
+	<div class="flex rounded-lg shadow-sm shadow-black/4">
 		<div
 			class="relative inline-flex items-center self-stretch rounded-l-lg border border-input bg-background py-2 pe-2 ps-3 text-muted-foreground ring-offset-background transition-shadow focus-within:z-10 focus-within:border-ring focus-within:text-foreground focus-within:outline-none focus-within:ring-2 focus-within:ring-ring/30 focus-within:ring-offset-2 hover:bg-accent hover:text-foreground has-[:disabled]:pointer-events-none has-[:disabled]:opacity-50"
 		>
 			<div class="inline-flex items-center gap-1" aria-hidden="true">
-				<span class="flex h-[16px] w-5 items-center overflow-hidden rounded-sm">
+				<span
+					class="flex h-4 w-5 items-center overflow-hidden rounded-sm"
+				>
 					{#if selectedCountry}
 						<span
-							class="flag flag-{selectedCountry.toLowerCase()} !h-[13px] !w-5"
+							class="flag flag-{selectedCountry.toLowerCase()} h-3.25! w-5!"
 							aria-hidden="true"
 						></span>
 					{:else}
@@ -62,11 +64,15 @@
 			bind:country={selectedCountry}
 			bind:value
 			options={{
-				format: 'international'
+				format: "international",
 			}}
 		/>
 	</div>
-	<p class="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
+	<p
+		class="mt-2 text-xs text-muted-foreground"
+		role="region"
+		aria-live="polite"
+	>
 		Built with <a
 			class="underline hover:text-foreground"
 			href="https://github.com/gyurielf/svelte-tel-input/tree/main"

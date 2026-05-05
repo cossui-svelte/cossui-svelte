@@ -1,7 +1,7 @@
 <script lang="ts">
   import { cn } from "$lib/utils.js";
   import { Dialog } from "bits-ui";
-  import { Search, CornerDownLeft, Atom, BookOpen } from "lucide-svelte";
+  import { Search, CornerDownLeft, Atom, BookOpen } from "@lucide/svelte";
   import { buttonVariants } from "$lib/components/ui/button";
   import { Kbd, KbdGroup } from "$lib/components/ui/kbd";
   import { useIsMac } from "$lib/hooks/use-is-mac.svelte";

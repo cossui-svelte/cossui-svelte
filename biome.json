@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.11/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.14/schema.json",
   "assist": {
     "actions": {
       "source": {
@@ -13,8 +13,11 @@
     "includes": [
       "src/**/*.ts",
       "src/**/*.js",
+      "tsconfig.json",
       "vite.config.ts",
       "svelte.config.js",
+      "package.json",
+      "knip.ts",
       "postcss.config.mjs",
       "!node_modules",
       "!dist",

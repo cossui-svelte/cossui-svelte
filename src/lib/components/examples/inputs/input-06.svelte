@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Input from '$lib/components/ui/input.svelte';
-	import Label from '$lib/components/ui/label.svelte';
+	import { Input } from "$lib/components/ui/input";
+	import { Label } from "$lib/components/ui/label";
 
 	const uid = $props.id();
 </script>
@@ -14,5 +14,7 @@
 		type="email"
 		value="invalid@email.com"
 	/>
-	<p class="text-xs text-destructive" role="alert" aria-live="polite">Email is invalid</p>
+	<p class="text-xs text-destructive" role="alert" aria-live="polite">
+		Email is invalid
+	</p>
 </div>

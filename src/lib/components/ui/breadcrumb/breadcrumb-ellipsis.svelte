@@ -1,6 +1,6 @@
 <script lang="ts">
   import { cn, type WithElementRef } from "$lib/utils.js";
-  import { Ellipsis } from "lucide-svelte";
+  import { Ellipsis } from "@lucide/svelte";
   import type { HTMLAttributes } from "svelte/elements";
 
   let {

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Tooltip } from "bits-ui";
-  import { Check, Copy } from "lucide-svelte";
+  import { Check, Copy } from "@lucide/svelte";
   import { cn } from "$lib/utils.js";
   import { buttonVariants } from "$lib/components/ui/button";
 

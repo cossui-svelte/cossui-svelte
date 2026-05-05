@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Input from '$lib/components/ui/input.svelte';
-	import Label from '$lib/components/ui/label.svelte';
+	import { Input } from "$lib/components/ui/input";
+	import { Label } from "$lib/components/ui/label";
 
-	import ChevronDown from '@lucide/svelte/icons/chevron-down';
+	import ChevronDown from "@lucide/svelte/icons/chevron-down";
 
 	const uid = $props.id();
 </script>

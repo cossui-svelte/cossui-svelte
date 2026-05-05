@@ -2,7 +2,7 @@
 	import type { Snippet } from "svelte";
 	import { DialogBackdrop } from ".";
 	import { cn } from "$lib/utils.js";
-	import { X } from "lucide-svelte";
+	import { X } from "@lucide/svelte";
 	import { Dialog as DialogPrimitive, type WithoutChild } from "bits-ui";
 	import Button from "../button/button.svelte";
 

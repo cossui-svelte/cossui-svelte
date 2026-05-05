@@ -8,7 +8,7 @@
         ChevronLeft,
         ChevronRight,
         ChevronUp,
-    } from "lucide-svelte";
+    } from "@lucide/svelte";
     import {
         Tooltip,
         TooltipContent,

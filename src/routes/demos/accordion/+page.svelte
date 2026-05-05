@@ -50,7 +50,7 @@
         AccordionItem,
         AccordionTrigger,
     } from "$lib/components/ui/accordion";
-    import { Bell, LifeBuoy, Link2, Plus, ShieldCheck } from "lucide-svelte";
+    import { Bell, LifeBuoy, Link2, Plus, ShieldCheck } from "@lucide/svelte";
 
     const items = [
         {

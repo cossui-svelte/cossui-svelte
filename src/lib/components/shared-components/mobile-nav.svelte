@@ -18,7 +18,7 @@
 
 <script lang="ts">
   import { Dialog } from "bits-ui";
-  import { Menu } from "lucide-svelte";
+  import { Menu } from "@lucide/svelte";
   import { cn } from "$lib/utils.js";
   import { Button } from "$lib/components/ui/button";
   import Sheet from "$lib/components/ui/sheet/sheet.svelte";

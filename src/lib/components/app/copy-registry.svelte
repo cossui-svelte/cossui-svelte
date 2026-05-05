@@ -1,7 +1,7 @@
 <script lang="ts">
   import { cn } from "$lib/utils.js";
   import { Tooltip } from "bits-ui";
-  import { Check } from "lucide-svelte";
+  import { Check } from "@lucide/svelte";
   import { buttonVariants } from "$lib/components/ui/button";
   import { Icons } from "$lib/components/shared-components/icons.ts";
 

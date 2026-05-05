@@ -27,7 +27,7 @@
         CopyIcon,
         InfoIcon,
         SearchIcon,
-    } from "lucide-svelte";
+    } from "@lucide/svelte";
 </script>
 
 <ComponentPreviewTabs>

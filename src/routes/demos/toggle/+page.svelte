@@ -1,7 +1,7 @@
 <script lang="ts">
     import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
     import { Toggle } from "$lib/components/ui/toggle";
-    import { BookmarkIcon } from "lucide-svelte";
+    import { BookmarkIcon } from "@lucide/svelte";
 </script>
 
 <ComponentPreviewTabs>

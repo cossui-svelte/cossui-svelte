@@ -14,7 +14,7 @@
     TextCursor,
     UserRound,
     X,
-  } from "lucide-svelte";
+  } from "@lucide/svelte";
 
   interface Props {
     slug: string;
