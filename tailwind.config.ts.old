@@ -1,12 +1,10 @@
 import type { Config } from 'tailwindcss';
 
-import tailwindCssAnimate from 'tw-animate-css';
 import defaultTheme from 'tailwindcss/defaultTheme';
 
 export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	darkMode: 'class',
-	plugins: [tailwindCssAnimate],
 	theme: {
 		extend: {
 			animation: {
