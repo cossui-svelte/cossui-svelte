@@ -8,23 +8,23 @@
  * !!!!!!!!!!
  */
 
-import type { Prettify } from "$lib/types/helpers";
-import type { COSSUIDirectories } from "./componentRegistry.components";
+import type { Prettify } from '$lib/types/helpers';
+import type { COSSUIDirectories } from './componentRegistry.components';
 
 // Directory Type
 export type COSSUIDirectory = COSSUIDirectoryHelper<keyof COSSUIDirectories>;
 
 // Helpers
 export type COSSUIDirectoryHelper<T extends keyof COSSUIDirectories> =
-  COSSUIDirectories[T]["directory"];
+  COSSUIDirectories[T]['directory'];
 export type COSSUIComponentHelper<T extends keyof COSSUIDirectories> =
-  COSSUIDirectories[T]["components"][number];
+  COSSUIDirectories[T]['components'][number];
 
 // Status Helpers
 
 // Status Type Helpers
 export type COSSUITodoComponent<T extends keyof COSSUIDirectories> = Extract<
-  COSSUIDirectories[T]["components"][number],
+  COSSUIDirectories[T]['components'][number],
   `${string}todo.svelte`
 >;
 
@@ -43,7 +43,7 @@ export type COSSUIDirectoryTodoComponents = {
 
 // Ready Component Helpers
 export type COSSUIReadyComponent<T extends keyof COSSUIDirectories> = Exclude<
-  COSSUIDirectories[T]["components"][number],
+  COSSUIDirectories[T]['components'][number],
   `${string}todo.svelte`
 >;
 
@@ -65,13 +65,13 @@ export type COSSUIDirectoryComponentCounts = {
   [K in keyof COSSUIDirectories]: {
     directory: K;
     total: number;
-    status: COSSUIDirectories[K]["status"];
+    status: COSSUIDirectories[K]['status'];
   };
 };
 
 // Directory Status Filters
 export type COSSUIDirectoriesWithTodo = {
-  [K in keyof COSSUIDirectories as COSSUIDirectories[K]["status"]["todo"] extends 0
+  [K in keyof COSSUIDirectories as COSSUIDirectories[K]['status']['todo'] extends 0
     ? never
     : K]: COSSUIDirectories[K];
 };
@@ -80,17 +80,17 @@ export type COSSUIDirectoriesWithTodo = {
 export type COSSUIComponentMetadata = {
   [K in keyof COSSUIDirectories]: {
     directory: K;
-    name: COSSUIDirectories[K]["name"];
+    name: COSSUIDirectories[K]['name'];
     totalComponents: number;
-    status: COSSUIDirectories[K]["status"];
+    status: COSSUIDirectories[K]['status'];
     hasInProgress: boolean;
   };
 };
 
 // Component Types
-export type COSSUIButtonsComponents = COSSUIComponentHelper<"BUTTONS">;
-export type COSSUICheckboxesComponents = COSSUIComponentHelper<"CHECKBOXES">;
-export type COSSUIInputsComponents = COSSUIComponentHelper<"INPUTS">;
+export type COSSUIButtonsComponents = COSSUIComponentHelper<'BUTTONS'>;
+export type COSSUICheckboxesComponents = COSSUIComponentHelper<'CHECKBOXES'>;
+export type COSSUIInputsComponents = COSSUIComponentHelper<'INPUTS'>;
 
 // All Component Types
 export type COSSUIComponent = Prettify<

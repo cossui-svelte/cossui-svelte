@@ -22,6 +22,8 @@
     description?: string;
   };
 
+  let { data } = $props();
+
   const description = "Built for developers and AI.";
 
   const categories: Category[] = [];
