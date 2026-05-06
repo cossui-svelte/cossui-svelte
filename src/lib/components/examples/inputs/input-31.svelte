@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Input from '$lib/components/ui/input.svelte';
+	import { Input } from "$lib/components/ui/input";
 
 	const uid = $props.id();
 </script>

@@ -1,11 +1,12 @@
 <script lang="ts">
-	import CheckboxTree, {
-		type TreeNode,
-	} from "$lib/components/ui/checkbox-tree.svelte";
 	import { Checkbox } from "$lib/components/ui/checkbox";
+	import {
+		CheckboxTree,
+		type CheckBoxTreeNode,
+	} from "$lib/components/ui/checkbox-group";
 	import { Label } from "$lib/components/ui/label";
 
-	const initialTree: TreeNode = {
+	const initialTree: CheckBoxTreeNode = {
 		children: [
 			{
 				defaultChecked: true,

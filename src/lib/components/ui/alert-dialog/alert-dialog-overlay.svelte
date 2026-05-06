@@ -6,12 +6,12 @@
 		ref = $bindable(null),
 		class: className,
 		...restProps
-	}: AlertDialogPrimitive.DescriptionProps = $props();
+	}: AlertDialogPrimitive.OverlayProps = $props();
 </script>
 
-<AlertDialogPrimitive.Description
+<AlertDialogPrimitive.Overlay
 	bind:ref
-	data-slot="alert-dialog-description"
-	class={cn("cn-alert-dialog-description", className)}
+	data-slot="alert-dialog-overlay"
+	class={cn("cn-alert-dialog-overlay fixed inset-0 z-50", className)}
 	{...restProps}
 />

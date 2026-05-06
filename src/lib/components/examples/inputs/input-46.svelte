@@ -1,16 +1,16 @@
 <script lang="ts">
-	import type { CountryCode, E164Number } from "svelte-tel-input/types";
+	import type { CountryCode } from "svelte-tel-input/types";
 	import type { ChangeEventHandler } from "svelte/elements";
 
 	import { Label } from "$lib/components/ui/label";
 
 	import ChevronDown from "@lucide/svelte/icons/chevron-down";
 	import Phone from "@lucide/svelte/icons/phone";
-	import { normalizedCountries, TelInput } from "svelte-tel-input";
+	import { countries, TelInput } from "svelte-tel-input";
 	import "svelte-tel-input/styles/flags.css";
 
 	let selectedCountry = $state<CountryCode | null>(null);
-	let value = $state<E164Number | null>(null);
+	let value = $state<string>("");
 
 	const handleCountryChange: ChangeEventHandler<HTMLSelectElement> = (e) => {
 		const { value } = e.currentTarget;
@@ -24,7 +24,7 @@
 	<Label for={uid}>Phone number input</Label>
 	<div class="flex rounded-lg shadow-sm shadow-black/4">
 		<div
-			class="relative inline-flex items-center self-stretch rounded-l-lg border border-input bg-background py-2 pe-2 ps-3 text-muted-foreground ring-offset-background transition-shadow focus-within:z-10 focus-within:border-ring focus-within:text-foreground focus-within:outline-none focus-within:ring-2 focus-within:ring-ring/30 focus-within:ring-offset-2 hover:bg-accent hover:text-foreground has-[:disabled]:pointer-events-none has-[:disabled]:opacity-50"
+			class="relative inline-flex items-center self-stretch rounded-l-lg border border-input bg-background py-2 pe-2 ps-3 text-muted-foreground ring-offset-background transition-shadow focus-within:z-10 focus-within:border-ring focus-within:text-foreground focus-within:outline-none focus-within:ring-2 focus-within:ring-ring/30 focus-within:ring-offset-2 hover:bg-accent hover:text-foreground has-disabled:pointer-events-none has-disabled:opacity-50"
 		>
 			<div class="inline-flex items-center gap-1" aria-hidden="true">
 				<span
@@ -49,7 +49,7 @@
 				aria-label="Select country"
 			>
 				<option value="">Select a country</option>
-				{#each normalizedCountries as country (country.id)}
+				{#each countries as country (country.id)}
 					<option value={country.id}>
 						{country.label}
 					</option>
@@ -60,12 +60,12 @@
 			id={uid}
 			required
 			placeholder="Enter phone number"
-			class="-ml-px flex h-9 w-full rounded-lg rounded-l-none border border-input bg-background px-3 py-2 text-sm text-foreground shadow-none shadow-black/[.04] ring-offset-background transition-shadow placeholder:text-muted-foreground/70 focus-visible:z-10 focus-visible:border-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+			class="-ml-px flex h-9 w-full rounded-lg rounded-l-none border border-input bg-background px-3 py-2 text-sm text-foreground shadow-none shadow-black/4 ring-offset-background transition-shadow placeholder:text-muted-foreground/70 focus-visible:z-10 focus-visible:border-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
 			bind:country={selectedCountry}
 			bind:value
-			options={{
-				format: "international",
-			}}
+			// options={{
+			// 	format: "international",
+			// }}
 		/>
 	</div>
 	<p

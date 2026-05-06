@@ -5,49 +5,33 @@
      * If you're interested in collaborating to create a more robust, production-ready
      * headless component, your contributions are welcome!
      */
-
-    export interface TreeNode {
-        children?: TreeNode[];
-        defaultChecked?: boolean;
-        id: string;
-        indeterminate?: boolean;
-        label: string;
-    }
-
-    export interface RenderNodeProps {
-        checked: boolean;
-        children: RenderNodeProps[];
-        id: string;
-        indeterminate?: boolean;
-        label: string;
-        onCheckedChange: () => void;
-    }
 </script>
 
 <script lang="ts">
     import type { Snippet } from "svelte";
 
     import { SvelteSet } from "svelte/reactivity";
+    import type { RenderNodeProps, CheckBoxTreeNode } from ".";
 
     let {
         renderNode,
         tree,
     }: {
         renderNode: Snippet<[RenderNodeProps]>;
-        tree: TreeNode;
+        tree: CheckBoxTreeNode;
     } = $props();
 
     const checkedNodes = new SvelteSet<string>();
 
     // Initialize checked nodes (Self-invoking function)
-    (function initializeCheckedNodes(node: TreeNode) {
+    (function initializeCheckedNodes(node: CheckBoxTreeNode) {
         if (node.defaultChecked) {
             checkedNodes.add(node.id);
         }
         node.children?.forEach(initializeCheckedNodes);
     })(tree);
 
-    function isChecked(node: TreeNode): boolean {
+    function isChecked(node: CheckBoxTreeNode): boolean {
         if (!node.children) {
             return checkedNodes.has(node.id);
         }
@@ -60,15 +44,15 @@
         return false;
     }
 
-    function isIndeterminate(node: TreeNode): boolean {
+    function isIndeterminate(node: CheckBoxTreeNode): boolean {
         if (!node.children?.length) return false;
 
         const childrenChecked = node.children.map(isChecked);
         return childrenChecked.some(Boolean) && !childrenChecked.every(Boolean);
     }
 
-    function handleCheck(node: TreeNode) {
-        function toggleNode(n: TreeNode, check: boolean) {
+    function handleCheck(node: CheckBoxTreeNode) {
+        function toggleNode(n: CheckBoxTreeNode, check: boolean) {
             if (check) {
                 checkedNodes.add(n.id);
             } else {
@@ -83,7 +67,7 @@
         toggleNode(node, newCheck);
     }
 
-    function renderTreeNode(node: TreeNode): RenderNodeProps {
+    function renderTreeNode(node: CheckBoxTreeNode): RenderNodeProps {
         return {
             checked: isChecked(node),
             children: node.children?.map(renderTreeNode) ?? [],

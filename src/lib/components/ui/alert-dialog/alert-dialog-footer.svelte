@@ -1,27 +1,22 @@
 <script lang="ts">
-	import type { WithElementRef } from "bits-ui";
+	import { cn, type WithElementRef } from "$lib/utils.js";
 	import type { HTMLAttributes } from "svelte/elements";
-	import { cn } from "$lib/utils.js";
 
 	let {
-		children,
-		variant = "default",
+		ref = $bindable(null),
 		class: className,
+		children,
 		...restProps
-	}: WithElementRef<HTMLAttributes<HTMLDivElement>> & {
-		variant?: "default" | "bare";
-	} = $props();
+	}: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();
 </script>
 
 <div
-	class={cn(
-		"flex flex-col-reverse gap-2 px-6 sm:flex-row sm:justify-end sm:rounded-b-[calc(var(--radius-2xl)-1px)]",
-		variant === "default" && "border-t bg-muted/72 py-4",
-		variant === "bare" &&
-			"in-[[data-slot=alert-dialog-popup]:has([data-slot=alert-dialog-panel])]:pt-3 pt-4 pb-6",
-		className,
-	)}
+	bind:this={ref}
 	data-slot="alert-dialog-footer"
+	class={cn(
+		"cn-alert-dialog-footer flex flex-col-reverse gap-2 group-data-[size=sm]/alert-dialog-content:grid group-data-[size=sm]/alert-dialog-content:grid-cols-2 sm:flex-row sm:justify-end",
+		className
+	)}
 	{...restProps}
 >
 	{@render children?.()}
