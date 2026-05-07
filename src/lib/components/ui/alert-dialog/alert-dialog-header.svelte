@@ -13,7 +13,10 @@
 <div
 	bind:this={ref}
 	data-slot="alert-dialog-header"
-	class={cn("cn-alert-dialog-header", className)}
+	class={cn(
+		"flex flex-col gap-2 p-6 text-center in-[[data-slot=alert-dialog-popup]:has([data-slot=alert-dialog-panel])]:pb-3 max-sm:pb-4 sm:text-left",
+		className,
+	)}
 	{...restProps}
 >
 	{@render children?.()}

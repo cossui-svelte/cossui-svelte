@@ -12,6 +12,6 @@
 <AlertDialogPrimitive.Description
 	bind:ref
 	data-slot="alert-dialog-description"
-	class={cn("cn-alert-dialog-description", className)}
+	class={cn("text-muted-foreground text-sm", className)}
 	{...restProps}
 />
