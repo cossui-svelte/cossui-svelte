@@ -1,17 +1,19 @@
 <script lang="ts">
-	import Button, { buttonVariants } from '$lib/components/ui/button.svelte';
-	import * as Dialog from '$lib/components/ui/dialog/index.js';
-	import Input from '$lib/components/ui/input.svelte';
-	import Label from '$lib/components/ui/label.svelte';
+	import { Button, buttonVariants } from "$lib/components/ui/button";
+	import { Dialog } from "$lib/components/ui/dialog";
+	import { Input } from "$lib/components/ui/input";
+	import { Label } from "$lib/components/ui/label";
 
-	import CircleAlert from '@lucide/svelte/icons/circle-alert';
-	import { PROJECT_NAME } from '$lib/config';
+	import CircleAlert from "@lucide/svelte/icons/circle-alert";
+	import { PROJECT_NAME } from "$lib/config";
 
-	let inputValue = $state('');
+	let inputValue = $state("");
 </script>
 
 <Dialog.Root>
-	<Dialog.Trigger class={buttonVariants({ variant: 'outline' })}>Delete project</Dialog.Trigger>
+	<Dialog.Trigger class={buttonVariants({ variant: "outline" })}
+		>Delete project</Dialog.Trigger
+	>
 	<Dialog.Content>
 		<div class="flex flex-col items-center gap-2">
 			<div
@@ -21,9 +23,12 @@
 				<CircleAlert class="opacity-80" size={16} strokeWidth={2} />
 			</div>
 			<Dialog.Header>
-				<Dialog.Title class="sm:text-center">Final confirmation</Dialog.Title>
+				<Dialog.Title class="sm:text-center"
+					>Final confirmation</Dialog.Title
+				>
 				<Dialog.Description class="sm:text-center">
-					This action cannot be undone. To confirm, please enter the project name
+					This action cannot be undone. To confirm, please enter the
+					project name
 					<span class="text-foreground">{PROJECT_NAME}</span>.
 				</Dialog.Description>
 			</Dialog.Header>
@@ -40,8 +45,15 @@
 				/>
 			</div>
 			<Dialog.Footer>
-				<Dialog.Close class="{buttonVariants({ variant: 'outline' })} flex-1">Cancel</Dialog.Close>
-				<Button type="button" class="flex-1" disabled={inputValue !== PROJECT_NAME}>Delete</Button>
+				<Dialog.Close
+					class="{buttonVariants({ variant: 'outline' })} flex-1"
+					>Cancel</Dialog.Close
+				>
+				<Button
+					type="button"
+					class="flex-1"
+					disabled={inputValue !== PROJECT_NAME}>Delete</Button
+				>
 			</Dialog.Footer>
 		</form>
 	</Dialog.Content>

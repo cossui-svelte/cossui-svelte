@@ -1,19 +1,23 @@
 <script lang="ts">
-	import { badgeVariants } from '$lib/components/ui/badge.svelte';
-	import Checkbox from '$lib/components/ui/checkbox.svelte';
+	import { badgeVariants } from "$lib/components/ui/badge";
+	import { Checkbox } from "$lib/components/ui/checkbox";
 
-	import Check from '@lucide/svelte/icons/check';
-	import { cn } from '$lib/utils';
+	import Check from "@lucide/svelte/icons/check";
+	import { cn } from "$lib/utils";
 </script>
 
 <label
 	class={cn(
-		badgeVariants({ variant: 'default' }),
-		'cursor-pointer hover:bg-primary/80 has-[[data-state=unchecked]]:bg-muted has-[[data-state=unchecked]]:text-muted-foreground has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-ring/70'
+		badgeVariants({ variant: "default" }),
+		"cursor-pointer hover:bg-primary/80 has-[[data-state=unchecked]]:bg-muted has-[[data-state=unchecked]]:text-muted-foreground has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-ring/70",
 	)}
 >
 	<div class="flex items-center gap-1">
-		<Checkbox id="badge-selectable" class="peer sr-only after:absolute after:inset-0" checked />
+		<Checkbox
+			id="badge-selectable"
+			class="peer sr-only after:absolute after:inset-0"
+			checked
+		/>
 		<Check
 			size={12}
 			strokeWidth={2}

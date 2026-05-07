@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { buttonVariants } from '$lib/components/ui/button.svelte';
-	import * as Dialog from '$lib/components/ui/dialog/index.js';
+	import { buttonVariants } from "$lib/components/ui/button";
+	import * as Dialog from "$lib/components/ui/dialog/index.js";
 </script>
 
 <Dialog.Root>
-	<Dialog.Trigger class={buttonVariants({ variant: 'outline' })}>
+	<Dialog.Trigger class={buttonVariants({ variant: "outline" })}>
 		Scrollable (sticky footer)
 	</Dialog.Trigger>
 	<Dialog.Content
@@ -12,16 +12,22 @@
 	>
 		<div class="overflow-y-auto">
 			<Dialog.Header class="contents space-y-0 text-left">
-				<Dialog.Title class="px-6 pt-6 text-base">Frequently Asked Questions (FAQ)</Dialog.Title>
+				<Dialog.Title class="px-6 pt-6 text-base"
+					>Frequently Asked Questions (FAQ)</Dialog.Title
+				>
 				<Dialog.Description class="p-6">
-					<div class="space-y-4 [&_strong]:font-semibold [&_strong]:text-foreground">
+					<div
+						class="space-y-4 [&_strong]:font-semibold [&_strong]:text-foreground"
+					>
 						<div class="space-y-1">
 							<p>
 								<strong>Account Management</strong>
 							</p>
 							<p>
-								Navigate to the registration page, provide required information, and verify your
-								email address. You can sign up using your email or through social media platforms.
+								Navigate to the registration page, provide
+								required information, and verify your email
+								address. You can sign up using your email or
+								through social media platforms.
 							</p>
 						</div>
 						<div class="space-y-1">
@@ -29,9 +35,11 @@
 								<strong>Password Reset Process</strong>
 							</p>
 							<p>
-								Users can reset their password through the account settings page. Click &quot;Forgot
-								Password&quot; and follow the email verification steps to regain account access
-								quickly and securely.
+								Users can reset their password through the
+								account settings page. Click &quot;Forgot
+								Password&quot; and follow the email verification
+								steps to regain account access quickly and
+								securely.
 							</p>
 						</div>
 						<div class="space-y-1">
@@ -39,9 +47,12 @@
 								<strong>Service Pricing Tiers</strong>
 							</p>
 							<p>
-								We offer three primary subscription levels designed to meet diverse user needs:
-								Basic (free with limited features), Professional (monthly fee with comprehensive
-								access), and Enterprise (custom pricing with full platform capabilities).
+								We offer three primary subscription levels
+								designed to meet diverse user needs: Basic (free
+								with limited features), Professional (monthly
+								fee with comprehensive access), and Enterprise
+								(custom pricing with full platform
+								capabilities).
 							</p>
 						</div>
 						<div class="space-y-1">
@@ -49,9 +60,11 @@
 								<strong>Technical Support Channels</strong>
 							</p>
 							<p>
-								Customer support is accessible through multiple communication methods including
-								email support, live chat during business hours, an integrated support ticket system,
-								and phone support specifically for enterprise-level customers.
+								Customer support is accessible through multiple
+								communication methods including email support,
+								live chat during business hours, an integrated
+								support ticket system, and phone support
+								specifically for enterprise-level customers.
 							</p>
 						</div>
 						<div class="space-y-1">
@@ -59,9 +72,11 @@
 								<strong>Data Protection Strategies</strong>
 							</p>
 							<p>
-								Our platform implements rigorous security measures including 256-bit SSL encryption,
-								regular comprehensive security audits, strict data access controls, and compliance
-								with international privacy protection standards.
+								Our platform implements rigorous security
+								measures including 256-bit SSL encryption,
+								regular comprehensive security audits, strict
+								data access controls, and compliance with
+								international privacy protection standards.
 							</p>
 						</div>
 						<div class="space-y-1">
@@ -69,9 +84,11 @@
 								<strong>Platform Compatibility</strong>
 							</p>
 							<p>
-								The service supports multiple device and operating system environments, including
-								web browsers like Chrome and Firefox, mobile applications for iOS and Android, and
-								desktop applications compatible with Windows and macOS.
+								The service supports multiple device and
+								operating system environments, including web
+								browsers like Chrome and Firefox, mobile
+								applications for iOS and Android, and desktop
+								applications compatible with Windows and macOS.
 							</p>
 						</div>
 						<div class="space-y-1">
@@ -79,9 +96,12 @@
 								<strong>Subscription Management</strong>
 							</p>
 							<p>
-								Subscriptions can be cancelled at any time through account settings, with pro-rated
-								refunds available within 30 days of payment. Both monthly and annual billing options
-								are provided, with special discounts offered for annual commitments.
+								Subscriptions can be cancelled at any time
+								through account settings, with pro-rated refunds
+								available within 30 days of payment. Both
+								monthly and annual billing options are provided,
+								with special discounts offered for annual
+								commitments.
 							</p>
 						</div>
 						<div class="space-y-1">
@@ -89,10 +109,12 @@
 								<strong>Payment Method Options</strong>
 							</p>
 							<p>
-								We accept a wide range of payment methods including major credit cards such as Visa,
-								MasterCard, and American Express, digital payment platforms like PayPal, and direct
-								bank transfers. Regional payment options may also be available depending on user
-								location.
+								We accept a wide range of payment methods
+								including major credit cards such as Visa,
+								MasterCard, and American Express, digital
+								payment platforms like PayPal, and direct bank
+								transfers. Regional payment options may also be
+								available depending on user location.
 							</p>
 						</div>
 						<div class="space-y-1">
@@ -100,8 +122,9 @@
 								<strong>Customer Support</strong>
 							</p>
 							<p>
-								Our dedicated customer support team is available 24/7, providing quick and efficient
-								assistance to address any inquiries or issues you may have.
+								Our dedicated customer support team is available
+								24/7, providing quick and efficient assistance
+								to address any inquiries or issues you may have.
 							</p>
 						</div>
 						<div class="space-y-1">
@@ -109,8 +132,9 @@
 								<strong>Privacy Policy</strong>
 							</p>
 							<p>
-								Our privacy policy outlines how we collect, use, and protect your personal data,
-								ensuring your privacy is protected at all times.
+								Our privacy policy outlines how we collect, use,
+								and protect your personal data, ensuring your
+								privacy is protected at all times.
 							</p>
 						</div>
 					</div>
@@ -118,7 +142,9 @@
 			</Dialog.Header>
 		</div>
 		<Dialog.Footer class="border-t border-border px-6 py-4">
-			<Dialog.Close class={buttonVariants({ variant: 'outline' })}>Cancel</Dialog.Close>
+			<Dialog.Close class={buttonVariants({ variant: "outline" })}
+				>Cancel</Dialog.Close
+			>
 			<Dialog.Close class={buttonVariants()}>Okay</Dialog.Close>
 		</Dialog.Footer>
 	</Dialog.Content>

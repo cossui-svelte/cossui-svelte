@@ -1,20 +1,27 @@
 <script lang="ts">
-	import Button, { buttonVariants } from '$lib/components/ui/button.svelte';
-	import * as Dialog from '$lib/components/ui/dialog/index.js';
-	import Textarea from '$lib/components/ui/textarea.svelte';
+	import { Button, buttonVariants } from "$lib/components/ui/button";
+	import * as Dialog from "$lib/components/ui/dialog/index.js";
+	import { Textarea } from "$lib/components/ui/textarea";
 </script>
 
 <Dialog.Root>
-	<Dialog.Trigger class={buttonVariants({ variant: 'outline' })}>Feedback</Dialog.Trigger>
+	<Dialog.Trigger class={buttonVariants({ variant: "outline" })}
+		>Feedback</Dialog.Trigger
+	>
 	<Dialog.Content>
 		<Dialog.Header>
 			<Dialog.Title>Send us feedback</Dialog.Title>
 			<Dialog.Description>
 				Watch
-				<a class="text-foreground hover:underline" href="#title">tutorials</a>, read Origin
-				UI&lsquo;s
-				<a class="text-foreground hover:underline" href="#title">documentation</a>, or join our
-				<a class="text-foreground hover:underline" href="#title">Discord</a>
+				<a class="text-foreground hover:underline" href="#title"
+					>tutorials</a
+				>, read Origin UI&lsquo;s
+				<a class="text-foreground hover:underline" href="#title"
+					>documentation</a
+				>, or join our
+				<a class="text-foreground hover:underline" href="#title"
+					>Discord</a
+				>
 				for community help.
 			</Dialog.Description>
 		</Dialog.Header>

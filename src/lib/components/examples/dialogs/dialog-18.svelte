@@ -1,15 +1,20 @@
 <script lang="ts">
-	import Button, { buttonVariants } from '$lib/components/ui/button.svelte';
-	import * as Dialog from '$lib/components/ui/dialog/index.js';
-	import Label from '$lib/components/ui/label.svelte';
-	import { RadioGroup, RadioGroupItem } from '$lib/components/ui/radio-group/index.js';
+	import { Button, buttonVariants } from "$lib/components/ui/button";
+	import * as Dialog from "$lib/components/ui/dialog/index.js";
+	import { Label } from "$lib/components/ui/label";
+	import {
+		RadioGroup,
+		RadioGroupItem,
+	} from "$lib/components/ui/radio-group/index.js";
 
-	import Check from '@lucide/svelte/icons/check';
-	import RefreshCcw from '@lucide/svelte/icons/refresh-ccw';
+	import Check from "@lucide/svelte/icons/check";
+	import RefreshCcw from "@lucide/svelte/icons/refresh-ccw";
 </script>
 
 <Dialog.Root>
-	<Dialog.Trigger class={buttonVariants({ variant: 'outline' })}>Change plan</Dialog.Trigger>
+	<Dialog.Trigger class={buttonVariants({ variant: "outline" })}
+		>Change plan</Dialog.Trigger
+	>
 	<Dialog.Content>
 		<div class="mb-2 flex flex-col gap-2">
 			<div
@@ -20,7 +25,9 @@
 			</div>
 			<Dialog.Header>
 				<Dialog.Title class="text-left">Change your plan</Dialog.Title>
-				<Dialog.Description class="text-left">Pick one of the following plans.</Dialog.Description>
+				<Dialog.Description class="text-left"
+					>Pick one of the following plans.</Dialog.Description
+				>
 			</Dialog.Header>
 		</div>
 
@@ -37,7 +44,10 @@
 					/>
 					<div class="grid grow gap-1">
 						<Label for="plan-01">Essential</Label>
-						<p id="plan-01-description" class="text-xs text-muted-foreground">
+						<p
+							id="plan-01-description"
+							class="text-xs text-muted-foreground"
+						>
 							$4 per member/month
 						</p>
 					</div>
@@ -53,7 +63,10 @@
 					/>
 					<div class="grid grow gap-1">
 						<Label for="plan-02">Standard</Label>
-						<p id="plan-02-description" class="text-xs text-muted-foreground">
+						<p
+							id="plan-02-description"
+							class="text-xs text-muted-foreground"
+						>
 							$19 per member/month
 						</p>
 					</div>
@@ -69,7 +82,10 @@
 					/>
 					<div class="grid grow gap-1">
 						<Label for="plan-03">Enterprise</Label>
-						<p id="plan-03-description" class="text-xs text-muted-foreground">
+						<p
+							id="plan-03-description"
+							class="text-xs text-muted-foreground"
+						>
 							$32 per member/month
 						</p>
 					</div>
@@ -78,7 +94,9 @@
 
 			<div class="space-y-3">
 				<p>
-					<strong class="text-sm font-medium">Features include:</strong>
+					<strong class="text-sm font-medium"
+						>Features include:</strong
+					>
 				</p>
 				<ul class="space-y-2 text-sm text-muted-foreground">
 					<li class="flex gap-2">
@@ -140,7 +158,10 @@
 
 			<div class="grid gap-2">
 				<Button type="button" class="w-full">Change plan</Button>
-				<Dialog.Close class="{buttonVariants({ variant: 'ghost' })} w-full">Cancel</Dialog.Close>
+				<Dialog.Close
+					class="{buttonVariants({ variant: 'ghost' })} w-full"
+					>Cancel</Dialog.Close
+				>
 			</div>
 		</form>
 	</Dialog.Content>

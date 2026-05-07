@@ -1,38 +1,47 @@
 <script lang="ts">
-	import Input from '../ui/input.svelte';
-	import Textarea from '../ui/textarea.svelte';
-	import Button, { buttonVariants } from '$lib/components/ui/button.svelte';
-	import * as Dialog from '$lib/components/ui/dialog/index.js';
-	import Label from '$lib/components/ui/label.svelte';
-	import { useCharacterLimit } from '$lib/hooks/use-character-limit.svelte';
-	import { useImageUpload } from '$lib/hooks/use-image-upload.svelte';
+	import { Input } from "$lib/components/ui/input";
+	import { Textarea } from "$lib/components/ui/textarea";
+	import { Button, buttonVariants } from "$lib/components/ui/button";
+	import * as Dialog from "$lib/components/ui/dialog/index.js";
+	import { Label } from "$lib/components/ui/label";
+	import { useCharacterLimit } from "$lib/hooks/use-character-limit.svelte";
+	import { useImageUpload } from "$lib/hooks/use-image-upload.svelte";
 
-	import Check from '@lucide/svelte/icons/check';
-	import ImagePlus from '@lucide/svelte/icons/image-plus';
-	import X from '@lucide/svelte/icons/x';
+	import Check from "@lucide/svelte/icons/check";
+	import ImagePlus from "@lucide/svelte/icons/image-plus";
+	import X from "@lucide/svelte/icons/x";
 
 	const bioLimit = useCharacterLimit(
 		180,
-		'Hey, I am Margaret, a web developer who loves turning ideas into amazing websites!'
+		"Hey, I am Margaret, a web developer who loves turning ideas into amazing websites!",
 	);
-	const bannerImageHandler = useImageUpload({ initialImage: '/profile-bg.jpg' });
-	const profileImageHandler = useImageUpload({ initialImage: '/avatar-72-01.jpg' });
+	const bannerImageHandler = useImageUpload({
+		initialImage: "/profile-bg.jpg",
+	});
+	const profileImageHandler = useImageUpload({
+		initialImage: "/avatar-72-01.jpg",
+	});
 </script>
 
 <Dialog.Root>
 	<Dialog.Trigger>
 		{#snippet child({ props })}
-			<Button variant="outline" class={buttonVariants({ variant: 'outline' })} {...props}
-				>Edit profile</Button
+			<Button
+				variant="outline"
+				class={buttonVariants({ variant: "outline" })}
+				{...props}>Edit profile</Button
 			>
 		{/snippet}
 	</Dialog.Trigger>
 	<Dialog.Content>
 		<Dialog.Header class="contents space-y-0 text-left">
-			<Dialog.Title class="border-b border-border px-6 py-4 text-base">Edit profile</Dialog.Title>
+			<Dialog.Title class="border-b border-border px-6 py-4 text-base"
+				>Edit profile</Dialog.Title
+			>
 		</Dialog.Header>
 		<Dialog.Description class="sr-only">
-			Make changes to your profile here. You can change your photo and set a username.
+			Make changes to your profile here. You can change your photo and set
+			a username.
 		</Dialog.Description>
 
 		<div class="overflow-y-auto">
@@ -76,7 +85,12 @@
 							<div
 								class="pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 text-muted-foreground/80 peer-disabled:opacity-50"
 							>
-								<Check size={16} stroke-width={2} class="text-emerald-500" aria-hidden="true" />
+								<Check
+									size={16}
+									stroke-width={2}
+									class="text-emerald-500"
+									aria-hidden="true"
+								/>
 							</div>
 						</div>
 					</div>
@@ -112,7 +126,10 @@
 							role="status"
 							aria-live="polite"
 						>
-							<span class="tabular-nums">{bioLimit.maxLength - bioLimit.characterCount}</span>
+							<span class="tabular-nums"
+								>{bioLimit.maxLength -
+									bioLimit.characterCount}</span
+							>
 							characters left
 						</p>
 					</div>
@@ -122,7 +139,9 @@
 		<Dialog.Footer class="border-t border-border px-6 py-4">
 			<Dialog.Close>
 				{#snippet child({ props })}
-					<Button type="button" variant="outline" {...props}>Cancel</Button>
+					<Button type="button" variant="outline" {...props}
+						>Cancel</Button
+					>
 				{/snippet}
 			</Dialog.Close>
 			<Dialog.Close>
@@ -136,25 +155,31 @@
 
 {#snippet ProfileBg()}
 	<div class="h-32">
-		<div class="relative flex h-full w-full items-center justify-center overflow-hidden bg-muted">
+		<div
+			class="relative flex h-full w-full items-center justify-center overflow-hidden bg-muted"
+		>
 			{#if bannerImageHandler.previewUrl}
 				<img
 					class="h-full w-full object-cover"
 					src={bannerImageHandler.previewUrl}
 					alt={bannerImageHandler.fileName
-						? 'Preview of uploaded image'
-						: 'Default profile background'}
+						? "Preview of uploaded image"
+						: "Default profile background"}
 					width={512}
 					height={96}
 				/>
 			{/if}
 
-			<div class="absolute inset-0 flex items-center justify-center gap-2">
+			<div
+				class="absolute inset-0 flex items-center justify-center gap-2"
+			>
 				<button
 					type="button"
 					class="z-50 flex size-10 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white outline-offset-2 transition-colors hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70"
 					onclick={bannerImageHandler.handleThumbnailClick}
-					aria-label={bannerImageHandler ? 'Change image' : 'Upload image'}
+					aria-label={bannerImageHandler
+						? "Change image"
+						: "Upload image"}
 				>
 					<ImagePlus size={16} stroke-width={2} aria-hidden="true" />
 				</button>

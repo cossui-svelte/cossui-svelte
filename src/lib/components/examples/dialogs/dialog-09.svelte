@@ -1,13 +1,15 @@
 <script lang="ts">
-	import Button, { buttonVariants } from '$lib/components/ui/button.svelte';
-	import * as Dialog from '$lib/components/ui/dialog/index.js';
-	import Input from '$lib/components/ui/input.svelte';
+	import { Button, buttonVariants } from "$lib/components/ui/button";
+	import { Dialog } from "$lib/components/ui/dialog";
+	import { Input } from "$lib/components/ui/input";
 
-	import Mail from '@lucide/svelte/icons/mail';
+	import Mail from "@lucide/svelte/icons/mail";
 </script>
 
 <Dialog.Root>
-	<Dialog.Trigger class={buttonVariants({ variant: 'outline' })}>Newsletter</Dialog.Trigger>
+	<Dialog.Trigger class={buttonVariants({ variant: "outline" })}
+		>Newsletter</Dialog.Trigger
+	>
 	<Dialog.Content>
 		<div class="mb-2 flex flex-col items-center gap-2">
 			<div
@@ -22,11 +24,19 @@
 					viewBox="0 0 32 32"
 					aria-hidden="true"
 				>
-					<circle cx="16" cy="16" r="12" fill="none" stroke-width="8" />
+					<circle
+						cx="16"
+						cy="16"
+						r="12"
+						fill="none"
+						stroke-width="8"
+					/>
 				</svg>
 			</div>
 			<Dialog.Header>
-				<Dialog.Title class="sm:text-center">Never miss an update</Dialog.Title>
+				<Dialog.Title class="sm:text-center"
+					>Never miss an update</Dialog.Title
+				>
 				<Dialog.Description class="sm:text-center">
 					Subscribe to receive news and special offers.
 				</Dialog.Description>
@@ -55,7 +65,9 @@
 
 		<p class="text-center text-xs text-muted-foreground">
 			By subscribing you agree to our
-			<a class="underline hover:no-underline" href="#title">Privacy Policy</a>.
+			<a class="underline hover:no-underline" href="#title"
+				>Privacy Policy</a
+			>.
 		</p>
 	</Dialog.Content>
 </Dialog.Root>

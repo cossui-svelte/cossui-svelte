@@ -1,13 +1,15 @@
 <script lang="ts">
-	import Button, { buttonVariants } from '$lib/components/ui/button.svelte';
-	import Checkbox from '$lib/components/ui/checkbox.svelte';
-	import * as Dialog from '$lib/components/ui/dialog/index.js';
-	import Input from '$lib/components/ui/input.svelte';
-	import Label from '$lib/components/ui/label.svelte';
+	import { Button, buttonVariants } from "$lib/components/ui/button";
+	import { Checkbox } from "$lib/components/ui/checkbox";
+	import * as Dialog from "$lib/components/ui/dialog/index.js";
+	import { Input } from "$lib/components/ui/input";
+	import { Label } from "$lib/components/ui/label";
 </script>
 
 <Dialog.Root>
-	<Dialog.Trigger class={buttonVariants({ variant: 'outline' })}>Sign in</Dialog.Trigger>
+	<Dialog.Trigger class={buttonVariants({ variant: "outline" })}
+		>Sign in</Dialog.Trigger
+	>
 	<Dialog.Content>
 		<div class="flex flex-col items-center gap-2">
 			<div
@@ -22,7 +24,13 @@
 					viewBox="0 0 32 32"
 					aria-hidden="true"
 				>
-					<circle cx="16" cy="16" r="12" fill="none" stroke-width="8" />
+					<circle
+						cx="16"
+						cy="16"
+						r="12"
+						fill="none"
+						stroke-width="8"
+					/>
 				</svg>
 			</div>
 			<Dialog.Header>
@@ -37,19 +45,35 @@
 			<div class="space-y-4">
 				<div class="space-y-2">
 					<Label for="login-email">Email</Label>
-					<Input id="login-email" placeholder="hi@yourcompany.com" type="email" required />
+					<Input
+						id="login-email"
+						placeholder="hi@yourcompany.com"
+						type="email"
+						required
+					/>
 				</div>
 				<div class="space-y-2">
 					<Label for="login-password">Password</Label>
-					<Input id="login-password" placeholder="Enter your password" type="password" required />
+					<Input
+						id="login-password"
+						placeholder="Enter your password"
+						type="password"
+						required
+					/>
 				</div>
 			</div>
 			<div class="flex justify-between gap-2">
 				<div class="flex items-center gap-2">
 					<Checkbox id="login-remember" />
-					<Label for="login-remember" class="font-normal text-muted-foreground">Remember me</Label>
+					<Label
+						for="login-remember"
+						class="font-normal text-muted-foreground"
+						>Remember me</Label
+					>
 				</div>
-				<a class="text-sm underline hover:no-underline" href="#title">Forgot password?</a>
+				<a class="text-sm underline hover:no-underline" href="#title"
+					>Forgot password?</a
+				>
 			</div>
 			<Button type="button" class="w-full">Sign in</Button>
 		</form>
