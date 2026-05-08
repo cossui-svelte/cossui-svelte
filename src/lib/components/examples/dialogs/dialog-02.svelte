@@ -1,15 +1,25 @@
 <script lang="ts">
-	import * as AlertDialog from "$lib/components/ui/alert-dialog/index.js";
+	import {
+		AlertDialog,
+		AlertDialogAction,
+		AlertDialogClose,
+		AlertDialogContent,
+		AlertDialogDescription,
+		AlertDialogFooter,
+		AlertDialogHeader,
+		AlertDialogTitle,
+		AlertDialogTrigger,
+	} from "$lib/components/ui/alert-dialog";
 	import { buttonVariants } from "$lib/components/ui/button";
 
 	import CircleAlert from "@lucide/svelte/icons/circle-alert";
 </script>
 
-<AlertDialog.Root>
-	<AlertDialog.Trigger class={buttonVariants({ variant: "outline" })}>
+<AlertDialog>
+	<AlertDialogTrigger class={buttonVariants({ variant: "outline" })}>
 		Alert dialog with icon
-	</AlertDialog.Trigger>
-	<AlertDialog.Content>
+	</AlertDialogTrigger>
+	<AlertDialogContent>
 		<div
 			class="flex flex-col gap-2 max-sm:items-center sm:flex-row sm:gap-4"
 		>
@@ -19,17 +29,17 @@
 			>
 				<CircleAlert class="opacity-80" size={16} strokeWidth={2} />
 			</div>
-			<AlertDialog.Header>
-				<AlertDialog.Title>Are you sure?</AlertDialog.Title>
-				<AlertDialog.Description>
+			<AlertDialogHeader>
+				<AlertDialogTitle>Are you sure?</AlertDialogTitle>
+				<AlertDialogDescription>
 					Are you sure you want to delete your account? All your data
 					will be removed.
-				</AlertDialog.Description>
-			</AlertDialog.Header>
+				</AlertDialogDescription>
+			</AlertDialogHeader>
 		</div>
-		<AlertDialog.Footer>
-			<AlertDialog.Cancel>Cancel</AlertDialog.Cancel>
-			<AlertDialog.Action>Confirm</AlertDialog.Action>
-		</AlertDialog.Footer>
-	</AlertDialog.Content>
-</AlertDialog.Root>
+		<AlertDialogFooter>
+			<AlertDialogClose>Cancel</AlertDialogClose>
+			<AlertDialogAction>Confirm</AlertDialogAction>
+		</AlertDialogFooter>
+	</AlertDialogContent>
+</AlertDialog>
