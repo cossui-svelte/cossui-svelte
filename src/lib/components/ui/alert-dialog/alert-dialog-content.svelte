@@ -34,11 +34,11 @@
 		data-size={size}
 		class={cn(
 			// Fixed full-screen layer
-			"fixed z-50 w-full flex flex-col gap-6 p-0 outline-none group/alert-dialog-content",
+			"fixed z-50 w-full flex flex-col gap-0 p-0 outline-none group/alert-dialog-content",
 			// Appearance
 			"bg-popover text-popover-foreground ring-1 ring-foreground/10",
-			// Animation base
-			"transition-[scale,opacity,translate] duration-200 ease-in-out will-change-transform",
+			// Animation base — split by breakpoint so resize doesn't trigger cross-layout transitions
+			"sm:transition-[scale,opacity] max-sm:transition-[translate,opacity] duration-200 ease-in-out will-change-transform",
 			"data-open:animate-in data-closed:animate-out data-closed:fade-out-0 data-open:fade-in-0",
 			"data-starting-style:opacity-0 data-ending-style:opacity-0",
 			// Desktop (sm+): centered dialog
