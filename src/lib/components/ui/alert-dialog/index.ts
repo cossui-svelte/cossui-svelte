@@ -12,19 +12,6 @@ import Description from './alert-dialog-description.svelte';
 import Media from './alert-dialog-media.svelte';
 
 export {
-  Root,
-  Title,
-  Action,
-  Cancel,
-  Portal,
-  Footer,
-  Header,
-  Trigger,
-  Overlay,
-  Content,
-  Description,
-  Media,
-  //
   Root as AlertDialog,
   Title as AlertDialogTitle,
   Action as AlertDialogAction,
