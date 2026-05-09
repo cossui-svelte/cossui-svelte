@@ -11,7 +11,7 @@
         DialogPopup,
         DialogTitle,
         DialogTrigger,
-    } from "$lib/components/ui/dialog.old";
+    } from "$lib/components/ui/dialog";
 
     import { Field, FieldLabel } from "$lib/components/ui/field";
     import { Form } from "$lib/components/ui/form";
@@ -34,11 +34,11 @@
                     </DialogDescription>
                 </DialogHeader>
                 <DialogPanel class="grid gap-4">
-                    <Field>
+                    <Field name="name">
                         <FieldLabel>Name</FieldLabel>
                         <Input value="Margaret Welsh" type="text" />
                     </Field>
-                    <Field>
+                    <Field name="username">
                         <FieldLabel>Username</FieldLabel>
                         <Input value="@maggie.welsh" type="text" />
                     </Field>
