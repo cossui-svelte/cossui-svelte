@@ -5,7 +5,8 @@
 	} from "bits-ui";
 	import type { Snippet, ComponentProps } from "svelte";
 	import { Button } from "$lib/components/ui/button";
-	import IconPlaceholder from "$lib/components/icon-placeholder/icon-placeholder.svelte";
+	import { XIcon } from "@lucide/svelte";
+
 	import { DialogOverlay, DialogPortal } from ".";
 	import { cn } from "$lib/utils";
 
@@ -71,17 +72,12 @@
 				{#snippet child({ props })}
 					<Button
 						variant="ghost"
-						class="cn-dialog-close"
+						aria-label="Close"
+						class="absolute end-2 top-2"
 						size="icon-sm"
 						{...props}
 					>
-						<IconPlaceholder
-							lucide="XIcon"
-							tabler="IconX"
-							hugeicons="Cancel01Icon"
-							phosphor="XIcon"
-							remixicon="RiCloseLine"
-						/>
+						<XIcon />
 						<span class="sr-only">Close</span>
 					</Button>
 				{/snippet}

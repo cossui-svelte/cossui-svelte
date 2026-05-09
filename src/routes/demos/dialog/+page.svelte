@@ -16,16 +16,25 @@
     import { Field, FieldLabel } from "$lib/components/ui/field";
     import { Form } from "$lib/components/ui/form";
     import { Input } from "$lib/components/ui/input";
+    import { valibotClient } from "sveltekit-superforms/adapters";
+    import { superForm } from "sveltekit-superforms/client";
+    import { schema } from "./schema.js";
+
+    let { data } = $props();
+
+    const formConfig = superForm(data.form, {
+        SPA: true,
+        validators: valibotClient(schema),
+    });
 </script>
 
 <ComponentPreviewTabs>
     <Dialog>
         <DialogTrigger class={buttonVariants({ variant: "outline" })}>
-            <!-- <Button variant="outline">Open Dialog</Button> -->
             Open Dialog
         </DialogTrigger>
         <DialogPopup class="sm:max-w-sm">
-            <Form class="contents">
+            <Form config={formConfig} class="contents">
                 <DialogHeader>
                     <DialogTitle>Edit profile</DialogTitle>
                     <DialogDescription>
