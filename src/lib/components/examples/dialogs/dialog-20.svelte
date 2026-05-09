@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Button, buttonVariants } from "$lib/components/ui/button";
-	import * as Dialog from "$lib/components/ui/dialog/index.js";
+	import * as Dialog from "$lib/components/ui/dialog.old/index.js";
 
 	import ArrowRight from "@lucide/svelte/icons/arrow-right";
 	import DialogImg from "$lib/assets/dialog-content.png";

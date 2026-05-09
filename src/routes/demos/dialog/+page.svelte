@@ -11,7 +11,7 @@
         DialogPopup,
         DialogTitle,
         DialogTrigger,
-    } from "$lib/components/ui/dialog";
+    } from "$lib/components/ui/dialog.old";
 
     import { Field, FieldLabel } from "$lib/components/ui/field";
     import { Form } from "$lib/components/ui/form";

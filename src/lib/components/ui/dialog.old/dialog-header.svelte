@@ -1,19 +1,22 @@
 <script lang="ts">
+	import type { WithElementRef } from "bits-ui";
 	import type { HTMLAttributes } from "svelte/elements";
-	import { cn, type WithElementRef } from "$lib/utils.js";
+
+	import { cn } from "$lib/utils.js";
 
 	let {
-		ref = $bindable(null),
-		class: className,
 		children,
+		class: className,
 		...restProps
 	}: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();
 </script>
 
 <div
-	bind:this={ref}
+	class={cn(
+		"flex flex-col gap-2 p-6 in-[[data-slot=dialog-popup]:has([data-slot=dialog-panel])]:pb-3 max-sm:pb-4",
+		className,
+	)}
 	data-slot="dialog-header"
-	class={cn("cn-dialog-header flex flex-col", className)}
 	{...restProps}
 >
 	{@render children?.()}

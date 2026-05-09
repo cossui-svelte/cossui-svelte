@@ -1,17 +1,18 @@
 <script lang="ts">
-	import { Dialog as DialogPrimitive } from "bits-ui";
 	import { cn } from "$lib/utils.js";
 
+	import { Dialog as DialogPrimitive } from "bits-ui";
+
 	let {
-		ref = $bindable(null),
 		class: className,
+		ref = $bindable(null),
 		...restProps
 	}: DialogPrimitive.DescriptionProps = $props();
 </script>
 
 <DialogPrimitive.Description
 	bind:ref
+	class={cn("text-muted-foreground text-sm", className)}
 	data-slot="dialog-description"
-	class={cn("cn-dialog-description", className)}
 	{...restProps}
 />

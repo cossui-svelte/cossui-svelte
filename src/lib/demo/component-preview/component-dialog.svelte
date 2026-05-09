@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { getComponentDialogCtx } from "./component-dialog-context.svelte";
 	import Content from "./content.svelte";
-	import * as Dialog from "$lib/components/ui/dialog";
+	import * as Dialog from "$lib/components/ui/dialog.old";
 	import * as Drawer from "$lib/components/ui/drawer";
 
 	import { pushState, replaceState } from "$app/navigation";

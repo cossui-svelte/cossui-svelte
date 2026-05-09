@@ -2,7 +2,7 @@
 	import { Input } from "$lib/components/ui/input";
 	import { Textarea } from "$lib/components/ui/textarea";
 	import { Button, buttonVariants } from "$lib/components/ui/button";
-	import * as Dialog from "$lib/components/ui/dialog/index.js";
+	import * as Dialog from "$lib/components/ui/dialog.old/index.js";
 	import { Label } from "$lib/components/ui/label";
 	import { useCharacterLimit } from "$lib/hooks/use-character-limit.svelte";
 	import { useImageUpload } from "$lib/hooks/use-image-upload.svelte";
