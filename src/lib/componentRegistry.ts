@@ -60,15 +60,17 @@ class ComponentRegistry {
 
   async #initializeComponents(): Promise<Map<COSSUIDirectory, Set<COSSUIComponent>>> {
     const files = this.#getFileImports();
+
     const componentMap = new Map<COSSUIDirectory, Set<COSSUIComponent>>();
 
     // In dev mode, we just need the paths
     const paths = Object.keys(files);
 
     for (const path of paths) {
-      const match = path.match(/\/components\/([^/]+)\/([^/]+)\.svelte$/);
+      console.log(path)
+      const match = path.match(/\/components\/examples\/([^/]+)\/([^/]+)\.svelte$/);
       if (!match) continue;
-
+      console.log(path)
       const [, directory, filename] = match as [string, COSSUIDirectory, COSSUIComponent];
 
       if (!componentMap.has(directory)) {
