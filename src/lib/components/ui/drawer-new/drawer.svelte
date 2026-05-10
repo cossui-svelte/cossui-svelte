@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Drawer as DrawerPrimitive } from "vaul-svelte";
+	import { setContext } from "svelte";
 
 	type Position = "top" | "bottom" | "left" | "right";
 
@@ -9,7 +10,17 @@
 		activeSnapPoint = $bindable(null),
 		position = "bottom" as Position,
 		...restProps
-	}: Omit<DrawerPrimitive.RootProps, "direction"> & { position?: Position } = $props();
+	}: Omit<DrawerPrimitive.RootProps, "direction"> & {
+		position?: Position;
+	} = $props();
+
+	setContext("drawer-position", { position: () => position });
 </script>
 
-<DrawerPrimitive.Root {shouldScaleBackground} bind:open bind:activeSnapPoint direction={position} {...(restProps as any)} />
+<DrawerPrimitive.Root
+	{shouldScaleBackground}
+	bind:open
+	bind:activeSnapPoint
+	direction={position}
+	{...restProps as any}
+/>
