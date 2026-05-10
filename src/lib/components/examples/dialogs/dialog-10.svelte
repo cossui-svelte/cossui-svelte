@@ -1,17 +1,26 @@
 <script lang="ts">
 	import { Button, buttonVariants } from "$lib/components/ui/button";
-	import * as Dialog from "$lib/components/ui/dialog.old/index.js";
+	import {
+		Dialog,
+		DialogClose,
+		DialogContent,
+		DialogDescription,
+		DialogFooter,
+		DialogHeader,
+		DialogTitle,
+		DialogTrigger,
+	} from "$lib/components/ui/dialog";
 	import { Textarea } from "$lib/components/ui/textarea";
 </script>
 
-<Dialog.Root>
-	<Dialog.Trigger class={buttonVariants({ variant: "outline" })}
-		>Feedback</Dialog.Trigger
+<Dialog>
+	<DialogTrigger class={buttonVariants({ variant: "outline" })}
+		>Feedback</DialogTrigger
 	>
-	<Dialog.Content>
-		<Dialog.Header>
-			<Dialog.Title>Send us feedback</Dialog.Title>
-			<Dialog.Description>
+	<DialogContent>
+		<DialogHeader>
+			<DialogTitle>Send us feedback</DialogTitle>
+			<DialogDescription>
 				Watch
 				<a class="text-foreground hover:underline" href="#title"
 					>tutorials</a
@@ -23,8 +32,8 @@
 					>Discord</a
 				>
 				for community help.
-			</Dialog.Description>
-		</Dialog.Header>
+			</DialogDescription>
+		</DialogHeader>
 		<form class="space-y-5">
 			<Textarea
 				id="feedback"
@@ -35,5 +44,5 @@
 				<Button type="button">Send feedback</Button>
 			</div>
 		</form>
-	</Dialog.Content>
-</Dialog.Root>
+	</DialogContent>
+</Dialog>

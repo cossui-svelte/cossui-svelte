@@ -1,6 +1,15 @@
 <script lang="ts">
 	import { Button, buttonVariants } from "$lib/components/ui/button";
-	import * as Dialog from "$lib/components/ui/dialog.old/index.js";
+	import {
+		Dialog,
+		DialogClose,
+		DialogContent,
+		DialogDescription,
+		DialogFooter,
+		DialogHeader,
+		DialogTitle,
+		DialogTrigger,
+	} from "$lib/components/ui/dialog";
 
 	import ArrowRight from "@lucide/svelte/icons/arrow-right";
 	import DialogImg from "$lib/assets/dialog-content.png";
@@ -38,15 +47,15 @@
 	}
 </script>
 
-<Dialog.Root
+<Dialog
 	onOpenChange={(open) => {
 		if (open) step = 1;
 	}}
 >
-	<Dialog.Trigger class={buttonVariants({ variant: "outline" })}
-		>Onboarding</Dialog.Trigger
+	<DialogTrigger class={buttonVariants({ variant: "outline" })}
+		>Onboarding</DialogTrigger
 	>
-	<Dialog.Content class="gap-0 p-0 [&>button:last-child]:text-white">
+	<DialogContent class="gap-0 p-0 [&>button:last-child]:text-white">
 		<div class="p-2">
 			<img
 				class="w-full rounded-lg"
@@ -57,12 +66,12 @@
 			/>
 		</div>
 		<div class="space-y-6 px-6 pb-6 pt-3">
-			<Dialog.Header>
-				<Dialog.Title>{steps[step - 1].title}</Dialog.Title>
-				<Dialog.Description
-					>{steps[step - 1].description}</Dialog.Description
+			<DialogHeader>
+				<DialogTitle>{steps[step - 1].title}</DialogTitle>
+				<DialogDescription
+					>{steps[step - 1].description}</DialogDescription
 				>
-			</Dialog.Header>
+			</DialogHeader>
 			<div
 				class="flex flex-col justify-between gap-4 sm:flex-row sm:items-center"
 			>
@@ -78,9 +87,9 @@
 						></div>
 					{/each}
 				</div>
-				<Dialog.Footer>
-					<Dialog.Close class={buttonVariants({ variant: "ghost" })}
-						>Skip</Dialog.Close
+				<DialogFooter>
+					<DialogClose class={buttonVariants({ variant: "ghost" })}
+						>Skip</DialogClose
 					>
 					{#if step < steps.length}
 						<Button
@@ -97,12 +106,10 @@
 							/>
 						</Button>
 					{:else}
-						<Dialog.Close class={buttonVariants()}
-							>Okay</Dialog.Close
-						>
+						<DialogClose class={buttonVariants()}>Okay</DialogClose>
 					{/if}
-				</Dialog.Footer>
+				</DialogFooter>
 			</div>
 		</div>
-	</Dialog.Content>
-</Dialog.Root>
+	</DialogContent>
+</Dialog>

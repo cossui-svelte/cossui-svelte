@@ -2,7 +2,16 @@
 	import { Input } from "$lib/components/ui/input";
 	import { Textarea } from "$lib/components/ui/textarea";
 	import { Button, buttonVariants } from "$lib/components/ui/button";
-	import * as Dialog from "$lib/components/ui/dialog.old/index.js";
+	import {
+		Dialog,
+		DialogClose,
+		DialogContent,
+		DialogDescription,
+		DialogFooter,
+		DialogHeader,
+		DialogTitle,
+		DialogTrigger,
+	} from "$lib/components/ui/dialog";
 	import { Label } from "$lib/components/ui/label";
 	import { useCharacterLimit } from "$lib/hooks/use-character-limit.svelte";
 	import { useImageUpload } from "$lib/hooks/use-image-upload.svelte";
@@ -23,8 +32,8 @@
 	});
 </script>
 
-<Dialog.Root>
-	<Dialog.Trigger>
+<Dialog>
+	<DialogTrigger>
 		{#snippet child({ props })}
 			<Button
 				variant="outline"
@@ -32,17 +41,17 @@
 				{...props}>Edit profile</Button
 			>
 		{/snippet}
-	</Dialog.Trigger>
-	<Dialog.Content>
-		<Dialog.Header class="contents space-y-0 text-left">
-			<Dialog.Title class="border-b border-border px-6 py-4 text-base"
-				>Edit profile</Dialog.Title
+	</DialogTrigger>
+	<DialogContent>
+		<DialogHeader class="contents space-y-0 text-left">
+			<DialogTitle class="border-b border-border px-6 py-4 text-base"
+				>Edit profile</DialogTitle
 			>
-		</Dialog.Header>
-		<Dialog.Description class="sr-only">
+		</DialogHeader>
+		<DialogDescription class="sr-only">
 			Make changes to your profile here. You can change your photo and set
 			a username.
-		</Dialog.Description>
+		</DialogDescription>
 
 		<div class="overflow-y-auto">
 			{@render ProfileBg()}
@@ -136,22 +145,22 @@
 				</form>
 			</div>
 		</div>
-		<Dialog.Footer class="border-t border-border px-6 py-4">
-			<Dialog.Close>
+		<DialogFooter class="border-t border-border px-6 py-4">
+			<DialogClose>
 				{#snippet child({ props })}
 					<Button type="button" variant="outline" {...props}
 						>Cancel</Button
 					>
 				{/snippet}
-			</Dialog.Close>
-			<Dialog.Close>
+			</DialogClose>
+			<DialogClose>
 				{#snippet child({ props })}
 					<Button type="button" {...props}>Save changes</Button>
 				{/snippet}
-			</Dialog.Close>
-		</Dialog.Footer>
-	</Dialog.Content>
-</Dialog.Root>
+			</DialogClose>
+		</DialogFooter>
+	</DialogContent>
+</Dialog>
 
 {#snippet ProfileBg()}
 	<div class="h-32">

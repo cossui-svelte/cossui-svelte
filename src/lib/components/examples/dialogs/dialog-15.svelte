@@ -1,6 +1,15 @@
 <script lang="ts">
 	import { Button, buttonVariants } from "$lib/components/ui/button";
-	import * as Dialog from "$lib/components/ui/dialog.old/index.js";
+	import {
+		Dialog,
+		DialogClose,
+		DialogContent,
+		DialogDescription,
+		DialogFooter,
+		DialogHeader,
+		DialogTitle,
+		DialogTrigger,
+	} from "$lib/components/ui/dialog";
 	import { Input } from "$lib/components/ui/input";
 	import { Label } from "$lib/components/ui/label";
 	import {
@@ -30,11 +39,11 @@
 	}
 </script>
 
-<Dialog.Root>
-	<Dialog.Trigger class={buttonVariants({ variant: "outline" })}
-		>Invite members</Dialog.Trigger
+<Dialog>
+	<DialogTrigger class={buttonVariants({ variant: "outline" })}
+		>Invite members</DialogTrigger
 	>
-	<Dialog.Content>
+	<DialogContent>
 		<div class="flex flex-col gap-2">
 			<div
 				class="flex size-11 shrink-0 items-center justify-center rounded-full border border-border"
@@ -42,14 +51,12 @@
 			>
 				<UserRoundPlus class="opacity-80" size={16} strokeWidth={2} />
 			</div>
-			<Dialog.Header>
-				<Dialog.Title class="text-left"
-					>Invite team members</Dialog.Title
-				>
-				<Dialog.Description class="text-left">
+			<DialogHeader>
+				<DialogTitle class="text-left">Invite team members</DialogTitle>
+				<DialogDescription class="text-left">
 					Invite teammates to earn free components.
-				</Dialog.Description>
-			</Dialog.Header>
+				</DialogDescription>
+			</DialogHeader>
 		</div>
 
 		<form class="space-y-5">
@@ -143,5 +150,5 @@
 				</TooltipProvider>
 			</div>
 		</div>
-	</Dialog.Content>
-</Dialog.Root>
+	</DialogContent>
+</Dialog>

@@ -1,16 +1,25 @@
 <script lang="ts">
 	import { Button, buttonVariants } from "$lib/components/ui/button";
 	import { Checkbox } from "$lib/components/ui/checkbox";
-	import * as Dialog from "$lib/components/ui/dialog.old/index.js";
+	import {
+		Dialog,
+		DialogClose,
+		DialogContent,
+		DialogDescription,
+		DialogFooter,
+		DialogHeader,
+		DialogTitle,
+		DialogTrigger,
+	} from "$lib/components/ui/dialog";
 	import { Input } from "$lib/components/ui/input";
 	import { Label } from "$lib/components/ui/label";
 </script>
 
-<Dialog.Root>
-	<Dialog.Trigger class={buttonVariants({ variant: "outline" })}
-		>Sign in</Dialog.Trigger
+<Dialog>
+	<DialogTrigger class={buttonVariants({ variant: "outline" })}
+		>Sign in</DialogTrigger
 	>
-	<Dialog.Content>
+	<DialogContent>
 		<div class="flex flex-col items-center gap-2">
 			<div
 				class="flex size-11 shrink-0 items-center justify-center rounded-full border border-border"
@@ -33,12 +42,12 @@
 					/>
 				</svg>
 			</div>
-			<Dialog.Header>
-				<Dialog.Title class="sm:text-center">Welcome back</Dialog.Title>
-				<Dialog.Description class="sm:text-center">
+			<DialogHeader>
+				<DialogTitle class="sm:text-center">Welcome back</DialogTitle>
+				<DialogDescription class="sm:text-center">
 					Enter your credentials to login to your account.
-				</Dialog.Description>
-			</Dialog.Header>
+				</DialogDescription>
+			</DialogHeader>
 		</div>
 
 		<form class="space-y-5">
@@ -85,5 +94,5 @@
 		</div>
 
 		<Button variant="outline">Login with Google</Button>
-	</Dialog.Content>
-</Dialog.Root>
+	</DialogContent>
+</Dialog>

@@ -1,15 +1,24 @@
 <script lang="ts">
 	import { Button, buttonVariants } from "$lib/components/ui/button";
-	import * as Dialog from "$lib/components/ui/dialog.old/index.js";
+	import {
+		Dialog,
+		DialogClose,
+		DialogContent,
+		DialogDescription,
+		DialogFooter,
+		DialogHeader,
+		DialogTitle,
+		DialogTrigger,
+	} from "$lib/components/ui/dialog";
 	import { Input } from "$lib/components/ui/input";
 	import { Label } from "$lib/components/ui/label";
 </script>
 
-<Dialog.Root>
-	<Dialog.Trigger class={buttonVariants({ variant: "outline" })}
-		>Sign up</Dialog.Trigger
+<Dialog>
+	<DialogTrigger class={buttonVariants({ variant: "outline" })}
+		>Sign up</DialogTrigger
 	>
-	<Dialog.Content>
+	<DialogContent>
 		<div class="flex flex-col items-center gap-2">
 			<div
 				class="flex size-11 shrink-0 items-center justify-center rounded-full border border-border"
@@ -32,14 +41,14 @@
 					/>
 				</svg>
 			</div>
-			<Dialog.Header>
-				<Dialog.Title class="sm:text-center"
-					>Sign up Origin UI</Dialog.Title
+			<DialogHeader>
+				<DialogTitle class="sm:text-center"
+					>Sign up Origin UI</DialogTitle
 				>
-				<Dialog.Description class="sm:text-center">
+				<DialogDescription class="sm:text-center">
 					We just need a few details to get you started.
-				</Dialog.Description>
-			</Dialog.Header>
+				</DialogDescription>
+			</DialogHeader>
 		</div>
 
 		<form class="space-y-5">
@@ -87,5 +96,5 @@
 			By signing up you agree to our
 			<a class="underline hover:no-underline" href="#title">Terms</a>.
 		</p>
-	</Dialog.Content>
-</Dialog.Root>
+	</DialogContent>
+</Dialog>

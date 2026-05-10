@@ -179,8 +179,8 @@
 </script>
 
 <!-- Trigger button -->
-<Dialog.Root bind:open>
-  <Dialog.Trigger>
+<Dialog bind:open>
+  <DialogTrigger>
     {#snippet child({ props })}
       <button
         {...props}
@@ -198,13 +198,13 @@
         </KbdGroup>
       </button>
     {/snippet}
-  </Dialog.Trigger>
+  </DialogTrigger>
 
   <Dialog.Portal>
     <Dialog.Overlay
       class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm data-[state=closed]:animate-out data-[state=open]:animate-in data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
     />
-    <Dialog.Content
+    <DialogContent
       class="fixed top-[10%] left-1/2 z-50 w-full max-w-lg -translate-x-1/2 overflow-hidden rounded-2xl border bg-popover shadow-xl data-[state=closed]:animate-out data-[state=open]:animate-in data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95"
     >
       <!-- Search input -->
@@ -276,6 +276,6 @@
           </div>
         {/if}
       </div>
-    </Dialog.Content>
+    </DialogContent>
   </Dialog.Portal>
-</Dialog.Root>
+</Dialog>

@@ -1,6 +1,15 @@
 <script lang="ts">
 	import { Button, buttonVariants } from "$lib/components/ui/button";
-	import * as Dialog from "$lib/components/ui/dialog.old/index.js";
+	import {
+		Dialog,
+		DialogClose,
+		DialogContent,
+		DialogDescription,
+		DialogFooter,
+		DialogHeader,
+		DialogTitle,
+		DialogTrigger,
+	} from "$lib/components/ui/dialog";
 	import { Label } from "$lib/components/ui/label";
 	import {
 		RadioGroup,
@@ -11,11 +20,11 @@
 	import RefreshCcw from "@lucide/svelte/icons/refresh-ccw";
 </script>
 
-<Dialog.Root>
-	<Dialog.Trigger class={buttonVariants({ variant: "outline" })}
-		>Change plan</Dialog.Trigger
+<Dialog>
+	<DialogTrigger class={buttonVariants({ variant: "outline" })}
+		>Change plan</DialogTrigger
 	>
-	<Dialog.Content>
+	<DialogContent>
 		<div class="mb-2 flex flex-col gap-2">
 			<div
 				class="flex size-11 shrink-0 items-center justify-center rounded-full border border-border"
@@ -23,12 +32,12 @@
 			>
 				<RefreshCcw class="opacity-80" size={16} strokeWidth={2} />
 			</div>
-			<Dialog.Header>
-				<Dialog.Title class="text-left">Change your plan</Dialog.Title>
-				<Dialog.Description class="text-left"
-					>Pick one of the following plans.</Dialog.Description
+			<DialogHeader>
+				<DialogTitle class="text-left">Change your plan</DialogTitle>
+				<DialogDescription class="text-left"
+					>Pick one of the following plans.</DialogDescription
 				>
-			</Dialog.Header>
+			</DialogHeader>
 		</div>
 
 		<form class="space-y-5">
@@ -158,11 +167,11 @@
 
 			<div class="grid gap-2">
 				<Button type="button" class="w-full">Change plan</Button>
-				<Dialog.Close
+				<DialogClose
 					class="{buttonVariants({ variant: 'ghost' })} w-full"
-					>Cancel</Dialog.Close
+					>Cancel</DialogClose
 				>
 			</div>
 		</form>
-	</Dialog.Content>
-</Dialog.Root>
+	</DialogContent>
+</Dialog>

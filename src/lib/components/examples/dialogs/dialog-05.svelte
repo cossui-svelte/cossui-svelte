@@ -1,21 +1,30 @@
 <script lang="ts">
 	import { buttonVariants } from "$lib/components/ui/button";
-	import * as Dialog from "$lib/components/ui/dialog.old/index.js";
+	import {
+		Dialog,
+		DialogClose,
+		DialogContent,
+		DialogDescription,
+		DialogFooter,
+		DialogHeader,
+		DialogTitle,
+		DialogTrigger,
+	} from "$lib/components/ui/dialog";
 </script>
 
-<Dialog.Root>
-	<Dialog.Trigger class={buttonVariants({ variant: "outline" })}>
+<Dialog>
+	<DialogTrigger class={buttonVariants({ variant: "outline" })}>
 		Scrollable (sticky header)
-	</Dialog.Trigger>
-	<Dialog.Content
+	</DialogTrigger>
+	<DialogContent
 		class="flex flex-col gap-0 p-0 sm:max-h-[min(640px,80vh)] sm:max-w-lg [&>button:last-child]:top-3.5"
 	>
-		<Dialog.Header class="contents space-y-0 text-left">
-			<Dialog.Title class="border-b border-border px-6 py-4 text-base">
+		<DialogHeader class="contents space-y-0 text-left">
+			<DialogTitle class="border-b border-border px-6 py-4 text-base">
 				Frequently Asked Questions (FAQ)
-			</Dialog.Title>
+			</DialogTitle>
 			<div class="overflow-y-auto">
-				<Dialog.Description class="px-6 py-4">
+				<DialogDescription class="px-6 py-4">
 					<div
 						class="space-y-4 [&_strong]:font-semibold [&_strong]:text-foreground"
 					>
@@ -138,11 +147,11 @@
 							</p>
 						</div>
 					</div>
-				</Dialog.Description>
-				<Dialog.Footer class="px-6 pb-6 sm:justify-start">
-					<Dialog.Close class={buttonVariants()}>Okay</Dialog.Close>
-				</Dialog.Footer>
+				</DialogDescription>
+				<DialogFooter class="px-6 pb-6 sm:justify-start">
+					<DialogClose class={buttonVariants()}>Okay</DialogClose>
+				</DialogFooter>
 			</div>
-		</Dialog.Header>
-	</Dialog.Content>
-</Dialog.Root>
+		</DialogHeader>
+	</DialogContent>
+</Dialog>

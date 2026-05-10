@@ -1,7 +1,15 @@
 <script lang="ts">
 	import { getComponentDialogCtx } from "./component-dialog-context.svelte";
 	import Content from "./content.svelte";
-	import * as Dialog from "$lib/components/ui/dialog.old";
+	import {
+		Dialog,
+		DialogClose,
+		DialogContent,
+		DialogDescription,
+		DialogFooter,
+		DialogHeader,
+		DialogTitle,
+		DialogTrigger,
 	import * as Drawer from "$lib/components/ui/drawer";
 
 	import { pushState, replaceState } from "$app/navigation";
@@ -39,10 +47,10 @@
 </script>
 
 {#if screen.current}
-	<Dialog.Root bind:open onOpenChange={handleOpenChange}>
+	<Dialog bind:open onOpenChange={handleOpenChange}>
 		<Dialog.Portal>
 			<Dialog.Overlay />
-			<Dialog.Content
+			<DialogContent
 				class="block h-auto max-h-[calc(80svh)] max-w-[calc(100svw-5rem)] overflow-y-auto sm:max-w-2xl"
 			>
 				<Content
@@ -52,9 +60,9 @@
 						replaceState(originalPath, {});
 					}}
 				/>
-			</Dialog.Content>
+			</DialogContent>
 		</Dialog.Portal>
-	</Dialog.Root>
+	</Dialog>
 {:else}
 	<Drawer.Root bind:open onOpenChange={handleOpenChange}>
 		<Drawer.Content class="overflow-hidden after:![all:unset]">

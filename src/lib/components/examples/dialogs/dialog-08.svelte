@@ -1,6 +1,15 @@
 <script lang="ts">
 	import { Button, buttonVariants } from "$lib/components/ui/button";
-	import { Dialog } from "$lib/components/ui/dialog.old";
+	import {
+		Dialog,
+		DialogClose,
+		DialogContent,
+		DialogDescription,
+		DialogFooter,
+		DialogHeader,
+		DialogTitle,
+		DialogTrigger,
+	} from "$lib/components/ui/dialog";
 	import { Input } from "$lib/components/ui/input";
 	import { Label } from "$lib/components/ui/label";
 
@@ -10,11 +19,11 @@
 	let inputValue = $state("");
 </script>
 
-<Dialog.Root>
-	<Dialog.Trigger class={buttonVariants({ variant: "outline" })}
-		>Delete project</Dialog.Trigger
+<Dialog>
+	<DialogTrigger class={buttonVariants({ variant: "outline" })}
+		>Delete project</DialogTrigger
 	>
-	<Dialog.Content>
+	<DialogContent>
 		<div class="flex flex-col items-center gap-2">
 			<div
 				class="flex size-9 shrink-0 items-center justify-center rounded-full border border-border"
@@ -22,16 +31,16 @@
 			>
 				<CircleAlert class="opacity-80" size={16} strokeWidth={2} />
 			</div>
-			<Dialog.Header>
-				<Dialog.Title class="sm:text-center"
-					>Final confirmation</Dialog.Title
+			<DialogHeader>
+				<DialogTitle class="sm:text-center"
+					>Final confirmation</DialogTitle
 				>
-				<Dialog.Description class="sm:text-center">
+				<DialogDescription class="sm:text-center">
 					This action cannot be undone. To confirm, please enter the
 					project name
 					<span class="text-foreground">{PROJECT_NAME}</span>.
-				</Dialog.Description>
-			</Dialog.Header>
+				</DialogDescription>
+			</DialogHeader>
 		</div>
 
 		<form class="space-y-5">
@@ -44,17 +53,17 @@
 					bind:value={inputValue}
 				/>
 			</div>
-			<Dialog.Footer>
-				<Dialog.Close
+			<DialogFooter>
+				<DialogClose
 					class="{buttonVariants({ variant: 'outline' })} flex-1"
-					>Cancel</Dialog.Close
+					>Cancel</DialogClose
 				>
 				<Button
 					type="button"
 					class="flex-1"
 					disabled={inputValue !== PROJECT_NAME}>Delete</Button
 				>
-			</Dialog.Footer>
+			</DialogFooter>
 		</form>
-	</Dialog.Content>
-</Dialog.Root>
+	</DialogContent>
+</Dialog>

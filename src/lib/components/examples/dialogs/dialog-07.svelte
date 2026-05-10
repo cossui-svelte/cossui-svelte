@@ -1,6 +1,15 @@
 <script lang="ts">
 	import { Button, buttonVariants } from "$lib/components/ui/button";
-	import * as Dialog from "$lib/components/ui/dialog.old/index.js";
+	import {
+		Dialog,
+		DialogClose,
+		DialogContent,
+		DialogDescription,
+		DialogFooter,
+		DialogHeader,
+		DialogTitle,
+		DialogTrigger,
+	} from "$lib/components/ui/dialog";
 
 	let content = $state<HTMLDivElement | null>();
 	let hasReadToBottom = $state(false);
@@ -15,23 +24,23 @@
 	}
 </script>
 
-<Dialog.Root>
-	<Dialog.Trigger class={buttonVariants({ variant: "outline" })}
-		>Terms & Conditions</Dialog.Trigger
+<Dialog>
+	<DialogTrigger class={buttonVariants({ variant: "outline" })}
+		>Terms & Conditions</DialogTrigger
 	>
-	<Dialog.Content
+	<DialogContent
 		class="flex flex-col gap-0 p-0 sm:max-h-[min(640px,80vh)] sm:max-w-lg [&>button:last-child]:top-3.5"
 	>
-		<Dialog.Header class="contents space-y-0 text-left">
-			<Dialog.Title class="border-b border-border px-6 py-4 text-base">
+		<DialogHeader class="contents space-y-0 text-left">
+			<DialogTitle class="border-b border-border px-6 py-4 text-base">
 				Terms & Conditions
-			</Dialog.Title>
+			</DialogTitle>
 			<div
 				bind:this={content}
 				onscroll={handleScroll}
 				class="overflow-y-auto"
 			>
-				<Dialog.Description class="px-6 py-4">
+				<DialogDescription class="px-6 py-4">
 					<div
 						class="space-y-4 [&_strong]:font-semibold [&_strong]:text-foreground"
 					>
@@ -154,10 +163,10 @@
 							</div>
 						</div>
 					</div>
-				</Dialog.Description>
+				</DialogDescription>
 			</div>
-		</Dialog.Header>
-		<Dialog.Footer class="border-t border-border px-6 py-4 sm:items-center">
+		</DialogHeader>
+		<DialogFooter class="border-t border-border px-6 py-4 sm:items-center">
 			{#if !hasReadToBottom}
 				<span
 					class="grow text-xs text-muted-foreground max-sm:text-center"
@@ -165,16 +174,16 @@
 					Read all terms before accepting.
 				</span>
 			{/if}
-			<Dialog.Close class={buttonVariants({ variant: "outline" })}
-				>Cancel</Dialog.Close
+			<DialogClose class={buttonVariants({ variant: "outline" })}
+				>Cancel</DialogClose
 			>
-			<Dialog.Close>
+			<DialogClose>
 				{#snippet child({ props })}
 					<Button {...props} disabled={!hasReadToBottom}
 						>I agree</Button
 					>
 				{/snippet}
-			</Dialog.Close>
-		</Dialog.Footer>
-	</Dialog.Content>
-</Dialog.Root>
+			</DialogClose>
+		</DialogFooter>
+	</DialogContent>
+</Dialog>

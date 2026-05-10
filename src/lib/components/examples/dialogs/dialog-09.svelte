@@ -1,16 +1,25 @@
 <script lang="ts">
 	import { Button, buttonVariants } from "$lib/components/ui/button";
-	import { Dialog } from "$lib/components/ui/dialog.old";
+	import {
+		Dialog,
+		DialogClose,
+		DialogContent,
+		DialogDescription,
+		DialogFooter,
+		DialogHeader,
+		DialogTitle,
+		DialogTrigger,
+	} from "$lib/components/ui/dialog";
 	import { Input } from "$lib/components/ui/input";
 
 	import Mail from "@lucide/svelte/icons/mail";
 </script>
 
-<Dialog.Root>
-	<Dialog.Trigger class={buttonVariants({ variant: "outline" })}
-		>Newsletter</Dialog.Trigger
+<Dialog>
+	<DialogTrigger class={buttonVariants({ variant: "outline" })}
+		>Newsletter</DialogTrigger
 	>
-	<Dialog.Content>
+	<DialogContent>
 		<div class="mb-2 flex flex-col items-center gap-2">
 			<div
 				class="flex size-11 shrink-0 items-center justify-center rounded-full border border-border"
@@ -33,14 +42,14 @@
 					/>
 				</svg>
 			</div>
-			<Dialog.Header>
-				<Dialog.Title class="sm:text-center"
-					>Never miss an update</Dialog.Title
+			<DialogHeader>
+				<DialogTitle class="sm:text-center"
+					>Never miss an update</DialogTitle
 				>
-				<Dialog.Description class="sm:text-center">
+				<DialogDescription class="sm:text-center">
 					Subscribe to receive news and special offers.
-				</Dialog.Description>
-			</Dialog.Header>
+				</DialogDescription>
+			</DialogHeader>
 		</div>
 
 		<form class="space-y-5">
@@ -69,5 +78,5 @@
 				>Privacy Policy</a
 			>.
 		</p>
-	</Dialog.Content>
-</Dialog.Root>
+	</DialogContent>
+</Dialog>

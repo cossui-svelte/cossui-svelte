@@ -1,6 +1,15 @@
 <script lang="ts">
 	import { Button, buttonVariants } from "$lib/components/ui/button";
-	import * as Dialog from "$lib/components/ui/dialog.old/index.js";
+	import {
+		Dialog,
+		DialogClose,
+		DialogContent,
+		DialogDescription,
+		DialogFooter,
+		DialogHeader,
+		DialogTitle,
+		DialogTrigger,
+	} from "$lib/components/ui/dialog";
 	import { Label } from "$lib/components/ui/label";
 	import {
 		RadioGroup,
@@ -9,18 +18,18 @@
 	import { Textarea } from "$lib/components/ui/textarea";
 </script>
 
-<Dialog.Root>
-	<Dialog.Trigger class={buttonVariants({ variant: "outline" })}
-		>Rating</Dialog.Trigger
+<Dialog>
+	<DialogTrigger class={buttonVariants({ variant: "outline" })}
+		>Rating</DialogTrigger
 	>
-	<Dialog.Content
+	<DialogContent
 		class="flex flex-col gap-0 p-0 [&>button:last-child]:top-3.5"
 	>
-		<Dialog.Header class="contents space-y-0 text-left">
-			<Dialog.Title class="border-b border-border px-6 py-4 text-base">
+		<DialogHeader class="contents space-y-0 text-left">
+			<DialogTitle class="border-b border-border px-6 py-4 text-base">
 				Help us improve
-			</Dialog.Title>
-		</Dialog.Header>
+			</DialogTitle>
+		</DialogHeader>
 		<div class="px-6 py-4">
 			<form class="space-y-5">
 				<div class="space-y-4">
@@ -69,5 +78,5 @@
 				<Button type="button" class="w-full">Send feedback</Button>
 			</form>
 		</div>
-	</Dialog.Content>
-</Dialog.Root>
+	</DialogContent>
+</Dialog>

@@ -40,7 +40,7 @@
 </script>
 
 <Sheet {open} onOpenChange={(v) => (open = v)}>
-  <Dialog.Trigger>
+  <DialogTrigger>
     {#snippet child({ props })}
       <Button
         {...props}
@@ -52,7 +52,7 @@
         <span class="sr-only">Toggle Menu</span>
       </Button>
     {/snippet}
-  </Dialog.Trigger>
+  </DialogTrigger>
   <SheetPopup side="left">
     <div class="flex flex-col gap-12 overflow-auto p-6 pt-8">
       <div class="flex flex-col gap-3">
