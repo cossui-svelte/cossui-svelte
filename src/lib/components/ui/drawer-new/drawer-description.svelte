@@ -6,12 +6,12 @@
 		ref = $bindable(null),
 		class: className,
 		...restProps
-	}: DrawerPrimitive.TitleProps = $props();
+	}: DrawerPrimitive.DescriptionProps = $props();
 </script>
 
-<DrawerPrimitive.Title
+<DrawerPrimitive.Description
 	bind:ref
-	data-slot="drawer-title"
-	class={cn("cn-font-heading cn-drawer-title", className)}
+	data-slot="drawer-description"
+	class={cn("text-muted-foreground text-sm", className)}
 	{...restProps}
 />
