@@ -3,6 +3,7 @@
   import {
     Dialog,
     DialogContent,
+    DialogOverlay,
     DialogPortal,
     DialogTrigger,
   } from "$lib/components/ui/dialog";

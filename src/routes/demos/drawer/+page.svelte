@@ -1,6 +1,6 @@
 <script lang="ts">
     import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
-    import { Button, buttonVariants } from "$lib/components/ui/button";
+    import { buttonVariants } from "$lib/components/ui/button";
     import {
         Drawer,
         DrawerHeader,
@@ -14,8 +14,8 @@
 <ComponentPreviewTabs>
     <div class="flex flex-wrap gap-2">
         <Drawer position="right">
-            <DrawerTrigger>
-                <Button variant="outline">Right</Button>
+            <DrawerTrigger class={buttonVariants({ variant: "outline" })}>
+                Right
             </DrawerTrigger>
             <DrawerPopup variant="inset">
                 <DrawerHeader>
@@ -30,8 +30,8 @@
         </Drawer>
 
         <Drawer position="left">
-            <DrawerTrigger>
-                <Button variant="outline">Left</Button>
+            <DrawerTrigger class={buttonVariants({ variant: "outline" })}>
+                Left
             </DrawerTrigger>
             <DrawerPopup variant="inset">
                 <DrawerHeader>
@@ -46,8 +46,8 @@
         </Drawer>
 
         <Drawer position="top">
-            <DrawerTrigger>
-                <Button variant="outline">Top</Button>
+            <DrawerTrigger class={buttonVariants({ variant: "outline" })}>
+                Top
             </DrawerTrigger>
             <DrawerPopup variant="inset">
                 <DrawerHeader>
@@ -62,8 +62,8 @@
         </Drawer>
 
         <Drawer>
-            <DrawerTrigger>
-                <Button variant="outline">Bottom</Button>
+            <DrawerTrigger class={buttonVariants({ variant: "outline" })}>
+                Bottom
             </DrawerTrigger>
             <DrawerPopup variant="inset">
                 <DrawerHeader>

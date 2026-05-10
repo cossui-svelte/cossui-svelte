@@ -7,7 +7,7 @@
 		DialogOverlay,
 		DialogPortal,
 	} from "$lib/components/ui/dialog";
-	import { Drawer, DrawerContent } from "$lib/components/ui/drawer";
+	import { Drawer, DrawerContent } from "$lib/components/ui/drawer.old";
 
 	import { pushState, replaceState } from "$app/navigation";
 	import { page } from "$app/state";
