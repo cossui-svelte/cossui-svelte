@@ -1,16 +1,25 @@
 <script lang="ts">
-  import { Dialog as DrawerPrimitive } from "bits-ui";
-  import { setContext } from "svelte";
+  import { Drawer as DrawerPrimitive } from "vaul-svelte";
 
   type DrawerPosition = "right" | "left" | "top" | "bottom";
 
-  interface Props extends DrawerPrimitive.RootProps {
+  //TODO: omit the direction parameter
+  let {
+    shouldScaleBackground = true,
+    open = $bindable(false),
+    position = "bottom",
+    activeSnapPoint = $bindable(null),
+    ...restProps
+  }: DrawerPrimitive.RootProps & {
     position?: DrawerPosition;
-  }
-
-  let { position = "bottom", ...restProps }: Props = $props();
-
-  setContext("drawer-position", { position: () => position });
+  } = $props();
+  // }: Omit<DrawerPrimitive.RootProps, "direction"> & DProps = $props();
 </script>
 
-<DrawerPrimitive.Root {...restProps} />
+<DrawerPrimitive.Root
+  {shouldScaleBackground}
+  bind:open
+  bind:activeSnapPoint
+  direction={position}
+  {...restProps}
+/>

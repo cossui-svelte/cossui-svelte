@@ -1,6 +1,11 @@
 <script lang="ts">
   import { cn } from "$lib/utils.js";
-  import { Dialog } from "bits-ui";
+  import {
+    Dialog,
+    DialogContent,
+    DialogPortal,
+    DialogTrigger,
+  } from "$lib/components/ui/dialog";
   import { Search, CornerDownLeft, Atom, BookOpen } from "@lucide/svelte";
   import { buttonVariants } from "$lib/components/ui/button";
   import { Kbd, KbdGroup } from "$lib/components/ui/kbd";
@@ -200,8 +205,8 @@
     {/snippet}
   </DialogTrigger>
 
-  <Dialog.Portal>
-    <Dialog.Overlay
+  <DialogPortal>
+    <DialogOverlay
       class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm data-[state=closed]:animate-out data-[state=open]:animate-in data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
     />
     <DialogContent
@@ -277,5 +282,5 @@
         {/if}
       </div>
     </DialogContent>
-  </Dialog.Portal>
+  </DialogPortal>
 </Dialog>
