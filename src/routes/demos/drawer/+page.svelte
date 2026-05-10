@@ -8,7 +8,7 @@
         DrawerPopup,
         DrawerTitle,
         DrawerTrigger,
-    } from "$lib/components/ui/drawer";
+    } from "$lib/components/ui/drawer-new";
 </script>
 
 <ComponentPreviewTabs>

@@ -2,12 +2,13 @@
   import { Dialog as DrawerPrimitive } from "bits-ui";
   import { cn } from "$lib/utils.js";
 
-  let { class: className, ...restProps }: DrawerPrimitive.OverlayProps = $props();
+  let { class: className, ...restProps }: DrawerPrimitive.OverlayProps =
+    $props();
 </script>
 
 <DrawerPrimitive.Overlay
   class={cn(
-    "fixed inset-0 z-50 bg-black/32 backdrop-blur-sm transition-opacity duration-450 ease-[cubic-bezier(0.32,0.72,0,1)] data-[state=closed]:opacity-0 data-[state=open]:opacity-100 supports-[-webkit-touch-callout:none]:absolute",
+    "data-open:animate-in data-closed:animate-out data-closed:fade-out-0 data-open:fade-in-0 fixed inset-0 z-50 bg-black/32 backdrop-blur-sm transition-all duration-200 data-ending-style:opacity-0 data-starting-style:opacity-0",
     className,
   )}
   data-slot="drawer-backdrop"
