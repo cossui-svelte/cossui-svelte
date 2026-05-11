@@ -102,9 +102,6 @@ importers:
       valibot:
         specifier: ^1.4.0
         version: 1.4.0(typescript@6.0.3)
-      vaul-svelte:
-        specifier: 1.0.0-next.7
-        version: 1.0.0-next.7(svelte@5.55.5)
       vite:
         specifier: ^8.0.12
         version: 8.0.12(@types/node@25.6.2)(esbuild@0.27.7)(jiti@2.7.0)(tsx@4.21.0)(yaml@2.8.3)
@@ -1796,12 +1793,6 @@ packages:
     resolution: {integrity: sha512-TQ5pAGhd5whStmqWvYF4OjQROlmv9SMFVt37qoCBdqRffuuklWYQlCNnEs2ZaIBD1kZRNnikiZOS1eqgkar0iw==}
     engines: {node: '>= 0.10'}
 
-  vaul-svelte@1.0.0-next.7:
-    resolution: {integrity: sha512-7zN7Bi3dFQixvvbUJY9uGDe7Ws/dGZeBQR2pXdXmzQiakjrxBvWo0QrmsX3HK+VH+SZOltz378cmgmCS9f9rSg==}
-    engines: {node: '>=18', pnpm: '>=8.7.0'}
-    peerDependencies:
-      svelte: ^5.0.0
-
   vfile-message@4.0.3:
     resolution: {integrity: sha512-QTHzsGd1EhbZs4AsQ20JX1rC3cOlt/IWJruk893DfLRr57lcnOeMaWG4K0JrRta4mIJZKth2Au3mM3u03/JWKw==}
 
@@ -3461,12 +3452,6 @@ snapshots:
 
   validator@13.15.35:
     optional: true
-
-  vaul-svelte@1.0.0-next.7(svelte@5.55.5):
-    dependencies:
-      runed: 0.23.4(svelte@5.55.5)
-      svelte: 5.55.5
-      svelte-toolbelt: 0.7.1(svelte@5.55.5)
 
   vfile-message@4.0.3:
     dependencies:

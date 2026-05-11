@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Drawer as DrawerPrimitive } from "vaul-svelte";
+	import { Drawer as DrawerPrimitive } from "$lib/vaul";
 	import { cn } from "$lib/utils.js";
 	import { getContext, type ComponentProps } from "svelte";
 	import type { WithoutChildrenOrChild } from "$lib/utils.js";

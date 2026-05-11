@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Drawer as DrawerPrimitive } from "vaul-svelte";
+	import { Drawer as DrawerPrimitive } from "$lib/vaul";
 
 	let {
 		shouldScaleBackground = true,
@@ -9,4 +9,9 @@
 	}: DrawerPrimitive.RootProps = $props();
 </script>
 
-<DrawerPrimitive.NestedRoot {shouldScaleBackground} bind:open bind:activeSnapPoint {...restProps} />
+<DrawerPrimitive.NestedRoot
+	{shouldScaleBackground}
+	bind:open
+	bind:activeSnapPoint
+	{...restProps}
+/>

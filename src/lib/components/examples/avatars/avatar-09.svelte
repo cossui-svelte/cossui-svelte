@@ -1,7 +1,11 @@
 <script lang="ts">
-	import Badge from '$lib/components/ui/badge.svelte';
+	import { Badge } from "$lib/components/ui/badge";
 
-	import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
+	import {
+		Avatar,
+		AvatarFallback,
+		AvatarImage,
+	} from "$lib/components/ui/avatar";
 </script>
 
 <div class="relative">
@@ -9,7 +13,8 @@
 		<AvatarImage src="/avatar-80-07.jpg" alt="Kelly King" />
 		<AvatarFallback>KK</AvatarFallback>
 	</Avatar>
-	<Badge class="absolute -top-1.5 left-full min-w-5 -translate-x-3.5 border-background px-1"
+	<Badge
+		class="absolute -top-1.5 left-full min-w-5 -translate-x-3.5 border-background px-1"
 		>6</Badge
 	>
 </div>

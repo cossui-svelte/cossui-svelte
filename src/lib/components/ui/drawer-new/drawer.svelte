@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Drawer as DrawerPrimitive } from "vaul-svelte";
+	import { Drawer as DrawerPrimitive } from "$lib/vaul";
 	import { setContext } from "svelte";
 
 	type Position = "top" | "bottom" | "left" | "right";
