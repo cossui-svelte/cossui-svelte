@@ -26,8 +26,8 @@
 			</AlertDialogDescription>
 		</AlertDialogHeader>
 		<AlertDialogFooter>
-			<AlertDialogCancel>Cancel</AlertDialogCancel>
+			<AlertDialogClose>Cancel</AlertDialogClose>
 			<AlertDialogAction>Okay</AlertDialogAction>
 		</AlertDialogFooter>
 	</AlertDialogContent>
-</AlertDialogRoot>
+</AlertDialog>
