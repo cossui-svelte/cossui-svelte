@@ -96,6 +96,17 @@
     <div
       class="grid gap-6 pt-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 xl:grid-cols-4"
     >
+      {#each Object.entries(data.componentsMeta.directoriesBreakdown) as [directory, { componentCount, stateBreakdown }] (directory)}
+        {directory}
+        {componentCount}
+        {stateBreakdown}
+        {@render categoryCard(
+          directory,
+          directory,
+          `${componentCount} components, ${stateBreakdown.active} active, ${stateBreakdown.inactive} inactive`,
+        )}
+      {/each}
+
       {#each categories as category (category.slug)}
         {@render categoryCard(
           category.slug,
