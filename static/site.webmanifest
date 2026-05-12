@@ -1,6 +1,9 @@
 {
-    "name": "cossui-svelte",
+    "name": "Coss.ui for Svelte",
     "short_name": "cossui-svelte",
+    "description": "A port of Coss.ui components and theme to Svelte",
+    "start_url": "/",
+    "scope": "/",
     "icons": [
         {
             "src": "/icon-192.png",
