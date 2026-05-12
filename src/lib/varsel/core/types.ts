@@ -1,4 +1,4 @@
-import type { VariantProps } from 'class-variance-authority';
+import type { VariantProps } from 'tailwind-variants';
 import type { Component } from 'svelte'; // Use Component
 
 import type { toastContainerVariants } from './variants';
