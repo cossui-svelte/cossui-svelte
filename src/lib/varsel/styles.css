@@ -1,0 +1,195 @@
+/*
+ * Main stylesheet for Varsel.
+ * Built with Tailwind CSS v4 using the @theme directive.
+ *
+ * Defines custom CSS variables for colors, shadows, and animations.
+ * Supports light and dark modes via the .dark class (standard Tailwind approach).
+ */
+
+@import "tailwindcss";
+@source "./**/*.{svelte,js,ts}";
+
+:root {
+	/* Base hue used for generating the color palette (oklch) */
+	--base-hue: 285;
+
+	/* Semantic color tokens */
+	--vs-popover: oklch(0.9851 0 0);
+	--vs-popover-muted: oklch(0.9497 0.0027 var(--base-hue));
+	--vs-foreground: oklch(0.1408 0.0044 var(--base-hue));
+	--vs-border: oklch(0.9437 0.0027 var(--base-hue));
+	--vs-ring: oklch(0.55 0.012 var(--base-hue));
+	--vs-ring-offset: oklch(0.96 0.002 var(--base-hue));
+	--vs-destructive: oklch(0.62 0.21 25);
+	--vs-warning: oklch(0.8 0.2 75);
+	--vs-success: oklch(0.7 0.18 155);
+	--vs-info: oklch(0.7 0.18 240);
+
+	/* Shadows */
+	--shadow-vs-button:
+		0px 1px 1px -0.5px rgb(0 0 0 / 0.06), 0px 3px 3px -1.5px rgb(0 0 0 / 0.06),
+		0px 6px 6px -3px rgb(0 0 0 / 0.06);
+	--shadow-vs-toast:
+		0px 1px 1px -0.5px rgb(0 0 0 / 0.06), 0px 3px 3px -1.5px rgb(0 0 0 / 0.06),
+		0px 6px 6px -3px rgb(0 0 0 / 0.06), 0px 12px 12px -6px rgb(0 0 0 / 0.06),
+		0px 24px 24px -12px rgb(0 0 0 / 0.06);
+
+	/* Radius & Easing */
+	--radius-base: 0.15rem;
+	--ease-vs-button: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	--ease-vs-toast: cubic-bezier(0.32, 0.72, 0, 1);
+	--ease-vs-pop: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.dark {
+	--vs-popover: oklch(0.2103 0.0059 var(--base-hue));
+	--vs-popover-muted: oklch(0.2367 0.0076 var(--base-hue));
+	--vs-foreground: oklch(0.9851 0 0);
+	--vs-border: oklch(0.2739 0.0055 var(--base-hue));
+	--vs-ring: oklch(0.58 0.012 var(--base-hue));
+	--vs-ring-offset: oklch(0.15 0.005 var(--base-hue));
+	--vs-destructive: oklch(0.72 0.27 25);
+	--vs-warning: oklch(0.82 0.24 85);
+	--vs-success: oklch(0.78 0.25 155);
+	--vs-info: oklch(0.78 0.18 240);
+}
+
+@theme {
+	--color-vs-popover: var(--vs-popover);
+	--color-vs-popover-muted: var(--vs-popover-muted);
+	--color-vs-foreground: var(--vs-foreground);
+	--color-vs-border: var(--vs-border);
+	--color-vs-ring: var(--vs-ring);
+	--color-vs-ring-offset: var(--vs-ring-offset);
+	--color-vs-destructive: var(--vs-destructive);
+	--color-vs-warning: var(--vs-warning);
+	--color-vs-success: var(--vs-success);
+	--color-vs-info: var(--vs-info);
+	--shadow-vs-button: var(--shadow-vs-button);
+	--shadow-vs-toast: var(--shadow-vs-toast);
+	--radius-vs-sm: calc(var(--radius-base) * 2);
+	--radius-vs-md: calc(var(--radius-base) * 3);
+	--radius-vs-lg: calc(var(--radius-base) * 4);
+	--ease-vs-button: var(--ease-vs-button);
+	--ease-vs-toast: var(--ease-vs-toast);
+	--ease-vs-pop: var(--ease-vs-pop);
+}
+
+/* Spinner Styles */
+.vs-spinner {
+	display: inline-flex;
+	width: 1rem;
+	height: 1rem;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	position: absolute;
+	inset: 0;
+	transform-origin: center;
+}
+
+.vs-spinner--active {
+	opacity: 1;
+}
+
+.vs-spinner--finish {
+	animation: vs-spinner-finish 0.42s var(--ease-vs-toast) forwards;
+}
+
+.vs-spinner svg {
+	width: 100%;
+	height: 100%;
+	animation: vs-spin 1s linear infinite;
+}
+
+/* Icon Styles */
+.vs-icon {
+	display: inline-flex;
+	width: 1rem;
+	height: 1rem;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	position: absolute;
+	inset: 0;
+}
+
+.vs-icon--static {
+	opacity: 1;
+	transform: scale(1);
+}
+
+.vs-icon--waiting {
+	opacity: 0;
+	transform: scale(0.25);
+	filter: blur(4px);
+}
+
+.vs-icon--pop {
+	animation: vs-icon-pop 0.36s var(--ease-vs-pop) forwards;
+}
+
+.vs-icon svg {
+	width: 100%;
+	height: 100%;
+}
+
+.vs-sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+@keyframes vs-spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes vs-spinner-finish {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+		filter: blur(0);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(0.25);
+		filter: blur(4px);
+	}
+}
+
+@keyframes vs-icon-pop {
+	0% {
+		opacity: 0;
+		transform: scale(0.25);
+		filter: blur(4px);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+		filter: blur(0);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.vs-spinner svg {
+		animation-duration: 2s;
+	}
+
+	.vs-spinner--finish {
+		animation-duration: 0s;
+	}
+
+	.vs-icon--pop {
+		animation: none;
+		opacity: 1;
+		transform: scale(1);
+	}
+}
