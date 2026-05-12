@@ -33,14 +33,14 @@
 	} = setCtx({
 		defaultOpen: open,
 		defaultActiveSnapPoint: activeSnapPoint,
-		onOpenChange: ({ next }) => {
+		onOpenChange: ({ next }: { curr: boolean; next: boolean }) => {
 			if (open !== next) {
 				onOpenChange?.(next);
 				open = next;
 			}
 			return next;
 		},
-		onActiveSnapPointChange: ({ next }) => {
+		onActiveSnapPointChange: ({ next }: { curr: number | string | null; next: number | string | null }) => {
 			if (next === undefined && snapPoints && activeSnapPoint !== next) {
 				const newNext = snapPoints[0];
 				onActiveSnapPointChange?.(newNext);
