@@ -1,9 +1,9 @@
 export const TRANSITIONS = {
-	DURATION: 0.5,
-	EASE: [0.32, 0.72, 0, 1],
+  DURATION: 0.5,
+  EASE: [0.32, 0.72, 0, 1]
 };
 
-export const TRANSITION_TIMING = `cubic-bezier(${TRANSITIONS.EASE.join(",")})`;
+export const TRANSITION_TIMING = `cubic-bezier(${TRANSITIONS.EASE.join(',')})`;
 export const TRANSFORM_TRANSITION = `transform ${TRANSITIONS.DURATION}s ${TRANSITION_TIMING}`;
 export const OPACITY_TRANSITION = `opacity ${TRANSITIONS.DURATION}s ${TRANSITION_TIMING}`;
 
@@ -25,4 +25,4 @@ export const NESTED_DISPLACEMENT = 16;
 export const WINDOW_TOP_OFFSET = 26;
 
 /** CSS class added to the drawer element during an active drag */
-export const DRAG_CLASS = "vaul-dragging";
+export const DRAG_CLASS = 'vaul-dragging';

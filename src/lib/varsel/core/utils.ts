@@ -7,4 +7,4 @@
  * @returns A single string of valid class names joined by spaces.
  */
 export const cn = (...values: Array<string | false | undefined | null>) =>
-	values.filter(Boolean).join(" ");
+  values.filter(Boolean).join(' ');

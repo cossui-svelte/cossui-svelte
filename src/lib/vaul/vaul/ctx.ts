@@ -1,21 +1,21 @@
-import { getOptionUpdater } from "../internal/helpers/options.js";
-import { createVaul, type CreateVaulProps } from "../internal/vaul.js";
-import { getContext, setContext } from "svelte";
+import { getOptionUpdater } from '../internal/helpers/options.js';
+import { createVaul, type CreateVaulProps } from '../internal/vaul.js';
+import { getContext, setContext } from 'svelte';
 
-const VAUL_ROOT = Symbol("VAUL_ROOT");
+const VAUL_ROOT = Symbol('VAUL_ROOT');
 
 export function setCtx(props: CreateVaulProps = {}) {
-	const vaul = createVaul(props);
-	const updateOption = getOptionUpdater(vaul.options);
+  const vaul = createVaul(props);
+  const updateOption = getOptionUpdater(vaul.options);
 
-	setContext(VAUL_ROOT, { ...vaul, updateOption });
+  setContext(VAUL_ROOT, { ...vaul, updateOption });
 
-	return {
-		...vaul,
-		updateOption,
-	};
+  return {
+    ...vaul,
+    updateOption
+  };
 }
 
 export function getCtx() {
-	return getContext<ReturnType<typeof setCtx>>(VAUL_ROOT);
+  return getContext<ReturnType<typeof setCtx>>(VAUL_ROOT);
 }

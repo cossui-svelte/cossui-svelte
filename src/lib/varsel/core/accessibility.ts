@@ -3,13 +3,13 @@
  * Used for managing keyboard focus when interacting with toasts containing actions.
  */
 export const FOCUSABLE_SELECTORS = [
-	"button:not([disabled])",
-	"input:not([disabled])",
-	"textarea:not([disabled])",
-	"select:not([disabled])",
-	"a[href]",
-	'[tabindex]:not([tabindex="-1"])',
-].join(", ");
+  'button:not([disabled])',
+  'input:not([disabled])',
+  'textarea:not([disabled])',
+  'select:not([disabled])',
+  'a[href]',
+  '[tabindex]:not([tabindex="-1"])'
+].join(', ');
 
 /**
  * Returns true when the element currently matches `:focus-visible`, i.e. focus
@@ -18,12 +18,12 @@ export const FOCUSABLE_SELECTORS = [
  * that should only respond to keyboard focus, not mouse-induced focus.
  */
 export const isFocusVisible = (el: Element | null | undefined): boolean => {
-	if (!el || typeof (el as HTMLElement).matches !== "function") return false;
-	try {
-		return (el as HTMLElement).matches(":focus-visible");
-	} catch {
-		return false;
-	}
+  if (!el || typeof (el as HTMLElement).matches !== 'function') return false;
+  try {
+    return (el as HTMLElement).matches(':focus-visible');
+  } catch {
+    return false;
+  }
 };
 
 /**
@@ -39,36 +39,36 @@ let prevFocusElement: HTMLElement | null = null;
 let toastRegionClaimed = false;
 
 export const focusManager = {
-	savePrevFocus(): void {
-		if (typeof document === "undefined") return;
-		const active = document.activeElement;
-		if (active instanceof HTMLElement && active !== document.body) {
-			prevFocusElement = active;
-		} else {
-			prevFocusElement = null;
-		}
-		toastRegionClaimed = true;
-	},
-	restoreFocusToPrevElement(): void {
-		toastRegionClaimed = false;
-		const target = prevFocusElement;
-		prevFocusElement = null;
-		if (target && typeof document !== "undefined" && document.contains(target)) {
-			try {
-				target.focus({ preventScroll: true });
-			} catch {
-				target.focus();
-			}
-		}
-	},
-	getPrevFocus(): HTMLElement | null {
-		return prevFocusElement;
-	},
-	isClaimed(): boolean {
-		return toastRegionClaimed;
-	},
-	releaseClaim(): void {
-		toastRegionClaimed = false;
-		prevFocusElement = null;
-	},
+  savePrevFocus(): void {
+    if (typeof document === 'undefined') return;
+    const active = document.activeElement;
+    if (active instanceof HTMLElement && active !== document.body) {
+      prevFocusElement = active;
+    } else {
+      prevFocusElement = null;
+    }
+    toastRegionClaimed = true;
+  },
+  restoreFocusToPrevElement(): void {
+    toastRegionClaimed = false;
+    const target = prevFocusElement;
+    prevFocusElement = null;
+    if (target && typeof document !== 'undefined' && document.contains(target)) {
+      try {
+        target.focus({ preventScroll: true });
+      } catch {
+        target.focus();
+      }
+    }
+  },
+  getPrevFocus(): HTMLElement | null {
+    return prevFocusElement;
+  },
+  isClaimed(): boolean {
+    return toastRegionClaimed;
+  },
+  releaseClaim(): void {
+    toastRegionClaimed = false;
+    prevFocusElement = null;
+  }
 };

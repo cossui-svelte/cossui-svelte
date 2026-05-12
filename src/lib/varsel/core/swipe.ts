@@ -1,9 +1,9 @@
-import type { ToastPosition } from "./positions";
+import type { ToastPosition } from './positions';
 
 /** Directions in which a toast can be swiped to dismiss. */
-export type SwipeDirection = "top" | "bottom" | "left" | "right";
+export type SwipeDirection = 'top' | 'bottom' | 'left' | 'right';
 /** Axes along which swipe gestures are tracked. */
-export type SwipeAxis = "x" | "y";
+export type SwipeAxis = 'x' | 'y';
 
 /** Minimum pixel distance required to trigger a swipe dismissal. */
 export const SWIPE_DISMISS_THRESHOLD = 45;
@@ -25,27 +25,25 @@ export const SWIPE_REVERSE_CANCEL_THRESHOLD = 10;
  * @param position - The toast's position on screen.
  * @returns An array of allowed swipe directions.
  */
-export const getDefaultSwipeDirections = (
-	position?: ToastPosition | null,
-): SwipeDirection[] => {
-	if (!position) {
-		return ["top", "bottom", "left", "right"];
-	}
+export const getDefaultSwipeDirections = (position?: ToastPosition | null): SwipeDirection[] => {
+  if (!position) {
+    return ['top', 'bottom', 'left', 'right'];
+  }
 
-	const [vertical, horizontal] = position.split("-") as [string, string | undefined];
-	const directions: SwipeDirection[] = [];
+  const [vertical, horizontal] = position.split('-') as [string, string | undefined];
+  const directions: SwipeDirection[] = [];
 
-	if (vertical === "top" || vertical === "bottom") {
-		directions.push(vertical);
-	}
+  if (vertical === 'top' || vertical === 'bottom') {
+    directions.push(vertical);
+  }
 
-	if (horizontal === "left" || horizontal === "right") {
-		directions.push(horizontal);
-	}
+  if (horizontal === 'left' || horizontal === 'right') {
+    directions.push(horizontal);
+  }
 
-	if (directions.length === 0) {
-		directions.push("top", "bottom");
-	}
+  if (directions.length === 0) {
+    directions.push('top', 'bottom');
+  }
 
-	return directions;
+  return directions;
 };

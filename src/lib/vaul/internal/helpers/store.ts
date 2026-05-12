@@ -1,12 +1,12 @@
-import type { Readable, Updater, Writable } from "svelte/store";
-import { derived, writable } from "svelte/store";
-import { onDestroy, onMount } from "svelte";
+import type { Readable, Updater, Writable } from 'svelte/store';
+import { derived, writable } from 'svelte/store';
+import { onDestroy, onMount } from 'svelte';
 
 /** Local type definitions for Svelte 5 compatibility (these were removed from svelte/store exports) */
 type Stores = Readable<unknown> | [Readable<unknown>, ...Array<Readable<unknown>>];
 
 type StoresValues<T> =
-	T extends Readable<infer U> ? U : { [K in keyof T]: T[K] extends Readable<infer U> ? U : never };
+  T extends Readable<infer U> ? U : { [K in keyof T]: T[K] extends Readable<infer U> ? U : never };
 
 /**
  * A utility function that creates an effect from a set of stores and a function.
@@ -18,29 +18,29 @@ type StoresValues<T> =
  * @returns A function that can be used to unsubscribe the effect
  */
 export function effect<S extends Stores>(
-	stores: S,
-	fn: (values: StoresValues<S>) => (() => void) | void
+  stores: S,
+  fn: (values: StoresValues<S>) => (() => void) | void
 ): () => void {
-	if (typeof document === "undefined") {
-		return () => {};
-	}
-	// Create a derived store that contains the stores object and an onUnsubscribe function
-	const unsub = derivedWithUnsubscribe(stores, (stores, onUnsubscribe) => {
-		return {
-			stores,
-			onUnsubscribe,
-		};
-	}).subscribe(({ stores, onUnsubscribe }) => {
-		const returned = fn(stores);
-		// If the function returns a cleanup function, call it when the effect is unsubscribed
-		if (returned) {
-			onUnsubscribe(returned);
-		}
-	});
+  if (typeof document === 'undefined') {
+    return () => {};
+  }
+  // Create a derived store that contains the stores object and an onUnsubscribe function
+  const unsub = derivedWithUnsubscribe(stores, (stores, onUnsubscribe) => {
+    return {
+      stores,
+      onUnsubscribe
+    };
+  }).subscribe(({ stores, onUnsubscribe }) => {
+    const returned = fn(stores);
+    // If the function returns a cleanup function, call it when the effect is unsubscribed
+    if (returned) {
+      onUnsubscribe(returned);
+    }
+  });
 
-	// Automatically unsubscribe the effect when the component is destroyed
-	safeOnDestroy(unsub);
-	return unsub;
+  // Automatically unsubscribe the effect when the component is destroyed
+  safeOnDestroy(unsub);
+  return unsub;
 }
 
 /**
@@ -54,91 +54,94 @@ export function effect<S extends Stores>(
  * @returns A derived store that automatically unsubscribes from its dependencies
  */
 export function derivedWithUnsubscribe<S extends Stores, T>(
-	stores: S,
-	fn: (values: StoresValues<S>, onUnsubscribe: (cb: () => void) => void) => T
+  stores: S,
+  fn: (values: StoresValues<S>, onUnsubscribe: (cb: () => void) => void) => T
 ): Readable<T> {
-	let unsubscribers: (() => void)[] = [];
-	const onUnsubscribe = (cb: () => void) => {
-		unsubscribers.push(cb);
-	};
+  let unsubscribers: (() => void)[] = [];
+  const onUnsubscribe = (cb: () => void) => {
+    unsubscribers.push(cb);
+  };
 
-	const unsubscribe = () => {
-		// Call all of the unsubscribe functions from the previous run of the function
-		unsubscribers.forEach((fn) => fn());
-		// Clear the list of unsubscribe functions
-		unsubscribers = [];
-	};
+  const unsubscribe = () => {
+    // Call all of the unsubscribe functions from the previous run of the function
+    unsubscribers.forEach((fn) => fn());
+    // Clear the list of unsubscribe functions
+    unsubscribers = [];
+  };
 
-	const derivedStore = derived(stores, ($storeValues) => {
-		unsubscribe();
-		return fn($storeValues, onUnsubscribe);
-	});
+  const derivedStore = derived(stores, ($storeValues) => {
+    unsubscribe();
+    return fn($storeValues, onUnsubscribe);
+  });
 
-	safeOnDestroy(unsubscribe);
+  safeOnDestroy(unsubscribe);
 
-	const subscribe: typeof derivedStore.subscribe = (...args) => {
-		const unsub = derivedStore.subscribe(...args);
-		return () => {
-			unsub();
-			unsubscribe();
-		};
-	};
+  const subscribe: typeof derivedStore.subscribe = (...args) => {
+    const unsub = derivedStore.subscribe(...args);
+    return () => {
+      unsub();
+      unsubscribe();
+    };
+  };
 
-	return {
-		...derivedStore,
-		subscribe,
-	};
+  return {
+    ...derivedStore,
+    subscribe
+  };
 }
 
 export const safeOnMount = (fn: (...args: unknown[]) => unknown) => {
-	try {
-		onMount(fn);
-	} catch {
-		return fn();
-	}
+  try {
+    onMount(fn);
+  } catch {
+    return fn();
+  }
 };
 
 export const safeOnDestroy = (fn: (...args: unknown[]) => unknown) => {
-	try {
-		onDestroy(fn);
-	} catch (e) {
-		// Only swallow the "called outside component initialization" lifecycle error.
-		if (!(e instanceof Error) || (!e.message.includes("lifecycle") && !e.message.includes("component"))) {
-			throw e;
-		}
-		return fn();
-	}
+  try {
+    onDestroy(fn);
+  } catch (e) {
+    // Only swallow the "called outside component initialization" lifecycle error.
+    if (
+      !(e instanceof Error) ||
+      (!e.message.includes('lifecycle') && !e.message.includes('component'))
+    ) {
+      throw e;
+    }
+    return fn();
+  }
 };
 
 export type ChangeFn<T> = (args: { curr: T; next: T }) => T;
 
 export const overridable = <T>(store: Writable<T>, onChange?: ChangeFn<T>) => {
-	const update = (updater: Updater<T>, sideEffect?: (newValue: T) => void) => {
-		store.update((curr) => {
-			const next = updater(curr);
-			let res: T = next;
-			if (onChange) {
-				res = onChange({ curr, next });
-			}
+  const update = (updater: Updater<T>, sideEffect?: (newValue: T) => void) => {
+    store.update((curr) => {
+      const next = updater(curr);
+      let res: T = next;
+      if (onChange) {
+        res = onChange({ curr, next });
+      }
 
-			sideEffect?.(res);
-			return res;
-		});
-	};
+      sideEffect?.(res);
+      return res;
+    });
+  };
 
-	const set: typeof store.set = (curr) => {
-		update(() => curr);
-	};
+  const set: typeof store.set = (curr) => {
+    update(() => curr);
+  };
 
-	return {
-		...store,
-		update,
-		set,
-	};
+  return {
+    ...store,
+    update,
+    set
+  };
 };
 
 export type ToWritableStores<T extends Record<string, unknown>> = {
-	[K in keyof T]: Writable<T[K]>;
+  [K in keyof T]: Writable<T[K]>;
 };
 
 /**
@@ -146,15 +149,15 @@ export type ToWritableStores<T extends Record<string, unknown>> = {
  * with the same properties and values.
  */
 export function toWritableStores<T extends Record<string, unknown>>(
-	properties: T
+  properties: T
 ): ToWritableStores<T> {
-	const result = {} as { [K in keyof T]: Writable<T[K]> };
+  const result = {} as { [K in keyof T]: Writable<T[K]> };
 
-	Object.keys(properties).forEach((key) => {
-		const propertyKey = key as keyof T;
-		const value = properties[propertyKey];
-		result[propertyKey] = writable(value);
-	});
+  Object.keys(properties).forEach((key) => {
+    const propertyKey = key as keyof T;
+    const value = properties[propertyKey];
+    result[propertyKey] = writable(value);
+  });
 
-	return result;
+  return result;
 }
