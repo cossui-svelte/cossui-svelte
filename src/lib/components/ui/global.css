@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "@aejkatappaja/phantom-ui/ssr.css";
+@import "$lib/varsel/styles.css";
 
 @custom-variant dark (&:is(.dark *));
 

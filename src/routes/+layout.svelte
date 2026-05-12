@@ -6,7 +6,10 @@
 
   import SiteHeader from "$lib/components/app/site-header.svelte";
   import { ModeWatcher } from "mode-watcher";
-  import { Toaster } from "svelte-sonner";
+  import {
+    AnchoredToastProvider,
+    ToastProvider,
+  } from "$lib/components/ui/toast";
 
   let { children, data }: { children: Snippet; data: LayoutData } = $props();
 </script>
@@ -23,7 +26,11 @@
 </svelte:head>
 
 <ModeWatcher defaultMode="system" disableTransitions />
-<Toaster position="top-center" />
+<ToastProvider>
+  <AnchoredToastProvider>
+    <main>{@render children()}</main>
+  </AnchoredToastProvider>
+</ToastProvider>
 
 <div
   class="relative isolate flex min-h-svh flex-col overflow-clip [--header-height:4rem]"

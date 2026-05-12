@@ -1,16 +1,21 @@
 <script lang="ts">
 	import Cta from "$lib/demo/cta.svelte";
-
 	import * as ComponentDialog from "$lib/demo/component-preview";
-	import { mode } from "mode-watcher";
-	import { Toaster } from "svelte-sonner";
+	import {
+		AnchoredToastProvider,
+		ToastProvider,
+	} from "$lib/components/ui/toast";
 	let { children } = $props();
 </script>
 
-<Toaster position="top-right" theme={mode.current} />
+<ToastProvider>
+	<AnchoredToastProvider>
+		<main>{@render children()}</main>
+	</AnchoredToastProvider>
+</ToastProvider>
 
 <ComponentDialog.DialogContextProvider>
-	<main class="flex-grow">
+	<main class="grow">
 		{@render children()}
 		<Cta />
 	</main>
