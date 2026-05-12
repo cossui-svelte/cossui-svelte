@@ -101,7 +101,11 @@ export const safeOnMount = (fn: (...args: unknown[]) => unknown) => {
 export const safeOnDestroy = (fn: (...args: unknown[]) => unknown) => {
 	try {
 		onDestroy(fn);
-	} catch {
+	} catch (e) {
+		// Only swallow the "called outside component initialization" lifecycle error.
+		if (!(e instanceof Error) || (!e.message.includes("lifecycle") && !e.message.includes("component"))) {
+			throw e;
+		}
 		return fn();
 	}
 };

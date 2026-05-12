@@ -19,7 +19,7 @@ import {
 	noop,
 	addEventListener,
 	isBrowser,
-} from "$lib/internal/helpers/index.js";
+} from "../internal/helpers/index.js";
 import { preventScroll } from "./prevent-scroll.js";
 import {
 	TRANSITIONS,
@@ -38,6 +38,7 @@ import { handleEscapeKeydown } from "./escape-keydown.js";
 import { handlePositionFixed } from "./position-fixed.js";
 
 const openDrawerIds = writable<string[]>([]);
+const IS_IOS = isIOS();
 
 type WithFadeFromProps = {
 	snapPoints: (number | string)[];
@@ -146,22 +147,23 @@ export function createVaul(props: CreateVaulProps) {
 	const visible = writable(false);
 	const justReleased = writable(false);
 	const overlayRef = writable<HTMLDivElement | undefined>(undefined);
-	const openTime = writable<Date | null>(null);
+	const openTime = writable<number | null>(null);
 	const keyboardIsOpen = writable(false);
 	const drawerRef = writable<HTMLDivElement | undefined>(undefined);
 	const drawerId = writable<string | undefined>(undefined);
 
 	let isDragging = false;
-	let dragStartTime: Date | null = null;
+	let dragStartTime: number | null = null;
 	let isClosing = false;
 	let pointerStart = 0;
-	let dragEndTime: Date | null = null;
-	let lastTimeDragPrevented: Date | null = null;
+	let dragEndTime: number | null = null;
+	let lastTimeDragPrevented: number | null = null;
 	let isAllowedToDrag = false;
+	let cachedDirection: DrawerDirection = "bottom";
 	let drawerHeightRef = get(drawerRef)?.getBoundingClientRect().height || 0;
 	let previousDiffFromInitial = 0;
 	let initialDrawerHeight = 0;
-	let nestedOpenChangeTimer: NodeJS.Timeout | null = null;
+	let nestedOpenChangeTimer: ReturnType<typeof setTimeout> | null = null;
 	let closeTimeoutId: ReturnType<typeof setTimeout> | undefined;
 	let closeResetTimeoutId: ReturnType<typeof setTimeout> | undefined;
 	let cachedWrapperEl: Element | null = null;
@@ -249,7 +251,7 @@ export function createVaul(props: CreateVaulProps) {
 
 	// prevent scroll when the drawer is open
 	effect([isOpen], ([$isOpen]) => {
-		let unsub = () => {};
+		let unsub = () => { };
 
 		if ($isOpen) {
 			unsub = preventScroll();
@@ -290,16 +292,17 @@ export function createVaul(props: CreateVaulProps) {
 
 		isDragging = true;
 
-		dragStartTime = new Date();
+		dragStartTime = Date.now();
 
 		// iOS doesn't trigger mouseUp after scrolling so we need to listen to touched in order to disallow dragging
-		if (isIOS()) {
+		if (IS_IOS) {
 			window.addEventListener("touchend", () => (isAllowedToDrag = false), { once: true });
 		}
 		// Ensure we maintain correct pointer capture even when going outside of the drawer
 		(event.target as HTMLElement).setPointerCapture(event.pointerId);
 
-		pointerStart = isVertical(get(direction)) ? event.screenY : event.screenX;
+		cachedDirection = get(direction);
+		pointerStart = isVertical(cachedDirection) ? event.screenY : event.screenX;
 	}
 
 	function shouldDrag(el: EventTarget, isDraggingInDirection: boolean) {
@@ -308,7 +311,7 @@ export function createVaul(props: CreateVaulProps) {
 		const highlightedText = window.getSelection()?.toString();
 		const $direction = get(direction);
 		const swipeAmount = $drawerRef ? getTranslate($drawerRef, $direction) : null;
-		const date = new Date();
+		const now = Date.now();
 
 		// Don't drag if the element has the `data-vaul-no-drag` attribute
 		if (element.hasAttribute("data-vaul-no-drag") || element.closest("[data-vaul-no-drag]")) {
@@ -318,7 +321,7 @@ export function createVaul(props: CreateVaulProps) {
 		// Allow scrolling when animating
 		const $openTime = get(openTime);
 
-		if ($openTime && date.getTime() - $openTime.getTime() < 500) {
+		if ($openTime && now - $openTime < 500) {
 			return false;
 		}
 
@@ -338,15 +341,15 @@ export function createVaul(props: CreateVaulProps) {
 		// Disallow dragging if drawer was scrolled within `scrollLockTimeout`
 		if (
 			lastTimeDragPrevented &&
-			date.getTime() - lastTimeDragPrevented.getTime() < $scrollLockTimeout &&
+			now - lastTimeDragPrevented < $scrollLockTimeout &&
 			swipeAmount === 0
 		) {
-			lastTimeDragPrevented = date;
+			lastTimeDragPrevented = now;
 			return false;
 		}
 
 		if (isDraggingInDirection) {
-			lastTimeDragPrevented = date;
+			lastTimeDragPrevented = now;
 
 			// We are dragging down so we should allow scrolling
 			return false;
@@ -357,7 +360,7 @@ export function createVaul(props: CreateVaulProps) {
 			// Check if the element is scrollable
 			if (element.scrollHeight > element.clientHeight) {
 				if (element.scrollTop !== 0) {
-					lastTimeDragPrevented = new Date();
+					lastTimeDragPrevented = Date.now();
 
 					// The element is scrollable and not scrolled to the top, so don't drag
 					return false;
@@ -380,7 +383,7 @@ export function createVaul(props: CreateVaulProps) {
 		const $drawerRef = get(drawerRef);
 		if (!$drawerRef || !isDragging) return;
 		// We need to know how much of the drawer has been dragged in percentages so that we can transform background accordingly
-		const $direction = get(direction);
+		const $direction = cachedDirection;
 
 		const directionMultiplier = getDirectionMultiplier($direction);
 
@@ -688,8 +691,8 @@ export function createVaul(props: CreateVaulProps) {
 		isAllowedToDrag = false;
 		isDragging = false;
 
-		dragEndTime = new Date();
-		const $direction = get(direction);
+		dragEndTime = Date.now();
+		const $direction = cachedDirection;
 		const swipeAmount = getTranslate($drawerRef, $direction);
 
 		if (
@@ -701,7 +704,7 @@ export function createVaul(props: CreateVaulProps) {
 
 		if (dragStartTime === null) return;
 
-		const timeTaken = dragEndTime.getTime() - dragStartTime.getTime();
+		const timeTaken = dragEndTime - dragStartTime;
 		const distMoved = getDistanceMoved(pointerStart, $direction, event);
 		const velocity = Math.abs(distMoved) / timeTaken;
 
@@ -761,7 +764,7 @@ export function createVaul(props: CreateVaulProps) {
 				scrollBehavior: "auto",
 			});
 		}
-		openTime.set(new Date());
+		openTime.set(Date.now());
 		scaleBackground(true, props.backgroundColor);
 	});
 
@@ -772,6 +775,7 @@ export function createVaul(props: CreateVaulProps) {
 		const $drawerRef = get(drawerRef);
 		if (!$drawerRef) return;
 
+		const marked: HTMLElement[] = [];
 		const children = $drawerRef.querySelectorAll("*");
 		children.forEach((child: Element) => {
 			const htmlChild = child as HTMLElement;
@@ -780,8 +784,13 @@ export function createVaul(props: CreateVaulProps) {
 				htmlChild.scrollWidth > htmlChild.clientWidth
 			) {
 				htmlChild.classList.add("vaul-scrollable");
+				marked.push(htmlChild);
 			}
 		});
+
+		return () => {
+			marked.forEach((el) => el.classList.remove("vaul-scrollable"));
+		};
 	});
 
 	function onNestedOpenChange(o: boolean) {

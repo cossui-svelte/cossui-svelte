@@ -1,5 +1,5 @@
 import { readable } from "svelte/store";
-import { addEventListener, chain, noop, isHTMLElement } from "$lib/internal/helpers/index.js";
+import { addEventListener, chain, noop, isHTMLElement } from "../internal/helpers/index.js";
 
 /**
  * Creates a readable store that tracks the latest Escape Keydown that occurred on the document.

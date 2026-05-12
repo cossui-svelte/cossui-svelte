@@ -1,6 +1,6 @@
 // This code comes from https://github.com/adobe/react-spectrum/blob/main/packages/%40react-aria/overlays/src/usePreventScroll.ts
 
-import { addEventListener, chain, isInput, isIOS } from "$lib/internal/helpers/index.js";
+import { addEventListener, chain, isInput, isIOS } from "../internal/helpers/index.js";
 
 const visualViewport = typeof document !== "undefined" && window.visualViewport;
 
@@ -31,7 +31,7 @@ let restore: () => void;
  * shift due to the scrollbars disappearing.
  */
 export function preventScroll() {
-	if (typeof document === "undefined") return () => {};
+	if (typeof document === "undefined") return () => { };
 
 	preventScrollCount++;
 	if (preventScrollCount === 1) {
@@ -73,7 +73,7 @@ function setCSSProperty(el: HTMLElement | null | undefined, property: string, va
 // For most browsers, all we need to do is set `overflow: hidden` on the root element, and
 // add some padding to prevent the page from shifting when the scrollbar is hidden.
 function preventScrollStandard() {
-	if (typeof document === "undefined") return () => {};
+	if (typeof document === "undefined") return () => { };
 	const win = document.defaultView ?? window;
 
 	const { documentElement, body } = document;

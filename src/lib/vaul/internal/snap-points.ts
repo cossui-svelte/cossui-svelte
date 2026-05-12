@@ -18,7 +18,7 @@ export function handleSnapPoints({
 	fadeFromIndex: Writable<number | undefined>;
 	drawerRef: Writable<HTMLDivElement | undefined>;
 	overlayRef: Writable<HTMLDivElement | undefined>;
-	openTime: Writable<Date | null>;
+	openTime: Writable<number | null>;
 	direction: Writable<DrawerDirection>;
 }) {
 	const isLastSnapPoint = derived(
@@ -48,7 +48,7 @@ export function handleSnapPoints({
 			$snapPoints?.findIndex((snapPoint) => snapPoint === $activeSnapPoint) ?? null
 	);
 
-	const snapPointsOffset = derived(snapPoints, ($snapPoints) => {
+	const snapPointsOffset = derived([snapPoints, direction], ([$snapPoints, $direction]) => {
 		if ($snapPoints) {
 			return $snapPoints.map((snapPoint) => {
 				const hasWindow = typeof window !== "undefined";
@@ -58,7 +58,6 @@ export function handleSnapPoints({
 				if (isPx) {
 					snapPointAsNumber = parseInt(snapPoint, 10);
 				}
-				const $direction = get(direction);
 
 				if (isVertical($direction)) {
 					const height = isPx ? snapPointAsNumber : hasWindow ? snapPoint * window.innerHeight : 0;
@@ -96,16 +95,18 @@ export function handleSnapPoints({
 			const $snapPointsOffset = get(snapPointsOffset);
 			const newIndex = $snapPoints?.findIndex((snapPoint) => snapPoint === $activeSnapPoint) ?? -1;
 			if ($snapPointsOffset && newIndex !== -1 && typeof $snapPointsOffset[newIndex] === "number") {
-				snapToPoint($snapPointsOffset[newIndex] as number);
+				snapToPoint($snapPointsOffset[newIndex] as number, newIndex);
 			}
 		}
 	});
 
-	function snapToPoint(dimension: number) {
+	function snapToPoint(dimension: number, knownIndex?: number | null) {
 		tick().then(() => {
 			const $snapPointsOffset = get(snapPointsOffset);
 			const newSnapPointIndex =
-				$snapPointsOffset?.findIndex((snapPointDim) => snapPointDim === dimension) ?? null;
+				knownIndex !== undefined && knownIndex !== null
+					? knownIndex
+					: ($snapPointsOffset?.findIndex((snapPointDim) => snapPointDim === dimension) ?? null);
 
 			const $drawerRef = get(drawerRef);
 			const $direction = get(direction);
@@ -297,7 +298,7 @@ export function handleSnapPoints({
 		const $snapPoints = get(snapPoints);
 		const $snapPointsOffset = get(snapPointsOffset);
 		if ($snapPoints && activeSnapPointIndex === $snapPointsOffset.length - 1) {
-			openTime.set(new Date());
+			openTime.set(Date.now());
 		}
 	}
 
