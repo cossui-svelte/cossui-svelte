@@ -12,7 +12,6 @@
   font-family: "CalSansUI";
   src: url("$lib/fonts/CalSansUI[MODE,wght].woff2") format("woff2");
   font-weight: 300 700;
-  /* variable range */
   font-style: normal;
   font-display: swap;
 }
@@ -27,9 +26,9 @@
 }
 
 :root {
-  --font-mono: "PaperMono", monospace;
-  --font-sans: "CalSansUI", sans-serif;
   --font-heading: "CalSansHeading", sans-serif;
+  --font-sans: "CalSansUI", sans-serif;
+  --font-mono: "PaperMono", monospace;
 }
 
 @import "$lib/components/ui/global.css";
