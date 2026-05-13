@@ -1,4 +1,4 @@
 import Badge from './badge.svelte';
-import { badgeVariants } from './badgeVariants';
+export { badgeVariants } from './badgeVariants';
 
-export { Badge, badgeVariants };
+export { Badge };
