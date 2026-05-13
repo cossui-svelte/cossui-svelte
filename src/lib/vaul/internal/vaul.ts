@@ -1,41 +1,41 @@
-import { derived, get, writable, type Readable } from 'svelte/store';
-import type { DrawerDirection, SvelteEvent } from './types.js';
-import { handleSnapPoints } from './snap-points.js';
+import { derived, get, type Readable, writable } from 'svelte/store';
 import {
-  overridable,
-  toWritableStores,
-  omit,
+  addEventListener,
   type ChangeFn,
-  getTranslate,
-  isVertical,
-  makeTranslate,
-  set,
-  reset,
   effect,
-  removeUndefined,
-  styleToString,
+  getTranslate,
+  isBrowser,
   isInput,
   isIOS,
+  isVertical,
+  makeTranslate,
   noop,
-  addEventListener,
-  isBrowser
+  omit,
+  overridable,
+  removeUndefined,
+  reset,
+  set,
+  styleToString,
+  toWritableStores
 } from '../internal/helpers/index.js';
-import { preventScroll } from './prevent-scroll.js';
 import {
-  TRANSITIONS,
-  TRANSITION_TIMING,
-  TRANSFORM_TRANSITION,
-  OPACITY_TRANSITION,
-  VELOCITY_THRESHOLD,
-  CLOSE_THRESHOLD,
-  SCROLL_LOCK_TIMEOUT,
   BORDER_RADIUS,
+  CLOSE_THRESHOLD,
+  DRAG_CLASS,
   NESTED_DISPLACEMENT,
-  WINDOW_TOP_OFFSET,
-  DRAG_CLASS
+  OPACITY_TRANSITION,
+  SCROLL_LOCK_TIMEOUT,
+  TRANSFORM_TRANSITION,
+  TRANSITION_TIMING,
+  TRANSITIONS,
+  VELOCITY_THRESHOLD,
+  WINDOW_TOP_OFFSET
 } from './constants.js';
 import { handleEscapeKeydown } from './escape-keydown.js';
 import { handlePositionFixed } from './position-fixed.js';
+import { preventScroll } from './prevent-scroll.js';
+import { handleSnapPoints } from './snap-points.js';
+import type { DrawerDirection, SvelteEvent } from './types.js';
 
 const openDrawerIds = writable<string[]>([]);
 const IS_IOS = isIOS();
@@ -77,22 +77,22 @@ export type CreateVaulProps = {
 
 const defaultProps = {
   closeThreshold: CLOSE_THRESHOLD,
-  shouldScaleBackground: true,
-  scrollLockTimeout: SCROLL_LOCK_TIMEOUT,
-  onDrag: undefined,
-  onRelease: undefined,
-  snapPoints: undefined,
-  fadeFromIndex: undefined,
   defaultActiveSnapPoint: undefined,
-  onActiveSnapPointChange: undefined,
   defaultOpen: false,
-  onOpenChange: undefined,
-  fixed: undefined,
+  direction: 'bottom' as const,
   dismissible: true,
+  fadeFromIndex: undefined,
+  fixed: undefined,
   modal: true,
   nested: false,
+  onActiveSnapPointChange: undefined,
   onClose: undefined,
-  direction: 'bottom' as const
+  onDrag: undefined,
+  onOpenChange: undefined,
+  onRelease: undefined,
+  scrollLockTimeout: SCROLL_LOCK_TIMEOUT,
+  shouldScaleBackground: true,
+  snapPoints: undefined
 };
 
 const omittedOptions = [
@@ -116,8 +116,8 @@ export function createVaul(props: CreateVaulProps) {
     omit(
       {
         ...withDefaults,
-        snapPoints: snapPointsProp,
-        fadeFromIndex: fadeFromIndexProp
+        fadeFromIndex: fadeFromIndexProp,
+        snapPoints: snapPointsProp
       },
       ...omittedOptions
     )
@@ -188,13 +188,13 @@ export function createVaul(props: CreateVaulProps) {
     shouldFade,
     snapPointsOffset
   } = handleSnapPoints({
-    snapPoints,
     activeSnapPoint,
+    direction,
     drawerRef,
     fadeFromIndex,
-    overlayRef,
     openTime,
-    direction
+    overlayRef,
+    snapPoints
   });
 
   const getContentStyle: Readable<(style?: string | null) => string> = derived(
@@ -260,7 +260,7 @@ export function createVaul(props: CreateVaulProps) {
     return unsub;
   });
 
-  const { restorePositionSetting } = handlePositionFixed({ isOpen, modal, nested, hasBeenOpened });
+  const { restorePositionSetting } = handlePositionFixed({ hasBeenOpened, isOpen, modal, nested });
 
   // Close the drawer on escape keydown
   effect([drawerRef], ([$drawerRef]) => {
@@ -515,8 +515,8 @@ export function createVaul(props: CreateVaulProps) {
       reset(wrapper, 'transform');
       reset(wrapper, 'borderRadius');
       set(wrapper, {
-        transitionProperty: 'transform, border-radius',
         transitionDuration: `${TRANSITIONS.DURATION}s`,
+        transitionProperty: 'transform, border-radius',
         transitionTimingFunction: TRANSITION_TIMING
       });
     }
@@ -660,8 +660,8 @@ export function createVaul(props: CreateVaulProps) {
     });
 
     set($overlayRef, {
-      transition: OPACITY_TRANSITION,
-      opacity: '1'
+      opacity: '1',
+      transition: OPACITY_TRANSITION
     });
 
     const $shouldScaleBackground = get(shouldScaleBackground);
@@ -719,10 +719,10 @@ export function createVaul(props: CreateVaulProps) {
 
     if (get(snapPoints)) {
       onReleaseSnapPoints({
-        draggedDistance: distMoved * getDirectionMultiplier($direction),
         closeDrawer,
-        velocity,
-        dismissible: get(dismissible)
+        dismissible: get(dismissible),
+        draggedDistance: distMoved * getDirectionMultiplier($direction),
+        velocity
       });
       onReleaseProp?.(event, true);
       return;
@@ -805,8 +805,8 @@ export function createVaul(props: CreateVaulProps) {
     }
 
     set($drawerRef, {
-      transition: TRANSFORM_TRANSITION,
-      transform: `scale(${scale}) ${makeTranslate($direction, `${translate}px`)}`
+      transform: `scale(${scale}) ${makeTranslate($direction, `${translate}px`)}`,
+      transition: TRANSFORM_TRANSITION
     });
 
     if (!o && $drawerRef) {
@@ -814,8 +814,8 @@ export function createVaul(props: CreateVaulProps) {
         const $direction = get(direction);
         const translateValue = getTranslate($drawerRef, $direction);
         set($drawerRef, {
-          transition: 'none',
-          transform: makeTranslate($direction, `${translateValue}px`)
+          transform: makeTranslate($direction, `${translateValue}px`),
+          transition: 'none'
         });
       }, 500);
     }
@@ -848,8 +848,8 @@ export function createVaul(props: CreateVaulProps) {
 
     if (o) {
       set(get(drawerRef), {
-        transition: TRANSFORM_TRANSITION,
-        transform: `scale(${scale}) ${makeTranslate($direction, `${translate}px`)}`
+        transform: `scale(${scale}) ${makeTranslate($direction, `${translate}px`)}`,
+        transition: TRANSFORM_TRANSITION
       });
     }
   }
@@ -866,41 +866,41 @@ export function createVaul(props: CreateVaulProps) {
   }
 
   return {
-    states: {
-      isOpen,
-      hasBeenOpened,
-      snapPoints,
-      activeSnapPoint,
-      snapPointsOffset,
-      keyboardIsOpen,
-      shouldFade,
-      visible,
-      drawerId,
-      openDrawerIds
-    },
     helpers: {
       getContentStyle
     },
     methods: {
+      cleanup,
       closeDrawer,
-      onOpenChange,
-      onPress,
-      onRelease,
       onDrag,
-      scaleBackground,
       onNestedDrag,
       onNestedOpenChange,
       onNestedRelease,
-      restorePositionSetting,
+      onOpenChange,
+      onPress,
+      onRelease,
       openDrawer,
-      cleanup
+      restorePositionSetting,
+      scaleBackground
     },
+    options,
     refs: {
       drawerRef,
       overlayRef,
       triggerRef
     },
-    options
+    states: {
+      activeSnapPoint,
+      drawerId,
+      hasBeenOpened,
+      isOpen,
+      keyboardIsOpen,
+      openDrawerIds,
+      shouldFade,
+      snapPoints,
+      snapPointsOffset,
+      visible
+    }
   };
 }
 
@@ -921,8 +921,8 @@ function getWrapperScaleStyles(direction: DrawerDirection): Record<string, strin
       ? `scale(${getScale()}) translate3d(0, calc(env(safe-area-inset-top) + 14px), 0)`
       : `scale(${getScale()}) translate3d(calc(env(safe-area-inset-top) + 14px), 0, 0)`,
     transformOrigin: isVertical(direction) ? 'top' : 'left',
-    transitionProperty: 'transform, border-radius',
     transitionDuration: `${TRANSITIONS.DURATION}s`,
+    transitionProperty: 'transform, border-radius',
     transitionTimingFunction: TRANSITION_TIMING
   };
 }

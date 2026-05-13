@@ -9,8 +9,6 @@
  */
 export const COSSUI_DIRECTORIES = {
   ACCORDIONS: {
-    directory: 'accordions',
-    name: 'Accordions',
     components: [
       'accordion-01.svelte',
       'accordion-02.svelte',
@@ -33,14 +31,14 @@ export const COSSUI_DIRECTORIES = {
       'accordion-19.svelte',
       'accordion-20.svelte'
     ],
+    directory: 'accordions',
+    name: 'Accordions',
     status: {
-      todo: 0,
-      ready: 20
+      ready: 20,
+      todo: 0
     }
   },
   ALERTS: {
-    directory: 'alerts',
-    name: 'Alerts',
     components: [
       'alert-01.svelte',
       'alert-02.svelte',
@@ -55,14 +53,14 @@ export const COSSUI_DIRECTORIES = {
       'alert-11.svelte',
       'alert-12.svelte'
     ],
+    directory: 'alerts',
+    name: 'Alerts',
     status: {
-      todo: 0,
-      ready: 12
+      ready: 12,
+      todo: 0
     }
   },
   AVATARS: {
-    directory: 'avatars',
-    name: 'Avatars',
     components: [
       'avatar-01.svelte',
       'avatar-02.svelte',
@@ -88,14 +86,14 @@ export const COSSUI_DIRECTORIES = {
       'avatar-22.svelte',
       'avatar-23.svelte'
     ],
+    directory: 'avatars',
+    name: 'Avatars',
     status: {
-      todo: 0,
-      ready: 23
+      ready: 23,
+      todo: 0
     }
   },
   BADGES: {
-    directory: 'badges',
-    name: 'Badges',
     components: [
       'badge-01.svelte',
       'badge-02.svelte',
@@ -111,14 +109,14 @@ export const COSSUI_DIRECTORIES = {
       'badge-12.svelte',
       'badge-13.svelte'
     ],
+    directory: 'badges',
+    name: 'Badges',
     status: {
-      todo: 0,
-      ready: 13
+      ready: 13,
+      todo: 0
     }
   },
   BANNERS: {
-    directory: 'banners',
-    name: 'Banners',
     components: [
       'banner-01.svelte',
       'banner-02.svelte',
@@ -133,14 +131,14 @@ export const COSSUI_DIRECTORIES = {
       'banner-11.svelte',
       'banner-12.svelte'
     ],
+    directory: 'banners',
+    name: 'Banners',
     status: {
-      todo: 0,
-      ready: 12
+      ready: 12,
+      todo: 0
     }
   },
   BREADCRUMBS: {
-    directory: 'breadcrumbs',
-    name: 'Breadcrumbs',
     components: [
       'breadcrumb-01.svelte',
       'breadcrumb-02.svelte',
@@ -151,14 +149,14 @@ export const COSSUI_DIRECTORIES = {
       'breadcrumb-07.svelte',
       'breadcrumb-08.svelte'
     ],
+    directory: 'breadcrumbs',
+    name: 'Breadcrumbs',
     status: {
-      todo: 0,
-      ready: 8
+      ready: 8,
+      todo: 0
     }
   },
   BUTTONS: {
-    directory: 'buttons',
-    name: 'Buttons',
     components: [
       'button-01.svelte',
       'button-02.svelte',
@@ -171,14 +169,14 @@ export const COSSUI_DIRECTORIES = {
       'button-09.svelte',
       'button-10.svelte'
     ],
+    directory: 'buttons',
+    name: 'Buttons',
     status: {
-      todo: 0,
-      ready: 10
+      ready: 10,
+      todo: 0
     }
   },
   CHECKBOXES: {
-    directory: 'checkboxes',
-    name: 'Checkboxes',
     components: [
       'checkbox-01.svelte',
       'checkbox-02.svelte',
@@ -199,14 +197,14 @@ export const COSSUI_DIRECTORIES = {
       'checkbox-17.svelte',
       'checkbox-18.svelte'
     ],
+    directory: 'checkboxes',
+    name: 'Checkboxes',
     status: {
-      todo: 0,
-      ready: 18
+      ready: 18,
+      todo: 0
     }
   },
   DIALOGS: {
-    directory: 'dialogs',
-    name: 'Dialogs',
     components: [
       'dialog-01.svelte',
       'dialog-02.svelte',
@@ -230,14 +228,14 @@ export const COSSUI_DIRECTORIES = {
       'dialog-20.svelte',
       'dialog-21.svelte'
     ],
+    directory: 'dialogs',
+    name: 'Dialogs',
     status: {
-      todo: 3,
-      ready: 18
+      ready: 18,
+      todo: 3
     }
   },
   INPUTS: {
-    directory: 'inputs',
-    name: 'Inputs',
     components: [
       'input-01.svelte',
       'input-02.svelte',
@@ -299,16 +297,18 @@ export const COSSUI_DIRECTORIES = {
       'input-58.todo.svelte',
       'input-59.todo.svelte'
     ],
+    directory: 'inputs',
+    name: 'Inputs',
     status: {
-      todo: 12,
-      ready: 47
+      ready: 47,
+      todo: 12
     }
   }
 } as const;
 export type COSSUIDirectories = typeof COSSUI_DIRECTORIES;
 export const COMPONENT_STATES = {
-  TODO: 'todo',
-  READY: 'ready'
+  READY: 'ready',
+  TODO: 'todo'
 } as const;
 
 export type ComponentState = (typeof COMPONENT_STATES)[keyof typeof COMPONENT_STATES];

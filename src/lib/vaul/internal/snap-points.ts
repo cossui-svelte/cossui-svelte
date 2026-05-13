@@ -1,7 +1,7 @@
 import { tick } from 'svelte';
 import { derived, get, type Writable } from 'svelte/store';
-import { TRANSFORM_TRANSITION, OPACITY_TRANSITION, VELOCITY_THRESHOLD } from './constants.js';
-import { effect, set, isVertical, isBottomOrRight, makeTranslate } from './helpers/index.js';
+import { OPACITY_TRANSITION, TRANSFORM_TRANSITION, VELOCITY_THRESHOLD } from './constants.js';
+import { effect, isBottomOrRight, isVertical, makeTranslate, set } from './helpers/index.js';
 import type { DrawerDirection } from './types.js';
 
 export function handleSnapPoints({
@@ -114,8 +114,8 @@ export function handleSnapPoints({
       onSnapPointChange(newSnapPointIndex);
 
       set($drawerRef, {
-        transition: TRANSFORM_TRANSITION,
-        transform: makeTranslate($direction, `${dimension}px`)
+        transform: makeTranslate($direction, `${dimension}px`),
+        transition: TRANSFORM_TRANSITION
       });
 
       const $fadeFromIndex = get(fadeFromIndex);
@@ -127,13 +127,13 @@ export function handleSnapPoints({
         newSnapPointIndex !== $fadeFromIndex
       ) {
         set($overlayRef, {
-          transition: OPACITY_TRANSITION,
-          opacity: '0'
+          opacity: '0',
+          transition: OPACITY_TRANSITION
         });
       } else {
         set($overlayRef, {
-          transition: OPACITY_TRANSITION,
-          opacity: '1'
+          opacity: '1',
+          transition: OPACITY_TRANSITION
         });
       }
       activeSnapPoint.update(() => {
@@ -303,11 +303,11 @@ export function handleSnapPoints({
   }
 
   return {
-    shouldFade,
-    getPercentageDragged,
     activeSnapPointIndex,
-    onRelease,
+    getPercentageDragged,
     onDrag,
+    onRelease,
+    shouldFade,
     snapPointsOffset
   };
 }

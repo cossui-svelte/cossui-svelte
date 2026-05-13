@@ -1,9 +1,8 @@
-import type { VariantProps } from 'tailwind-variants';
 import type { Component } from 'svelte'; // Use Component
-
-import type { toastContainerVariants } from './variants';
+import type { VariantProps } from 'tailwind-variants';
 import type { ToastPosition } from './positions';
 import type { SwipeAxis, SwipeDirection } from './swipe';
+import type { toastContainerVariants } from './variants';
 
 /**
  * Represents the data structure for a single toast notification.
@@ -190,4 +189,4 @@ export interface VarselItemContext {
 /** Function signature for toast state subscribers. */
 export type ToastSubscriber = (toasts: ToastData[]) => void;
 
-export type { ToastPosition, SwipeAxis, SwipeDirection };
+export type { SwipeAxis, SwipeDirection, ToastPosition };

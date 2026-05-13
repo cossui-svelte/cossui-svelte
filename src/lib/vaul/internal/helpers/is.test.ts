@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
-import { describe, it, expect } from 'vitest';
-import { isVertical, isBottomOrRight, isInput, isBrowser } from './is.js';
+import { describe, expect, it } from 'vitest';
+import { isBottomOrRight, isBrowser, isInput, isVertical } from './is.js';
 
 describe('isVertical', () => {
   it("returns true for 'top'", () => {

@@ -5,17 +5,17 @@
  * @module varsel
  */
 
-export { default as VarselToaster } from './VarselToaster.svelte';
-export { toast } from './internals';
 export type {
+  PositionedToast,
+  SwipeAxis,
+  SwipeDirection,
   ToastData,
   ToastInput,
   ToastInvoker,
   ToastPosition,
+  ToastPromiseOptions,
   ToastVariantInput,
-  SwipeAxis,
-  SwipeDirection,
-  PositionedToast,
-  VarselItemContext,
-  ToastPromiseOptions
+  VarselItemContext
 } from './internals';
+export { toast } from './internals';
+export { default as VarselToaster } from './VarselToaster.svelte';

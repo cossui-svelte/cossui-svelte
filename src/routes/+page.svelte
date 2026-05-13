@@ -26,7 +26,7 @@
 
   const description = "Built for developers and AI.";
 
-  const categories: Category[] = [];
+  // const categories: Category[] = [];
   const PAGES_NEW: string[] = [];
   const particleCount = 0;
 </script>
@@ -97,9 +97,6 @@
       class="grid gap-6 pt-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 xl:grid-cols-4"
     >
       {#each Object.entries(data.componentsMeta.directoriesBreakdown) as [directory, { componentCount, stateBreakdown }] (directory)}
-        {directory}
-        {componentCount}
-        {stateBreakdown}
         {@render categoryCard(
           directory,
           directory,

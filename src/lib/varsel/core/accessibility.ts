@@ -39,15 +39,15 @@ let prevFocusElement: HTMLElement | null = null;
 let toastRegionClaimed = false;
 
 export const focusManager = {
-  savePrevFocus(): void {
-    if (typeof document === 'undefined') return;
-    const active = document.activeElement;
-    if (active instanceof HTMLElement && active !== document.body) {
-      prevFocusElement = active;
-    } else {
-      prevFocusElement = null;
-    }
-    toastRegionClaimed = true;
+  getPrevFocus(): HTMLElement | null {
+    return prevFocusElement;
+  },
+  isClaimed(): boolean {
+    return toastRegionClaimed;
+  },
+  releaseClaim(): void {
+    toastRegionClaimed = false;
+    prevFocusElement = null;
   },
   restoreFocusToPrevElement(): void {
     toastRegionClaimed = false;
@@ -61,14 +61,14 @@ export const focusManager = {
       }
     }
   },
-  getPrevFocus(): HTMLElement | null {
-    return prevFocusElement;
-  },
-  isClaimed(): boolean {
-    return toastRegionClaimed;
-  },
-  releaseClaim(): void {
-    toastRegionClaimed = false;
-    prevFocusElement = null;
+  savePrevFocus(): void {
+    if (typeof document === 'undefined') return;
+    const active = document.activeElement;
+    if (active instanceof HTMLElement && active !== document.body) {
+      prevFocusElement = active;
+    } else {
+      prevFocusElement = null;
+    }
+    toastRegionClaimed = true;
   }
 };

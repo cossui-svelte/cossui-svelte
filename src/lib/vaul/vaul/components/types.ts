@@ -1,7 +1,7 @@
-import type { CreateVaulProps } from '../../internal/vaul.js';
-import type { DrawerDirection, OnChangeFn } from '../../internal/types.js';
 import type { Snippet } from 'svelte';
 import type { HTMLAttributes } from 'svelte/elements';
+import type { DrawerDirection, OnChangeFn } from '../../internal/types.js';
+import type { CreateVaulProps } from '../../internal/vaul.js';
 
 export type Props = {
   /**

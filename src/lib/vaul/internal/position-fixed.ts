@@ -1,6 +1,6 @@
 import { onMount } from 'svelte';
-import { writable, get, type Writable } from 'svelte/store';
-import { effect, addEventListener } from './helpers/index.js';
+import { get, type Writable, writable } from 'svelte/store';
+import { addEventListener, effect } from './helpers/index.js';
 
 let previousBodyPosition: Record<string, string> | null = null;
 
@@ -23,10 +23,10 @@ export function handlePositionFixed({
     if (!(previousBodyPosition === null && open)) return;
 
     previousBodyPosition = {
-      position: document.body.style.position,
-      top: document.body.style.top,
+      height: document.body.style.height,
       left: document.body.style.left,
-      height: document.body.style.height
+      position: document.body.style.position,
+      top: document.body.style.top
     };
 
     // Update the dom inside an animation frame

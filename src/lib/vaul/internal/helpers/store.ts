@@ -1,6 +1,6 @@
+import { onDestroy, onMount } from 'svelte';
 import type { Readable, Updater, Writable } from 'svelte/store';
 import { derived, writable } from 'svelte/store';
-import { onDestroy, onMount } from 'svelte';
 
 /** Local type definitions for Svelte 5 compatibility (these were removed from svelte/store exports) */
 type Stores = Readable<unknown> | [Readable<unknown>, ...Array<Readable<unknown>>];
@@ -27,8 +27,8 @@ export function effect<S extends Stores>(
   // Create a derived store that contains the stores object and an onUnsubscribe function
   const unsub = derivedWithUnsubscribe(stores, (stores, onUnsubscribe) => {
     return {
-      stores,
-      onUnsubscribe
+      onUnsubscribe,
+      stores
     };
   }).subscribe(({ stores, onUnsubscribe }) => {
     const returned = fn(stores);
@@ -135,8 +135,8 @@ export const overridable = <T>(store: Writable<T>, onChange?: ChangeFn<T>) => {
 
   return {
     ...store,
-    update,
-    set
+    set,
+    update
   };
 };
 

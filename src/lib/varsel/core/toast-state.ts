@@ -86,8 +86,8 @@ class ToastState {
   dismissAll(): void {
     this.toasts = this.toasts.map((toast) => ({
       ...toast,
-      shouldClose: true,
-      duration: 0
+      duration: 0,
+      shouldClose: true
     }));
     this.notify();
   }

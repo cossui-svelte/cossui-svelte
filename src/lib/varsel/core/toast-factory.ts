@@ -134,21 +134,21 @@ createToast.promise = <T, E = unknown>(
     const payload = await resolvePromiseState(value, state);
     toastState.update(toastId, {
       ...payload,
-      isLoading: false,
       duration: payload.duration,
-      variant: payload.variant ?? defaultVariant,
-      showClose: payload.showClose ?? true
+      isLoading: false,
+      showClose: payload.showClose ?? true,
+      variant: payload.variant ?? defaultVariant
     });
   };
 
   const applyPromiseFallback = (error: unknown) => {
     toastState.update(toastId, {
-      title: 'Operation failed',
       description: getPromiseFallbackDescription(error),
-      variant: 'destructive',
+      duration: 5000,
       isLoading: false,
       showClose: true,
-      duration: 5000
+      title: 'Operation failed',
+      variant: 'destructive'
     });
   };
 
