@@ -46,15 +46,12 @@
   },
   "scripts": {
     "build": "vite build",
-    "check": "biome check .",
-    "check:svelte": "svelte-check --tsconfig ./tsconfig.json",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
     "clean": "rm -rf node_modules dist",
     "dev": "vite",
-    "format": "biome format --write .",
+    "format": "biome format --write . && biome check . --fix",
     "generate:registry": "tsx scripts/createComponentRegistryTypes.ts",
-    "lint": "biome lint --write src",
-    "lint:check": "biome lint src",
-    "lint:deadcode": "pnpx knip --max-show-issues 10",
+    "lint": "pnpx knip --max-show-issues 15",
     "mrproper": "rm -rf node_modules dist build .svelte-kit",
     "typecheck": "tsc --noEmit"
   },
