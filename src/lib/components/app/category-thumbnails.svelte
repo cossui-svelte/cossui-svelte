@@ -366,6 +366,17 @@
       </div>
     </div>
   </div>
+{:else if slug === "drawer"}
+  <div class="flex h-full w-full flex-1 flex-col justify-end gap-2">
+    <div class="flex-1 rounded-xl border border-input border-dashed"></div>
+    <div class={cardCls("max-w-none shrink-0 [--radius-2xl:14px]")}>
+      <div class={cpCls("pt-1 pb-12")}>
+        <div class="flex justify-center py-2">
+          <div class="h-1 w-12 rounded-full bg-muted-foreground/30"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 {:else if slug === "empty"}
   <div
     class={cardCls(
@@ -428,6 +439,29 @@
       {@render textSnip("w-[60%]")}
     </div>
   </div>
+{:else if slug === "otp-field"}
+  <div class="flex max-w-50 flex-1 items-center gap-2">
+    <div class={cardCls("size-10 [--radius-2xl:12px]", false)}>
+      <div class={cpCls("flex items-center justify-center p-0")}>
+        {@render textSnip("size-1.5")}
+      </div>
+    </div>
+    <div class={cardCls("size-10 [--radius-2xl:12px]", false)}>
+      <div class={cpCls("flex items-center justify-center p-0")}>
+        {@render textSnip("size-1.5")}
+      </div>
+    </div>
+    <div class={cardCls("size-10 [--radius-2xl:12px]", false)}>
+      <div class={cpCls("flex items-center justify-center p-0")}>
+        {@render textSnip("size-1.5")}
+      </div>
+    </div>
+    <div class={cardCls("size-10 [--radius-2xl:12px]", false)}>
+      <div class={cpCls("flex items-center justify-center p-0")}>
+        {@render iconSnip(TextCursor)}
+      </div>
+    </div>
+  </div>
 {:else if slug === "input-group"}
   <div class={cardCls("[--radius-2xl:14px]", false)}>
     <div class={cpCls("flex gap-2 p-0")}>
@@ -464,7 +498,7 @@
 {:else if slug === "label"}
   <div class="flex max-w-50 flex-1 flex-col gap-3">
     <div class="h-1.5 w-16 rounded-full bg-primary"></div>
-    <div class={cardCls("[--radius-2xl:10px]")}>
+    <div class={cardCls("[--radius-2xl:10px]", false)}>
       <div class={cpCls("py-3.5")}></div>
     </div>
   </div>

@@ -66,10 +66,10 @@ class ComponentRegistry {
     const paths = Object.keys(files);
 
     for (const path of paths) {
-      console.log(path);
+
       const match = path.match(/\/components\/examples\/([^/]+)\/([^/]+)\.svelte$/);
       if (!match) continue;
-      console.log(path);
+
       const [, directory, filename] = match as [string, COSSUIDirectory, COSSUIComponent];
 
       if (!componentMap.has(directory)) {
