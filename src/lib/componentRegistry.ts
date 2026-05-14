@@ -66,7 +66,6 @@ class ComponentRegistry {
     const paths = Object.keys(files);
 
     for (const path of paths) {
-
       const match = path.match(/\/components\/examples\/([^/]+)\/([^/]+)\.svelte$/);
       if (!match) continue;
 

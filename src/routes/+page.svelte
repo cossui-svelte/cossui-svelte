@@ -26,7 +26,7 @@
 
   const description = "Built for developers and AI.";
 
-  // const categories: Category[] = [];
+  // TODO - get this from .. somewhere. the list of new components - will add a New badge
   const PAGES_NEW: string[] = [];
   const particleCount = 0;
 </script>
@@ -40,7 +40,6 @@
 
 {#snippet categoryCard(slug: string, name: string, desc: string | undefined)}
   {@const href = `/docs/components/${slug}`}
-  {@const thumb = slug.substring(0, slug.length - 1)}
   {@const isNew = PAGES_NEW.includes(href)}
   <CardFrame
     class="after:-inset-1.25 after:-z-1 w-full after:pointer-events-none after:absolute after:rounded-[calc(var(--radius-xl)+4px)] after:border after:border-border/64"
@@ -64,7 +63,7 @@
       <CardPanel
         class="flex flex-1 items-center justify-center px-8 [--border:--alpha(var(--color-black)/7%)] [--btn-from:--alpha(var(--color-primary)/90%)] [--btn-to:var(--color-primary)] in-[[data-slot=card-frame]:has(a:not(:hover))]:*:translate-y-0.5 *:transition-transform *:duration-200 dark:[--border:--alpha(var(--color-white)/3%)] dark:[--btn-from:var(--color-primary)] dark:[--btn-to:--alpha(var(--color-primary)/90%)]"
       >
-        <CategoryThumbnail slug={thumb} />
+        <CategoryThumbnail {slug} />
       </CardPanel>
     </Card>
   </CardFrame>

@@ -51,7 +51,7 @@
     "dev": "vite",
     "format": "biome format --write . && biome check . --fix",
     "generate:registry": "tsx scripts/createComponentRegistryTypes.ts",
-    "lint": "pnpx knip --max-show-issues 15",
+    "lint:audit": "pnpx knip --max-show-issues 15",
     "mrproper": "rm -rf node_modules dist build .svelte-kit",
     "typecheck": "tsc --noEmit"
   },

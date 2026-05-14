@@ -2,7 +2,7 @@
 /**
  * !!!!!!!!!!
  * This file is auto-generated. Do not edit manually
- * Last generated at: 5/9/2026, 6:53:22 PM
+ * Last generated at: 5/14/2026, 11:20:39 AM
  * To update, run: pnpm generate:registry --format
  * @version 0.1.0
  * !!!!!!!!!!
@@ -88,41 +88,41 @@ export type COSSUIComponentMetadata = {
 };
 
 // Component Types
-export type COSSUIAccordionsComponents = COSSUIComponentHelper<'ACCORDIONS'>;
-export type COSSUIAlertsComponents = COSSUIComponentHelper<'ALERTS'>;
-export type COSSUIAvatarsComponents = COSSUIComponentHelper<'AVATARS'>;
-export type COSSUIBadgesComponents = COSSUIComponentHelper<'BADGES'>;
-export type COSSUIBannersComponents = COSSUIComponentHelper<'BANNERS'>;
-export type COSSUIBreadcrumbsComponents = COSSUIComponentHelper<'BREADCRUMBS'>;
-export type COSSUIButtonsComponents = COSSUIComponentHelper<'BUTTONS'>;
-export type COSSUICheckboxesComponents = COSSUIComponentHelper<'CHECKBOXES'>;
-export type COSSUIDialogsComponents = COSSUIComponentHelper<'DIALOGS'>;
-export type COSSUIInputsComponents = COSSUIComponentHelper<'INPUTS'>;
+export type COSSUIAccordionComponents = COSSUIComponentHelper<'ACCORDION'>;
+export type COSSUIAlertComponents = COSSUIComponentHelper<'ALERT'>;
+export type COSSUIAvatarComponents = COSSUIComponentHelper<'AVATAR'>;
+export type COSSUIBadgeComponents = COSSUIComponentHelper<'BADGE'>;
+export type COSSUIBannerComponents = COSSUIComponentHelper<'BANNER'>;
+export type COSSUIBreadcrumbComponents = COSSUIComponentHelper<'BREADCRUMB'>;
+export type COSSUIButtonComponents = COSSUIComponentHelper<'BUTTON'>;
+export type COSSUICheckboxComponents = COSSUIComponentHelper<'CHECKBOX'>;
+export type COSSUIDialogComponents = COSSUIComponentHelper<'DIALOG'>;
+export type COSSUIInputComponents = COSSUIComponentHelper<'INPUT'>;
 
 // All Component Types
 export type COSSUIComponent = Prettify<
-  | COSSUIAccordionsComponents
-  | COSSUIAlertsComponents
-  | COSSUIAvatarsComponents
-  | COSSUIBadgesComponents
-  | COSSUIBannersComponents
-  | COSSUIBreadcrumbsComponents
-  | COSSUIButtonsComponents
-  | COSSUICheckboxesComponents
-  | COSSUIDialogsComponents
-  | COSSUIInputsComponents
+  | COSSUIAccordionComponents
+  | COSSUIAlertComponents
+  | COSSUIAvatarComponents
+  | COSSUIBadgeComponents
+  | COSSUIBannerComponents
+  | COSSUIBreadcrumbComponents
+  | COSSUIButtonComponents
+  | COSSUICheckboxComponents
+  | COSSUIDialogComponents
+  | COSSUIInputComponents
 >;
 
 // Directory To Component
 export type COSSUIDirectoryToComponent = Prettify<{
-  accordions: COSSUIAccordionsComponents;
-  alerts: COSSUIAlertsComponents;
-  avatars: COSSUIAvatarsComponents;
-  badges: COSSUIBadgesComponents;
-  banners: COSSUIBannersComponents;
-  breadcrumbs: COSSUIBreadcrumbsComponents;
-  buttons: COSSUIButtonsComponents;
-  checkboxes: COSSUICheckboxesComponents;
-  dialogs: COSSUIDialogsComponents;
-  inputs: COSSUIInputsComponents;
+  accordion: COSSUIAccordionComponents;
+  alert: COSSUIAlertComponents;
+  avatar: COSSUIAvatarComponents;
+  badge: COSSUIBadgeComponents;
+  banner: COSSUIBannerComponents;
+  breadcrumb: COSSUIBreadcrumbComponents;
+  button: COSSUIButtonComponents;
+  checkbox: COSSUICheckboxComponents;
+  dialog: COSSUIDialogComponents;
+  input: COSSUIInputComponents;
 }>;

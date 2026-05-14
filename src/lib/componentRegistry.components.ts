@@ -2,13 +2,13 @@
 /**
  * !!!!!!!!!!
  * This file is auto-generated. Do not edit manually
- * Last generated at: 5/9/2026, 6:53:22 PM
+ * Last generated at: 5/14/2026, 11:20:39 AM
  * To update, run: pnpm generate:registry --format
  * @version 0.1.0
  * !!!!!!!!!!
  */
 export const COSSUI_DIRECTORIES = {
-  ACCORDIONS: {
+  ACCORDION: {
     components: [
       'accordion-01.svelte',
       'accordion-02.svelte',
@@ -31,14 +31,14 @@ export const COSSUI_DIRECTORIES = {
       'accordion-19.svelte',
       'accordion-20.svelte'
     ],
-    directory: 'accordions',
-    name: 'Accordions',
+    directory: 'accordion',
+    name: 'Accordion',
     status: {
       ready: 20,
       todo: 0
     }
   },
-  ALERTS: {
+  ALERT: {
     components: [
       'alert-01.svelte',
       'alert-02.svelte',
@@ -53,14 +53,14 @@ export const COSSUI_DIRECTORIES = {
       'alert-11.svelte',
       'alert-12.svelte'
     ],
-    directory: 'alerts',
-    name: 'Alerts',
+    directory: 'alert',
+    name: 'Alert',
     status: {
       ready: 12,
       todo: 0
     }
   },
-  AVATARS: {
+  AVATAR: {
     components: [
       'avatar-01.svelte',
       'avatar-02.svelte',
@@ -86,14 +86,14 @@ export const COSSUI_DIRECTORIES = {
       'avatar-22.svelte',
       'avatar-23.svelte'
     ],
-    directory: 'avatars',
-    name: 'Avatars',
+    directory: 'avatar',
+    name: 'Avatar',
     status: {
       ready: 23,
       todo: 0
     }
   },
-  BADGES: {
+  BADGE: {
     components: [
       'badge-01.svelte',
       'badge-02.svelte',
@@ -109,14 +109,14 @@ export const COSSUI_DIRECTORIES = {
       'badge-12.svelte',
       'badge-13.svelte'
     ],
-    directory: 'badges',
-    name: 'Badges',
+    directory: 'badge',
+    name: 'Badge',
     status: {
       ready: 13,
       todo: 0
     }
   },
-  BANNERS: {
+  BANNER: {
     components: [
       'banner-01.svelte',
       'banner-02.svelte',
@@ -131,14 +131,14 @@ export const COSSUI_DIRECTORIES = {
       'banner-11.svelte',
       'banner-12.svelte'
     ],
-    directory: 'banners',
-    name: 'Banners',
+    directory: 'banner',
+    name: 'Banner',
     status: {
       ready: 12,
       todo: 0
     }
   },
-  BREADCRUMBS: {
+  BREADCRUMB: {
     components: [
       'breadcrumb-01.svelte',
       'breadcrumb-02.svelte',
@@ -149,14 +149,14 @@ export const COSSUI_DIRECTORIES = {
       'breadcrumb-07.svelte',
       'breadcrumb-08.svelte'
     ],
-    directory: 'breadcrumbs',
-    name: 'Breadcrumbs',
+    directory: 'breadcrumb',
+    name: 'Breadcrumb',
     status: {
       ready: 8,
       todo: 0
     }
   },
-  BUTTONS: {
+  BUTTON: {
     components: [
       'button-01.svelte',
       'button-02.svelte',
@@ -169,14 +169,14 @@ export const COSSUI_DIRECTORIES = {
       'button-09.svelte',
       'button-10.svelte'
     ],
-    directory: 'buttons',
-    name: 'Buttons',
+    directory: 'button',
+    name: 'Button',
     status: {
       ready: 10,
       todo: 0
     }
   },
-  CHECKBOXES: {
+  CHECKBOX: {
     components: [
       'checkbox-01.svelte',
       'checkbox-02.svelte',
@@ -197,14 +197,14 @@ export const COSSUI_DIRECTORIES = {
       'checkbox-17.svelte',
       'checkbox-18.svelte'
     ],
-    directory: 'checkboxes',
-    name: 'Checkboxes',
+    directory: 'checkbox',
+    name: 'Checkbox',
     status: {
       ready: 18,
       todo: 0
     }
   },
-  DIALOGS: {
+  DIALOG: {
     components: [
       'dialog-01.svelte',
       'dialog-02.svelte',
@@ -226,16 +226,16 @@ export const COSSUI_DIRECTORIES = {
       'dialog-18.svelte',
       'dialog-19.svelte',
       'dialog-20.svelte',
-      'dialog-21.svelte'
+      'dialog-21.todo.svelte'
     ],
-    directory: 'dialogs',
-    name: 'Dialogs',
+    directory: 'dialog',
+    name: 'Dialog',
     status: {
-      ready: 18,
-      todo: 3
+      ready: 17,
+      todo: 4
     }
   },
-  INPUTS: {
+  INPUT: {
     components: [
       'input-01.svelte',
       'input-02.svelte',
@@ -297,8 +297,8 @@ export const COSSUI_DIRECTORIES = {
       'input-58.todo.svelte',
       'input-59.todo.svelte'
     ],
-    directory: 'inputs',
-    name: 'Inputs',
+    directory: 'input',
+    name: 'Input',
     status: {
       ready: 47,
       todo: 12
