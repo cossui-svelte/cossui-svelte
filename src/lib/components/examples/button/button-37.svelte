@@ -1,14 +1,16 @@
 <script lang="ts">
-	import Button from '$lib/components/ui/button.svelte';
+	import { Button } from "$lib/components/ui/button";
 
-	import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
-	import GitForkIcon from '@lucide/svelte/icons/git-fork';
+	import ChevronDownIcon from "@lucide/svelte/icons/chevron-down";
+	import GitForkIcon from "@lucide/svelte/icons/git-fork";
 </script>
 
 <div
 	class="shadow-xs inline-flex divide-x divide-primary-foreground/30 rounded-md rtl:space-x-reverse"
 >
-	<Button class="rounded-none shadow-none first:rounded-s-md last:rounded-e-md focus-visible:z-10">
+	<Button
+		class="rounded-none shadow-none first:rounded-s-md last:rounded-e-md focus-visible:z-10"
+	>
 		<GitForkIcon class="opacity-60" size={16} aria-hidden="true" />
 		Fork
 		<span

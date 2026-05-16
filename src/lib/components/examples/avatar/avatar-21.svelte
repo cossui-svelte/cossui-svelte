@@ -1,10 +1,10 @@
 <script lang="ts">
-	import Button from '$lib/components/ui/button.svelte';
+	import { Button } from "$lib/components/ui/button";
 
-	import AvatarImg01 from '$assets/avatar-80-03.jpg?w=80&h=80&enhanced';
-	import AvatarImg02 from '$assets/avatar-80-05.jpg?w=80&h=80&enhanced';
-	import AvatarImg03 from '$assets/avatar-80-06.jpg?w=80&h=80&enhanced';
-	import AvatarImg04 from '$assets/avatar-80-07.jpg?w=80&h=80&enhanced';
+	import AvatarImg01 from "$assets/avatar-80-03.jpg?w=80&h=80&enhanced";
+	import AvatarImg02 from "$assets/avatar-80-05.jpg?w=80&h=80&enhanced";
+	import AvatarImg03 from "$assets/avatar-80-06.jpg?w=80&h=80&enhanced";
+	import AvatarImg04 from "$assets/avatar-80-07.jpg?w=80&h=80&enhanced";
 </script>
 
 <div class="flex items-center rounded-full bg-muted p-0.5">

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Button from '$lib/components/ui/button.svelte';
+	import { Button } from "$lib/components/ui/button";
 
-	import QrCodeIcon from '@lucide/svelte/icons/qr-code';
+	import QrCodeIcon from "@lucide/svelte/icons/qr-code";
 </script>
 
 <div
@@ -14,7 +14,9 @@
 	>
 		<QrCodeIcon size={16} aria-hidden="true" />
 	</Button>
-	<Button class="rounded-none shadow-none first:rounded-s-md last:rounded-e-md focus-visible:z-10">
+	<Button
+		class="rounded-none shadow-none first:rounded-s-md last:rounded-e-md focus-visible:z-10"
+	>
 		Sign in
 	</Button>
 </div>

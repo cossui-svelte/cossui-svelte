@@ -1,17 +1,17 @@
 <script lang="ts">
-	import Button from '$lib/components/ui/button.svelte';
+	import { Button } from "$lib/components/ui/button";
 
-	import Book from '@lucide/svelte/icons/book';
-	import Info from '@lucide/svelte/icons/info';
-	import LifeBuoy from '@lucide/svelte/icons/life-buoy';
-	import MessageCircleMore from '@lucide/svelte/icons/message-circle-more';
+	import Book from "@lucide/svelte/icons/book";
+	import Info from "@lucide/svelte/icons/info";
+	import LifeBuoy from "@lucide/svelte/icons/life-buoy";
+	import MessageCircleMore from "@lucide/svelte/icons/message-circle-more";
 	import {
 		DropdownMenu,
 		DropdownMenuContent,
 		DropdownMenuItem,
 		DropdownMenuLabel,
-		DropdownMenuTrigger
-	} from '$lib/components/ui/dropdowns';
+		DropdownMenuTrigger,
+	} from "$lib/components/ui/dropdowns";
 </script>
 
 <DropdownMenu>
@@ -30,26 +30,47 @@
 	</DropdownMenuTrigger>
 	<DropdownMenuContent class="pb-2">
 		<DropdownMenuLabel>Need help?</DropdownMenuLabel>
-		<DropdownMenuItem class="cursor-pointer py-1 focus:bg-transparent focus:underline">
+		<DropdownMenuItem
+			class="cursor-pointer py-1 focus:bg-transparent focus:underline"
+		>
 			{#snippet child({ props })}
 				<a href="#title" {...props}>
-					<Book size={16} stroke-width={2} class="opacity-60" aria-hidden="true" />
+					<Book
+						size={16}
+						stroke-width={2}
+						class="opacity-60"
+						aria-hidden="true"
+					/>
 					Documentation
 				</a>
 			{/snippet}
 		</DropdownMenuItem>
-		<DropdownMenuItem class="cursor-pointer py-1 focus:bg-transparent focus:underline">
+		<DropdownMenuItem
+			class="cursor-pointer py-1 focus:bg-transparent focus:underline"
+		>
 			{#snippet child({ props })}
 				<a href="#title" {...props}>
-					<LifeBuoy size={16} stroke-width={2} class="opacity-60" aria-hidden="true" />
+					<LifeBuoy
+						size={16}
+						stroke-width={2}
+						class="opacity-60"
+						aria-hidden="true"
+					/>
 					Support
 				</a>
 			{/snippet}
 		</DropdownMenuItem>
-		<DropdownMenuItem class="cursor-pointer py-1 focus:bg-transparent focus:underline">
+		<DropdownMenuItem
+			class="cursor-pointer py-1 focus:bg-transparent focus:underline"
+		>
 			{#snippet child({ props })}
 				<a href="#title" {...props}>
-					<MessageCircleMore size={16} stroke-width={2} class="opacity-60" aria-hidden="true" />
+					<MessageCircleMore
+						size={16}
+						stroke-width={2}
+						class="opacity-60"
+						aria-hidden="true"
+					/>
 					Contact us
 				</a>
 			{/snippet}

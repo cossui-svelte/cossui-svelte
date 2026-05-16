@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Button from '$lib/components/ui/button.svelte';
+	import { Button } from "$lib/components/ui/button";
 
-	import Eclipse from '@lucide/svelte/icons/eclipse';
-	import X from '@lucide/svelte/icons/x';
+	import Eclipse from "@lucide/svelte/icons/eclipse";
+	import X from "@lucide/svelte/icons/x";
 
 	let visible = $state(true);
 </script>
@@ -17,13 +17,18 @@
 					strokeWidth={2}
 					aria-hidden="true"
 				/>
-				<div class="flex grow flex-col justify-between gap-3 md:flex-row md:items-center">
+				<div
+					class="flex grow flex-col justify-between gap-3 md:flex-row md:items-center"
+				>
 					<p class="text-sm">
-						It&lsquo;s live and ready to use! Start exploring the latest addition to your toolkit.
+						It&lsquo;s live and ready to use! Start exploring the
+						latest addition to your toolkit.
 					</p>
 					<div class="flex gap-2 max-md:flex-wrap">
 						<Button size="sm" class="text-sm">Download</Button>
-						<Button variant="link" size="sm" class="text-sm">Learn more</Button>
+						<Button variant="link" size="sm" class="text-sm"
+							>Learn more</Button
+						>
 					</div>
 				</div>
 			</div>

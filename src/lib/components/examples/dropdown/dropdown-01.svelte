@@ -1,13 +1,13 @@
 <script lang="ts">
-	import Button from '$lib/components/ui/button.svelte';
+	import { Button } from "$lib/components/ui/button";
 
-	import Ellipsis from '@lucide/svelte/icons/ellipsis';
+	import Ellipsis from "@lucide/svelte/icons/ellipsis";
 	import {
 		DropdownMenu,
 		DropdownMenuContent,
 		DropdownMenuItem,
-		DropdownMenuTrigger
-	} from '$lib/components/ui/dropdowns';
+		DropdownMenuTrigger,
+	} from "$lib/components/ui/dropdowns";
 </script>
 
 <DropdownMenu>

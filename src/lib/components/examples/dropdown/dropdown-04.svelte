@@ -1,20 +1,20 @@
 <script lang="ts">
-	import Button from '$lib/components/ui/button.svelte';
+	import { Button } from "$lib/components/ui/button";
 
-	import Bolt from '@lucide/svelte/icons/bolt';
-	import ChevronDown from '@lucide/svelte/icons/chevron-down';
-	import CopyPlus from '@lucide/svelte/icons/copy-plus';
-	import Files from '@lucide/svelte/icons/files';
-	import Layers2 from '@lucide/svelte/icons/layers-2';
-	import Trash from '@lucide/svelte/icons/trash';
+	import Bolt from "@lucide/svelte/icons/bolt";
+	import ChevronDown from "@lucide/svelte/icons/chevron-down";
+	import CopyPlus from "@lucide/svelte/icons/copy-plus";
+	import Files from "@lucide/svelte/icons/files";
+	import Layers2 from "@lucide/svelte/icons/layers-2";
+	import Trash from "@lucide/svelte/icons/trash";
 	import {
 		DropdownMenu,
 		DropdownMenuContent,
 		DropdownMenuGroup,
 		DropdownMenuItem,
 		DropdownMenuSeparator,
-		DropdownMenuTrigger
-	} from '$lib/components/ui/dropdowns';
+		DropdownMenuTrigger,
+	} from "$lib/components/ui/dropdowns";
 </script>
 
 <DropdownMenu>
@@ -23,29 +23,54 @@
 			<Button variant="outline" {...props}>
 				Grouped items
 
-				<ChevronDown class="-me-1 opacity-60" size={16} stroke-width={2} aria-hidden="true" />
+				<ChevronDown
+					class="-me-1 opacity-60"
+					size={16}
+					stroke-width={2}
+					aria-hidden="true"
+				/>
 			</Button>
 		{/snippet}
 	</DropdownMenuTrigger>
 	<DropdownMenuContent>
 		<DropdownMenuGroup>
 			<DropdownMenuItem>
-				<CopyPlus size={16} stroke-width={2} class="opacity-60" aria-hidden="true" />
+				<CopyPlus
+					size={16}
+					stroke-width={2}
+					class="opacity-60"
+					aria-hidden="true"
+				/>
 				Copy
 			</DropdownMenuItem>
 			<DropdownMenuItem>
-				<Bolt size={16} stroke-width={2} class="opacity-60" aria-hidden="true" />
+				<Bolt
+					size={16}
+					stroke-width={2}
+					class="opacity-60"
+					aria-hidden="true"
+				/>
 				Edit
 			</DropdownMenuItem>
 		</DropdownMenuGroup>
 		<DropdownMenuSeparator />
 		<DropdownMenuGroup>
 			<DropdownMenuItem>
-				<Layers2 size={16} stroke-width={2} class="opacity-60" aria-hidden="true" />
+				<Layers2
+					size={16}
+					stroke-width={2}
+					class="opacity-60"
+					aria-hidden="true"
+				/>
 				Group
 			</DropdownMenuItem>
 			<DropdownMenuItem>
-				<Files size={16} stroke-width={2} class="opacity-60" aria-hidden="true" />
+				<Files
+					size={16}
+					stroke-width={2}
+					class="opacity-60"
+					aria-hidden="true"
+				/>
 				Clone
 			</DropdownMenuItem>
 			<DropdownMenuItem class="text-destructive focus:text-destructive">

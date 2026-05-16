@@ -1,16 +1,19 @@
 <script lang="ts">
-	import type { EventHandler } from 'svelte/elements';
+	import type { EventHandler } from "svelte/elements";
 
-	import Button from '$lib/components/ui/button.svelte';
+	import { Button } from "$lib/components/ui/button";
 
-	import IconCircleUserRound from '@lucide/svelte/icons/circle-user-round';
+	import IconCircleUserRound from "@lucide/svelte/icons/circle-user-round";
 
 	let fileInput: HTMLInputElement;
 	let files = $state<FileList | null>(null);
 	let fileName = $state<null | string>(null);
 	let previewUrl = $state<null | string>(null);
 
-	const handleButtonClick: EventHandler<Event, HTMLAnchorElement | HTMLButtonElement> = () => {
+	const handleButtonClick: EventHandler<
+		Event,
+		HTMLAnchorElement | HTMLButtonElement
+	> = () => {
 		fileInput.click();
 	};
 
@@ -25,7 +28,7 @@
 	const handleRemove: EventHandler<Event, HTMLButtonElement> = () => {
 		fileName = null;
 		previewUrl = null;
-		fileInput.value = '';
+		fileInput.value = "";
 	};
 </script>
 
@@ -34,7 +37,9 @@
 		<div
 			class="relative flex size-9 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-input"
 			role="img"
-			aria-label={previewUrl ? 'Preview of uploaded file' : 'Default user avatar'}
+			aria-label={previewUrl
+				? "Preview of uploaded file"
+				: "Default user avatar"}
 		>
 			{#if previewUrl}
 				<img
@@ -46,13 +51,17 @@
 				/>
 			{:else}
 				<div aria-hidden="true">
-					<IconCircleUserRound class="opacity-60" size={16} stroke-width="2" />
+					<IconCircleUserRound
+						class="opacity-60"
+						size={16}
+						stroke-width="2"
+					/>
 				</div>
 			{/if}
 		</div>
 		<div class="relative inline-block">
 			<Button onclick={handleButtonClick}>
-				{fileName ? 'Change image' : 'Upload image'}
+				{fileName ? "Change image" : "Upload image"}
 			</Button>
 			<input
 				type="file"
@@ -80,6 +89,8 @@
 		</div>
 	{/if}
 	<div class="sr-only" aria-live="polite" role="status">
-		{previewUrl ? 'Image uploaded and preview available' : 'No image uploaded'}
+		{previewUrl
+			? "Image uploaded and preview available"
+			: "No image uploaded"}
 	</div>
 </div>

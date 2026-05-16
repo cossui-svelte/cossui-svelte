@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Button from '$lib/components/ui/button.svelte';
+	import { Button } from "$lib/components/ui/button";
 
 	let open = $state(false);
 
@@ -14,7 +14,7 @@
 	size="icon"
 	onclick={toggleOpen}
 	aria-expanded={open}
-	aria-label={open ? 'Close menu' : 'Open menu'}
+	aria-label={open ? "Close menu" : "Open menu"}
 >
 	<svg
 		class="pointer-events-none"

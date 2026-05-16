@@ -1,13 +1,15 @@
 <script lang="ts">
-	import Button from '$lib/components/ui/button.svelte';
+	import { Button } from "$lib/components/ui/button";
 
-	import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
+	import ChevronRightIcon from "@lucide/svelte/icons/chevron-right";
 </script>
 
 <Button class="group h-auto gap-4 py-3 text-left" variant="outline">
 	<div class="space-y-1">
 		<h3>Talent Agency</h3>
-		<p class="whitespace-break-spaces font-normal text-muted-foreground">Matches for your roster</p>
+		<p class="whitespace-break-spaces font-normal text-muted-foreground">
+			Matches for your roster
+		</p>
 	</div>
 	<ChevronRightIcon
 		class="opacity-60 transition-transform group-hover:translate-x-0.5"

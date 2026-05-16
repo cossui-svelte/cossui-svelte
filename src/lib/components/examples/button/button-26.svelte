@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Button from '$lib/components/ui/button.svelte';
+	import { Button } from "$lib/components/ui/button";
 
-	import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
-	import ChevronUpIcon from '@lucide/svelte/icons/chevron-up';
+	import ChevronDownIcon from "@lucide/svelte/icons/chevron-down";
+	import ChevronUpIcon from "@lucide/svelte/icons/chevron-up";
 </script>
 
 <div class="shadow-xs inline-flex -space-x-px rounded-full rtl:space-x-reverse">
@@ -13,7 +13,9 @@
 	>
 		<ChevronUpIcon size={16} aria-hidden="true" />
 	</Button>
-	<span class="flex items-center bg-primary px-1 text-sm font-medium text-primary-foreground">
+	<span
+		class="flex items-center bg-primary px-1 text-sm font-medium text-primary-foreground"
+	>
 		235
 	</span>
 	<Button

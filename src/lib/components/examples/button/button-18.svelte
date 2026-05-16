@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Button from '$lib/components/ui/button.svelte';
+	import { Button } from "$lib/components/ui/button";
 
-	import ChevronDown from '@lucide/svelte/icons/chevron-down';
+	import ChevronDown from "@lucide/svelte/icons/chevron-down";
 </script>
 
 <Button variant="ghost" class="h-auto p-0 hover:bg-transparent">
@@ -13,5 +13,10 @@
 		aria-hidden="true"
 	/>
 
-	<ChevronDown size={16} stroke-width={2} class="opacity-60" aria-hidden="true" />
+	<ChevronDown
+		size={16}
+		stroke-width={2}
+		class="opacity-60"
+		aria-hidden="true"
+	/>
 </Button>

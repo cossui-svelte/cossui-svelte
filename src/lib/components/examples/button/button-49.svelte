@@ -1,10 +1,10 @@
 <script lang="ts">
-	import type { EventHandler } from 'svelte/elements';
+	import type { EventHandler } from "svelte/elements";
 
-	import Button from '$lib/components/ui/button.svelte';
+	import { Button } from "$lib/components/ui/button";
 
-	import IconCircleUserRound from '@lucide/svelte/icons/circle-user-round';
-	import IconX from '@lucide/svelte/icons/x';
+	import IconCircleUserRound from "@lucide/svelte/icons/circle-user-round";
+	import IconX from "@lucide/svelte/icons/x";
 
 	let fileInput: HTMLInputElement;
 	let fileName = $state<null | string>(null);
@@ -22,10 +22,13 @@
 		}
 	};
 
-	const handleRemove: EventHandler<Event, HTMLAnchorElement | HTMLButtonElement> = () => {
+	const handleRemove: EventHandler<
+		Event,
+		HTMLAnchorElement | HTMLButtonElement
+	> = () => {
 		fileName = null;
 		previewUrl = null;
-		fileInput.value = '';
+		fileInput.value = "";
 	};
 </script>
 
@@ -35,7 +38,7 @@
 			variant="outline"
 			class="relative size-16 overflow-hidden"
 			onclick={handleThumbnailClick}
-			aria-label={previewUrl ? 'Change image' : 'Upload image'}
+			aria-label={previewUrl ? "Change image" : "Upload image"}
 		>
 			{#if previewUrl}
 				<img
@@ -45,7 +48,12 @@
 				/>
 			{:else}
 				<div aria-hidden="true">
-					<IconCircleUserRound class="opacity-60" width="16" height="16" stroke-width="2" />
+					<IconCircleUserRound
+						class="opacity-60"
+						width="16"
+						height="16"
+						stroke-width="2"
+					/>
 				</div>
 			{/if}
 		</Button>
@@ -77,6 +85,8 @@
 		</p>
 	{/if}
 	<div class="sr-only" aria-live="polite" role="status">
-		{previewUrl ? 'Image uploaded and preview available' : 'No image uploaded'}
+		{previewUrl
+			? "Image uploaded and preview available"
+			: "No image uploaded"}
 	</div>
 </div>

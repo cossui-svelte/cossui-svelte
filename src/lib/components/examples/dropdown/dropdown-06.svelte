@@ -1,13 +1,13 @@
 <script lang="ts">
-	import Button from '$lib/components/ui/button.svelte';
+	import { Button } from "$lib/components/ui/button";
 
-	import ChevronDown from '@lucide/svelte/icons/chevron-down';
+	import ChevronDown from "@lucide/svelte/icons/chevron-down";
 	import {
 		DropdownMenu,
 		DropdownMenuCheckboxItem,
 		DropdownMenuContent,
-		DropdownMenuTrigger
-	} from '$lib/components/ui/dropdowns';
+		DropdownMenuTrigger,
+	} from "$lib/components/ui/dropdowns";
 
 	let sveltekit = $state(true);
 	let remix = $state(false);
@@ -20,7 +20,12 @@
 		{#snippet child({ props })}
 			<Button variant="outline" {...props}>
 				Checkbox items
-				<ChevronDown class="-me-1 opacity-60" size={16} stroke-width={2} aria-hidden="true" />
+				<ChevronDown
+					class="-me-1 opacity-60"
+					size={16}
+					stroke-width={2}
+					aria-hidden="true"
+				/>
 			</Button>
 		{/snippet}
 	</DropdownMenuTrigger>
@@ -31,7 +36,10 @@
 		>
 			SvelteKit
 		</DropdownMenuCheckboxItem>
-		<DropdownMenuCheckboxItem checked={nextjs} onCheckedChange={(checked) => (nextjs = checked)}>
+		<DropdownMenuCheckboxItem
+			checked={nextjs}
+			onCheckedChange={(checked) => (nextjs = checked)}
+		>
 			Next.js
 		</DropdownMenuCheckboxItem>
 		<DropdownMenuCheckboxItem
@@ -41,7 +49,10 @@
 		>
 			Remix
 		</DropdownMenuCheckboxItem>
-		<DropdownMenuCheckboxItem checked={astro} onCheckedChange={(checked) => (astro = checked)}>
+		<DropdownMenuCheckboxItem
+			checked={astro}
+			onCheckedChange={(checked) => (astro = checked)}
+		>
 			Astro
 		</DropdownMenuCheckboxItem>
 	</DropdownMenuContent>

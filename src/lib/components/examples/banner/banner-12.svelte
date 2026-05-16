@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Button from '$lib/components/ui/button.svelte';
+	import { Button } from "$lib/components/ui/button";
 
-	import Download from '@lucide/svelte/icons/download';
-	import LoaderCircle from '@lucide/svelte/icons/loader-circle';
+	import Download from "@lucide/svelte/icons/download";
+	import LoaderCircle from "@lucide/svelte/icons/loader-circle";
 
 	let isDownloading = $state(false);
 
@@ -27,7 +27,12 @@
 			class="min-w-24"
 		>
 			{#if isDownloading}
-				<LoaderCircle class="-ms-0.5 animate-spin" size={16} strokeWidth={2} aria-hidden="true" />
+				<LoaderCircle
+					class="-ms-0.5 animate-spin"
+					size={16}
+					strokeWidth={2}
+					aria-hidden="true"
+				/>
 				Updating...
 			{:else}
 				<Download size={16} class="-ms-0.5" aria-hidden="true" />

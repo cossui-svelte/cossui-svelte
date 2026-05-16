@@ -1,16 +1,16 @@
 <script lang="ts">
-	import Button from '$lib/components/ui/button.svelte';
+	import { Button } from "$lib/components/ui/button";
 
-	import ChevronDown from '@lucide/svelte/icons/chevron-down';
+	import ChevronDown from "@lucide/svelte/icons/chevron-down";
 	import {
 		DropdownMenu,
 		DropdownMenuContent,
 		DropdownMenuRadioGroup,
 		DropdownMenuRadioItem,
-		DropdownMenuTrigger
-	} from '$lib/components/ui/dropdowns';
+		DropdownMenuTrigger,
+	} from "$lib/components/ui/dropdowns";
 
-	let framework = $state('sveltekit');
+	let framework = $state("sveltekit");
 </script>
 
 <DropdownMenu>
@@ -18,14 +18,26 @@
 		{#snippet child({ props })}
 			<Button variant="outline" {...props}>
 				Radio items
-				<ChevronDown class="-me-1 opacity-60" size={16} stroke-width={2} aria-hidden="true" />
+				<ChevronDown
+					class="-me-1 opacity-60"
+					size={16}
+					stroke-width={2}
+					aria-hidden="true"
+				/>
 			</Button>
 		{/snippet}
 	</DropdownMenuTrigger>
 	<DropdownMenuContent>
-		<DropdownMenuRadioGroup value={framework} onValueChange={(value) => (framework = value)}>
-			<DropdownMenuRadioItem value="sveltekit">SvelteKit</DropdownMenuRadioItem>
-			<DropdownMenuRadioItem value="nextjs" disabled>Next.js</DropdownMenuRadioItem>
+		<DropdownMenuRadioGroup
+			value={framework}
+			onValueChange={(value) => (framework = value)}
+		>
+			<DropdownMenuRadioItem value="sveltekit"
+				>SvelteKit</DropdownMenuRadioItem
+			>
+			<DropdownMenuRadioItem value="nextjs" disabled
+				>Next.js</DropdownMenuRadioItem
+			>
 			<DropdownMenuRadioItem value="remix">Remix</DropdownMenuRadioItem>
 			<DropdownMenuRadioItem value="astro">Astro</DropdownMenuRadioItem>
 		</DropdownMenuRadioGroup>

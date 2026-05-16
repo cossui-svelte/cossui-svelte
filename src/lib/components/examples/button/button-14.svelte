@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Button from '$lib/components/ui/button.svelte';
+	import { Button } from "$lib/components/ui/button";
 
-	import LoaderCircle from '@lucide/svelte/icons/loader-circle';
+	import LoaderCircle from "@lucide/svelte/icons/loader-circle";
 
 	let isLoading = $state(false);
 
@@ -23,7 +23,12 @@
 	<span class="group-data-[loading=true]:text-transparent">Click me</span>
 	{#if isLoading}
 		<div class="absolute inset-0 flex items-center justify-center">
-			<LoaderCircle class="animate-spin" size={16} stroke-width={2} aria-hidden="true" />
+			<LoaderCircle
+				class="animate-spin"
+				size={16}
+				stroke-width={2}
+				aria-hidden="true"
+			/>
 		</div>
 	{/if}
 </Button>

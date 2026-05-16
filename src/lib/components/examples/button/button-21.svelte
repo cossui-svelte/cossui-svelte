@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Button from '$lib/components/ui/button.svelte';
+	import { Button } from "$lib/components/ui/button";
 
-	import Plus from '@lucide/svelte/icons/plus';
+	import Plus from "@lucide/svelte/icons/plus";
 
 	let open = $state(false);
 
@@ -16,7 +16,7 @@
 	size="icon"
 	onclick={toggleOpen}
 	aria-expanded={open}
-	aria-label={open ? 'Close menu' : 'Open menu'}
+	aria-label={open ? "Close menu" : "Open menu"}
 >
 	<Plus
 		class="ease-[cubic-bezier(0.68,-0.6,0.32,1.6)] transition-transform duration-500 group-aria-expanded:rotate-[135deg]"

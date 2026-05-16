@@ -1,19 +1,19 @@
 <script lang="ts">
-	import Button from '$lib/components/ui/button.svelte';
+	import { Button } from "$lib/components/ui/button";
 
-	import Heading1 from '@lucide/svelte/icons/heading-1';
-	import Heading2 from '@lucide/svelte/icons/heading-2';
-	import Minus from '@lucide/svelte/icons/minus';
-	import Plus from '@lucide/svelte/icons/plus';
-	import TextQuote from '@lucide/svelte/icons/text-quote';
-	import Type from '@lucide/svelte/icons/type';
+	import Heading1 from "@lucide/svelte/icons/heading-1";
+	import Heading2 from "@lucide/svelte/icons/heading-2";
+	import Minus from "@lucide/svelte/icons/minus";
+	import Plus from "@lucide/svelte/icons/plus";
+	import TextQuote from "@lucide/svelte/icons/text-quote";
+	import Type from "@lucide/svelte/icons/type";
 	import {
 		DropdownMenu,
 		DropdownMenuContent,
 		DropdownMenuItem,
 		DropdownMenuLabel,
-		DropdownMenuTrigger
-	} from '$lib/components/ui/dropdowns';
+		DropdownMenuTrigger,
+	} from "$lib/components/ui/dropdowns";
 </script>
 
 <DropdownMenu>
@@ -41,7 +41,9 @@
 			</div>
 			<div>
 				<div class="text-sm font-medium">Text</div>
-				<div class="text-xs text-muted-foreground">Start writing with plain text</div>
+				<div class="text-xs text-muted-foreground">
+					Start writing with plain text
+				</div>
 			</div>
 		</DropdownMenuItem>
 		<DropdownMenuItem>
@@ -65,7 +67,9 @@
 			</div>
 			<div>
 				<div class="text-sm font-medium">Divider</div>
-				<div class="text-xs text-muted-foreground">Visually divide blocks</div>
+				<div class="text-xs text-muted-foreground">
+					Visually divide blocks
+				</div>
 			</div>
 		</DropdownMenuItem>
 		<DropdownMenuItem>
@@ -77,7 +81,9 @@
 			</div>
 			<div>
 				<div class="text-sm font-medium">Heading 1</div>
-				<div class="text-xs text-muted-foreground">Big section heading</div>
+				<div class="text-xs text-muted-foreground">
+					Big section heading
+				</div>
 			</div>
 		</DropdownMenuItem>
 		<DropdownMenuItem>
@@ -89,7 +95,9 @@
 			</div>
 			<div>
 				<div class="text-sm font-medium">Heading 2</div>
-				<div class="text-xs text-muted-foreground">Medium section subheading</div>
+				<div class="text-xs text-muted-foreground">
+					Medium section subheading
+				</div>
 			</div>
 		</DropdownMenuItem>
 	</DropdownMenuContent>

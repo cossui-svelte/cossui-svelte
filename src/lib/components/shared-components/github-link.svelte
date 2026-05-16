@@ -7,7 +7,7 @@
 
   async function getGithubStarCount() {
     try {
-      const res = await fetch("https://ungh.cc/repos/huntabyte/shadcn-svelte");
+      const res = await fetch("https://ungh.cc/repos/orefalo/cossui-svelte");
       const data = await res.json();
       return data.repo?.stars ?? FALLBACK_STAR_COUNT;
     } catch (error) {
@@ -24,7 +24,7 @@
 </script>
 
 <Button
-  href="https://github.com/huntabyte/shadcn-svelte"
+  href="https://github.com/orefalo/cossui-svelte"
   target="_blank"
   rel="noreferrer"
   size="sm"
