@@ -3,7 +3,17 @@ import { exec as execCallback } from 'node:child_process';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { promisify } from 'node:util';
-import * as Registry from "./registry.json"
+import registryJson from "./registry.json";
+
+interface RegistryEntry {
+	description: string;
+	category: string;
+	isnew: boolean;
+}
+
+type RegistryData = Record<string, RegistryEntry>;
+
+const Registry = registryJson as RegistryData;
 
 const exec = promisify(execCallback);
 
@@ -339,7 +349,9 @@ class ComponentRegistryGenerator {
 				output += `
   '${dir.toUpperCase()}': {
     directory: '${dir}',
-	description: '${Registry[dir]?.description}',
+	description: '${Registry[dir]?.description ?? "No description available."}',
+	isnew: ${Registry[dir]?.isnew ?? false},
+	category: '${Registry[dir]?.category ?? "Uncategorized"}',
     name: '${dir.charAt(0).toUpperCase()}${dir.slice(1)}',
     components: [${files
 						.sort()
@@ -407,7 +419,9 @@ export type COSSUIReadyComponents = {
 export type COSSUIDirectoryReadyComponents = {
   [K in keyof ${TYPES.objectTypeName}]: {
     description: string;
+	isnew: boolean;
     directory: K;
+	category: string;
     components: COSSUIReadyComponent<K>[];
   }
 };`;
