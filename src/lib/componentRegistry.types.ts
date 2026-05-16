@@ -2,7 +2,7 @@
 /**
  * !!!!!!!!!!
  * This file is auto-generated. Do not edit manually
- * Last generated at: 5/14/2026, 11:20:39 AM
+ * Last generated at: 5/16/2026, 11:48:02 AM
  * To update, run: pnpm generate:registry --format
  * @version 0.1.0
  * !!!!!!!!!!
@@ -55,6 +55,7 @@ export type COSSUIReadyComponents = {
 // Get ready components by directory
 export type COSSUIDirectoryReadyComponents = {
   [K in keyof COSSUIDirectories]: {
+    description: string;
     directory: K;
     components: COSSUIReadyComponent<K>[];
   };

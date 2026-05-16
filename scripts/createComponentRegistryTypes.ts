@@ -3,6 +3,7 @@ import { exec as execCallback } from 'node:child_process';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { promisify } from 'node:util';
+import * as Registry from "./registry.json"
 
 const exec = promisify(execCallback);
 
@@ -338,6 +339,7 @@ class ComponentRegistryGenerator {
 				output += `
   '${dir.toUpperCase()}': {
     directory: '${dir}',
+	description: '${Registry[dir]?.description}',
     name: '${dir.charAt(0).toUpperCase()}${dir.slice(1)}',
     components: [${files
 						.sort()
@@ -404,6 +406,7 @@ export type COSSUIReadyComponents = {
 // Get ready components by directory
 export type COSSUIDirectoryReadyComponents = {
   [K in keyof ${TYPES.objectTypeName}]: {
+    description: string;
     directory: K;
     components: COSSUIReadyComponent<K>[];
   }

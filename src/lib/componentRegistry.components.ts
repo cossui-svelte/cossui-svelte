@@ -2,7 +2,7 @@
 /**
  * !!!!!!!!!!
  * This file is auto-generated. Do not edit manually
- * Last generated at: 5/14/2026, 11:20:39 AM
+ * Last generated at: 5/16/2026, 11:48:01 AM
  * To update, run: pnpm generate:registry --format
  * @version 0.1.0
  * !!!!!!!!!!
@@ -31,6 +31,7 @@ export const COSSUI_DIRECTORIES = {
       'accordion-19.svelte',
       'accordion-20.svelte'
     ],
+    description: 'A set of collapsible panels with headings and content.',
     directory: 'accordion',
     name: 'Accordion',
     status: {
@@ -53,6 +54,7 @@ export const COSSUI_DIRECTORIES = {
       'alert-11.svelte',
       'alert-12.svelte'
     ],
+    description: 'A callout for displaying important information.',
     directory: 'alert',
     name: 'Alert',
     status: {
@@ -86,6 +88,7 @@ export const COSSUI_DIRECTORIES = {
       'avatar-22.svelte',
       'avatar-23.svelte'
     ],
+    description: 'An image element with a fallback for representing the user.',
     directory: 'avatar',
     name: 'Avatar',
     status: {
@@ -109,6 +112,7 @@ export const COSSUI_DIRECTORIES = {
       'badge-12.svelte',
       'badge-13.svelte'
     ],
+    description: 'A badge or a component that looks like a badge.',
     directory: 'badge',
     name: 'Badge',
     status: {
@@ -131,6 +135,7 @@ export const COSSUI_DIRECTORIES = {
       'banner-11.svelte',
       'banner-12.svelte'
     ],
+    description: 'undefined',
     directory: 'banner',
     name: 'Banner',
     status: {
@@ -149,6 +154,7 @@ export const COSSUI_DIRECTORIES = {
       'breadcrumb-07.svelte',
       'breadcrumb-08.svelte'
     ],
+    description: 'Displays the path to the current resource using a hierarchy of links.',
     directory: 'breadcrumb',
     name: 'Breadcrumb',
     status: {
@@ -169,6 +175,7 @@ export const COSSUI_DIRECTORIES = {
       'button-09.svelte',
       'button-10.svelte'
     ],
+    description: 'A button or a component that looks like a button.',
     directory: 'button',
     name: 'Button',
     status: {
@@ -197,6 +204,7 @@ export const COSSUI_DIRECTORIES = {
       'checkbox-17.svelte',
       'checkbox-18.svelte'
     ],
+    description: 'A control allowing the user to toggle between checked and not checked.',
     directory: 'checkbox',
     name: 'Checkbox',
     status: {
@@ -228,6 +236,7 @@ export const COSSUI_DIRECTORIES = {
       'dialog-20.svelte',
       'dialog-21.todo.svelte'
     ],
+    description: 'A popup that opens on top of the entire page.',
     directory: 'dialog',
     name: 'Dialog',
     status: {
@@ -297,6 +306,7 @@ export const COSSUI_DIRECTORIES = {
       'input-58.todo.svelte',
       'input-59.todo.svelte'
     ],
+    description: 'A native input element.',
     directory: 'input',
     name: 'Input',
     status: {
