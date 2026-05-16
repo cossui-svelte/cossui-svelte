@@ -39,7 +39,7 @@
 </svelte:head>
 
 {#snippet categoryCard(slug: string, name: string, desc: string | undefined)}
-  {@const href = `/docs/components/${slug}`}
+  {@const href = `/${slug}`}
   {@const isNew = PAGES_NEW.includes(href)}
   <CardFrame
     class="after:-inset-1.25 after:-z-1 w-full after:pointer-events-none after:absolute after:rounded-[calc(var(--radius-xl)+4px)] after:border after:border-border/64"
