@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Label from '$lib/components/ui/label.svelte';
-	import Textarea from '$lib/components/ui/textarea.svelte';
+	import { Label } from "$lib/components/ui/label";
+	import Textarea from "$lib/components/ui/textarea.svelte";
 
 	const uid = $props.id();
 </script>

@@ -1,15 +1,18 @@
 <script lang="ts">
-	import type { TransitionEventHandler } from 'svelte/elements';
+	import type { TransitionEventHandler } from "svelte/elements";
 
-	import Input from '$lib/components/ui/input.svelte';
-	import Label from '$lib/components/ui/label.svelte';
-	import { RadioGroup, RadioGroupItem } from '$lib/components/ui/radio-group/index.js';
+	import { Input } from "$lib/components/ui/input";
+	import { Label } from "$lib/components/ui/label";
+	import {
+		RadioGroup,
+		RadioGroupItem,
+	} from "$lib/components/ui/radio-group/index.js";
 
-	let selectedValue = $state('without-expansion');
+	let selectedValue = $state("without-expansion");
 	let inputElement = $state<HTMLInputElement | null>(null);
 
 	const handleTransitionEnd: TransitionEventHandler<HTMLDivElement> = () => {
-		if (selectedValue === 'with-expansion' && inputElement) {
+		if (selectedValue === "with-expansion" && inputElement) {
 			inputElement.focus();
 		}
 	};
@@ -26,8 +29,13 @@
 			/>
 			<div class="grow">
 				<div class="grid grow gap-2">
-					<Label for="radio-05-with-expansion">Radio with expansion</Label>
-					<p id="radio-05-with-expansion-description" class="text-xs text-muted-foreground">
+					<Label for="radio-05-with-expansion"
+						>Radio with expansion</Label
+					>
+					<p
+						id="radio-05-with-expansion-description"
+						class="text-xs text-muted-foreground"
+					>
 						You can use this radio with a label and a description.
 					</p>
 				</div>
@@ -38,7 +46,9 @@
 					id="radio-input-05"
 					aria-labelledby="radio-05-with-expansion"
 					class="grid transition-all ease-in-out data-[state=collapsed]:grid-rows-[0fr] data-[state=expanded]:grid-rows-[1fr] data-[state=collapsed]:opacity-0 data-[state=expanded]:opacity-100"
-					data-state={selectedValue === 'with-expansion' ? 'expanded' : 'collapsed'}
+					data-state={selectedValue === "with-expansion"
+						? "expanded"
+						: "collapsed"}
 				>
 					<div class="-m-2 overflow-hidden p-2">
 						<div class="mt-3">
@@ -48,7 +58,7 @@
 								id="radio-05-additional-info"
 								placeholder="Enter details"
 								aria-label="Additional Information"
-								disabled={selectedValue !== 'with-expansion'}
+								disabled={selectedValue !== "with-expansion"}
 							/>
 						</div>
 					</div>
@@ -64,8 +74,13 @@
 			aria-describedby="radio-05-without-expansion-description"
 		/>
 		<div class="grid grow gap-2">
-			<Label for="radio-05-without-expansion">Radio without expansion</Label>
-			<p id="radio-05-without-expansion-description" class="text-xs text-muted-foreground">
+			<Label for="radio-05-without-expansion"
+				>Radio without expansion</Label
+			>
+			<p
+				id="radio-05-without-expansion-description"
+				class="text-xs text-muted-foreground"
+			>
 				You can use this checkbox with a label and a description.
 			</p>
 		</div>

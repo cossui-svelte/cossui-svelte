@@ -1,12 +1,14 @@
 <script lang="ts">
-	import Label from '$lib/components/ui/label.svelte';
-	import Switch from '$lib/components/ui/switch.svelte';
+	import { Label } from "$lib/components/ui/label";
+	import Switch from "$lib/components/ui/switch.svelte";
 
 	const uid = $props.id();
 </script>
 
 <div>
-	<div class="relative inline-grid h-9 grid-cols-[1fr_1fr] items-center text-sm font-medium">
+	<div
+		class="relative inline-grid h-9 grid-cols-[1fr_1fr] items-center text-sm font-medium"
+	>
 		<Switch
 			id={uid}
 			checked

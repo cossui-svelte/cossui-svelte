@@ -1,15 +1,15 @@
 <script lang="ts">
-	import Label from '$lib/components/ui/label.svelte';
-	import * as Select from '$lib/components/ui/select/index.js';
+	import { Label } from "$lib/components/ui/label";
+	import * as Select from "$lib/components/ui/select/index.js";
 
 	const items = [
-		{ label: 'Svelte', value: 's1' },
-		{ label: 'Next.js', value: 's2' },
-		{ label: 'Astro', value: 's3' },
-		{ label: 'Gatsby', value: 's4' }
+		{ label: "Svelte", value: "s1" },
+		{ label: "Next.js", value: "s2" },
+		{ label: "Astro", value: "s3" },
+		{ label: "Gatsby", value: "s4" },
 	];
 
-	let value = $state('s2');
+	let value = $state("s2");
 
 	const selected = $derived(items.find((i) => i.value === value));
 
@@ -19,8 +19,11 @@
 <div class="space-y-2">
 	<Label for={uid}>Select with gray background</Label>
 	<Select.Root type="single" bind:value>
-		<Select.Trigger id={uid} class="border-transparent bg-muted shadow-none">
-			{selected?.label ?? 'Select a framework'}
+		<Select.Trigger
+			id={uid}
+			class="border-transparent bg-muted shadow-none"
+		>
+			{selected?.label ?? "Select a framework"}
 		</Select.Trigger>
 		<Select.Content>
 			{#each items as item (item.value)}

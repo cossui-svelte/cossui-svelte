@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Label from '$lib/components/ui/label.svelte';
-	import Switch from '$lib/components/ui/switch.svelte';
+	import { Label } from "$lib/components/ui/label";
+	import Switch from "$lib/components/ui/switch.svelte";
 
 	let checked = $state(false);
 
@@ -71,7 +71,9 @@
 		<div class="grid grow gap-2">
 			<Label for={uid}>
 				Label
-				<span class="text-xs font-normal leading-[inherit] text-muted-foreground">
+				<span
+					class="text-xs font-normal leading-[inherit] text-muted-foreground"
+				>
 					(Sublabel)
 				</span>
 			</Label>

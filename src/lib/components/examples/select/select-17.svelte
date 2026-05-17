@@ -1,17 +1,17 @@
 <script lang="ts">
-	import Label from '$lib/components/ui/label.svelte';
-	import * as Select from '$lib/components/ui/select/index.js';
+	import { Label } from "$lib/components/ui/label";
+	import * as Select from "$lib/components/ui/select/index.js";
 
-	import Clock from '@lucide/svelte/icons/clock';
+	import Clock from "@lucide/svelte/icons/clock";
 
 	const items = [
-		{ label: '00:00 AM - 11:59 PM', value: 's1' },
-		{ label: '01:00 AM - 12:59 PM', value: 's2' },
-		{ label: '02:00 AM - 01:59 PM', value: 's3' },
-		{ label: '03:00 AM - 02:59 PM', value: 's4' }
+		{ label: "00:00 AM - 11:59 PM", value: "s1" },
+		{ label: "01:00 AM - 12:59 PM", value: "s2" },
+		{ label: "02:00 AM - 01:59 PM", value: "s3" },
+		{ label: "03:00 AM - 02:59 PM", value: "s4" },
 	];
 
-	let value = $state('s1');
+	let value = $state("s1");
 
 	const selected = $derived(items.find((i) => i.value === value));
 
@@ -27,7 +27,7 @@
 			>
 				<Clock size={16} strokeWidth={2} aria-hidden="true" />
 			</div>
-			{selected?.label ?? 'Select a time'}
+			{selected?.label ?? "Select a time"}
 		</Select.Trigger>
 		<Select.Content>
 			{#each items as item (item.value)}

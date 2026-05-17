@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Label from '$lib/components/ui/label.svelte';
-	import Slider from '$lib/components/ui/slider.svelte';
+	import { Label } from "$lib/components/ui/label";
+	import Slider from "$lib/components/ui/slider.svelte";
 
 	let value = $state([25, 75]);
 </script>
@@ -12,5 +12,9 @@
 			{value[0]} - {value[1]}
 		</output>
 	</div>
-	<Slider type="multiple" bind:value aria-label="Dual range slider with output" />
+	<Slider
+		type="multiple"
+		bind:value
+		aria-label="Dual range slider with output"
+	/>
 </div>

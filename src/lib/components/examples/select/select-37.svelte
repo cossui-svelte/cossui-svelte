@@ -1,55 +1,54 @@
 <script lang="ts">
-	import Label from '$lib/components/ui/label.svelte';
-	import * as Select from '$lib/components/ui/select/index.js';
+	import { Label } from "$lib/components/ui/label";
+	import * as Select from "$lib/components/ui/select/index.js";
 
 	const continents = [
 		{
 			countries: [
-				{ flag: '🇺🇸', label: 'United States', value: 's1' },
-				{ flag: '🇨🇦', label: 'Canada', value: 's2' },
-				{ flag: '🇲🇽', label: 'Mexico', value: 's3' }
+				{ flag: "🇺🇸", label: "United States", value: "s1" },
+				{ flag: "🇨🇦", label: "Canada", value: "s2" },
+				{ flag: "🇲🇽", label: "Mexico", value: "s3" },
 			],
-			label: 'America'
+			label: "America",
 		},
 		{
 			countries: [
-				{ flag: '🇿🇦', label: 'South Africa', value: 's4' },
-				{ flag: '🇳🇬', label: 'Nigeria', value: 's5' },
-				{ flag: '🇲🇦', label: 'Morocco', value: 's6' }
+				{ flag: "🇿🇦", label: "South Africa", value: "s4" },
+				{ flag: "🇳🇬", label: "Nigeria", value: "s5" },
+				{ flag: "🇲🇦", label: "Morocco", value: "s6" },
 			],
-			label: 'Africa'
+			label: "Africa",
 		},
 		{
 			countries: [
-				{ flag: '🇨🇳', label: 'China', value: 's7' },
-				{ flag: '🇯🇵', label: 'Japan', value: 's8' },
-				{ flag: '🇮🇳', label: 'India', value: 's9' }
+				{ flag: "🇨🇳", label: "China", value: "s7" },
+				{ flag: "🇯🇵", label: "Japan", value: "s8" },
+				{ flag: "🇮🇳", label: "India", value: "s9" },
 			],
-			label: 'Asia'
+			label: "Asia",
 		},
 		{
 			countries: [
-				{ flag: '🇬🇧', label: 'United Kingdom', value: 's10' },
-				{ flag: '🇫🇷', label: 'France', value: 's11' },
-				{ flag: '🇩🇪', label: 'Germany', value: 's12' }
+				{ flag: "🇬🇧", label: "United Kingdom", value: "s10" },
+				{ flag: "🇫🇷", label: "France", value: "s11" },
+				{ flag: "🇩🇪", label: "Germany", value: "s12" },
 			],
-			label: 'Europe'
+			label: "Europe",
 		},
 		{
 			countries: [
-				{ flag: '🇦🇺', label: 'Australia', value: 's13' },
-				{ flag: '🇳🇿', label: 'New Zealand', value: 's14' }
+				{ flag: "🇦🇺", label: "Australia", value: "s13" },
+				{ flag: "🇳🇿", label: "New Zealand", value: "s14" },
 			],
-			label: 'Oceania'
-		}
+			label: "Oceania",
+		},
 	] as const;
 
-	const items = continents.reduce<(typeof continents)[number]['countries'][number][]>(
-		(previous, current) => [...previous, ...current.countries],
-		[]
-	);
+	const items = continents.reduce<
+		(typeof continents)[number]["countries"][number][]
+	>((previous, current) => [...previous, ...current.countries], []);
 
-	let value = $state('s2');
+	let value = $state("s2");
 
 	const selected = $derived(items.find((i) => i.value === value));
 

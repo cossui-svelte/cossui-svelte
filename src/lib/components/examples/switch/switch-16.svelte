@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Label from '$lib/components/ui/label.svelte';
-	import Switch from '$lib/components/ui/switch.svelte';
+	import { Label } from "$lib/components/ui/label";
+	import Switch from "$lib/components/ui/switch.svelte";
 
 	let checked = $state(false);
 
@@ -26,7 +26,10 @@
 			aria-hidden="true"
 		>
 			<rect width="32" height="24" rx="4" fill="#252525" />
-			<path d="M19.0537 6.49742H12.9282V17.5026H19.0537V6.49742Z" fill="#FF5A00" />
+			<path
+				d="M19.0537 6.49742H12.9282V17.5026H19.0537V6.49742Z"
+				fill="#FF5A00"
+			/>
 			<path
 				d="M13.3359 12C13.3359 9.76408 14.3871 7.77961 16 6.49741C14.8129 5.56408 13.3155 5 11.6822 5C7.81295 5 4.68221 8.13074 4.68221 12C4.68221 15.8693 7.81295 19 11.6822 19C13.3155 19 14.8129 18.4359 16 17.5026C14.3848 16.2385 13.3359 14.2359 13.3359 12Z"
 				fill="#EB001B"
@@ -39,7 +42,9 @@
 		<div class="grid grow gap-2">
 			<Label for={uid}>
 				Label
-				<span class="text-xs font-normal leading-[inherit] text-muted-foreground">
+				<span
+					class="text-xs font-normal leading-[inherit] text-muted-foreground"
+				>
 					(Sublabel)
 				</span>
 			</Label>

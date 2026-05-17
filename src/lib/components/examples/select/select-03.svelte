@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Label from '$lib/components/ui/label.svelte';
-	import SelectNative from '$lib/components/ui/select-native.svelte';
+	import { Label } from "$lib/components/ui/label";
+	import SelectNative from "$lib/components/ui/select-native.svelte";
 
-	import Clock from '@lucide/svelte/icons/clock';
+	import Clock from "@lucide/svelte/icons/clock";
 
 	const uid = $props.id();
 </script>

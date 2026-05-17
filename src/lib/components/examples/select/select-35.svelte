@@ -1,18 +1,18 @@
 <script lang="ts">
-	import Label from '$lib/components/ui/label.svelte';
-	import * as Select from '$lib/components/ui/select/index.js';
+	import { Label } from "$lib/components/ui/label";
+	import * as Select from "$lib/components/ui/select/index.js";
 
-	import MonitorCog from '@lucide/svelte/icons/monitor-cog';
-	import Moon from '@lucide/svelte/icons/moon';
-	import Sun from '@lucide/svelte/icons/sun';
+	import MonitorCog from "@lucide/svelte/icons/monitor-cog";
+	import Moon from "@lucide/svelte/icons/moon";
+	import Sun from "@lucide/svelte/icons/sun";
 
 	const items = [
-		{ icon: Sun, label: 'Light', value: 's1' },
-		{ icon: Moon, label: 'Dark', value: 's2' },
-		{ icon: MonitorCog, label: 'System', value: 's3' }
+		{ icon: Sun, label: "Light", value: "s1" },
+		{ icon: Moon, label: "Dark", value: "s2" },
+		{ icon: MonitorCog, label: "System", value: "s3" },
 	];
 
-	let value = $state('s1');
+	let value = $state("s1");
 
 	const selected = $derived(items.find((i) => i.value === value));
 

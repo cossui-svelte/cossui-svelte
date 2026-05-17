@@ -1,15 +1,15 @@
 <script lang="ts">
-	import Label from '$lib/components/ui/label.svelte';
-	import * as Select from '$lib/components/ui/select/index.js';
+	import { Label } from "$lib/components/ui/label";
+	import * as Select from "$lib/components/ui/select/index.js";
 
 	const items = [
-		{ label: 'Svelte', value: 's1' },
-		{ label: 'Next.js', value: 's2' },
-		{ label: 'Astro', value: 's3' },
-		{ label: 'Gatsby', value: 's4' }
+		{ label: "Svelte", value: "s1" },
+		{ label: "Next.js", value: "s2" },
+		{ label: "Astro", value: "s3" },
+		{ label: "Gatsby", value: "s4" },
 	];
 
-	let value = $state('s1');
+	let value = $state("s1");
 
 	const selected = $derived(items.find((i) => i.value === value));
 
@@ -19,7 +19,9 @@
 <div class="space-y-2">
 	<Label for={uid}>Disabled select</Label>
 	<Select.Root type="single" bind:value disabled>
-		<Select.Trigger id={uid}>{selected?.label ?? 'Select a framework'}</Select.Trigger>
+		<Select.Trigger id={uid}
+			>{selected?.label ?? "Select a framework"}</Select.Trigger
+		>
 		<Select.Content>
 			{#each items as item (item.value)}
 				<Select.Item value={item.value}>

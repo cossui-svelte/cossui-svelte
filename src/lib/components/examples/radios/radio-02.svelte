@@ -1,6 +1,9 @@
 <script lang="ts">
-	import Label from '$lib/components/ui/label.svelte';
-	import { RadioGroup, RadioGroupItem } from '$lib/components/ui/radio-group/index.js';
+	import { Label } from "$lib/components/ui/label";
+	import {
+		RadioGroup,
+		RadioGroupItem,
+	} from "$lib/components/ui/radio-group/index.js";
 </script>
 
 <RadioGroup value="r2" --primary="238.7 83.5% 66.7%" --ring="238.7 83.5% 66.7%">

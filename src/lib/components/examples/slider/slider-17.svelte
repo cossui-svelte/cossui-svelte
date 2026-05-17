@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Label from '$lib/components/ui/label.svelte';
-	import Slider from '$lib/components/ui/slider.svelte';
+	import { Label } from "$lib/components/ui/label";
+	import Slider from "$lib/components/ui/slider.svelte";
 
-	const labels = ['Awful', 'Poor', 'Okay', 'Good', 'Amazing'];
+	const labels = ["Awful", "Poor", "Okay", "Good", "Amazing"];
 
 	let value = $state(3);
 </script>
@@ -14,7 +14,13 @@
 	</div>
 	<div class="flex items-center gap-3">
 		<span class="text-2xl">😡</span>
-		<Slider type="single" bind:value min={1} max={5} aria-label="Rate your experience" />
+		<Slider
+			type="single"
+			bind:value
+			min={1}
+			max={5}
+			aria-label="Rate your experience"
+		/>
 		<span class="text-2xl">😍</span>
 	</div>
 </div>

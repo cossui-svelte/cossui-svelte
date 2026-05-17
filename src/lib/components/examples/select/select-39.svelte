@@ -1,15 +1,27 @@
 <script lang="ts">
-	import Label from '$lib/components/ui/label.svelte';
-	import * as Select from '$lib/components/ui/select/index.js';
-	import { cn } from '$lib/utils.js';
+	import { Label } from "$lib/components/ui/label";
+	import * as Select from "$lib/components/ui/select/index.js";
+	import { cn } from "$lib/utils.js";
 
 	const items = [
-		{ class: 'bg-indigo-400/20 text-indigo-500', name: 'Frank Morris', value: 's1' },
-		{ class: 'bg-purple-400/20 text-purple-500', name: 'Xavier Guerra', value: 's2' },
-		{ class: 'bg-rose-400/20 text-rose-500', name: 'Anne Kelley', value: 's3' }
+		{
+			class: "bg-indigo-400/20 text-indigo-500",
+			name: "Frank Morris",
+			value: "s1",
+		},
+		{
+			class: "bg-purple-400/20 text-purple-500",
+			name: "Xavier Guerra",
+			value: "s2",
+		},
+		{
+			class: "bg-rose-400/20 text-rose-500",
+			name: "Anne Kelley",
+			value: "s3",
+		},
 	] as const;
 
-	let value = $state('s1');
+	let value = $state("s1");
 
 	const selected = $derived(items.find((i) => i.value === value));
 
@@ -20,8 +32,8 @@
 	<span
 		data-square
 		class={cn(
-			'flex size-5 items-center justify-center rounded bg-muted text-xs font-medium text-muted-foreground',
-			item.class
+			"flex size-5 items-center justify-center rounded bg-muted text-xs font-medium text-muted-foreground",
+			item.class,
 		)}
 		aria-hidden="true"
 	>
@@ -36,8 +48,8 @@
 		<Select.Trigger
 			id={uid}
 			class={cn(
-				'[&>span]:flex [&>span]:items-center [&>span]:gap-2 [&>span_img]:shrink-0',
-				selected && 'ps-2'
+				"[&>span]:flex [&>span]:items-center [&>span]:gap-2 [&>span_img]:shrink-0",
+				selected && "ps-2",
 			)}
 		>
 			{#if selected}
@@ -50,7 +62,9 @@
 			class="[&_*[data-select-item]>span]:end-2 [&_*[data-select-item]>span]:start-auto [&_*[data-select-item]>span]:flex [&_*[data-select-item]>span]:items-center [&_*[data-select-item]>span]:gap-2 [&_*[data-select-item]]:pe-8 [&_*[data-select-item]]:ps-2"
 		>
 			<Select.Group>
-				<Select.GroupHeading class="ps-2">Impersonate user</Select.GroupHeading>
+				<Select.GroupHeading class="ps-2"
+					>Impersonate user</Select.GroupHeading
+				>
 				{#each items as item (item.value)}
 					<Select.Item value={item.value}>
 						{@render user(item)}

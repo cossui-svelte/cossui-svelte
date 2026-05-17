@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Label from '$lib/components/ui/label.svelte';
-	import Textarea from '$lib/components/ui/textarea.svelte';
-	import { useCharacterLimit } from '$lib/hooks/use-character-limit.svelte';
+	import { Label } from "$lib/components/ui/label";
+	import Textarea from "$lib/components/ui/textarea.svelte";
+	import { useCharacterLimit } from "$lib/hooks/use-character-limit.svelte";
 
 	const maxLength = 180;
 	const characterLimit = useCharacterLimit(maxLength);
@@ -23,7 +23,9 @@
 		role="status"
 		aria-live="polite"
 	>
-		<span class="tabular-nums">{characterLimit.maxLength - characterLimit.characterCount}</span>
+		<span class="tabular-nums"
+			>{characterLimit.maxLength - characterLimit.characterCount}</span
+		>
 		characters left
 	</p>
 </div>

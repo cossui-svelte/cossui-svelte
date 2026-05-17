@@ -1,19 +1,34 @@
 <script lang="ts">
-	import Label from '$lib/components/ui/label.svelte';
-	import * as Select from '$lib/components/ui/select/index.js';
-	import { cn } from '$lib/utils.js';
+	import { Label } from "$lib/components/ui/label";
+	import * as Select from "$lib/components/ui/select/index.js";
+	import { cn } from "$lib/utils.js";
 
-	import Avatar01 from '$lib/assets/avatar-40-01.jpg?w=80&h=80&enhanced';
-	import Avatar02 from '$lib/assets/avatar-40-02.jpg?w=80&h=80&enhanced';
-	import Avatar03 from '$lib/assets/avatar-40-03.jpg?w=80&h=80&enhanced';
+	import Avatar01 from "$lib/assets/avatar-40-01.jpg?w=80&h=80&enhanced";
+	import Avatar02 from "$lib/assets/avatar-40-02.jpg?w=80&h=80&enhanced";
+	import Avatar03 from "$lib/assets/avatar-40-03.jpg?w=80&h=80&enhanced";
 
 	const items = [
-		{ avatar: Avatar01, name: 'Jenny Hamilton', username: '@jennycodes', value: 's1' },
-		{ avatar: Avatar02, name: 'Paul Smith', username: '@paulsmith', value: 's2' },
-		{ avatar: Avatar03, name: 'Luna Wyen', username: '@wyen.luna', value: 's3' }
+		{
+			avatar: Avatar01,
+			name: "Jenny Hamilton",
+			username: "@jennycodes",
+			value: "s1",
+		},
+		{
+			avatar: Avatar02,
+			name: "Paul Smith",
+			username: "@paulsmith",
+			value: "s2",
+		},
+		{
+			avatar: Avatar03,
+			name: "Luna Wyen",
+			username: "@wyen.luna",
+			value: "s3",
+		},
 	] as const;
 
-	let value = $state('s1');
+	let value = $state("s1");
 
 	const selected = $derived(items.find((i) => i.value === value));
 
@@ -22,10 +37,16 @@
 
 {#snippet user(item: (typeof items)[number])}
 	<span class="flex items-center gap-2">
-		<enhanced:img class=" size-10 rounded-full" src={item.avatar} alt={item.name} />
+		<enhanced:img
+			class=" size-10 rounded-full"
+			src={item.avatar}
+			alt={item.name}
+		/>
 		<span>
 			<span class="block font-medium">{item.name}</span>
-			<span class="mt-0.5 block text-xs text-muted-foreground">{item.username}</span>
+			<span class="mt-0.5 block text-xs text-muted-foreground"
+				>{item.username}</span
+			>
 		</span>
 	</span>
 {/snippet}
@@ -36,8 +57,8 @@
 		<Select.Trigger
 			id={uid}
 			class={cn(
-				'h-auto [&>span]:flex [&>span]:items-center [&>span]:gap-2 [&>span_img]:shrink-0',
-				selected && 'ps-2'
+				"h-auto [&>span]:flex [&>span]:items-center [&>span]:gap-2 [&>span_img]:shrink-0",
+				selected && "ps-2",
 			)}
 		>
 			{#if selected}

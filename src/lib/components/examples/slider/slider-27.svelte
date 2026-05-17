@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Label from '$lib/components/ui/label.svelte';
-	import Slider from '$lib/components/ui/slider.svelte';
+	import { Label } from "$lib/components/ui/label";
+	import Slider from "$lib/components/ui/slider.svelte";
 </script>
 
 <div class="space-y-4">
@@ -17,7 +17,9 @@
 				aria-label="60 Hz"
 				showTooltip
 			/>
-			<Label class="flex w-0 justify-center text-xs text-muted-foreground">60</Label>
+			<Label class="flex w-0 justify-center text-xs text-muted-foreground"
+				>60</Label
+			>
 		</div>
 		<div class="flex flex-col items-center gap-2">
 			<Slider
@@ -30,7 +32,9 @@
 				aria-label="250 Hz"
 				showTooltip
 			/>
-			<Label class="flex w-0 justify-center text-xs text-muted-foreground">250</Label>
+			<Label class="flex w-0 justify-center text-xs text-muted-foreground"
+				>250</Label
+			>
 		</div>
 		<div class="flex flex-col items-center gap-2">
 			<Slider
@@ -43,7 +47,9 @@
 				aria-label="1k"
 				showTooltip
 			/>
-			<Label class="flex w-0 justify-center text-xs text-muted-foreground">1k</Label>
+			<Label class="flex w-0 justify-center text-xs text-muted-foreground"
+				>1k</Label
+			>
 		</div>
 		<div class="flex flex-col items-center gap-2">
 			<Slider
@@ -56,7 +62,9 @@
 				aria-label="4k"
 				showTooltip
 			/>
-			<Label class="flex w-0 justify-center text-xs text-muted-foreground">4k</Label>
+			<Label class="flex w-0 justify-center text-xs text-muted-foreground"
+				>4k</Label
+			>
 		</div>
 		<div class="flex flex-col items-center gap-2">
 			<Slider
@@ -69,7 +77,9 @@
 				aria-label="16k"
 				showTooltip
 			/>
-			<Label class="flex w-0 justify-center text-xs text-muted-foreground">16K</Label>
+			<Label class="flex w-0 justify-center text-xs text-muted-foreground"
+				>16K</Label
+			>
 		</div>
 	</div>
 </div>

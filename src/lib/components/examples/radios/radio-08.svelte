@@ -1,6 +1,9 @@
 <script lang="ts">
-	import Label from '$lib/components/ui/label.svelte';
-	import { RadioGroup, RadioGroupItem } from '$lib/components/ui/radio-group/index.js';
+	import { Label } from "$lib/components/ui/label";
+	import {
+		RadioGroup,
+		RadioGroupItem,
+	} from "$lib/components/ui/radio-group/index.js";
 </script>
 
 <RadioGroup class="gap-2" value="r1">
@@ -17,11 +20,16 @@
 		<div class="grid grow gap-2">
 			<Label for="radio-08-r1">
 				Label
-				<span class="text-xs font-normal leading-[inherit] text-muted-foreground">
+				<span
+					class="text-xs font-normal leading-[inherit] text-muted-foreground"
+				>
 					(Sublabel)
 				</span>
 			</Label>
-			<p id="radio-08-r1-description" class="text-xs text-muted-foreground">
+			<p
+				id="radio-08-r1-description"
+				class="text-xs text-muted-foreground"
+			>
 				You can use this card with a label and a description.
 			</p>
 		</div>
@@ -39,11 +47,16 @@
 		<div class="grid grow gap-2">
 			<Label for="radio-08-r2">
 				Label
-				<span class="text-xs font-normal leading-[inherit] text-muted-foreground">
+				<span
+					class="text-xs font-normal leading-[inherit] text-muted-foreground"
+				>
 					(Sublabel)
 				</span>
 			</Label>
-			<p id="radio-08-r2-description" class="text-xs text-muted-foreground">
+			<p
+				id="radio-08-r2-description"
+				class="text-xs text-muted-foreground"
+			>
 				You can use this card with a label and a description.
 			</p>
 		</div>

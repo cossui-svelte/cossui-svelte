@@ -1,15 +1,15 @@
 <script lang="ts">
-	import { buttonVariants } from '$lib/components/ui/button.svelte';
+	import { buttonVariants } from "$lib/components/ui/button";
 
-	import ChevronLeft from '@lucide/svelte/icons/chevron-left';
-	import ChevronRight from '@lucide/svelte/icons/chevron-right';
+	import ChevronLeft from "@lucide/svelte/icons/chevron-left";
+	import ChevronRight from "@lucide/svelte/icons/chevron-right";
 	import {
 		Pagination,
 		PaginationContent,
 		PaginationItem,
-		PaginationLink
-	} from '$lib/components/ui/pagination';
-	import { cn } from '$lib/utils';
+		PaginationLink,
+	} from "$lib/components/ui/pagination";
+	import { cn } from "$lib/utils";
 
 	type PaginationProps = {
 		currentPage: number;
@@ -23,14 +23,14 @@
 		<PaginationItem>
 			<PaginationLink
 				class={cn(
-					'aria-disabled:pointer-events-none aria-disabled:opacity-50',
+					"aria-disabled:pointer-events-none aria-disabled:opacity-50",
 					buttonVariants({
-						variant: 'outline'
-					})
+						variant: "outline",
+					}),
 				)}
 				aria-label="Go to previous page"
 				aria-disabled={currentPage === 1 ? true : undefined}
-				role={currentPage === 1 ? 'link' : undefined}
+				role={currentPage === 1 ? "link" : undefined}
 			>
 				<ChevronLeft size={16} stroke-width={2} aria-hidden="true" />
 			</PaginationLink>
@@ -44,15 +44,17 @@
 		<PaginationItem>
 			<PaginationLink
 				class={cn(
-					'aria-disabled:pointer-events-none aria-disabled:opacity-50',
+					"aria-disabled:pointer-events-none aria-disabled:opacity-50",
 					buttonVariants({
-						variant: 'outline'
-					})
+						variant: "outline",
+					}),
 				)}
-				href={currentPage === totalPages ? undefined : `#/page/${currentPage + 1}`}
+				href={currentPage === totalPages
+					? undefined
+					: `#/page/${currentPage + 1}`}
 				aria-label="Go to next page"
 				aria-disabled={currentPage === totalPages ? true : undefined}
-				role={currentPage === totalPages ? 'link' : undefined}
+				role={currentPage === totalPages ? "link" : undefined}
 			>
 				<ChevronRight size={16} stroke-width={2} aria-hidden="true" />
 			</PaginationLink>

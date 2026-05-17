@@ -1,14 +1,17 @@
 <script lang="ts">
-	import Input from '$lib/components/ui/input.svelte';
-	import Label from '$lib/components/ui/label.svelte';
-	import Slider from '$lib/components/ui/slider.svelte';
+	import { Input } from "$lib/components/ui/input";
+	import { Label } from "$lib/components/ui/label";
+	import Slider from "$lib/components/ui/slider.svelte";
 
 	const min = 0;
 	const max = 200;
 
 	let value = $state([50, 150]);
 
-	function handleInputChange(e: Event & { currentTarget: HTMLInputElement }, index: number) {
+	function handleInputChange(
+		e: Event & { currentTarget: HTMLInputElement },
+		index: number,
+	) {
 		const v = parseFloat(e.currentTarget.value) || 0;
 		if (index == 0 && v > value[1]) value = [value[1], value[1]];
 		else if (index == 1 && v < value[0]) value = [value[0], value[0]];

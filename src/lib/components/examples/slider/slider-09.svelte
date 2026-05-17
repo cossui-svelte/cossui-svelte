@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Label from '$lib/components/ui/label.svelte';
-	import Slider from '$lib/components/ui/slider.svelte';
+	import { Label } from "$lib/components/ui/label";
+	import Slider from "$lib/components/ui/slider.svelte";
 </script>
 
 <div class="space-y-4">
@@ -13,6 +13,11 @@
 			<span>Low</span>
 			<span>High</span>
 		</span>
-		<Slider type="single" value={50} step={10} aria-label="Slider with labels" />
+		<Slider
+			type="single"
+			value={50}
+			step={10}
+			aria-label="Slider with labels"
+		/>
 	</div>
 </div>

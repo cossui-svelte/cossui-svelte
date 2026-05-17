@@ -1,13 +1,13 @@
 <script lang="ts">
-	import Label from '$lib/components/ui/label.svelte';
-	import * as Select from '$lib/components/ui/select/index.js';
+	import { Label } from "$lib/components/ui/label";
+	import * as Select from "$lib/components/ui/select/index.js";
 
 	const items = [
-		{ label: 'Javascript', value: 's1' },
-		{ label: 'Bash', value: 's2' }
+		{ label: "Javascript", value: "s1" },
+		{ label: "Bash", value: "s2" },
 	];
 
-	let value = $state('s1');
+	let value = $state("s1");
 
 	const selected = $derived(items.find((i) => i.value === value));
 

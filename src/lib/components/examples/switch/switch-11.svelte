@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Label from '$lib/components/ui/label.svelte';
-	import Switch from '$lib/components/ui/switch.svelte';
+	import { Label } from "$lib/components/ui/label";
+	import Switch from "$lib/components/ui/switch.svelte";
 
-	import IconMoon from '@lucide/svelte/icons/moon';
-	import IconSun from '@lucide/svelte/icons/sun';
+	import IconMoon from "@lucide/svelte/icons/moon";
+	import IconSun from "@lucide/svelte/icons/sun";
 
 	let checked = $state(false);
 
@@ -16,7 +16,10 @@
 
 <div>
 	<Label for={uid} class="sr-only">Toggle switch</Label>
-	<div class="group inline-flex items-center gap-2" data-state={checked ? 'checked' : 'unchecked'}>
+	<div
+		class="group inline-flex items-center gap-2"
+		data-state={checked ? "checked" : "unchecked"}
+	>
 		<button
 			id="{uid}-off-label"
 			class="flex-1 cursor-pointer text-right text-sm font-medium group-data-[state=checked]:text-muted-foreground/70"
