@@ -1,114 +1,128 @@
 <script lang="ts">
-	import * as Accordion from '$lib/components/ui/accordion/index.js';
+	import {
+		Accordion,
+		AccordionItem,
+		AccordionTrigger,
+		AccordionContent,
+	} from "$lib/components/ui/accordion";
 
-	import ChevronDown from '@lucide/svelte/icons/chevron-down';
+	import ChevronDown from "@lucide/svelte/icons/chevron-down";
 	import {
 		Collapsible,
 		CollapsibleContent,
-		CollapsibleTrigger
-	} from '$lib/components/ui/collapsible';
+		CollapsibleTrigger,
+	} from "$lib/components/ui/collapsible";
 
 	const items = [
 		{
 			collapsibles: [
 				{
-					content: 'We optimize every component for maximum performance and minimal bundle size.',
-					title: 'What about performance?'
+					content:
+						"We optimize every component for maximum performance and minimal bundle size.",
+					title: "What about performance?",
 				},
 				{
 					content:
-						'Our documentation is comprehensive and includes live examples for every component.',
-					title: 'How is the documentation?'
-				}
+						"Our documentation is comprehensive and includes live examples for every component.",
+					title: "How is the documentation?",
+				},
 			],
-			id: '1',
-			title: 'What makes Origin UI - Svelte different?'
+			id: "1",
+			title: "What makes Origin UI - Svelte different?",
 		},
 		{
 			collapsibles: [
 				{
 					content:
-						'Yes, our theming system is fully customizable and supports both light and dark modes.',
-					title: 'Can I use custom themes?'
+						"Yes, our theming system is fully customizable and supports both light and dark modes.",
+					title: "Can I use custom themes?",
 				},
 				{
-					content: 'We have first-class support for Tailwind CSS with custom utility classes.',
-					title: 'What about Tailwind support?'
-				}
+					content:
+						"We have first-class support for Tailwind CSS with custom utility classes.",
+					title: "What about Tailwind support?",
+				},
 			],
-			id: '2',
-			title: 'How can I customize the components?'
+			id: "2",
+			title: "How can I customize the components?",
 		},
 		{
 			collapsibles: [
 				{
 					content:
-						'Our components are tree-shakeable and typically add minimal overhead to your bundle.',
+						"Our components are tree-shakeable and typically add minimal overhead to your bundle.",
 					open: true,
-					title: "What's the bundle size impact?"
+					title: "What's the bundle size impact?",
 				},
 				{
-					content: 'We support automatic code splitting for optimal loading performance.',
-					title: 'How is code splitting handled?'
-				}
+					content:
+						"We support automatic code splitting for optimal loading performance.",
+					title: "How is code splitting handled?",
+				},
 			],
-			id: '3',
-			title: 'Is Origin UI - Svelte optimized for performance?'
+			id: "3",
+			title: "Is Origin UI - Svelte optimized for performance?",
 		},
 		{
 			collapsibles: [
 				{
-					content: 'We test with NVDA, VoiceOver, and JAWS to ensure broad compatibility.',
-					title: 'Which screen readers are supported?'
+					content:
+						"We test with NVDA, VoiceOver, and JAWS to ensure broad compatibility.",
+					title: "Which screen readers are supported?",
 				},
 				{
 					content:
-						'Full keyboard navigation support is implemented following WAI-ARIA best practices.',
-					title: 'What about keyboard navigation?'
-				}
+						"Full keyboard navigation support is implemented following WAI-ARIA best practices.",
+					title: "What about keyboard navigation?",
+				},
 			],
-			id: '4',
-			title: 'How accessible are the components?'
-		}
+			id: "4",
+			title: "How accessible are the components?",
+		},
 	];
 </script>
 
 <div class="space-y-4">
 	<h2 class="text-xl font-bold">Table w/ left plus-minus</h2>
-	<Accordion.Root type="single" class="w-full -space-y-px" value="3">
+	<Accordion type="single" class="w-full -space-y-px" value="3">
 		{#each items as item (item.id)}
-			<Accordion.Item
+			<AccordionItem
 				value={item.id}
 				class="overflow-hidden border bg-background first:rounded-t-lg last:rounded-b-lg"
 			>
-				<Accordion.Trigger class="px-4 py-3 text-[15px] leading-6 hover:no-underline">
+				<AccordionTrigger
+					class="px-4 py-3 text-[15px] leading-6 hover:no-underline"
+				>
 					{item.title}
-				</Accordion.Trigger>
+				</AccordionTrigger>
 
-				<Accordion.Content class="p-0">
+				<AccordionContent class="p-0">
 					{#each item.collapsibles as collapsible (collapsible.title)}
 						{@render CollapsibleDemo({
 							content: collapsible.content,
 							open: collapsible.open ?? false,
-							title: collapsible.title
+							title: collapsible.title,
 						})}
 					{/each}
-				</Accordion.Content>
-			</Accordion.Item>
+				</AccordionContent>
+			</AccordionItem>
 		{/each}
-	</Accordion.Root>
+	</Accordion>
 </div>
 
 {#snippet CollapsibleDemo({
 	content,
 	open,
-	title
+	title,
 }: {
 	content: string;
 	open: boolean;
 	title: string;
 })}
-	<Collapsible class="space-y-1 border-t border-border bg-accent px-4 py-3" {open}>
+	<Collapsible
+		class="space-y-1 border-t border-border bg-accent px-4 py-3"
+		{open}
+	>
 		<CollapsibleTrigger
 			class="flex gap-2 text-[15px] font-semibold leading-6 [&[data-state=open]>svg]:rotate-180"
 		>
