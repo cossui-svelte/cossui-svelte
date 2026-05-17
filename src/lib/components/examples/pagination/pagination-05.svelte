@@ -1,7 +1,11 @@
 <script lang="ts">
-	import Button from '../ui/button.svelte';
+	import { Button } from "$lib/components/ui/button";
 
-	import { Pagination, PaginationContent, PaginationItem } from '$lib/components/ui/pagination';
+	import {
+		Pagination,
+		PaginationContent,
+		PaginationItem,
+	} from "$lib/components/ui/pagination";
 
 	type PaginationProps = {
 		currentPage: number;
@@ -23,8 +27,10 @@
 					variant="outline"
 					class="aria-disabled:pointer-events-none aria-disabled:opacity-50"
 					aria-disabled={currentPage === 1 ? true : undefined}
-					role={currentPage === 1 ? 'link' : undefined}
-					href={currentPage === 1 ? undefined : `#/page/${currentPage - 1}`}
+					role={currentPage === 1 ? "link" : undefined}
+					href={currentPage === 1
+						? undefined
+						: `#/page/${currentPage - 1}`}
 				>
 					Previous
 				</Button>
@@ -34,9 +40,13 @@
 				<Button
 					variant="outline"
 					class="aria-disabled:pointer-events-none aria-disabled:opacity-50"
-					aria-disabled={currentPage === totalPages ? true : undefined}
-					role={currentPage === totalPages ? 'link' : undefined}
-					href={currentPage === totalPages ? undefined : `#/page/${currentPage + 1}`}
+					aria-disabled={currentPage === totalPages
+						? true
+						: undefined}
+					role={currentPage === totalPages ? "link" : undefined}
+					href={currentPage === totalPages
+						? undefined
+						: `#/page/${currentPage + 1}`}
 				>
 					Next
 				</Button>

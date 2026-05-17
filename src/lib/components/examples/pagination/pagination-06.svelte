@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { usePagination } from '$lib/hooks/use-pagination.svelte';
+	import { usePagination } from "$lib/hooks/use-pagination.svelte";
 
 	import {
 		Pagination,
@@ -7,9 +7,9 @@
 		PaginationEllipsis,
 		PaginationItem,
 		PaginationLink,
-		PaginationNextButton,
-		PaginationPrevButton
-	} from '$lib/components/ui/pagination';
+		PaginationNext,
+		PaginationPrevious,
+	} from "$lib/components/ui/pagination";
 
 	type PaginationProps = {
 		currentPage: number;
@@ -20,13 +20,13 @@
 	let {
 		currentPage = 1,
 		paginationItemsToDisplay = 5,
-		totalPages = 10
+		totalPages = 10,
 	}: PaginationProps = $props();
 
 	const pagination = usePagination({
 		currentPage,
 		paginationItemsToDisplay,
-		totalPages
+		totalPages,
 	});
 </script>
 
@@ -34,11 +34,13 @@
 	<PaginationContent>
 		<!-- Previous page button -->
 		<PaginationItem>
-			<PaginationPrevButton
+			<PaginationPrevious
 				class="aria-disabled:pointer-events-none aria-disabled:opacity-50"
-				href={currentPage === 1 ? undefined : `#/page/${currentPage - 1}`}
+				href={currentPage === 1
+					? undefined
+					: `#/page/${currentPage - 1}`}
 				aria-disabled={currentPage === 1 ? true : undefined}
-				role={currentPage === 1 ? 'link' : undefined}
+				role={currentPage === 1 ? "link" : undefined}
 			/>
 		</PaginationItem>
 
@@ -52,7 +54,10 @@
 		<!-- Page number links  -->
 		{#each pagination.pages as page (page)}
 			<PaginationItem>
-				<PaginationLink href="#/page/{page}" isActive={page === currentPage}>
+				<PaginationLink
+					href="#/page/{page}"
+					isActive={page === currentPage}
+				>
 					{page}
 				</PaginationLink>
 			</PaginationItem>
@@ -67,11 +72,13 @@
 
 		<!-- Next page button -->
 		<PaginationItem>
-			<PaginationNextButton
+			<PaginationNext
 				class="aria-disabled:pointer-events-none aria-disabled:opacity-50"
-				href={currentPage === totalPages ? undefined : `#/page/${currentPage + 1}`}
+				href={currentPage === totalPages
+					? undefined
+					: `#/page/${currentPage + 1}`}
 				aria-disabled={currentPage === totalPages ? true : undefined}
-				role={currentPage === totalPages ? 'link' : undefined}
+				role={currentPage === totalPages ? "link" : undefined}
 			/>
 		</PaginationItem>
 	</PaginationContent>
