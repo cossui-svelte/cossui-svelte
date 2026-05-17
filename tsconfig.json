@@ -10,5 +10,6 @@
     "sourceMap": true,
     "strict": true
   },
+  "exclude": ["**/*.old", "**/*.old/**"],
   "extends": "./.svelte-kit/tsconfig.json"
 }

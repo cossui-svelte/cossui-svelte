@@ -1,4 +1,3 @@
-
 import Toggle from './toggle.svelte';
 
 export {
@@ -8,4 +7,4 @@ export {
   type ToggleVariants,
   toggleVariants
 } from './toggle.svelte';
-export { Toggle }
+export { Toggle };

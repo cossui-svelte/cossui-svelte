@@ -1,17 +1,21 @@
 <script lang="ts">
-	import type { User } from '$data/api/data/users.handlers';
+	import type { User } from "$data/api/data/users.handlers";
 
-	import Badge from '$lib/components/ui/badge.svelte';
-	import Checkbox from '$lib/components/ui/checkbox.svelte';
+	import { Badge } from "$lib/components/ui/badge";
+	import Checkbox from "$lib/components/ui/checkbox.svelte";
 
-	import { type ColumnDef, getCoreRowModel, type RowSelectionState } from '@tanstack/table-core';
-	import { fetchUsers } from '$data/api/data/users';
+	import {
+		type ColumnDef,
+		getCoreRowModel,
+		type RowSelectionState,
+	} from "@tanstack/table-core";
+	import { fetchUsers } from "$data/api/data/users";
 	import {
 		createSvelteTable,
 		FlexRender,
 		renderComponent,
-		renderSnippet
-	} from '$lib/components/ui/data-table';
+		renderSnippet,
+	} from "$lib/components/ui/data-table";
 	import {
 		Table,
 		TableBody,
@@ -19,109 +23,115 @@
 		TableFooter,
 		TableHead,
 		TableHeader,
-		TableRow
-	} from '$lib/components/ui/table';
-	import { cn } from '$lib/utils';
-	import { createRawSnippet } from 'svelte';
+		TableRow,
+	} from "$lib/components/ui/table";
+	import { cn } from "$lib/utils";
+	import { createRawSnippet } from "svelte";
 
 	const columns: ColumnDef<User>[] = [
 		{
 			cell: ({ row }) =>
 				renderComponent(Checkbox, {
-					'aria-label': 'Select row',
+					"aria-label": "Select row",
 					checked: row.getIsSelected(),
-					onCheckedChange: (value) => row.toggleSelected(!!value)
+					onCheckedChange: (value) => row.toggleSelected(!!value),
 				}),
 			header: ({ table }) =>
 				renderComponent(Checkbox, {
-					'aria-label': 'Select all',
+					"aria-label": "Select all",
 					checked: table.getIsAllPageRowsSelected(),
-					indeterminate: table.getIsSomePageRowsSelected() && !table.getIsAllPageRowsSelected(),
-					onCheckedChange: (value) => table.toggleAllPageRowsSelected(!!value)
+					indeterminate:
+						table.getIsSomePageRowsSelected() &&
+						!table.getIsAllPageRowsSelected(),
+					onCheckedChange: (value) =>
+						table.toggleAllPageRowsSelected(!!value),
 				}),
-			id: 'select'
+			id: "select",
 		},
 		{
-			accessorKey: 'name',
+			accessorKey: "name",
 			cell: ({ row }) => {
 				const nameSnippet = createRawSnippet<[string]>((getName) => {
 					const name = getName();
 					return {
-						render: () => `<div class="font-medium">${name}</div>`
+						render: () => `<div class="font-medium">${name}</div>`,
 					};
 				});
-				return renderSnippet(nameSnippet, row.getValue('name'));
+				return renderSnippet(nameSnippet, row.getValue("name"));
 			},
-			header: 'Name'
+			header: "Name",
 		},
 		{
-			accessorKey: 'email',
-			header: 'Email'
+			accessorKey: "email",
+			header: "Email",
 		},
 		{
-			accessorKey: 'location',
+			accessorKey: "location",
 			cell: ({ row }) => {
-				const locationSnippet = createRawSnippet<[{ flag: string; location: string }]>((args) => {
+				const locationSnippet = createRawSnippet<
+					[{ flag: string; location: string }]
+				>((args) => {
 					const { flag, location } = args();
 					return {
 						render: () => `
 							<div>
 								<span class="text-lg leading-none">${flag}</span>
 								${location}
-							</div>`
+							</div>`,
 					};
 				});
 				return renderSnippet(locationSnippet, {
 					flag: row.original.flag,
-					location: row.getValue('location') as string
+					location: row.getValue("location") as string,
 				});
 			},
-			header: 'Location'
+			header: "Location",
 		},
 		{
-			accessorKey: 'status',
+			accessorKey: "status",
 			cell: ({ row }) =>
 				renderComponent(Badge, {
 					children: createRawSnippet(() => {
-						const status = row.getValue('status') as string;
+						const status = row.getValue("status") as string;
 						return {
-							render: () => status
+							render: () => status,
 						};
 					}),
 
 					class: cn(
-						row.getValue('status') === 'Inactive' &&
-							'bg-muted-foreground/60 text-primary-foreground'
-					)
+						row.getValue("status") === "Inactive" &&
+							"bg-muted-foreground/60 text-primary-foreground",
+					),
 				}),
-			header: 'Status'
+			header: "Status",
 		},
 		{
-			accessorKey: 'balance',
+			accessorKey: "balance",
 			cell: ({ row }) => {
 				return renderSnippet(
 					createRawSnippet((getBalance) => {
 						const balance = getBalance() as string;
-						const formatted = new Intl.NumberFormat('en-US', {
-							currency: 'USD',
-							style: 'currency'
+						const formatted = new Intl.NumberFormat("en-US", {
+							currency: "USD",
+							style: "currency",
 						}).format(parseFloat(balance));
 						return {
-							render: () => `<div class="text-right">${formatted}</div>`
+							render: () =>
+								`<div class="text-right">${formatted}</div>`,
 						};
 					}),
-					row.getValue('balance')
+					row.getValue("balance"),
 				);
 			},
 			header: () => {
 				const nameSnippet = createRawSnippet(() => {
 					return {
-						render: () => `<div class="text-right">Balance</div>`
+						render: () => `<div class="text-right">Balance</div>`,
 					};
 				});
 				return renderSnippet(nameSnippet, {});
-			}
-		}
+			},
+		},
 	];
 
 	let rowSelection = $state<RowSelectionState>({});
@@ -144,7 +154,7 @@
 		},
 		getCoreRowModel: getCoreRowModel(),
 		onRowSelectionChange: (updater) => {
-			if (typeof updater === 'function') {
+			if (typeof updater === "function") {
 				rowSelection = updater(rowSelection);
 			} else {
 				rowSelection = updater;
@@ -153,8 +163,8 @@
 		state: {
 			get rowSelection() {
 				return rowSelection;
-			}
-		}
+			},
+		},
 	});
 </script>
 
@@ -178,16 +188,21 @@
 		</TableHeader>
 		<TableBody>
 			{#each table.getRowModel().rows as row (row.id)}
-				<TableRow data-state={row.getIsSelected() && 'selected'}>
+				<TableRow data-state={row.getIsSelected() && "selected"}>
 					{#each row.getVisibleCells() as cell (cell.id)}
 						<TableCell>
-							<FlexRender content={cell.column.columnDef.cell} context={cell.getContext()} />
+							<FlexRender
+								content={cell.column.columnDef.cell}
+								context={cell.getContext()}
+							/>
 						</TableCell>
 					{/each}
 				</TableRow>
 			{:else}
 				<TableRow>
-					<TableCell colspan={columns.length} class="h-24 text-center">No results.</TableCell>
+					<TableCell colspan={columns.length} class="h-24 text-center"
+						>No results.</TableCell
+					>
 				</TableRow>
 			{/each}
 		</TableBody>
@@ -195,10 +210,12 @@
 			<TableRow class="hover:bg-transparent">
 				<TableCell colspan={5}>Total</TableCell>
 				<TableCell class="text-right">
-					{new Intl.NumberFormat('en-US', {
-						currency: 'USD',
-						style: 'currency'
-					}).format(data.reduce((total, item) => total + item.balance, 0))}
+					{new Intl.NumberFormat("en-US", {
+						currency: "USD",
+						style: "currency",
+					}).format(
+						data.reduce((total, item) => total + item.balance, 0),
+					)}
 				</TableCell>
 			</TableRow>
 		</TableFooter>

@@ -1,21 +1,21 @@
 <script lang="ts">
   import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
-  import ArchiveIcon from "@lucide/svelte/icons/archive-icon";
-import Pencil from "@lucide/svelte/icons/pencil";
-import EllipsisIcon from "@lucide/svelte/icons/ellipsis-icon";
-import FilesIcon from "@lucide/svelte/icons/files-icon";
-import FilmIcon from "@lucide/svelte/icons/film-icon";
-import ShareIcon from "@lucide/svelte/icons/share-icon";
-import TrashIcon from "@lucide/svelte/icons/trash-icon";
-import ZoomInIcon from "@lucide/svelte/icons/zoom-in-icon";
-import ZoomOutIcon from "@lucide/svelte/icons/zoom-out-icon";
-import QrCodeIcon from "@lucide/svelte/icons/qr-code-icon";
-import AudioWaveformIcon from "@lucide/svelte/icons/audio-waveform-icon";
-import ArrowLeftIcon from "@lucide/svelte/icons/arrow-left-icon";
-import ArrowRightIcon from "@lucide/svelte/icons/arrow-right-icon";
-import DownloadIcon from "@lucide/svelte/icons/download-icon";
-import ChevronDownIcon from "@lucide/svelte/icons/chevron-down-icon";
-import SquarePenIcon from "@lucide/svelte/icons/square-pen-icon";
+  import ArchiveIcon from "@lucide/svelte/icons/archive";
+  import Pencil from "@lucide/svelte/icons/pencil";
+  import EllipsisIcon from "@lucide/svelte/icons/ellipsis";
+  import FilesIcon from "@lucide/svelte/icons/files";
+  import FilmIcon from "@lucide/svelte/icons/film";
+  import ShareIcon from "@lucide/svelte/icons/share";
+  import TrashIcon from "@lucide/svelte/icons/trash";
+  import ZoomInIcon from "@lucide/svelte/icons/zoom-in";
+  import ZoomOutIcon from "@lucide/svelte/icons/zoom-out";
+  import QrCodeIcon from "@lucide/svelte/icons/qr-code";
+  import AudioWaveformIcon from "@lucide/svelte/icons/audio-waveform";
+  import ArrowLeftIcon from "@lucide/svelte/icons/arrow-left";
+  import ArrowRightIcon from "@lucide/svelte/icons/arrow-right";
+  import DownloadIcon from "@lucide/svelte/icons/download";
+  import ChevronDownIcon from "@lucide/svelte/icons/chevron-down";
+  import SquarePenIcon from "@lucide/svelte/icons/square-pen";
 
   import { Group, GroupSeparator, GroupText } from "$lib/components/ui/group";
   import {

@@ -2,7 +2,7 @@
 	import { Button } from "$lib/components/ui/button";
 
 	import ArrowRight from "@lucide/svelte/icons/arrow-right";
-import MailIcon from "@lucide/svelte/icons/mail-icon";
+	import MailIcon from "@lucide/svelte/icons/mail";
 </script>
 
 <Button class="group" variant="secondary">

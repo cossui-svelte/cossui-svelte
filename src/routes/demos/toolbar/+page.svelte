@@ -1,9 +1,9 @@
 <script lang="ts">
     import TextAlignCenter from "@lucide/svelte/icons/text-align-center";
-import TextAlignStart from "@lucide/svelte/icons/text-align-start";
-import TextAlignEnd from "@lucide/svelte/icons/text-align-end";
-import DollarSignIcon from "@lucide/svelte/icons/dollar-sign-icon";
-import PercentIcon from "@lucide/svelte/icons/percent-icon";
+    import TextAlignStart from "@lucide/svelte/icons/text-align-start";
+    import TextAlignEnd from "@lucide/svelte/icons/text-align-end";
+    import DollarSignIcon from "@lucide/svelte/icons/dollar-sign";
+    import PercentIcon from "@lucide/svelte/icons/percent";
     import { Button } from "$lib/components/ui/button";
     import {
         Select,

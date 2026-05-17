@@ -1,6 +1,6 @@
 <script lang="ts">
     import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
-    import ChevronDownIcon from "@lucide/svelte/icons/chevron-down-icon";
+    import ChevronDownIcon from "@lucide/svelte/icons/chevron-down";
     import {
         Collapsible,
         CollapsiblePanel,

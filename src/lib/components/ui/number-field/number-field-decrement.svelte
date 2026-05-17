@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { HTMLButtonAttributes } from "svelte/elements";
   import { getContext } from "svelte";
-  import MinusIcon from "@lucide/svelte/icons/minus-icon";
+  import MinusIcon from "@lucide/svelte/icons/minus";
   import { cn } from "$lib/utils.js";
   import {
     NUMBER_FIELD_CONTEXT_KEY,

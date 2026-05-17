@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { User } from "$data/api/data/users.handlers";
 
-	import Badge from "$lib/components/ui/badge.svelte";
+	import { Badge } from "$lib/components/ui/badge";
 	import { Button } from "$lib/components/ui/button";
 	import Checkbox from "$lib/components/ui/checkbox.svelte";
 	import Label from "$lib/components/ui/label.svelte";

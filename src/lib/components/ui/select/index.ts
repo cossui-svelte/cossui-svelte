@@ -10,18 +10,17 @@ import Separator from './select-separator.svelte';
 import Trigger, { selectTriggerVariants } from './select-trigger.svelte';
 import Value from './select-value.svelte';
 
-const Root = SelectPrimitive.Root;
-const Group = SelectPrimitive.Group;
+const { Root: Select, Group: SelectGroup } = SelectPrimitive;
 
 export {
   Content as SelectContent,
   Content as SelectPopup,
-  Group as SelectGroup,
   GroupHeading as SelectGroupLabel,
   Item as SelectItem,
-  Root as Select,
   ScrollDownButton as SelectScrollDownButton,
   ScrollUpButton as SelectScrollUpButton,
+  Select,
+  SelectGroup,
   SelectPrimitive,
   Separator as SelectSeparator,
   selectTriggerVariants,
