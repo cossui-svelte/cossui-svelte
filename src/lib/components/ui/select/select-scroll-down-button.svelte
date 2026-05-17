@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { cn } from "$lib/utils.js";
 
-	import { ChevronDown } from "@lucide/svelte";
+	import ChevronDown from "@lucide/svelte/icons/chevron-down";
 	import {
 		Select as SelectPrimitive,
 		type WithoutChildrenOrChild,

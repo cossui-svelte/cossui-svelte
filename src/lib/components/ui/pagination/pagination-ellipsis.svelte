@@ -4,7 +4,7 @@
 
 	import { cn } from "$lib/utils.js";
 
-	import { Ellipsis } from "@lucide/svelte";
+	import Ellipsis from "@lucide/svelte/icons/ellipsis";
 
 	let {
 		class: className,

@@ -1,7 +1,9 @@
 <script lang="ts">
   import { cn } from "$lib/utils.js";
   import { Tooltip } from "bits-ui";
-  import { Terminal, Copy, Check } from "@lucide/svelte";
+  import Terminal from "@lucide/svelte/icons/terminal";
+import Copy from "@lucide/svelte/icons/copy";
+import Check from "@lucide/svelte/icons/check";
   import { buttonVariants } from "$lib/components/ui/button";
   import Tabs from "$lib/components/ui/tabs/tabs.svelte";
   import TabsList from "$lib/components/ui/tabs/tabs-list.svelte";

@@ -2,13 +2,11 @@
     import { Button } from "$lib/components/ui/button";
     import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
 
-    import {
-        Circle,
-        ChevronDown,
-        ChevronLeft,
-        ChevronRight,
-        ChevronUp,
-    } from "@lucide/svelte";
+    import Circle from "@lucide/svelte/icons/circle";
+import ChevronDown from "@lucide/svelte/icons/chevron-down";
+import ChevronLeft from "@lucide/svelte/icons/chevron-left";
+import ChevronRight from "@lucide/svelte/icons/chevron-right";
+import ChevronUp from "@lucide/svelte/icons/chevron-up";
     import {
         Tooltip,
         TooltipContent,

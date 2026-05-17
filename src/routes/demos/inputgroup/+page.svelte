@@ -21,13 +21,11 @@
         TooltipPopup,
         TooltipTrigger,
     } from "$lib/components/ui/tooltip";
-    import {
-        ArrowRightIcon,
-        CheckIcon,
-        CopyIcon,
-        InfoIcon,
-        SearchIcon,
-    } from "@lucide/svelte";
+    import ArrowRightIcon from "@lucide/svelte/icons/arrow-right-icon";
+import CheckIcon from "@lucide/svelte/icons/check-icon";
+import CopyIcon from "@lucide/svelte/icons/copy-icon";
+import InfoIcon from "@lucide/svelte/icons/info-icon";
+import SearchIcon from "@lucide/svelte/icons/search-icon";
 </script>
 
 <ComponentPreviewTabs>

@@ -5,7 +5,7 @@
 	} from "bits-ui";
 	import type { Snippet, ComponentProps } from "svelte";
 	import { Button } from "$lib/components/ui/button";
-	import { XIcon } from "@lucide/svelte";
+	import XIcon from "@lucide/svelte/icons/x-icon";
 
 	import { DialogOverlay, DialogPortal } from ".";
 	import { cn } from "$lib/utils";

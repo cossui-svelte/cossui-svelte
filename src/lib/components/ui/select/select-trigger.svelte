@@ -18,7 +18,7 @@
 
 <script lang="ts">
 	import { cn } from "$lib/utils.js";
-	import { ChevronsUpDown } from "@lucide/svelte";
+	import ChevronsUpDown from "@lucide/svelte/icons/chevrons-up-down";
 	import { Select as SelectPrimitive, type WithoutChild } from "bits-ui";
 	import { tv, type VariantProps } from "tailwind-variants";
 

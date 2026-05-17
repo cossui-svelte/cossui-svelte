@@ -52,8 +52,9 @@
     "format": "biome format --write . && biome check . --fix",
     "generate:registry": "tsx scripts/createComponentRegistryTypes.ts",
     "lint:audit": "pnpx knip --max-show-issues 15",
+    "lint:typecheck": "tsc --noEmit",
     "mrproper": "rm -rf node_modules dist build .svelte-kit",
-    "typecheck": "tsc --noEmit"
+    "optimize:icons": " tsx ./scripts/transformLucideImports.ts"
   },
   "type": "module",
   "version": "0.1.0"

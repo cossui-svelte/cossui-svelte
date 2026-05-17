@@ -1,5 +1,8 @@
 <script lang="ts">
-  import { Braces, FileCode, FileType2, Folder } from "@lucide/svelte";
+  import Braces from "@lucide/svelte/icons/braces";
+import FileCode from "@lucide/svelte/icons/file-code";
+import FileType2 from "@lucide/svelte/icons/file-type-2";
+import Folder from "@lucide/svelte/icons/folder";
 
   interface Props {
     language: string;

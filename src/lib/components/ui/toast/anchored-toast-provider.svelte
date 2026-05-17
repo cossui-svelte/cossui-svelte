@@ -1,12 +1,10 @@
 <script lang="ts">
 	import { Portal } from 'bits-ui';
-	import {
-		CircleAlertIcon,
-		CircleCheckIcon,
-		InfoIcon,
-		LoaderCircleIcon,
-		TriangleAlertIcon
-	} from '@lucide/svelte';
+	import CircleAlertIcon from "@lucide/svelte/icons/circle-alert-icon";
+import CircleCheckIcon from "@lucide/svelte/icons/circle-check-icon";
+import InfoIcon from "@lucide/svelte/icons/info-icon";
+import LoaderCircleIcon from "@lucide/svelte/icons/loader-circle-icon";
+import TriangleAlertIcon from "@lucide/svelte/icons/triangle-alert-icon";
 	import type { Snippet } from 'svelte';
 	import { cn } from '$lib/utils';
 	import { buttonVariants } from '$lib/components/ui/button';

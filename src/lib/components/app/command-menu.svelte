@@ -7,7 +7,10 @@
     DialogPortal,
     DialogTrigger,
   } from "$lib/components/ui/dialog";
-  import { Search, CornerDownLeft, Atom, BookOpen } from "@lucide/svelte";
+  import Search from "@lucide/svelte/icons/search";
+import CornerDownLeft from "@lucide/svelte/icons/corner-down-left";
+import Atom from "@lucide/svelte/icons/atom";
+import BookOpen from "@lucide/svelte/icons/book-open";
   import { buttonVariants } from "$lib/components/ui/button";
   import { Kbd, KbdGroup } from "$lib/components/ui/kbd";
   import { useIsMac } from "$lib/hooks/use-is-mac.svelte";

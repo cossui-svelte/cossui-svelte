@@ -3,7 +3,7 @@
   import { Dialog as DrawerPrimitive } from "bits-ui";
   import { getContext } from "svelte";
   import { cn } from "$lib/utils.js";
-  import { X } from "@lucide/svelte";
+  import X from "@lucide/svelte/icons/x";
   import DrawerBackdrop from "./drawer-backdrop.svelte";
   import DrawerViewport from "./drawer-viewport.svelte";
   import DrawerBar from "./drawer-bar.svelte";

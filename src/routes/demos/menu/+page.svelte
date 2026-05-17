@@ -1,12 +1,10 @@
 <script lang="ts">
     import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
-    import {
-        PauseIcon,
-        PlayIcon,
-        SkipBackIcon,
-        SkipForwardIcon,
-        TrashIcon,
-    } from "@lucide/svelte";
+    import PauseIcon from "@lucide/svelte/icons/pause-icon";
+import PlayIcon from "@lucide/svelte/icons/play-icon";
+import SkipBackIcon from "@lucide/svelte/icons/skip-back-icon";
+import SkipForwardIcon from "@lucide/svelte/icons/skip-forward-icon";
+import TrashIcon from "@lucide/svelte/icons/trash-icon";
     import { Button } from "$lib/components/ui/button";
     import {
         Menu,

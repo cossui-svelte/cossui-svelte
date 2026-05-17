@@ -2,7 +2,10 @@
 	import { Checkbox } from "$lib/components/ui/checkbox";
 	import { Label } from "$lib/components/ui/label";
 
-	import { Brush, Eraser, Scissors, SwatchBook } from "@lucide/svelte";
+	import Brush from "@lucide/svelte/icons/brush";
+import Eraser from "@lucide/svelte/icons/eraser";
+import Scissors from "@lucide/svelte/icons/scissors";
+import SwatchBook from "@lucide/svelte/icons/swatch-book";
 
 	const items = [
 		{

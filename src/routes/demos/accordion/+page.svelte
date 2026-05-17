@@ -7,7 +7,11 @@
         AccordionItem,
         AccordionTrigger,
     } from "$lib/components/ui/accordion";
-    import { Bell, LifeBuoy, Link2, Plus, ShieldCheck } from "@lucide/svelte";
+    import Bell from "@lucide/svelte/icons/bell";
+import LifeBuoy from "@lucide/svelte/icons/life-buoy";
+import Link2 from "@lucide/svelte/icons/link-2";
+import Plus from "@lucide/svelte/icons/plus";
+import ShieldCheck from "@lucide/svelte/icons/shield-check";
 
     const items = [
         {

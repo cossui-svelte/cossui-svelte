@@ -1,23 +1,21 @@
 <script lang="ts">
   import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
-  import {
-    ArchiveIcon,
-    Pencil,
-    EllipsisIcon,
-    FilesIcon,
-    FilmIcon,
-    ShareIcon,
-    TrashIcon,
-    ZoomInIcon,
-    ZoomOutIcon,
-    QrCodeIcon,
-    AudioWaveformIcon,
-    ArrowLeftIcon,
-    ArrowRightIcon,
-    DownloadIcon,
-    ChevronDownIcon,
-    SquarePenIcon,
-  } from "@lucide/svelte";
+  import ArchiveIcon from "@lucide/svelte/icons/archive-icon";
+import Pencil from "@lucide/svelte/icons/pencil";
+import EllipsisIcon from "@lucide/svelte/icons/ellipsis-icon";
+import FilesIcon from "@lucide/svelte/icons/files-icon";
+import FilmIcon from "@lucide/svelte/icons/film-icon";
+import ShareIcon from "@lucide/svelte/icons/share-icon";
+import TrashIcon from "@lucide/svelte/icons/trash-icon";
+import ZoomInIcon from "@lucide/svelte/icons/zoom-in-icon";
+import ZoomOutIcon from "@lucide/svelte/icons/zoom-out-icon";
+import QrCodeIcon from "@lucide/svelte/icons/qr-code-icon";
+import AudioWaveformIcon from "@lucide/svelte/icons/audio-waveform-icon";
+import ArrowLeftIcon from "@lucide/svelte/icons/arrow-left-icon";
+import ArrowRightIcon from "@lucide/svelte/icons/arrow-right-icon";
+import DownloadIcon from "@lucide/svelte/icons/download-icon";
+import ChevronDownIcon from "@lucide/svelte/icons/chevron-down-icon";
+import SquarePenIcon from "@lucide/svelte/icons/square-pen-icon";
 
   import { Group, GroupSeparator, GroupText } from "$lib/components/ui/group";
   import {

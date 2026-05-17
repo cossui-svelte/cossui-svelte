@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { Button } from "$lib/components/ui/button";
 
-	import { ArrowRight, MailIcon } from "@lucide/svelte";
+	import ArrowRight from "@lucide/svelte/icons/arrow-right";
+import MailIcon from "@lucide/svelte/icons/mail-icon";
 </script>
 
 <Button class="group" variant="secondary">

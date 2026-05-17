@@ -7,7 +7,8 @@
     } from "$lib/components/ui/avatar";
     import { Button } from "$lib/components/ui/button";
     import { Skeleton } from "$lib/components/ui/skeleton";
-    import { UserRoundPlusIcon, UsersRoundIcon } from "@lucide/svelte";
+    import UserRoundPlusIcon from "@lucide/svelte/icons/user-round-plus-icon";
+import UsersRoundIcon from "@lucide/svelte/icons/users-round-icon";
 
     let loading = $state(true);
 

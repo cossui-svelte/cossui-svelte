@@ -2,7 +2,7 @@
 	import { Label } from "$lib/components/ui/label";
 	import { cn } from "$lib/utils.js";
 
-	import { Minus } from "@lucide/svelte";
+	import Minus from "@lucide/svelte/icons/minus";
 	import { PinInput, type PinInputCell } from "bits-ui";
 
 	let value = $state("");

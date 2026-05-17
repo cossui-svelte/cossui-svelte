@@ -1,6 +1,7 @@
 <script lang="ts">
     import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
-    import { BookIcon, RouteIcon } from "@lucide/svelte";
+    import BookIcon from "@lucide/svelte/icons/book-icon";
+import RouteIcon from "@lucide/svelte/icons/route-icon";
     import { Button } from "$lib/components/ui/button";
     import {
         Empty,

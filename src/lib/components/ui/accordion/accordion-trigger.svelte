@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Accordion } from "bits-ui";
-  import { ChevronDown } from "@lucide/svelte";
+  import ChevronDown from "@lucide/svelte/icons/chevron-down";
 
   import { cn, type WithoutChild } from "$lib/utils.js";
 

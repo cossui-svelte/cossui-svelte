@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import { Combobox } from "bits-ui";
-  import { ChevronsUpDown } from "@lucide/svelte";
+  import ChevronsUpDown from "@lucide/svelte/icons/chevrons-up-down";
   import { cn } from "$lib/utils.js";
   import AutocompleteTrigger from "./autocomplete-trigger.svelte";
   import AutocompleteClear from "./autocomplete-clear.svelte";

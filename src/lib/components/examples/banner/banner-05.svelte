@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { Button } from "$lib/components/ui/button";
-	import { ArrowRight, Eclipse, X } from "@lucide/svelte";
+	import ArrowRight from "@lucide/svelte/icons/arrow-right";
+import Eclipse from "@lucide/svelte/icons/eclipse";
+import X from "@lucide/svelte/icons/x";
 
 	let visible = $state(true);
 </script>

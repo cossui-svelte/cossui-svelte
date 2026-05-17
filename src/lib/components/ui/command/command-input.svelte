@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Command } from "bits-ui";
-  import { Search } from "@lucide/svelte";
+  import Search from "@lucide/svelte/icons/search";
   import { cn } from "$lib/utils.js";
 
   type Props = Command.InputProps;

@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import type { HTMLButtonAttributes } from "svelte/elements";
-  import { PanelLeft } from "@lucide/svelte";
+  import PanelLeft from "@lucide/svelte/icons/panel-left";
 
   import { getSidebarContext } from "./sidebar-context.js";
   import { cn } from "$lib/utils.js";
