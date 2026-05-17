@@ -4,7 +4,7 @@ const config: KnipConfig = {
   compilers: {
     svelte: (text: string) => [...text.matchAll(/import[^;]+/g)].join('\n')
   },
-  ignore: ['**/*.old', '**/*.old/**', '**/done/**'],
+  // ignore: ['**/*.old', '**/*.old/**', '**/done/**'],
   ignoreDependencies: ['tw-animate-css'],
   project: ['src/**/*.{svelte,ts,js}', 'scripts/**/*.ts'],
   svelte: {
