@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { Button } from "$lib/components/ui/button";
 	import ArrowRight from "@lucide/svelte/icons/arrow-right";
-import Eclipse from "@lucide/svelte/icons/eclipse";
-import X from "@lucide/svelte/icons/x";
+	import Eclipse from "@lucide/svelte/icons/eclipse";
+	import X from "@lucide/svelte/icons/x";
 
 	let visible = $state(true);
 </script>
 
 {#if visible}
-	<div class="dark bg-muted px-4 py-3 text-foreground">
+	<div class="bg-black px-4 py-3 text-white">
 		<div class="flex gap-2">
 			<div class="flex grow gap-3">
 				<Eclipse

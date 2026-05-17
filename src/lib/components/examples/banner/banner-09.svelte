@@ -8,14 +8,14 @@
 </script>
 
 {#if visible}
-	<div class="dark bg-muted px-4 py-3 text-foreground">
+	<div class="bg-black px-4 py-3 text-white">
 		<div class="flex gap-2 md:items-center">
 			<div class="flex grow gap-3 md:items-center">
 				<div
-					class="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary/15 max-md:mt-0.5"
+					class="flex size-9 shrink-0 items-center justify-center rounded-full bg-gray-700 max-md:mt-0.5"
 					aria-hidden="true"
 				>
-					<Rocket class="opacity-80" size={16} strokeWidth={2} />
+					<Rocket class="opacity-90" size={16} strokeWidth={2} />
 				</div>
 				<div
 					class="flex grow flex-col justify-between gap-3 md:flex-row md:items-center"

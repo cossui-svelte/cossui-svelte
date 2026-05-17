@@ -48,11 +48,11 @@
 </script>
 
 {#if visible && !timeLeft.isExpired}
-	<div class="dark bg-muted px-4 py-3 text-foreground">
+	<div class="bg-black px-4 py-3 text-white">
 		<div class="flex gap-2 md:items-center">
 			<div class="flex grow gap-3 md:items-center">
 				<div
-					class="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary/15 max-md:mt-0.5"
+					class="flex size-9 shrink-0 items-center justify-center rounded-full bg-gray-700 max-md:mt-0.5"
 					aria-hidden="true"
 				>
 					<TicketPercent

@@ -8,7 +8,7 @@
 </script>
 
 {#if visible}
-	<div class="dark bg-muted px-4 py-3 text-foreground md:py-2">
+	<div class="bg-black px-4 py-3 text-white md:py-2">
 		<div class="flex gap-2 md:items-center">
 			<div class="flex grow gap-3 md:items-center">
 				<Eclipse
