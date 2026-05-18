@@ -60,9 +60,6 @@ importers:
       postcss:
         specifier: ^8.5.14
         version: 8.5.14
-      runed:
-        specifier: ^0.37.1
-        version: 0.37.1(@sveltejs/kit@2.60.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.55.7)(vite@8.0.13(@types/node@25.9.0)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.2)(yaml@2.9.0)))(svelte@5.55.7)(typescript@6.0.3)(vite@8.0.13(@types/node@25.9.0)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.2)(yaml@2.9.0)))(svelte@5.55.7)(zod@4.4.3)
       shiki:
         specifier: ^4.0.2
         version: 4.0.2
@@ -1602,18 +1599,6 @@ packages:
       svelte: ^5.7.0
     peerDependenciesMeta:
       '@sveltejs/kit':
-        optional: true
-
-  runed@0.37.1:
-    resolution: {integrity: sha512-MeFY73xBW8IueWBm012nNFIGy19WUGPLtknavyUPMpnyt350M47PhGSGrGoSLbidwn+Zlt/O0cp8/OZE3LASWA==}
-    peerDependencies:
-      '@sveltejs/kit': ^2.21.0
-      svelte: ^5.7.0
-      zod: ^4.1.0
-    peerDependenciesMeta:
-      '@sveltejs/kit':
-        optional: true
-      zod:
         optional: true
 
   sade@1.8.1:
@@ -3298,16 +3283,6 @@ snapshots:
       svelte: 5.55.7
     optionalDependencies:
       '@sveltejs/kit': 2.60.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.55.7)(vite@8.0.13(@types/node@25.9.0)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.2)(yaml@2.9.0)))(svelte@5.55.7)(typescript@6.0.3)(vite@8.0.13(@types/node@25.9.0)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.2)(yaml@2.9.0))
-
-  runed@0.37.1(@sveltejs/kit@2.60.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.55.7)(vite@8.0.13(@types/node@25.9.0)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.2)(yaml@2.9.0)))(svelte@5.55.7)(typescript@6.0.3)(vite@8.0.13(@types/node@25.9.0)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.2)(yaml@2.9.0)))(svelte@5.55.7)(zod@4.4.3):
-    dependencies:
-      dequal: 2.0.3
-      esm-env: 1.2.2
-      lz-string: 1.5.0
-      svelte: 5.55.7
-    optionalDependencies:
-      '@sveltejs/kit': 2.60.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.55.7)(vite@8.0.13(@types/node@25.9.0)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.2)(yaml@2.9.0)))(svelte@5.55.7)(typescript@6.0.3)(vite@8.0.13(@types/node@25.9.0)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.2)(yaml@2.9.0))
-      zod: 4.4.3
 
   sade@1.8.1:
     dependencies:

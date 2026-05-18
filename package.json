@@ -16,7 +16,6 @@
     "knip": "^6.14.1",
     "mode-watcher": "^1.1.0",
     "postcss": "^8.5.14",
-    "runed": "^0.37.1",
     "shiki": "^4.0.2",
     "svelte-check": "^4.4.8",
     "svelte-remixicon": "^2.10.0",
