@@ -1,15 +1,15 @@
 <script lang="ts">
-	import type { WithElementRef } from 'bits-ui';
-	import type { HTMLAttributes } from 'svelte/elements';
+	import type { WithElementRef } from "bits-ui";
+	import type { HTMLAttributes } from "svelte/elements";
 
-	import { timelineContext } from './timeline-context.svelte';
+	import { setTimelineContext } from "./timeline-context.svelte";
 
-	import { cn } from '$lib/utils';
+	import { cn } from "$lib/utils";
 
 	type TimelineProps = WithElementRef<HTMLAttributes<HTMLDivElement>> & {
 		defaultValue?: number;
 		onValueChange?: (value: number) => void;
-		orientation?: 'horizontal' | 'vertical';
+		orientation?: "horizontal" | "vertical";
 		value?: number;
 	};
 	let {
@@ -17,7 +17,7 @@
 		class: className,
 		defaultValue = 1,
 		onValueChange,
-		orientation = 'vertical',
+		orientation = "vertical",
 		ref = $bindable(null),
 		value,
 		...restProps
@@ -35,9 +35,9 @@
 
 	const currentStep = $derived(value ?? activeStep);
 
-	timelineContext.set({
+	setTimelineContext({
 		activeStep: currentStep,
-		setActiveStep
+		setActiveStep,
 	});
 </script>
 
@@ -45,8 +45,8 @@
 	bind:this={ref}
 	data-slot="timeline"
 	class={cn(
-		'group/timeline flex data-[orientation=horizontal]:w-full data-[orientation=horizontal]:flex-row data-[orientation=vertical]:flex-col',
-		className
+		"group/timeline flex data-[orientation=horizontal]:w-full data-[orientation=horizontal]:flex-row data-[orientation=vertical]:flex-col",
+		className,
 	)}
 	data-orientation={orientation}
 	{...restProps}
