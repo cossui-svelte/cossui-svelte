@@ -53,8 +53,8 @@ class ComponentRegistry {
   #getFileImports = () => {
     return import.meta.glob<COSSUIComponent>(
       [
-        '$lib/components/**/*.svelte',
-        '!$lib/components/ui/**/*.svelte',
+        '$lib/components/ui/**/*.svelte',
+        '!$lib/components/**/*.svelte',
         '!$lib/components/**/*.old/**'
       ],
       { eager: false, import: 'default' }

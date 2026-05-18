@@ -83,16 +83,6 @@
 								<h2 class="mt-6 mb-4 font-semibold text-xl">
 									Code
 								</h2>
-								<Button
-									href="https://v0.dev/chat/api/open?url={encodeURIComponent(
-										`${cossuiUrl}/r/${particle.name}.json`,
-									)}"
-									variant="outline"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									Open in v0
-								</Button>
 							</div>
 						</div>
 					</div>
