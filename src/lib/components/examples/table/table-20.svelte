@@ -5,7 +5,7 @@
 	import { Button } from "$lib/components/ui/button";
 	import Checkbox from "$lib/components/ui/checkbox.svelte";
 	import { Input } from "$lib/components/ui/input";
-	import Label from "$lib/components/ui/label.svelte";
+	import { Label } from "$lib/components/ui/label";
 
 	import ChevronDown from "@lucide/svelte/icons/chevron-down";
 	import ChevronFirst from "@lucide/svelte/icons/chevron-first";

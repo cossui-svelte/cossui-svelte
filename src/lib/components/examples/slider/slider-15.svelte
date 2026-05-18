@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Button } from "$lib/components/ui/button";
 	import { Input } from "$lib/components/ui/input";
-	import Label from "$lib/components/ui/label.svelte";
+	import { Label } from "$lib/components/ui/label";
 	import Slider from "$lib/components/ui/slider.svelte";
 	import {
 		Tooltip,

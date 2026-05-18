@@ -1,20 +1,20 @@
 <script lang="ts">
 	import { Button } from "$lib/components/ui/button";
 
-	import { toast } from "svelte-sonner";
+	import { toastManager } from "$lib/components/ui/toast";
 </script>
 
 <Button
 	variant="outline"
 	onclick={() => {
-		toast("Your request was completed!", {
+		toastManager.info("Your request was completed!", {
 			action: {
 				label: "Undo",
-				onClick: () => console.info("Undo"),
+				onclick: () => console.info("Undo"),
 			},
 			description: "It was a long journey, but we made it!",
 		});
 	}}
 >
-	Show sonner
+	Show Toast
 </Button>

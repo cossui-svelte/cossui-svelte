@@ -2,7 +2,8 @@
     "accordion": {
         "description": "A set of collapsible panels with headings and content.",
         "category": "ui",
-        "isnew": false
+        "isnew": false,
+        "columns": 2
     },
     "alert": {
         "description": "A callout for displaying important information.",
