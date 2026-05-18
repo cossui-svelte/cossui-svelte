@@ -3,7 +3,7 @@
 
 	import { Badge } from "$lib/components/ui/badge";
 	import { Button } from "$lib/components/ui/button";
-	import Checkbox from "$lib/components/ui/checkbox.svelte";
+	import { Checkbox } from "$lib/components/ui/checkbox";
 	import { usePagination } from "$lib/hooks/use-pagination.svelte";
 
 	import ChevronDown from "@lucide/svelte/icons/chevron-down";

@@ -3,7 +3,7 @@
 
 	import { Badge } from "$lib/components/ui/badge";
 	import { Button } from "$lib/components/ui/button";
-	import Checkbox from "$lib/components/ui/checkbox.svelte";
+	import { Checkbox } from "$lib/components/ui/checkbox";
 
 	import ChevronDown from "@lucide/svelte/icons/chevron-down";
 	import ChevronUp from "@lucide/svelte/icons/chevron-up";

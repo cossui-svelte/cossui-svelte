@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Label } from "$lib/components/ui/label";
-	import SelectNative from "$lib/components/ui/select-native.svelte";
+	import { Select } from "$lib/components/ui/select";
 
 	import Clock from "@lucide/svelte/icons/clock";
 
@@ -10,12 +10,12 @@
 <div class="space-y-2">
 	<Label for={uid}>Select with icon (native)</Label>
 	<div class="group relative">
-		<SelectNative id={uid} class="ps-9">
+		<Select id={uid} class="ps-9">
 			<option value="s1">00:00 AM - 11:59 PM</option>
 			<option value="s2">01:00 AM - 12:59 PM</option>
 			<option value="s3">02:00 AM - 01:59 PM</option>
 			<option value="s4">03:00 AM - 02:59 PM</option>
-		</SelectNative>
+		</Select>
 		<div
 			class="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-muted-foreground/80 group-has-[[disabled]]:opacity-50"
 		>

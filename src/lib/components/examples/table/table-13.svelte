@@ -9,7 +9,7 @@
 </script>
 
 <script lang="ts">
-	import Checkbox from "$lib/components/ui/checkbox.svelte";
+	import { Checkbox } from "$lib/components/ui/checkbox";
 	import { Input } from "$lib/components/ui/input";
 	import { Label } from "$lib/components/ui/label";
 
