@@ -64,10 +64,10 @@ const CONFIG: ComponentConfig = {
 		component: path.join(process.cwd(), 'src', 'lib', 'components', 'examples'),
 		exclude: ['.', 'index.svelte'],
 		object: {
-			output: path.join(process.cwd(), 'src', 'lib', 'componentRegistry.components.ts')
+			output: path.join(process.cwd(), 'src', 'lib', 'registry', 'componentRegistry.components.ts')
 		},
 		types: {
-			output: path.join(process.cwd(), 'src', 'lib', 'componentRegistry.types.ts')
+			output: path.join(process.cwd(), 'src', 'lib',  'registry','componentRegistry.types.ts')
 		}
 	},
 	files: {

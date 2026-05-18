@@ -1,4 +1,4 @@
-import { getComponentRegistry } from '$lib/componentRegistry';
+import { getComponentRegistry } from '$lib/registry/componentRegistry';
 import type { TypedResponse } from '$lib/data/api/helpers/types';
 import type { RequestHandler as MetaRequestHandler } from '../../../../../routes/(api)/api/v1/components/_meta.json/$types';
 

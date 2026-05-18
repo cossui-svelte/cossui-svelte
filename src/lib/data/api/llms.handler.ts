@@ -1,4 +1,4 @@
-import { getComponentDirectories } from '$lib/componentRegistry';
+import { getComponentDirectories } from '$lib/registry/componentRegistry';
 import type {
   EntryGenerator as LLMSEntryGenerator,
   RequestHandler as LLMSRequestHandler

@@ -1,5 +1,5 @@
 import type { Component } from 'svelte';
-import { getComponentDirectories, getComponentFileNames } from '$lib/componentRegistry';
+import { getComponentDirectories, getComponentFileNames } from '$lib/registry/componentRegistry';
 import { getComponentSource } from '$lib/utils/handleComponentSource';
 import type {
   EntryGenerator as DirectoryEntryGenerator,

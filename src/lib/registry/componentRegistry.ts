@@ -1,11 +1,11 @@
-import { COSSUI_DIRECTORIES, type ComponentState } from '$lib/componentRegistry.components';
+import { COSSUI_DIRECTORIES, type ComponentState } from '$lib/registry/componentRegistry.components';
 import type {
   COSSUIComponent,
   COSSUIDirectory,
   COSSUIDirectoryToComponent
-} from '$lib/componentRegistry.types';
+} from '$lib/registry/componentRegistry.types';
 
-import { GITHUB_REPO_URL } from './constants';
+import { GITHUB_REPO_URL } from '../constants';
 
 interface ComponentMetadata {
   githubUrl: string;

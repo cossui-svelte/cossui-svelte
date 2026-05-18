@@ -1,4 +1,4 @@
-import type { COSSUIComponent, COSSUIDirectory } from '$lib/componentRegistry.types';
+import type { COSSUIComponent, COSSUIDirectory } from '$lib/registry/componentRegistry.types';
 
 import {
   type AvailableCOSSUIComponent,

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Input from "../ui/input.svelte";
+	import { Input } from "$lib/components/ui/input";
 	import { Button } from "$lib/components/ui/button";
 
 	import Check from "@lucide/svelte/icons/check";

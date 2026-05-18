@@ -2,29 +2,29 @@
 /**
  * !!!!!!!!!!
  * This file is auto-generated. Do not edit manually
- * Last generated at: 5/18/2026, 1:46:27 PM
+ * Last generated at: 5/18/2026, 9:17:30 PM
  * To update, run: pnpm generate:registry --format
  * @version 0.1.0
  * !!!!!!!!!!
  */
 
-import type { Prettify } from '$lib/types/helpers';
-import type { COSSUIDirectories } from './componentRegistry.components';
+import type { Prettify } from "$lib/types/helpers";
+import type { COSSUIDirectories } from "./componentRegistry.components";
 
 // Directory Type
 export type COSSUIDirectory = COSSUIDirectoryHelper<keyof COSSUIDirectories>;
 
 // Helpers
 export type COSSUIDirectoryHelper<T extends keyof COSSUIDirectories> =
-  COSSUIDirectories[T]['directory'];
+  COSSUIDirectories[T]["directory"];
 export type COSSUIComponentHelper<T extends keyof COSSUIDirectories> =
-  COSSUIDirectories[T]['components'][number];
+  COSSUIDirectories[T]["components"][number];
 
 // Status Helpers
 
 // Status Type Helpers
 export type COSSUITodoComponent<T extends keyof COSSUIDirectories> = Extract<
-  COSSUIDirectories[T]['components'][number],
+  COSSUIDirectories[T]["components"][number],
   `${string}todo.svelte`
 >;
 
@@ -43,7 +43,7 @@ export type COSSUIDirectoryTodoComponents = {
 
 // Ready Component Helpers
 export type COSSUIReadyComponent<T extends keyof COSSUIDirectories> = Exclude<
-  COSSUIDirectories[T]['components'][number],
+  COSSUIDirectories[T]["components"][number],
   `${string}todo.svelte`
 >;
 
@@ -68,13 +68,13 @@ export type COSSUIDirectoryComponentCounts = {
   [K in keyof COSSUIDirectories]: {
     directory: K;
     total: number;
-    status: COSSUIDirectories[K]['status'];
+    status: COSSUIDirectories[K]["status"];
   };
 };
 
 // Directory Status Filters
 export type COSSUIDirectoriesWithTodo = {
-  [K in keyof COSSUIDirectories as COSSUIDirectories[K]['status']['todo'] extends 0
+  [K in keyof COSSUIDirectories as COSSUIDirectories[K]["status"]["todo"] extends 0
     ? never
     : K]: COSSUIDirectories[K];
 };
@@ -83,39 +83,38 @@ export type COSSUIDirectoriesWithTodo = {
 export type COSSUIComponentMetadata = {
   [K in keyof COSSUIDirectories]: {
     directory: K;
-    name: COSSUIDirectories[K]['name'];
+    name: COSSUIDirectories[K]["name"];
     totalComponents: number;
-    status: COSSUIDirectories[K]['status'];
+    status: COSSUIDirectories[K]["status"];
     hasInProgress: boolean;
   };
 };
 
 // Component Types
-export type COSSUIAccordionComponents = COSSUIComponentHelper<'ACCORDION'>;
-export type COSSUIAlertComponents = COSSUIComponentHelper<'ALERT'>;
-export type COSSUIAvatarComponents = COSSUIComponentHelper<'AVATAR'>;
-export type COSSUIBadgeComponents = COSSUIComponentHelper<'BADGE'>;
-export type COSSUIBannerComponents = COSSUIComponentHelper<'BANNER'>;
-export type COSSUIBreadcrumbComponents = COSSUIComponentHelper<'BREADCRUMB'>;
-export type COSSUIButtonComponents = COSSUIComponentHelper<'BUTTON'>;
-export type COSSUICheckboxComponents = COSSUIComponentHelper<'CHECKBOX'>;
-export type COSSUIComboboxoriginoldComponents = COSSUIComponentHelper<'COMBOBOX.ORIGIN.OLD'>;
-export type COSSUIDialogComponents = COSSUIComponentHelper<'DIALOG'>;
-export type COSSUIEmptyComponents = COSSUIComponentHelper<'EMPTY'>;
-export type COSSUIInputComponents = COSSUIComponentHelper<'INPUT'>;
-export type COSSUINotificationComponents = COSSUIComponentHelper<'NOTIFICATION'>;
-export type COSSUIPaginationComponents = COSSUIComponentHelper<'PAGINATION'>;
-export type COSSUIPopoverComponents = COSSUIComponentHelper<'POPOVER'>;
-export type COSSUIRadioComponents = COSSUIComponentHelper<'RADIO'>;
-export type COSSUISelectComponents = COSSUIComponentHelper<'SELECT'>;
-export type COSSUISliderComponents = COSSUIComponentHelper<'SLIDER'>;
-export type COSSUISwitchComponents = COSSUIComponentHelper<'SWITCH'>;
-export type COSSUITabComponents = COSSUIComponentHelper<'TAB'>;
-export type COSSUITableComponents = COSSUIComponentHelper<'TABLE'>;
-export type COSSUITextareaComponents = COSSUIComponentHelper<'TEXTAREA'>;
-export type COSSUITimelineComponents = COSSUIComponentHelper<'TIMELINE'>;
-export type COSSUITooltipComponents = COSSUIComponentHelper<'TOOLTIP'>;
-export type COSSUITreeoldComponents = COSSUIComponentHelper<'TREE.OLD'>;
+export type COSSUIAccordionComponents = COSSUIComponentHelper<"ACCORDION">;
+export type COSSUIAlertComponents = COSSUIComponentHelper<"ALERT">;
+export type COSSUIAvatarComponents = COSSUIComponentHelper<"AVATAR">;
+export type COSSUIBadgeComponents = COSSUIComponentHelper<"BADGE">;
+export type COSSUIBannerComponents = COSSUIComponentHelper<"BANNER">;
+export type COSSUIBreadcrumbComponents = COSSUIComponentHelper<"BREADCRUMB">;
+export type COSSUIButtonComponents = COSSUIComponentHelper<"BUTTON">;
+export type COSSUICheckboxComponents = COSSUIComponentHelper<"CHECKBOX">;
+export type COSSUIDialogComponents = COSSUIComponentHelper<"DIALOG">;
+export type COSSUIEmptyComponents = COSSUIComponentHelper<"EMPTY">;
+export type COSSUIInputComponents = COSSUIComponentHelper<"INPUT">;
+export type COSSUINotificationComponents =
+  COSSUIComponentHelper<"NOTIFICATION">;
+export type COSSUIPaginationComponents = COSSUIComponentHelper<"PAGINATION">;
+export type COSSUIPopoverComponents = COSSUIComponentHelper<"POPOVER">;
+export type COSSUIRadioComponents = COSSUIComponentHelper<"RADIO">;
+export type COSSUISelectComponents = COSSUIComponentHelper<"SELECT">;
+export type COSSUISliderComponents = COSSUIComponentHelper<"SLIDER">;
+export type COSSUISwitchComponents = COSSUIComponentHelper<"SWITCH">;
+export type COSSUITabComponents = COSSUIComponentHelper<"TAB">;
+export type COSSUITableComponents = COSSUIComponentHelper<"TABLE">;
+export type COSSUITextareaComponents = COSSUIComponentHelper<"TEXTAREA">;
+export type COSSUITimelineComponents = COSSUIComponentHelper<"TIMELINE">;
+export type COSSUITooltipComponents = COSSUIComponentHelper<"TOOLTIP">;
 
 // All Component Types
 export type COSSUIComponent = Prettify<
@@ -127,7 +126,6 @@ export type COSSUIComponent = Prettify<
   | COSSUIBreadcrumbComponents
   | COSSUIButtonComponents
   | COSSUICheckboxComponents
-  | COSSUIComboboxoriginoldComponents
   | COSSUIDialogComponents
   | COSSUIEmptyComponents
   | COSSUIInputComponents
@@ -143,7 +141,6 @@ export type COSSUIComponent = Prettify<
   | COSSUITextareaComponents
   | COSSUITimelineComponents
   | COSSUITooltipComponents
-  | COSSUITreeoldComponents
 >;
 
 // Directory To Component
@@ -156,7 +153,6 @@ export type COSSUIDirectoryToComponent = Prettify<{
   breadcrumb: COSSUIBreadcrumbComponents;
   button: COSSUIButtonComponents;
   checkbox: COSSUICheckboxComponents;
-  'combobox.origin.old': COSSUIComboboxoriginoldComponents;
   dialog: COSSUIDialogComponents;
   empty: COSSUIEmptyComponents;
   input: COSSUIInputComponents;
@@ -172,5 +168,4 @@ export type COSSUIDirectoryToComponent = Prettify<{
   textarea: COSSUITextareaComponents;
   timeline: COSSUITimelineComponents;
   tooltip: COSSUITooltipComponents;
-  'tree.old': COSSUITreeoldComponents;
 }>;

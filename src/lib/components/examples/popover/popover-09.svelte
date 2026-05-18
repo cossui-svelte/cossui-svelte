@@ -1,14 +1,18 @@
 <script lang="ts">
-	import type { Icon as IconType } from '@lucide/svelte';
+	import type { Icon as IconType } from "@lucide/svelte";
 
-	import Button from '../ui/button.svelte';
+	import { Button } from "$lib/components/ui/button";
 
-	import Club from '@lucide/svelte/icons/club';
-	import Diamond from '@lucide/svelte/icons/diamond';
-	import Heart from '@lucide/svelte/icons/heart';
-	import Spade from '@lucide/svelte/icons/spade';
+	import Club from "@lucide/svelte/icons/club";
+	import Diamond from "@lucide/svelte/icons/diamond";
+	import Heart from "@lucide/svelte/icons/heart";
+	import Spade from "@lucide/svelte/icons/spade";
 
-	import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
+	import {
+		Popover,
+		PopoverContent,
+		PopoverTrigger,
+	} from "$lib/components/ui/popover";
 
 	interface TourStep {
 		description: string;
@@ -21,26 +25,26 @@
 			description:
 				"This is your new workspace. Here you'll find all your projects, recent activities, settings, and more.",
 			icon: Heart,
-			title: 'Heart'
+			title: "Heart",
 		},
 		{
 			description:
-				'Use the toolbar above to create new projects, invite team members, or access settings.',
+				"Use the toolbar above to create new projects, invite team members, or access settings.",
 			icon: Diamond,
-			title: 'Diamond'
+			title: "Diamond",
 		},
 		{
 			description:
-				'Click the support icon in the top right corner to access our help center and documentation.',
+				"Click the support icon in the top right corner to access our help center and documentation.",
 			icon: Club,
-			title: 'Club'
+			title: "Club",
 		},
 		{
 			description:
-				'Press ⌘K to open the command palette. Use arrow keys to navigate and Enter to select an action.',
+				"Press ⌘K to open the command palette. Use arrow keys to navigate and Enter to select an action.",
 			icon: Spade,
-			title: 'Spade'
-		}
+			title: "Spade",
+		},
 	];
 
 	let currentStep = $state(0);
@@ -80,21 +84,30 @@
 
 		<PopoverContent
 			class="max-w-[280px] py-3 shadow-none"
-			side={currentStep % 2 === 0 ? 'left' : 'right'}
+			side={currentStep % 2 === 0 ? "left" : "right"}
 			customAnchor={anchors[currentStep]}
 			showArrow={true}
 		>
 			<div class="space-y-3">
 				<div class="space-y-1">
-					<p class="text-[13px] font-medium">{tourSteps[currentStep].title}</p>
-					<p class="text-xs text-muted-foreground">{tourSteps[currentStep].description}</p>
+					<p class="text-[13px] font-medium">
+						{tourSteps[currentStep].title}
+					</p>
+					<p class="text-xs text-muted-foreground">
+						{tourSteps[currentStep].description}
+					</p>
 				</div>
 				<div class="flex items-center justify-between gap-2">
 					<span class="text-xs text-muted-foreground">
 						{currentStep + 1}/{tourSteps.length}
 					</span>
-					<button class="text-xs font-medium hover:underline" onclick={handleNavigation}>
-						{currentStep === tourSteps.length - 1 ? 'Start over' : 'Next'}
+					<button
+						class="text-xs font-medium hover:underline"
+						onclick={handleNavigation}
+					>
+						{currentStep === tourSteps.length - 1
+							? "Start over"
+							: "Next"}
 					</button>
 				</div>
 			</div>
