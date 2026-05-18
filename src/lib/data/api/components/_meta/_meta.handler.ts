@@ -1,5 +1,5 @@
-import { getComponentRegistry } from '$lib/registry/componentRegistry';
 import type { TypedResponse } from '$lib/data/api/helpers/types';
+import { getComponentRegistry } from '$lib/registry/componentRegistry';
 import type { RequestHandler as MetaRequestHandler } from '../../../../../routes/(api)/api/v1/components/_meta.json/$types';
 
 export const API_V1_COMPONENTS_META_ENDPOINT_HANDLER = {

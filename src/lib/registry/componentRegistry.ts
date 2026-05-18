@@ -1,4 +1,7 @@
-import { COSSUI_DIRECTORIES, type ComponentState } from '$lib/registry/componentRegistry.components';
+import {
+  COSSUI_DIRECTORIES,
+  type ComponentState
+} from '$lib/registry/componentRegistry.components';
 import type {
   COSSUIComponent,
   COSSUIDirectory,

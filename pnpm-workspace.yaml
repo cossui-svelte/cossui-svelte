@@ -4,3 +4,4 @@ allowBuilds:
 minimumReleaseAgeExclude:
   - '@types/node@25.9.0'
   - tsx@4.22.2
+  - svelte@5.55.8

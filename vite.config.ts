@@ -8,12 +8,14 @@ import Icons from 'unplugin-icons/vite';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  plugins: [tailwindcss(), enhancedImages(), sveltekit(),
+  plugins: [
+    tailwindcss(),
+    enhancedImages(),
+    sveltekit(),
 
-  Icons({
-    compiler: 'svelte'
-  })
-
+    Icons({
+      compiler: 'svelte'
+    })
   ],
   resolve: {
     alias: {
