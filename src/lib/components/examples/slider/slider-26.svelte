@@ -127,7 +127,7 @@
 	import { Button } from "$lib/components/ui/button";
 	import { Input } from "$lib/components/ui/input";
 	import { Label } from "$lib/components/ui/label";
-	import Slider from "$lib/components/ui/slider.svelte";
+	import { Slider } from "$lib/components/ui/slider";
 
 	let value = $state([200, 780]);
 	const itemsInRange = $derived(

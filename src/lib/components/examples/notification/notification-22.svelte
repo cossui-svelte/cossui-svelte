@@ -3,19 +3,19 @@
 
 	import CircleCheck from "@lucide/svelte/icons/circle-check";
 	import X from "@lucide/svelte/icons/x";
-	import { toast, type ToastT } from "svelte-sonner";
+	import { toastManager } from "$lib/components/ui/toast";
 
 	function openToast() {
 		const newId = Math.random();
 		//the implementation will change, once https://github.com/wobsoriano/svelte-sonner/pull/126 lands
 		//@ts-expect-error - this is a hack to get the toast id, dont use in production
-		toast.custom((node) => customToastSnippet(node, () => newId), {
+		toastManager.add((node) => customToastSnippet(node, () => newId), {
 			id: newId,
 		});
 	}
 </script>
 
-{#snippet customToastSnippet(toastId: ToastT["id"])}
+{#snippet customToastSnippet(toastId: string)}
 	<div
 		class="w-[var(--width)] rounded-lg border border-border bg-background px-4 py-3"
 	>
@@ -37,7 +37,7 @@
 						<span class="mx-1 text-muted-foreground">·</span>
 						<button
 							class="text-sm font-medium hover:underline"
-							onclick={() => toast.dismiss(toastId)}
+							onclick={() => toastManager.dismiss(toastId)}
 						>
 							Undo
 						</button>
@@ -48,7 +48,7 @@
 				variant="ghost"
 				class="group -my-1.5 -me-2 size-8 shrink-0 p-0 hover:bg-transparent"
 				aria-label="Close banner"
-				onclick={() => toast.dismiss(toastId)}
+				onclick={() => toastManager.dismiss(toastId)}
 			>
 				<X
 					size={16}

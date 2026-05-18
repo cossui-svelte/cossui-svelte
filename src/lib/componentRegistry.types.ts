@@ -2,7 +2,7 @@
 /**
  * !!!!!!!!!!
  * This file is auto-generated. Do not edit manually
- * Last generated at: 5/17/2026, 10:57:28 PM
+ * Last generated at: 5/18/2026, 1:46:27 PM
  * To update, run: pnpm generate:registry --format
  * @version 0.1.0
  * !!!!!!!!!!
@@ -108,7 +108,7 @@ export type COSSUINotificationComponents =
   COSSUIComponentHelper<"NOTIFICATION">;
 export type COSSUIPaginationComponents = COSSUIComponentHelper<"PAGINATION">;
 export type COSSUIPopoverComponents = COSSUIComponentHelper<"POPOVER">;
-export type COSSUIRadiosComponents = COSSUIComponentHelper<"RADIOS">;
+export type COSSUIRadioComponents = COSSUIComponentHelper<"RADIO">;
 export type COSSUISelectComponents = COSSUIComponentHelper<"SELECT">;
 export type COSSUISliderComponents = COSSUIComponentHelper<"SLIDER">;
 export type COSSUISwitchComponents = COSSUIComponentHelper<"SWITCH">;
@@ -136,7 +136,7 @@ export type COSSUIComponent = Prettify<
   | COSSUINotificationComponents
   | COSSUIPaginationComponents
   | COSSUIPopoverComponents
-  | COSSUIRadiosComponents
+  | COSSUIRadioComponents
   | COSSUISelectComponents
   | COSSUISliderComponents
   | COSSUISwitchComponents
@@ -165,7 +165,7 @@ export type COSSUIDirectoryToComponent = Prettify<{
   notification: COSSUINotificationComponents;
   pagination: COSSUIPaginationComponents;
   popover: COSSUIPopoverComponents;
-  radios: COSSUIRadiosComponents;
+  radio: COSSUIRadioComponents;
   select: COSSUISelectComponents;
   slider: COSSUISliderComponents;
   switch: COSSUISwitchComponents;

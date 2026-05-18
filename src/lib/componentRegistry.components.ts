@@ -2,7 +2,7 @@
 /**
  * !!!!!!!!!!
  * This file is auto-generated. Do not edit manually
- * Last generated at: 5/17/2026, 10:57:28 PM
+ * Last generated at: 5/18/2026, 1:46:26 PM
  * To update, run: pnpm generate:registry --format
  * @version 0.1.0
  * !!!!!!!!!!
@@ -500,12 +500,12 @@ export const COSSUI_DIRECTORIES = {
       ready: 9,
     },
   },
-  RADIOS: {
-    directory: "radios",
+  RADIO: {
+    directory: "radio",
     description: "No description available.",
     isnew: false,
     category: "Uncategorized",
-    name: "Radios",
+    name: "Radio",
     components: [
       "radio-01.svelte",
       "radio-02.svelte",

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Input } from "$lib/components/ui/input";
 	import { Label } from "$lib/components/ui/label";
-	import Slider from "$lib/components/ui/slider.svelte";
+	import { Slider } from "$lib/components/ui/slider";
 
 	const min = 0;
 	const max = 200;
