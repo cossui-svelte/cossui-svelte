@@ -1,39 +1,35 @@
 <script lang="ts">
-	import { Drawer as DrawerPrimitive } from "$lib/vaul";
-	import { cn } from "$lib/utils.js";
-	import { getContext, type ComponentProps } from "svelte";
-	import type { WithoutChildrenOrChild } from "$lib/utils.js";
-	import { DrawerViewport, DrawerOverlay, DrawerPortal } from ".";
+import { type ComponentProps, getContext } from 'svelte';
+import type { WithoutChildrenOrChild } from '$lib/utils.js';
+import { cn } from '$lib/utils.js';
+import type { Drawer as DrawerPrimitive } from '$lib/vaul';
+import { DrawerOverlay, type DrawerPortal, DrawerViewport } from '.';
 
-	type DrawerPosition = "right" | "left" | "top" | "bottom";
+type DrawerPosition = 'right' | 'left' | 'top' | 'bottom';
 
-	let {
-		ref = $bindable(null),
-		class: className,
-		portalProps,
-		children,
-		showCloseButton = false,
-		position: positionProp,
-		variant = "default",
-		showBar = false,
-		...restProps
-	}: DrawerPrimitive.ContentProps & {
-		showCloseButton?: boolean;
-		position?: DrawerPosition;
-		variant?: "default" | "straight" | "inset";
-		showBar?: boolean;
-		portalProps?: WithoutChildrenOrChild<
-			ComponentProps<typeof DrawerPortal>
-		>;
-	} = $props();
+let {
+  ref = $bindable(null),
+  class: className,
+  portalProps,
+  children,
+  showCloseButton = false,
+  position: positionProp,
+  variant = 'default',
+  showBar = false,
+  ...restProps
+}: DrawerPrimitive.ContentProps & {
+  showCloseButton?: boolean;
+  position?: DrawerPosition;
+  variant?: 'default' | 'straight' | 'inset';
+  showBar?: boolean;
+  portalProps?: WithoutChildrenOrChild<ComponentProps<typeof DrawerPortal>>;
+} = $props();
 
-	const ctx = getContext<{ position: () => DrawerPosition } | undefined>(
-		"drawer-position",
-	);
-	const position = $derived(positionProp ?? ctx?.position() ?? "bottom");
+const ctx = getContext<{ position: () => DrawerPosition } | undefined>('drawer-position');
+const position = $derived(positionProp ?? ctx?.position() ?? 'bottom');
 
-	// const handle =
-	// "bg-muted mx-auto mt-4 hidden h-1.5 w-[100px] shrink-0 rounded-full group-data-[vaul-drawer-direction=bottom]/drawer-content:block";
+// const handle =
+// "bg-muted mx-auto mt-4 hidden h-1.5 w-[100px] shrink-0 rounded-full group-data-[vaul-drawer-direction=bottom]/drawer-content:block";
 </script>
 
 <DrawerPortal {...portalProps}>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	const uid = $props.id();
+const uid = $props.id();
 </script>
 
 <div

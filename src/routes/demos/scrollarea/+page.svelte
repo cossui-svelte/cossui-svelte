@@ -1,8 +1,8 @@
 <script>
-    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
-    import { ScrollArea } from "$lib/components/ui/scroll-area";
+import ComponentPreviewTabs from '$lib/components/app/component-preview-tabs.svelte';
+import { ScrollArea } from '$lib/components/ui/scroll-area';
 
-    const tags = Array.from({ length: 200 }, (_, i) => `v1.0.0-alpha.${i}`);
+const tags = Array.from({ length: 200 }, (_, i) => `v1.0.0-alpha.${i}`);
 </script>
 
 <ComponentPreviewTabs>

@@ -1,51 +1,46 @@
 <script lang="ts">
-	import {
-		Accordion,
-		AccordionItem,
-		AccordionContent,
-	} from "$lib/components/ui/accordion";
+import Bell from '@lucide/svelte/icons/bell';
+import LifeBuoy from '@lucide/svelte/icons/life-buoy';
+import Link2 from '@lucide/svelte/icons/link-2';
+import Plus from '@lucide/svelte/icons/plus';
+import ShieldCheck from '@lucide/svelte/icons/shield-check';
+import { Accordion as AccordionPrimitive } from 'bits-ui';
+import { Accordion, AccordionContent, AccordionItem } from '$lib/components/ui/accordion';
 
-	import Bell from "@lucide/svelte/icons/bell";
-	import LifeBuoy from "@lucide/svelte/icons/life-buoy";
-	import Link2 from "@lucide/svelte/icons/link-2";
-	import Plus from "@lucide/svelte/icons/plus";
-	import ShieldCheck from "@lucide/svelte/icons/shield-check";
-	import { Accordion as AccordionPrimitive } from "bits-ui";
-
-	const items = [
-		{
-			content:
-				"Connect your accounts from Google, GitHub, or Microsoft to enable single sign-on and streamline your workflow. Connected accounts can be used for quick login and importing your preferences across platforms. You can revoke access to any connected account at any time.",
-			icon: Link2,
-			id: "1",
-			sub: "Manage your linked social and work accounts",
-			title: "Connected accounts",
-		},
-		{
-			content:
-				"Choose which updates you want to receive. You can get notifications for: security alerts, billing updates, newsletter and product announcements, usage reports, and scheduled maintenance. Notifications can be delivered via email, SMS, or push notifications on your devices.",
-			icon: Bell,
-			id: "2",
-			sub: "Customize your notification preferences",
-			title: "Notifications",
-		},
-		{
-			content:
-				"Protect your account with two-factor authentication. You can use authenticator apps like Google Authenticator or Authy, receive SMS codes, or use security keys like YubiKey. We recommend using an authenticator app for the most secure experience.",
-			icon: ShieldCheck,
-			id: "3",
-			sub: "Add an extra layer of security to your account",
-			title: "2-step verification",
-		},
-		{
-			content:
-				"Our support team is available around the clock to assist you. For billing inquiries, technical issues, or general questions, you can reach us through live chat, email at support@example.com, or schedule a call with our technical team. Premium support is available for enterprise customers.",
-			icon: LifeBuoy,
-			id: "4",
-			sub: "We're here to help 24/7",
-			title: "Contact support",
-		},
-	];
+const items = [
+  {
+    content:
+      'Connect your accounts from Google, GitHub, or Microsoft to enable single sign-on and streamline your workflow. Connected accounts can be used for quick login and importing your preferences across platforms. You can revoke access to any connected account at any time.',
+    icon: Link2,
+    id: '1',
+    sub: 'Manage your linked social and work accounts',
+    title: 'Connected accounts'
+  },
+  {
+    content:
+      'Choose which updates you want to receive. You can get notifications for: security alerts, billing updates, newsletter and product announcements, usage reports, and scheduled maintenance. Notifications can be delivered via email, SMS, or push notifications on your devices.',
+    icon: Bell,
+    id: '2',
+    sub: 'Customize your notification preferences',
+    title: 'Notifications'
+  },
+  {
+    content:
+      'Protect your account with two-factor authentication. You can use authenticator apps like Google Authenticator or Authy, receive SMS codes, or use security keys like YubiKey. We recommend using an authenticator app for the most secure experience.',
+    icon: ShieldCheck,
+    id: '3',
+    sub: 'Add an extra layer of security to your account',
+    title: '2-step verification'
+  },
+  {
+    content:
+      'Our support team is available around the clock to assist you. For billing inquiries, technical issues, or general questions, you can reach us through live chat, email at support@example.com, or schedule a call with our technical team. Premium support is available for enterprise customers.',
+    icon: LifeBuoy,
+    id: '4',
+    sub: "We're here to help 24/7",
+    title: 'Contact support'
+  }
+];
 </script>
 
 <div class="space-y-4">

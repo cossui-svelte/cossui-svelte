@@ -11,8 +11,11 @@
   },
   "files": {
     "includes": [
+      "scripts/**/*.ts",
+      "scripts/**/*.json",
       "src/**/*.ts",
       "src/**/*.js",
+      "src/**/*.svelte",
       "tsconfig.json",
       "vite.config.ts",
       "svelte.config.js",
@@ -23,7 +26,6 @@
       "!dist",
       "!.svelte-kit",
       "!build",
-      "!**/*.old",
       "!**/*.old"
     ]
   },

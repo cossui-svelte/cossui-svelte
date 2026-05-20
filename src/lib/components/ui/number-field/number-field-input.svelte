@@ -1,32 +1,35 @@
 <script lang="ts">
-  import type { HTMLInputAttributes } from "svelte/elements";
-  import { getContext } from "svelte";
-  import { cn } from "$lib/utils.js";
-  import { NUMBER_FIELD_CONTEXT_KEY, type NumberFieldContext } from "./number-field.svelte";
+import { getContext } from 'svelte';
+import type { HTMLInputAttributes } from 'svelte/elements';
+import { cn } from '$lib/utils.js';
+import { NUMBER_FIELD_CONTEXT_KEY, type NumberFieldContext } from './number-field.svelte';
 
-  type Props = Omit<HTMLInputAttributes, "id" | "type" | "value" | "min" | "max" | "step" | "disabled">;
+type Props = Omit<
+  HTMLInputAttributes,
+  'id' | 'type' | 'value' | 'min' | 'max' | 'step' | 'disabled'
+>;
 
-  let { class: className, ...restProps }: Props = $props();
+let { class: className, ...restProps }: Props = $props();
 
-  const ctx = getContext<NumberFieldContext>(NUMBER_FIELD_CONTEXT_KEY);
+const ctx = getContext<NumberFieldContext>(NUMBER_FIELD_CONTEXT_KEY);
 
-  function handleChange(e: Event) {
-    const input = e.currentTarget as HTMLInputElement;
-    const v = parseFloat(input.value);
-    if (!isNaN(v)) {
-      ctx?.setValue(v);
-    }
+function handleChange(e: Event) {
+  const input = e.currentTarget as HTMLInputElement;
+  const v = parseFloat(input.value);
+  if (!isNaN(v)) {
+    ctx?.setValue(v);
   }
+}
 
-  function handleKeydown(e: KeyboardEvent) {
-    if (e.key === "ArrowUp") {
-      e.preventDefault();
-      ctx?.increment();
-    } else if (e.key === "ArrowDown") {
-      e.preventDefault();
-      ctx?.decrement();
-    }
+function handleKeydown(e: KeyboardEvent) {
+  if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    ctx?.increment();
+  } else if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    ctx?.decrement();
   }
+}
 </script>
 
 <input

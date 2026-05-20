@@ -1,40 +1,40 @@
 <script lang="ts">
-  import { Tooltip } from "bits-ui";
-  import Check from "@lucide/svelte/icons/check";
-import Copy from "@lucide/svelte/icons/copy";
-  import { cn } from "$lib/utils.js";
-  import { buttonVariants } from "$lib/components/ui/button";
+import Check from '@lucide/svelte/icons/check';
+import Copy from '@lucide/svelte/icons/copy';
+import { Tooltip } from 'bits-ui';
+import { buttonVariants } from '$lib/components/ui/button';
+import { cn } from '$lib/utils.js';
 
-  interface Props {
-    value: string;
-    class?: string;
-    variant?:
-      | "ghost"
-      | "outline"
-      | "default"
-      | "secondary"
-      | "destructive"
-      | "link"
-      | "destructive-outline";
+interface Props {
+  value: string;
+  class?: string;
+  variant?:
+    | 'ghost'
+    | 'outline'
+    | 'default'
+    | 'secondary'
+    | 'destructive'
+    | 'link'
+    | 'destructive-outline';
+}
+
+let { value, class: className, variant = 'ghost' }: Props = $props();
+
+let isCopied = $state(false);
+let timeoutId: ReturnType<typeof setTimeout> | undefined;
+
+async function copyToClipboard() {
+  try {
+    await navigator.clipboard.writeText(value);
+    isCopied = true;
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      isCopied = false;
+    }, 2000);
+  } catch (err) {
+    console.error('Failed to copy to clipboard:', err);
   }
-
-  let { value, class: className, variant = "ghost" }: Props = $props();
-
-  let isCopied = $state(false);
-  let timeoutId: ReturnType<typeof setTimeout> | undefined;
-
-  async function copyToClipboard() {
-    try {
-      await navigator.clipboard.writeText(value);
-      isCopied = true;
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(() => {
-        isCopied = false;
-      }, 2000);
-    } catch (err) {
-      console.error("Failed to copy to clipboard:", err);
-    }
-  }
+}
 </script>
 
 <Tooltip.Provider>

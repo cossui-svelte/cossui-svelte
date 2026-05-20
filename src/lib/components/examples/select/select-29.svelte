@@ -1,18 +1,18 @@
 <script lang="ts">
-	import * as Select from '$lib/components/ui/select/index.js';
+import * as Select from '$lib/components/ui/select/index.js';
 
-	const items = [
-		{ label: 'Svelte', value: 's1' },
-		{ label: 'Next.js', value: 's2' },
-		{ label: 'Astro', value: 's3' },
-		{ label: 'Gatsby', value: 's4' }
-	] as const;
+const items = [
+  { label: 'Svelte', value: 's1' },
+  { label: 'Next.js', value: 's2' },
+  { label: 'Astro', value: 's3' },
+  { label: 'Gatsby', value: 's4' }
+] as const;
 
-	let value = $state('');
+let value = $state('');
 
-	const selected = $derived(items.find((i) => i.value === value));
+const selected = $derived(items.find((i) => i.value === value));
 
-	const uid = $props.id();
+const uid = $props.id();
 </script>
 
 <div

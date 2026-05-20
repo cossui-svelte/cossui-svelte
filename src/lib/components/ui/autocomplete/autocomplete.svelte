@@ -1,10 +1,10 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import { Combobox } from "bits-ui";
+import type { Combobox } from 'bits-ui';
+import type { Snippet } from 'svelte';
 
-  type Props = Combobox.RootProps & { children?: Snippet };
+type Props = Combobox.RootProps & { children?: Snippet };
 
-  let { children, ...restProps }: Props = $props();
+let { children, ...restProps }: Props = $props();
 </script>
 
 <Combobox.Root {...restProps}>

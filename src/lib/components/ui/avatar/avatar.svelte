@@ -1,16 +1,16 @@
 <script lang="ts">
-  import { Avatar as AvatarPrimitive } from "bits-ui";
-  import { cn } from "$lib/utils.js";
+import type { Avatar as AvatarPrimitive } from 'bits-ui';
+import { cn } from '$lib/utils.js';
 
-  let {
-    ref = $bindable(null),
-    loadingStatus = $bindable("loading"),
-    size = "default",
-    class: className,
-    ...restProps
-  }: AvatarPrimitive.RootProps & {
-    size?: "default" | "sm" | "lg";
-  } = $props();
+let {
+  ref = $bindable(null),
+  loadingStatus = $bindable('loading'),
+  size = 'default',
+  class: className,
+  ...restProps
+}: AvatarPrimitive.RootProps & {
+  size?: 'default' | 'sm' | 'lg';
+} = $props();
 </script>
 
 <AvatarPrimitive.Root

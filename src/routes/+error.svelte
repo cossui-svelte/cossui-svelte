@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { page } from "$app/state";
-	import PageHeaderDescription from "$lib/components/shared-components/page-header-description.svelte";
-	import PageHeaderHeading from "$lib/components/shared-components/page-header-heading.svelte";
-	import PageHeader from "$lib/components/shared-components/page-header.svelte";
-	import { Button } from "$lib/components/ui/button";
-	import { RiArrowLeftLine } from "svelte-remixicon";
+import { RiArrowLeftLine } from 'svelte-remixicon';
+import { page } from '$app/state';
+import PageHeader from '$lib/components/shared-components/page-header.svelte';
+import PageHeaderDescription from '$lib/components/shared-components/page-header-description.svelte';
+import PageHeaderHeading from '$lib/components/shared-components/page-header-heading.svelte';
+import { Button } from '$lib/components/ui/button';
 </script>
 
 <svelte:head>

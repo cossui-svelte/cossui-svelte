@@ -1,22 +1,21 @@
 <script lang="ts">
-	import { Button, buttonVariants } from "$lib/components/ui/button";
-	import {
-		Dialog,
-		DialogClose,
-		DialogContent,
-		DialogDescription,
-		DialogFooter,
-		DialogHeader,
-		DialogTitle,
-		DialogTrigger,
-	} from "$lib/components/ui/dialog";
-	import { Input } from "$lib/components/ui/input";
-	import { Label } from "$lib/components/ui/label";
+import CircleAlert from '@lucide/svelte/icons/circle-alert';
+import { Button, buttonVariants } from '$lib/components/ui/button';
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger
+} from '$lib/components/ui/dialog';
+import { Input } from '$lib/components/ui/input';
+import { Label } from '$lib/components/ui/label';
+import { PROJECT_NAME } from '$lib/config';
 
-	import CircleAlert from "@lucide/svelte/icons/circle-alert";
-	import { PROJECT_NAME } from "$lib/config";
-
-	let inputValue = $state("");
+let inputValue = $state('');
 </script>
 
 <Dialog>

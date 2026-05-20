@@ -1,29 +1,29 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import { Popover as PopoverPrimitive } from "bits-ui";
-  import { cn } from "$lib/utils.js";
+import type { Popover as PopoverPrimitive } from 'bits-ui';
+import type { Snippet } from 'svelte';
+import { cn } from '$lib/utils.js';
 
-  interface Props extends PopoverPrimitive.ContentProps {
-    children?: Snippet;
-    tooltipStyle?: boolean;
-    side?: PopoverPrimitive.ContentProps["side"];
-    align?: PopoverPrimitive.ContentProps["align"];
-    sideOffset?: number;
-    alignOffset?: number;
-    showArrow?: boolean;
-  }
+interface Props extends PopoverPrimitive.ContentProps {
+  children?: Snippet;
+  tooltipStyle?: boolean;
+  side?: PopoverPrimitive.ContentProps['side'];
+  align?: PopoverPrimitive.ContentProps['align'];
+  sideOffset?: number;
+  alignOffset?: number;
+  showArrow?: boolean;
+}
 
-  let {
-    class: className,
-    children,
-    tooltipStyle = false,
-    side = "bottom",
-    align = "center",
-    showArrow = false,
-    sideOffset = 4,
-    alignOffset = 0,
-    ...restProps
-  }: Props = $props();
+let {
+  class: className,
+  children,
+  tooltipStyle = false,
+  side = 'bottom',
+  align = 'center',
+  showArrow = false,
+  sideOffset = 4,
+  alignOffset = 0,
+  ...restProps
+}: Props = $props();
 </script>
 
 <PopoverPrimitive.Portal>

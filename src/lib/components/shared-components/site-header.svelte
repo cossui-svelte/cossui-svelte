@@ -1,23 +1,23 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import GithubLink from "./github-link.svelte";
-  import ModeSwitcher from "./mode-switcher.svelte";
-  import ProductLabel from "./product-label.svelte";
-  import ProductsDropdown from "./products-dropdown.svelte";
+import type { Snippet } from 'svelte';
+import GithubLink from './github-link.svelte';
+import ModeSwitcher from './mode-switcher.svelte';
+import ProductLabel from './product-label.svelte';
+import ProductsDropdown from './products-dropdown.svelte';
 
-  interface ProductItem {
-    href: string;
-    label: string;
-  }
+interface ProductItem {
+  href: string;
+  label: string;
+}
 
-  interface Props {
-    products: ProductItem[];
-    mobileNav?: Snippet;
-    children?: Snippet;
-    currentProduct?: string;
-  }
+interface Props {
+  products: ProductItem[];
+  mobileNav?: Snippet;
+  children?: Snippet;
+  currentProduct?: string;
+}
 
-  let { products, mobileNav, children, currentProduct }: Props = $props();
+let { products, mobileNav, children, currentProduct }: Props = $props();
 </script>
 
 <header

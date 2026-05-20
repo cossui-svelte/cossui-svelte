@@ -1,11 +1,11 @@
 <script lang="ts">
-    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
-    import { Checkbox } from "$lib/components/ui/checkbox";
-    import { Label } from "$lib/components/ui/label";
+import ComponentPreviewTabs from '$lib/components/app/component-preview-tabs.svelte';
+import { Checkbox } from '$lib/components/ui/checkbox';
+import { Label } from '$lib/components/ui/label';
 
-    let checked = $state(false);
+let checked = $state(false);
 
-    const uid = $props.id();
+const uid = $props.id();
 </script>
 
 <ComponentPreviewTabs>

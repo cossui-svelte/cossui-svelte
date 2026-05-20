@@ -1,8 +1,8 @@
 <script lang="ts">
-	// If you have a custom Input component, you might want to import it here
-	// import Input from '$lib/components/ui/input.svelte';
+// If you have a custom Input component, you might want to import it here
+// import Input from '$lib/components/ui/input.svelte';
 
-	const uid = $props.id();
+const uid = $props.id();
 </script>
 
 <div

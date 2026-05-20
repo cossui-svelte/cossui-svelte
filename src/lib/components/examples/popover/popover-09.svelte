@@ -1,62 +1,56 @@
 <script lang="ts">
-	import type { Icon as IconType } from "@lucide/svelte";
+import type { Icon as IconType } from '@lucide/svelte';
+import Club from '@lucide/svelte/icons/club';
+import Diamond from '@lucide/svelte/icons/diamond';
+import Heart from '@lucide/svelte/icons/heart';
+import Spade from '@lucide/svelte/icons/spade';
+import { Button } from '$lib/components/ui/button';
 
-	import { Button } from "$lib/components/ui/button";
+import { Popover, PopoverContent, PopoverTrigger } from '$lib/components/ui/popover';
 
-	import Club from "@lucide/svelte/icons/club";
-	import Diamond from "@lucide/svelte/icons/diamond";
-	import Heart from "@lucide/svelte/icons/heart";
-	import Spade from "@lucide/svelte/icons/spade";
+interface TourStep {
+  description: string;
+  icon: typeof IconType;
+  title: string;
+}
 
-	import {
-		Popover,
-		PopoverContent,
-		PopoverTrigger,
-	} from "$lib/components/ui/popover";
+const tourSteps: TourStep[] = [
+  {
+    description:
+      "This is your new workspace. Here you'll find all your projects, recent activities, settings, and more.",
+    icon: Heart,
+    title: 'Heart'
+  },
+  {
+    description:
+      'Use the toolbar above to create new projects, invite team members, or access settings.',
+    icon: Diamond,
+    title: 'Diamond'
+  },
+  {
+    description:
+      'Click the support icon in the top right corner to access our help center and documentation.',
+    icon: Club,
+    title: 'Club'
+  },
+  {
+    description:
+      'Press ⌘K to open the command palette. Use arrow keys to navigate and Enter to select an action.',
+    icon: Spade,
+    title: 'Spade'
+  }
+];
 
-	interface TourStep {
-		description: string;
-		icon: typeof IconType;
-		title: string;
-	}
+let currentStep = $state(0);
+let anchors = $state<HTMLDivElement[]>([]);
 
-	const tourSteps: TourStep[] = [
-		{
-			description:
-				"This is your new workspace. Here you'll find all your projects, recent activities, settings, and more.",
-			icon: Heart,
-			title: "Heart",
-		},
-		{
-			description:
-				"Use the toolbar above to create new projects, invite team members, or access settings.",
-			icon: Diamond,
-			title: "Diamond",
-		},
-		{
-			description:
-				"Click the support icon in the top right corner to access our help center and documentation.",
-			icon: Club,
-			title: "Club",
-		},
-		{
-			description:
-				"Press ⌘K to open the command palette. Use arrow keys to navigate and Enter to select an action.",
-			icon: Spade,
-			title: "Spade",
-		},
-	];
-
-	let currentStep = $state(0);
-	let anchors = $state<HTMLDivElement[]>([]);
-
-	function handleNavigation() {
-		if (currentStep === tourSteps.length - 1) {
-			currentStep = 0;
-		} else {
-			currentStep++;
-		}
-	}
+function handleNavigation() {
+  if (currentStep === tourSteps.length - 1) {
+    currentStep = 0;
+  } else {
+    currentStep++;
+  }
+}
 </script>
 
 <div class="flex flex-col gap-4">

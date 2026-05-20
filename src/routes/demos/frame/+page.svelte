@@ -1,14 +1,14 @@
 <script>
-    import ComponentPreview from "$lib/components/app/component-preview.svelte";
-    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
-    import {
-        Frame,
-        FrameDescription,
-        FrameFooter,
-        FrameHeader,
-        FramePanel,
-        FrameTitle,
-    } from "$lib/components/ui/frame";
+import ComponentPreview from '$lib/components/app/component-preview.svelte';
+import ComponentPreviewTabs from '$lib/components/app/component-preview-tabs.svelte';
+import {
+  Frame,
+  FrameDescription,
+  FrameFooter,
+  FrameHeader,
+  FramePanel,
+  FrameTitle
+} from '$lib/components/ui/frame';
 </script>
 
 <ComponentPreviewTabs>

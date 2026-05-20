@@ -1,18 +1,17 @@
 <script lang="ts">
-	import {
-		AlertDialog,
-		AlertDialogAction,
-		AlertDialogClose,
-		AlertDialogContent,
-		AlertDialogDescription,
-		AlertDialogFooter,
-		AlertDialogHeader,
-		AlertDialogTitle,
-		AlertDialogTrigger,
-	} from "$lib/components/ui/alert-dialog";
-	import { buttonVariants } from "$lib/components/ui/button";
-
-	import CircleAlert from "@lucide/svelte/icons/circle-alert";
+import CircleAlert from '@lucide/svelte/icons/circle-alert';
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogClose,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger
+} from '$lib/components/ui/alert-dialog';
+import { buttonVariants } from '$lib/components/ui/button';
 </script>
 
 <AlertDialog>

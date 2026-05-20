@@ -1,88 +1,90 @@
 <script lang="ts">
-	import { Timeline, TimelineContent, TimelineItem } from '$lib/components/ui/timeline';
-	type ActionType = 'create' | 'edit' | 'post' | 'reply';
+import { Timeline, TimelineContent, TimelineItem } from '$lib/components/ui/timeline';
 
-	import type { Icon as IconType } from '@lucide/svelte';
+type ActionType = 'create' | 'edit' | 'post' | 'reply';
 
-	import BookOpenIcon from '@lucide/svelte/icons/book-open';
-	import MessageCircleIcon from '@lucide/svelte/icons/message-circle';
-	import PencilIcon from '@lucide/svelte/icons/pencil';
-	import PlusIcon from '@lucide/svelte/icons/plus';
-	import Avatar02 from '$lib/assets/avatar-40-02.jpg?w=48&h=48&enhanced';
-	const items: {
-		action: ActionType;
-		date: Date;
-		id: number;
-		image: Picture;
-		user: string;
-	}[] = [
-		{
-			action: 'post',
-			date: new Date(Date.now() - 59000), // 59 seconds ago
-			id: 1,
-			image: Avatar02,
-			user: 'Matt'
-		},
-		{
-			action: 'reply',
-			date: new Date(Date.now() - 180000), // 3 minutes ago
-			id: 2,
-			image: Avatar02,
-			user: 'Matt'
-		},
-		{
-			action: 'edit',
-			date: new Date(Date.now() - 300000), // 5 minutes ago
-			id: 3,
-			image: Avatar02,
-			user: 'Matt'
-		},
-		{
-			action: 'create',
-			date: new Date(Date.now() - 600000), // 10 minutes ago
-			id: 4,
-			image: Avatar02,
-			user: 'Matt'
-		}
-	];
+import type { Icon as IconType } from '@lucide/svelte';
 
-	function getActionIcon(action: ActionType): typeof IconType {
-		const icons: Record<ActionType, typeof IconType> = {
-			create: PlusIcon,
-			edit: PencilIcon,
-			post: BookOpenIcon,
-			reply: MessageCircleIcon
-		};
-		return icons[action];
-	}
+import BookOpenIcon from '@lucide/svelte/icons/book-open';
+import MessageCircleIcon from '@lucide/svelte/icons/message-circle';
+import PencilIcon from '@lucide/svelte/icons/pencil';
+import PlusIcon from '@lucide/svelte/icons/plus';
+import Avatar02 from '$lib/assets/avatar-40-02.jpg?w=48&h=48&enhanced';
 
-	function getActionText(action: ActionType): string {
-		const texts: Record<ActionType, string> = {
-			create: 'created a new project',
-			edit: 'edited a post',
-			post: 'wrote a new post',
-			reply: 'replied to a comment'
-		};
-		return texts[action];
-	}
+const items: {
+  action: ActionType;
+  date: Date;
+  id: number;
+  image: Picture;
+  user: string;
+}[] = [
+  {
+    action: 'post',
+    date: new Date(Date.now() - 59000), // 59 seconds ago
+    id: 1,
+    image: Avatar02,
+    user: 'Matt'
+  },
+  {
+    action: 'reply',
+    date: new Date(Date.now() - 180000), // 3 minutes ago
+    id: 2,
+    image: Avatar02,
+    user: 'Matt'
+  },
+  {
+    action: 'edit',
+    date: new Date(Date.now() - 300000), // 5 minutes ago
+    id: 3,
+    image: Avatar02,
+    user: 'Matt'
+  },
+  {
+    action: 'create',
+    date: new Date(Date.now() - 600000), // 10 minutes ago
+    id: 4,
+    image: Avatar02,
+    user: 'Matt'
+  }
+];
 
-	function getRelativeTimeString(date: Date): string {
-		const now = new Date();
-		const diffInSeconds = Math.floor((now.getTime() - date.getTime()) / 1000);
+function getActionIcon(action: ActionType): typeof IconType {
+  const icons: Record<ActionType, typeof IconType> = {
+    create: PlusIcon,
+    edit: PencilIcon,
+    post: BookOpenIcon,
+    reply: MessageCircleIcon
+  };
+  return icons[action];
+}
 
-		if (diffInSeconds < 60) {
-			return `${diffInSeconds} seconds ago`;
-		} else if (diffInSeconds < 3600) {
-			const minutes = Math.floor(diffInSeconds / 60);
-			return `${minutes} ${minutes === 1 ? 'minute' : 'minutes'} ago`;
-		} else if (diffInSeconds < 86400) {
-			const hours = Math.floor(diffInSeconds / 3600);
-			return `${hours} ${hours === 1 ? 'hour' : 'hours'} ago`;
-		} else {
-			const days = Math.floor(diffInSeconds / 86400);
-			return `${days} ${days === 1 ? 'day' : 'days'} ago`;
-		}
-	}
+function getActionText(action: ActionType): string {
+  const texts: Record<ActionType, string> = {
+    create: 'created a new project',
+    edit: 'edited a post',
+    post: 'wrote a new post',
+    reply: 'replied to a comment'
+  };
+  return texts[action];
+}
+
+function getRelativeTimeString(date: Date): string {
+  const now = new Date();
+  const diffInSeconds = Math.floor((now.getTime() - date.getTime()) / 1000);
+
+  if (diffInSeconds < 60) {
+    return `${diffInSeconds} seconds ago`;
+  } else if (diffInSeconds < 3600) {
+    const minutes = Math.floor(diffInSeconds / 60);
+    return `${minutes} ${minutes === 1 ? 'minute' : 'minutes'} ago`;
+  } else if (diffInSeconds < 86400) {
+    const hours = Math.floor(diffInSeconds / 3600);
+    return `${hours} ${hours === 1 ? 'hour' : 'hours'} ago`;
+  } else {
+    const days = Math.floor(diffInSeconds / 86400);
+    return `${days} ${days === 1 ? 'day' : 'days'} ago`;
+  }
+}
 </script>
 
 <div class="space-y-3">

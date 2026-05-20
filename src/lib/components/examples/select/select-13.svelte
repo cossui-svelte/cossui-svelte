@@ -1,7 +1,7 @@
 <script lang="ts">
-	import SelectNative from '$lib/components/ui/select-native.svelte';
+import SelectNative from '$lib/components/ui/select-native.svelte';
 
-	const uid = $props.id();
+const uid = $props.id();
 </script>
 
 <div class="group relative">

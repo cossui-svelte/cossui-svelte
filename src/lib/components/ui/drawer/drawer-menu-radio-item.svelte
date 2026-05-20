@@ -1,13 +1,13 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import { RadioGroup } from "bits-ui";
-  import { cn } from "$lib/utils.js";
+import type { RadioGroup } from 'bits-ui';
+import type { Snippet } from 'svelte';
+import { cn } from '$lib/utils.js';
 
-  interface Props extends Omit<RadioGroup.ItemProps, "children"> {
-    label?: Snippet;
-  }
+interface Props extends Omit<RadioGroup.ItemProps, 'children'> {
+  label?: Snippet;
+}
 
-  let { class: className, label, ...restProps }: Props = $props();
+let { class: className, label, ...restProps }: Props = $props();
 </script>
 
 <RadioGroup.Item

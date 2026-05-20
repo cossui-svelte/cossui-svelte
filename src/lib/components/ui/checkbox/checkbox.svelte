@@ -1,15 +1,14 @@
 <script lang="ts">
-	import { cn } from '$lib/utils.js';
+import type { Checkbox as CheckboxPrimitive } from 'bits-ui';
+import { cn } from '$lib/utils.js';
 
-	import { Checkbox as CheckboxPrimitive } from 'bits-ui';
-
-	let {
-		checked = $bindable(false),
-		class: className,
-		indeterminate = $bindable(false),
-		ref = $bindable(null),
-		...restProps
-	}: CheckboxPrimitive.RootProps = $props();
+let {
+  checked = $bindable(false),
+  class: className,
+  indeterminate = $bindable(false),
+  ref = $bindable(null),
+  ...restProps
+}: CheckboxPrimitive.RootProps = $props();
 </script>
 
 <CheckboxPrimitive.Root

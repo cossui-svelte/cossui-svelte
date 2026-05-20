@@ -1,12 +1,7 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button";
-
-	import AvatarImg from "$assets/avatar-40-04.jpg?w=40&h=40&enhanced";
-	import {
-		HoverCard,
-		HoverCardContent,
-		HoverCardTrigger,
-	} from "$lib/components/ui/hover-card";
+import AvatarImg from '$assets/avatar-40-04.jpg?w=40&h=40&enhanced';
+import { Button } from '$lib/components/ui/button';
+import { HoverCard, HoverCardContent, HoverCardTrigger } from '$lib/components/ui/hover-card';
 </script>
 
 <HoverCard>

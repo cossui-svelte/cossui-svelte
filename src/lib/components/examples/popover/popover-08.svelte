@@ -1,12 +1,7 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button";
-	import { Textarea } from "$lib/components/ui/textarea";
-
-	import {
-		Popover,
-		PopoverContent,
-		PopoverTrigger,
-	} from "$lib/components/ui/popover";
+import { Button } from '$lib/components/ui/button';
+import { Popover, PopoverContent, PopoverTrigger } from '$lib/components/ui/popover';
+import { Textarea } from '$lib/components/ui/textarea';
 </script>
 
 <div class="flex flex-col gap-4">

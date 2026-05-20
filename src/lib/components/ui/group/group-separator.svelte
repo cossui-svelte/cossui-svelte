@@ -1,16 +1,16 @@
 <script lang="ts">
-  import { cn, type WithElementRef } from "$lib/utils.js";
-  import { Separator } from "$lib/components/ui/separator";
+import type { Separator } from '$lib/components/ui/separator';
+import { cn, type WithElementRef } from '$lib/utils.js';
 
-  let {
-    ref = $bindable(null),
-    class: className,
-    orientation = "vertical",
-    ...restProps
-  }: WithElementRef<Separator> & {
-    class?: string;
-    orientation?: "horizontal" | "vertical";
-  } = $props();
+let {
+  ref = $bindable(null),
+  class: className,
+  orientation = 'vertical',
+  ...restProps
+}: WithElementRef<Separator> & {
+  class?: string;
+  orientation?: 'horizontal' | 'vertical';
+} = $props();
 </script>
 
 <Separator

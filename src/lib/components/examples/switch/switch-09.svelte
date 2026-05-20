@@ -1,14 +1,14 @@
 <script lang="ts">
-	import { Label } from "$lib/components/ui/label";
-	import { Switch } from "$lib/components/ui/switch";
+import { Label } from '$lib/components/ui/label';
+import { Switch } from '$lib/components/ui/switch';
 
-	let checked = $state(false);
+let checked = $state(false);
 
-	function toggleSwitch() {
-		checked = !checked;
-	}
+function toggleSwitch() {
+  checked = !checked;
+}
 
-	const uid = $props.id();
+const uid = $props.id();
 </script>
 
 <div>

@@ -1,17 +1,15 @@
 <script lang="ts">
-	import type { WithElementRef } from 'bits-ui';
-	import type { HTMLAttributes } from 'svelte/elements';
+import type { WithElementRef } from 'bits-ui';
+import type { HTMLAttributes } from 'svelte/elements';
+import { cn } from '$lib/utils';
+import { useTimeline } from './timeline-context.svelte';
 
-	import { useTimeline } from './timeline-context.svelte';
+type Props = WithElementRef<HTMLAttributes<HTMLDivElement>> & {
+  step: number;
+};
+let { children, class: className, ref = $bindable(null), step, ...restProps }: Props = $props();
 
-	import { cn } from '$lib/utils';
-
-	type Props = WithElementRef<HTMLAttributes<HTMLDivElement>> & {
-		step: number;
-	};
-	let { children, class: className, ref = $bindable(null), step, ...restProps }: Props = $props();
-
-	const { activeStep } = useTimeline();
+const { activeStep } = useTimeline();
 </script>
 
 <div

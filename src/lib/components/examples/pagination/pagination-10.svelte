@@ -1,42 +1,34 @@
 <script lang="ts">
-	import { Label } from "$lib/components/ui/label";
+import ChevronFirst from '@lucide/svelte/icons/chevron-first';
+import ChevronLast from '@lucide/svelte/icons/chevron-last';
+import ChevronLeft from '@lucide/svelte/icons/chevron-left';
+import ChevronRight from '@lucide/svelte/icons/chevron-right';
+import { Label } from '$lib/components/ui/label';
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink
+} from '$lib/components/ui/pagination';
+import { Select, SelectContent, SelectItem, SelectTrigger } from '$lib/components/ui/select';
 
-	import ChevronFirst from "@lucide/svelte/icons/chevron-first";
-	import ChevronLast from "@lucide/svelte/icons/chevron-last";
-	import ChevronLeft from "@lucide/svelte/icons/chevron-left";
-	import ChevronRight from "@lucide/svelte/icons/chevron-right";
-	import {
-		Pagination,
-		PaginationContent,
-		PaginationItem,
-		PaginationLink,
-	} from "$lib/components/ui/pagination";
-	import {
-		Select,
-		SelectContent,
-		SelectItem,
-		SelectTrigger,
-	} from "$lib/components/ui/select";
+type PaginationProps = {
+  currentPage: number;
+  totalPages: number;
+};
 
-	type PaginationProps = {
-		currentPage: number;
-		totalPages: number;
-	};
+let { currentPage = 1, totalPages = 10 }: PaginationProps = $props();
 
-	let { currentPage = 1, totalPages = 10 }: PaginationProps = $props();
+const paginationItemsToDisplayOptions = [10, 20, 50, 100];
+let selectedPaginationItemsToDisplay = $state(paginationItemsToDisplayOptions[0]);
 
-	const paginationItemsToDisplayOptions = [10, 20, 50, 100];
-	let selectedPaginationItemsToDisplay = $state(
-		paginationItemsToDisplayOptions[0],
-	);
+function getValue() {
+  return selectedPaginationItemsToDisplay.toString();
+}
 
-	function getValue() {
-		return selectedPaginationItemsToDisplay.toString();
-	}
-
-	function setValue(newValue: string) {
-		selectedPaginationItemsToDisplay = parseInt(newValue);
-	}
+function setValue(newValue: string) {
+  selectedPaginationItemsToDisplay = parseInt(newValue);
+}
 </script>
 
 <div class="flex items-center justify-between gap-8">

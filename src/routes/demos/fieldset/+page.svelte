@@ -1,17 +1,13 @@
 <script lang="ts">
-    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
-    import {
-        Field,
-        FieldDescription,
-        FieldLabel,
-    } from "$lib/components/ui/field";
-    import { Fieldset, FieldsetLegend } from "$lib/components/ui/fieldset";
-    import { Form } from "$lib/components/ui/form";
-    import { Input } from "$lib/components/ui/input";
-    import { superForm } from "sveltekit-superforms";
+import { superForm } from 'sveltekit-superforms';
+import ComponentPreviewTabs from '$lib/components/app/component-preview-tabs.svelte';
+import { Field, FieldDescription, FieldLabel } from '$lib/components/ui/field';
+import { Fieldset, FieldsetLegend } from '$lib/components/ui/fieldset';
+import { Form } from '$lib/components/ui/form';
+import { Input } from '$lib/components/ui/input';
 
-    let { data } = $props();
-    const formConfig = superForm(data.form);
+let { data } = $props();
+const formConfig = superForm(data.form);
 </script>
 
 <ComponentPreviewTabs>

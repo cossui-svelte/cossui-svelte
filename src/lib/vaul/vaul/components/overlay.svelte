@@ -1,29 +1,29 @@
 <script lang="ts">
-	import { Dialog } from "bits-ui";
-	import { getCtx } from "../ctx.js";
+import { Dialog } from 'bits-ui';
+import { getCtx } from '../ctx.js';
 
-	let { class: className, ...restProps }: { class?: string; [key: string]: unknown } = $props();
+let { class: className, ...restProps }: { class?: string; [key: string]: unknown } = $props();
 
-	const {
-		refs: { overlayRef },
-		states: { isOpen, visible, snapPoints, shouldFade },
-		methods: { onRelease, closeDrawer },
-		options: { dismissible },
-	} = getCtx();
+const {
+  refs: { overlayRef },
+  states: { isOpen, visible, snapPoints, shouldFade },
+  methods: { onRelease, closeDrawer },
+  options: { dismissible }
+} = getCtx();
 
-	let overlayEl: HTMLDivElement | null = $state(null);
+let overlayEl: HTMLDivElement | null = $state(null);
 
-	$effect(() => {
-		if (overlayEl) overlayRef.set(overlayEl);
-	});
+$effect(() => {
+  if (overlayEl) overlayRef.set(overlayEl);
+});
 
-	let hasSnapPoints = $derived($snapPoints && $snapPoints.length > 0);
+let hasSnapPoints = $derived($snapPoints && $snapPoints.length > 0);
 
-	function handleClick() {
-		if ($dismissible) {
-			closeDrawer();
-		}
-	}
+function handleClick() {
+  if ($dismissible) {
+    closeDrawer();
+  }
+}
 </script>
 
 <Dialog.Overlay

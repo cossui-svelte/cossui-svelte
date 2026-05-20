@@ -1,58 +1,53 @@
 <script>
-	import { Button } from "$lib/components/ui/button";
+import ArrowLeft from '@lucide/svelte/icons/arrow-left';
+import ArrowRight from '@lucide/svelte/icons/arrow-right';
+import { Button } from '$lib/components/ui/button';
+import { Popover, PopoverContent, PopoverTrigger } from '$lib/components/ui/popover';
 
-	import ArrowLeft from "@lucide/svelte/icons/arrow-left";
-	import ArrowRight from "@lucide/svelte/icons/arrow-right";
-	import {
-		Popover,
-		PopoverContent,
-		PopoverTrigger,
-	} from "$lib/components/ui/popover";
+const tips = [
+  {
+    description:
+      "This is your new workspace. Here you'll find all your projects, recent activities, settings, and more.",
+    title: 'Welcome to Dashboard'
+  },
+  {
+    description:
+      'Use the toolbar above to create new projects, invite team members, or access settings.',
+    title: 'Quick Actions'
+  },
+  {
+    description:
+      'Click the support icon in the top right corner to access our help center and documentation.',
+    title: 'Need Help?'
+  },
+  {
+    description:
+      'Press ⌘K to open the command palette. Use arrow keys to navigate and Enter to select an action.',
+    title: 'Keyboard Shortcuts'
+  },
+  {
+    description:
+      'Enable notifications to receive updates about your projects, team activity, and important deadlines.',
+    title: 'Stay Updated'
+  }
+];
 
-	const tips = [
-		{
-			description:
-				"This is your new workspace. Here you'll find all your projects, recent activities, settings, and more.",
-			title: "Welcome to Dashboard",
-		},
-		{
-			description:
-				"Use the toolbar above to create new projects, invite team members, or access settings.",
-			title: "Quick Actions",
-		},
-		{
-			description:
-				"Click the support icon in the top right corner to access our help center and documentation.",
-			title: "Need Help?",
-		},
-		{
-			description:
-				"Press ⌘K to open the command palette. Use arrow keys to navigate and Enter to select an action.",
-			title: "Keyboard Shortcuts",
-		},
-		{
-			description:
-				"Enable notifications to receive updates about your projects, team activity, and important deadlines.",
-			title: "Stay Updated",
-		},
-	];
+let currentTip = $state(0);
 
-	let currentTip = $state(0);
+function handleNext() {
+  if (currentTip < tips.length - 1) {
+    currentTip++;
+  }
+}
 
-	function handleNext() {
-		if (currentTip < tips.length - 1) {
-			currentTip++;
-		}
-	}
+function handlePrev() {
+  if (currentTip > 0) {
+    currentTip--;
+  }
+}
 
-	function handlePrev() {
-		if (currentTip > 0) {
-			currentTip--;
-		}
-	}
-
-	const isFirstTip = $derived(currentTip === 0);
-	const isLastTip = $derived(currentTip === tips.length - 1);
+const isFirstTip = $derived(currentTip === 0);
+const isLastTip = $derived(currentTip === tips.length - 1);
 </script>
 
 <Popover>

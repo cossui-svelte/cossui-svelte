@@ -1,58 +1,46 @@
 <script lang="ts">
-	import { Label } from "$lib/components/ui/label";
-	import { useLocale } from "$lib/hooks/use-locale.svelte";
-	import { cn } from "$lib/utils.js";
+import { type DateValue, getLocalTimeZone, isWeekend, today } from '@internationalized/date';
+import Calendar from '@lucide/svelte/icons/calendar';
+import ChevronLeft from '@lucide/svelte/icons/chevron-left';
+import ChevronRight from '@lucide/svelte/icons/chevron-right';
+import { type DateRange, DateRangePicker, type DateRangeValidator } from 'bits-ui';
+import { Label } from '$lib/components/ui/label';
+import { useLocale } from '$lib/hooks/use-locale.svelte';
+import { cn } from '$lib/utils.js';
 
-	import {
-		type DateValue,
-		getLocalTimeZone,
-		isWeekend,
-		today,
-	} from "@internationalized/date";
-	import Calendar from "@lucide/svelte/icons/calendar";
-	import ChevronLeft from "@lucide/svelte/icons/chevron-left";
-	import ChevronRight from "@lucide/svelte/icons/chevron-right";
-	import {
-		type DateRange,
-		DateRangePicker,
-		type DateRangeValidator,
-	} from "bits-ui";
+let now = today(getLocalTimeZone());
+let value: DateRange = $state({ end: undefined, start: undefined });
+let locale = useLocale();
 
-	let now = today(getLocalTimeZone());
-	let value: DateRange = $state({ end: undefined, start: undefined });
-	let locale = useLocale();
+// Define disabled date ranges
+const disabledRanges = [
+  [now, now.add({ days: 5 })],
+  [now.add({ days: 14 }), now.add({ days: 16 })],
+  [now.add({ days: 23 }), now.add({ days: 24 })]
+];
 
-	// Define disabled date ranges
-	const disabledRanges = [
-		[now, now.add({ days: 5 })],
-		[now.add({ days: 14 }), now.add({ days: 16 })],
-		[now.add({ days: 23 }), now.add({ days: 24 })],
-	];
+// Check if a date is unavailable
+function isDateUnavailable(date: DateValue) {
+  return (
+    isWeekend(date, locale.locale) ||
+    disabledRanges.some(
+      (interval) => date.compare(interval[0]) >= 0 && date.compare(interval[1]) <= 0
+    )
+  );
+}
 
-	// Check if a date is unavailable
-	function isDateUnavailable(date: DateValue) {
-		return (
-			isWeekend(date, locale.locale) ||
-			disabledRanges.some(
-				(interval) =>
-					date.compare(interval[0]) >= 0 &&
-					date.compare(interval[1]) <= 0,
-			)
-		);
-	}
+// Validate the selected range
+const validate: DateRangeValidator = (value: DateRange) => {
+  if (!value?.start || !value?.end) return;
+  const hasOverlap = disabledRanges.some((interval) => {
+    const rangeEnd = value.end!.compare(interval[0]) >= 0;
+    const rangeStart = value.start!.compare(interval[1]) <= 0;
+    return rangeEnd && rangeStart;
+  });
+  if (!hasOverlap) return;
 
-	// Validate the selected range
-	const validate: DateRangeValidator = (value: DateRange) => {
-		if (!value?.start || !value?.end) return;
-		const hasOverlap = disabledRanges.some((interval) => {
-			const rangeEnd = value.end!.compare(interval[0]) >= 0;
-			const rangeStart = value.start!.compare(interval[1]) <= 0;
-			return rangeEnd && rangeStart;
-		});
-		if (!hasOverlap) return;
-
-		return "Selected date range may not include unavailable dates.";
-	};
+  return 'Selected date range may not include unavailable dates.';
+};
 </script>
 
 <DateRangePicker.Root

@@ -1,16 +1,16 @@
 <script lang="ts">
-	import {
-		AlertDialog,
-		AlertDialogAction,
-		AlertDialogClose,
-		AlertDialogContent,
-		AlertDialogDescription,
-		AlertDialogFooter,
-		AlertDialogHeader,
-		AlertDialogTitle,
-		AlertDialogTrigger,
-	} from "$lib/components/ui/alert-dialog";
-	import { buttonVariants } from "$lib/components/ui/button";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogClose,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger
+} from '$lib/components/ui/alert-dialog';
+import { buttonVariants } from '$lib/components/ui/button';
 </script>
 
 <AlertDialog>

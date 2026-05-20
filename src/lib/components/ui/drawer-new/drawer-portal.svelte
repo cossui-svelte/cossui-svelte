@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { Drawer as DrawerPrimitive } from "$lib/vaul";
+import type { Drawer as DrawerPrimitive } from '$lib/vaul';
 
-	let { ...restProps }: DrawerPrimitive.PortalProps = $props();
+let { ...restProps }: DrawerPrimitive.PortalProps = $props();
 </script>
 
 <DrawerPrimitive.Portal {...restProps} />

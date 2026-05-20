@@ -1,24 +1,19 @@
 <script lang="ts">
-  import type { HTMLButtonAttributes } from "svelte/elements";
-  import { getContext } from "svelte";
-  import MinusIcon from "@lucide/svelte/icons/minus";
-  import { cn } from "$lib/utils.js";
-  import {
-    NUMBER_FIELD_CONTEXT_KEY,
-    type NumberFieldContext,
-  } from "./number-field.svelte";
+import MinusIcon from '@lucide/svelte/icons/minus';
+import { getContext } from 'svelte';
+import type { HTMLButtonAttributes } from 'svelte/elements';
+import { cn } from '$lib/utils.js';
+import { NUMBER_FIELD_CONTEXT_KEY, type NumberFieldContext } from './number-field.svelte';
 
-  type Props = Omit<HTMLButtonAttributes, "type" | "disabled" | "onclick">;
+type Props = Omit<HTMLButtonAttributes, 'type' | 'disabled' | 'onclick'>;
 
-  let { class: className, ...restProps }: Props = $props();
+let { class: className, ...restProps }: Props = $props();
 
-  const ctx = getContext<NumberFieldContext>(NUMBER_FIELD_CONTEXT_KEY);
+const ctx = getContext<NumberFieldContext>(NUMBER_FIELD_CONTEXT_KEY);
 
-  let isAtMin = $derived(
-    ctx?.value !== undefined && ctx?.min !== undefined
-      ? ctx.value <= ctx.min
-      : false,
-  );
+let isAtMin = $derived(
+  ctx?.value !== undefined && ctx?.min !== undefined ? ctx.value <= ctx.min : false
+);
 </script>
 
 <button

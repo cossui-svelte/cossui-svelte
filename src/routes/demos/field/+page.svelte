@@ -1,15 +1,11 @@
 <script lang="ts">
-    import {
-        Field,
-        FieldDescription,
-        FieldLabel,
-    } from "$lib/components/ui/field";
-    import { Form } from "$lib/components/ui/form";
-    import { Input } from "$lib/components/ui/input";
-    import { superForm } from "sveltekit-superforms";
+import { superForm } from 'sveltekit-superforms';
+import { Field, FieldDescription, FieldLabel } from '$lib/components/ui/field';
+import { Form } from '$lib/components/ui/form';
+import { Input } from '$lib/components/ui/input';
 
-    let { data } = $props();
-    const formConfig = superForm(data.form);
+let { data } = $props();
+const formConfig = superForm(data.form);
 </script>
 
 <Form config={formConfig}>

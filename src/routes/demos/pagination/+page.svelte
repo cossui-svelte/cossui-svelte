@@ -1,14 +1,14 @@
 <script>
-    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
-    import {
-        Pagination,
-        PaginationContent,
-        PaginationEllipsis,
-        PaginationItem,
-        PaginationLink,
-        PaginationNext,
-        PaginationPrevious,
-    } from "$lib/components/ui/pagination";
+import ComponentPreviewTabs from '$lib/components/app/component-preview-tabs.svelte';
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious
+} from '$lib/components/ui/pagination';
 </script>
 
 <ComponentPreviewTabs>

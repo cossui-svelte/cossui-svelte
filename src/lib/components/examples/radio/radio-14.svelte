@@ -1,15 +1,12 @@
 <script lang="ts">
-	import { Label } from "$lib/components/ui/label";
-	import {
-		RadioGroup,
-		RadioGroupItem,
-	} from "$lib/components/ui/radio-group/index.js";
+import { Label } from '$lib/components/ui/label';
+import { RadioGroup, RadioGroupItem } from '$lib/components/ui/radio-group/index.js';
 
-	const items = [
-		{ id: "radio-14-r1", label: "USA", value: "r1" },
-		{ id: "radio-14-r2", label: "UK", value: "r2" },
-		{ id: "radio-14-r3", label: "France", value: "r3" },
-	];
+const items = [
+  { id: 'radio-14-r1', label: 'USA', value: 'r1' },
+  { id: 'radio-14-r2', label: 'UK', value: 'r2' },
+  { id: 'radio-14-r3', label: 'France', value: 'r3' }
+];
 </script>
 
 <fieldset class="space-y-4">

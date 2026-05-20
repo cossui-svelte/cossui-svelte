@@ -1,11 +1,11 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import { Command } from "bits-ui";
-  import { cn } from "$lib/utils.js";
+import type { Command } from 'bits-ui';
+import type { Snippet } from 'svelte';
+import { cn } from '$lib/utils.js';
 
-  type Props = Command.GroupHeadingProps & { children?: Snippet };
+type Props = Command.GroupHeadingProps & { children?: Snippet };
 
-  let { class: className, children, ...restProps }: Props = $props();
+let { class: className, children, ...restProps }: Props = $props();
 </script>
 
 <Command.GroupHeading

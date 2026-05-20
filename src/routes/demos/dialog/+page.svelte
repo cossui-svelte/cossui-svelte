@@ -1,31 +1,30 @@
 <script lang="ts">
-    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
-    import { Button, buttonVariants } from "$lib/components/ui/button";
-    import {
-        Dialog,
-        DialogClose,
-        DialogDescription,
-        DialogFooter,
-        DialogHeader,
-        DialogPanel,
-        DialogPopup,
-        DialogTitle,
-        DialogTrigger,
-    } from "$lib/components/ui/dialog";
+import { valibotClient } from 'sveltekit-superforms/adapters';
+import { superForm } from 'sveltekit-superforms/client';
+import ComponentPreviewTabs from '$lib/components/app/component-preview-tabs.svelte';
+import { Button, buttonVariants } from '$lib/components/ui/button';
+import {
+  Dialog,
+  DialogClose,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogPanel,
+  DialogPopup,
+  DialogTitle,
+  DialogTrigger
+} from '$lib/components/ui/dialog';
+import { Field, FieldLabel } from '$lib/components/ui/field';
+import { Form } from '$lib/components/ui/form';
+import { Input } from '$lib/components/ui/input';
+import { schema } from './schema.js';
 
-    import { Field, FieldLabel } from "$lib/components/ui/field";
-    import { Form } from "$lib/components/ui/form";
-    import { Input } from "$lib/components/ui/input";
-    import { valibotClient } from "sveltekit-superforms/adapters";
-    import { superForm } from "sveltekit-superforms/client";
-    import { schema } from "./schema.js";
+let { data } = $props();
 
-    let { data } = $props();
-
-    const formConfig = superForm(data.form, {
-        SPA: true,
-        validators: valibotClient(schema),
-    });
+const formConfig = superForm(data.form, {
+  SPA: true,
+  validators: valibotClient(schema)
+});
 </script>
 
 <ComponentPreviewTabs>

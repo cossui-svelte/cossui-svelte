@@ -1,14 +1,10 @@
 <script>
-    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
-    import { Label } from "$lib/components/ui/label";
+import ComponentPreviewTabs from '$lib/components/app/component-preview-tabs.svelte';
+import { Label } from '$lib/components/ui/label';
 
-    import {
-        Radio,
-        RadioGroup,
-        RadioGroupItem,
-    } from "$lib/components/ui/radio-group";
+import { Radio, RadioGroup, RadioGroupItem } from '$lib/components/ui/radio-group';
 
-    let selectedValue = $state("on");
+let selectedValue = $state('on');
 </script>
 
 <ComponentPreviewTabs>

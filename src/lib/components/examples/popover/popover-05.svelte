@@ -1,39 +1,35 @@
 <script>
-	import { Button } from "$lib/components/ui/button";
+import { Button } from '$lib/components/ui/button';
 
-	import {
-		Popover,
-		PopoverContent,
-		PopoverTrigger,
-	} from "$lib/components/ui/popover";
+import { Popover, PopoverContent, PopoverTrigger } from '$lib/components/ui/popover';
 
-	const tips = [
-		{
-			description:
-				"This is your new workspace. Here you'll find all your projects, recent activities, settings, and more.",
-			title: "Welcome to Dashboard",
-		},
-		{
-			description:
-				"Use the toolbar above to create new projects, invite team members, or access settings.",
-			title: "Quick Actions",
-		},
-		{
-			description:
-				"Click the support icon in the top right corner to access our help center and documentation.",
-			title: "Need Help?",
-		},
-	];
+const tips = [
+  {
+    description:
+      "This is your new workspace. Here you'll find all your projects, recent activities, settings, and more.",
+    title: 'Welcome to Dashboard'
+  },
+  {
+    description:
+      'Use the toolbar above to create new projects, invite team members, or access settings.',
+    title: 'Quick Actions'
+  },
+  {
+    description:
+      'Click the support icon in the top right corner to access our help center and documentation.',
+    title: 'Need Help?'
+  }
+];
 
-	let currentTip = $state(0);
+let currentTip = $state(0);
 
-	function handleNavigation() {
-		if (currentTip === tips.length - 1) {
-			currentTip = 0;
-		} else {
-			currentTip++;
-		}
-	}
+function handleNavigation() {
+  if (currentTip === tips.length - 1) {
+    currentTip = 0;
+  } else {
+    currentTip++;
+  }
+}
 </script>
 
 <Popover>

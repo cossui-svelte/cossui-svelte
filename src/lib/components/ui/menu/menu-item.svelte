@@ -1,15 +1,15 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import { DropdownMenu } from "bits-ui";
-  import { cn } from "$lib/utils.js";
+import type { DropdownMenu } from 'bits-ui';
+import type { Snippet } from 'svelte';
+import { cn } from '$lib/utils.js';
 
-  interface Props extends DropdownMenu.ItemProps {
-    children?: Snippet;
-    inset?: boolean;
-    variant?: "default" | "destructive";
-  }
+interface Props extends DropdownMenu.ItemProps {
+  children?: Snippet;
+  inset?: boolean;
+  variant?: 'default' | 'destructive';
+}
 
-  let { children, class: className, inset, variant = "default", ...restProps }: Props = $props();
+let { children, class: className, inset, variant = 'default', ...restProps }: Props = $props();
 </script>
 
 <DropdownMenu.Item

@@ -1,31 +1,31 @@
 <script lang="ts">
-	import { Label } from "$lib/components/ui/label";
-	import * as Select from "$lib/components/ui/select/index.js";
-	import { cn } from "$lib/utils.js";
+import { Label } from '$lib/components/ui/label';
+import * as Select from '$lib/components/ui/select/index.js';
+import { cn } from '$lib/utils.js';
 
-	const items = [
-		{
-			class: "bg-indigo-400/20 text-indigo-500",
-			name: "Frank Morris",
-			value: "s1",
-		},
-		{
-			class: "bg-purple-400/20 text-purple-500",
-			name: "Xavier Guerra",
-			value: "s2",
-		},
-		{
-			class: "bg-rose-400/20 text-rose-500",
-			name: "Anne Kelley",
-			value: "s3",
-		},
-	] as const;
+const items = [
+  {
+    class: 'bg-indigo-400/20 text-indigo-500',
+    name: 'Frank Morris',
+    value: 's1'
+  },
+  {
+    class: 'bg-purple-400/20 text-purple-500',
+    name: 'Xavier Guerra',
+    value: 's2'
+  },
+  {
+    class: 'bg-rose-400/20 text-rose-500',
+    name: 'Anne Kelley',
+    value: 's3'
+  }
+] as const;
 
-	let value = $state("s1");
+let value = $state('s1');
 
-	const selected = $derived(items.find((i) => i.value === value));
+const selected = $derived(items.find((i) => i.value === value));
 
-	const uid = $props.id();
+const uid = $props.id();
 </script>
 
 {#snippet user(item: (typeof items)[number])}

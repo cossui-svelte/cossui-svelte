@@ -1,12 +1,8 @@
 <script lang="ts">
-  import { Separator } from "bits-ui";
-  import { cn } from "$lib/utils.js";
+import type { Separator } from 'bits-ui';
+import { cn } from '$lib/utils.js';
 
-  let {
-    ref = $bindable(null),
-    class: className,
-    ...restProps
-  }: Separator.RootProps = $props();
+let { ref = $bindable(null), class: className, ...restProps }: Separator.RootProps = $props();
 </script>
 
 <Separator.Root

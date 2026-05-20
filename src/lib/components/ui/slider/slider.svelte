@@ -1,49 +1,45 @@
 <script lang="ts">
-  import { cn } from "$lib/utils.js";
+import type { Slider as SliderPrimitive, WithoutChildrenOrChild } from 'bits-ui';
+import { on } from 'svelte/events';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger
+} from '$lib/components/ui/tooltip';
+import { cn } from '$lib/utils.js';
 
-  import {
-    Tooltip,
-    TooltipContent,
-    TooltipProvider,
-    TooltipTrigger,
-  } from "$lib/components/ui/tooltip";
-  import {
-    Slider as SliderPrimitive,
-    type WithoutChildrenOrChild,
-  } from "bits-ui";
-  import { on } from "svelte/events";
-
-  let {
-    class: className,
-    orientation = "horizontal",
-    ref = $bindable(null),
-    showTooltip = false,
-    tooltipContent,
-    value = $bindable(),
-    ...restProps
-  }: WithoutChildrenOrChild<
-    SliderPrimitive.RootProps & {
-      showTooltip?: boolean;
-      tooltipContent?: (value: number) => number | string;
-    }
-  > = $props();
-
-  let tooltipOpen = $state(false);
-
-  function handlePointerUp() {
-    tooltipOpen = false;
+let {
+  class: className,
+  orientation = 'horizontal',
+  ref = $bindable(null),
+  showTooltip = false,
+  tooltipContent,
+  value = $bindable(),
+  ...restProps
+}: WithoutChildrenOrChild<
+  SliderPrimitive.RootProps & {
+    showTooltip?: boolean;
+    tooltipContent?: (value: number) => number | string;
   }
+> = $props();
 
-  function handlePointerDown() {
-    tooltipOpen = true;
+let tooltipOpen = $state(false);
+
+function handlePointerUp() {
+  tooltipOpen = false;
+}
+
+function handlePointerDown() {
+  tooltipOpen = true;
+}
+
+$effect(() => {
+  if (showTooltip) {
+    const cleanup = on(document, 'pointerup', handlePointerUp);
+    return cleanup;
   }
-
-  $effect(() => {
-    if (showTooltip) {
-      const cleanup = on(document, "pointerup", handlePointerUp);
-      return cleanup;
-    }
-  });
+});
 </script>
 
 {#snippet thumb(props: SliderPrimitive.ThumbProps)}

@@ -1,16 +1,16 @@
 <script lang="ts">
-	import type { HTMLAttributes } from "svelte/elements";
-	import { cn, type WithElementRef } from "$lib/utils.js";
+import type { HTMLAttributes } from 'svelte/elements';
+import { cn, type WithElementRef } from '$lib/utils.js';
 
-	let {
-		ref = $bindable(null),
-		class: className,
-		children,
-		allowSelection = false,
-		...restProps
-	}: WithElementRef<HTMLAttributes<HTMLDivElement>> & {
-		allowSelection?: boolean;
-	} = $props();
+let {
+  ref = $bindable(null),
+  class: className,
+  children,
+  allowSelection = false,
+  ...restProps
+}: WithElementRef<HTMLAttributes<HTMLDivElement>> & {
+  allowSelection?: boolean;
+} = $props();
 </script>
 
 <div

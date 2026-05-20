@@ -1,24 +1,23 @@
 <script lang="ts">
-	import { Checkbox } from "$lib/components/ui/checkbox";
-	import { Label } from "$lib/components/ui/label";
+import Brush from '@lucide/svelte/icons/brush';
+import Eraser from '@lucide/svelte/icons/eraser';
+import Scissors from '@lucide/svelte/icons/scissors';
+import SwatchBook from '@lucide/svelte/icons/swatch-book';
+import { Checkbox } from '$lib/components/ui/checkbox';
+import { Label } from '$lib/components/ui/label';
 
-	import Brush from "@lucide/svelte/icons/brush";
-import Eraser from "@lucide/svelte/icons/eraser";
-import Scissors from "@lucide/svelte/icons/scissors";
-import SwatchBook from "@lucide/svelte/icons/swatch-book";
-
-	const items = [
-		{
-			defaultChecked: true,
-			Icon: SwatchBook,
-			id: "checkbox-16-c1",
-			label: "Palette",
-			value: "c1",
-		},
-		{ Icon: Brush, id: "checkbox-16-c2", label: "Brush", value: "c2" },
-		{ Icon: Eraser, id: "checkbox-16-c3", label: "Eraser", value: "c3" },
-		{ Icon: Scissors, id: "checkbox-16-c4", label: "Cut", value: "c4" },
-	];
+const items = [
+  {
+    defaultChecked: true,
+    Icon: SwatchBook,
+    id: 'checkbox-16-c1',
+    label: 'Palette',
+    value: 'c1'
+  },
+  { Icon: Brush, id: 'checkbox-16-c2', label: 'Brush', value: 'c2' },
+  { Icon: Eraser, id: 'checkbox-16-c3', label: 'Eraser', value: 'c3' },
+  { Icon: Scissors, id: 'checkbox-16-c4', label: 'Cut', value: 'c4' }
+];
 </script>
 
 <div class="grid grid-cols-2 gap-3">

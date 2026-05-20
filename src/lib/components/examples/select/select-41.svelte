@@ -1,39 +1,38 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button";
-	import { Label } from "$lib/components/ui/label";
+import Check from '@lucide/svelte/icons/check';
+import ChevronDown from '@lucide/svelte/icons/chevron-down';
+import { Button } from '$lib/components/ui/button';
+import * as Command from '$lib/components/ui/command';
+import { Label } from '$lib/components/ui/label';
+import * as Popover from '$lib/components/ui/popover';
+import { cn } from '$lib/utils';
 
-	import Check from "@lucide/svelte/icons/check";
-	import ChevronDown from "@lucide/svelte/icons/chevron-down";
-	import * as Command from "$lib/components/ui/command";
-	import * as Popover from "$lib/components/ui/popover";
-	import { cn } from "$lib/utils";
+let open = $state(false);
+let value = $state('');
 
-	let open = $state(false);
-	let value = $state("");
+const frameworks = [
+  { label: 'SvelteKit', value: 'sveltekit' },
+  { label: 'Svelte', value: 'svelte' },
+  { label: 'Nuxt.js', value: 'nuxt.js' },
+  { label: 'Remix', value: 'remix' },
+  { label: 'Astro', value: 'astro' },
+  { label: 'Angular', value: 'angular' },
+  { label: 'Vue.js', value: 'vue' },
+  { label: 'Ember.js', value: 'ember' },
+  { label: 'Gatsby', value: 'gatsby' },
+  { label: 'Eleventy', value: 'eleventy' },
+  { label: 'SolidJS', value: 'solid' },
+  { label: 'Preact', value: 'preact' },
+  { label: 'Qwik', value: 'qwik' },
+  { label: 'Next.js', value: 'next.js' },
+  { label: 'Alpine.js', value: 'alpine' },
+  { label: 'Lit', value: 'lit' }
+] as const;
 
-	const frameworks = [
-		{ label: "SvelteKit", value: "sveltekit" },
-		{ label: "Svelte", value: "svelte" },
-		{ label: "Nuxt.js", value: "nuxt.js" },
-		{ label: "Remix", value: "remix" },
-		{ label: "Astro", value: "astro" },
-		{ label: "Angular", value: "angular" },
-		{ label: "Vue.js", value: "vue" },
-		{ label: "Ember.js", value: "ember" },
-		{ label: "Gatsby", value: "gatsby" },
-		{ label: "Eleventy", value: "eleventy" },
-		{ label: "SolidJS", value: "solid" },
-		{ label: "Preact", value: "preact" },
-		{ label: "Qwik", value: "qwik" },
-		{ label: "Next.js", value: "next.js" },
-		{ label: "Alpine.js", value: "alpine" },
-		{ label: "Lit", value: "lit" },
-	] as const;
-
-	function handleSelect(currentValue: string) {
-		value = currentValue === value ? "" : currentValue;
-		open = false;
-	}
+function handleSelect(currentValue: string) {
+  value = currentValue === value ? '' : currentValue;
+  open = false;
+}
 </script>
 
 <div class="space-y-2">

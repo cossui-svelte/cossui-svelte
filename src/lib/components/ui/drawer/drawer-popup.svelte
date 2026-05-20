@@ -1,38 +1,36 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import { Dialog as DrawerPrimitive } from "bits-ui";
-  import { getContext } from "svelte";
-  import { cn } from "$lib/utils.js";
-  import X from "@lucide/svelte/icons/x";
-  import DrawerBackdrop from "./drawer-backdrop.svelte";
-  import DrawerViewport from "./drawer-viewport.svelte";
-  import DrawerBar from "./drawer-bar.svelte";
-  import Button from "../button/button.svelte";
+import X from '@lucide/svelte/icons/x';
+import type { Dialog as DrawerPrimitive } from 'bits-ui';
+import type { Snippet } from 'svelte';
+import { getContext } from 'svelte';
+import { cn } from '$lib/utils.js';
+import Button from '../button/button.svelte';
+import DrawerBackdrop from './drawer-backdrop.svelte';
+import DrawerBar from './drawer-bar.svelte';
+import DrawerViewport from './drawer-viewport.svelte';
 
-  type DrawerPosition = "right" | "left" | "top" | "bottom";
+type DrawerPosition = 'right' | 'left' | 'top' | 'bottom';
 
-  interface Props extends DrawerPrimitive.ContentProps {
-    children?: Snippet;
-    showCloseButton?: boolean;
-    position?: DrawerPosition;
-    variant?: "default" | "straight" | "inset";
-    showBar?: boolean;
-  }
+interface Props extends DrawerPrimitive.ContentProps {
+  children?: Snippet;
+  showCloseButton?: boolean;
+  position?: DrawerPosition;
+  variant?: 'default' | 'straight' | 'inset';
+  showBar?: boolean;
+}
 
-  let {
-    class: className,
-    children,
-    showCloseButton = false,
-    position: positionProp,
-    variant = "default",
-    showBar = false,
-    ...restProps
-  }: Props = $props();
+let {
+  class: className,
+  children,
+  showCloseButton = false,
+  position: positionProp,
+  variant = 'default',
+  showBar = false,
+  ...restProps
+}: Props = $props();
 
-  const ctx = getContext<{ position: () => DrawerPosition } | undefined>(
-    "drawer-position",
-  );
-  const position = $derived(positionProp ?? ctx?.position() ?? "bottom");
+const ctx = getContext<{ position: () => DrawerPosition } | undefined>('drawer-position');
+const position = $derived(positionProp ?? ctx?.position() ?? 'bottom');
 </script>
 
 <DrawerPrimitive.Portal>

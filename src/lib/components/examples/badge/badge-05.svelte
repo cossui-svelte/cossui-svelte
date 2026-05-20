@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { badgeVariants } from "$lib/components/ui/badge";
-	import { cn } from "$lib/utils";
+import { badgeVariants } from '$lib/components/ui/badge';
+import { cn } from '$lib/utils';
 </script>
 
 <a

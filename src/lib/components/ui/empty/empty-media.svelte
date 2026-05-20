@@ -1,22 +1,20 @@
 <script lang="ts" module>
-	import { tv, type VariantProps } from "tailwind-variants";
+import { tv, type VariantProps } from 'tailwind-variants';
 
-	export const emptyMediaVariants = tv({
-		base: "cn-empty-media flex shrink-0 items-center justify-center [&_svg]:pointer-events-none [&_svg]:shrink-0",
-		variants: {
-			variant: {
-				default: "cn-empty-media-default",
-				icon: "cn-empty-media-icon",
-			},
-		},
-		defaultVariants: {
-			variant: "default",
-		},
-	});
+export const emptyMediaVariants = tv({
+  base: 'cn-empty-media flex shrink-0 items-center justify-center [&_svg]:pointer-events-none [&_svg]:shrink-0',
+  defaultVariants: {
+    variant: 'default'
+  },
+  variants: {
+    variant: {
+      default: 'cn-empty-media-default',
+      icon: 'cn-empty-media-icon'
+    }
+  }
+});
 
-	export type EmptyMediaVariant = VariantProps<
-		typeof emptyMediaVariants
-	>["variant"];
+export type EmptyMediaVariant = VariantProps<typeof emptyMediaVariants>['variant'];
 </script>
 
 <script lang="ts">

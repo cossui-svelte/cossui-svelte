@@ -1,10 +1,6 @@
 <script>
-    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
-    import {
-        Alert,
-        AlertDescription,
-        AlertTitle,
-    } from "$lib/components/ui/alert";
+import ComponentPreviewTabs from '$lib/components/app/component-preview-tabs.svelte';
+import { Alert, AlertDescription, AlertTitle } from '$lib/components/ui/alert';
 </script>
 
 <ComponentPreviewTabs>

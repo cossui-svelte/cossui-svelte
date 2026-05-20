@@ -1,15 +1,15 @@
 <script lang="ts">
-  import { Accordion } from "bits-ui";
-  import ChevronDown from "@lucide/svelte/icons/chevron-down";
+import ChevronDown from '@lucide/svelte/icons/chevron-down';
+import type { Accordion } from 'bits-ui';
 
-  import { cn, type WithoutChild } from "$lib/utils.js";
+import { cn, type WithoutChild } from '$lib/utils.js';
 
-  let {
-    ref = $bindable(null),
-    class: className,
-    children,
-    ...restProps
-  }: WithoutChild<Accordion.TriggerProps> = $props();
+let {
+  ref = $bindable(null),
+  class: className,
+  children,
+  ...restProps
+}: WithoutChild<Accordion.TriggerProps> = $props();
 </script>
 
 <Accordion.Header class="flex">

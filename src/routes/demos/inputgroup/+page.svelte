@@ -1,31 +1,23 @@
 <script lang="ts">
-    import ComponentPreview from "$lib/components/app/component-preview.svelte";
-    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
-    import { Badge } from "$lib/components/ui/badge";
-    import { Button } from "$lib/components/ui/button";
-    import {
-        InputGroup,
-        InputGroupAddon,
-        InputGroupInput,
-        InputGroupText,
-    } from "$lib/components/ui/input-group";
-    import { Kbd } from "$lib/components/ui/kbd";
-    import { Label } from "$lib/components/ui/label";
-    import {
-        Popover,
-        PopoverPopup,
-        PopoverTrigger,
-    } from "$lib/components/ui/popover";
-    import {
-        Tooltip,
-        TooltipPopup,
-        TooltipTrigger,
-    } from "$lib/components/ui/tooltip";
-    import ArrowRightIcon from "@lucide/svelte/icons/arrow-right";
-    import CheckIcon from "@lucide/svelte/icons/check";
-    import CopyIcon from "@lucide/svelte/icons/copy";
-    import InfoIcon from "@lucide/svelte/icons/info";
-    import SearchIcon from "@lucide/svelte/icons/search";
+import ArrowRightIcon from '@lucide/svelte/icons/arrow-right';
+import CheckIcon from '@lucide/svelte/icons/check';
+import CopyIcon from '@lucide/svelte/icons/copy';
+import InfoIcon from '@lucide/svelte/icons/info';
+import SearchIcon from '@lucide/svelte/icons/search';
+import ComponentPreview from '$lib/components/app/component-preview.svelte';
+import ComponentPreviewTabs from '$lib/components/app/component-preview-tabs.svelte';
+import { Badge } from '$lib/components/ui/badge';
+import { Button } from '$lib/components/ui/button';
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+  InputGroupText
+} from '$lib/components/ui/input-group';
+import { Kbd } from '$lib/components/ui/kbd';
+import { Label } from '$lib/components/ui/label';
+import { Popover, PopoverPopup, PopoverTrigger } from '$lib/components/ui/popover';
+import { Tooltip, TooltipPopup, TooltipTrigger } from '$lib/components/ui/tooltip';
 </script>
 
 <ComponentPreviewTabs>

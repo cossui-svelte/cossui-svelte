@@ -1,22 +1,22 @@
 <script lang="ts" generics="T extends Record<string, unknown>">
-  import type { HTMLFormAttributes } from "svelte/elements";
-  import { cn, type WithElementRef } from "$lib/utils.js";
-  import { setFormContext } from "./form-context.svelte";
-  import { type SuperForm } from "sveltekit-superforms";
+import type { HTMLFormAttributes } from 'svelte/elements';
+import type { SuperForm } from 'sveltekit-superforms';
+import { cn, type WithElementRef } from '$lib/utils.js';
+import { setFormContext } from './form-context.svelte';
 
-  let {
-    ref = $bindable(null),
-    class: className,
-    children,
-    config,
-    ...restProps
-  }: WithElementRef<
-    HTMLFormAttributes & {
-      config: SuperForm<T>;
-    }
-  > = $props();
+let {
+  ref = $bindable(null),
+  class: className,
+  children,
+  config,
+  ...restProps
+}: WithElementRef<
+  HTMLFormAttributes & {
+    config: SuperForm<T>;
+  }
+> = $props();
 
-  setFormContext(config);
+setFormContext(config);
 </script>
 
 <form

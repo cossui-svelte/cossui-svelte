@@ -1,7 +1,8 @@
 <script lang="ts" module>
-	import type { FormPath as _FormPath } from "sveltekit-superforms";
-	type T = unknown;
-	type U = unknown;
+import type { FormPath as _FormPath } from 'sveltekit-superforms';
+
+type T = unknown;
+type U = unknown;
 </script>
 
 <script

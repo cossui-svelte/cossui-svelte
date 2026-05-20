@@ -1,12 +1,12 @@
 <script>
-    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
-    import {
-        Meter,
-        MeterIndicator,
-        MeterLabel,
-        MeterTrack,
-        MeterValue,
-    } from "$lib/components/ui/meter";
+import ComponentPreviewTabs from '$lib/components/app/component-preview-tabs.svelte';
+import {
+  Meter,
+  MeterIndicator,
+  MeterLabel,
+  MeterTrack,
+  MeterValue
+} from '$lib/components/ui/meter';
 </script>
 
 <ComponentPreviewTabs>

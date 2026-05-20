@@ -1,50 +1,48 @@
 <script lang="ts">
-	import { Button, buttonVariants } from "$lib/components/ui/button";
-	import {
-		Dialog,
-		DialogClose,
-		DialogContent,
-		DialogDescription,
-		DialogFooter,
-		DialogHeader,
-		DialogTitle,
-		DialogTrigger,
-	} from "$lib/components/ui/dialog";
+import ArrowRight from '@lucide/svelte/icons/arrow-right';
+import DialogImg from '$lib/assets/dialog-content.png';
+import { Button, buttonVariants } from '$lib/components/ui/button';
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger
+} from '$lib/components/ui/dialog';
+import { cn } from '$lib/utils';
 
-	import ArrowRight from "@lucide/svelte/icons/arrow-right";
-	import DialogImg from "$lib/assets/dialog-content.png";
-	import { cn } from "$lib/utils";
+const steps = [
+  {
+    description:
+      'Discover a powerful collection of components designed to enhance your development workflow.',
+    title: 'Welcome to Origin UI'
+  },
+  {
+    description:
+      'Each component is fully customizable and built with modern web standards in mind.',
+    title: 'Customizable Components'
+  },
+  {
+    description: 'Begin building amazing interfaces with our comprehensive component library.',
+    title: 'Ready to Start?'
+  },
+  {
+    description:
+      'Access our extensive documentation and community resources to make the most of Origin UI.',
+    title: 'Get Support'
+  }
+];
 
-	const steps = [
-		{
-			description:
-				"Discover a powerful collection of components designed to enhance your development workflow.",
-			title: "Welcome to Origin UI",
-		},
-		{
-			description:
-				"Each component is fully customizable and built with modern web standards in mind.",
-			title: "Customizable Components",
-		},
-		{
-			description:
-				"Begin building amazing interfaces with our comprehensive component library.",
-			title: "Ready to Start?",
-		},
-		{
-			description:
-				"Access our extensive documentation and community resources to make the most of Origin UI.",
-			title: "Get Support",
-		},
-	];
+let step = $state(1);
 
-	let step = $state(1);
-
-	function handleContinue() {
-		if (step < steps.length) {
-			step += 1;
-		}
-	}
+function handleContinue() {
+  if (step < steps.length) {
+    step += 1;
+  }
+}
 </script>
 
 <Dialog

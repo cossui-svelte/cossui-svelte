@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button";
+import { Button } from '$lib/components/ui/button';
 
-	import RiFacebookFill from "~icons/ri/facebook-fill";
-	import RiGithubFill from "~icons/ri/github-fill";
-	import RiGoogleFill from "~icons/ri/google-fill";
-	import RiTwitterXFill from "~icons/ri/twitter-x-fill";
+import RiFacebookFill from '~icons/ri/facebook-fill';
+import RiGithubFill from '~icons/ri/github-fill';
+import RiGoogleFill from '~icons/ri/google-fill';
+import RiTwitterXFill from '~icons/ri/twitter-x-fill';
 </script>
 
 <div class="flex flex-wrap gap-2">

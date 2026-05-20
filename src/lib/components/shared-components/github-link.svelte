@@ -1,26 +1,26 @@
 <script lang="ts">
-  import { Button } from "../ui/button";
-  import GithubIcon from "./github.svelte";
-  import { onMount } from "svelte";
+import { onMount } from 'svelte';
+import { Button } from '../ui/button';
+import GithubIcon from './github.svelte';
 
-  export const FALLBACK_STAR_COUNT = 8000;
+export const FALLBACK_STAR_COUNT = 8000;
 
-  async function getGithubStarCount() {
-    try {
-      const res = await fetch("https://ungh.cc/repos/orefalo/cossui-svelte");
-      const data = await res.json();
-      return data.repo?.stars ?? FALLBACK_STAR_COUNT;
-    } catch (error) {
-      console.error(error);
-      return FALLBACK_STAR_COUNT;
-    }
+async function getGithubStarCount() {
+  try {
+    const res = await fetch('https://ungh.cc/repos/orefalo/cossui-svelte');
+    const data = await res.json();
+    return data.repo?.stars ?? FALLBACK_STAR_COUNT;
+  } catch (error) {
+    console.error(error);
+    return FALLBACK_STAR_COUNT;
   }
+}
 
-  let stars = $state(FALLBACK_STAR_COUNT);
+let stars = $state(FALLBACK_STAR_COUNT);
 
-  onMount(async () => {
-    stars = await getGithubStarCount();
-  });
+onMount(async () => {
+  stars = await getGithubStarCount();
+});
 </script>
 
 <Button

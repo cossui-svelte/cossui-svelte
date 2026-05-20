@@ -1,10 +1,9 @@
 <script lang="ts">
-	import { Label } from "$lib/components/ui/label";
-	import { useLocale } from "$lib/hooks/use-locale.svelte";
+import { DateField } from 'bits-ui';
+import { Label } from '$lib/components/ui/label';
+import { useLocale } from '$lib/hooks/use-locale.svelte';
 
-	import { DateField } from "bits-ui";
-
-	const localeCtx = useLocale();
+const localeCtx = useLocale();
 </script>
 
 <div class="space-y-2">

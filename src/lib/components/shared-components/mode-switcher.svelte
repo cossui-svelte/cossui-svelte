@@ -1,13 +1,13 @@
 <script lang="ts">
-      import { Button } from "$lib/components/ui/button";
-      import { cn } from "$lib/utils";
-      import { toggleMode } from "mode-watcher";
+import { toggleMode } from 'mode-watcher';
+import { Button } from '$lib/components/ui/button';
+import { cn } from '$lib/utils';
 
-      type Props = {
-            class?: string;
-      };
+type Props = {
+  class?: string;
+};
 
-      let { class: className }: Props = $props();
+let { class: className }: Props = $props();
 </script>
 
 <Button

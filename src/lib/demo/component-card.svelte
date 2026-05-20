@@ -1,49 +1,49 @@
 <script lang="ts">
-	import type { WithElementRef, WithoutChildren } from 'bits-ui';
-	import type { Snippet } from 'svelte';
-	import type { HTMLAttributes } from 'svelte/elements';
+import type { WithElementRef, WithoutChildren } from 'bits-ui';
+import type { Snippet } from 'svelte';
+import type { HTMLAttributes } from 'svelte/elements';
 
-	import { cn } from '$lib/utils';
+import { cn } from '$lib/utils';
 
-	type Layout = 'default' | 'full' | 'wide';
-	type Style = 'centered' | 'default' | 'text-center';
+type Layout = 'default' | 'full' | 'wide';
+type Style = 'centered' | 'default' | 'text-center';
 
-	interface ComponentMeta {
-		layout?: Layout;
-		style?: Style;
-	}
+interface ComponentMeta {
+  layout?: Layout;
+  style?: Style;
+}
 
-	type Props = WithElementRef<
-		WithoutChildren<HTMLAttributes<HTMLDivElement>> & {
-			children: Snippet;
-			meta?: ComponentMeta;
-		},
-		HTMLDivElement
-	>;
+type Props = WithElementRef<
+  WithoutChildren<HTMLAttributes<HTMLDivElement>> & {
+    children: Snippet;
+    meta?: ComponentMeta;
+  },
+  HTMLDivElement
+>;
 
-	let { children, meta, ref = $bindable(), ...rest }: Props = $props();
+let { children, meta, ref = $bindable(), ...rest }: Props = $props();
 
-	const layoutClasses = $derived.by(() => {
-		switch (meta?.layout) {
-			case 'full':
-				return 'col-span-12';
-			case 'wide':
-				return 'col-span-12 sm:col-span-6 lg:col-span-6';
-			default:
-				return 'col-span-12 sm:col-span-6 lg:col-span-4';
-		}
-	});
+const layoutClasses = $derived.by(() => {
+  switch (meta?.layout) {
+    case 'full':
+      return 'col-span-12';
+    case 'wide':
+      return 'col-span-12 sm:col-span-6 lg:col-span-6';
+    default:
+      return 'col-span-12 sm:col-span-6 lg:col-span-4';
+  }
+});
 
-	const styleClasses = $derived.by(() => {
-		switch (meta?.style) {
-			case 'centered':
-				return 'flex items-center justify-center';
-			case 'text-center':
-				return 'text-center';
-			default:
-				return '';
-		}
-	});
+const styleClasses = $derived.by(() => {
+  switch (meta?.style) {
+    case 'centered':
+      return 'flex items-center justify-center';
+    case 'text-center':
+      return 'text-center';
+    default:
+      return '';
+  }
+});
 </script>
 
 <div

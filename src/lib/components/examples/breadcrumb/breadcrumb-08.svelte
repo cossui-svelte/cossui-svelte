@@ -1,22 +1,22 @@
 <script lang="ts">
-	import Database from '@lucide/svelte/icons/database';
-	import {
-		Breadcrumb,
-		BreadcrumbItem,
-		BreadcrumbLink,
-		BreadcrumbList,
-		BreadcrumbSeparator
-	} from '$lib/components/ui/breadcrumb';
-	import { Select, SelectContent, SelectItem, SelectTrigger } from '$lib/components/ui/select';
+import Database from '@lucide/svelte/icons/database';
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbSeparator
+} from '$lib/components/ui/breadcrumb';
+import { Select, SelectContent, SelectItem, SelectTrigger } from '$lib/components/ui/select';
 
-	let value = $state('s1');
-	const items = [
-		{ label: 'Orion', value: 's1' },
-		{ label: 'Sigma', value: 's2' },
-		{ label: 'Dorado', value: 's3' }
-	];
+let value = $state('s1');
+const items = [
+  { label: 'Orion', value: 's1' },
+  { label: 'Sigma', value: 's2' },
+  { label: 'Dorado', value: 's3' }
+];
 
-	const selectedItem = $derived(items.find((item) => item.value === value));
+const selectedItem = $derived(items.find((item) => item.value === value));
 </script>
 
 <Breadcrumb>

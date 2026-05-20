@@ -1,32 +1,31 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button";
-	import { Label } from "$lib/components/ui/label";
+import Check from '@lucide/svelte/icons/check';
+import ChevronDown from '@lucide/svelte/icons/chevron-down';
+import Plus from '@lucide/svelte/icons/plus';
+import { Button } from '$lib/components/ui/button';
+import * as Command from '$lib/components/ui/command';
+import { Label } from '$lib/components/ui/label';
+import * as Popover from '$lib/components/ui/popover';
+import { cn } from '$lib/utils';
 
-	import Check from "@lucide/svelte/icons/check";
-	import ChevronDown from "@lucide/svelte/icons/chevron-down";
-	import Plus from "@lucide/svelte/icons/plus";
-	import * as Command from "$lib/components/ui/command";
-	import * as Popover from "$lib/components/ui/popover";
-	import { cn } from "$lib/utils";
+let open = $state(false);
+let value = $state('originui');
 
-	let open = $state(false);
-	let value = $state("originui");
+const organizations = [
+  {
+    label: 'Origin UI - Svelte',
+    value: 'originui'
+  },
+  {
+    label: 'Bits UI',
+    value: 'bitsui'
+  }
+] as const;
 
-	const organizations = [
-		{
-			label: "Origin UI - Svelte",
-			value: "originui",
-		},
-		{
-			label: "Bits UI",
-			value: "bitsui",
-		},
-	] as const;
-
-	function handleSelect(currentValue: string) {
-		value = currentValue === value ? "" : currentValue;
-		open = false;
-	}
+function handleSelect(currentValue: string) {
+  value = currentValue === value ? '' : currentValue;
+  open = false;
+}
 </script>
 
 <div class="space-y-2">

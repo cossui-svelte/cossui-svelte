@@ -1,30 +1,30 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import { Combobox } from "bits-ui";
-  import ChevronsUpDown from "@lucide/svelte/icons/chevrons-up-down";
-  import { cn } from "$lib/utils.js";
-  import AutocompleteTrigger from "./autocomplete-trigger.svelte";
-  import AutocompleteClear from "./autocomplete-clear.svelte";
+import ChevronsUpDown from '@lucide/svelte/icons/chevrons-up-down';
+import type { Combobox } from 'bits-ui';
+import type { Snippet } from 'svelte';
+import { cn } from '$lib/utils.js';
+import AutocompleteClear from './autocomplete-clear.svelte';
+import AutocompleteTrigger from './autocomplete-trigger.svelte';
 
-  interface Props extends Omit<Combobox.InputProps, "size"> {
-    showTrigger?: boolean;
-    showClear?: boolean;
-    startAddon?: Snippet;
-    size?: "sm" | "default" | "lg" | number;
-    clearProps?: { onclick?: () => void; class?: string };
-    triggerProps?: { class?: string };
-  }
+interface Props extends Omit<Combobox.InputProps, 'size'> {
+  showTrigger?: boolean;
+  showClear?: boolean;
+  startAddon?: Snippet;
+  size?: 'sm' | 'default' | 'lg' | number;
+  clearProps?: { onclick?: () => void; class?: string };
+  triggerProps?: { class?: string };
+}
 
-  let {
-    class: className,
-    showTrigger = false,
-    showClear = false,
-    startAddon,
-    size = "default",
-    clearProps,
-    triggerProps,
-    ...restProps
-  }: Props = $props();
+let {
+  class: className,
+  showTrigger = false,
+  showClear = false,
+  startAddon,
+  size = 'default',
+  clearProps,
+  triggerProps,
+  ...restProps
+}: Props = $props();
 </script>
 
 <div class="relative not-has-[>*.w-full]:w-fit w-full text-foreground has-disabled:opacity-64">

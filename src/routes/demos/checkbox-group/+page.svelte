@@ -1,39 +1,38 @@
 <script lang="ts">
-    import { CheckboxGroup } from "$lib/components/ui/checkbox-group";
+import ComponentPreviewTabs from '$lib/components/app/component-preview-tabs.svelte';
+import { Checkbox } from '$lib/components/ui/checkbox';
+import { CheckboxGroup } from '$lib/components/ui/checkbox-group';
+import CheckboxTree, {
+  type TreeNode
+} from '$lib/components/ui/checkbox-group/checkbox-tree.svelte';
+import { Label } from '$lib/components/ui/label';
 
-    import CheckboxTree, {
-        type TreeNode,
-    } from "$lib/components/ui/checkbox-group/checkbox-tree.svelte";
-    import { Checkbox } from "$lib/components/ui/checkbox";
-    import { Label } from "$lib/components/ui/label";
-    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
-
-    const initialTree: TreeNode = {
-        children: [
-            {
-                defaultChecked: true,
-                id: "mountains",
-                indeterminate: true,
-                label: "Mountains",
-            },
-            {
-                children: [
-                    { id: "niagara", label: "Niagara Falls" },
-                    {
-                        defaultChecked: true,
-                        id: "angel-falls",
-                        label: "Angel Falls",
-                    },
-                ],
-                id: "waterfalls",
-                indeterminate: true,
-                label: "Waterfalls",
-            },
-            { id: "grand-canyon", label: "Grand Canyon" },
-        ],
-        id: "natural-wonders",
-        label: "Natural Wonders",
-    };
+const initialTree: TreeNode = {
+  children: [
+    {
+      defaultChecked: true,
+      id: 'mountains',
+      indeterminate: true,
+      label: 'Mountains'
+    },
+    {
+      children: [
+        { id: 'niagara', label: 'Niagara Falls' },
+        {
+          defaultChecked: true,
+          id: 'angel-falls',
+          label: 'Angel Falls'
+        }
+      ],
+      id: 'waterfalls',
+      indeterminate: true,
+      label: 'Waterfalls'
+    },
+    { id: 'grand-canyon', label: 'Grand Canyon' }
+  ],
+  id: 'natural-wonders',
+  label: 'Natural Wonders'
+};
 </script>
 
 <ComponentPreviewTabs>

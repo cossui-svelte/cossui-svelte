@@ -1,15 +1,15 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import { DropdownMenu } from "bits-ui";
-  import ChevronRight from "@lucide/svelte/icons/chevron-right";
-  import { cn } from "$lib/utils.js";
+import ChevronRight from '@lucide/svelte/icons/chevron-right';
+import type { DropdownMenu } from 'bits-ui';
+import type { Snippet } from 'svelte';
+import { cn } from '$lib/utils.js';
 
-  interface Props extends DropdownMenu.SubTriggerProps {
-    children?: Snippet;
-    inset?: boolean;
-  }
+interface Props extends DropdownMenu.SubTriggerProps {
+  children?: Snippet;
+  inset?: boolean;
+}
 
-  let { children, class: className, inset, ...restProps }: Props = $props();
+let { children, class: className, inset, ...restProps }: Props = $props();
 </script>
 
 <DropdownMenu.SubTrigger

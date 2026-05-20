@@ -1,55 +1,54 @@
 <script lang="ts">
-	import Avatar01 from '$lib/assets/avatar-40-01.jpg?w=48&h=48&enhanced';
-	import Avatar02 from '$lib/assets/avatar-40-02.jpg?w=48&h=48&enhanced';
-	import Avatar03 from '$lib/assets/avatar-40-03.jpg?w=48&h=48&enhanced';
-	import Avatar05 from '$lib/assets/avatar-40-05.jpg?w=48&h=48&enhanced';
-	import {
-		Timeline,
-		TimelineContent,
-		TimelineDate,
-		TimelineHeader,
-		TimelineIndicator,
-		TimelineItem,
-		TimelineSeparator,
-		TimelineTitle
-	} from '$lib/components/ui/timeline';
+import Avatar01 from '$lib/assets/avatar-40-01.jpg?w=48&h=48&enhanced';
+import Avatar02 from '$lib/assets/avatar-40-02.jpg?w=48&h=48&enhanced';
+import Avatar03 from '$lib/assets/avatar-40-03.jpg?w=48&h=48&enhanced';
+import Avatar05 from '$lib/assets/avatar-40-05.jpg?w=48&h=48&enhanced';
+import {
+  Timeline,
+  TimelineContent,
+  TimelineDate,
+  TimelineHeader,
+  TimelineIndicator,
+  TimelineItem,
+  TimelineSeparator,
+  TimelineTitle
+} from '$lib/components/ui/timeline';
 
-	const items = [
-		{
-			action: 'opened a new issue',
-			date: '15 minutes ago',
-			description:
-				"I'm having trouble with the new component library. It's not rendering properly.",
-			id: 1,
-			image: Avatar01,
-			title: 'Hannah Kandell'
-		},
-		{
-			action: 'commented on',
-			date: '10 minutes ago',
-			description:
-				"Hey Hannah, I'm having trouble with the new component library. It's not rendering properly.",
-			id: 2,
-			image: Avatar02,
-			title: 'Chris Tompson'
-		},
-		{
-			action: 'assigned you to',
-			date: '5 minutes ago',
-			description: 'The new component library is not rendering properly. Can you take a look?',
-			id: 3,
-			image: Avatar03,
-			title: 'Emma Davis'
-		},
-		{
-			action: 'closed the issue',
-			date: '2 minutes ago',
-			description: 'The issue has been fixed. Please review the changes.',
-			id: 4,
-			image: Avatar05,
-			title: 'Alex Morgan'
-		}
-	];
+const items = [
+  {
+    action: 'opened a new issue',
+    date: '15 minutes ago',
+    description: "I'm having trouble with the new component library. It's not rendering properly.",
+    id: 1,
+    image: Avatar01,
+    title: 'Hannah Kandell'
+  },
+  {
+    action: 'commented on',
+    date: '10 minutes ago',
+    description:
+      "Hey Hannah, I'm having trouble with the new component library. It's not rendering properly.",
+    id: 2,
+    image: Avatar02,
+    title: 'Chris Tompson'
+  },
+  {
+    action: 'assigned you to',
+    date: '5 minutes ago',
+    description: 'The new component library is not rendering properly. Can you take a look?',
+    id: 3,
+    image: Avatar03,
+    title: 'Emma Davis'
+  },
+  {
+    action: 'closed the issue',
+    date: '2 minutes ago',
+    description: 'The issue has been fixed. Please review the changes.',
+    id: 4,
+    image: Avatar05,
+    title: 'Alex Morgan'
+  }
+];
 </script>
 
 <Timeline>

@@ -1,17 +1,17 @@
 <script lang="ts">
-	import { Dialog } from "bits-ui";
-	import { getCtx } from "../ctx.js";
-	import type { Snippet } from "svelte";
+import { Dialog } from 'bits-ui';
+import type { Snippet } from 'svelte';
+import { getCtx } from '../ctx.js';
 
-	let {
-		children,
-		class: className,
-		...restProps
-	}: { children?: Snippet; class?: string; [key: string]: unknown } = $props();
+let {
+  children,
+  class: className,
+  ...restProps
+}: { children?: Snippet; class?: string; [key: string]: unknown } = $props();
 
-	const {
-		methods: { closeDrawer },
-	} = getCtx();
+const {
+  methods: { closeDrawer }
+} = getCtx();
 </script>
 
 <Dialog.Close

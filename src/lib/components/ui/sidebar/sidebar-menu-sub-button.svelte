@@ -1,22 +1,22 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import type { HTMLAnchorAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils.js";
+import type { Snippet } from 'svelte';
+import type { HTMLAnchorAttributes } from 'svelte/elements';
+import { cn } from '$lib/utils.js';
 
-  interface Props extends HTMLAnchorAttributes {
-    size?: "sm" | "md";
-    isActive?: boolean;
-    children?: Snippet;
-  }
+interface Props extends HTMLAnchorAttributes {
+  size?: 'sm' | 'md';
+  isActive?: boolean;
+  children?: Snippet;
+}
 
-  let {
-    class: className,
-    href,
-    size = "md",
-    isActive = false,
-    children,
-    ...restProps
-  }: Props = $props();
+let {
+  class: className,
+  href,
+  size = 'md',
+  isActive = false,
+  children,
+  ...restProps
+}: Props = $props();
 </script>
 
 <svelte:element

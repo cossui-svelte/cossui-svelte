@@ -1,27 +1,25 @@
 <script lang="ts">
-	import { Button, buttonVariants } from "$lib/components/ui/button";
-	import {
-		Dialog,
-		DialogClose,
-		DialogContent,
-		DialogDescription,
-		DialogFooter,
-		DialogHeader,
-		DialogTitle,
-		DialogTrigger,
-	} from "$lib/components/ui/dialog";
+import { Button, buttonVariants } from '$lib/components/ui/button';
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger
+} from '$lib/components/ui/dialog';
 
-	let content = $state<HTMLDivElement | null>();
-	let hasReadToBottom = $state(false);
+let content = $state<HTMLDivElement | null>();
+let hasReadToBottom = $state(false);
 
-	function handleScroll() {
-		const scrollPercentage =
-			content!.scrollTop /
-			(content!.scrollHeight - content!.clientHeight);
-		if (scrollPercentage >= 0.99 && !hasReadToBottom) {
-			hasReadToBottom = true;
-		}
-	}
+function handleScroll() {
+  const scrollPercentage = content!.scrollTop / (content!.scrollHeight - content!.clientHeight);
+  if (scrollPercentage >= 0.99 && !hasReadToBottom) {
+    hasReadToBottom = true;
+  }
+}
 </script>
 
 <Dialog>

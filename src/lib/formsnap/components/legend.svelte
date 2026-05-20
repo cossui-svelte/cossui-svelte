@@ -1,26 +1,20 @@
 <script lang="ts">
-	import { box, mergeProps } from "svelte-toolbelt";
-	import type { LegendProps } from "./types.js";
-	import { useId } from "$lib/formsnap/internal/utils/id.js";
-	import { useLegend } from "$lib/formsnap/formsnap.svelte.js";
+import { box, mergeProps } from 'svelte-toolbelt';
+import { useLegend } from '$lib/formsnap/formsnap.svelte.js';
+import { useId } from '$lib/formsnap/internal/utils/id.js';
+import type { LegendProps } from './types.js';
 
-	let {
-		id = useId(),
-		ref = $bindable(null),
-		children,
-		child,
-		...restProps
-	}: LegendProps = $props();
+let { id = useId(), ref = $bindable(null), children, child, ...restProps }: LegendProps = $props();
 
-	const legendState = useLegend({
-		id: box.with(() => id),
-		ref: box.with(
-			() => ref,
-			(v) => (ref = v),
-		),
-	});
+const legendState = useLegend({
+  id: box.with(() => id),
+  ref: box.with(
+    () => ref,
+    (v) => (ref = v)
+  )
+});
 
-	const mergedProps = $derived(mergeProps(restProps, legendState.props));
+const mergedProps = $derived(mergeProps(restProps, legendState.props));
 </script>
 
 <!--

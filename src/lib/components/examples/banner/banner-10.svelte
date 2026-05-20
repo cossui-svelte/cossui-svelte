@@ -1,50 +1,45 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button";
+import TicketPercent from '@lucide/svelte/icons/ticket-percent';
+import X from '@lucide/svelte/icons/x';
+import { Button } from '$lib/components/ui/button';
 
-	import TicketPercent from "@lucide/svelte/icons/ticket-percent";
-	import X from "@lucide/svelte/icons/x";
+// Setting 9h 45m 24s from now for demo purposes
+const saleEndDate = new Date(Date.now() + 9 * 60 * 60 * 1000 + 45 * 60 * 1000 + 24 * 1000);
 
-	// Setting 9h 45m 24s from now for demo purposes
-	const saleEndDate = new Date(
-		Date.now() + 9 * 60 * 60 * 1000 + 45 * 60 * 1000 + 24 * 1000,
-	);
+let visible = $state(true);
+let timeLeft = $state(calculateTimeLeft());
 
-	let visible = $state(true);
-	let timeLeft = $state(calculateTimeLeft());
+function calculateTimeLeft() {
+  const difference = saleEndDate.getTime() - new Date().getTime();
 
-	function calculateTimeLeft() {
-		const difference = saleEndDate.getTime() - new Date().getTime();
+  if (difference <= 0)
+    return {
+      days: 0,
+      hours: 0,
+      isExpired: true,
+      minutes: 0,
+      seconds: 0
+    };
 
-		if (difference <= 0)
-			return {
-				days: 0,
-				hours: 0,
-				isExpired: true,
-				minutes: 0,
-				seconds: 0,
-			};
+  return {
+    days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+    hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+    isExpired: false,
+    minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+    seconds: Math.floor((difference % (1000 * 60)) / 1000)
+  };
+}
 
-		return {
-			days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-			hours: Math.floor(
-				(difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
-			),
-			isExpired: false,
-			minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
-			seconds: Math.floor((difference % (1000 * 60)) / 1000),
-		};
-	}
+$effect(() => {
+  const timer = setInterval(() => {
+    timeLeft = calculateTimeLeft();
+    if (timeLeft.isExpired) {
+      clearInterval(timer);
+    }
+  }, 1000);
 
-	$effect(() => {
-		const timer = setInterval(() => {
-			timeLeft = calculateTimeLeft();
-			if (timeLeft.isExpired) {
-				clearInterval(timer);
-			}
-		}, 1000);
-
-		return () => clearInterval(timer);
-	});
+  return () => clearInterval(timer);
+});
 </script>
 
 {#if visible && !timeLeft.isExpired}

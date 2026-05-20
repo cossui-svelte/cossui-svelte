@@ -1,8 +1,7 @@
 <script lang="ts">
-	import { Drawer as DrawerPrimitive } from "$lib/vaul";
+import type { Drawer as DrawerPrimitive } from '$lib/vaul';
 
-	let { ref = $bindable(null), ...restProps }: DrawerPrimitive.TriggerProps =
-		$props();
+let { ref = $bindable(null), ...restProps }: DrawerPrimitive.TriggerProps = $props();
 </script>
 
 <DrawerPrimitive.Trigger bind:ref data-slot="drawer-trigger" {...restProps} />

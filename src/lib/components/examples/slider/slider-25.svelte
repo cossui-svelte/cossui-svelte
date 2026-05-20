@@ -1,33 +1,32 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button";
-	import { Input } from "$lib/components/ui/input";
-	import { Label } from "$lib/components/ui/label";
-	import { Slider } from "$lib/components/ui/slider";
+import RotateCcw from '@lucide/svelte/icons/rotate-ccw';
+import { Button } from '$lib/components/ui/button';
+import { Input } from '$lib/components/ui/input';
+import { Label } from '$lib/components/ui/label';
+import { Slider } from '$lib/components/ui/slider';
 
-	import RotateCcw from "@lucide/svelte/icons/rotate-ccw";
+const defaultValue = 0;
+const min = -10;
+const max = 10;
 
-	const defaultValue = 0;
-	const min = -10;
-	const max = 10;
+let value = $state({
+  x: -2,
+  y: 4,
+  z: 2
+});
 
-	let value = $state({
-		x: -2,
-		y: 4,
-		z: 2,
-	});
+function reset() {
+  value.x = defaultValue;
+  value.y = defaultValue;
+  value.z = defaultValue;
+}
 
-	function reset() {
-		value.x = defaultValue;
-		value.y = defaultValue;
-		value.z = defaultValue;
-	}
-
-	function handleInputChange(
-		e: Event & { currentTarget: HTMLInputElement },
-		key: keyof typeof value,
-	) {
-		value[key] = parseFloat(e.currentTarget.value) || 0;
-	}
+function handleInputChange(
+  e: Event & { currentTarget: HTMLInputElement },
+  key: keyof typeof value
+) {
+  value[key] = parseFloat(e.currentTarget.value) || 0;
+}
 </script>
 
 <div class="space-y-4">

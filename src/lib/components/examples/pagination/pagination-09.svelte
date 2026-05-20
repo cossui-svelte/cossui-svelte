@@ -1,37 +1,32 @@
 <script lang="ts">
-	import { usePagination } from '$lib/hooks/use-pagination.svelte';
+import ChevronLeft from '@lucide/svelte/icons/chevron-left';
+import ChevronRight from '@lucide/svelte/icons/chevron-right';
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink
+} from '$lib/components/ui/pagination';
+import { Select, SelectContent, SelectItem, SelectTrigger } from '$lib/components/ui/select';
+import { usePagination } from '$lib/hooks/use-pagination.svelte';
 
-	import ChevronLeft from '@lucide/svelte/icons/chevron-left';
-	import ChevronRight from '@lucide/svelte/icons/chevron-right';
-	import {
-		Pagination,
-		PaginationContent,
-		PaginationEllipsis,
-		PaginationItem,
-		PaginationLink
-	} from '$lib/components/ui/pagination';
-	import { Select, SelectContent, SelectItem, SelectTrigger } from '$lib/components/ui/select';
+type PaginationProps = {
+  currentPage: number;
+  paginationItemsToDisplay?: number;
+  totalPages: number;
+};
 
-	type PaginationProps = {
-		currentPage: number;
-		paginationItemsToDisplay?: number;
-		totalPages: number;
-	};
+let { currentPage = 1, paginationItemsToDisplay = 5, totalPages = 10 }: PaginationProps = $props();
 
-	let {
-		currentPage = 1,
-		paginationItemsToDisplay = 5,
-		totalPages = 10
-	}: PaginationProps = $props();
+const pagination = usePagination({
+  currentPage,
+  paginationItemsToDisplay,
+  totalPages
+});
 
-	const pagination = usePagination({
-		currentPage,
-		paginationItemsToDisplay,
-		totalPages
-	});
-
-	const paginationItemsToDisplayOptions = ['10', '20', '50', '100'];
-	let selectedPaginationItemsToDisplay = $state(paginationItemsToDisplayOptions[0]);
+const paginationItemsToDisplayOptions = ['10', '20', '50', '100'];
+let selectedPaginationItemsToDisplay = $state(paginationItemsToDisplayOptions[0]);
 </script>
 
 <div class="flex items-center justify-between gap-3">

@@ -1,26 +1,23 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import type { HTMLButtonAttributes } from "svelte/elements";
-  import PanelLeft from "@lucide/svelte/icons/panel-left";
+import PanelLeft from '@lucide/svelte/icons/panel-left';
+import type { Snippet } from 'svelte';
+import type { HTMLButtonAttributes } from 'svelte/elements';
+import { Button } from '$lib/components/ui/button';
+import { cn } from '$lib/utils.js';
+import { getSidebarContext } from './sidebar-context.js';
 
-  import { getSidebarContext } from "./sidebar-context.js";
-  import { cn } from "$lib/utils.js";
-  import { Button } from "$lib/components/ui/button";
+interface Props extends HTMLButtonAttributes {
+  children?: Snippet;
+}
 
-  interface Props extends HTMLButtonAttributes {
-    children?: Snippet;
-  }
+let { class: className, onclick, children, ...restProps }: Props = $props();
 
-  let { class: className, onclick, children, ...restProps }: Props = $props();
+const ctx = getSidebarContext();
 
-  const ctx = getSidebarContext();
-
-  function handleClick(
-    event: MouseEvent & { currentTarget: EventTarget & HTMLButtonElement },
-  ) {
-    onclick?.(event);
-    ctx.toggleSidebar();
-  }
+function handleClick(event: MouseEvent & { currentTarget: EventTarget & HTMLButtonElement }) {
+  onclick?.(event);
+  ctx.toggleSidebar();
+}
 </script>
 
 <Button

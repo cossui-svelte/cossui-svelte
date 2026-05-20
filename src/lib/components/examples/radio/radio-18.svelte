@@ -1,17 +1,16 @@
 <script lang="ts">
-	import { RadioGroup, RadioGroupItem } from '$lib/components/ui/radio-group/index.js';
+import IconCheck from '@lucide/svelte/icons/check';
+import IconMinus from '@lucide/svelte/icons/minus';
+import UiDark from '$assets/ui-dark.png?enhanced';
+import UiLight from '$assets/ui-light.png?enhanced';
+import UiSystem from '$assets/ui-system.png?enhanced';
+import { RadioGroup, RadioGroupItem } from '$lib/components/ui/radio-group/index.js';
 
-	import IconCheck from '@lucide/svelte/icons/check';
-	import IconMinus from '@lucide/svelte/icons/minus';
-	import UiDark from '$assets/ui-dark.png?enhanced';
-	import UiLight from '$assets/ui-light.png?enhanced';
-	import UiSystem from '$assets/ui-system.png?enhanced';
-
-	const items = [
-		{ id: 'radio-18-r1', image: UiLight, label: 'Light', value: 'r1' },
-		{ id: 'radio-18-r2', image: UiDark, label: 'Dark', value: 'r2' },
-		{ id: 'radio-18-r3', image: UiSystem, label: 'System', value: 'r3' }
-	] as const;
+const items = [
+  { id: 'radio-18-r1', image: UiLight, label: 'Light', value: 'r1' },
+  { id: 'radio-18-r2', image: UiDark, label: 'Dark', value: 'r2' },
+  { id: 'radio-18-r3', image: UiSystem, label: 'System', value: 'r3' }
+] as const;
 </script>
 
 <fieldset class="space-y-4">

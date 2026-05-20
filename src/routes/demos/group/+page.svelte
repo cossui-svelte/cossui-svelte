@@ -1,32 +1,26 @@
 <script lang="ts">
-  import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
-  import ArchiveIcon from "@lucide/svelte/icons/archive";
-  import Pencil from "@lucide/svelte/icons/pencil";
-  import EllipsisIcon from "@lucide/svelte/icons/ellipsis";
-  import FilesIcon from "@lucide/svelte/icons/files";
-  import FilmIcon from "@lucide/svelte/icons/film";
-  import ShareIcon from "@lucide/svelte/icons/share";
-  import TrashIcon from "@lucide/svelte/icons/trash";
-  import ZoomInIcon from "@lucide/svelte/icons/zoom-in";
-  import ZoomOutIcon from "@lucide/svelte/icons/zoom-out";
-  import QrCodeIcon from "@lucide/svelte/icons/qr-code";
-  import AudioWaveformIcon from "@lucide/svelte/icons/audio-waveform";
-  import ArrowLeftIcon from "@lucide/svelte/icons/arrow-left";
-  import ArrowRightIcon from "@lucide/svelte/icons/arrow-right";
-  import DownloadIcon from "@lucide/svelte/icons/download";
-  import ChevronDownIcon from "@lucide/svelte/icons/chevron-down";
-  import SquarePenIcon from "@lucide/svelte/icons/square-pen";
-
-  import { Group, GroupSeparator, GroupText } from "$lib/components/ui/group";
-  import {
-    Menu,
-    MenuTrigger,
-    MenuItem,
-    MenuPopup,
-  } from "$lib/components/ui/menu";
-  import { Button } from "$lib/components/ui/button";
-  import { Input } from "$lib/components/ui/input";
-  import { Label } from "$lib/components/ui/label";
+import ArchiveIcon from '@lucide/svelte/icons/archive';
+import ArrowLeftIcon from '@lucide/svelte/icons/arrow-left';
+import ArrowRightIcon from '@lucide/svelte/icons/arrow-right';
+import AudioWaveformIcon from '@lucide/svelte/icons/audio-waveform';
+import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
+import DownloadIcon from '@lucide/svelte/icons/download';
+import EllipsisIcon from '@lucide/svelte/icons/ellipsis';
+import FilesIcon from '@lucide/svelte/icons/files';
+import FilmIcon from '@lucide/svelte/icons/film';
+import Pencil from '@lucide/svelte/icons/pencil';
+import QrCodeIcon from '@lucide/svelte/icons/qr-code';
+import ShareIcon from '@lucide/svelte/icons/share';
+import SquarePenIcon from '@lucide/svelte/icons/square-pen';
+import TrashIcon from '@lucide/svelte/icons/trash';
+import ZoomInIcon from '@lucide/svelte/icons/zoom-in';
+import ZoomOutIcon from '@lucide/svelte/icons/zoom-out';
+import ComponentPreviewTabs from '$lib/components/app/component-preview-tabs.svelte';
+import { Button } from '$lib/components/ui/button';
+import { Group, GroupSeparator, GroupText } from '$lib/components/ui/group';
+import { Input } from '$lib/components/ui/input';
+import { Label } from '$lib/components/ui/label';
+import { Menu, MenuItem, MenuPopup, MenuTrigger } from '$lib/components/ui/menu';
 </script>
 
 <ComponentPreviewTabs>

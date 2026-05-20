@@ -1,18 +1,15 @@
 <script lang="ts">
-  import type { LayoutData } from "./$types";
-  import type { Snippet } from "svelte";
+import type { Snippet } from 'svelte';
+import type { LayoutData } from './$types';
 
-  import "../app.css";
+import '../app.css';
 
-  import SiteHeader from "$lib/components/app/app-site-header.svelte";
-  import SiteFooter from "$lib/components/shared-components/site-footer.svelte";
-  import { ModeWatcher } from "mode-watcher";
-  import {
-    AnchoredToastProvider,
-    ToastProvider,
-  } from "$lib/components/ui/toast";
+import { ModeWatcher } from 'mode-watcher';
+import SiteHeader from '$lib/components/app/app-site-header.svelte';
+import SiteFooter from '$lib/components/shared-components/site-footer.svelte';
+import { AnchoredToastProvider, ToastProvider } from '$lib/components/ui/toast';
 
-  let { children, data }: { children: Snippet; data: LayoutData } = $props();
+let { children, data }: { children: Snippet; data: LayoutData } = $props();
 </script>
 
 <svelte:head>

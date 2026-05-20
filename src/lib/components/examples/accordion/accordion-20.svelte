@@ -1,105 +1,100 @@
 <script lang="ts">
-	import {
-		Accordion,
-		AccordionItem,
-		AccordionTrigger,
-		AccordionContent,
-	} from "$lib/components/ui/accordion";
+import AtSign from '@lucide/svelte/icons/at-sign';
+import ChevronDown from '@lucide/svelte/icons/chevron-down';
+import CircleDashed from '@lucide/svelte/icons/circle-dashed';
+import Command from '@lucide/svelte/icons/command';
+import Eclipse from '@lucide/svelte/icons/eclipse';
+import Gauge from '@lucide/svelte/icons/gauge';
+import Plus from '@lucide/svelte/icons/plus';
+import Zap from '@lucide/svelte/icons/zap';
+import { Accordion as AccordionPrimitive } from 'bits-ui';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger
+} from '$lib/components/ui/accordion';
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger
+} from '$lib/components/ui/collapsible';
 
-	import AtSign from "@lucide/svelte/icons/at-sign";
-	import ChevronDown from "@lucide/svelte/icons/chevron-down";
-	import CircleDashed from "@lucide/svelte/icons/circle-dashed";
-	import Command from "@lucide/svelte/icons/command";
-	import Eclipse from "@lucide/svelte/icons/eclipse";
-	import Gauge from "@lucide/svelte/icons/gauge";
-	import Plus from "@lucide/svelte/icons/plus";
-	import Zap from "@lucide/svelte/icons/zap";
-	import {
-		Collapsible,
-		CollapsibleContent,
-		CollapsibleTrigger,
-	} from "$lib/components/ui/collapsible";
-	import { Accordion as AccordionPrimitive } from "bits-ui";
-
-	const items = [
-		{
-			collapsibles: [
-				{
-					content:
-						"We optimize every component for maximum performance and minimal bundle size.",
-					icon: Gauge,
-					title: "What about performance?",
-				},
-				{
-					content:
-						"Our documentation is comprehensive and includes live examples for every component.",
-					icon: CircleDashed,
-					title: "How is the documentation?",
-				},
-			],
-			icon: Command,
-			id: "1",
-			title: "What makes Origin UI - Svelte different?",
-		},
-		{
-			collapsibles: [
-				{
-					content:
-						"Yes, our theming system is fully customizable and supports both light and dark modes.",
-					icon: Gauge,
-					title: "Can I use custom themes?",
-				},
-				{
-					content:
-						"We have first-class support for Tailwind CSS with custom utility classes.",
-					icon: CircleDashed,
-					title: "What about Tailwind support?",
-				},
-			],
-			icon: Eclipse,
-			id: "2",
-			title: "How can I customize the components?",
-		},
-		{
-			collapsibles: [
-				{
-					content:
-						"Our components are tree-shakeable and typically add minimal overhead to your bundle.",
-					icon: Gauge,
-					open: true,
-					title: "What's the bundle size impact?",
-				},
-				{
-					content:
-						"We support automatic code splitting for optimal loading performance.",
-					icon: CircleDashed,
-					title: "How is code splitting handled?",
-				},
-			],
-			icon: Zap,
-			id: "3",
-			title: "Is Origin UI - Svelte optimized for performance?",
-		},
-		{
-			collapsibles: [
-				{
-					content:
-						"We test with NVDA, VoiceOver, and JAWS to ensure broad compatibility.",
-					icon: Gauge,
-					title: "Which screen readers are supported?",
-				},
-				{
-					content:
-						"Full keyboard navigation support is implemented following WAI-ARIA best practices.",
-					icon: CircleDashed,
-					title: "What about keyboard navigation?",
-				},
-			],
-			icon: AtSign,
-			id: "4",
-			title: "How accessible are the components?",
-		},
-	];
+const items = [
+  {
+    collapsibles: [
+      {
+        content: 'We optimize every component for maximum performance and minimal bundle size.',
+        icon: Gauge,
+        title: 'What about performance?'
+      },
+      {
+        content:
+          'Our documentation is comprehensive and includes live examples for every component.',
+        icon: CircleDashed,
+        title: 'How is the documentation?'
+      }
+    ],
+    icon: Command,
+    id: '1',
+    title: 'What makes Origin UI - Svelte different?'
+  },
+  {
+    collapsibles: [
+      {
+        content:
+          'Yes, our theming system is fully customizable and supports both light and dark modes.',
+        icon: Gauge,
+        title: 'Can I use custom themes?'
+      },
+      {
+        content: 'We have first-class support for Tailwind CSS with custom utility classes.',
+        icon: CircleDashed,
+        title: 'What about Tailwind support?'
+      }
+    ],
+    icon: Eclipse,
+    id: '2',
+    title: 'How can I customize the components?'
+  },
+  {
+    collapsibles: [
+      {
+        content:
+          'Our components are tree-shakeable and typically add minimal overhead to your bundle.',
+        icon: Gauge,
+        open: true,
+        title: "What's the bundle size impact?"
+      },
+      {
+        content: 'We support automatic code splitting for optimal loading performance.',
+        icon: CircleDashed,
+        title: 'How is code splitting handled?'
+      }
+    ],
+    icon: Zap,
+    id: '3',
+    title: 'Is Origin UI - Svelte optimized for performance?'
+  },
+  {
+    collapsibles: [
+      {
+        content: 'We test with NVDA, VoiceOver, and JAWS to ensure broad compatibility.',
+        icon: Gauge,
+        title: 'Which screen readers are supported?'
+      },
+      {
+        content:
+          'Full keyboard navigation support is implemented following WAI-ARIA best practices.',
+        icon: CircleDashed,
+        title: 'What about keyboard navigation?'
+      }
+    ],
+    icon: AtSign,
+    id: '4',
+    title: 'How accessible are the components?'
+  }
+];
 </script>
 
 <div class="space-y-4">

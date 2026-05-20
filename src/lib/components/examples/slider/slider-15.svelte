@@ -1,30 +1,29 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button";
-	import { Input } from "$lib/components/ui/input";
-	import { Label } from "$lib/components/ui/label";
-	import { Slider } from "$lib/components/ui/slider";
-	import {
-		Tooltip,
-		TooltipContent,
-		TooltipProvider,
-		TooltipTrigger,
-	} from "$lib/components/ui/tooltip/index.js";
+import RotateCcw from '@lucide/svelte/icons/rotate-ccw';
+import { Button } from '$lib/components/ui/button';
+import { Input } from '$lib/components/ui/input';
+import { Label } from '$lib/components/ui/label';
+import { Slider } from '$lib/components/ui/slider';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger
+} from '$lib/components/ui/tooltip/index.js';
 
-	import RotateCcw from "@lucide/svelte/icons/rotate-ccw";
+const min = 0;
+const max = 2;
+const initialValue = 1.25;
 
-	const min = 0;
-	const max = 2;
-	const initialValue = 1.25;
+let value = $state(initialValue);
 
-	let value = $state(initialValue);
+function reset() {
+  value = initialValue;
+}
 
-	function reset() {
-		value = initialValue;
-	}
-
-	function handleInputChange(e: Event & { currentTarget: HTMLInputElement }) {
-		value = parseFloat(e.currentTarget.value) || 0;
-	}
+function handleInputChange(e: Event & { currentTarget: HTMLInputElement }) {
+  value = parseFloat(e.currentTarget.value) || 0;
+}
 </script>
 
 <div class="space-y-3">

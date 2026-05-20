@@ -1,12 +1,12 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import type { HTMLAttributes } from "svelte/elements";
+import type { Snippet } from 'svelte';
+import type { HTMLAttributes } from 'svelte/elements';
 
-  interface Props extends HTMLAttributes<HTMLDivElement> {
-    children?: Snippet;
-  }
+interface Props extends HTMLAttributes<HTMLDivElement> {
+  children?: Snippet;
+}
 
-  let { children, ...restProps }: Props = $props();
+let { children, ...restProps }: Props = $props();
 </script>
 
 <div data-slot="autocomplete-collection" {...restProps}>

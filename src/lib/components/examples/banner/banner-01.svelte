@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button";
+import { Button } from '$lib/components/ui/button';
 </script>
 
 <div class="z-50 rounded-md border bg-background px-4 py-3 shadow-lg">

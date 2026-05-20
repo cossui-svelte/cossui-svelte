@@ -1,38 +1,26 @@
 <script lang="ts">
-	import { box, mergeProps } from "svelte-toolbelt";
-	import type { LabelProps } from "./types.js";
-	import { useId } from "$lib/formsnap/internal/utils/id.js";
-	import {
-		getField,
-		getFormControl2,
-		useLabel,
-	} from "$lib/formsnap/formsnap.svelte.js";
+import { box, mergeProps } from 'svelte-toolbelt';
+import { getField, getFormControl2, useLabel } from '$lib/formsnap/formsnap.svelte.js';
+import { useId } from '$lib/formsnap/internal/utils/id.js';
+import type { LabelProps } from './types.js';
 
-	let {
-		id = useId(),
-		ref = $bindable(null),
-		children,
-		child,
-		...restProps
-	}: LabelProps = $props();
+let { id = useId(), ref = $bindable(null), children, child, ...restProps }: LabelProps = $props();
 
-	const formField = getField();
-	const control = getFormControl2();
-	if (!formField && !control) {
-		throw new Error(
-			"Label must be used within a Field or Control component",
-		);
-	}
+const formField = getField();
+const control = getFormControl2();
+if (!formField && !control) {
+  throw new Error('Label must be used within a Field or Control component');
+}
 
-	const labelState = useLabel({
-		id: box.with(() => id),
-		ref: box.with(
-			() => ref,
-			(v) => (ref = v),
-		),
-	});
+const labelState = useLabel({
+  id: box.with(() => id),
+  ref: box.with(
+    () => ref,
+    (v) => (ref = v)
+  )
+});
 
-	const mergedProps = $derived(mergeProps(restProps, labelState.props));
+const mergedProps = $derived(mergeProps(restProps, labelState.props));
 </script>
 
 <!--

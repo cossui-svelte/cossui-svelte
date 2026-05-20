@@ -1,23 +1,21 @@
 <script lang="ts">
-	import type { CountryCode } from "svelte-tel-input/types";
-	import type { ChangeEventHandler } from "svelte/elements";
+import ChevronDown from '@lucide/svelte/icons/chevron-down';
+import Phone from '@lucide/svelte/icons/phone';
+import type { ChangeEventHandler } from 'svelte/elements';
+import { countries, TelInput } from 'svelte-tel-input';
+import type { CountryCode } from 'svelte-tel-input/types';
+import { Label } from '$lib/components/ui/label';
+import 'svelte-tel-input/styles/flags.css';
 
-	import { Label } from "$lib/components/ui/label";
+let selectedCountry = $state<CountryCode | null>(null);
+let value = $state<string>('');
 
-	import ChevronDown from "@lucide/svelte/icons/chevron-down";
-	import Phone from "@lucide/svelte/icons/phone";
-	import { countries, TelInput } from "svelte-tel-input";
-	import "svelte-tel-input/styles/flags.css";
+const handleCountryChange: ChangeEventHandler<HTMLSelectElement> = (e) => {
+  const { value } = e.currentTarget;
+  selectedCountry = (value as CountryCode) || null;
+};
 
-	let selectedCountry = $state<CountryCode | null>(null);
-	let value = $state<string>("");
-
-	const handleCountryChange: ChangeEventHandler<HTMLSelectElement> = (e) => {
-		const { value } = e.currentTarget;
-		selectedCountry = (value as CountryCode) || null;
-	};
-
-	const uid = $props.id();
+const uid = $props.id();
 </script>
 
 <div class="space-y-2" dir="ltr">

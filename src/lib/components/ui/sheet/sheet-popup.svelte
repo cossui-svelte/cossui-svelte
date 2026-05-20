@@ -1,24 +1,24 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import { Dialog } from "bits-ui";
-  import X from "@lucide/svelte/icons/x";
-  import { cn } from "$lib/utils.js";
+import X from '@lucide/svelte/icons/x';
+import { Dialog } from 'bits-ui';
+import type { Snippet } from 'svelte';
+import { cn } from '$lib/utils.js';
 
-  interface Props extends DialogContentProps {
-    children?: Snippet;
-    side?: "right" | "left" | "top" | "bottom";
-    variant?: "default" | "inset";
-    showCloseButton?: boolean;
-  }
+interface Props extends DialogContentProps {
+  children?: Snippet;
+  side?: 'right' | 'left' | 'top' | 'bottom';
+  variant?: 'default' | 'inset';
+  showCloseButton?: boolean;
+}
 
-  let {
-    class: className,
-    children,
-    side = "right",
-    variant = "default",
-    showCloseButton = true,
-    ...restProps
-  }: Props = $props();
+let {
+  class: className,
+  children,
+  side = 'right',
+  variant = 'default',
+  showCloseButton = true,
+  ...restProps
+}: Props = $props();
 </script>
 
 <Dialog.Portal>

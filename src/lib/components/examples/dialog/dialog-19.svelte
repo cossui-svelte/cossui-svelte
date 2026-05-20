@@ -1,35 +1,34 @@
 <script lang="ts">
-	import { Input } from "$lib/components/ui/input";
-	import { Textarea } from "$lib/components/ui/textarea";
-	import { Button, buttonVariants } from "$lib/components/ui/button";
-	import {
-		Dialog,
-		DialogClose,
-		DialogContent,
-		DialogDescription,
-		DialogFooter,
-		DialogHeader,
-		DialogTitle,
-		DialogTrigger,
-	} from "$lib/components/ui/dialog";
-	import { Label } from "$lib/components/ui/label";
-	import { useCharacterLimit } from "$lib/hooks/use-character-limit.svelte";
-	import { useImageUpload } from "$lib/hooks/use-image-upload.svelte";
+import Check from '@lucide/svelte/icons/check';
+import ImagePlus from '@lucide/svelte/icons/image-plus';
+import X from '@lucide/svelte/icons/x';
+import { Button, buttonVariants } from '$lib/components/ui/button';
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger
+} from '$lib/components/ui/dialog';
+import { Input } from '$lib/components/ui/input';
+import { Label } from '$lib/components/ui/label';
+import { Textarea } from '$lib/components/ui/textarea';
+import { useCharacterLimit } from '$lib/hooks/use-character-limit.svelte';
+import { useImageUpload } from '$lib/hooks/use-image-upload.svelte';
 
-	import Check from "@lucide/svelte/icons/check";
-	import ImagePlus from "@lucide/svelte/icons/image-plus";
-	import X from "@lucide/svelte/icons/x";
-
-	const bioLimit = useCharacterLimit(
-		180,
-		"Hey, I am Margaret, a web developer who loves turning ideas into amazing websites!",
-	);
-	const bannerImageHandler = useImageUpload({
-		initialImage: "/profile-bg.jpg",
-	});
-	const profileImageHandler = useImageUpload({
-		initialImage: "/avatar-72-01.jpg",
-	});
+const bioLimit = useCharacterLimit(
+  180,
+  'Hey, I am Margaret, a web developer who loves turning ideas into amazing websites!'
+);
+const bannerImageHandler = useImageUpload({
+  initialImage: '/profile-bg.jpg'
+});
+const profileImageHandler = useImageUpload({
+  initialImage: '/avatar-72-01.jpg'
+});
 </script>
 
 <Dialog>

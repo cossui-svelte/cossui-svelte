@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button";
-	import ArchiveIcon from "@lucide/svelte/icons/archive";
+import ArchiveIcon from '@lucide/svelte/icons/archive';
+import { Button } from '$lib/components/ui/button';
 </script>
 
 <Button>

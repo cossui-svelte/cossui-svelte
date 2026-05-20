@@ -1,27 +1,27 @@
 <script lang="ts">
-    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
-    import PauseIcon from "@lucide/svelte/icons/pause";
-    import PlayIcon from "@lucide/svelte/icons/play";
-    import SkipBackIcon from "@lucide/svelte/icons/skip-back";
-    import SkipForwardIcon from "@lucide/svelte/icons/skip-forward";
-    import TrashIcon from "@lucide/svelte/icons/trash";
-    import { Button } from "$lib/components/ui/button";
-    import {
-        Menu,
-        MenuCheckboxItem,
-        MenuGroup,
-        MenuGroupLabel,
-        MenuItem,
-        MenuPopup,
-        MenuRadioGroup,
-        MenuRadioItem,
-        MenuSeparator,
-        MenuShortcut,
-        MenuSub,
-        MenuSubPopup,
-        MenuSubTrigger,
-        MenuTrigger,
-    } from "$lib/components/ui/menu";
+import PauseIcon from '@lucide/svelte/icons/pause';
+import PlayIcon from '@lucide/svelte/icons/play';
+import SkipBackIcon from '@lucide/svelte/icons/skip-back';
+import SkipForwardIcon from '@lucide/svelte/icons/skip-forward';
+import TrashIcon from '@lucide/svelte/icons/trash';
+import ComponentPreviewTabs from '$lib/components/app/component-preview-tabs.svelte';
+import { Button } from '$lib/components/ui/button';
+import {
+  Menu,
+  MenuCheckboxItem,
+  MenuGroup,
+  MenuGroupLabel,
+  MenuItem,
+  MenuPopup,
+  MenuRadioGroup,
+  MenuRadioItem,
+  MenuSeparator,
+  MenuShortcut,
+  MenuSub,
+  MenuSubPopup,
+  MenuSubTrigger,
+  MenuTrigger
+} from '$lib/components/ui/menu';
 </script>
 
 <ComponentPreviewTabs>

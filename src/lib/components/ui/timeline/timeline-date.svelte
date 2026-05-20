@@ -1,25 +1,24 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
-	import type { HTMLAttributes } from 'svelte/elements';
+import { mergeProps, type WithElementRef } from 'bits-ui';
+import type { Snippet } from 'svelte';
+import type { HTMLAttributes } from 'svelte/elements';
+import { cn } from '$lib/utils';
 
-	import { cn } from '$lib/utils';
-	import { mergeProps, type WithElementRef } from 'bits-ui';
+type Props = WithElementRef<HTMLAttributes<HTMLTimeElement>> & {
+  child?: Snippet<[{ props: HTMLAttributes<HTMLTimeElement> }]>;
+};
 
-	type Props = WithElementRef<HTMLAttributes<HTMLTimeElement>> & {
-		child?: Snippet<[{ props: HTMLAttributes<HTMLTimeElement> }]>;
-	};
+let { child, children, class: className, ref = $bindable(null), ...restProps }: Props = $props();
 
-	let { child, children, class: className, ref = $bindable(null), ...restProps }: Props = $props();
-
-	const mergedProps = $derived(
-		mergeProps(restProps, {
-			class: cn(
-				'text-muted-foreground mb-1 block text-xs font-medium group-data-[orientation=vertical]/timeline:max-sm:h-4',
-				className
-			),
-			'data-slot': 'timeline-date'
-		})
-	);
+const mergedProps = $derived(
+  mergeProps(restProps, {
+    class: cn(
+      'text-muted-foreground mb-1 block text-xs font-medium group-data-[orientation=vertical]/timeline:max-sm:h-4',
+      className
+    ),
+    'data-slot': 'timeline-date'
+  })
+);
 </script>
 
 {#if child}

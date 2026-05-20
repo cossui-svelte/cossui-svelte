@@ -1,14 +1,14 @@
 <script lang="ts">
-  import { cn } from "$lib/utils.js";
-  import { page } from "$app/state";
-  import { buttonVariants } from "$lib/components/ui/button";
+import { page } from '$app/state';
+import { buttonVariants } from '$lib/components/ui/button';
+import { cn } from '$lib/utils.js';
 
-  interface Props {
-    items: { href: string; label: string }[];
-    class?: string;
-  }
+interface Props {
+  items: { href: string; label: string }[];
+  class?: string;
+}
 
-  let { items, class: className }: Props = $props();
+let { items, class: className }: Props = $props();
 </script>
 
 <nav class={cn("items-center gap-2", className)}>

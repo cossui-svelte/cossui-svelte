@@ -1,14 +1,14 @@
 <script lang="ts">
-  import type { HTMLAttributes } from "svelte/elements";
-  import { Separator } from "$lib/components/ui/separator";
-  import { cn } from "$lib/utils.js";
+import type { HTMLAttributes } from 'svelte/elements';
+import { Separator } from '$lib/components/ui/separator';
+import { cn } from '$lib/utils.js';
 
-  interface Props extends HTMLAttributes<HTMLDivElement> {
-    orientation?: "horizontal" | "vertical";
-    decorative?: boolean;
-  }
+interface Props extends HTMLAttributes<HTMLDivElement> {
+  orientation?: 'horizontal' | 'vertical';
+  decorative?: boolean;
+}
 
-  let { class: className, ...restProps }: Props = $props();
+let { class: className, ...restProps }: Props = $props();
 </script>
 
 <Separator

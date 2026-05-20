@@ -1,33 +1,28 @@
 <script lang="ts">
-	import { usePagination } from "$lib/hooks/use-pagination.svelte";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious
+} from '$lib/components/ui/pagination';
+import { usePagination } from '$lib/hooks/use-pagination.svelte';
 
-	import {
-		Pagination,
-		PaginationContent,
-		PaginationEllipsis,
-		PaginationItem,
-		PaginationLink,
-		PaginationNext,
-		PaginationPrevious,
-	} from "$lib/components/ui/pagination";
+type PaginationProps = {
+  currentPage: number;
+  paginationItemsToDisplay?: number;
+  totalPages: number;
+};
 
-	type PaginationProps = {
-		currentPage: number;
-		paginationItemsToDisplay?: number;
-		totalPages: number;
-	};
+let { currentPage = 1, paginationItemsToDisplay = 5, totalPages = 10 }: PaginationProps = $props();
 
-	let {
-		currentPage = 1,
-		paginationItemsToDisplay = 5,
-		totalPages = 10,
-	}: PaginationProps = $props();
-
-	const pagination = usePagination({
-		currentPage,
-		paginationItemsToDisplay,
-		totalPages,
-	});
+const pagination = usePagination({
+  currentPage,
+  paginationItemsToDisplay,
+  totalPages
+});
 </script>
 
 <Pagination>

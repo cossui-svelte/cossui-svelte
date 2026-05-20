@@ -1,12 +1,12 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import { DropdownMenu } from "bits-ui";
+import type { DropdownMenu } from 'bits-ui';
+import type { Snippet } from 'svelte';
 
-  interface Props extends DropdownMenu.SubProps {
-    children?: Snippet;
-  }
+interface Props extends DropdownMenu.SubProps {
+  children?: Snippet;
+}
 
-  let { children, ...restProps }: Props = $props();
+let { children, ...restProps }: Props = $props();
 </script>
 
 <DropdownMenu.Sub {...restProps}>

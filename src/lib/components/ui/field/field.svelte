@@ -1,19 +1,19 @@
 <script lang="ts">
-  import { Field } from "$lib/formsnap";
-  import { cn } from "$lib/utils.js";
-  import { type ComponentProps } from "svelte";
-  import { getFormContext } from "../form/form-context.svelte";
+import type { ComponentProps } from 'svelte';
+import type { Field } from '$lib/formsnap';
+import { cn } from '$lib/utils.js';
+import { getFormContext } from '../form/form-context.svelte';
 
-  let {
-    class: className,
-    name,
-    children: childrenProp,
-    ...restProps
-  }: Omit<ComponentProps<typeof Field>, "form"> & {
-    class?: string;
-  } = $props();
+let {
+  class: className,
+  name,
+  children: childrenProp,
+  ...restProps
+}: Omit<ComponentProps<typeof Field>, 'form'> & {
+  class?: string;
+} = $props();
 
-  const form = getFormContext();
+const form = getFormContext();
 </script>
 
 <Field {form} {name}>

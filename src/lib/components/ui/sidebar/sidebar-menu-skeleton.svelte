@@ -1,16 +1,16 @@
 <script lang="ts">
-  import type { HTMLAttributes } from "svelte/elements";
-  import { Skeleton } from "$lib/components/ui/skeleton";
-  import { cn } from "$lib/utils.js";
+import type { HTMLAttributes } from 'svelte/elements';
+import { Skeleton } from '$lib/components/ui/skeleton';
+import { cn } from '$lib/utils.js';
 
-  interface Props extends HTMLAttributes<HTMLDivElement> {
-    showIcon?: boolean;
-  }
+interface Props extends HTMLAttributes<HTMLDivElement> {
+  showIcon?: boolean;
+}
 
-  let { class: className, showIcon = false, ...restProps }: Props = $props();
+let { class: className, showIcon = false, ...restProps }: Props = $props();
 
-  // Random width between 50–90% computed once at init
-  const width = `${Math.floor(Math.random() * 40) + 50}%`;
+// Random width between 50–90% computed once at init
+const width = `${Math.floor(Math.random() * 40) + 50}%`;
 </script>
 
 <div

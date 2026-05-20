@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { Label } from "$lib/components/ui/label";
-	import SelectNative from "$lib/components/ui/select-native.svelte";
+import { Label } from '$lib/components/ui/label';
+import SelectNative from '$lib/components/ui/select-native.svelte';
 
-	const uid = $props.id();
+const uid = $props.id();
 </script>
 
 <!-- NOTE: This inline style is to show how to set the --ring variable in your CSS file in order to change the focus ring color. -->

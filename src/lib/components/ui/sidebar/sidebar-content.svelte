@@ -1,14 +1,14 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import type { HTMLAttributes } from "svelte/elements";
-  import { ScrollArea } from "$lib/components/ui/scroll-area";
-  import { cn } from "$lib/utils.js";
+import type { Snippet } from 'svelte';
+import type { HTMLAttributes } from 'svelte/elements';
+import { ScrollArea } from '$lib/components/ui/scroll-area';
+import { cn } from '$lib/utils.js';
 
-  interface Props extends HTMLAttributes<HTMLDivElement> {
-    children?: Snippet;
-  }
+interface Props extends HTMLAttributes<HTMLDivElement> {
+  children?: Snippet;
+}
 
-  let { class: className, children, ...restProps }: Props = $props();
+let { class: className, children, ...restProps }: Props = $props();
 </script>
 
 <ScrollArea class="**:data-[slot=scroll-area-scrollbar]:hidden" scrollFade>

@@ -1,17 +1,16 @@
 <script lang="ts">
-	import { Input } from "$lib/components/ui/input";
-	import { Label } from "$lib/components/ui/label";
+import Eye from '@lucide/svelte/icons/eye';
+import EyeOff from '@lucide/svelte/icons/eye-off';
+import { Input } from '$lib/components/ui/input';
+import { Label } from '$lib/components/ui/label';
 
-	import Eye from "@lucide/svelte/icons/eye";
-	import EyeOff from "@lucide/svelte/icons/eye-off";
+let isVisible = $state(false);
 
-	let isVisible = $state(false);
+function toggleVisibility() {
+  isVisible = !isVisible;
+}
 
-	function toggleVisibility() {
-		isVisible = !isVisible;
-	}
-
-	const uid = $props.id();
+const uid = $props.id();
 </script>
 
 <div class="space-y-2">

@@ -1,22 +1,19 @@
 <script lang="ts">
-	import { Input } from "$lib/components/ui/input";
-	import { Label } from "$lib/components/ui/label";
-	import { Slider } from "$lib/components/ui/slider";
+import { Input } from '$lib/components/ui/input';
+import { Label } from '$lib/components/ui/label';
+import { Slider } from '$lib/components/ui/slider';
 
-	const min = 0;
-	const max = 200;
+const min = 0;
+const max = 200;
 
-	let value = $state([50, 150]);
+let value = $state([50, 150]);
 
-	function handleInputChange(
-		e: Event & { currentTarget: HTMLInputElement },
-		index: number,
-	) {
-		const v = parseFloat(e.currentTarget.value) || 0;
-		if (index == 0 && v > value[1]) value = [value[1], value[1]];
-		else if (index == 1 && v < value[0]) value = [value[0], value[0]];
-		else value[index] = v;
-	}
+function handleInputChange(e: Event & { currentTarget: HTMLInputElement }, index: number) {
+  const v = parseFloat(e.currentTarget.value) || 0;
+  if (index == 0 && v > value[1]) value = [value[1], value[1]];
+  else if (index == 1 && v < value[0]) value = [value[0], value[0]];
+  else value[index] = v;
+}
 </script>
 
 <div class="space-y-3">

@@ -1,28 +1,24 @@
 <script lang="ts">
-	import { Label } from "$lib/components/ui/label";
-	import {
-		RadioGroup,
-		RadioGroupItem,
-	} from "$lib/components/ui/radio-group/index.js";
+import IconBrush from '@lucide/svelte/icons/brush';
+import IconEraser from '@lucide/svelte/icons/eraser';
+import IconScissors from '@lucide/svelte/icons/scissors';
+import IconSwatchBook from '@lucide/svelte/icons/swatch-book';
+import { Label } from '$lib/components/ui/label';
+import { RadioGroup, RadioGroupItem } from '$lib/components/ui/radio-group/index.js';
 
-	import IconBrush from "@lucide/svelte/icons/brush";
-	import IconEraser from "@lucide/svelte/icons/eraser";
-	import IconScissors from "@lucide/svelte/icons/scissors";
-	import IconSwatchBook from "@lucide/svelte/icons/swatch-book";
+const items = [
+  {
+    Icon: IconSwatchBook,
+    id: 'radio-11-r1',
+    label: 'Palette',
+    value: 'r1'
+  },
+  { Icon: IconBrush, id: 'radio-11-r2', label: 'Brush', value: 'r2' },
+  { Icon: IconEraser, id: 'radio-11-r3', label: 'Eraser', value: 'r3' },
+  { Icon: IconScissors, id: 'radio-11-r4', label: 'Cut', value: 'r4' }
+];
 
-	const items = [
-		{
-			Icon: IconSwatchBook,
-			id: "radio-11-r1",
-			label: "Palette",
-			value: "r1",
-		},
-		{ Icon: IconBrush, id: "radio-11-r2", label: "Brush", value: "r2" },
-		{ Icon: IconEraser, id: "radio-11-r3", label: "Eraser", value: "r3" },
-		{ Icon: IconScissors, id: "radio-11-r4", label: "Cut", value: "r4" },
-	];
-
-	let selectedValue = $state("r1");
+let selectedValue = $state('r1');
 </script>
 
 <RadioGroup class="grid grid-cols-2 gap-2" bind:value={selectedValue}>

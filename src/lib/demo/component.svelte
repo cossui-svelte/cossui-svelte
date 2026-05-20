@@ -1,24 +1,23 @@
 <script lang="ts">
-	import type { AvailableComponentMetadata } from '$data/api/components/components.handler';
-	import type { WithElementRef } from 'bits-ui';
-	import type { HTMLAttributes } from 'svelte/elements';
+import type { WithElementRef } from 'bits-ui';
+import type { HTMLAttributes } from 'svelte/elements';
+import type { AvailableComponentMetadata } from '$data/api/components/components.handler';
+import { cn } from '$lib/utils.js';
+import CopyButton from './copy-button.svelte';
+import ViewComponentButton from './view-component-button.svelte';
 
-	import CopyButton from './copy-button.svelte';
-	import ViewComponentButton from './view-component-button.svelte';
-	import { cn } from '$lib/utils.js';
+type DemoComponentProps = WithElementRef<HTMLAttributes<HTMLDivElement>, HTMLDivElement> & {
+  componentData: AvailableComponentMetadata;
+  onShallowRouteClick?: (e: MouseEvent) => void;
+};
 
-	type DemoComponentProps = WithElementRef<HTMLAttributes<HTMLDivElement>, HTMLDivElement> & {
-		componentData: AvailableComponentMetadata;
-		onShallowRouteClick?: (e: MouseEvent) => void;
-	};
-
-	let {
-		children,
-		componentData,
-		onShallowRouteClick,
-		ref = $bindable(null),
-		...restProps
-	}: DemoComponentProps = $props();
+let {
+  children,
+  componentData,
+  onShallowRouteClick,
+  ref = $bindable(null),
+  ...restProps
+}: DemoComponentProps = $props();
 </script>
 
 {#snippet actionButtons({ source }: { source: string })}

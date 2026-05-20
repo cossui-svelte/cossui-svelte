@@ -1,25 +1,25 @@
 <script lang="ts">
-	import ChevronFirst from '@lucide/svelte/icons/chevron-first';
-	import ChevronLast from '@lucide/svelte/icons/chevron-last';
-	import ChevronLeft from '@lucide/svelte/icons/chevron-left';
-	import ChevronRight from '@lucide/svelte/icons/chevron-right';
-	import {
-		Pagination,
-		PaginationContent,
-		PaginationItem,
-		PaginationLink
-	} from '$lib/components/ui/pagination';
-	import { Select, SelectContent, SelectItem, SelectTrigger } from '$lib/components/ui/select';
+import ChevronFirst from '@lucide/svelte/icons/chevron-first';
+import ChevronLast from '@lucide/svelte/icons/chevron-last';
+import ChevronLeft from '@lucide/svelte/icons/chevron-left';
+import ChevronRight from '@lucide/svelte/icons/chevron-right';
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink
+} from '$lib/components/ui/pagination';
+import { Select, SelectContent, SelectItem, SelectTrigger } from '$lib/components/ui/select';
 
-	type PaginationProps = {
-		currentPage: number;
-		totalPages: number;
-	};
+type PaginationProps = {
+  currentPage: number;
+  totalPages: number;
+};
 
-	let { currentPage = 1, totalPages = 10 }: PaginationProps = $props();
+let { currentPage = 1, totalPages = 10 }: PaginationProps = $props();
 
-	const paginationItemsToDisplayOptions = Array.from({ length: totalPages }, (_, i) => i + 1);
-	let selectedPaginationItemsToDisplay = $state(String(paginationItemsToDisplayOptions[0]));
+const paginationItemsToDisplayOptions = Array.from({ length: totalPages }, (_, i) => i + 1);
+let selectedPaginationItemsToDisplay = $state(String(paginationItemsToDisplayOptions[0]));
 </script>
 
 <Pagination>

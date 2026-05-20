@@ -1,17 +1,17 @@
 <script lang="ts">
-	import type { AvailableCOSSUIComponent } from "$data/api/components/components.handler";
+import type { AvailableCOSSUIComponent } from '$data/api/components/components.handler';
 
-	import { PROJECT_NAME, SEO_DELIMITER } from "$lib/config";
+import { PROJECT_NAME, SEO_DELIMITER } from '$lib/config';
 
-	type Props = {
-		component: AvailableCOSSUIComponent;
-	};
+type Props = {
+  component: AvailableCOSSUIComponent;
+};
 
-	let { component }: Props = $props();
+let { component }: Props = $props();
 
-	const title = `${component.name} ${SEO_DELIMITER} ${component.directory} ${SEO_DELIMITER} ${PROJECT_NAME}`;
-	const description = `Overview of the ${component.name} component from the ${component.directory} directory.`;
-	const keywords = `svelte, component, ${component.name}, ${component.directory}, origin ui, tailwindcss, ui, library`;
+const title = `${component.name} ${SEO_DELIMITER} ${component.directory} ${SEO_DELIMITER} ${PROJECT_NAME}`;
+const description = `Overview of the ${component.name} component from the ${component.directory} directory.`;
+const keywords = `svelte, component, ${component.name}, ${component.directory}, origin ui, tailwindcss, ui, library`;
 </script>
 
 <svelte:head>

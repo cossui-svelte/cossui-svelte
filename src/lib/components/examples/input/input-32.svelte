@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { Input } from "$lib/components/ui/input";
+import { Input } from '$lib/components/ui/input';
 
-	const uid = $props.id();
+const uid = $props.id();
 </script>
 
 <div class="group relative">

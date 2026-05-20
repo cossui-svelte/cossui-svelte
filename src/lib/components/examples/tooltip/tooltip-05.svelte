@@ -1,13 +1,12 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button";
-
-	import Globe from "@lucide/svelte/icons/globe";
-	import {
-		Tooltip,
-		TooltipContent,
-		TooltipProvider,
-		TooltipTrigger,
-	} from "$lib/components/ui/tooltip";
+import Globe from '@lucide/svelte/icons/globe';
+import { Button } from '$lib/components/ui/button';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger
+} from '$lib/components/ui/tooltip';
 </script>
 
 <TooltipProvider delayDuration={0}>

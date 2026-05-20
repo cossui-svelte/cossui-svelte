@@ -1,14 +1,14 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import { Checkbox as CheckboxPrimitive } from "bits-ui";
-  import { cn } from "$lib/utils.js";
+import type { Checkbox as CheckboxPrimitive } from 'bits-ui';
+import type { Snippet } from 'svelte';
+import { cn } from '$lib/utils.js';
 
-  interface Props extends Omit<CheckboxPrimitive.RootProps, "children"> {
-    variant?: "default" | "switch";
-    label?: Snippet;
-  }
+interface Props extends Omit<CheckboxPrimitive.RootProps, 'children'> {
+  variant?: 'default' | 'switch';
+  label?: Snippet;
+}
 
-  let { class: className, variant = "default", label, ...restProps }: Props = $props();
+let { class: className, variant = 'default', label, ...restProps }: Props = $props();
 </script>
 
 <CheckboxPrimitive.Root

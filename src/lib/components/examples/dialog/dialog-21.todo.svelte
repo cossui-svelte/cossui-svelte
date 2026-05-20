@@ -1,28 +1,28 @@
 <script lang="ts">
-	import ArrowUpRight from '@lucide/svelte/icons/arrow-up-right';
-	import CircleFadingPlus from '@lucide/svelte/icons/circle-fading-plus';
-	import FileInput from '@lucide/svelte/icons/file-input';
-	import FolderPlus from '@lucide/svelte/icons/folder-plus';
-	import Search from '@lucide/svelte/icons/search';
-	import {
-		CommandDialog,
-		CommandEmpty,
-		CommandGroup,
-		CommandInput,
-		CommandItem,
-		CommandList,
-		CommandSeparator,
-		CommandShortcut
-	} from '$lib/components/ui/command';
+import ArrowUpRight from '@lucide/svelte/icons/arrow-up-right';
+import CircleFadingPlus from '@lucide/svelte/icons/circle-fading-plus';
+import FileInput from '@lucide/svelte/icons/file-input';
+import FolderPlus from '@lucide/svelte/icons/folder-plus';
+import Search from '@lucide/svelte/icons/search';
+import {
+  CommandDialog,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandSeparator,
+  CommandShortcut
+} from '$lib/components/ui/command';
 
-	let open = $state(false);
+let open = $state(false);
 
-	const down = (e: KeyboardEvent) => {
-		if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
-			e.preventDefault();
-			open = !open;
-		}
-	};
+const down = (e: KeyboardEvent) => {
+  if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
+    e.preventDefault();
+    open = !open;
+  }
+};
 </script>
 
 <svelte:window onkeydown={down} />

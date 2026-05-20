@@ -1,11 +1,10 @@
 <script lang="ts">
-	import { Label } from "$lib/components/ui/label";
-	import { cn } from "$lib/utils.js";
+import { PinInput, type PinInputCell } from 'bits-ui';
+import { Label } from '$lib/components/ui/label';
+import { cn } from '$lib/utils.js';
 
-	import { PinInput, type PinInputCell } from "bits-ui";
-
-	let value = $state("");
-	const uid = $props.id();
+let value = $state('');
+const uid = $props.id();
 </script>
 
 {#snippet Cell(cell: PinInputCell)}

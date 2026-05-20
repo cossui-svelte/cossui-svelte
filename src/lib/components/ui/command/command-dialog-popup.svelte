@@ -1,15 +1,15 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import type { HTMLAttributes } from "svelte/elements";
-  import { Dialog as DialogPrimitive } from "bits-ui";
-  import { cn } from "$lib/utils.js";
-  import { DialogBackdrop, DialogPortal } from "$lib/components/ui/dialog/index.js";
+import { Dialog as DialogPrimitive } from 'bits-ui';
+import type { Snippet } from 'svelte';
+import type { HTMLAttributes } from 'svelte/elements';
+import { DialogBackdrop, DialogPortal } from '$lib/components/ui/dialog/index.js';
+import { cn } from '$lib/utils.js';
 
-  interface Props extends HTMLAttributes<HTMLDivElement> {
-    children?: Snippet;
-  }
+interface Props extends HTMLAttributes<HTMLDivElement> {
+  children?: Snippet;
+}
 
-  let { class: className, children, ...restProps }: Props = $props();
+let { class: className, children, ...restProps }: Props = $props();
 </script>
 
 <DialogPortal>

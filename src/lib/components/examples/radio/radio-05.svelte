@@ -1,21 +1,18 @@
 <script lang="ts">
-	import type { TransitionEventHandler } from "svelte/elements";
+import type { TransitionEventHandler } from 'svelte/elements';
 
-	import { Input } from "$lib/components/ui/input";
-	import { Label } from "$lib/components/ui/label";
-	import {
-		RadioGroup,
-		RadioGroupItem,
-	} from "$lib/components/ui/radio-group/index.js";
+import { Input } from '$lib/components/ui/input';
+import { Label } from '$lib/components/ui/label';
+import { RadioGroup, RadioGroupItem } from '$lib/components/ui/radio-group/index.js';
 
-	let selectedValue = $state("without-expansion");
-	let inputElement = $state<HTMLInputElement | null>(null);
+let selectedValue = $state('without-expansion');
+let inputElement = $state<HTMLInputElement | null>(null);
 
-	const handleTransitionEnd: TransitionEventHandler<HTMLDivElement> = () => {
-		if (selectedValue === "with-expansion" && inputElement) {
-			inputElement.focus();
-		}
-	};
+const handleTransitionEnd: TransitionEventHandler<HTMLDivElement> = () => {
+  if (selectedValue === 'with-expansion' && inputElement) {
+    inputElement.focus();
+  }
+};
 </script>
 
 <RadioGroup class="gap-6" bind:value={selectedValue}>

@@ -1,11 +1,11 @@
 <script>
-    import {
-        Popover,
-        PopoverPopup,
-        PopoverTitle,
-        PopoverTrigger,
-        PopoverDescription,
-    } from "$lib/components/ui/popover";
+import {
+  Popover,
+  PopoverDescription,
+  PopoverPopup,
+  PopoverTitle,
+  PopoverTrigger
+} from '$lib/components/ui/popover';
 </script>
 
 <Popover>

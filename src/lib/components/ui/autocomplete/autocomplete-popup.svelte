@@ -1,25 +1,25 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import { Combobox } from "bits-ui";
-  import { cn } from "$lib/utils.js";
+import type { Combobox } from 'bits-ui';
+import type { Snippet } from 'svelte';
+import { cn } from '$lib/utils.js';
 
-  interface Props extends Combobox.ContentProps {
-    children?: Snippet;
-    align?: "start" | "center" | "end";
-    sideOffset?: number;
-    alignOffset?: number;
-    side?: "top" | "right" | "bottom" | "left";
-  }
+interface Props extends Combobox.ContentProps {
+  children?: Snippet;
+  align?: 'start' | 'center' | 'end';
+  sideOffset?: number;
+  alignOffset?: number;
+  side?: 'top' | 'right' | 'bottom' | 'left';
+}
 
-  let {
-    class: className,
-    children,
-    side = "bottom",
-    sideOffset = 4,
-    alignOffset,
-    align = "start",
-    ...restProps
-  }: Props = $props();
+let {
+  class: className,
+  children,
+  side = 'bottom',
+  sideOffset = 4,
+  alignOffset,
+  align = 'start',
+  ...restProps
+}: Props = $props();
 </script>
 
 <Combobox.Portal>

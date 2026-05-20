@@ -1,15 +1,13 @@
 <script lang="ts">
-	import type { ComponentProps } from "svelte";
+import Code from '@lucide/svelte/icons/code';
+import type { ComponentProps } from 'svelte';
+import { Button } from '$lib/components/ui/button';
+import type * as Tooltip from '$lib/components/ui/tooltip/index.js';
+import { cn } from '$lib/utils.js';
 
-	import { Button } from "$lib/components/ui/button";
-	import * as Tooltip from "$lib/components/ui/tooltip/index.js";
-	import { cn } from "$lib/utils.js";
+type Props = ComponentProps<typeof Tooltip.TooltipTrigger>;
 
-	import Code from "@lucide/svelte/icons/code";
-
-	type Props = ComponentProps<typeof Tooltip.TooltipTrigger>;
-
-	let { class: className, onclick, ...restProps }: Props = $props();
+let { class: className, onclick, ...restProps }: Props = $props();
 </script>
 
 <div class={cn(className)}>

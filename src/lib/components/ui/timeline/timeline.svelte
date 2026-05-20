@@ -1,44 +1,42 @@
 <script lang="ts">
-	import type { WithElementRef } from "bits-ui";
-	import type { HTMLAttributes } from "svelte/elements";
+import type { WithElementRef } from 'bits-ui';
+import type { HTMLAttributes } from 'svelte/elements';
+import { cn } from '$lib/utils';
+import { setTimelineContext } from './timeline-context.svelte';
 
-	import { setTimelineContext } from "./timeline-context.svelte";
+type TimelineProps = WithElementRef<HTMLAttributes<HTMLDivElement>> & {
+  defaultValue?: number;
+  onValueChange?: (value: number) => void;
+  orientation?: 'horizontal' | 'vertical';
+  value?: number;
+};
+let {
+  children,
+  class: className,
+  defaultValue = 1,
+  onValueChange,
+  orientation = 'vertical',
+  ref = $bindable(null),
+  value,
+  ...restProps
+}: TimelineProps = $props();
 
-	import { cn } from "$lib/utils";
+let activeStep = $state(defaultValue);
 
-	type TimelineProps = WithElementRef<HTMLAttributes<HTMLDivElement>> & {
-		defaultValue?: number;
-		onValueChange?: (value: number) => void;
-		orientation?: "horizontal" | "vertical";
-		value?: number;
-	};
-	let {
-		children,
-		class: className,
-		defaultValue = 1,
-		onValueChange,
-		orientation = "vertical",
-		ref = $bindable(null),
-		value,
-		...restProps
-	}: TimelineProps = $props();
+function setActiveStep(step: number) {
+  if (value === undefined) {
+    activeStep = step;
+  }
 
-	let activeStep = $state(defaultValue);
+  onValueChange?.(step);
+}
 
-	function setActiveStep(step: number) {
-		if (value === undefined) {
-			activeStep = step;
-		}
+const currentStep = $derived(value ?? activeStep);
 
-		onValueChange?.(step);
-	}
-
-	const currentStep = $derived(value ?? activeStep);
-
-	setTimelineContext({
-		activeStep: currentStep,
-		setActiveStep,
-	});
+setTimelineContext({
+  activeStep: currentStep,
+  setActiveStep
+});
 </script>
 
 <div

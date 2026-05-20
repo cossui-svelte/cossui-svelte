@@ -1,47 +1,42 @@
 <script lang="ts">
-  import SiteHeaderBase from "../shared-components/site-header.svelte";
-  import { Separator } from "$lib/components/ui/separator";
-  import CommandMenu from "./command-menu.svelte";
-  import MainNav from "./main-nav.svelte";
-  import MobileNav from "./mobile-nav.svelte";
-  import { Button } from "$lib/components/ui/button";
+import { Button } from '$lib/components/ui/button';
+import { Separator } from '$lib/components/ui/separator';
+import SiteHeaderBase from '../shared-components/site-header.svelte';
+import CommandMenu from './command-menu.svelte';
+import MainNav from './main-nav.svelte';
+import MobileNav from './mobile-nav.svelte';
 
-  interface PageNode {
-    type: "page";
-    name: string | unknown;
-    url: string;
-  }
+interface PageNode {
+  type: 'page';
+  name: string | unknown;
+  url: string;
+}
 
-  interface FolderNode {
-    type: "folder";
-    $id?: string;
-    name: string | unknown;
-    children: (PageNode | FolderNode)[];
-  }
+interface FolderNode {
+  type: 'folder';
+  $id?: string;
+  name: string | unknown;
+  children: (PageNode | FolderNode)[];
+}
 
-  interface NavTree {
-    children: (PageNode | FolderNode)[];
-  }
+interface NavTree {
+  children: (PageNode | FolderNode)[];
+}
 
-  interface ProductItem {
-    href: string;
-    label: string;
-    upcoming?: boolean;
-  }
+interface ProductItem {
+  href: string;
+  label: string;
+  upcoming?: boolean;
+}
 
-  interface Props {
-    navItems?: { href: string; label: string }[];
-    tree?: NavTree;
-    currentProduct?: string;
-    products?: ProductItem[];
-  }
+interface Props {
+  navItems?: { href: string; label: string }[];
+  tree?: NavTree;
+  currentProduct?: string;
+  products?: ProductItem[];
+}
 
-  let {
-    navItems = [],
-    tree,
-    currentProduct = "ui",
-    products = [],
-  }: Props = $props();
+let { navItems = [], tree, currentProduct = 'ui', products = [] }: Props = $props();
 </script>
 
 <SiteHeaderBase {currentProduct} {products}>

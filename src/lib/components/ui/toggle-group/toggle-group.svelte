@@ -1,23 +1,20 @@
 <script lang="ts" module>
-	import { getContext, setContext } from "svelte";
-	import {
-		type ToggleVariant,
-		type ToggleSize,
-	} from "$lib/components/ui/toggle";
+import { getContext, setContext } from 'svelte';
+import type { ToggleSize, ToggleVariant } from '$lib/components/ui/toggle';
 
-	interface ToggleGroupProps {
-		variant?: ToggleVariant;
-		size?: ToggleSize;
-		orientation?: Orientation;
-	}
+interface ToggleGroupProps {
+  variant?: ToggleVariant;
+  size?: ToggleSize;
+  orientation?: Orientation;
+}
 
-	export function setToggleGroupCtx(props: ToggleGroupProps) {
-		setContext("toggleGroup", props);
-	}
+export function setToggleGroupCtx(props: ToggleGroupProps) {
+  setContext('toggleGroup', props);
+}
 
-	export function getToggleGroupCtx() {
-		return getContext<Required<ToggleGroupProps>>("toggleGroup");
-	}
+export function getToggleGroupCtx() {
+  return getContext<Required<ToggleGroupProps>>('toggleGroup');
+}
 </script>
 
 <script lang="ts">

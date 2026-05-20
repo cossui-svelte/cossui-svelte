@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ArrowRight from "@lucide/svelte/icons/arrow-right";
+import ArrowRight from '@lucide/svelte/icons/arrow-right';
 </script>
 
 <div class="bg-black px-4 py-3 text-white">

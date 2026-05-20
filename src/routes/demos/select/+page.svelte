@@ -1,25 +1,20 @@
 <script lang="ts">
-    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
-    import { Label } from "$lib/components/ui/label";
-    import {
-        Select,
-        SelectTrigger,
-        SelectContent,
-        SelectItem,
-    } from "$lib/components/ui/select";
+import ComponentPreviewTabs from '$lib/components/app/component-preview-tabs.svelte';
+import { Label } from '$lib/components/ui/label';
+import { Select, SelectContent, SelectItem, SelectTrigger } from '$lib/components/ui/select';
 
-    const items = [
-        { label: "Svelte", value: "s1" },
-        { label: "Next.js", value: "s2" },
-        { label: "Astro", value: "s3" },
-        { label: "Gatsby", value: "s4" },
-    ];
+const items = [
+  { label: 'Svelte', value: 's1' },
+  { label: 'Next.js', value: 's2' },
+  { label: 'Astro', value: 's3' },
+  { label: 'Gatsby', value: 's4' }
+];
 
-    let value = $state("s1");
+let value = $state('s1');
 
-    const selected = $derived(items.find((i) => i.value === value));
+const selected = $derived(items.find((i) => i.value === value));
 
-    const uid = $props.id();
+const uid = $props.id();
 </script>
 
 <ComponentPreviewTabs>

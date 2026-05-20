@@ -1,31 +1,31 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import { cn } from "$lib/utils.js";
-  import ComponentPreviewTabs from "./component-preview-tabs.svelte";
+import type { Snippet } from 'svelte';
+import { cn } from '$lib/utils.js';
+import ComponentPreviewTabs from './component-preview-tabs.svelte';
 
-  /**
-   * In SvelteKit the component registry lookup happens in the server load
-   * function. Pass the resolved component and source snippets as props.
-   */
-  interface Props {
-    name?: string;
-    class?: string;
-    metaClassName?: string;
-    align?: "center" | "start" | "end";
-    hideCode?: boolean;
-    component?: Snippet;
-    source?: Snippet;
-  }
+/**
+ * In SvelteKit the component registry lookup happens in the server load
+ * function. Pass the resolved component and source snippets as props.
+ */
+interface Props {
+  name?: string;
+  class?: string;
+  metaClassName?: string;
+  align?: 'center' | 'start' | 'end';
+  hideCode?: boolean;
+  component?: Snippet;
+  source?: Snippet;
+}
 
-  let {
-    name,
-    class: className,
-    metaClassName,
-    align = "center",
-    hideCode = false,
-    component,
-    source,
-  }: Props = $props();
+let {
+  name,
+  class: className,
+  metaClassName,
+  align = 'center',
+  hideCode = false,
+  component,
+  source
+}: Props = $props();
 </script>
 
 {#if component && source}

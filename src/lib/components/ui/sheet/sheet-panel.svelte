@@ -1,17 +1,17 @@
 <script lang="ts">
-	import { cn, type WithElementRef } from "$lib/utils.js";
-	import type { HTMLAttributes } from "svelte/elements";
-	import { ScrollArea } from "../scroll-area";
+import type { HTMLAttributes } from 'svelte/elements';
+import { cn, type WithElementRef } from '$lib/utils.js';
+import { ScrollArea } from '../scroll-area';
 
-	let {
-		ref = $bindable(null),
-		class: className,
-		children,
-		scrollFade = true,
-		...restProps
-	}: WithElementRef<HTMLAttributes<HTMLDivElement>> & {
-		scrollFade?: boolean;
-	} = $props();
+let {
+  ref = $bindable(null),
+  class: className,
+  children,
+  scrollFade = true,
+  ...restProps
+}: WithElementRef<HTMLAttributes<HTMLDivElement>> & {
+  scrollFade?: boolean;
+} = $props();
 </script>
 
 <ScrollArea {scrollFade}>

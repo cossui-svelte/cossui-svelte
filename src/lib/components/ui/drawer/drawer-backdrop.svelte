@@ -1,9 +1,8 @@
 <script lang="ts">
-  import { Dialog as DrawerPrimitive } from "bits-ui";
-  import { cn } from "$lib/utils.js";
+import type { Dialog as DrawerPrimitive } from 'bits-ui';
+import { cn } from '$lib/utils.js';
 
-  let { class: className, ...restProps }: DrawerPrimitive.OverlayProps =
-    $props();
+let { class: className, ...restProps }: DrawerPrimitive.OverlayProps = $props();
 </script>
 
 <DrawerPrimitive.Overlay

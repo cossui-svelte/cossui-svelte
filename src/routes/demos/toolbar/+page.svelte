@@ -1,39 +1,26 @@
 <script lang="ts">
-    import TextAlignCenter from "@lucide/svelte/icons/text-align-center";
-    import TextAlignStart from "@lucide/svelte/icons/text-align-start";
-    import TextAlignEnd from "@lucide/svelte/icons/text-align-end";
-    import DollarSignIcon from "@lucide/svelte/icons/dollar-sign";
-    import PercentIcon from "@lucide/svelte/icons/percent";
-    import { Button } from "$lib/components/ui/button";
-    import {
-        Select,
-        SelectItem,
-        SelectPopup,
-        SelectTrigger,
-        SelectValue,
-    } from "$lib/components/ui/select";
-    import {
-        ToggleGroup,
-        ToggleGroupItem,
-    } from "$lib/components/ui/toggle-group";
-    import {
-        Toolbar,
-        ToolbarButton,
-        ToolbarGroup,
-        ToolbarSeparator,
-    } from "$lib/components/ui/toolbar";
-    import {
-        Tooltip,
-        TooltipPopup,
-        TooltipProvider,
-        TooltipTrigger,
-    } from "$lib/components/ui/tooltip";
+import DollarSignIcon from '@lucide/svelte/icons/dollar-sign';
+import PercentIcon from '@lucide/svelte/icons/percent';
+import TextAlignCenter from '@lucide/svelte/icons/text-align-center';
+import TextAlignEnd from '@lucide/svelte/icons/text-align-end';
+import TextAlignStart from '@lucide/svelte/icons/text-align-start';
+import { Button } from '$lib/components/ui/button';
+import {
+  Select,
+  SelectItem,
+  SelectPopup,
+  SelectTrigger,
+  SelectValue
+} from '$lib/components/ui/select';
+import { ToggleGroup, ToggleGroupItem } from '$lib/components/ui/toggle-group';
+import { Toolbar, ToolbarButton, ToolbarGroup, ToolbarSeparator } from '$lib/components/ui/toolbar';
+import { Tooltip, TooltipPopup, TooltipProvider, TooltipTrigger } from '$lib/components/ui/tooltip';
 
-    const items = [
-        { label: "Helvetica", value: "helvetica" },
-        { label: "Arial", value: "arial" },
-        { label: "Times New Roman", value: "times-new-roman" },
-    ];
+const items = [
+  { label: 'Helvetica', value: 'helvetica' },
+  { label: 'Arial', value: 'arial' },
+  { label: 'Times New Roman', value: 'times-new-roman' }
+];
 </script>
 
 <TooltipProvider>

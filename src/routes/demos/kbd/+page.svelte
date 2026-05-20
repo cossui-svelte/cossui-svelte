@@ -1,6 +1,6 @@
 <script>
-    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
-    import { Kbd, KbdGroup } from "$lib/components/ui/kbd";
+import ComponentPreviewTabs from '$lib/components/app/component-preview-tabs.svelte';
+import { Kbd, KbdGroup } from '$lib/components/ui/kbd';
 </script>
 
 <ComponentPreviewTabs>

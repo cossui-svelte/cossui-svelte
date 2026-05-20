@@ -1,32 +1,32 @@
 <script lang="ts">
-  import { cn } from "$lib/utils.js";
-  import CodeBlock from "../shared-components/code-block.svelte";
-  import CodeCollapsibleWrapper from "./code-collapsible-wrapper.svelte";
+import { cn } from '$lib/utils.js';
+import CodeBlock from '../shared-components/code-block.svelte';
+import CodeCollapsibleWrapper from './code-collapsible-wrapper.svelte';
 
-  /**
-   * In SvelteKit, server-side file reading happens in a load function.
-   * Pass the already-loaded `code` string and `highlightedCode` HTML here.
-   */
-  interface Props {
-    class?: string;
-    code?: string;
-    title?: string;
-    language?: string;
-    collapsible?: boolean;
-    /** Pre-rendered highlighted HTML from a server-side highlight function */
-    highlightedCode?: string;
-  }
+/**
+ * In SvelteKit, server-side file reading happens in a load function.
+ * Pass the already-loaded `code` string and `highlightedCode` HTML here.
+ */
+interface Props {
+  class?: string;
+  code?: string;
+  title?: string;
+  language?: string;
+  collapsible?: boolean;
+  /** Pre-rendered highlighted HTML from a server-side highlight function */
+  highlightedCode?: string;
+}
 
-  let {
-    class: className,
-    code,
-    title,
-    language,
-    collapsible = true,
-    highlightedCode = "",
-  }: Props = $props();
+let {
+  class: className,
+  code,
+  title,
+  language,
+  collapsible = true,
+  highlightedCode = ''
+}: Props = $props();
 
-  const lang = $derived(language ?? title?.split(".").pop() ?? "tsx");
+const lang = $derived(language ?? title?.split('.').pop() ?? 'tsx');
 </script>
 
 {#if code}

@@ -1,15 +1,15 @@
 <script lang="ts">
-	import { RadioGroup, RadioGroupItem } from '$lib/components/ui/radio-group/index.js';
+import { RadioGroup, RadioGroupItem } from '$lib/components/ui/radio-group/index.js';
 
-	const items = [
-		{ icon: '😠', id: 'radio-16-r1', label: 'Angry', value: 'r1' },
-		{ icon: '🙁', id: 'radio-16-r2', label: 'Sad', value: 'r2' },
-		{ icon: '😐', id: 'radio-16-r3', label: 'Neutral', value: 'r3' },
-		{ icon: '🙂', id: 'radio-16-r4', label: 'Happy', value: 'r4' },
-		{ icon: '😀', id: 'radio-16-r5', label: 'Laughing', value: 'r5' }
-	];
+const items = [
+  { icon: '😠', id: 'radio-16-r1', label: 'Angry', value: 'r1' },
+  { icon: '🙁', id: 'radio-16-r2', label: 'Sad', value: 'r2' },
+  { icon: '😐', id: 'radio-16-r3', label: 'Neutral', value: 'r3' },
+  { icon: '🙂', id: 'radio-16-r4', label: 'Happy', value: 'r4' },
+  { icon: '😀', id: 'radio-16-r5', label: 'Laughing', value: 'r5' }
+];
 
-	let selectedValue = $state('r3');
+let selectedValue = $state('r3');
 </script>
 
 <fieldset class="space-y-4">

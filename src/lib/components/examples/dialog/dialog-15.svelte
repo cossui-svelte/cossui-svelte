@@ -1,42 +1,41 @@
 <script lang="ts">
-	import { Button, buttonVariants } from "$lib/components/ui/button";
-	import {
-		Dialog,
-		DialogClose,
-		DialogContent,
-		DialogDescription,
-		DialogFooter,
-		DialogHeader,
-		DialogTitle,
-		DialogTrigger,
-	} from "$lib/components/ui/dialog";
-	import { Input } from "$lib/components/ui/input";
-	import { Label } from "$lib/components/ui/label";
-	import {
-		Tooltip,
-		TooltipContent,
-		TooltipProvider,
-		TooltipTrigger,
-	} from "$lib/components/ui/tooltip/index.js";
+import Check from '@lucide/svelte/icons/check';
+import Copy from '@lucide/svelte/icons/copy';
+import UserRoundPlus from '@lucide/svelte/icons/user-round-plus';
+import { Button, buttonVariants } from '$lib/components/ui/button';
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger
+} from '$lib/components/ui/dialog';
+import { Input } from '$lib/components/ui/input';
+import { Label } from '$lib/components/ui/label';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger
+} from '$lib/components/ui/tooltip/index.js';
+import { cn } from '$lib/utils';
 
-	import Check from "@lucide/svelte/icons/check";
-	import Copy from "@lucide/svelte/icons/copy";
-	import UserRoundPlus from "@lucide/svelte/icons/user-round-plus";
-	import { cn } from "$lib/utils";
+let input = $state<HTMLInputElement | null>(null);
+let emails = $state(['mark@yourcompany.com', 'jane@yourcompany.com', '']);
+let copied = $state(false);
 
-	let input = $state<HTMLInputElement | null>(null);
-	let emails = $state(["mark@yourcompany.com", "jane@yourcompany.com", ""]);
-	let copied = $state(false);
+function addEmail() {
+  emails.push('');
+}
 
-	function addEmail() {
-		emails.push("");
-	}
-
-	function handleCopy() {
-		navigator.clipboard.writeText(input!.value);
-		copied = true;
-		setTimeout(() => (copied = false), 1500);
-	}
+function handleCopy() {
+  navigator.clipboard.writeText(input!.value);
+  copied = true;
+  setTimeout(() => (copied = false), 1500);
+}
 </script>
 
 <Dialog>

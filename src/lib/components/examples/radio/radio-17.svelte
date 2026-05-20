@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { RadioGroup, RadioGroupItem } from '$lib/components/ui/radio-group/index.js';
+import { RadioGroup, RadioGroupItem } from '$lib/components/ui/radio-group/index.js';
 
-	let selectedValue = $state('');
+let selectedValue = $state('');
 </script>
 
 <fieldset class="space-y-4">

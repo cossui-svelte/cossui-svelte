@@ -1,14 +1,14 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import { Dialog as DrawerPrimitive } from "bits-ui";
-  import ChevronRight from "@lucide/svelte/icons/chevron-right";
-  import { cn } from "$lib/utils.js";
+import ChevronRight from '@lucide/svelte/icons/chevron-right';
+import type { Dialog as DrawerPrimitive } from 'bits-ui';
+import type { Snippet } from 'svelte';
+import { cn } from '$lib/utils.js';
 
-  interface Props extends DrawerPrimitive.TriggerProps {
-    children?: Snippet;
-  }
+interface Props extends DrawerPrimitive.TriggerProps {
+  children?: Snippet;
+}
 
-  let { class: className, children, ...restProps }: Props = $props();
+let { class: className, children, ...restProps }: Props = $props();
 </script>
 
 <DrawerPrimitive.Trigger

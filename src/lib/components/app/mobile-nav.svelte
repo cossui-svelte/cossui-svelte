@@ -1,43 +1,43 @@
 <script lang="ts">
-  import { cn } from "$lib/utils.js";
-  import { Dialog } from "bits-ui";
-  import Menu from "@lucide/svelte/icons/menu";
-  import { Button } from "$lib/components/ui/button";
-  import { Badge } from "$lib/components/ui/badge";
-  import Sheet from "$lib/components/ui/sheet/sheet.svelte";
-  import SheetPopup from "$lib/components/ui/sheet/sheet-popup.svelte";
+import Menu from '@lucide/svelte/icons/menu';
+import { Dialog } from 'bits-ui';
+import { Badge } from '$lib/components/ui/badge';
+import { Button } from '$lib/components/ui/button';
+import Sheet from '$lib/components/ui/sheet/sheet.svelte';
+import SheetPopup from '$lib/components/ui/sheet/sheet-popup.svelte';
+import { cn } from '$lib/utils.js';
 
-  interface PageNode {
-    type: "page";
-    name: string | unknown;
-    url: string;
-  }
+interface PageNode {
+  type: 'page';
+  name: string | unknown;
+  url: string;
+}
 
-  interface FolderNode {
-    type: "folder";
-    $id?: string;
-    name: string | unknown;
-    children: (PageNode | FolderNode)[];
-  }
+interface FolderNode {
+  type: 'folder';
+  $id?: string;
+  name: string | unknown;
+  children: (PageNode | FolderNode)[];
+}
 
-  interface NavTree {
-    children: (PageNode | FolderNode)[];
-  }
+interface NavTree {
+  children: (PageNode | FolderNode)[];
+}
 
-  interface Props {
-    tree?: NavTree;
-    items: { href: string; label: string }[];
-    pagesNew?: string[];
-    class?: string;
-  }
+interface Props {
+  tree?: NavTree;
+  items: { href: string; label: string }[];
+  pagesNew?: string[];
+  class?: string;
+}
 
-  let { tree, items, pagesNew = [], class: className }: Props = $props();
+let { tree, items, pagesNew = [], class: className }: Props = $props();
 
-  let open = $state(false);
+let open = $state(false);
 
-  function closeNav() {
-    open = false;
-  }
+function closeNav() {
+  open = false;
+}
 </script>
 
 <Sheet {open} onOpenChange={(v) => (open = v)}>

@@ -1,13 +1,13 @@
 <script lang="ts">
-  import { Description, type DescriptionProps } from "$lib/formsnap";
-  import { cn, type WithElementRef } from "$lib/utils.js";
+import { Description, type DescriptionProps } from '$lib/formsnap';
+import { cn, type WithElementRef } from '$lib/utils.js';
 
-  let {
-    ref = $bindable(null),
-    class: className,
-    children,
-    ...restProps
-  }: WithElementRef<DescriptionProps> = $props();
+let {
+  ref = $bindable(null),
+  class: className,
+  children,
+  ...restProps
+}: WithElementRef<DescriptionProps> = $props();
 </script>
 
 <Description

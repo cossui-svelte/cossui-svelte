@@ -1,13 +1,13 @@
 <script lang="ts">
-  import { cn } from "$lib/utils.js";
-  import { RadioGroup as RadioGroupPrimitive } from "bits-ui";
+import type { RadioGroup as RadioGroupPrimitive } from 'bits-ui';
+import { cn } from '$lib/utils.js';
 
-  let {
-    class: className,
-    ref = $bindable(null),
-    value = $bindable(""),
-    ...restProps
-  }: RadioGroupPrimitive.ItemProps = $props();
+let {
+  class: className,
+  ref = $bindable(null),
+  value = $bindable(''),
+  ...restProps
+}: RadioGroupPrimitive.ItemProps = $props();
 </script>
 
 <RadioGroupPrimitive.Item

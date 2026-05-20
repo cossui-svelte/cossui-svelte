@@ -1,13 +1,13 @@
 <script lang="ts">
-  import { PinInput as InputOTPPrimitive } from "bits-ui";
-  import { cn } from "$lib/utils.js";
+import type { PinInput as InputOTPPrimitive } from 'bits-ui';
+import { cn } from '$lib/utils.js';
 
-  let {
-    ref = $bindable(null),
-    class: className,
-    value = $bindable(""),
-    ...restProps
-  }: InputOTPPrimitive.RootProps = $props();
+let {
+  ref = $bindable(null),
+  class: className,
+  value = $bindable(''),
+  ...restProps
+}: InputOTPPrimitive.RootProps = $props();
 </script>
 
 <InputOTPPrimitive.Root

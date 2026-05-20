@@ -1,60 +1,60 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import type { HTMLAttributes } from "svelte/elements";
-  import { getContext } from "svelte";
-  import { Label } from "$lib/components/ui/label/index.js";
-  import { cn } from "$lib/utils.js";
-  import { NUMBER_FIELD_CONTEXT_KEY, type NumberFieldContext } from "./number-field.svelte";
+import type { Snippet } from 'svelte';
+import { getContext } from 'svelte';
+import type { HTMLAttributes } from 'svelte/elements';
+import { Label } from '$lib/components/ui/label/index.js';
+import { cn } from '$lib/utils.js';
+import { NUMBER_FIELD_CONTEXT_KEY, type NumberFieldContext } from './number-field.svelte';
 
-  interface Props extends HTMLAttributes<HTMLSpanElement> {
-    label: string;
-    children?: Snippet;
+interface Props extends HTMLAttributes<HTMLSpanElement> {
+  label: string;
+  children?: Snippet;
+}
+
+let { label, class: className, children, ...restProps }: Props = $props();
+
+const ctx = getContext<NumberFieldContext>(NUMBER_FIELD_CONTEXT_KEY);
+
+if (!ctx) {
+  throw new Error(
+    'NumberFieldScrubArea must be used within a NumberField component for accessibility.'
+  );
+}
+
+let scrubEl = $state<HTMLSpanElement | null>(null);
+let isScrubbing = $state(false);
+let lastX = $state(0);
+let showCursor = $state(false);
+let cursorX = $state(0);
+let cursorY = $state(0);
+
+function handlePointerDown(e: PointerEvent) {
+  if (ctx.disabled) return;
+  isScrubbing = true;
+  lastX = e.clientX;
+  showCursor = true;
+  cursorX = e.clientX;
+  cursorY = e.clientY;
+  scrubEl?.setPointerCapture(e.pointerId);
+}
+
+function handlePointerMove(e: PointerEvent) {
+  if (!isScrubbing) return;
+  cursorX = e.clientX;
+  cursorY = e.clientY;
+  const delta = e.clientX - lastX;
+  lastX = e.clientX;
+  if (delta !== 0) {
+    const change = delta * ctx.step;
+    ctx.setValue((ctx.value ?? 0) + change);
   }
+}
 
-  let { label, class: className, children, ...restProps }: Props = $props();
-
-  const ctx = getContext<NumberFieldContext>(NUMBER_FIELD_CONTEXT_KEY);
-
-  if (!ctx) {
-    throw new Error(
-      "NumberFieldScrubArea must be used within a NumberField component for accessibility.",
-    );
-  }
-
-  let scrubEl = $state<HTMLSpanElement | null>(null);
-  let isScrubbing = $state(false);
-  let lastX = $state(0);
-  let showCursor = $state(false);
-  let cursorX = $state(0);
-  let cursorY = $state(0);
-
-  function handlePointerDown(e: PointerEvent) {
-    if (ctx.disabled) return;
-    isScrubbing = true;
-    lastX = e.clientX;
-    showCursor = true;
-    cursorX = e.clientX;
-    cursorY = e.clientY;
-    scrubEl?.setPointerCapture(e.pointerId);
-  }
-
-  function handlePointerMove(e: PointerEvent) {
-    if (!isScrubbing) return;
-    cursorX = e.clientX;
-    cursorY = e.clientY;
-    const delta = e.clientX - lastX;
-    lastX = e.clientX;
-    if (delta !== 0) {
-      const change = delta * ctx.step;
-      ctx.setValue((ctx.value ?? 0) + change);
-    }
-  }
-
-  function handlePointerUp(e: PointerEvent) {
-    isScrubbing = false;
-    showCursor = false;
-    scrubEl?.releasePointerCapture(e.pointerId);
-  }
+function handlePointerUp(e: PointerEvent) {
+  isScrubbing = false;
+  showCursor = false;
+  scrubEl?.releasePointerCapture(e.pointerId);
+}
 </script>
 
 <span

@@ -1,83 +1,78 @@
 <script lang="ts">
-	import { Badge } from "$lib/components/ui/badge";
-	import { Button } from "$lib/components/ui/button";
+import Bell from '@lucide/svelte/icons/bell';
+import { Badge } from '$lib/components/ui/badge';
+import { Button } from '$lib/components/ui/button';
+import { Popover, PopoverContent, PopoverTrigger } from '$lib/components/ui/popover';
 
-	import Bell from "@lucide/svelte/icons/bell";
-	import {
-		Popover,
-		PopoverContent,
-		PopoverTrigger,
-	} from "$lib/components/ui/popover";
+const initialNotifications = [
+  {
+    action: 'requested review on',
+    id: 1,
+    target: 'PR #42: Feature implementation',
+    timestamp: '15 minutes ago',
+    unread: true,
+    user: 'Chris Tompson'
+  },
+  {
+    action: 'shared',
+    id: 2,
+    target: 'New component library',
+    timestamp: '45 minutes ago',
+    unread: true,
+    user: 'Emma Davis'
+  },
+  {
+    action: 'assigned you to',
+    id: 3,
+    target: 'API integration task',
+    timestamp: '4 hours ago',
+    unread: false,
+    user: 'James Wilson'
+  },
+  {
+    action: 'replied to your comment in',
+    id: 4,
+    target: 'Authentication flow',
+    timestamp: '12 hours ago',
+    unread: false,
+    user: 'Alex Morgan'
+  },
+  {
+    action: 'commented on',
+    id: 5,
+    target: 'Dashboard redesign',
+    timestamp: '2 days ago',
+    unread: false,
+    user: 'Sarah Chen'
+  },
+  {
+    action: 'mentioned you in',
+    id: 6,
+    target: 'Origin UI open graph image',
+    timestamp: '2 weeks ago',
+    unread: false,
+    user: 'Miky Derya'
+  }
+];
 
-	const initialNotifications = [
-		{
-			action: "requested review on",
-			id: 1,
-			target: "PR #42: Feature implementation",
-			timestamp: "15 minutes ago",
-			unread: true,
-			user: "Chris Tompson",
-		},
-		{
-			action: "shared",
-			id: 2,
-			target: "New component library",
-			timestamp: "45 minutes ago",
-			unread: true,
-			user: "Emma Davis",
-		},
-		{
-			action: "assigned you to",
-			id: 3,
-			target: "API integration task",
-			timestamp: "4 hours ago",
-			unread: false,
-			user: "James Wilson",
-		},
-		{
-			action: "replied to your comment in",
-			id: 4,
-			target: "Authentication flow",
-			timestamp: "12 hours ago",
-			unread: false,
-			user: "Alex Morgan",
-		},
-		{
-			action: "commented on",
-			id: 5,
-			target: "Dashboard redesign",
-			timestamp: "2 days ago",
-			unread: false,
-			user: "Sarah Chen",
-		},
-		{
-			action: "mentioned you in",
-			id: 6,
-			target: "Origin UI open graph image",
-			timestamp: "2 weeks ago",
-			unread: false,
-			user: "Miky Derya",
-		},
-	];
+let notifications = $state(initialNotifications);
+const unreadCount = $derived(notifications.filter((n) => n.unread).length);
 
-	let notifications = $state(initialNotifications);
-	const unreadCount = $derived(notifications.filter((n) => n.unread).length);
+function handleMarkAllAsRead() {
+  notifications = notifications.map((n) => {
+    n.unread = false;
+    return n;
+  });
+}
 
-	function handleMarkAllAsRead() {
-		notifications = notifications.map((n) => {
-			n.unread = false;
-			return n;
-		});
-	}
-
-	function handleNotificationClick(id: number) {
-		notifications = notifications.map((n) => {
-			if (n.id === id) {
-				n.unread = false;
-			}
-			return n;
-		});
-	}
+function handleNotificationClick(id: number) {
+  notifications = notifications.map((n) => {
+    if (n.id === id) {
+      n.unread = false;
+    }
+    return n;
+  });
+}
 </script>
 
 {#snippet Dot(className = "")}

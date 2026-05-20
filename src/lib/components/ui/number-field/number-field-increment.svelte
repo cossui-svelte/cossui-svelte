@@ -1,24 +1,19 @@
 <script lang="ts">
-  import type { HTMLButtonAttributes } from "svelte/elements";
-  import { getContext } from "svelte";
-  import PlusIcon from "@lucide/svelte/icons/plus";
-  import { cn } from "$lib/utils.js";
-  import {
-    NUMBER_FIELD_CONTEXT_KEY,
-    type NumberFieldContext,
-  } from "./number-field.svelte";
+import PlusIcon from '@lucide/svelte/icons/plus';
+import { getContext } from 'svelte';
+import type { HTMLButtonAttributes } from 'svelte/elements';
+import { cn } from '$lib/utils.js';
+import { NUMBER_FIELD_CONTEXT_KEY, type NumberFieldContext } from './number-field.svelte';
 
-  type Props = Omit<HTMLButtonAttributes, "type" | "disabled" | "onclick">;
+type Props = Omit<HTMLButtonAttributes, 'type' | 'disabled' | 'onclick'>;
 
-  let { class: className, ...restProps }: Props = $props();
+let { class: className, ...restProps }: Props = $props();
 
-  const ctx = getContext<NumberFieldContext>(NUMBER_FIELD_CONTEXT_KEY);
+const ctx = getContext<NumberFieldContext>(NUMBER_FIELD_CONTEXT_KEY);
 
-  let isAtMax = $derived(
-    ctx?.value !== undefined && ctx?.max !== undefined
-      ? ctx.value >= ctx.max
-      : false,
-  );
+let isAtMax = $derived(
+  ctx?.value !== undefined && ctx?.max !== undefined ? ctx.value >= ctx.max : false
+);
 </script>
 
 <button

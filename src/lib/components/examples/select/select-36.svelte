@@ -1,30 +1,30 @@
 <script lang="ts">
-	import { Label } from "$lib/components/ui/label";
-	import * as Select from "$lib/components/ui/select/index.js";
+import { Label } from '$lib/components/ui/label';
+import * as Select from '$lib/components/ui/select/index.js';
 
-	const items = [
-		{
-			description: "Ideal for individuals",
-			label: "Standard Plan",
-			value: "s1",
-		},
-		{
-			description: "For professional users",
-			label: "Pro Plan",
-			value: "s2",
-		},
-		{
-			description: "Built for large teams",
-			label: "Enterprise Plan",
-			value: "s3",
-		},
-	] as const;
+const items = [
+  {
+    description: 'Ideal for individuals',
+    label: 'Standard Plan',
+    value: 's1'
+  },
+  {
+    description: 'For professional users',
+    label: 'Pro Plan',
+    value: 's2'
+  },
+  {
+    description: 'Built for large teams',
+    label: 'Enterprise Plan',
+    value: 's3'
+  }
+] as const;
 
-	let value = $state("s2");
+let value = $state('s2');
 
-	const selected = $derived(items.find((i) => i.value === value));
+const selected = $derived(items.find((i) => i.value === value));
 
-	const uid = $props.id();
+const uid = $props.id();
 </script>
 
 <div class="space-y-2">

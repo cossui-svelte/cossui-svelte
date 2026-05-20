@@ -1,121 +1,125 @@
 <script lang="ts">
-	import { Dialog } from "bits-ui";
-	import { setCtx } from "../ctx.js";
-	import type { CreateVaulProps } from "../../internal/vaul.js";
-	import type { Props } from "./types.js";
-	import { get } from "svelte/store";
+import { Dialog } from 'bits-ui';
+import { get } from 'svelte/store';
+import type { CreateVaulProps } from '../../internal/vaul.js';
+import { setCtx } from '../ctx.js';
+import type { Props } from './types.js';
 
-	let {
-		open = $bindable(false),
-		onOpenChange,
-		closeThreshold,
-		scrollLockTimeout,
-		snapPoints,
-		fadeFromIndex,
-		backgroundColor = "black",
-		nested = false,
-		shouldScaleBackground = false,
-		activeSnapPoint = $bindable(undefined),
-		onActiveSnapPointChange,
-		onRelease,
-		onDrag,
-		onClose,
-		dismissible,
-		direction = "bottom",
-		children,
-	}: Props = $props();
+let {
+  open = $bindable(false),
+  onOpenChange,
+  closeThreshold,
+  scrollLockTimeout,
+  snapPoints,
+  fadeFromIndex,
+  backgroundColor = 'black',
+  nested = false,
+  shouldScaleBackground = false,
+  activeSnapPoint = $bindable(undefined),
+  onActiveSnapPointChange,
+  onRelease,
+  onDrag,
+  onClose,
+  dismissible,
+  direction = 'bottom',
+  children
+}: Props = $props();
 
-	const {
-		states: { activeSnapPoint: localActiveSnapPoint, isOpen },
-		methods: { closeDrawer, openDrawer, cleanup },
-		updateOption,
-		// svelte-ignore state_referenced_locally
-	} = setCtx({
-		defaultOpen: open,
-		defaultActiveSnapPoint: activeSnapPoint,
-		onOpenChange: ({ next }: { curr: boolean; next: boolean }) => {
-			if (open !== next) {
-				onOpenChange?.(next);
-				open = next;
-			}
-			return next;
-		},
-		onActiveSnapPointChange: ({ next }: { curr: number | string | null; next: number | string | null }) => {
-			if (next === undefined && snapPoints && activeSnapPoint !== next) {
-				const newNext = snapPoints[0];
-				onActiveSnapPointChange?.(newNext);
-				activeSnapPoint = newNext;
-				return newNext;
-			}
+const {
+  states: { activeSnapPoint: localActiveSnapPoint, isOpen },
+  methods: { closeDrawer, openDrawer, cleanup },
+  updateOption
+  // svelte-ignore state_referenced_locally
+} = setCtx({
+  backgroundColor,
+  closeThreshold,
+  defaultActiveSnapPoint: activeSnapPoint,
+  defaultOpen: open,
+  direction,
+  dismissible,
+  fadeFromIndex,
+  nested,
+  onActiveSnapPointChange: ({
+    next
+  }: {
+    curr: number | string | null;
+    next: number | string | null;
+  }) => {
+    if (next === undefined && snapPoints && activeSnapPoint !== next) {
+      const newNext = snapPoints[0];
+      onActiveSnapPointChange?.(newNext);
+      activeSnapPoint = newNext;
+      return newNext;
+    }
 
-			if (activeSnapPoint !== next) {
-				onActiveSnapPointChange?.(next);
-				activeSnapPoint = next;
-			}
-			return next;
-		},
-		closeThreshold,
-		scrollLockTimeout,
-		snapPoints: snapPoints as (number | string)[] | undefined,
-		fadeFromIndex,
-		nested,
-		onDrag,
-		onClose,
-		onRelease,
-		shouldScaleBackground,
-		backgroundColor,
-		dismissible,
-		direction,
-	} as CreateVaulProps);
+    if (activeSnapPoint !== next) {
+      onActiveSnapPointChange?.(next);
+      activeSnapPoint = next;
+    }
+    return next;
+  },
+  onClose,
+  onDrag,
+  onOpenChange: ({ next }: { curr: boolean; next: boolean }) => {
+    if (open !== next) {
+      onOpenChange?.(next);
+      open = next;
+    }
+    return next;
+  },
+  onRelease,
+  scrollLockTimeout,
+  shouldScaleBackground,
+  snapPoints: snapPoints as (number | string)[] | undefined
+} as CreateVaulProps);
 
-	$effect(() => {
-		if (activeSnapPoint !== undefined)
-			localActiveSnapPoint.set(activeSnapPoint);
-	});
+$effect(() => {
+  if (activeSnapPoint !== undefined) localActiveSnapPoint.set(activeSnapPoint);
+});
 
-	$effect(() => {
-		updateOption("closeThreshold", closeThreshold);
-	});
+$effect(() => {
+  updateOption('closeThreshold', closeThreshold);
+});
 
-	$effect(() => {
-		updateOption("scrollLockTimeout", scrollLockTimeout);
-	});
+$effect(() => {
+  updateOption('scrollLockTimeout', scrollLockTimeout);
+});
 
-	$effect(() => {
-		updateOption("snapPoints", snapPoints);
-	});
+$effect(() => {
+  updateOption('snapPoints', snapPoints);
+});
 
-	$effect(() => {
-		updateOption("fadeFromIndex", fadeFromIndex);
-	});
+$effect(() => {
+  updateOption('fadeFromIndex', fadeFromIndex);
+});
 
-	$effect(() => {
-		updateOption("shouldScaleBackground", shouldScaleBackground);
-	});
+$effect(() => {
+  updateOption('shouldScaleBackground', shouldScaleBackground);
+});
 
-	$effect(() => {
-		updateOption("backgroundColor", backgroundColor);
-	});
+$effect(() => {
+  updateOption('backgroundColor', backgroundColor);
+});
 
-	$effect(() => {
-		updateOption("dismissible", dismissible);
-	});
+$effect(() => {
+  updateOption('dismissible', dismissible);
+});
 
-	$effect(() => {
-		updateOption("direction", direction);
-	});
+$effect(() => {
+  updateOption('direction', direction);
+});
 
-	$effect(() => {
-		if (open && !get(isOpen)) openDrawer();
-	});
+$effect(() => {
+  if (open && !get(isOpen)) openDrawer();
+});
 
-	$effect(() => {
-		if (!open && get(isOpen)) closeDrawer();
-	});
+$effect(() => {
+  if (!open && get(isOpen)) closeDrawer();
+});
 
-	$effect(() => {
-		return () => cleanup();
-	});
+$effect(() => {
+  return () => cleanup();
+});
 </script>
 
 <Dialog.Root

@@ -1,13 +1,13 @@
 <script lang="ts">
-  import { Accordion } from "bits-ui";
-  import { cn, type WithoutChild } from "$lib/utils.js";
+import type { Accordion } from 'bits-ui';
+import { cn, type WithoutChild } from '$lib/utils.js';
 
-  let {
-    ref = $bindable(null),
-    class: className,
-    children,
-    ...restProps
-  }: WithoutChild<Accordion.ContentProps> = $props();
+let {
+  ref = $bindable(null),
+  class: className,
+  children,
+  ...restProps
+}: WithoutChild<Accordion.ContentProps> = $props();
 </script>
 
 <Accordion.Content

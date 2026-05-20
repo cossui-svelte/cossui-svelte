@@ -1,11 +1,11 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
+import type { Snippet } from 'svelte';
 
-	import { setComponentDialogCtx } from './component-dialog-context.svelte';
+import { setComponentDialogCtx } from './component-dialog-context.svelte';
 
-	let { children }: { children: Snippet } = $props();
+let { children }: { children: Snippet } = $props();
 
-	setComponentDialogCtx({});
+setComponentDialogCtx({});
 </script>
 
 {@render children()}

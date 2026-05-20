@@ -1,21 +1,21 @@
 <script module lang="ts">
-  interface PageNode {
-    type: "page";
-    $id?: string;
-    name: string | unknown;
-    url: string;
-  }
+interface PageNode {
+  type: 'page';
+  $id?: string;
+  name: string | unknown;
+  url: string;
+}
 
-  interface FolderNode {
-    type: "folder";
-    $id?: string;
-    name: string | unknown;
-    children: (PageNode | FolderNode)[];
-  }
+interface FolderNode {
+  type: 'folder';
+  $id?: string;
+  name: string | unknown;
+  children: (PageNode | FolderNode)[];
+}
 
-  export interface NavTree {
-    children: (PageNode | FolderNode)[];
-  }
+export interface NavTree {
+  children: (PageNode | FolderNode)[];
+}
 </script>
 
 <script lang="ts">

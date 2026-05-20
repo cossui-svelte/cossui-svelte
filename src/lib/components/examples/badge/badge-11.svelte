@@ -1,9 +1,8 @@
 <script lang="ts">
-	import { badgeVariants } from "$lib/components/ui/badge";
-	import { Checkbox } from "$lib/components/ui/checkbox";
-
-	import Check from "@lucide/svelte/icons/check";
-	import { cn } from "$lib/utils";
+import Check from '@lucide/svelte/icons/check';
+import { badgeVariants } from '$lib/components/ui/badge';
+import { Checkbox } from '$lib/components/ui/checkbox';
+import { cn } from '$lib/utils';
 </script>
 
 <label

@@ -1,49 +1,45 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button";
-	import { Label } from "$lib/components/ui/label";
+import Check from '@lucide/svelte/icons/check';
+import ChevronDown from '@lucide/svelte/icons/chevron-down';
+import { Button } from '$lib/components/ui/button';
+import * as Command from '$lib/components/ui/command';
+import { Label } from '$lib/components/ui/label';
+import * as Popover from '$lib/components/ui/popover';
+import { cn } from '$lib/utils';
 
-	import Check from "@lucide/svelte/icons/check";
-	import ChevronDown from "@lucide/svelte/icons/chevron-down";
-	import * as Command from "$lib/components/ui/command";
-	import * as Popover from "$lib/components/ui/popover";
-	import { cn } from "$lib/utils";
+let open = $state(false);
+let value = $state('Europe/Berlin');
 
-	let open = $state(false);
-	let value = $state("Europe/Berlin");
+const timezones = Intl.supportedValuesOf('timeZone');
 
-	const timezones = Intl.supportedValuesOf("timeZone");
+const formattedTimezones = timezones
+  .map((timezone) => {
+    const formatter = new Intl.DateTimeFormat('en', {
+      timeZone: timezone,
+      timeZoneName: 'shortOffset'
+    });
+    const parts = formatter.formatToParts(new Date());
+    const offset = parts.find((part) => part.type === 'timeZoneName')?.value || '';
+    const modifiedOffset = offset === 'GMT' ? 'GMT+0' : offset;
 
-	const formattedTimezones = timezones
-		.map((timezone) => {
-			const formatter = new Intl.DateTimeFormat("en", {
-				timeZone: timezone,
-				timeZoneName: "shortOffset",
-			});
-			const parts = formatter.formatToParts(new Date());
-			const offset =
-				parts.find((part) => part.type === "timeZoneName")?.value || "";
-			const modifiedOffset = offset === "GMT" ? "GMT+0" : offset;
+    return {
+      label: `(${modifiedOffset}) ${timezone.replace(/_/g, ' ')}`,
+      numericOffset: parseInt(offset.replace('GMT', '').replace('+', '') || '0'),
+      value: timezone
+    };
+  })
+  .sort((a, b) => a.numericOffset - b.numericOffset);
 
-			return {
-				label: `(${modifiedOffset}) ${timezone.replace(/_/g, " ")}`,
-				numericOffset: parseInt(
-					offset.replace("GMT", "").replace("+", "") || "0",
-				),
-				value: timezone,
-			};
-		})
-		.sort((a, b) => a.numericOffset - b.numericOffset);
+function handleSelect(currentValue: string) {
+  value = currentValue === value ? '' : currentValue;
+  open = false;
+}
 
-	function handleSelect(currentValue: string) {
-		value = currentValue === value ? "" : currentValue;
-		open = false;
-	}
-
-	function filterFn(value: string, search: string) {
-		const normalizedValue = value.toLowerCase();
-		const normalizedSearch = search.toLowerCase().replace(/\s+/g, "");
-		return normalizedValue.includes(normalizedSearch) ? 1 : 0;
-	}
+function filterFn(value: string, search: string) {
+  const normalizedValue = value.toLowerCase();
+  const normalizedSearch = search.toLowerCase().replace(/\s+/g, '');
+  return normalizedValue.includes(normalizedSearch) ? 1 : 0;
+}
 </script>
 
 <div class="space-y-2">
