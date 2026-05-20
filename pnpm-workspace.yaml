@@ -16,3 +16,11 @@ minimumReleaseAgeExclude:
   - postcss@8.5.15
   - shiki@4.1.0
   - tsx@4.22.3
+  - '@vitest/expect@4.1.7'
+  - '@vitest/mocker@4.1.7'
+  - '@vitest/pretty-format@4.1.7'
+  - '@vitest/runner@4.1.7'
+  - '@vitest/snapshot@4.1.7'
+  - '@vitest/spy@4.1.7'
+  - '@vitest/utils@4.1.7'
+  - vitest@4.1.7

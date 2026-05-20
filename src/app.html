@@ -15,7 +15,9 @@
 </head>
 
 <body class="relative bg-sidebar font-sans text-foreground antialiased" data-sveltekit-preload-data="hover">
-	%sveltekit.body%
+	<div className="isolate relative flex min-h-svh flex-col">
+		%sveltekit.body%
+	</div>
 </body>
 
 </html>
