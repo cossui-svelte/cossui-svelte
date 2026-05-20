@@ -1,6 +1,7 @@
 <script lang="ts">
-import ChevronLeftIcon from '@lucide/svelte/icons/chevron-left';
-import { Button } from '$lib/components/ui/button';
+	import { Button } from "$lib/components/ui/button";
+
+	import ChevronLeftIcon from "@lucide/svelte/icons/chevron-left";
 </script>
 
 <Button class="relative ps-12">

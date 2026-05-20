@@ -1,17 +1,17 @@
 <script lang="ts">
-import type { Snippet } from 'svelte';
-import { getContext } from 'svelte';
-import type { HTMLAttributes } from 'svelte/elements';
-import { cn } from '$lib/utils.js';
-import { NUMBER_FIELD_CONTEXT_KEY, type NumberFieldContext } from './number-field.svelte';
+  import type { Snippet } from "svelte";
+  import type { HTMLAttributes } from "svelte/elements";
+  import { getContext } from "svelte";
+  import { cn } from "$lib/utils.js";
+  import { NUMBER_FIELD_CONTEXT_KEY, type NumberFieldContext } from "./number-field.svelte";
 
-interface Props extends HTMLAttributes<HTMLDivElement> {
-  children?: Snippet;
-}
+  interface Props extends HTMLAttributes<HTMLDivElement> {
+    children?: Snippet;
+  }
 
-let { class: className, children, ...restProps }: Props = $props();
+  let { class: className, children, ...restProps }: Props = $props();
 
-const ctx = getContext<NumberFieldContext>(NUMBER_FIELD_CONTEXT_KEY);
+  const ctx = getContext<NumberFieldContext>(NUMBER_FIELD_CONTEXT_KEY);
 </script>
 
 <div

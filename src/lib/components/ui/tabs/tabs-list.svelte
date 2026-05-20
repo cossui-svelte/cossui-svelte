@@ -1,15 +1,20 @@
 <script lang="ts">
-import type { Tabs } from 'bits-ui';
-import type { Snippet } from 'svelte';
-import { cn } from '$lib/utils.js';
-import type { TabsVariant } from '.';
+  import type { Snippet } from "svelte";
+  import { Tabs } from "bits-ui";
+  import { cn } from "$lib/utils.js";
+  import type { TabsVariant } from ".";
 
-interface Props extends Tabs.ListProps {
-  variant?: TabsVariant;
-  children?: Snippet;
-}
+  interface Props extends Tabs.ListProps {
+    variant?: TabsVariant;
+    children?: Snippet;
+  }
 
-let { class: className, variant = 'default', children, ...restProps }: Props = $props();
+  let {
+    class: className,
+    variant = "default",
+    children,
+    ...restProps
+  }: Props = $props();
 </script>
 
 <Tabs.List

@@ -1,11 +1,11 @@
 <script lang="ts">
-import Search from '@lucide/svelte/icons/search';
-import type { Command } from 'bits-ui';
-import { cn } from '$lib/utils.js';
+  import { Command } from "bits-ui";
+  import Search from "@lucide/svelte/icons/search";
+  import { cn } from "$lib/utils.js";
 
-type Props = Command.InputProps;
+  type Props = Command.InputProps;
 
-let { class: className, ...restProps }: Props = $props();
+  let { class: className, ...restProps }: Props = $props();
 </script>
 
 <div class="px-2.5 py-1.5">

@@ -1,7 +1,7 @@
 <script lang="ts">
-import { ToggleGroup, ToggleGroupItem } from '$lib/components/ui/toggle-group/index.js';
+	import { ToggleGroup, ToggleGroupItem } from '$lib/components/ui/toggle-group/index.js';
 
-let value = $state('left');
+	let value = $state('left');
 </script>
 
 <ToggleGroup type="single" variant="outline" bind:value>

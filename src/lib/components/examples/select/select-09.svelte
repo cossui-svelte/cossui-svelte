@@ -1,8 +1,8 @@
 <script lang="ts">
-import { Label } from '$lib/components/ui/label';
-import SelectNative from '$lib/components/ui/select-native.svelte';
+	import { Label } from "$lib/components/ui/label";
+	import SelectNative from "$lib/components/ui/select-native.svelte";
 
-const uid = $props.id();
+	const uid = $props.id();
 </script>
 
 <div class="space-y-2">

@@ -1,8 +1,8 @@
 <script lang="ts">
-import { Label } from '$lib/components/ui/label';
-import { Textarea } from '$lib/components/ui/textarea';
+	import { Label } from "$lib/components/ui/label";
+	import { Textarea } from "$lib/components/ui/textarea";
 
-const uid = $props.id();
+	const uid = $props.id();
 </script>
 
 <div class="group relative">

@@ -1,50 +1,50 @@
 <script lang="ts">
-import { cn } from '$lib/utils.js';
+  import { cn } from "$lib/utils.js";
 
-interface TocItem {
-  title?: string;
-  url: string;
-  depth: number;
-}
-
-interface Props {
-  toc: TocItem[];
-  class?: string;
-}
-
-let { toc, class: className }: Props = $props();
-
-let activeId = $state<string | null>(null);
-
-const itemIds = $derived(toc.map((item) => item.url.replace('#', '')));
-
-$effect(() => {
-  if (!activeId && itemIds.length) {
-    activeId = itemIds[0] ?? null;
+  interface TocItem {
+    title?: string;
+    url: string;
+    depth: number;
   }
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      for (const entry of entries) {
-        if (entry.isIntersecting) {
-          activeId = entry.target.id;
-        }
-      }
-    },
-    { rootMargin: '0% 0% -80% 0%' }
-  );
+  interface Props {
+    toc: TocItem[];
+    class?: string;
+  }
 
-  for (const id of itemIds) {
-    const element = document.getElementById(id);
-    if (element) {
-      observer.observe(element);
+  let { toc, class: className }: Props = $props();
+
+  let activeId = $state<string | null>(null);
+
+  const itemIds = $derived(toc.map((item) => item.url.replace("#", "")));
+
+  $effect(() => {
+    if (!activeId && itemIds.length) {
+      activeId = itemIds[0] ?? null;
     }
-  }
 
-  return () => {
-    observer.disconnect();
-  };
-});
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            activeId = entry.target.id;
+          }
+        }
+      },
+      { rootMargin: "0% 0% -80% 0%" },
+    );
+
+    for (const id of itemIds) {
+      const element = document.getElementById(id);
+      if (element) {
+        observer.observe(element);
+      }
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  });
 </script>
 
 {#if toc?.length}

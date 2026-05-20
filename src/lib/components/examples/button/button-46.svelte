@@ -1,13 +1,14 @@
 <script lang="ts">
-import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
-import ChevronUpIcon from '@lucide/svelte/icons/chevron-up';
-import { Button } from '$lib/components/ui/button';
+	import { Button } from "$lib/components/ui/button";
 
-let isExpanded = $state(false);
+	import ChevronDownIcon from "@lucide/svelte/icons/chevron-down";
+	import ChevronUpIcon from "@lucide/svelte/icons/chevron-up";
 
-function toggleExpand() {
-  isExpanded = !isExpanded;
-}
+	let isExpanded = $state(false);
+
+	function toggleExpand() {
+		isExpanded = !isExpanded;
+	}
 </script>
 
 <Button

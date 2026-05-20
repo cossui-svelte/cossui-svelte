@@ -1,34 +1,37 @@
 <script lang="ts">
-import { Checkbox } from '$lib/components/ui/checkbox';
-import { type CheckBoxTreeNode, CheckboxTree } from '$lib/components/ui/checkbox-group';
-import { Label } from '$lib/components/ui/label';
+	import { Checkbox } from "$lib/components/ui/checkbox";
+	import {
+		CheckboxTree,
+		type CheckBoxTreeNode,
+	} from "$lib/components/ui/checkbox-group";
+	import { Label } from "$lib/components/ui/label";
 
-const initialTree: CheckBoxTreeNode = {
-  children: [
-    {
-      defaultChecked: true,
-      id: 'mountains',
-      indeterminate: true,
-      label: 'Mountains'
-    },
-    {
-      children: [
-        { id: 'niagara', label: 'Niagara Falls' },
-        {
-          defaultChecked: true,
-          id: 'angel-falls',
-          label: 'Angel Falls'
-        }
-      ],
-      id: 'waterfalls',
-      indeterminate: true,
-      label: 'Waterfalls'
-    },
-    { id: 'grand-canyon', label: 'Grand Canyon' }
-  ],
-  id: 'natural-wonders',
-  label: 'Natural Wonders'
-};
+	const initialTree: CheckBoxTreeNode = {
+		children: [
+			{
+				defaultChecked: true,
+				id: "mountains",
+				indeterminate: true,
+				label: "Mountains",
+			},
+			{
+				children: [
+					{ id: "niagara", label: "Niagara Falls" },
+					{
+						defaultChecked: true,
+						id: "angel-falls",
+						label: "Angel Falls",
+					},
+				],
+				id: "waterfalls",
+				indeterminate: true,
+				label: "Waterfalls",
+			},
+			{ id: "grand-canyon", label: "Grand Canyon" },
+		],
+		id: "natural-wonders",
+		label: "Natural Wonders",
+	};
 </script>
 
 <div class="space-y-3">

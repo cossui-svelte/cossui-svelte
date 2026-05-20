@@ -1,12 +1,12 @@
 <script lang="ts">
-import type { Snippet } from 'svelte';
-import { cn } from '$lib/utils.js';
+  import type { Snippet } from "svelte";
+  import { cn } from "$lib/utils.js";
 
-let {
-  children,
-  class: className,
-  ...restProps
-}: { children?: Snippet; class?: string; [key: string]: unknown } = $props();
+  let {
+    children,
+    class: className,
+    ...restProps
+  }: { children?: Snippet; class?: string; [key: string]: unknown } = $props();
 </script>
 
 <kbd

@@ -1,30 +1,35 @@
 <script lang="ts">
-import IconCircleUserRound from '@lucide/svelte/icons/circle-user-round';
-import type { EventHandler } from 'svelte/elements';
-import { Button } from '$lib/components/ui/button';
+	import type { EventHandler } from "svelte/elements";
 
-let fileInput: HTMLInputElement;
-let files = $state<FileList | null>(null);
-let fileName = $state<null | string>(null);
-let previewUrl = $state<null | string>(null);
+	import { Button } from "$lib/components/ui/button";
 
-const handleButtonClick: EventHandler<Event, HTMLAnchorElement | HTMLButtonElement> = () => {
-  fileInput.click();
-};
+	import IconCircleUserRound from "@lucide/svelte/icons/circle-user-round";
 
-const handleFileChange: EventHandler<Event, HTMLInputElement> = (e) => {
-  const file = e.currentTarget.files?.[0];
-  if (file) {
-    fileName = file.name;
-    previewUrl = URL.createObjectURL(file);
-  }
-};
+	let fileInput: HTMLInputElement;
+	let files = $state<FileList | null>(null);
+	let fileName = $state<null | string>(null);
+	let previewUrl = $state<null | string>(null);
 
-const handleRemove: EventHandler<Event, HTMLButtonElement> = () => {
-  fileName = null;
-  previewUrl = null;
-  fileInput.value = '';
-};
+	const handleButtonClick: EventHandler<
+		Event,
+		HTMLAnchorElement | HTMLButtonElement
+	> = () => {
+		fileInput.click();
+	};
+
+	const handleFileChange: EventHandler<Event, HTMLInputElement> = (e) => {
+		const file = e.currentTarget.files?.[0];
+		if (file) {
+			fileName = file.name;
+			previewUrl = URL.createObjectURL(file);
+		}
+	};
+
+	const handleRemove: EventHandler<Event, HTMLButtonElement> = () => {
+		fileName = null;
+		previewUrl = null;
+		fileInput.value = "";
+	};
 </script>
 
 <div>

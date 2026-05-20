@@ -1,12 +1,12 @@
 <script lang="ts">
-import type { DropdownMenu } from 'bits-ui';
-import type { Snippet } from 'svelte';
+  import type { Snippet } from "svelte";
+  import { DropdownMenu } from "bits-ui";
 
-interface Props extends DropdownMenu.GroupProps {
-  children?: Snippet;
-}
+  interface Props extends DropdownMenu.GroupProps {
+    children?: Snippet;
+  }
 
-let { children, ...restProps }: Props = $props();
+  let { children, ...restProps }: Props = $props();
 </script>
 
 <DropdownMenu.Group data-slot="menu-group" {...restProps}>

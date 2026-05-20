@@ -1,18 +1,21 @@
 <script lang="ts">
-import { Button, buttonVariants } from '$lib/components/ui/button';
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger
-} from '$lib/components/ui/dialog';
-import { Label } from '$lib/components/ui/label';
-import { RadioGroup, RadioGroupItem } from '$lib/components/ui/radio-group/index.js';
-import { Textarea } from '$lib/components/ui/textarea';
+	import { Button, buttonVariants } from "$lib/components/ui/button";
+	import {
+		Dialog,
+		DialogClose,
+		DialogContent,
+		DialogDescription,
+		DialogFooter,
+		DialogHeader,
+		DialogTitle,
+		DialogTrigger,
+	} from "$lib/components/ui/dialog";
+	import { Label } from "$lib/components/ui/label";
+	import {
+		RadioGroup,
+		RadioGroupItem,
+	} from "$lib/components/ui/radio-group/index.js";
+	import { Textarea } from "$lib/components/ui/textarea";
 </script>
 
 <Dialog>

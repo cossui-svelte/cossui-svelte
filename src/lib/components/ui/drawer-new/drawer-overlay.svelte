@@ -1,12 +1,12 @@
 <script lang="ts">
-import { cn } from '$lib/utils.js';
-import type { Drawer as DrawerPrimitive } from '$lib/vaul';
+	import { Drawer as DrawerPrimitive } from "$lib/vaul";
+	import { cn } from "$lib/utils.js";
 
-let {
-  ref = $bindable(null),
-  class: className,
-  ...restProps
-}: DrawerPrimitive.OverlayProps = $props();
+	let {
+		ref = $bindable(null),
+		class: className,
+		...restProps
+	}: DrawerPrimitive.OverlayProps = $props();
 </script>
 
 <DrawerPrimitive.Overlay

@@ -1,7 +1,8 @@
 <script lang="ts">
-import CircleAlert from '@lucide/svelte/icons/circle-alert';
-import X from '@lucide/svelte/icons/x';
-import { Button } from '$lib/components/ui/button';
+	import { Button } from "$lib/components/ui/button";
+
+	import CircleAlert from "@lucide/svelte/icons/circle-alert";
+	import X from "@lucide/svelte/icons/x";
 </script>
 
 <!-- To make the notification fixed, add classes like `fixed bottom-4 right-4` to the container element. -->

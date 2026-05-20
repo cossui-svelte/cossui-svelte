@@ -1,19 +1,19 @@
 <script lang="ts">
-import type { Drawer as DrawerPrimitive } from '$lib/vaul';
+  import { Drawer as DrawerPrimitive } from "$lib/vaul";
 
-type DrawerPosition = 'right' | 'left' | 'top' | 'bottom';
+  type DrawerPosition = "right" | "left" | "top" | "bottom";
 
-//TODO: omit the direction parameter
-let {
-  shouldScaleBackground = true,
-  open = $bindable(false),
-  position = 'bottom',
-  activeSnapPoint = $bindable(null),
-  ...restProps
-}: DrawerPrimitive.RootProps & {
-  position?: DrawerPosition;
-} = $props();
-// }: Omit<DrawerPrimitive.RootProps, "direction"> & DProps = $props();
+  //TODO: omit the direction parameter
+  let {
+    shouldScaleBackground = true,
+    open = $bindable(false),
+    position = "bottom",
+    activeSnapPoint = $bindable(null),
+    ...restProps
+  }: DrawerPrimitive.RootProps & {
+    position?: DrawerPosition;
+  } = $props();
+  // }: Omit<DrawerPrimitive.RootProps, "direction"> & DProps = $props();
 </script>
 
 <DrawerPrimitive.Root

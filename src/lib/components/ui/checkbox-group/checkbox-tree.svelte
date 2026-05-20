@@ -1,10 +1,10 @@
 <script lang="ts" module>
-/**
- * IMPORTANT: This component was built for demo purposes only and has not been tested in production.
- * It serves as a proof of concept for a checkbox tree implementation.
- * If you're interested in collaborating to create a more robust, production-ready
- * headless component, your contributions are welcome!
- */
+    /**
+     * IMPORTANT: This component was built for demo purposes only and has not been tested in production.
+     * It serves as a proof of concept for a checkbox tree implementation.
+     * If you're interested in collaborating to create a more robust, production-ready
+     * headless component, your contributions are welcome!
+     */
 </script>
 
 <script lang="ts">

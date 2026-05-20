@@ -1,30 +1,35 @@
 <script lang="ts">
-import IconCircleUserRound from '@lucide/svelte/icons/circle-user-round';
-import IconX from '@lucide/svelte/icons/x';
-import type { EventHandler } from 'svelte/elements';
-import { Button } from '$lib/components/ui/button';
+	import type { EventHandler } from "svelte/elements";
 
-let fileInput: HTMLInputElement;
-let fileName = $state<null | string>(null);
-let previewUrl = $state<null | string>(null);
+	import { Button } from "$lib/components/ui/button";
 
-function handleThumbnailClick() {
-  fileInput.click();
-}
+	import IconCircleUserRound from "@lucide/svelte/icons/circle-user-round";
+	import IconX from "@lucide/svelte/icons/x";
 
-const handleFileChange: EventHandler<Event, HTMLInputElement> = (e) => {
-  const file = e.currentTarget.files?.[0];
-  if (file) {
-    fileName = file.name;
-    previewUrl = URL.createObjectURL(file);
-  }
-};
+	let fileInput: HTMLInputElement;
+	let fileName = $state<null | string>(null);
+	let previewUrl = $state<null | string>(null);
 
-const handleRemove: EventHandler<Event, HTMLAnchorElement | HTMLButtonElement> = () => {
-  fileName = null;
-  previewUrl = null;
-  fileInput.value = '';
-};
+	function handleThumbnailClick() {
+		fileInput.click();
+	}
+
+	const handleFileChange: EventHandler<Event, HTMLInputElement> = (e) => {
+		const file = e.currentTarget.files?.[0];
+		if (file) {
+			fileName = file.name;
+			previewUrl = URL.createObjectURL(file);
+		}
+	};
+
+	const handleRemove: EventHandler<
+		Event,
+		HTMLAnchorElement | HTMLButtonElement
+	> = () => {
+		fileName = null;
+		previewUrl = null;
+		fileInput.value = "";
+	};
 </script>
 
 <div>

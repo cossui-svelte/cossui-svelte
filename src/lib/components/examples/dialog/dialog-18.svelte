@@ -1,19 +1,23 @@
 <script lang="ts">
-import Check from '@lucide/svelte/icons/check';
-import RefreshCcw from '@lucide/svelte/icons/refresh-ccw';
-import { Button, buttonVariants } from '$lib/components/ui/button';
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger
-} from '$lib/components/ui/dialog';
-import { Label } from '$lib/components/ui/label';
-import { RadioGroup, RadioGroupItem } from '$lib/components/ui/radio-group/index.js';
+	import { Button, buttonVariants } from "$lib/components/ui/button";
+	import {
+		Dialog,
+		DialogClose,
+		DialogContent,
+		DialogDescription,
+		DialogFooter,
+		DialogHeader,
+		DialogTitle,
+		DialogTrigger,
+	} from "$lib/components/ui/dialog";
+	import { Label } from "$lib/components/ui/label";
+	import {
+		RadioGroup,
+		RadioGroupItem,
+	} from "$lib/components/ui/radio-group/index.js";
+
+	import Check from "@lucide/svelte/icons/check";
+	import RefreshCcw from "@lucide/svelte/icons/refresh-ccw";
 </script>
 
 <Dialog>

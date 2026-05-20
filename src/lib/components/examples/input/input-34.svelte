@@ -1,11 +1,11 @@
 <script lang="ts">
-import { Input } from '$lib/components/ui/input';
-import { Label } from '$lib/components/ui/label';
-import { useCharacterLimit } from '$lib/hooks/use-character-limit.svelte';
+	import { Input } from "$lib/components/ui/input";
+	import { Label } from "$lib/components/ui/label";
+	import { useCharacterLimit } from "$lib/hooks/use-character-limit.svelte";
 
-const maxLength = 50;
-const characterLimit = useCharacterLimit(maxLength);
-const uid = $props.id();
+	const maxLength = 50;
+	const characterLimit = useCharacterLimit(maxLength);
+	const uid = $props.id();
 </script>
 
 <div class="space-y-2">

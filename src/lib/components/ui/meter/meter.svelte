@@ -1,12 +1,12 @@
 <script lang="ts" module>
-export interface MeterContext {
-  readonly value: number;
-  readonly min: number;
-  readonly max: number;
-  readonly percentage: number;
-}
+  export interface MeterContext {
+    readonly value: number;
+    readonly min: number;
+    readonly max: number;
+    readonly percentage: number;
+  }
 
-export const METER_CONTEXT_KEY = Symbol.for('cossui:meter');
+  export const METER_CONTEXT_KEY = Symbol.for("cossui:meter");
 </script>
 
 <script lang="ts">

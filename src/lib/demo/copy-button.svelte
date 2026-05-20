@@ -1,28 +1,28 @@
 <script lang="ts">
-import type { ComponentProps } from 'svelte';
-import type { EventHandler } from 'svelte/elements';
+	import type { ComponentProps } from "svelte";
+	import type { EventHandler } from "svelte/elements";
 
-import { Button } from '$lib/components/ui/button';
-import type * as Tooltip from '$lib/components/ui/tooltip/index.js';
-import { cn } from '$lib/utils.js';
+	import { Button } from "$lib/components/ui/button";
+	import * as Tooltip from "$lib/components/ui/tooltip/index.js";
+	import { cn } from "$lib/utils.js";
 
-type Props = ComponentProps<typeof Tooltip.TooltipTrigger> & {
-  code: string;
-};
+	type Props = ComponentProps<typeof Tooltip.TooltipTrigger> & {
+		code: string;
+	};
 
-let { class: className, code, ...restProps }: Props = $props();
+	let { class: className, code, ...restProps }: Props = $props();
 
-let copied = $state(false);
+	let copied = $state(false);
 
-const handleCopy: EventHandler<Event, HTMLButtonElement> = async () => {
-  try {
-    await navigator.clipboard.writeText(code);
-    copied = true;
-    setTimeout(() => (copied = false), 1500);
-  } catch (err) {
-    console.error('Failed to copy text: ', err);
-  }
-};
+	const handleCopy: EventHandler<Event, HTMLButtonElement> = async () => {
+		try {
+			await navigator.clipboard.writeText(code);
+			copied = true;
+			setTimeout(() => (copied = false), 1500);
+		} catch (err) {
+			console.error("Failed to copy text: ", err);
+		}
+	};
 </script>
 
 <Tooltip.TooltipProvider>

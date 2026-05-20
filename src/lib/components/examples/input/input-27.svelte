@@ -1,36 +1,38 @@
 <script lang="ts">
-import LoaderCircle from '@lucide/svelte/icons/loader-circle';
-import Mic from '@lucide/svelte/icons/mic';
-import Search from '@lucide/svelte/icons/search';
-import { onDestroy } from 'svelte';
-import type { EventHandler } from 'svelte/elements';
-import { Input } from '$lib/components/ui/input';
-import { Label } from '$lib/components/ui/label';
+	import type { EventHandler } from "svelte/elements";
 
-let inputValue = $state('');
-let isLoading = $state(false);
-let timer: null | ReturnType<typeof setTimeout> = $state(null);
+	import { Input } from "$lib/components/ui/input";
+	import { Label } from "$lib/components/ui/label";
 
-const handleInput: EventHandler<Event, HTMLInputElement> = () => {
-  if (timer) clearTimeout(timer);
+	import LoaderCircle from "@lucide/svelte/icons/loader-circle";
+	import Mic from "@lucide/svelte/icons/mic";
+	import Search from "@lucide/svelte/icons/search";
+	import { onDestroy } from "svelte";
 
-  if (!inputValue) {
-    isLoading = false;
-    return;
-  }
+	let inputValue = $state("");
+	let isLoading = $state(false);
+	let timer: null | ReturnType<typeof setTimeout> = $state(null);
 
-  isLoading = true;
-  timer = setTimeout(() => {
-    isLoading = false;
-    timer = null;
-  }, 500);
-};
+	const handleInput: EventHandler<Event, HTMLInputElement> = () => {
+		if (timer) clearTimeout(timer);
 
-const uid = $props.id();
+		if (!inputValue) {
+			isLoading = false;
+			return;
+		}
 
-onDestroy(() => {
-  if (timer) clearTimeout(timer);
-});
+		isLoading = true;
+		timer = setTimeout(() => {
+			isLoading = false;
+			timer = null;
+		}, 500);
+	};
+
+	const uid = $props.id();
+
+	onDestroy(() => {
+		if (timer) clearTimeout(timer);
+	});
 </script>
 
 <div class="space-y-2">

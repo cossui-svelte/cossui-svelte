@@ -1,14 +1,14 @@
 <script lang="ts">
-import type { ComponentProps } from 'svelte';
-import type { Legend } from '$lib/formsnap';
-import { cn } from '$lib/utils.js';
+  import { Legend } from "$lib/formsnap";
+  import { cn } from "$lib/utils.js";
+  import type { ComponentProps } from "svelte";
 
-let {
-  ref = $bindable(null),
-  class: className,
-  children,
-  ...restProps
-}: ComponentProps<typeof Legend> = $props();
+  let {
+    ref = $bindable(null),
+    class: className,
+    children,
+    ...restProps
+  }: ComponentProps<typeof Legend> = $props();
 </script>
 
 <Legend

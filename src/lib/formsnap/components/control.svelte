@@ -1,14 +1,14 @@
 <script lang="ts">
-import { box } from 'svelte-toolbelt';
-import { useControl } from '$lib/formsnap/formsnap.svelte.js';
-import { useId } from '$lib/formsnap/internal/utils/index.js';
-import type { ControlProps } from './types.js';
+	import { box } from "svelte-toolbelt";
+	import type { ControlProps } from "./types.js";
+	import { useId } from "$lib/formsnap/internal/utils/index.js";
+	import { useControl } from "$lib/formsnap/formsnap.svelte.js";
 
-let { id = useId(), children }: ControlProps = $props();
+	let { id = useId(), children }: ControlProps = $props();
 
-const controlState = useControl({
-  id: box.with(() => id)
-});
+	const controlState = useControl({
+		id: box.with(() => id),
+	});
 </script>
 
 <!--

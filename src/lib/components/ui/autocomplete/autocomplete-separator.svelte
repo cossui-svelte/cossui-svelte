@@ -1,10 +1,10 @@
 <script lang="ts">
-import type { Separator } from 'bits-ui';
-import { cn } from '$lib/utils.js';
+  import { Separator } from "bits-ui";
+  import { cn } from "$lib/utils.js";
 
-type Props = Separator.RootProps;
+  type Props = Separator.RootProps;
 
-let { class: className, ...restProps }: Props = $props();
+  let { class: className, ...restProps }: Props = $props();
 </script>
 
 <Separator.Root

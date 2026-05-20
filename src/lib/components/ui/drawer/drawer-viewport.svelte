@@ -1,23 +1,23 @@
 <script lang="ts">
-import type { Snippet } from 'svelte';
-import type { HTMLAttributes } from 'svelte/elements';
-import { cn } from '$lib/utils.js';
+  import type { Snippet } from "svelte";
+  import type { HTMLAttributes } from "svelte/elements";
+  import { cn } from "$lib/utils.js";
 
-type DrawerPosition = 'right' | 'left' | 'top' | 'bottom';
+  type DrawerPosition = "right" | "left" | "top" | "bottom";
 
-interface Props extends HTMLAttributes<HTMLDivElement> {
-  position?: DrawerPosition;
-  variant?: 'default' | 'straight' | 'inset';
-  children?: Snippet;
-}
+  interface Props extends HTMLAttributes<HTMLDivElement> {
+    position?: DrawerPosition;
+    variant?: "default" | "straight" | "inset";
+    children?: Snippet;
+  }
 
-let {
-  class: className,
-  position = 'bottom',
-  variant = 'default',
-  children,
-  ...restProps
-}: Props = $props();
+  let {
+    class: className,
+    position = "bottom",
+    variant = "default",
+    children,
+    ...restProps
+  }: Props = $props();
 </script>
 
 <div

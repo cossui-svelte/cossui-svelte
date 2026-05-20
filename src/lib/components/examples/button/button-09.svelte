@@ -1,6 +1,6 @@
 <script lang="ts">
-import ArrowRightIcon from '@lucide/svelte/icons/arrow-right';
-import { Button } from '$lib/components/ui/button';
+	import { Button } from "$lib/components/ui/button";
+	import ArrowRightIcon from "@lucide/svelte/icons/arrow-right";
 </script>
 
 <Button class="group">

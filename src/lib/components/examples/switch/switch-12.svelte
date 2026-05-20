@@ -1,10 +1,11 @@
 <script lang="ts">
-import IconMoon from '@lucide/svelte/icons/moon';
-import IconSun from '@lucide/svelte/icons/sun';
-import { Label } from '$lib/components/ui/label';
-import { Switch } from '$lib/components/ui/switch';
+	import { Label } from "$lib/components/ui/label";
+	import { Switch } from "$lib/components/ui/switch";
 
-const uid = $props.id();
+	import IconMoon from "@lucide/svelte/icons/moon";
+	import IconSun from "@lucide/svelte/icons/sun";
+
+	const uid = $props.id();
 </script>
 
 <div>

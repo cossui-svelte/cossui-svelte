@@ -1,8 +1,8 @@
 <script lang="ts">
-import { Label } from '$lib/components/ui/label';
-import { Slider } from '$lib/components/ui/slider';
+	import { Label } from "$lib/components/ui/label";
+	import { Slider } from "$lib/components/ui/slider";
 
-let value = $state([25, 75]);
+	let value = $state([25, 75]);
 </script>
 
 <div class="space-y-4">

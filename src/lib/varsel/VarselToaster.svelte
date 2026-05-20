@@ -1,13 +1,13 @@
 <script lang="ts" module>
-/**
- * Main module exports for the Varsel library.
- */
-export {
-  type ToastData,
-  type ToastInvoker,
-  type ToastPosition,
-  toast
-} from './internals';
+	/**
+	 * Main module exports for the Varsel library.
+	 */
+	export {
+		toast,
+		type ToastData,
+		type ToastInvoker,
+		type ToastPosition,
+	} from "./internals";
 </script>
 
 <script lang="ts">

@@ -1,12 +1,12 @@
 <script lang="ts">
-import { Label } from '$lib/components/ui/label';
-import { Textarea } from '$lib/components/ui/textarea';
-import { useCharacterLimit } from '$lib/hooks/use-character-limit.svelte';
+	import { Label } from "$lib/components/ui/label";
+	import { Textarea } from "$lib/components/ui/textarea";
+	import { useCharacterLimit } from "$lib/hooks/use-character-limit.svelte";
 
-const maxLength = 180;
-const characterLimit = useCharacterLimit(maxLength);
+	const maxLength = 180;
+	const characterLimit = useCharacterLimit(maxLength);
 
-const uid = $props.id();
+	const uid = $props.id();
 </script>
 
 <div class="space-y-2">

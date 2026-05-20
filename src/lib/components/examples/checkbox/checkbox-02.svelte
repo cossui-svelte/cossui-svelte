@@ -1,10 +1,10 @@
 <script lang="ts">
-import { Checkbox } from '$lib/components/ui/checkbox';
-import { Label } from '$lib/components/ui/label';
+	import { Checkbox } from "$lib/components/ui/checkbox";
+	import { Label } from "$lib/components/ui/label";
 
-let checked = $state(false);
+	let checked = $state(false);
 
-const uid = $props.id();
+	const uid = $props.id();
 </script>
 
 <div class="flex items-center gap-2">

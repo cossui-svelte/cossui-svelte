@@ -1,7 +1,8 @@
 <script lang="ts">
-import FlipHorizontalIcon from '@lucide/svelte/icons/flip-horizontal';
-import FlipVerticalIcon from '@lucide/svelte/icons/flip-vertical';
-import { Button } from '$lib/components/ui/button';
+	import { Button } from "$lib/components/ui/button";
+
+	import FlipHorizontalIcon from "@lucide/svelte/icons/flip-horizontal";
+	import FlipVerticalIcon from "@lucide/svelte/icons/flip-vertical";
 </script>
 
 <div class="shadow-xs inline-flex -space-x-px rounded-md rtl:space-x-reverse">

@@ -1,15 +1,15 @@
 <script lang="ts">
-import type { LabelRootProps } from 'bits-ui';
-import type { HTMLAttributes } from 'svelte/elements';
-import { Label } from '$lib/formsnap';
-import { cn } from '$lib/utils.js';
+  import { Label } from "$lib/formsnap";
+  import type { HTMLAttributes } from "svelte/elements";
+  import { cn } from "$lib/utils.js";
+  import type { LabelRootProps } from "bits-ui";
 
-let {
-  ref = $bindable(null),
-  class: className,
-  children,
-  ...restProps
-}: LabelRootProps & HTMLAttributes<HTMLDivElement> = $props();
+  let {
+    ref = $bindable(null),
+    class: className,
+    children,
+    ...restProps
+  }: LabelRootProps & HTMLAttributes<HTMLDivElement> = $props();
 </script>
 
 <Label

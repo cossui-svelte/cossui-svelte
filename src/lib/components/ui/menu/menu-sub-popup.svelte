@@ -1,22 +1,22 @@
 <script lang="ts">
-import type { DropdownMenu } from 'bits-ui';
-import type { Snippet } from 'svelte';
-import { cn } from '$lib/utils.js';
+  import type { Snippet } from "svelte";
+  import { DropdownMenu } from "bits-ui";
+  import { cn } from "$lib/utils.js";
 
-interface Props extends DropdownMenu.SubContentProps {
-  children?: Snippet;
-}
+  interface Props extends DropdownMenu.SubContentProps {
+    children?: Snippet;
+  }
 
-let {
-  children,
-  class: className,
-  sideOffset = 0,
-  align = 'start',
-  alignOffset,
-  ...restProps
-}: Props = $props();
+  let {
+    children,
+    class: className,
+    sideOffset = 0,
+    align = "start",
+    alignOffset,
+    ...restProps
+  }: Props = $props();
 
-const defaultAlignOffset = align !== 'center' ? -5 : undefined;
+  const defaultAlignOffset = align !== "center" ? -5 : undefined;
 </script>
 
 <DropdownMenu.Portal>

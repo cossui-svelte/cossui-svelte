@@ -1,8 +1,7 @@
 <script lang="ts" module>
-import type { FormPathLeaves as _FormPathLeaves } from 'sveltekit-superforms';
-
-type T = unknown;
-type U = unknown;
+	import type { FormPathLeaves as _FormPathLeaves } from "sveltekit-superforms";
+	type T = unknown;
+	type U = unknown;
 </script>
 
 <script

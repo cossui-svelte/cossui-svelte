@@ -1,6 +1,6 @@
 <script lang="ts">
-import ContentImg from '$assets/dialog-content.png?w=382&h=216&enhanced';
-import { HoverCard, HoverCardContent, HoverCardTrigger } from '$lib/components/ui/hover-card';
+	import ContentImg from '$assets/dialog-content.png?w=382&h=216&enhanced';
+	import { HoverCard, HoverCardContent, HoverCardTrigger } from '$lib/components/ui/hover-card';
 </script>
 
 <HoverCard>

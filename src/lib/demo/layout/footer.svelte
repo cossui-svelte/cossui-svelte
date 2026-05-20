@@ -1,11 +1,11 @@
 <script lang="ts">
-type Link = { links: { 'aria-label': string; href: string; label: string }[]; title: string };
+	type Link = { links: { 'aria-label': string; href: string; label: string }[]; title: string };
 
-type Props = {
-  footerLinks: Link[];
-};
+	type Props = {
+		footerLinks: Link[];
+	};
 
-let { footerLinks }: Props = $props();
+	let { footerLinks }: Props = $props();
 </script>
 
 <footer

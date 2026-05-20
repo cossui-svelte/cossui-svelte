@@ -1,11 +1,11 @@
 <script lang="ts">
-import { Button } from '$lib/components/ui/button';
+	import { Button } from "$lib/components/ui/button";
 
-let open = $state(false);
+	let open = $state(false);
 
-function toggleOpen() {
-  open = !open;
-}
+	function toggleOpen() {
+		open = !open;
+	}
 </script>
 
 <Button

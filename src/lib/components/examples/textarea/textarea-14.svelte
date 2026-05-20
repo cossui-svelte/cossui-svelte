@@ -1,7 +1,7 @@
 <script lang="ts">
-import { Textarea } from '$lib/components/ui/textarea';
+	import { Textarea } from "$lib/components/ui/textarea";
 
-const uid = $props.id();
+	const uid = $props.id();
 </script>
 
 <div class="group relative">

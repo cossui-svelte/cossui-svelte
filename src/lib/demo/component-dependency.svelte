@@ -1,17 +1,22 @@
 <script lang="ts">
-import ExternalLink from '@lucide/svelte/icons/external-link';
-import Package from '@lucide/svelte/icons/package';
-import { Button } from '$lib/components/ui/button';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger
-} from '$lib/components/ui/tooltip/index.js';
-import type { PossibleDependency } from '$lib/constants';
-import { cn } from '$lib/utils.js';
+	import type { PossibleDependency } from "$lib/constants";
 
-let { class: className, dependency }: { class?: string; dependency: PossibleDependency } = $props();
+	import { Button } from "$lib/components/ui/button";
+	import {
+		Tooltip,
+		TooltipContent,
+		TooltipProvider,
+		TooltipTrigger,
+	} from "$lib/components/ui/tooltip/index.js";
+	import { cn } from "$lib/utils.js";
+
+	import ExternalLink from "@lucide/svelte/icons/external-link";
+import Package from "@lucide/svelte/icons/package";
+
+	let {
+		class: className,
+		dependency,
+	}: { class?: string; dependency: PossibleDependency } = $props();
 </script>
 
 <TooltipProvider>

@@ -1,13 +1,13 @@
 <script lang="ts">
-import type { DropdownMenu } from 'bits-ui';
-import type { Snippet } from 'svelte';
-import { cn } from '$lib/utils.js';
+  import type { Snippet } from "svelte";
+  import { DropdownMenu } from "bits-ui";
+  import { cn } from "$lib/utils.js";
 
-interface Props extends Omit<DropdownMenu.RadioItemProps, 'children'> {
-  children?: Snippet;
-}
+  interface Props extends Omit<DropdownMenu.RadioItemProps, "children"> {
+    children?: Snippet;
+  }
 
-let { children: userContent, class: className, ...restProps }: Props = $props();
+  let { children: userContent, class: className, ...restProps }: Props = $props();
 </script>
 
 <DropdownMenu.RadioItem

@@ -1,22 +1,24 @@
 <script lang="ts" module>
-import { tv, type VariantProps } from 'tailwind-variants';
+	import { tv, type VariantProps } from "tailwind-variants";
 
-const inputGroupButtonVariants = tv({
-  base: 'cn-input-group-button flex items-center shadow-none',
-  defaultVariants: {
-    size: 'xs'
-  },
-  variants: {
-    size: {
-      'icon-sm': 'cn-input-group-button-size-icon-sm',
-      'icon-xs': 'cn-input-group-button-size-icon-xs',
-      sm: 'cn-input-group-button-size-sm',
-      xs: 'cn-input-group-button-size-xs'
-    }
-  }
-});
+	const inputGroupButtonVariants = tv({
+		base: "cn-input-group-button flex items-center shadow-none",
+		variants: {
+			size: {
+				xs: "cn-input-group-button-size-xs",
+				sm: "cn-input-group-button-size-sm",
+				"icon-xs": "cn-input-group-button-size-icon-xs",
+				"icon-sm": "cn-input-group-button-size-icon-sm",
+			},
+		},
+		defaultVariants: {
+			size: "xs",
+		},
+	});
 
-export type InputGroupButtonSize = VariantProps<typeof inputGroupButtonVariants>['size'];
+	export type InputGroupButtonSize = VariantProps<
+		typeof inputGroupButtonVariants
+	>["size"];
 </script>
 
 <script lang="ts">

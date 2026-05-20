@@ -1,45 +1,49 @@
 <script lang="ts">
-import Check from '@lucide/svelte/icons/check';
-import ChevronDown from '@lucide/svelte/icons/chevron-down';
-import { Button } from '$lib/components/ui/button';
-import * as Command from '$lib/components/ui/command';
-import { Label } from '$lib/components/ui/label';
-import * as Popover from '$lib/components/ui/popover';
-import { cn } from '$lib/utils';
+	import { Button } from "$lib/components/ui/button";
+	import { Label } from "$lib/components/ui/label";
 
-let open = $state(false);
-let value = $state('Europe/Berlin');
+	import Check from "@lucide/svelte/icons/check";
+	import ChevronDown from "@lucide/svelte/icons/chevron-down";
+	import * as Command from "$lib/components/ui/command";
+	import * as Popover from "$lib/components/ui/popover";
+	import { cn } from "$lib/utils";
 
-const timezones = Intl.supportedValuesOf('timeZone');
+	let open = $state(false);
+	let value = $state("Europe/Berlin");
 
-const formattedTimezones = timezones
-  .map((timezone) => {
-    const formatter = new Intl.DateTimeFormat('en', {
-      timeZone: timezone,
-      timeZoneName: 'shortOffset'
-    });
-    const parts = formatter.formatToParts(new Date());
-    const offset = parts.find((part) => part.type === 'timeZoneName')?.value || '';
-    const modifiedOffset = offset === 'GMT' ? 'GMT+0' : offset;
+	const timezones = Intl.supportedValuesOf("timeZone");
 
-    return {
-      label: `(${modifiedOffset}) ${timezone.replace(/_/g, ' ')}`,
-      numericOffset: parseInt(offset.replace('GMT', '').replace('+', '') || '0'),
-      value: timezone
-    };
-  })
-  .sort((a, b) => a.numericOffset - b.numericOffset);
+	const formattedTimezones = timezones
+		.map((timezone) => {
+			const formatter = new Intl.DateTimeFormat("en", {
+				timeZone: timezone,
+				timeZoneName: "shortOffset",
+			});
+			const parts = formatter.formatToParts(new Date());
+			const offset =
+				parts.find((part) => part.type === "timeZoneName")?.value || "";
+			const modifiedOffset = offset === "GMT" ? "GMT+0" : offset;
 
-function handleSelect(currentValue: string) {
-  value = currentValue === value ? '' : currentValue;
-  open = false;
-}
+			return {
+				label: `(${modifiedOffset}) ${timezone.replace(/_/g, " ")}`,
+				numericOffset: parseInt(
+					offset.replace("GMT", "").replace("+", "") || "0",
+				),
+				value: timezone,
+			};
+		})
+		.sort((a, b) => a.numericOffset - b.numericOffset);
 
-function filterFn(value: string, search: string) {
-  const normalizedValue = value.toLowerCase();
-  const normalizedSearch = search.toLowerCase().replace(/\s+/g, '');
-  return normalizedValue.includes(normalizedSearch) ? 1 : 0;
-}
+	function handleSelect(currentValue: string) {
+		value = currentValue === value ? "" : currentValue;
+		open = false;
+	}
+
+	function filterFn(value: string, search: string) {
+		const normalizedValue = value.toLowerCase();
+		const normalizedSearch = search.toLowerCase().replace(/\s+/g, "");
+		return normalizedValue.includes(normalizedSearch) ? 1 : 0;
+	}
 </script>
 
 <div class="space-y-2">

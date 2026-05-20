@@ -1,7 +1,8 @@
 <script lang="ts">
-import ChevronDown from '@lucide/svelte/icons/chevron-down';
-import ChevronUp from '@lucide/svelte/icons/chevron-up';
-import { Button } from '$lib/components/ui/button';
+	import { Button } from "$lib/components/ui/button";
+
+	import ChevronDown from "@lucide/svelte/icons/chevron-down";
+	import ChevronUp from "@lucide/svelte/icons/chevron-up";
 </script>
 
 <div class="shadow-xs inline-flex -space-x-px rounded-md rtl:space-x-reverse">

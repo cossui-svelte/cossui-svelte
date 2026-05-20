@@ -1,13 +1,13 @@
 <script lang="ts">
-import type { Snippet } from 'svelte';
-import type { HTMLAttributes } from 'svelte/elements';
-import { cn } from '$lib/utils.js';
+  import type { Snippet } from "svelte";
+  import type { HTMLAttributes } from "svelte/elements";
+  import { cn } from "$lib/utils.js";
 
-interface Props extends HTMLAttributes<HTMLTableCellElement> {
-  children?: Snippet;
-}
+  interface Props extends HTMLAttributes<HTMLTableCellElement> {
+    children?: Snippet;
+  }
 
-let { class: className, children, ...restProps }: Props = $props();
+  let { class: className, children, ...restProps }: Props = $props();
 </script>
 
 <th

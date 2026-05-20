@@ -1,8 +1,8 @@
 <script lang="ts">
-import type { Snippet } from 'svelte';
-import SidebarProvider from '$lib/components/ui/sidebar/sidebar-provider.svelte';
+    import SidebarProvider from "$lib/components/ui/sidebar/sidebar-provider.svelte";
+    import type { Snippet } from "svelte";
 
-let { children }: { children: Snippet } = $props();
+    let { children }: { children: Snippet } = $props();
 </script>
 
 <main class="flex flex-1 flex-col">

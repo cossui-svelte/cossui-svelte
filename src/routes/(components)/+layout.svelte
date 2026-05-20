@@ -1,8 +1,8 @@
 <script lang="ts">
-import * as ComponentDialog from '$lib/demo/component-preview';
-import Cta from '$lib/demo/cta.svelte';
+	import Cta from "$lib/demo/cta.svelte";
+	import * as ComponentDialog from "$lib/demo/component-preview";
 
-let { children } = $props();
+	let { children } = $props();
 </script>
 
 <ComponentDialog.DialogContextProvider>

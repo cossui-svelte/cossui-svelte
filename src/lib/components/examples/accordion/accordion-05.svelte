@@ -1,45 +1,46 @@
 <script lang="ts">
-import AtSign from '@lucide/svelte/icons/at-sign';
-import Command from '@lucide/svelte/icons/command';
-import Eclipse from '@lucide/svelte/icons/eclipse';
-import Zap from '@lucide/svelte/icons/zap';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger
-} from '$lib/components/ui/accordion';
+	import {
+		Accordion,
+		AccordionItem,
+		AccordionTrigger,
+		AccordionContent,
+	} from "$lib/components/ui/accordion";
 
-const items = [
-  {
-    content:
-      'Origin UI focuses on developer experience and performance. Built with TypeScript, it offers excellent type safety, follows accessibility standards, and provides comprehensive documentation with regular updates.',
-    icon: Command,
-    id: '1',
-    title: 'What makes Origin UI - Svelte different?'
-  },
-  {
-    content:
-      'Use our CSS variables for global styling, or class and style props for component-specific changes. We support CSS modules, Tailwind, and dark mode out of the box.',
-    icon: Eclipse,
-    id: '2',
-    title: 'How can I customize the components?'
-  },
-  {
-    content:
-      'Yes, with tree-shaking, code splitting, and minimal runtime overhead. Most components are under 5KB gzipped.',
-    icon: Zap,
-    id: '3',
-    title: 'Is Origin UI - Svelte optimized for performance?'
-  },
-  {
-    content:
-      'All components follow WAI-ARIA standards, featuring proper ARIA attributes, keyboard navigation, and screen reader support. Regular testing ensures compatibility with NVDA, VoiceOver, and JAWS.',
-    icon: AtSign,
-    id: '4',
-    title: 'How accessible are the components?'
-  }
-];
+	import AtSign from "@lucide/svelte/icons/at-sign";
+	import Command from "@lucide/svelte/icons/command";
+	import Eclipse from "@lucide/svelte/icons/eclipse";
+	import Zap from "@lucide/svelte/icons/zap";
+
+	const items = [
+		{
+			content:
+				"Origin UI focuses on developer experience and performance. Built with TypeScript, it offers excellent type safety, follows accessibility standards, and provides comprehensive documentation with regular updates.",
+			icon: Command,
+			id: "1",
+			title: "What makes Origin UI - Svelte different?",
+		},
+		{
+			content:
+				"Use our CSS variables for global styling, or class and style props for component-specific changes. We support CSS modules, Tailwind, and dark mode out of the box.",
+			icon: Eclipse,
+			id: "2",
+			title: "How can I customize the components?",
+		},
+		{
+			content:
+				"Yes, with tree-shaking, code splitting, and minimal runtime overhead. Most components are under 5KB gzipped.",
+			icon: Zap,
+			id: "3",
+			title: "Is Origin UI - Svelte optimized for performance?",
+		},
+		{
+			content:
+				"All components follow WAI-ARIA standards, featuring proper ARIA attributes, keyboard navigation, and screen reader support. Regular testing ensures compatibility with NVDA, VoiceOver, and JAWS.",
+			icon: AtSign,
+			id: "4",
+			title: "How accessible are the components?",
+		},
+	];
 </script>
 
 <div class="space-y-4">

@@ -1,15 +1,21 @@
 <script lang="ts">
-import Box from '@lucide/svelte/icons/box';
-import House from '@lucide/svelte/icons/house';
-import PanelsTopLeft from '@lucide/svelte/icons/panels-top-left';
-import { Badge } from '$lib/components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '$lib/components/ui/tabs';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger
-} from '$lib/components/ui/tooltip';
+	import { Badge } from "$lib/components/ui/badge";
+
+	import Box from "@lucide/svelte/icons/box";
+	import House from "@lucide/svelte/icons/house";
+	import PanelsTopLeft from "@lucide/svelte/icons/panels-top-left";
+	import {
+		Tabs,
+		TabsContent,
+		TabsList,
+		TabsTrigger,
+	} from "$lib/components/ui/tabs";
+	import {
+		Tooltip,
+		TooltipContent,
+		TooltipProvider,
+		TooltipTrigger,
+	} from "$lib/components/ui/tooltip";
 </script>
 
 <Tabs value="tab-1" orientation="vertical" class="w-full flex-row">

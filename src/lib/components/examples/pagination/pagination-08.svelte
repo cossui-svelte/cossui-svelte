@@ -1,30 +1,35 @@
 <script lang="ts">
-import ChevronLeft from '@lucide/svelte/icons/chevron-left';
-import ChevronRight from '@lucide/svelte/icons/chevron-right';
-import { buttonVariants } from '$lib/components/ui/button';
-import {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink
-} from '$lib/components/ui/pagination';
-import { usePagination } from '$lib/hooks/use-pagination.svelte';
-import { cn } from '$lib/utils';
+	import { buttonVariants } from "$lib/components/ui/button";
+	import { usePagination } from "$lib/hooks/use-pagination.svelte";
 
-type PaginationProps = {
-  currentPage: number;
-  paginationItemsToDisplay?: number;
-  totalPages: number;
-};
+	import ChevronLeft from "@lucide/svelte/icons/chevron-left";
+	import ChevronRight from "@lucide/svelte/icons/chevron-right";
+	import {
+		Pagination,
+		PaginationContent,
+		PaginationEllipsis,
+		PaginationItem,
+		PaginationLink,
+	} from "$lib/components/ui/pagination";
+	import { cn } from "$lib/utils";
 
-let { currentPage = 1, paginationItemsToDisplay = 5, totalPages = 10 }: PaginationProps = $props();
+	type PaginationProps = {
+		currentPage: number;
+		paginationItemsToDisplay?: number;
+		totalPages: number;
+	};
 
-const pagination = usePagination({
-  currentPage,
-  paginationItemsToDisplay,
-  totalPages
-});
+	let {
+		currentPage = 1,
+		paginationItemsToDisplay = 5,
+		totalPages = 10,
+	}: PaginationProps = $props();
+
+	const pagination = usePagination({
+		currentPage,
+		paginationItemsToDisplay,
+		totalPages,
+	});
 </script>
 
 <Pagination>

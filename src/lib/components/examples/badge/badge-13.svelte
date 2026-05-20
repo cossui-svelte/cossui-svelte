@@ -1,8 +1,9 @@
 <script lang="ts">
-import X from '@lucide/svelte/icons/x';
-import { Badge } from '$lib/components/ui/badge';
+	import { Badge } from "$lib/components/ui/badge";
 
-let isActive = $state(true);
+	import X from "@lucide/svelte/icons/x";
+
+	let isActive = $state(true);
 </script>
 
 {#if isActive}

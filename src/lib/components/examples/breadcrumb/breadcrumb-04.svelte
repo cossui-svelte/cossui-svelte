@@ -1,14 +1,14 @@
 <script lang="ts">
-import Component from '@lucide/svelte/icons/component';
-import Home from '@lucide/svelte/icons/home';
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator
-} from '$lib/components/ui/breadcrumb';
+	import Component from '@lucide/svelte/icons/component';
+	import Home from '@lucide/svelte/icons/home';
+	import {
+		Breadcrumb,
+		BreadcrumbItem,
+		BreadcrumbLink,
+		BreadcrumbList,
+		BreadcrumbPage,
+		BreadcrumbSeparator
+	} from '$lib/components/ui/breadcrumb';
 </script>
 
 <Breadcrumb>

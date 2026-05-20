@@ -1,10 +1,10 @@
 <script lang="ts">
-import type { Command } from 'bits-ui';
-import type { Snippet } from 'svelte';
+  import type { Snippet } from "svelte";
+  import { Command } from "bits-ui";
 
-type Props = Command.RootProps & { children?: Snippet };
+  type Props = Command.RootProps & { children?: Snippet };
 
-let { children, ...restProps }: Props = $props();
+  let { children, ...restProps }: Props = $props();
 </script>
 
 <Command.Root data-slot="command" {...restProps}>

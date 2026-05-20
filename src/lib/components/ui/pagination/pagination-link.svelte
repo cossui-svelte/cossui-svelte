@@ -1,15 +1,18 @@
 <script module lang="ts">
-import type { WithElementRef } from 'bits-ui';
-import type { Snippet } from 'svelte';
-import type { HTMLAnchorAttributes } from 'svelte/elements';
+	import type { WithElementRef } from "bits-ui";
+	import type { Snippet } from "svelte";
+	import type { HTMLAnchorAttributes } from "svelte/elements";
 
-import { type ButtonProps, buttonVariants } from '$lib/components/ui/button';
+	import {
+		type ButtonProps,
+		buttonVariants,
+	} from "$lib/components/ui/button";
 
-export type Props = WithElementRef<HTMLAnchorAttributes> & {
-  children: Snippet;
-  isActive?: boolean;
-  isDisabled?: boolean;
-} & Pick<ButtonProps, 'size'>;
+	export type Props = WithElementRef<HTMLAnchorAttributes> & {
+		children: Snippet;
+		isActive?: boolean;
+		isDisabled?: boolean;
+	} & Pick<ButtonProps, "size">;
 </script>
 
 <script lang="ts">

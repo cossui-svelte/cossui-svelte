@@ -1,12 +1,11 @@
 <script lang="ts">
-import type { HTMLAttributes } from 'svelte/elements';
+	import type { HTMLAttributes } from 'svelte/elements';
 
-import { cn } from '$lib/utils';
-
-type Props = HTMLAttributes<HTMLDivElement> & {
-  code: string;
-};
-let { class: className, code, ...restProps }: Props = $props();
+	import { cn } from '$lib/utils';
+	type Props = HTMLAttributes<HTMLDivElement> & {
+		code: string;
+	};
+	let { class: className, code, ...restProps }: Props = $props();
 </script>
 
 <div

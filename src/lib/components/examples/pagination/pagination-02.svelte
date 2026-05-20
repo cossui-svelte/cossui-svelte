@@ -1,14 +1,19 @@
 <script lang="ts">
-import ArrowLeft from '@lucide/svelte/icons/arrow-left';
-import ArrowRight from '@lucide/svelte/icons/arrow-right';
-import { Button } from '$lib/components/ui/button';
-import { Pagination, PaginationContent, PaginationItem } from '$lib/components/ui/pagination';
+	import { Button } from "$lib/components/ui/button";
 
-type PaginationProps = {
-  currentPage: number;
-  totalPages: number;
-};
-let { currentPage = 1, totalPages = 10 }: PaginationProps = $props();
+	import ArrowLeft from "@lucide/svelte/icons/arrow-left";
+	import ArrowRight from "@lucide/svelte/icons/arrow-right";
+	import {
+		Pagination,
+		PaginationContent,
+		PaginationItem,
+	} from "$lib/components/ui/pagination";
+
+	type PaginationProps = {
+		currentPage: number;
+		totalPages: number;
+	};
+	let { currentPage = 1, totalPages = 10 }: PaginationProps = $props();
 </script>
 
 <Pagination>

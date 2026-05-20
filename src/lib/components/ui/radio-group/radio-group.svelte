@@ -1,7 +1,7 @@
 <script lang="ts" module>
-import { RadioGroup } from 'bits-ui';
+  import { RadioGroup } from "bits-ui";
 
-export const RadioGroupItem = RadioGroup.Item;
+  export const RadioGroupItem = RadioGroup.Item;
 </script>
 
 <script lang="ts">

@@ -1,37 +1,45 @@
 <script lang="ts">
-import { untrack } from 'svelte';
-import { MediaQuery } from 'svelte/reactivity';
-import { pushState, replaceState } from '$app/navigation';
-import { page } from '$app/state';
-import { Dialog, DialogContent, DialogOverlay, DialogPortal } from '$lib/components/ui/dialog';
-import { Drawer, DrawerContent } from '$lib/components/ui/drawer';
-import { getComponentDialogCtx } from './component-dialog-context.svelte';
-import Content from './content.svelte';
+	import { getComponentDialogCtx } from "./component-dialog-context.svelte";
+	import Content from "./content.svelte";
+	import {
+		Dialog,
+		DialogContent,
+		DialogOverlay,
+		DialogPortal,
+	} from "$lib/components/ui/dialog";
+	import { Drawer, DrawerContent } from "$lib/components/ui/drawer";
 
-const screen = new MediaQuery('(min-width: 768px)');
-const componentDialogCtx = getComponentDialogCtx();
-const originalPath = page.url.pathname;
+	import { pushState, replaceState } from "$app/navigation";
+	import { page } from "$app/state";
+	import { untrack } from "svelte";
+	import { MediaQuery } from "svelte/reactivity";
 
-let open = $derived(!!componentDialogCtx.component);
-let statePushed = $state(false);
+	const screen = new MediaQuery("(min-width: 768px)");
+	const componentDialogCtx = getComponentDialogCtx();
+	const originalPath = page.url.pathname;
 
-const targetPath = $derived.by(() => `${page.url.pathname}/${componentDialogCtx.component?.name}`);
-$effect(() => {
-  open;
-  untrack(() => {
-    if (open && page.url.pathname !== targetPath) {
-      pushState(targetPath, {});
-      statePushed = true;
-    }
-  });
-});
+	let open = $derived(!!componentDialogCtx.component);
+	let statePushed = $state(false);
 
-function handleOpenChange(open: boolean) {
-  if (!open && statePushed) {
-    replaceState(originalPath, {});
-    statePushed = false;
-  }
-}
+	const targetPath = $derived.by(
+		() => `${page.url.pathname}/${componentDialogCtx.component?.name}`,
+	);
+	$effect(() => {
+		open;
+		untrack(() => {
+			if (open && page.url.pathname !== targetPath) {
+				pushState(targetPath, {});
+				statePushed = true;
+			}
+		});
+	});
+
+	function handleOpenChange(open: boolean) {
+		if (!open && statePushed) {
+			replaceState(originalPath, {});
+			statePushed = false;
+		}
+	}
 </script>
 
 {#if screen.current}

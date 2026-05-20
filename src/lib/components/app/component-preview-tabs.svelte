@@ -1,23 +1,23 @@
 <script lang="ts">
-import type { Snippet } from 'svelte';
-import { Tabs, TabsList, TabsTab } from '$lib/components/ui/tabs';
-import { cn } from '$lib/utils.js';
+  import type { Snippet } from "svelte";
+  import { cn } from "$lib/utils.js";
+  import { Tabs, TabsList, TabsTab } from "$lib/components/ui/tabs";
 
-let {
-  class: className,
-  align = 'center',
-  hideCode = true,
-  children,
-  source
-}: {
-  class?: string;
-  align?: 'center' | 'start' | 'end';
-  hideCode?: boolean;
-  children?: Snippet;
-  source?: Snippet;
-} = $props();
+  let {
+    class: className,
+    align = "center",
+    hideCode = true,
+    children,
+    source,
+  }: {
+    class?: string;
+    align?: "center" | "start" | "end";
+    hideCode?: boolean;
+    children?: Snippet;
+    source?: Snippet;
+  } = $props();
 
-let tab = $state('preview');
+  let tab = $state("preview");
 </script>
 
 <div class={cn("group relative mt-4 mb-12 flex flex-col gap-2", className)}>

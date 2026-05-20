@@ -1,34 +1,36 @@
 <script lang="ts">
-import Share from '@lucide/svelte/icons/share-2';
-import type { ComponentProps } from 'svelte';
-import { page } from '$app/state';
-import type { AvailableComponentMetadata } from '$data/api/components/components.handler';
-import { Button } from '$lib/components/ui/button';
-import type * as Tooltip from '$lib/components/ui/tooltip/index.js';
+	import type { AvailableComponentMetadata } from "$data/api/components/components.handler";
+	import type { ComponentProps } from "svelte";
 
-type Props = ComponentProps<typeof Tooltip.TooltipTrigger> & {
-  component: AvailableComponentMetadata;
-};
+	import { Button } from "$lib/components/ui/button";
+	import * as Tooltip from "$lib/components/ui/tooltip/index.js";
 
-let { component, ...restProps }: Props = $props();
+	import Share from "@lucide/svelte/icons/share-2";
+	import { page } from "$app/state";
 
-async function shareComponent() {
-  const shareData = {
-    text: `Check out the ${component.name} component from Origin UI - Svelte`,
-    title: `Origin UI - Svelte - ${component.name}`,
-    url: page.url.href
-  };
+	type Props = ComponentProps<typeof Tooltip.TooltipTrigger> & {
+		component: AvailableComponentMetadata;
+	};
 
-  try {
-    if (navigator.share) {
-      await navigator.share(shareData);
-    } else {
-      await navigator.clipboard.writeText(shareData.url);
-    }
-  } catch (err) {
-    console.error('Error sharing:', err);
-  }
-}
+	let { component, ...restProps }: Props = $props();
+
+	async function shareComponent() {
+		const shareData = {
+			text: `Check out the ${component.name} component from Origin UI - Svelte`,
+			title: `Origin UI - Svelte - ${component.name}`,
+			url: page.url.href,
+		};
+
+		try {
+			if (navigator.share) {
+				await navigator.share(shareData);
+			} else {
+				await navigator.clipboard.writeText(shareData.url);
+			}
+		} catch (err) {
+			console.error("Error sharing:", err);
+		}
+	}
 </script>
 
 <Tooltip.TooltipProvider>

@@ -1,18 +1,18 @@
 <script lang="ts">
-import type { Button } from 'bits-ui';
-import { Spinner } from '$lib/components/ui/spinner';
-import { cn } from '$lib/utils';
-import type { ButtonProps } from '.';
-import { buttonVariants } from './button-variants';
+  import { Spinner } from "$lib/components/ui/spinner";
+  import { Button } from "bits-ui";
+  import { cn } from "$lib/utils";
+  import { buttonVariants } from "./button-variants";
+  import type { ButtonProps } from ".";
 
-let {
-  class: className,
-  variant,
-  size,
-  children,
-  loading,
-  ...restProps
-}: Button.RootProps & ButtonProps = $props();
+  let {
+    class: className,
+    variant,
+    size,
+    children,
+    loading,
+    ...restProps
+  }: Button.RootProps & ButtonProps = $props();
 </script>
 
 <Button.Root

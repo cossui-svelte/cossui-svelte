@@ -1,22 +1,22 @@
 <script lang="ts">
-import type { Tooltip } from 'bits-ui';
-import type { Snippet } from 'svelte';
-import { cn } from '$lib/utils.js';
+  import type { Snippet } from "svelte";
+  import { Tooltip } from "bits-ui";
+  import { cn } from "$lib/utils.js";
 
-interface Props extends Tooltip.ContentProps {
-  children?: Snippet;
-  sideOffset?: number;
-  showArrow?: boolean;
-}
+  interface Props extends Tooltip.ContentProps {
+    children?: Snippet;
+    sideOffset?: number;
+    showArrow?: boolean;
+  }
 
-let {
-  ref = $bindable(null),
-  class: className,
-  showArrow = false,
-  children,
-  sideOffset = 4,
-  ...restProps
-}: Props = $props();
+  let {
+    ref = $bindable(null),
+    class: className,
+    showArrow = false,
+    children,
+    sideOffset = 4,
+    ...restProps
+  }: Props = $props();
 </script>
 
 <!-- <Tooltip.Portal>

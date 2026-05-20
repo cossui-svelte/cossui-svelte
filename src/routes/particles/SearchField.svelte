@@ -1,81 +1,86 @@
 <script lang="ts">
-import Search from '@lucide/svelte/icons/search';
-import Tag from '@lucide/svelte/icons/tag';
-import X from '@lucide/svelte/icons/x';
-import { Combobox } from 'bits-ui';
-import { getCategorySortOrder } from '$lib/registry/registry-categories.js';
-import { particles } from '$lib/registry/registry-particles.js';
-import { cn } from '$lib/utils.js';
+	import { Combobox } from "bits-ui";
+	import Search from "@lucide/svelte/icons/search";
+	import Tag from "@lucide/svelte/icons/tag";
+	import X from "@lucide/svelte/icons/x";
+	import { cn } from "$lib/utils.js";
+	import { particles } from "$lib/registry/registry-particles.js";
+	import { getCategorySortOrder } from "$lib/registry/registry-categories.js";
 
-export interface SearchItem {
-  label: string;
-  value: string;
-}
+	export interface SearchItem {
+		label: string;
+		value: string;
+	}
 
-interface Props {
-  items: SearchItem[];
-  selectedItems: SearchItem[];
-  onItemsChange: (items: SearchItem[]) => void;
-}
+	interface Props {
+		items: SearchItem[];
+		selectedItems: SearchItem[];
+		onItemsChange: (items: SearchItem[]) => void;
+	}
 
-let { items, selectedItems, onItemsChange }: Props = $props();
+	let { items, selectedItems, onItemsChange }: Props = $props();
 
-let inputValue = $state('');
-let open = $state(selectedItems.length === 0);
+	let inputValue = $state("");
+	let open = $state(selectedItems.length === 0);
 
-$effect(() => {
-  if (selectedItems.length === 0) open = true;
-});
+	$effect(() => {
+		if (selectedItems.length === 0) open = true;
+	});
 
-const selectedValues = $derived(selectedItems.map((i) => i.value));
+	const selectedValues = $derived(selectedItems.map((i) => i.value));
 
-const groupedItems = $derived(() => {
-  const q = inputValue.toLowerCase();
-  const visible = q ? items.filter((i) => i.label.toLowerCase().includes(q)) : items;
+	const groupedItems = $derived(() => {
+		const q = inputValue.toLowerCase();
+		const visible = q
+			? items.filter((i) => i.label.toLowerCase().includes(q))
+			: items;
 
-  const enabled: SearchItem[] = [];
-  const disabled: SearchItem[] = [];
+		const enabled: SearchItem[] = [];
+		const disabled: SearchItem[] = [];
 
-  for (const item of visible) {
-    if (selectedValues.includes(item.value)) {
-      enabled.push(item);
-      continue;
-    }
-    const testValues = [...selectedValues, item.value];
-    const hasMatches = particles.some((p) => {
-      const cats = p.categories ?? [];
-      return testValues.every((v) => cats.includes(v));
-    });
-    if (hasMatches) enabled.push(item);
-    else disabled.push(item);
-  }
+		for (const item of visible) {
+			if (selectedValues.includes(item.value)) {
+				enabled.push(item);
+				continue;
+			}
+			const testValues = [...selectedValues, item.value];
+			const hasMatches = particles.some((p) => {
+				const cats = p.categories ?? [];
+				return testValues.every((v) => cats.includes(v));
+			});
+			if (hasMatches) enabled.push(item);
+			else disabled.push(item);
+		}
 
-  const sortedEnabled = [...enabled].sort((a, b) => {
-    const aSelected = selectedValues.includes(a.value);
-    const bSelected = selectedValues.includes(b.value);
-    if (aSelected && !bSelected) return -1;
-    if (!aSelected && bSelected) return 1;
-    return getCategorySortOrder(a.value) - getCategorySortOrder(b.value);
-  });
+		const sortedEnabled = [...enabled].sort((a, b) => {
+			const aSelected = selectedValues.includes(a.value);
+			const bSelected = selectedValues.includes(b.value);
+			if (aSelected && !bSelected) return -1;
+			if (!aSelected && bSelected) return 1;
+			return (
+				getCategorySortOrder(a.value) - getCategorySortOrder(b.value)
+			);
+		});
 
-  const sortedDisabled = [...disabled].sort(
-    (a, b) => getCategorySortOrder(a.value) - getCategorySortOrder(b.value)
-  );
+		const sortedDisabled = [...disabled].sort(
+			(a, b) =>
+				getCategorySortOrder(a.value) - getCategorySortOrder(b.value),
+		);
 
-  return { disabled: sortedDisabled, enabled: sortedEnabled };
-});
+		return { enabled: sortedEnabled, disabled: sortedDisabled };
+	});
 
-function handleValueChange(newValues: string[]) {
-  const newItems = newValues
-    .map((v) => items.find((i) => i.value === v))
-    .filter((i): i is SearchItem => !!i);
-  onItemsChange(newItems);
-  open = false;
-}
+	function handleValueChange(newValues: string[]) {
+		const newItems = newValues
+			.map((v) => items.find((i) => i.value === v))
+			.filter((i): i is SearchItem => !!i);
+		onItemsChange(newItems);
+		open = false;
+	}
 
-function removeItem(value: string) {
-  handleValueChange(selectedValues.filter((v) => v !== value));
-}
+	function removeItem(value: string) {
+		handleValueChange(selectedValues.filter((v) => v !== value));
+	}
 </script>
 
 <div class="mx-auto max-w-2xl">

@@ -1,22 +1,28 @@
 <script lang="ts">
-import type { AlertDialog as AlertDialogPrimitive } from 'bits-ui';
-import type { ComponentProps } from 'svelte';
-import { cn, type WithoutChild, type WithoutChildrenOrChild } from '$lib/utils.js';
-import AlertDialogOverlay from './alert-dialog-overlay.svelte';
-import type AlertDialogPortal from './alert-dialog-portal.svelte';
+	import { AlertDialog as AlertDialogPrimitive } from "bits-ui";
+	import AlertDialogPortal from "./alert-dialog-portal.svelte";
+	import AlertDialogOverlay from "./alert-dialog-overlay.svelte";
+	import {
+		cn,
+		type WithoutChild,
+		type WithoutChildrenOrChild,
+	} from "$lib/utils.js";
+	import type { ComponentProps } from "svelte";
 
-let {
-  ref = $bindable(null),
-  class: className,
-  bottomStickOnMobile = true,
-  size = 'default',
-  portalProps,
-  ...restProps
-}: WithoutChild<AlertDialogPrimitive.ContentProps> & {
-  size?: 'default' | 'sm';
-  bottomStickOnMobile?: boolean;
-  portalProps?: WithoutChildrenOrChild<ComponentProps<typeof AlertDialogPortal>>;
-} = $props();
+	let {
+		ref = $bindable(null),
+		class: className,
+		bottomStickOnMobile = true,
+		size = "default",
+		portalProps,
+		...restProps
+	}: WithoutChild<AlertDialogPrimitive.ContentProps> & {
+		size?: "default" | "sm";
+		bottomStickOnMobile?: boolean;
+		portalProps?: WithoutChildrenOrChild<
+			ComponentProps<typeof AlertDialogPortal>
+		>;
+	} = $props();
 </script>
 
 <AlertDialogPortal {...portalProps}>

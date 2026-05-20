@@ -1,15 +1,15 @@
 <script lang="ts">
-import type { Switch as SwitchPrimitive } from 'bits-ui';
-import { cn } from '$lib/utils.js';
+  import { Switch as SwitchPrimitive } from "bits-ui";
+  import { cn } from "$lib/utils.js";
 
-type Props = SwitchPrimitive.RootProps;
+  type Props = SwitchPrimitive.RootProps;
 
-let {
-  checked = $bindable(false),
-  class: className,
-  ref = $bindable(null),
-  ...restProps
-}: SwitchPrimitive.RootProps = $props();
+  let {
+    checked = $bindable(false),
+    class: className,
+    ref = $bindable(null),
+    ...restProps
+  }: SwitchPrimitive.RootProps = $props();
 </script>
 
 <SwitchPrimitive.Root

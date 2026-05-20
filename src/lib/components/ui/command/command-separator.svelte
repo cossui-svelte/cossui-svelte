@@ -1,10 +1,10 @@
 <script lang="ts">
-import type { Command } from 'bits-ui';
-import { cn } from '$lib/utils.js';
+  import { Command } from "bits-ui";
+  import { cn } from "$lib/utils.js";
 
-type Props = Command.SeparatorProps;
+  type Props = Command.SeparatorProps;
 
-let { class: className, ...restProps }: Props = $props();
+  let { class: className, ...restProps }: Props = $props();
 </script>
 
 <Command.Separator

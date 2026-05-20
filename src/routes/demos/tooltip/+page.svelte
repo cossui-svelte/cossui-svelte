@@ -1,18 +1,19 @@
 <script lang="ts">
-import ChevronDown from '@lucide/svelte/icons/chevron-down';
-import ChevronLeft from '@lucide/svelte/icons/chevron-left';
-import ChevronRight from '@lucide/svelte/icons/chevron-right';
-import ChevronUp from '@lucide/svelte/icons/chevron-up';
-import Circle from '@lucide/svelte/icons/circle';
-import ComponentPreviewTabs from '$lib/components/app/component-preview-tabs.svelte';
-import { Button } from '$lib/components/ui/button';
-import { Kbd, KbdGroup } from '$lib/components/ui/kbd';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger
-} from '$lib/components/ui/tooltip';
+    import { Button } from "$lib/components/ui/button";
+    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
+
+    import Circle from "@lucide/svelte/icons/circle";
+import ChevronDown from "@lucide/svelte/icons/chevron-down";
+import ChevronLeft from "@lucide/svelte/icons/chevron-left";
+import ChevronRight from "@lucide/svelte/icons/chevron-right";
+import ChevronUp from "@lucide/svelte/icons/chevron-up";
+    import {
+        Tooltip,
+        TooltipContent,
+        TooltipProvider,
+        TooltipTrigger,
+    } from "$lib/components/ui/tooltip";
+    import { Kbd, KbdGroup } from "$lib/components/ui/kbd";
 </script>
 
 <ComponentPreviewTabs>

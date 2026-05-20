@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Button } from '$lib/components/ui/button';
+	import { Button } from "$lib/components/ui/button";
 </script>
 
 <section class="relative isolate overflow-hidden border-t border-border">

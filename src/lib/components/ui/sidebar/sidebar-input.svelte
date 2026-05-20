@@ -1,14 +1,14 @@
 <script lang="ts">
-import type { HTMLInputAttributes } from 'svelte/elements';
-import { cn } from '$lib/utils.js';
-import Input from '../input/input.svelte';
+  import type { HTMLInputAttributes } from "svelte/elements";
+  import Input from "../input/input.svelte";
+  import { cn } from "$lib/utils.js";
 
-interface Props extends Omit<HTMLInputAttributes, 'size'> {
-  size?: 'sm' | 'default' | 'lg' | number;
-  unstyled?: boolean;
-}
+  interface Props extends Omit<HTMLInputAttributes, "size"> {
+    size?: "sm" | "default" | "lg" | number;
+    unstyled?: boolean;
+  }
 
-let { class: className, ...restProps }: Props = $props();
+  let { class: className, ...restProps }: Props = $props();
 </script>
 
 <Input

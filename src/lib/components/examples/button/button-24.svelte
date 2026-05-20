@@ -1,14 +1,15 @@
 <script lang="ts">
-import Bookmark from '@lucide/svelte/icons/bookmark';
-import { Toggle } from '$lib/components/ui/toggle';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger
-} from '$lib/components/ui/tooltip/index.js';
+	import { Toggle } from "$lib/components/ui/toggle";
+	import {
+		Tooltip,
+		TooltipContent,
+		TooltipProvider,
+		TooltipTrigger,
+	} from "$lib/components/ui/tooltip/index.js";
 
-let bookmarked = $state(false);
+	import Bookmark from "@lucide/svelte/icons/bookmark";
+
+	let bookmarked = $state(false);
 </script>
 
 <TooltipProvider>

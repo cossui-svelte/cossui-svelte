@@ -1,16 +1,21 @@
 <script>
-import ComponentPreviewTabs from '$lib/components/app/component-preview-tabs.svelte';
-import {
-  Breadcrumb,
-  BreadcrumbEllipsis,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator
-} from '$lib/components/ui/breadcrumb';
-import { Button } from '$lib/components/ui/button';
-import { Menu, MenuItem, MenuPopup, MenuTrigger } from '$lib/components/ui/menu';
+    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
+    import {
+        Breadcrumb,
+        BreadcrumbEllipsis,
+        BreadcrumbItem,
+        BreadcrumbLink,
+        BreadcrumbList,
+        BreadcrumbPage,
+        BreadcrumbSeparator,
+    } from "$lib/components/ui/breadcrumb";
+    import { Button } from "$lib/components/ui/button";
+    import {
+        Menu,
+        MenuItem,
+        MenuPopup,
+        MenuTrigger,
+    } from "$lib/components/ui/menu";
 </script>
 
 <ComponentPreviewTabs>

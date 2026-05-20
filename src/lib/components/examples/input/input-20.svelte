@@ -1,9 +1,10 @@
 <script lang="ts">
-import Download from '@lucide/svelte/icons/download';
-import { Input } from '$lib/components/ui/input';
-import { Label } from '$lib/components/ui/label';
+	import { Input } from "$lib/components/ui/input";
+	import { Label } from "$lib/components/ui/label";
 
-const uid = $props.id();
+	import Download from "@lucide/svelte/icons/download";
+
+	const uid = $props.id();
 </script>
 
 <div class="space-y-2">

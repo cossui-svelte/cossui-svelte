@@ -1,10 +1,10 @@
 <script lang="ts">
-import type { Command } from 'bits-ui';
-import type { Snippet } from 'svelte';
+  import type { Snippet } from "svelte";
+  import { Command } from "bits-ui";
 
-type Props = Command.GroupItemsProps & { children?: Snippet };
+  type Props = Command.GroupItemsProps & { children?: Snippet };
 
-let { children, ...restProps }: Props = $props();
+  let { children, ...restProps }: Props = $props();
 </script>
 
 <Command.GroupItems data-slot="command-collection" {...restProps}>

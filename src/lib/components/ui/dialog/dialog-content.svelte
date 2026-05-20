@@ -1,25 +1,31 @@
 <script lang="ts">
-import XIcon from '@lucide/svelte/icons/x';
-import type { Dialog as DialogPrimitive, WithoutChildrenOrChild } from 'bits-ui';
-import type { ComponentProps, Snippet } from 'svelte';
-import { Button } from '$lib/components/ui/button';
-import { cn } from '$lib/utils';
-import { DialogOverlay, type DialogPortal } from '.';
+	import {
+		Dialog as DialogPrimitive,
+		type WithoutChildrenOrChild,
+	} from "bits-ui";
+	import type { Snippet, ComponentProps } from "svelte";
+	import { Button } from "$lib/components/ui/button";
+	import XIcon from "@lucide/svelte/icons/x";
 
-let {
-  ref = $bindable(null),
-  class: className,
-  bottomStickOnMobile = true,
-  portalProps,
-  children,
-  showCloseButton = true,
-  ...restProps
-}: WithoutChildrenOrChild<DialogPrimitive.ContentProps> & {
-  bottomStickOnMobile?: boolean;
-  portalProps?: WithoutChildrenOrChild<ComponentProps<typeof DialogPortal>>;
-  children: Snippet;
-  showCloseButton?: boolean;
-} = $props();
+	import { DialogOverlay, DialogPortal } from ".";
+	import { cn } from "$lib/utils";
+
+	let {
+		ref = $bindable(null),
+		class: className,
+		bottomStickOnMobile = true,
+		portalProps,
+		children,
+		showCloseButton = true,
+		...restProps
+	}: WithoutChildrenOrChild<DialogPrimitive.ContentProps> & {
+		bottomStickOnMobile?: boolean;
+		portalProps?: WithoutChildrenOrChild<
+			ComponentProps<typeof DialogPortal>
+		>;
+		children: Snippet;
+		showCloseButton?: boolean;
+	} = $props();
 </script>
 
 <DialogPortal {...portalProps}>

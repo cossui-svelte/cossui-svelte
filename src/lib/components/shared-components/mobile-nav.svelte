@@ -1,19 +1,19 @@
 <script module lang="ts">
-export type PageNode = {
-  type: 'page';
-  name: string;
-  url: string;
-};
+  export type PageNode = {
+    type: "page";
+    name: string;
+    url: string;
+  };
 
-export type FolderNode = {
-  type: 'folder';
-  name: string;
-  children: (PageNode | FolderNode)[];
-};
+  export type FolderNode = {
+    type: "folder";
+    name: string;
+    children: (PageNode | FolderNode)[];
+  };
 
-export type NavTree = {
-  children: FolderNode[];
-};
+  export type NavTree = {
+    children: FolderNode[];
+  };
 </script>
 
 <script lang="ts">

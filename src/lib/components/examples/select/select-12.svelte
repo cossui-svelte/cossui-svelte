@@ -1,26 +1,29 @@
 <script lang="ts">
-import { Label } from '$lib/components/ui/label';
-import SelectNative from '$lib/components/ui/select-native.svelte';
+	import { Label } from "$lib/components/ui/label";
+	import SelectNative from "$lib/components/ui/select-native.svelte";
 
-const timezones = Intl.supportedValuesOf('timeZone')
-  .map((timezone) => {
-    const formatter = new Intl.DateTimeFormat('en', {
-      timeZone: timezone,
-      timeZoneName: 'shortOffset'
-    });
-    const parts = formatter.formatToParts(new Date());
-    const offset = parts.find((part) => part.type === 'timeZoneName')?.value || '';
-    const modifiedOffset = offset === 'GMT' ? 'GMT+0' : offset;
+	const timezones = Intl.supportedValuesOf("timeZone")
+		.map((timezone) => {
+			const formatter = new Intl.DateTimeFormat("en", {
+				timeZone: timezone,
+				timeZoneName: "shortOffset",
+			});
+			const parts = formatter.formatToParts(new Date());
+			const offset =
+				parts.find((part) => part.type === "timeZoneName")?.value || "";
+			const modifiedOffset = offset === "GMT" ? "GMT+0" : offset;
 
-    return {
-      label: `(${modifiedOffset}) ${timezone.replace(/_/g, ' ')}`,
-      numericOffset: parseInt(offset.replace('GMT', '').replace('+', '') || '0'),
-      value: timezone
-    };
-  })
-  .sort((a, b) => a.numericOffset - b.numericOffset);
+			return {
+				label: `(${modifiedOffset}) ${timezone.replace(/_/g, " ")}`,
+				numericOffset: parseInt(
+					offset.replace("GMT", "").replace("+", "") || "0",
+				),
+				value: timezone,
+			};
+		})
+		.sort((a, b) => a.numericOffset - b.numericOffset);
 
-const uid = $props.id();
+	const uid = $props.id();
 </script>
 
 <div class="space-y-2">

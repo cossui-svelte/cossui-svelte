@@ -1,14 +1,14 @@
 <script lang="ts">
-import ComponentPreviewTabs from '$lib/components/app/component-preview-tabs.svelte';
-import { buttonVariants } from '$lib/components/ui/button';
-import {
-  Drawer,
-  DrawerHeader,
-  DrawerPanel,
-  DrawerPopup,
-  DrawerTitle,
-  DrawerTrigger
-} from '$lib/components/ui/drawer-new';
+    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
+    import { buttonVariants } from "$lib/components/ui/button";
+    import {
+        Drawer,
+        DrawerHeader,
+        DrawerPanel,
+        DrawerPopup,
+        DrawerTitle,
+        DrawerTrigger,
+    } from "$lib/components/ui/drawer-new";
 </script>
 
 <ComponentPreviewTabs>

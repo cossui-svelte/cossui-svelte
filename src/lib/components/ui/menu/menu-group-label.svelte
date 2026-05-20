@@ -1,14 +1,14 @@
 <script lang="ts">
-import type { DropdownMenu } from 'bits-ui';
-import type { Snippet } from 'svelte';
-import { cn } from '$lib/utils.js';
+  import type { Snippet } from "svelte";
+  import { DropdownMenu } from "bits-ui";
+  import { cn } from "$lib/utils.js";
 
-interface Props extends DropdownMenu.GroupHeadingProps {
-  children?: Snippet;
-  inset?: boolean;
-}
+  interface Props extends DropdownMenu.GroupHeadingProps {
+    children?: Snippet;
+    inset?: boolean;
+  }
 
-let { children, class: className, inset, ...restProps }: Props = $props();
+  let { children, class: className, inset, ...restProps }: Props = $props();
 </script>
 
 <DropdownMenu.GroupHeading

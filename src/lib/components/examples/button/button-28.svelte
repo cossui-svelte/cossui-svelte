@@ -1,21 +1,22 @@
 <script lang="ts">
-import CheckIcon from '@lucide/svelte/icons/check';
-import CopyIcon from '@lucide/svelte/icons/copy';
-import { Button } from '$lib/components/ui/button';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger
-} from '$lib/components/ui/tooltip/index.js';
-import { cn } from '$lib/utils.js';
+	import { Button } from "$lib/components/ui/button";
+	import {
+		Tooltip,
+		TooltipContent,
+		TooltipProvider,
+		TooltipTrigger,
+	} from "$lib/components/ui/tooltip/index.js";
+	import { cn } from "$lib/utils.js";
 
-let copied = $state(false);
+	import CheckIcon from "@lucide/svelte/icons/check";
+	import CopyIcon from "@lucide/svelte/icons/copy";
 
-function handleCopy() {
-  copied = true;
-  setTimeout(() => (copied = false), 1500);
-}
+	let copied = $state(false);
+
+	function handleCopy() {
+		copied = true;
+		setTimeout(() => (copied = false), 1500);
+	}
 </script>
 
 <TooltipProvider>

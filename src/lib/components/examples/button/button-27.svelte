@@ -1,26 +1,33 @@
 <script lang="ts">
-import MinusIcon from '@lucide/svelte/icons/minus';
-import PlusIcon from '@lucide/svelte/icons/plus';
-import VolumeIcon from '@lucide/svelte/icons/volume';
-import Volume1Icon from '@lucide/svelte/icons/volume-1';
-import Volume2Icon from '@lucide/svelte/icons/volume-2';
-import VolumeXIcon from '@lucide/svelte/icons/volume-x';
-import { Button } from '$lib/components/ui/button';
+	import { Button } from "$lib/components/ui/button";
 
-let volume = $state(3);
+	import MinusIcon from "@lucide/svelte/icons/minus";
+	import PlusIcon from "@lucide/svelte/icons/plus";
+	import VolumeIcon from "@lucide/svelte/icons/volume";
+	import Volume1Icon from "@lucide/svelte/icons/volume-1";
+	import Volume2Icon from "@lucide/svelte/icons/volume-2";
+	import VolumeXIcon from "@lucide/svelte/icons/volume-x";
 
-function decreaseVolume() {
-  volume = Math.max(0, volume - 1);
-}
+	let volume = $state(3);
 
-function increaseVolume() {
-  volume = Math.min(6, volume + 1);
-}
+	function decreaseVolume() {
+		volume = Math.max(0, volume - 1);
+	}
 
-// Reactive volume icon selection
-const Icon = $derived(
-  volume === 0 ? VolumeXIcon : volume < 3 ? VolumeIcon : volume < 5 ? Volume1Icon : Volume2Icon
-);
+	function increaseVolume() {
+		volume = Math.min(6, volume + 1);
+	}
+
+	// Reactive volume icon selection
+	const Icon = $derived(
+		volume === 0
+			? VolumeXIcon
+			: volume < 3
+				? VolumeIcon
+				: volume < 5
+					? Volume1Icon
+					: Volume2Icon,
+	);
 </script>
 
 <div

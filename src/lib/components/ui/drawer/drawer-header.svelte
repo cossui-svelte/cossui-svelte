@@ -1,14 +1,14 @@
 <script lang="ts">
-import type { Snippet } from 'svelte';
-import type { HTMLAttributes } from 'svelte/elements';
-import { cn } from '$lib/utils.js';
+  import type { Snippet } from "svelte";
+  import type { HTMLAttributes } from "svelte/elements";
+  import { cn } from "$lib/utils.js";
 
-interface Props extends HTMLAttributes<HTMLDivElement> {
-  allowSelection?: boolean;
-  children?: Snippet;
-}
+  interface Props extends HTMLAttributes<HTMLDivElement> {
+    allowSelection?: boolean;
+    children?: Snippet;
+  }
 
-let { class: className, allowSelection = false, children, ...restProps }: Props = $props();
+  let { class: className, allowSelection = false, children, ...restProps }: Props = $props();
 </script>
 
 <div

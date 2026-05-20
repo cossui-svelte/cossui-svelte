@@ -1,16 +1,17 @@
 <script lang="ts">
-import CircleX from '@lucide/svelte/icons/circle-x';
-import { Input } from '$lib/components/ui/input';
-import { Label } from '$lib/components/ui/label';
+	import { Input } from "$lib/components/ui/input";
+	import { Label } from "$lib/components/ui/label";
 
-let inputValue = $state('Click to clear');
-let inputElement = $state<HTMLInputElement | null>(null)!;
+	import CircleX from "@lucide/svelte/icons/circle-x";
 
-function handleClearInput() {
-  inputValue = '';
-}
+	let inputValue = $state("Click to clear");
+	let inputElement = $state<HTMLInputElement | null>(null)!;
 
-const uid = $props.id();
+	function handleClearInput() {
+		inputValue = "";
+	}
+
+	const uid = $props.id();
 </script>
 
 <div class="space-y-2">

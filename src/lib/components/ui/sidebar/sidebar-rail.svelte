@@ -1,13 +1,13 @@
 <script lang="ts">
-import type { HTMLButtonAttributes } from 'svelte/elements';
-import { cn } from '$lib/utils.js';
-import { getSidebarContext } from './sidebar-context.js';
+  import type { HTMLButtonAttributes } from "svelte/elements";
+  import { getSidebarContext } from "./sidebar-context.js";
+  import { cn } from "$lib/utils.js";
 
-interface Props extends HTMLButtonAttributes {}
+  interface Props extends HTMLButtonAttributes {}
 
-let { class: className, ...restProps }: Props = $props();
+  let { class: className, ...restProps }: Props = $props();
 
-const ctx = getSidebarContext();
+  const ctx = getSidebarContext();
 </script>
 
 <button

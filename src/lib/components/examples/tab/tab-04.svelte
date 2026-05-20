@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '$lib/components/ui/tabs';
+	import { Tabs, TabsContent, TabsList, TabsTrigger } from '$lib/components/ui/tabs';
 </script>
 
 <Tabs value="tab-1" class="items-center">

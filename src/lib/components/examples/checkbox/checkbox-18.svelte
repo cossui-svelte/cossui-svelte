@@ -1,35 +1,35 @@
 <script lang="ts">
-import { Checkbox } from '$lib/components/ui/checkbox';
+	import { Checkbox } from "$lib/components/ui/checkbox";
 
-const items = [
-  {
-    defaultChecked: true,
-    id: 'checkbox-18-c1',
-    label: 'Monday',
-    value: 'c1'
-  },
-  {
-    defaultChecked: true,
-    id: 'checkbox-18-c2',
-    label: 'Tuesday',
-    value: 'c2'
-  },
-  { id: 'checkbox-18-c3', label: 'Wednesday', value: 'c3' },
-  {
-    defaultChecked: true,
-    id: 'checkbox-18-c4',
-    label: 'Thursday',
-    value: 'c4'
-  },
-  {
-    defaultChecked: true,
-    id: 'checkbox-18-c5',
-    label: 'Friday',
-    value: 'c5'
-  },
-  { id: 'checkbox-18-c6', label: 'Saturday', value: 'c6' },
-  { disabled: true, id: 'checkbox-18-c7', label: 'Sunday', value: 'c7' }
-];
+	const items = [
+		{
+			defaultChecked: true,
+			id: "checkbox-18-c1",
+			label: "Monday",
+			value: "c1",
+		},
+		{
+			defaultChecked: true,
+			id: "checkbox-18-c2",
+			label: "Tuesday",
+			value: "c2",
+		},
+		{ id: "checkbox-18-c3", label: "Wednesday", value: "c3" },
+		{
+			defaultChecked: true,
+			id: "checkbox-18-c4",
+			label: "Thursday",
+			value: "c4",
+		},
+		{
+			defaultChecked: true,
+			id: "checkbox-18-c5",
+			label: "Friday",
+			value: "c5",
+		},
+		{ id: "checkbox-18-c6", label: "Saturday", value: "c6" },
+		{ disabled: true, id: "checkbox-18-c7", label: "Sunday", value: "c7" },
+	];
 </script>
 
 <fieldset class="space-y-4">

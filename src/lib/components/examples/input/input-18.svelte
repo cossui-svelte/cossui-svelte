@@ -1,9 +1,10 @@
 <script lang="ts">
-import ChevronDown from '@lucide/svelte/icons/chevron-down';
-import { Input } from '$lib/components/ui/input';
-import { Label } from '$lib/components/ui/label';
+	import { Input } from "$lib/components/ui/input";
+	import { Label } from "$lib/components/ui/label";
 
-const uid = $props.id();
+	import ChevronDown from "@lucide/svelte/icons/chevron-down";
+
+	const uid = $props.id();
 </script>
 
 <div class="space-y-2">

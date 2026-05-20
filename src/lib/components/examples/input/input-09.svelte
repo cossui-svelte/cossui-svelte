@@ -1,9 +1,10 @@
 <script lang="ts">
-import AtSign from '@lucide/svelte/icons/at-sign';
-import { Input } from '$lib/components/ui/input';
-import { Label } from '$lib/components/ui/label';
+	import { Input } from "$lib/components/ui/input";
+	import { Label } from "$lib/components/ui/label";
 
-const uid = $props.id();
+	import AtSign from "@lucide/svelte/icons/at-sign";
+
+	const uid = $props.id();
 </script>
 
 <div class="space-y-2">

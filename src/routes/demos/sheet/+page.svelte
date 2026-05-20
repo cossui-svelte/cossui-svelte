@@ -1,20 +1,20 @@
 <script>
-import ComponentPreviewTabs from '$lib/components/app/component-preview-tabs.svelte';
-import { Button, buttonVariants } from '$lib/components/ui/button';
-import { Field, FieldLabel } from '$lib/components/ui/field';
-import { Form } from '$lib/components/ui/form';
-import { Input } from '$lib/components/ui/input';
-import {
-  Sheet,
-  SheetClose,
-  SheetDescription,
-  SheetFooter,
-  SheetHeader,
-  SheetPanel,
-  SheetPopup,
-  SheetTitle,
-  SheetTrigger
-} from '$lib/components/ui/sheet';
+    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
+    import { Button, buttonVariants } from "$lib/components/ui/button";
+    import { Field, FieldLabel } from "$lib/components/ui/field";
+    import { Form } from "$lib/components/ui/form";
+    import { Input } from "$lib/components/ui/input";
+    import {
+        Sheet,
+        SheetClose,
+        SheetDescription,
+        SheetFooter,
+        SheetHeader,
+        SheetPanel,
+        SheetPopup,
+        SheetTitle,
+        SheetTrigger,
+    } from "$lib/components/ui/sheet";
 </script>
 
 <ComponentPreviewTabs>

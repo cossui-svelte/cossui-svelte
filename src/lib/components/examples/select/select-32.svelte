@@ -1,20 +1,20 @@
 <script lang="ts">
-import { Label } from '$lib/components/ui/label';
-import * as Select from '$lib/components/ui/select/index.js';
+	import { Label } from "$lib/components/ui/label";
+	import * as Select from "$lib/components/ui/select/index.js";
 
-const items = [
-  { class: 'text-emerald-600', label: 'Completed', value: 's1' },
-  { class: 'text-blue-500', label: 'In Progress', value: 's2' },
-  { class: 'text-amber-500', label: 'Pending', value: 's3' },
-  { class: 'text-gray-500', label: 'Cancelled', value: 's4' },
-  { class: 'text-red-500', label: 'Failed', value: 's5' }
-] as const;
+	const items = [
+		{ class: "text-emerald-600", label: "Completed", value: "s1" },
+		{ class: "text-blue-500", label: "In Progress", value: "s2" },
+		{ class: "text-amber-500", label: "Pending", value: "s3" },
+		{ class: "text-gray-500", label: "Cancelled", value: "s4" },
+		{ class: "text-red-500", label: "Failed", value: "s5" },
+	] as const;
 
-let value = $state('s1');
+	let value = $state("s1");
 
-const selected = $derived(items.find((i) => i.value === value));
+	const selected = $derived(items.find((i) => i.value === value));
 
-const uid = $props.id();
+	const uid = $props.id();
 </script>
 
 {#snippet status(item: (typeof items)[number])}

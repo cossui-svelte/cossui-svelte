@@ -1,13 +1,13 @@
 <script lang="ts" module>
-export interface ProgressContext {
-  readonly value: number | null;
-  readonly min: number;
-  readonly max: number;
-  readonly percentage: number;
-  readonly indeterminate: boolean;
-}
+  export interface ProgressContext {
+    readonly value: number | null;
+    readonly min: number;
+    readonly max: number;
+    readonly percentage: number;
+    readonly indeterminate: boolean;
+  }
 
-export const PROGRESS_CONTEXT_KEY = Symbol.for('cossui:progress');
+  export const PROGRESS_CONTEXT_KEY = Symbol.for("cossui:progress");
 </script>
 
 <script lang="ts">

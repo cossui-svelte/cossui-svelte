@@ -1,21 +1,22 @@
 <script lang="ts">
-import Inputmask from 'inputmask';
-import { Input } from '$lib/components/ui/input';
-import { Label } from '$lib/components/ui/label';
+	import { Input } from "$lib/components/ui/input";
+	import { Label } from "$lib/components/ui/label";
 
-let inputElement = $state<HTMLInputElement | null>(null);
+	import Inputmask from "inputmask";
 
-$effect(() => {
-  if (!inputElement) return;
-  const im = new Inputmask('AA99 AAA', {
-    placeholder: '',
-    showMaskOnHover: false
-  }).mask(inputElement);
+	let inputElement = $state<HTMLInputElement | null>(null);
 
-  return () => im.remove();
-});
+	$effect(() => {
+		if (!inputElement) return;
+		const im = new Inputmask("AA99 AAA", {
+			placeholder: "",
+			showMaskOnHover: false,
+		}).mask(inputElement);
 
-const uid = $props.id();
+		return () => im.remove();
+	});
+
+	const uid = $props.id();
 </script>
 
 <div class="space-y-2">

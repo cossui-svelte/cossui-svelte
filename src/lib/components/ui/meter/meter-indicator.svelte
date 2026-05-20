@@ -1,14 +1,14 @@
 <script lang="ts">
-import { getContext } from 'svelte';
-import type { HTMLAttributes } from 'svelte/elements';
-import { cn } from '$lib/utils.js';
-import { METER_CONTEXT_KEY, type MeterContext } from './meter.svelte';
+  import type { HTMLAttributes } from "svelte/elements";
+  import { getContext } from "svelte";
+  import { cn } from "$lib/utils.js";
+  import { METER_CONTEXT_KEY, type MeterContext } from "./meter.svelte";
 
-type Props = HTMLAttributes<HTMLDivElement>;
+  type Props = HTMLAttributes<HTMLDivElement>;
 
-let { class: className, ...restProps }: Props = $props();
+  let { class: className, ...restProps }: Props = $props();
 
-const ctx = getContext<MeterContext>(METER_CONTEXT_KEY);
+  const ctx = getContext<MeterContext>(METER_CONTEXT_KEY);
 </script>
 
 <div

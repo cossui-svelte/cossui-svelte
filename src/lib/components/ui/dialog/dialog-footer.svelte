@@ -1,20 +1,20 @@
 <script lang="ts">
-import { Dialog as DialogPrimitive } from 'bits-ui';
-import type { HTMLAttributes } from 'svelte/elements';
-import { Button } from '$lib/components/ui/button';
-import { cn, type WithElementRef } from '$lib/utils.js';
+	import { cn, type WithElementRef } from "$lib/utils.js";
+	import type { HTMLAttributes } from "svelte/elements";
+	import { Dialog as DialogPrimitive } from "bits-ui";
+	import { Button } from "$lib/components/ui/button";
 
-let {
-  ref = $bindable(null),
-  class: className,
-  children,
-  variant = 'default',
-  showCloseButton = false,
-  ...restProps
-}: WithElementRef<HTMLAttributes<HTMLDivElement>> & {
-  variant?: 'default' | 'bare';
-  showCloseButton?: boolean;
-} = $props();
+	let {
+		ref = $bindable(null),
+		class: className,
+		children,
+		variant = "default",
+		showCloseButton = false,
+		...restProps
+	}: WithElementRef<HTMLAttributes<HTMLDivElement>> & {
+		variant?: "default" | "bare";
+		showCloseButton?: boolean;
+	} = $props();
 </script>
 
 <div

@@ -1,26 +1,26 @@
 <script lang="ts">
-import { Label } from '$lib/components/ui/label';
-import * as Select from '$lib/components/ui/select/index.js';
+	import { Label } from "$lib/components/ui/label";
+	import * as Select from "$lib/components/ui/select/index.js";
 
-const frontend = [
-  { label: 'Svelte', value: 's1' },
-  { label: 'Vue', value: 's2' },
-  { label: 'Angular', value: 's3' }
-] as const;
+	const frontend = [
+		{ label: "Svelte", value: "s1" },
+		{ label: "Vue", value: "s2" },
+		{ label: "Angular", value: "s3" },
+	] as const;
 
-const backend = [
-  { label: 'Node.js', value: 's4' },
-  { label: 'Python', value: 's5' },
-  { label: 'Java', value: 's6' }
-] as const;
+	const backend = [
+		{ label: "Node.js", value: "s4" },
+		{ label: "Python", value: "s5" },
+		{ label: "Java", value: "s6" },
+	] as const;
 
-const items = [...frontend, ...backend];
+	const items = [...frontend, ...backend];
 
-let value = $state('s1');
+	let value = $state("s1");
 
-const selected = $derived(items.find((i) => i.value === value));
+	const selected = $derived(items.find((i) => i.value === value));
 
-const uid = $props.id();
+	const uid = $props.id();
 </script>
 
 <div class="space-y-2">

@@ -1,31 +1,36 @@
 <script lang="ts">
-import Check from '@lucide/svelte/icons/check';
-import Copy from '@lucide/svelte/icons/copy';
-import { Button } from '$lib/components/ui/button';
-import { Input } from '$lib/components/ui/input';
-import { Popover, PopoverContent, PopoverTrigger } from '$lib/components/ui/popover';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger
-} from '$lib/components/ui/tooltip';
-import { cn } from '$lib/utils';
-import RiCodeFill from '~icons/ri/code-fill';
-import RiFacebookFill from '~icons/ri/facebook-fill';
-import RiMailLine from '~icons/ri/mail-line';
-import RiTwitterXFill from '~icons/ri/twitter-x-fill';
+	import { Input } from "$lib/components/ui/input";
+	import { Button } from "$lib/components/ui/button";
 
-let copied = $state(false);
-let inputRef = $state<HTMLInputElement | null>(null);
+	import Check from "@lucide/svelte/icons/check";
+	import Copy from "@lucide/svelte/icons/copy";
+	import RiCodeFill from "~icons/ri/code-fill";
+	import RiFacebookFill from "~icons/ri/facebook-fill";
+	import RiMailLine from "~icons/ri/mail-line";
+	import RiTwitterXFill from "~icons/ri/twitter-x-fill";
+	import {
+		Popover,
+		PopoverContent,
+		PopoverTrigger,
+	} from "$lib/components/ui/popover";
+	import {
+		Tooltip,
+		TooltipContent,
+		TooltipProvider,
+		TooltipTrigger,
+	} from "$lib/components/ui/tooltip";
+	import { cn } from "$lib/utils";
 
-function handleCopy() {
-  if (!inputRef) return;
+	let copied = $state(false);
+	let inputRef = $state<HTMLInputElement | null>(null);
 
-  navigator.clipboard.writeText(inputRef.value);
-  copied = true;
-  setTimeout(() => (copied = false), 1500);
-}
+	function handleCopy() {
+		if (!inputRef) return;
+
+		navigator.clipboard.writeText(inputRef.value);
+		copied = true;
+		setTimeout(() => (copied = false), 1500);
+	}
 </script>
 
 <div class="flex flex-col gap-4">

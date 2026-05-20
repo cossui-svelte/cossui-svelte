@@ -1,15 +1,20 @@
 <script lang="ts">
-import type { WithElementRef } from 'bits-ui';
-import type { Snippet } from 'svelte';
-import type { SvelteHTMLElements } from 'svelte/elements';
+	import type { WithElementRef } from "bits-ui";
+	import type { Snippet } from "svelte";
+	import type { SvelteHTMLElements } from "svelte/elements";
 
-import { cn } from '$lib/utils.js';
+	import { cn } from "$lib/utils.js";
 
-type Props = WithElementRef<SvelteHTMLElements['nav']> & {
-  children: Snippet;
-};
+	type Props = WithElementRef<SvelteHTMLElements["nav"]> & {
+		children: Snippet;
+	};
 
-let { children, class: className, ref = $bindable(null), ...restProps }: Props = $props();
+	let {
+		children,
+		class: className,
+		ref = $bindable(null),
+		...restProps
+	}: Props = $props();
 </script>
 
 <nav

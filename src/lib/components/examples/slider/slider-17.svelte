@@ -1,10 +1,10 @@
 <script lang="ts">
-import { Label } from '$lib/components/ui/label';
-import { Slider } from '$lib/components/ui/slider';
+	import { Label } from "$lib/components/ui/label";
+	import { Slider } from "$lib/components/ui/slider";
 
-const labels = ['Awful', 'Poor', 'Okay', 'Good', 'Amazing'];
+	const labels = ["Awful", "Poor", "Okay", "Good", "Amazing"];
 
-let value = $state(3);
+	let value = $state(3);
 </script>
 
 <div class="space-y-3">

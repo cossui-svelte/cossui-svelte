@@ -1,18 +1,18 @@
 <script lang="ts">
-import type { HTMLAttributes } from 'svelte/elements';
-import { cn, type WithElementRef } from '$lib/utils.js';
+  import type { HTMLAttributes } from "svelte/elements";
+  import { cn, type WithElementRef } from "$lib/utils.js";
 
-type InputOTPSize = 'default' | 'lg';
+  type InputOTPSize = "default" | "lg";
 
-let {
-  ref = $bindable(null),
-  class: className,
-  size = 'default',
-  children,
-  ...restProps
-}: WithElementRef<HTMLAttributes<HTMLDivElement>> & {
-  size?: InputOTPSize;
-} = $props();
+  let {
+    ref = $bindable(null),
+    class: className,
+    size = "default",
+    children,
+    ...restProps
+  }: WithElementRef<HTMLAttributes<HTMLDivElement>> & {
+    size?: InputOTPSize;
+  } = $props();
 </script>
 
 <div

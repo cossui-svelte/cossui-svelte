@@ -1,10 +1,10 @@
 <script lang="ts">
-import type { LinkPreview } from 'bits-ui';
-import type { Snippet } from 'svelte';
+    import type { Snippet } from "svelte";
+    import { LinkPreview } from "bits-ui";
 
-type Props = LinkPreview.RootProps & { children?: Snippet };
+    type Props = LinkPreview.RootProps & { children?: Snippet };
 
-let { children, ...restProps }: Props = $props();
+    let { children, ...restProps }: Props = $props();
 </script>
 
 <LinkPreview.Root {...restProps}>

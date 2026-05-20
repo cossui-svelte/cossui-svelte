@@ -1,12 +1,12 @@
 <script lang="ts">
-import type { Drawer as DrawerPrimitive } from '$lib/vaul';
+	import { Drawer as DrawerPrimitive } from "$lib/vaul";
 
-let {
-  shouldScaleBackground = true,
-  open = $bindable(false),
-  activeSnapPoint = $bindable(null),
-  ...restProps
-}: DrawerPrimitive.RootProps = $props();
+	let {
+		shouldScaleBackground = true,
+		open = $bindable(false),
+		activeSnapPoint = $bindable(null),
+		...restProps
+	}: DrawerPrimitive.RootProps = $props();
 </script>
 
 <DrawerPrimitive.NestedRoot

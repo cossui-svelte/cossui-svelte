@@ -1,19 +1,19 @@
 <script lang="ts">
-import { Label } from '$lib/components/ui/label';
-import * as Select from '$lib/components/ui/select/index.js';
+	import { Label } from "$lib/components/ui/label";
+	import * as Select from "$lib/components/ui/select/index.js";
 
-const items = [
-  { label: 'Svelte', value: 's1' },
-  { label: 'Next.js', value: 's2' },
-  { label: 'Astro', value: 's3' },
-  { label: 'Gatsby', value: 's4' }
-];
+	const items = [
+		{ label: "Svelte", value: "s1" },
+		{ label: "Next.js", value: "s2" },
+		{ label: "Astro", value: "s3" },
+		{ label: "Gatsby", value: "s4" },
+	];
 
-let value = $state('s1');
+	let value = $state("s1");
 
-const selected = $derived(items.find((i) => i.value === value));
+	const selected = $derived(items.find((i) => i.value === value));
 
-const uid = $props.id();
+	const uid = $props.id();
 </script>
 
 <!-- NOTE: This inline style is to show how to set the --ring variable in your CSS file in order to change the focus ring color. -->

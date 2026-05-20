@@ -1,8 +1,9 @@
 <script lang="ts">
-import ArrowRight from '@lucide/svelte/icons/arrow-right';
-import CircleCheck from '@lucide/svelte/icons/circle-check';
-import X from '@lucide/svelte/icons/x';
-import { Button } from '$lib/components/ui/button';
+	import { Button } from "$lib/components/ui/button";
+
+	import ArrowRight from "@lucide/svelte/icons/arrow-right";
+	import CircleCheck from "@lucide/svelte/icons/circle-check";
+	import X from "@lucide/svelte/icons/x";
 </script>
 
 <!-- To make the notification fixed, add classes like `fixed bottom-4 right-4` to the container element. -->

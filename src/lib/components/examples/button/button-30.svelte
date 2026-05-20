@@ -1,11 +1,12 @@
 <script lang="ts">
-import AlignCenter from '@lucide/svelte/icons/align-center';
-import AlignJustify from '@lucide/svelte/icons/align-justify';
-import AlignLeft from '@lucide/svelte/icons/align-left';
-import AlignRight from '@lucide/svelte/icons/align-right';
-import { ToggleGroup, ToggleGroupItem } from '$lib/components/ui/toggle-group/index.js';
+	import { ToggleGroup, ToggleGroupItem } from '$lib/components/ui/toggle-group/index.js';
 
-let value = $state('center');
+	import AlignCenter from '@lucide/svelte/icons/align-center';
+	import AlignJustify from '@lucide/svelte/icons/align-justify';
+	import AlignLeft from '@lucide/svelte/icons/align-left';
+	import AlignRight from '@lucide/svelte/icons/align-right';
+
+	let value = $state('center');
 </script>
 
 <ToggleGroup class="inline-flex divide-x divide-background" type="single" bind:value>

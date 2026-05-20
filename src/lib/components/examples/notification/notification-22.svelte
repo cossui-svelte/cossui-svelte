@@ -1,17 +1,18 @@
 <script lang="ts">
-import CircleCheck from '@lucide/svelte/icons/circle-check';
-import X from '@lucide/svelte/icons/x';
-import { Button } from '$lib/components/ui/button';
-import { toastManager } from '$lib/components/ui/toast';
+	import { Button } from "$lib/components/ui/button";
 
-function openToast() {
-  const newId = Math.random();
-  //the implementation will change, once https://github.com/wobsoriano/svelte-sonner/pull/126 lands
-  //@ts-expect-error - this is a hack to get the toast id, dont use in production
-  toastManager.add((node) => customToastSnippet(node, () => newId), {
-    id: newId
-  });
-}
+	import CircleCheck from "@lucide/svelte/icons/circle-check";
+	import X from "@lucide/svelte/icons/x";
+	import { toastManager } from "$lib/components/ui/toast";
+
+	function openToast() {
+		const newId = Math.random();
+		//the implementation will change, once https://github.com/wobsoriano/svelte-sonner/pull/126 lands
+		//@ts-expect-error - this is a hack to get the toast id, dont use in production
+		toastManager.add((node) => customToastSnippet(node, () => newId), {
+			id: newId,
+		});
+	}
 </script>
 
 {#snippet customToastSnippet(toastId: string)}

@@ -1,10 +1,11 @@
 <script lang="ts">
-import ArrowRight from '@lucide/svelte/icons/arrow-right';
-import Search from '@lucide/svelte/icons/search';
-import { Input } from '$lib/components/ui/input';
-import { Label } from '$lib/components/ui/label';
+	import { Input } from "$lib/components/ui/input";
+	import { Label } from "$lib/components/ui/label";
 
-const uid = $props.id();
+	import ArrowRight from "@lucide/svelte/icons/arrow-right";
+	import Search from "@lucide/svelte/icons/search";
+
+	const uid = $props.id();
 </script>
 
 <div class="space-y-2">

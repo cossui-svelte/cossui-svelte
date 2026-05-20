@@ -1,6 +1,9 @@
 <script lang="ts">
-import { Label } from '$lib/components/ui/label';
-import { RadioGroup, RadioGroupItem } from '$lib/components/ui/radio-group/index.js';
+	import { Label } from "$lib/components/ui/label";
+	import {
+		RadioGroup,
+		RadioGroupItem,
+	} from "$lib/components/ui/radio-group/index.js";
 </script>
 
 <RadioGroup value="r1">

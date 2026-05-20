@@ -1,13 +1,13 @@
 <script lang="ts">
-import BoldIcon from '@lucide/svelte/icons/bold';
-import ItalicIcon from '@lucide/svelte/icons/italic';
-import UnderlineIcon from '@lucide/svelte/icons/underline';
-import ComponentPreviewTabs from '$lib/components/app/component-preview-tabs.svelte';
-import {
-  ToggleGroup,
-  ToggleGroupItem,
-  ToggleGroupSeparator
-} from '$lib/components/ui/toggle-group';
+    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
+    import BoldIcon from "@lucide/svelte/icons/bold";
+    import ItalicIcon from "@lucide/svelte/icons/italic";
+    import UnderlineIcon from "@lucide/svelte/icons/underline";
+    import {
+        ToggleGroupItem,
+        ToggleGroup,
+        ToggleGroupSeparator,
+    } from "$lib/components/ui/toggle-group";
 </script>
 
 <ComponentPreviewTabs>

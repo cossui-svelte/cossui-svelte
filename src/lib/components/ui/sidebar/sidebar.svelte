@@ -1,29 +1,29 @@
 <script lang="ts">
-import { Dialog } from 'bits-ui';
-import type { Snippet } from 'svelte';
-import type { HTMLAttributes } from 'svelte/elements';
-import { cn } from '$lib/utils.js';
-import Sheet from '../sheet/sheet.svelte';
-import SheetPopup from '../sheet/sheet-popup.svelte';
-import { getSidebarContext } from './sidebar-context.js';
+  import type { Snippet } from "svelte";
+  import type { HTMLAttributes } from "svelte/elements";
+  import { Dialog } from "bits-ui";
+  import Sheet from "../sheet/sheet.svelte";
+  import SheetPopup from "../sheet/sheet-popup.svelte";
+  import { getSidebarContext } from "./sidebar-context.js";
+  import { cn } from "$lib/utils.js";
 
-interface Props extends HTMLAttributes<HTMLDivElement> {
-  side?: 'left' | 'right';
-  variant?: 'sidebar' | 'floating' | 'inset';
-  collapsible?: 'offcanvas' | 'icon' | 'none';
-  children?: Snippet;
-}
+  interface Props extends HTMLAttributes<HTMLDivElement> {
+    side?: "left" | "right";
+    variant?: "sidebar" | "floating" | "inset";
+    collapsible?: "offcanvas" | "icon" | "none";
+    children?: Snippet;
+  }
 
-let {
-  class: className,
-  side = 'left',
-  variant = 'sidebar',
-  collapsible = 'offcanvas',
-  children,
-  ...restProps
-}: Props = $props();
+  let {
+    class: className,
+    side = "left",
+    variant = "sidebar",
+    collapsible = "offcanvas",
+    children,
+    ...restProps
+  }: Props = $props();
 
-const ctx = getSidebarContext();
+  const ctx = getSidebarContext();
 </script>
 
 {#if collapsible === "none"}

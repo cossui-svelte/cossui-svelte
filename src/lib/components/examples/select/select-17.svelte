@@ -1,20 +1,21 @@
 <script lang="ts">
-import Clock from '@lucide/svelte/icons/clock';
-import { Label } from '$lib/components/ui/label';
-import * as Select from '$lib/components/ui/select/index.js';
+	import { Label } from "$lib/components/ui/label";
+	import * as Select from "$lib/components/ui/select/index.js";
 
-const items = [
-  { label: '00:00 AM - 11:59 PM', value: 's1' },
-  { label: '01:00 AM - 12:59 PM', value: 's2' },
-  { label: '02:00 AM - 01:59 PM', value: 's3' },
-  { label: '03:00 AM - 02:59 PM', value: 's4' }
-];
+	import Clock from "@lucide/svelte/icons/clock";
 
-let value = $state('s1');
+	const items = [
+		{ label: "00:00 AM - 11:59 PM", value: "s1" },
+		{ label: "01:00 AM - 12:59 PM", value: "s2" },
+		{ label: "02:00 AM - 01:59 PM", value: "s3" },
+		{ label: "03:00 AM - 02:59 PM", value: "s4" },
+	];
 
-const selected = $derived(items.find((i) => i.value === value));
+	let value = $state("s1");
 
-const uid = $props.id();
+	const selected = $derived(items.find((i) => i.value === value));
+
+	const uid = $props.id();
 </script>
 
 <div class="space-y-2">

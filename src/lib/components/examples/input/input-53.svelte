@@ -1,30 +1,31 @@
 <script lang="ts">
-import Check from '@lucide/svelte/icons/check';
-import Copy from '@lucide/svelte/icons/copy';
-import { Input } from '$lib/components/ui/input';
-import { Label } from '$lib/components/ui/label';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger
-} from '$lib/components/ui/tooltip/index.js';
-import { cn } from '$lib/utils.js';
+	import { Input } from "$lib/components/ui/input";
+	import { Label } from "$lib/components/ui/label";
+	import {
+		Tooltip,
+		TooltipContent,
+		TooltipProvider,
+		TooltipTrigger,
+	} from "$lib/components/ui/tooltip/index.js";
+	import { cn } from "$lib/utils.js";
 
-let copied = $state(false);
-let inputElement = $state<HTMLInputElement | null>(null);
+	import Check from "@lucide/svelte/icons/check";
+	import Copy from "@lucide/svelte/icons/copy";
 
-async function handleCopy() {
-  if (!inputElement) return;
+	let copied = $state(false);
+	let inputElement = $state<HTMLInputElement | null>(null);
 
-  await navigator.clipboard.writeText(inputElement.value);
-  copied = true;
-  setTimeout(() => {
-    copied = false;
-  }, 1500);
-}
+	async function handleCopy() {
+		if (!inputElement) return;
 
-const uid = $props.id();
+		await navigator.clipboard.writeText(inputElement.value);
+		copied = true;
+		setTimeout(() => {
+			copied = false;
+		}, 1500);
+	}
+
+	const uid = $props.id();
 </script>
 
 <div class="space-y-2">

@@ -1,12 +1,12 @@
 <script lang="ts">
-import type { Select as SelectPrimitive } from 'bits-ui';
-import { cn } from '$lib/utils.js';
+	import { cn } from "$lib/utils.js";
+	import { Select as SelectPrimitive } from "bits-ui";
 
-let {
-  class: className,
-  ref = $bindable(null),
-  ...restProps
-}: SelectPrimitive.GroupHeadingProps = $props();
+	let {
+		class: className,
+		ref = $bindable(null),
+		...restProps
+	}: SelectPrimitive.GroupHeadingProps = $props();
 </script>
 
 <SelectPrimitive.GroupHeading

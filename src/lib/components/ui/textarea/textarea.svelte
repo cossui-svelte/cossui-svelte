@@ -1,21 +1,21 @@
 <script lang="ts">
-import type { WithElementRef } from 'bits-ui';
-import type { HTMLTextareaAttributes } from 'svelte/elements';
-import { cn } from '$lib/utils.js';
+  import type { WithElementRef } from "bits-ui";
+  import type { HTMLTextareaAttributes } from "svelte/elements";
+  import { cn } from "$lib/utils.js";
 
-interface Props extends HTMLTextareaAttributes {
-  size?: 'sm' | 'default' | 'lg' | number;
-  unstyled?: boolean;
-}
+  interface Props extends HTMLTextareaAttributes {
+    size?: "sm" | "default" | "lg" | number;
+    unstyled?: boolean;
+  }
 
-let {
-  class: className,
-  ref = $bindable(null),
-  size = 'default',
-  unstyled = false,
-  value = $bindable(),
-  ...restProps
-}: WithElementRef<Props> = $props();
+  let {
+    class: className,
+    ref = $bindable(null),
+    size = "default",
+    unstyled = false,
+    value = $bindable(),
+    ...restProps
+  }: WithElementRef<Props> = $props();
 </script>
 
 <span

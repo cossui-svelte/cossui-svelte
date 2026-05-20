@@ -1,17 +1,17 @@
 <script lang="ts" module>
-export interface NumberFieldContext {
-  readonly fieldId: string;
-  readonly value: number | undefined;
-  readonly min: number | undefined;
-  readonly max: number | undefined;
-  readonly step: number;
-  readonly disabled: boolean;
-  increment(): void;
-  decrement(): void;
-  setValue(v: number): void;
-}
+  export interface NumberFieldContext {
+    readonly fieldId: string;
+    readonly value: number | undefined;
+    readonly min: number | undefined;
+    readonly max: number | undefined;
+    readonly step: number;
+    readonly disabled: boolean;
+    increment(): void;
+    decrement(): void;
+    setValue(v: number): void;
+  }
 
-export const NUMBER_FIELD_CONTEXT_KEY = Symbol.for('cossui:number-field');
+  export const NUMBER_FIELD_CONTEXT_KEY = Symbol.for("cossui:number-field");
 </script>
 
 <script lang="ts">

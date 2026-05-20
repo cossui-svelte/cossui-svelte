@@ -1,15 +1,15 @@
 <script lang="ts">
-import type { WithElementRef } from 'bits-ui';
-import type { HTMLAttributes } from 'svelte/elements';
+	import type { WithElementRef } from 'bits-ui';
+	import type { HTMLAttributes } from 'svelte/elements';
 
-import { cn } from '$lib/utils';
+	import { cn } from '$lib/utils';
 
-let {
-  children,
-  class: className,
-  ref = $bindable(null),
-  ...restProps
-}: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();
+	let {
+		children,
+		class: className,
+		ref = $bindable(null),
+		...restProps
+	}: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();
 </script>
 
 <div

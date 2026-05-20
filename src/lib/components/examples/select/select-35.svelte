@@ -1,21 +1,22 @@
 <script lang="ts">
-import MonitorCog from '@lucide/svelte/icons/monitor-cog';
-import Moon from '@lucide/svelte/icons/moon';
-import Sun from '@lucide/svelte/icons/sun';
-import { Label } from '$lib/components/ui/label';
-import * as Select from '$lib/components/ui/select/index.js';
+	import { Label } from "$lib/components/ui/label";
+	import * as Select from "$lib/components/ui/select/index.js";
 
-const items = [
-  { icon: Sun, label: 'Light', value: 's1' },
-  { icon: Moon, label: 'Dark', value: 's2' },
-  { icon: MonitorCog, label: 'System', value: 's3' }
-];
+	import MonitorCog from "@lucide/svelte/icons/monitor-cog";
+	import Moon from "@lucide/svelte/icons/moon";
+	import Sun from "@lucide/svelte/icons/sun";
 
-let value = $state('s1');
+	const items = [
+		{ icon: Sun, label: "Light", value: "s1" },
+		{ icon: Moon, label: "Dark", value: "s2" },
+		{ icon: MonitorCog, label: "System", value: "s3" },
+	];
 
-const selected = $derived(items.find((i) => i.value === value));
+	let value = $state("s1");
 
-const uid = $props.id();
+	const selected = $derived(items.find((i) => i.value === value));
+
+	const uid = $props.id();
 </script>
 
 {#snippet theme(item: (typeof items)[number])}

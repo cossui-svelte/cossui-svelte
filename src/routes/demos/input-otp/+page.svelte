@@ -1,18 +1,18 @@
 <script lang="ts">
-import ComponentPreviewTabs from '$lib/components/app/component-preview-tabs.svelte';
-import { Label } from '$lib/components/ui/label';
-import {
-  InputOTP,
-  InputOTPGroup,
-  InputOTPSeparator,
-  InputOTPSlot
-} from '$lib/components/ui/otp-field';
+    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
+    import {
+        InputOTP,
+        InputOTPGroup,
+        InputOTPSeparator,
+        InputOTPSlot,
+    } from "$lib/components/ui/otp-field";
+    import { Label } from "$lib/components/ui/label";
 
-let value = $state('');
-let invalid = $state(false);
-const id = 'otp-input';
+    let value = $state("");
+    let invalid = $state(false);
+    const id = "otp-input";
 
-const valid = $derived(value.length === 6 && value === '123456');
+    const valid = $derived(value.length === 6 && value === "123456");
 </script>
 
 <ComponentPreviewTabs>

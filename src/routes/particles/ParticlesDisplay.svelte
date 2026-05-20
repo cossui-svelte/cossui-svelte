@@ -1,45 +1,45 @@
 <script lang="ts">
-import { Skeleton } from '$lib/components/ui/skeleton';
-import type { RegistryCategory } from '$lib/registry/registry-categories.js';
-import { getCategorySortOrder } from '$lib/registry/registry-categories.js';
-import { particles } from '$lib/registry/registry-particles.js';
-import ParticleCard from './ParticleCard.svelte';
-import ParticleCardContainer from './ParticleCardContainer.svelte';
+	import { Skeleton } from '$lib/components/ui/skeleton';
+	import { particles } from '$lib/registry/registry-particles.js';
+	import { getCategorySortOrder } from '$lib/registry/registry-categories.js';
+	import type { RegistryCategory } from '$lib/registry/registry-categories.js';
+	import ParticleCard from './ParticleCard.svelte';
+	import ParticleCardContainer from './ParticleCardContainer.svelte';
 
-interface Props {
-  selectedCategories: RegistryCategory[];
-}
+	interface Props {
+		selectedCategories: RegistryCategory[];
+	}
 
-let { selectedCategories }: Props = $props();
+	let { selectedCategories }: Props = $props();
 
-function calculateRelevanceWeight(
-  particle: (typeof particles)[number],
-  searchTerms: RegistryCategory[]
-): number {
-  let weight = 0;
-  for (const term of searchTerms) {
-    const normalizedTerm = term.replace(/\s+/g, '-');
-    if (particle.name.startsWith(`p-${normalizedTerm}-`)) weight += 30;
-    const deps = particle.registryDependencies ?? [];
-    if (deps.some((dep) => dep === `@coss/${normalizedTerm}`)) weight += 20;
-    const cats = particle.categories ?? [];
-    if (cats[0] === term) weight += 10;
-  }
-  return weight;
-}
+	function calculateRelevanceWeight(
+		particle: (typeof particles)[number],
+		searchTerms: RegistryCategory[]
+	): number {
+		let weight = 0;
+		for (const term of searchTerms) {
+			const normalizedTerm = term.replace(/\s+/g, '-');
+			if (particle.name.startsWith(`p-${normalizedTerm}-`)) weight += 30;
+			const deps = particle.registryDependencies ?? [];
+			if (deps.some((dep) => dep === `@coss/${normalizedTerm}`)) weight += 20;
+			const cats = particle.categories ?? [];
+			if (cats[0] === term) weight += 10;
+		}
+		return weight;
+	}
 
-const filteredParticles = $derived(
-  particles
-    .filter((p) => {
-      const cats = p.categories ?? [];
-      return selectedCategories.every((v) => cats.includes(v));
-    })
-    .sort((a, b) => {
-      const wA = calculateRelevanceWeight(a, selectedCategories);
-      const wB = calculateRelevanceWeight(b, selectedCategories);
-      return wB - wA;
-    })
-);
+	const filteredParticles = $derived(
+		particles
+			.filter((p) => {
+				const cats = p.categories ?? [];
+				return selectedCategories.every((v) => cats.includes(v));
+			})
+			.sort((a, b) => {
+				const wA = calculateRelevanceWeight(a, selectedCategories);
+				const wB = calculateRelevanceWeight(b, selectedCategories);
+				return wB - wA;
+			})
+	);
 </script>
 
 {#if filteredParticles.length === 0}

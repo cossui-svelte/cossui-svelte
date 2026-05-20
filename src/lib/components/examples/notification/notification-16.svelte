@@ -1,7 +1,8 @@
 <script lang="ts">
-import RefreshCw from '@lucide/svelte/icons/refresh-cw';
-import X from '@lucide/svelte/icons/x';
-import { Button } from '$lib/components/ui/button';
+	import { Button } from "$lib/components/ui/button";
+
+	import RefreshCw from "@lucide/svelte/icons/refresh-cw";
+	import X from "@lucide/svelte/icons/x";
 </script>
 
 <!-- To make the notification fixed, add classes like `fixed bottom-4 right-4` to the container element. -->

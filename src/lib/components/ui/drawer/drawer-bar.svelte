@@ -1,21 +1,21 @@
 <script lang="ts">
-import type { Snippet } from 'svelte';
-import { getContext } from 'svelte';
-import type { HTMLAttributes } from 'svelte/elements';
-import { cn } from '$lib/utils.js';
+  import type { HTMLAttributes } from "svelte/elements";
+  import type { Snippet } from "svelte";
+  import { getContext } from "svelte";
+  import { cn } from "$lib/utils.js";
 
-type DrawerPosition = 'right' | 'left' | 'top' | 'bottom';
+  type DrawerPosition = "right" | "left" | "top" | "bottom";
 
-interface Props extends HTMLAttributes<HTMLDivElement> {
-  position?: DrawerPosition;
-  children?: Snippet;
-}
+  interface Props extends HTMLAttributes<HTMLDivElement> {
+    position?: DrawerPosition;
+    children?: Snippet;
+  }
 
-let { class: className, position: positionProp, children, ...restProps }: Props = $props();
+  let { class: className, position: positionProp, children, ...restProps }: Props = $props();
 
-const ctx = getContext<{ position: () => DrawerPosition } | undefined>('drawer-position');
-const position = $derived(positionProp ?? ctx?.position() ?? 'bottom');
-const horizontal = $derived(position === 'left' || position === 'right');
+  const ctx = getContext<{ position: () => DrawerPosition } | undefined>("drawer-position");
+  const position = $derived(positionProp ?? ctx?.position() ?? "bottom");
+  const horizontal = $derived(position === "left" || position === "right");
 </script>
 
 <div

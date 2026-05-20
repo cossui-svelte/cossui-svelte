@@ -1,13 +1,13 @@
 <script lang="ts">
-import type { Snippet } from 'svelte';
-import type { HTMLAttributes } from 'svelte/elements';
+  import type { Snippet } from "svelte";
+  import type { HTMLAttributes } from "svelte/elements";
 
-interface Props extends HTMLAttributes<HTMLElement> {
-  children?: Snippet;
-  class?: string;
-}
+  interface Props extends HTMLAttributes<HTMLElement> {
+    children?: Snippet;
+    class?: string;
+  }
 
-let { class: className, children, ...restProps }: Props = $props();
+  let { class: className, children, ...restProps }: Props = $props();
 </script>
 
 <section class={className} {...restProps}>

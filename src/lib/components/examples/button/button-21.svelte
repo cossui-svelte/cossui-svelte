@@ -1,12 +1,13 @@
 <script lang="ts">
-import Plus from '@lucide/svelte/icons/plus';
-import { Button } from '$lib/components/ui/button';
+	import { Button } from "$lib/components/ui/button";
 
-let open = $state(false);
+	import Plus from "@lucide/svelte/icons/plus";
 
-function toggleOpen() {
-  open = !open;
-}
+	let open = $state(false);
+
+	function toggleOpen() {
+		open = !open;
+	}
 </script>
 
 <Button

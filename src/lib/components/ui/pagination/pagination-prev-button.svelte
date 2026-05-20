@@ -1,13 +1,16 @@
 <script lang="ts">
-import ChevronLeft from '@lucide/svelte/icons/chevron-left';
-import { cn } from '$lib/utils.js';
-import PaginationLink, { type Props as PaginationLinkProps } from './pagination-link.svelte';
+	import PaginationLink, {
+		type Props as PaginationLinkProps,
+	} from "./pagination-link.svelte";
+	import { cn } from "$lib/utils.js";
 
-let {
-  class: className,
-  ref = $bindable(null),
-  ...restProps
-}: Omit<PaginationLinkProps, 'children'> = $props();
+	import ChevronLeft from "@lucide/svelte/icons/chevron-left";
+
+	let {
+		class: className,
+		ref = $bindable(null),
+		...restProps
+	}: Omit<PaginationLinkProps, "children"> = $props();
 </script>
 
 <PaginationLink

@@ -1,12 +1,12 @@
 <script lang="ts">
-let { data } = $props();
+    let { data } = $props();
 
-function formatName(folder: string): string {
-  return folder
-    .split('-')
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
-}
+    function formatName(folder: string): string {
+        return folder
+            .split("-")
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(" ");
+    }
 </script>
 
 <div class="min-h-screen bg-background px-6 py-12">

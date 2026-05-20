@@ -1,8 +1,12 @@
 <script lang="ts">
-import type { Accordion } from 'bits-ui';
-import { cn } from '$lib/utils.js';
+  import { Accordion } from "bits-ui";
+  import { cn } from "$lib/utils.js";
 
-let { ref = $bindable(null), class: className, ...restProps }: Accordion.ItemProps = $props();
+  let {
+    ref = $bindable(null),
+    class: className,
+    ...restProps
+  }: Accordion.ItemProps = $props();
 </script>
 
 <Accordion.Item

@@ -1,20 +1,20 @@
 <script lang="ts">
-import { setContext } from 'svelte';
-import type { Drawer as DrawerPrimitive } from '$lib/vaul';
+	import { Drawer as DrawerPrimitive } from "$lib/vaul";
+	import { setContext } from "svelte";
 
-type Position = 'top' | 'bottom' | 'left' | 'right';
+	type Position = "top" | "bottom" | "left" | "right";
 
-let {
-  shouldScaleBackground = true,
-  open = $bindable(false),
-  activeSnapPoint = $bindable(null),
-  position = 'bottom' as Position,
-  ...restProps
-}: Omit<DrawerPrimitive.RootProps, 'direction'> & {
-  position?: Position;
-} = $props();
+	let {
+		shouldScaleBackground = true,
+		open = $bindable(false),
+		activeSnapPoint = $bindable(null),
+		position = "bottom" as Position,
+		...restProps
+	}: Omit<DrawerPrimitive.RootProps, "direction"> & {
+		position?: Position;
+	} = $props();
 
-setContext('drawer-position', { position: () => position });
+	setContext("drawer-position", { position: () => position });
 </script>
 
 <DrawerPrimitive.Root

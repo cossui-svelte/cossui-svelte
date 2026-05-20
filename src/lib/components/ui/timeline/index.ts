@@ -2,7 +2,7 @@
 
 import Timeline from './timeline.svelte';
 import Content from './timeline-content.svelte';
-import DatT from './timeline-date.svelte';
+import Date from './timeline-date.svelte';
 import Header from './timeline-header.svelte';
 import Indicator from './timeline-indicator.svelte';
 import Item from './timeline-item.svelte';
@@ -13,8 +13,8 @@ export {
   Content,
   //
   Content as TimelineContent,
-  DatT as Date,
-  DatT as TimelineDate,
+  Date,
+  Date as TimelineDate,
   Header,
   Header as TimelineHeader,
   Indicator,

@@ -1,15 +1,17 @@
 <script lang="ts">
-import Link from '@lucide/svelte/icons/square-arrow-out-up-right';
-import type { ComponentProps } from 'svelte';
-import { Button } from '$lib/components/ui/button';
-import type * as Tooltip from '$lib/components/ui/tooltip/index.js';
+	import type { ComponentProps } from "svelte";
 
-type Props = ComponentProps<typeof Tooltip.TooltipTrigger> & {
-  description: string;
-  href: string;
-};
+	import { Button } from "$lib/components/ui/button";
+	import * as Tooltip from "$lib/components/ui/tooltip/index.js";
 
-let { description, href, ...restProps }: Props = $props();
+	import Link from "@lucide/svelte/icons/square-arrow-out-up-right";
+
+	type Props = ComponentProps<typeof Tooltip.TooltipTrigger> & {
+		description: string;
+		href: string;
+	};
+
+	let { description, href, ...restProps }: Props = $props();
 </script>
 
 <Tooltip.TooltipProvider>

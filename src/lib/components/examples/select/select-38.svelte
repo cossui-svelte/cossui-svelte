@@ -1,22 +1,23 @@
 <script lang="ts">
-import Avatar01 from '$lib/assets/avatar-40-01.jpg?w=40&h=40&enhanced';
-import Avatar02 from '$lib/assets/avatar-40-02.jpg?w=40&h=40&enhanced';
-import Avatar03 from '$lib/assets/avatar-40-03.jpg?w=40&h=40&enhanced';
-import { Label } from '$lib/components/ui/label';
-import * as Select from '$lib/components/ui/select/index.js';
-import { cn } from '$lib/utils.js';
+	import { Label } from "$lib/components/ui/label";
+	import * as Select from "$lib/components/ui/select/index.js";
+	import { cn } from "$lib/utils.js";
 
-const items = [
-  { avatar: Avatar01, name: 'Jenny Hamilton', value: 's1' },
-  { avatar: Avatar02, name: 'Paul Smith', value: 's2' },
-  { avatar: Avatar03, name: 'Luna Wyen', value: 's3' }
-] as const;
+	import Avatar01 from "$lib/assets/avatar-40-01.jpg?w=40&h=40&enhanced";
+	import Avatar02 from "$lib/assets/avatar-40-02.jpg?w=40&h=40&enhanced";
+	import Avatar03 from "$lib/assets/avatar-40-03.jpg?w=40&h=40&enhanced";
 
-let value = $state('s1');
+	const items = [
+		{ avatar: Avatar01, name: "Jenny Hamilton", value: "s1" },
+		{ avatar: Avatar02, name: "Paul Smith", value: "s2" },
+		{ avatar: Avatar03, name: "Luna Wyen", value: "s3" },
+	] as const;
 
-const selected = $derived(items.find((i) => i.value === value));
+	let value = $state("s1");
 
-const uid = $props.id();
+	const selected = $derived(items.find((i) => i.value === value));
+
+	const uid = $props.id();
 </script>
 
 {#snippet user(item: (typeof items)[number])}

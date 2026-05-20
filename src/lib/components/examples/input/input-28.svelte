@@ -1,32 +1,33 @@
 <script lang="ts">
-import Minus from '@lucide/svelte/icons/minus';
-import Plus from '@lucide/svelte/icons/plus';
-import { Label } from '$lib/components/ui/label';
+	import { Label } from "$lib/components/ui/label";
 
-let value = $state(2048);
-const minValue = 0;
+	import Minus from "@lucide/svelte/icons/minus";
+	import Plus from "@lucide/svelte/icons/plus";
 
-function increment() {
-  value++;
-}
+	let value = $state(2048);
+	const minValue = 0;
 
-function decrement() {
-  if (value > minValue) {
-    value--;
-  }
-}
+	function increment() {
+		value++;
+	}
 
-function handleInput(event: Event) {
-  const input = event.target as HTMLInputElement;
-  const newValue = Number.parseInt(input.value, 10);
-  if (!Number.isNaN(newValue) && newValue >= minValue) {
-    value = newValue;
-  } else {
-    input.value = value.toString();
-  }
-}
+	function decrement() {
+		if (value > minValue) {
+			value--;
+		}
+	}
 
-const uid = $props.id();
+	function handleInput(event: Event) {
+		const input = event.target as HTMLInputElement;
+		const newValue = Number.parseInt(input.value, 10);
+		if (!Number.isNaN(newValue) && newValue >= minValue) {
+			value = newValue;
+		} else {
+			input.value = value.toString();
+		}
+	}
+
+	const uid = $props.id();
 </script>
 
 <div class="space-y-2">

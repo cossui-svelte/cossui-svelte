@@ -1,11 +1,11 @@
 <script lang="ts">
-import type { Collapsible } from 'bits-ui';
-import type { Snippet } from 'svelte';
-import { cn } from '$lib/utils.js';
+  import type { Snippet } from "svelte";
+  import { Collapsible } from "bits-ui";
+  import { cn } from "$lib/utils.js";
 
-type Props = Collapsible.TriggerProps & { children?: Snippet };
+  type Props = Collapsible.TriggerProps & { children?: Snippet };
 
-let { class: className, children, ...restProps }: Props = $props();
+  let { class: className, children, ...restProps }: Props = $props();
 </script>
 
 <Collapsible.Trigger

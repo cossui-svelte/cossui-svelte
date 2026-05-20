@@ -1,6 +1,7 @@
 <script lang="ts">
-import LoaderCircle from '@lucide/svelte/icons/loader-circle';
-import { Button } from '$lib/components/ui/button';
+	import { Button } from "$lib/components/ui/button";
+
+	import LoaderCircle from "@lucide/svelte/icons/loader-circle";
 </script>
 
 <Button disabled>

@@ -1,189 +1,190 @@
 <script lang="ts">
-import Atom from '@lucide/svelte/icons/atom';
-import BookOpen from '@lucide/svelte/icons/book-open';
-import CornerDownLeft from '@lucide/svelte/icons/corner-down-left';
-import Search from '@lucide/svelte/icons/search';
-import { buttonVariants } from '$lib/components/ui/button';
-import {
-  Dialog,
-  DialogContent,
-  DialogOverlay,
-  DialogPortal,
-  DialogTrigger
-} from '$lib/components/ui/dialog';
-import { Kbd, KbdGroup } from '$lib/components/ui/kbd';
-import { useIsMac } from '$lib/hooks/use-is-mac.svelte';
-import { cn } from '$lib/utils.js';
+  import { cn } from "$lib/utils.js";
+  import {
+    Dialog,
+    DialogContent,
+    DialogOverlay,
+    DialogPortal,
+    DialogTrigger,
+  } from "$lib/components/ui/dialog";
+  import Search from "@lucide/svelte/icons/search";
+import CornerDownLeft from "@lucide/svelte/icons/corner-down-left";
+import Atom from "@lucide/svelte/icons/atom";
+import BookOpen from "@lucide/svelte/icons/book-open";
+  import { buttonVariants } from "$lib/components/ui/button";
+  import { Kbd, KbdGroup } from "$lib/components/ui/kbd";
+  import { useIsMac } from "$lib/hooks/use-is-mac.svelte";
 
-interface PageItem {
-  value: string;
-  label: string;
-  url: string;
-  isComponent: boolean;
-  keywords?: string[];
-}
+  interface PageItem {
+    value: string;
+    label: string;
+    url: string;
+    isComponent: boolean;
+    keywords?: string[];
+  }
 
-interface PageGroup {
-  value: string;
-  items: PageItem[];
-}
+  interface PageGroup {
+    value: string;
+    items: PageItem[];
+  }
 
-interface PageNode {
-  type: 'page';
-  name: string | unknown;
-  url: string;
-}
+  interface PageNode {
+    type: "page";
+    name: string | unknown;
+    url: string;
+  }
 
-interface FolderNode {
-  type: 'folder';
-  name: string | unknown;
-  children: (PageNode | FolderNode)[];
-}
+  interface FolderNode {
+    type: "folder";
+    name: string | unknown;
+    children: (PageNode | FolderNode)[];
+  }
 
-interface NavTree {
-  children: (PageNode | FolderNode)[];
-}
+  interface NavTree {
+    children: (PageNode | FolderNode)[];
+  }
 
-interface Props {
-  tree?: NavTree;
-  navItems?: { href: string; label: string }[];
-  packageManager?: 'pnpm' | 'npm' | 'yarn' | 'bun';
-}
+  interface Props {
+    tree?: NavTree;
+    navItems?: { href: string; label: string }[];
+    packageManager?: "pnpm" | "npm" | "yarn" | "bun";
+  }
 
-let { tree, navItems, packageManager = 'pnpm' }: Props = $props();
+  let { tree, navItems, packageManager = "pnpm" }: Props = $props();
 
-let open = $state(false);
-let query = $state('');
-let selectedType = $state<'page' | 'component' | null>(null);
-let copyPayload = $state('');
+  let open = $state(false);
+  let query = $state("");
+  let selectedType = $state<"page" | "component" | null>(null);
+  let copyPayload = $state("");
 
-// Detect macOS
-let isMac = useIsMac();
+  // Detect macOS
+  let isMac = useIsMac();
 
-// Build grouped items from tree
-const groupedItems = $derived<PageGroup[]>(
-  (() => {
-    const groups: PageGroup[] = [];
+  // Build grouped items from tree
+  const groupedItems = $derived<PageGroup[]>(
+    (() => {
+      const groups: PageGroup[] = [];
 
-    if (navItems && navItems.length > 0) {
-      groups.push({
-        items: navItems.map((item) => ({
-          isComponent: false,
-          keywords: ['nav', 'navigation', item.label.toLowerCase()],
-          label: item.label,
-          url: item.href,
-          value: `Navigation ${item.label}`
-        })),
-        value: 'Pages'
-      });
-    }
+      if (navItems && navItems.length > 0) {
+        groups.push({
+          items: navItems.map((item) => ({
+            isComponent: false,
+            keywords: ["nav", "navigation", item.label.toLowerCase()],
+            label: item.label,
+            url: item.href,
+            value: `Navigation ${item.label}`,
+          })),
+          value: "Pages",
+        });
+      }
 
-    if (tree) {
-      tree.children.forEach((group) => {
-        if (group.type === 'folder') {
-          const items: PageItem[] = [];
-          group.children.forEach((item) => {
-            if (item.type === 'page') {
-              const isComponent = item.url.includes('/components/');
-              const itemName = String(item.name ?? '');
-              items.push({
-                isComponent,
-                keywords: isComponent ? ['component'] : undefined,
-                label: itemName,
-                url: item.url,
-                value: itemName ? `${String(group.name)} ${itemName}` : ''
-              });
+      if (tree) {
+        tree.children.forEach((group) => {
+          if (group.type === "folder") {
+            const items: PageItem[] = [];
+            group.children.forEach((item) => {
+              if (item.type === "page") {
+                const isComponent = item.url.includes("/components/");
+                const itemName = String(item.name ?? "");
+                items.push({
+                  isComponent,
+                  keywords: isComponent ? ["component"] : undefined,
+                  label: itemName,
+                  url: item.url,
+                  value: itemName ? `${String(group.name)} ${itemName}` : "",
+                });
+              }
+            });
+            if (items.length > 0) {
+              groups.push({ items, value: String(group.name) });
             }
-          });
-          if (items.length > 0) {
-            groups.push({ items, value: String(group.name) });
           }
+        });
+      }
+
+      return groups;
+    })(),
+  );
+
+  // Filter items based on search query
+  const filteredGroups = $derived<PageGroup[]>(
+    (() => {
+      if (!query.trim()) return groupedItems;
+      const q = query.toLowerCase();
+      return groupedItems
+        .map((group) => ({
+          ...group,
+          items: group.items.filter(
+            (item) =>
+              item.label.toLowerCase().includes(q) ||
+              item.keywords?.some((k) => k.includes(q)),
+          ),
+        }))
+        .filter((group) => group.items.length > 0);
+    })(),
+  );
+
+  function handleItemHighlight(item: PageItem) {
+    if (item.isComponent) {
+      const componentName = item.url.split("/").pop();
+      selectedType = "component";
+      const registryItem = `@coss/${componentName}`;
+      let cmd: string;
+      switch (packageManager) {
+        case "pnpm":
+          cmd = `pnpm dlx shadcn@latest add ${registryItem}`;
+          break;
+        case "bun":
+          cmd = `bunx --bun shadcn@latest add ${registryItem}`;
+          break;
+        case "yarn":
+          cmd = `yarn dlx shadcn@latest add ${registryItem}`;
+          break;
+        default:
+          cmd = `npx shadcn@latest add ${registryItem}`;
+      }
+      copyPayload = cmd;
+    } else {
+      selectedType = "page";
+      copyPayload = "";
+    }
+  }
+
+  async function copyPayloadToClipboard() {
+    if (copyPayload) {
+      try {
+        await navigator.clipboard.writeText(copyPayload);
+      } catch (err) {
+        console.error("Failed to copy:", err);
+      }
+    }
+  }
+
+  $effect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if ((e.key === "k" && (e.metaKey || e.ctrlKey)) || e.key === "/") {
+        if (
+          (e.target instanceof HTMLElement && e.target.isContentEditable) ||
+          e.target instanceof HTMLInputElement ||
+          e.target instanceof HTMLTextAreaElement ||
+          e.target instanceof HTMLSelectElement
+        ) {
+          return;
         }
-      });
-    }
-
-    return groups;
-  })()
-);
-
-// Filter items based on search query
-const filteredGroups = $derived<PageGroup[]>(
-  (() => {
-    if (!query.trim()) return groupedItems;
-    const q = query.toLowerCase();
-    return groupedItems
-      .map((group) => ({
-        ...group,
-        items: group.items.filter(
-          (item) =>
-            item.label.toLowerCase().includes(q) || item.keywords?.some((k) => k.includes(q))
-        )
-      }))
-      .filter((group) => group.items.length > 0);
-  })()
-);
-
-function handleItemHighlight(item: PageItem) {
-  if (item.isComponent) {
-    const componentName = item.url.split('/').pop();
-    selectedType = 'component';
-    const registryItem = `@coss/${componentName}`;
-    let cmd: string;
-    switch (packageManager) {
-      case 'pnpm':
-        cmd = `pnpm dlx shadcn@latest add ${registryItem}`;
-        break;
-      case 'bun':
-        cmd = `bunx --bun shadcn@latest add ${registryItem}`;
-        break;
-      case 'yarn':
-        cmd = `yarn dlx shadcn@latest add ${registryItem}`;
-        break;
-      default:
-        cmd = `npx shadcn@latest add ${registryItem}`;
-    }
-    copyPayload = cmd;
-  } else {
-    selectedType = 'page';
-    copyPayload = '';
-  }
-}
-
-async function copyPayloadToClipboard() {
-  if (copyPayload) {
-    try {
-      await navigator.clipboard.writeText(copyPayload);
-    } catch (err) {
-      console.error('Failed to copy:', err);
-    }
-  }
-}
-
-$effect(() => {
-  function handleKeyDown(e: KeyboardEvent) {
-    if ((e.key === 'k' && (e.metaKey || e.ctrlKey)) || e.key === '/') {
-      if (
-        (e.target instanceof HTMLElement && e.target.isContentEditable) ||
-        e.target instanceof HTMLInputElement ||
-        e.target instanceof HTMLTextAreaElement ||
-        e.target instanceof HTMLSelectElement
-      ) {
-        return;
+        e.preventDefault();
+        open = !open;
       }
-      e.preventDefault();
-      open = !open;
-    }
 
-    if (e.key === 'c' && (e.metaKey || e.ctrlKey) && open) {
-      if (selectedType === 'page' || selectedType === 'component') {
-        copyPayloadToClipboard();
+      if (e.key === "c" && (e.metaKey || e.ctrlKey) && open) {
+        if (selectedType === "page" || selectedType === "component") {
+          copyPayloadToClipboard();
+        }
       }
     }
-  }
 
-  document.addEventListener('keydown', handleKeyDown);
-  return () => document.removeEventListener('keydown', handleKeyDown);
-});
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  });
 </script>
 
 <!-- Trigger button -->

@@ -1,13 +1,13 @@
 <script lang="ts">
-import type { WithElementRef } from 'bits-ui';
-import type { HTMLAttributes } from 'svelte/elements';
+	import type { WithElementRef } from 'bits-ui';
+	import type { HTMLAttributes } from 'svelte/elements';
 
-import { cn } from '$lib/utils';
+	import { cn } from '$lib/utils';
 
-type PageHeaderProps = WithElementRef<HTMLAttributes<HTMLDivElement>> & {
-  title: string;
-};
-let { children, ref = $bindable(null), title, ...restProps }: PageHeaderProps = $props();
+	type PageHeaderProps = WithElementRef<HTMLAttributes<HTMLDivElement>> & {
+		title: string;
+	};
+	let { children, ref = $bindable(null), title, ...restProps }: PageHeaderProps = $props();
 </script>
 
 <div bind:this={ref} class={cn('mb-16 text-center', restProps.class)}>

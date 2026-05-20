@@ -1,19 +1,19 @@
 <script lang="ts">
-import { Collapsible } from 'bits-ui';
-import type { Snippet } from 'svelte';
-import { buttonVariants } from '$lib/components/ui/button';
-import CollapsiblePanel from '$lib/components/ui/collapsible/collapsible-panel.svelte';
-import { Separator } from '$lib/components/ui/separator';
-import { cn } from '$lib/utils.js';
+  import type { Snippet } from "svelte";
+  import { Collapsible } from "bits-ui";
+  import { cn } from "$lib/utils.js";
+  import { buttonVariants } from "$lib/components/ui/button";
+  import CollapsiblePanel from "$lib/components/ui/collapsible/collapsible-panel.svelte";
+  import { Separator } from "$lib/components/ui/separator";
 
-interface Props {
-  class?: string;
-  children?: Snippet;
-}
+  interface Props {
+    class?: string;
+    children?: Snippet;
+  }
 
-let { class: className, children }: Props = $props();
+  let { class: className, children }: Props = $props();
 
-let isOpened = $state(false);
+  let isOpened = $state(false);
 </script>
 
 <Collapsible.Root

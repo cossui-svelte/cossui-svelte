@@ -1,23 +1,24 @@
 <script lang="ts">
-import Minus from '@lucide/svelte/icons/minus';
-import Plus from '@lucide/svelte/icons/plus';
-import { Button } from '$lib/components/ui/button';
-import { Label } from '$lib/components/ui/label';
-import { Slider } from '$lib/components/ui/slider';
+	import { Button } from "$lib/components/ui/button";
+	import { Label } from "$lib/components/ui/label";
+	import { Slider } from "$lib/components/ui/slider";
 
-const min = 0;
-const max = 200;
-const steps = 5;
+	import Minus from "@lucide/svelte/icons/minus";
+	import Plus from "@lucide/svelte/icons/plus";
 
-let value = $state(100);
+	const min = 0;
+	const max = 200;
+	const steps = 5;
 
-function decrement() {
-  value -= steps;
-}
+	let value = $state(100);
 
-function increment() {
-  value += steps;
-}
+	function decrement() {
+		value -= steps;
+	}
+
+	function increment() {
+		value += steps;
+	}
 </script>
 
 <div class="space-y-3">

@@ -1,34 +1,34 @@
 <script lang="ts">
-import CategoryThumbnail from '$lib/components/app/category-thumbnails.svelte';
-import PageHeader from '$lib/components/shared-components/page-header.svelte';
-import PageHeaderDescription from '$lib/components/shared-components/page-header-description.svelte';
-import PageHeaderHeading from '$lib/components/shared-components/page-header-heading.svelte';
-import SiteFooter from '$lib/components/shared-components/site-footer.svelte';
+  import PageHeaderDescription from "$lib/components/shared-components/page-header-description.svelte";
+  import PageHeaderHeading from "$lib/components/shared-components/page-header-heading.svelte";
+  import PageHeader from "$lib/components/shared-components/page-header.svelte";
+  import SiteFooter from "$lib/components/shared-components/site-footer.svelte";
+  import CategoryThumbnail from "$lib/components/app/category-thumbnails.svelte";
 
-import { Badge } from '$lib/components/ui/badge';
-import { Button } from '$lib/components/ui/button';
-import {
-  Card,
-  CardFrame,
-  CardFrameDescription,
-  CardFrameHeader,
-  CardFrameTitle,
-  CardPanel
-} from '$lib/components/ui/card';
+  import { Badge } from "$lib/components/ui/badge";
+  import { Button } from "$lib/components/ui/button";
+  import {
+    Card,
+    CardFrame,
+    CardFrameDescription,
+    CardFrameHeader,
+    CardFrameTitle,
+    CardPanel,
+  } from "$lib/components/ui/card";
 
-type Category = {
-  slug: string;
-  name: string;
-  description?: string;
-};
+  type Category = {
+    slug: string;
+    name: string;
+    description?: string;
+  };
 
-let { data } = $props();
+  let { data } = $props();
 
-const description = 'Built for developers and AI.';
+  const description = "Built for developers and AI.";
 
-// TODO - get this from .. somewhere. the list of new components - will add a New badge
-const PAGES_NEW: string[] = [];
-const particleCount = 0;
+  // TODO - get this from .. somewhere. the list of new components - will add a New badge
+  const PAGES_NEW: string[] = [];
+  const particleCount = 0;
 </script>
 
 <svelte:head>

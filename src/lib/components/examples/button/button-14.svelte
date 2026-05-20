@@ -1,16 +1,17 @@
 <script lang="ts">
-import LoaderCircle from '@lucide/svelte/icons/loader-circle';
-import { Button } from '$lib/components/ui/button';
+	import { Button } from "$lib/components/ui/button";
 
-let isLoading = $state(false);
+	import LoaderCircle from "@lucide/svelte/icons/loader-circle";
 
-function handleClick() {
-  isLoading = true;
-  // Simulate an async operation
-  setTimeout(() => {
-    isLoading = false;
-  }, 1000); // Reset after 1 second
-}
+	let isLoading = $state(false);
+
+	function handleClick() {
+		isLoading = true;
+		// Simulate an async operation
+		setTimeout(() => {
+			isLoading = false;
+		}, 1000); // Reset after 1 second
+	}
 </script>
 
 <Button

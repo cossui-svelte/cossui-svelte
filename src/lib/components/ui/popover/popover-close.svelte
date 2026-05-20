@@ -1,10 +1,10 @@
 <script lang="ts">
-import type { Popover } from 'bits-ui';
-import type { Snippet } from 'svelte';
+  import type { Snippet } from "svelte";
+  import { Popover } from "bits-ui";
 
-type Props = Popover.CloseProps & { children?: Snippet };
+  type Props = Popover.CloseProps & { children?: Snippet };
 
-let { children, ...restProps }: Props = $props();
+  let { children, ...restProps }: Props = $props();
 </script>
 
 <Popover.Close data-slot="popover-close" {...restProps}>

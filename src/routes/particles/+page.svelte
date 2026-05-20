@@ -1,22 +1,22 @@
 <script lang="ts">
-import { page } from '$app/state';
-import PageHeader from '$lib/components/shared-components/page-header.svelte';
-import PageHeaderDescription from '$lib/components/shared-components/page-header-description.svelte';
-import PageHeaderHeading from '$lib/components/shared-components/page-header-heading.svelte';
-import { isValidRegistryCategory } from '$lib/registry/registry-categories.js';
-import { particles } from '$lib/registry/registry-particles.js';
-import ParticlesDisplay from './ParticlesDisplay.svelte';
-import SearchContainer from './SearchContainer.svelte';
+	import { page } from '$app/state';
+	import PageHeader from '$lib/components/shared-components/page-header.svelte';
+	import PageHeaderHeading from '$lib/components/shared-components/page-header-heading.svelte';
+	import PageHeaderDescription from '$lib/components/shared-components/page-header-description.svelte';
+	import { particles } from '$lib/registry/registry-particles.js';
+	import { isValidRegistryCategory } from '$lib/registry/registry-categories.js';
+	import SearchContainer from './SearchContainer.svelte';
+	import ParticlesDisplay from './ParticlesDisplay.svelte';
 
-const particleCount = particles.length;
-const description = `Discover ${particleCount} ready-to-use particles, the building blocks of your design system. Filter by category to find the perfect component for your project.`;
+	const particleCount = particles.length;
+	const description = `Discover ${particleCount} ready-to-use particles, the building blocks of your design system. Filter by category to find the perfect component for your project.`;
 
-const selectedCategories = $derived(() => {
-  const rawCategories = page.url.searchParams.get('tags')?.split(',').filter(Boolean) ?? [];
-  const validCategories = rawCategories.filter(isValidRegistryCategory);
-  const hasInvalid = rawCategories.some((c) => !isValidRegistryCategory(c));
-  return { hasInvalid, valid: validCategories };
-});
+	const selectedCategories = $derived(() => {
+		const rawCategories = page.url.searchParams.get('tags')?.split(',').filter(Boolean) ?? [];
+		const validCategories = rawCategories.filter(isValidRegistryCategory);
+		const hasInvalid = rawCategories.some((c) => !isValidRegistryCategory(c));
+		return { valid: validCategories, hasInvalid };
+	});
 </script>
 
 <svelte:head>

@@ -1,10 +1,10 @@
 <script lang="ts">
-import ArrowRight from '@lucide/svelte/icons/arrow-right';
-import Eclipse from '@lucide/svelte/icons/eclipse';
-import X from '@lucide/svelte/icons/x';
-import { Button } from '$lib/components/ui/button';
+	import { Button } from "$lib/components/ui/button";
+	import ArrowRight from "@lucide/svelte/icons/arrow-right";
+	import Eclipse from "@lucide/svelte/icons/eclipse";
+	import X from "@lucide/svelte/icons/x";
 
-let visible = $state(true);
+	let visible = $state(true);
 </script>
 
 {#if visible}

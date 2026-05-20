@@ -1,8 +1,12 @@
 <script lang="ts">
-import type { WithElementRef } from 'bits-ui';
-import type { HTMLLiAttributes } from 'svelte/elements';
+	import type { WithElementRef } from "bits-ui";
+	import type { HTMLLiAttributes } from "svelte/elements";
 
-let { children, ref = $bindable(null), ...restProps }: WithElementRef<HTMLLiAttributes> = $props();
+	let {
+		children,
+		ref = $bindable(null),
+		...restProps
+	}: WithElementRef<HTMLLiAttributes> = $props();
 </script>
 
 <li bind:this={ref} data-slot="pagination-item" {...restProps}>

@@ -1,15 +1,20 @@
 <script lang="ts">
-import ChevronsUpDown from '@lucide/svelte/icons/chevrons-up-down';
-import type { Combobox } from 'bits-ui';
-import type { Snippet } from 'svelte';
-import { cn } from '$lib/utils.js';
+  import type { Snippet } from "svelte";
+  import { Combobox } from "bits-ui";
+  import ChevronsUpDown from "@lucide/svelte/icons/chevrons-up-down";
+  import { cn } from "$lib/utils.js";
 
-interface Props extends Combobox.InputProps {
-  showTrigger?: boolean;
-  children?: Snippet;
-}
+  interface Props extends Combobox.InputProps {
+    showTrigger?: boolean;
+    children?: Snippet;
+  }
 
-let { class: className, showTrigger = true, children, ...restProps }: Props = $props();
+  let {
+    class: className,
+    showTrigger = true,
+    children,
+    ...restProps
+  }: Props = $props();
 </script>
 
 <div class="relative w-full text-foreground has-disabled:opacity-64">

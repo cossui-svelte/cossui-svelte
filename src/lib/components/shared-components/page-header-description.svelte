@@ -1,14 +1,14 @@
 <script lang="ts">
-import type { Snippet } from 'svelte';
-import type { HTMLAttributes } from 'svelte/elements';
-import { cn } from '$lib/utils.js';
+  import type { Snippet } from "svelte";
+  import type { HTMLAttributes } from "svelte/elements";
+  import { cn } from "$lib/utils.js";
 
-interface Props extends HTMLAttributes<HTMLParagraphElement> {
-  children?: Snippet;
-  class?: string;
-}
+  interface Props extends HTMLAttributes<HTMLParagraphElement> {
+    children?: Snippet;
+    class?: string;
+  }
 
-let { class: className, children, ...restProps }: Props = $props();
+  let { class: className, children, ...restProps }: Props = $props();
 </script>
 
 <p class={cn("text-muted-foreground lg:text-lg", className)} {...restProps}>

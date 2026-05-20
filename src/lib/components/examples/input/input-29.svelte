@@ -1,11 +1,12 @@
 <script lang="ts">
-import ChevronDown from '@lucide/svelte/icons/chevron-down';
-import ChevronUp from '@lucide/svelte/icons/chevron-up';
-import { Label } from '$lib/components/ui/label';
-import { CurrencyInput } from '$lib/hooks/use-currency-input.svelte';
+	import { Label } from "$lib/components/ui/label";
+	import { CurrencyInput } from "$lib/hooks/use-currency-input.svelte";
 
-const uid = $props.id();
-const currencyInput = new CurrencyInput({ id: uid, initialValue: 99 });
+	import ChevronDown from "@lucide/svelte/icons/chevron-down";
+	import ChevronUp from "@lucide/svelte/icons/chevron-up";
+
+	const uid = $props.id();
+	const currencyInput = new CurrencyInput({ id: uid, initialValue: 99 });
 </script>
 
 <div class="space-y-2">

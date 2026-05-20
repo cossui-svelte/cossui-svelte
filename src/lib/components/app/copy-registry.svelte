@@ -1,41 +1,41 @@
 <script lang="ts">
-import Check from '@lucide/svelte/icons/check';
-import { Tooltip } from 'bits-ui';
-import { Icons } from '$lib/components/shared-components/icons';
-import { buttonVariants } from '$lib/components/ui/button';
-import { cn } from '$lib/utils.js';
+  import { cn } from "$lib/utils.js";
+  import { Tooltip } from "bits-ui";
+  import Check from "@lucide/svelte/icons/check";
+  import { buttonVariants } from "$lib/components/ui/button";
+  import { Icons } from "$lib/components/shared-components/icons";
 
-interface Props {
-  value: string;
-  class?: string;
-  variant?:
-    | 'ghost'
-    | 'outline'
-    | 'default'
-    | 'secondary'
-    | 'destructive'
-    | 'link'
-    | 'destructive-outline';
-  src?: string;
-}
-
-let { value, class: className, variant = 'ghost' }: Props = $props();
-
-let isCopied = $state(false);
-let timeoutId: ReturnType<typeof setTimeout> | undefined;
-
-async function copyToClipboard() {
-  try {
-    await navigator.clipboard.writeText(value);
-    isCopied = true;
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => {
-      isCopied = false;
-    }, 2000);
-  } catch (err) {
-    console.error('Failed to copy:', err);
+  interface Props {
+    value: string;
+    class?: string;
+    variant?:
+      | "ghost"
+      | "outline"
+      | "default"
+      | "secondary"
+      | "destructive"
+      | "link"
+      | "destructive-outline";
+    src?: string;
   }
-}
+
+  let { value, class: className, variant = "ghost" }: Props = $props();
+
+  let isCopied = $state(false);
+  let timeoutId: ReturnType<typeof setTimeout> | undefined;
+
+  async function copyToClipboard() {
+    try {
+      await navigator.clipboard.writeText(value);
+      isCopied = true;
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        isCopied = false;
+      }, 2000);
+    } catch (err) {
+      console.error("Failed to copy:", err);
+    }
+  }
 </script>
 
 <Tooltip.Provider>

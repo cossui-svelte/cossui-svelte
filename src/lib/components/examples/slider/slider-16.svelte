@@ -1,16 +1,16 @@
 <script lang="ts">
-import { Input } from '$lib/components/ui/input';
-import { Label } from '$lib/components/ui/label';
-import { Slider } from '$lib/components/ui/slider';
+	import { Input } from "$lib/components/ui/input";
+	import { Label } from "$lib/components/ui/label";
+	import { Slider } from "$lib/components/ui/slider";
 
-const min = 0;
-const max = 100;
+	const min = 0;
+	const max = 100;
 
-let value = $state(25);
+	let value = $state(25);
 
-function handleInputChange(e: Event & { currentTarget: HTMLInputElement }) {
-  value = parseFloat(e.currentTarget.value) || 0;
-}
+	function handleInputChange(e: Event & { currentTarget: HTMLInputElement }) {
+		value = parseFloat(e.currentTarget.value) || 0;
+	}
 </script>
 
 <div class="space-y-3">

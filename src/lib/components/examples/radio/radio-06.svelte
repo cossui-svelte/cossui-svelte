@@ -1,10 +1,13 @@
 <script lang="ts">
-import { Label } from '$lib/components/ui/label';
-import { RadioGroup, RadioGroupItem } from '$lib/components/ui/radio-group/index.js';
+	import { Label } from "$lib/components/ui/label";
+	import {
+		RadioGroup,
+		RadioGroupItem,
+	} from "$lib/components/ui/radio-group/index.js";
 
-import IconStarFill from '~icons/ri/star-fill';
+	import IconStarFill from "~icons/ri/star-fill";
 
-let selectedValue = $state('all');
+	let selectedValue = $state("all");
 </script>
 
 <RadioGroup bind:value={selectedValue}>

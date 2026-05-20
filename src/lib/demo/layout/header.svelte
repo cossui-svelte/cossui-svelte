@@ -1,7 +1,7 @@
 <script lang="ts">
-import ThemeToggle from '$lib/demo/theme-toggle.svelte';
+	import ThemeToggle from '$lib/demo/theme-toggle.svelte';
 
-import RiArrowRightUpLine from '~icons/ri/arrow-right-up-line';
+	import RiArrowRightUpLine from '~icons/ri/arrow-right-up-line';
 </script>
 
 <header

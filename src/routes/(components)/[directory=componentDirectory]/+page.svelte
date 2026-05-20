@@ -1,70 +1,77 @@
 <script lang="ts">
-import type { ComponentProps } from 'svelte';
-import type { AvailableCOSSUIComponent } from '$data/api/components/components.handler.js';
-import Component from '$lib/demo/component.svelte';
-import type ComponentCard from '$lib/demo/component-card.svelte';
-import { getComponentDialogCtx } from '$lib/demo/component-preview/component-dialog-context.svelte.js';
-import ComponentUnavailable from '$lib/demo/component-unavailable.svelte';
-import PageGrid from '$lib/demo/page-grid.svelte';
-import PageHeader from '$lib/demo/page-header.svelte';
+	import type { AvailableCOSSUIComponent } from "$data/api/components/components.handler.js";
+	import type { ComponentProps } from "svelte";
 
-let { data } = $props();
+	import ComponentCard from "$lib/demo/component-card.svelte";
+	import { getComponentDialogCtx } from "$lib/demo/component-preview/component-dialog-context.svelte.js";
+	import ComponentUnavailable from "$lib/demo/component-unavailable.svelte";
+	import Component from "$lib/demo/component.svelte";
+	import PageGrid from "$lib/demo/page-grid.svelte";
+	import PageHeader from "$lib/demo/page-header.svelte";
 
-const componentDialogCtx = getComponentDialogCtx();
-async function showComponentModal({ component }: { component: AvailableCOSSUIComponent }) {
-  componentDialogCtx.setComponent(component);
-}
+	let { data } = $props();
 
-const componentLayoutMeta = $derived.by<ComponentProps<typeof ComponentCard>['meta']>(() => {
-  switch (data.componentsData.meta.directory) {
-    case 'accordions':
-      return { layout: 'wide', style: 'default' };
-    case 'alerts':
-      return { layout: 'wide', style: 'default' };
-    case 'avatars':
-      return { layout: 'default', style: 'centered' };
-    case 'badges':
-      return { layout: 'default', style: 'centered' };
-    case 'banners':
-      return { layout: 'full', style: 'default' };
-    case 'breadcrumbs':
-      return { layout: 'full', style: 'centered' };
-    case 'buttons':
-      return { layout: 'default', style: 'centered' };
-    case 'checkboxes':
-      return { layout: 'default', style: 'default' };
-    case 'dialogs':
-      return { layout: 'default', style: 'centered' };
-    case 'dropdowns':
-      return { layout: 'default', style: 'centered' };
-    case 'inputs':
-      return { layout: 'default', style: 'centered' };
-    case 'notifications':
-      return { layout: 'wide', style: 'centered' };
-    case 'paginations':
-      return { layout: 'wide', style: 'default' };
-    case 'popovers':
-      return { layout: 'default', style: 'centered' };
-    case 'radios':
-      return { layout: 'default', style: 'default' };
-    case 'selects':
-      return { layout: 'default', style: 'default' };
-    case 'sliders':
-      return { layout: 'default', style: 'default' };
-    case 'switches':
-      return { layout: 'default', style: 'centered' };
-    case 'tables':
-      return { layout: 'full', style: 'default' };
-    case 'tabs':
-      return { layout: 'wide', style: 'text-center' };
-    case 'timelines':
-      return { layout: 'wide', style: 'default' };
-    case 'tooltips':
-      return { layout: 'default', style: 'centered' };
-    default:
-      return { layout: 'default', style: 'default' };
-  }
-});
+	const componentDialogCtx = getComponentDialogCtx();
+	async function showComponentModal({
+		component,
+	}: {
+		component: AvailableCOSSUIComponent;
+	}) {
+		componentDialogCtx.setComponent(component);
+	}
+
+	const componentLayoutMeta = $derived.by<
+		ComponentProps<typeof ComponentCard>["meta"]
+	>(() => {
+		switch (data.componentsData.meta.directory) {
+			case "accordions":
+				return { layout: "wide", style: "default" };
+			case "alerts":
+				return { layout: "wide", style: "default" };
+			case "avatars":
+				return { layout: "default", style: "centered" };
+			case "badges":
+				return { layout: "default", style: "centered" };
+			case "banners":
+				return { layout: "full", style: "default" };
+			case "breadcrumbs":
+				return { layout: "full", style: "centered" };
+			case "buttons":
+				return { layout: "default", style: "centered" };
+			case "checkboxes":
+				return { layout: "default", style: "default" };
+			case "dialogs":
+				return { layout: "default", style: "centered" };
+			case "dropdowns":
+				return { layout: "default", style: "centered" };
+			case "inputs":
+				return { layout: "default", style: "centered" };
+			case "notifications":
+				return { layout: "wide", style: "centered" };
+			case "paginations":
+				return { layout: "wide", style: "default" };
+			case "popovers":
+				return { layout: "default", style: "centered" };
+			case "radios":
+				return { layout: "default", style: "default" };
+			case "selects":
+				return { layout: "default", style: "default" };
+			case "sliders":
+				return { layout: "default", style: "default" };
+			case "switches":
+				return { layout: "default", style: "centered" };
+			case "tables":
+				return { layout: "full", style: "default" };
+			case "tabs":
+				return { layout: "wide", style: "text-center" };
+			case "timelines":
+				return { layout: "wide", style: "default" };
+			case "tooltips":
+				return { layout: "default", style: "centered" };
+			default:
+				return { layout: "default", style: "default" };
+		}
+	});
 </script>
 
 <PageHeader id="title" title={data.pageHeader.title}>

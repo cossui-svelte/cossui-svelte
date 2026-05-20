@@ -1,14 +1,14 @@
 <script lang="ts">
-import type { Snippet } from 'svelte';
-import Tabs from '$lib/components/ui/tabs/tabs.svelte';
+  import type { Snippet } from "svelte";
+  import Tabs from "$lib/components/ui/tabs/tabs.svelte";
 
-interface Props {
-  children?: Snippet;
-}
+  interface Props {
+    children?: Snippet;
+  }
 
-let { children }: Props = $props();
+  let { children }: Props = $props();
 
-let installationType = $state<'cli' | 'manual'>('cli');
+  let installationType = $state<"cli" | "manual">("cli");
 </script>
 
 <Tabs

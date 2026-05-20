@@ -1,40 +1,40 @@
 <script lang="ts">
-import Calendar from '@lucide/svelte/icons/calendar';
-import ChevronDown from '@lucide/svelte/icons/chevron-down';
-import ChevronLeft from '@lucide/svelte/icons/chevron-left';
-import ChevronRight from '@lucide/svelte/icons/chevron-right';
-import CircleAlert from '@lucide/svelte/icons/circle-alert';
-import Ellipsis from '@lucide/svelte/icons/ellipsis';
-import Info from '@lucide/svelte/icons/info';
-import Minus from '@lucide/svelte/icons/minus';
-import Plus from '@lucide/svelte/icons/plus';
-import Search from '@lucide/svelte/icons/search';
-import TextCursor from '@lucide/svelte/icons/text-cursor';
-import UserRound from '@lucide/svelte/icons/user-round';
-import X from '@lucide/svelte/icons/x';
-import { cn } from '$lib/utils.js';
+  import { cn } from "$lib/utils.js";
+  import CircleAlert from "@lucide/svelte/icons/circle-alert";
+import Calendar from "@lucide/svelte/icons/calendar";
+import ChevronDown from "@lucide/svelte/icons/chevron-down";
+import ChevronLeft from "@lucide/svelte/icons/chevron-left";
+import ChevronRight from "@lucide/svelte/icons/chevron-right";
+import Ellipsis from "@lucide/svelte/icons/ellipsis";
+import Info from "@lucide/svelte/icons/info";
+import Minus from "@lucide/svelte/icons/minus";
+import Plus from "@lucide/svelte/icons/plus";
+import Search from "@lucide/svelte/icons/search";
+import TextCursor from "@lucide/svelte/icons/text-cursor";
+import UserRound from "@lucide/svelte/icons/user-round";
+import X from "@lucide/svelte/icons/x";
 
-interface Props {
-  slug: string;
-}
+  interface Props {
+    slug: string;
+  }
 
-let { slug }: Props = $props();
+  let { slug }: Props = $props();
 
-// ── Helper class generators ─────────────────────────────────────────────────
+  // ── Helper class generators ─────────────────────────────────────────────────
 
-function cardCls(cls?: string, withGradient = true) {
-  return cn(
-    'relative flex w-full max-w-72 flex-col rounded-2xl border not-dark:bg-clip-padding text-card-foreground shadow-md/5 before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-2xl)-1px)] before:shadow-[0_-1px_--theme(--color-white/6%),0_1px_--theme(--color-black/6%)]',
-    withGradient
-      ? 'bg-linear-to-b from-[color-mix(in_srgb,var(--card)_96%,var(--color-white))] to-[color-mix(in_srgb,var(--card)_99%,var(--color-black))] dark:to-[color-mix(in_srgb,var(--card)_98%,var(--color-white))]'
-      : 'bg-card/99 dark:bg-card',
-    cls
-  );
-}
+  function cardCls(cls?: string, withGradient = true) {
+    return cn(
+      "relative flex w-full max-w-72 flex-col rounded-2xl border not-dark:bg-clip-padding text-card-foreground shadow-md/5 before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-2xl)-1px)] before:shadow-[0_-1px_--theme(--color-white/6%),0_1px_--theme(--color-black/6%)]",
+      withGradient
+        ? "bg-linear-to-b from-[color-mix(in_srgb,var(--card)_96%,var(--color-white))] to-[color-mix(in_srgb,var(--card)_99%,var(--color-black))] dark:to-[color-mix(in_srgb,var(--card)_98%,var(--color-white))]"
+        : "bg-card/99 dark:bg-card",
+      cls,
+    );
+  }
 
-function cpCls(cls?: string) {
-  return cn('flex-1 p-6', cls);
-}
+  function cpCls(cls?: string) {
+    return cn("flex-1 p-6", cls);
+  }
 </script>
 
 <!-- ── Primitive snippets ──────────────────────────────────────────────────── -->

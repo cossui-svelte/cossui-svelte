@@ -1,15 +1,15 @@
 <script lang="ts">
-import type { WithElementRef } from 'bits-ui';
-import type { HTMLAttributes } from 'svelte/elements';
+	import type { WithElementRef } from 'bits-ui';
+	import type { HTMLAttributes } from 'svelte/elements';
 
-import { cn } from '$lib/utils';
+	import { cn } from '$lib/utils';
 
-let {
-  children,
-  class: className,
-  ref = $bindable(null),
-  ...restProps
-}: WithElementRef<HTMLAttributes<HTMLHeadingElement>> = $props();
+	let {
+		children,
+		class: className,
+		ref = $bindable(null),
+		...restProps
+	}: WithElementRef<HTMLAttributes<HTMLHeadingElement>> = $props();
 </script>
 
 <h3

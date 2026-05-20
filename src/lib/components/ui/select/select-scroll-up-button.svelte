@@ -1,13 +1,17 @@
 <script lang="ts">
-import ChevronUp from '@lucide/svelte/icons/chevron-up';
-import type { Select as SelectPrimitive, WithoutChildrenOrChild } from 'bits-ui';
-import { cn } from '$lib/utils.js';
+	import { cn } from "$lib/utils.js";
 
-let {
-  class: className,
-  ref = $bindable(null),
-  ...restProps
-}: WithoutChildrenOrChild<SelectPrimitive.ScrollUpButtonProps> = $props();
+	import ChevronUp from "@lucide/svelte/icons/chevron-up";
+	import {
+		Select as SelectPrimitive,
+		type WithoutChildrenOrChild,
+	} from "bits-ui";
+
+	let {
+		class: className,
+		ref = $bindable(null),
+		...restProps
+	}: WithoutChildrenOrChild<SelectPrimitive.ScrollUpButtonProps> = $props();
 </script>
 
 <SelectPrimitive.ScrollUpButton

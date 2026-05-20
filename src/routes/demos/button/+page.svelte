@@ -1,8 +1,8 @@
 <script lang="ts">
-import DownloadIcon from '@lucide/svelte/icons/download';
-import ComponentPreviewTabs from '$lib/components/app/component-preview-tabs.svelte';
-import { Button } from '$lib/components/ui/button';
-import { Spinner } from '$lib/components/ui/spinner';
+  import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
+  import { Spinner } from "$lib/components/ui/spinner";
+  import { Button } from "$lib/components/ui/button";
+  import DownloadIcon from "@lucide/svelte/icons/download";
 </script>
 
 <ComponentPreviewTabs>

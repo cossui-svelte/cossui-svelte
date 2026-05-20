@@ -1,14 +1,14 @@
 <script lang="ts">
-import type { Snippet } from 'svelte';
-import type { HTMLButtonAttributes } from 'svelte/elements';
-import { cn } from '$lib/utils.js';
+  import type { Snippet } from "svelte";
+  import type { HTMLButtonAttributes } from "svelte/elements";
+  import { cn } from "$lib/utils.js";
 
-interface Props extends HTMLButtonAttributes {
-  variant?: 'default' | 'destructive';
-  children?: Snippet;
-}
+  interface Props extends HTMLButtonAttributes {
+    variant?: "default" | "destructive";
+    children?: Snippet;
+  }
 
-let { class: className, variant = 'default', children, ...restProps }: Props = $props();
+  let { class: className, variant = "default", children, ...restProps }: Props = $props();
 </script>
 
 <button

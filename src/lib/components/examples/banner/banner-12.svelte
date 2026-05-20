@@ -1,14 +1,15 @@
 <script lang="ts">
-import Download from '@lucide/svelte/icons/download';
-import LoaderCircle from '@lucide/svelte/icons/loader-circle';
-import { Button } from '$lib/components/ui/button';
+	import { Button } from "$lib/components/ui/button";
 
-let isDownloading = $state(false);
+	import Download from "@lucide/svelte/icons/download";
+	import LoaderCircle from "@lucide/svelte/icons/loader-circle";
 
-function handleDownload() {
-  isDownloading = true;
-  setTimeout(() => (isDownloading = false), 2000);
-}
+	let isDownloading = $state(false);
+
+	function handleDownload() {
+		isDownloading = true;
+		setTimeout(() => (isDownloading = false), 2000);
+	}
 </script>
 
 <div class="bg-muted px-4 py-3 md:py-2">

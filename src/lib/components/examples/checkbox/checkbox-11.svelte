@@ -1,20 +1,20 @@
 <script lang="ts">
-import type { TransitionEventHandler } from 'svelte/elements';
+	import type { TransitionEventHandler } from "svelte/elements";
 
-import { Checkbox } from '$lib/components/ui/checkbox';
-import { Input } from '$lib/components/ui/input';
-import { Label } from '$lib/components/ui/label';
+	import { Checkbox } from "$lib/components/ui/checkbox";
+	import { Label } from "$lib/components/ui/label";
+	import { Input } from "$lib/components/ui/input";
 
-let checked = $state(false);
-let inputElement: HTMLInputElement | null = $state(null);
+	let checked = $state(false);
+	let inputElement: HTMLInputElement | null = $state(null);
 
-const handleTransitionEnd: TransitionEventHandler<HTMLDivElement> = () => {
-  if (checked && inputElement) {
-    inputElement.focus();
-  }
-};
+	const handleTransitionEnd: TransitionEventHandler<HTMLDivElement> = () => {
+		if (checked && inputElement) {
+			inputElement.focus();
+		}
+	};
 
-const uid = $props.id();
+	const uid = $props.id();
 </script>
 
 <div>

@@ -1,24 +1,24 @@
 <script lang="ts">
-import type { Snippet } from 'svelte';
-import { getCtx } from '../ctx.js';
-import Root from './root.svelte';
-import type { Props } from './types.js';
+	import Root from "./root.svelte";
+	import { getCtx } from "../ctx.js";
+	import type { Props } from "./types.js";
+	import type { Snippet } from "svelte";
 
-let {
-  onDrag,
-  onOpenChange,
-  open = $bindable(false),
-  children,
-  ...restProps
-}: Props & { children?: Snippet } = $props();
+	let {
+		onDrag,
+		onOpenChange,
+		open = $bindable(false),
+		children,
+		...restProps
+	}: Props & { children?: Snippet } = $props();
 
-const {
-  methods: { onNestedDrag, onNestedRelease, onNestedOpenChange }
-} = getCtx();
+	const {
+		methods: { onNestedDrag, onNestedRelease, onNestedOpenChange },
+	} = getCtx();
 
-if (!onNestedDrag) {
-  throw new Error('NestedRoot must be a child of a Root');
-}
+	if (!onNestedDrag) {
+		throw new Error("NestedRoot must be a child of a Root");
+	}
 </script>
 
 <Root

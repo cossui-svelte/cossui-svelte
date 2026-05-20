@@ -1,8 +1,8 @@
 <script lang="ts">
-import { Input } from '$lib/components/ui/input';
-import { Label } from '$lib/components/ui/label';
+	import { Input } from "$lib/components/ui/input";
+	import { Label } from "$lib/components/ui/label";
 
-const uid = $props.id();
+	const uid = $props.id();
 </script>
 
 <div class="[&>*:not(:first-child)]:mt-2">

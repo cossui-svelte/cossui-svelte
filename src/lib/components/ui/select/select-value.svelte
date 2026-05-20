@@ -1,17 +1,17 @@
 <script lang="ts">
-import { getContext } from 'svelte';
-import { cn } from '$lib/utils.js';
+	import { getContext } from "svelte";
+	import { cn } from "$lib/utils.js";
 
-interface Props {
-  placeholder?: string;
-  class?: string;
-}
+	interface Props {
+		placeholder?: string;
+		class?: string;
+	}
 
-let { placeholder = '', class: className }: Props = $props();
+	let { placeholder = "", class: className }: Props = $props();
 
-const ctx = getContext<{ getLabel: () => string } | undefined>('coss-select');
+	const ctx = getContext<{ getLabel: () => string } | undefined>("coss-select");
 
-let label = $derived(ctx?.getLabel() ?? '');
+	let label = $derived(ctx?.getLabel() ?? "");
 </script>
 
 <span

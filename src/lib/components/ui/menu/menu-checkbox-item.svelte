@@ -1,19 +1,14 @@
 <script lang="ts">
-import type { DropdownMenu } from 'bits-ui';
-import type { Snippet } from 'svelte';
-import { cn } from '$lib/utils.js';
+  import type { Snippet } from "svelte";
+  import { DropdownMenu } from "bits-ui";
+  import { cn } from "$lib/utils.js";
 
-interface Props extends Omit<DropdownMenu.CheckboxItemProps, 'children'> {
-  children?: Snippet;
-  variant?: 'default' | 'switch';
-}
+  interface Props extends Omit<DropdownMenu.CheckboxItemProps, "children"> {
+    children?: Snippet;
+    variant?: "default" | "switch";
+  }
 
-let {
-  children: userContent,
-  class: className,
-  variant = 'default',
-  ...restProps
-}: Props = $props();
+  let { children: userContent, class: className, variant = "default", ...restProps }: Props = $props();
 </script>
 
 <DropdownMenu.CheckboxItem

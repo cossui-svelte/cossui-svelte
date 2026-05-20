@@ -1,6 +1,6 @@
 <script>
-import ComponentPreviewTabs from '$lib/components/app/component-preview-tabs.svelte';
-import { Input } from '$lib/components/ui/input';
+    import { Input } from "$lib/components/ui/input";
+    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
 </script>
 
 <ComponentPreviewTabs>

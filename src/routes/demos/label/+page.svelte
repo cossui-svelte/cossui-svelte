@@ -1,9 +1,9 @@
 <script>
-import ComponentPreviewTabs from '$lib/components/app/component-preview-tabs.svelte';
-import { Input } from '$lib/components/ui/input';
-import { Label } from '$lib/components/ui/label';
+    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
+    import { Input } from "$lib/components/ui/input";
+    import { Label } from "$lib/components/ui/label";
 
-const uid = $props.id();
+    const uid = $props.id();
 </script>
 
 <ComponentPreviewTabs>

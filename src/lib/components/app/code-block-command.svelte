@@ -1,50 +1,50 @@
 <script lang="ts">
-import Check from '@lucide/svelte/icons/check';
-import Copy from '@lucide/svelte/icons/copy';
-import Terminal from '@lucide/svelte/icons/terminal';
-import { Tooltip } from 'bits-ui';
-import { buttonVariants } from '$lib/components/ui/button';
-import { ScrollArea } from '$lib/components/ui/scroll-area';
-import Tabs from '$lib/components/ui/tabs/tabs.svelte';
-import TabsList from '$lib/components/ui/tabs/tabs-list.svelte';
-import TabsPanel from '$lib/components/ui/tabs/tabs-panel.svelte';
-import TabsTab from '$lib/components/ui/tabs/tabs-tab.svelte';
-import { cn } from '$lib/utils.js';
+  import { cn } from "$lib/utils.js";
+  import { Tooltip } from "bits-ui";
+  import Terminal from "@lucide/svelte/icons/terminal";
+import Copy from "@lucide/svelte/icons/copy";
+import Check from "@lucide/svelte/icons/check";
+  import { buttonVariants } from "$lib/components/ui/button";
+  import Tabs from "$lib/components/ui/tabs/tabs.svelte";
+  import TabsList from "$lib/components/ui/tabs/tabs-list.svelte";
+  import TabsTab from "$lib/components/ui/tabs/tabs-tab.svelte";
+  import TabsPanel from "$lib/components/ui/tabs/tabs-panel.svelte";
+  import { ScrollArea } from "$lib/components/ui/scroll-area";
 
-interface Props {
-  __npm__?: string;
-  __yarn__?: string;
-  __pnpm__?: string;
-  __bun__?: string;
-}
-
-let { __npm__, __yarn__, __pnpm__, __bun__ }: Props = $props();
-
-let packageManager = $state<'pnpm' | 'npm' | 'yarn' | 'bun'>('pnpm');
-let isCopied = $state(false);
-let timeoutId: ReturnType<typeof setTimeout> | undefined;
-
-const tabs = $derived({
-  bun: __bun__,
-  npm: __npm__,
-  pnpm: __pnpm__,
-  yarn: __yarn__
-});
-
-async function copyCommand() {
-  const command = tabs[packageManager];
-  if (!command) return;
-  try {
-    await navigator.clipboard.writeText(command);
-    isCopied = true;
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => {
-      isCopied = false;
-    }, 2000);
-  } catch (err) {
-    console.error('Failed to copy:', err);
+  interface Props {
+    __npm__?: string;
+    __yarn__?: string;
+    __pnpm__?: string;
+    __bun__?: string;
   }
-}
+
+  let { __npm__, __yarn__, __pnpm__, __bun__ }: Props = $props();
+
+  let packageManager = $state<"pnpm" | "npm" | "yarn" | "bun">("pnpm");
+  let isCopied = $state(false);
+  let timeoutId: ReturnType<typeof setTimeout> | undefined;
+
+  const tabs = $derived({
+    bun: __bun__,
+    npm: __npm__,
+    pnpm: __pnpm__,
+    yarn: __yarn__,
+  });
+
+  async function copyCommand() {
+    const command = tabs[packageManager];
+    if (!command) return;
+    try {
+      await navigator.clipboard.writeText(command);
+      isCopied = true;
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        isCopied = false;
+      }, 2000);
+    } catch (err) {
+      console.error("Failed to copy:", err);
+    }
+  }
 </script>
 
 <div class="relative">

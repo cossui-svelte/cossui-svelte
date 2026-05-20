@@ -1,7 +1,11 @@
 <script>
-import { Button } from '$lib/components/ui/button';
+	import { Button } from "$lib/components/ui/button";
 
-import { Popover, PopoverContent, PopoverTrigger } from '$lib/components/ui/popover';
+	import {
+		Popover,
+		PopoverContent,
+		PopoverTrigger,
+	} from "$lib/components/ui/popover";
 </script>
 
 <Popover>

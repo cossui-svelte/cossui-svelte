@@ -1,26 +1,28 @@
 <script lang="ts">
-import { box, mergeProps } from 'svelte-toolbelt';
-import { useFieldErrors } from '$lib/formsnap/formsnap.svelte.js';
-import { useId } from '$lib/formsnap/internal/utils/index.js';
-import type { FieldErrorsProps } from './types.js';
+	import { box, mergeProps } from "svelte-toolbelt";
+	import type { FieldErrorsProps } from "./types.js";
+	import { useId } from "$lib/formsnap/internal/utils/index.js";
+	import { useFieldErrors } from "$lib/formsnap/formsnap.svelte.js";
 
-let {
-  id = useId(),
-  ref = $bindable(null),
-  children,
-  child,
-  ...restProps
-}: FieldErrorsProps = $props();
+	let {
+		id = useId(),
+		ref = $bindable(null),
+		children,
+		child,
+		...restProps
+	}: FieldErrorsProps = $props();
 
-const fieldErrorsState = useFieldErrors({
-  id: box.with(() => id),
-  ref: box.with(
-    () => ref,
-    (v) => (ref = v)
-  )
-});
+	const fieldErrorsState = useFieldErrors({
+		id: box.with(() => id),
+		ref: box.with(
+			() => ref,
+			(v) => (ref = v),
+		),
+	});
 
-const mergedProps = $derived(mergeProps(restProps, fieldErrorsState.fieldErrorsProps));
+	const mergedProps = $derived(
+		mergeProps(restProps, fieldErrorsState.fieldErrorsProps),
+	);
 </script>
 
 <!--

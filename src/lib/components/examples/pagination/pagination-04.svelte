@@ -1,19 +1,19 @@
 <script lang="ts">
-import ChevronLeft from '@lucide/svelte/icons/chevron-left';
-import ChevronRight from '@lucide/svelte/icons/chevron-right';
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationLink
-} from '$lib/components/ui/pagination';
+	import ChevronLeft from '@lucide/svelte/icons/chevron-left';
+	import ChevronRight from '@lucide/svelte/icons/chevron-right';
+	import {
+		Pagination,
+		PaginationContent,
+		PaginationItem,
+		PaginationLink
+	} from '$lib/components/ui/pagination';
 
-type PaginationProps = {
-  currentPage: number;
+	type PaginationProps = {
+		currentPage: number;
 
-  totalPages: number;
-};
-let { currentPage = 1, totalPages = 10 }: PaginationProps = $props();
+		totalPages: number;
+	};
+	let { currentPage = 1, totalPages = 10 }: PaginationProps = $props();
 </script>
 
 <Pagination>

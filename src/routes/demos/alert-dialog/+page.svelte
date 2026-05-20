@@ -1,16 +1,16 @@
 <script>
-import ComponentPreviewTabs from '$lib/components/app/component-preview-tabs.svelte';
-import {
-  AlertDialog,
-  AlertDialogClose,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogPopup,
-  AlertDialogTitle,
-  AlertDialogTrigger
-} from '$lib/components/ui/alert-dialog';
-import { Button, buttonVariants } from '$lib/components/ui/button';
+    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
+    import {
+        AlertDialog,
+        AlertDialogClose,
+        AlertDialogDescription,
+        AlertDialogFooter,
+        AlertDialogHeader,
+        AlertDialogPopup,
+        AlertDialogTitle,
+        AlertDialogTrigger,
+    } from "$lib/components/ui/alert-dialog";
+    import { Button, buttonVariants } from "$lib/components/ui/button";
 </script>
 
 <ComponentPreviewTabs>

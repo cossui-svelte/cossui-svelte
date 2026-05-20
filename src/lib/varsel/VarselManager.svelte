@@ -1,475 +1,484 @@
 <script lang="ts">
-/**
- * @component
- * @description
- * Internal component responsible for grouping toasts by position and calculating
- * their stacking offsets (both collapsed and expanded).
- * It handles the "hover to expand" logic and manages the lifecycle of toast groups.
- */
+	/**
+	 * @component
+	 * @description
+	 * Internal component responsible for grouping toasts by position and calculating
+	 * their stacking offsets (both collapsed and expanded).
+	 * It handles the "hover to expand" logic and manages the lifecycle of toast groups.
+	 */
+	import VarselItem from "./VarselItem.svelte";
+	import {
+		ANIMATION_CONFIG,
+		FOCUSABLE_SELECTORS,
+		focusManager,
+		type PositionedToast,
+		type ToastData,
+		type ToastPosition,
+	} from "./internals";
 
-import {
-  ANIMATION_CONFIG,
-  FOCUSABLE_SELECTORS,
-  focusManager,
-  type PositionedToast,
-  type ToastData,
-  type ToastPosition
-} from './internals';
-import VarselItem from './VarselItem.svelte';
+	let {
+		toasts = [],
+		onRemove,
+		expandedGap = ANIMATION_CONFIG.EXPANDED_GAP,
+		position: defaultPosition = "bottom-center",
+		visibleToasts = 3,
+		expand = true,
+		duration = 5000,
+		closeButton = true,
+		pauseOnHover = true,
+		offset = undefined,
+		dir = "auto",
+	}: {
+		toasts?: ToastData[];
+		onRemove: (id: string) => void;
+		expandedGap?: number;
+		position?: ToastPosition;
+		visibleToasts?: number;
+		expand?: boolean;
+		duration?: number;
+		closeButton?: boolean;
+		pauseOnHover?: boolean;
+		offset?: number | string;
+		dir?: "ltr" | "rtl" | "auto";
+	} = $props();
 
-let {
-  toasts = [],
-  onRemove,
-  expandedGap = ANIMATION_CONFIG.EXPANDED_GAP,
-  position: defaultPosition = 'bottom-center',
-  visibleToasts = 3,
-  expand = true,
-  duration = 5000,
-  closeButton = true,
-  pauseOnHover = true,
-  offset = undefined,
-  dir = 'auto'
-}: {
-  toasts?: ToastData[];
-  onRemove: (id: string) => void;
-  expandedGap?: number;
-  position?: ToastPosition;
-  visibleToasts?: number;
-  expand?: boolean;
-  duration?: number;
-  closeButton?: boolean;
-  pauseOnHover?: boolean;
-  offset?: number | string;
-  dir?: 'ltr' | 'rtl' | 'auto';
-} = $props();
+	const createPositionMap = <T,>(value: () => T): Record<ToastPosition, T> => ({
+		"top-left": value(),
+		"top-center": value(),
+		"top-right": value(),
+		"bottom-left": value(),
+		"bottom-center": value(),
+		"bottom-right": value(),
+	});
 
-const createPositionMap = <T,>(value: () => T): Record<ToastPosition, T> => ({
-  'bottom-center': value(),
-  'bottom-left': value(),
-  'bottom-right': value(),
-  'top-center': value(),
-  'top-left': value(),
-  'top-right': value()
-});
+	let heights = $state<Record<string, number>>({});
+	let hovered = $state<Record<ToastPosition, boolean>>(createPositionMap(() => false));
+	let heldToasts = $state<Record<ToastPosition, Set<string>>>(
+		createPositionMap(() => new Set<string>()),
+	);
+	let isWindowFocused = $state(
+		typeof document === "undefined" ? true : document.visibilityState !== "hidden",
+	);
+	let isToastRegionClaimed = $state(false);
 
-let heights = $state<Record<string, number>>({});
-let hovered = $state<Record<ToastPosition, boolean>>(createPositionMap(() => false));
-let heldToasts = $state<Record<ToastPosition, Set<string>>>(
-  createPositionMap(() => new Set<string>())
-);
-let isWindowFocused = $state(
-  typeof document === 'undefined' ? true : document.visibilityState !== 'hidden'
-);
-let isToastRegionClaimed = $state(false);
+	// Non-reactive internal state for "previous" values (mimicking legacy behavior)
+	let previousStackIndex: Record<string, number> = {};
+	let previousCollapsedOffsets: Record<string, number> = {};
+	let previousExpandedOffsets: Record<string, number> = {};
 
-// Non-reactive internal state for "previous" values (mimicking legacy behavior)
-let previousStackIndex: Record<string, number> = {};
-let previousCollapsedOffsets: Record<string, number> = {};
-let previousExpandedOffsets: Record<string, number> = {};
+	let toastsByPosition = $state<Record<ToastPosition, PositionedToast[]>>(
+		createPositionMap<PositionedToast[]>(() => []),
+	);
 
-let toastsByPosition = $state<Record<ToastPosition, PositionedToast[]>>(
-  createPositionMap<PositionedToast[]>(() => [])
-);
+	let collapsedOffsetData = $state<{
+		byPosition: Record<ToastPosition, number[]>;
+		byId: Record<string, number>;
+	}>({ byPosition: createPositionMap<number[]>(() => []), byId: {} });
 
-let collapsedOffsetData = $state<{
-  byPosition: Record<ToastPosition, number[]>;
-  byId: Record<string, number>;
-}>({ byId: {}, byPosition: createPositionMap<number[]>(() => []) });
+	let expandedOffsetData = $state<{
+		byPosition: Record<ToastPosition, number[]>;
+		byId: Record<string, number>;
+	}>({ byPosition: createPositionMap<number[]>(() => []), byId: {} });
 
-let expandedOffsetData = $state<{
-  byPosition: Record<ToastPosition, number[]>;
-  byId: Record<string, number>;
-}>({ byId: {}, byPosition: createPositionMap<number[]>(() => []) });
+	let positionEntries = $derived(
+		Object.entries(toastsByPosition) as [ToastPosition, PositionedToast[]][],
+	);
+	let latestPositionEntries = $derived(positionEntries);
+	let latestHovered = $derived(hovered);
 
-let positionEntries = $derived(
-  Object.entries(toastsByPosition) as [ToastPosition, PositionedToast[]][]
-);
-let latestPositionEntries = $derived(positionEntries);
-let latestHovered = $derived(hovered);
+	const updateHoldState = (
+		position: ToastPosition,
+		toastId: string,
+		isHolding: boolean,
+	) => {
+		const current = heldToasts[position] ?? new Set<string>();
+		const next = new Set(current);
+		if (isHolding) {
+			next.add(toastId);
+		} else {
+			next.delete(toastId);
+		}
+		if (next.size !== current.size) {
+			heldToasts = { ...heldToasts, [position]: next };
+		}
+	};
 
-const updateHoldState = (position: ToastPosition, toastId: string, isHolding: boolean) => {
-  const current = heldToasts[position] ?? new Set<string>();
-  const next = new Set(current);
-  if (isHolding) {
-    next.add(toastId);
-  } else {
-    next.delete(toastId);
-  }
-  if (next.size !== current.size) {
-    heldToasts = { ...heldToasts, [position]: next };
-  }
-};
+	// Calculate toastsByPosition based on toasts
+	$effect(() => {
+		const grouped = createPositionMap<ToastData[]>(() => []);
+		for (const toast of toasts) {
+			const pos = toast.position || defaultPosition;
+			grouped[pos].push(toast);
+		}
 
-// Calculate toastsByPosition based on toasts
-$effect(() => {
-  const grouped = createPositionMap<ToastData[]>(() => []);
-  for (const toast of toasts) {
-    const pos = toast.position || defaultPosition;
-    grouped[pos].push(toast);
-  }
+		const nextStackIndices: Record<string, number> = {};
+		const positioned = createPositionMap<PositionedToast[]>(() => []);
 
-  const nextStackIndices: Record<string, number> = {};
-  const positioned = createPositionMap<PositionedToast[]>(() => []);
+		for (const position of Object.keys(grouped) as ToastPosition[]) {
+			const list = grouped[position];
+			const activeToasts = list.filter(
+				(toast) => !toast.isLeaving && !toast.shouldClose,
+			);
+			const activeIndexMap = new Map<string, number>();
+			activeToasts.forEach((toast, activeIndex) => {
+				activeIndexMap.set(toast.id, activeIndex);
+			});
 
-  for (const position of Object.keys(grouped) as ToastPosition[]) {
-    const list = grouped[position];
-    const activeToasts = list.filter((toast) => !toast.isLeaving && !toast.shouldClose);
-    const activeIndexMap = new Map<string, number>();
-    activeToasts.forEach((toast, activeIndex) => {
-      activeIndexMap.set(toast.id, activeIndex);
-    });
+			positioned[position] = list.map((toast, orderIndex) => {
+				let stackIndex = activeIndexMap.get(toast.id) ?? previousStackIndex[toast.id];
+				if (stackIndex == null || Number.isNaN(stackIndex)) {
+					stackIndex = orderIndex;
+				}
 
-    positioned[position] = list.map((toast, orderIndex) => {
-      let stackIndex = activeIndexMap.get(toast.id) ?? previousStackIndex[toast.id];
-      if (stackIndex == null || Number.isNaN(stackIndex)) {
-        stackIndex = orderIndex;
-      }
+				nextStackIndices[toast.id] = stackIndex;
 
-      nextStackIndices[toast.id] = stackIndex;
+				return {
+					...toast,
+					position: position,
+					index: stackIndex,
+					renderIndex: orderIndex,
+					total: list.length,
+				};
+			}) as PositionedToast[];
+		}
 
-      return {
-        ...toast,
-        index: stackIndex,
-        position: position,
-        renderIndex: orderIndex,
-        total: list.length
-      };
-    }) as PositionedToast[];
-  }
+		previousStackIndex = nextStackIndices;
+		toastsByPosition = positioned;
+	});
 
-  previousStackIndex = nextStackIndices;
-  toastsByPosition = positioned;
-});
+	// Update hovered state based on empty groups
+	$effect(() => {
+		const next = { ...hovered };
+		let changed = false;
+		for (const pos of Object.keys(hovered) as ToastPosition[]) {
+			const hasToast = (toastsByPosition[pos]?.length ?? 0) > 0;
+			if (!hasToast && next[pos]) {
+				next[pos] = false;
+				changed = true;
+			}
+		}
+		if (changed) {
+			hovered = next;
+		}
+	});
 
-// Update hovered state based on empty groups
-$effect(() => {
-  const next = { ...hovered };
-  let changed = false;
-  for (const pos of Object.keys(hovered) as ToastPosition[]) {
-    const hasToast = (toastsByPosition[pos]?.length ?? 0) > 0;
-    if (!hasToast && next[pos]) {
-      next[pos] = false;
-      changed = true;
-    }
-  }
-  if (changed) {
-    hovered = next;
-  }
-});
+	$effect(() => {
+		if (toasts.length === 0 && isToastRegionClaimed) {
+			isToastRegionClaimed = false;
+			focusManager.releaseClaim();
+		}
+	});
 
-$effect(() => {
-  if (toasts.length === 0 && isToastRegionClaimed) {
-    isToastRegionClaimed = false;
-    focusManager.releaseClaim();
-  }
-});
+	// Calculate collapsedOffsetData
+	$effect(() => {
+		const byPosition = createPositionMap<number[]>(() => []);
+		const byId: Record<string, number> = {};
 
-// Calculate collapsedOffsetData
-$effect(() => {
-  const byPosition = createPositionMap<number[]>(() => []);
-  const byId: Record<string, number> = {};
+		for (const [pos, group] of positionEntries) {
+			const isTopPosition = pos.startsWith("top-");
+			const activeToasts = group.filter((toast) => !toast.shouldClose);
+			const offsetsForActive: number[] = [];
 
-  for (const [pos, group] of positionEntries) {
-    const isTopPosition = pos.startsWith('top-');
-    const activeToasts = group.filter((toast) => !toast.shouldClose);
-    const offsetsForActive: number[] = [];
+			for (let i = 0; i < activeToasts.length; i++) {
+				if (i === 0) {
+					offsetsForActive.push(0);
+					continue;
+				}
 
-    for (let i = 0; i < activeToasts.length; i++) {
-      if (i === 0) {
-        offsetsForActive.push(0);
-        continue;
-      }
+				const prevToast = activeToasts[i - 1];
+				const currentToast = activeToasts[i];
+				const prevOffset = offsetsForActive[i - 1] ?? 0;
+				if (!prevToast || !currentToast) {
+					offsetsForActive.push(prevOffset);
+					continue;
+				}
+				const prevHeight = heights[prevToast.id];
+				const currentHeight = heights[currentToast.id];
+				const fallbackOffset =
+					prevOffset + (isTopPosition ? 1 : -1) * ANIMATION_CONFIG.STACK_OFFSET;
 
-      const prevToast = activeToasts[i - 1];
-      const currentToast = activeToasts[i];
-      const prevOffset = offsetsForActive[i - 1] ?? 0;
-      if (!prevToast || !currentToast) {
-        offsetsForActive.push(prevOffset);
-        continue;
-      }
-      const prevHeight = heights[prevToast.id];
-      const currentHeight = heights[currentToast.id];
-      const fallbackOffset = prevOffset + (isTopPosition ? 1 : -1) * ANIMATION_CONFIG.STACK_OFFSET;
+				if (
+					prevHeight == null ||
+					currentHeight == null ||
+					Number.isNaN(prevHeight) ||
+					Number.isNaN(currentHeight)
+				) {
+					offsetsForActive.push(fallbackOffset);
+					continue;
+				}
 
-      if (
-        prevHeight == null ||
-        currentHeight == null ||
-        Number.isNaN(prevHeight) ||
-        Number.isNaN(currentHeight)
-      ) {
-        offsetsForActive.push(fallbackOffset);
-        continue;
-      }
+				if (isTopPosition) {
+					offsetsForActive.push(
+						prevOffset + (prevHeight - currentHeight + ANIMATION_CONFIG.STACK_OFFSET),
+					);
+				} else {
+					offsetsForActive.push(
+						prevOffset + (currentHeight - prevHeight - ANIMATION_CONFIG.STACK_OFFSET),
+					);
+				}
+			}
 
-      if (isTopPosition) {
-        offsetsForActive.push(
-          prevOffset + (prevHeight - currentHeight + ANIMATION_CONFIG.STACK_OFFSET)
-        );
-      } else {
-        offsetsForActive.push(
-          prevOffset + (currentHeight - prevHeight - ANIMATION_CONFIG.STACK_OFFSET)
-        );
-      }
-    }
+			for (let i = 0; i < activeToasts.length; i++) {
+				const toast = activeToasts[i];
+				if (!toast) continue;
+				byId[toast.id] = offsetsForActive[i] ?? 0;
+			}
 
-    for (let i = 0; i < activeToasts.length; i++) {
-      const toast = activeToasts[i];
-      if (!toast) continue;
-      byId[toast.id] = offsetsForActive[i] ?? 0;
-    }
+			for (const toast of group) {
+				if (byId[toast.id] != null) continue;
+				const previousOffset = previousCollapsedOffsets[toast.id];
+				if (typeof previousOffset === "number") {
+					byId[toast.id] = previousOffset;
+					continue;
+				}
 
-    for (const toast of group) {
-      if (byId[toast.id] != null) continue;
-      const previousOffset = previousCollapsedOffsets[toast.id];
-      if (typeof previousOffset === 'number') {
-        byId[toast.id] = previousOffset;
-        continue;
-      }
+				const defaultOffset = isTopPosition
+					? toast.index * ANIMATION_CONFIG.STACK_OFFSET
+					: -(toast.index * ANIMATION_CONFIG.STACK_OFFSET);
+				byId[toast.id] = defaultOffset;
+			}
 
-      const defaultOffset = isTopPosition
-        ? toast.index * ANIMATION_CONFIG.STACK_OFFSET
-        : -(toast.index * ANIMATION_CONFIG.STACK_OFFSET);
-      byId[toast.id] = defaultOffset;
-    }
+			byPosition[pos] = group.map((toast) => byId[toast.id] ?? 0);
+		}
 
-    byPosition[pos] = group.map((toast) => byId[toast.id] ?? 0);
-  }
+		previousCollapsedOffsets = byId;
+		collapsedOffsetData = { byPosition, byId };
+	});
 
-  previousCollapsedOffsets = byId;
-  collapsedOffsetData = { byId, byPosition };
-});
+	// Calculate expandedOffsetData
+	$effect(() => {
+		const byPosition = createPositionMap<number[]>(() => []);
+		const byId: Record<string, number> = {};
 
-// Calculate expandedOffsetData
-$effect(() => {
-  const byPosition = createPositionMap<number[]>(() => []);
-  const byId: Record<string, number> = {};
+		for (const [pos, group] of positionEntries) {
+			const offsets: number[] = [];
+			const activeToasts = group.filter((toast) => !toast.shouldClose);
+			let acc = 0;
 
-  for (const [pos, group] of positionEntries) {
-    const offsets: number[] = [];
-    const activeToasts = group.filter((toast) => !toast.shouldClose);
-    let acc = 0;
+			for (let i = 0; i < activeToasts.length; i++) {
+				if (i === 0) {
+					offsets.push(0);
+					continue;
+				}
+				const prevToast = activeToasts[i - 1];
+				const prevHeight = prevToast ? (heights[prevToast.id] ?? 0) : 0;
+				acc += prevHeight + expandedGap;
+				offsets.push(acc);
+			}
 
-    for (let i = 0; i < activeToasts.length; i++) {
-      if (i === 0) {
-        offsets.push(0);
-        continue;
-      }
-      const prevToast = activeToasts[i - 1];
-      const prevHeight = prevToast ? (heights[prevToast.id] ?? 0) : 0;
-      acc += prevHeight + expandedGap;
-      offsets.push(acc);
-    }
+			for (let i = 0; i < activeToasts.length; i++) {
+				const toast = activeToasts[i];
+				if (!toast) continue;
+				byId[toast.id] = offsets[i] ?? 0;
+			}
 
-    for (let i = 0; i < activeToasts.length; i++) {
-      const toast = activeToasts[i];
-      if (!toast) continue;
-      byId[toast.id] = offsets[i] ?? 0;
-    }
+			for (const toast of group) {
+				if (byId[toast.id] != null) continue;
 
-    for (const toast of group) {
-      if (byId[toast.id] != null) continue;
+				const previousOffset = previousExpandedOffsets[toast.id];
+				if (typeof previousOffset === "number") {
+					byId[toast.id] = previousOffset;
+					continue;
+				}
 
-      const previousOffset = previousExpandedOffsets[toast.id];
-      if (typeof previousOffset === 'number') {
-        byId[toast.id] = previousOffset;
-        continue;
-      }
+				let fallback = 0;
+				for (const candidate of group) {
+					if (candidate.id === toast.id) break;
+					const height = heights[candidate.id] ?? 0;
+					fallback += height + expandedGap;
+				}
+				byId[toast.id] = fallback;
+			}
 
-      let fallback = 0;
-      for (const candidate of group) {
-        if (candidate.id === toast.id) break;
-        const height = heights[candidate.id] ?? 0;
-        fallback += height + expandedGap;
-      }
-      byId[toast.id] = fallback;
-    }
+			byPosition[pos] = group.map((toast) => byId[toast.id] ?? 0);
+		}
 
-    byPosition[pos] = group.map((toast) => byId[toast.id] ?? 0);
-  }
+		previousExpandedOffsets = byId;
+		expandedOffsetData = { byPosition, byId };
+	});
 
-  previousExpandedOffsets = byId;
-  expandedOffsetData = { byId, byPosition };
-});
+	$effect(() => {
+		let hoverFrameId: number | null = null;
+		let pointerX = 0;
+		let pointerY = 0;
 
-$effect(() => {
-  let hoverFrameId: number | null = null;
-  let pointerX = 0;
-  let pointerY = 0;
+		const updateHoverState = (x: number, y: number) => {
+			if (latestPositionEntries.length === 0) return;
+			const next: Record<ToastPosition, boolean> = {
+				...latestHovered,
+			};
+			for (const [pos, group] of latestPositionEntries) {
+				let top = Number.POSITIVE_INFINITY;
+				let left = Number.POSITIVE_INFINITY;
+				let right = Number.NEGATIVE_INFINITY;
+				let bottom = Number.NEGATIVE_INFINITY;
+				let any = false;
+				for (const t of group) {
+					if (t.index >= visibleToasts) continue;
+					const el = document.querySelector(
+						`[data-toast-id="${t.id}"]`,
+					) as HTMLElement | null;
+					if (!el) continue;
+					const rect = el.getBoundingClientRect();
+					top = Math.min(top, rect.top);
+					left = Math.min(left, rect.left);
+					right = Math.max(right, rect.right);
+					bottom = Math.max(bottom, rect.bottom);
+					any = true;
+				}
 
-  const updateHoverState = (x: number, y: number) => {
-    if (latestPositionEntries.length === 0) return;
-    const next: Record<ToastPosition, boolean> = {
-      ...latestHovered
-    };
-    for (const [pos, group] of latestPositionEntries) {
-      let top = Number.POSITIVE_INFINITY;
-      let left = Number.POSITIVE_INFINITY;
-      let right = Number.NEGATIVE_INFINITY;
-      let bottom = Number.NEGATIVE_INFINITY;
-      let any = false;
-      for (const t of group) {
-        if (t.index >= visibleToasts) continue;
-        const el = document.querySelector(`[data-toast-id="${t.id}"]`) as HTMLElement | null;
-        if (!el) continue;
-        const rect = el.getBoundingClientRect();
-        top = Math.min(top, rect.top);
-        left = Math.min(left, rect.left);
-        right = Math.max(right, rect.right);
-        bottom = Math.max(bottom, rect.bottom);
-        any = true;
-      }
+				if (!any) {
+					next[pos] = false;
+					continue;
+				}
 
-      if (!any) {
-        next[pos] = false;
-        continue;
-      }
+				const inside = x >= left && x <= right && y >= top && y <= bottom;
+				next[pos] = inside;
+			}
 
-      const inside = x >= left && x <= right && y >= top && y <= bottom;
-      next[pos] = inside;
-    }
+			const changed = (Object.keys(next) as ToastPosition[]).some(
+				(key) => next[key] !== hovered[key],
+			);
+			if (changed) {
+				hovered = next;
+			}
+		};
 
-    const changed = (Object.keys(next) as ToastPosition[]).some(
-      (key) => next[key] !== hovered[key]
-    );
-    if (changed) {
-      hovered = next;
-    }
-  };
+		const flushHoverUpdate = () => {
+			hoverFrameId = null;
+			updateHoverState(pointerX, pointerY);
+		};
 
-  const flushHoverUpdate = () => {
-    hoverFrameId = null;
-    updateHoverState(pointerX, pointerY);
-  };
+		const handleMouseMove = (event: MouseEvent) => {
+			pointerX = event.clientX;
+			pointerY = event.clientY;
+			if (hoverFrameId == null) {
+				hoverFrameId = requestAnimationFrame(flushHoverUpdate);
+			}
+		};
 
-  const handleMouseMove = (event: MouseEvent) => {
-    pointerX = event.clientX;
-    pointerY = event.clientY;
-    if (hoverFrameId == null) {
-      hoverFrameId = requestAnimationFrame(flushHoverUpdate);
-    }
-  };
+		const handleKeyDown = (event: KeyboardEvent) => {
+			if (event.key === "F6") {
+				if (latestPositionEntries.length === 0) return;
+				let target: HTMLElement | null = null;
+				for (const [, group] of latestPositionEntries) {
+					const candidate = group.find(
+						(t) => !t.shouldClose && !t.isLeaving && t.index < visibleToasts,
+					);
+					if (!candidate) continue;
+					const el = document.querySelector(
+						`[data-toast-id="${candidate.id}"]`,
+					) as HTMLElement | null;
+					if (el) {
+						target = el;
+						break;
+					}
+				}
+				if (!target) return;
+				if (document.activeElement && target.contains(document.activeElement)) {
+					return;
+				}
+				event.preventDefault();
+				focusManager.savePrevFocus();
+				isToastRegionClaimed = true;
+				const focusable = target.querySelector<HTMLElement>(FOCUSABLE_SELECTORS);
+				(focusable ?? target).focus({ preventScroll: true });
+				return;
+			}
 
-  const handleKeyDown = (event: KeyboardEvent) => {
-    if (event.key === 'F6') {
-      if (latestPositionEntries.length === 0) return;
-      let target: HTMLElement | null = null;
-      for (const [, group] of latestPositionEntries) {
-        const candidate = group.find(
-          (t) => !t.shouldClose && !t.isLeaving && t.index < visibleToasts
-        );
-        if (!candidate) continue;
-        const el = document.querySelector(
-          `[data-toast-id="${candidate.id}"]`
-        ) as HTMLElement | null;
-        if (el) {
-          target = el;
-          break;
-        }
-      }
-      if (!target) return;
-      if (document.activeElement && target.contains(document.activeElement)) {
-        return;
-      }
-      event.preventDefault();
-      focusManager.savePrevFocus();
-      isToastRegionClaimed = true;
-      const focusable = target.querySelector<HTMLElement>(FOCUSABLE_SELECTORS);
-      (focusable ?? target).focus({ preventScroll: true });
-      return;
-    }
+			if (event.key !== "Escape") return;
+			for (const [, group] of latestPositionEntries) {
+				const latestToast = group?.[0];
+				if (!latestToast) continue;
+				const container = document.querySelector(
+					`[data-toast-id="${latestToast.id}"]`,
+				) as HTMLElement | null;
+				if (!container) continue;
+				const active = document.activeElement as HTMLElement | null;
+				if (active && container.contains(active)) {
+					const closeBtn = container.querySelector(
+						'[aria-label="Close toast"]',
+					) as HTMLButtonElement | null;
+					if (closeBtn) {
+						event.preventDefault();
+						closeBtn.click();
+					}
+				}
+			}
+		};
 
-    if (event.key !== 'Escape') return;
-    for (const [, group] of latestPositionEntries) {
-      const latestToast = group?.[0];
-      if (!latestToast) continue;
-      const container = document.querySelector(
-        `[data-toast-id="${latestToast.id}"]`
-      ) as HTMLElement | null;
-      if (!container) continue;
-      const active = document.activeElement as HTMLElement | null;
-      if (active && container.contains(active)) {
-        const closeBtn = container.querySelector(
-          '[aria-label="Close toast"]'
-        ) as HTMLButtonElement | null;
-        if (closeBtn) {
-          event.preventDefault();
-          closeBtn.click();
-        }
-      }
-    }
-  };
 
-  const handleWindowBlur = () => {
-    isWindowFocused = false;
-  };
+		const handleWindowBlur = () => {
+			isWindowFocused = false;
+		};
 
-  const handleWindowFocus = () => {
-    isWindowFocused = true;
-  };
+		const handleWindowFocus = () => {
+			isWindowFocused = true;
+		};
 
-  const handleVisibilityChange = () => {
-    isWindowFocused = document.visibilityState !== 'hidden';
-  };
+		const handleVisibilityChange = () => {
+			isWindowFocused = document.visibilityState !== "hidden";
+		};
 
-  const handleDocumentPointerDown = (event: PointerEvent) => {
-    if (event.pointerType !== 'touch') return;
-    if (latestPositionEntries.length === 0) return;
-    const target = event.target as Element | null;
-    if (target && target.closest('[data-toast-id]')) return;
+		const handleDocumentPointerDown = (event: PointerEvent) => {
+			if (event.pointerType !== "touch") return;
+			if (latestPositionEntries.length === 0) return;
+			const target = event.target as Element | null;
+			if (target && target.closest("[data-toast-id]")) return;
 
-    let changed = false;
-    const next = { ...hovered };
-    for (const pos of Object.keys(hovered) as ToastPosition[]) {
-      if (next[pos]) {
-        next[pos] = false;
-        changed = true;
-      }
-    }
-    if (changed) {
-      hovered = next;
-    }
-  };
+			let changed = false;
+			const next = { ...hovered };
+			for (const pos of Object.keys(hovered) as ToastPosition[]) {
+				if (next[pos]) {
+					next[pos] = false;
+					changed = true;
+				}
+			}
+			if (changed) {
+				hovered = next;
+			}
+		};
 
-  document.addEventListener('mousemove', handleMouseMove);
-  document.addEventListener('keydown', handleKeyDown);
-  window.addEventListener('blur', handleWindowBlur);
-  window.addEventListener('focus', handleWindowFocus);
-  document.addEventListener('visibilitychange', handleVisibilityChange);
-  document.addEventListener('pointerdown', handleDocumentPointerDown, true);
-  return () => {
-    if (hoverFrameId != null) {
-      cancelAnimationFrame(hoverFrameId);
-      hoverFrameId = null;
-    }
-    document.removeEventListener('mousemove', handleMouseMove);
-    document.removeEventListener('keydown', handleKeyDown);
-    window.removeEventListener('blur', handleWindowBlur);
-    window.removeEventListener('focus', handleWindowFocus);
-    document.removeEventListener('visibilitychange', handleVisibilityChange);
-    document.removeEventListener('pointerdown', handleDocumentPointerDown, true);
-  };
-});
+		document.addEventListener("mousemove", handleMouseMove);
+		document.addEventListener("keydown", handleKeyDown);
+		window.addEventListener("blur", handleWindowBlur);
+		window.addEventListener("focus", handleWindowFocus);
+		document.addEventListener("visibilitychange", handleVisibilityChange);
+		document.addEventListener("pointerdown", handleDocumentPointerDown, true);
+		return () => {
+			if (hoverFrameId != null) {
+				cancelAnimationFrame(hoverFrameId);
+				hoverFrameId = null;
+			}
+			document.removeEventListener("mousemove", handleMouseMove);
+			document.removeEventListener("keydown", handleKeyDown);
+			window.removeEventListener("blur", handleWindowBlur);
+			window.removeEventListener("focus", handleWindowFocus);
+			document.removeEventListener("visibilitychange", handleVisibilityChange);
+			document.removeEventListener("pointerdown", handleDocumentPointerDown, true);
+		};
+	});
 
-const handleHeightChange = (id: string, height: number) => {
-  if (heights[id] === height) return;
-  heights = { ...heights, [id]: height };
-};
+	const handleHeightChange = (id: string, height: number) => {
+		if (heights[id] === height) return;
+		heights = { ...heights, [id]: height };
+	};
 
-const handleFocusGuard = () => {
-  if (!isToastRegionClaimed) return;
-  isToastRegionClaimed = false;
-  focusManager.restoreFocusToPrevElement();
-};
+	const handleFocusGuard = () => {
+		if (!isToastRegionClaimed) return;
+		isToastRegionClaimed = false;
+		focusManager.restoreFocusToPrevElement();
+	};
 
-let highPriorityToasts = $derived(
-  toasts.filter(
-    (toast) =>
-      toast.priority === 'high' &&
-      !toast.shouldClose &&
-      !toast.isLeaving &&
-      (toast.title || toast.description)
-  )
-);
+	let highPriorityToasts = $derived(
+		toasts.filter(
+			(toast) =>
+				toast.priority === "high" &&
+				!toast.shouldClose &&
+				!toast.isLeaving &&
+				(toast.title || toast.description),
+		),
+	);
 </script>
 
 {#if highPriorityToasts.length > 0}

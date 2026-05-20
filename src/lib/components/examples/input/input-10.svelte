@@ -1,9 +1,10 @@
 <script lang="ts">
-import Mail from '@lucide/svelte/icons/mail';
-import { Input } from '$lib/components/ui/input';
-import { Label } from '$lib/components/ui/label';
+	import { Input } from "$lib/components/ui/input";
+	import { Label } from "$lib/components/ui/label";
 
-const uid = $props.id();
+	import Mail from "@lucide/svelte/icons/mail";
+
+	const uid = $props.id();
 </script>
 
 <div class="space-y-2">

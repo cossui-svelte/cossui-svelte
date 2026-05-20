@@ -1,41 +1,48 @@
 <script lang="ts">
-import Box from '@lucide/svelte/icons/box';
-import Code from '@lucide/svelte/icons/code';
-import Folder from '@lucide/svelte/icons/folder';
-import FolderTree from '@lucide/svelte/icons/folder-tree';
-import { tick } from 'svelte';
-import type { HTMLAttributes } from 'svelte/elements';
-import { page } from '$app/state';
-import type { AvailableCOSSUIComponent } from '$data/api/components/components.handler';
-import * as Tab from '$lib/components/ui/tabs';
-import CodePreview from '../code-preview.svelte';
-import ComponentDependency from '../component-dependency.svelte';
-import GotoComponentButton from '../component-goto-button.svelte';
-import CopyButton from '../copy-button.svelte';
-import ShareButton from '../share-button.svelte';
+	import type { AvailableCOSSUIComponent } from "$data/api/components/components.handler";
+	import type { HTMLAttributes } from "svelte/elements";
 
-type PropsComponentPreview = HTMLAttributes<HTMLDivElement> & {
-  component: AvailableCOSSUIComponent;
-  isSinglePage?: false;
-  onGotoComponent?: (e: MouseEvent) => void;
-};
+	import CodePreview from "../code-preview.svelte";
+	import ComponentDependency from "../component-dependency.svelte";
+	import GotoComponentButton from "../component-goto-button.svelte";
+	import CopyButton from "../copy-button.svelte";
+	import ShareButton from "../share-button.svelte";
 
-type PropsSinglePage = HTMLAttributes<HTMLDivElement> & {
-  component: AvailableCOSSUIComponent;
-  isSinglePage: true;
-  onGotoComponent?: never;
-};
+	import Box from "@lucide/svelte/icons/box";
+import Code from "@lucide/svelte/icons/code";
+import Folder from "@lucide/svelte/icons/folder";
+import FolderTree from "@lucide/svelte/icons/folder-tree";
+	import { page } from "$app/state";
+	import * as Tab from "$lib/components/ui/tabs";
+	import { tick } from "svelte";
 
-type Props = PropsComponentPreview | PropsSinglePage;
+	type PropsComponentPreview = HTMLAttributes<HTMLDivElement> & {
+		component: AvailableCOSSUIComponent;
+		isSinglePage?: false;
+		onGotoComponent?: (e: MouseEvent) => void;
+	};
 
-let { component, isSinglePage = false, onGotoComponent, ...restProps }: Props = $props();
+	type PropsSinglePage = HTMLAttributes<HTMLDivElement> & {
+		component: AvailableCOSSUIComponent;
+		isSinglePage: true;
+		onGotoComponent?: never;
+	};
 
-let dialogRef: HTMLDivElement | null = $state(null);
-let wrapperRef: HTMLDivElement | null = $state(null);
+	type Props = PropsComponentPreview | PropsSinglePage;
 
-const handleTabChange = () => {
-  tick().then(() => {});
-};
+	let {
+		component,
+		isSinglePage = false,
+		onGotoComponent,
+		...restProps
+	}: Props = $props();
+
+	let dialogRef: HTMLDivElement | null = $state(null);
+	let wrapperRef: HTMLDivElement | null = $state(null);
+
+	const handleTabChange = () => {
+		tick().then(() => {});
+	};
 </script>
 
 <div class="flex flex-col gap-4 px-4 pb-4" {...restProps}>

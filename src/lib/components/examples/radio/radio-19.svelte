@@ -1,7 +1,7 @@
 <script lang="ts">
-import { RadioGroup, RadioGroupItem } from '$lib/components/ui/radio-group/index.js';
+	import { RadioGroup, RadioGroupItem } from '$lib/components/ui/radio-group/index.js';
 
-let selectedValue = $state('on');
+	let selectedValue = $state('on');
 </script>
 
 <div class="inline-flex h-9 rounded-lg bg-input/50 p-0.5">

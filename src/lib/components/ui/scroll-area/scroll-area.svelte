@@ -1,27 +1,27 @@
 <script lang="ts">
-import type { ScrollArea as ScrollAreaPrimitive } from 'bits-ui';
-import { cn, type WithoutChild } from '$lib/utils.js';
-import { Scrollbar } from './index';
+    import { ScrollArea as ScrollAreaPrimitive } from "bits-ui";
+    import { Scrollbar } from "./index";
+    import { cn, type WithoutChild } from "$lib/utils.js";
 
-let {
-  ref = $bindable(null),
-  viewportRef = $bindable(null),
-  class: className,
-  orientation = 'vertical',
-  scrollbarXClasses = '',
-  scrollbarYClasses = '',
-  children,
-  scrollFade = false,
-  scrollbarGutter = false,
-  ...restProps
-}: WithoutChild<ScrollAreaPrimitive.RootProps> & {
-  orientation?: 'vertical' | 'horizontal' | 'both' | undefined;
-  scrollbarXClasses?: string | undefined;
-  scrollbarYClasses?: string | undefined;
-  viewportRef?: HTMLElement | null;
-  scrollFade?: boolean;
-  scrollbarGutter?: boolean;
-} = $props();
+    let {
+        ref = $bindable(null),
+        viewportRef = $bindable(null),
+        class: className,
+        orientation = "vertical",
+        scrollbarXClasses = "",
+        scrollbarYClasses = "",
+        children,
+        scrollFade = false,
+        scrollbarGutter = false,
+        ...restProps
+    }: WithoutChild<ScrollAreaPrimitive.RootProps> & {
+        orientation?: "vertical" | "horizontal" | "both" | undefined;
+        scrollbarXClasses?: string | undefined;
+        scrollbarYClasses?: string | undefined;
+        viewportRef?: HTMLElement | null;
+        scrollFade?: boolean;
+        scrollbarGutter?: boolean;
+    } = $props();
 </script>
 
 <ScrollAreaPrimitive.Root

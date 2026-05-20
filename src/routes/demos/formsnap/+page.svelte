@@ -1,25 +1,25 @@
 <script lang="ts">
-import { superForm } from 'sveltekit-superforms';
-import { valibotClient } from 'sveltekit-superforms/adapters';
-import { Control, Field, FieldErrors, Label } from '$lib/formsnap';
-import { userSchema } from './schema';
+    import { superForm } from "sveltekit-superforms";
+    import { valibotClient } from "sveltekit-superforms/adapters";
+    import { Field, Control, Label, FieldErrors } from "$lib/formsnap";
+    import { userSchema } from "./schema";
 
-let { data } = $props();
+    let { data } = $props();
 
-const sf = superForm(data.form, {
-  onUpdated({ form }) {
-    if (form.valid) {
-      alert('Form submitted successfully!');
-    }
-  },
-  resetForm: true,
-  SPA: true,
-  scrollToError: 'smooth',
-  validationMethod: 'oninput',
-  validators: valibotClient(userSchema)
-});
+    const sf = superForm(data.form, {
+        SPA: true,
+        validators: valibotClient(userSchema),
+        validationMethod: "oninput",
+        scrollToError: "smooth",
+        resetForm: true,
+        onUpdated({ form }) {
+            if (form.valid) {
+                alert("Form submitted successfully!");
+            }
+        },
+    });
 
-const { form, enhance, submitting, delayed } = sf;
+    const { form, enhance, submitting, delayed } = sf;
 </script>
 
 <main>

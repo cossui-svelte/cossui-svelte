@@ -1,16 +1,21 @@
 <script lang="ts">
-import type { Snippet } from 'svelte';
-import { Card, CardFrame, CardFrameFooter, CardPanel } from '$lib/components/ui/card';
-import { cn } from '$lib/utils.js';
+	import type { Snippet } from 'svelte';
+	import { cn } from '$lib/utils.js';
+	import {
+		Card,
+		CardFrame,
+		CardFrameFooter,
+		CardPanel
+	} from '$lib/components/ui/card';
 
-interface Props {
-  children: Snippet;
-  footer: Snippet;
-  class?: string;
-  colSpan?: number;
-}
+	interface Props {
+		children: Snippet;
+		footer: Snippet;
+		class?: string;
+		colSpan?: number;
+	}
 
-let { children, footer, class: className, colSpan }: Props = $props();
+	let { children, footer, class: className, colSpan }: Props = $props();
 </script>
 
 <div class={cn('relative flex min-w-0', colSpan === 2 && 'lg:col-span-2', className)}>

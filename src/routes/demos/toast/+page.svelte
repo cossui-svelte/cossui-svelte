@@ -1,12 +1,12 @@
 <script lang="ts">
-import ComponentPreviewTabs from '$lib/components/app/component-preview-tabs.svelte';
-import { Button } from '$lib/components/ui/button';
-import {
-  AnchoredToastProvider,
-  anchoredToastManager,
-  ToastProvider,
-  toastManager
-} from '$lib/components/ui/toast';
+  import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
+  import { Button } from "$lib/components/ui/button";
+  import {
+    AnchoredToastProvider,
+    ToastProvider,
+    anchoredToastManager,
+    toastManager,
+  } from "$lib/components/ui/toast";
 </script>
 
 <!-- Standard toast viewport (rendered once at layout level) -->

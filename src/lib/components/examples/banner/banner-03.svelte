@@ -1,5 +1,5 @@
 <script lang="ts">
-import Eclipse from '@lucide/svelte/icons/eclipse';
+	import Eclipse from "@lucide/svelte/icons/eclipse";
 </script>
 
 <div class="bg-black px-4 py-3 text-white">
