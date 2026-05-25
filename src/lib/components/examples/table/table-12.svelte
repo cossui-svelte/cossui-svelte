@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { User } from "$data/api/data/users.handlers";
+	import type { User } from "$data/(api)/data/users.handlers";
 
 	import { Badge } from "$lib/components/ui/badge";
 	import { Checkbox } from "$lib/components/ui/checkbox";
@@ -9,7 +9,7 @@
 		getCoreRowModel,
 		type RowSelectionState,
 	} from "@tanstack/table-core";
-	import { fetchUsers } from "$data/api/data/users";
+	import { fetchUsers } from "$data/(api)/data/users";
 	import {
 		createSvelteTable,
 		FlexRender,

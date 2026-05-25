@@ -54,19 +54,14 @@ class ComponentRegistry {
   }
 
   #getFileImports = () => {
-    return import.meta.glob<COSSUIComponent>(
-      [
-        '$lib/components/ui/**/*.svelte',
-        '!$lib/components/**/*.svelte',
-        '!$lib/components/**/*.old/**'
-      ],
-      { eager: false, import: 'default' }
-    );
+    return import.meta.glob<COSSUIComponent>(['$lib/components/ui/**/*.svelte'], {
+      eager: false,
+      import: 'default'
+    });
   };
 
   async #initializeComponents(): Promise<Map<COSSUIDirectory, Set<COSSUIComponent>>> {
     const files = this.#getFileImports();
-
     const componentMap = new Map<COSSUIDirectory, Set<COSSUIComponent>>();
 
     // In dev mode, we just need the paths
@@ -138,6 +133,7 @@ class ComponentRegistry {
       const components = this.#components.get(directory);
       const componentsMetadata: ComponentMetadata[] = [];
       const stateBreakdown = {
+        new: 0,
         ready: 0,
         soon: 0,
         todo: 0

@@ -2,8 +2,8 @@
   import PageHeaderDescription from "$lib/components/shared-components/page-header-description.svelte";
   import PageHeaderHeading from "$lib/components/shared-components/page-header-heading.svelte";
   import PageHeader from "$lib/components/shared-components/page-header.svelte";
-  import SiteFooter from "$lib/components/shared-components/site-footer.svelte";
   import CategoryThumbnail from "$lib/components/app/category-thumbnails.svelte";
+  import type { PageData } from "./$types";
 
   import { Badge } from "$lib/components/ui/badge";
   import { Button } from "$lib/components/ui/button";
@@ -16,13 +16,13 @@
     CardPanel,
   } from "$lib/components/ui/card";
 
-  type Category = {
-    slug: string;
-    name: string;
-    description?: string;
-  };
+  // type Category = {
+  //   slug: string;
+  //   name: string;
+  //   description?: string;
+  // };
 
-  let { data } = $props();
+  let { data }: { data: PageData } = $props();
 
   const description = "Built for developers and AI.";
 
@@ -103,7 +103,7 @@
         {@render categoryCard(
           directory,
           readableName,
-          `${componentCount} components, ${stateBreakdown.active} active, ${stateBreakdown.inactive} inactive`,
+          `${componentCount} components`,
         )}
       {/each}
     </div>

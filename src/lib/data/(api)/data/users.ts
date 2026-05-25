@@ -1,4 +1,4 @@
-import { createRequestClient } from '../helpers/RequestClient';
+import { createRequestClient } from '../../old/helpers.old/RequestClient';
 import type { UsersAPIResponseJSON } from './users.handlers';
 import { API_V1_USERS_ROUTE } from './users.routes';
 

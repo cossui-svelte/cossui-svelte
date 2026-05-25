@@ -1,6 +1,7 @@
 import type { Handle } from '@sveltejs/kit';
 import { RequestClient } from '$data/api/helpers/RequestClient';
 
+// this will configure the global fetcher
 const typedServerFetch: Handle = async ({ event, resolve }) => {
   const { fetch, locals } = event;
 
