@@ -5,7 +5,7 @@
 		RadioGroupItem,
 	} from "$lib/components/ui/radio-group/index.js";
 
-	import IconStarFill from "~icons/ri/star-fill";
+	import IconStarFill from "svelte-remixicon/RiStarFill.svelte";
 
 	let selectedValue = $state("all");
 </script>

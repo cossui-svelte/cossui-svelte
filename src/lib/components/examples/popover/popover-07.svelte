@@ -4,10 +4,10 @@
 
 	import Check from "@lucide/svelte/icons/check";
 	import Copy from "@lucide/svelte/icons/copy";
-	import RiCodeFill from "~icons/ri/code-fill";
-	import RiFacebookFill from "~icons/ri/facebook-fill";
-	import RiMailLine from "~icons/ri/mail-line";
-	import RiTwitterXFill from "~icons/ri/twitter-x-fill";
+	import RiCodeFill from "svelte-remixicon/RiCodeFill.svelte";
+	import RiFacebookFill from "svelte-remixicon/RiFacebookFill.svelte";
+	import RiMailLine from "svelte-remixicon/RiMailLine.svelte";
+	import RiTwitterXFill from "svelte-remixicon/RiTwitterXFill.svelte";
 	import {
 		Popover,
 		PopoverContent,

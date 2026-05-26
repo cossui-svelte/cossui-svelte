@@ -21,12 +21,6 @@ export const POSSIBLE_DEPENDENCIES = [
     url: 'https://www.npmjs.com/package/@iconify-json/ri'
   },
   {
-    dev: true,
-    name: '~icons/ri',
-    packageName: 'unplugin-icons',
-    url: 'https://github.com/antfu/unplugin-icons'
-  },
-  {
     dev: false,
     name: '@internationalized/date',
     packageName: '@internationalized/date',

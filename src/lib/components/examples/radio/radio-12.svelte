@@ -1,17 +1,30 @@
 <script lang="ts">
-	import { RadioGroup, RadioGroupItem } from '$lib/components/ui/radio-group/index.js';
+	import {
+		RadioGroup,
+		RadioGroupItem,
+	} from "$lib/components/ui/radio-group/index.js";
 
-	import IconApple from '~icons/ri/apple-line';
-	import IconBankCard from '~icons/ri/bank-card-line';
-	import IconPaypal from '~icons/ri/paypal-line';
+	import IconApple from "svelte-remixicon/RiAppleFill.svelte";
+	import IconBankCard from "svelte-remixicon/RiBankCardLine.svelte";
+	import IconPaypal from "svelte-remixicon/RiPaypalLine.svelte";
 
 	const items = [
-		{ Icon: IconBankCard, id: 'radio-12-cc', label: 'Card', value: 'cc' },
-		{ Icon: IconPaypal, id: 'radio-12-paypal', label: 'PayPal', value: 'paypal' },
-		{ Icon: IconApple, id: 'radio-12-apple-pay', label: 'Apple Pay', value: 'apple-pay' }
+		{ Icon: IconBankCard, id: "radio-12-cc", label: "Card", value: "cc" },
+		{
+			Icon: IconPaypal,
+			id: "radio-12-paypal",
+			label: "PayPal",
+			value: "paypal",
+		},
+		{
+			Icon: IconApple,
+			id: "radio-12-apple-pay",
+			label: "Apple Pay",
+			value: "apple-pay",
+		},
 	];
 
-	let selectedValue = $state('cc');
+	let selectedValue = $state("cc");
 </script>
 
 <RadioGroup class="grid grid-cols-3 gap-2" bind:value={selectedValue}>
@@ -24,8 +37,15 @@
 				value={item.value}
 				class="sr-only after:absolute after:inset-0"
 			/>
-			<item.Icon class="opacity-60" width="20" height="20" aria-hidden="true" />
-			<p class="text-xs font-medium leading-none text-foreground">{item.label}</p>
+			<item.Icon
+				class="opacity-60"
+				width="20"
+				height="20"
+				aria-hidden="true"
+			/>
+			<p class="text-xs font-medium leading-none text-foreground">
+				{item.label}
+			</p>
 		</label>
 	{/each}
 </RadioGroup>

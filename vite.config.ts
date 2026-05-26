@@ -4,7 +4,6 @@ import path from 'node:path';
 import { enhancedImages } from '@sveltejs/enhanced-img';
 import { sveltekit } from '@sveltejs/kit/vite';
 import tailwindcss from '@tailwindcss/vite';
-import Icons from 'unplugin-icons/vite';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
@@ -12,10 +11,6 @@ export default defineConfig({
     tailwindcss(),
     enhancedImages(),
     sveltekit(),
-
-    Icons({
-      compiler: 'svelte'
-    })
   ],
   resolve: {
     alias: {

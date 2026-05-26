@@ -8,12 +8,21 @@
 		BreadcrumbPage,
 		BreadcrumbSeparator
 	} from '$lib/components/ui/breadcrumb';
-	import {
-		DropdownMenu,
-		DropdownMenuContent,
-		DropdownMenuItem,
-		DropdownMenuTrigger
-	} from '$lib/components/ui/dropdowns';
+	import { Select, SelectContent, SelectItem, SelectTrigger } from '$lib/components/ui/select';
+
+	const sections = [
+		{ value: 'documentation', label: 'Documentation', href: '#title' },
+		{ value: 'themes', label: 'Themes', href: '#title' },
+		{ value: 'github', label: 'GitHub', href: '#title' }
+	];
+
+	let selected = $state<string | undefined>(undefined);
+
+	$effect(() => {
+		if (!selected) return;
+		const section = sections.find((s) => s.value === selected);
+		if (section) window.location.href = section.href;
+	});
 </script>
 
 <Breadcrumb>
@@ -23,29 +32,16 @@
 		</BreadcrumbItem>
 		<BreadcrumbSeparator />
 		<BreadcrumbItem>
-			<DropdownMenu>
-				<DropdownMenuTrigger class="hover:text-foreground">
+			<Select bind:value={selected} type="single">
+				<SelectTrigger class="hover:text-foreground" aria-label="Toggle menu">
 					<BreadcrumbEllipsis />
-					<span class="sr-only">Toggle menu</span>
-				</DropdownMenuTrigger>
-				<DropdownMenuContent align="start">
-					<DropdownMenuItem>
-						{#snippet child({ props })}
-							<a href="#title" {...props}>Documentation</a>
-						{/snippet}
-					</DropdownMenuItem>
-					<DropdownMenuItem>
-						{#snippet child({ props })}
-							<a href="#title" {...props}>Themes</a>
-						{/snippet}
-					</DropdownMenuItem>
-					<DropdownMenuItem>
-						{#snippet child({ props })}
-							<a href="#title" {...props}>GitHub</a>
-						{/snippet}
-					</DropdownMenuItem>
-				</DropdownMenuContent>
-			</DropdownMenu>
+				</SelectTrigger>
+				<SelectContent>
+					{#each sections as section}
+						<SelectItem value={section.value} label={section.label} />
+					{/each}
+				</SelectContent>
+			</Select>
 		</BreadcrumbItem>
 		<BreadcrumbSeparator />
 		<BreadcrumbItem>
