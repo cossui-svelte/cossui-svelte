@@ -36,7 +36,7 @@
   },
   "license": "AGPL-3.0-or-later",
   "name": "coss-ui-svelte",
-  "packageManager": "pnpm@11.3.0",
+  "packageManager": "pnpm@10.33.4",
   "peerDependencies": {
     "svelte": "^5.55.9"
   },
