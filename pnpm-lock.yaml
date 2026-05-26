@@ -8,10 +8,6 @@ importers:
 
   .:
     dependencies:
-      svelte:
-        specifier: ^5.55.9
-        version: 5.55.9
-    devDependencies:
       '@aejkatappaja/phantom-ui':
         specifier: ^0.10.1
         version: 0.10.1
@@ -21,6 +17,43 @@ importers:
       '@lucide/svelte':
         specifier: ^1.16.0
         version: 1.16.0(svelte@5.55.9)
+      bits-ui:
+        specifier: ^2.18.1
+        version: 2.18.1(@internationalized/date@3.12.1)(@sveltejs/kit@2.61.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.55.9)(vite@8.0.14(@types/node@25.9.1)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.3)(yaml@2.9.0)))(svelte@5.55.9)(typescript@6.0.3)(vite@8.0.14(@types/node@25.9.1)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.3)(yaml@2.9.0)))(svelte@5.55.9)
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      inputmask:
+        specifier: ^5.0.9
+        version: 5.0.9
+      mode-watcher:
+        specifier: ^1.1.0
+        version: 1.1.0(svelte@5.55.9)
+      shiki:
+        specifier: ^4.1.0
+        version: 4.1.0
+      svelte:
+        specifier: ^5.55.9
+        version: 5.55.9
+      svelte-remixicon:
+        specifier: ^2.10.0
+        version: 2.10.0(svelte@5.55.9)
+      svelte-tel-input:
+        specifier: ^4.2.0
+        version: 4.2.0(svelte@5.55.9)
+      svelte-toolbelt:
+        specifier: ^0.10.6
+        version: 0.10.6(@sveltejs/kit@2.61.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.55.9)(vite@8.0.14(@types/node@25.9.1)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.3)(yaml@2.9.0)))(svelte@5.55.9)(typescript@6.0.3)(vite@8.0.14(@types/node@25.9.1)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.3)(yaml@2.9.0)))(svelte@5.55.9)
+      sveltekit-superforms:
+        specifier: ^2.30.1
+        version: 2.30.1(@sveltejs/kit@2.61.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.55.9)(vite@8.0.14(@types/node@25.9.1)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.3)(yaml@2.9.0)))(svelte@5.55.9)(typescript@6.0.3)(vite@8.0.14(@types/node@25.9.1)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.3)(yaml@2.9.0)))(svelte@5.55.9)(typescript@6.0.3)
+      tailwind-merge:
+        specifier: ^3.6.0
+        version: 3.6.0
+      tailwind-variants:
+        specifier: ^3.2.2
+        version: 3.2.2(tailwind-merge@3.6.0)(tailwindcss@4.3.0)
+    devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^7.0.1
         version: 7.0.1(@sveltejs/kit@2.61.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.55.9)(vite@8.0.14(@types/node@25.9.1)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.3)(yaml@2.9.0)))(svelte@5.55.9)(typescript@6.0.3)(vite@8.0.14(@types/node@25.9.1)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.3)(yaml@2.9.0)))
@@ -45,48 +78,15 @@ importers:
       '@types/node':
         specifier: ^25.9.1
         version: 25.9.1
-      bits-ui:
-        specifier: ^2.18.1
-        version: 2.18.1(@internationalized/date@3.12.1)(@sveltejs/kit@2.61.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.55.9)(vite@8.0.14(@types/node@25.9.1)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.3)(yaml@2.9.0)))(svelte@5.55.9)(typescript@6.0.3)(vite@8.0.14(@types/node@25.9.1)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.3)(yaml@2.9.0)))(svelte@5.55.9)
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
-      inputmask:
-        specifier: ^5.0.9
-        version: 5.0.9
       knip:
         specifier: ^6.14.2
         version: 6.14.2(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)
-      mode-watcher:
-        specifier: ^1.1.0
-        version: 1.1.0(svelte@5.55.9)
       postcss:
         specifier: ^8.5.15
         version: 8.5.15
-      shiki:
-        specifier: ^4.1.0
-        version: 4.1.0
       svelte-check:
         specifier: ^4.4.8
         version: 4.4.8(picomatch@4.0.4)(svelte@5.55.9)(typescript@6.0.3)
-      svelte-remixicon:
-        specifier: ^2.10.0
-        version: 2.10.0(svelte@5.55.9)
-      svelte-tel-input:
-        specifier: ^4.2.0
-        version: 4.2.0(svelte@5.55.9)
-      svelte-toolbelt:
-        specifier: ^0.10.6
-        version: 0.10.6(@sveltejs/kit@2.61.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.55.9)(vite@8.0.14(@types/node@25.9.1)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.3)(yaml@2.9.0)))(svelte@5.55.9)(typescript@6.0.3)(vite@8.0.14(@types/node@25.9.1)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.3)(yaml@2.9.0)))(svelte@5.55.9)
-      sveltekit-superforms:
-        specifier: ^2.30.1
-        version: 2.30.1(@sveltejs/kit@2.61.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.55.9)(vite@8.0.14(@types/node@25.9.1)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.3)(yaml@2.9.0)))(svelte@5.55.9)(typescript@6.0.3)(vite@8.0.14(@types/node@25.9.1)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.3)(yaml@2.9.0)))(svelte@5.55.9)(typescript@6.0.3)
-      tailwind-merge:
-        specifier: ^3.6.0
-        version: 3.6.0
-      tailwind-variants:
-        specifier: ^3.2.2
-        version: 3.2.2(tailwind-merge@3.6.0)(tailwindcss@4.3.0)
       tailwindcss:
         specifier: ^4.3.0
         version: 4.3.0
@@ -1562,8 +1562,8 @@ packages:
     resolution: {integrity: sha512-xal3CZX1Xlo/k4ApwCFrHVACi9fBqJ7V+mwhBsuf/1IOKbBy098Fex+Wa/5QMubw09pSZ/u8EY8PWgevJsXp1A==}
     engines: {node: '>=6'}
 
-  semver@7.8.0:
-    resolution: {integrity: sha512-AcM7dV/5ul4EekoQ29Agm5vri8JNqRyj39o0qpX6vDF2GZrtutZl5RwgD1XnZjiTAfncsJhMI48QQH3sN87YNA==}
+  semver@7.8.1:
+    resolution: {integrity: sha512-rkVq3IXh+4FDGch+KwzX3aV9W3kO54GyEgpvBzSyctDA6Xtd7RJQV1xmXbeQp5v7+VzLOfVqiutSE6GICgPFvg==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -3160,7 +3160,7 @@ snapshots:
     dependencies:
       mri: 1.2.0
 
-  semver@7.8.0: {}
+  semver@7.8.1: {}
 
   set-cookie-parser@3.1.0: {}
 
@@ -3168,7 +3168,7 @@ snapshots:
     dependencies:
       '@img/colour': 1.1.0
       detect-libc: 2.1.2
-      semver: 7.8.0
+      semver: 7.8.1
     optionalDependencies:
       '@img/sharp-darwin-arm64': 0.34.5
       '@img/sharp-darwin-x64': 0.34.5
