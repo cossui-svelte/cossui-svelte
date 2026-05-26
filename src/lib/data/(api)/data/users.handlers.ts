@@ -1,5 +1,4 @@
 import type { RequestHandler as DataUsersRequestHandler } from '../../../../routes/(api)/api/v1/data/users/$types';
-
 import type { TypedResponse } from '../../old/helpers.old/types';
 
 const USERS_DATA = [

@@ -12,13 +12,15 @@
 		value: string;
 	}
 
-	interface Props {
+	let {
+		items,
+		selectedItems,
+		onItemsChange,
+	}: {
 		items: SearchItem[];
 		selectedItems: SearchItem[];
 		onItemsChange: (items: SearchItem[]) => void;
-	}
-
-	let { items, selectedItems, onItemsChange }: Props = $props();
+	} = $props();
 
 	let inputValue = $state("");
 	let open = $state(selectedItems.length === 0);

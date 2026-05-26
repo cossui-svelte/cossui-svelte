@@ -3,7 +3,17 @@
   "assist": {
     "actions": {
       "source": {
-        "organizeImports": "on",
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [
+              [":PACKAGE_WITH_PROTOCOL:", ":PACKAGE:"],
+              ["$lib/components/ui/**"],
+              ["$lib/**"],
+              ":PATH:"
+            ]
+          }
+        },
         "useSortedKeys": "on"
       }
     },
@@ -20,9 +30,12 @@
       "knip.ts",
       "postcss.config.mjs",
       "!node_modules",
+      "!pnpm-lock.yaml",
+      "!pnpm-workspace.yaml",
       "!dist",
-      "!.svelte-kit",
       "!build",
+      "!.svelte-kit",
+      "!**/*.log",
       "!**/*.old",
       "!**/*.old"
     ]
@@ -86,6 +99,12 @@
             "noConsole": "off"
           }
         }
+      }
+    },
+    {
+      "includes": ["src/lib/formsnap/**", "src/lib/vaul/**", "src/lib/varsel/**"],
+      "linter": {
+        "enabled": false
       }
     }
   ],

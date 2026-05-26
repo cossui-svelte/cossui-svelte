@@ -2,7 +2,7 @@
 
 import Timeline from './timeline.svelte';
 import Content from './timeline-content.svelte';
-import Date from './timeline-date.svelte';
+import TLDate from './timeline-date.svelte';
 import Header from './timeline-header.svelte';
 import Indicator from './timeline-indicator.svelte';
 import Item from './timeline-item.svelte';
@@ -11,10 +11,7 @@ import Title from './timeline-title.svelte';
 
 export {
   Content,
-  //
   Content as TimelineContent,
-  Date,
-  Date as TimelineDate,
   Header,
   Header as TimelineHeader,
   Indicator,
@@ -25,5 +22,7 @@ export {
   Separator as TimelineSeparator,
   Timeline,
   Title,
-  Title as TimelineTitle
+  Title as TimelineTitle,
+  TLDate,
+  TLDate as TimelineDate
 };

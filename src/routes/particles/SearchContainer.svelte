@@ -1,30 +1,31 @@
 <script lang="ts">
-	import { page } from '$app/state';
-	import { goto } from '$app/navigation';
-	import { particles } from '$lib/registry/registry-particles.js';
-	import { getCategorySortOrder } from '$lib/registry/registry-categories.js';
-	import SearchField, { type SearchItem } from './SearchField.svelte';
+	import { page } from "$app/state";
+	import { goto } from "$app/navigation";
+	import { particles } from "$lib/registry/registry-particles.js";
+	import { getCategorySortOrder } from "$lib/registry/registry-categories.js";
+	import SearchField, { type SearchItem } from "./SearchField.svelte";
 
 	const uniqueCategories = Array.from(
-		new Set(particles.flatMap((p) => p.categories ?? []))
+		new Set(particles.flatMap((p) => p.categories ?? [])),
 	).sort((a, b) => getCategorySortOrder(a) - getCategorySortOrder(b));
 
 	const searchItems: SearchItem[] = uniqueCategories.map((category) => ({
 		label: category
-			.split(' ')
+			.split(" ")
 			.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-			.join(' '),
-		value: category
+			.join(" "),
+		value: category,
 	}));
 
 	const selectedItems = $derived(
-		(page.url.searchParams.get('tags')?.split(',').filter(Boolean) ?? [])
+		(page.url.searchParams.get("tags")?.split(",").filter(Boolean) ?? [])
 			.map((tag) => searchItems.find((item) => item.value === tag))
-			.filter((item): item is SearchItem => !!item)
+			.filter((item): item is SearchItem => !!item),
 	);
 
 	function updateSelectedItems(items: SearchItem[]) {
-		const tags = items.length > 0 ? items.map((i) => i.value).join(',') : '';
+		const tags =
+			items.length > 0 ? items.map((i) => i.value).join(",") : "";
 		const newUrl = tags
 			? `${page.url.pathname}?tags=${encodeURIComponent(tags)}`
 			: page.url.pathname;
@@ -33,5 +34,9 @@
 </script>
 
 <div class="mb-8 md:mb-12 lg:mb-16">
-	<SearchField items={searchItems} {selectedItems} onItemsChange={updateSelectedItems} />
+	<SearchField
+		items={searchItems}
+		{selectedItems}
+		onItemsChange={updateSelectedItems}
+	/>
 </div>

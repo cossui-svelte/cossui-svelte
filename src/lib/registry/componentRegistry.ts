@@ -7,7 +7,6 @@ import type {
   COSSUIDirectory,
   COSSUIDirectoryToComponent
 } from '$lib/registry/componentRegistry.types';
-
 import { GITHUB_REPO_URL } from '../constants';
 
 interface ComponentMetadata {

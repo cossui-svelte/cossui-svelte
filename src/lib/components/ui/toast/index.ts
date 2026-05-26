@@ -11,6 +11,5 @@ export type {
   ToastSide,
   ToastType
 } from './toast-manager.svelte';
-
 export { anchoredToastManager, toastManager } from './toast-manager.svelte';
 export { default as ToastProvider } from './toast-provider.svelte';

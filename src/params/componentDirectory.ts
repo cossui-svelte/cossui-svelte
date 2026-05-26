@@ -1,5 +1,4 @@
 import type { ParamMatcher } from '@sveltejs/kit';
-
 import { COSSUI_DIRECTORIES } from '$lib/registry/componentRegistry.components';
 
 export const match = ((

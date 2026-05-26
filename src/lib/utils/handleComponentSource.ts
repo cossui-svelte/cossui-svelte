@@ -47,7 +47,6 @@ export async function getComponentSource(
   directory: COSSUIDirectory,
   componentName: COSSUIComponent
 ) {
-  console.log(`Getting source for component: ${directory}/${componentName}`);
   const path = buildComponentPath(directory, componentName);
   const imports = getImports();
   const importFn = imports.source[path];
@@ -93,7 +92,9 @@ function getDependencies(source: string): PossibleDependency[] {
   for (const match of matches) {
     const importPath = match[1] || match[2];
     const matchingDeps = POSSIBLE_DEPENDENCIES.filter((dep) => importPath.includes(dep.name));
-    matchingDeps.forEach((dep) => dependencies.add(dep));
+    matchingDeps.forEach(function dd(dep) {
+      dependencies.add(dep);
+    });
   }
 
   const enhancedImageMatch = source.match(ENHANCED_IMAGE_REGEX);

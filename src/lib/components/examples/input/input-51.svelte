@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Input } from "$lib/components/ui/input";
 	import { Label } from "$lib/components/ui/label";
-	import { usePasswordStrength } from "$lib/hooks/use-password-strength.svelte";
+	import { usePasswordStrength } from "$lib/hooks/use-password-strength.svelte.ts";
 	import { cn } from "$lib/utils.js";
 
 	import Check from "@lucide/svelte/icons/check";
