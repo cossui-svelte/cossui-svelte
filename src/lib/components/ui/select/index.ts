@@ -24,7 +24,6 @@ export {
   SelectGroup,
   SelectPrimitive,
   Separator as SelectSeparator,
-
   Trigger as SelectTrigger,
   Value as SelectValue
 };

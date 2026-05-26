@@ -2,7 +2,7 @@
 /**
  * !!!!!!!!!!
  * This file is auto-generated. Do not edit manually
- * Last generated at: 5/25/2026, 7:42:36 PM
+ * Last generated at: 5/26/2026, 6:01:57 PM
  * To update, run: pnpm generate:registry --format
  * @version 0.1.1
  * !!!!!!!!!!
@@ -508,17 +508,7 @@ export const COSSUI_DIRECTORIES = {
       'select-01.svelte',
       'select-02.svelte',
       'select-03.svelte',
-      'select-04.svelte',
       'select-05.svelte',
-      'select-06.svelte',
-      'select-07.svelte',
-      'select-08.svelte',
-      'select-09.svelte',
-      'select-10.svelte',
-      'select-11.svelte',
-      'select-12.svelte',
-      'select-13.svelte',
-      'select-14.svelte',
       'select-15.svelte',
       'select-16.svelte',
       'select-17.svelte',
@@ -549,21 +539,15 @@ export const COSSUI_DIRECTORIES = {
       'select-42.svelte',
       'select-43.svelte',
       'select-44.svelte',
-      'select-45.svelte',
-      'select-46.todo.svelte',
-      'select-47.todo.svelte',
-      'select-48.svelte',
-      'select-49.todo.svelte',
-      'select-50.todo.svelte',
-      'select-51.todo.svelte'
+      'select-45.svelte'
     ],
     description: 'A common form component for choosing a predefined value in a dropdown menu.',
     directory: 'select',
     isnew: false,
     name: 'Select',
     status: {
-      ready: 46,
-      todo: 5
+      ready: 35,
+      todo: 0
     }
   },
   SLIDER: {
