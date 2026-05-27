@@ -20,6 +20,7 @@
 		const validCategories = rawCategories.filter(
 			isValidRegistryCategory,
 		) as RegistryCategory[];
+
 		const hasInvalid = rawCategories.some(
 			(c) => !isValidRegistryCategory(c),
 		);
