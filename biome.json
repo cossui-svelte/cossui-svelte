@@ -9,7 +9,7 @@
             "groups": [
               [":PACKAGE_WITH_PROTOCOL:", ":PACKAGE:"],
               ["$lib/components/ui/**"],
-              ["$lib/**"],
+              ["$lib/**", "$assets/**"],
               ":PATH:"
             ]
           }
@@ -48,6 +48,9 @@
     "indentWidth": 2,
     "lineEnding": "lf",
     "lineWidth": 100
+  },
+  "html": {
+    "experimentalFullSupportEnabled": true
   },
   "javascript": {
     "formatter": {
