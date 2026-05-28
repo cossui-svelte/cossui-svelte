@@ -11,8 +11,8 @@
 </script>
 
 <div
-  class={cn("not-empty:p-2 text-center text-base text-muted-foreground sm:text-sm", className)}
-  data-slot="combobox-empty"
+  class={cn("flex flex-row", className)}
+  data-slot="combobox-row"
   {...restProps}
 >
   {@render children?.()}

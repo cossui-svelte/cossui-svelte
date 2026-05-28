@@ -1,14 +1,19 @@
 <script lang="ts">
-	import * as Select from '$lib/components/ui/select/index.js';
+	import {
+		Select,
+		SelectContent,
+		SelectItem,
+		SelectTrigger,
+	} from "$lib/components/ui/select";
 
 	const items = [
-		{ label: 'Svelte', value: 's1' },
-		{ label: 'Next.js', value: 's2' },
-		{ label: 'Astro', value: 's3' },
-		{ label: 'Gatsby', value: 's4' }
+		{ label: "Svelte", value: "s1" },
+		{ label: "Next.js", value: "s2" },
+		{ label: "Astro", value: "s3" },
+		{ label: "Gatsby", value: "s4" },
 	] as const;
 
-	let value = $state('');
+	let value = $state("");
 
 	const selected = $derived(items.find((i) => i.value === value));
 
@@ -18,22 +23,25 @@
 <div
 	class="relative rounded-lg border border-input bg-background shadow-sm shadow-black/5 transition-shadow focus-within:border-ring focus-within:outline-none focus-within:ring-[3px] focus-within:ring-ring/20 has-[:disabled]:cursor-not-allowed has-[:disabled]:opacity-50 [&:has(input:is(:disabled))_*]:pointer-events-none"
 >
-	<label for={uid} class="block px-3 pt-2 text-xs font-medium text-foreground">
+	<label
+		for={uid}
+		class="block px-3 pt-2 text-xs font-medium text-foreground"
+	>
 		Select with inset label
 	</label>
-	<Select.Root type="single" bind:value>
-		<Select.Trigger
+	<Select type="single" bind:value>
+		<SelectTrigger
 			id={uid}
 			class="border-none bg-transparent shadow-none focus:ring-0 focus:ring-offset-0"
 		>
-			{selected?.label ?? 'Select a framework'}
-		</Select.Trigger>
-		<Select.Content>
+			{selected?.label ?? "Select a framework"}
+		</SelectTrigger>
+		<SelectContent>
 			{#each items as item (item.value)}
-				<Select.Item value={item.value}>
+				<SelectItem value={item.value}>
 					{item.label}
-				</Select.Item>
+				</SelectItem>
 			{/each}
-		</Select.Content>
-	</Select.Root>
+		</SelectContent>
+	</Select>
 </div>

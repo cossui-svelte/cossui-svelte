@@ -1,19 +1,19 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
-  import type { HTMLAttributes } from "svelte/elements";
+  import { Combobox } from "bits-ui";
   import { cn } from "$lib/utils.js";
 
-  interface Props extends HTMLAttributes<HTMLDivElement> {
+  interface Props extends Combobox.TriggerProps {
     children?: Snippet;
   }
 
   let { class: className, children, ...restProps }: Props = $props();
 </script>
 
-<div
-  class={cn("not-empty:p-2 text-center text-base text-muted-foreground sm:text-sm", className)}
-  data-slot="combobox-empty"
+<Combobox.Trigger
+  class={cn(className)}
+  data-slot="combobox-trigger"
   {...restProps}
 >
   {@render children?.()}
-</div>
+</Combobox.Trigger>

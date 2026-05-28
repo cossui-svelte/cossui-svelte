@@ -15,7 +15,7 @@
     "tailwind-variants": "^3.2.2"
   },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "^7.0.1",
+    "@sveltejs/adapter-vercel": "^6.3.3",
     "@sveltejs/enhanced-img": "^0.10.4",
     "@sveltejs/kit": "^2.61.1",
     "@sveltejs/vite-plugin-svelte": "^7.1.2",
