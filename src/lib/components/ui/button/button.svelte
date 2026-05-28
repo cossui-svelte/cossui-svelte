@@ -2,8 +2,12 @@
   import { Spinner } from "$lib/components/ui/spinner";
   import { Button } from "bits-ui";
   import { cn } from "$lib/utils";
-  import { buttonVariants } from "./button-variants";
-  import type { ButtonProps } from ".";
+  import {
+    buttonVariants,
+    type ButtonSize,
+    type ButtonVariant,
+  } from "./button-variants";
+  import type { Snippet } from "svelte";
 
   let {
     class: className,
@@ -12,7 +16,13 @@
     children,
     loading,
     ...restProps
-  }: Button.RootProps & ButtonProps = $props();
+  }: Button.RootProps & {
+    variant?: ButtonVariant;
+    size?: ButtonSize;
+    class?: string;
+    children?: Snippet;
+    loading?: boolean;
+  } = $props();
 </script>
 
 <Button.Root

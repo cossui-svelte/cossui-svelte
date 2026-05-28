@@ -1,8 +1,16 @@
 <script lang="ts">
 	import { Toggle as TogglePrimitive } from "bits-ui";
 	import { cn } from "$lib/utils.js";
-	import { toggleVariants } from "./toggle-variants";
-	import type { ToggleProps } from ".";
+	import {
+		toggleVariants,
+		type ToggleSize,
+		type ToggleVariant,
+	} from "./toggle-variants";
+
+	type ToggleProps = TogglePrimitive.RootProps & {
+		variant?: ToggleVariant;
+		size?: ToggleSize;
+	};
 
 	let {
 		ref = $bindable(null),

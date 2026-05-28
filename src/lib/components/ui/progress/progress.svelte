@@ -15,7 +15,8 @@
   import { setContext } from "svelte";
   import { Progress as ProgressPrimitive } from "bits-ui";
   import { cn } from "$lib/utils.js";
-  import { ProgressIndicator, ProgressTrack } from ".";
+  import ProgressIndicator from "./progress-indicator.svelte";
+  import ProgressTrack from "./progress-track.svelte";
 
   type Props = ProgressPrimitive.RootProps & { children?: Snippet };
 

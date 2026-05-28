@@ -12,31 +12,31 @@ export interface ToastActionProps {
 }
 
 export interface AnchorPositionerProps {
-  anchor: string | HTMLElement | null;
-  sideOffset?: number;
-  side?: ToastSide;
   align?: ToastAlign;
+  anchor: string | HTMLElement | null;
+  side?: ToastSide;
+  sideOffset?: number;
 }
 
 export interface AnchoredToastData {
-  id: string;
-  title?: string;
-  description?: string;
-  type?: ToastType;
-  duration?: number;
   action?: ToastActionProps;
+  description?: string;
+  duration?: number;
+  id: string;
   positionerProps?: AnchorPositionerProps;
+  title?: string;
   tooltipStyle?: boolean;
+  type?: ToastType;
 }
 
 export type AddAnchoredToastOptions = Omit<AnchoredToastData, 'id'> & { id?: string };
 
 export interface AddToastOptions {
-  title?: string;
-  description?: string;
-  type?: ToastType;
   action?: ToastActionProps;
+  description?: string;
   duration?: number;
+  title?: string;
+  type?: ToastType;
 }
 
 export type AddToastVariantOptions = Omit<AddToastOptions, 'type'>;

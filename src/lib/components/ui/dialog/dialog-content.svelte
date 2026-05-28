@@ -7,7 +7,9 @@
 	import { Button } from "$lib/components/ui/button";
 	import XIcon from "@lucide/svelte/icons/x";
 
-	import { DialogOverlay, DialogPortal } from ".";
+	import DialogPortal from "./dialog-portal.svelte";
+	import DialogOverlay from "./dialog-backdrop.svelte";
+
 	import { cn } from "$lib/utils";
 
 	let {

@@ -14,6 +14,7 @@
             ]
           }
         },
+        "useSortedInterfaceMembers": "on",
         "useSortedKeys": "on"
       }
     },
@@ -86,7 +87,9 @@
       },
       "suspicious": {
         "noConsole": "warn",
-        "noExplicitAny": "warn"
+        "noDeprecatedImports": "error",
+        "noExplicitAny": "warn",
+        "noImportCycles": "error"
       }
     }
   },

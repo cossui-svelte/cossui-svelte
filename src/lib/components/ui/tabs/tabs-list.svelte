@@ -2,7 +2,8 @@
   import type { Snippet } from "svelte";
   import { Tabs } from "bits-ui";
   import { cn } from "$lib/utils.js";
-  import type { TabsVariant } from ".";
+
+  type TabsVariant = "default" | "underline";
 
   interface Props extends Tabs.ListProps {
     variant?: TabsVariant;

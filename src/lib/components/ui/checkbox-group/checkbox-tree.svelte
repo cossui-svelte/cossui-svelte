@@ -9,9 +9,24 @@
 
 <script lang="ts">
     import type { Snippet } from "svelte";
-
     import { SvelteSet } from "svelte/reactivity";
-    import type { RenderNodeProps, CheckBoxTreeNode } from ".";
+
+    interface CheckBoxTreeNode {
+        children?: CheckBoxTreeNode[];
+        defaultChecked?: boolean;
+        id: string;
+        indeterminate?: boolean;
+        label: string;
+    }
+
+    interface RenderNodeProps {
+        checked: boolean;
+        children: RenderNodeProps[];
+        id: string;
+        indeterminate?: boolean;
+        label: string;
+        onCheckedChange: () => void;
+    }
 
     let {
         renderNode,

@@ -3,7 +3,9 @@
 	import { cn } from "$lib/utils.js";
 	import { getContext, type ComponentProps } from "svelte";
 	import type { WithoutChildrenOrChild } from "$lib/utils.js";
-	import { DrawerViewport, DrawerOverlay, DrawerPortal } from ".";
+	import DrawerViewport from "./drawer-viewport.svelte";
+	import DrawerOverlay from "./drawer-overlay.svelte";
+	import DrawerPortal from "./drawer-portal.svelte";
 
 	type DrawerPosition = "right" | "left" | "top" | "bottom";
 

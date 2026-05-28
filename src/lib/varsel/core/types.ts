@@ -8,23 +8,6 @@ import type { toastContainerVariants } from './variants';
  * Represents the data structure for a single toast notification.
  */
 export interface ToastData extends VariantProps<typeof toastContainerVariants> {
-  /** Unique identifier for the toast. */
-  id: string;
-  /** The main title of the toast notification. */
-  title?: string;
-  /** Additional details or description displayed below the title. */
-  description?: string;
-  /** Optional CSS class to apply to the toast container. */
-  className?: string;
-  /**
-   * Duration in milliseconds before the toast automatically closes.
-   * Defaults to 5000ms. Set to `0` or `Infinity` to keep open indefinitely.
-   */
-  duration?: number;
-  /** Whether the toast is in a loading state. */
-  isLoading?: boolean;
-  /** Whether to show the close button. Defaults to `true`. */
-  showClose?: boolean;
   /** Optional action button to display within the toast. */
   action?: {
     /** Label for the action button. */
@@ -32,14 +15,29 @@ export interface ToastData extends VariantProps<typeof toastContainerVariants> {
     /** Callback function executed when the action button is clicked. */
     onClick: () => void;
   };
+  /** Optional CSS class to apply to the toast container. */
+  className?: string;
+  /** Custom Svelte component to render instead of the default toast layout. */
+  component?: Component<any>; // Use Component<any> for storage
+  /** Props to pass to the custom component. */
+  componentProps?: Record<string, any>;
+  /** Additional details or description displayed below the title. */
+  description?: string;
+  /**
+   * Duration in milliseconds before the toast automatically closes.
+   * Defaults to 5000ms. Set to `0` or `Infinity` to keep open indefinitely.
+   */
+  duration?: number;
+  /** Unique identifier for the toast. */
+  id: string;
+  /** Internal flag: signals that the toast is currently leaving the DOM. */
+  isLeaving?: boolean;
+  /** Whether the toast is in a loading state. */
+  isLoading?: boolean;
   /** Callback fired when the toast finishes its auto-close timer. */
   onAutoClose?: () => void;
   /** Callback fired when the toast is dismissed manually (button, swipe, `toast.dismiss`, etc.). */
   onDismiss?: () => void;
-  /** Internal flag: signals that the toast should begin its closing animation. */
-  shouldClose?: boolean;
-  /** Internal flag: signals that the toast is currently leaving the DOM. */
-  isLeaving?: boolean;
   /** The position on the screen where this toast should appear. */
   position?: ToastPosition;
   /**
@@ -52,10 +50,12 @@ export interface ToastData extends VariantProps<typeof toastContainerVariants> {
    *   immediately even while the main toast has not received focus.
    */
   priority?: 'low' | 'high';
-  /** Custom Svelte component to render instead of the default toast layout. */
-  component?: Component<any>; // Use Component<any> for storage
-  /** Props to pass to the custom component. */
-  componentProps?: Record<string, any>;
+  /** Internal flag: signals that the toast should begin its closing animation. */
+  shouldClose?: boolean;
+  /** Whether to show the close button. Defaults to `true`. */
+  showClose?: boolean;
+  /** The main title of the toast notification. */
+  title?: string;
 }
 
 /**
@@ -175,15 +175,15 @@ export type PositionedToast = ToastData & {
  * Context provided to toast items (mostly for internal use).
  */
 export interface VarselItemContext {
-  toast: PositionedToast;
-  onRemove: (id: string) => void;
-  isGroupHovered?: boolean;
-  expandedOffset?: number;
-  expandedGap?: number;
   collapsedOffset?: number;
+  expandedGap?: number;
+  expandedOffset?: number;
   hiddenCollapsedOffset?: number;
-  onHeightChange?: (id: string, height: number) => void;
+  isGroupHovered?: boolean;
   onGroupHoverEnter?: () => void;
+  onHeightChange?: (id: string, height: number) => void;
+  onRemove: (id: string) => void;
+  toast: PositionedToast;
 }
 
 /** Function signature for toast state subscribers. */

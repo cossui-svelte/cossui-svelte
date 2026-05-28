@@ -15,8 +15,8 @@ export type IconElement =
   | { tag: 'circle'; cx: number; cy: number; r: number };
 
 export interface VariantIconDefinition {
-  viewBox: string;
   elements: IconElement[];
+  viewBox: string;
 }
 
 export const variantIconMap = {

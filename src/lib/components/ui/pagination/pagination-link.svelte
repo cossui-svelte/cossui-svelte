@@ -3,16 +3,14 @@
 	import type { Snippet } from "svelte";
 	import type { HTMLAnchorAttributes } from "svelte/elements";
 
-	import {
-		type ButtonProps,
-		buttonVariants,
-	} from "$lib/components/ui/button";
+	import { type ButtonSize, buttonVariants } from "$lib/components/ui/button";
 
 	export type Props = WithElementRef<HTMLAnchorAttributes> & {
 		children: Snippet;
 		isActive?: boolean;
 		isDisabled?: boolean;
-	} & Pick<ButtonProps, "size">;
+		size?: ButtonSize;
+	};
 </script>
 
 <script lang="ts">
