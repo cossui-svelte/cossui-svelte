@@ -2,7 +2,7 @@
 /**
  * !!!!!!!!!!
  * This file is auto-generated. Do not edit manually
- * Last generated at: 5/26/2026, 6:01:57 PM
+ * Last generated at: 5/28/2026, 1:02:32 PM
  * To update, run: pnpm generate:registry --format
  * @version 0.1.1
  * !!!!!!!!!!
@@ -110,7 +110,6 @@ export type COSSUISelectComponents = COSSUIComponentHelper<'SELECT'>;
 export type COSSUISliderComponents = COSSUIComponentHelper<'SLIDER'>;
 export type COSSUISwitchComponents = COSSUIComponentHelper<'SWITCH'>;
 export type COSSUITabComponents = COSSUIComponentHelper<'TAB'>;
-export type COSSUITableComponents = COSSUIComponentHelper<'TABLE'>;
 export type COSSUITextareaComponents = COSSUIComponentHelper<'TEXTAREA'>;
 export type COSSUITimelineComponents = COSSUIComponentHelper<'TIMELINE'>;
 export type COSSUITooltipComponents = COSSUIComponentHelper<'TOOLTIP'>;
@@ -136,7 +135,6 @@ export type COSSUIComponent = Prettify<
   | COSSUISliderComponents
   | COSSUISwitchComponents
   | COSSUITabComponents
-  | COSSUITableComponents
   | COSSUITextareaComponents
   | COSSUITimelineComponents
   | COSSUITooltipComponents
@@ -163,7 +161,6 @@ export type COSSUIDirectoryToComponent = Prettify<{
   slider: COSSUISliderComponents;
   switch: COSSUISwitchComponents;
   tab: COSSUITabComponents;
-  table: COSSUITableComponents;
   textarea: COSSUITextareaComponents;
   timeline: COSSUITimelineComponents;
   tooltip: COSSUITooltipComponents;

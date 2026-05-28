@@ -10,11 +10,14 @@
 	} from "$lib/registry/registry-categories.js";
 	import SearchContainer from "./SearchContainer.svelte";
 	import ParticlesDisplay from "./ParticlesDisplay.svelte";
+	import { browser } from "$app/environment";
 
 	const particleCount = particles.length;
 	const description = `Discover ${particleCount} ready-to-use particles, the building blocks of your design system. Filter by category to find the perfect component for your project.`;
 
 	const selectedCategories = $derived(() => {
+		if (!browser) return { valid: [], hasInvalid: false };
+
 		const rawCategories =
 			page.url.searchParams.get("tags")?.split(",").filter(Boolean) ?? [];
 		const validCategories = rawCategories.filter(

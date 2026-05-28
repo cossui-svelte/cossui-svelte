@@ -4,6 +4,7 @@
 	import { particles } from "$lib/registry/registry-particles.js";
 	import { getCategorySortOrder } from "$lib/registry/registry-categories.js";
 	import SearchField, { type SearchItem } from "./SearchField.svelte";
+	import { browser } from "$app/environment";
 
 	const uniqueCategories = Array.from(
 		new Set(particles.flatMap((p) => p.categories ?? [])),
@@ -18,7 +19,11 @@
 	}));
 
 	const selectedItems = $derived(
-		(page.url.searchParams.get("tags")?.split(",").filter(Boolean) ?? [])
+		(
+			(browser ? page.url.searchParams.get("tags") : null)
+				?.split(",")
+				.filter(Boolean) ?? []
+		)
 			.map((tag) => searchItems.find((item) => item.value === tag))
 			.filter((item): item is SearchItem => !!item),
 	);

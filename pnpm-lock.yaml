@@ -15,8 +15,8 @@ importers:
         specifier: ^3.12.1
         version: 3.12.1
       '@lucide/svelte':
-        specifier: ^1.16.0
-        version: 1.16.0(svelte@5.55.10)
+        specifier: ^1.17.0
+        version: 1.17.0(svelte@5.55.10)
       bits-ui:
         specifier: ^2.18.1
         version: 2.18.1(@internationalized/date@3.12.1)(@sveltejs/kit@2.61.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.55.10)(vite@8.0.14(@types/node@25.9.1)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.3)(yaml@2.9.0)))(svelte@5.55.10)(typescript@6.0.3)(vite@8.0.14(@types/node@25.9.1)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.3)(yaml@2.9.0)))(svelte@5.55.10)
@@ -35,9 +35,6 @@ importers:
       svelte:
         specifier: ^5.55.10
         version: 5.55.10
-      svelte-remixicon:
-        specifier: ^2.10.0
-        version: 2.10.0(svelte@5.55.10)
       svelte-tel-input:
         specifier: ^4.2.0
         version: 4.2.0(svelte@5.55.10)
@@ -81,15 +78,15 @@ importers:
       knip:
         specifier: ^6.14.2
         version: 6.14.2(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)
-      postcss:
-        specifier: ^8.5.15
-        version: 8.5.15
       rollup-plugin-visualizer:
         specifier: ^7.0.1
         version: 7.0.1(rolldown@1.0.2)
       svelte-check:
         specifier: ^4.4.8
         version: 4.4.8(picomatch@4.0.4)(svelte@5.55.10)(typescript@6.0.3)
+      svelte-remixicon:
+        specifier: ^2.10.0
+        version: 2.10.0(svelte@5.55.10)
       tailwindcss:
         specifier: ^4.3.0
         version: 4.3.0
@@ -489,8 +486,8 @@ packages:
   '@lit/reactive-element@2.1.2':
     resolution: {integrity: sha512-pbCDiVMnne1lYUIaYNN5wrwQXDtHaYtg7YEFPeW+hws6U47WeFvISGUWekPGKWOP1ygrs0ef0o1VJMk1exos5A==}
 
-  '@lucide/svelte@1.16.0':
-    resolution: {integrity: sha512-AvvPJnaWxeiNkAljI5MsSEc84yHPLMaWQIAJOcbX7k9au/f9ITS7cxTTQiautDiOFKVOXiYdZ+d6mtl88J+Kbg==}
+  '@lucide/svelte@1.17.0':
+    resolution: {integrity: sha512-q06YCFBN5CO8cd1ADmLCxWRVMVb7xxvHzqC0lvNoxGa+FLW6Cd1Y1AOxgbQk4Iwe68vkAMCRveNHint4WoaVKg==}
     peerDependencies:
       svelte: ^5
 
@@ -2289,7 +2286,7 @@ snapshots:
     dependencies:
       '@lit-labs/ssr-dom-shim': 1.6.0
 
-  '@lucide/svelte@1.16.0(svelte@5.55.10)':
+  '@lucide/svelte@1.17.0(svelte@5.55.10)':
     dependencies:
       svelte: 5.55.10
 

@@ -11,7 +11,7 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
     enhancedImages(),
-    sveltekit(),
+    sveltekit()
     // turn this on to check bundle details
     // visualizer({
     //   brotliSize: true,

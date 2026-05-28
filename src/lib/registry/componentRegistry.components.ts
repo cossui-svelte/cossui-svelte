@@ -2,7 +2,7 @@
 /**
  * !!!!!!!!!!
  * This file is auto-generated. Do not edit manually
- * Last generated at: 5/26/2026, 6:01:57 PM
+ * Last generated at: 5/28/2026, 1:02:32 PM
  * To update, run: pnpm generate:registry --format
  * @version 0.1.1
  * !!!!!!!!!!
@@ -648,39 +648,6 @@ export const COSSUI_DIRECTORIES = {
     directory: 'tab',
     isnew: false,
     name: 'Tab',
-    status: {
-      ready: 20,
-      todo: 0
-    }
-  },
-  TABLE: {
-    category: 'ui',
-    components: [
-      'table-01.svelte',
-      'table-02.svelte',
-      'table-03.svelte',
-      'table-04.svelte',
-      'table-05.svelte',
-      'table-06.svelte',
-      'table-07.svelte',
-      'table-08.svelte',
-      'table-09.svelte',
-      'table-10.svelte',
-      'table-11.svelte',
-      'table-12.svelte',
-      'table-13.svelte',
-      'table-14.svelte',
-      'table-15.svelte',
-      'table-16.svelte',
-      'table-17.svelte',
-      'table-18.svelte',
-      'table-19.svelte',
-      'table-20.svelte'
-    ],
-    description: 'A simple table component for displaying tabular data.',
-    directory: 'table',
-    isnew: false,
-    name: 'Table',
     status: {
       ready: 20,
       todo: 0
