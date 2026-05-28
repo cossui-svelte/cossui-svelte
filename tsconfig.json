@@ -1,15 +1,4 @@
 {
-  "compilerOptions": {
-    "allowJs": true,
-    "checkJs": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "sourceMap": true,
-    "strict": true
-  },
   "exclude": ["**/*.old", "**/*.old/**"],
   "extends": "./.svelte-kit/tsconfig.json"
 }
