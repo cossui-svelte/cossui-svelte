@@ -4,7 +4,7 @@ import path from 'node:path';
 import { enhancedImages } from '@sveltejs/enhanced-img';
 import { sveltekit } from '@sveltejs/kit/vite';
 import tailwindcss from '@tailwindcss/vite';
-import { visualizer } from 'rollup-plugin-visualizer';
+// import { visualizer } from 'rollup-plugin-visualizer';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
@@ -12,12 +12,13 @@ export default defineConfig({
     tailwindcss(),
     enhancedImages(),
     sveltekit(),
-    visualizer({
-      brotliSize: true,
-      filename: 'stats.html',
-      gzipSize: true,
-      open: true // auto-opens in browser
-    })
+    // turn this on to check bundle details
+    // visualizer({
+    //   brotliSize: true,
+    //   filename: 'stats.html',
+    //   gzipSize: true,
+    //   open: true // auto-opens in browser
+    // })
   ],
   resolve: {
     alias: {
