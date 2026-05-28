@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { Dialog as DrawerPrimitive } from "bits-ui";
+	import { Drawer as DrawerPrimitive } from "$lib/vaul";
 
-  let { ...restProps }: DrawerPrimitive.TriggerProps = $props();
+	let { ref = $bindable(null), ...restProps }: DrawerPrimitive.TriggerProps =
+		$props();
 </script>
 
-<DrawerPrimitive.Trigger data-slot="drawer-trigger" {...restProps} />
+<DrawerPrimitive.Trigger bind:ref data-slot="drawer-trigger" {...restProps} />

@@ -1,24 +1,29 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import type { HTMLAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils.js";
+	import type { HTMLAttributes } from "svelte/elements";
+	import { cn, type WithElementRef } from "$lib/utils.js";
 
-  interface Props extends HTMLAttributes<HTMLDivElement> {
-    allowSelection?: boolean;
-    children?: Snippet;
-  }
-
-  let { class: className, allowSelection = false, children, ...restProps }: Props = $props();
+	let {
+		ref = $bindable(null),
+		class: className,
+		children,
+		allowSelection = false,
+		...restProps
+	}: WithElementRef<HTMLAttributes<HTMLDivElement>> & {
+		allowSelection?: boolean;
+	} = $props();
 </script>
 
 <div
-  class={cn(
-    "flex flex-col gap-2 p-6 in-[[data-slot=drawer-popup]:has([data-slot=drawer-panel])]:pb-3 max-sm:pb-4",
-    !allowSelection && "cursor-default",
-    className,
-  )}
-  data-slot="drawer-header"
-  {...restProps}
+	bind:this={ref}
+	data-slot="drawer-header"
+	class={cn(
+		"flex flex-col gap-2 p-6 in-[[data-slot=drawer-popup]:has([data-slot=drawer-panel])]:pb-3 max-sm:pb-4",
+		!allowSelection && "cursor-default",
+		// this is orginal shad-cn
+		"gap-0.5 p-4 group-data-[vaul-drawer-direction=bottom]/drawer-content:text-center group-data-[vaul-drawer-direction=top]/drawer-content:text-center md:gap-1.5 md:text-left flex flex-col",
+		className,
+	)}
+	{...restProps}
 >
-  {@render children?.()}
+	{@render children?.()}
 </div>

@@ -22,7 +22,8 @@
 
 <div
   class={cn(
-    "fixed inset-0 z-50 touch-none [--bleed:--spacing(12)] [--inset:--spacing(0)]",
+    // "fixed",
+    "inset-0 z-50 touch-none [--bleed:--spacing(12)] [--inset:--spacing(0)]",
     position === "bottom" && "grid grid-rows-[1fr_auto] pt-12",
     position === "top" && "grid grid-rows-[auto_1fr] pb-12",
     position === "left" && "flex justify-start",
