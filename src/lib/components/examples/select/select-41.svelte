@@ -4,8 +4,19 @@
 
 	import Check from "@lucide/svelte/icons/check";
 	import ChevronDown from "@lucide/svelte/icons/chevron-down";
-	import * as Command from "$lib/components/ui/command";
-	import * as Popover from "$lib/components/ui/popover";
+	import {
+		Command,
+		CommandEmpty,
+		CommandGroup,
+		CommandInput,
+		CommandItem,
+		CommandList,
+	} from "$lib/components/ui/command";
+	import {
+		Popover,
+		PopoverContent,
+		PopoverTrigger,
+	} from "$lib/components/ui/popover";
 	import { cn } from "$lib/utils";
 
 	let open = $state(false);
@@ -38,8 +49,8 @@
 
 <div class="space-y-2">
 	<Label>Select with search</Label>
-	<Popover.Root bind:open>
-		<Popover.Trigger>
+	<Popover bind:open>
+		<PopoverTrigger>
 			{#snippet child({ props })}
 				<Button
 					variant="outline"
@@ -70,18 +81,18 @@
 					/>
 				</Button>
 			{/snippet}
-		</Popover.Trigger>
-		<Popover.Content
+		</PopoverTrigger>
+		<PopoverContent
 			class="w-full min-w-[var(--bits-popover-anchor-width)] p-0"
 			align="start"
 		>
-			<Command.Root>
-				<Command.Input placeholder="Search framework..." />
-				<Command.List>
-					<Command.Empty>No framework found.</Command.Empty>
-					<Command.Group>
+			<Command>
+				<CommandInput placeholder="Search framework..." />
+				<CommandList>
+					<CommandEmpty>No framework found.</CommandEmpty>
+					<CommandGroup>
 						{#each frameworks as framework (framework.value)}
-							<Command.Item
+							<CommandItem
 								value={framework.value}
 								onSelect={() => handleSelect(framework.value)}
 							>
@@ -94,11 +105,11 @@
 											: "opacity-0",
 									)}
 								/>
-							</Command.Item>
+							</CommandItem>
 						{/each}
-					</Command.Group>
-				</Command.List>
-			</Command.Root>
-		</Popover.Content>
-	</Popover.Root>
+					</CommandGroup>
+				</CommandList>
+			</Command>
+		</PopoverContent>
+	</Popover>
 </div>

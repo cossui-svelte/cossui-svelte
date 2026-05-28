@@ -13,8 +13,19 @@
 	import Network from "@lucide/svelte/icons/network";
 	import Search from "@lucide/svelte/icons/search";
 	import Server from "@lucide/svelte/icons/server";
-	import * as Command from "$lib/components/ui/command";
-	import * as Popover from "$lib/components/ui/popover";
+	import {
+		Command,
+		CommandEmpty,
+		CommandGroup,
+		CommandInput,
+		CommandItem,
+		CommandList,
+	} from "$lib/components/ui/command";
+	import {
+		Popover,
+		PopoverContent,
+		PopoverTrigger,
+	} from "$lib/components/ui/popover";
 
 	let open = $state(false);
 	let value = $state("");
@@ -91,8 +102,8 @@
 
 <div class="space-y-2">
 	<Label>Options with icon and number</Label>
-	<Popover.Root bind:open>
-		<Popover.Trigger>
+	<Popover bind:open>
+		<PopoverTrigger>
 			{#snippet child({ props })}
 				<Button
 					variant="outline"
@@ -122,18 +133,18 @@
 					/>
 				</Button>
 			{/snippet}
-		</Popover.Trigger>
-		<Popover.Content
+		</PopoverTrigger>
+		<PopoverContent
 			class="w-full min-w-[var(--bits-popover-anchor-width)] p-0"
 			align="start"
 		>
-			<Command.Root>
-				<Command.Input placeholder="Search services..." />
-				<Command.List>
-					<Command.Empty>No service found.</Command.Empty>
-					<Command.Group>
+			<Command>
+				<CommandInput placeholder="Search services..." />
+				<CommandList>
+					<CommandEmpty>No service found.</CommandEmpty>
+					<CommandGroup>
 						{#each items as item (item.value)}
-							<Command.Item
+							<CommandItem
 								value={item.value}
 								onSelect={() => handleSelect(item.value)}
 							>
@@ -146,11 +157,11 @@
 								<span class="text-xs text-muted-foreground">
 									{item.number.toLocaleString()}
 								</span>
-							</Command.Item>
+							</CommandItem>
 						{/each}
-					</Command.Group>
-				</Command.List>
-			</Command.Root>
-		</Popover.Content>
-	</Popover.Root>
+					</CommandGroup>
+				</CommandList>
+			</Command>
+		</PopoverContent>
+	</Popover>
 </div>

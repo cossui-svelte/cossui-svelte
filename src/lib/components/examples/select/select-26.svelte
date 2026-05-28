@@ -1,6 +1,14 @@
 <script lang="ts">
 	import { Label } from "$lib/components/ui/label";
-	import * as Select from "$lib/components/ui/select/index.js";
+	import {
+		Select,
+		SelectContent,
+		SelectGroup,
+		SelectGroupLabel,
+		SelectItem,
+		SelectSeparator,
+		SelectTrigger,
+	} from "$lib/components/ui/select";
 
 	const frontend = [
 		{ label: "Svelte", value: "s1" },
@@ -25,28 +33,28 @@
 
 <div class="space-y-2">
 	<Label for={uid}>Select with separator</Label>
-	<Select.Root type="single" bind:value>
-		<Select.Trigger id={uid}>
+	<Select type="single" bind:value>
+		<SelectTrigger id={uid}>
 			{selected?.label ?? "Select a framework"}
-		</Select.Trigger>
-		<Select.Content>
-			<Select.Group>
-				<Select.GroupHeading>Frontend</Select.GroupHeading>
+		</SelectTrigger>
+		<SelectContent>
+			<SelectGroup>
+				<SelectGroupLabel>Frontend</SelectGroupLabel>
 				{#each frontend as item (item.value)}
-					<Select.Item value={item.value}>
+					<SelectItem value={item.value}>
 						{item.label}
-					</Select.Item>
+					</SelectItem>
 				{/each}
-			</Select.Group>
-			<Select.Separator />
-			<Select.Group>
-				<Select.GroupHeading>Backend</Select.GroupHeading>
+			</SelectGroup>
+			<SelectSeparator />
+			<SelectGroup>
+				<SelectGroupLabel>Backend</SelectGroupLabel>
 				{#each backend as item (item.value)}
-					<Select.Item value={item.value}>
+					<SelectItem value={item.value}>
 						{item.label}
-					</Select.Item>
+					</SelectItem>
 				{/each}
-			</Select.Group>
-		</Select.Content>
-	</Select.Root>
+			</SelectGroup>
+		</SelectContent>
+	</Select>
 </div>

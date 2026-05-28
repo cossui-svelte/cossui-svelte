@@ -1,6 +1,11 @@
 <script lang="ts">
 	import { Label } from "$lib/components/ui/label";
-	import * as Select from "$lib/components/ui/select/index.js";
+	import {
+		Select,
+		SelectContent,
+		SelectItem,
+		SelectTrigger
+	} from "$lib/components/ui/select/index.js";
 
 	const continents = [
 		{
@@ -62,8 +67,8 @@
 
 <div class="space-y-2">
 	<Label for={uid}>Options with flag</Label>
-	<Select.Root type="single" bind:value>
-		<Select.Trigger
+	<Select type="single" bind:value>
+		<SelectTrigger
 			id={uid}
 			class="[&>span]:flex [&>span]:items-center [&>span]:gap-2 [&>span_svg]:shrink-0 [&>span_svg]:text-muted-foreground/80"
 		>
@@ -74,22 +79,22 @@
 					Select a country
 				{/if}
 			</span>
-		</Select.Trigger>
-		<Select.Content
+		</SelectTrigger>
+		<SelectContent
 			class="[&_*[data-select-item]>span>svg]:shrink-0 [&_*[data-select-item]>span>svg]:text-muted-foreground/80 [&_*[data-select-item]>span]:end-2 [&_*[data-select-item]>span]:start-auto [&_*[data-select-item]>span]:flex [&_*[data-select-item]>span]:items-center [&_*[data-select-item]>span]:gap-2 [&_*[data-select-item]]:pe-8 [&_*[data-select-item]]:ps-2"
 		>
 			{#each continents as continent (continent.label)}
-				<Select.Group>
-					<Select.GroupHeading class="ps-2">
+				<SelectGroup>
+					<SelectGroupHeading class="ps-2">
 						{continent.label}
-					</Select.GroupHeading>
+					</SelectGroupHeading>
 					{#each continent.countries as item (item.value)}
-						<Select.Item value={item.value}>
+						<SelectItem value={item.value}>
 							{@render country(item)}
-						</Select.Item>
+						</SelectItem>
 					{/each}
-				</Select.Group>
+				</SelectGroup>
 			{/each}
-		</Select.Content>
-	</Select.Root>
+		</SelectContent>
+	</Select>
 </div>

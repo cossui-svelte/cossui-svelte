@@ -1,11 +1,16 @@
 <script lang="ts">
 	import { Label } from "$lib/components/ui/label";
-	import * as Select from "$lib/components/ui/select/index.js";
+	import {
+		Select,
+		SelectContent,
+		SelectItem,
+		SelectTrigger,
+	} from "$lib/components/ui/select";
 	import { cn } from "$lib/utils.js";
 
-	import Avatar01 from "$lib/assets/avatar-40-01.jpg?w=80&h=80&enhanced";
-	import Avatar02 from "$lib/assets/avatar-40-02.jpg?w=80&h=80&enhanced";
-	import Avatar03 from "$lib/assets/avatar-40-03.jpg?w=80&h=80&enhanced";
+	import Avatar01 from "$assets/avatar-40-01.jpg?w=80&h=80&enhanced";
+	import Avatar02 from "$assets/avatar-40-02.jpg?w=80&h=80&enhanced";
+	import Avatar03 from "$assets/avatar-40-03.jpg?w=80&h=80&enhanced";
 
 	const items = [
 		{
@@ -53,8 +58,8 @@
 
 <div class="space-y-2">
 	<Label for={uid}>Options with portrait</Label>
-	<Select.Root type="single" bind:value>
-		<Select.Trigger
+	<Select type="single" bind:value>
+		<SelectTrigger
 			id={uid}
 			class={cn(
 				"h-auto [&>span]:flex [&>span]:items-center [&>span]:gap-2 [&>span_img]:shrink-0",
@@ -66,15 +71,15 @@
 			{:else}
 				Select a user
 			{/if}
-		</Select.Trigger>
-		<Select.Content
+		</SelectTrigger>
+		<SelectContent
 			class="[&_*[data-select-item]>span]:end-2 [&_*[data-select-item]>span]:start-auto [&_*[data-select-item]]:pe-8 [&_*[data-select-item]]:ps-2"
 		>
 			{#each items as item (item.value)}
-				<Select.Item value={item.value}>
+				<SelectItem value={item.value}>
 					{@render user(item)}
-				</Select.Item>
+				</SelectItem>
 			{/each}
-		</Select.Content>
-	</Select.Root>
+		</SelectContent>
+	</Select>
 </div>

@@ -1,6 +1,11 @@
 <script lang="ts">
 	import { Label } from "$lib/components/ui/label";
-	import * as Select from "$lib/components/ui/select/index.js";
+	import {
+		Select,
+		SelectContent,
+		SelectItem,
+		SelectTrigger,
+	} from "$lib/components/ui/select/index.js";
 
 	const items = [
 		{ class: "text-emerald-600", label: "Completed", value: "s1" },
@@ -36,8 +41,8 @@
 
 <div class="space-y-2">
 	<Label for={uid}>Status select</Label>
-	<Select.Root type="single" bind:value>
-		<Select.Trigger
+	<Select type="single" bind:value>
+		<SelectTrigger
 			id={uid}
 			class="[&>span]:flex [&>span]:items-center [&>span]:gap-2 [&>span_svg]:shrink-0"
 		>
@@ -46,15 +51,15 @@
 			{:else}
 				Select a status
 			{/if}
-		</Select.Trigger>
-		<Select.Content
+		</SelectTrigger>
+		<SelectContent
 			class="[&_*[data-select-item]>span>svg]:shrink-0 [&_*[data-select-item]>span>svg]:text-muted-foreground/80 [&_*[data-select-item]>span]:end-2 [&_*[data-select-item]>span]:start-auto [&_*[data-select-item]>span]:flex [&_*[data-select-item]>span]:items-center [&_*[data-select-item]>span]:gap-2 [&_*[data-select-item]]:pe-8 [&_*[data-select-item]]:ps-2"
 		>
 			{#each items as item (item.value)}
-				<Select.Item value={item.value}>
+				<SelectItem value={item.value}>
 					{@render status(item)}
-				</Select.Item>
+				</SelectItem>
 			{/each}
-		</Select.Content>
-	</Select.Root>
+		</SelectContent>
+	</Select>
 </div>

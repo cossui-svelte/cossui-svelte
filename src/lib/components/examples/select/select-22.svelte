@@ -1,6 +1,14 @@
 <script lang="ts">
 	import { Label } from "$lib/components/ui/label";
-	import * as Select from "$lib/components/ui/select/index.js";
+	import {
+		Select,
+		SelectContent,
+		SelectGroup,
+		SelectGroupLabel,
+		SelectItem,
+		SelectSeparator,
+		SelectTrigger,
+	} from "$lib/components/ui/select";
 
 	const items = [
 		{ label: "Svelte", value: "s1" },
@@ -18,16 +26,16 @@
 
 <div class="space-y-2">
 	<Label for={uid}>Disabled select</Label>
-	<Select.Root type="single" bind:value disabled>
-		<Select.Trigger id={uid}
-			>{selected?.label ?? "Select a framework"}</Select.Trigger
-		>
-		<Select.Content>
+	<Select type="single" bind:value disabled>
+		<SelectTrigger id={uid}>
+			{selected?.label ?? "Select a framework"}
+		</SelectTrigger>
+		<SelectContent>
 			{#each items as item (item.value)}
-				<Select.Item value={item.value}>
+				<SelectItem value={item.value}>
 					{item.label}
-				</Select.Item>
+				</SelectItem>
 			{/each}
-		</Select.Content>
-	</Select.Root>
+		</SelectContent>
+	</Select>
 </div>

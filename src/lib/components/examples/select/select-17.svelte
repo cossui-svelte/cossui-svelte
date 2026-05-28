@@ -1,6 +1,11 @@
 <script lang="ts">
 	import { Label } from "$lib/components/ui/label";
-	import * as Select from "$lib/components/ui/select/index.js";
+	import {
+		Select,
+		SelectContent,
+		SelectItem,
+		SelectTrigger
+	} from "$lib/components/ui/select/index.js";
 
 	import Clock from "@lucide/svelte/icons/clock";
 
@@ -20,21 +25,21 @@
 
 <div class="space-y-2">
 	<Label for={uid}>Select with icon</Label>
-	<Select.Root type="single" bind:value>
-		<Select.Trigger class="relative ps-9" id={uid}>
+	<Select type="single" bind:value>
+		<SelectTrigger class="relative ps-9" id={uid}>
 			<div
 				class="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-muted-foreground/80 group-has-[[disabled]]:opacity-50"
 			>
 				<Clock size={16} strokeWidth={2} aria-hidden="true" />
 			</div>
 			{selected?.label ?? "Select a time"}
-		</Select.Trigger>
-		<Select.Content>
+		</SelectTrigger>
+		<SelectContent>
 			{#each items as item (item.value)}
-				<Select.Item value={item.value}>
+				<SelectItem value={item.value}>
 					{item.label}
-				</Select.Item>
+				</SelectItem>
 			{/each}
-		</Select.Content>
-	</Select.Root>
+		</SelectContent>
+	</Select>
 </div>

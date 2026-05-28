@@ -12,7 +12,7 @@
 	} from "$lib/components/ui/dialog";
 
 	import ArrowRight from "@lucide/svelte/icons/arrow-right";
-	import DialogImg from "$lib/assets/dialog-content.png";
+	import DialogImg from "$assets/dialog-content.png";
 	import { cn } from "$lib/utils";
 
 	const steps = [

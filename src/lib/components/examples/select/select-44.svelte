@@ -7,8 +7,19 @@
 
 	import Check from "@lucide/svelte/icons/check";
 	import ChevronDown from "@lucide/svelte/icons/chevron-down";
-	import * as Command from "$lib/components/ui/command";
-	import * as Popover from "$lib/components/ui/popover";
+	import {
+		Command,
+		CommandEmpty,
+		CommandGroup,
+		CommandInput,
+		CommandItem,
+		CommandList,
+	} from "$lib/components/ui/command";
+	import {
+		Popover,
+		PopoverContent,
+		PopoverTrigger,
+	} from "$lib/components/ui/popover";
 	import { cn } from "$lib/utils";
 
 	let open = $state(false);
@@ -73,8 +84,8 @@
 
 <div class="space-y-2">
 	<Label>Options with flag and search</Label>
-	<Popover.Root bind:open>
-		<Popover.Trigger>
+	<Popover bind:open>
+		<PopoverTrigger>
 			{#snippet child({ props })}
 				<Button
 					variant="outline"
@@ -102,19 +113,19 @@
 					/>
 				</Button>
 			{/snippet}
-		</Popover.Trigger>
-		<Popover.Content
+		</PopoverTrigger>
+		<PopoverContent
 			class="w-full min-w-[var(--bits-popover-anchor-width)] p-0"
 			align="start"
 		>
-			<Command.Root>
-				<Command.Input placeholder="Search country..." />
-				<Command.List>
-					<Command.Empty>No country found.</Command.Empty>
+			<Command>
+				<CommandInput placeholder="Search country..." />
+				<CommandList>
+					<CommandEmpty>No country found.</CommandEmpty>
 					{#each countries as group (group.continent)}
-						<Command.Group heading={group.continent}>
+						<CommandGroup heading={group.continent}>
 							{#each group.items as country (country.value)}
-								<Command.Item
+								<CommandItem
 									value={country.value}
 									onSelect={() => handleSelect(country.value)}
 								>
@@ -130,12 +141,12 @@
 												: "opacity-0",
 										)}
 									/>
-								</Command.Item>
+								</CommandItem>
 							{/each}
-						</Command.Group>
+						</CommandGroup>
 					{/each}
-				</Command.List>
-			</Command.Root>
-		</Popover.Content>
-	</Popover.Root>
+				</CommandList>
+			</Command>
+		</PopoverContent>
+	</Popover>
 </div>

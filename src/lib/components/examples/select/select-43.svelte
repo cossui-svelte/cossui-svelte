@@ -4,8 +4,19 @@
 
 	import Check from "@lucide/svelte/icons/check";
 	import ChevronDown from "@lucide/svelte/icons/chevron-down";
-	import * as Command from "$lib/components/ui/command";
-	import * as Popover from "$lib/components/ui/popover";
+	import {
+		Command,
+		CommandEmpty,
+		CommandGroup,
+		CommandInput,
+		CommandItem,
+		CommandList,
+	} from "$lib/components/ui/command";
+	import {
+		Popover,
+		PopoverContent,
+		PopoverTrigger,
+	} from "$lib/components/ui/popover";
 	import { cn } from "$lib/utils";
 
 	let open = $state(false);
@@ -48,8 +59,8 @@
 
 <div class="space-y-2">
 	<Label>Timezone select with search</Label>
-	<Popover.Root bind:open>
-		<Popover.Trigger>
+	<Popover bind:open>
+		<PopoverTrigger>
 			{#snippet child({ props })}
 				<Button
 					variant="outline"
@@ -80,18 +91,18 @@
 					/>
 				</Button>
 			{/snippet}
-		</Popover.Trigger>
-		<Popover.Content
+		</PopoverTrigger>
+		<PopoverContent
 			class="w-full min-w-[var(--bits-popover-anchor-width)] p-0"
 			align="start"
 		>
-			<Command.Root filter={filterFn}>
-				<Command.Input placeholder="Search timezone..." />
-				<Command.List>
-					<Command.Empty>No timezone found.</Command.Empty>
-					<Command.Group>
+			<Command filter={filterFn}>
+				<CommandInput placeholder="Search timezone..." />
+				<CommandList>
+					<CommandEmpty>No timezone found.</CommandEmpty>
+					<CommandGroup>
 						{#each formattedTimezones as { label, value: itemValue } (itemValue)}
-							<Command.Item
+							<CommandItem
 								value={itemValue}
 								onSelect={() => handleSelect(itemValue)}
 							>
@@ -104,11 +115,11 @@
 											: "opacity-0",
 									)}
 								/>
-							</Command.Item>
+							</CommandItem>
 						{/each}
-					</Command.Group>
-				</Command.List>
-			</Command.Root>
-		</Popover.Content>
-	</Popover.Root>
+					</CommandGroup>
+				</CommandList>
+			</Command>
+		</PopoverContent>
+	</Popover>
 </div>

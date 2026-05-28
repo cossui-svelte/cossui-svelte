@@ -1,11 +1,18 @@
 <script lang="ts">
 	import { Label } from "$lib/components/ui/label";
-	import * as Select from "$lib/components/ui/select/index.js";
+	import {
+		Select,
+		SelectContent,
+		SelectGroup,
+		SelectGroupLabel,
+		SelectItem,
+		SelectTrigger,
+	} from "$lib/components/ui/select";
 	import { cn } from "$lib/utils.js";
 
-	import Avatar01 from "$lib/assets/avatar-40-01.jpg?w=40&h=40&enhanced";
-	import Avatar02 from "$lib/assets/avatar-40-02.jpg?w=40&h=40&enhanced";
-	import Avatar03 from "$lib/assets/avatar-40-03.jpg?w=40&h=40&enhanced";
+	import Avatar01 from "$assets/avatar-40-01.jpg?w=40&h=40&enhanced";
+	import Avatar02 from "$assets/avatar-40-02.jpg?w=40&h=40&enhanced";
+	import Avatar03 from "$assets/avatar-40-03.jpg?w=40&h=40&enhanced";
 
 	const items = [
 		{ avatar: Avatar01, name: "Jenny Hamilton", value: "s1" },
@@ -27,8 +34,8 @@
 
 <div class="space-y-2">
 	<Label for={uid}>Options with avatar</Label>
-	<Select.Root type="single" bind:value>
-		<Select.Trigger
+	<Select type="single" bind:value>
+		<SelectTrigger
 			id={uid}
 			class={cn(
 				"[&>span]:flex [&>span]:items-center [&>span]:gap-2 [&>span_img]:shrink-0",
@@ -40,20 +47,20 @@
 			{:else}
 				Select a user
 			{/if}
-		</Select.Trigger>
-		<Select.Content
+		</SelectTrigger>
+		<SelectContent
 			class="[&_*[data-select-item]>span]:end-2 [&_*[data-select-item]>span]:start-auto [&_*[data-select-item]>span]:flex [&_*[data-select-item]>span]:items-center [&_*[data-select-item]>span]:gap-2 [&_*[data-select-item]]:pe-8 [&_*[data-select-item]]:ps-2"
 		>
-			<Select.Group>
-				<Select.GroupHeading class="ps-2"
-					>Impersonate user</Select.GroupHeading
+			<SelectGroup>
+				<SelectGroupLabel class="ps-2"
+					>Impersonate user</SelectGroupLabel
 				>
 				{#each items as item (item.value)}
-					<Select.Item value={item.value}>
+					<SelectItem value={item.value}>
 						{@render user(item)}
-					</Select.Item>
+					</SelectItem>
 				{/each}
-			</Select.Group>
-		</Select.Content>
-	</Select.Root>
+			</SelectGroup>
+		</SelectContent>
+	</Select>
 </div>

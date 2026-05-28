@@ -1,6 +1,14 @@
 <script lang="ts">
 	import { Label } from "$lib/components/ui/label";
-	import * as Select from "$lib/components/ui/select/index.js";
+	import {
+		Select,
+		SelectContent,
+		SelectGroup,
+		SelectGroupLabel,
+		SelectItem,
+		SelectSeparator,
+		SelectTrigger,
+	} from "$lib/components/ui/select";
 
 	const items = [
 		{ label: "Svelte", value: "s1" },
@@ -18,17 +26,16 @@
 
 <div class="space-y-2">
 	<Label for={uid}>Select with auto-width</Label>
-	<Select.Root type="single" bind:value>
-		<!-- Adjust the min-width to fit the longest option -->
-		<Select.Trigger id={uid} class="w-auto min-w-48 max-w-full">
+	<Select type="single" bind:value>
+		<SelectTrigger id={uid} class="w-auto min-w-48 max-w-full">
 			{selected?.label ?? "Select a framework"}
-		</Select.Trigger>
-		<Select.Content>
+		</SelectTrigger>
+		<SelectContent>
 			{#each items as item (item.value)}
-				<Select.Item value={item.value}>
+				<SelectItem value={item.value}>
 					{item.label}
-				</Select.Item>
+				</SelectItem>
 			{/each}
-		</Select.Content>
-	</Select.Root>
+		</SelectContent>
+	</Select>
 </div>
