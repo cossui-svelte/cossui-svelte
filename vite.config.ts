@@ -4,10 +4,21 @@ import path from 'node:path';
 import { enhancedImages } from '@sveltejs/enhanced-img';
 import { sveltekit } from '@sveltejs/kit/vite';
 import tailwindcss from '@tailwindcss/vite';
+import { visualizer } from 'rollup-plugin-visualizer';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  plugins: [tailwindcss(), enhancedImages(), sveltekit()],
+  plugins: [
+    tailwindcss(),
+    enhancedImages(),
+    sveltekit(),
+    visualizer({
+      brotliSize: true,
+      filename: 'stats.html',
+      gzipSize: true,
+      open: true // auto-opens in browser
+    })
+  ],
   resolve: {
     alias: {
       $assets: path.resolve('./src/lib/assets'),

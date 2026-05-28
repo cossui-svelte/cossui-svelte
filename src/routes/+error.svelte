@@ -4,7 +4,7 @@
 	import PageHeaderHeading from "$lib/components/shared-components/page-header-heading.svelte";
 	import PageHeader from "$lib/components/shared-components/page-header.svelte";
 	import { Button } from "$lib/components/ui/button";
-	import { RiArrowLeftLine } from "svelte-remixicon";
+	import RiArrowLeftLine from "svelte-remixicon/RiArrowLeftLine.svelte";
 </script>
 
 <svelte:head>
