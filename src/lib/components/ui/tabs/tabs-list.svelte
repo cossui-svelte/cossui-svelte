@@ -2,6 +2,7 @@
   import type { Snippet } from "svelte";
   import { Tabs } from "bits-ui";
   import { cn } from "$lib/utils.js";
+  import TabsIndicator from "./tabs-indicator.svelte";
 
   type TabsVariant = "default" | "underline";
 
@@ -31,7 +32,7 @@
   {...restProps}
 >
   {@render children?.()}
-  <div
+  <TabsIndicator
     class={cn(
       "absolute bottom-0 left-0 h-(--active-tab-height) w-(--active-tab-width) translate-x-(--active-tab-left) -translate-y-(--active-tab-bottom) transition-[width,translate] duration-200 ease-in-out",
       variant === "underline"
