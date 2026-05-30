@@ -1,14 +1,18 @@
-import type { KnipConfig } from 'knip';
 
-const config: KnipConfig = {
+
+const config = {
   compilers: {
     svelte: (text: string) => [...text.matchAll(/import[^;]+/g)].join('\n')
   },
-  // ignore: ['**/*.old', '**/*.old/**', '**/done/**'],
   ignoreDependencies: ['tw-animate-css'],
-  project: ['src/**/*.{svelte,ts,js}', 'scripts/**/*.ts'],
+  project: ['src/**/*.{svelte,ts,js}'],
   svelte: {
-    entry: ['src/routes/**/+*.{svelte,ts,js}', 'src/params/*.ts', 'src/app.html']
+    entry: [
+      'src/routes/**/+*.{svelte,ts,js}',
+      'src/params/*.ts',
+      'src/app.html',
+      'src/lib/**/*.svelte'
+    ]
   }
 };
 

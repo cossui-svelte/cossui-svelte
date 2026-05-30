@@ -23,7 +23,6 @@
     "@tanstack/table-core": "^8.21.3",
     "@types/inputmask": "^5.0.7",
     "@types/node": "^25.9.1",
-    "knip": "^6.14.2",
     "rollup-plugin-visualizer": "^7.0.1",
     "svelte-check": "^4.4.8",
     "svelte-remixicon": "^2.10.0",
