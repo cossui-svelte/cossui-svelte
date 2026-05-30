@@ -10,7 +10,7 @@
   >
     <p>
       Built by
-      <a class="font-heading text-foreground text-lg" href="/">coss.ui</a>.
+      <a class="font-heading text-foreground text-lg" href="/">coss.com</a>.
       Ported to Svelte by
       <a
         class="font-heading text-foreground text-lg"
