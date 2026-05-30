@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "@aejkatappaja/phantom-ui": "^0.10.1",
-    "@internationalized/date": "^3.12.1",
+    "@internationalized/date": "^3.12.2",
     "@lucide/svelte": "^1.17.0",
     "bits-ui": "^2.18.1",
     "clsx": "^2.1.1",
@@ -39,7 +39,7 @@
   "name": "coss-ui-svelte",
   "packageManager": "pnpm@10.34.1",
   "peerDependencies": {
-    "svelte": "^5.55.10"
+    "svelte": "^5.56.0"
   },
   "scripts": {
     "build": "vite build",
@@ -47,7 +47,7 @@
     "clean": "rm -rf node_modules dist build .svelte-kit",
     "dev": "vite",
     "format": "biome format --write . && biome check . --fix",
-    "generate:registry": "tsx scripts/createComponentRegistryTypes.ts",
+    "generate:registry": "tsx scripts/createComponentRegistryTypes.ts && pnpm format",
     "lint:audit": "pnpx knip --max-show-issues 15",
     "lint:typecheck": "tsc --noEmit",
     "optimize:icons": " tsx ./scripts/transformLucideImports.ts"

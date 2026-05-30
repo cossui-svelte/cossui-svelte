@@ -3,17 +3,9 @@ import { exec as execCallback } from 'node:child_process';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { promisify } from 'node:util';
-import registryJson from "./registry.json";
+import RegistryCategoryMetaData from "./registry-category-metadata";
 
-interface RegistryEntry {
-	description: string;
-	category: string;
-	isnew: boolean;
-}
-
-type RegistryData = Record<string, RegistryEntry>;
-
-const Registry = registryJson as RegistryData;
+// const Registry: RegistryData = registryJson;
 
 const exec = promisify(execCallback);
 
@@ -67,7 +59,7 @@ const CONFIG: ComponentConfig = {
 			output: path.join(process.cwd(), 'src', 'lib', 'registry', 'componentRegistry.components.ts')
 		},
 		types: {
-			output: path.join(process.cwd(), 'src', 'lib',  'registry','componentRegistry.types.ts')
+			output: path.join(process.cwd(), 'src', 'lib', 'registry', 'componentRegistry.types.ts')
 		}
 	},
 	files: {
@@ -349,9 +341,9 @@ class ComponentRegistryGenerator {
 				output += `
   '${dir.toUpperCase()}': {
     directory: '${dir}',
-	description: '${Registry[dir]?.description ?? "No description available."}',
-	isnew: ${Registry[dir]?.isnew ?? false},
-	category: '${Registry[dir]?.category ?? "Uncategorized"}',
+	description: '${RegistryCategoryMetaData[dir]?.description ?? "No description available."}',
+	isnew: ${RegistryCategoryMetaData[dir]?.isnew ?? false},
+	category: '${RegistryCategoryMetaData[dir]?.category ?? "Uncategorized"}',
     name: '${dir.charAt(0).toUpperCase()}${dir.slice(1)}',
     components: [${files
 						.sort()
@@ -507,7 +499,7 @@ export type COSSUIDirectoryTodoComponents = {
 
 		return `
 ${this.#fileHeader()}
-import type { Prettify } from '$lib/types/helpers';
+import type { Prettify } from './helpers';
 import type { ${TYPES.objectTypeName} } from './componentRegistry.components';
 
 // Directory Type

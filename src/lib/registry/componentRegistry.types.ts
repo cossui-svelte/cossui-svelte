@@ -2,14 +2,14 @@
 /**
  * !!!!!!!!!!
  * This file is auto-generated. Do not edit manually
- * Last generated at: 5/28/2026, 1:02:32 PM
+ * Last generated at: 5/30/2026, 8:27:46 AM
  * To update, run: pnpm generate:registry --format
  * @version 0.1.1
  * !!!!!!!!!!
  */
 
-import type { Prettify } from '$lib/types/helpers';
 import type { COSSUIDirectories } from './componentRegistry.components';
+import type { Prettify } from './helpers';
 
 // Directory Type
 export type COSSUIDirectory = COSSUIDirectoryHelper<keyof COSSUIDirectories>;
