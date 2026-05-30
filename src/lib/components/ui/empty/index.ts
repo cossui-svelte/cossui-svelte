@@ -1,8 +1,6 @@
-import Empty from './empty.svelte';
-import EmptyContent from './empty-content.svelte';
-import EmptyDescription from './empty-description.svelte';
-import EmptyHeader from './empty-header.svelte';
-import EmptyMedia from './empty-media.svelte';
-import EmptyTitle from './empty-title.svelte';
-
-export { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle };
+export { default as Empty } from './empty.svelte';
+export { default as EmptyContent } from './empty-content.svelte';
+export { default as EmptyDescription } from './empty-description.svelte';
+export { default as EmptyHeader } from './empty-header.svelte';
+export { default as EmptyMedia } from './empty-media.svelte';
+export { default as EmptyTitle } from './empty-title.svelte';

@@ -1,33 +1,15 @@
-import Command from './command.svelte';
-import CommandCollection from './command-collection.svelte';
-import CommandDialog from './command-dialog.svelte';
-import CommandDialogPopup from './command-dialog-popup.svelte';
-import CommandDialogTrigger from './command-dialog-trigger.svelte';
-import CommandEmpty from './command-empty.svelte';
-import CommandFooter from './command-footer.svelte';
-import CommandGroup from './command-group.svelte';
-import CommandGroupLabel from './command-group-label.svelte';
-import CommandInput from './command-input.svelte';
-import CommandItem from './command-item.svelte';
-import CommandList from './command-list.svelte';
-import CommandPanel from './command-panel.svelte';
-import CommandSeparator from './command-separator.svelte';
-import CommandShortcut from './command-shortcut.svelte';
-
-export {
-  Command,
-  CommandCollection,
-  CommandDialog,
-  CommandDialogPopup,
-  CommandDialogTrigger,
-  CommandEmpty,
-  CommandFooter,
-  CommandGroup,
-  CommandGroupLabel,
-  CommandInput,
-  CommandItem,
-  CommandList,
-  CommandPanel,
-  CommandSeparator,
-  CommandShortcut
-};
+export { default as Command } from './command.svelte';
+export { default as CommandCollection } from './command-collection.svelte';
+export { default as CommandDialog } from './command-dialog.svelte';
+export { default as CommandDialogPopup } from './command-dialog-popup.svelte';
+export { default as CommandDialogTrigger } from './command-dialog-trigger.svelte';
+export { default as CommandEmpty } from './command-empty.svelte';
+export { default as CommandFooter } from './command-footer.svelte';
+export { default as CommandGroup } from './command-group.svelte';
+export { default as CommandGroupLabel } from './command-group-label.svelte';
+export { default as CommandInput } from './command-input.svelte';
+export { default as CommandItem } from './command-item.svelte';
+export { default as CommandList } from './command-list.svelte';
+export { default as CommandPanel } from './command-panel.svelte';
+export { default as CommandSeparator } from './command-separator.svelte';
+export { default as CommandShortcut } from './command-shortcut.svelte';

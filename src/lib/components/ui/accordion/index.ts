@@ -1,17 +1,8 @@
 import { Accordion as AccordionPrimitive } from 'bits-ui';
-import Accordion from './accordion.svelte';
-import AccordionItem from './accordion-item.svelte';
-import AccordionPanel from './accordion-panel.svelte';
-import AccordionTrigger from './accordion-trigger.svelte';
 
-const AccordionHeader = AccordionPrimitive.Header;
-
-export {
-  Accordion,
-  AccordionHeader,
-  AccordionItem,
-  AccordionPanel,
-  AccordionPanel as AccordionContent,
-  AccordionPrimitive,
-  AccordionTrigger
-};
+export { default as Accordion } from './accordion.svelte';
+export { default as AccordionItem } from './accordion-item.svelte';
+export { default as AccordionPanel, default as AccordionContent } from './accordion-panel.svelte';
+export { default as AccordionTrigger } from './accordion-trigger.svelte';
+export { AccordionPrimitive };
+export const AccordionHeader = AccordionPrimitive.Header;

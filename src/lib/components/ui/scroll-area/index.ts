@@ -1,4 +1,2 @@
-import ScrollArea from './scroll-area.svelte';
-import Scrollbar from './scroll-area-scrollbar.svelte';
-
-export { ScrollArea, Scrollbar };
+export { default as ScrollArea } from './scroll-area.svelte';
+export { default as Scrollbar } from './scroll-area-scrollbar.svelte';

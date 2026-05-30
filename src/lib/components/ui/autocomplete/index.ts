@@ -1,44 +1,16 @@
-import Autocomplete from './autocomplete.svelte';
-import AutocompleteClear from './autocomplete-clear.svelte';
-import AutocompleteCollection from './autocomplete-collection.svelte';
-import AutocompleteEmpty from './autocomplete-empty.svelte';
-import AutocompleteGroup from './autocomplete-group.svelte';
-import AutocompleteGroupLabel from './autocomplete-group-label.svelte';
-import AutocompleteInput from './autocomplete-input.svelte';
-import AutocompleteItem from './autocomplete-item.svelte';
-import AutocompleteList from './autocomplete-list.svelte';
-import AutocompletePopup from './autocomplete-popup.svelte';
-import AutocompleteRow from './autocomplete-row.svelte';
-import AutocompleteSeparator from './autocomplete-separator.svelte';
-import AutocompleteStatus from './autocomplete-status.svelte';
-import AutocompleteTrigger from './autocomplete-trigger.svelte';
-import AutocompleteValue from './autocomplete-value.svelte';
-
-function useAutocompleteFilter() {
-  function contains(itemText: string, inputValue: string) {
-    return itemText.toLowerCase().includes(inputValue.toLowerCase());
-  }
-  function startsWith(itemText: string, inputValue: string) {
-    return itemText.toLowerCase().startsWith(inputValue.toLowerCase());
-  }
-  return { contains, startsWith };
-}
-
-export {
-  Autocomplete,
-  AutocompleteClear,
-  AutocompleteCollection,
-  AutocompleteEmpty,
-  AutocompleteGroup,
-  AutocompleteGroupLabel,
-  AutocompleteInput,
-  AutocompleteItem,
-  AutocompleteList,
-  AutocompletePopup,
-  AutocompleteRow,
-  AutocompleteSeparator,
-  AutocompleteStatus,
-  AutocompleteTrigger,
-  AutocompleteValue,
-  useAutocompleteFilter
-};
+export { default as Autocomplete } from './autocomplete.svelte';
+export { default as AutocompleteClear } from './autocomplete-clear.svelte';
+export { default as AutocompleteCollection } from './autocomplete-collection.svelte';
+export { default as AutocompleteEmpty } from './autocomplete-empty.svelte';
+export { default as AutocompleteGroup } from './autocomplete-group.svelte';
+export { default as AutocompleteGroupLabel } from './autocomplete-group-label.svelte';
+export { default as AutocompleteInput } from './autocomplete-input.svelte';
+export { default as AutocompleteItem } from './autocomplete-item.svelte';
+export { default as AutocompleteList } from './autocomplete-list.svelte';
+export { default as AutocompletePopup } from './autocomplete-popup.svelte';
+export { default as AutocompleteRow } from './autocomplete-row.svelte';
+export { default as AutocompleteSeparator } from './autocomplete-separator.svelte';
+export { default as AutocompleteStatus } from './autocomplete-status.svelte';
+export { default as AutocompleteTrigger } from './autocomplete-trigger.svelte';
+export { default as AutocompleteValue } from './autocomplete-value.svelte';
+export { useAutocompleteFilter };

@@ -1,3 +1,1 @@
-import Separator from './separator.svelte';
-
-export { Separator };
+export { default as Separator } from './separator.svelte';

@@ -1,17 +1,7 @@
-import Toolbar from './toolbar.svelte';
-import ToolbarButton from './toolbar-button.svelte';
-import ToolbarGroup from './toolbar-group.svelte';
-import ToolbarGroupItem from './toolbar-group-item.svelte';
-import ToolbarInput from './toolbar-input.svelte';
-import ToolbarLink from './toolbar-link.svelte';
-import ToolbarSeparator from './toolbar-separator.svelte';
-
-export {
-  Toolbar,
-  ToolbarButton,
-  ToolbarGroup,
-  ToolbarGroupItem,
-  ToolbarInput,
-  ToolbarLink,
-  ToolbarSeparator
-};
+export { default as Toolbar } from './toolbar.svelte';
+export { default as ToolbarButton } from './toolbar-button.svelte';
+export { default as ToolbarGroup } from './toolbar-group.svelte';
+export { default as ToolbarGroupItem } from './toolbar-group-item.svelte';
+export { default as ToolbarInput } from './toolbar-input.svelte';
+export { default as ToolbarLink } from './toolbar-link.svelte';
+export { default as ToolbarSeparator } from './toolbar-separator.svelte';

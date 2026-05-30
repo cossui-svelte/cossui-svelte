@@ -1,30 +1,13 @@
-import Root from './drawer.svelte';
-import Close from './drawer-close.svelte';
-import Content from './drawer-content.svelte';
-import Description from './drawer-description.svelte';
-import Footer from './drawer-footer.svelte';
-import Header from './drawer-header.svelte';
-import NestedRoot from './drawer-nested.svelte';
-import Overlay from './drawer-overlay.svelte';
-import Panel from './drawer-panel.svelte';
-import Portal from './drawer-portal.svelte';
-import Title from './drawer-title.svelte';
-import Trigger from './drawer-trigger.svelte';
-import Viewport from './drawer-viewport.svelte';
-
-export {
-  Close as DrawerClose,
-  Content as DrawerContent,
-  Content as DrawerPopup,
-  Description as DrawerDescription,
-  Footer as DrawerFooter,
-  Header as DrawerHeader,
-  NestedRoot as DrawerNestedRoot,
-  Overlay as DrawerOverlay,
-  Panel as DrawerPanel,
-  Portal as DrawerPortal,
-  Root as Drawer,
-  Title as DrawerTitle,
-  Trigger as DrawerTrigger,
-  Viewport as DrawerViewport
-};
+export { default as Drawer } from './drawer.svelte';
+export { default as DrawerClose } from './drawer-close.svelte';
+export { default as DrawerContent, default as DrawerPopup } from './drawer-content.svelte';
+export { default as DrawerDescription } from './drawer-description.svelte';
+export { default as DrawerFooter } from './drawer-footer.svelte';
+export { default as DrawerHeader } from './drawer-header.svelte';
+export { default as DrawerNestedRoot } from './drawer-nested.svelte';
+export { default as DrawerOverlay } from './drawer-overlay.svelte';
+export { default as DrawerPanel } from './drawer-panel.svelte';
+export { default as DrawerPortal } from './drawer-portal.svelte';
+export { default as DrawerTitle } from './drawer-title.svelte';
+export { default as DrawerTrigger } from './drawer-trigger.svelte';
+export { default as DrawerViewport } from './drawer-viewport.svelte';

@@ -1,6 +1,4 @@
-import Tabs from './tabs.svelte';
-import TabsList from './tabs-list.svelte';
-import TabsPanel from './tabs-panel.svelte';
-import TabsTab from './tabs-tab.svelte';
-
-export { Tabs, TabsList, TabsPanel, TabsPanel as TabsContent, TabsTab, TabsTab as TabsTrigger };
+export { default as Tabs } from './tabs.svelte';
+export { default as TabsList } from './tabs-list.svelte';
+export { default as TabsPanel, default as TabsContent } from './tabs-panel.svelte';
+export { default as TabsTab, default as TabsTrigger } from './tabs-tab.svelte';

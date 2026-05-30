@@ -1,30 +1,13 @@
-import Card from './card.svelte';
-import CardAction from './card-action.svelte';
-import CardDescription from './card-description.svelte';
-import CardFooter from './card-footer.svelte';
-import CardHeader from './card-header.svelte';
-import CardPanel from './card-panel.svelte';
-import CardTitle from './card-title.svelte';
-import CardFrame from './cardframe.svelte';
-import CardFrameAction from './cardframe-action.svelte';
-import CardFrameDescription from './cardframe-description.svelte';
-import CardFrameFooter from './cardframe-footer.svelte';
-import CardFrameHeader from './cardframe-header.svelte';
-import CardFrameTitle from './cardframe-title.svelte';
-
-export {
-  Card,
-  CardAction,
-  CardDescription,
-  CardFooter,
-  CardFrame,
-  CardFrameAction,
-  CardFrameDescription,
-  CardFrameFooter,
-  CardFrameHeader,
-  CardFrameTitle,
-  CardHeader,
-  CardPanel,
-  CardPanel as CardContent,
-  CardTitle
-};
+export { default as Card } from './card.svelte';
+export { default as CardAction } from './card-action.svelte';
+export { default as CardDescription } from './card-description.svelte';
+export { default as CardFooter } from './card-footer.svelte';
+export { default as CardHeader } from './card-header.svelte';
+export { default as CardPanel, default as CardContent } from './card-panel.svelte';
+export { default as CardTitle } from './card-title.svelte';
+export { default as CardFrame } from './cardframe.svelte';
+export { default as CardFrameAction } from './cardframe-action.svelte';
+export { default as CardFrameDescription } from './cardframe-description.svelte';
+export { default as CardFrameFooter } from './cardframe-footer.svelte';
+export { default as CardFrameHeader } from './cardframe-header.svelte';
+export { default as CardFrameTitle } from './cardframe-title.svelte';

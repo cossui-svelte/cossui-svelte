@@ -1,5 +1,3 @@
-import ToggleGroup from './toggle-group.svelte';
-import ToggleGroupItem from './toggle-group-item.svelte';
-import ToggleGroupSeparator from './toggle-group-separator.svelte';
-
-export { ToggleGroup, ToggleGroupItem, ToggleGroupSeparator };
+export { default as ToggleGroup } from './toggle-group.svelte';
+export { default as ToggleGroupItem } from './toggle-group-item.svelte';
+export { default as ToggleGroupSeparator } from './toggle-group-separator.svelte';

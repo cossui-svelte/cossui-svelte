@@ -1,4 +1,4 @@
 import { Label as LabelPrimitive } from 'bits-ui';
-import Label from './label.svelte';
 
-export { Label, LabelPrimitive };
+export { default as Label } from './label.svelte';
+export { LabelPrimitive };

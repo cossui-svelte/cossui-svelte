@@ -1,19 +1,9 @@
 /* eslint-disable perfectionist/sort-named-exports */
 
-import Pagination from './pagination.svelte';
-import PaginationContent from './pagination-content.svelte';
-import PaginationEllipsis from './pagination-ellipsis.svelte';
-import PaginationItem from './pagination-item.svelte';
-import PaginationLink from './pagination-link.svelte';
-import PaginationNext from './pagination-next-button.svelte';
-import PaginationPrevious from './pagination-prev-button.svelte';
-
-export {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious
-};
+export { default as Pagination } from './pagination.svelte';
+export { default as PaginationContent } from './pagination-content.svelte';
+export { default as PaginationEllipsis } from './pagination-ellipsis.svelte';
+export { default as PaginationItem } from './pagination-item.svelte';
+export { default as PaginationLink } from './pagination-link.svelte';
+export { default as PaginationNext } from './pagination-next-button.svelte';
+export { default as PaginationPrevious } from './pagination-prev-button.svelte';

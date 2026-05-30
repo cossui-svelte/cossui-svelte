@@ -1,4 +1,2 @@
-import Form from './form.svelte';
-import FormDebug from './form-debug.svelte';
-
-export { Form, FormDebug };
+export { default as Form } from './form.svelte';
+export { default as FormDebug } from './form-debug.svelte';

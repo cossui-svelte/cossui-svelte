@@ -1,4 +1,2 @@
-import Fieldset from './fieldset.svelte';
-import FieldsetLegend from './fieldset-legend.svelte';
-
-export { Fieldset, FieldsetLegend };
+export { default as Fieldset } from './fieldset.svelte';
+export { default as FieldsetLegend } from './fieldset-legend.svelte';

@@ -1,3 +1,1 @@
-import Slider from './slider.svelte';
-
-export { Slider };
+export { default as Slider } from './slider.svelte';

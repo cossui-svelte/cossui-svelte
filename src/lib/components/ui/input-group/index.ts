@@ -1,7 +1,5 @@
-import InputGroup from './input-group.svelte';
-import InputGroupAddon from './input-group-addon.svelte';
-import InputGroupInput from './input-group-input.svelte';
-import InputGroupText from './input-group-text.svelte';
-import InputGroupTextarea from './input-group-textarea.svelte';
-
-export { InputGroup, InputGroupAddon, InputGroupInput, InputGroupText, InputGroupTextarea };
+export { default as InputGroup } from './input-group.svelte';
+export { default as InputGroupAddon } from './input-group-addon.svelte';
+export { default as InputGroupInput } from './input-group-input.svelte';
+export { default as InputGroupText } from './input-group-text.svelte';
+export { default as InputGroupTextarea } from './input-group-textarea.svelte';
