@@ -22,8 +22,8 @@
         resetForm: true,
         async onUpdated({ form }) {
             if (form.valid) {
-                await sleep(1000);
-                // alert("Form submitted successfully!");
+                await new Promise((r) => setTimeout(r, 2000));
+                alert("Form submitted successfully!");
             }
         },
     });
