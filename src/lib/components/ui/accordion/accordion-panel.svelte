@@ -6,13 +6,14 @@
     ref = $bindable(null),
     class: className,
     children,
+
     ...restProps
   }: WithoutChild<Accordion.ContentProps> = $props();
 </script>
 
 <Accordion.Content
   bind:ref
-  class="h-(--accordion-panel-height) overflow-hidden text-muted-foreground text-sm transition-[height] duration-200 ease-in-out data-ending-style:h-0 data-starting-style:h-0"
+  class="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
   data-slot="accordion-panel"
   {...restProps}
 >

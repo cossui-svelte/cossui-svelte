@@ -10,6 +10,7 @@
 </script>
 
 <Accordion.Item
+  bind:ref
   class={cn("border-b last:border-b-0", className)}
   data-slot="accordion-item"
   {...restProps}

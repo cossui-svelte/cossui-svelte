@@ -13,7 +13,7 @@
 <AccordionPrimitive.Root
   bind:ref
   bind:value={value as never}
-  class={cn(className)}
+  class={className}
   data-slot="accordion"
   {...restProps}
 />
