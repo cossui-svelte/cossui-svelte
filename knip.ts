@@ -1,5 +1,3 @@
-
-
 const config = {
   compilers: {
     svelte: (text: string) => [...text.matchAll(/import[^;]+/g)].join('\n')

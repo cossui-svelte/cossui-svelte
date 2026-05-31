@@ -1,7 +1,10 @@
 export { default as AlertDialog } from './alert-dialog.svelte';
 export { default as AlertDialogAction } from './alert-dialog-action.svelte';
 export { default as AlertDialogClose } from './alert-dialog-close.svelte';
-export { default as AlertDialogContent, default as AlertDialogPopup } from './alert-dialog-content.svelte';
+export {
+  default as AlertDialogContent,
+  default as AlertDialogPopup
+} from './alert-dialog-content.svelte';
 export { default as AlertDialogDescription } from './alert-dialog-description.svelte';
 export { default as AlertDialogFooter } from './alert-dialog-footer.svelte';
 export { default as AlertDialogHeader } from './alert-dialog-header.svelte';

@@ -2,7 +2,7 @@
 /**
  * !!!!!!!!!!
  * This file is auto-generated. Do not edit manually
- * Last generated at: 5/30/2026, 8:27:46 AM
+ * Last generated at: 5/31/2026, 1:09:44 PM
  * To update, run: pnpm generate:registry --format
  * @version 0.1.1
  * !!!!!!!!!!
