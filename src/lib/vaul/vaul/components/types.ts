@@ -1,5 +1,5 @@
+import { Dialog } from 'bits-ui';
 import type { Snippet } from 'svelte';
-import type { HTMLAttributes } from 'svelte/elements';
 import type { DrawerDirection, OnChangeFn } from '../../internal/types.js';
 import type { CreateVaulProps } from '../../internal/vaul.js';
 
@@ -128,9 +128,11 @@ export type Props = {
   children?: Snippet;
 };
 
-export type OverlayProps = HTMLAttributes<HTMLDivElement>;
-export type ContentProps = HTMLAttributes<HTMLDivElement>;
-export type TitleProps = HTMLAttributes<HTMLHeadingElement>;
-export type DescriptionProps = HTMLAttributes<HTMLDivElement>;
-export type CloseProps = HTMLAttributes<HTMLButtonElement>;
-export type TriggerProps = HTMLAttributes<HTMLButtonElement>;
+export type RootProps = Props;
+export type PortalProps = Dialog.PortalProps;
+export type OverlayProps = Dialog.OverlayProps;
+export type ContentProps = Dialog.ContentProps;
+export type TitleProps = Dialog.TitleProps;
+export type DescriptionProps = Dialog.DescriptionProps;
+export type CloseProps = Dialog.CloseProps;
+export type TriggerProps = Dialog.TriggerProps;

@@ -5,11 +5,13 @@
 	import Visible from "./visible.svelte";
 
 	let {
+		ref = $bindable(null),
 		style = "",
 		children,
 		class: className,
 		...restProps
 	}: {
+		ref?: HTMLElement | null;
 		style?: string;
 		children?: Snippet;
 		class?: string;
@@ -24,17 +26,15 @@
 		options: { direction },
 	} = getCtx();
 
-	let drawerEl: HTMLDivElement | null = $state(null);
-
 	$effect(() => {
-		if (drawerEl) drawerRef.set(drawerEl);
+		if (ref) drawerRef.set(ref as HTMLDivElement);
 	});
 
 	let contentStyle = $derived($getContentStyle(style));
 </script>
 
 <Dialog.Content
-	bind:ref={drawerEl}
+	bind:ref
 	style={contentStyle}
 	class={className}
 	onpointerdown={(e) => {

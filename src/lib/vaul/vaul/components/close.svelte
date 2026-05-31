@@ -1,13 +1,15 @@
 <script lang="ts">
 	import { Dialog } from "bits-ui";
 	import { getCtx } from "../ctx.js";
-	import type { Snippet } from "svelte";
 
 	let {
+		ref = $bindable(null),
 		children,
 		class: className,
+		onclick: _onclick,
+		onkeydown: _onkeydown,
 		...restProps
-	}: { children?: Snippet; class?: string; [key: string]: unknown } = $props();
+	}: Dialog.CloseProps = $props();
 
 	const {
 		methods: { closeDrawer },
@@ -15,6 +17,7 @@
 </script>
 
 <Dialog.Close
+	bind:ref
 	onclick={(e) => {
 		e.preventDefault();
 		closeDrawer();

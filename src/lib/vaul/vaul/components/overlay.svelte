@@ -2,7 +2,11 @@
 	import { Dialog } from "bits-ui";
 	import { getCtx } from "../ctx.js";
 
-	let { class: className, ...restProps }: { class?: string; [key: string]: unknown } = $props();
+	let {
+		ref = $bindable(null),
+		class: className,
+		...restProps
+	}: { ref?: HTMLElement | null; class?: string; [key: string]: unknown } = $props();
 
 	const {
 		refs: { overlayRef },
@@ -11,10 +15,8 @@
 		options: { dismissible },
 	} = getCtx();
 
-	let overlayEl: HTMLDivElement | null = $state(null);
-
 	$effect(() => {
-		if (overlayEl) overlayRef.set(overlayEl);
+		if (ref) overlayRef.set(ref as HTMLDivElement);
 	});
 
 	let hasSnapPoints = $derived($snapPoints && $snapPoints.length > 0);
@@ -27,7 +29,7 @@
 </script>
 
 <Dialog.Overlay
-	bind:ref={overlayEl}
+	bind:ref
 	onmouseup={onRelease}
 	onclick={handleClick}
 	class={className}

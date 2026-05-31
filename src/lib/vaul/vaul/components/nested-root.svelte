@@ -8,6 +8,7 @@
 		onDrag,
 		onOpenChange,
 		open = $bindable(false),
+		activeSnapPoint = $bindable(null),
 		children,
 		...restProps
 	}: Props & { children?: Snippet } = $props();
@@ -24,6 +25,7 @@
 <Root
 	nested={true}
 	bind:open
+	bind:activeSnapPoint
 	onClose={() => {
 		onNestedOpenChange(false);
 	}}
