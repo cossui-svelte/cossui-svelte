@@ -99,6 +99,7 @@ export const toastManager = {
 
   loading(title: string, opts?: AddToastVariantOptions): string {
     return vToast({
+      action: adaptAction(opts?.action),
       description: opts?.description,
       duration: opts?.duration ?? 0,
       isLoading: true,
@@ -113,6 +114,19 @@ export const toastManager = {
       duration: opts?.duration,
       title
     });
+  },
+
+  update(id: string, data: Partial<Omit<AddToastOptions, 'type'>> | string): void {
+    if (typeof data === 'string') {
+      vToast.update(id, { description: data });
+    } else {
+      vToast.update(id, {
+        action: data.action ? adaptAction(data.action) : undefined,
+        description: data.description,
+        duration: data.duration,
+        title: data.title
+      });
+    }
   },
 
   warning(title: string, opts?: AddToastVariantOptions): string {

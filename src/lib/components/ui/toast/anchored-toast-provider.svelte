@@ -6,6 +6,7 @@
 	import LoaderCircleIcon from "@lucide/svelte/icons/loader-circle";
 	import TriangleAlertIcon from "@lucide/svelte/icons/triangle-alert";
 	import type { Snippet } from "svelte";
+	import { scale } from "svelte/transition";
 	import { cn } from "$lib/utils";
 	import { buttonVariants } from "$lib/components/ui/button";
 	import {
@@ -161,10 +162,11 @@
 		<Portal>
 			<div
 				use:floating={toast}
+				transition:scale={{ duration: 150, start: 0.98, opacity: 0 }}
 				class={cn(
 					"fixed z-50 max-w-[min(16rem,var(--available-width,16rem))]",
-					"relative text-balance border bg-popover not-dark:bg-clip-padding",
-					"text-popover-foreground text-xs transition-[scale,opacity]",
+					"text-balance border bg-popover not-dark:bg-clip-padding",
+					"text-popover-foreground text-xs",
 					"before:pointer-events-none before:absolute before:inset-0",
 					"before:shadow-[0_1px_--theme(--color-black/4%)]",
 					"dark:before:shadow-[0_-1px_--theme(--color-white/6%)]",
