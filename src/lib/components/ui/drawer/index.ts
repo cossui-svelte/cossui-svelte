@@ -1,4 +1,5 @@
 export { default as Drawer } from './drawer.svelte';
+export { default as DrawerBar } from './drawer-bar.svelte';
 export { default as DrawerClose } from './drawer-close.svelte';
 export { default as DrawerContent, default as DrawerPopup } from './drawer-content.svelte';
 export { default as DrawerDescription } from './drawer-description.svelte';

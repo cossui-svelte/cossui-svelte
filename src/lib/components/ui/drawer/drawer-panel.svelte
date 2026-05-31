@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import type { HTMLAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils.js";
+  import { cn, type WithElementRef } from "$lib/utils.js";
   import { ScrollArea } from "../scroll-area/index.js";
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
@@ -12,19 +12,20 @@
   }
 
   let {
+    ref = $bindable(null),
     class: className,
     scrollFade = true,
     scrollable = true,
     allowSelection = true,
     children,
     ...restProps
-  }: Props = $props();
+  }: WithElementRef<Props> = $props();
 
-  const panelClass = cn(
+  const panelClass = $derived(cn(
     "p-6 in-[[data-slot=drawer-popup]:has([data-slot=drawer-header])]:pt-1 in-[[data-slot=drawer-popup]:has([data-slot=drawer-footer]:not(.border-t))]:pb-1",
     !allowSelection && "cursor-default",
     className,
-  );
+  ));
 </script>
 
 {#if scrollable}
@@ -34,7 +35,7 @@
     </div>
   </ScrollArea>
 {:else}
-  <div class={panelClass} data-slot="drawer-panel" {...restProps}>
+  <div bind:this={ref} class={panelClass} data-slot="drawer-panel" {...restProps}>
     {@render children?.()}
   </div>
 {/if}

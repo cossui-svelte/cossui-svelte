@@ -10,7 +10,7 @@
 		activeSnapPoint = $bindable(null),
 		position = "bottom" as Position,
 		...restProps
-	}: Omit<DrawerPrimitive.RootProps, "direction"> & {
+	}: Omit<DrawerPrimitive.Props, "direction"> & {
 		position?: Position;
 	} = $props();
 

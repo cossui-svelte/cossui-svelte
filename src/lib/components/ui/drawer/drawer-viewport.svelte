@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import type { HTMLAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils.js";
+  import { cn, type WithElementRef } from "$lib/utils.js";
 
   type DrawerPosition = "right" | "left" | "top" | "bottom";
 
@@ -12,18 +12,19 @@
   }
 
   let {
+    ref = $bindable(null),
     class: className,
     position = "bottom",
     variant = "default",
     children,
     ...restProps
-  }: Props = $props();
+  }: WithElementRef<Props> = $props();
 </script>
 
 <div
+  bind:this={ref}
   class={cn(
-    // "fixed",
-    "inset-0 z-50 touch-none [--bleed:--spacing(12)] [--inset:--spacing(0)]",
+    "fixed inset-0 z-50 touch-none pointer-events-none [--bleed:--spacing(12)] [--inset:--spacing(0)]",
     position === "bottom" && "grid grid-rows-[1fr_auto] pt-12",
     position === "top" && "grid grid-rows-[auto_1fr] pb-12",
     position === "left" && "flex justify-start",
