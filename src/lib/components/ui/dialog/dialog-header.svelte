@@ -14,7 +14,7 @@
 	bind:this={ref}
 	data-slot="dialog-header"
 	class={cn(
-		"flex flex-col gap-2 p-6 text-center in-[[data-slot=alert-dialog-popup]:has([data-slot=alert-dialog-panel])]:pb-3 max-sm:pb-4 sm:text-left",
+		"flex flex-col gap-2 p-6 text-center in-[[data-slot=dialog-popup]:has([data-slot=dialog-panel])]:pb-3 max-sm:pb-4 sm:text-left",
 		className,
 	)}
 	{...restProps}
