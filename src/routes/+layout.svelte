@@ -4,10 +4,6 @@
 
   import "../app.css";
 
-  import calSansUIUrl from "$lib/fonts/CalSansUI[MODE,wght].woff2?url";
-  import calSansHeadingUrl from "$lib/fonts/CalSans-SemiBold.woff2?url";
-  import paperMonoUrl from "$lib/fonts/PaperMono-Regular.woff2?url";
-
   import SiteHeader from "$lib/components/app/app-site-header.svelte";
   import SiteFooter from "$lib/components/shared-components/site-footer.svelte";
   import { ModeWatcher } from "mode-watcher";
@@ -20,9 +16,6 @@
 </script>
 
 <svelte:head>
-  <link rel="preload" href={calSansUIUrl} as="font" type="font/woff2" crossorigin="anonymous" />
-  <link rel="preload" href={calSansHeadingUrl} as="font" type="font/woff2" crossorigin="anonymous" />
-  <link rel="preload" href={paperMonoUrl} as="font" type="font/woff2" crossorigin="anonymous" />
   <title>
     coss ui-svelte - A new, modern UI component library built on top of Bits UI.
     Built for developers and AI.

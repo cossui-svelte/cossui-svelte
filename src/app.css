@@ -1,28 +1,28 @@
 /* Mono */
 @font-face {
   font-family: "PaperMono";
-  src: url("$lib/fonts/PaperMono-Regular.woff2") format("woff2");
+  src: url("/fonts/PaperMono-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 }
 
 /* Sans (Variable Font) */
 @font-face {
   font-family: "CalSansUI";
-  src: url("$lib/fonts/CalSansUI[MODE,wght].woff2") format("woff2");
+  src: url("/fonts/CalSansUI[MODE,wght].woff2") format("woff2");
   font-weight: 300 700;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 }
 
 /* Heading */
 @font-face {
   font-family: "CalSansHeading";
-  src: url("$lib/fonts/CalSans-SemiBold.woff2") format("woff2");
+  src: url("/fonts/CalSans-SemiBold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 }
 
 :root {
