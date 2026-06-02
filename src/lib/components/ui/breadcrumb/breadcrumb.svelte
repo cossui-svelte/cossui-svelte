@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { cn, type WithElementRef } from "$lib/utils.js";
+  import { type WithElementRef } from "$lib/utils.js";
   import type { HTMLAttributes } from "svelte/elements";
 
   let {
@@ -13,6 +13,7 @@
 <nav
   bind:this={ref}
   aria-label="breadcrumb"
+  class={className}
   data-slot="breadcrumb"
   {...restProps}
 >

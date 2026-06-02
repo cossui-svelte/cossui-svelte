@@ -1,6 +1,6 @@
 <script lang="ts">
   import { cn, type WithElementRef } from "$lib/utils.js";
-  import type { HTMLAttributes } from "svelte/elements";
+  import type { HTMLAnchorAttributes } from "svelte/elements";
 
   let {
     ref = $bindable(null),
@@ -8,9 +8,7 @@
     href,
     children,
     ...restProps
-  }: WithElementRef<HTMLAttributes<HTMLAnchorElement>> & {
-    href?: string;
-  } = $props();
+  }: WithElementRef<HTMLAnchorAttributes> = $props();
 </script>
 
 <a

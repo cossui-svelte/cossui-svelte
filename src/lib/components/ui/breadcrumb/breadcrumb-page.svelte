@@ -13,10 +13,8 @@
 <span
   bind:this={ref}
   aria-current="page"
-  aria-disabled="true"
   class={cn("font-normal text-foreground", className)}
   data-slot="breadcrumb-page"
-  role="link"
   {...restProps}
 >
   {@render children?.()}
