@@ -53,9 +53,9 @@
 				position === "top" &&
 					"border-b has-data-[slot=drawer-bar]:pb-2",
 				position === "left" &&
-					"w-[calc(100%_-_-(--spacing(12)))] max-w-md border-e has-data-[slot=drawer-bar]:pe-2",
+					"w-[calc(100%-(--spacing(12)))] max-w-md border-e has-data-[slot=drawer-bar]:pe-2",
 				position === "right" &&
-					"w-[calc(100%_-_-(--spacing(12)))] max-w-md border-s has-data-[slot=drawer-bar]:ps-2",
+					"w-[calc(100%-(--spacing(12)))] max-w-md border-s has-data-[slot=drawer-bar]:ps-2",
 				variant !== "straight" &&
 					cn(
 						position === "bottom" &&
