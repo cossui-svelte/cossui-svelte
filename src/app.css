@@ -4,7 +4,7 @@
   src: url("/fonts/PaperMono-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
+  font-display: optional;
 }
 
 /* Sans (Variable Font) */
@@ -13,7 +13,7 @@
   src: url("/fonts/CalSansUI[MODE,wght].woff2") format("woff2");
   font-weight: 300 700;
   font-style: normal;
-  font-display: swap;
+  font-display: optional;
 }
 
 /* Heading */
@@ -22,7 +22,7 @@
   src: url("/fonts/CalSans-SemiBold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
-  font-display: swap;
+  font-display: optional;
 }
 
 :root {
