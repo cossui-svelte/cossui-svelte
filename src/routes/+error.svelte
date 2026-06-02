@@ -23,11 +23,8 @@
 		</PageHeaderDescription>
 		<div class="mt-4">
 			<Button class="group" size="lg">
-				<a href="/">
-					<RiArrowLeftLine
-						aria-hidden="true"
-						class="-ms-1 opacity-60"
-					/>Back to Home
+				<a class="flex items-center gap-1" href="/">
+					<RiArrowLeftLine aria-hidden="true" class="opacity-60" />Back to Home
 				</a>
 			</Button>
 		</div>
