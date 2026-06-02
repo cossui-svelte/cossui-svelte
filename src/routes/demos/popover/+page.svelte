@@ -6,6 +6,10 @@
         PopoverTrigger,
         PopoverDescription,
     } from "$lib/components/ui/popover";
+    import { Button } from "$lib/components/ui/button";
+    import { Form } from "$lib/components/ui/form";
+    import { Field } from "$lib/components/ui/field";
+    import { Textarea } from "$lib/components/ui/textarea";
 </script>
 
 <Popover>
@@ -17,7 +21,7 @@
                 Let us know how we can improve.
             </PopoverDescription>
         </div>
-        <!-- TODO <Form>
+        <Form>
             <Field>
                 <Textarea
                     aria-label="Send feedback"
@@ -26,6 +30,6 @@
                 />
             </Field>
             <Button type="submit">Send feedback</Button>
-        </Form> -->
+        </Form>
     </PopoverPopup>
 </Popover>

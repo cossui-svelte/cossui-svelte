@@ -1,6 +1,8 @@
 <script>
     import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
-
+    import { defaults, superForm } from "sveltekit-superforms";
+    import { valibot } from "sveltekit-superforms/adapters";
+    import * as v from "valibot";
     import { Form } from "$lib/components/ui/form";
     import { Textarea } from "$lib/components/ui/textarea";
     import { Field, FieldError, FieldLabel } from "$lib/components/ui/field";
@@ -8,6 +10,8 @@
     import { Label } from "$lib/components/ui/label";
 
     let loading = $state(false);
+
+    const id = $props.id();
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -17,6 +21,23 @@
         loading = false;
         alert(`Message: ${formData.get("message") || ""}`);
     };
+
+    //===
+
+    const schema = v.object({
+        message: v.pipe(v.string(), v.minLength(1, "Required")),
+    });
+
+    const form = superForm(defaults(valibot(schema)), {
+        SPA: true,
+        validators: valibot(schema),
+        onUpdate({ form }) {
+            if (form.valid) {
+                // do your thing — fetch, store write, etc.
+                console.log("valid", form.data);
+            }
+        },
+    });
 </script>
 
 <ComponentPreviewTabs>
@@ -38,13 +59,13 @@
     <Textarea disabled placeholder="Type your message here" />
 </ComponentPreviewTabs>
 <ComponentPreviewTabs>
-    <div className="flex flex-col items-start gap-2">
-        <Label htmlFor={id}>Message</Label>
+    <div class="flex flex-col items-start gap-2">
+        <Label on:fullscreenerror={id}>Message</Label>
         <Textarea {id} placeholder="Type your message here" />
     </div>
 </ComponentPreviewTabs>
 <ComponentPreviewTabs>
-    <Form className="flex w-full max-w-64 flex-col gap-4" {onSubmit}>
+    <Form config={form} class="flex w-full max-w-64 flex-col gap-4">
         <Field>
             <FieldLabel>Message</FieldLabel>
             <Textarea

@@ -26,9 +26,8 @@
 				<a href="/">
 					<RiArrowLeftLine
 						aria-hidden="true"
-						class="-ms-1 group-hover:-translate-x-0.5 opacity-60 transition-transform"
-					/>
-					Back to Home
+						class="-ms-1 opacity-60"
+					/>Back to Home
 				</a>
 			</Button>
 		</div>
