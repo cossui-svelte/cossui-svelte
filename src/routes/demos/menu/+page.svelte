@@ -56,8 +56,8 @@
             <MenuSeparator />
 
             <MenuCheckboxItem>Shuffle</MenuCheckboxItem>
-            <MenuItem>Repeat</MenuItem>
-            <MenuItem disabled>Enhanced Audio</MenuItem>
+            <MenuCheckboxItem>Repeat</MenuCheckboxItem>
+            <MenuCheckboxItem disabled>Enhanced Audio</MenuCheckboxItem>
             <MenuSeparator />
             <MenuGroup>
                 <MenuGroupLabel>Sort by</MenuGroupLabel>
