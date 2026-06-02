@@ -1,9 +1,9 @@
 * GROUP bug with menu '...'
 * PROGRESS with a simple value - does not work
-* Drawer with style inset, shows a white bar (css issue)
 * Drawer nested, do not stack properly on top of each others
 * Breadcrumb - ... is aligned, but it takes a hack
 
+* DONE Drawer with style inset, shows a white bar (css issue)
 * DONE Collapsible animation
 * DONE MENU bug
 * DONE - Drawer & Dialog-alert
