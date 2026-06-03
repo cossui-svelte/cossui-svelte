@@ -16,6 +16,7 @@
  *   pnpm dlx tsx transform-lucide-imports.ts --dry      # preview only
  */
 
+/// <reference types="node" />
 import { readdir, readFile, writeFile, stat } from "node:fs/promises";
 import { join, extname } from "node:path";
 

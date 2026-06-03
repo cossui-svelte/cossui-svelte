@@ -1,4 +1,5 @@
 /// <reference types="vitest" />
+/// <reference types="node" />
 
 import path from 'node:path';
 import { enhancedImages } from '@sveltejs/enhanced-img';
