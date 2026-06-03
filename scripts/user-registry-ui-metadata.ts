@@ -1,15 +1,9 @@
 // This file contains extra meta-data, to add into the registry
 // it is edited manually
 
-export interface RegistryUIEntry {
-	description: string;
-	category: "ui" | "extra"; // for now, just a simple category to separate "core" UI components from extra ones
-	isnew: boolean;
-}
+import { type RegistryUiData } from './createUiRegistry';
 
-export type RegistryUIData = Record<string, RegistryUIEntry>;
-
-const registryCategory: RegistryUIData = {
+const registryCategory: RegistryUiData = {
 	accordion: {
 		description: "A set of collapsible panels with headings and content.",
 		category: "ui",

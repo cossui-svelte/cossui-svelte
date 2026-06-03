@@ -86,9 +86,7 @@ export type RegistryParticuleData = Record<string, RegistryParticuleEntry>;
 export const particules: RegistryParticuleData = ${json};
 `;
 
-
     if (writeFlag) {
-
         await fs.writeFile(outputFile, output);
         console.log(`Written to ${outputFile}`);
     } else {

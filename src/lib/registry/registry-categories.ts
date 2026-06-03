@@ -1,5 +1,6 @@
 // All registry categories in display order
-export const registryCategories = [
+// used during rendering
+export const tagCategories = [
   // UI components
   'accordion',
   'alert',
@@ -54,7 +55,13 @@ export const registryCategories = [
   'toggle',
   'toggle-group',
   'toolbar',
-  'tooltip',
+  'tooltip'
+] as const;
+
+// This is used by the search to find particules
+export const registryCategories = [
+  // UI components
+  ...tagCategories,
   // Features and states
   'async',
   'copy',
