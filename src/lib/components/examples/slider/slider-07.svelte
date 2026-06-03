@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Label } from "$lib/components/ui/label";
 	import { Slider } from "$lib/components/ui/slider";
-	import { cn } from "$lib/utils.js";
+	import { cn } from "$lib/utils";
 
 	const max = 12;
 	const skipInterval = 2; // Set to 1 to allow no text skipping

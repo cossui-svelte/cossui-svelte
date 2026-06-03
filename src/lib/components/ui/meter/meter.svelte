@@ -13,7 +13,7 @@
   import type { Snippet } from "svelte";
   import { setContext } from "svelte";
   import { Meter as MeterPrimitive } from "bits-ui";
-  import { cn } from "$lib/utils.js";
+  import { cn } from "$lib/utils";
 
   type Props = MeterPrimitive.RootProps & { children?: Snippet };
 

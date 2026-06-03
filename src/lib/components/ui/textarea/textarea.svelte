@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { WithElementRef } from "bits-ui";
   import type { HTMLTextareaAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils.js";
+  import { cn } from "$lib/utils";
 
   interface Props extends HTMLTextareaAttributes {
     size?: "sm" | "default" | "lg" | number;

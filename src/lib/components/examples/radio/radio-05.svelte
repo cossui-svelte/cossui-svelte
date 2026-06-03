@@ -3,10 +3,7 @@
 
 	import { Input } from "$lib/components/ui/input";
 	import { Label } from "$lib/components/ui/label";
-	import {
-		RadioGroup,
-		RadioGroupItem,
-	} from "$lib/components/ui/radio-group/index.js";
+	import { RadioGroup, RadioGroupItem } from "$lib/components/ui/radio-group";
 
 	let selectedValue = $state("without-expansion");
 	let inputElement = $state<HTMLInputElement | null>(null);

@@ -16,7 +16,7 @@ export interface RegistryUIEntry {
 }
 
 export type RegistryUiData = Record<string, RegistryUIEntry>;
-export const categories: RegistryUiData = {
+const categories: RegistryUiData = {
   accordion: {
     category: 'ui',
     description: 'A set of collapsible panels with headings and content.',
@@ -501,3 +501,5 @@ export const categories: RegistryUiData = {
     registryDependencies: []
   }
 };
+
+export { categories };

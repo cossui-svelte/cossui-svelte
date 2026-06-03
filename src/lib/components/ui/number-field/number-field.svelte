@@ -18,7 +18,7 @@
   import type { Snippet } from "svelte";
   import type { HTMLAttributes } from "svelte/elements";
   import { setContext } from "svelte";
-  import { cn } from "$lib/utils.js";
+  import { cn } from "$lib/utils";
 
   interface Props extends Omit<HTMLAttributes<HTMLDivElement>, "id"> {
     id?: string;
@@ -45,7 +45,9 @@
   }: Props = $props();
 
   // Generate a unique ID if none is provided
-  let generatedId = $state(`number-field-${Math.random().toString(36).slice(2, 9)}`);
+  let generatedId = $state(
+    `number-field-${Math.random().toString(36).slice(2, 9)}`,
+  );
   let fieldId = $derived(id ?? generatedId);
 
   function clamp(v: number): number {
@@ -68,12 +70,24 @@
   }
 
   setContext<NumberFieldContext>(NUMBER_FIELD_CONTEXT_KEY, {
-    get fieldId() { return fieldId; },
-    get value() { return value; },
-    get min() { return min; },
-    get max() { return max; },
-    get step() { return step; },
-    get disabled() { return disabled; },
+    get fieldId() {
+      return fieldId;
+    },
+    get value() {
+      return value;
+    },
+    get min() {
+      return min;
+    },
+    get max() {
+      return max;
+    },
+    get step() {
+      return step;
+    },
+    get disabled() {
+      return disabled;
+    },
     increment,
     decrement,
     setValue,

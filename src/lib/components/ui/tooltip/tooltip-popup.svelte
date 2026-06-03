@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import { Tooltip } from "bits-ui";
-  import { cn } from "$lib/utils.js";
+  import { cn } from "$lib/utils";
 
   interface Props extends Tooltip.ContentProps {
     children?: Snippet;

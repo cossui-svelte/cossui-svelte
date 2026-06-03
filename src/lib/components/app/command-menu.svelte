@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { cn } from "$lib/utils.js";
+  import { cn } from "$lib/utils";
   import {
     Dialog,
     DialogContent,
@@ -8,9 +8,9 @@
     DialogTrigger,
   } from "$lib/components/ui/dialog";
   import Search from "@lucide/svelte/icons/search";
-import CornerDownLeft from "@lucide/svelte/icons/corner-down-left";
-import Atom from "@lucide/svelte/icons/atom";
-import BookOpen from "@lucide/svelte/icons/book-open";
+  import CornerDownLeft from "@lucide/svelte/icons/corner-down-left";
+  import Atom from "@lucide/svelte/icons/atom";
+  import BookOpen from "@lucide/svelte/icons/book-open";
   import { buttonVariants } from "$lib/components/ui/button";
   import { Kbd, KbdGroup } from "$lib/components/ui/kbd";
   import { useIsMac } from "$lib/hooks/use-is-mac.svelte";

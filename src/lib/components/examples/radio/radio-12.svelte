@@ -1,8 +1,5 @@
 <script lang="ts">
-	import {
-		RadioGroup,
-		RadioGroupItem,
-	} from "$lib/components/ui/radio-group/index.js";
+	import { RadioGroup, RadioGroupItem } from "$lib/components/ui/radio-group";
 
 	import IconApple from "svelte-remixicon/RiAppleFill.svelte";
 	import IconBankCard from "svelte-remixicon/RiBankCardLine.svelte";

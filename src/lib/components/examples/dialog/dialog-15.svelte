@@ -17,7 +17,7 @@
 		TooltipContent,
 		TooltipProvider,
 		TooltipTrigger,
-	} from "$lib/components/ui/tooltip/index.js";
+	} from "$lib/components/ui/tooltip";
 
 	import Check from "@lucide/svelte/icons/check";
 	import Copy from "@lucide/svelte/icons/copy";

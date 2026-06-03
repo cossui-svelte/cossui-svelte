@@ -1,6 +1,6 @@
 <script lang="ts">
   import { FieldErrors, type FieldErrorsProps } from "$lib/formsnap";
-  import { cn, type WithElementRef } from "$lib/utils.js";
+  import { cn, type WithElementRef } from "$lib/utils";
 
   let {
     ref = $bindable(null),

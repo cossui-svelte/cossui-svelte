@@ -2,7 +2,7 @@
 	import { Input } from "$lib/components/ui/input";
 	import { Label } from "$lib/components/ui/label";
 	import { usePasswordStrength } from "$lib/hooks/use-password-strength.svelte.ts";
-	import { cn } from "$lib/utils.js";
+	import { cn } from "$lib/utils";
 
 	import Check from "@lucide/svelte/icons/check";
 	import Eye from "@lucide/svelte/icons/eye";

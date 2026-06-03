@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { cn } from "$lib/utils.js";
+  import { cn } from "$lib/utils";
   import { page } from "$app/state";
   import { buttonVariants } from "$lib/components/ui/button";
 

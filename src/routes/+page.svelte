@@ -16,13 +16,9 @@
     CardPanel,
   } from "$lib/components/ui/card";
 
-  // type Category = {
-  //   slug: string;
-  //   name: string;
-  //   description?: string;
-  // };
+  import * as categories from "$lib/registry/registry-ui";
 
-  let { data }: { data: PageData } = $props();
+  // let { data }: { data: PageData } = $props();
 
   const description = "Built for developers and AI.";
 
@@ -97,14 +93,8 @@
     <div
       class="grid gap-6 pt-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 xl:grid-cols-4"
     >
-      {#each Object.entries(data.componentsMeta.directoriesBreakdown) as [directory, { componentCount, stateBreakdown }] (directory)}
-        {@const readableName =
-          directory.charAt(0).toUpperCase() + directory.slice(1)}
-        {@render categoryCard(
-          directory,
-          readableName,
-          `${componentCount} components`,
-        )}
+      {#each Object.entries(categories) as [id, { name, description }] (id)}
+        {@render categoryCard(id, name, description)}
       {/each}
     </div>
   </div>

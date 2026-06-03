@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import type { HTMLAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils.js";
+  import { cn } from "$lib/utils";
 
   interface Props extends HTMLAttributes<HTMLSpanElement> {
     children?: Snippet;
@@ -9,7 +9,13 @@
     value?: string;
   }
 
-  let { class: className, children, placeholder, value, ...restProps }: Props = $props();
+  let {
+    class: className,
+    children,
+    placeholder,
+    value,
+    ...restProps
+  }: Props = $props();
 </script>
 
 <span

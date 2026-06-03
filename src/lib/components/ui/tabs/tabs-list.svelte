@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import { Tabs } from "bits-ui";
-  import { cn } from "$lib/utils.js";
+  import { cn } from "$lib/utils";
   import TabsIndicator from "./tabs-indicator.svelte";
 
   type TabsVariant = "default" | "underline";

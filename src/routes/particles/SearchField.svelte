@@ -3,8 +3,8 @@
 	import Search from "@lucide/svelte/icons/search";
 	import Tag from "@lucide/svelte/icons/tag";
 	import X from "@lucide/svelte/icons/x";
-	import { cn } from "$lib/utils.js";
-	import { particles } from "$lib/registry/registry-particles.js";
+	import { cn } from "$lib/utils";
+	import { particles } from "$lib/registry/registry-particles";
 	import { getCategorySortOrder } from "$lib/registry/registry-categories.js";
 
 	export interface SearchItem {

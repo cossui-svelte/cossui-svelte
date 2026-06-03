@@ -17,7 +17,7 @@ export interface RegistryParticuleEntry {
 }
 
 export type RegistryParticuleData = Record<string, RegistryParticuleEntry>;
-export const particules: RegistryParticuleData = {
+const particles: RegistryParticuleData = {
   'accordion-01': {
     description: 'Basic accordion',
     file: 'examples/accordion/accordion-01.svelte',
@@ -3563,3 +3563,5 @@ export const particules: RegistryParticuleData = {
     tags: []
   }
 };
+
+export { particles };

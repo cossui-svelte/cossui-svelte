@@ -5,7 +5,7 @@
   import Sheet from "../sheet/sheet.svelte";
   import SheetPopup from "../sheet/sheet-popup.svelte";
   import { getSidebarContext } from "./sidebar-context.js";
-  import { cn } from "$lib/utils.js";
+  import { cn } from "$lib/utils";
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
     side?: "left" | "right";

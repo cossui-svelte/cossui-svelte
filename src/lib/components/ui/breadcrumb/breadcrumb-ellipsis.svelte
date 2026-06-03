@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type WithElementRef } from "$lib/utils.js";
+  import { type WithElementRef } from "$lib/utils";
   import Ellipsis from "@lucide/svelte/icons/ellipsis";
   import type { HTMLAttributes } from "svelte/elements";
 

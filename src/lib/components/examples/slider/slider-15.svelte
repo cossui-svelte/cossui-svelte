@@ -8,7 +8,7 @@
 		TooltipContent,
 		TooltipProvider,
 		TooltipTrigger,
-	} from "$lib/components/ui/tooltip/index.js";
+	} from "$lib/components/ui/tooltip";
 
 	import RotateCcw from "@lucide/svelte/icons/rotate-ccw";
 

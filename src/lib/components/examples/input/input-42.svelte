@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Label } from "$lib/components/ui/label";
 	import { useLocale } from "$lib/hooks/use-locale.svelte";
-	import { cn } from "$lib/utils.js";
+	import { cn } from "$lib/utils";
 
 	import { getLocalTimeZone, today } from "@internationalized/date";
 	import Calendar from "@lucide/svelte/icons/calendar";

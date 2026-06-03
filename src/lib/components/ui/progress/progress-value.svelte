@@ -1,8 +1,11 @@
 <script lang="ts">
   import type { HTMLAttributes } from "svelte/elements";
   import { getContext } from "svelte";
-  import { cn } from "$lib/utils.js";
-  import { PROGRESS_CONTEXT_KEY, type ProgressContext } from "./progress.svelte";
+  import { cn } from "$lib/utils";
+  import {
+    PROGRESS_CONTEXT_KEY,
+    type ProgressContext,
+  } from "./progress.svelte";
 
   type Props = HTMLAttributes<HTMLSpanElement>;
 

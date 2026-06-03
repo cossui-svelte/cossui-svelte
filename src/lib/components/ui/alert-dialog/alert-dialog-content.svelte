@@ -6,7 +6,7 @@
 		cn,
 		type WithoutChild,
 		type WithoutChildrenOrChild,
-	} from "$lib/utils.js";
+	} from "$lib/utils";
 	import type { ComponentProps } from "svelte";
 
 	let {

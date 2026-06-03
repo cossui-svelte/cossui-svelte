@@ -5,7 +5,7 @@
 		TooltipContent,
 		TooltipProvider,
 		TooltipTrigger,
-	} from "$lib/components/ui/tooltip/index.js";
+	} from "$lib/components/ui/tooltip";
 
 	import Bookmark from "@lucide/svelte/icons/bookmark";
 

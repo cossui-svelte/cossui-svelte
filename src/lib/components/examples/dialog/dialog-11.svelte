@@ -11,10 +11,7 @@
 		DialogTrigger,
 	} from "$lib/components/ui/dialog";
 	import { Label } from "$lib/components/ui/label";
-	import {
-		RadioGroup,
-		RadioGroupItem,
-	} from "$lib/components/ui/radio-group/index.js";
+	import { RadioGroup, RadioGroupItem } from "$lib/components/ui/radio-group";
 	import { Textarea } from "$lib/components/ui/textarea";
 </script>
 

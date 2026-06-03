@@ -1,18 +1,18 @@
 <script lang="ts">
-  import { cn } from "$lib/utils.js";
+  import { cn } from "$lib/utils";
   import CircleAlert from "@lucide/svelte/icons/circle-alert";
-import Calendar from "@lucide/svelte/icons/calendar";
-import ChevronDown from "@lucide/svelte/icons/chevron-down";
-import ChevronLeft from "@lucide/svelte/icons/chevron-left";
-import ChevronRight from "@lucide/svelte/icons/chevron-right";
-import Ellipsis from "@lucide/svelte/icons/ellipsis";
-import Info from "@lucide/svelte/icons/info";
-import Minus from "@lucide/svelte/icons/minus";
-import Plus from "@lucide/svelte/icons/plus";
-import Search from "@lucide/svelte/icons/search";
-import TextCursor from "@lucide/svelte/icons/text-cursor";
-import UserRound from "@lucide/svelte/icons/user-round";
-import X from "@lucide/svelte/icons/x";
+  import Calendar from "@lucide/svelte/icons/calendar";
+  import ChevronDown from "@lucide/svelte/icons/chevron-down";
+  import ChevronLeft from "@lucide/svelte/icons/chevron-left";
+  import ChevronRight from "@lucide/svelte/icons/chevron-right";
+  import Ellipsis from "@lucide/svelte/icons/ellipsis";
+  import Info from "@lucide/svelte/icons/info";
+  import Minus from "@lucide/svelte/icons/minus";
+  import Plus from "@lucide/svelte/icons/plus";
+  import Search from "@lucide/svelte/icons/search";
+  import TextCursor from "@lucide/svelte/icons/text-cursor";
+  import UserRound from "@lucide/svelte/icons/user-round";
+  import X from "@lucide/svelte/icons/x";
 
   interface Props {
     slug: string;

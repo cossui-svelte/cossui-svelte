@@ -1,9 +1,6 @@
 <script lang="ts">
 	import { Label } from "$lib/components/ui/label";
-	import {
-		RadioGroup,
-		RadioGroupItem,
-	} from "$lib/components/ui/radio-group/index.js";
+	import { RadioGroup, RadioGroupItem } from "$lib/components/ui/radio-group";
 
 	const items = [
 		{ id: "radio-15-r1", label: "Hobby", price: "$9/mo", value: "r1" },

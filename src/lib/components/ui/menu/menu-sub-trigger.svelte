@@ -2,7 +2,7 @@
   import type { Snippet } from "svelte";
   import { DropdownMenu } from "bits-ui";
   import ChevronRight from "@lucide/svelte/icons/chevron-right";
-  import { cn } from "$lib/utils.js";
+  import { cn } from "$lib/utils";
 
   interface Props extends DropdownMenu.SubTriggerProps {
     children?: Snippet;

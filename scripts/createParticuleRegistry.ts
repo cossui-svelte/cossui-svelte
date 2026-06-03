@@ -47,7 +47,6 @@ async function scanExamples(): Promise<void> {
             if (!file.endsWith('.svelte')) continue;
 
             const id = file.replace(/\.svelte$/, '');
-            console.log(id)
             const meta = userRegistry[id];
             const component: RegistryParticuleEntry = {
                 name: toName(id),
@@ -83,7 +82,8 @@ export interface RegistryParticuleEntry {
 }
 
 export type RegistryParticuleData = Record<string, RegistryParticuleEntry>;
-export const particules: RegistryParticuleData = ${json};
+const particles: RegistryParticuleData = ${json};
+export { particles };
 `;
 
     if (writeFlag) {

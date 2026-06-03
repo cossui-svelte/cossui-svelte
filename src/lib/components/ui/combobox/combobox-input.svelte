@@ -2,7 +2,7 @@
   import type { Snippet } from "svelte";
   import { Combobox } from "bits-ui";
   import ChevronsUpDown from "@lucide/svelte/icons/chevrons-up-down";
-  import { cn } from "$lib/utils.js";
+  import { cn } from "$lib/utils";
   import ComboboxTrigger from "./combobox-trigger.svelte";
   import ComboboxClear from "./combobox-clear.svelte";
 
@@ -27,7 +27,9 @@
   }: Props = $props();
 </script>
 
-<div class="relative not-has-[>*.w-full]:w-fit w-full text-foreground has-disabled:opacity-64">
+<div
+  class="relative not-has-[>*.w-full]:w-fit w-full text-foreground has-disabled:opacity-64"
+>
   {#if startAddon}
     <div
       aria-hidden="true"
@@ -45,10 +47,15 @@
     <Combobox.Input
       class={cn(
         "h-8.5 w-full min-w-0 rounded-[inherit] px-[calc(--spacing(3)-1px)] leading-8.5 outline-none placeholder:text-muted-foreground/72 sm:h-7.5 sm:leading-7.5 [transition:background-color_5000000s_ease-in-out_0s]",
-        startAddon && size !== "sm" && "ps-[calc(--spacing(8.5)-1px)] sm:ps-[calc(--spacing(8)-1px)]",
-        startAddon && size === "sm" && "ps-[calc(--spacing(7.5)-1px)] sm:ps-[calc(--spacing(7)-1px)]",
+        startAddon &&
+          size !== "sm" &&
+          "ps-[calc(--spacing(8.5)-1px)] sm:ps-[calc(--spacing(8)-1px)]",
+        startAddon &&
+          size === "sm" &&
+          "ps-[calc(--spacing(7.5)-1px)] sm:ps-[calc(--spacing(7)-1px)]",
         (showTrigger || showClear) && (size === "sm" ? "pe-6.5" : "pe-7"),
-        size === "sm" && "h-7.5 px-[calc(--spacing(2.5)-1px)] leading-7.5 sm:h-6.5 sm:leading-6.5",
+        size === "sm" &&
+          "h-7.5 px-[calc(--spacing(2.5)-1px)] leading-7.5 sm:h-6.5 sm:leading-6.5",
         size === "lg" && "h-9.5 leading-9.5 sm:h-8.5 sm:leading-8.5",
         className,
       )}

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Label } from "$lib/components/ui/label";
-	import { cn } from "$lib/utils.js";
+	import { cn } from "$lib/utils";
 
 	import { PinInput, type PinInputCell } from "bits-ui";
 

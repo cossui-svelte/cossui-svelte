@@ -5,7 +5,7 @@
 		SelectContent,
 		SelectItem,
 		SelectTrigger,
-	} from "$lib/components/ui/select/index.js";
+	} from "$lib/components/ui/select";
 
 	const items = [
 		{ class: "text-emerald-600", label: "Completed", value: "s1" },

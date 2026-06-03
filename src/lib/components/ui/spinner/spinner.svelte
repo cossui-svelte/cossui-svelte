@@ -1,6 +1,6 @@
 <script lang="ts">
   import LoaderCircle from "@lucide/svelte/icons/loader-circle";
-  import { cn } from "$lib/utils.js";
+  import { cn } from "$lib/utils";
 
   let { class: className, ...restProps }: { class?: string } = $props();
 </script>

@@ -87,7 +87,8 @@ export interface RegistryUIEntry {
 }
 
 export type RegistryUiData = Record<string, RegistryUIEntry>;
-export const categories: RegistryUiData = ${json};
+const categories: RegistryUiData = ${json};
+export { categories };
 `;
 
     if (writeFlag) {

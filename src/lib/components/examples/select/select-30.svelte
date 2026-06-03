@@ -5,7 +5,7 @@
 		SelectContent,
 		SelectItem,
 		SelectTrigger,
-	} from "$lib/components/ui/select/index.js";
+	} from "$lib/components/ui/select";
 
 	const timezones = Intl.supportedValuesOf("timeZone")
 		.map((timezone) => {

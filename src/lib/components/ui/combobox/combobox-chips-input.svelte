@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Combobox } from "bits-ui";
-  import { cn } from "$lib/utils.js";
+  import { cn } from "$lib/utils";
 
   interface Props extends Omit<Combobox.InputProps, "size"> {
     size?: "sm" | "default" | "lg" | number;

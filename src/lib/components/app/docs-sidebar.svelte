@@ -19,7 +19,7 @@
 </script>
 
 <script lang="ts">
-  import { cn } from "$lib/utils.js";
+  import { cn } from "$lib/utils";
   import { page } from "$app/state";
   import { Badge } from "$lib/components/ui/badge";
 

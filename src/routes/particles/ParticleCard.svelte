@@ -8,7 +8,6 @@
 	} from "$lib/components/ui/drawer";
 	import CodeBlockCommand from "$lib/components/app/code-block-command.svelte";
 	import CopyRegistry from "$lib/components/app/copy-registry.svelte";
-	import type { Particle } from "$lib/registry/registry-particles.js";
 	import ParticleCardContainer from "./ParticleCardContainer.svelte";
 
 	interface Props {

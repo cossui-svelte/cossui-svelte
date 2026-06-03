@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { box } from "svelte-toolbelt";
 	import type { ControlProps } from "./types.js";
-	import { useId } from "$lib/formsnap/internal/utils/index.js";
+	import { useId } from "$lib/formsnap/internal/utils";
 	import { useControl } from "$lib/formsnap/formsnap.svelte.js";
 
 	let { id = useId(), children }: ControlProps = $props();

@@ -1,10 +1,16 @@
 <script lang="ts">
   import type { HTMLInputAttributes } from "svelte/elements";
   import { getContext } from "svelte";
-  import { cn } from "$lib/utils.js";
-  import { NUMBER_FIELD_CONTEXT_KEY, type NumberFieldContext } from "./number-field.svelte";
+  import { cn } from "$lib/utils";
+  import {
+    NUMBER_FIELD_CONTEXT_KEY,
+    type NumberFieldContext,
+  } from "./number-field.svelte";
 
-  type Props = Omit<HTMLInputAttributes, "id" | "type" | "value" | "min" | "max" | "step" | "disabled">;
+  type Props = Omit<
+    HTMLInputAttributes,
+    "id" | "type" | "value" | "min" | "max" | "step" | "disabled"
+  >;
 
   let { class: className, ...restProps }: Props = $props();
 

@@ -1,14 +1,10 @@
 <script lang="ts">
   import type { HTMLInputAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils.js";
+  import { cn } from "$lib/utils";
 
   type Props = HTMLInputAttributes;
 
   let { class: className, ...restProps }: Props = $props();
 </script>
 
-<input
-  class={cn(className)}
-  data-slot="toolbar-input"
-  {...restProps}
-/>
+<input class={cn(className)} data-slot="toolbar-input" {...restProps} />

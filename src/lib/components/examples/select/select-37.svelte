@@ -4,8 +4,8 @@
 		Select,
 		SelectContent,
 		SelectItem,
-		SelectTrigger
-	} from "$lib/components/ui/select/index.js";
+		SelectTrigger,
+	} from "$lib/components/ui/select";
 
 	const continents = [
 		{

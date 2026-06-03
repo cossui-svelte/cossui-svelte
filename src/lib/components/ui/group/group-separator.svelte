@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { cn, type WithElementRef } from "$lib/utils.js";
+  import { cn, type WithElementRef } from "$lib/utils";
   import { Separator } from "$lib/components/ui/separator";
 
   let {

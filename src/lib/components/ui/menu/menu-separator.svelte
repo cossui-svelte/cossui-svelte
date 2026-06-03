@@ -1,8 +1,9 @@
 <script lang="ts">
   import { DropdownMenu } from "bits-ui";
-  import { cn } from "$lib/utils.js";
+  import { cn } from "$lib/utils";
 
-  let { class: className, ...restProps }: DropdownMenu.SeparatorProps = $props();
+  let { class: className, ...restProps }: DropdownMenu.SeparatorProps =
+    $props();
 </script>
 
 <DropdownMenu.Separator

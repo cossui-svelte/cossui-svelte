@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Drawer as DrawerPrimitive } from "$lib/vaul";
-	import { cn, type WithoutChildrenOrChild } from "$lib/utils.js";
+	import { cn, type WithoutChildrenOrChild } from "$lib/utils";
 	import { getContext, type ComponentProps } from "svelte";
 	import { buttonVariants } from "$lib/components/ui/button/button-variants";
 	import XIcon from "@lucide/svelte/icons/x";
@@ -78,7 +78,10 @@
 			{#if showCloseButton}
 				<DrawerClose
 					aria-label="Close"
-					class={cn(buttonVariants({ variant: "ghost", size: "icon" }), "absolute inset-e-2 top-2")}
+					class={cn(
+						buttonVariants({ variant: "ghost", size: "icon" }),
+						"absolute inset-e-2 top-2",
+					)}
 				>
 					<XIcon />
 				</DrawerClose>

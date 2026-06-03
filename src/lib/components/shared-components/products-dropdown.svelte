@@ -1,7 +1,7 @@
 <script lang="ts">
   import { DropdownMenu } from "bits-ui";
   import ChevronDown from "@lucide/svelte/icons/chevron-down";
-  import { cn } from "$lib/utils.js";
+  import { cn } from "$lib/utils";
   import { Badge } from "$lib/components/ui/badge";
   import { Button } from "$lib/components/ui/button";
   import { Menu, MenuPopup } from "$lib/components/ui/menu";

@@ -3,7 +3,7 @@
 	import type { Snippet } from "svelte";
 	import type { SvelteHTMLElements } from "svelte/elements";
 
-	import { cn } from "$lib/utils.js";
+	import { cn } from "$lib/utils";
 
 	type Props = WithElementRef<SvelteHTMLElements["nav"]> & {
 		children: Snippet;

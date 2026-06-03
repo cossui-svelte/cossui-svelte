@@ -5,7 +5,7 @@
 		SelectContent,
 		SelectItem,
 		SelectTrigger,
-	} from "$lib/components/ui/select/index.js";
+	} from "$lib/components/ui/select";
 
 	import MonitorCog from "@lucide/svelte/icons/monitor-cog";
 	import Moon from "@lucide/svelte/icons/moon";

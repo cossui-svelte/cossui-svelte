@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { cn } from "$lib/utils.js";
+  import { cn } from "$lib/utils";
   import { Tooltip } from "bits-ui";
   import Check from "@lucide/svelte/icons/check";
   import { buttonVariants } from "$lib/components/ui/button";

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { PinInput as InputOTPPrimitive } from "bits-ui";
-  import { cn } from "$lib/utils.js";
+  import { cn } from "$lib/utils";
 
   let {
     ref = $bindable(null),
@@ -22,7 +22,9 @@
 >
   {cell.char}
   {#if cell.hasFakeCaret}
-    <div class="pointer-events-none absolute inset-0 flex items-center justify-center">
+    <div
+      class="pointer-events-none absolute inset-0 flex items-center justify-center"
+    >
       <div class="h-4 w-px animate-caret-blink bg-foreground"></div>
     </div>
   {/if}

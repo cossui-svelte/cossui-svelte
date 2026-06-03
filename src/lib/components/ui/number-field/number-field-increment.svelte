@@ -2,7 +2,7 @@
   import type { HTMLButtonAttributes } from "svelte/elements";
   import { getContext } from "svelte";
   import PlusIcon from "@lucide/svelte/icons/plus";
-  import { cn } from "$lib/utils.js";
+  import { cn } from "$lib/utils";
   import {
     NUMBER_FIELD_CONTEXT_KEY,
     type NumberFieldContext,

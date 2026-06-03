@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import { Collapsible } from "bits-ui";
-  import { cn } from "$lib/utils.js";
+  import { cn } from "$lib/utils";
   import { buttonVariants } from "$lib/components/ui/button";
   import CollapsiblePanel from "$lib/components/ui/collapsible/collapsible-panel.svelte";
   import { Separator } from "$lib/components/ui/separator";

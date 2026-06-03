@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import { Command } from "bits-ui";
-  import { cn } from "$lib/utils.js";
+  import { cn } from "$lib/utils";
 
   type Props = Command.EmptyProps & { children?: Snippet };
 
@@ -9,7 +9,10 @@
 </script>
 
 <Command.Empty
-  class={cn("not-empty:py-6 text-center text-base text-muted-foreground sm:text-sm", className)}
+  class={cn(
+    "not-empty:py-6 text-center text-base text-muted-foreground sm:text-sm",
+    className,
+  )}
   data-slot="command-empty"
   {...restProps}
 >

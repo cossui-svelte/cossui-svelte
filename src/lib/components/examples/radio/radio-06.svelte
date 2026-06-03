@@ -1,9 +1,6 @@
 <script lang="ts">
 	import { Label } from "$lib/components/ui/label";
-	import {
-		RadioGroup,
-		RadioGroupItem,
-	} from "$lib/components/ui/radio-group/index.js";
+	import { RadioGroup, RadioGroupItem } from "$lib/components/ui/radio-group";
 
 	import IconStarFill from "svelte-remixicon/RiStarFill.svelte";
 

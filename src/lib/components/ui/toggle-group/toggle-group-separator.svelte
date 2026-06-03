@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { cn } from "$lib/utils.js";
+    import { cn } from "$lib/utils";
     import { Separator } from "$lib/components/ui/separator";
     import { getToggleGroupCtx } from "./toggle-group.svelte";
 

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { page } from "$app/state";
 	import { goto } from "$app/navigation";
-	import { particles } from "$lib/registry/registry-particles.js";
-	import { getCategorySortOrder } from "$lib/registry/registry-categories.js";
+	import { particles } from "$lib/registry/registry-particles";
+	import { getCategorySortOrder } from "$lib/registry/registry-categories";
 	import SearchField, { type SearchItem } from "./SearchField.svelte";
 	import { browser } from "$app/environment";
 

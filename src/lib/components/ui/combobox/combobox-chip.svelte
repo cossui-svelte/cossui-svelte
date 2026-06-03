@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import type { HTMLAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils.js";
+  import { cn } from "$lib/utils";
   import ComboboxChipRemove from "./combobox-chip-remove.svelte";
 
   interface Props extends HTMLAttributes<HTMLSpanElement> {
@@ -9,7 +9,12 @@
     removeProps?: HTMLAttributes<HTMLButtonElement>;
   }
 
-  let { class: className, children, removeProps, ...restProps }: Props = $props();
+  let {
+    class: className,
+    children,
+    removeProps,
+    ...restProps
+  }: Props = $props();
 </script>
 
 <span

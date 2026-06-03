@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { HTMLAttributes } from "svelte/elements";
   import { getContext } from "svelte";
-  import { cn } from "$lib/utils.js";
+  import { cn } from "$lib/utils";
   import { METER_CONTEXT_KEY, type MeterContext } from "./meter.svelte";
 
   type Props = HTMLAttributes<HTMLDivElement>;

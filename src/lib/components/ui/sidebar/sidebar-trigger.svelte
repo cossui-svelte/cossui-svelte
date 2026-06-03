@@ -4,7 +4,7 @@
   import PanelLeft from "@lucide/svelte/icons/panel-left";
 
   import { getSidebarContext } from "./sidebar-context.js";
-  import { cn } from "$lib/utils.js";
+  import { cn } from "$lib/utils";
   import { Button } from "$lib/components/ui/button";
 
   interface Props extends HTMLButtonAttributes {

@@ -1,14 +1,19 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import type { HTMLAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils.js";
+  import { cn } from "$lib/utils";
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
     children?: Snippet;
     startAddon?: Snippet;
   }
 
-  let { class: className, children, startAddon, ...restProps }: Props = $props();
+  let {
+    class: className,
+    children,
+    startAddon,
+    ...restProps
+  }: Props = $props();
 </script>
 
 <div

@@ -1,8 +1,8 @@
 <script lang="ts">
   import { Tooltip } from "bits-ui";
   import Check from "@lucide/svelte/icons/check";
-import Copy from "@lucide/svelte/icons/copy";
-  import { cn } from "$lib/utils.js";
+  import Copy from "@lucide/svelte/icons/copy";
+  import { cn } from "$lib/utils";
   import { buttonVariants } from "$lib/components/ui/button";
 
   interface Props {

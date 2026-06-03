@@ -3,7 +3,8 @@
 	import PageHeader from "$lib/components/shared-components/page-header.svelte";
 	import PageHeaderHeading from "$lib/components/shared-components/page-header-heading.svelte";
 	import PageHeaderDescription from "$lib/components/shared-components/page-header-description.svelte";
-	import { particles } from "$lib/registry/registry-particles.js";
+	import { particles } from "$lib/registry/registry-particles";
+
 	import {
 		isValidRegistryCategory,
 		type RegistryCategory,

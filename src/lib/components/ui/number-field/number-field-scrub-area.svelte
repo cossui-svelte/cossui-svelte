@@ -2,9 +2,12 @@
   import type { Snippet } from "svelte";
   import type { HTMLAttributes } from "svelte/elements";
   import { getContext } from "svelte";
-  import { Label } from "$lib/components/ui/label/index.js";
-  import { cn } from "$lib/utils.js";
-  import { NUMBER_FIELD_CONTEXT_KEY, type NumberFieldContext } from "./number-field.svelte";
+  import { Label } from "$lib/components/ui/label";
+  import { cn } from "$lib/utils";
+  import {
+    NUMBER_FIELD_CONTEXT_KEY,
+    type NumberFieldContext,
+  } from "./number-field.svelte";
 
   interface Props extends HTMLAttributes<HTMLSpanElement> {
     label: string;
@@ -89,7 +92,9 @@
       width="26"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path d="M19.5 5.5L6.49737 5.51844V2L1 6.9999L6.5 12L6.49737 8.5L19.5 8.5V12L25 6.9999L19.5 2V5.5Z" />
+      <path
+        d="M19.5 5.5L6.49737 5.51844V2L1 6.9999L6.5 12L6.49737 8.5L19.5 8.5V12L25 6.9999L19.5 2V5.5Z"
+      />
     </svg>
   </span>
 {/if}

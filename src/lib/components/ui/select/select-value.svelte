@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { getContext } from "svelte";
-	import { cn } from "$lib/utils.js";
+	import { cn } from "$lib/utils";
 
 	interface Props {
 		placeholder?: string;
@@ -9,7 +9,9 @@
 
 	let { placeholder = "", class: className }: Props = $props();
 
-	const ctx = getContext<{ getLabel: () => string } | undefined>("coss-select");
+	const ctx = getContext<{ getLabel: () => string } | undefined>(
+		"coss-select",
+	);
 
 	let label = $derived(ctx?.getLabel() ?? "");
 </script>

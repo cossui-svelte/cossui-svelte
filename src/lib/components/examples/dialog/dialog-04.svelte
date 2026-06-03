@@ -10,7 +10,7 @@
 		DialogTitle,
 		DialogTrigger,
 	} from "$lib/components/ui/dialog";
-	import { ScrollArea } from "$lib/components/ui/scroll-area/index.js";
+	import { ScrollArea } from "$lib/components/ui/scroll-area";
 </script>
 
 <Dialog>

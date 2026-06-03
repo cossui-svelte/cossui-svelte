@@ -5,8 +5,8 @@
 		TooltipContent,
 		TooltipProvider,
 		TooltipTrigger,
-	} from "$lib/components/ui/tooltip/index.js";
-	import { cn } from "$lib/utils.js";
+	} from "$lib/components/ui/tooltip";
+	import { cn } from "$lib/utils";
 
 	import CheckIcon from "@lucide/svelte/icons/check";
 	import CopyIcon from "@lucide/svelte/icons/copy";

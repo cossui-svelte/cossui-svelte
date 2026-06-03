@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { HTMLInputAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils.js";
+  import { cn } from "$lib/utils";
   import { Control } from "$lib/formsnap";
   import { getField } from "$lib/formsnap/formsnap.svelte";
 
