@@ -4,602 +4,602 @@
 import { RegistryParticuleData } from "./createParticuleRegistry";
 
 const userRegistryParticule: RegistryParticuleData = {
-	"p-accordion-1": {
+	"accordion-01": {
 		tags: ["accordion"],
 		description: "Basic accordion",
 	},
-	"p-accordion-2": {
+	"accordion-02": {
 		tags: ["accordion"],
 		description: "Accordion with one panel open",
 	},
-	"p-accordion-3": {
+	"accordion-03": {
 		tags: ["accordion"],
 		description: "Accordion allowing multiple panels open",
 	},
-	"p-accordion-4": {
+	"accordion-04": {
 		tags: ["accordion"],
 		description: "Controlled accordion",
 	},
-	"p-alert-1": {
+	"alert-01": {
 		tags: ["alert"],
 		description: "Basic alert",
 	},
-	"p-alert-2": {
+	"alert-02": {
 		tags: ["alert"],
 		npmDependencies: ["lucide-react"],
 		description: "Alert with icon",
 	},
-	"p-alert-3": {
+	"alert-03": {
 		tags: ["alert"],
 		npmDependencies: ["lucide-react"],
 		description: "Alert with icon and action buttons",
 	},
-	"p-alert-4": {
+	"alert-04": {
 		tags: ["alert", "info"],
 		npmDependencies: ["lucide-react"],
 		description: "Info alert",
 	},
-	"p-alert-5": {
+	"alert-05": {
 		tags: ["alert", "success"],
 		npmDependencies: ["lucide-react"],
 		description: "Success alert",
 	},
-	"p-alert-6": {
+	"alert-06": {
 		tags: ["alert", "warning"],
 		npmDependencies: ["lucide-react"],
 		description: "Warning alert",
 	},
-	"p-alert-7": {
+	"alert-07": {
 		tags: ["alert", "error"],
 		npmDependencies: ["lucide-react"],
 		description: "Error alert",
 	},
-	"p-alert-dialog-1": {
+	"alert-dialog-01": {
 		tags: ["alert dialog", "dialog"],
 		description: "Alert dialog",
 	},
-	"p-alert-dialog-2": {
+	"alert-dialog-02": {
 		tags: ["alert dialog", "dialog"],
 		description: "Alert dialog with bare footer",
 	},
-	"p-autocomplete-1": {
+	"autocomplete-01": {
 		tags: ["autocomplete", "input"],
 		description: "Basic autocomplete",
 	},
-	"p-autocomplete-2": {
+	"autocomplete-02": {
 		tags: ["autocomplete", "input", "disabled"],
 		description: "Disabled autocomplete",
 	},
-	"p-autocomplete-3": {
+	"autocomplete-03": {
 		tags: ["autocomplete", "input"],
 		description: "Small autocomplete",
 	},
-	"p-autocomplete-4": {
+	"autocomplete-04": {
 		tags: ["autocomplete", "input"],
 		description: "Large autocomplete",
 	},
-	"p-autocomplete-5": {
+	"autocomplete-05": {
 		tags: ["autocomplete", "input"],
 		description: "Autocomplete with label",
 	},
-	"p-autocomplete-6": {
+	"autocomplete-06": {
 		tags: ["autocomplete", "input"],
 		description: "Autocomplete autofilling the input with the highlighted item",
 	},
-	"p-autocomplete-7": {
+	"autocomplete-07": {
 		tags: ["autocomplete", "input"],
 		description: "Autocomplete auto highlighting the first option",
 	},
-	"p-autocomplete-8": {
+	"autocomplete-08": {
 		tags: ["autocomplete", "input"],
 		description: "Autocomplete with clear button",
 	},
-	"p-autocomplete-9": {
+	"autocomplete-09": {
 		tags: ["autocomplete", "input"],
 		description: "Autocomplete with trigger and clear buttons",
 	},
-	"p-autocomplete-10": {
+	"autocomplete-10": {
 		tags: ["autocomplete", "input"],
 		description: "Autocomplete with grouped items",
 	},
-	"p-autocomplete-11": {
+	"autocomplete-11": {
 		tags: ["autocomplete", "input"],
 		description: "Autocomplete with limited number of results",
 	},
-	"p-autocomplete-12": {
+	"autocomplete-12": {
 		tags: ["autocomplete", "input", "async"],
 		description: "Autocomplete with async items loading",
 	},
-	"p-autocomplete-13": {
+	"autocomplete-13": {
 		tags: ["autocomplete", "form", "input"],
 		description: "Autocomplete form",
 	},
-	"p-autocomplete-14": {
+	"autocomplete-14": {
 		tags: ["autocomplete", "input"],
 		description: "Autocomplete form",
 	},
-	"p-autocomplete-15": {
+	"autocomplete-15": {
 		tags: ["autocomplete", "input"],
 		description: "Pill-shaped autocomplete",
 	},
-	"p-avatar-1": {
+	"avatar-01": {
 		tags: ["avatar"],
 		description: "Avatar with image and fallback",
 	},
-	"p-avatar-2": {
+	"avatar-02": {
 		tags: ["avatar"],
 		description: "Fallback-only avatar",
 	},
-	"p-avatar-3": {
+	"avatar-03": {
 		tags: ["avatar"],
 		description: "Avatars with different sizes",
 	},
-	"p-avatar-4": {
+	"avatar-04": {
 		tags: ["avatar"],
 		description: "Avatars with different radii",
 	},
-	"p-avatar-5": {
+	"avatar-05": {
 		tags: ["avatar"],
 		description: "Overlapping avatar group",
 	},
-	"p-avatar-6": {
+	"avatar-06": {
 		tags: ["avatar"],
 		npmDependencies: ["lucide-react"],
 		description: "Avatar with user icon fallback",
 	},
-	"p-avatar-7": {
+	"avatar-07": {
 		tags: ["avatar"],
 		description: "Avatar with emerald status dot",
 	},
-	"p-avatar-8": {
+	"avatar-08": {
 		tags: ["avatar"],
 		description: "Avatar with muted status dot",
 	},
-	"p-avatar-9": {
+	"avatar-09": {
 		tags: ["avatar"],
 		description: "Rounded avatar with top-right emerald status",
 	},
-	"p-avatar-10": {
+	"avatar-10": {
 		tags: ["avatar"],
 		description: "Avatar with notification badge",
 	},
-	"p-avatar-11": {
+	"avatar-11": {
 		tags: ["avatar"],
 		description: "Rounded avatar with notification badge",
 	},
-	"p-avatar-12": {
+	"avatar-12": {
 		tags: ["avatar"],
 		description: "Avatar with verified badge",
 	},
-	"p-avatar-13": {
+	"avatar-13": {
 		tags: ["avatar"],
 		description: "Small overlapping avatar group",
 	},
-	"p-avatar-14": {
+	"avatar-14": {
 		tags: ["avatar"],
 		description: "Large overlapping avatar group",
 	},
-	"p-badge-1": {
+	"badge-01": {
 		tags: ["badge"],
 		description: "Basic badge",
 	},
-	"p-badge-2": {
+	"badge-02": {
 		tags: ["badge"],
 		description: "Outline badge",
 	},
-	"p-badge-3": {
+	"badge-03": {
 		tags: ["badge"],
 		description: "Secondary badge",
 	},
-	"p-badge-4": {
+	"badge-04": {
 		tags: ["badge", "error"],
 		description: "Destructive badge",
 	},
-	"p-badge-5": {
+	"badge-05": {
 		tags: ["badge", "info"],
 		description: "Info badge",
 	},
-	"p-badge-6": {
+	"badge-06": {
 		tags: ["badge", "success"],
 		description: "Success badge",
 	},
-	"p-badge-7": {
+	"badge-07": {
 		tags: ["badge", "warning"],
 		description: "Warning badge",
 	},
-	"p-badge-8": {
+	"badge-08": {
 		tags: ["badge", "error"],
 		description: "Error badge",
 	},
-	"p-badge-9": {
+	"badge-09": {
 		tags: ["badge"],
 		description: "Small badge",
 	},
-	"p-badge-10": {
+	"badge-10": {
 		tags: ["badge"],
 		description: "Large badge",
 	},
-	"p-badge-11": {
+	"badge-11": {
 		tags: ["badge"],
 		npmDependencies: ["lucide-react"],
 		description: "Badge with icon",
 	},
-	"p-badge-12": {
+	"badge-12": {
 		tags: ["badge"],
 		description: "Badge with link",
 	},
-	"p-badge-13": {
+	"badge-13": {
 		tags: ["badge"],
 		description: "Badge with count",
 	},
-	"p-badge-14": {
+	"badge-14": {
 		tags: ["badge"],
 		description: "Full rounded badge (pill)",
 	},
-	"p-badge-15": {
+	"badge-15": {
 		tags: ["badge"],
 		description: "Badge with number after text",
 	},
-	"p-badge-16": {
+	"badge-16": {
 		tags: ["badge"],
 		description: "Status badge - Paid",
 	},
-	"p-badge-17": {
+	"badge-17": {
 		tags: ["badge"],
 		description: "Status badge - Pending",
 	},
-	"p-badge-18": {
+	"badge-18": {
 		tags: ["badge"],
 		description: "Status badge - Failed",
 	},
-	"p-badge-19": {
+	"badge-19": {
 		tags: ["badge", "checkbox"],
 		npmDependencies: ["lucide-react"],
 		description: "Selectable badge with checkbox",
 	},
-	"p-badge-20": {
+	"badge-20": {
 		tags: ["badge"],
 		npmDependencies: ["lucide-react"],
 		description: "Removable badge",
 	},
-	"p-breadcrumb-1": {
+	"breadcrumb-01": {
 		tags: ["breadcrumb", "dropdown", "menu"],
 		description: "Breadcrumb with menu example",
 	},
-	"p-breadcrumb-2": {
+	"breadcrumb-02": {
 		tags: ["breadcrumb"],
 		description: "Breadcrumb with custom separator",
 	},
-	"p-breadcrumb-3": {
+	"breadcrumb-03": {
 		tags: ["breadcrumb"],
 		npmDependencies: ["lucide-react"],
 		description: "Breadcrumb with home icon for home link only",
 	},
-	"p-breadcrumb-4": {
+	"breadcrumb-04": {
 		tags: ["breadcrumb", "dropdown", "menu"],
 		npmDependencies: ["lucide-react"],
 		description: "Breadcrumb with folders icon menu",
 	},
-	"p-breadcrumb-5": {
+	"breadcrumb-05": {
 		tags: ["breadcrumb"],
 		npmDependencies: ["lucide-react"],
 		description: "Breadcrumb with icons before text",
 	},
-	"p-breadcrumb-6": {
+	"breadcrumb-06": {
 		tags: ["breadcrumb"],
 		npmDependencies: ["lucide-react"],
 		description: "Breadcrumb with dot separators",
 	},
-	"p-breadcrumb-7": {
+	"breadcrumb-07": {
 		tags: ["breadcrumb", "select"],
 		npmDependencies: ["lucide-react"],
 		description: "Breadcrumb with select dropdown",
 	},
-	"p-button-1": {
+	"button-01": {
 		tags: ["button"],
 		description: "Default button",
 	},
-	"p-button-2": {
+	"button-02": {
 		tags: ["button"],
 		description: "Outline button",
 	},
-	"p-button-3": {
+	"button-03": {
 		tags: ["button"],
 		description: "Secondary button",
 	},
-	"p-button-4": {
+	"button-04": {
 		tags: ["button"],
 		description: "Destructive button",
 	},
-	"p-button-5": {
+	"button-05": {
 		tags: ["button"],
 		description: "Destructive outline button",
 	},
-	"p-button-6": {
+	"button-06": {
 		tags: ["button"],
 		description: "Ghost button",
 	},
-	"p-button-7": {
+	"button-07": {
 		tags: ["button"],
 		description: "Link button",
 	},
-	"p-button-8": {
+	"button-08": {
 		tags: ["button"],
 		description: "Extra-small button",
 	},
-	"p-button-9": {
+	"button-09": {
 		tags: ["button"],
 		description: "Small button",
 	},
-	"p-button-10": {
+	"button-10": {
 		tags: ["button"],
 		description: "Large button",
 	},
-	"p-button-11": {
+	"button-11": {
 		tags: ["button"],
 		description: "Extra-large button",
 	},
-	"p-button-12": {
+	"button-12": {
 		tags: ["button", "disabled"],
 		description: "Disabled button",
 	},
-	"p-button-13": {
+	"button-13": {
 		tags: ["button"],
 		npmDependencies: ["lucide-react"],
 		description: "Icon button",
 	},
-	"p-button-14": {
+	"button-14": {
 		tags: ["button"],
 		npmDependencies: ["lucide-react"],
 		description: "Small icon button",
 	},
-	"p-button-15": {
+	"button-15": {
 		tags: ["button"],
 		npmDependencies: ["lucide-react"],
 		description: "Large icon button",
 	},
-	"p-button-16": {
+	"button-16": {
 		tags: ["button"],
 		npmDependencies: ["lucide-react"],
 		description: "Button with icon",
 	},
-	"p-button-17": {
+	"button-17": {
 		tags: ["button"],
 		description: "Link rendered as button",
 	},
-	"p-button-41": {
+	"button-41": {
 		tags: ["button", "loading"],
 		description: "Button using the built-in loading prop",
 	},
-	"p-button-18": {
+	"button-18": {
 		tags: ["button", "loading"],
 		description: "Custom loading button with manual Spinner",
 	},
-	"p-button-19": {
+	"button-19": {
 		tags: ["button"],
 		npmDependencies: ["lucide-react"],
 		description: "Expandable show more/less toggle button",
 	},
-	"p-button-20": {
+	"button-20": {
 		tags: ["button"],
 		npmDependencies: ["lucide-react"],
 		description: "Back link button with chevron",
 	},
-	"p-button-21": {
+	"button-21": {
 		tags: ["button"],
 		npmDependencies: ["lucide-react"],
 		description: "Card-style button with heading and description",
 	},
-	"p-button-22": {
+	"button-22": {
 		tags: ["button"],
 		npmDependencies: ["lucide-react"],
 		description: "Directional pad control buttons",
 	},
-	"p-button-23": {
+	"button-23": {
 		tags: ["button"],
 		npmDependencies: ["lucide-react"],
 		description: "Outline like button with count",
 	},
-	"p-button-24": {
+	"button-24": {
 		tags: ["button"],
 		npmDependencies: ["@remixicon/react"],
 		description: "Social login icon buttons",
 	},
-	"p-button-26": {
+	"button-26": {
 		tags: ["button"],
 		npmDependencies: ["lucide-react"],
 		description: "Star button with count badge",
 	},
-	"p-button-27": {
+	"button-27": {
 		tags: ["button", "group"],
 		npmDependencies: ["lucide-react"],
 		description: "Button group with QR code icon and sign in",
 	},
-	"p-button-28": {
+	"button-28": {
 		tags: ["button", "avatar"],
 		description: "Button with avatar",
 	},
-	"p-button-29": {
+	"button-29": {
 		tags: ["button"],
 		description: "Pill-shaped button with rounded-full styling",
 	},
-	"p-button-30": {
+	"button-30": {
 		tags: ["button"],
 		npmDependencies: ["lucide-react"],
 		description: "Button with animated arrow on hover",
 	},
-	"p-button-31": {
+	"button-31": {
 		tags: ["button", "kbd"],
 		npmDependencies: ["lucide-react"],
 		description: "Button with keyboard shortcut indicator",
 	},
-	"p-button-32": {
+	"button-32": {
 		tags: ["button", "badge"],
 		description: "Button with notification badge",
 	},
-	"p-button-33": {
+	"button-33": {
 		tags: ["button"],
 		description: "Paired buttons (Cancel/Save)",
 	},
-	"p-button-34": {
+	"button-34": {
 		tags: ["button"],
 		description: "Button with animated status dot",
 	},
-	"p-button-35": {
+	"button-35": {
 		tags: ["button"],
 		npmDependencies: ["lucide-react"],
 		description: "Icon-only copy button with feedback",
 	},
-	"p-button-36": {
+	"button-36": {
 		tags: ["button"],
 		npmDependencies: ["lucide-react"],
 		description: "Copy button with feedback",
 	},
-	"p-button-37": {
+	"button-37": {
 		tags: ["button"],
 		npmDependencies: ["lucide-react"],
 		description: "Rotating icon button (FAB-style toggle)",
 	},
-	"p-button-39": {
+	"button-39": {
 		tags: ["button"],
 		description: "Hamburger menu button with animated icon",
 	},
-	"p-button-40": {
+	"button-40": {
 		tags: ["button", "group", "tooltip", "toast"],
 		npmDependencies: ["lucide-react"],
 		description: "Download button with progress and cancel action",
 	},
-	"p-button-38": {
+	"button-38": {
 		tags: ["button"],
 		npmDependencies: ["@remixicon/react"],
 		description: "Social login buttons (Google, X, GitHub)",
 	},
-	"p-calendar-1": {
+	"calendar-01": {
 		tags: ["calendar"],
 		description: "Basic calendar",
 	},
-	"p-calendar-3": {
+	"calendar-03": {
 		tags: ["calendar"],
 		description: "Calendar with date range selection",
 	},
-	"p-calendar-4": {
+	"calendar-04": {
 		tags: ["calendar"],
 		description: "Calendar with month/year dropdown navigation",
 	},
-	"p-calendar-5": {
+	"calendar-05": {
 		tags: ["calendar", "select"],
 		description: "Calendar with custom Select dropdown for month/year",
 	},
-	"p-calendar-6": {
+	"calendar-06": {
 		tags: ["calendar", "combobox"],
 		npmDependencies: ["lucide-react"],
 		description: "Calendar with Combobox dropdown for month/year",
 	},
-	"p-calendar-7": {
+	"calendar-07": {
 		tags: ["calendar"],
 		npmDependencies: ["date-fns"],
 		description: "Calendar with disabled dates",
 	},
-	"p-calendar-8": {
+	"calendar-08": {
 		tags: ["calendar"],
 		npmDependencies: ["date-fns"],
 		description: "Calendar with multiple date selection",
 	},
-	"p-calendar-2": {
+	"calendar-02": {
 		tags: ["calendar"],
 		description: "Calendar with custom cell size",
 	},
-	"p-calendar-9": {
+	"calendar-09": {
 		tags: ["calendar"],
 		description: "Calendar with rounded day buttons",
 	},
-	"p-calendar-10": {
+	"calendar-10": {
 		tags: ["calendar"],
 		npmDependencies: ["date-fns"],
 		description: "Calendar with rounded range selection style",
 	},
-	"p-calendar-11": {
+	"calendar-11": {
 		tags: ["calendar"],
 		description: "Calendar with right-aligned navigation",
 	},
-	"p-calendar-12": {
+	"calendar-12": {
 		tags: ["calendar"],
 		description: "Calendar with week numbers",
 	},
-	"p-calendar-13": {
+	"calendar-13": {
 		tags: ["calendar", "combobox"],
 		description: "Calendar with year-only combobox dropdown",
 	},
-	"p-calendar-14": {
+	"calendar-14": {
 		tags: ["calendar", "select"],
 		description: "Calendar without arrow navigation (dropdown only)",
 	},
-	"p-calendar-15": {
+	"calendar-15": {
 		tags: ["calendar", "button"],
 		npmDependencies: ["date-fns"],
 		description: "Calendar with current month button",
 	},
-	"p-calendar-16": {
+	"calendar-16": {
 		tags: ["calendar", "button"],
 		npmDependencies: ["date-fns"],
 		description: "Calendar with today button",
 	},
-	"p-calendar-17": {
+	"calendar-17": {
 		tags: ["calendar", "input", "field"],
 		npmDependencies: ["date-fns", "lucide-react"],
 		description: "Calendar with date input",
 	},
-	"p-calendar-18": {
+	"calendar-18": {
 		tags: ["calendar", "input", "field"],
 		npmDependencies: ["lucide-react"],
 		description: "Calendar with time input",
 	},
-	"p-calendar-19": {
+	"calendar-19": {
 		tags: ["calendar", "toggle", "toggle group", "scroll area"],
 		npmDependencies: ["date-fns"],
 		description: "Calendar with time slots (appointment picker)",
 	},
-	"p-calendar-20": {
+	"calendar-20": {
 		tags: ["calendar", "button"],
 		npmDependencies: ["date-fns"],
 		description: "Calendar with date presets",
 	},
-	"p-calendar-21": {
+	"calendar-21": {
 		tags: ["calendar", "button"],
 		npmDependencies: ["date-fns"],
 		description: "Range calendar with date presets",
 	},
-	"p-calendar-22": {
+	"calendar-22": {
 		tags: ["calendar"],
 		npmDependencies: ["date-fns"],
 		description: "Two months calendar",
 	},
-	"p-calendar-23": {
+	"calendar-23": {
 		tags: ["calendar"],
 		npmDependencies: ["date-fns"],
 		description: "Three months calendar",
 	},
-	"p-calendar-24": {
+	"calendar-24": {
 		tags: ["calendar"],
 		npmDependencies: ["date-fns"],
 		description: "Pricing calendar with custom day buttons",
 	},
-	"p-date-picker-1": {
+	"date-picker-01": {
 		tags: ["date picker", "calendar", "popover", "button"],
 		npmDependencies: ["date-fns", "lucide-react"],
 		description: "Basic date picker",
 	},
-	"p-date-picker-2": {
+	"date-picker-02": {
 		tags: ["date picker", "calendar", "popover", "button"],
 		npmDependencies: ["date-fns", "lucide-react"],
 		description: "Date range picker",
 	},
-	"p-date-picker-9": {
+	"date-picker-09": {
 		tags: ["date picker", "calendar", "popover", "button"],
 		npmDependencies: ["date-fns", "lucide-react"],
 		description: "Two months calendar with range date",
 	},
-	"p-date-picker-3": {
+	"date-picker-03": {
 		tags: [
 			"date picker",
 			"calendar",
@@ -611,12 +611,12 @@ const userRegistryParticule: RegistryParticuleData = {
 		npmDependencies: ["date-fns", "lucide-react"],
 		description: "Date picker with field and dropdown navigation",
 	},
-	"p-date-picker-4": {
+	"date-picker-04": {
 		tags: ["date picker", "calendar", "popover", "button"],
 		npmDependencies: ["date-fns", "lucide-react"],
 		description: "Date picker with presets",
 	},
-	"p-date-picker-5": {
+	"date-picker-05": {
 		tags: [
 			"date picker",
 			"calendar",
@@ -627,12 +627,12 @@ const userRegistryParticule: RegistryParticuleData = {
 		npmDependencies: ["date-fns", "lucide-react"],
 		description: "Date picker with input",
 	},
-	"p-date-picker-6": {
+	"date-picker-06": {
 		tags: ["date picker", "calendar", "popover", "button"],
 		npmDependencies: ["date-fns", "lucide-react"],
 		description: "Date picker that closes on select",
 	},
-	"p-date-picker-7": {
+	"date-picker-07": {
 		tags: [
 			"date picker",
 			"calendar",
@@ -643,329 +643,329 @@ const userRegistryParticule: RegistryParticuleData = {
 		npmDependencies: ["date-fns", "lucide-react"],
 		description: "Multiple dates picker",
 	},
-	"p-date-picker-8": {
+	"date-picker-08": {
 		tags: ["date picker", "calendar", "popover", "button"],
 		npmDependencies: ["date-fns", "lucide-react"],
 		description: "Date picker with select-like trigger",
 	},
-	"p-card-1": {
+	"card-01": {
 		tags: ["card", "form"],
 		npmDependencies: ["lucide-react"],
 		description: "A basic card with header and footer",
 	},
-	"p-card-2": {
+	"card-02": {
 		tags: ["card", "form"],
 		description: "Authentication card with actions",
 	},
-	"p-card-3": {
+	"card-03": {
 		tags: ["card", "form"],
 		npmDependencies: ["lucide-react"],
 		description: "Authentication card with separators",
 	},
-	"p-card-4": {
+	"card-04": {
 		tags: ["card", "form"],
 		npmDependencies: ["lucide-react"],
 		description: "Framed card with footer",
 	},
-	"p-card-5": {
+	"card-05": {
 		tags: ["card", "form"],
 		description: "Framed card with header",
 	},
-	"p-card-6": {
+	"card-06": {
 		tags: ["card", "form"],
 		npmDependencies: ["lucide-react"],
 		description: "Framed card with header and footer",
 	},
-	"p-card-7": {
+	"card-07": {
 		tags: ["card", "form"],
 		npmDependencies: ["lucide-react"],
 		description: "Framed card with no rounded bottom",
 	},
-	"p-card-8": {
+	"card-08": {
 		tags: ["card", "form", "frame"],
 		description: "Card within a frame and footer",
 	},
-	"p-card-9": {
+	"card-09": {
 		tags: ["card", "form", "frame"],
 		npmDependencies: ["lucide-react"],
 		description: "Card within a frame and footer",
 	},
-	"p-card-10": {
+	"card-10": {
 		tags: ["card", "form", "frame"],
 		npmDependencies: ["lucide-react"],
 		description: "Card within a frame with header and footer",
 	},
-	"p-card-11": {
+	"card-11": {
 		tags: ["card", "frame"],
 		npmDependencies: ["lucide-react"],
 		description: "CardFrame with header action",
 	},
-	"p-checkbox-1": {
+	"checkbox-01": {
 		tags: ["checkbox"],
 		description: "Basic checkbox",
 	},
-	"p-checkbox-2": {
+	"checkbox-02": {
 		tags: ["checkbox", "disabled"],
 		description: "Disabled checkbox",
 	},
-	"p-checkbox-3": {
+	"checkbox-03": {
 		tags: ["checkbox"],
 		description: "Checkbox with description",
 	},
-	"p-checkbox-4": {
+	"checkbox-04": {
 		tags: ["checkbox"],
 		description: "Card-style checkbox",
 	},
-	"p-checkbox-5": {
+	"checkbox-05": {
 		tags: ["checkbox", "form"],
 		description: "Checkbox form",
 	},
-	"p-checkbox-group-1": {
+	"checkbox-group-01": {
 		tags: ["checkbox", "checkbox group"],
 		description: "Basic checkbox group",
 	},
-	"p-checkbox-group-2": {
+	"checkbox-group-02": {
 		tags: ["checkbox", "checkbox group", "disabled"],
 		description: "Checkbox group with disabled items",
 	},
-	"p-checkbox-group-3": {
+	"checkbox-group-03": {
 		tags: ["checkbox", "checkbox group"],
 		description: "Checkbox group with parent checkbox",
 	},
-	"p-checkbox-group-4": {
+	"checkbox-group-04": {
 		tags: ["checkbox", "checkbox group"],
 		description: "Nested checkbox group with parent",
 	},
-	"p-checkbox-group-5": {
+	"checkbox-group-05": {
 		tags: ["checkbox", "checkbox group", "form"],
 		description: "Checkbox group form",
 	},
-	"p-collapsible-1": {
+	"collapsible-01": {
 		tags: ["collapsible"],
 		npmDependencies: ["lucide-react"],
 		description: "Basic collapsible",
 	},
-	"p-combobox-1": {
+	"combobox-01": {
 		tags: ["combobox", "input"],
 		description: "Basic combobox",
 	},
-	"p-combobox-2": {
+	"combobox-02": {
 		tags: ["combobox", "input", "disabled"],
 		description: "Disabled combobox",
 	},
-	"p-combobox-3": {
+	"combobox-03": {
 		tags: ["combobox", "input"],
 		description: "Small combobox",
 	},
-	"p-combobox-4": {
+	"combobox-04": {
 		tags: ["combobox", "input"],
 		description: "Large combobox",
 	},
-	"p-combobox-5": {
+	"combobox-05": {
 		tags: ["combobox", "input"],
 		description: "Combobox with label",
 	},
-	"p-combobox-6": {
+	"combobox-06": {
 		tags: ["combobox", "input"],
 		description: "Combobox auto highlighting the first option",
 	},
-	"p-combobox-7": {
+	"combobox-07": {
 		tags: ["combobox", "input"],
 		description: "Combobox with clear button",
 	},
-	"p-combobox-8": {
+	"combobox-08": {
 		tags: ["combobox", "input"],
 		description: "Combobox with grouped items",
 	},
-	"p-combobox-9": {
+	"combobox-09": {
 		tags: ["combobox", "input"],
 		description: "Combobox with multiple selection",
 	},
-	"p-combobox-10": {
+	"combobox-10": {
 		tags: ["combobox", "input"],
 		npmDependencies: ["lucide-react"],
 		description: "Combobox with input inside popup",
 	},
-	"p-combobox-11": {
+	"combobox-11": {
 		tags: ["combobox", "form", "input"],
 		description: "Combobox form",
 	},
-	"p-combobox-12": {
+	"combobox-12": {
 		tags: ["combobox", "form", "input"],
 		description: "Combobox multiple form",
 	},
-	"p-combobox-13": {
+	"combobox-13": {
 		tags: ["combobox", "input"],
 		npmDependencies: ["lucide-react"],
 		description: "Combobox with start addon",
 	},
-	"p-combobox-14": {
+	"combobox-14": {
 		tags: ["combobox", "input"],
 		npmDependencies: ["lucide-react"],
 		description: "Combobox multiple with start addon",
 	},
-	"p-combobox-15": {
+	"combobox-15": {
 		tags: ["combobox", "input"],
 		description: "Pill-shaped combobox",
 	},
-	"p-combobox-16": {
+	"combobox-16": {
 		tags: ["combobox", "input", "timezone"],
 		description: "Timezone combobox",
 	},
-	"p-combobox-17": {
+	"combobox-17": {
 		tags: ["combobox", "input", "timezone"],
 		npmDependencies: ["lucide-react"],
 		description: "Timezone combobox with search input",
 	},
-	"p-combobox-18": {
+	"combobox-18": {
 		tags: ["combobox", "select"],
 		description: "Combobox with select trigger",
 	},
-	"p-command-1": {
+	"command-01": {
 		tags: ["command", "dialog"],
 		npmDependencies: ["lucide-react"],
 		description: "Command palette with dialog",
 	},
-	"p-command-2": {
+	"command-02": {
 		tags: ["command", "dialog"],
 		npmDependencies: ["lucide-react"],
 		description: "Command palette with AI assistant",
 	},
-	"p-dialog-1": {
+	"dialog-01": {
 		tags: ["dialog"],
 		description: "Dialog with form",
 	},
-	"p-dialog-6": {
+	"dialog-06": {
 		tags: ["dialog"],
 		description: "Dialog with bare footer",
 	},
-	"p-dialog-2": {
+	"dialog-02": {
 		tags: ["dialog", "dropdown", "menu"],
 		description: "Dialog opened from menu",
 	},
-	"p-dialog-3": {
+	"dialog-03": {
 		tags: ["dialog"],
 		description: "Nested dialogs",
 	},
-	"p-dialog-4": {
+	"dialog-04": {
 		tags: ["alert dialog", "dialog"],
 		description: "Dialog with close confirmation",
 	},
-	"p-dialog-5": {
+	"dialog-05": {
 		tags: ["dialog"],
 		description: "Dialog with long content",
 	},
-	"p-drawer-1": {
+	"drawer-01": {
 		tags: ["drawer"],
 		description: "Simple bottom drawer with close button",
 	},
-	"p-drawer-2": {
+	"drawer-02": {
 		tags: ["drawer"],
 		description: "Bottom drawer without drag bar",
 	},
-	"p-drawer-3": {
+	"drawer-03": {
 		tags: ["drawer"],
 		description: "Drawer with close button",
 	},
-	"p-drawer-4": {
+	"drawer-04": {
 		tags: ["drawer"],
 		description: "Inset variant drawers for all four positions",
 	},
-	"p-drawer-5": {
+	"drawer-05": {
 		tags: ["drawer"],
 		description: "Straight variant drawers for all four positions",
 	},
-	"p-drawer-6": {
+	"drawer-06": {
 		tags: ["drawer"],
 		description: "Scrollable content with terms and conditions",
 	},
-	"p-drawer-7": {
+	"drawer-07": {
 		tags: ["drawer"],
 		description: "Nested bottom drawers with centered content",
 	},
-	"p-drawer-8": {
+	"drawer-08": {
 		tags: ["drawer"],
 		description: "Nested right drawers with inset variant",
 	},
-	"p-drawer-9": {
+	"drawer-09": {
 		tags: ["drawer"],
 		description: "Bottom drawer with snap points",
 	},
-	"p-drawer-10": {
+	"drawer-10": {
 		tags: ["drawer"],
 		description: "Edit profile form with default and bare footer variants",
 	},
-	"p-drawer-11": {
+	"drawer-11": {
 		tags: ["drawer"],
 		description: "Mobile menu drawer from the left",
 	},
-	"p-drawer-12": {
+	"drawer-12": {
 		tags: ["drawer", "dialog"],
 		description: "Responsive edit profile: dialog on desktop, drawer on mobile",
 	},
-	"p-drawer-13": {
+	"drawer-13": {
 		tags: ["drawer", "menu"],
 		npmDependencies: ["lucide-react"],
 		description: "Responsive actions menu: menu on desktop, drawer on mobile",
 	},
-	"p-drawer-14": {
+	"drawer-14": {
 		tags: ["drawer"],
 		description: "Left drawer with swipe area",
 	},
-	"p-empty-1": {
+	"empty-01": {
 		tags: ["empty state"],
 		npmDependencies: ["lucide-react"],
 		description: "Empty state with icon and actions",
 	},
-	"p-field-1": {
+	"field-01": {
 		tags: ["field", "input", "label"],
 		description: "Field with description",
 	},
-	"p-field-2": {
+	"field-02": {
 		tags: ["field", "input", "label"],
 		description: "Field with required indicator",
 	},
-	"p-field-3": {
+	"field-03": {
 		tags: ["disabled", "field", "input", "label"],
 		description: "Field in disabled state",
 	},
-	"p-field-4": {
+	"field-04": {
 		tags: ["error", "field", "input", "label"],
 		description: "Field showing validation error",
 	},
-	"p-field-5": {
+	"field-05": {
 		tags: ["field", "input"],
 		description: "Show field validity state",
 	},
-	"p-field-6": {
+	"field-06": {
 		tags: ["button", "field", "input", "input group"],
 		description: "Input group with field",
 	},
-	"p-field-7": {
+	"field-07": {
 		tags: ["autocomplete", "field", "input", "label"],
 		description: "Field with autocomplete",
 	},
-	"p-field-8": {
+	"field-08": {
 		tags: ["combobox", "field", "input", "label"],
 		description: "Field with combobox",
 	},
-	"p-field-9": {
+	"field-09": {
 		tags: ["combobox", "field", "input", "label"],
 		description: "Field with multiple selection combobox",
 	},
-	"p-field-10": {
+	"field-10": {
 		tags: ["field", "label", "textarea"],
 		description: "Field with textarea",
 	},
-	"p-field-11": {
+	"field-11": {
 		tags: ["field", "label", "select"],
 		description: "Field with select",
 	},
-	"p-field-12": {
+	"field-12": {
 		tags: ["checkbox", "field", "label"],
 		description: "Field with checkbox",
 	},
-	"p-field-13": {
+	"field-13": {
 		tags: [
 			"checkbox",
 			"checkbox group",
@@ -975,23 +975,23 @@ const userRegistryParticule: RegistryParticuleData = {
 		],
 		description: "Field with checkbox group",
 	},
-	"p-field-14": {
+	"field-14": {
 		tags: ["field", "fieldset", "label", "radio group"],
 		description: "Field with radio group",
 	},
-	"p-field-15": {
+	"field-15": {
 		tags: ["field", "label", "switch"],
 		description: "Field with toggle switch",
 	},
-	"p-field-16": {
+	"field-16": {
 		tags: ["field", "label", "slider"],
 		description: "Field with slider",
 	},
-	"p-field-17": {
+	"field-17": {
 		tags: ["field", "input", "label", "number field"],
 		description: "Field with number field",
 	},
-	"p-field-18": {
+	"field-18": {
 		tags: [
 			"button",
 			"checkbox",
@@ -1003,15 +1003,15 @@ const userRegistryParticule: RegistryParticuleData = {
 		],
 		description: "Complete form built with field",
 	},
-	"p-fieldset-1": {
+	"fieldset-01": {
 		tags: ["fieldset", "input"],
 		description: "Fieldset with multiple fields",
 	},
-	"p-form-1": {
+	"form-01": {
 		tags: ["button", "field", "form", "input"],
 		description: "Input in a form",
 	},
-	"p-form-2": {
+	"form-02": {
 		tags: [
 			"button",
 			"field",
@@ -1023,318 +1023,318 @@ const userRegistryParticule: RegistryParticuleData = {
 		npmDependencies: ["zod"],
 		description: "Form with zod validation",
 	},
-	"p-frame-1": {
+	"frame-01": {
 		tags: ["frame"],
 		description: "Basic frame",
 	},
-	"p-frame-3": {
+	"frame-03": {
 		tags: ["frame"],
 		description: "Frame with multiple separated panels",
 	},
-	"p-frame-4": {
+	"frame-04": {
 		tags: ["frame"],
 		description: "Frame with multiple stacked panels",
 	},
-	"p-frame-2": {
+	"frame-02": {
 		tags: ["collapsible", "frame"],
 		npmDependencies: ["lucide-react"],
 		description: "Frame with collapsible content and delete button",
 	},
-	"p-kbd-1": {
+	"kbd-01": {
 		tags: ["kbd"],
 		description: "Keyboard shortcuts display",
 	},
-	"p-group-1": {
+	"group-01": {
 		tags: ["group"],
 		description: "Basic group",
 	},
-	"p-group-2": {
+	"group-02": {
 		tags: ["group", "input"],
 		description: "Group with input",
 	},
-	"p-group-3": {
+	"group-03": {
 		tags: ["group"],
 		description: "Small group",
 	},
-	"p-group-4": {
+	"group-04": {
 		tags: ["group"],
 		description: "Large group",
 	},
-	"p-group-5": {
+	"group-05": {
 		tags: ["button", "group"],
 		description: "Group with disabled button",
 	},
-	"p-group-6": {
+	"group-06": {
 		tags: ["button", "group"],
 		description: "Group with default button",
 	},
-	"p-group-7": {
+	"group-07": {
 		tags: ["group"],
 		description: "Group with start text",
 	},
-	"p-group-8": {
+	"group-08": {
 		tags: ["group"],
 		description: "Group with end text",
 	},
-	"p-group-9": {
+	"group-09": {
 		tags: ["group"],
 		description: "Vertical group",
 	},
-	"p-group-10": {
+	"group-10": {
 		tags: ["group"],
 		description: "Nested groups",
 	},
-	"p-group-11": {
+	"group-11": {
 		tags: ["group"],
 		description: "Group with popup",
 	},
-	"p-group-12": {
+	"group-12": {
 		tags: ["group", "input group"],
 		description: "Group with input group",
 	},
-	"p-group-13": {
+	"group-13": {
 		tags: ["dropdown", "group", "menu"],
 		description: "Group with menu",
 	},
-	"p-group-14": {
+	"group-14": {
 		tags: ["group", "select", "number field"],
 		description: "Group with select",
 	},
-	"p-group-15": {
+	"group-15": {
 		tags: ["group", "search"],
 		description: "Group with search",
 	},
-	"p-group-16": {
+	"group-16": {
 		tags: ["button", "group", "input"],
 		npmDependencies: ["lucide-react"],
 		description: "Group with add button and input",
 	},
-	"p-group-17": {
+	"group-17": {
 		tags: ["group", "input"],
 		description: "Group with input and currency text",
 	},
-	"p-group-18": {
+	"group-18": {
 		tags: ["group", "input", "select"],
 		description: "Group with select and input",
 	},
-	"p-group-19": {
+	"group-19": {
 		tags: ["group", "input", "select"],
 		description: "Group with input and select",
 	},
-	"p-group-20": {
+	"group-20": {
 		tags: ["button", "group", "input"],
 		description: "Group with input and text button",
 	},
-	"p-group-22": {
+	"group-22": {
 		tags: ["group", "label", "number field"],
 		description: "Group with two number inputs for range",
 	},
-	"p-group-23": {
+	"group-23": {
 		tags: ["avatar", "badge", "button", "combobox", "group"],
 		description:
 			"Group with filter label, combobox multi-select, and remove button",
 	},
-	"p-input-1": {
+	"input-01": {
 		tags: ["input"],
 		description: "Basic input",
 	},
-	"p-input-2": {
+	"input-02": {
 		tags: ["input"],
 		description: "Small input",
 	},
-	"p-input-3": {
+	"input-03": {
 		tags: ["input"],
 		description: "Large input",
 	},
-	"p-input-4": {
+	"input-04": {
 		tags: ["input"],
 		description: "Disabled input",
 	},
-	"p-input-5": {
+	"input-05": {
 		tags: ["input"],
 		description: "File input",
 	},
-	"p-input-6": {
+	"input-06": {
 		tags: ["input", "label"],
 		description: "Input with label",
 	},
-	"p-input-7": {
+	"input-07": {
 		tags: ["button", "group", "input"],
 		description: "Input with button using Group",
 	},
-	"p-input-8": {
+	"input-08": {
 		tags: ["button", "input", "input group", "popover"],
 		description: "Input with start text and end tooltip",
 	},
-	"p-input-9": {
+	"input-09": {
 		tags: ["button", "input", "input group", "tooltip"],
 		description: "Password input with toggle visibility",
 	},
-	"p-input-10": {
+	"input-10": {
 		tags: ["button", "input", "input group", "popover"],
 		description: "Input group mimicking a URL bar",
 	},
-	"p-input-11": {
+	"input-11": {
 		tags: ["input", "input group", "kbd", "search"],
 		description: "Input group with keyboard shortcut",
 	},
-	"p-input-12": {
+	"input-12": {
 		tags: ["input", "input group", "spinner", "loading"],
 		description: "Input group with start loading spinner",
 	},
-	"p-input-13": {
+	"input-13": {
 		tags: ["input", "label"],
 		description: "Input with label and required indicator",
 	},
-	"p-input-14": {
+	"input-14": {
 		tags: ["input", "label"],
 		description: "Input with optional label",
 	},
-	"p-input-15": {
+	"input-15": {
 		tags: ["input"],
 		description: "Input with custom border and background",
 	},
-	"p-input-16": {
+	"input-16": {
 		tags: ["input", "input group", "spinner", "loading"],
 		description: "Input group with end loading spinner",
 	},
-	"p-input-17": {
+	"input-17": {
 		tags: ["input"],
 		description: "Read-only input",
 	},
-	"p-otp-field-1": {
+	"otp-field-01": {
 		tags: ["otp field", "input"],
 		description: "Basic OTP field",
 	},
-	"p-otp-field-2": {
+	"otp-field-02": {
 		tags: ["otp field", "input"],
 		description: "Large OTP field",
 	},
-	"p-otp-field-3": {
+	"otp-field-03": {
 		tags: ["otp field", "input"],
 		description: "OTP field with separator",
 	},
-	"p-otp-field-4": {
+	"otp-field-04": {
 		tags: ["otp field", "input", "field"],
 		description: "OTP field with label",
 	},
-	"p-otp-field-6": {
+	"otp-field-06": {
 		tags: ["otp field", "input", "field", "validation"],
 		description: "OTP field with custom sanitization",
 	},
-	"p-otp-field-7": {
+	"otp-field-07": {
 		tags: ["otp field", "input", "validation"],
 		description: "OTP field with auto validation",
 	},
-	"p-otp-field-8": {
+	"otp-field-08": {
 		tags: ["otp field", "input", "field"],
 		description: "Alphanumeric OTP field",
 	},
-	"p-otp-field-9": {
+	"otp-field-09": {
 		tags: ["otp field", "input", "field"],
 		description: "OTP field with placeholder hints",
 	},
-	"p-otp-field-10": {
+	"otp-field-10": {
 		tags: ["otp field", "input", "field"],
 		description: "Masked OTP field",
 	},
-	"p-input-group-1": {
+	"input-group-01": {
 		tags: ["input group"],
 		description: "Basic input group",
 	},
-	"p-input-group-2": {
+	"input-group-02": {
 		tags: ["input group"],
 		npmDependencies: ["lucide-react"],
 		description: "Input group with end icon",
 	},
-	"p-input-group-3": {
+	"input-group-03": {
 		tags: ["input group"],
 		description: "Input group with start text",
 	},
-	"p-input-group-4": {
+	"input-group-04": {
 		tags: ["input group"],
 		description: "Input group with end text",
 	},
-	"p-input-group-5": {
+	"input-group-05": {
 		tags: ["input group"],
 		description: "Input group with start and end text",
 	},
-	"p-input-group-6": {
+	"input-group-06": {
 		tags: ["input group", "number field"],
 		description: "Input group with number field",
 	},
-	"p-input-group-7": {
+	"input-group-07": {
 		tags: ["input group", "tooltip"],
 		npmDependencies: ["lucide-react"],
 		description: "Input group with end tooltip",
 	},
-	"p-input-group-8": {
+	"input-group-08": {
 		tags: ["button", "input group"],
 		npmDependencies: ["lucide-react"],
 		description: "Input group with icon button",
 	},
-	"p-input-group-9": {
+	"input-group-09": {
 		tags: ["button", "input group"],
 		description: "Input group with button",
 	},
-	"p-input-group-10": {
+	"input-group-10": {
 		tags: ["badge", "input group"],
 		description: "Input group with badge",
 	},
-	"p-input-group-11": {
+	"input-group-11": {
 		tags: ["input group", "kbd"],
 		description: "Input group with keyboard shortcut",
 	},
-	"p-input-group-12": {
+	"input-group-12": {
 		tags: ["input group", "label"],
 		description: "Input group with inner label",
 	},
-	"p-input-group-13": {
+	"input-group-13": {
 		tags: ["input group"],
 		description: "Small input group",
 	},
-	"p-input-group-14": {
+	"input-group-14": {
 		tags: ["input group"],
 		description: "Large input group",
 	},
-	"p-input-group-15": {
+	"input-group-15": {
 		tags: ["input group"],
 		description: "Disabled input group",
 	},
-	"p-input-group-16": {
+	"input-group-16": {
 		tags: ["input group", "spinner"],
 		description: "Input group with loading spinner",
 	},
-	"p-input-group-17": {
+	"input-group-17": {
 		tags: ["input group", "textarea"],
 		description: "Input group with textarea",
 	},
-	"p-input-group-18": {
+	"input-group-18": {
 		tags: ["badge", "dropdown", "input group", "menu"],
 		npmDependencies: ["lucide-react"],
 		description: "Input group with badge and menu",
 	},
-	"p-input-group-19": {
+	"input-group-19": {
 		tags: ["button", "input group", "textarea", "toggle"],
 		npmDependencies: ["lucide-react"],
 		description: "Mini editor built with input group and toggle",
 	},
-	"p-input-group-20": {
+	"input-group-20": {
 		tags: ["input", "input group", "search"],
 		npmDependencies: ["lucide-react"],
 		description: "Input group with search icon",
 	},
-	"p-input-group-21": {
+	"input-group-21": {
 		tags: ["button", "input", "input group", "tooltip"],
 		npmDependencies: ["lucide-react"],
 		description: "Input group with start tooltip",
 	},
-	"p-input-group-22": {
+	"input-group-22": {
 		tags: ["button", "input", "input group"],
 		npmDependencies: ["lucide-react"],
 		description: "Input group with clear button",
 	},
-	"p-input-group-23": {
+	"input-group-23": {
 		tags: [
 			"button",
 			"input",
@@ -1345,24 +1345,24 @@ const userRegistryParticule: RegistryParticuleData = {
 		npmDependencies: ["lucide-react"],
 		description: "Search input group with loader and voice button",
 	},
-	"p-input-group-24": {
+	"input-group-24": {
 		tags: ["input", "input group"],
 		description: "Input group with character counter",
 	},
-	"p-input-18": {
+	"input-18": {
 		tags: ["field", "input"],
 		description: "Input with characters remaining counter",
 	},
-	"p-input-19": {
+	"input-19": {
 		tags: ["input"],
 		description: "Pill-shaped input",
 	},
-	"p-input-group-26": {
+	"input-group-26": {
 		tags: ["button", "input", "input group", "label"],
 		npmDependencies: ["lucide-react"],
 		description: "Password input with strength indicator",
 	},
-	"p-input-group-27": {
+	"input-group-27": {
 		tags: [
 			"button",
 			"input group",
@@ -1373,407 +1373,407 @@ const userRegistryParticule: RegistryParticuleData = {
 		npmDependencies: ["lucide-react"],
 		description: "Code snippet input with language selector",
 	},
-	"p-input-group-28": {
+	"input-group-28": {
 		tags: ["button", "input group", "textarea", "tooltip"],
 		npmDependencies: ["lucide-react"],
 		description: "Message composer with attachment buttons",
 	},
-	"p-input-group-29": {
+	"input-group-29": {
 		tags: ["button", "input group", "textarea", "tooltip"],
 		npmDependencies: ["lucide-react"],
 		description: "Chat input with voice and send buttons",
 	},
-	"p-meter-1": {
+	"meter-01": {
 		tags: ["meter"],
 		description: "Basic meter",
 	},
-	"p-meter-2": {
+	"meter-02": {
 		tags: ["meter"],
 		description: "Simple meter",
 	},
-	"p-meter-3": {
+	"meter-03": {
 		tags: ["meter"],
 		description: "Meter with formatted value",
 	},
-	"p-meter-4": {
+	"meter-04": {
 		tags: ["meter"],
 		description: "Meter with range",
 	},
-	"p-menu-1": {
+	"menu-01": {
 		tags: ["dropdown", "menu"],
 		description: "Basic menu",
 	},
-	"p-menu-2": {
+	"menu-02": {
 		tags: ["dropdown", "menu"],
 		description: "Menu with hover",
 	},
-	"p-menu-3": {
+	"menu-03": {
 		tags: ["dropdown", "menu"],
 		description: "Menu with checkbox",
 	},
-	"p-menu-9": {
+	"menu-09": {
 		tags: ["dropdown", "menu", "switch"],
 		description: "Menu with checkbox items as switches",
 	},
-	"p-menu-4": {
+	"menu-04": {
 		tags: ["dropdown", "menu"],
 		description: "Menu with radio group",
 	},
-	"p-menu-5": {
+	"menu-05": {
 		tags: ["dropdown", "menu"],
 		description: "Menu with link",
 	},
-	"p-menu-6": {
+	"menu-06": {
 		tags: ["dropdown", "menu"],
 		description: "Menu with group labels",
 	},
-	"p-menu-7": {
+	"menu-07": {
 		tags: ["dropdown", "menu"],
 		description: "Nested menu",
 	},
-	"p-menu-8": {
+	"menu-08": {
 		tags: ["dropdown", "menu"],
 		description: "Menu close on click",
 	},
-	"p-number-field-1": {
+	"number-field-01": {
 		tags: ["number field", "input"],
 		description: "Basic number field",
 	},
-	"p-number-field-2": {
+	"number-field-02": {
 		tags: ["number field", "input"],
 		description: "Small number field",
 	},
-	"p-number-field-3": {
+	"number-field-03": {
 		tags: ["number field", "input"],
 		description: "Large number field",
 	},
-	"p-number-field-4": {
+	"number-field-04": {
 		tags: ["number field", "input"],
 		description: "Disabled number field",
 	},
-	"p-number-field-5": {
+	"number-field-05": {
 		tags: ["number field", "input"],
 		description: "Number field with label",
 	},
-	"p-number-field-6": {
+	"number-field-06": {
 		tags: ["number field", "input"],
 		description: "Number field with scrub",
 	},
-	"p-number-field-7": {
+	"number-field-07": {
 		tags: ["number field", "input"],
 		description: "Number field with range",
 	},
-	"p-number-field-8": {
+	"number-field-08": {
 		tags: ["number field", "input"],
 		description: "Number field with formatted value",
 	},
-	"p-number-field-9": {
+	"number-field-09": {
 		tags: ["number field", "input"],
 		description: "Number field with step",
 	},
-	"p-number-field-10": {
+	"number-field-10": {
 		tags: ["number field", "input", "form", "field", "zod"],
 		npmDependencies: ["zod"],
 		description: "Number field in form",
 	},
-	"p-number-field-11": {
+	"number-field-11": {
 		tags: ["number field", "input"],
 		description: "Pill-shaped number field",
 	},
-	"p-pagination-1": {
+	"pagination-01": {
 		tags: ["pagination"],
 		description: "Pagination example",
 	},
-	"p-pagination-2": {
+	"pagination-02": {
 		tags: ["pagination"],
 		description: "Pagination with previous and next buttons only",
 	},
-	"p-pagination-3": {
+	"pagination-03": {
 		tags: ["pagination", "select"],
 		description: "Pagination with select, and previous and next buttons",
 	},
-	"p-popover-1": {
+	"popover-01": {
 		tags: ["button", "field", "form", "popover", "textarea"],
 		description: "Popover with a form",
 	},
-	"p-popover-2": {
+	"popover-02": {
 		tags: ["button", "popover"],
 		npmDependencies: ["lucide-react"],
 		description: "Popover with close button",
 	},
-	"p-popover-3": {
+	"popover-03": {
 		tags: ["avatar", "button", "popover"],
 		npmDependencies: ["lucide-react"],
 		description: "Animated popovers",
 	},
-	"p-preview-card-1": {
+	"preview-card-01": {
 		tags: ["preview card"],
 		npmDependencies: ["lucide-react"],
 		description: "Preview card with popup",
 	},
-	"p-progress-1": {
+	"progress-01": {
 		tags: ["progress"],
 		description: "Basic progress bar",
 	},
-	"p-progress-2": {
+	"progress-02": {
 		tags: ["progress"],
 		description: "Progress with label and value",
 	},
-	"p-progress-3": {
+	"progress-03": {
 		tags: ["progress"],
 		description: "Progress with formatted value",
 	},
-	"p-radio-group-1": {
+	"radio-group-01": {
 		tags: ["radio group"],
 		description: "Basic radio group",
 	},
-	"p-radio-group-2": {
+	"radio-group-02": {
 		tags: ["radio group"],
 		description: "Disabled radio group",
 	},
-	"p-radio-group-3": {
+	"radio-group-03": {
 		tags: ["radio group"],
 		description: "Radio group with description",
 	},
-	"p-radio-group-4": {
+	"radio-group-04": {
 		tags: ["radio group"],
 		description: "Radio group card",
 	},
-	"p-radio-group-5": {
+	"radio-group-05": {
 		tags: ["radio group", "form"],
 		description: "Radio group in form",
 	},
-	"p-radio-group-6": {
+	"radio-group-06": {
 		tags: ["radio group", "form"],
 		npmDependencies: ["lucide-react"],
 		description: "Theme selector with image cards",
 	},
-	"p-scroll-area-1": {
+	"scroll-area-01": {
 		tags: ["scroll area"],
 		description: "Basic scroll area",
 	},
-	"p-scroll-area-2": {
+	"scroll-area-02": {
 		tags: ["scroll area"],
 		description: "Horizontal scroll area",
 	},
-	"p-scroll-area-3": {
+	"scroll-area-03": {
 		tags: ["scroll area"],
 		description: "Scroll area with both directions",
 	},
-	"p-scroll-area-4": {
+	"scroll-area-04": {
 		tags: ["scroll area"],
 		description: "Scroll area with fading edges",
 	},
-	"p-scroll-area-5": {
+	"scroll-area-05": {
 		tags: ["scroll area"],
 		description: "Horizontal scroll area with scrollbar gutter",
 	},
-	"p-select-1": {
+	"select-01": {
 		tags: ["select"],
 		description: "Basic select",
 	},
-	"p-select-2": {
+	"select-02": {
 		tags: ["select"],
 		description: "Small select",
 	},
-	"p-select-3": {
+	"select-03": {
 		tags: ["select"],
 		description: "Large select",
 	},
-	"p-select-4": {
+	"select-04": {
 		tags: ["select"],
 		description: "Disabled select",
 	},
-	"p-select-5": {
+	"select-05": {
 		tags: ["select"],
 		description: "Select without item alignment",
 	},
-	"p-select-6": {
+	"select-06": {
 		tags: ["select"],
 		description: "Select with groups",
 	},
-	"p-select-7": {
+	"select-07": {
 		tags: ["select"],
 		description: "Multiple select",
 	},
-	"p-select-8": {
+	"select-08": {
 		tags: ["select"],
 		npmDependencies: ["lucide-react"],
 		description: "Select with icon",
 	},
-	"p-select-9": {
+	"select-09": {
 		tags: ["select"],
 		npmDependencies: ["lucide-react"],
 		description: "Select options with icon",
 	},
-	"p-select-10": {
+	"select-10": {
 		tags: ["select"],
 		description: "Select with object values",
 	},
-	"p-select-12": {
+	"select-12": {
 		tags: ["select", "disabled"],
 		description: "Select with disabled items",
 	},
-	"p-select-13": {
+	"select-13": {
 		tags: ["select", "time", "timezone"],
 		description: "Timezone select",
 	},
-	"p-select-14": {
+	"select-14": {
 		tags: ["select"],
 		description: "Status select with colored dot",
 	},
-	"p-select-15": {
+	"select-15": {
 		tags: ["select"],
 		description: "Pill-shaped select trigger",
 	},
-	"p-select-16": {
+	"select-16": {
 		tags: ["select"],
 		description: "Select with left text label",
 	},
-	"p-select-17": {
+	"select-17": {
 		tags: ["select"],
 		description: "Select with country flags",
 	},
-	"p-select-18": {
+	"select-18": {
 		tags: ["select"],
 		description: "Select with description in options only",
 	},
-	"p-select-19": {
+	"select-19": {
 		tags: ["select", "avatar"],
 		description: "Select with avatars",
 	},
-	"p-select-20": {
+	"select-20": {
 		tags: ["select", "avatar"],
 		description: "Rich select with avatars and usernames",
 	},
-	"p-select-21": {
+	"select-21": {
 		tags: ["select"],
 		description: "Auto width select",
 	},
-	"p-select-22": {
+	"select-22": {
 		tags: ["select"],
 		description: "Select with custom border and background",
 	},
-	"p-select-23": {
+	"select-23": {
 		tags: ["select"],
 		description: "Select with label",
 	},
-	"p-select-11": {
+	"select-11": {
 		tags: ["select"],
 		description: "Select in form",
 	},
-	"p-separator-1": {
+	"separator-01": {
 		tags: ["separator"],
 		description: "Separator with horizontal and vertical orientations",
 	},
-	"p-sheet-1": {
+	"sheet-01": {
 		tags: ["sheet"],
 		description: "Basic sheet",
 	},
-	"p-sheet-2": {
+	"sheet-02": {
 		tags: ["sheet"],
 		description: "Sheet inset",
 	},
-	"p-sheet-3": {
+	"sheet-03": {
 		tags: ["sheet"],
 		description: "Sheet position",
 	},
-	"p-skeleton-1": {
+	"skeleton-01": {
 		tags: ["skeleton"],
 		description: "Basic skeleton",
 	},
-	"p-skeleton-2": {
+	"skeleton-02": {
 		tags: ["skeleton"],
 		description: "Skeleton only",
 	},
-	"p-slider-1": {
+	"slider-01": {
 		tags: ["slider"],
 		description: "Basic slider",
 	},
-	"p-slider-2": {
+	"slider-02": {
 		tags: ["slider"],
 		description: "Slider with label and value",
 	},
-	"p-slider-3": {
+	"slider-03": {
 		tags: ["slider", "disabled"],
 		description: "Disabled slider",
 	},
-	"p-slider-4": {
+	"slider-04": {
 		tags: ["slider"],
 		description: "Slider with reference labels",
 	},
-	"p-slider-5": {
+	"slider-05": {
 		tags: ["slider"],
 		description: "Slider with ticks",
 	},
-	"p-slider-6": {
+	"slider-06": {
 		tags: ["slider"],
 		description: "Slider with labels above",
 	},
-	"p-slider-7": {
+	"slider-07": {
 		tags: ["slider"],
 		description: "Range slider",
 	},
-	"p-slider-8": {
+	"slider-08": {
 		tags: ["slider"],
 		description: "Slider with 3 thumbs",
 	},
-	"p-slider-9": {
+	"slider-09": {
 		tags: ["slider"],
 		description: "Range slider with collision behavior none",
 	},
-	"p-slider-10": {
+	"slider-10": {
 		tags: ["slider"],
 		description: "Range slider with collision behavior swap",
 	},
-	"p-slider-11": {
+	"slider-11": {
 		tags: ["slider"],
 		npmDependencies: ["lucide-react"],
 		description: "Slider with icons",
 	},
-	"p-slider-12": {
+	"slider-12": {
 		tags: ["slider", "number field"],
 		description: "Slider with input",
 	},
-	"p-slider-13": {
+	"slider-13": {
 		tags: ["slider", "number field"],
 		description: "Range slider with inputs",
 	},
-	"p-slider-14": {
+	"slider-14": {
 		tags: ["slider", "button"],
 		npmDependencies: ["lucide-react"],
 		description: "Slider with increment and decrement buttons",
 	},
-	"p-slider-15": {
+	"slider-15": {
 		tags: ["slider"],
 		description: "Price range slider",
 	},
-	"p-slider-16": {
+	"slider-16": {
 		tags: ["slider"],
 		description: "Emoji rating slider",
 	},
-	"p-slider-17": {
+	"slider-17": {
 		tags: ["slider"],
 		description: "Vertical slider",
 	},
-	"p-slider-18": {
+	"slider-18": {
 		tags: ["slider"],
 		description: "Vertical range slider",
 	},
-	"p-slider-19": {
+	"slider-19": {
 		tags: ["slider", "number field"],
 		description: "Vertical slider with input",
 	},
-	"p-slider-20": {
+	"slider-20": {
 		tags: ["slider"],
 		description: "Equalizer with vertical sliders",
 	},
-	"p-slider-21": {
+	"slider-21": {
 		tags: ["slider", "number field", "button"],
 		npmDependencies: ["lucide-react"],
 		description: "Object position sliders with reset",
 	},
-	"p-slider-22": {
+	"slider-22": {
 		tags: [
 			"slider",
 			"number field",
@@ -1783,52 +1783,52 @@ const userRegistryParticule: RegistryParticuleData = {
 		],
 		description: "Price slider with histogram",
 	},
-	"p-slider-23": {
+	"slider-23": {
 		tags: ["slider", "form"],
 		description: "Slider in form",
 	},
-	"p-spinner-1": {
+	"spinner-01": {
 		tags: ["spinner"],
 		description: "Basic spinner",
 	},
-	"p-switch-1": {
+	"switch-01": {
 		tags: ["switch"],
 		description: "Basic switch",
 	},
-	"p-switch-2": {
+	"switch-02": {
 		tags: ["switch"],
 		description: "Disabled switch",
 	},
-	"p-switch-3": {
+	"switch-03": {
 		tags: ["switch"],
 		description: "Switch with description",
 	},
-	"p-switch-4": {
+	"switch-04": {
 		tags: ["switch"],
 		description: "Switch card",
 	},
-	"p-switch-5": {
+	"switch-05": {
 		tags: ["switch"],
 		description: "Switch in form",
 	},
-	"p-switch-6": {
+	"switch-06": {
 		tags: ["switch"],
 		description: "Custom size switch",
 	},
-	"p-table-1": {
+	"table-01": {
 		tags: ["table"],
 		description: "Basic table",
 	},
-	"p-table-2": {
+	"table-02": {
 		tags: ["frame", "table"],
 		description: "Frame with card-style table",
 	},
-	"p-table-3": {
+	"table-03": {
 		tags: ["checkbox", "table", "tanstack"],
 		npmDependencies: ["@tanstack/react-table"],
 		description: "Table with TanStack Table and checkboxes",
 	},
-	"p-table-4": {
+	"table-04": {
 		tags: [
 			"checkbox",
 			"pagination",
@@ -1839,20 +1839,20 @@ const userRegistryParticule: RegistryParticuleData = {
 		npmDependencies: ["@tanstack/react-table", "lucide-react"],
 		description: "Table with TanStack Table, sorting, and pagination",
 	},
-	"p-table-5": {
+	"table-05": {
 		tags: ["table"],
 		description: "Card-style table variant",
 	},
-	"p-table-7": {
+	"table-07": {
 		tags: ["card", "table"],
 		description: "CardFrame with card-style table",
 	},
-	"p-table-6": {
+	"table-06": {
 		tags: ["card", "checkbox", "table", "tanstack"],
 		npmDependencies: ["@tanstack/react-table"],
 		description: "CardFrame with TanStack Table and checkboxes",
 	},
-	"p-table-8": {
+	"table-08": {
 		tags: [
 			"card",
 			"checkbox",
@@ -1864,270 +1864,270 @@ const userRegistryParticule: RegistryParticuleData = {
 		npmDependencies: ["@tanstack/react-table", "lucide-react"],
 		description: "CardFrame with TanStack Table, sorting, and pagination",
 	},
-	"p-tabs-1": {
+	"tabs-01": {
 		tags: ["tabs"],
 		description: "Basic tabs",
 	},
-	"p-tabs-2": {
+	"tabs-02": {
 		tags: ["tabs"],
 		description: "Tabs with underline",
 	},
-	"p-tabs-3": {
+	"tabs-03": {
 		tags: ["tabs"],
 		description: "Vertical tabs",
 	},
-	"p-tabs-4": {
+	"tabs-04": {
 		tags: ["tabs"],
 		description: "Vertical tabs with underline",
 	},
-	"p-tabs-5": {
+	"tabs-05": {
 		tags: ["tabs"],
 		description: "Tabs with full rounded triggers",
 	},
-	"p-tabs-6": {
+	"tabs-06": {
 		tags: ["tabs"],
 		npmDependencies: ["lucide-react"],
 		description: "Tabs with icon before name",
 	},
-	"p-tabs-7": {
+	"tabs-07": {
 		tags: ["tabs"],
 		npmDependencies: ["lucide-react"],
 		description: "Tabs with icon before name and underline",
 	},
-	"p-tabs-8": {
+	"tabs-08": {
 		tags: ["tabs"],
 		npmDependencies: ["lucide-react"],
 		description: "Tabs with icon only",
 	},
-	"p-tabs-9": {
+	"tabs-09": {
 		tags: ["tabs"],
 		npmDependencies: ["lucide-react"],
 		description: "Tabs with underline and icon on top",
 	},
-	"p-tabs-10": {
+	"tabs-10": {
 		tags: ["tabs", "badge"],
 		description: "Tabs with count badge",
 	},
-	"p-tabs-11": {
+	"tabs-11": {
 		tags: ["tabs"],
 		npmDependencies: ["lucide-react"],
 		description: "Vertical tabs with underline and icon before name",
 	},
-	"p-tabs-12": {
+	"tabs-12": {
 		tags: ["tabs", "badge"],
 		npmDependencies: ["lucide-react"],
 		description: "Tabs with icon only and count badge",
 	},
-	"p-tabs-13": {
+	"tabs-13": {
 		tags: ["tabs", "tooltip"],
 		npmDependencies: ["lucide-react"],
 		description: "Tabs with icon only and grouped tooltips",
 	},
-	"p-textarea-1": {
+	"textarea-01": {
 		tags: ["textarea"],
 		description: "Basic textarea",
 	},
-	"p-textarea-2": {
+	"textarea-02": {
 		tags: ["textarea"],
 		description: "Small textarea",
 	},
-	"p-textarea-3": {
+	"textarea-03": {
 		tags: ["textarea"],
 		description: "Large textarea",
 	},
-	"p-textarea-4": {
+	"textarea-04": {
 		tags: ["textarea"],
 		description: "Disabled textarea",
 	},
-	"p-textarea-5": {
+	"textarea-05": {
 		tags: ["textarea"],
 		description: "Textarea with label",
 	},
-	"p-textarea-6": {
+	"textarea-06": {
 		tags: ["textarea"],
 		description: "Textarea in form",
 	},
-	"p-textarea-7": {
+	"textarea-07": {
 		tags: ["label", "textarea"],
 		description: "Textarea with label and required indicator",
 	},
-	"p-textarea-8": {
+	"textarea-08": {
 		tags: ["label", "textarea"],
 		description: "Textarea with optional label",
 	},
-	"p-textarea-9": {
+	"textarea-09": {
 		tags: ["textarea"],
 		description: "Textarea with custom border and background",
 	},
-	"p-textarea-10": {
+	"textarea-10": {
 		tags: ["textarea"],
 		description: "Read-only textarea",
 	},
-	"p-textarea-11": {
+	"textarea-11": {
 		tags: ["field", "textarea"],
 		description: "Textarea with characters remaining counter",
 	},
-	"p-textarea-12": {
+	"textarea-12": {
 		tags: ["field", "label", "textarea"],
 		description: "Textarea field with required indicator",
 	},
-	"p-textarea-13": {
+	"textarea-13": {
 		tags: ["textarea"],
 		description: "Shorter textarea with fixed height",
 	},
-	"p-textarea-14": {
+	"textarea-14": {
 		tags: ["button", "textarea"],
 		description: "Textarea with button aligned right",
 	},
-	"p-textarea-15": {
+	"textarea-15": {
 		tags: ["button", "textarea"],
 		description: "Textarea with button aligned left",
 	},
-	"p-toast-1": {
+	"toast-01": {
 		tags: ["toast"],
 		description: "Default stacked toast with title and description",
 	},
-	"p-toast-2": {
+	"toast-02": {
 		tags: ["toast"],
 		description:
 			"Stacked toasts by semantic type (success, error, info, warning)",
 	},
-	"p-toast-3": {
+	"toast-03": {
 		tags: ["toast"],
 		description: "Loading-state stacked toast",
 	},
-	"p-toast-4": {
+	"toast-04": {
 		tags: ["toast"],
 		description: "Stacked toast with primary action (undo)",
 	},
-	"p-toast-5": {
+	"toast-05": {
 		tags: ["toast"],
 		description: "Promise-based stacked toast",
 	},
-	"p-toast-6": {
+	"toast-06": {
 		tags: ["toast"],
 		description: "Stacked toasts with varying content height",
 	},
-	"p-toast-7": {
+	"toast-07": {
 		tags: ["toast"],
 		description: "Anchored tooltip-style toast after copy",
 	},
-	"p-toast-8": {
+	"toast-08": {
 		tags: ["toast"],
 		description: "Anchored error toast after async failure",
 	},
-	"p-toast-9": {
+	"toast-09": {
 		tags: ["toast", "button"],
 		npmDependencies: ["lucide-react"],
 		description: "Long-running promise toast with cancel",
 	},
-	"p-toast-10": {
+	"toast-10": {
 		tags: ["toast", "button"],
 		description: "Deduplicated success toast",
 	},
-	"p-toast-11": {
+	"toast-11": {
 		tags: ["toast", "button", "error"],
 		description: "Deduplicated error toast",
 	},
-	"p-toast-12": {
+	"toast-12": {
 		tags: ["toast", "button"],
 		npmDependencies: ["lucide-react"],
 		description: "Anchored deduplicated success toast",
 	},
-	"p-toast-13": {
+	"toast-13": {
 		tags: ["toast", "button", "error"],
 		npmDependencies: ["lucide-react"],
 		description: "Anchored deduplicated error toast",
 	},
-	"p-toggle-group-1": {
+	"toggle-group-01": {
 		tags: ["toggle", "toggle group"],
 		description: "Basic toggle group",
 	},
-	"p-toggle-group-2": {
+	"toggle-group-02": {
 		tags: ["toggle", "toggle group"],
 		description: "Small toggle group",
 	},
-	"p-toggle-group-3": {
+	"toggle-group-03": {
 		tags: ["toggle", "toggle group"],
 		description: "Large toggle group",
 	},
-	"p-toggle-group-4": {
+	"toggle-group-04": {
 		tags: ["toggle", "toggle group"],
 		description: "Toggle group with outline",
 	},
-	"p-toggle-group-5": {
+	"toggle-group-05": {
 		tags: ["toggle", "toggle group"],
 		description: "Vertical toggle group with outline",
 	},
-	"p-toggle-group-6": {
+	"toggle-group-06": {
 		tags: ["toggle", "toggle group"],
 		description: "Disabled toggle group",
 	},
-	"p-toggle-group-7": {
+	"toggle-group-07": {
 		tags: ["toggle", "toggle group"],
 		description: "Toggle group with disabled item",
 	},
-	"p-toggle-group-8": {
+	"toggle-group-08": {
 		tags: ["toggle", "toggle group"],
 		description: "Multiple selection toggle group",
 	},
-	"p-toggle-group-9": {
+	"toggle-group-09": {
 		tags: ["toggle", "toggle group"],
 		description: "Toggle group with tooltips",
 	},
-	"p-toggle-1": {
+	"toggle-01": {
 		tags: ["toggle"],
 		description: "Basic toggle",
 	},
-	"p-toggle-2": {
+	"toggle-02": {
 		tags: ["toggle"],
 		description: "Toggle with outline",
 	},
-	"p-toggle-3": {
+	"toggle-03": {
 		tags: ["toggle"],
 		npmDependencies: ["lucide-react"],
 		description: "Toggle with icon",
 	},
-	"p-toggle-4": {
+	"toggle-04": {
 		tags: ["toggle"],
 		description: "Small toggle",
 	},
-	"p-toggle-5": {
+	"toggle-05": {
 		tags: ["toggle"],
 		description: "Large toggle",
 	},
-	"p-toggle-6": {
+	"toggle-06": {
 		tags: ["toggle"],
 		description: "Disabled toggle",
 	},
-	"p-toggle-7": {
+	"toggle-07": {
 		tags: ["toggle"],
 		npmDependencies: ["lucide-react"],
 		description: "Toggle icon group",
 	},
-	"p-toggle-8": {
+	"toggle-08": {
 		tags: ["toggle", "tooltip", "toast"],
 		npmDependencies: ["lucide-react"],
 		description: "Bookmark toggle with tooltip and success toast",
 	},
-	"p-toolbar-1": {
+	"toolbar-01": {
 		tags: ["toolbar"],
 		npmDependencies: ["lucide-react"],
 		description: "Toolbar with toggles, buttons, and select",
 	},
-	"p-tooltip-1": {
+	"tooltip-01": {
 		tags: ["tooltip"],
 		description: "Basic tooltip",
 	},
-	"p-tooltip-2": {
+	"tooltip-02": {
 		tags: ["tooltip"],
 		description: "Grouped tooltips",
 	},
-	"p-tooltip-3": {
+	"tooltip-03": {
 		tags: ["tooltip"],
 		description: "Toggle group animated tooltip",
 	},
-	"p-tooltip-4": {
+	"tooltip-04": {
 		tags: ["tooltip"],
 		description: "Vertical group with animated tooltip",
 	},

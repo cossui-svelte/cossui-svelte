@@ -17,7 +17,7 @@ export interface RegistryParticuleEntry {
 export type RegistryParticuleData = Record<string, RegistryParticuleEntry>;
 
 
-const EXAMPLES_DIR = path.resolve('src/lib/components/examples');
+const SOURCE_DIR = path.resolve('src/lib/components/examples');
 
 const writeFlag = process.argv.includes('-w');
 const writeArgIdx = process.argv.indexOf('-w');
@@ -33,23 +33,23 @@ function toName(id: string): string {
 }
 
 async function scanExamples(): Promise<void> {
-    const categories = await fs.readdir(EXAMPLES_DIR, { withFileTypes: true });
+    const categories = await fs.readdir(SOURCE_DIR, { withFileTypes: true });
     const components: RegistryParticuleData = {};
 
     for (const entry of categories.sort((a, b) => a.name.localeCompare(b.name))) {
         if (!entry.isDirectory()) continue;
 
         const category = entry.name;
-        const categoryPath = path.join(EXAMPLES_DIR, category);
+        const categoryPath = path.join(SOURCE_DIR, category);
         const files = (await fs.readdir(categoryPath)).sort();
-        const meta = userRegistry[category];
 
         for (const file of files) {
             if (!file.endsWith('.svelte')) continue;
 
             const id = file.replace(/\.svelte$/, '');
+            console.log(id)
+            const meta = userRegistry[id];
             const component: RegistryParticuleEntry = {
-
                 name: toName(id),
                 description: meta?.description ?? '',
                 file: `examples/${category}/${file}`,

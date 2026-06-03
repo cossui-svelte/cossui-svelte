@@ -19,36 +19,36 @@ export interface RegistryParticuleEntry {
 export type RegistryParticuleData = Record<string, RegistryParticuleEntry>;
 export const particules: RegistryParticuleData = {
   'accordion-01': {
-    description: '',
+    description: 'Basic accordion',
     file: 'examples/accordion/accordion-01.svelte',
     name: 'Accordion 01',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['accordion']
   },
   'accordion-02': {
-    description: '',
+    description: 'Accordion with one panel open',
     file: 'examples/accordion/accordion-02.svelte',
     name: 'Accordion 02',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['accordion']
   },
   'accordion-03': {
-    description: '',
+    description: 'Accordion allowing multiple panels open',
     file: 'examples/accordion/accordion-03.svelte',
     name: 'Accordion 03',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['accordion']
   },
   'accordion-04': {
-    description: '',
+    description: 'Controlled accordion',
     file: 'examples/accordion/accordion-04.svelte',
     name: 'Accordion 04',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['accordion']
   },
   'accordion-05': {
     description: '',
@@ -179,60 +179,60 @@ export const particules: RegistryParticuleData = {
     tags: []
   },
   'alert-01': {
-    description: '',
+    description: 'Basic alert',
     file: 'examples/alert/alert-01.svelte',
     name: 'Alert 01',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['alert']
   },
   'alert-02': {
-    description: '',
+    description: 'Alert with icon',
     file: 'examples/alert/alert-02.svelte',
     name: 'Alert 02',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['alert']
   },
   'alert-03': {
-    description: '',
+    description: 'Alert with icon and action buttons',
     file: 'examples/alert/alert-03.svelte',
     name: 'Alert 03',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['alert']
   },
   'alert-04': {
-    description: '',
+    description: 'Info alert',
     file: 'examples/alert/alert-04.svelte',
     name: 'Alert 04',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['alert', 'info']
   },
   'alert-05': {
-    description: '',
+    description: 'Success alert',
     file: 'examples/alert/alert-05.svelte',
     name: 'Alert 05',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['alert', 'success']
   },
   'alert-06': {
-    description: '',
+    description: 'Warning alert',
     file: 'examples/alert/alert-06.svelte',
     name: 'Alert 06',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['alert', 'warning']
   },
   'alert-07': {
-    description: '',
+    description: 'Error alert',
     file: 'examples/alert/alert-07.svelte',
     name: 'Alert 07',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['alert', 'error']
   },
   'alert-08': {
     description: '',
@@ -275,116 +275,116 @@ export const particules: RegistryParticuleData = {
     tags: []
   },
   'avatar-01': {
-    description: '',
+    description: 'Avatar with image and fallback',
     file: 'examples/avatar/avatar-01.svelte',
     name: 'Avatar 01',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['avatar']
   },
   'avatar-02': {
-    description: '',
+    description: 'Fallback-only avatar',
     file: 'examples/avatar/avatar-02.svelte',
     name: 'Avatar 02',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['avatar']
   },
   'avatar-03': {
-    description: '',
+    description: 'Avatars with different sizes',
     file: 'examples/avatar/avatar-03.svelte',
     name: 'Avatar 03',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['avatar']
   },
   'avatar-04': {
-    description: '',
+    description: 'Avatars with different radii',
     file: 'examples/avatar/avatar-04.svelte',
     name: 'Avatar 04',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['avatar']
   },
   'avatar-05': {
-    description: '',
+    description: 'Overlapping avatar group',
     file: 'examples/avatar/avatar-05.svelte',
     name: 'Avatar 05',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['avatar']
   },
   'avatar-06': {
-    description: '',
+    description: 'Avatar with user icon fallback',
     file: 'examples/avatar/avatar-06.svelte',
     name: 'Avatar 06',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['avatar']
   },
   'avatar-07': {
-    description: '',
+    description: 'Avatar with emerald status dot',
     file: 'examples/avatar/avatar-07.svelte',
     name: 'Avatar 07',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['avatar']
   },
   'avatar-08': {
-    description: '',
+    description: 'Avatar with muted status dot',
     file: 'examples/avatar/avatar-08.svelte',
     name: 'Avatar 08',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['avatar']
   },
   'avatar-09': {
-    description: '',
+    description: 'Rounded avatar with top-right emerald status',
     file: 'examples/avatar/avatar-09.svelte',
     name: 'Avatar 09',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['avatar']
   },
   'avatar-10': {
-    description: '',
+    description: 'Avatar with notification badge',
     file: 'examples/avatar/avatar-10.svelte',
     name: 'Avatar 10',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['avatar']
   },
   'avatar-11': {
-    description: '',
+    description: 'Rounded avatar with notification badge',
     file: 'examples/avatar/avatar-11.svelte',
     name: 'Avatar 11',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['avatar']
   },
   'avatar-12': {
-    description: '',
+    description: 'Avatar with verified badge',
     file: 'examples/avatar/avatar-12.svelte',
     name: 'Avatar 12',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['avatar']
   },
   'avatar-13': {
-    description: '',
+    description: 'Small overlapping avatar group',
     file: 'examples/avatar/avatar-13.svelte',
     name: 'Avatar 13',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['avatar']
   },
   'avatar-14': {
-    description: '',
+    description: 'Large overlapping avatar group',
     file: 'examples/avatar/avatar-14.svelte',
     name: 'Avatar 14',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['avatar']
   },
   'avatar-15': {
     description: '',
@@ -459,108 +459,108 @@ export const particules: RegistryParticuleData = {
     tags: []
   },
   'badge-01': {
-    description: '',
+    description: 'Basic badge',
     file: 'examples/badge/badge-01.svelte',
     name: 'Badge 01',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['badge']
   },
   'badge-02': {
-    description: '',
+    description: 'Outline badge',
     file: 'examples/badge/badge-02.svelte',
     name: 'Badge 02',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['badge']
   },
   'badge-03': {
-    description: '',
+    description: 'Secondary badge',
     file: 'examples/badge/badge-03.svelte',
     name: 'Badge 03',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['badge']
   },
   'badge-04': {
-    description: '',
+    description: 'Destructive badge',
     file: 'examples/badge/badge-04.svelte',
     name: 'Badge 04',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['badge', 'error']
   },
   'badge-05': {
-    description: '',
+    description: 'Info badge',
     file: 'examples/badge/badge-05.svelte',
     name: 'Badge 05',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['badge', 'info']
   },
   'badge-06': {
-    description: '',
+    description: 'Success badge',
     file: 'examples/badge/badge-06.svelte',
     name: 'Badge 06',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['badge', 'success']
   },
   'badge-07': {
-    description: '',
+    description: 'Warning badge',
     file: 'examples/badge/badge-07.svelte',
     name: 'Badge 07',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['badge', 'warning']
   },
   'badge-08': {
-    description: '',
+    description: 'Error badge',
     file: 'examples/badge/badge-08.svelte',
     name: 'Badge 08',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['badge', 'error']
   },
   'badge-09': {
-    description: '',
+    description: 'Small badge',
     file: 'examples/badge/badge-09.svelte',
     name: 'Badge 09',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['badge']
   },
   'badge-10': {
-    description: '',
+    description: 'Large badge',
     file: 'examples/badge/badge-10.svelte',
     name: 'Badge 10',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['badge']
   },
   'badge-11': {
-    description: '',
+    description: 'Badge with icon',
     file: 'examples/badge/badge-11.svelte',
     name: 'Badge 11',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['badge']
   },
   'badge-12': {
-    description: '',
+    description: 'Badge with link',
     file: 'examples/badge/badge-12.svelte',
     name: 'Badge 12',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['badge']
   },
   'badge-13': {
-    description: '',
+    description: 'Badge with count',
     file: 'examples/badge/badge-13.svelte',
     name: 'Badge 13',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['badge']
   },
   'banner-01': {
     description: '',
@@ -659,60 +659,60 @@ export const particules: RegistryParticuleData = {
     tags: []
   },
   'breadcrumb-01': {
-    description: '',
+    description: 'Breadcrumb with menu example',
     file: 'examples/breadcrumb/breadcrumb-01.svelte',
     name: 'Breadcrumb 01',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['breadcrumb', 'dropdown', 'menu']
   },
   'breadcrumb-02': {
-    description: '',
+    description: 'Breadcrumb with custom separator',
     file: 'examples/breadcrumb/breadcrumb-02.svelte',
     name: 'Breadcrumb 02',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['breadcrumb']
   },
   'breadcrumb-03': {
-    description: '',
+    description: 'Breadcrumb with home icon for home link only',
     file: 'examples/breadcrumb/breadcrumb-03.svelte',
     name: 'Breadcrumb 03',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['breadcrumb']
   },
   'breadcrumb-04': {
-    description: '',
+    description: 'Breadcrumb with folders icon menu',
     file: 'examples/breadcrumb/breadcrumb-04.svelte',
     name: 'Breadcrumb 04',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['breadcrumb', 'dropdown', 'menu']
   },
   'breadcrumb-05': {
-    description: '',
+    description: 'Breadcrumb with icons before text',
     file: 'examples/breadcrumb/breadcrumb-05.svelte',
     name: 'Breadcrumb 05',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['breadcrumb']
   },
   'breadcrumb-06': {
-    description: '',
+    description: 'Breadcrumb with dot separators',
     file: 'examples/breadcrumb/breadcrumb-06.svelte',
     name: 'Breadcrumb 06',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['breadcrumb']
   },
   'breadcrumb-07': {
-    description: '',
+    description: 'Breadcrumb with select dropdown',
     file: 'examples/breadcrumb/breadcrumb-07.svelte',
     name: 'Breadcrumb 07',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['breadcrumb', 'select']
   },
   'breadcrumb-08': {
     description: '',
@@ -723,196 +723,196 @@ export const particules: RegistryParticuleData = {
     tags: []
   },
   'button-01': {
-    description: '',
+    description: 'Default button',
     file: 'examples/button/button-01.svelte',
     name: 'Button 01',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button']
   },
   'button-02': {
-    description: '',
+    description: 'Outline button',
     file: 'examples/button/button-02.svelte',
     name: 'Button 02',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button']
   },
   'button-03': {
-    description: '',
+    description: 'Secondary button',
     file: 'examples/button/button-03.svelte',
     name: 'Button 03',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button']
   },
   'button-04': {
-    description: '',
+    description: 'Destructive button',
     file: 'examples/button/button-04.svelte',
     name: 'Button 04',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button']
   },
   'button-05': {
-    description: '',
+    description: 'Destructive outline button',
     file: 'examples/button/button-05.svelte',
     name: 'Button 05',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button']
   },
   'button-06': {
-    description: '',
+    description: 'Ghost button',
     file: 'examples/button/button-06.svelte',
     name: 'Button 06',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button']
   },
   'button-07': {
-    description: '',
+    description: 'Link button',
     file: 'examples/button/button-07.svelte',
     name: 'Button 07',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button']
   },
   'button-08': {
-    description: '',
+    description: 'Extra-small button',
     file: 'examples/button/button-08.svelte',
     name: 'Button 08',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button']
   },
   'button-09': {
-    description: '',
+    description: 'Small button',
     file: 'examples/button/button-09.svelte',
     name: 'Button 09',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button']
   },
   'button-10': {
-    description: '',
+    description: 'Large button',
     file: 'examples/button/button-10.svelte',
     name: 'Button 10',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button']
   },
   'button-11': {
-    description: '',
+    description: 'Extra-large button',
     file: 'examples/button/button-11.svelte',
     name: 'Button 11',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button']
   },
   'button-12': {
-    description: '',
+    description: 'Disabled button',
     file: 'examples/button/button-12.svelte',
     name: 'Button 12',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button', 'disabled']
   },
   'button-13': {
-    description: '',
+    description: 'Icon button',
     file: 'examples/button/button-13.svelte',
     name: 'Button 13',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button']
   },
   'button-14': {
-    description: '',
+    description: 'Small icon button',
     file: 'examples/button/button-14.svelte',
     name: 'Button 14',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button']
   },
   'button-15': {
-    description: '',
+    description: 'Large icon button',
     file: 'examples/button/button-15.svelte',
     name: 'Button 15',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button']
   },
   'button-16': {
-    description: '',
+    description: 'Button with icon',
     file: 'examples/button/button-16.svelte',
     name: 'Button 16',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button']
   },
   'button-17': {
-    description: '',
+    description: 'Link rendered as button',
     file: 'examples/button/button-17.svelte',
     name: 'Button 17',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button']
   },
   'button-18': {
-    description: '',
+    description: 'Custom loading button with manual Spinner',
     file: 'examples/button/button-18.svelte',
     name: 'Button 18',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button', 'loading']
   },
   'button-19': {
-    description: '',
+    description: 'Expandable show more/less toggle button',
     file: 'examples/button/button-19.svelte',
     name: 'Button 19',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button']
   },
   'button-20': {
-    description: '',
+    description: 'Back link button with chevron',
     file: 'examples/button/button-20.svelte',
     name: 'Button 20',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button']
   },
   'button-21': {
-    description: '',
+    description: 'Card-style button with heading and description',
     file: 'examples/button/button-21.svelte',
     name: 'Button 21',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button']
   },
   'button-22': {
-    description: '',
+    description: 'Directional pad control buttons',
     file: 'examples/button/button-22.svelte',
     name: 'Button 22',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button']
   },
   'button-23': {
-    description: '',
+    description: 'Outline like button with count',
     file: 'examples/button/button-23.svelte',
     name: 'Button 23',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button']
   },
   'button-24': {
-    description: '',
+    description: 'Social login icon buttons',
     file: 'examples/button/button-24.svelte',
     name: 'Button 24',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button']
   },
   'button-25': {
     description: '',
@@ -923,132 +923,132 @@ export const particules: RegistryParticuleData = {
     tags: []
   },
   'button-26': {
-    description: '',
+    description: 'Star button with count badge',
     file: 'examples/button/button-26.svelte',
     name: 'Button 26',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button']
   },
   'button-27': {
-    description: '',
+    description: 'Button group with QR code icon and sign in',
     file: 'examples/button/button-27.svelte',
     name: 'Button 27',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button', 'group']
   },
   'button-28': {
-    description: '',
+    description: 'Button with avatar',
     file: 'examples/button/button-28.svelte',
     name: 'Button 28',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button', 'avatar']
   },
   'button-29': {
-    description: '',
+    description: 'Pill-shaped button with rounded-full styling',
     file: 'examples/button/button-29.svelte',
     name: 'Button 29',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button']
   },
   'button-30': {
-    description: '',
+    description: 'Button with animated arrow on hover',
     file: 'examples/button/button-30.svelte',
     name: 'Button 30',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button']
   },
   'button-31': {
-    description: '',
+    description: 'Button with keyboard shortcut indicator',
     file: 'examples/button/button-31.svelte',
     name: 'Button 31',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button', 'kbd']
   },
   'button-32': {
-    description: '',
+    description: 'Button with notification badge',
     file: 'examples/button/button-32.svelte',
     name: 'Button 32',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button', 'badge']
   },
   'button-33': {
-    description: '',
+    description: 'Paired buttons (Cancel/Save)',
     file: 'examples/button/button-33.svelte',
     name: 'Button 33',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button']
   },
   'button-34': {
-    description: '',
+    description: 'Button with animated status dot',
     file: 'examples/button/button-34.svelte',
     name: 'Button 34',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button']
   },
   'button-35': {
-    description: '',
+    description: 'Icon-only copy button with feedback',
     file: 'examples/button/button-35.svelte',
     name: 'Button 35',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button']
   },
   'button-36': {
-    description: '',
+    description: 'Copy button with feedback',
     file: 'examples/button/button-36.svelte',
     name: 'Button 36',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button']
   },
   'button-37': {
-    description: '',
+    description: 'Rotating icon button (FAB-style toggle)',
     file: 'examples/button/button-37.svelte',
     name: 'Button 37',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button']
   },
   'button-38': {
-    description: '',
+    description: 'Social login buttons (Google, X, GitHub)',
     file: 'examples/button/button-38.svelte',
     name: 'Button 38',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button']
   },
   'button-39': {
-    description: '',
+    description: 'Hamburger menu button with animated icon',
     file: 'examples/button/button-39.svelte',
     name: 'Button 39',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button']
   },
   'button-40': {
-    description: '',
+    description: 'Download button with progress and cancel action',
     file: 'examples/button/button-40.svelte',
     name: 'Button 40',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button', 'group', 'tooltip', 'toast']
   },
   'button-41': {
-    description: '',
+    description: 'Button using the built-in loading prop',
     file: 'examples/button/button-41.svelte',
     name: 'Button 41',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button', 'loading']
   },
   'button-42': {
     description: '',
@@ -1131,44 +1131,44 @@ export const particules: RegistryParticuleData = {
     tags: []
   },
   'checkbox-01': {
-    description: '',
+    description: 'Basic checkbox',
     file: 'examples/checkbox/checkbox-01.svelte',
     name: 'Checkbox 01',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['checkbox']
   },
   'checkbox-02': {
-    description: '',
+    description: 'Disabled checkbox',
     file: 'examples/checkbox/checkbox-02.svelte',
     name: 'Checkbox 02',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['checkbox', 'disabled']
   },
   'checkbox-03': {
-    description: '',
+    description: 'Checkbox with description',
     file: 'examples/checkbox/checkbox-03.svelte',
     name: 'Checkbox 03',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['checkbox']
   },
   'checkbox-04': {
-    description: '',
+    description: 'Card-style checkbox',
     file: 'examples/checkbox/checkbox-04.svelte',
     name: 'Checkbox 04',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['checkbox']
   },
   'checkbox-05': {
-    description: '',
+    description: 'Checkbox form',
     file: 'examples/checkbox/checkbox-05.svelte',
     name: 'Checkbox 05',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['checkbox', 'form']
   },
   'checkbox-06': {
     description: '',
@@ -1275,52 +1275,52 @@ export const particules: RegistryParticuleData = {
     tags: []
   },
   'dialog-01': {
-    description: '',
+    description: 'Dialog with form',
     file: 'examples/dialog/dialog-01.svelte',
     name: 'Dialog 01',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['dialog']
   },
   'dialog-02': {
-    description: '',
+    description: 'Dialog opened from menu',
     file: 'examples/dialog/dialog-02.svelte',
     name: 'Dialog 02',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['dialog', 'dropdown', 'menu']
   },
   'dialog-03': {
-    description: '',
+    description: 'Nested dialogs',
     file: 'examples/dialog/dialog-03.svelte',
     name: 'Dialog 03',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['dialog']
   },
   'dialog-04': {
-    description: '',
+    description: 'Dialog with close confirmation',
     file: 'examples/dialog/dialog-04.svelte',
     name: 'Dialog 04',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['alert dialog', 'dialog']
   },
   'dialog-05': {
-    description: '',
+    description: 'Dialog with long content',
     file: 'examples/dialog/dialog-05.svelte',
     name: 'Dialog 05',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['dialog']
   },
   'dialog-06': {
-    description: '',
+    description: 'Dialog with bare footer',
     file: 'examples/dialog/dialog-06.svelte',
     name: 'Dialog 06',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['dialog']
   },
   'dialog-07': {
     description: '',
@@ -1443,164 +1443,164 @@ export const particules: RegistryParticuleData = {
     tags: []
   },
   'empty-01': {
-    description: '',
+    description: 'Empty state with icon and actions',
     file: 'examples/empty/empty-01.svelte',
     name: 'Empty 01',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['empty state']
   },
   'input-01': {
-    description: '',
+    description: 'Basic input',
     file: 'examples/input/input-01.svelte',
     name: 'Input 01',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['input']
   },
   'input-02': {
-    description: '',
+    description: 'Small input',
     file: 'examples/input/input-02.svelte',
     name: 'Input 02',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['input']
   },
   'input-03': {
-    description: '',
+    description: 'Large input',
     file: 'examples/input/input-03.svelte',
     name: 'Input 03',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['input']
   },
   'input-04': {
-    description: '',
+    description: 'Disabled input',
     file: 'examples/input/input-04.svelte',
     name: 'Input 04',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['input']
   },
   'input-05': {
-    description: '',
+    description: 'File input',
     file: 'examples/input/input-05.svelte',
     name: 'Input 05',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['input']
   },
   'input-06': {
-    description: '',
+    description: 'Input with label',
     file: 'examples/input/input-06.svelte',
     name: 'Input 06',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['input', 'label']
   },
   'input-07': {
-    description: '',
+    description: 'Input with button using Group',
     file: 'examples/input/input-07.svelte',
     name: 'Input 07',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button', 'group', 'input']
   },
   'input-08': {
-    description: '',
+    description: 'Input with start text and end tooltip',
     file: 'examples/input/input-08.svelte',
     name: 'Input 08',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button', 'input', 'input group', 'popover']
   },
   'input-09': {
-    description: '',
+    description: 'Password input with toggle visibility',
     file: 'examples/input/input-09.svelte',
     name: 'Input 09',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button', 'input', 'input group', 'tooltip']
   },
   'input-10': {
-    description: '',
+    description: 'Input group mimicking a URL bar',
     file: 'examples/input/input-10.svelte',
     name: 'Input 10',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button', 'input', 'input group', 'popover']
   },
   'input-11': {
-    description: '',
+    description: 'Input group with keyboard shortcut',
     file: 'examples/input/input-11.svelte',
     name: 'Input 11',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['input', 'input group', 'kbd', 'search']
   },
   'input-12': {
-    description: '',
+    description: 'Input group with start loading spinner',
     file: 'examples/input/input-12.svelte',
     name: 'Input 12',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['input', 'input group', 'spinner', 'loading']
   },
   'input-13': {
-    description: '',
+    description: 'Input with label and required indicator',
     file: 'examples/input/input-13.svelte',
     name: 'Input 13',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['input', 'label']
   },
   'input-14': {
-    description: '',
+    description: 'Input with optional label',
     file: 'examples/input/input-14.svelte',
     name: 'Input 14',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['input', 'label']
   },
   'input-15': {
-    description: '',
+    description: 'Input with custom border and background',
     file: 'examples/input/input-15.svelte',
     name: 'Input 15',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['input']
   },
   'input-16': {
-    description: '',
+    description: 'Input group with end loading spinner',
     file: 'examples/input/input-16.svelte',
     name: 'Input 16',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['input', 'input group', 'spinner', 'loading']
   },
   'input-17': {
-    description: '',
+    description: 'Read-only input',
     file: 'examples/input/input-17.svelte',
     name: 'Input 17',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['input']
   },
   'input-18': {
-    description: '',
+    description: 'Input with characters remaining counter',
     file: 'examples/input/input-18.svelte',
     name: 'Input 18',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['field', 'input']
   },
   'input-19': {
-    description: '',
+    description: 'Pill-shaped input',
     file: 'examples/input/input-19.svelte',
     name: 'Input 19',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['input']
   },
   'input-20': {
     description: '',
@@ -2107,28 +2107,28 @@ export const particules: RegistryParticuleData = {
     tags: []
   },
   'pagination-01': {
-    description: '',
+    description: 'Pagination example',
     file: 'examples/pagination/pagination-01.svelte',
     name: 'Pagination 01',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['pagination']
   },
   'pagination-02': {
-    description: '',
+    description: 'Pagination with previous and next buttons only',
     file: 'examples/pagination/pagination-02.svelte',
     name: 'Pagination 02',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['pagination']
   },
   'pagination-03': {
-    description: '',
+    description: 'Pagination with select, and previous and next buttons',
     file: 'examples/pagination/pagination-03.svelte',
     name: 'Pagination 03',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['pagination', 'select']
   },
   'pagination-04': {
     description: '',
@@ -2203,28 +2203,28 @@ export const particules: RegistryParticuleData = {
     tags: []
   },
   'popover-01': {
-    description: '',
+    description: 'Popover with a form',
     file: 'examples/popover/popover-01.svelte',
     name: 'Popover 01',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button', 'field', 'form', 'popover', 'textarea']
   },
   'popover-02': {
-    description: '',
+    description: 'Popover with close button',
     file: 'examples/popover/popover-02.svelte',
     name: 'Popover 02',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button', 'popover']
   },
   'popover-03': {
-    description: '',
+    description: 'Animated popovers',
     file: 'examples/popover/popover-03.svelte',
     name: 'Popover 03',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['avatar', 'button', 'popover']
   },
   'popover-04': {
     description: '',
@@ -2427,108 +2427,108 @@ export const particules: RegistryParticuleData = {
     tags: []
   },
   'select-01': {
-    description: '',
+    description: 'Basic select',
     file: 'examples/select/select-01.svelte',
     name: 'Select 01',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['select']
   },
   'select-02': {
-    description: '',
+    description: 'Small select',
     file: 'examples/select/select-02.svelte',
     name: 'Select 02',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['select']
   },
   'select-03': {
-    description: '',
+    description: 'Large select',
     file: 'examples/select/select-03.svelte',
     name: 'Select 03',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['select']
   },
   'select-05': {
-    description: '',
+    description: 'Select without item alignment',
     file: 'examples/select/select-05.svelte',
     name: 'Select 05',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['select']
   },
   'select-15': {
-    description: '',
+    description: 'Pill-shaped select trigger',
     file: 'examples/select/select-15.svelte',
     name: 'Select 15',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['select']
   },
   'select-16': {
-    description: '',
+    description: 'Select with left text label',
     file: 'examples/select/select-16.svelte',
     name: 'Select 16',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['select']
   },
   'select-17': {
-    description: '',
+    description: 'Select with country flags',
     file: 'examples/select/select-17.svelte',
     name: 'Select 17',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['select']
   },
   'select-18': {
-    description: '',
+    description: 'Select with description in options only',
     file: 'examples/select/select-18.svelte',
     name: 'Select 18',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['select']
   },
   'select-19': {
-    description: '',
+    description: 'Select with avatars',
     file: 'examples/select/select-19.svelte',
     name: 'Select 19',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['select', 'avatar']
   },
   'select-20': {
-    description: '',
+    description: 'Rich select with avatars and usernames',
     file: 'examples/select/select-20.svelte',
     name: 'Select 20',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['select', 'avatar']
   },
   'select-21': {
-    description: '',
+    description: 'Auto width select',
     file: 'examples/select/select-21.svelte',
     name: 'Select 21',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['select']
   },
   'select-22': {
-    description: '',
+    description: 'Select with custom border and background',
     file: 'examples/select/select-22.svelte',
     name: 'Select 22',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['select']
   },
   'select-23': {
-    description: '',
+    description: 'Select with label',
     file: 'examples/select/select-23.svelte',
     name: 'Select 23',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['select']
   },
   'select-24': {
     description: '',
@@ -2707,188 +2707,188 @@ export const particules: RegistryParticuleData = {
     tags: []
   },
   'slider-01': {
-    description: '',
+    description: 'Basic slider',
     file: 'examples/slider/slider-01.svelte',
     name: 'Slider 01',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['slider']
   },
   'slider-02': {
-    description: '',
+    description: 'Slider with label and value',
     file: 'examples/slider/slider-02.svelte',
     name: 'Slider 02',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['slider']
   },
   'slider-03': {
-    description: '',
+    description: 'Disabled slider',
     file: 'examples/slider/slider-03.svelte',
     name: 'Slider 03',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['slider', 'disabled']
   },
   'slider-04': {
-    description: '',
+    description: 'Slider with reference labels',
     file: 'examples/slider/slider-04.svelte',
     name: 'Slider 04',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['slider']
   },
   'slider-05': {
-    description: '',
+    description: 'Slider with ticks',
     file: 'examples/slider/slider-05.svelte',
     name: 'Slider 05',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['slider']
   },
   'slider-06': {
-    description: '',
+    description: 'Slider with labels above',
     file: 'examples/slider/slider-06.svelte',
     name: 'Slider 06',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['slider']
   },
   'slider-07': {
-    description: '',
+    description: 'Range slider',
     file: 'examples/slider/slider-07.svelte',
     name: 'Slider 07',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['slider']
   },
   'slider-08': {
-    description: '',
+    description: 'Slider with 3 thumbs',
     file: 'examples/slider/slider-08.svelte',
     name: 'Slider 08',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['slider']
   },
   'slider-09': {
-    description: '',
+    description: 'Range slider with collision behavior none',
     file: 'examples/slider/slider-09.svelte',
     name: 'Slider 09',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['slider']
   },
   'slider-10': {
-    description: '',
+    description: 'Range slider with collision behavior swap',
     file: 'examples/slider/slider-10.svelte',
     name: 'Slider 10',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['slider']
   },
   'slider-11': {
-    description: '',
+    description: 'Slider with icons',
     file: 'examples/slider/slider-11.svelte',
     name: 'Slider 11',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['slider']
   },
   'slider-12': {
-    description: '',
+    description: 'Slider with input',
     file: 'examples/slider/slider-12.svelte',
     name: 'Slider 12',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['slider', 'number field']
   },
   'slider-13': {
-    description: '',
+    description: 'Range slider with inputs',
     file: 'examples/slider/slider-13.svelte',
     name: 'Slider 13',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['slider', 'number field']
   },
   'slider-14': {
-    description: '',
+    description: 'Slider with increment and decrement buttons',
     file: 'examples/slider/slider-14.svelte',
     name: 'Slider 14',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['slider', 'button']
   },
   'slider-15': {
-    description: '',
+    description: 'Price range slider',
     file: 'examples/slider/slider-15.svelte',
     name: 'Slider 15',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['slider']
   },
   'slider-16': {
-    description: '',
+    description: 'Emoji rating slider',
     file: 'examples/slider/slider-16.svelte',
     name: 'Slider 16',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['slider']
   },
   'slider-17': {
-    description: '',
+    description: 'Vertical slider',
     file: 'examples/slider/slider-17.svelte',
     name: 'Slider 17',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['slider']
   },
   'slider-18': {
-    description: '',
+    description: 'Vertical range slider',
     file: 'examples/slider/slider-18.svelte',
     name: 'Slider 18',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['slider']
   },
   'slider-19': {
-    description: '',
+    description: 'Vertical slider with input',
     file: 'examples/slider/slider-19.svelte',
     name: 'Slider 19',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['slider', 'number field']
   },
   'slider-20': {
-    description: '',
+    description: 'Equalizer with vertical sliders',
     file: 'examples/slider/slider-20.svelte',
     name: 'Slider 20',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['slider']
   },
   'slider-21': {
-    description: '',
+    description: 'Object position sliders with reset',
     file: 'examples/slider/slider-21.svelte',
     name: 'Slider 21',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['slider', 'number field', 'button']
   },
   'slider-22': {
-    description: '',
+    description: 'Price slider with histogram',
     file: 'examples/slider/slider-22.svelte',
     name: 'Slider 22',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['slider', 'number field', 'input group', 'button', 'filter']
   },
   'slider-23': {
-    description: '',
+    description: 'Slider in form',
     file: 'examples/slider/slider-23.svelte',
     name: 'Slider 23',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['slider', 'form']
   },
   'slider-24': {
     description: '',
@@ -2923,52 +2923,52 @@ export const particules: RegistryParticuleData = {
     tags: []
   },
   'switch-01': {
-    description: '',
+    description: 'Basic switch',
     file: 'examples/switch/switch-01.svelte',
     name: 'Switch 01',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['switch']
   },
   'switch-02': {
-    description: '',
+    description: 'Disabled switch',
     file: 'examples/switch/switch-02.svelte',
     name: 'Switch 02',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['switch']
   },
   'switch-03': {
-    description: '',
+    description: 'Switch with description',
     file: 'examples/switch/switch-03.svelte',
     name: 'Switch 03',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['switch']
   },
   'switch-04': {
-    description: '',
+    description: 'Switch card',
     file: 'examples/switch/switch-04.svelte',
     name: 'Switch 04',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['switch']
   },
   'switch-05': {
-    description: '',
+    description: 'Switch in form',
     file: 'examples/switch/switch-05.svelte',
     name: 'Switch 05',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['switch']
   },
   'switch-06': {
-    description: '',
+    description: 'Custom size switch',
     file: 'examples/switch/switch-06.svelte',
     name: 'Switch 06',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['switch']
   },
   'switch-07': {
     description: '',
@@ -3219,124 +3219,124 @@ export const particules: RegistryParticuleData = {
     tags: []
   },
   'textarea-01': {
-    description: '',
+    description: 'Basic textarea',
     file: 'examples/textarea/textarea-01.svelte',
     name: 'Textarea 01',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['textarea']
   },
   'textarea-02': {
-    description: '',
+    description: 'Small textarea',
     file: 'examples/textarea/textarea-02.svelte',
     name: 'Textarea 02',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['textarea']
   },
   'textarea-03': {
-    description: '',
+    description: 'Large textarea',
     file: 'examples/textarea/textarea-03.svelte',
     name: 'Textarea 03',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['textarea']
   },
   'textarea-04': {
-    description: '',
+    description: 'Disabled textarea',
     file: 'examples/textarea/textarea-04.svelte',
     name: 'Textarea 04',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['textarea']
   },
   'textarea-05': {
-    description: '',
+    description: 'Textarea with label',
     file: 'examples/textarea/textarea-05.svelte',
     name: 'Textarea 05',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['textarea']
   },
   'textarea-06': {
-    description: '',
+    description: 'Textarea in form',
     file: 'examples/textarea/textarea-06.svelte',
     name: 'Textarea 06',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['textarea']
   },
   'textarea-07': {
-    description: '',
+    description: 'Textarea with label and required indicator',
     file: 'examples/textarea/textarea-07.svelte',
     name: 'Textarea 07',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['label', 'textarea']
   },
   'textarea-08': {
-    description: '',
+    description: 'Textarea with optional label',
     file: 'examples/textarea/textarea-08.svelte',
     name: 'Textarea 08',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['label', 'textarea']
   },
   'textarea-09': {
-    description: '',
+    description: 'Textarea with custom border and background',
     file: 'examples/textarea/textarea-09.svelte',
     name: 'Textarea 09',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['textarea']
   },
   'textarea-10': {
-    description: '',
+    description: 'Read-only textarea',
     file: 'examples/textarea/textarea-10.svelte',
     name: 'Textarea 10',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['textarea']
   },
   'textarea-11': {
-    description: '',
+    description: 'Textarea with characters remaining counter',
     file: 'examples/textarea/textarea-11.svelte',
     name: 'Textarea 11',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['field', 'textarea']
   },
   'textarea-12': {
-    description: '',
+    description: 'Textarea field with required indicator',
     file: 'examples/textarea/textarea-12.svelte',
     name: 'Textarea 12',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['field', 'label', 'textarea']
   },
   'textarea-13': {
-    description: '',
+    description: 'Shorter textarea with fixed height',
     file: 'examples/textarea/textarea-13.svelte',
     name: 'Textarea 13',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['textarea']
   },
   'textarea-14': {
-    description: '',
+    description: 'Textarea with button aligned right',
     file: 'examples/textarea/textarea-14.svelte',
     name: 'Textarea 14',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button', 'textarea']
   },
   'textarea-15': {
-    description: '',
+    description: 'Textarea with button aligned left',
     file: 'examples/textarea/textarea-15.svelte',
     name: 'Textarea 15',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['button', 'textarea']
   },
   'textarea-16': {
     description: '',
@@ -3467,36 +3467,36 @@ export const particules: RegistryParticuleData = {
     tags: []
   },
   'tooltip-01': {
-    description: '',
+    description: 'Basic tooltip',
     file: 'examples/tooltip/tooltip-01.svelte',
     name: 'Tooltip 01',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['tooltip']
   },
   'tooltip-02': {
-    description: '',
+    description: 'Grouped tooltips',
     file: 'examples/tooltip/tooltip-02.svelte',
     name: 'Tooltip 02',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['tooltip']
   },
   'tooltip-03': {
-    description: '',
+    description: 'Toggle group animated tooltip',
     file: 'examples/tooltip/tooltip-03.svelte',
     name: 'Tooltip 03',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['tooltip']
   },
   'tooltip-04': {
-    description: '',
+    description: 'Vertical group with animated tooltip',
     file: 'examples/tooltip/tooltip-04.svelte',
     name: 'Tooltip 04',
     npmDependencies: [],
     registryDependencies: [],
-    tags: []
+    tags: ['tooltip']
   },
   'tooltip-05': {
     description: '',
