@@ -71,13 +71,12 @@ export const registryCategories = [
   'success',
   'tag',
   'tanstack',
-  'text editor',
+  'text-editor',
   'time',
   'timezone',
   'upload',
   'validation',
-  'warning',
-  'zod'
+  'warning'
 ] as const;
 
 export type RegistryCategory = (typeof registryCategories)[number];

@@ -3,7 +3,7 @@
 
 import { RegistryParticuleData } from "./createParticuleRegistry";
 
-const registryBlocks: RegistryParticuleData = {
+const userRegistryParticule: RegistryParticuleData = {
 	"p-accordion-1": {
 		tags: ["accordion"],
 		description: "Basic accordion",
@@ -2134,4 +2134,4 @@ const registryBlocks: RegistryParticuleData = {
 };
 
 
-export default registryBlocks;
+export default userRegistryParticule;

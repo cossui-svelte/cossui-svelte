@@ -11,7 +11,7 @@ export function getFormContext<T extends Record<string, unknown>>(): SuperForm<T
   const ctx = getContext<SuperForm<T>>(FORM_KEY);
   if (!ctx) {
     throw new Error(
-      'Coss-ui form context was not found. Wrap your component in a <Form config={form} /> component',
+      'Coss-ui form context was not found. Wrap your component in a <Form config={form} /> component'
     );
   }
   return ctx;
