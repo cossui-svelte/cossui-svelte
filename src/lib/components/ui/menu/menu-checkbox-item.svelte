@@ -38,7 +38,7 @@
       >
         <span
           class="pointer-events-none block aspect-square h-full origin-left rounded-(--thumb-size) bg-background shadow-sm/5 will-change-transform [transition:translate_.15s,border-radius_.15s,scale_.1s_.1s,transform-origin_.15s] in-[[data-slot=menu-checkbox-item][data-state=checked]]:origin-[var(--thumb-size)_50%] in-[[data-slot=menu-checkbox-item][data-state=checked]]:translate-x-[calc(var(--thumb-size)-4px)] in-[[data-slot=menu-checkbox-item]:active]:not-data-disabled:scale-x-110 in-[[data-slot=menu-checkbox-item]:active]:rounded-[var(--thumb-size)/calc(var(--thumb-size)*1.10)]"
-        />
+        ></span>
       </span>
     {:else}
       <span class="-ms-0.5 col-start-1 flex items-center justify-center">

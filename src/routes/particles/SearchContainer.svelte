@@ -7,7 +7,8 @@
 	import { browser } from "$app/environment";
 
 	const uniqueCategories = Array.from(
-		new Set(particles.flatMap((p) => p.categories ?? [])),
+		// new Set(particles.flatMap((p) => p.categories ?? [])),
+		new Set(Object.values(particles).flatMap((p) => p.tags)),
 	).sort((a, b) => getCategorySortOrder(a) - getCategorySortOrder(b));
 
 	const searchItems: SearchItem[] = uniqueCategories.map((category) => ({

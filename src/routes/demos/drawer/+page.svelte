@@ -258,7 +258,7 @@
                             <div class="flex justify-center">
                                 <div
                                     class="size-48 shrink-0 rounded-xl border bg-muted"
-                                />
+                                ></div>
                             </div>
                         </DrawerPanel>
                         <DrawerFooter
@@ -291,7 +291,7 @@
                                         <div class="flex justify-center">
                                             <div
                                                 class="size-32 shrink-0 rounded-full border bg-muted"
-                                            />
+                                            ></div>
                                         </div>
                                     </DrawerPanel>
                                 </DrawerPopup>

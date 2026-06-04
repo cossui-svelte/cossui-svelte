@@ -20,11 +20,11 @@
   {...restProps}
 >
   {#if showIcon}
-    <div class="size-4 rounded-lg" data-sidebar="menu-skeleton-icon" />
+    <div class="size-4 rounded-lg" data-sidebar="menu-skeleton-icon"></div>
   {/if}
   <div
     class="h-4 max-w-(--skeleton-width) flex-1"
     data-sidebar="menu-skeleton-text"
     style="--skeleton-width: {width};"
-  />
+  ></div>
 </div>
