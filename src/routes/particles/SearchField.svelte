@@ -46,8 +46,8 @@
 				continue;
 			}
 			const testValues = [...selectedValues, item.value];
-			const hasMatches = particles.some((p) => {
-				const cats = p.categories ?? [];
+			const hasMatches = Object.values(particles).some((p) => {
+				const cats = p.tags ?? [];
 				return testValues.every((v) => cats.includes(v));
 			});
 			if (hasMatches) enabled.push(item);

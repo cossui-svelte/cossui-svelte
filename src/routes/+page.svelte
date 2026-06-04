@@ -20,7 +20,7 @@
 
   const description = "Built for developers and AI.";
 
-  const particleCount = particles.length;
+  const particleCount = particles.size;
 </script>
 
 <svelte:head>
