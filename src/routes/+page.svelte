@@ -3,7 +3,6 @@
   import PageHeaderHeading from "$lib/components/shared-components/page-header-heading.svelte";
   import PageHeader from "$lib/components/shared-components/page-header.svelte";
   import CategoryThumbnail from "$lib/components/app/category-thumbnails.svelte";
-  import type { PageData } from "./$types";
 
   import { Badge } from "$lib/components/ui/badge";
   import { Button } from "$lib/components/ui/button";
@@ -16,15 +15,12 @@
     CardPanel,
   } from "$lib/components/ui/card";
 
-  import * as categories from "$lib/registry/registry-ui";
-
-  // let { data }: { data: PageData } = $props();
+  import { categories } from "$lib/registry/registry-ui";
+  import { particles } from "$lib/registry/registry-particles";
 
   const description = "Built for developers and AI.";
 
-  // TODO - get this from .. somewhere. the list of new components - will add a New badge
-  const PAGES_NEW: string[] = [];
-  const particleCount = 0;
+  const particleCount = particles.length;
 </script>
 
 <svelte:head>
@@ -34,9 +30,13 @@
   <meta name="description" content={description} />
 </svelte:head>
 
-{#snippet categoryCard(slug: string, name: string, desc: string | undefined)}
+{#snippet categoryCard(
+  slug: string,
+  name: string,
+  desc: string | undefined,
+  isNew: boolean,
+)}
   {@const href = `particles?tags=${slug}`}
-  {@const isNew = PAGES_NEW.includes(href)}
   <CardFrame
     class="after:-inset-1.25 after:-z-1 w-full after:pointer-events-none after:absolute after:rounded-[calc(var(--radius-xl)+4px)] after:border after:border-border/64"
   >
@@ -47,7 +47,7 @@
         </h2>
       </CardFrameTitle>
       <CardFrameDescription class="line-clamp-2 sm:h-[2lh]">
-        <p>{description || "\u00A0"}</p>
+        <p>{desc || "\u00A0"}</p>
       </CardFrameDescription>
     </CardFrameHeader>
     <Card
@@ -93,8 +93,8 @@
     <div
       class="grid gap-6 pt-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 xl:grid-cols-4"
     >
-      {#each Object.entries(categories) as [id, { name, description }] (id)}
-        {@render categoryCard(id, name, description)}
+      {#each Object.entries(categories) as [id, meta]}
+        {@render categoryCard(id, meta.name, meta.description, meta.isnew)}
       {/each}
     </div>
   </div>
