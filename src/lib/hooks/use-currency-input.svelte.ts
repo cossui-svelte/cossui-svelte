@@ -80,7 +80,7 @@ export class CurrencyInput {
 
   #handleInput = (event: Event & { currentTarget: HTMLInputElement }) => {
     const input = event.currentTarget;
-    const cleanedInput = input.value.replace(/[^\d,]/g, '');
+    const cleanedInput = input.value.replace(/[^\d,]/gu, '');
     const cursorPosition = input.selectionStart;
 
     // Handle empty input

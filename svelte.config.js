@@ -28,8 +28,8 @@ const config = {
 
   vitePlugin: {
     exclude: [
-      /\.old$/, // files ending in .old
-      /\.old\// // folders ending in .old
+      /\.old$/u, // files ending in .old
+      /\.old\//u // folders ending in .old
     ]
   }
 };

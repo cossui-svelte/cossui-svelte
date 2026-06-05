@@ -4,10 +4,10 @@ export type PasswordRequirement = {
 };
 
 const DEFAULT_REQUIREMENTS: readonly PasswordRequirement[] = [
-  { regex: /.{8,}/, text: 'At least 8 characters' },
-  { regex: /[0-9]/, text: 'At least 1 number' },
-  { regex: /[a-z]/, text: 'At least 1 lowercase letter' },
-  { regex: /[A-Z]/, text: 'At least 1 uppercase letter' }
+  { regex: /.{8,}/u, text: 'At least 8 characters' },
+  { regex: /[0-9]/u, text: 'At least 1 number' },
+  { regex: /[a-z]/u, text: 'At least 1 lowercase letter' },
+  { regex: /[A-Z]/u, text: 'At least 1 uppercase letter' }
 ] as const;
 
 export class PasswordStrength {

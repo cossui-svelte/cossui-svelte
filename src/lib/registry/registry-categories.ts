@@ -1,6 +1,6 @@
 // All registry categories in display order
 // used during rendering
-export const tagCategories = [
+const tagCategories = [
   // UI components
   'accordion',
   'alert',

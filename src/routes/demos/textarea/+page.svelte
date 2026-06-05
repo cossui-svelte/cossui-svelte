@@ -66,7 +66,7 @@
 </ComponentPreviewTabs>
 <ComponentPreviewTabs>
     <Form config={form} class="flex w-full max-w-64 flex-col gap-4">
-        <Field>
+        <Field name="message">
             <FieldLabel>Message</FieldLabel>
             <Textarea
                 name="message"

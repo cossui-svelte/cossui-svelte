@@ -8,7 +8,7 @@ const componentModules = import.meta.glob('/src/lib/components/*/**/*.svelte');
 function deriveSlug(path: string): string {
   // '/src/lib/components/blog/index.svelte' → 'blog'
   // '/src/lib/components/about/Hero.svelte'  → 'about'
-  const match = path.match(/\/src\/lib\/components\/([^/]+)/);
+  const match = path.match(/\/src\/lib\/components\/([^/]+)/u);
   return match ? match[1] : '';
 }
 
@@ -34,7 +34,7 @@ const STATIC_URLS: Array<{
 ];
 
 export const GET: RequestHandler = ({ url }) => {
-  const origin = url.origin; // e.g. https://example.com
+  const { origin } = url; // e.g. https://example.com
   const today = toW3CDate(new Date());
 
   // ---------------------------------------------------------------------------
