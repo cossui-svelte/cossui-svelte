@@ -8,6 +8,20 @@ import tailwindcss from '@tailwindcss/vite';
 // import { visualizer } from 'rollup-plugin-visualizer';
 import { defineConfig } from 'vite';
 
+// Rolldown doesn't support wildcard package exports (./*.svelte), so we resolve
+// svelte-remixicon subpath imports to the actual dist path ourselves.
+function remixiconResolver() {
+  return {
+    name: 'svelte-remixicon-resolver',
+    resolveId(id: string) {
+      const match = id.match(/^svelte-remixicon\/(Ri\w+\.svelte)$/);
+      if (match) {
+        return path.resolve('./node_modules/svelte-remixicon/dist/icons/', match[1]);
+      }
+    }
+  };
+}
+
 export default defineConfig({
   build: {
     rollupOptions: {
@@ -18,6 +32,7 @@ export default defineConfig({
     exclude: ['@vinejs/vine']
   },
   plugins: [
+    remixiconResolver(),
     tailwindcss(),
     enhancedImages(),
     sveltekit()
