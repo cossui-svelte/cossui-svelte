@@ -47,7 +47,7 @@
     "format": "biome format --write . && biome check . --fix",
     "generate:registry": "tsx scripts/createParticuleRegistry.ts -w src/lib/registry/registry-particles.ts && pnpm tsx scripts/createUiRegistry.ts -w src/lib/registry/registry-ui.ts && pnpm format",
     "generate:registry2": "tsx scripts/createComponentRegistryTypes.ts && pnpm format",
-    "lint:audit": "pnpx knip --max-show-issues 15",
+    "lint:audit": "pnpx knip --max-show-issues 20",
     "lint:typecheck": "tsc --noEmit",
     "optimize:icons": " tsx ./scripts/transformLucideImports.ts"
   },

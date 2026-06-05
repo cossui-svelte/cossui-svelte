@@ -13,4 +13,4 @@ export { default as AutocompleteSeparator } from './autocomplete-separator.svelt
 export { default as AutocompleteStatus } from './autocomplete-status.svelte';
 export { default as AutocompleteTrigger } from './autocomplete-trigger.svelte';
 export { default as AutocompleteValue } from './autocomplete-value.svelte';
-export type { useAutocompleteFilter };
+
