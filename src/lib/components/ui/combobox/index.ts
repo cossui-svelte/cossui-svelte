@@ -17,4 +17,3 @@ export { default as ComboboxSeparator } from './combobox-separator.svelte';
 export { default as ComboboxStatus } from './combobox-status.svelte';
 export { default as ComboboxTrigger } from './combobox-trigger.svelte';
 export { default as ComboboxValue } from './combobox-value.svelte';
-

@@ -17,7 +17,7 @@ export interface RegistryParticuleEntry {
 export type RegistryParticuleData = Record<string, RegistryParticuleEntry>;
 
 
-const SOURCE_DIR = path.resolve('src/lib/components/examples');
+const SOURCE_DIR = path.resolve('src/lib/components/particles');
 
 const writeFlag = process.argv.includes('-w');
 const writeArgIdx = process.argv.indexOf('-w');
@@ -51,7 +51,7 @@ async function scanExamples(): Promise<void> {
             const component: RegistryParticuleEntry = {
                 name: toName(id),
                 description: meta?.description ?? '',
-                file: `examples/${category}/${file}`,
+                file: `particles/${category}/${file}`,
                 tags: meta ? meta.tags : [],
                 npmDependencies: [],
                 registryDependencies: []

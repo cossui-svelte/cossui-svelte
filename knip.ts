@@ -7,7 +7,7 @@ const config = {
     'src/lib/components/ui/**': ['exports', 'types'],
     'src/lib/formsnap/**': ['exports', 'types'],
     'src/lib/varsel/**': ['exports', 'types'],
-    'src/lib/vaul/**': ['exports', 'types'],
+    'src/lib/vaul/**': ['exports', 'types']
   },
 
   paths: {
