@@ -1,15 +1,14 @@
 <script lang="ts">
   import { cn } from "$lib/utils";
   import { Tooltip } from "bits-ui";
+
+  import { buttonVariants } from "$lib/components/ui/button";
+  import { Tabs, TabsList, TabsTab, TabsPanel } from "$lib/components/ui/tabs";
+  import { ScrollArea } from "$lib/components/ui/scroll-area";
+
   import Terminal from "@lucide/svelte/icons/terminal";
   import Copy from "@lucide/svelte/icons/copy";
   import Check from "@lucide/svelte/icons/check";
-  import { buttonVariants } from "$lib/components/ui/button";
-  import Tabs from "$lib/components/ui/tabs/tabs.svelte";
-  import TabsList from "$lib/components/ui/tabs/tabs-list.svelte";
-  import TabsTab from "$lib/components/ui/tabs/tabs-tab.svelte";
-  import TabsPanel from "$lib/components/ui/tabs/tabs-panel.svelte";
-  import { ScrollArea } from "$lib/components/ui/scroll-area";
 
   interface Props {
     __npm__?: string;

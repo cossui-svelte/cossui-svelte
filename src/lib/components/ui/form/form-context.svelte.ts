@@ -1,5 +1,5 @@
 import { getContext, setContext } from 'svelte';
-import type { SuperForm } from 'sveltekit-superforms';
+import { type SuperForm } from 'sveltekit-superforms';
 
 const FORM_KEY = Symbol('cossui.form');
 

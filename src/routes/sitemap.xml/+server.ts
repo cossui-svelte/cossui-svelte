@@ -1,4 +1,4 @@
-import type { RequestHandler } from '@sveltejs/kit';
+import { type RequestHandler } from '@sveltejs/kit';
 
 // Grab all index files (or any .svelte file) inside $lib/components sub-folders.
 // Each key looks like: /src/lib/components/blog/index.svelte

@@ -1,4 +1,4 @@
-import type { TypedResponse } from './types';
+import { type TypedResponse } from './types';
 
 export class RequestClient {
   constructor(readonly fetch: typeof globalThis.fetch = globalThis.fetch) {}

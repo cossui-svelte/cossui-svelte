@@ -9,14 +9,17 @@
 	import CodeBlockCommand from "$lib/components/app/code-block-command.svelte";
 	import CopyRegistry from "$lib/components/app/copy-registry.svelte";
 	import ParticleCardContainer from "./ParticleCardContainer.svelte";
+	import type { RegistryParticuleEntry } from "$lib/registry/registry-particles";
 
-	interface Props {
-		particle: Particle;
+	let {
+		particle,
+		class: className,
+		colSpan,
+	}: {
+		particle: RegistryParticuleEntry;
 		class?: string;
 		colSpan?: number;
-	}
-
-	let { particle, class: className, colSpan }: Props = $props();
+	} = $props();
 
 	const cossuiUrl = "https://coss.ui/";
 </script>

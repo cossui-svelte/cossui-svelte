@@ -1,4 +1,4 @@
-import type { Handle } from '@sveltejs/kit';
+import { type Handle } from '@sveltejs/kit';
 import { RequestClient } from '$data/api/helpers/RequestClient';
 
 // this will configure the global fetcher

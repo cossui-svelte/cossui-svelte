@@ -10,6 +10,7 @@
               [":PACKAGE_WITH_PROTOCOL:", ":PACKAGE:"],
               ["$lib/components/ui/**"],
               ["$lib/**"],
+              ["@lucide/**"],
               ":PATH:"
             ]
           }
@@ -82,7 +83,12 @@
             "syntax": "shorthand"
           }
         },
-        "useImportType": "error",
+        "useImportType": {
+          "level": "on",
+          "options": {
+            "style": "inlineType"
+          }
+        },
         "useTemplate": "error"
       },
       "suspicious": {

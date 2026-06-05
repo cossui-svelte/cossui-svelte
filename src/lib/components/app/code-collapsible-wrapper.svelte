@@ -3,7 +3,7 @@
   import { Collapsible } from "bits-ui";
   import { cn } from "$lib/utils";
   import { buttonVariants } from "$lib/components/ui/button";
-  import CollapsiblePanel from "$lib/components/ui/collapsible/collapsible-panel.svelte";
+  import { CollapsiblePanel } from "$lib/components/ui/collapsible";
   import { Separator } from "$lib/components/ui/separator";
 
   interface Props {

@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
-  import Tabs from "$lib/components/ui/tabs/tabs.svelte";
+  import { Tabs } from "$lib/components/ui/tabs";
 
   interface Props {
     children?: Snippet;
