@@ -5,7 +5,7 @@
  * @version 0.1.0
  * !!!!!!!!!!
  */
-export interface RegistryParticuleEntry {
+interface RegistryParticuleEntry {
   description: string;
   // relative to src/lib/components/
   file: string;
@@ -16,7 +16,7 @@ export interface RegistryParticuleEntry {
   tags: string[];
 }
 
-export type RegistryParticuleData = Record<string, RegistryParticuleEntry>;
+type RegistryParticuleData = Record<string, RegistryParticuleEntry>;
 const particles: RegistryParticuleData = {
   'accordion-01': {
     description: 'Basic accordion',

@@ -1,7 +1,7 @@
 <script lang="ts">
-  import PageHeaderDescription from "$lib/components/shared-components/page-header-description.svelte";
-  import PageHeaderHeading from "$lib/components/shared-components/page-header-heading.svelte";
-  import PageHeader from "$lib/components/shared-components/page-header.svelte";
+  import PageHeaderDescription from "$lib/components/app/page-header-description.svelte";
+  import PageHeaderHeading from "$lib/components/app/page-header-heading.svelte";
+  import PageHeader from "$lib/components/app/page-header.svelte";
   import CategoryThumbnail from "$lib/components/app/category-thumbnails.svelte";
 
   import { Badge } from "$lib/components/ui/badge";
