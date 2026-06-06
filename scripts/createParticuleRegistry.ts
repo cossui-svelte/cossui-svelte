@@ -51,7 +51,7 @@ async function scanExamples(): Promise<void> {
             const component: RegistryParticuleEntry = {
                 name: toName(id),
                 description: meta?.description ?? '',
-                file: `particles/${category}/${file}`,
+                file: `${file.replace('.svelte', '')}`,
                 tags: meta ? meta.tags : [],
                 npmDependencies: [],
                 registryDependencies: []

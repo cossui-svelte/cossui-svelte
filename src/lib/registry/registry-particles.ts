@@ -20,7 +20,7 @@ export type RegistryParticuleData = Record<string, RegistryParticuleEntry>;
 const particles: RegistryParticuleData = {
   'accordion-01': {
     description: 'Basic accordion',
-    file: 'examples/accordion/accordion-01.svelte',
+    file: 'accordion/accordion-01',
     name: 'Accordion 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -28,7 +28,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-02': {
     description: 'Accordion with one panel open',
-    file: 'examples/accordion/accordion-02.svelte',
+    file: 'accordion/accordion-02',
     name: 'Accordion 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -36,7 +36,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-03': {
     description: 'Accordion allowing multiple panels open',
-    file: 'examples/accordion/accordion-03.svelte',
+    file: 'accordion/accordion-03',
     name: 'Accordion 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -44,7 +44,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-04': {
     description: 'Controlled accordion',
-    file: 'examples/accordion/accordion-04.svelte',
+    file: 'accordion/accordion-04',
     name: 'Accordion 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -52,7 +52,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-05': {
     description: '',
-    file: 'examples/accordion/accordion-05.svelte',
+    file: 'accordion/accordion-05',
     name: 'Accordion 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -60,7 +60,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-06': {
     description: '',
-    file: 'examples/accordion/accordion-06.svelte',
+    file: 'accordion/accordion-06',
     name: 'Accordion 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -68,7 +68,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-07': {
     description: '',
-    file: 'examples/accordion/accordion-07.svelte',
+    file: 'accordion/accordion-07',
     name: 'Accordion 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -76,7 +76,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-08': {
     description: '',
-    file: 'examples/accordion/accordion-08.svelte',
+    file: 'accordion/accordion-08',
     name: 'Accordion 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -84,7 +84,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-09': {
     description: '',
-    file: 'examples/accordion/accordion-09.svelte',
+    file: 'accordion/accordion-09',
     name: 'Accordion 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -92,7 +92,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-10': {
     description: '',
-    file: 'examples/accordion/accordion-10.svelte',
+    file: 'accordion/accordion-10',
     name: 'Accordion 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -100,7 +100,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-11': {
     description: '',
-    file: 'examples/accordion/accordion-11.svelte',
+    file: 'accordion/accordion-11',
     name: 'Accordion 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -108,7 +108,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-12': {
     description: '',
-    file: 'examples/accordion/accordion-12.svelte',
+    file: 'accordion/accordion-12',
     name: 'Accordion 12',
     npmDependencies: [],
     registryDependencies: [],
@@ -116,7 +116,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-13': {
     description: '',
-    file: 'examples/accordion/accordion-13.svelte',
+    file: 'accordion/accordion-13',
     name: 'Accordion 13',
     npmDependencies: [],
     registryDependencies: [],
@@ -124,7 +124,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-14': {
     description: '',
-    file: 'examples/accordion/accordion-14.svelte',
+    file: 'accordion/accordion-14',
     name: 'Accordion 14',
     npmDependencies: [],
     registryDependencies: [],
@@ -132,7 +132,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-15': {
     description: '',
-    file: 'examples/accordion/accordion-15.svelte',
+    file: 'accordion/accordion-15',
     name: 'Accordion 15',
     npmDependencies: [],
     registryDependencies: [],
@@ -140,7 +140,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-16': {
     description: '',
-    file: 'examples/accordion/accordion-16.svelte',
+    file: 'accordion/accordion-16',
     name: 'Accordion 16',
     npmDependencies: [],
     registryDependencies: [],
@@ -148,7 +148,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-17': {
     description: '',
-    file: 'examples/accordion/accordion-17.svelte',
+    file: 'accordion/accordion-17',
     name: 'Accordion 17',
     npmDependencies: [],
     registryDependencies: [],
@@ -156,7 +156,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-18': {
     description: '',
-    file: 'examples/accordion/accordion-18.svelte',
+    file: 'accordion/accordion-18',
     name: 'Accordion 18',
     npmDependencies: [],
     registryDependencies: [],
@@ -164,7 +164,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-19': {
     description: '',
-    file: 'examples/accordion/accordion-19.svelte',
+    file: 'accordion/accordion-19',
     name: 'Accordion 19',
     npmDependencies: [],
     registryDependencies: [],
@@ -172,7 +172,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-20': {
     description: '',
-    file: 'examples/accordion/accordion-20.svelte',
+    file: 'accordion/accordion-20',
     name: 'Accordion 20',
     npmDependencies: [],
     registryDependencies: [],
@@ -180,7 +180,7 @@ const particles: RegistryParticuleData = {
   },
   'alert-01': {
     description: 'Basic alert',
-    file: 'examples/alert/alert-01.svelte',
+    file: 'alert/alert-01',
     name: 'Alert 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -188,7 +188,7 @@ const particles: RegistryParticuleData = {
   },
   'alert-02': {
     description: 'Alert with icon',
-    file: 'examples/alert/alert-02.svelte',
+    file: 'alert/alert-02',
     name: 'Alert 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -196,7 +196,7 @@ const particles: RegistryParticuleData = {
   },
   'alert-03': {
     description: 'Alert with icon and action buttons',
-    file: 'examples/alert/alert-03.svelte',
+    file: 'alert/alert-03',
     name: 'Alert 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -204,7 +204,7 @@ const particles: RegistryParticuleData = {
   },
   'alert-04': {
     description: 'Info alert',
-    file: 'examples/alert/alert-04.svelte',
+    file: 'alert/alert-04',
     name: 'Alert 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -212,7 +212,7 @@ const particles: RegistryParticuleData = {
   },
   'alert-05': {
     description: 'Success alert',
-    file: 'examples/alert/alert-05.svelte',
+    file: 'alert/alert-05',
     name: 'Alert 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -220,7 +220,7 @@ const particles: RegistryParticuleData = {
   },
   'alert-06': {
     description: 'Warning alert',
-    file: 'examples/alert/alert-06.svelte',
+    file: 'alert/alert-06',
     name: 'Alert 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -228,7 +228,7 @@ const particles: RegistryParticuleData = {
   },
   'alert-07': {
     description: 'Error alert',
-    file: 'examples/alert/alert-07.svelte',
+    file: 'alert/alert-07',
     name: 'Alert 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -236,7 +236,7 @@ const particles: RegistryParticuleData = {
   },
   'alert-08': {
     description: '',
-    file: 'examples/alert/alert-08.svelte',
+    file: 'alert/alert-08',
     name: 'Alert 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -244,7 +244,7 @@ const particles: RegistryParticuleData = {
   },
   'alert-09': {
     description: '',
-    file: 'examples/alert/alert-09.svelte',
+    file: 'alert/alert-09',
     name: 'Alert 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -252,7 +252,7 @@ const particles: RegistryParticuleData = {
   },
   'alert-10': {
     description: '',
-    file: 'examples/alert/alert-10.svelte',
+    file: 'alert/alert-10',
     name: 'Alert 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -260,7 +260,7 @@ const particles: RegistryParticuleData = {
   },
   'alert-11': {
     description: '',
-    file: 'examples/alert/alert-11.svelte',
+    file: 'alert/alert-11',
     name: 'Alert 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -268,7 +268,7 @@ const particles: RegistryParticuleData = {
   },
   'alert-12': {
     description: '',
-    file: 'examples/alert/alert-12.svelte',
+    file: 'alert/alert-12',
     name: 'Alert 12',
     npmDependencies: [],
     registryDependencies: [],
@@ -276,7 +276,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-01': {
     description: 'Avatar with image and fallback',
-    file: 'examples/avatar/avatar-01.svelte',
+    file: 'avatar/avatar-01',
     name: 'Avatar 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -284,7 +284,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-02': {
     description: 'Fallback-only avatar',
-    file: 'examples/avatar/avatar-02.svelte',
+    file: 'avatar/avatar-02',
     name: 'Avatar 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -292,7 +292,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-03': {
     description: 'Avatars with different sizes',
-    file: 'examples/avatar/avatar-03.svelte',
+    file: 'avatar/avatar-03',
     name: 'Avatar 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -300,7 +300,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-04': {
     description: 'Avatars with different radii',
-    file: 'examples/avatar/avatar-04.svelte',
+    file: 'avatar/avatar-04',
     name: 'Avatar 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -308,7 +308,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-05': {
     description: 'Overlapping avatar group',
-    file: 'examples/avatar/avatar-05.svelte',
+    file: 'avatar/avatar-05',
     name: 'Avatar 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -316,7 +316,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-06': {
     description: 'Avatar with user icon fallback',
-    file: 'examples/avatar/avatar-06.svelte',
+    file: 'avatar/avatar-06',
     name: 'Avatar 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -324,7 +324,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-07': {
     description: 'Avatar with emerald status dot',
-    file: 'examples/avatar/avatar-07.svelte',
+    file: 'avatar/avatar-07',
     name: 'Avatar 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -332,7 +332,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-08': {
     description: 'Avatar with muted status dot',
-    file: 'examples/avatar/avatar-08.svelte',
+    file: 'avatar/avatar-08',
     name: 'Avatar 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -340,7 +340,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-09': {
     description: 'Rounded avatar with top-right emerald status',
-    file: 'examples/avatar/avatar-09.svelte',
+    file: 'avatar/avatar-09',
     name: 'Avatar 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -348,7 +348,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-10': {
     description: 'Avatar with notification badge',
-    file: 'examples/avatar/avatar-10.svelte',
+    file: 'avatar/avatar-10',
     name: 'Avatar 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -356,7 +356,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-11': {
     description: 'Rounded avatar with notification badge',
-    file: 'examples/avatar/avatar-11.svelte',
+    file: 'avatar/avatar-11',
     name: 'Avatar 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -364,7 +364,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-12': {
     description: 'Avatar with verified badge',
-    file: 'examples/avatar/avatar-12.svelte',
+    file: 'avatar/avatar-12',
     name: 'Avatar 12',
     npmDependencies: [],
     registryDependencies: [],
@@ -372,7 +372,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-13': {
     description: 'Small overlapping avatar group',
-    file: 'examples/avatar/avatar-13.svelte',
+    file: 'avatar/avatar-13',
     name: 'Avatar 13',
     npmDependencies: [],
     registryDependencies: [],
@@ -380,7 +380,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-14': {
     description: 'Large overlapping avatar group',
-    file: 'examples/avatar/avatar-14.svelte',
+    file: 'avatar/avatar-14',
     name: 'Avatar 14',
     npmDependencies: [],
     registryDependencies: [],
@@ -388,7 +388,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-15': {
     description: '',
-    file: 'examples/avatar/avatar-15.svelte',
+    file: 'avatar/avatar-15',
     name: 'Avatar 15',
     npmDependencies: [],
     registryDependencies: [],
@@ -396,7 +396,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-16': {
     description: '',
-    file: 'examples/avatar/avatar-16.svelte',
+    file: 'avatar/avatar-16',
     name: 'Avatar 16',
     npmDependencies: [],
     registryDependencies: [],
@@ -404,7 +404,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-17': {
     description: '',
-    file: 'examples/avatar/avatar-17.svelte',
+    file: 'avatar/avatar-17',
     name: 'Avatar 17',
     npmDependencies: [],
     registryDependencies: [],
@@ -412,7 +412,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-18': {
     description: '',
-    file: 'examples/avatar/avatar-18.svelte',
+    file: 'avatar/avatar-18',
     name: 'Avatar 18',
     npmDependencies: [],
     registryDependencies: [],
@@ -420,7 +420,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-19': {
     description: '',
-    file: 'examples/avatar/avatar-19.svelte',
+    file: 'avatar/avatar-19',
     name: 'Avatar 19',
     npmDependencies: [],
     registryDependencies: [],
@@ -428,7 +428,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-20': {
     description: '',
-    file: 'examples/avatar/avatar-20.svelte',
+    file: 'avatar/avatar-20',
     name: 'Avatar 20',
     npmDependencies: [],
     registryDependencies: [],
@@ -436,7 +436,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-21': {
     description: '',
-    file: 'examples/avatar/avatar-21.svelte',
+    file: 'avatar/avatar-21',
     name: 'Avatar 21',
     npmDependencies: [],
     registryDependencies: [],
@@ -444,7 +444,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-22': {
     description: '',
-    file: 'examples/avatar/avatar-22.svelte',
+    file: 'avatar/avatar-22',
     name: 'Avatar 22',
     npmDependencies: [],
     registryDependencies: [],
@@ -452,7 +452,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-23': {
     description: '',
-    file: 'examples/avatar/avatar-23.svelte',
+    file: 'avatar/avatar-23',
     name: 'Avatar 23',
     npmDependencies: [],
     registryDependencies: [],
@@ -460,7 +460,7 @@ const particles: RegistryParticuleData = {
   },
   'badge-01': {
     description: 'Basic badge',
-    file: 'examples/badge/badge-01.svelte',
+    file: 'badge/badge-01',
     name: 'Badge 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -468,7 +468,7 @@ const particles: RegistryParticuleData = {
   },
   'badge-02': {
     description: 'Outline badge',
-    file: 'examples/badge/badge-02.svelte',
+    file: 'badge/badge-02',
     name: 'Badge 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -476,7 +476,7 @@ const particles: RegistryParticuleData = {
   },
   'badge-03': {
     description: 'Secondary badge',
-    file: 'examples/badge/badge-03.svelte',
+    file: 'badge/badge-03',
     name: 'Badge 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -484,7 +484,7 @@ const particles: RegistryParticuleData = {
   },
   'badge-04': {
     description: 'Destructive badge',
-    file: 'examples/badge/badge-04.svelte',
+    file: 'badge/badge-04',
     name: 'Badge 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -492,7 +492,7 @@ const particles: RegistryParticuleData = {
   },
   'badge-05': {
     description: 'Info badge',
-    file: 'examples/badge/badge-05.svelte',
+    file: 'badge/badge-05',
     name: 'Badge 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -500,7 +500,7 @@ const particles: RegistryParticuleData = {
   },
   'badge-06': {
     description: 'Success badge',
-    file: 'examples/badge/badge-06.svelte',
+    file: 'badge/badge-06',
     name: 'Badge 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -508,7 +508,7 @@ const particles: RegistryParticuleData = {
   },
   'badge-07': {
     description: 'Warning badge',
-    file: 'examples/badge/badge-07.svelte',
+    file: 'badge/badge-07',
     name: 'Badge 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -516,7 +516,7 @@ const particles: RegistryParticuleData = {
   },
   'badge-08': {
     description: 'Error badge',
-    file: 'examples/badge/badge-08.svelte',
+    file: 'badge/badge-08',
     name: 'Badge 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -524,7 +524,7 @@ const particles: RegistryParticuleData = {
   },
   'badge-09': {
     description: 'Small badge',
-    file: 'examples/badge/badge-09.svelte',
+    file: 'badge/badge-09',
     name: 'Badge 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -532,7 +532,7 @@ const particles: RegistryParticuleData = {
   },
   'badge-10': {
     description: 'Large badge',
-    file: 'examples/badge/badge-10.svelte',
+    file: 'badge/badge-10',
     name: 'Badge 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -540,7 +540,7 @@ const particles: RegistryParticuleData = {
   },
   'badge-11': {
     description: 'Badge with icon',
-    file: 'examples/badge/badge-11.svelte',
+    file: 'badge/badge-11',
     name: 'Badge 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -548,7 +548,7 @@ const particles: RegistryParticuleData = {
   },
   'badge-12': {
     description: 'Badge with link',
-    file: 'examples/badge/badge-12.svelte',
+    file: 'badge/badge-12',
     name: 'Badge 12',
     npmDependencies: [],
     registryDependencies: [],
@@ -556,7 +556,7 @@ const particles: RegistryParticuleData = {
   },
   'badge-13': {
     description: 'Badge with count',
-    file: 'examples/badge/badge-13.svelte',
+    file: 'badge/badge-13',
     name: 'Badge 13',
     npmDependencies: [],
     registryDependencies: [],
@@ -564,7 +564,7 @@ const particles: RegistryParticuleData = {
   },
   'banner-01': {
     description: '',
-    file: 'examples/banner/banner-01.svelte',
+    file: 'banner/banner-01',
     name: 'Banner 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -572,7 +572,7 @@ const particles: RegistryParticuleData = {
   },
   'banner-02': {
     description: '',
-    file: 'examples/banner/banner-02.svelte',
+    file: 'banner/banner-02',
     name: 'Banner 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -580,7 +580,7 @@ const particles: RegistryParticuleData = {
   },
   'banner-03': {
     description: '',
-    file: 'examples/banner/banner-03.svelte',
+    file: 'banner/banner-03',
     name: 'Banner 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -588,7 +588,7 @@ const particles: RegistryParticuleData = {
   },
   'banner-04': {
     description: '',
-    file: 'examples/banner/banner-04.svelte',
+    file: 'banner/banner-04',
     name: 'Banner 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -596,7 +596,7 @@ const particles: RegistryParticuleData = {
   },
   'banner-05': {
     description: '',
-    file: 'examples/banner/banner-05.svelte',
+    file: 'banner/banner-05',
     name: 'Banner 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -604,7 +604,7 @@ const particles: RegistryParticuleData = {
   },
   'banner-06': {
     description: '',
-    file: 'examples/banner/banner-06.svelte',
+    file: 'banner/banner-06',
     name: 'Banner 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -612,7 +612,7 @@ const particles: RegistryParticuleData = {
   },
   'banner-07': {
     description: '',
-    file: 'examples/banner/banner-07.svelte',
+    file: 'banner/banner-07',
     name: 'Banner 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -620,7 +620,7 @@ const particles: RegistryParticuleData = {
   },
   'banner-08': {
     description: '',
-    file: 'examples/banner/banner-08.svelte',
+    file: 'banner/banner-08',
     name: 'Banner 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -628,7 +628,7 @@ const particles: RegistryParticuleData = {
   },
   'banner-09': {
     description: '',
-    file: 'examples/banner/banner-09.svelte',
+    file: 'banner/banner-09',
     name: 'Banner 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -636,7 +636,7 @@ const particles: RegistryParticuleData = {
   },
   'banner-10': {
     description: '',
-    file: 'examples/banner/banner-10.svelte',
+    file: 'banner/banner-10',
     name: 'Banner 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -644,7 +644,7 @@ const particles: RegistryParticuleData = {
   },
   'banner-11': {
     description: '',
-    file: 'examples/banner/banner-11.svelte',
+    file: 'banner/banner-11',
     name: 'Banner 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -652,7 +652,7 @@ const particles: RegistryParticuleData = {
   },
   'banner-12': {
     description: '',
-    file: 'examples/banner/banner-12.svelte',
+    file: 'banner/banner-12',
     name: 'Banner 12',
     npmDependencies: [],
     registryDependencies: [],
@@ -660,7 +660,7 @@ const particles: RegistryParticuleData = {
   },
   'breadcrumb-01': {
     description: 'Breadcrumb with menu example',
-    file: 'examples/breadcrumb/breadcrumb-01.svelte',
+    file: 'breadcrumb/breadcrumb-01',
     name: 'Breadcrumb 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -668,7 +668,7 @@ const particles: RegistryParticuleData = {
   },
   'breadcrumb-02': {
     description: 'Breadcrumb with custom separator',
-    file: 'examples/breadcrumb/breadcrumb-02.svelte',
+    file: 'breadcrumb/breadcrumb-02',
     name: 'Breadcrumb 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -676,7 +676,7 @@ const particles: RegistryParticuleData = {
   },
   'breadcrumb-03': {
     description: 'Breadcrumb with home icon for home link only',
-    file: 'examples/breadcrumb/breadcrumb-03.svelte',
+    file: 'breadcrumb/breadcrumb-03',
     name: 'Breadcrumb 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -684,7 +684,7 @@ const particles: RegistryParticuleData = {
   },
   'breadcrumb-04': {
     description: 'Breadcrumb with folders icon menu',
-    file: 'examples/breadcrumb/breadcrumb-04.svelte',
+    file: 'breadcrumb/breadcrumb-04',
     name: 'Breadcrumb 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -692,7 +692,7 @@ const particles: RegistryParticuleData = {
   },
   'breadcrumb-05': {
     description: 'Breadcrumb with icons before text',
-    file: 'examples/breadcrumb/breadcrumb-05.svelte',
+    file: 'breadcrumb/breadcrumb-05',
     name: 'Breadcrumb 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -700,7 +700,7 @@ const particles: RegistryParticuleData = {
   },
   'breadcrumb-06': {
     description: 'Breadcrumb with dot separators',
-    file: 'examples/breadcrumb/breadcrumb-06.svelte',
+    file: 'breadcrumb/breadcrumb-06',
     name: 'Breadcrumb 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -708,7 +708,7 @@ const particles: RegistryParticuleData = {
   },
   'breadcrumb-07': {
     description: 'Breadcrumb with select dropdown',
-    file: 'examples/breadcrumb/breadcrumb-07.svelte',
+    file: 'breadcrumb/breadcrumb-07',
     name: 'Breadcrumb 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -716,7 +716,7 @@ const particles: RegistryParticuleData = {
   },
   'breadcrumb-08': {
     description: '',
-    file: 'examples/breadcrumb/breadcrumb-08.svelte',
+    file: 'breadcrumb/breadcrumb-08',
     name: 'Breadcrumb 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -724,7 +724,7 @@ const particles: RegistryParticuleData = {
   },
   'button-01': {
     description: 'Default button',
-    file: 'examples/button/button-01.svelte',
+    file: 'button/button-01',
     name: 'Button 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -732,7 +732,7 @@ const particles: RegistryParticuleData = {
   },
   'button-02': {
     description: 'Outline button',
-    file: 'examples/button/button-02.svelte',
+    file: 'button/button-02',
     name: 'Button 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -740,7 +740,7 @@ const particles: RegistryParticuleData = {
   },
   'button-03': {
     description: 'Secondary button',
-    file: 'examples/button/button-03.svelte',
+    file: 'button/button-03',
     name: 'Button 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -748,7 +748,7 @@ const particles: RegistryParticuleData = {
   },
   'button-04': {
     description: 'Destructive button',
-    file: 'examples/button/button-04.svelte',
+    file: 'button/button-04',
     name: 'Button 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -756,7 +756,7 @@ const particles: RegistryParticuleData = {
   },
   'button-05': {
     description: 'Destructive outline button',
-    file: 'examples/button/button-05.svelte',
+    file: 'button/button-05',
     name: 'Button 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -764,7 +764,7 @@ const particles: RegistryParticuleData = {
   },
   'button-06': {
     description: 'Ghost button',
-    file: 'examples/button/button-06.svelte',
+    file: 'button/button-06',
     name: 'Button 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -772,7 +772,7 @@ const particles: RegistryParticuleData = {
   },
   'button-07': {
     description: 'Link button',
-    file: 'examples/button/button-07.svelte',
+    file: 'button/button-07',
     name: 'Button 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -780,7 +780,7 @@ const particles: RegistryParticuleData = {
   },
   'button-08': {
     description: 'Extra-small button',
-    file: 'examples/button/button-08.svelte',
+    file: 'button/button-08',
     name: 'Button 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -788,7 +788,7 @@ const particles: RegistryParticuleData = {
   },
   'button-09': {
     description: 'Small button',
-    file: 'examples/button/button-09.svelte',
+    file: 'button/button-09',
     name: 'Button 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -796,7 +796,7 @@ const particles: RegistryParticuleData = {
   },
   'button-10': {
     description: 'Large button',
-    file: 'examples/button/button-10.svelte',
+    file: 'button/button-10',
     name: 'Button 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -804,7 +804,7 @@ const particles: RegistryParticuleData = {
   },
   'button-11': {
     description: 'Extra-large button',
-    file: 'examples/button/button-11.svelte',
+    file: 'button/button-11',
     name: 'Button 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -812,7 +812,7 @@ const particles: RegistryParticuleData = {
   },
   'button-12': {
     description: 'Disabled button',
-    file: 'examples/button/button-12.svelte',
+    file: 'button/button-12',
     name: 'Button 12',
     npmDependencies: [],
     registryDependencies: [],
@@ -820,7 +820,7 @@ const particles: RegistryParticuleData = {
   },
   'button-13': {
     description: 'Icon button',
-    file: 'examples/button/button-13.svelte',
+    file: 'button/button-13',
     name: 'Button 13',
     npmDependencies: [],
     registryDependencies: [],
@@ -828,7 +828,7 @@ const particles: RegistryParticuleData = {
   },
   'button-14': {
     description: 'Small icon button',
-    file: 'examples/button/button-14.svelte',
+    file: 'button/button-14',
     name: 'Button 14',
     npmDependencies: [],
     registryDependencies: [],
@@ -836,7 +836,7 @@ const particles: RegistryParticuleData = {
   },
   'button-15': {
     description: 'Large icon button',
-    file: 'examples/button/button-15.svelte',
+    file: 'button/button-15',
     name: 'Button 15',
     npmDependencies: [],
     registryDependencies: [],
@@ -844,7 +844,7 @@ const particles: RegistryParticuleData = {
   },
   'button-16': {
     description: 'Button with icon',
-    file: 'examples/button/button-16.svelte',
+    file: 'button/button-16',
     name: 'Button 16',
     npmDependencies: [],
     registryDependencies: [],
@@ -852,7 +852,7 @@ const particles: RegistryParticuleData = {
   },
   'button-17': {
     description: 'Link rendered as button',
-    file: 'examples/button/button-17.svelte',
+    file: 'button/button-17',
     name: 'Button 17',
     npmDependencies: [],
     registryDependencies: [],
@@ -860,7 +860,7 @@ const particles: RegistryParticuleData = {
   },
   'button-18': {
     description: 'Custom loading button with manual Spinner',
-    file: 'examples/button/button-18.svelte',
+    file: 'button/button-18',
     name: 'Button 18',
     npmDependencies: [],
     registryDependencies: [],
@@ -868,7 +868,7 @@ const particles: RegistryParticuleData = {
   },
   'button-19': {
     description: 'Expandable show more/less toggle button',
-    file: 'examples/button/button-19.svelte',
+    file: 'button/button-19',
     name: 'Button 19',
     npmDependencies: [],
     registryDependencies: [],
@@ -876,7 +876,7 @@ const particles: RegistryParticuleData = {
   },
   'button-20': {
     description: 'Back link button with chevron',
-    file: 'examples/button/button-20.svelte',
+    file: 'button/button-20',
     name: 'Button 20',
     npmDependencies: [],
     registryDependencies: [],
@@ -884,7 +884,7 @@ const particles: RegistryParticuleData = {
   },
   'button-21': {
     description: 'Card-style button with heading and description',
-    file: 'examples/button/button-21.svelte',
+    file: 'button/button-21',
     name: 'Button 21',
     npmDependencies: [],
     registryDependencies: [],
@@ -892,7 +892,7 @@ const particles: RegistryParticuleData = {
   },
   'button-22': {
     description: 'Directional pad control buttons',
-    file: 'examples/button/button-22.svelte',
+    file: 'button/button-22',
     name: 'Button 22',
     npmDependencies: [],
     registryDependencies: [],
@@ -900,7 +900,7 @@ const particles: RegistryParticuleData = {
   },
   'button-23': {
     description: 'Outline like button with count',
-    file: 'examples/button/button-23.svelte',
+    file: 'button/button-23',
     name: 'Button 23',
     npmDependencies: [],
     registryDependencies: [],
@@ -908,7 +908,7 @@ const particles: RegistryParticuleData = {
   },
   'button-24': {
     description: 'Social login icon buttons',
-    file: 'examples/button/button-24.svelte',
+    file: 'button/button-24',
     name: 'Button 24',
     npmDependencies: [],
     registryDependencies: [],
@@ -916,7 +916,7 @@ const particles: RegistryParticuleData = {
   },
   'button-25': {
     description: '',
-    file: 'examples/button/button-25.svelte',
+    file: 'button/button-25',
     name: 'Button 25',
     npmDependencies: [],
     registryDependencies: [],
@@ -924,7 +924,7 @@ const particles: RegistryParticuleData = {
   },
   'button-26': {
     description: 'Star button with count badge',
-    file: 'examples/button/button-26.svelte',
+    file: 'button/button-26',
     name: 'Button 26',
     npmDependencies: [],
     registryDependencies: [],
@@ -932,7 +932,7 @@ const particles: RegistryParticuleData = {
   },
   'button-27': {
     description: 'Button group with QR code icon and sign in',
-    file: 'examples/button/button-27.svelte',
+    file: 'button/button-27',
     name: 'Button 27',
     npmDependencies: [],
     registryDependencies: [],
@@ -940,7 +940,7 @@ const particles: RegistryParticuleData = {
   },
   'button-28': {
     description: 'Button with avatar',
-    file: 'examples/button/button-28.svelte',
+    file: 'button/button-28',
     name: 'Button 28',
     npmDependencies: [],
     registryDependencies: [],
@@ -948,7 +948,7 @@ const particles: RegistryParticuleData = {
   },
   'button-29': {
     description: 'Pill-shaped button with rounded-full styling',
-    file: 'examples/button/button-29.svelte',
+    file: 'button/button-29',
     name: 'Button 29',
     npmDependencies: [],
     registryDependencies: [],
@@ -956,7 +956,7 @@ const particles: RegistryParticuleData = {
   },
   'button-30': {
     description: 'Button with animated arrow on hover',
-    file: 'examples/button/button-30.svelte',
+    file: 'button/button-30',
     name: 'Button 30',
     npmDependencies: [],
     registryDependencies: [],
@@ -964,7 +964,7 @@ const particles: RegistryParticuleData = {
   },
   'button-31': {
     description: 'Button with keyboard shortcut indicator',
-    file: 'examples/button/button-31.svelte',
+    file: 'button/button-31',
     name: 'Button 31',
     npmDependencies: [],
     registryDependencies: [],
@@ -972,7 +972,7 @@ const particles: RegistryParticuleData = {
   },
   'button-32': {
     description: 'Button with notification badge',
-    file: 'examples/button/button-32.svelte',
+    file: 'button/button-32',
     name: 'Button 32',
     npmDependencies: [],
     registryDependencies: [],
@@ -980,7 +980,7 @@ const particles: RegistryParticuleData = {
   },
   'button-33': {
     description: 'Paired buttons (Cancel/Save)',
-    file: 'examples/button/button-33.svelte',
+    file: 'button/button-33',
     name: 'Button 33',
     npmDependencies: [],
     registryDependencies: [],
@@ -988,7 +988,7 @@ const particles: RegistryParticuleData = {
   },
   'button-34': {
     description: 'Button with animated status dot',
-    file: 'examples/button/button-34.svelte',
+    file: 'button/button-34',
     name: 'Button 34',
     npmDependencies: [],
     registryDependencies: [],
@@ -996,7 +996,7 @@ const particles: RegistryParticuleData = {
   },
   'button-35': {
     description: 'Icon-only copy button with feedback',
-    file: 'examples/button/button-35.svelte',
+    file: 'button/button-35',
     name: 'Button 35',
     npmDependencies: [],
     registryDependencies: [],
@@ -1004,7 +1004,7 @@ const particles: RegistryParticuleData = {
   },
   'button-36': {
     description: 'Copy button with feedback',
-    file: 'examples/button/button-36.svelte',
+    file: 'button/button-36',
     name: 'Button 36',
     npmDependencies: [],
     registryDependencies: [],
@@ -1012,7 +1012,7 @@ const particles: RegistryParticuleData = {
   },
   'button-37': {
     description: 'Rotating icon button (FAB-style toggle)',
-    file: 'examples/button/button-37.svelte',
+    file: 'button/button-37',
     name: 'Button 37',
     npmDependencies: [],
     registryDependencies: [],
@@ -1020,7 +1020,7 @@ const particles: RegistryParticuleData = {
   },
   'button-38': {
     description: 'Social login buttons (Google, X, GitHub)',
-    file: 'examples/button/button-38.svelte',
+    file: 'button/button-38',
     name: 'Button 38',
     npmDependencies: [],
     registryDependencies: [],
@@ -1028,7 +1028,7 @@ const particles: RegistryParticuleData = {
   },
   'button-39': {
     description: 'Hamburger menu button with animated icon',
-    file: 'examples/button/button-39.svelte',
+    file: 'button/button-39',
     name: 'Button 39',
     npmDependencies: [],
     registryDependencies: [],
@@ -1036,7 +1036,7 @@ const particles: RegistryParticuleData = {
   },
   'button-40': {
     description: 'Download button with progress and cancel action',
-    file: 'examples/button/button-40.svelte',
+    file: 'button/button-40',
     name: 'Button 40',
     npmDependencies: [],
     registryDependencies: [],
@@ -1044,7 +1044,7 @@ const particles: RegistryParticuleData = {
   },
   'button-41': {
     description: 'Button using the built-in loading prop',
-    file: 'examples/button/button-41.svelte',
+    file: 'button/button-41',
     name: 'Button 41',
     npmDependencies: [],
     registryDependencies: [],
@@ -1052,7 +1052,7 @@ const particles: RegistryParticuleData = {
   },
   'button-42': {
     description: '',
-    file: 'examples/button/button-42.svelte',
+    file: 'button/button-42',
     name: 'Button 42',
     npmDependencies: [],
     registryDependencies: [],
@@ -1060,7 +1060,7 @@ const particles: RegistryParticuleData = {
   },
   'button-43': {
     description: '',
-    file: 'examples/button/button-43.svelte',
+    file: 'button/button-43',
     name: 'Button 43',
     npmDependencies: [],
     registryDependencies: [],
@@ -1068,7 +1068,7 @@ const particles: RegistryParticuleData = {
   },
   'button-44': {
     description: '',
-    file: 'examples/button/button-44.svelte',
+    file: 'button/button-44',
     name: 'Button 44',
     npmDependencies: [],
     registryDependencies: [],
@@ -1076,7 +1076,7 @@ const particles: RegistryParticuleData = {
   },
   'button-45': {
     description: '',
-    file: 'examples/button/button-45.svelte',
+    file: 'button/button-45',
     name: 'Button 45',
     npmDependencies: [],
     registryDependencies: [],
@@ -1084,7 +1084,7 @@ const particles: RegistryParticuleData = {
   },
   'button-46': {
     description: '',
-    file: 'examples/button/button-46.svelte',
+    file: 'button/button-46',
     name: 'Button 46',
     npmDependencies: [],
     registryDependencies: [],
@@ -1092,7 +1092,7 @@ const particles: RegistryParticuleData = {
   },
   'button-47': {
     description: '',
-    file: 'examples/button/button-47.svelte',
+    file: 'button/button-47',
     name: 'Button 47',
     npmDependencies: [],
     registryDependencies: [],
@@ -1100,7 +1100,7 @@ const particles: RegistryParticuleData = {
   },
   'button-48': {
     description: '',
-    file: 'examples/button/button-48.svelte',
+    file: 'button/button-48',
     name: 'Button 48',
     npmDependencies: [],
     registryDependencies: [],
@@ -1108,7 +1108,7 @@ const particles: RegistryParticuleData = {
   },
   'button-49': {
     description: '',
-    file: 'examples/button/button-49.svelte',
+    file: 'button/button-49',
     name: 'Button 49',
     npmDependencies: [],
     registryDependencies: [],
@@ -1116,7 +1116,7 @@ const particles: RegistryParticuleData = {
   },
   'button-50': {
     description: '',
-    file: 'examples/button/button-50.svelte',
+    file: 'button/button-50',
     name: 'Button 50',
     npmDependencies: [],
     registryDependencies: [],
@@ -1124,7 +1124,7 @@ const particles: RegistryParticuleData = {
   },
   'button-51': {
     description: '',
-    file: 'examples/button/button-51.svelte',
+    file: 'button/button-51',
     name: 'Button 51',
     npmDependencies: [],
     registryDependencies: [],
@@ -1132,7 +1132,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-01': {
     description: 'Basic checkbox',
-    file: 'examples/checkbox/checkbox-01.svelte',
+    file: 'checkbox/checkbox-01',
     name: 'Checkbox 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -1140,7 +1140,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-02': {
     description: 'Disabled checkbox',
-    file: 'examples/checkbox/checkbox-02.svelte',
+    file: 'checkbox/checkbox-02',
     name: 'Checkbox 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -1148,7 +1148,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-03': {
     description: 'Checkbox with description',
-    file: 'examples/checkbox/checkbox-03.svelte',
+    file: 'checkbox/checkbox-03',
     name: 'Checkbox 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -1156,7 +1156,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-04': {
     description: 'Card-style checkbox',
-    file: 'examples/checkbox/checkbox-04.svelte',
+    file: 'checkbox/checkbox-04',
     name: 'Checkbox 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -1164,7 +1164,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-05': {
     description: 'Checkbox form',
-    file: 'examples/checkbox/checkbox-05.svelte',
+    file: 'checkbox/checkbox-05',
     name: 'Checkbox 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -1172,7 +1172,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-06': {
     description: '',
-    file: 'examples/checkbox/checkbox-06.svelte',
+    file: 'checkbox/checkbox-06',
     name: 'Checkbox 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -1180,7 +1180,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-07': {
     description: '',
-    file: 'examples/checkbox/checkbox-07.svelte',
+    file: 'checkbox/checkbox-07',
     name: 'Checkbox 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -1188,7 +1188,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-08': {
     description: '',
-    file: 'examples/checkbox/checkbox-08.svelte',
+    file: 'checkbox/checkbox-08',
     name: 'Checkbox 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -1196,7 +1196,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-09': {
     description: '',
-    file: 'examples/checkbox/checkbox-09.svelte',
+    file: 'checkbox/checkbox-09',
     name: 'Checkbox 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -1204,7 +1204,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-10': {
     description: '',
-    file: 'examples/checkbox/checkbox-10.svelte',
+    file: 'checkbox/checkbox-10',
     name: 'Checkbox 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -1212,7 +1212,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-11': {
     description: '',
-    file: 'examples/checkbox/checkbox-11.svelte',
+    file: 'checkbox/checkbox-11',
     name: 'Checkbox 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -1220,7 +1220,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-12': {
     description: '',
-    file: 'examples/checkbox/checkbox-12.svelte',
+    file: 'checkbox/checkbox-12',
     name: 'Checkbox 12',
     npmDependencies: [],
     registryDependencies: [],
@@ -1228,7 +1228,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-13': {
     description: '',
-    file: 'examples/checkbox/checkbox-13.svelte',
+    file: 'checkbox/checkbox-13',
     name: 'Checkbox 13',
     npmDependencies: [],
     registryDependencies: [],
@@ -1236,7 +1236,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-14': {
     description: '',
-    file: 'examples/checkbox/checkbox-14.svelte',
+    file: 'checkbox/checkbox-14',
     name: 'Checkbox 14',
     npmDependencies: [],
     registryDependencies: [],
@@ -1244,7 +1244,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-15': {
     description: '',
-    file: 'examples/checkbox/checkbox-15.svelte',
+    file: 'checkbox/checkbox-15',
     name: 'Checkbox 15',
     npmDependencies: [],
     registryDependencies: [],
@@ -1252,7 +1252,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-16': {
     description: '',
-    file: 'examples/checkbox/checkbox-16.svelte',
+    file: 'checkbox/checkbox-16',
     name: 'Checkbox 16',
     npmDependencies: [],
     registryDependencies: [],
@@ -1260,7 +1260,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-17': {
     description: '',
-    file: 'examples/checkbox/checkbox-17.svelte',
+    file: 'checkbox/checkbox-17',
     name: 'Checkbox 17',
     npmDependencies: [],
     registryDependencies: [],
@@ -1268,7 +1268,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-18': {
     description: '',
-    file: 'examples/checkbox/checkbox-18.svelte',
+    file: 'checkbox/checkbox-18',
     name: 'Checkbox 18',
     npmDependencies: [],
     registryDependencies: [],
@@ -1276,7 +1276,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-01': {
     description: 'Dialog with form',
-    file: 'examples/dialog/dialog-01.svelte',
+    file: 'dialog/dialog-01',
     name: 'Dialog 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -1284,7 +1284,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-02': {
     description: 'Dialog opened from menu',
-    file: 'examples/dialog/dialog-02.svelte',
+    file: 'dialog/dialog-02',
     name: 'Dialog 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -1292,7 +1292,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-03': {
     description: 'Nested dialogs',
-    file: 'examples/dialog/dialog-03.svelte',
+    file: 'dialog/dialog-03',
     name: 'Dialog 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -1300,7 +1300,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-04': {
     description: 'Dialog with close confirmation',
-    file: 'examples/dialog/dialog-04.svelte',
+    file: 'dialog/dialog-04',
     name: 'Dialog 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -1308,7 +1308,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-05': {
     description: 'Dialog with long content',
-    file: 'examples/dialog/dialog-05.svelte',
+    file: 'dialog/dialog-05',
     name: 'Dialog 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -1316,7 +1316,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-06': {
     description: 'Dialog with bare footer',
-    file: 'examples/dialog/dialog-06.svelte',
+    file: 'dialog/dialog-06',
     name: 'Dialog 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -1324,7 +1324,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-07': {
     description: '',
-    file: 'examples/dialog/dialog-07.svelte',
+    file: 'dialog/dialog-07',
     name: 'Dialog 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -1332,7 +1332,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-08': {
     description: '',
-    file: 'examples/dialog/dialog-08.svelte',
+    file: 'dialog/dialog-08',
     name: 'Dialog 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -1340,7 +1340,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-09': {
     description: '',
-    file: 'examples/dialog/dialog-09.svelte',
+    file: 'dialog/dialog-09',
     name: 'Dialog 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -1348,7 +1348,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-10': {
     description: '',
-    file: 'examples/dialog/dialog-10.svelte',
+    file: 'dialog/dialog-10',
     name: 'Dialog 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -1356,7 +1356,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-11': {
     description: '',
-    file: 'examples/dialog/dialog-11.svelte',
+    file: 'dialog/dialog-11',
     name: 'Dialog 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -1364,7 +1364,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-12.todo': {
     description: '',
-    file: 'examples/dialog/dialog-12.todo.svelte',
+    file: 'dialog/dialog-12.todo',
     name: 'Dialog 12.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -1372,7 +1372,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-13': {
     description: '',
-    file: 'examples/dialog/dialog-13.svelte',
+    file: 'dialog/dialog-13',
     name: 'Dialog 13',
     npmDependencies: [],
     registryDependencies: [],
@@ -1380,7 +1380,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-14': {
     description: '',
-    file: 'examples/dialog/dialog-14.svelte',
+    file: 'dialog/dialog-14',
     name: 'Dialog 14',
     npmDependencies: [],
     registryDependencies: [],
@@ -1388,7 +1388,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-15': {
     description: '',
-    file: 'examples/dialog/dialog-15.svelte',
+    file: 'dialog/dialog-15',
     name: 'Dialog 15',
     npmDependencies: [],
     registryDependencies: [],
@@ -1396,7 +1396,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-16.todo': {
     description: '',
-    file: 'examples/dialog/dialog-16.todo.svelte',
+    file: 'dialog/dialog-16.todo',
     name: 'Dialog 16.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -1404,7 +1404,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-17.todo': {
     description: '',
-    file: 'examples/dialog/dialog-17.todo.svelte',
+    file: 'dialog/dialog-17.todo',
     name: 'Dialog 17.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -1412,7 +1412,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-18': {
     description: '',
-    file: 'examples/dialog/dialog-18.svelte',
+    file: 'dialog/dialog-18',
     name: 'Dialog 18',
     npmDependencies: [],
     registryDependencies: [],
@@ -1420,7 +1420,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-19': {
     description: '',
-    file: 'examples/dialog/dialog-19.svelte',
+    file: 'dialog/dialog-19',
     name: 'Dialog 19',
     npmDependencies: [],
     registryDependencies: [],
@@ -1428,7 +1428,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-20': {
     description: '',
-    file: 'examples/dialog/dialog-20.svelte',
+    file: 'dialog/dialog-20',
     name: 'Dialog 20',
     npmDependencies: [],
     registryDependencies: [],
@@ -1436,7 +1436,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-21.todo': {
     description: '',
-    file: 'examples/dialog/dialog-21.todo.svelte',
+    file: 'dialog/dialog-21.todo',
     name: 'Dialog 21.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -1444,7 +1444,7 @@ const particles: RegistryParticuleData = {
   },
   'empty-01': {
     description: 'Empty state with icon and actions',
-    file: 'examples/empty/empty-01.svelte',
+    file: 'empty/empty-01',
     name: 'Empty 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -1452,7 +1452,7 @@ const particles: RegistryParticuleData = {
   },
   'input-01': {
     description: 'Basic input',
-    file: 'examples/input/input-01.svelte',
+    file: 'input/input-01',
     name: 'Input 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -1460,7 +1460,7 @@ const particles: RegistryParticuleData = {
   },
   'input-02': {
     description: 'Small input',
-    file: 'examples/input/input-02.svelte',
+    file: 'input/input-02',
     name: 'Input 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -1468,7 +1468,7 @@ const particles: RegistryParticuleData = {
   },
   'input-03': {
     description: 'Large input',
-    file: 'examples/input/input-03.svelte',
+    file: 'input/input-03',
     name: 'Input 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -1476,7 +1476,7 @@ const particles: RegistryParticuleData = {
   },
   'input-04': {
     description: 'Disabled input',
-    file: 'examples/input/input-04.svelte',
+    file: 'input/input-04',
     name: 'Input 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -1484,7 +1484,7 @@ const particles: RegistryParticuleData = {
   },
   'input-05': {
     description: 'File input',
-    file: 'examples/input/input-05.svelte',
+    file: 'input/input-05',
     name: 'Input 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -1492,7 +1492,7 @@ const particles: RegistryParticuleData = {
   },
   'input-06': {
     description: 'Input with label',
-    file: 'examples/input/input-06.svelte',
+    file: 'input/input-06',
     name: 'Input 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -1500,7 +1500,7 @@ const particles: RegistryParticuleData = {
   },
   'input-07': {
     description: 'Input with button using Group',
-    file: 'examples/input/input-07.svelte',
+    file: 'input/input-07',
     name: 'Input 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -1508,7 +1508,7 @@ const particles: RegistryParticuleData = {
   },
   'input-08': {
     description: 'Input with start text and end tooltip',
-    file: 'examples/input/input-08.svelte',
+    file: 'input/input-08',
     name: 'Input 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -1516,7 +1516,7 @@ const particles: RegistryParticuleData = {
   },
   'input-09': {
     description: 'Password input with toggle visibility',
-    file: 'examples/input/input-09.svelte',
+    file: 'input/input-09',
     name: 'Input 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -1524,7 +1524,7 @@ const particles: RegistryParticuleData = {
   },
   'input-10': {
     description: 'Input group mimicking a URL bar',
-    file: 'examples/input/input-10.svelte',
+    file: 'input/input-10',
     name: 'Input 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -1532,7 +1532,7 @@ const particles: RegistryParticuleData = {
   },
   'input-11': {
     description: 'Input group with keyboard shortcut',
-    file: 'examples/input/input-11.svelte',
+    file: 'input/input-11',
     name: 'Input 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -1540,7 +1540,7 @@ const particles: RegistryParticuleData = {
   },
   'input-12': {
     description: 'Input group with start loading spinner',
-    file: 'examples/input/input-12.svelte',
+    file: 'input/input-12',
     name: 'Input 12',
     npmDependencies: [],
     registryDependencies: [],
@@ -1548,7 +1548,7 @@ const particles: RegistryParticuleData = {
   },
   'input-13': {
     description: 'Input with label and required indicator',
-    file: 'examples/input/input-13.svelte',
+    file: 'input/input-13',
     name: 'Input 13',
     npmDependencies: [],
     registryDependencies: [],
@@ -1556,7 +1556,7 @@ const particles: RegistryParticuleData = {
   },
   'input-14': {
     description: 'Input with optional label',
-    file: 'examples/input/input-14.svelte',
+    file: 'input/input-14',
     name: 'Input 14',
     npmDependencies: [],
     registryDependencies: [],
@@ -1564,7 +1564,7 @@ const particles: RegistryParticuleData = {
   },
   'input-15': {
     description: 'Input with custom border and background',
-    file: 'examples/input/input-15.svelte',
+    file: 'input/input-15',
     name: 'Input 15',
     npmDependencies: [],
     registryDependencies: [],
@@ -1572,7 +1572,7 @@ const particles: RegistryParticuleData = {
   },
   'input-16': {
     description: 'Input group with end loading spinner',
-    file: 'examples/input/input-16.svelte',
+    file: 'input/input-16',
     name: 'Input 16',
     npmDependencies: [],
     registryDependencies: [],
@@ -1580,7 +1580,7 @@ const particles: RegistryParticuleData = {
   },
   'input-17': {
     description: 'Read-only input',
-    file: 'examples/input/input-17.svelte',
+    file: 'input/input-17',
     name: 'Input 17',
     npmDependencies: [],
     registryDependencies: [],
@@ -1588,7 +1588,7 @@ const particles: RegistryParticuleData = {
   },
   'input-18': {
     description: 'Input with characters remaining counter',
-    file: 'examples/input/input-18.svelte',
+    file: 'input/input-18',
     name: 'Input 18',
     npmDependencies: [],
     registryDependencies: [],
@@ -1596,7 +1596,7 @@ const particles: RegistryParticuleData = {
   },
   'input-19': {
     description: 'Pill-shaped input',
-    file: 'examples/input/input-19.svelte',
+    file: 'input/input-19',
     name: 'Input 19',
     npmDependencies: [],
     registryDependencies: [],
@@ -1604,7 +1604,7 @@ const particles: RegistryParticuleData = {
   },
   'input-20': {
     description: '',
-    file: 'examples/input/input-20.svelte',
+    file: 'input/input-20',
     name: 'Input 20',
     npmDependencies: [],
     registryDependencies: [],
@@ -1612,7 +1612,7 @@ const particles: RegistryParticuleData = {
   },
   'input-21': {
     description: '',
-    file: 'examples/input/input-21.svelte',
+    file: 'input/input-21',
     name: 'Input 21',
     npmDependencies: [],
     registryDependencies: [],
@@ -1620,7 +1620,7 @@ const particles: RegistryParticuleData = {
   },
   'input-22': {
     description: '',
-    file: 'examples/input/input-22.svelte',
+    file: 'input/input-22',
     name: 'Input 22',
     npmDependencies: [],
     registryDependencies: [],
@@ -1628,7 +1628,7 @@ const particles: RegistryParticuleData = {
   },
   'input-23': {
     description: '',
-    file: 'examples/input/input-23.svelte',
+    file: 'input/input-23',
     name: 'Input 23',
     npmDependencies: [],
     registryDependencies: [],
@@ -1636,7 +1636,7 @@ const particles: RegistryParticuleData = {
   },
   'input-24': {
     description: '',
-    file: 'examples/input/input-24.svelte',
+    file: 'input/input-24',
     name: 'Input 24',
     npmDependencies: [],
     registryDependencies: [],
@@ -1644,7 +1644,7 @@ const particles: RegistryParticuleData = {
   },
   'input-25': {
     description: '',
-    file: 'examples/input/input-25.svelte',
+    file: 'input/input-25',
     name: 'Input 25',
     npmDependencies: [],
     registryDependencies: [],
@@ -1652,7 +1652,7 @@ const particles: RegistryParticuleData = {
   },
   'input-26': {
     description: '',
-    file: 'examples/input/input-26.svelte',
+    file: 'input/input-26',
     name: 'Input 26',
     npmDependencies: [],
     registryDependencies: [],
@@ -1660,7 +1660,7 @@ const particles: RegistryParticuleData = {
   },
   'input-27': {
     description: '',
-    file: 'examples/input/input-27.svelte',
+    file: 'input/input-27',
     name: 'Input 27',
     npmDependencies: [],
     registryDependencies: [],
@@ -1668,7 +1668,7 @@ const particles: RegistryParticuleData = {
   },
   'input-28': {
     description: '',
-    file: 'examples/input/input-28.svelte',
+    file: 'input/input-28',
     name: 'Input 28',
     npmDependencies: [],
     registryDependencies: [],
@@ -1676,7 +1676,7 @@ const particles: RegistryParticuleData = {
   },
   'input-29': {
     description: '',
-    file: 'examples/input/input-29.svelte',
+    file: 'input/input-29',
     name: 'Input 29',
     npmDependencies: [],
     registryDependencies: [],
@@ -1684,7 +1684,7 @@ const particles: RegistryParticuleData = {
   },
   'input-30': {
     description: '',
-    file: 'examples/input/input-30.svelte',
+    file: 'input/input-30',
     name: 'Input 30',
     npmDependencies: [],
     registryDependencies: [],
@@ -1692,7 +1692,7 @@ const particles: RegistryParticuleData = {
   },
   'input-31': {
     description: '',
-    file: 'examples/input/input-31.svelte',
+    file: 'input/input-31',
     name: 'Input 31',
     npmDependencies: [],
     registryDependencies: [],
@@ -1700,7 +1700,7 @@ const particles: RegistryParticuleData = {
   },
   'input-32': {
     description: '',
-    file: 'examples/input/input-32.svelte',
+    file: 'input/input-32',
     name: 'Input 32',
     npmDependencies: [],
     registryDependencies: [],
@@ -1708,7 +1708,7 @@ const particles: RegistryParticuleData = {
   },
   'input-33': {
     description: '',
-    file: 'examples/input/input-33.svelte',
+    file: 'input/input-33',
     name: 'Input 33',
     npmDependencies: [],
     registryDependencies: [],
@@ -1716,7 +1716,7 @@ const particles: RegistryParticuleData = {
   },
   'input-34': {
     description: '',
-    file: 'examples/input/input-34.svelte',
+    file: 'input/input-34',
     name: 'Input 34',
     npmDependencies: [],
     registryDependencies: [],
@@ -1724,7 +1724,7 @@ const particles: RegistryParticuleData = {
   },
   'input-35': {
     description: '',
-    file: 'examples/input/input-35.svelte',
+    file: 'input/input-35',
     name: 'Input 35',
     npmDependencies: [],
     registryDependencies: [],
@@ -1732,7 +1732,7 @@ const particles: RegistryParticuleData = {
   },
   'input-36': {
     description: '',
-    file: 'examples/input/input-36.svelte',
+    file: 'input/input-36',
     name: 'Input 36',
     npmDependencies: [],
     registryDependencies: [],
@@ -1740,7 +1740,7 @@ const particles: RegistryParticuleData = {
   },
   'input-37.todo': {
     description: '',
-    file: 'examples/input/input-37.todo.svelte',
+    file: 'input/input-37.todo',
     name: 'Input 37.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -1748,7 +1748,7 @@ const particles: RegistryParticuleData = {
   },
   'input-38.todo': {
     description: '',
-    file: 'examples/input/input-38.todo.svelte',
+    file: 'input/input-38.todo',
     name: 'Input 38.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -1756,7 +1756,7 @@ const particles: RegistryParticuleData = {
   },
   'input-39.todo': {
     description: '',
-    file: 'examples/input/input-39.todo.svelte',
+    file: 'input/input-39.todo',
     name: 'Input 39.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -1764,7 +1764,7 @@ const particles: RegistryParticuleData = {
   },
   'input-40.todo': {
     description: '',
-    file: 'examples/input/input-40.todo.svelte',
+    file: 'input/input-40.todo',
     name: 'Input 40.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -1772,7 +1772,7 @@ const particles: RegistryParticuleData = {
   },
   'input-41.todo': {
     description: '',
-    file: 'examples/input/input-41.todo.svelte',
+    file: 'input/input-41.todo',
     name: 'Input 41.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -1780,7 +1780,7 @@ const particles: RegistryParticuleData = {
   },
   'input-42': {
     description: '',
-    file: 'examples/input/input-42.svelte',
+    file: 'input/input-42',
     name: 'Input 42',
     npmDependencies: [],
     registryDependencies: [],
@@ -1788,7 +1788,7 @@ const particles: RegistryParticuleData = {
   },
   'input-43': {
     description: '',
-    file: 'examples/input/input-43.svelte',
+    file: 'input/input-43',
     name: 'Input 43',
     npmDependencies: [],
     registryDependencies: [],
@@ -1796,7 +1796,7 @@ const particles: RegistryParticuleData = {
   },
   'input-44': {
     description: '',
-    file: 'examples/input/input-44.svelte',
+    file: 'input/input-44',
     name: 'Input 44',
     npmDependencies: [],
     registryDependencies: [],
@@ -1804,7 +1804,7 @@ const particles: RegistryParticuleData = {
   },
   'input-45': {
     description: '',
-    file: 'examples/input/input-45.svelte',
+    file: 'input/input-45',
     name: 'Input 45',
     npmDependencies: [],
     registryDependencies: [],
@@ -1812,7 +1812,7 @@ const particles: RegistryParticuleData = {
   },
   'input-46': {
     description: '',
-    file: 'examples/input/input-46.svelte',
+    file: 'input/input-46',
     name: 'Input 46',
     npmDependencies: [],
     registryDependencies: [],
@@ -1820,7 +1820,7 @@ const particles: RegistryParticuleData = {
   },
   'input-47.todo': {
     description: '',
-    file: 'examples/input/input-47.todo.svelte',
+    file: 'input/input-47.todo',
     name: 'Input 47.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -1828,7 +1828,7 @@ const particles: RegistryParticuleData = {
   },
   'input-48.todo': {
     description: '',
-    file: 'examples/input/input-48.todo.svelte',
+    file: 'input/input-48.todo',
     name: 'Input 48.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -1836,7 +1836,7 @@ const particles: RegistryParticuleData = {
   },
   'input-49.todo': {
     description: '',
-    file: 'examples/input/input-49.todo.svelte',
+    file: 'input/input-49.todo',
     name: 'Input 49.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -1844,7 +1844,7 @@ const particles: RegistryParticuleData = {
   },
   'input-50.todo': {
     description: '',
-    file: 'examples/input/input-50.todo.svelte',
+    file: 'input/input-50.todo',
     name: 'Input 50.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -1852,7 +1852,7 @@ const particles: RegistryParticuleData = {
   },
   'input-51': {
     description: '',
-    file: 'examples/input/input-51.svelte',
+    file: 'input/input-51',
     name: 'Input 51',
     npmDependencies: [],
     registryDependencies: [],
@@ -1860,7 +1860,7 @@ const particles: RegistryParticuleData = {
   },
   'input-52': {
     description: '',
-    file: 'examples/input/input-52.svelte',
+    file: 'input/input-52',
     name: 'Input 52',
     npmDependencies: [],
     registryDependencies: [],
@@ -1868,7 +1868,7 @@ const particles: RegistryParticuleData = {
   },
   'input-53': {
     description: '',
-    file: 'examples/input/input-53.svelte',
+    file: 'input/input-53',
     name: 'Input 53',
     npmDependencies: [],
     registryDependencies: [],
@@ -1876,7 +1876,7 @@ const particles: RegistryParticuleData = {
   },
   'input-54': {
     description: '',
-    file: 'examples/input/input-54.svelte',
+    file: 'input/input-54',
     name: 'Input 54',
     npmDependencies: [],
     registryDependencies: [],
@@ -1884,7 +1884,7 @@ const particles: RegistryParticuleData = {
   },
   'input-55': {
     description: '',
-    file: 'examples/input/input-55.svelte',
+    file: 'input/input-55',
     name: 'Input 55',
     npmDependencies: [],
     registryDependencies: [],
@@ -1892,7 +1892,7 @@ const particles: RegistryParticuleData = {
   },
   'input-56': {
     description: '',
-    file: 'examples/input/input-56.svelte',
+    file: 'input/input-56',
     name: 'Input 56',
     npmDependencies: [],
     registryDependencies: [],
@@ -1900,7 +1900,7 @@ const particles: RegistryParticuleData = {
   },
   'input-57.todo': {
     description: '',
-    file: 'examples/input/input-57.todo.svelte',
+    file: 'input/input-57.todo',
     name: 'Input 57.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -1908,7 +1908,7 @@ const particles: RegistryParticuleData = {
   },
   'input-58.todo': {
     description: '',
-    file: 'examples/input/input-58.todo.svelte',
+    file: 'input/input-58.todo',
     name: 'Input 58.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -1916,7 +1916,7 @@ const particles: RegistryParticuleData = {
   },
   'input-59.todo': {
     description: '',
-    file: 'examples/input/input-59.todo.svelte',
+    file: 'input/input-59.todo',
     name: 'Input 59.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -1924,7 +1924,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-01': {
     description: '',
-    file: 'examples/notification/notification-01.svelte',
+    file: 'notification/notification-01',
     name: 'Notification 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -1932,7 +1932,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-02': {
     description: '',
-    file: 'examples/notification/notification-02.svelte',
+    file: 'notification/notification-02',
     name: 'Notification 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -1940,7 +1940,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-03': {
     description: '',
-    file: 'examples/notification/notification-03.svelte',
+    file: 'notification/notification-03',
     name: 'Notification 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -1948,7 +1948,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-04': {
     description: '',
-    file: 'examples/notification/notification-04.svelte',
+    file: 'notification/notification-04',
     name: 'Notification 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -1956,7 +1956,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-05': {
     description: '',
-    file: 'examples/notification/notification-05.svelte',
+    file: 'notification/notification-05',
     name: 'Notification 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -1964,7 +1964,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-06': {
     description: '',
-    file: 'examples/notification/notification-06.svelte',
+    file: 'notification/notification-06',
     name: 'Notification 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -1972,7 +1972,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-07': {
     description: '',
-    file: 'examples/notification/notification-07.svelte',
+    file: 'notification/notification-07',
     name: 'Notification 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -1980,7 +1980,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-08': {
     description: '',
-    file: 'examples/notification/notification-08.svelte',
+    file: 'notification/notification-08',
     name: 'Notification 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -1988,7 +1988,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-09': {
     description: '',
-    file: 'examples/notification/notification-09.svelte',
+    file: 'notification/notification-09',
     name: 'Notification 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -1996,7 +1996,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-10': {
     description: '',
-    file: 'examples/notification/notification-10.svelte',
+    file: 'notification/notification-10',
     name: 'Notification 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -2004,7 +2004,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-11': {
     description: '',
-    file: 'examples/notification/notification-11.svelte',
+    file: 'notification/notification-11',
     name: 'Notification 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -2012,7 +2012,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-12': {
     description: '',
-    file: 'examples/notification/notification-12.svelte',
+    file: 'notification/notification-12',
     name: 'Notification 12',
     npmDependencies: [],
     registryDependencies: [],
@@ -2020,7 +2020,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-13': {
     description: '',
-    file: 'examples/notification/notification-13.svelte',
+    file: 'notification/notification-13',
     name: 'Notification 13',
     npmDependencies: [],
     registryDependencies: [],
@@ -2028,7 +2028,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-14': {
     description: '',
-    file: 'examples/notification/notification-14.svelte',
+    file: 'notification/notification-14',
     name: 'Notification 14',
     npmDependencies: [],
     registryDependencies: [],
@@ -2036,7 +2036,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-15': {
     description: '',
-    file: 'examples/notification/notification-15.svelte',
+    file: 'notification/notification-15',
     name: 'Notification 15',
     npmDependencies: [],
     registryDependencies: [],
@@ -2044,7 +2044,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-16': {
     description: '',
-    file: 'examples/notification/notification-16.svelte',
+    file: 'notification/notification-16',
     name: 'Notification 16',
     npmDependencies: [],
     registryDependencies: [],
@@ -2052,7 +2052,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-17': {
     description: '',
-    file: 'examples/notification/notification-17.svelte',
+    file: 'notification/notification-17',
     name: 'Notification 17',
     npmDependencies: [],
     registryDependencies: [],
@@ -2060,7 +2060,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-18': {
     description: '',
-    file: 'examples/notification/notification-18.svelte',
+    file: 'notification/notification-18',
     name: 'Notification 18',
     npmDependencies: [],
     registryDependencies: [],
@@ -2068,7 +2068,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-19.todo': {
     description: '',
-    file: 'examples/notification/notification-19.todo.svelte',
+    file: 'notification/notification-19.todo',
     name: 'Notification 19.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -2076,7 +2076,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-20.todo': {
     description: '',
-    file: 'examples/notification/notification-20.todo.svelte',
+    file: 'notification/notification-20.todo',
     name: 'Notification 20.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -2084,7 +2084,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-21': {
     description: '',
-    file: 'examples/notification/notification-21.svelte',
+    file: 'notification/notification-21',
     name: 'Notification 21',
     npmDependencies: [],
     registryDependencies: [],
@@ -2092,7 +2092,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-22': {
     description: '',
-    file: 'examples/notification/notification-22.svelte',
+    file: 'notification/notification-22',
     name: 'Notification 22',
     npmDependencies: [],
     registryDependencies: [],
@@ -2100,7 +2100,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-23': {
     description: '',
-    file: 'examples/notification/notification-23.svelte',
+    file: 'notification/notification-23',
     name: 'Notification 23',
     npmDependencies: [],
     registryDependencies: [],
@@ -2108,7 +2108,7 @@ const particles: RegistryParticuleData = {
   },
   'pagination-01': {
     description: 'Pagination example',
-    file: 'examples/pagination/pagination-01.svelte',
+    file: 'pagination/pagination-01',
     name: 'Pagination 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -2116,7 +2116,7 @@ const particles: RegistryParticuleData = {
   },
   'pagination-02': {
     description: 'Pagination with previous and next buttons only',
-    file: 'examples/pagination/pagination-02.svelte',
+    file: 'pagination/pagination-02',
     name: 'Pagination 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -2124,7 +2124,7 @@ const particles: RegistryParticuleData = {
   },
   'pagination-03': {
     description: 'Pagination with select, and previous and next buttons',
-    file: 'examples/pagination/pagination-03.svelte',
+    file: 'pagination/pagination-03',
     name: 'Pagination 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -2132,7 +2132,7 @@ const particles: RegistryParticuleData = {
   },
   'pagination-04': {
     description: '',
-    file: 'examples/pagination/pagination-04.svelte',
+    file: 'pagination/pagination-04',
     name: 'Pagination 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -2140,7 +2140,7 @@ const particles: RegistryParticuleData = {
   },
   'pagination-05': {
     description: '',
-    file: 'examples/pagination/pagination-05.svelte',
+    file: 'pagination/pagination-05',
     name: 'Pagination 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -2148,7 +2148,7 @@ const particles: RegistryParticuleData = {
   },
   'pagination-06': {
     description: '',
-    file: 'examples/pagination/pagination-06.svelte',
+    file: 'pagination/pagination-06',
     name: 'Pagination 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -2156,7 +2156,7 @@ const particles: RegistryParticuleData = {
   },
   'pagination-07': {
     description: '',
-    file: 'examples/pagination/pagination-07.svelte',
+    file: 'pagination/pagination-07',
     name: 'Pagination 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -2164,7 +2164,7 @@ const particles: RegistryParticuleData = {
   },
   'pagination-08': {
     description: '',
-    file: 'examples/pagination/pagination-08.svelte',
+    file: 'pagination/pagination-08',
     name: 'Pagination 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -2172,7 +2172,7 @@ const particles: RegistryParticuleData = {
   },
   'pagination-09': {
     description: '',
-    file: 'examples/pagination/pagination-09.svelte',
+    file: 'pagination/pagination-09',
     name: 'Pagination 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -2180,7 +2180,7 @@ const particles: RegistryParticuleData = {
   },
   'pagination-10': {
     description: '',
-    file: 'examples/pagination/pagination-10.svelte',
+    file: 'pagination/pagination-10',
     name: 'Pagination 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -2188,7 +2188,7 @@ const particles: RegistryParticuleData = {
   },
   'pagination-11': {
     description: '',
-    file: 'examples/pagination/pagination-11.svelte',
+    file: 'pagination/pagination-11',
     name: 'Pagination 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -2196,7 +2196,7 @@ const particles: RegistryParticuleData = {
   },
   'pagination-12': {
     description: '',
-    file: 'examples/pagination/pagination-12.svelte',
+    file: 'pagination/pagination-12',
     name: 'Pagination 12',
     npmDependencies: [],
     registryDependencies: [],
@@ -2204,7 +2204,7 @@ const particles: RegistryParticuleData = {
   },
   'popover-01': {
     description: 'Popover with a form',
-    file: 'examples/popover/popover-01.svelte',
+    file: 'popover/popover-01',
     name: 'Popover 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -2212,7 +2212,7 @@ const particles: RegistryParticuleData = {
   },
   'popover-02': {
     description: 'Popover with close button',
-    file: 'examples/popover/popover-02.svelte',
+    file: 'popover/popover-02',
     name: 'Popover 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -2220,7 +2220,7 @@ const particles: RegistryParticuleData = {
   },
   'popover-03': {
     description: 'Animated popovers',
-    file: 'examples/popover/popover-03.svelte',
+    file: 'popover/popover-03',
     name: 'Popover 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -2228,7 +2228,7 @@ const particles: RegistryParticuleData = {
   },
   'popover-04': {
     description: '',
-    file: 'examples/popover/popover-04.svelte',
+    file: 'popover/popover-04',
     name: 'Popover 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -2236,7 +2236,7 @@ const particles: RegistryParticuleData = {
   },
   'popover-05': {
     description: '',
-    file: 'examples/popover/popover-05.svelte',
+    file: 'popover/popover-05',
     name: 'Popover 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -2244,7 +2244,7 @@ const particles: RegistryParticuleData = {
   },
   'popover-06': {
     description: '',
-    file: 'examples/popover/popover-06.svelte',
+    file: 'popover/popover-06',
     name: 'Popover 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -2252,7 +2252,7 @@ const particles: RegistryParticuleData = {
   },
   'popover-07': {
     description: '',
-    file: 'examples/popover/popover-07.svelte',
+    file: 'popover/popover-07',
     name: 'Popover 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -2260,7 +2260,7 @@ const particles: RegistryParticuleData = {
   },
   'popover-08': {
     description: '',
-    file: 'examples/popover/popover-08.svelte',
+    file: 'popover/popover-08',
     name: 'Popover 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -2268,7 +2268,7 @@ const particles: RegistryParticuleData = {
   },
   'popover-09': {
     description: '',
-    file: 'examples/popover/popover-09.svelte',
+    file: 'popover/popover-09',
     name: 'Popover 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -2276,7 +2276,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-01': {
     description: '',
-    file: 'examples/radio/radio-01.svelte',
+    file: 'radio/radio-01',
     name: 'Radio 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -2284,7 +2284,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-02': {
     description: '',
-    file: 'examples/radio/radio-02.svelte',
+    file: 'radio/radio-02',
     name: 'Radio 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -2292,7 +2292,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-03': {
     description: '',
-    file: 'examples/radio/radio-03.svelte',
+    file: 'radio/radio-03',
     name: 'Radio 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -2300,7 +2300,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-04': {
     description: '',
-    file: 'examples/radio/radio-04.svelte',
+    file: 'radio/radio-04',
     name: 'Radio 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -2308,7 +2308,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-05': {
     description: '',
-    file: 'examples/radio/radio-05.svelte',
+    file: 'radio/radio-05',
     name: 'Radio 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -2316,7 +2316,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-06': {
     description: '',
-    file: 'examples/radio/radio-06.svelte',
+    file: 'radio/radio-06',
     name: 'Radio 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -2324,7 +2324,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-07': {
     description: '',
-    file: 'examples/radio/radio-07.svelte',
+    file: 'radio/radio-07',
     name: 'Radio 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -2332,7 +2332,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-08': {
     description: '',
-    file: 'examples/radio/radio-08.svelte',
+    file: 'radio/radio-08',
     name: 'Radio 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -2340,7 +2340,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-09': {
     description: '',
-    file: 'examples/radio/radio-09.svelte',
+    file: 'radio/radio-09',
     name: 'Radio 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -2348,7 +2348,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-10': {
     description: '',
-    file: 'examples/radio/radio-10.svelte',
+    file: 'radio/radio-10',
     name: 'Radio 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -2356,7 +2356,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-11': {
     description: '',
-    file: 'examples/radio/radio-11.svelte',
+    file: 'radio/radio-11',
     name: 'Radio 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -2364,7 +2364,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-12': {
     description: '',
-    file: 'examples/radio/radio-12.svelte',
+    file: 'radio/radio-12',
     name: 'Radio 12',
     npmDependencies: [],
     registryDependencies: [],
@@ -2372,7 +2372,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-13': {
     description: '',
-    file: 'examples/radio/radio-13.svelte',
+    file: 'radio/radio-13',
     name: 'Radio 13',
     npmDependencies: [],
     registryDependencies: [],
@@ -2380,7 +2380,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-14': {
     description: '',
-    file: 'examples/radio/radio-14.svelte',
+    file: 'radio/radio-14',
     name: 'Radio 14',
     npmDependencies: [],
     registryDependencies: [],
@@ -2388,7 +2388,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-15': {
     description: '',
-    file: 'examples/radio/radio-15.svelte',
+    file: 'radio/radio-15',
     name: 'Radio 15',
     npmDependencies: [],
     registryDependencies: [],
@@ -2396,7 +2396,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-16': {
     description: '',
-    file: 'examples/radio/radio-16.svelte',
+    file: 'radio/radio-16',
     name: 'Radio 16',
     npmDependencies: [],
     registryDependencies: [],
@@ -2404,7 +2404,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-17': {
     description: '',
-    file: 'examples/radio/radio-17.svelte',
+    file: 'radio/radio-17',
     name: 'Radio 17',
     npmDependencies: [],
     registryDependencies: [],
@@ -2412,7 +2412,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-18': {
     description: '',
-    file: 'examples/radio/radio-18.svelte',
+    file: 'radio/radio-18',
     name: 'Radio 18',
     npmDependencies: [],
     registryDependencies: [],
@@ -2420,7 +2420,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-19': {
     description: '',
-    file: 'examples/radio/radio-19.svelte',
+    file: 'radio/radio-19',
     name: 'Radio 19',
     npmDependencies: [],
     registryDependencies: [],
@@ -2428,7 +2428,7 @@ const particles: RegistryParticuleData = {
   },
   'select-01': {
     description: 'Basic select',
-    file: 'examples/select/select-01.svelte',
+    file: 'select/select-01',
     name: 'Select 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -2436,7 +2436,7 @@ const particles: RegistryParticuleData = {
   },
   'select-02': {
     description: 'Small select',
-    file: 'examples/select/select-02.svelte',
+    file: 'select/select-02',
     name: 'Select 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -2444,7 +2444,7 @@ const particles: RegistryParticuleData = {
   },
   'select-03': {
     description: 'Large select',
-    file: 'examples/select/select-03.svelte',
+    file: 'select/select-03',
     name: 'Select 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -2452,7 +2452,7 @@ const particles: RegistryParticuleData = {
   },
   'select-05': {
     description: 'Select without item alignment',
-    file: 'examples/select/select-05.svelte',
+    file: 'select/select-05',
     name: 'Select 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -2460,7 +2460,7 @@ const particles: RegistryParticuleData = {
   },
   'select-15': {
     description: 'Pill-shaped select trigger',
-    file: 'examples/select/select-15.svelte',
+    file: 'select/select-15',
     name: 'Select 15',
     npmDependencies: [],
     registryDependencies: [],
@@ -2468,7 +2468,7 @@ const particles: RegistryParticuleData = {
   },
   'select-16': {
     description: 'Select with left text label',
-    file: 'examples/select/select-16.svelte',
+    file: 'select/select-16',
     name: 'Select 16',
     npmDependencies: [],
     registryDependencies: [],
@@ -2476,7 +2476,7 @@ const particles: RegistryParticuleData = {
   },
   'select-17': {
     description: 'Select with country flags',
-    file: 'examples/select/select-17.svelte',
+    file: 'select/select-17',
     name: 'Select 17',
     npmDependencies: [],
     registryDependencies: [],
@@ -2484,7 +2484,7 @@ const particles: RegistryParticuleData = {
   },
   'select-18': {
     description: 'Select with description in options only',
-    file: 'examples/select/select-18.svelte',
+    file: 'select/select-18',
     name: 'Select 18',
     npmDependencies: [],
     registryDependencies: [],
@@ -2492,7 +2492,7 @@ const particles: RegistryParticuleData = {
   },
   'select-19': {
     description: 'Select with avatars',
-    file: 'examples/select/select-19.svelte',
+    file: 'select/select-19',
     name: 'Select 19',
     npmDependencies: [],
     registryDependencies: [],
@@ -2500,7 +2500,7 @@ const particles: RegistryParticuleData = {
   },
   'select-20': {
     description: 'Rich select with avatars and usernames',
-    file: 'examples/select/select-20.svelte',
+    file: 'select/select-20',
     name: 'Select 20',
     npmDependencies: [],
     registryDependencies: [],
@@ -2508,7 +2508,7 @@ const particles: RegistryParticuleData = {
   },
   'select-21': {
     description: 'Auto width select',
-    file: 'examples/select/select-21.svelte',
+    file: 'select/select-21',
     name: 'Select 21',
     npmDependencies: [],
     registryDependencies: [],
@@ -2516,7 +2516,7 @@ const particles: RegistryParticuleData = {
   },
   'select-22': {
     description: 'Select with custom border and background',
-    file: 'examples/select/select-22.svelte',
+    file: 'select/select-22',
     name: 'Select 22',
     npmDependencies: [],
     registryDependencies: [],
@@ -2524,7 +2524,7 @@ const particles: RegistryParticuleData = {
   },
   'select-23': {
     description: 'Select with label',
-    file: 'examples/select/select-23.svelte',
+    file: 'select/select-23',
     name: 'Select 23',
     npmDependencies: [],
     registryDependencies: [],
@@ -2532,7 +2532,7 @@ const particles: RegistryParticuleData = {
   },
   'select-24': {
     description: '',
-    file: 'examples/select/select-24.svelte',
+    file: 'select/select-24',
     name: 'Select 24',
     npmDependencies: [],
     registryDependencies: [],
@@ -2540,7 +2540,7 @@ const particles: RegistryParticuleData = {
   },
   'select-25': {
     description: '',
-    file: 'examples/select/select-25.svelte',
+    file: 'select/select-25',
     name: 'Select 25',
     npmDependencies: [],
     registryDependencies: [],
@@ -2548,7 +2548,7 @@ const particles: RegistryParticuleData = {
   },
   'select-26': {
     description: '',
-    file: 'examples/select/select-26.svelte',
+    file: 'select/select-26',
     name: 'Select 26',
     npmDependencies: [],
     registryDependencies: [],
@@ -2556,7 +2556,7 @@ const particles: RegistryParticuleData = {
   },
   'select-27': {
     description: '',
-    file: 'examples/select/select-27.svelte',
+    file: 'select/select-27',
     name: 'Select 27',
     npmDependencies: [],
     registryDependencies: [],
@@ -2564,7 +2564,7 @@ const particles: RegistryParticuleData = {
   },
   'select-28': {
     description: '',
-    file: 'examples/select/select-28.svelte',
+    file: 'select/select-28',
     name: 'Select 28',
     npmDependencies: [],
     registryDependencies: [],
@@ -2572,7 +2572,7 @@ const particles: RegistryParticuleData = {
   },
   'select-29': {
     description: '',
-    file: 'examples/select/select-29.svelte',
+    file: 'select/select-29',
     name: 'Select 29',
     npmDependencies: [],
     registryDependencies: [],
@@ -2580,7 +2580,7 @@ const particles: RegistryParticuleData = {
   },
   'select-30': {
     description: '',
-    file: 'examples/select/select-30.svelte',
+    file: 'select/select-30',
     name: 'Select 30',
     npmDependencies: [],
     registryDependencies: [],
@@ -2588,7 +2588,7 @@ const particles: RegistryParticuleData = {
   },
   'select-31': {
     description: '',
-    file: 'examples/select/select-31.svelte',
+    file: 'select/select-31',
     name: 'Select 31',
     npmDependencies: [],
     registryDependencies: [],
@@ -2596,7 +2596,7 @@ const particles: RegistryParticuleData = {
   },
   'select-32': {
     description: '',
-    file: 'examples/select/select-32.svelte',
+    file: 'select/select-32',
     name: 'Select 32',
     npmDependencies: [],
     registryDependencies: [],
@@ -2604,7 +2604,7 @@ const particles: RegistryParticuleData = {
   },
   'select-33': {
     description: '',
-    file: 'examples/select/select-33.svelte',
+    file: 'select/select-33',
     name: 'Select 33',
     npmDependencies: [],
     registryDependencies: [],
@@ -2612,7 +2612,7 @@ const particles: RegistryParticuleData = {
   },
   'select-34': {
     description: '',
-    file: 'examples/select/select-34.svelte',
+    file: 'select/select-34',
     name: 'Select 34',
     npmDependencies: [],
     registryDependencies: [],
@@ -2620,7 +2620,7 @@ const particles: RegistryParticuleData = {
   },
   'select-35': {
     description: '',
-    file: 'examples/select/select-35.svelte',
+    file: 'select/select-35',
     name: 'Select 35',
     npmDependencies: [],
     registryDependencies: [],
@@ -2628,7 +2628,7 @@ const particles: RegistryParticuleData = {
   },
   'select-36': {
     description: '',
-    file: 'examples/select/select-36.svelte',
+    file: 'select/select-36',
     name: 'Select 36',
     npmDependencies: [],
     registryDependencies: [],
@@ -2636,7 +2636,7 @@ const particles: RegistryParticuleData = {
   },
   'select-37': {
     description: '',
-    file: 'examples/select/select-37.svelte',
+    file: 'select/select-37',
     name: 'Select 37',
     npmDependencies: [],
     registryDependencies: [],
@@ -2644,7 +2644,7 @@ const particles: RegistryParticuleData = {
   },
   'select-38': {
     description: '',
-    file: 'examples/select/select-38.svelte',
+    file: 'select/select-38',
     name: 'Select 38',
     npmDependencies: [],
     registryDependencies: [],
@@ -2652,7 +2652,7 @@ const particles: RegistryParticuleData = {
   },
   'select-39': {
     description: '',
-    file: 'examples/select/select-39.svelte',
+    file: 'select/select-39',
     name: 'Select 39',
     npmDependencies: [],
     registryDependencies: [],
@@ -2660,7 +2660,7 @@ const particles: RegistryParticuleData = {
   },
   'select-40': {
     description: '',
-    file: 'examples/select/select-40.svelte',
+    file: 'select/select-40',
     name: 'Select 40',
     npmDependencies: [],
     registryDependencies: [],
@@ -2668,7 +2668,7 @@ const particles: RegistryParticuleData = {
   },
   'select-41': {
     description: '',
-    file: 'examples/select/select-41.svelte',
+    file: 'select/select-41',
     name: 'Select 41',
     npmDependencies: [],
     registryDependencies: [],
@@ -2676,7 +2676,7 @@ const particles: RegistryParticuleData = {
   },
   'select-42': {
     description: '',
-    file: 'examples/select/select-42.svelte',
+    file: 'select/select-42',
     name: 'Select 42',
     npmDependencies: [],
     registryDependencies: [],
@@ -2684,7 +2684,7 @@ const particles: RegistryParticuleData = {
   },
   'select-43': {
     description: '',
-    file: 'examples/select/select-43.svelte',
+    file: 'select/select-43',
     name: 'Select 43',
     npmDependencies: [],
     registryDependencies: [],
@@ -2692,7 +2692,7 @@ const particles: RegistryParticuleData = {
   },
   'select-44': {
     description: '',
-    file: 'examples/select/select-44.svelte',
+    file: 'select/select-44',
     name: 'Select 44',
     npmDependencies: [],
     registryDependencies: [],
@@ -2700,7 +2700,7 @@ const particles: RegistryParticuleData = {
   },
   'select-45': {
     description: '',
-    file: 'examples/select/select-45.svelte',
+    file: 'select/select-45',
     name: 'Select 45',
     npmDependencies: [],
     registryDependencies: [],
@@ -2708,7 +2708,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-01': {
     description: 'Basic slider',
-    file: 'examples/slider/slider-01.svelte',
+    file: 'slider/slider-01',
     name: 'Slider 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -2716,7 +2716,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-02': {
     description: 'Slider with label and value',
-    file: 'examples/slider/slider-02.svelte',
+    file: 'slider/slider-02',
     name: 'Slider 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -2724,7 +2724,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-03': {
     description: 'Disabled slider',
-    file: 'examples/slider/slider-03.svelte',
+    file: 'slider/slider-03',
     name: 'Slider 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -2732,7 +2732,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-04': {
     description: 'Slider with reference labels',
-    file: 'examples/slider/slider-04.svelte',
+    file: 'slider/slider-04',
     name: 'Slider 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -2740,7 +2740,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-05': {
     description: 'Slider with ticks',
-    file: 'examples/slider/slider-05.svelte',
+    file: 'slider/slider-05',
     name: 'Slider 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -2748,7 +2748,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-06': {
     description: 'Slider with labels above',
-    file: 'examples/slider/slider-06.svelte',
+    file: 'slider/slider-06',
     name: 'Slider 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -2756,7 +2756,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-07': {
     description: 'Range slider',
-    file: 'examples/slider/slider-07.svelte',
+    file: 'slider/slider-07',
     name: 'Slider 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -2764,7 +2764,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-08': {
     description: 'Slider with 3 thumbs',
-    file: 'examples/slider/slider-08.svelte',
+    file: 'slider/slider-08',
     name: 'Slider 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -2772,7 +2772,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-09': {
     description: 'Range slider with collision behavior none',
-    file: 'examples/slider/slider-09.svelte',
+    file: 'slider/slider-09',
     name: 'Slider 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -2780,7 +2780,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-10': {
     description: 'Range slider with collision behavior swap',
-    file: 'examples/slider/slider-10.svelte',
+    file: 'slider/slider-10',
     name: 'Slider 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -2788,7 +2788,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-11': {
     description: 'Slider with icons',
-    file: 'examples/slider/slider-11.svelte',
+    file: 'slider/slider-11',
     name: 'Slider 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -2796,7 +2796,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-12': {
     description: 'Slider with input',
-    file: 'examples/slider/slider-12.svelte',
+    file: 'slider/slider-12',
     name: 'Slider 12',
     npmDependencies: [],
     registryDependencies: [],
@@ -2804,7 +2804,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-13': {
     description: 'Range slider with inputs',
-    file: 'examples/slider/slider-13.svelte',
+    file: 'slider/slider-13',
     name: 'Slider 13',
     npmDependencies: [],
     registryDependencies: [],
@@ -2812,7 +2812,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-14': {
     description: 'Slider with increment and decrement buttons',
-    file: 'examples/slider/slider-14.svelte',
+    file: 'slider/slider-14',
     name: 'Slider 14',
     npmDependencies: [],
     registryDependencies: [],
@@ -2820,7 +2820,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-15': {
     description: 'Price range slider',
-    file: 'examples/slider/slider-15.svelte',
+    file: 'slider/slider-15',
     name: 'Slider 15',
     npmDependencies: [],
     registryDependencies: [],
@@ -2828,7 +2828,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-16': {
     description: 'Emoji rating slider',
-    file: 'examples/slider/slider-16.svelte',
+    file: 'slider/slider-16',
     name: 'Slider 16',
     npmDependencies: [],
     registryDependencies: [],
@@ -2836,7 +2836,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-17': {
     description: 'Vertical slider',
-    file: 'examples/slider/slider-17.svelte',
+    file: 'slider/slider-17',
     name: 'Slider 17',
     npmDependencies: [],
     registryDependencies: [],
@@ -2844,7 +2844,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-18': {
     description: 'Vertical range slider',
-    file: 'examples/slider/slider-18.svelte',
+    file: 'slider/slider-18',
     name: 'Slider 18',
     npmDependencies: [],
     registryDependencies: [],
@@ -2852,7 +2852,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-19': {
     description: 'Vertical slider with input',
-    file: 'examples/slider/slider-19.svelte',
+    file: 'slider/slider-19',
     name: 'Slider 19',
     npmDependencies: [],
     registryDependencies: [],
@@ -2860,7 +2860,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-20': {
     description: 'Equalizer with vertical sliders',
-    file: 'examples/slider/slider-20.svelte',
+    file: 'slider/slider-20',
     name: 'Slider 20',
     npmDependencies: [],
     registryDependencies: [],
@@ -2868,7 +2868,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-21': {
     description: 'Object position sliders with reset',
-    file: 'examples/slider/slider-21.svelte',
+    file: 'slider/slider-21',
     name: 'Slider 21',
     npmDependencies: [],
     registryDependencies: [],
@@ -2876,7 +2876,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-22': {
     description: 'Price slider with histogram',
-    file: 'examples/slider/slider-22.svelte',
+    file: 'slider/slider-22',
     name: 'Slider 22',
     npmDependencies: [],
     registryDependencies: [],
@@ -2884,7 +2884,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-23': {
     description: 'Slider in form',
-    file: 'examples/slider/slider-23.svelte',
+    file: 'slider/slider-23',
     name: 'Slider 23',
     npmDependencies: [],
     registryDependencies: [],
@@ -2892,7 +2892,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-24': {
     description: '',
-    file: 'examples/slider/slider-24.svelte',
+    file: 'slider/slider-24',
     name: 'Slider 24',
     npmDependencies: [],
     registryDependencies: [],
@@ -2900,7 +2900,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-25': {
     description: '',
-    file: 'examples/slider/slider-25.svelte',
+    file: 'slider/slider-25',
     name: 'Slider 25',
     npmDependencies: [],
     registryDependencies: [],
@@ -2908,7 +2908,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-26': {
     description: '',
-    file: 'examples/slider/slider-26.svelte',
+    file: 'slider/slider-26',
     name: 'Slider 26',
     npmDependencies: [],
     registryDependencies: [],
@@ -2916,7 +2916,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-27': {
     description: '',
-    file: 'examples/slider/slider-27.svelte',
+    file: 'slider/slider-27',
     name: 'Slider 27',
     npmDependencies: [],
     registryDependencies: [],
@@ -2924,7 +2924,7 @@ const particles: RegistryParticuleData = {
   },
   'switch-01': {
     description: 'Basic switch',
-    file: 'examples/switch/switch-01.svelte',
+    file: 'switch/switch-01',
     name: 'Switch 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -2932,7 +2932,7 @@ const particles: RegistryParticuleData = {
   },
   'switch-02': {
     description: 'Disabled switch',
-    file: 'examples/switch/switch-02.svelte',
+    file: 'switch/switch-02',
     name: 'Switch 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -2940,7 +2940,7 @@ const particles: RegistryParticuleData = {
   },
   'switch-03': {
     description: 'Switch with description',
-    file: 'examples/switch/switch-03.svelte',
+    file: 'switch/switch-03',
     name: 'Switch 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -2948,7 +2948,7 @@ const particles: RegistryParticuleData = {
   },
   'switch-04': {
     description: 'Switch card',
-    file: 'examples/switch/switch-04.svelte',
+    file: 'switch/switch-04',
     name: 'Switch 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -2956,7 +2956,7 @@ const particles: RegistryParticuleData = {
   },
   'switch-05': {
     description: 'Switch in form',
-    file: 'examples/switch/switch-05.svelte',
+    file: 'switch/switch-05',
     name: 'Switch 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -2964,7 +2964,7 @@ const particles: RegistryParticuleData = {
   },
   'switch-06': {
     description: 'Custom size switch',
-    file: 'examples/switch/switch-06.svelte',
+    file: 'switch/switch-06',
     name: 'Switch 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -2972,7 +2972,7 @@ const particles: RegistryParticuleData = {
   },
   'switch-07': {
     description: '',
-    file: 'examples/switch/switch-07.svelte',
+    file: 'switch/switch-07',
     name: 'Switch 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -2980,7 +2980,7 @@ const particles: RegistryParticuleData = {
   },
   'switch-08': {
     description: '',
-    file: 'examples/switch/switch-08.svelte',
+    file: 'switch/switch-08',
     name: 'Switch 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -2988,7 +2988,7 @@ const particles: RegistryParticuleData = {
   },
   'switch-09': {
     description: '',
-    file: 'examples/switch/switch-09.svelte',
+    file: 'switch/switch-09',
     name: 'Switch 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -2996,7 +2996,7 @@ const particles: RegistryParticuleData = {
   },
   'switch-10': {
     description: '',
-    file: 'examples/switch/switch-10.svelte',
+    file: 'switch/switch-10',
     name: 'Switch 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -3004,7 +3004,7 @@ const particles: RegistryParticuleData = {
   },
   'switch-11': {
     description: '',
-    file: 'examples/switch/switch-11.svelte',
+    file: 'switch/switch-11',
     name: 'Switch 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -3012,7 +3012,7 @@ const particles: RegistryParticuleData = {
   },
   'switch-12': {
     description: '',
-    file: 'examples/switch/switch-12.svelte',
+    file: 'switch/switch-12',
     name: 'Switch 12',
     npmDependencies: [],
     registryDependencies: [],
@@ -3020,7 +3020,7 @@ const particles: RegistryParticuleData = {
   },
   'switch-13': {
     description: '',
-    file: 'examples/switch/switch-13.svelte',
+    file: 'switch/switch-13',
     name: 'Switch 13',
     npmDependencies: [],
     registryDependencies: [],
@@ -3028,7 +3028,7 @@ const particles: RegistryParticuleData = {
   },
   'switch-14': {
     description: '',
-    file: 'examples/switch/switch-14.svelte',
+    file: 'switch/switch-14',
     name: 'Switch 14',
     npmDependencies: [],
     registryDependencies: [],
@@ -3036,7 +3036,7 @@ const particles: RegistryParticuleData = {
   },
   'switch-15': {
     description: '',
-    file: 'examples/switch/switch-15.svelte',
+    file: 'switch/switch-15',
     name: 'Switch 15',
     npmDependencies: [],
     registryDependencies: [],
@@ -3044,7 +3044,7 @@ const particles: RegistryParticuleData = {
   },
   'switch-16': {
     description: '',
-    file: 'examples/switch/switch-16.svelte',
+    file: 'switch/switch-16',
     name: 'Switch 16',
     npmDependencies: [],
     registryDependencies: [],
@@ -3052,7 +3052,7 @@ const particles: RegistryParticuleData = {
   },
   'switch-17': {
     description: '',
-    file: 'examples/switch/switch-17.svelte',
+    file: 'switch/switch-17',
     name: 'Switch 17',
     npmDependencies: [],
     registryDependencies: [],
@@ -3060,7 +3060,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-01': {
     description: '',
-    file: 'examples/tab/tab-01.svelte',
+    file: 'tab/tab-01',
     name: 'Tab 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -3068,7 +3068,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-02': {
     description: '',
-    file: 'examples/tab/tab-02.svelte',
+    file: 'tab/tab-02',
     name: 'Tab 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -3076,7 +3076,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-03': {
     description: '',
-    file: 'examples/tab/tab-03.svelte',
+    file: 'tab/tab-03',
     name: 'Tab 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -3084,7 +3084,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-04': {
     description: '',
-    file: 'examples/tab/tab-04.svelte',
+    file: 'tab/tab-04',
     name: 'Tab 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -3092,7 +3092,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-05': {
     description: '',
-    file: 'examples/tab/tab-05.svelte',
+    file: 'tab/tab-05',
     name: 'Tab 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -3100,7 +3100,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-06': {
     description: '',
-    file: 'examples/tab/tab-06.svelte',
+    file: 'tab/tab-06',
     name: 'Tab 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -3108,7 +3108,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-07': {
     description: '',
-    file: 'examples/tab/tab-07.svelte',
+    file: 'tab/tab-07',
     name: 'Tab 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -3116,7 +3116,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-08': {
     description: '',
-    file: 'examples/tab/tab-08.svelte',
+    file: 'tab/tab-08',
     name: 'Tab 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -3124,7 +3124,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-09': {
     description: '',
-    file: 'examples/tab/tab-09.svelte',
+    file: 'tab/tab-09',
     name: 'Tab 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -3132,7 +3132,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-10': {
     description: '',
-    file: 'examples/tab/tab-10.svelte',
+    file: 'tab/tab-10',
     name: 'Tab 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -3140,7 +3140,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-11': {
     description: '',
-    file: 'examples/tab/tab-11.svelte',
+    file: 'tab/tab-11',
     name: 'Tab 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -3148,7 +3148,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-12': {
     description: '',
-    file: 'examples/tab/tab-12.svelte',
+    file: 'tab/tab-12',
     name: 'Tab 12',
     npmDependencies: [],
     registryDependencies: [],
@@ -3156,7 +3156,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-13': {
     description: '',
-    file: 'examples/tab/tab-13.svelte',
+    file: 'tab/tab-13',
     name: 'Tab 13',
     npmDependencies: [],
     registryDependencies: [],
@@ -3164,7 +3164,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-14': {
     description: '',
-    file: 'examples/tab/tab-14.svelte',
+    file: 'tab/tab-14',
     name: 'Tab 14',
     npmDependencies: [],
     registryDependencies: [],
@@ -3172,7 +3172,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-15': {
     description: '',
-    file: 'examples/tab/tab-15.svelte',
+    file: 'tab/tab-15',
     name: 'Tab 15',
     npmDependencies: [],
     registryDependencies: [],
@@ -3180,7 +3180,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-16': {
     description: '',
-    file: 'examples/tab/tab-16.svelte',
+    file: 'tab/tab-16',
     name: 'Tab 16',
     npmDependencies: [],
     registryDependencies: [],
@@ -3188,7 +3188,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-17': {
     description: '',
-    file: 'examples/tab/tab-17.svelte',
+    file: 'tab/tab-17',
     name: 'Tab 17',
     npmDependencies: [],
     registryDependencies: [],
@@ -3196,7 +3196,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-18': {
     description: '',
-    file: 'examples/tab/tab-18.svelte',
+    file: 'tab/tab-18',
     name: 'Tab 18',
     npmDependencies: [],
     registryDependencies: [],
@@ -3204,7 +3204,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-19': {
     description: '',
-    file: 'examples/tab/tab-19.svelte',
+    file: 'tab/tab-19',
     name: 'Tab 19',
     npmDependencies: [],
     registryDependencies: [],
@@ -3212,7 +3212,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-20': {
     description: '',
-    file: 'examples/tab/tab-20.svelte',
+    file: 'tab/tab-20',
     name: 'Tab 20',
     npmDependencies: [],
     registryDependencies: [],
@@ -3220,7 +3220,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-01': {
     description: 'Basic textarea',
-    file: 'examples/textarea/textarea-01.svelte',
+    file: 'textarea/textarea-01',
     name: 'Textarea 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -3228,7 +3228,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-02': {
     description: 'Small textarea',
-    file: 'examples/textarea/textarea-02.svelte',
+    file: 'textarea/textarea-02',
     name: 'Textarea 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -3236,7 +3236,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-03': {
     description: 'Large textarea',
-    file: 'examples/textarea/textarea-03.svelte',
+    file: 'textarea/textarea-03',
     name: 'Textarea 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -3244,7 +3244,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-04': {
     description: 'Disabled textarea',
-    file: 'examples/textarea/textarea-04.svelte',
+    file: 'textarea/textarea-04',
     name: 'Textarea 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -3252,7 +3252,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-05': {
     description: 'Textarea with label',
-    file: 'examples/textarea/textarea-05.svelte',
+    file: 'textarea/textarea-05',
     name: 'Textarea 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -3260,7 +3260,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-06': {
     description: 'Textarea in form',
-    file: 'examples/textarea/textarea-06.svelte',
+    file: 'textarea/textarea-06',
     name: 'Textarea 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -3268,7 +3268,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-07': {
     description: 'Textarea with label and required indicator',
-    file: 'examples/textarea/textarea-07.svelte',
+    file: 'textarea/textarea-07',
     name: 'Textarea 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -3276,7 +3276,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-08': {
     description: 'Textarea with optional label',
-    file: 'examples/textarea/textarea-08.svelte',
+    file: 'textarea/textarea-08',
     name: 'Textarea 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -3284,7 +3284,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-09': {
     description: 'Textarea with custom border and background',
-    file: 'examples/textarea/textarea-09.svelte',
+    file: 'textarea/textarea-09',
     name: 'Textarea 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -3292,7 +3292,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-10': {
     description: 'Read-only textarea',
-    file: 'examples/textarea/textarea-10.svelte',
+    file: 'textarea/textarea-10',
     name: 'Textarea 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -3300,7 +3300,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-11': {
     description: 'Textarea with characters remaining counter',
-    file: 'examples/textarea/textarea-11.svelte',
+    file: 'textarea/textarea-11',
     name: 'Textarea 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -3308,7 +3308,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-12': {
     description: 'Textarea field with required indicator',
-    file: 'examples/textarea/textarea-12.svelte',
+    file: 'textarea/textarea-12',
     name: 'Textarea 12',
     npmDependencies: [],
     registryDependencies: [],
@@ -3316,7 +3316,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-13': {
     description: 'Shorter textarea with fixed height',
-    file: 'examples/textarea/textarea-13.svelte',
+    file: 'textarea/textarea-13',
     name: 'Textarea 13',
     npmDependencies: [],
     registryDependencies: [],
@@ -3324,7 +3324,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-14': {
     description: 'Textarea with button aligned right',
-    file: 'examples/textarea/textarea-14.svelte',
+    file: 'textarea/textarea-14',
     name: 'Textarea 14',
     npmDependencies: [],
     registryDependencies: [],
@@ -3332,7 +3332,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-15': {
     description: 'Textarea with button aligned left',
-    file: 'examples/textarea/textarea-15.svelte',
+    file: 'textarea/textarea-15',
     name: 'Textarea 15',
     npmDependencies: [],
     registryDependencies: [],
@@ -3340,7 +3340,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-16': {
     description: '',
-    file: 'examples/textarea/textarea-16.svelte',
+    file: 'textarea/textarea-16',
     name: 'Textarea 16',
     npmDependencies: [],
     registryDependencies: [],
@@ -3348,7 +3348,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-17': {
     description: '',
-    file: 'examples/textarea/textarea-17.svelte',
+    file: 'textarea/textarea-17',
     name: 'Textarea 17',
     npmDependencies: [],
     registryDependencies: [],
@@ -3356,7 +3356,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-18': {
     description: '',
-    file: 'examples/textarea/textarea-18.svelte',
+    file: 'textarea/textarea-18',
     name: 'Textarea 18',
     npmDependencies: [],
     registryDependencies: [],
@@ -3364,7 +3364,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-19': {
     description: '',
-    file: 'examples/textarea/textarea-19.svelte',
+    file: 'textarea/textarea-19',
     name: 'Textarea 19',
     npmDependencies: [],
     registryDependencies: [],
@@ -3372,7 +3372,7 @@ const particles: RegistryParticuleData = {
   },
   'timeline-01': {
     description: '',
-    file: 'examples/timeline/timeline-01.svelte',
+    file: 'timeline/timeline-01',
     name: 'Timeline 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -3380,7 +3380,7 @@ const particles: RegistryParticuleData = {
   },
   'timeline-02': {
     description: '',
-    file: 'examples/timeline/timeline-02.svelte',
+    file: 'timeline/timeline-02',
     name: 'Timeline 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -3388,7 +3388,7 @@ const particles: RegistryParticuleData = {
   },
   'timeline-03': {
     description: '',
-    file: 'examples/timeline/timeline-03.svelte',
+    file: 'timeline/timeline-03',
     name: 'Timeline 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -3396,7 +3396,7 @@ const particles: RegistryParticuleData = {
   },
   'timeline-04': {
     description: '',
-    file: 'examples/timeline/timeline-04.svelte',
+    file: 'timeline/timeline-04',
     name: 'Timeline 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -3404,7 +3404,7 @@ const particles: RegistryParticuleData = {
   },
   'timeline-05': {
     description: '',
-    file: 'examples/timeline/timeline-05.svelte',
+    file: 'timeline/timeline-05',
     name: 'Timeline 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -3412,7 +3412,7 @@ const particles: RegistryParticuleData = {
   },
   'timeline-06': {
     description: '',
-    file: 'examples/timeline/timeline-06.svelte',
+    file: 'timeline/timeline-06',
     name: 'Timeline 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -3420,7 +3420,7 @@ const particles: RegistryParticuleData = {
   },
   'timeline-07': {
     description: '',
-    file: 'examples/timeline/timeline-07.svelte',
+    file: 'timeline/timeline-07',
     name: 'Timeline 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -3428,7 +3428,7 @@ const particles: RegistryParticuleData = {
   },
   'timeline-08': {
     description: '',
-    file: 'examples/timeline/timeline-08.svelte',
+    file: 'timeline/timeline-08',
     name: 'Timeline 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -3436,7 +3436,7 @@ const particles: RegistryParticuleData = {
   },
   'timeline-09': {
     description: '',
-    file: 'examples/timeline/timeline-09.svelte',
+    file: 'timeline/timeline-09',
     name: 'Timeline 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -3444,7 +3444,7 @@ const particles: RegistryParticuleData = {
   },
   'timeline-10': {
     description: '',
-    file: 'examples/timeline/timeline-10.svelte',
+    file: 'timeline/timeline-10',
     name: 'Timeline 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -3452,7 +3452,7 @@ const particles: RegistryParticuleData = {
   },
   'timeline-11': {
     description: '',
-    file: 'examples/timeline/timeline-11.svelte',
+    file: 'timeline/timeline-11',
     name: 'Timeline 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -3460,7 +3460,7 @@ const particles: RegistryParticuleData = {
   },
   'timeline-12': {
     description: '',
-    file: 'examples/timeline/timeline-12.svelte',
+    file: 'timeline/timeline-12',
     name: 'Timeline 12',
     npmDependencies: [],
     registryDependencies: [],
@@ -3468,7 +3468,7 @@ const particles: RegistryParticuleData = {
   },
   'tooltip-01': {
     description: 'Basic tooltip',
-    file: 'examples/tooltip/tooltip-01.svelte',
+    file: 'tooltip/tooltip-01',
     name: 'Tooltip 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -3476,7 +3476,7 @@ const particles: RegistryParticuleData = {
   },
   'tooltip-02': {
     description: 'Grouped tooltips',
-    file: 'examples/tooltip/tooltip-02.svelte',
+    file: 'tooltip/tooltip-02',
     name: 'Tooltip 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -3484,7 +3484,7 @@ const particles: RegistryParticuleData = {
   },
   'tooltip-03': {
     description: 'Toggle group animated tooltip',
-    file: 'examples/tooltip/tooltip-03.svelte',
+    file: 'tooltip/tooltip-03',
     name: 'Tooltip 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -3492,7 +3492,7 @@ const particles: RegistryParticuleData = {
   },
   'tooltip-04': {
     description: 'Vertical group with animated tooltip',
-    file: 'examples/tooltip/tooltip-04.svelte',
+    file: 'tooltip/tooltip-04',
     name: 'Tooltip 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -3500,7 +3500,7 @@ const particles: RegistryParticuleData = {
   },
   'tooltip-05': {
     description: '',
-    file: 'examples/tooltip/tooltip-05.svelte',
+    file: 'tooltip/tooltip-05',
     name: 'Tooltip 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -3508,7 +3508,7 @@ const particles: RegistryParticuleData = {
   },
   'tooltip-06': {
     description: '',
-    file: 'examples/tooltip/tooltip-06.svelte',
+    file: 'tooltip/tooltip-06',
     name: 'Tooltip 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -3516,7 +3516,7 @@ const particles: RegistryParticuleData = {
   },
   'tooltip-07': {
     description: '',
-    file: 'examples/tooltip/tooltip-07.svelte',
+    file: 'tooltip/tooltip-07',
     name: 'Tooltip 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -3524,7 +3524,7 @@ const particles: RegistryParticuleData = {
   },
   'tooltip-08': {
     description: '',
-    file: 'examples/tooltip/tooltip-08.svelte',
+    file: 'tooltip/tooltip-08',
     name: 'Tooltip 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -3532,7 +3532,7 @@ const particles: RegistryParticuleData = {
   },
   'tooltip-09': {
     description: '',
-    file: 'examples/tooltip/tooltip-09.svelte',
+    file: 'tooltip/tooltip-09',
     name: 'Tooltip 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -3540,7 +3540,7 @@ const particles: RegistryParticuleData = {
   },
   'tooltip-10': {
     description: '',
-    file: 'examples/tooltip/tooltip-10.svelte',
+    file: 'tooltip/tooltip-10',
     name: 'Tooltip 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -3548,7 +3548,7 @@ const particles: RegistryParticuleData = {
   },
   'tooltip-11': {
     description: '',
-    file: 'examples/tooltip/tooltip-11.svelte',
+    file: 'tooltip/tooltip-11',
     name: 'Tooltip 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -3556,7 +3556,7 @@ const particles: RegistryParticuleData = {
   },
   'tooltip-12': {
     description: '',
-    file: 'examples/tooltip/tooltip-12.svelte',
+    file: 'tooltip/tooltip-12',
     name: 'Tooltip 12',
     npmDependencies: [],
     registryDependencies: [],
