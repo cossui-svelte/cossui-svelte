@@ -1,9 +1,8 @@
 <script lang="ts">
-  import SiteHeaderBase from "../shared-components/site-header.svelte";
+  import SiteHeaderBase from "./site-header.svelte";
   import { Separator } from "$lib/components/ui/separator";
   import CommandMenu from "./command-menu.svelte";
   import MainNav from "./main-nav.svelte";
-  import MobileNav from "./mobile-nav.svelte";
   import { Button } from "$lib/components/ui/button";
 
   interface PageNode {

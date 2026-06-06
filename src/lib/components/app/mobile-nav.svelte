@@ -1,11 +1,12 @@
 <script lang="ts">
   import { cn } from "$lib/utils";
-  import { Dialog } from "bits-ui";
+
   import Menu from "@lucide/svelte/icons/menu";
   import { Button } from "$lib/components/ui/button";
   import { Badge } from "$lib/components/ui/badge";
   import Sheet from "$lib/components/ui/sheet/sheet.svelte";
   import SheetPopup from "$lib/components/ui/sheet/sheet-popup.svelte";
+  import { DialogTrigger } from "$lib/components/ui/dialog";
 
   interface PageNode {
     type: "page";

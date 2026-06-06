@@ -1,6 +1,6 @@
 <script lang="ts">
   import { cn } from "$lib/utils";
-  import CodeBlock from "../shared-components/code-block.svelte";
+  import CodeBlock from "./code-block.svelte";
   import CodeCollapsibleWrapper from "./code-collapsible-wrapper.svelte";
 
   /**
