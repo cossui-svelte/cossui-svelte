@@ -95,6 +95,16 @@
     internalValue = v;
     value = v as never;
     onValueChange?.(v as never);
+    // Keep inputValueProxy in sync so re-renders don't push a stale "" back to bits-ui.
+    if (type !== "multiple") {
+      const selected = v as string;
+      inputValueProxy = selected
+        ? (items?.find((i) => i.value === selected)?.label ?? selected)
+        : "";
+    } else {
+      // For multiple, clear the input so the user can search for the next chip.
+      inputValueProxy = "";
+    }
   }
 
   let filterText = $state("");
@@ -131,7 +141,12 @@
       open = v as never;
       onOpenChange?.(v);
     },
-    setFilterText(v) { filterText = v; },
+    setFilterText(v) {
+      filterText = v;
+      // Track typed text in multiple mode so clearing inputValueProxy in
+      // handleValueChange registers as an actual change that Svelte will push.
+      if (type === "multiple") inputValueProxy = v;
+    },
     removeLastValue() {
       if (type === "multiple") {
         const current = internalValue as string[] | undefined;
