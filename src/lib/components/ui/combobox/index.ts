@@ -1,4 +1,11 @@
-export { default as Combobox } from './combobox.svelte';
+export { default as Combobox, getComboboxCtx } from './combobox.svelte';
+
+export function useComboboxFilter(
+  filterFn: (value: string, inputValue: string) => boolean = (v, q) =>
+    v.toLowerCase().includes(q.toLowerCase()),
+): (value: string, inputValue: string) => boolean {
+  return filterFn;
+}
 export { default as ComboboxChip } from './combobox-chip.svelte';
 export { default as ComboboxChipRemove } from './combobox-chip-remove.svelte';
 export { default as ComboboxChips } from './combobox-chips.svelte';

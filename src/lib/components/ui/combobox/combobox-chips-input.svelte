@@ -7,6 +7,8 @@
   }
 
   let { class: className, size = "default", ...restProps }: Props = $props();
+
+  const numericSize = $derived(typeof size === "number" ? size : undefined);
 </script>
 
 <Combobox.Input
@@ -17,5 +19,6 @@
   )}
   data-size={typeof size === "string" ? size : undefined}
   data-slot="combobox-chips-input"
+  {...(numericSize !== undefined ? ({ size: numericSize } as object) : {})}
   {...restProps}
 />

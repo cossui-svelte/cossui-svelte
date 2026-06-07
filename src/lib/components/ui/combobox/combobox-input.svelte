@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
+  import type { HTMLButtonAttributes } from "svelte/elements";
   import { Combobox } from "bits-ui";
   import ChevronsUpDown from "@lucide/svelte/icons/chevrons-up-down";
   import { cn } from "$lib/utils";
@@ -11,8 +12,8 @@
     showClear?: boolean;
     startAddon?: Snippet;
     size?: "sm" | "default" | "lg" | number;
-    clearProps?: { onclick?: () => void; class?: string };
-    triggerProps?: { class?: string };
+    clearProps?: Omit<HTMLButtonAttributes, "class"> & { class?: string };
+    triggerProps?: Omit<Combobox.TriggerProps, "class"> & { class?: string };
   }
 
   let {
@@ -25,6 +26,20 @@
     triggerProps,
     ...restProps
   }: Props = $props();
+
+  const clearPropsClass = $derived(clearProps?.class);
+  const clearPropsRest = $derived.by(() => {
+    if (!clearProps) return {};
+    const { class: _, ...rest } = clearProps;
+    return rest as Omit<NonNullable<typeof clearProps>, "class">;
+  });
+
+  const triggerPropsClass = $derived(triggerProps?.class);
+  const triggerPropsRest = $derived.by(() => {
+    if (!triggerProps) return {};
+    const { class: _, ...rest } = triggerProps;
+    return rest as Omit<NonNullable<typeof triggerProps>, "class">;
+  });
 </script>
 
 <div
@@ -67,8 +82,9 @@
       class={cn(
         "-translate-y-1/2 absolute top-1/2 inline-flex size-8 shrink-0 cursor-pointer items-center justify-center rounded-md border border-transparent opacity-80 outline-none transition-colors pointer-coarse:after:absolute pointer-coarse:after:min-h-11 pointer-coarse:after:min-w-11 hover:opacity-100 has-[+[data-slot=combobox-clear]]:hidden sm:size-7 [&_svg:not([class*='size-'])]:size-4.5 sm:[&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
         size === "sm" ? "end-0" : "end-0.5",
-        triggerProps?.class,
+        triggerPropsClass,
       )}
+      {...triggerPropsRest}
     >
       <ChevronsUpDown />
     </ComboboxTrigger>
@@ -78,9 +94,9 @@
       class={cn(
         "-translate-y-1/2 absolute top-1/2 inline-flex size-8 shrink-0 cursor-pointer items-center justify-center rounded-md border border-transparent opacity-80 outline-none transition-colors pointer-coarse:after:absolute pointer-coarse:after:min-h-11 pointer-coarse:after:min-w-11 hover:opacity-100 sm:size-7 [&_svg:not([class*='size-'])]:size-4.5 sm:[&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
         size === "sm" ? "end-0" : "end-0.5",
-        clearProps?.class,
+        clearPropsClass,
       )}
-      onclick={clearProps?.onclick}
+      {...clearPropsRest}
     />
   {/if}
 </div>
