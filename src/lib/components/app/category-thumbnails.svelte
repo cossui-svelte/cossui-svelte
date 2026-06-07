@@ -40,10 +40,7 @@
 <!-- ── Primitive snippets ──────────────────────────────────────────────────── -->
 
 {#snippet iconSnip(IconComp: any, cls?: string)}
-  <svelte:component
-    this={IconComp}
-    class={cn("size-4 text-muted-foreground/88", cls)}
-  />
+  <IconComp class={cn("size-4 text-muted-foreground/88", cls)} />
 {/snippet}
 
 {#snippet textSnip(cls?: string, variant: "main" | "secondary" = "main")}
