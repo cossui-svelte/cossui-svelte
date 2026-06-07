@@ -8,6 +8,7 @@
         ComboboxList,
         ComboboxPopup,
     } from "$lib/components/ui/combobox";
+    import ComboboxChip from "$lib/components/ui/combobox/combobox-chip.svelte";
 
     const items = [
         { label: "Apple", value: "apple" },
@@ -30,6 +31,25 @@
             placeholder="Select a item…"
         />
         <ComboboxPopup>
+            <ComboboxList>
+                {#each items as item}
+                    <ComboboxItem value={item.value} label={item.label}>
+                        {item.label}
+                    </ComboboxItem>
+                {/each}
+            </ComboboxList>
+        </ComboboxPopup>
+    </Combobox>
+</ComponentPreviewTabs>
+
+<ComponentPreviewTabs>
+    <Combobox defaultValue={items[2]} disabled {items}>
+        <ComboboxInput
+            aria-label="Select an item"
+            placeholder="Select an item…"
+        />
+        <ComboboxPopup>
+            <ComboboxEmpty>No items found.</ComboboxEmpty>
             <ComboboxList>
                 {#each items as item}
                     <ComboboxItem value={item.value} label={item.label}>

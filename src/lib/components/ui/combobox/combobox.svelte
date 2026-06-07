@@ -25,9 +25,12 @@
   import type { Snippet } from "svelte";
   import { Combobox } from "bits-ui";
 
+  type DefaultValue = string | { label?: string; value: string };
+
   type Props = Omit<Combobox.RootProps, "type"> & {
     children?: Snippet;
     type?: "single" | "multiple";
+    defaultValue?: DefaultValue;
   };
 
   let {
@@ -37,22 +40,47 @@
     onValueChange,
     open = $bindable(),
     onOpenChange,
+    inputValue: externalInputValue,
+    defaultValue,
     ...restProps
   }: Props = $props();
 
   let chipsEl = $state<HTMLElement | null>(null);
 
-  // Internal state bridges the discriminated-union value and open state so
-  // child components (clear button, input click) can drive them without
-  // needing access to bits-ui internals.
+  // Resolve value string and display label from defaultValue (computed once).
+  const defaultVal =
+    defaultValue === undefined
+      ? undefined
+      : typeof defaultValue === "string"
+        ? defaultValue
+        : defaultValue.value;
+
+  const defaultLabel =
+    defaultValue === undefined
+      ? ""
+      : typeof defaultValue === "string"
+        ? defaultValue
+        : (defaultValue.label ?? defaultValue.value);
+
+  // internalValue — uses controlled `value` when provided, otherwise defaultValue.
   let internalValue = $state<string | string[] | undefined>(
-    value as string | string[] | undefined,
+    value !== undefined ? (value as string | string[] | undefined) : defaultVal,
   );
+
+  // inputValueProxy — two-way bound to bits-ui's inputValue so the input field
+  // stays in sync when items are selected or the user types.
+  let inputValueProxy = $state(externalInputValue ?? defaultLabel);
+
   let internalOpen = $state(open ?? false);
 
-  // Sync external controlled props → internal state.
+  // Sync externally controlled props → internal state.
+  // Only sync value when it is defined so defaultValue is not overwritten
+  // in pure uncontrolled usage.
   $effect(() => {
-    internalValue = value as string | string[] | undefined;
+    if (value !== undefined) internalValue = value as string | string[] | undefined;
+  });
+  $effect(() => {
+    if (externalInputValue !== undefined) inputValueProxy = externalInputValue;
   });
   $effect(() => {
     if (open !== undefined) internalOpen = open;
@@ -77,6 +105,7 @@
     clearValue() {
       const empty = type === "multiple" ? ([] as string[]) : undefined;
       internalValue = empty;
+      inputValueProxy = "";
       value = empty as never;
       onValueChange?.(empty as never);
     },
@@ -96,6 +125,7 @@
     onValueChange: handleValueChange,
     open: internalOpen,
     onOpenChange: handleOpenChange,
+    inputValue: inputValueProxy,
     ...restProps,
   } as Combobox.RootProps)}
 >
