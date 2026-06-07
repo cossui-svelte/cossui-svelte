@@ -30,7 +30,6 @@
             placeholder="Select a item…"
         />
         <ComboboxPopup>
-            <ComboboxEmpty>No items found.</ComboboxEmpty>
             <ComboboxList>
                 {#each items as item}
                     <ComboboxItem value={item.value} label={item.label}>
