@@ -2,11 +2,14 @@
   import type { Snippet } from "svelte";
   import { Combobox } from "bits-ui";
 
-  type Props = Combobox.RootProps & { children?: Snippet };
+  type Props = Omit<Combobox.RootProps, "type"> & {
+    children?: Snippet;
+    type?: "single" | "multiple";
+  };
 
-  let { children, ...restProps }: Props = $props();
+  let { children, type = "single", ...restProps }: Props = $props();
 </script>
 
-<Combobox.Root {...restProps}>
+<Combobox.Root {...{ type, ...restProps } as Combobox.RootProps}>
   {@render children?.()}
 </Combobox.Root>

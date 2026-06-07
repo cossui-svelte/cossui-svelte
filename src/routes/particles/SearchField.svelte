@@ -77,6 +77,7 @@
 			.map((v) => items.find((i) => i.value === v))
 			.filter((i): i is SearchItem => !!i);
 		onItemsChange(newItems);
+		inputValue = "";
 		open = false;
 	}
 
@@ -90,6 +91,8 @@
 		type="multiple"
 		value={selectedValues}
 		onValueChange={handleValueChange}
+		{inputValue}
+		onInputValueChange={(v) => (inputValue = v)}
 		{open}
 		onOpenChange={(v) => (open = v)}
 	>
@@ -124,7 +127,6 @@
 					? "Search components..."
 					: ""}
 				aria-label="Filter particles"
-				oninput={(e) => (inputValue = e.currentTarget.value)}
 			/>
 		</div>
 
