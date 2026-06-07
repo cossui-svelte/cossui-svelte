@@ -5,7 +5,6 @@
         ComboboxChip,
         ComboboxChips,
         ComboboxChipsInput,
-        ComboboxEmpty,
         ComboboxInput,
         ComboboxItem,
         ComboboxList,
@@ -72,13 +71,7 @@
                 {#if item}
                     <ComboboxChip
                         aria-label={item.label}
-                        removeProps={{
-                            onclick: () => {
-                                multiValue = multiValue.filter(
-                                    (v) => v !== val,
-                                );
-                            },
-                        }}
+                        removeProps={{ onclick: () => { multiValue = multiValue.filter((v) => v !== val); } }}
                     >
                         {item.label}
                     </ComboboxChip>
@@ -86,9 +79,7 @@
             {/each}
             <ComboboxChipsInput
                 aria-label="Select a item"
-                placeholder={multiValue.length > 0
-                    ? undefined
-                    : "Select a item…"}
+                placeholder={multiValue.length > 0 ? undefined : "Select a item…"}
             />
         </ComboboxChips>
         <ComboboxPopup>

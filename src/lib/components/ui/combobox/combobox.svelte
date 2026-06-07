@@ -5,9 +5,12 @@
     readonly multiple: boolean;
     readonly value: string | string[] | undefined;
     readonly chipsEl: HTMLElement | null;
+    readonly filterText: string;
+    readonly hasVisibleItems: boolean;
     clearValue(): void;
     setChipsEl(el: HTMLElement | null): void;
     setOpen(v: boolean): void;
+    setFilterText(v: string): void;
   }
 
   const COMBOBOX_CTX_KEY = Symbol("combobox");
@@ -42,6 +45,7 @@
     onOpenChange,
     inputValue: externalInputValue,
     defaultValue,
+    items,
     ...restProps
   }: Props = $props();
 
@@ -92,16 +96,27 @@
     onValueChange?.(v as never);
   }
 
+  let filterText = $state("");
+
+  const hasVisibleItems = $derived.by(() => {
+    if (!filterText || !items?.length) return true;
+    const q = filterText.toLowerCase();
+    return items.some((i) => (i.label ?? i.value).toLowerCase().includes(q));
+  });
+
   function handleOpenChange(v: boolean) {
     internalOpen = v;
     open = v as never;
     onOpenChange?.(v);
+    if (v) filterText = "";
   }
 
   setComboboxCtx({
     get multiple() { return type === "multiple"; },
     get value() { return internalValue; },
     get chipsEl() { return chipsEl; },
+    get filterText() { return filterText; },
+    get hasVisibleItems() { return hasVisibleItems; },
     clearValue() {
       const empty = type === "multiple" ? ([] as string[]) : undefined;
       internalValue = empty;
@@ -115,6 +130,7 @@
       open = v as never;
       onOpenChange?.(v);
     },
+    setFilterText(v) { filterText = v; },
   });
 </script>
 
@@ -126,6 +142,7 @@
     open: internalOpen,
     onOpenChange: handleOpenChange,
     inputValue: inputValueProxy,
+    items,
     ...restProps,
   } as Combobox.RootProps)}
 >

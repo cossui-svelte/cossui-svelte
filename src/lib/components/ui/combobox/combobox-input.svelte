@@ -27,6 +27,7 @@
     clearProps,
     triggerProps,
     onclick: userOnclick,
+    oninput: userOninput,
     ...restProps
   }: Props = $props();
 
@@ -35,6 +36,11 @@
   function handleClick(e: MouseEvent & { currentTarget: EventTarget & HTMLInputElement }) {
     ctx?.setOpen(true);
     (userOnclick as ((e: MouseEvent) => void) | null | undefined)?.(e);
+  }
+
+  function handleInput(e: Event & { currentTarget: EventTarget & HTMLInputElement }) {
+    ctx?.setFilterText(e.currentTarget.value);
+    (userOninput as ((e: Event) => void) | null | undefined)?.(e);
   }
 
   const clearPropsClass = $derived(clearProps?.class);
@@ -71,6 +77,7 @@
   >
     <Combobox.Input
       onclick={handleClick}
+      oninput={handleInput}
       class={cn(
         "h-8.5 w-full min-w-0 rounded-[inherit] px-[calc(--spacing(3)-1px)] leading-8.5 outline-none placeholder:text-muted-foreground/72 sm:h-7.5 sm:leading-7.5 [transition:background-color_5000000s_ease-in-out_0s]",
         startAddon &&

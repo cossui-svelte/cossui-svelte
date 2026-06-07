@@ -2,21 +2,27 @@
   import type { Snippet } from "svelte";
   import type { HTMLAttributes } from "svelte/elements";
   import { cn } from "$lib/utils";
+  import { getComboboxCtx } from "./combobox.svelte";
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
     children?: Snippet;
   }
 
   let { class: className, children, ...restProps }: Props = $props();
+
+  const ctx = getComboboxCtx();
+  const visible = $derived(ctx ? !ctx.hasVisibleItems : false);
 </script>
 
-<div
-  class={cn(
-    "not-empty:p-2 text-center text-base text-muted-foreground sm:text-sm",
-    className,
-  )}
-  data-slot="combobox-empty"
-  {...restProps}
->
-  {@render children?.()}
-</div>
+{#if visible}
+  <div
+    class={cn(
+      "p-2 text-center text-base text-muted-foreground sm:text-sm",
+      className,
+    )}
+    data-slot="combobox-empty"
+    {...restProps}
+  >
+    {@render children?.()}
+  </div>
+{/if}
