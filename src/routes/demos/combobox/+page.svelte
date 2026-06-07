@@ -2,13 +2,15 @@
     import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
     import {
         Combobox,
+        ComboboxChip,
+        ComboboxChips,
+        ComboboxChipsInput,
         ComboboxEmpty,
         ComboboxInput,
         ComboboxItem,
         ComboboxList,
         ComboboxPopup,
     } from "$lib/components/ui/combobox";
-    import ComboboxChip from "$lib/components/ui/combobox/combobox-chip.svelte";
 
     const items = [
         { label: "Apple", value: "apple" },
@@ -22,6 +24,8 @@
         { label: "Peach", value: "peach" },
         { label: "Pear", value: "pear" },
     ];
+
+    let multiValue = $state<string[]>(["apple", "strawberry"]);
 </script>
 
 <ComponentPreviewTabs>
@@ -49,7 +53,45 @@
             placeholder="Select an item…"
         />
         <ComboboxPopup>
-            <ComboboxEmpty>No items found.</ComboboxEmpty>
+            <ComboboxList>
+                {#each items as item}
+                    <ComboboxItem value={item.value} label={item.label}>
+                        {item.label}
+                    </ComboboxItem>
+                {/each}
+            </ComboboxList>
+        </ComboboxPopup>
+    </Combobox>
+</ComponentPreviewTabs>
+
+<ComponentPreviewTabs>
+    <Combobox bind:value={multiValue} {items} type="multiple">
+        <ComboboxChips>
+            {#each multiValue as val}
+                {@const item = items.find((i) => i.value === val)}
+                {#if item}
+                    <ComboboxChip
+                        aria-label={item.label}
+                        removeProps={{
+                            onclick: () => {
+                                multiValue = multiValue.filter(
+                                    (v) => v !== val,
+                                );
+                            },
+                        }}
+                    >
+                        {item.label}
+                    </ComboboxChip>
+                {/if}
+            {/each}
+            <ComboboxChipsInput
+                aria-label="Select a item"
+                placeholder={multiValue.length > 0
+                    ? undefined
+                    : "Select a item…"}
+            />
+        </ComboboxChips>
+        <ComboboxPopup>
             <ComboboxList>
                 {#each items as item}
                     <ComboboxItem value={item.value} label={item.label}>
