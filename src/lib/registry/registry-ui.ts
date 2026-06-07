@@ -5,7 +5,7 @@
  * @version 0.1.0
  * !!!!!!!!!!
  */
-interface RegistryUIEntry {
+export interface RegistryUIEntry {
   category: 'ui' | 'extra'; // for now, just a simple category to separate "core" UI components from extra ones
   description: string;
   folder: string; // relative to src/lib/components/ui/
@@ -15,7 +15,7 @@ interface RegistryUIEntry {
   registryDependencies: string[];
 }
 
-type RegistryUiData = Record<string, RegistryUIEntry>;
+export type RegistryUiData = Record<string, RegistryUIEntry>;
 const categories: RegistryUiData = {
   accordion: {
     category: 'ui',

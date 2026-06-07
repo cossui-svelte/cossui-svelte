@@ -7,6 +7,15 @@
    * In SvelteKit the component registry lookup happens in the server load
    * function. Pass the resolved component and source snippets as props.
    */
+  interface Props {
+    name?: string;
+    class?: string;
+    metaClassName?: string;
+    align?: "center" | "start" | "end";
+    hideCode?: boolean;
+    component?: Snippet;
+    source?: Snippet;
+  }
 
   let {
     name,
@@ -16,15 +25,7 @@
     hideCode = false,
     component,
     source,
-  }: {
-    name?: string;
-    class?: string;
-    metaClassName?: string;
-    align?: "center" | "start" | "end";
-    hideCode?: boolean;
-    component?: Snippet;
-    source?: Snippet;
-  } = $props();
+  }: Props = $props();
 </script>
 
 {#if component && source}

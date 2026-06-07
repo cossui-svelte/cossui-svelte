@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { page } from "$app/state";
-	import PageHeaderDescription from "$lib/components/app/page-header-description.svelte";
-	import PageHeaderHeading from "$lib/components/app/page-header-heading.svelte";
-	import PageHeader from "$lib/components/app/page-header.svelte";
+	import PageHeaderDescription from "$lib/components/shared-components/page-header-description.svelte";
+	import PageHeaderHeading from "$lib/components/shared-components/page-header-heading.svelte";
+	import PageHeader from "$lib/components/shared-components/page-header.svelte";
 	import { Button } from "$lib/components/ui/button";
 	import RiArrowLeftLine from "svelte-remixicon/RiArrowLeftLine.svelte";
 </script>
@@ -24,10 +24,7 @@
 		<div class="mt-4">
 			<Button class="group" size="lg">
 				<a class="flex items-center gap-1" href="/">
-					<RiArrowLeftLine
-						aria-hidden="true"
-						class="opacity-60"
-					/>Back to Home
+					<RiArrowLeftLine aria-hidden="true" class="opacity-60" />Back to Home
 				</a>
 			</Button>
 		</div>

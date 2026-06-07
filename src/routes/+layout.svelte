@@ -5,7 +5,7 @@
   import "../app.css";
 
   import SiteHeader from "$lib/components/app/app-site-header.svelte";
-  import SiteFooter from "$lib/components/app/site-footer.svelte";
+  import SiteFooter from "$lib/components/shared-components/site-footer.svelte";
   import { ModeWatcher } from "mode-watcher";
   import {
     AnchoredToastProvider,

@@ -7,13 +7,13 @@
     class: className,
     align = "center",
     hideCode = true,
-    component,
+    children,
     source,
   }: {
     class?: string;
     align?: "center" | "start" | "end";
     hideCode?: boolean;
-    component?: Snippet;
+    children?: Snippet;
     source?: Snippet;
   } = $props();
 
@@ -43,7 +43,7 @@
         data-align={align}
       >
         <div data-slot="preview">
-          {@render component?.()}
+          {@render children?.()}
         </div>
       </div>
     </div>

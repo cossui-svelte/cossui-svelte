@@ -4,10 +4,10 @@ const config = {
   },
   ignoreDependencies: ['tw-animate-css'],
   ignoreIssues: {
-    'src/lib/components/ui/**': ['exports', 'types', 'files'],
-    'src/lib/formsnap/**': ['exports', 'types', 'files'],
-    'src/lib/varsel/**': ['exports', 'types', 'files'],
-    'src/lib/vaul/**': ['exports', 'types', 'files']
+    'src/lib/components/ui/**': ['exports', 'types'],
+    'src/lib/formsnap/**': ['exports', 'types'],
+    'src/lib/varsel/**': ['exports', 'types'],
+    'src/lib/vaul/**': ['exports', 'types']
   },
 
   paths: {
