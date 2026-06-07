@@ -13,6 +13,7 @@
     class: className,
     children,
     startAddon,
+    onclick: userOnclick,
     ...restProps
   }: Props = $props();
 
@@ -23,6 +24,17 @@
     ctx?.setChipsEl(el);
     return () => ctx?.setChipsEl(null);
   });
+
+  function handleClick(e: MouseEvent) {
+    // Ignore clicks on chips themselves (e.g. the remove button).
+    if ((e.target as Element).closest('[data-slot="combobox-chip"]')) {
+      (userOnclick as ((e: MouseEvent) => void) | null | undefined)?.(e);
+      return;
+    }
+    el?.querySelector<HTMLInputElement>("input")?.focus();
+    ctx?.setOpen(true);
+    (userOnclick as ((e: MouseEvent) => void) | null | undefined)?.(e);
+  }
 </script>
 
 <div
@@ -32,6 +44,7 @@
     className,
   )}
   data-slot="combobox-chips"
+  onclick={handleClick}
   {...restProps}
 >
   {#if startAddon}

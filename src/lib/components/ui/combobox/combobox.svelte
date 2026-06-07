@@ -11,6 +11,7 @@
     setChipsEl(el: HTMLElement | null): void;
     setOpen(v: boolean): void;
     setFilterText(v: string): void;
+    removeLastValue(): void;
   }
 
   const COMBOBOX_CTX_KEY = Symbol("combobox");
@@ -131,6 +132,21 @@
       onOpenChange?.(v);
     },
     setFilterText(v) { filterText = v; },
+    removeLastValue() {
+      if (type === "multiple") {
+        const current = internalValue as string[] | undefined;
+        if (!current?.length) return;
+        const next = current.slice(0, -1);
+        internalValue = next;
+        value = next as never;
+        onValueChange?.(next as never);
+      } else {
+        internalValue = undefined;
+        inputValueProxy = "";
+        value = undefined as never;
+        onValueChange?.(undefined as never);
+      }
+    },
   });
 </script>
 
