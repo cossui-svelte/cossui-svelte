@@ -33,7 +33,7 @@
             <ComboboxEmpty>No items found.</ComboboxEmpty>
             <ComboboxList>
                 {#each items as item}
-                    <ComboboxItem value={item.value}>
+                    <ComboboxItem value={item.value} label={item.label}>
                         {item.label}
                     </ComboboxItem>
                 {/each}
