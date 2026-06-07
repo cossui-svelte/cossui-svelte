@@ -7,6 +7,8 @@
   import ComboboxTrigger from "./combobox-trigger.svelte";
   import ComboboxClear from "./combobox-clear.svelte";
 
+  import { getComboboxCtx } from "./combobox.svelte";
+
   interface Props extends Omit<Combobox.InputProps, "size"> {
     showTrigger?: boolean;
     showClear?: boolean;
@@ -24,8 +26,16 @@
     size = "default",
     clearProps,
     triggerProps,
+    onclick: userOnclick,
     ...restProps
   }: Props = $props();
+
+  const ctx = getComboboxCtx();
+
+  function handleClick(e: MouseEvent & { currentTarget: EventTarget & HTMLInputElement }) {
+    ctx?.setOpen(true);
+    (userOnclick as ((e: MouseEvent) => void) | null | undefined)?.(e);
+  }
 
   const clearPropsClass = $derived(clearProps?.class);
   const clearPropsRest = $derived.by(() => {
@@ -60,6 +70,7 @@
     data-slot="combobox-input"
   >
     <Combobox.Input
+      onclick={handleClick}
       class={cn(
         "h-8.5 w-full min-w-0 rounded-[inherit] px-[calc(--spacing(3)-1px)] leading-8.5 outline-none placeholder:text-muted-foreground/72 sm:h-7.5 sm:leading-7.5 [transition:background-color_5000000s_ease-in-out_0s]",
         startAddon &&

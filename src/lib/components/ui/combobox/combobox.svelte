@@ -7,6 +7,7 @@
     readonly chipsEl: HTMLElement | null;
     clearValue(): void;
     setChipsEl(el: HTMLElement | null): void;
+    setOpen(v: boolean): void;
   }
 
   const COMBOBOX_CTX_KEY = Symbol("combobox");
@@ -29,21 +30,45 @@
     type?: "single" | "multiple";
   };
 
-  let { children, type = "single", value = $bindable(), onValueChange, ...restProps }: Props = $props();
+  let {
+    children,
+    type = "single",
+    value = $bindable(),
+    onValueChange,
+    open = $bindable(),
+    onOpenChange,
+    ...restProps
+  }: Props = $props();
 
   let chipsEl = $state<HTMLElement | null>(null);
 
-  // Internal state bridges the discriminated-union value for bits-ui and
-  // keeps uncontrolled mode working (bits-ui needs a stable reference to
-  // know what's selected when no external bind:value is provided).
+  // Internal state bridges the discriminated-union value and open state so
+  // child components (clear button, input click) can drive them without
+  // needing access to bits-ui internals.
   let internalValue = $state<string | string[] | undefined>(
     value as string | string[] | undefined,
   );
+  let internalOpen = $state(open ?? false);
 
-  // When the caller changes value externally (controlled mode), keep in sync.
+  // Sync external controlled props → internal state.
   $effect(() => {
     internalValue = value as string | string[] | undefined;
   });
+  $effect(() => {
+    if (open !== undefined) internalOpen = open;
+  });
+
+  function handleValueChange(v: string | string[]) {
+    internalValue = v;
+    value = v as never;
+    onValueChange?.(v as never);
+  }
+
+  function handleOpenChange(v: boolean) {
+    internalOpen = v;
+    open = v as never;
+    onOpenChange?.(v);
+  }
 
   setComboboxCtx({
     get multiple() { return type === "multiple"; },
@@ -56,17 +81,23 @@
       onValueChange?.(empty as never);
     },
     setChipsEl(el) { chipsEl = el; },
+    setOpen(v) {
+      internalOpen = v;
+      open = v as never;
+      onOpenChange?.(v);
+    },
   });
-
-  function handleValueChange(v: string | string[]) {
-    internalValue = v;
-    value = v as never;
-    onValueChange?.(v as never);
-  }
 </script>
 
 <Combobox.Root
-  {...({ type, value: internalValue, onValueChange: handleValueChange, ...restProps } as Combobox.RootProps)}
+  {...({
+    type,
+    value: internalValue,
+    onValueChange: handleValueChange,
+    open: internalOpen,
+    onOpenChange: handleOpenChange,
+    ...restProps,
+  } as Combobox.RootProps)}
 >
   {@render children?.()}
 </Combobox.Root>
