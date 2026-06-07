@@ -12,6 +12,7 @@ import { defineConfig } from 'vite';
 // svelte-remixicon subpath imports to the actual dist path ourselves.
 function remixiconResolver() {
   return {
+    enforce: 'pre' as const,
     name: 'svelte-remixicon-resolver',
     resolveId(id: string) {
       const match = id.match(/^svelte-remixicon\/(Ri\w+\.svelte)$/);
@@ -23,6 +24,7 @@ function remixiconResolver() {
 }
 
 export default defineConfig({
+  // these @vinejs/vine stuff is there to prevent vine from being bundled in the final build, it was generating errors during the build
   build: {
     rollupOptions: {
       external: ['@vinejs/vine']
