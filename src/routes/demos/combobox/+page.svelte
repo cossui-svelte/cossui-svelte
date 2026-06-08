@@ -42,9 +42,7 @@
             <ComboboxEmpty>No items found.</ComboboxEmpty>
             <ComboboxList>
                 {#each items as item}
-                    <ComboboxItem
-                        value={item.value}
-                        label={item.label}
+                    <ComboboxItem value={item.value} label={item.label}
                     ></ComboboxItem>
                 {/each}
             </ComboboxList>
@@ -115,6 +113,26 @@
 <ComponentPreviewTabs>
     Autohighlight
     <Combobox defaultValue={items[2]} autoHighlight {items}>
+        <ComboboxInput
+            aria-label="Select an item"
+            placeholder="Select an item…"
+        />
+        <ComboboxPopup>
+            <ComboboxEmpty>No results found.</ComboboxEmpty>
+            <ComboboxList>
+                {#each items as item}
+                    <ComboboxItem value={item.value} label={item.label}>
+                        {item.label}
+                    </ComboboxItem>
+                {/each}
+            </ComboboxList>
+        </ComboboxPopup>
+    </Combobox>
+</ComponentPreviewTabs>
+
+<ComponentPreviewTabs>
+    Show Clear button
+    <Combobox defaultValue={items[2]} showClear {items}>
         <ComboboxInput
             aria-label="Select an item"
             placeholder="Select an item…"

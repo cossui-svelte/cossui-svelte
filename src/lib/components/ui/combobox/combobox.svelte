@@ -7,8 +7,11 @@
     readonly chipsEl: HTMLElement | null;
     readonly filterText: string;
     readonly hasVisibleItems: boolean;
+    readonly showClear: boolean;
+    readonly showTrigger: boolean;
     clearValue(): void;
     setChipsEl(el: HTMLElement | null): void;
+    setInputEl(el: HTMLInputElement | null): void;
     setOpen(v: boolean): void;
     setFilterText(v: string): void;
     removeLastValue(): void;
@@ -27,6 +30,7 @@
 
 <script lang="ts">
   import type { Snippet } from "svelte";
+  import { tick } from "svelte";
   import { Combobox } from "bits-ui";
 
   type DefaultValue = string | { label?: string; value: string };
@@ -35,6 +39,9 @@
     children?: Snippet;
     type?: "single" | "multiple";
     defaultValue?: DefaultValue;
+    autoHighlight?: boolean;
+    showClear?: boolean;
+    showTrigger?: boolean;
   };
 
   let {
@@ -47,10 +54,14 @@
     inputValue: externalInputValue,
     defaultValue,
     items,
+    autoHighlight = false,
+    showClear = false,
+    showTrigger = true,
     ...restProps
   }: Props = $props();
 
   let chipsEl = $state<HTMLElement | null>(null);
+  let inputEl = $state<HTMLInputElement | null>(null);
 
   // Resolve value string and display label from defaultValue (computed once).
   const defaultVal =
@@ -109,6 +120,14 @@
 
   let filterText = $state("");
 
+  $effect(() => {
+    if (internalOpen && autoHighlight) {
+      tick().then(() => {
+        inputEl?.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowDown", bubbles: true, cancelable: true }));
+      });
+    }
+  });
+
   const hasVisibleItems = $derived.by(() => {
     if (!filterText || !items?.length) return true;
     const q = filterText.toLowerCase();
@@ -128,6 +147,8 @@
     get chipsEl() { return chipsEl; },
     get filterText() { return filterText; },
     get hasVisibleItems() { return hasVisibleItems; },
+    get showClear() { return showClear; },
+    get showTrigger() { return showTrigger; },
     clearValue() {
       const empty = type === "multiple" ? ([] as string[]) : undefined;
       internalValue = empty;
@@ -136,6 +157,7 @@
       onValueChange?.(empty as never);
     },
     setChipsEl(el) { chipsEl = el; },
+    setInputEl(el) { inputEl = el; },
     setOpen(v) {
       internalOpen = v;
       open = v as never;

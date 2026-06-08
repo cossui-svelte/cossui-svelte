@@ -12,6 +12,12 @@
   const ctx = getComboboxCtx();
   const numericSize = $derived(typeof size === "number" ? size : undefined);
 
+  let inputRef = $state<HTMLInputElement | null>(null);
+  $effect(() => {
+    ctx?.setInputEl(inputRef);
+    return () => ctx?.setInputEl(null);
+  });
+
   function handleClick(e: MouseEvent & { currentTarget: EventTarget & HTMLInputElement }) {
     ctx?.setOpen(true);
     (userOnclick as ((e: MouseEvent) => void) | null | undefined)?.(e);
@@ -31,6 +37,7 @@
 </script>
 
 <Combobox.Input
+  bind:ref={inputRef}
   onclick={handleClick}
   oninput={handleInput}
   onkeydown={handleKeydown}
