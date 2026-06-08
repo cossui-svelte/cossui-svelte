@@ -12,7 +12,7 @@
         ComboboxPopup,
     } from "$lib/components/ui/combobox";
     import { Label } from "$lib/components/ui/label";
-    import { SearchIcon } from "@lucide/svelte";
+    import SearchIcon from "@lucide/svelte/icons/search";
 
     const items = [
         { label: "Apple", value: "apple" },
@@ -161,6 +161,48 @@
         {#snippet startAddon()}<SearchIcon />{/snippet}
         <ComboboxPopup>
             <ComboboxEmpty>No results found.</ComboboxEmpty>
+            <ComboboxList>
+                {#each items as item}
+                    <ComboboxItem value={item.value} label={item.label}>
+                        {item.label}
+                    </ComboboxItem>
+                {/each}
+            </ComboboxList>
+        </ComboboxPopup>
+    </Combobox>
+</ComponentPreviewTabs>
+
+<ComponentPreviewTabs>
+    Show Add On - Multiple
+    <Combobox bind:value={multiValue} {items} type="multiple">
+        {#snippet startAddon()}<SearchIcon />{/snippet}
+        <ComboboxChips>
+            {#each multiValue as val}
+                {@const item = items.find((i) => i.value === val)}
+                {#if item}
+                    <ComboboxChip
+                        aria-label={item.label}
+                        removeProps={{
+                            onclick: () => {
+                                multiValue = multiValue.filter(
+                                    (v) => v !== val,
+                                );
+                            },
+                        }}
+                    >
+                        {item.label}
+                    </ComboboxChip>
+                {/if}
+            {/each}
+            <ComboboxChipsInput
+                aria-label="Select a item"
+                placeholder={multiValue.length > 0
+                    ? undefined
+                    : "Select a item…"}
+            />
+        </ComboboxChips>
+        <ComboboxPopup>
+            <ComboboxEmpty>No items found.</ComboboxEmpty>
             <ComboboxList>
                 {#each items as item}
                     <ComboboxItem value={item.value} label={item.label}>

@@ -3,7 +3,7 @@ import { join } from 'node:path';
 import { error } from '@sveltejs/kit';
 import { createHighlighter } from 'shiki';
 import { particles } from '$lib/registry/registry-particles';
-import type { RequestHandler } from './$types';
+import { type RequestHandler } from './$types';
 
 const highlighterPromise = createHighlighter({
   langs: ['svelte'],
@@ -13,7 +13,6 @@ const highlighterPromise = createHighlighter({
 export const GET: RequestHandler = async ({ params }) => {
   // validate the file parameter
   if (!/^[a-z0-9-]+$/.test(params.file)) {
-
     error(400, 'Invalid file parameter');
   }
 

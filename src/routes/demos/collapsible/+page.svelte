@@ -7,7 +7,7 @@
         CollapsibleTrigger,
     } from "$lib/components/ui/collapsible";
     import { Frame, FrameHeader, FramePanel } from "$lib/components/ui/frame";
-    import { TrashIcon } from "@lucide/svelte";
+    import TrashIcon from "@lucide/svelte/icons/trash";
     import { Button } from "$lib/components/ui/button";
 </script>
 

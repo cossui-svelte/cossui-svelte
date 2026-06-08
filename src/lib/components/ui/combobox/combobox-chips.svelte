@@ -19,6 +19,7 @@
 
   const ctx = getComboboxCtx();
   let el = $state<HTMLElement | null>(null);
+  const effectiveStartAddon = $derived(startAddon ?? ctx?.startAddon);
 
   $effect(() => {
     ctx?.setChipsEl(el);
@@ -47,13 +48,13 @@
   onclick={handleClick}
   {...restProps}
 >
-  {#if startAddon}
+  {#if effectiveStartAddon}
     <div
       aria-hidden="true"
       class="flex shrink-0 items-center ps-2 opacity-80 has-[~[data-size=sm]]:has-[+[data-slot=combobox-chip]]:pe-1.5 has-[~[data-size=sm]]:ps-1.5 has-[+[data-slot=combobox-chip]]:pe-2 [&_svg:not([class*='size-'])]:size-4.5 sm:[&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:-ms-0.5 [&_svg]:-me-1.5"
       data-slot="combobox-start-addon"
     >
-      {@render startAddon()}
+      {@render effectiveStartAddon()}
     </div>
   {/if}
   {@render children?.()}

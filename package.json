@@ -3,7 +3,6 @@
     "@aejkatappaja/phantom-ui": "^1.0.0",
     "@internationalized/date": "^3.12.2",
     "@lucide/svelte": "^1.17.0",
-    "@typescript/native-preview": "7.0.0-dev.20260606.1",
     "bits-ui": "^2.18.1",
     "clsx": "^2.1.1",
     "inputmask": "^5.0.9",
@@ -18,12 +17,13 @@
   "devDependencies": {
     "@sveltejs/adapter-vercel": "^6.3.3",
     "@sveltejs/enhanced-img": "^0.10.4",
-    "@sveltejs/kit": "^2.63.0",
+    "@sveltejs/kit": "^2.63.1",
     "@sveltejs/vite-plugin-svelte": "^7.1.2",
     "@tailwindcss/vite": "^4.3.0",
     "@tanstack/table-core": "^8.21.3",
     "@types/inputmask": "^5.0.7",
     "@types/node": "^25.9.2",
+    "@typescript/native-preview": "latest",
     "svelte-check": "^4.6.0",
     "svelte-remixicon": "^2.10.0",
     "tailwindcss": "^4.3.0",
@@ -38,7 +38,7 @@
   "name": "coss-ui-svelte",
   "packageManager": "pnpm@10.34.1",
   "peerDependencies": {
-    "svelte": "^5.56.1"
+    "svelte": "^5.56.3"
   },
   "scripts": {
     "build": "vite build",

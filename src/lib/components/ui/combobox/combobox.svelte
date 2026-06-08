@@ -31,7 +31,6 @@
 </script>
 
 <script lang="ts">
-  import type { Snippet } from "svelte";
   import { tick } from "svelte";
   import { Combobox } from "bits-ui";
 
@@ -97,7 +96,8 @@
   // Only sync value when it is defined so defaultValue is not overwritten
   // in pure uncontrolled usage.
   $effect(() => {
-    if (value !== undefined) internalValue = value as string | string[] | undefined;
+    if (value !== undefined)
+      internalValue = value as string | string[] | undefined;
   });
   $effect(() => {
     if (externalInputValue !== undefined) inputValueProxy = externalInputValue;
@@ -127,7 +127,13 @@
   $effect(() => {
     if (internalOpen && autoHighlight) {
       tick().then(() => {
-        inputEl?.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowDown", bubbles: true, cancelable: true }));
+        inputEl?.dispatchEvent(
+          new KeyboardEvent("keydown", {
+            key: "ArrowDown",
+            bubbles: true,
+            cancelable: true,
+          }),
+        );
       });
     }
   });
@@ -146,14 +152,30 @@
   }
 
   setComboboxCtx({
-    get multiple() { return type === "multiple"; },
-    get value() { return internalValue; },
-    get chipsEl() { return chipsEl; },
-    get filterText() { return filterText; },
-    get hasVisibleItems() { return hasVisibleItems; },
-    get showClear() { return showClear; },
-    get showTrigger() { return showTrigger; },
-    get startAddon() { return startAddon; },
+    get multiple() {
+      return type === "multiple";
+    },
+    get value() {
+      return internalValue;
+    },
+    get chipsEl() {
+      return chipsEl;
+    },
+    get filterText() {
+      return filterText;
+    },
+    get hasVisibleItems() {
+      return hasVisibleItems;
+    },
+    get showClear() {
+      return showClear;
+    },
+    get showTrigger() {
+      return showTrigger;
+    },
+    get startAddon() {
+      return startAddon;
+    },
     clearValue() {
       const empty = type === "multiple" ? ([] as string[]) : undefined;
       internalValue = empty;
@@ -161,8 +183,12 @@
       value = empty as never;
       onValueChange?.(empty as never);
     },
-    setChipsEl(el) { chipsEl = el; },
-    setInputEl(el) { inputEl = el; },
+    setChipsEl(el) {
+      chipsEl = el;
+    },
+    setInputEl(el) {
+      inputEl = el;
+    },
     setOpen(v) {
       internalOpen = v;
       open = v as never;
@@ -193,7 +219,7 @@
 </script>
 
 <Combobox.Root
-  {...({
+  {...{
     type,
     value: internalValue,
     onValueChange: handleValueChange,
@@ -202,7 +228,7 @@
     inputValue: inputValueProxy,
     items,
     ...restProps,
-  } as Combobox.RootProps)}
+  } as Combobox.RootProps}
 >
   {@render children?.()}
 </Combobox.Root>

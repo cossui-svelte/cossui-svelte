@@ -2,7 +2,7 @@ export { default as Combobox, getComboboxCtx } from './combobox.svelte';
 
 export function useComboboxFilter(
   filterFn: (value: string, inputValue: string) => boolean = (v, q) =>
-    v.toLowerCase().includes(q.toLowerCase()),
+    v.toLowerCase().includes(q.toLowerCase())
 ): (value: string, inputValue: string) => boolean {
   return filterFn;
 }
