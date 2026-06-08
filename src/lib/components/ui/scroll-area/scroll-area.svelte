@@ -7,12 +7,13 @@
         ref = $bindable(null),
         viewportRef = $bindable(null),
         class: className,
-        orientation = "vertical",
+        orientation = "both",
         scrollbarXClasses = "",
         scrollbarYClasses = "",
         children,
         scrollFade = false,
         scrollbarGutter = false,
+        fill = false,
         ...restProps
     }: WithoutChild<ScrollAreaPrimitive.RootProps> & {
         orientation?: "vertical" | "horizontal" | "both" | undefined;
@@ -21,16 +22,18 @@
         viewportRef?: HTMLElement | null;
         scrollFade?: boolean;
         scrollbarGutter?: boolean;
+        fill?: boolean;
     } = $props();
 </script>
 
 <ScrollAreaPrimitive.Root
     bind:ref
     data-slot="scroll-area"
-    class={cn("relative", className)}
+    class={cn("size-full min-h-0", className)}
     {...restProps}
 >
     <ScrollAreaPrimitive.Viewport
+        bind:ref={viewportRef}
         class={cn(
             "h-full rounded-[inherit] outline-none transition-shadows focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background data-has-overflow-y:overscroll-y-contain data-has-overflow-x:overscroll-x-contain",
             scrollFade &&
@@ -40,7 +43,9 @@
         )}
         data-slot="scroll-area-viewport"
     >
-        {@render children?.()}
+        <div class={cn(fill && "size-full")} data-slot="scroll-area-content">
+            {@render children?.()}
+        </div>
     </ScrollAreaPrimitive.Viewport>
     {#if orientation === "vertical" || orientation === "both"}
         <Scrollbar orientation="vertical" class={scrollbarYClasses} />
