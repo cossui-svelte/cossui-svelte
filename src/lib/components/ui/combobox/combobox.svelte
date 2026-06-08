@@ -1,5 +1,6 @@
 <script lang="ts" module>
   import { getContext, setContext } from "svelte";
+  import type { Snippet } from "svelte";
 
   interface ComboboxCtx {
     readonly multiple: boolean;
@@ -9,6 +10,7 @@
     readonly hasVisibleItems: boolean;
     readonly showClear: boolean;
     readonly showTrigger: boolean;
+    readonly startAddon: Snippet | undefined;
     clearValue(): void;
     setChipsEl(el: HTMLElement | null): void;
     setInputEl(el: HTMLInputElement | null): void;
@@ -42,6 +44,7 @@
     autoHighlight?: boolean;
     showClear?: boolean;
     showTrigger?: boolean;
+    startAddon?: Snippet;
   };
 
   let {
@@ -57,6 +60,7 @@
     autoHighlight = false,
     showClear = false,
     showTrigger = true,
+    startAddon,
     ...restProps
   }: Props = $props();
 
@@ -149,6 +153,7 @@
     get hasVisibleItems() { return hasVisibleItems; },
     get showClear() { return showClear; },
     get showTrigger() { return showTrigger; },
+    get startAddon() { return startAddon; },
     clearValue() {
       const empty = type === "multiple" ? ([] as string[]) : undefined;
       internalValue = empty;

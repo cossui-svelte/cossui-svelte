@@ -12,6 +12,7 @@
         ComboboxPopup,
     } from "$lib/components/ui/combobox";
     import { Label } from "$lib/components/ui/label";
+    import { SearchIcon } from "@lucide/svelte";
 
     const items = [
         { label: "Apple", value: "apple" },
@@ -137,6 +138,27 @@
             aria-label="Select an item"
             placeholder="Select an item…"
         />
+        <ComboboxPopup>
+            <ComboboxEmpty>No results found.</ComboboxEmpty>
+            <ComboboxList>
+                {#each items as item}
+                    <ComboboxItem value={item.value} label={item.label}>
+                        {item.label}
+                    </ComboboxItem>
+                {/each}
+            </ComboboxList>
+        </ComboboxPopup>
+    </Combobox>
+</ComponentPreviewTabs>
+
+<ComponentPreviewTabs>
+    Show Add On
+    <Combobox defaultValue={items[2]} showClear {items}>
+        <ComboboxInput
+            aria-label="Select an item"
+            placeholder="Select an item…"
+        />
+        {#snippet startAddon()}<SearchIcon />{/snippet}
         <ComboboxPopup>
             <ComboboxEmpty>No results found.</ComboboxEmpty>
             <ComboboxList>

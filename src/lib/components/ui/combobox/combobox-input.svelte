@@ -34,6 +34,7 @@
   const ctx = getComboboxCtx();
   const effectiveShowTrigger = $derived(showTrigger ?? ctx?.showTrigger ?? true);
   const effectiveShowClear = $derived(showClear ?? ctx?.showClear ?? false);
+  const effectiveStartAddon = $derived(startAddon ?? ctx?.startAddon);
 
   let inputRef = $state<HTMLInputElement | null>(null);
   $effect(() => {
@@ -69,13 +70,13 @@
 <div
   class="relative not-has-[>*.w-full]:w-fit w-full text-foreground has-disabled:opacity-64"
 >
-  {#if startAddon}
+  {#if effectiveStartAddon}
     <div
       aria-hidden="true"
       class="[&_svg]:-mx-0.5 pointer-events-none absolute inset-y-0 start-px z-10 flex items-center ps-[calc(--spacing(3)-1px)] opacity-80 has-[+[data-size=sm]]:ps-[calc(--spacing(2.5)-1px)] [&_svg:not([class*='size-'])]:size-4.5 sm:[&_svg:not([class*='size-'])]:size-4"
       data-slot="combobox-start-addon"
     >
-      {@render startAddon()}
+      {@render effectiveStartAddon()}
     </div>
   {/if}
   <span
@@ -89,10 +90,10 @@
       oninput={handleInput}
       class={cn(
         "h-8.5 w-full min-w-0 rounded-[inherit] px-[calc(--spacing(3)-1px)] leading-8.5 outline-none placeholder:text-muted-foreground/72 sm:h-7.5 sm:leading-7.5 [transition:background-color_5000000s_ease-in-out_0s]",
-        startAddon &&
+        effectiveStartAddon &&
           size !== "sm" &&
           "ps-[calc(--spacing(8.5)-1px)] sm:ps-[calc(--spacing(8)-1px)]",
-        startAddon &&
+        effectiveStartAddon &&
           size === "sm" &&
           "ps-[calc(--spacing(7.5)-1px)] sm:ps-[calc(--spacing(7)-1px)]",
         (effectiveShowTrigger || effectiveShowClear) && (size === "sm" ? "pe-6.5" : "pe-7"),
