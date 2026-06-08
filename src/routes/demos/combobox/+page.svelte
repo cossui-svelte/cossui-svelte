@@ -351,9 +351,16 @@
 </ComponentPreviewTabs>
 <ComponentPreviewTabs>
     With Groups
-    <Combobox items={groupedTags.flatMap((g) => g.items.map((t) => ({ value: t.id, label: t.label })))}>
+    <Combobox
+        items={groupedTags.flatMap((g) =>
+            g.items.map((t) => ({ value: t.id, label: t.label })),
+        )}
+    >
         <div class="flex flex-col items-start gap-2">
-            <ComboboxInput aria-label="Search tags" placeholder="e.g. feature" />
+            <ComboboxInput
+                aria-label="Search tags"
+                placeholder="e.g. feature"
+            />
         </div>
         <ComboboxPopup>
             <ComboboxEmpty>No tags found.</ComboboxEmpty>
