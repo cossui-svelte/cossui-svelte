@@ -37,7 +37,7 @@
     {...restProps}
   >
     <div
-      class="flex max-h-[min(var(--bits-combobox-content-available-height),23rem)] flex-1 flex-col text-foreground"
+      class="flex flex-col text-foreground"
     >
       {@render children?.()}
     </div>

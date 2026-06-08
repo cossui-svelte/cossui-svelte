@@ -1,5 +1,32 @@
 
 
+
+import Link from 'next/link' ->
+
+SvelteKit automatically intercepts <a> tag clicks and handles them as client-side navigation (no full page reload), so you get the same behavior as Next.js's <Link> out of the box.
+
+
+////
+
+
+import { Fragment } from "react"; -> Not needed in Svelte
+
+In Svelte, you don't need Fragment at all. Svelte components already allow multiple root elements, so you can just write them directly:
+
+<div>first</div>
+<p>second</p>
+If you need a wrapper that renders nothing in the DOM (the main use case for React's Fragment), Svelte has no direct equivalent — but you typically don't need one since multiple root elements are natively supported.
+
+The only case where you might want a "grouping" construct is inside {#each} or {#if} blocks with multiple elements, and those blocks themselves act as the wrapper:
+
+{#if condition}
+  <div>first</div>
+  <p>second</p>
+{/if}
+
+======
+
+
 className -> class
 htmlFor -> for
 style={{ color: 'red' }} -> style="color: red"

@@ -1,7 +1,6 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import type { HTMLAttributes } from "svelte/elements";
-  import { ScrollArea } from "$lib/components/ui/scroll-area";
   import { cn } from "$lib/utils";
   import { getComboboxCtx } from "./combobox.svelte";
 
@@ -16,11 +15,13 @@
   const hasVisible = $derived(ctx?.hasVisibleItems ?? true);
 </script>
 
-<ScrollArea scrollbarGutter scrollFade>
+<div
+  class="overflow-y-auto overscroll-contain"
+  style="max-height: min(var(--bits-combobox-content-available-height, 100vh), 23rem)"
+>
   <ul
     class={cn(
       hasVisible && "scroll-py-1 px-1 py-1",
-      hasVisible && "in-data-has-overflow-y:pe-3",
       className,
     )}
     data-slot="combobox-list"
@@ -31,4 +32,4 @@
   {#if !hasVisible && empty}
     {@render empty()}
   {/if}
-</ScrollArea>
+</div>
