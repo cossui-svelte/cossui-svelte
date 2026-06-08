@@ -5,11 +5,13 @@
         ComboboxChip,
         ComboboxChips,
         ComboboxChipsInput,
+        ComboboxEmpty,
         ComboboxInput,
         ComboboxItem,
         ComboboxList,
         ComboboxPopup,
     } from "$lib/components/ui/combobox";
+    import { Label } from "$lib/components/ui/label";
 
     const items = [
         { label: "Apple", value: "apple" },
@@ -25,20 +27,25 @@
     ];
 
     let multiValue = $state<string[]>(["apple", "strawberry"]);
+
+    const { id } = $props();
 </script>
 
 <ComponentPreviewTabs>
+    Default
     <Combobox {items}>
         <ComboboxInput
             aria-label="Select a item"
             placeholder="Select a item…"
         />
         <ComboboxPopup>
+            <ComboboxEmpty>No items found.</ComboboxEmpty>
             <ComboboxList>
                 {#each items as item}
-                    <ComboboxItem value={item.value} label={item.label}>
-                        {item.label}
-                    </ComboboxItem>
+                    <ComboboxItem
+                        value={item.value}
+                        label={item.label}
+                    ></ComboboxItem>
                 {/each}
             </ComboboxList>
         </ComboboxPopup>
@@ -46,12 +53,54 @@
 </ComponentPreviewTabs>
 
 <ComponentPreviewTabs>
+    Small Size
+    <Combobox {items}>
+        <ComboboxInput
+            aria-label="Select a item"
+            placeholder="Select a item…"
+            size="sm"
+        />
+        <ComboboxPopup>
+            <ComboboxEmpty>No results found.</ComboboxEmpty>
+            <ComboboxList>
+                {#each items as item}
+                    <ComboboxItem value={item.value} label={item.label}
+                    ></ComboboxItem>
+                {/each}
+            </ComboboxList>
+        </ComboboxPopup>
+    </Combobox>
+</ComponentPreviewTabs>
+
+<ComponentPreviewTabs>
+    Large Size
+    <Combobox {items}>
+        <ComboboxInput
+            aria-label="Select a item"
+            placeholder="Select a item…"
+            size="lg"
+        />
+        <ComboboxPopup>
+            <ComboboxEmpty>No results found.</ComboboxEmpty>
+            <ComboboxList>
+                {#each items as item}
+                    <ComboboxItem value={item.value} label={item.label}
+                    ></ComboboxItem>
+                {/each}
+            </ComboboxList>
+        </ComboboxPopup>
+    </Combobox>
+</ComponentPreviewTabs>
+
+<ComponentPreviewTabs>
+    Disabled
     <Combobox defaultValue={items[2]} disabled {items}>
         <ComboboxInput
             aria-label="Select an item"
             placeholder="Select an item…"
         />
         <ComboboxPopup>
+            <ComboboxEmpty>No results found.</ComboboxEmpty>
             <ComboboxList>
                 {#each items as item}
                     <ComboboxItem value={item.value} label={item.label}>
@@ -64,6 +113,51 @@
 </ComponentPreviewTabs>
 
 <ComponentPreviewTabs>
+    Autohighlight
+    <Combobox defaultValue={items[2]} autoHighlight {items}>
+        <ComboboxInput
+            aria-label="Select an item"
+            placeholder="Select an item…"
+        />
+        <ComboboxPopup>
+            <ComboboxEmpty>No results found.</ComboboxEmpty>
+            <ComboboxList>
+                {#each items as item}
+                    <ComboboxItem value={item.value} label={item.label}>
+                        {item.label}
+                    </ComboboxItem>
+                {/each}
+            </ComboboxList>
+        </ComboboxPopup>
+    </Combobox>
+</ComponentPreviewTabs>
+
+<ComponentPreviewTabs>
+    With Label
+    <Combobox {items}>
+        <div class="flex flex-col items-start gap-2">
+            <Label for={id}>Fruits</Label>
+            <ComboboxInput
+                aria-label="Select an item"
+                {id}
+                placeholder="Select an item..."
+            />
+        </div>
+        <ComboboxPopup>
+            <ComboboxEmpty>No results found.</ComboboxEmpty>
+            <ComboboxList>
+                {#each items as item}
+                    <ComboboxItem value={item.value} label={item.label}>
+                        {item.label}
+                    </ComboboxItem>
+                {/each}
+            </ComboboxList>
+        </ComboboxPopup>
+    </Combobox>
+</ComponentPreviewTabs>
+
+<ComponentPreviewTabs>
+    Multiple values
     <Combobox bind:value={multiValue} {items} type="multiple">
         <ComboboxChips>
             {#each multiValue as val}
@@ -71,7 +165,13 @@
                 {#if item}
                     <ComboboxChip
                         aria-label={item.label}
-                        removeProps={{ onclick: () => { multiValue = multiValue.filter((v) => v !== val); } }}
+                        removeProps={{
+                            onclick: () => {
+                                multiValue = multiValue.filter(
+                                    (v) => v !== val,
+                                );
+                            },
+                        }}
                     >
                         {item.label}
                     </ComboboxChip>
@@ -79,10 +179,13 @@
             {/each}
             <ComboboxChipsInput
                 aria-label="Select a item"
-                placeholder={multiValue.length > 0 ? undefined : "Select a item…"}
+                placeholder={multiValue.length > 0
+                    ? undefined
+                    : "Select a item…"}
             />
         </ComboboxChips>
         <ComboboxPopup>
+            <ComboboxEmpty>No items found.</ComboboxEmpty>
             <ComboboxList>
                 {#each items as item}
                     <ComboboxItem value={item.value} label={item.label}>

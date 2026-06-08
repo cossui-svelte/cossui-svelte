@@ -28,13 +28,7 @@
   >
     {@render children?.()}
   </ul>
-  {#if !hasVisible}
-    {#if empty}
-      {@render empty()}
-    {:else}
-      <div class="p-2 text-center text-sm text-muted-foreground" data-slot="combobox-empty">
-        No items found.
-      </div>
-    {/if}
+  {#if !hasVisible && empty}
+    {@render empty()}
   {/if}
 </ScrollArea>
