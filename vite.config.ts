@@ -8,21 +8,6 @@ import tailwindcss from '@tailwindcss/vite';
 // import { visualizer } from 'rollup-plugin-visualizer';
 import { defineConfig } from 'vite';
 
-// Rolldown doesn't support wildcard package exports (./*.svelte), so we resolve
-// svelte-remixicon subpath imports to the actual dist path ourselves.
-function remixiconResolver() {
-  return {
-    enforce: 'pre' as const,
-    name: 'svelte-remixicon-resolver',
-    resolveId(id: string) {
-      const match = id.match(/^svelte-remixicon\/(Ri\w+\.svelte)$/);
-      if (match) {
-        return path.resolve('./node_modules/svelte-remixicon/dist/icons/', match[1]);
-      }
-    }
-  };
-}
-
 export default defineConfig({
   // these @vinejs/vine stuff is there to prevent vine from being bundled in the final build, it was generating errors during the build
   build: {
@@ -34,7 +19,17 @@ export default defineConfig({
     exclude: ['@vinejs/vine']
   },
   plugins: [
-    remixiconResolver(),
+    {
+      // Rolldown doesn't support wildcard package exports (./*.svelte); this plugin
+      // catches svelte-remixicon icon imports before other resolvers.
+      enforce: 'pre',
+      name: 'svelte-remixicon-resolver',
+      resolveId(source: string) {
+        console.log(source)
+        const match = source.match(/^svelte-remixicon\/(Ri\w+\.svelte)$/);
+        if (match) return path.resolve(process.cwd(), 'node_modules/svelte-remixicon/dist/icons/', match[1]);
+      }
+    },
     tailwindcss(),
     enhancedImages(),
     sveltekit()
@@ -47,12 +42,12 @@ export default defineConfig({
     // })
   ],
   resolve: {
-    alias: {
-      $assets: path.resolve('./src/lib/assets'),
-      $data: path.resolve('./src/lib/data'),
-      $helpers: path.resolve('./src/lib/helpers'),
-      $lib: path.resolve('./src/lib')
-    }
+    alias: [
+      { find: '$assets', replacement: path.resolve('./src/lib/assets') },
+      { find: '$data', replacement: path.resolve('./src/lib/data') },
+      { find: '$helpers', replacement: path.resolve('./src/lib/helpers') },
+      { find: '$lib', replacement: path.resolve('./src/lib') }
+    ]
   },
   server: {
     watch: {
