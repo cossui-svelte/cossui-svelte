@@ -83,12 +83,7 @@
             "syntax": "shorthand"
           }
         },
-        "useImportType": {
-          "level": "on",
-          "options": {
-            "style": "inlineType"
-          }
-        },
+        "useImportType": "off",
         "useTemplate": "error"
       },
       "suspicious": {
