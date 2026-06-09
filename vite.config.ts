@@ -25,7 +25,6 @@ export default defineConfig({
       enforce: 'pre',
       name: 'svelte-remixicon-resolver',
       resolveId(source: string) {
-        console.log(source)
         const match = source.match(/^svelte-remixicon\/(Ri\w+\.svelte)$/);
         if (match) return path.resolve(process.cwd(), 'node_modules/svelte-remixicon/dist/icons/', match[1]);
       }
