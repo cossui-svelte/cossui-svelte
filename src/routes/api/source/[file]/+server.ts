@@ -3,7 +3,8 @@ import { join } from 'node:path';
 import { error } from '@sveltejs/kit';
 import { createHighlighter } from 'shiki';
 import { particles } from '$lib/registry/registry-particles';
-import { type RequestHandler } from './$types';
+import type { RequestHandler } from './$types';
+
 
 const highlighterPromise = createHighlighter({
   langs: ['svelte'],

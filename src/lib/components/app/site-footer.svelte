@@ -1,3 +1,7 @@
+<script lang="ts">
+  // No script needed for this component
+</script>
+
 <footer
   class="relative mt-8 py-6 text-muted-foreground before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-border/64"
 >
