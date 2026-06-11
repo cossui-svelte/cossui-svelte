@@ -1,5 +1,4 @@
 <script lang="ts">
-    import ComponentPreview from "$lib/components/app/component-preview.svelte";
     import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
     import { Badge } from "$lib/components/ui/badge";
     import { Button } from "$lib/components/ui/button";

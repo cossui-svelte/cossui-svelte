@@ -20,6 +20,7 @@
   let tab = $state("preview");
 </script>
 
+HERE COMPNENT PREVIEW TABS
 <div class={cn("group relative mt-4 mb-12 flex flex-col gap-2", className)}>
   <Tabs onValueChange={(v) => (tab = v)} value={tab}>
     <div class="flex items-center justify-between">

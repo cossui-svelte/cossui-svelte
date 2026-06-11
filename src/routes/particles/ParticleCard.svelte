@@ -7,7 +7,6 @@
 		DrawerTrigger,
 	} from "$lib/components/ui/drawer";
 	import CodeBlockCommand from "$lib/components/app/code-block-command.svelte";
-	import CopyRegistry from "$lib/components/app/copy-registry.svelte";
 	import ParticleCardContainer from "./ParticleCardContainer.svelte";
 	import type { RegistryParticuleEntry } from "$lib/registry/registry-particles";
 
@@ -41,10 +40,6 @@
 			<span class="truncate">{particle.description ?? ""}</span>
 		</p>
 		<div class="flex items-center gap-1.5">
-			<CopyRegistry
-				value="{cossuiUrl}/r/{particle.name}.json"
-				variant="outline"
-			/>
 			<Drawer position="right">
 				<DrawerTrigger>
 					{#snippet child({ props })}
