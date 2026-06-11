@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@aejkatappaja/phantom-ui": "^1.0.0",
+    "@aejkatappaja/phantom-ui": "^1.2.0",
     "@internationalized/date": "^3.12.2",
     "@lucide/svelte": "^1.17.0",
     "bits-ui": "^2.18.1",
@@ -17,12 +17,12 @@
   "devDependencies": {
     "@sveltejs/adapter-vercel": "^6.3.3",
     "@sveltejs/enhanced-img": "^0.10.4",
-    "@sveltejs/kit": "^2.64.0",
+    "@sveltejs/kit": "^2.65.0",
     "@sveltejs/vite-plugin-svelte": "^7.1.2",
     "@tailwindcss/vite": "^4.3.0",
     "@tanstack/table-core": "^8.21.3",
     "@types/inputmask": "^5.0.7",
-    "@types/node": "^25.9.2",
+    "@types/node": "^25.9.3",
     "@typescript/native-preview": "latest",
     "svelte-check": "^4.6.0",
     "svelte-remixicon": "^2.10.0",
@@ -36,7 +36,7 @@
   },
   "license": "AGPL-3.0-or-later",
   "name": "coss-ui-svelte",
-  "packageManager": "pnpm@10.34.1",
+  "packageManager": "pnpm@10.34.2",
   "peerDependencies": {
     "svelte": "^5.56.3"
   },
