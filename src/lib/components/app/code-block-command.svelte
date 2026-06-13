@@ -1,6 +1,12 @@
 <script lang="ts">
   import { cn } from "$lib/utils";
-  import { Tooltip } from "bits-ui";
+  import { config } from "$lib/hooks/use-pkgmgr-config.svelte";
+  import {
+    Tooltip,
+    TooltipProvider,
+    TooltipTrigger,
+    TooltipPopup,
+  } from "$lib/components/ui/tooltip";
 
   import { buttonVariants } from "$lib/components/ui/button";
   import { Tabs, TabsList, TabsTab, TabsPanel } from "$lib/components/ui/tabs";
@@ -19,7 +25,6 @@
 
   let { __npm__, __yarn__, __pnpm__, __bun__ }: Props = $props();
 
-  let packageManager = $state<"pnpm" | "npm" | "yarn" | "bun">("pnpm");
   let isCopied = $state(false);
   let timeoutId: ReturnType<typeof setTimeout> | undefined;
 
@@ -31,7 +36,7 @@
   });
 
   async function copyCommand() {
-    const command = tabs[packageManager];
+    const command = tabs[config.packageManager];
     if (!command) return;
     try {
       await navigator.clipboard.writeText(command);
@@ -50,8 +55,8 @@
   <Tabs
     class="gap-0"
     onValueChange={(value) =>
-      (packageManager = value as "pnpm" | "npm" | "yarn" | "bun")}
-    value={packageManager}
+      (config.packageManager = value as "pnpm" | "npm" | "yarn" | "bun")}
+    value={config.packageManager}
   >
     <div
       class="flex items-center gap-2 border-border/64 border-b px-4 py-1 font-mono"
@@ -60,7 +65,7 @@
       <TabsList
         class="bg-transparent p-0 *:data-[slot=tab-indicator]:rounded-lg *:data-[slot=tab-indicator]:bg-accent *:data-[slot=tab-indicator]:shadow-none"
       >
-        {#each Object.entries(tabs) as [key]}
+        {#each Object.entries(tabs) as [key] (key)}
           <TabsTab class="rounded-lg" value={key}>
             {key}
           </TabsTab>
@@ -70,7 +75,7 @@
     <ScrollArea
       class="**:data-[slot=scroll-area-scrollbar]:data-[orientation=horizontal]:mx-2 **:data-[slot=scroll-area-scrollbar]:data-[orientation=vertical]:my-2"
     >
-      {#each Object.entries(tabs) as [key, value]}
+      {#each Object.entries(tabs) as [key, value] (key)}
         <TabsPanel class="mt-0 w-max px-4 py-3.5" value={key}>
           <pre><code
               class="relative font-mono text-[.8125rem] leading-none"
@@ -80,10 +85,10 @@
       {/each}
     </ScrollArea>
   </Tabs>
-  <Tooltip.Provider>
-    <Tooltip.Root>
-      <Tooltip.Trigger>
-        {#snippet child({ props })}
+  <TooltipProvider>
+    <Tooltip>
+      <TooltipTrigger>
+        {#snippet child({ props }: { props: Record<string, unknown> })}
           <button
             {...props}
             class={cn(
@@ -102,17 +107,10 @@
             {/if}
           </button>
         {/snippet}
-      </Tooltip.Trigger>
-      <Tooltip.Portal>
-        <Tooltip.Content
-          class="relative flex origin-[--bits-tooltip-content-transform-origin] text-balance rounded-md border bg-popover not-dark:bg-clip-padding text-popover-foreground text-xs shadow-md/5 transition-[scale,opacity] before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-md)-1px)] before:shadow-[0_1px_--theme(--color-black/4%)] data-[state=closed]:scale-98 data-[state=closed]:opacity-0 data-[state=open]:scale-100 data-[state=open]:opacity-100 dark:before:shadow-[0_-1px_--theme(--color-white/6%)]"
-          sideOffset={4}
-        >
-          <div class="relative size-full overflow-clip px-2 py-1">
-            {isCopied ? "Copied" : "Copy to Clipboard"}
-          </div>
-        </Tooltip.Content>
-      </Tooltip.Portal>
-    </Tooltip.Root>
-  </Tooltip.Provider>
+      </TooltipTrigger>
+      <TooltipPopup>
+        {isCopied ? "Copied" : "Copy to Clipboard"}
+      </TooltipPopup>
+    </Tooltip>
+  </TooltipProvider>
 </div>
