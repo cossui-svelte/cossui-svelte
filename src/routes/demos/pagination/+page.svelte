@@ -1,5 +1,5 @@
 <script>
-    import ComponentPreviewTabs from "$lib/components/app/TODEL/component-preview-tabs.svelte";
+    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
     import {
         Pagination,
         PaginationContent,

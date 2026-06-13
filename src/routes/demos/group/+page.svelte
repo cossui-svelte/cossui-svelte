@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ComponentPreviewTabs from "$lib/components/app/TODEL/component-preview-tabs.svelte";
+  import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
   import ArchiveIcon from "@lucide/svelte/icons/archive";
   import Pencil from "@lucide/svelte/icons/pencil";
   import EllipsisIcon from "@lucide/svelte/icons/ellipsis";

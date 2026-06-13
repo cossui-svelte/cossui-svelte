@@ -1,6 +1,6 @@
 <script>
     import { Input } from "$lib/components/ui/input";
-    import ComponentPreviewTabs from "$lib/components/app/TODEL/component-preview-tabs.svelte";
+    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
 </script>
 
 <ComponentPreviewTabs>

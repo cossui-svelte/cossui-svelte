@@ -1,5 +1,5 @@
 <script lang="ts">
-    import ComponentPreviewTabs from "$lib/components/app/TODEL/component-preview-tabs.svelte";
+    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
     import { Checkbox } from "$lib/components/ui/checkbox";
     import { Label } from "$lib/components/ui/label";
 

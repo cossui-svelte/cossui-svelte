@@ -1,5 +1,5 @@
 <script lang="ts">
-    import ComponentPreviewTabs from "$lib/components/app/TODEL/component-preview-tabs.svelte";
+    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
     import PauseIcon from "@lucide/svelte/icons/pause";
     import PlayIcon from "@lucide/svelte/icons/play";
     import SkipBackIcon from "@lucide/svelte/icons/skip-back";
