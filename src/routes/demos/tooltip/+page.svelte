@@ -1,6 +1,6 @@
 <script lang="ts">
     import { Button } from "$lib/components/ui/button";
-    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
+    import ComponentPreviewTabs from "$lib/components/app/TODEL/component-preview-tabs.svelte";
 
     import Circle from "@lucide/svelte/icons/circle";
 import ChevronDown from "@lucide/svelte/icons/chevron-down";

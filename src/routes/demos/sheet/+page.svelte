@@ -1,5 +1,5 @@
 <script>
-    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
+    import ComponentPreviewTabs from "$lib/components/app/TODEL/component-preview-tabs.svelte";
     import { Button, buttonVariants } from "$lib/components/ui/button";
     import { Field, FieldLabel } from "$lib/components/ui/field";
     import { Form } from "$lib/components/ui/form";
