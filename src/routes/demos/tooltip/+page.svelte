@@ -10,11 +10,65 @@
     import {
         Tooltip,
         TooltipContent,
+        TooltipPopup,
         TooltipProvider,
         TooltipTrigger,
     } from "$lib/components/ui/tooltip";
     import { Kbd, KbdGroup } from "$lib/components/ui/kbd";
+    import { BoldIcon, ItalicIcon, UnderlineIcon } from "@lucide/svelte";
+    import { ToggleGroup, ToggleGroupItem } from "$lib/components/ui/toggle-group";
 </script>
+
+<ComponentPreviewTabs>
+    <TooltipProvider>
+        <Tooltip>
+            <TooltipTrigger>
+                {#snippet child({ props })}
+                    <Button variant="outline" {...props}>Hover me</Button>
+                {/snippet}
+            </TooltipTrigger>
+            <TooltipPopup>Helpful hint</TooltipPopup>
+        </Tooltip>
+    </TooltipProvider>
+</ComponentPreviewTabs>
+
+<ComponentPreviewTabs>
+    <TooltipProvider>
+        <ToggleGroup value={["bold"]} type="multiple">
+            <Tooltip>
+                <TooltipTrigger>
+                    {#snippet child({ props })}
+                        <ToggleGroupItem aria-label="Toggle bold" value="bold" {...props}>
+                            <BoldIcon />
+                        </ToggleGroupItem>
+                    {/snippet}
+                </TooltipTrigger>
+                <TooltipPopup>Bold</TooltipPopup>
+            </Tooltip>
+            <Tooltip>
+                <TooltipTrigger>
+                    {#snippet child({ props })}
+                        <ToggleGroupItem aria-label="Toggle italic" value="italic" {...props}>
+                            <ItalicIcon />
+                        </ToggleGroupItem>
+                    {/snippet}
+                </TooltipTrigger>
+                <TooltipPopup>Italic</TooltipPopup>
+            </Tooltip>
+            <Tooltip>
+                <TooltipTrigger>
+                    {#snippet child({ props })}
+                        <ToggleGroupItem aria-label="Toggle underline" value="underline" {...props}>
+                            <UnderlineIcon />
+                        </ToggleGroupItem>
+                    {/snippet}
+                </TooltipTrigger>
+                <TooltipPopup>Underline</TooltipPopup>
+            </Tooltip>
+        </ToggleGroup>
+    </TooltipProvider>
+</ComponentPreviewTabs>
+
 
 <ComponentPreviewTabs>
     <div class="inline-grid w-fit grid-cols-3 gap-1">

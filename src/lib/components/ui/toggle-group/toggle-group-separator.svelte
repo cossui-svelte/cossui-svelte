@@ -1,4 +1,5 @@
 <script lang="ts">
+    import type { ComponentProps } from "svelte";
     import { cn } from "$lib/utils";
     import { Separator } from "$lib/components/ui/separator";
     import { getToggleGroupCtx } from "./toggle-group.svelte";
@@ -6,9 +7,7 @@
     let {
         class: className,
         ...restProps
-    }: Separator & {
-        class: string;
-    } = $props();
+    }: ComponentProps<typeof Separator> = $props();
 
     let orientation = getToggleGroupCtx()?.orientation;
 

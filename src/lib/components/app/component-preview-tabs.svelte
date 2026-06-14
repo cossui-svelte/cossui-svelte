@@ -7,20 +7,19 @@
     class: className,
     align = "center",
     hideCode = true,
-    component,
+    children,
     source,
   }: {
     class?: string;
     align?: "center" | "start" | "end";
     hideCode?: boolean;
-    component?: Snippet;
+    children?: Snippet;
     source?: Snippet;
   } = $props();
 
   let tab = $state("preview");
 </script>
 
-HERE COMPNENT PREVIEW TABS
 <div class={cn("group relative mt-4 mb-12 flex flex-col gap-2", className)}>
   <Tabs onValueChange={(v) => (tab = v)} value={tab}>
     <div class="flex items-center justify-between">
@@ -44,7 +43,7 @@ HERE COMPNENT PREVIEW TABS
         data-align={align}
       >
         <div data-slot="preview">
-          {@render component?.()}
+          {@render children?.()}
         </div>
       </div>
     </div>
