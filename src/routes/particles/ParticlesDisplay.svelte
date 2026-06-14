@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { Skeleton } from "$lib/components/ui/skeleton";
+	// import { Skeleton } from "$lib/components/ui/skeleton";
 	import { particles } from "$lib/registry/registry-particles.js";
-	import { getCategorySortOrder } from "$lib/registry/registry-categories.js";
+	// import { getCategorySortOrder } from "$lib/registry/registry-categories.js";
 	import type { RegistryCategory } from "$lib/registry/registry-categories.js";
 	import ParticleCard from "./ParticleCard.svelte";
-	import ParticleCardContainer from "./ParticleCardContainer.svelte";
+	// import ParticleCardContainer from "./ParticleCardContainer.svelte";
 
 	interface Props {
 		selectedCategories: RegistryCategory[];

@@ -30,7 +30,10 @@
 			data-slot="preview"
 			class="flex items-center justify-center p-4"
 		>
-			<p class="text-muted-foreground text-sm">{particle.name}</p>
+			<p class="text-muted-foreground text-sm">
+				WE SHOULD RENDER THE PREVIEW HERE
+				{particle.name}
+			</p>
 		</div>
 	{/snippet}
 
@@ -80,6 +83,7 @@
 								<h2 class="mt-6 mb-4 font-semibold text-xl">
 									Code
 								</h2>
+								<p>WE SHOULD RENDER THE CODE HERE</p>
 							</div>
 						</div>
 					</div>

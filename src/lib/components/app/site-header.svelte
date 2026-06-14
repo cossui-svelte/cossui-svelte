@@ -32,7 +32,7 @@
     >
       <a aria-label="Home" href="/"
         >coss<span class="text-muted-foreground/64">.ui</span>
-        <span class="text-rose-400">svelte</span>
+        <span class="text-rose-400">svelte (unofficial)</span>
       </a>
 
       <ProductLabel {currentProduct} items={products} />

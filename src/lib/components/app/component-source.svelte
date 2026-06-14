@@ -4,7 +4,7 @@
   import { cn } from "$lib/utils";
   import CodeBlock from "$lib/components/ui/code-block.svelte";
   import CodeCollapsibleWrapper from "$lib/components/app/code-collapsible-wrapper.svelte";
-  import { getRegistryItem } from "$lib/registry";
+  // import { getRegistryItem } from "$lib/registry";
 
   let {
     name,
