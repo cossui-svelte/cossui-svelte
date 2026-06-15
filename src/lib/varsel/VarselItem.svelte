@@ -27,8 +27,19 @@
 		type SwipeAxis,
 		type SwipeDirection,
 	} from "./internals";
-	import { hasVariantIcon, variantIconMap } from "./variant-icons";
-	import type { IconElement } from "./variant-icons";
+	import CircleAlertIcon from "@lucide/svelte/icons/circle-alert";
+	import CircleCheckIcon from "@lucide/svelte/icons/circle-check";
+	import InfoIcon from "@lucide/svelte/icons/info";
+	import LoaderCircleIcon from "@lucide/svelte/icons/loader-circle";
+	import TriangleAlertIcon from "@lucide/svelte/icons/triangle-alert";
+	import { hasVariantIcon, type IconVariant } from "./variant-icons";
+
+	const VARIANT_ICONS: Record<IconVariant, typeof CircleAlertIcon> = {
+		destructive: CircleAlertIcon,
+		info: InfoIcon,
+		success: CircleCheckIcon,
+		warning: TriangleAlertIcon,
+	};
 
 	let {
 		toast,
@@ -117,8 +128,6 @@
 	let spinnerFinishTimer: ReturnType<typeof setTimeout> | null = null;
 	let hasShownSpinner = $state(false);
 
-	type LineElement = Extract<IconElement, { tag: "line" }>;
-
 	$effect(() => {
 		if (isLoading) {
 			hasShownSpinner = true;
@@ -155,7 +164,7 @@
 	};
 
 	let iconConfig = $derived(
-		hasVariantIcon(variant) ? variantIconMap[variant] : undefined,
+		hasVariantIcon(variant) ? VARIANT_ICONS[variant] : undefined,
 	);
 	let showStatusIcon = $derived(isLoading || Boolean(iconConfig));
 
@@ -866,47 +875,7 @@
 										aria-live={spinnerState === "loading" ? "assertive" : undefined}
 										onanimationend={handleSpinnerAnimationEnd}
 									>
-										<svg
-											viewBox="0 0 18 18"
-											fill="none"
-											stroke="currentColor"
-											stroke-width="1.5"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-										>
-											<line x1="9" y1="1.75" x2="9" y2="4.25" />
-											<line
-												x1="14.127"
-												y1="3.873"
-												x2="12.359"
-												y2="5.641"
-												opacity="0.88"
-											/>
-											<line x1="16.25" y1="9" x2="13.75" y2="9" opacity="0.75" />
-											<line
-												x1="14.127"
-												y1="14.127"
-												x2="12.359"
-												y2="12.359"
-												opacity="0.63"
-											/>
-											<line x1="9" y1="16.25" x2="9" y2="13.75" opacity="0.5" />
-											<line
-												x1="3.873"
-												y1="14.127"
-												x2="5.641"
-												y2="12.359"
-												opacity="0.38"
-											/>
-											<line x1="1.75" y1="9" x2="4.25" y2="9" opacity="0.25" />
-											<line
-												x1="3.873"
-												y1="3.873"
-												x2="5.641"
-												y2="5.641"
-												opacity="0.13"
-											/>
-										</svg>
+										<LoaderCircleIcon />
 									</span>
 								{/if}
 								{#if iconConfig}
@@ -917,36 +886,7 @@
 										)}
 										aria-hidden="true"
 									>
-										<svg
-											viewBox={iconConfig.viewBox}
-											fill="none"
-											stroke="currentColor"
-											stroke-width="1.5"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-										>
-											{#each iconConfig.elements as element, elementIndex (elementIndex)}
-												{#if element.tag === "path"}
-													{#if element.fill}
-														<path d={element.d} fill="currentColor" stroke="none" />
-													{:else}
-														<path d={element.d} />
-													{/if}
-												{:else if element.tag === "line"}
-													{@const lineEl = element as LineElement}
-
-													<line
-														x1={lineEl.x1}
-														y1={lineEl.y1}
-														x2={lineEl.x2}
-														y2={lineEl.y2}
-														opacity={lineEl.opacity ?? undefined}
-													/>
-												{:else if element.tag === "polyline"}
-													<polyline points={element.points} />
-												{/if}
-											{/each}
-										</svg>
+										<svelte:component this={iconConfig} />
 									</span>
 								{/if}
 							</span>
