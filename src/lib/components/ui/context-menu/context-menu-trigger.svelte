@@ -1,14 +1,7 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
   import { ContextMenu } from "bits-ui";
 
-  interface Props extends ContextMenu.TriggerProps {
-    children?: Snippet;
-  }
-
-  let { children, class: className, ...restProps }: Props = $props();
+  let { ref = $bindable(null), ...restProps }: ContextMenu.TriggerProps = $props();
 </script>
 
-<ContextMenu.Trigger class={className} data-slot="context-menu-trigger" {...restProps}>
-  {@render children?.()}
-</ContextMenu.Trigger>
+<ContextMenu.Trigger bind:ref data-slot="context-menu-trigger" {...restProps} />
