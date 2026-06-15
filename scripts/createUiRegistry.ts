@@ -7,7 +7,7 @@ export interface RegistryUIEntry {
     name?: string;
     description: string;
     folder?: string; // relative to src/lib/components/ui/
-    category: "ui" | "extra"; // for now, just a simple category to separate "core" UI components from extra ones
+    category: "ui" | "origin-ui" | "bits-ui" | "extra"; // for now, just a simple category to separate "core" UI components from extra ones
     isnew?: boolean; // whether this is a new component that should be highlighted in the UI
     npmDependencies?: string[];
     registryDependencies?: string[];

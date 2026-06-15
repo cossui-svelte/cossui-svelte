@@ -85,6 +85,11 @@ const registryCategory: RegistryUiData = {
 		category: "ui",
 		isnew: false,
 	},
+	"context-menu": {
+		description: "A menu that opens on right-click, providing contextual actions.",
+		category: "ui",
+		isnew: true,
+	},
 	"date-picker": {
 		description: "A date picker component built with Calendar and Popover.",
 		category: "ui",
@@ -130,6 +135,11 @@ const registryCategory: RegistryUiData = {
 		category: "ui",
 		isnew: false,
 	},
+	"hover-card": {
+		description: "A popup that appears when an element is hovered, showing additional information for sighted users.",
+		category: "origin-ui",
+		isnew: false,
+	},
 	input: {
 		description: "A native input element.",
 		category: "ui",
@@ -153,7 +163,7 @@ const registryCategory: RegistryUiData = {
 	menu: {
 		description: "A list of actions in a dropdown, enhanced with keyboard navigation.",
 		category: "ui",
-		isnew: false,
+		isnew: true,
 	},
 	meter: {
 		description: "A graphical display of a numeric value within a range.",
@@ -248,6 +258,11 @@ const registryCategory: RegistryUiData = {
 	textarea: {
 		description: "A native textarea element.",
 		category: "ui",
+		isnew: false,
+	},
+	timeline: {
+		description: "A component for displaying a series of events in chronological order.",
+		category: "origin-ui",
 		isnew: false,
 	},
 	toast: {

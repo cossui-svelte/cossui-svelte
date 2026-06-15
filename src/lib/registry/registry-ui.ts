@@ -146,9 +146,9 @@ const categories: RegistryUiData = {
   },
   'context-menu': {
     category: 'ui',
-    description: '',
+    description: 'A menu that opens on right-click, providing contextual actions.',
     folder: 'context-menu',
-    isnew: false,
+    isnew: true,
     name: 'Context Menu',
     npmDependencies: [],
     registryDependencies: []
@@ -227,8 +227,9 @@ const categories: RegistryUiData = {
     registryDependencies: []
   },
   'hover-card': {
-    category: 'ui',
-    description: '',
+    category: 'origin-ui',
+    description:
+      'A popup that appears when an element is hovered, showing additional information for sighted users.',
     folder: 'hover-card',
     isnew: false,
     name: 'Hover Card',
@@ -276,7 +277,7 @@ const categories: RegistryUiData = {
     category: 'ui',
     description: 'A list of actions in a dropdown, enhanced with keyboard navigation.',
     folder: 'menu',
-    isnew: false,
+    isnew: true,
     name: 'Menu',
     npmDependencies: [],
     registryDependencies: []
@@ -455,8 +456,8 @@ const categories: RegistryUiData = {
     registryDependencies: []
   },
   timeline: {
-    category: 'ui',
-    description: '',
+    category: 'origin-ui',
+    description: 'A component for displaying a series of events in chronological order.',
     folder: 'timeline',
     isnew: false,
     name: 'Timeline',
