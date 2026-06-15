@@ -6,7 +6,7 @@
   let {
     class: className,
     align = "center",
-    hideCode = true,
+    hideCode = false,
     children,
     source,
   }: {
