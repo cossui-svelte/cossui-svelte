@@ -2,6 +2,7 @@
   import type { Snippet } from "svelte";
   import type { HTMLAttributes } from "svelte/elements";
   import { cn } from "$lib/utils";
+  import Kbd from "$lib/components/ui/kbd/kbd.svelte";
 
   interface Props extends HTMLAttributes<HTMLElement> {
     children?: Snippet;
@@ -11,13 +12,10 @@
   let { children, class: className, ...restProps }: Props = $props();
 </script>
 
-<kbd
-  class={cn(
-    "ms-auto font-medium font-sans text-muted-foreground/72 text-xs tracking-widest",
-    className,
-  )}
+<Kbd
+  class={cn("ms-auto text-muted-foreground/72 tracking-widest", className)}
   data-slot="context-menu-shortcut"
   {...restProps}
 >
   {@render children?.()}
-</kbd>
+</Kbd>
