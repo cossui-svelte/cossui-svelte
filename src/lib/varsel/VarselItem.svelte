@@ -6,6 +6,7 @@
 	 * swipe-to-dismiss gestures, auto-closing timer, and rendering of content.
 	 */
 	import { onDestroy, onMount } from "svelte";
+	import { buttonVariants } from "$lib/components/ui/button";
 	import {
 		ANIMATION_CONFIG,
 		FOCUSABLE_SELECTORS,
@@ -826,7 +827,7 @@
 						type="button"
 						onclick={() => handleClose()}
 						class={cn(
-							"rounded-vs-sm text-vs-foreground/45 hover:bg-vs-popover-muted hover:text-vs-foreground/70 ease-vs-button focus-visible:ring-vs-ring/50 absolute end-2 top-2 cursor-pointer p-1 transition-[background-color,color,box-shadow] duration-100 focus-visible:ring-1 focus-visible:outline-none",
+							"rounded-sm text-foreground/45 hover:bg-muted hover:text-foreground/70 absolute end-2 top-2 cursor-pointer p-1 transition-[background-color,color,box-shadow] duration-100 focus-visible:ring-1 focus-visible:ring-ring/50 focus-visible:outline-none",
 						)}
 						aria-label="Close toast"
 					>
@@ -962,7 +963,7 @@
 							{#if description}
 								<div
 									id={descriptionId}
-									class="text-vs-foreground/70 text-sm leading-snug text-balance select-none"
+									class="text-muted-foreground text-sm leading-snug text-balance select-none"
 								>
 									{description}
 								</div>
@@ -975,7 +976,7 @@
 											action.onClick();
 											handleClose();
 										}}
-										class="rounded-vs-md bg-vs-foreground hover:bg-vs-foreground/90 text-vs-popover shadow-vs-button ease-vs-button focus-visible:ring-offset-vs-ring-offset/50 focus-visible:ring-vs-ring/50 border-vs-foreground relative inline-flex cursor-pointer items-center justify-center border px-3 py-1.5 text-sm font-medium transition-[background-color,color,box-shadow] duration-100 focus-visible:ring-1 focus-visible:ring-offset-1 focus-visible:outline-none"
+										class={buttonVariants({ size: "xs" })}
 									>
 										{action.label}
 									</button>

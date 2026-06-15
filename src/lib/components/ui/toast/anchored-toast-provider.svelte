@@ -7,6 +7,7 @@
 	import TriangleAlertIcon from "@lucide/svelte/icons/triangle-alert";
 	import type { Snippet } from "svelte";
 	import { scale } from "svelte/transition";
+	import { cubicOut } from "svelte/easing";
 	import { cn } from "$lib/utils";
 	import { buttonVariants } from "$lib/components/ui/button";
 	import {
@@ -27,6 +28,16 @@
 		success: CircleCheckIcon,
 		warning: TriangleAlertIcon,
 	} as const;
+
+	function upsertReplayClassName(toast: AnchoredToastData): string | undefined {
+		const k = toast.updateKey ?? 0;
+		if (k <= 0) return undefined;
+		const isEven = k % 2 === 0;
+		if (toast.type === "error") {
+			return isEven ? "animate-toast-error-even" : "animate-toast-error-odd";
+		}
+		return isEven ? "animate-toast-success-even" : "animate-toast-success-odd";
+	}
 
 	function floating(el: HTMLElement, toast: AnchoredToastData) {
 		let cleanup: (() => void) | null = null;
@@ -162,7 +173,7 @@
 		<Portal>
 			<div
 				use:floating={toast}
-				transition:scale={{ duration: 150, start: 0.98, opacity: 0 }}
+				transition:scale={{ duration: 150, start: 0.98, opacity: 0, easing: cubicOut }}
 				class={cn(
 					"fixed z-50 max-w-[min(16rem,var(--available-width,16rem))]",
 					"text-balance border bg-popover not-dark:bg-clip-padding",
@@ -173,6 +184,7 @@
 					toast.tooltipStyle
 						? "rounded-md shadow-md/5 before:rounded-[calc(var(--radius-md)-1px)]"
 						: "rounded-lg shadow-lg/5 before:rounded-[calc(var(--radius-lg)-1px)]",
+					upsertReplayClassName(toast),
 				)}
 				data-slot="toast-popup"
 				data-type={toast.type}

@@ -27,6 +27,7 @@ export interface AnchoredToastData {
   title?: string;
   tooltipStyle?: boolean;
   type?: ToastType;
+  updateKey?: number;
 }
 
 export type AddAnchoredToastOptions = Omit<AnchoredToastData, 'id'> & { id?: string };
@@ -150,7 +151,8 @@ class AnchoredToastManager {
     const id = data.id ?? `anchored-toast-${Date.now()}-${++this.idCounter}`;
     const idx = this.toasts.findIndex((t) => t.id === id);
     if (idx >= 0) {
-      this.toasts[idx] = { ...this.toasts[idx], ...data, id };
+      const prev = this.toasts[idx];
+      this.toasts[idx] = { ...prev, ...data, id, updateKey: (prev.updateKey ?? 0) + 1 };
     } else {
       this.toasts = [{ ...data, id }, ...this.toasts];
     }

@@ -17,21 +17,17 @@ export const toastContainerVariants = tv({
     },
     variant: {
       custom: '',
-      default:
-        'rounded-vs-lg border shadow-vs-toast border-vs-border bg-vs-popover text-vs-foreground',
-      destructive:
-        'rounded-vs-lg border shadow-vs-toast border-vs-border bg-vs-popover text-vs-destructive/90',
-      info: 'rounded-vs-lg border shadow-vs-toast border-vs-border bg-vs-popover text-vs-info/90',
-      success:
-        'rounded-vs-lg border shadow-vs-toast border-vs-border bg-vs-popover text-vs-success/90',
-      warning:
-        'rounded-vs-lg border shadow-vs-toast border-vs-border bg-vs-popover text-vs-warning/90'
+      default: 'rounded-lg border shadow-lg/5 bg-popover text-popover-foreground',
+      destructive: 'rounded-lg border shadow-lg/5 bg-popover text-destructive',
+      info: 'rounded-lg border shadow-lg/5 bg-popover text-info',
+      success: 'rounded-lg border shadow-lg/5 bg-popover text-success',
+      warning: 'rounded-lg border shadow-lg/5 bg-popover text-warning'
     }
   }
 });
 
 export const toastContentVariants = tv({
-  base: 'relative overflow-hidden rounded-vs-lg',
+  base: 'relative overflow-hidden rounded-lg before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-lg)-1px)] before:shadow-[0_1px_--theme(--color-black/4%)] dark:before:shadow-[0_-1px_--theme(--color-white/6%)]',
   defaultVariants: {
     variant: 'default'
   },
