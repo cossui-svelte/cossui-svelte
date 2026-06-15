@@ -1,10 +1,9 @@
 <script lang="ts">
     import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
     import {
-        InputOTP,
-        InputOTPGroup,
-        InputOTPSeparator,
-        InputOTPSlot,
+        OTPField,
+        OTPFieldInput,
+        OTPFieldSeparator,
     } from "$lib/components/ui/otp-field";
     import { Label } from "$lib/components/ui/label";
 
@@ -18,7 +17,7 @@
 <ComponentPreviewTabs>
     <div class="flex flex-col items-center gap-2">
         <Label for={id}>Verification code</Label>
-        <InputOTP
+        <OTPField
             aria-label="Verification code"
             {id}
             maxlength={6}
@@ -29,37 +28,15 @@
             }}
         >
             {#snippet children({ cells })}
-                <InputOTPGroup>
-                    <InputOTPSlot
-                        aria-invalid={invalid || undefined}
-                        cell={cells[0]}
-                    />
-                    <InputOTPSlot
-                        aria-invalid={invalid || undefined}
-                        cell={cells[1]}
-                    />
-                    <InputOTPSlot
-                        aria-invalid={invalid || undefined}
-                        cell={cells[2]}
-                    />
-                </InputOTPGroup>
-                <InputOTPSeparator />
-                <InputOTPGroup>
-                    <InputOTPSlot
-                        aria-invalid={invalid || undefined}
-                        cell={cells[3]}
-                    />
-                    <InputOTPSlot
-                        aria-invalid={invalid || undefined}
-                        cell={cells[4]}
-                    />
-                    <InputOTPSlot
-                        aria-invalid={invalid || undefined}
-                        cell={cells[5]}
-                    />
-                </InputOTPGroup>
+                <OTPFieldInput aria-invalid={invalid || undefined} cell={cells[0]} />
+                <OTPFieldInput aria-invalid={invalid || undefined} cell={cells[1]} />
+                <OTPFieldInput aria-invalid={invalid || undefined} cell={cells[2]} />
+                <OTPFieldSeparator />
+                <OTPFieldInput aria-invalid={invalid || undefined} cell={cells[3]} />
+                <OTPFieldInput aria-invalid={invalid || undefined} cell={cells[4]} />
+                <OTPFieldInput aria-invalid={invalid || undefined} cell={cells[5]} />
             {/snippet}
-        </InputOTP>
+        </OTPField>
         {#if !valid && !invalid}
             <p class="text-muted-foreground text-xs">
                 Enter `123456` to pass validation.

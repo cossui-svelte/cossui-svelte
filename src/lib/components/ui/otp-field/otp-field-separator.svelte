@@ -11,7 +11,8 @@
 
 <Separator.Root
   bind:ref
-  data-slot="input-otp-separator"
+  orientation="horizontal"
+  data-slot="otp-field-separator"
   class={cn(
     "rounded-full bg-input data-[orientation=horizontal]:h-0.5 data-[orientation=horizontal]:w-3",
     className,
