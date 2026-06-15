@@ -497,6 +497,24 @@
       <div class={cpCls("py-3.5")}></div>
     </div>
   </div>
+
+{:else if slug === "context-menu"}
+  <div class="flex max-w-50 flex-1 flex-col">
+    <div
+      class={cardCls(
+        "border-input border-dashed bg-none shadow-none [--radius-2xl:10px] before:hidden",
+      )}
+    >
+      <div class={cpCls("min-h-20")}></div>
+    </div>
+    <div class={cardCls("ms-auto -mt-3 w-fit [--radius-2xl:10px]")}>
+      <div class={cpCls("flex flex-col gap-3 p-3")}>
+        {@render textSnip("w-16", "secondary")}
+        {@render textSnip("w-16", "secondary")}
+        {@render textSnip("w-16", "secondary")}
+      </div>
+    </div>
+  </div>
 {:else if slug === "menu"}
   <div class="flex max-w-50 flex-1 flex-col items-end gap-2">
     <div class={cardCls("w-fit [--radius-2xl:12px]")}>
