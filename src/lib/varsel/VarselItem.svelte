@@ -195,6 +195,20 @@
 	type CloseReason = "auto" | "dismiss" | null;
 	let closeReason: CloseReason = null;
 
+	let bubbleKey = $derived(toast.bubbleKey ?? 0);
+
+	$effect(() => {
+		const key = bubbleKey;
+		if (key === 0 || !toastRef) return;
+		const el = toastRef;
+		el.classList.remove('vs-bubble');
+		void el.offsetWidth; // force reflow to restart the animation
+		el.classList.add('vs-bubble');
+		const onEnd = () => el.classList.remove('vs-bubble');
+		el.addEventListener('animationend', onEnd, { once: true });
+		return () => el.removeEventListener('animationend', onEnd);
+	});
+
 	const handleTransitionEnd = (event: TransitionEvent) => {
 		if (event.target !== toastRef) return;
 		if (event.propertyName !== "opacity" && event.propertyName !== "transform") return;

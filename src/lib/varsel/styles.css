@@ -146,6 +146,32 @@
 	border: 0;
 }
 
+/* Bubble pulse applied to an active toast when re-triggered with the same id */
+.vs-bubble {
+	animation: vs-bubble 0.32s cubic-bezier(0.5, 1, 0.89, 1)
+		/* animation: vs-bubble 0.4s var(--ease-vs-pop) forwards; */
+}
+
+@keyframes vs-bubble {
+	0% {
+
+		scale: 1;
+	}
+
+	30% {
+		scale: 1.025;
+	}
+
+	60% {
+		scale: 0.99;
+	}
+
+	100% {
+		scale: 1;
+	}
+
+}
+
 @keyframes vs-spin {
 	to {
 		transform: rotate(360deg);
@@ -158,6 +184,7 @@
 		transform: scale(1);
 		filter: blur(0);
 	}
+
 	100% {
 		opacity: 0;
 		transform: scale(0.25);
@@ -171,6 +198,7 @@
 		transform: scale(0.25);
 		filter: blur(4px);
 	}
+
 	100% {
 		opacity: 1;
 		transform: scale(1);
@@ -191,5 +219,9 @@
 		animation: none;
 		opacity: 1;
 		transform: scale(1);
+	}
+
+	.vs-bubble {
+		animation: none;
 	}
 }

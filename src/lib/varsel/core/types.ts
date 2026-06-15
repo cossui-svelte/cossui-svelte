@@ -15,6 +15,8 @@ export interface ToastData extends VariantProps<typeof toastContainerVariants> {
     /** Callback function executed when the action button is clicked. */
     onClick: () => void;
   };
+  /** Incremented each time a duplicate-id add is called on an active toast, triggering a bubble animation. */
+  bubbleKey?: number;
   /** Optional CSS class to apply to the toast container. */
   className?: string;
   /** Custom Svelte component to render instead of the default toast layout. */
@@ -28,6 +30,8 @@ export interface ToastData extends VariantProps<typeof toastContainerVariants> {
    * Defaults to 5000ms. Set to `0` or `Infinity` to keep open indefinitely.
    */
   duration?: number;
+  /** Incremented each time the toast is reset with the same id, forcing DOM recreation. */
+  generation?: number;
   /** Unique identifier for the toast. */
   id: string;
   /** Internal flag: signals that the toast is currently leaving the DOM. */

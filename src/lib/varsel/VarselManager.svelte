@@ -524,7 +524,7 @@
 				lastVisibleRenderIndex >= 0
 					? collapsedOffsets?.[lastVisibleRenderIndex]
 					: undefined}
-			{#each positionToasts as toast, idx (toast.id)}
+			{#each positionToasts as toast, idx (`${toast.id}:${toast.generation ?? 0}`)}
 				{@const toastIsHidden = toast.index >= visibleToasts}
 				{@const hiddenCollapsedOffset = toastIsHidden
 					? (sharedHiddenCollapsedOffset ?? collapsedOffsets?.[idx])

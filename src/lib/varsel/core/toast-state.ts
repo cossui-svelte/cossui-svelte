@@ -40,21 +40,23 @@ class ToastState {
    */
   add(data: Omit<ToastData, 'id'> & { id?: string }): string {
     const requestedId = data.id;
+    let generation = 0;
     if (requestedId) {
-      const existing = this.toasts.find((toast) => toast.id === requestedId);
+      const existing = this.toasts.find((t) => t.id === requestedId);
       if (existing && !existing.shouldClose && !existing.isLeaving) {
-        const { id: _ignored, ...updates } = data;
-        void _ignored;
-        this.update(requestedId, updates);
+        // Toast is already active — pulse it in place instead of replacing.
+        this.update(requestedId, { bubbleKey: (existing.bubbleKey ?? 0) + 1 });
         return requestedId;
       }
+      // Toast is leaving or gone — remove stale entry and recreate fresh.
+      generation = (existing?.generation ?? 0) + 1;
+      this.toasts = this.toasts.filter((t) => t.id !== requestedId);
     }
 
     const id = requestedId ?? this.generateId();
     const { id: _ignored, ...rest } = data;
     void _ignored;
-    const newToast: ToastData = { ...rest, id };
-    // Add new toasts to the beginning of the array (stack LIFO visually for some positions, logic handled in manager)
+    const newToast: ToastData = { ...rest, generation, id };
     this.toasts = [newToast, ...this.toasts];
     this.notify();
     return id;

@@ -36,6 +36,7 @@ export interface AddToastOptions {
   action?: ToastActionProps;
   description?: string;
   duration?: number;
+  id?: string;
   title?: string;
   type?: ToastType;
 }
@@ -72,6 +73,7 @@ export const toastManager = {
       action: adaptAction(opts.action),
       description: opts.description,
       duration: opts.duration,
+      id: opts.id,
       title: opts.title,
       variant: typeToVariant(opts.type)
     });
