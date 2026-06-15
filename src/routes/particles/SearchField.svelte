@@ -1,11 +1,20 @@
 <script lang="ts">
-	import { Combobox } from "bits-ui";
 	import Search from "@lucide/svelte/icons/search";
 	import Tag from "@lucide/svelte/icons/tag";
-	import X from "@lucide/svelte/icons/x";
-	import { cn } from "$lib/utils";
 	import { particles } from "$lib/registry/registry-particles";
 	import { getCategorySortOrder } from "$lib/registry/registry-categories.js";
+	import {
+		Combobox,
+		ComboboxChip,
+		ComboboxChips,
+		ComboboxChipsInput,
+		ComboboxGroup,
+		ComboboxGroupLabel,
+		ComboboxItem,
+		ComboboxList,
+		ComboboxPopup,
+		ComboboxSeparator,
+	} from "$lib/components/ui/combobox";
 
 	export interface SearchItem {
 		label: string;
@@ -87,155 +96,85 @@
 </script>
 
 <div class="mx-auto max-w-2xl">
-	<Combobox.Root
+	<Combobox
 		type="multiple"
 		value={selectedValues}
 		onValueChange={handleValueChange}
-		{inputValue}
-		onInputValueChange={(v) => (inputValue = v)}
 		{open}
 		onOpenChange={(v) => (open = v)}
+		inputValue={inputValue}
 	>
-		<div
-			class="flex flex-wrap items-center gap-1.5 rounded-xl border border-input bg-background p-2 focus-within:ring-2 focus-within:ring-ring"
-		>
-			<Search
-				class="size-5 shrink-0 text-muted-foreground"
-				strokeWidth={2}
-			/>
-
+		<ComboboxChips>
+			{#snippet startAddon()}
+				<Search class="size-4 text-muted-foreground" strokeWidth={2} />
+			{/snippet}
 			{#each selectedItems as item (item.value)}
-				<span
-					class="flex items-center gap-1 rounded-md border border-input bg-accent px-2 py-0.5 text-sm"
+				<ComboboxChip
+					removeProps={{ onclick: () => removeItem(item.value) }}
 				>
 					<Tag class="size-3 opacity-80" strokeWidth={2} />
 					{item.label}
-					<button
-						class="ml-0.5 opacity-60 hover:opacity-100"
-						type="button"
-						onclick={() => removeItem(item.value)}
-						aria-label="Remove {item.label}"
-					>
-						<X class="size-3" />
-					</button>
-				</span>
+				</ComboboxChip>
 			{/each}
-
-			<Combobox.Input
-				class="min-w-24 flex-1 bg-transparent text-base outline-none placeholder:text-muted-foreground sm:text-sm"
+			<ComboboxChipsInput
+				oninput={(e) =>
+					(inputValue = (e.currentTarget as HTMLInputElement).value)}
 				placeholder={selectedItems.length === 0
 					? "Search components..."
 					: ""}
 				aria-label="Filter particles"
 			/>
-		</div>
+		</ComboboxChips>
 
-		<Combobox.Portal>
-			<Combobox.Content
-				class={cn(
-					"relative mt-1 flex max-h-80 min-w-(--bits-combobox-anchor-width) flex-col overflow-y-auto rounded-lg border bg-popover p-1 shadow-lg",
-					"origin-[--bits-combobox-content-transform-origin] transition-[scale,opacity]",
-					"data-[state=closed]:scale-98 data-[state=closed]:opacity-0 data-[state=open]:scale-100 data-[state=open]:opacity-100",
-				)}
-			>
+		<ComboboxPopup>
+			<ComboboxList>
 				{#if groupedItems().enabled.length === 0 && groupedItems().disabled.length === 0}
-					<div class="p-2 text-center text-muted-foreground text-sm">
+					<div
+						class="p-2 text-center text-muted-foreground text-sm"
+					>
 						No filters found.
 					</div>
 				{/if}
 
 				{#if groupedItems().enabled.length > 0}
-					<Combobox.Group>
-						<Combobox.GroupHeading
-							class="px-2 py-1 text-muted-foreground text-xs font-medium"
-						>
-							Filter particles
-						</Combobox.GroupHeading>
+					<ComboboxGroup>
+						<ComboboxGroupLabel>Filter particles</ComboboxGroupLabel>
 						{#each groupedItems().enabled as item (item.value)}
-							<Combobox.Item
-								value={item.value}
-								label={item.label}
-								class="grid min-h-8 cursor-default grid-cols-[1rem_1fr] items-center gap-2 rounded-sm py-1 ps-2 pe-4 text-base outline-none data-highlighted:bg-accent data-highlighted:text-accent-foreground sm:min-h-7 sm:text-sm"
-							>
-								{#snippet children({ selected })}
-									<svg
-										class={cn(
-											"col-start-1 size-4",
-											!selected && "invisible",
-										)}
-										fill="none"
-										viewBox="0 0 24 24"
-										stroke="currentColor"
-										stroke-width="2"
-										stroke-linecap="round"
-										stroke-linejoin="round"
-									>
-										<path
-											d="M5.252 12.7 10.2 18.63 18.748 5.37"
-										/>
-									</svg>
-									<span
-										class="col-start-2 flex items-center gap-2"
-									>
-										<Tag
-											class="size-3.5 opacity-80"
-											strokeWidth={2}
-										/>
-										{item.label}
-									</span>
+							<ComboboxItem value={item.value} label={item.label}>
+								{#snippet children()}
+									<Tag
+										class="size-3.5 opacity-80"
+										strokeWidth={2}
+									/>
+									{item.label}
 								{/snippet}
-							</Combobox.Item>
+							</ComboboxItem>
 						{/each}
-					</Combobox.Group>
+					</ComboboxGroup>
 				{/if}
 
 				{#if groupedItems().disabled.length > 0}
-					<Combobox.Separator class="my-1 -mx-1 h-px bg-border" />
-					<Combobox.Group>
-						<Combobox.GroupHeading
-							class="px-2 py-1 text-muted-foreground text-xs font-medium"
-						>
-							No matches
-						</Combobox.GroupHeading>
+					<ComboboxSeparator />
+					<ComboboxGroup>
+						<ComboboxGroupLabel>No matches</ComboboxGroupLabel>
 						{#each groupedItems().disabled as item (item.value)}
-							<Combobox.Item
+							<ComboboxItem
 								value={item.value}
 								label={item.label}
 								disabled
-								class="grid min-h-8 cursor-default grid-cols-[1rem_1fr] items-center gap-2 rounded-sm py-1 ps-2 pe-4 text-base outline-none data-disabled:pointer-events-none data-disabled:opacity-50 sm:min-h-7 sm:text-sm"
 							>
-								{#snippet children({ selected })}
-									<svg
-										class={cn(
-											"col-start-1 size-4",
-											!selected && "invisible",
-										)}
-										fill="none"
-										viewBox="0 0 24 24"
-										stroke="currentColor"
-										stroke-width="2"
-										stroke-linecap="round"
-										stroke-linejoin="round"
-									>
-										<path
-											d="M5.252 12.7 10.2 18.63 18.748 5.37"
-										/>
-									</svg>
-									<span
-										class="col-start-2 flex items-center gap-2"
-									>
-										<Tag
-											class="size-3.5 opacity-80"
-											strokeWidth={2}
-										/>
-										{item.label}
-									</span>
+								{#snippet children()}
+									<Tag
+										class="size-3.5 opacity-80"
+										strokeWidth={2}
+									/>
+									{item.label}
 								{/snippet}
-							</Combobox.Item>
+							</ComboboxItem>
 						{/each}
-					</Combobox.Group>
+					</ComboboxGroup>
 				{/if}
-			</Combobox.Content>
-		</Combobox.Portal>
-	</Combobox.Root>
+			</ComboboxList>
+		</ComboboxPopup>
+	</Combobox>
 </div>
