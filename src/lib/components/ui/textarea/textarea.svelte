@@ -1,9 +1,11 @@
 <script lang="ts">
-  import type { WithElementRef } from "bits-ui";
   import type { HTMLTextareaAttributes } from "svelte/elements";
   import { cn } from "$lib/utils";
+  import { Control } from "$lib/formsnap";
+  import { getField } from "$lib/formsnap/formsnap.svelte";
 
   interface Props extends HTMLTextareaAttributes {
+    ref?: HTMLTextAreaElement | null;
     size?: "sm" | "default" | "lg" | number;
     unstyled?: boolean;
   }
@@ -15,7 +17,14 @@
     unstyled = false,
     value = $bindable(),
     ...restProps
-  }: WithElementRef<Props> = $props();
+  }: Props = $props();
+
+  const textareaClassName = cn(
+    "field-sizing-content min-h-17.5 w-full rounded-[inherit] px-[calc(--spacing(3)-1px)] py-[calc(--spacing(1.5)-1px)] outline-none max-sm:min-h-20.5",
+    size === "sm" &&
+      "min-h-16.5 px-[calc(--spacing(2.5)-1px)] py-[calc(--spacing(1)-1px)] max-sm:min-h-19.5",
+    size === "lg" && "min-h-18.5 py-[calc(--spacing(2)-1px)] max-sm:min-h-21.5",
+  );
 </script>
 
 <span
@@ -28,17 +37,25 @@
   data-size={size}
   data-slot="textarea-control"
 >
-  <textarea
-    bind:this={ref}
-    bind:value
-    class={cn(
-      "field-sizing-content min-h-17.5 w-full rounded-[inherit] px-[calc(--spacing(3)-1px)] py-[calc(--spacing(1.5)-1px)] outline-none max-sm:min-h-20.5",
-      size === "sm" &&
-        "min-h-16.5 px-[calc(--spacing(2.5)-1px)] py-[calc(--spacing(1)-1px)] max-sm:min-h-19.5",
-      size === "lg" &&
-        "min-h-18.5 py-[calc(--spacing(2)-1px)] max-sm:min-h-21.5",
-    )}
-    data-slot="textarea"
-    {...restProps}
-  ></textarea>
+  {#if getField()}
+    <Control>
+      {#snippet children({ props })}
+        <textarea
+          class={textareaClassName}
+          data-slot="textarea"
+          bind:this={ref}
+          bind:value
+          {...props}
+        ></textarea>
+      {/snippet}
+    </Control>
+  {:else}
+    <textarea
+      class={textareaClassName}
+      data-slot="textarea"
+      bind:this={ref}
+      bind:value
+      {...restProps}
+    ></textarea>
+  {/if}
 </span>
