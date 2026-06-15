@@ -2,7 +2,7 @@
   import { browser } from "$app/environment";
   import type { HTMLAttributes } from "svelte/elements";
   import { cn } from "$lib/utils";
-  import CodeBlock from "$lib/components/ui/code-block.svelte";
+  import CodeBlock from "$lib/components/app/code-block.svelte";
   import CodeCollapsibleWrapper from "$lib/components/app/code-collapsible-wrapper.svelte";
   // import { getRegistryItem } from "$lib/registry";
 

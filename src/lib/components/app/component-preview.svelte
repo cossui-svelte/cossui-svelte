@@ -3,7 +3,7 @@
   import { cn } from "$lib/utils";
   import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
   import ComponentSource from "$lib/components/app/component-source.svelte";
-  import { Index } from "$lib/registry/__index__";
+  // import { Index } from "$lib/registry/__index__";
 
   let {
     name,
@@ -38,7 +38,7 @@
     {hideCode}
     {...restProps}
   >
-    {#snippet component()}
+    {#snippet children()}
       <svelte:component this={Component} />
     {/snippet}
     {#snippet source()}
