@@ -14,6 +14,7 @@
         scrollFade = false,
         scrollbarGutter = false,
         fill = false,
+        clampContentMinWidth = true,
         ...restProps
     }: WithoutChild<ScrollAreaPrimitive.RootProps> & {
         orientation?: "vertical" | "horizontal" | "both" | undefined;
@@ -23,6 +24,7 @@
         scrollFade?: boolean;
         scrollbarGutter?: boolean;
         fill?: boolean;
+        clampContentMinWidth?: boolean;
     } = $props();
 </script>
 
@@ -43,7 +45,7 @@
         )}
         data-slot="scroll-area-viewport"
     >
-        <div class={cn(fill && "size-full")} data-slot="scroll-area-content">
+        <div class={cn(fill && "size-full")} style={clampContentMinWidth ? "min-width: 0" : ""} data-slot="scroll-area-content">
             {@render children?.()}
         </div>
     </ScrollAreaPrimitive.Viewport>
