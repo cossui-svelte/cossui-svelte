@@ -22,7 +22,10 @@ export default defineConfig({
     rollupOptions: {
       external: ['@vinejs/vine'],
       onwarn(warning, warn) {
-        if (warning.code === 'SOURCEMAP_BROKEN' || warning.message.includes('points to a source file outside its package'))
+        if (
+          warning.code === 'SOURCEMAP_BROKEN' ||
+          warning.message.includes('points to a source file outside its package')
+        )
           return;
         warn(warning);
       }
