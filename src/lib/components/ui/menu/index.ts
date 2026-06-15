@@ -6,6 +6,7 @@ export {
 export { default as MenuGroup, default as DropdownMenuGroup } from './menu-group.svelte';
 export { default as MenuGroupLabel, default as DropdownMenuLabel } from './menu-group-label.svelte';
 export { default as MenuItem, default as DropdownMenuItem } from './menu-item.svelte';
+export { default as MenuLinkItem, default as DropdownMenuLinkItem } from './menu-link-item.svelte';
 export { default as MenuPopup, default as DropdownMenuContent } from './menu-popup.svelte';
 export {
   default as MenuRadioGroup,

@@ -1,9 +1,9 @@
 "use client";
 
 import { Menu as MenuPrimitive } from "@base-ui/react/menu";
-import { cn } from "@coss/ui/lib/utils";
 import { ChevronRightIcon } from "lucide-react";
 import type * as React from "react";
+import { cn } from "@/registry/default/lib/utils";
 
 export const MenuCreateHandle: typeof MenuPrimitive.createHandle =
   MenuPrimitive.createHandle;
@@ -97,6 +97,31 @@ export function MenuItem({
       )}
       data-inset={inset}
       data-slot="menu-item"
+      data-variant={variant}
+      {...props}
+    />
+  );
+}
+
+export function MenuLinkItem({
+  className,
+  inset,
+  variant = "default",
+  closeOnClick = true,
+  ...props
+}: MenuPrimitive.LinkItem.Props & {
+  inset?: boolean;
+  variant?: "default" | "destructive";
+}): React.ReactElement {
+  return (
+    <MenuPrimitive.LinkItem
+      className={cn(
+        "flex min-h-8 cursor-default select-none items-center gap-2 rounded-sm px-2 py-1 text-base text-foreground outline-none data-disabled:pointer-events-none data-highlighted:bg-accent data-inset:ps-8 data-[variant=destructive]:text-destructive-foreground data-highlighted:text-accent-foreground data-disabled:opacity-64 sm:min-h-7 sm:text-sm [&>svg:not([class*='opacity-'])]:opacity-80 [&>svg:not([class*='size-'])]:size-4.5 sm:[&>svg:not([class*='size-'])]:size-4 [&>svg]:pointer-events-none [&>svg]:-mx-0.5 [&>svg]:shrink-0",
+        className,
+      )}
+      closeOnClick={closeOnClick}
+      data-inset={inset}
+      data-slot="menu-link-item"
       data-variant={variant}
       {...props}
     />
