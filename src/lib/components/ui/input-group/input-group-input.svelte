@@ -12,7 +12,6 @@
 
 <Input
 	bind:ref
-	data-slot="input-group-control"
 	class={className}
 	bind:value
 	unstyled

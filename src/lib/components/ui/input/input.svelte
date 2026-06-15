@@ -20,7 +20,7 @@
     ...restProps
   }: Props = $props();
 
-  const inputClassName = cn(
+  const inputClassName = $derived(cn(
     "h-8.5 w-full min-w-0 rounded-[inherit] px-[calc(--spacing(3)-1px)] leading-8.5 outline-none placeholder:text-muted-foreground/72 sm:h-7.5 sm:leading-7.5 [transition:background-color_5000000s_ease-in-out_0s]",
     size === "sm" &&
       "h-7.5 px-[calc(--spacing(2.5)-1px)] leading-7.5 sm:h-6.5 sm:leading-6.5",
@@ -29,7 +29,7 @@
       "[&::-webkit-search-cancel-button]:appearance-none [&::-webkit-search-decoration]:appearance-none [&::-webkit-search-results-button]:appearance-none [&::-webkit-search-results-decoration]:appearance-none",
     type === "file" &&
       "text-muted-foreground file:me-3 file:bg-transparent file:font-medium file:text-foreground file:text-sm",
-  );
+  ));
 </script>
 
 <span
@@ -50,7 +50,9 @@
           data-slot="input"
           bind:this={ref}
           bind:value
+          {type}
           size={typeof size === "number" ? size : undefined}
+          {...restProps}
           {...props}
         />
       {/snippet}
@@ -61,6 +63,7 @@
       bind:this={ref}
       data-slot="input"
       bind:value
+      {type}
       size={typeof size === "number" ? size : undefined}
       {...restProps}
     />
