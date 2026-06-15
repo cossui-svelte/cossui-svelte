@@ -1,4 +1,5 @@
 <script lang="ts">
+    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
     import {
         Accordion,
         AccordionItem,
@@ -34,20 +35,22 @@
     ];
 </script>
 
-<div class="space-y-4">
-    <h2 class="text-xl font-bold">W/ chevron</h2>
-    <Accordion type="single" class="w-full" value="3">
-        {#each items as item (item.id)}
-            <AccordionItem value={item.id} class="py-2">
-                <AccordionTrigger
-                    class="py-2 text-[15px] leading-6 hover:no-underline"
-                >
-                    {item.title}
-                </AccordionTrigger>
-                <AccordionContent class="pb-2 text-muted-foreground">
-                    {item.content}
-                </AccordionContent>
-            </AccordionItem>
-        {/each}
-    </Accordion>
-</div>
+<ComponentPreviewTabs>
+    <div class="w-full max-w-xl space-y-4">
+        <h2 class="text-xl font-bold">W/ chevron</h2>
+        <Accordion type="single" class="w-full" value="3">
+            {#each items as item (item.id)}
+                <AccordionItem value={item.id} class="py-2">
+                    <AccordionTrigger
+                        class="py-2 text-[15px] leading-6 hover:no-underline"
+                    >
+                        {item.title}
+                    </AccordionTrigger>
+                    <AccordionContent class="pb-2 text-muted-foreground">
+                        {item.content}
+                    </AccordionContent>
+                </AccordionItem>
+            {/each}
+        </Accordion>
+    </div>
+</ComponentPreviewTabs>
