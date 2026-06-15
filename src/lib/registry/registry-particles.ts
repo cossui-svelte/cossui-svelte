@@ -20,7 +20,7 @@ export type RegistryParticuleData = Record<string, RegistryParticuleEntry>;
 const particles: RegistryParticuleData = {
   'accordion-01': {
     description: 'Basic accordion',
-    file: 'accordion/accordion-01',
+    file: 'accordion-01',
     name: 'Accordion 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -28,7 +28,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-02': {
     description: 'Accordion with one panel open',
-    file: 'accordion/accordion-02',
+    file: 'accordion-02',
     name: 'Accordion 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -36,7 +36,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-03': {
     description: 'Accordion allowing multiple panels open',
-    file: 'accordion/accordion-03',
+    file: 'accordion-03',
     name: 'Accordion 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -44,7 +44,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-04': {
     description: 'Controlled accordion',
-    file: 'accordion/accordion-04',
+    file: 'accordion-04',
     name: 'Accordion 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -52,7 +52,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-05': {
     description: '',
-    file: 'accordion/accordion-05',
+    file: 'accordion-05',
     name: 'Accordion 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -60,7 +60,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-06': {
     description: '',
-    file: 'accordion/accordion-06',
+    file: 'accordion-06',
     name: 'Accordion 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -68,7 +68,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-07': {
     description: '',
-    file: 'accordion/accordion-07',
+    file: 'accordion-07',
     name: 'Accordion 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -76,7 +76,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-08': {
     description: '',
-    file: 'accordion/accordion-08',
+    file: 'accordion-08',
     name: 'Accordion 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -84,7 +84,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-09': {
     description: '',
-    file: 'accordion/accordion-09',
+    file: 'accordion-09',
     name: 'Accordion 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -92,7 +92,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-10': {
     description: '',
-    file: 'accordion/accordion-10',
+    file: 'accordion-10',
     name: 'Accordion 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -100,7 +100,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-11': {
     description: '',
-    file: 'accordion/accordion-11',
+    file: 'accordion-11',
     name: 'Accordion 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -108,7 +108,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-12': {
     description: '',
-    file: 'accordion/accordion-12',
+    file: 'accordion-12',
     name: 'Accordion 12',
     npmDependencies: [],
     registryDependencies: [],
@@ -116,7 +116,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-13': {
     description: '',
-    file: 'accordion/accordion-13',
+    file: 'accordion-13',
     name: 'Accordion 13',
     npmDependencies: [],
     registryDependencies: [],
@@ -124,7 +124,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-14': {
     description: '',
-    file: 'accordion/accordion-14',
+    file: 'accordion-14',
     name: 'Accordion 14',
     npmDependencies: [],
     registryDependencies: [],
@@ -132,7 +132,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-15': {
     description: '',
-    file: 'accordion/accordion-15',
+    file: 'accordion-15',
     name: 'Accordion 15',
     npmDependencies: [],
     registryDependencies: [],
@@ -140,7 +140,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-16': {
     description: '',
-    file: 'accordion/accordion-16',
+    file: 'accordion-16',
     name: 'Accordion 16',
     npmDependencies: [],
     registryDependencies: [],
@@ -148,7 +148,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-17': {
     description: '',
-    file: 'accordion/accordion-17',
+    file: 'accordion-17',
     name: 'Accordion 17',
     npmDependencies: [],
     registryDependencies: [],
@@ -156,7 +156,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-18': {
     description: '',
-    file: 'accordion/accordion-18',
+    file: 'accordion-18',
     name: 'Accordion 18',
     npmDependencies: [],
     registryDependencies: [],
@@ -164,7 +164,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-19': {
     description: '',
-    file: 'accordion/accordion-19',
+    file: 'accordion-19',
     name: 'Accordion 19',
     npmDependencies: [],
     registryDependencies: [],
@@ -172,7 +172,7 @@ const particles: RegistryParticuleData = {
   },
   'accordion-20': {
     description: '',
-    file: 'accordion/accordion-20',
+    file: 'accordion-20',
     name: 'Accordion 20',
     npmDependencies: [],
     registryDependencies: [],
@@ -180,7 +180,7 @@ const particles: RegistryParticuleData = {
   },
   'alert-01': {
     description: 'Basic alert',
-    file: 'alert/alert-01',
+    file: 'alert-01',
     name: 'Alert 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -188,7 +188,7 @@ const particles: RegistryParticuleData = {
   },
   'alert-02': {
     description: 'Alert with icon',
-    file: 'alert/alert-02',
+    file: 'alert-02',
     name: 'Alert 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -196,7 +196,7 @@ const particles: RegistryParticuleData = {
   },
   'alert-03': {
     description: 'Alert with icon and action buttons',
-    file: 'alert/alert-03',
+    file: 'alert-03',
     name: 'Alert 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -204,7 +204,7 @@ const particles: RegistryParticuleData = {
   },
   'alert-04': {
     description: 'Info alert',
-    file: 'alert/alert-04',
+    file: 'alert-04',
     name: 'Alert 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -212,7 +212,7 @@ const particles: RegistryParticuleData = {
   },
   'alert-05': {
     description: 'Success alert',
-    file: 'alert/alert-05',
+    file: 'alert-05',
     name: 'Alert 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -220,7 +220,7 @@ const particles: RegistryParticuleData = {
   },
   'alert-06': {
     description: 'Warning alert',
-    file: 'alert/alert-06',
+    file: 'alert-06',
     name: 'Alert 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -228,7 +228,7 @@ const particles: RegistryParticuleData = {
   },
   'alert-07': {
     description: 'Error alert',
-    file: 'alert/alert-07',
+    file: 'alert-07',
     name: 'Alert 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -236,7 +236,7 @@ const particles: RegistryParticuleData = {
   },
   'alert-08': {
     description: '',
-    file: 'alert/alert-08',
+    file: 'alert-08',
     name: 'Alert 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -244,7 +244,7 @@ const particles: RegistryParticuleData = {
   },
   'alert-09': {
     description: '',
-    file: 'alert/alert-09',
+    file: 'alert-09',
     name: 'Alert 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -252,7 +252,7 @@ const particles: RegistryParticuleData = {
   },
   'alert-10': {
     description: '',
-    file: 'alert/alert-10',
+    file: 'alert-10',
     name: 'Alert 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -260,7 +260,7 @@ const particles: RegistryParticuleData = {
   },
   'alert-11': {
     description: '',
-    file: 'alert/alert-11',
+    file: 'alert-11',
     name: 'Alert 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -268,7 +268,7 @@ const particles: RegistryParticuleData = {
   },
   'alert-12': {
     description: '',
-    file: 'alert/alert-12',
+    file: 'alert-12',
     name: 'Alert 12',
     npmDependencies: [],
     registryDependencies: [],
@@ -276,7 +276,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-01': {
     description: 'Avatar with image and fallback',
-    file: 'avatar/avatar-01',
+    file: 'avatar-01',
     name: 'Avatar 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -284,7 +284,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-02': {
     description: 'Fallback-only avatar',
-    file: 'avatar/avatar-02',
+    file: 'avatar-02',
     name: 'Avatar 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -292,7 +292,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-03': {
     description: 'Avatars with different sizes',
-    file: 'avatar/avatar-03',
+    file: 'avatar-03',
     name: 'Avatar 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -300,7 +300,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-04': {
     description: 'Avatars with different radii',
-    file: 'avatar/avatar-04',
+    file: 'avatar-04',
     name: 'Avatar 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -308,7 +308,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-05': {
     description: 'Overlapping avatar group',
-    file: 'avatar/avatar-05',
+    file: 'avatar-05',
     name: 'Avatar 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -316,7 +316,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-06': {
     description: 'Avatar with user icon fallback',
-    file: 'avatar/avatar-06',
+    file: 'avatar-06',
     name: 'Avatar 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -324,7 +324,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-07': {
     description: 'Avatar with emerald status dot',
-    file: 'avatar/avatar-07',
+    file: 'avatar-07',
     name: 'Avatar 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -332,7 +332,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-08': {
     description: 'Avatar with muted status dot',
-    file: 'avatar/avatar-08',
+    file: 'avatar-08',
     name: 'Avatar 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -340,7 +340,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-09': {
     description: 'Rounded avatar with top-right emerald status',
-    file: 'avatar/avatar-09',
+    file: 'avatar-09',
     name: 'Avatar 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -348,7 +348,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-10': {
     description: 'Avatar with notification badge',
-    file: 'avatar/avatar-10',
+    file: 'avatar-10',
     name: 'Avatar 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -356,7 +356,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-11': {
     description: 'Rounded avatar with notification badge',
-    file: 'avatar/avatar-11',
+    file: 'avatar-11',
     name: 'Avatar 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -364,7 +364,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-12': {
     description: 'Avatar with verified badge',
-    file: 'avatar/avatar-12',
+    file: 'avatar-12',
     name: 'Avatar 12',
     npmDependencies: [],
     registryDependencies: [],
@@ -372,7 +372,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-13': {
     description: 'Small overlapping avatar group',
-    file: 'avatar/avatar-13',
+    file: 'avatar-13',
     name: 'Avatar 13',
     npmDependencies: [],
     registryDependencies: [],
@@ -380,7 +380,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-14': {
     description: 'Large overlapping avatar group',
-    file: 'avatar/avatar-14',
+    file: 'avatar-14',
     name: 'Avatar 14',
     npmDependencies: [],
     registryDependencies: [],
@@ -388,7 +388,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-15': {
     description: '',
-    file: 'avatar/avatar-15',
+    file: 'avatar-15',
     name: 'Avatar 15',
     npmDependencies: [],
     registryDependencies: [],
@@ -396,7 +396,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-16': {
     description: '',
-    file: 'avatar/avatar-16',
+    file: 'avatar-16',
     name: 'Avatar 16',
     npmDependencies: [],
     registryDependencies: [],
@@ -404,7 +404,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-17': {
     description: '',
-    file: 'avatar/avatar-17',
+    file: 'avatar-17',
     name: 'Avatar 17',
     npmDependencies: [],
     registryDependencies: [],
@@ -412,7 +412,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-18': {
     description: '',
-    file: 'avatar/avatar-18',
+    file: 'avatar-18',
     name: 'Avatar 18',
     npmDependencies: [],
     registryDependencies: [],
@@ -420,7 +420,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-19': {
     description: '',
-    file: 'avatar/avatar-19',
+    file: 'avatar-19',
     name: 'Avatar 19',
     npmDependencies: [],
     registryDependencies: [],
@@ -428,7 +428,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-20': {
     description: '',
-    file: 'avatar/avatar-20',
+    file: 'avatar-20',
     name: 'Avatar 20',
     npmDependencies: [],
     registryDependencies: [],
@@ -436,7 +436,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-21': {
     description: '',
-    file: 'avatar/avatar-21',
+    file: 'avatar-21',
     name: 'Avatar 21',
     npmDependencies: [],
     registryDependencies: [],
@@ -444,7 +444,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-22': {
     description: '',
-    file: 'avatar/avatar-22',
+    file: 'avatar-22',
     name: 'Avatar 22',
     npmDependencies: [],
     registryDependencies: [],
@@ -452,7 +452,7 @@ const particles: RegistryParticuleData = {
   },
   'avatar-23': {
     description: '',
-    file: 'avatar/avatar-23',
+    file: 'avatar-23',
     name: 'Avatar 23',
     npmDependencies: [],
     registryDependencies: [],
@@ -460,7 +460,7 @@ const particles: RegistryParticuleData = {
   },
   'badge-01': {
     description: 'Basic badge',
-    file: 'badge/badge-01',
+    file: 'badge-01',
     name: 'Badge 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -468,7 +468,7 @@ const particles: RegistryParticuleData = {
   },
   'badge-02': {
     description: 'Outline badge',
-    file: 'badge/badge-02',
+    file: 'badge-02',
     name: 'Badge 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -476,7 +476,7 @@ const particles: RegistryParticuleData = {
   },
   'badge-03': {
     description: 'Secondary badge',
-    file: 'badge/badge-03',
+    file: 'badge-03',
     name: 'Badge 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -484,7 +484,7 @@ const particles: RegistryParticuleData = {
   },
   'badge-04': {
     description: 'Destructive badge',
-    file: 'badge/badge-04',
+    file: 'badge-04',
     name: 'Badge 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -492,7 +492,7 @@ const particles: RegistryParticuleData = {
   },
   'badge-05': {
     description: 'Info badge',
-    file: 'badge/badge-05',
+    file: 'badge-05',
     name: 'Badge 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -500,7 +500,7 @@ const particles: RegistryParticuleData = {
   },
   'badge-06': {
     description: 'Success badge',
-    file: 'badge/badge-06',
+    file: 'badge-06',
     name: 'Badge 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -508,7 +508,7 @@ const particles: RegistryParticuleData = {
   },
   'badge-07': {
     description: 'Warning badge',
-    file: 'badge/badge-07',
+    file: 'badge-07',
     name: 'Badge 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -516,7 +516,7 @@ const particles: RegistryParticuleData = {
   },
   'badge-08': {
     description: 'Error badge',
-    file: 'badge/badge-08',
+    file: 'badge-08',
     name: 'Badge 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -524,7 +524,7 @@ const particles: RegistryParticuleData = {
   },
   'badge-09': {
     description: 'Small badge',
-    file: 'badge/badge-09',
+    file: 'badge-09',
     name: 'Badge 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -532,7 +532,7 @@ const particles: RegistryParticuleData = {
   },
   'badge-10': {
     description: 'Large badge',
-    file: 'badge/badge-10',
+    file: 'badge-10',
     name: 'Badge 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -540,7 +540,7 @@ const particles: RegistryParticuleData = {
   },
   'badge-11': {
     description: 'Badge with icon',
-    file: 'badge/badge-11',
+    file: 'badge-11',
     name: 'Badge 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -548,7 +548,7 @@ const particles: RegistryParticuleData = {
   },
   'badge-12': {
     description: 'Badge with link',
-    file: 'badge/badge-12',
+    file: 'badge-12',
     name: 'Badge 12',
     npmDependencies: [],
     registryDependencies: [],
@@ -556,7 +556,7 @@ const particles: RegistryParticuleData = {
   },
   'badge-13': {
     description: 'Badge with count',
-    file: 'badge/badge-13',
+    file: 'badge-13',
     name: 'Badge 13',
     npmDependencies: [],
     registryDependencies: [],
@@ -564,7 +564,7 @@ const particles: RegistryParticuleData = {
   },
   'banner-01': {
     description: '',
-    file: 'banner/banner-01',
+    file: 'banner-01',
     name: 'Banner 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -572,7 +572,7 @@ const particles: RegistryParticuleData = {
   },
   'banner-02': {
     description: '',
-    file: 'banner/banner-02',
+    file: 'banner-02',
     name: 'Banner 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -580,7 +580,7 @@ const particles: RegistryParticuleData = {
   },
   'banner-03': {
     description: '',
-    file: 'banner/banner-03',
+    file: 'banner-03',
     name: 'Banner 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -588,7 +588,7 @@ const particles: RegistryParticuleData = {
   },
   'banner-04': {
     description: '',
-    file: 'banner/banner-04',
+    file: 'banner-04',
     name: 'Banner 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -596,7 +596,7 @@ const particles: RegistryParticuleData = {
   },
   'banner-05': {
     description: '',
-    file: 'banner/banner-05',
+    file: 'banner-05',
     name: 'Banner 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -604,7 +604,7 @@ const particles: RegistryParticuleData = {
   },
   'banner-06': {
     description: '',
-    file: 'banner/banner-06',
+    file: 'banner-06',
     name: 'Banner 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -612,7 +612,7 @@ const particles: RegistryParticuleData = {
   },
   'banner-07': {
     description: '',
-    file: 'banner/banner-07',
+    file: 'banner-07',
     name: 'Banner 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -620,7 +620,7 @@ const particles: RegistryParticuleData = {
   },
   'banner-08': {
     description: '',
-    file: 'banner/banner-08',
+    file: 'banner-08',
     name: 'Banner 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -628,7 +628,7 @@ const particles: RegistryParticuleData = {
   },
   'banner-09': {
     description: '',
-    file: 'banner/banner-09',
+    file: 'banner-09',
     name: 'Banner 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -636,7 +636,7 @@ const particles: RegistryParticuleData = {
   },
   'banner-10': {
     description: '',
-    file: 'banner/banner-10',
+    file: 'banner-10',
     name: 'Banner 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -644,7 +644,7 @@ const particles: RegistryParticuleData = {
   },
   'banner-11': {
     description: '',
-    file: 'banner/banner-11',
+    file: 'banner-11',
     name: 'Banner 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -652,7 +652,7 @@ const particles: RegistryParticuleData = {
   },
   'banner-12': {
     description: '',
-    file: 'banner/banner-12',
+    file: 'banner-12',
     name: 'Banner 12',
     npmDependencies: [],
     registryDependencies: [],
@@ -660,7 +660,7 @@ const particles: RegistryParticuleData = {
   },
   'breadcrumb-01': {
     description: 'Breadcrumb with menu example',
-    file: 'breadcrumb/breadcrumb-01',
+    file: 'breadcrumb-01',
     name: 'Breadcrumb 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -668,7 +668,7 @@ const particles: RegistryParticuleData = {
   },
   'breadcrumb-02': {
     description: 'Breadcrumb with custom separator',
-    file: 'breadcrumb/breadcrumb-02',
+    file: 'breadcrumb-02',
     name: 'Breadcrumb 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -676,7 +676,7 @@ const particles: RegistryParticuleData = {
   },
   'breadcrumb-03': {
     description: 'Breadcrumb with home icon for home link only',
-    file: 'breadcrumb/breadcrumb-03',
+    file: 'breadcrumb-03',
     name: 'Breadcrumb 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -684,7 +684,7 @@ const particles: RegistryParticuleData = {
   },
   'breadcrumb-04': {
     description: 'Breadcrumb with folders icon menu',
-    file: 'breadcrumb/breadcrumb-04',
+    file: 'breadcrumb-04',
     name: 'Breadcrumb 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -692,7 +692,7 @@ const particles: RegistryParticuleData = {
   },
   'breadcrumb-05': {
     description: 'Breadcrumb with icons before text',
-    file: 'breadcrumb/breadcrumb-05',
+    file: 'breadcrumb-05',
     name: 'Breadcrumb 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -700,7 +700,7 @@ const particles: RegistryParticuleData = {
   },
   'breadcrumb-06': {
     description: 'Breadcrumb with dot separators',
-    file: 'breadcrumb/breadcrumb-06',
+    file: 'breadcrumb-06',
     name: 'Breadcrumb 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -708,7 +708,7 @@ const particles: RegistryParticuleData = {
   },
   'breadcrumb-07': {
     description: 'Breadcrumb with select dropdown',
-    file: 'breadcrumb/breadcrumb-07',
+    file: 'breadcrumb-07',
     name: 'Breadcrumb 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -716,7 +716,7 @@ const particles: RegistryParticuleData = {
   },
   'breadcrumb-08': {
     description: '',
-    file: 'breadcrumb/breadcrumb-08',
+    file: 'breadcrumb-08',
     name: 'Breadcrumb 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -724,7 +724,7 @@ const particles: RegistryParticuleData = {
   },
   'button-01': {
     description: 'Default button',
-    file: 'button/button-01',
+    file: 'button-01',
     name: 'Button 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -732,7 +732,7 @@ const particles: RegistryParticuleData = {
   },
   'button-02': {
     description: 'Outline button',
-    file: 'button/button-02',
+    file: 'button-02',
     name: 'Button 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -740,7 +740,7 @@ const particles: RegistryParticuleData = {
   },
   'button-03': {
     description: 'Secondary button',
-    file: 'button/button-03',
+    file: 'button-03',
     name: 'Button 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -748,7 +748,7 @@ const particles: RegistryParticuleData = {
   },
   'button-04': {
     description: 'Destructive button',
-    file: 'button/button-04',
+    file: 'button-04',
     name: 'Button 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -756,7 +756,7 @@ const particles: RegistryParticuleData = {
   },
   'button-05': {
     description: 'Destructive outline button',
-    file: 'button/button-05',
+    file: 'button-05',
     name: 'Button 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -764,7 +764,7 @@ const particles: RegistryParticuleData = {
   },
   'button-06': {
     description: 'Ghost button',
-    file: 'button/button-06',
+    file: 'button-06',
     name: 'Button 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -772,7 +772,7 @@ const particles: RegistryParticuleData = {
   },
   'button-07': {
     description: 'Link button',
-    file: 'button/button-07',
+    file: 'button-07',
     name: 'Button 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -780,7 +780,7 @@ const particles: RegistryParticuleData = {
   },
   'button-08': {
     description: 'Extra-small button',
-    file: 'button/button-08',
+    file: 'button-08',
     name: 'Button 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -788,7 +788,7 @@ const particles: RegistryParticuleData = {
   },
   'button-09': {
     description: 'Small button',
-    file: 'button/button-09',
+    file: 'button-09',
     name: 'Button 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -796,7 +796,7 @@ const particles: RegistryParticuleData = {
   },
   'button-10': {
     description: 'Large button',
-    file: 'button/button-10',
+    file: 'button-10',
     name: 'Button 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -804,7 +804,7 @@ const particles: RegistryParticuleData = {
   },
   'button-11': {
     description: 'Extra-large button',
-    file: 'button/button-11',
+    file: 'button-11',
     name: 'Button 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -812,7 +812,7 @@ const particles: RegistryParticuleData = {
   },
   'button-12': {
     description: 'Disabled button',
-    file: 'button/button-12',
+    file: 'button-12',
     name: 'Button 12',
     npmDependencies: [],
     registryDependencies: [],
@@ -820,7 +820,7 @@ const particles: RegistryParticuleData = {
   },
   'button-13': {
     description: 'Icon button',
-    file: 'button/button-13',
+    file: 'button-13',
     name: 'Button 13',
     npmDependencies: [],
     registryDependencies: [],
@@ -828,7 +828,7 @@ const particles: RegistryParticuleData = {
   },
   'button-14': {
     description: 'Small icon button',
-    file: 'button/button-14',
+    file: 'button-14',
     name: 'Button 14',
     npmDependencies: [],
     registryDependencies: [],
@@ -836,7 +836,7 @@ const particles: RegistryParticuleData = {
   },
   'button-15': {
     description: 'Large icon button',
-    file: 'button/button-15',
+    file: 'button-15',
     name: 'Button 15',
     npmDependencies: [],
     registryDependencies: [],
@@ -844,7 +844,7 @@ const particles: RegistryParticuleData = {
   },
   'button-16': {
     description: 'Button with icon',
-    file: 'button/button-16',
+    file: 'button-16',
     name: 'Button 16',
     npmDependencies: [],
     registryDependencies: [],
@@ -852,7 +852,7 @@ const particles: RegistryParticuleData = {
   },
   'button-17': {
     description: 'Link rendered as button',
-    file: 'button/button-17',
+    file: 'button-17',
     name: 'Button 17',
     npmDependencies: [],
     registryDependencies: [],
@@ -860,7 +860,7 @@ const particles: RegistryParticuleData = {
   },
   'button-18': {
     description: 'Custom loading button with manual Spinner',
-    file: 'button/button-18',
+    file: 'button-18',
     name: 'Button 18',
     npmDependencies: [],
     registryDependencies: [],
@@ -868,7 +868,7 @@ const particles: RegistryParticuleData = {
   },
   'button-19': {
     description: 'Expandable show more/less toggle button',
-    file: 'button/button-19',
+    file: 'button-19',
     name: 'Button 19',
     npmDependencies: [],
     registryDependencies: [],
@@ -876,7 +876,7 @@ const particles: RegistryParticuleData = {
   },
   'button-20': {
     description: 'Back link button with chevron',
-    file: 'button/button-20',
+    file: 'button-20',
     name: 'Button 20',
     npmDependencies: [],
     registryDependencies: [],
@@ -884,7 +884,7 @@ const particles: RegistryParticuleData = {
   },
   'button-21': {
     description: 'Card-style button with heading and description',
-    file: 'button/button-21',
+    file: 'button-21',
     name: 'Button 21',
     npmDependencies: [],
     registryDependencies: [],
@@ -892,7 +892,7 @@ const particles: RegistryParticuleData = {
   },
   'button-22': {
     description: 'Directional pad control buttons',
-    file: 'button/button-22',
+    file: 'button-22',
     name: 'Button 22',
     npmDependencies: [],
     registryDependencies: [],
@@ -900,7 +900,7 @@ const particles: RegistryParticuleData = {
   },
   'button-23': {
     description: 'Outline like button with count',
-    file: 'button/button-23',
+    file: 'button-23',
     name: 'Button 23',
     npmDependencies: [],
     registryDependencies: [],
@@ -908,7 +908,7 @@ const particles: RegistryParticuleData = {
   },
   'button-24': {
     description: 'Social login icon buttons',
-    file: 'button/button-24',
+    file: 'button-24',
     name: 'Button 24',
     npmDependencies: [],
     registryDependencies: [],
@@ -916,7 +916,7 @@ const particles: RegistryParticuleData = {
   },
   'button-25': {
     description: '',
-    file: 'button/button-25',
+    file: 'button-25',
     name: 'Button 25',
     npmDependencies: [],
     registryDependencies: [],
@@ -924,7 +924,7 @@ const particles: RegistryParticuleData = {
   },
   'button-26': {
     description: 'Star button with count badge',
-    file: 'button/button-26',
+    file: 'button-26',
     name: 'Button 26',
     npmDependencies: [],
     registryDependencies: [],
@@ -932,7 +932,7 @@ const particles: RegistryParticuleData = {
   },
   'button-27': {
     description: 'Button group with QR code icon and sign in',
-    file: 'button/button-27',
+    file: 'button-27',
     name: 'Button 27',
     npmDependencies: [],
     registryDependencies: [],
@@ -940,7 +940,7 @@ const particles: RegistryParticuleData = {
   },
   'button-28': {
     description: 'Button with avatar',
-    file: 'button/button-28',
+    file: 'button-28',
     name: 'Button 28',
     npmDependencies: [],
     registryDependencies: [],
@@ -948,7 +948,7 @@ const particles: RegistryParticuleData = {
   },
   'button-29': {
     description: 'Pill-shaped button with rounded-full styling',
-    file: 'button/button-29',
+    file: 'button-29',
     name: 'Button 29',
     npmDependencies: [],
     registryDependencies: [],
@@ -956,7 +956,7 @@ const particles: RegistryParticuleData = {
   },
   'button-30': {
     description: 'Button with animated arrow on hover',
-    file: 'button/button-30',
+    file: 'button-30',
     name: 'Button 30',
     npmDependencies: [],
     registryDependencies: [],
@@ -964,7 +964,7 @@ const particles: RegistryParticuleData = {
   },
   'button-31': {
     description: 'Button with keyboard shortcut indicator',
-    file: 'button/button-31',
+    file: 'button-31',
     name: 'Button 31',
     npmDependencies: [],
     registryDependencies: [],
@@ -972,7 +972,7 @@ const particles: RegistryParticuleData = {
   },
   'button-32': {
     description: 'Button with notification badge',
-    file: 'button/button-32',
+    file: 'button-32',
     name: 'Button 32',
     npmDependencies: [],
     registryDependencies: [],
@@ -980,7 +980,7 @@ const particles: RegistryParticuleData = {
   },
   'button-33': {
     description: 'Paired buttons (Cancel/Save)',
-    file: 'button/button-33',
+    file: 'button-33',
     name: 'Button 33',
     npmDependencies: [],
     registryDependencies: [],
@@ -988,7 +988,7 @@ const particles: RegistryParticuleData = {
   },
   'button-34': {
     description: 'Button with animated status dot',
-    file: 'button/button-34',
+    file: 'button-34',
     name: 'Button 34',
     npmDependencies: [],
     registryDependencies: [],
@@ -996,7 +996,7 @@ const particles: RegistryParticuleData = {
   },
   'button-35': {
     description: 'Icon-only copy button with feedback',
-    file: 'button/button-35',
+    file: 'button-35',
     name: 'Button 35',
     npmDependencies: [],
     registryDependencies: [],
@@ -1004,7 +1004,7 @@ const particles: RegistryParticuleData = {
   },
   'button-36': {
     description: 'Copy button with feedback',
-    file: 'button/button-36',
+    file: 'button-36',
     name: 'Button 36',
     npmDependencies: [],
     registryDependencies: [],
@@ -1012,7 +1012,7 @@ const particles: RegistryParticuleData = {
   },
   'button-37': {
     description: 'Rotating icon button (FAB-style toggle)',
-    file: 'button/button-37',
+    file: 'button-37',
     name: 'Button 37',
     npmDependencies: [],
     registryDependencies: [],
@@ -1020,7 +1020,7 @@ const particles: RegistryParticuleData = {
   },
   'button-38': {
     description: 'Social login buttons (Google, X, GitHub)',
-    file: 'button/button-38',
+    file: 'button-38',
     name: 'Button 38',
     npmDependencies: [],
     registryDependencies: [],
@@ -1028,7 +1028,7 @@ const particles: RegistryParticuleData = {
   },
   'button-39': {
     description: 'Hamburger menu button with animated icon',
-    file: 'button/button-39',
+    file: 'button-39',
     name: 'Button 39',
     npmDependencies: [],
     registryDependencies: [],
@@ -1036,7 +1036,7 @@ const particles: RegistryParticuleData = {
   },
   'button-40': {
     description: 'Download button with progress and cancel action',
-    file: 'button/button-40',
+    file: 'button-40',
     name: 'Button 40',
     npmDependencies: [],
     registryDependencies: [],
@@ -1044,7 +1044,7 @@ const particles: RegistryParticuleData = {
   },
   'button-41': {
     description: 'Button using the built-in loading prop',
-    file: 'button/button-41',
+    file: 'button-41',
     name: 'Button 41',
     npmDependencies: [],
     registryDependencies: [],
@@ -1052,7 +1052,7 @@ const particles: RegistryParticuleData = {
   },
   'button-42': {
     description: '',
-    file: 'button/button-42',
+    file: 'button-42',
     name: 'Button 42',
     npmDependencies: [],
     registryDependencies: [],
@@ -1060,7 +1060,7 @@ const particles: RegistryParticuleData = {
   },
   'button-43': {
     description: '',
-    file: 'button/button-43',
+    file: 'button-43',
     name: 'Button 43',
     npmDependencies: [],
     registryDependencies: [],
@@ -1068,7 +1068,7 @@ const particles: RegistryParticuleData = {
   },
   'button-44': {
     description: '',
-    file: 'button/button-44',
+    file: 'button-44',
     name: 'Button 44',
     npmDependencies: [],
     registryDependencies: [],
@@ -1076,7 +1076,7 @@ const particles: RegistryParticuleData = {
   },
   'button-45': {
     description: '',
-    file: 'button/button-45',
+    file: 'button-45',
     name: 'Button 45',
     npmDependencies: [],
     registryDependencies: [],
@@ -1084,7 +1084,7 @@ const particles: RegistryParticuleData = {
   },
   'button-46': {
     description: '',
-    file: 'button/button-46',
+    file: 'button-46',
     name: 'Button 46',
     npmDependencies: [],
     registryDependencies: [],
@@ -1092,7 +1092,7 @@ const particles: RegistryParticuleData = {
   },
   'button-47': {
     description: '',
-    file: 'button/button-47',
+    file: 'button-47',
     name: 'Button 47',
     npmDependencies: [],
     registryDependencies: [],
@@ -1100,7 +1100,7 @@ const particles: RegistryParticuleData = {
   },
   'button-48': {
     description: '',
-    file: 'button/button-48',
+    file: 'button-48',
     name: 'Button 48',
     npmDependencies: [],
     registryDependencies: [],
@@ -1108,7 +1108,7 @@ const particles: RegistryParticuleData = {
   },
   'button-49': {
     description: '',
-    file: 'button/button-49',
+    file: 'button-49',
     name: 'Button 49',
     npmDependencies: [],
     registryDependencies: [],
@@ -1116,7 +1116,7 @@ const particles: RegistryParticuleData = {
   },
   'button-50': {
     description: '',
-    file: 'button/button-50',
+    file: 'button-50',
     name: 'Button 50',
     npmDependencies: [],
     registryDependencies: [],
@@ -1124,7 +1124,7 @@ const particles: RegistryParticuleData = {
   },
   'button-51': {
     description: '',
-    file: 'button/button-51',
+    file: 'button-51',
     name: 'Button 51',
     npmDependencies: [],
     registryDependencies: [],
@@ -1132,7 +1132,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-01': {
     description: 'Basic checkbox',
-    file: 'checkbox/checkbox-01',
+    file: 'checkbox-01',
     name: 'Checkbox 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -1140,7 +1140,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-02': {
     description: 'Disabled checkbox',
-    file: 'checkbox/checkbox-02',
+    file: 'checkbox-02',
     name: 'Checkbox 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -1148,7 +1148,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-03': {
     description: 'Checkbox with description',
-    file: 'checkbox/checkbox-03',
+    file: 'checkbox-03',
     name: 'Checkbox 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -1156,7 +1156,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-04': {
     description: 'Card-style checkbox',
-    file: 'checkbox/checkbox-04',
+    file: 'checkbox-04',
     name: 'Checkbox 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -1164,7 +1164,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-05': {
     description: 'Checkbox form',
-    file: 'checkbox/checkbox-05',
+    file: 'checkbox-05',
     name: 'Checkbox 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -1172,7 +1172,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-06': {
     description: '',
-    file: 'checkbox/checkbox-06',
+    file: 'checkbox-06',
     name: 'Checkbox 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -1180,7 +1180,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-07': {
     description: '',
-    file: 'checkbox/checkbox-07',
+    file: 'checkbox-07',
     name: 'Checkbox 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -1188,7 +1188,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-08': {
     description: '',
-    file: 'checkbox/checkbox-08',
+    file: 'checkbox-08',
     name: 'Checkbox 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -1196,7 +1196,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-09': {
     description: '',
-    file: 'checkbox/checkbox-09',
+    file: 'checkbox-09',
     name: 'Checkbox 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -1204,7 +1204,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-10': {
     description: '',
-    file: 'checkbox/checkbox-10',
+    file: 'checkbox-10',
     name: 'Checkbox 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -1212,7 +1212,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-11': {
     description: '',
-    file: 'checkbox/checkbox-11',
+    file: 'checkbox-11',
     name: 'Checkbox 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -1220,7 +1220,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-12': {
     description: '',
-    file: 'checkbox/checkbox-12',
+    file: 'checkbox-12',
     name: 'Checkbox 12',
     npmDependencies: [],
     registryDependencies: [],
@@ -1228,7 +1228,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-13': {
     description: '',
-    file: 'checkbox/checkbox-13',
+    file: 'checkbox-13',
     name: 'Checkbox 13',
     npmDependencies: [],
     registryDependencies: [],
@@ -1236,7 +1236,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-14': {
     description: '',
-    file: 'checkbox/checkbox-14',
+    file: 'checkbox-14',
     name: 'Checkbox 14',
     npmDependencies: [],
     registryDependencies: [],
@@ -1244,7 +1244,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-15': {
     description: '',
-    file: 'checkbox/checkbox-15',
+    file: 'checkbox-15',
     name: 'Checkbox 15',
     npmDependencies: [],
     registryDependencies: [],
@@ -1252,7 +1252,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-16': {
     description: '',
-    file: 'checkbox/checkbox-16',
+    file: 'checkbox-16',
     name: 'Checkbox 16',
     npmDependencies: [],
     registryDependencies: [],
@@ -1260,7 +1260,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-17': {
     description: '',
-    file: 'checkbox/checkbox-17',
+    file: 'checkbox-17',
     name: 'Checkbox 17',
     npmDependencies: [],
     registryDependencies: [],
@@ -1268,7 +1268,7 @@ const particles: RegistryParticuleData = {
   },
   'checkbox-18': {
     description: '',
-    file: 'checkbox/checkbox-18',
+    file: 'checkbox-18',
     name: 'Checkbox 18',
     npmDependencies: [],
     registryDependencies: [],
@@ -1276,7 +1276,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-01': {
     description: 'Dialog with form',
-    file: 'dialog/dialog-01',
+    file: 'dialog-01',
     name: 'Dialog 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -1284,7 +1284,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-02': {
     description: 'Dialog opened from menu',
-    file: 'dialog/dialog-02',
+    file: 'dialog-02',
     name: 'Dialog 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -1292,7 +1292,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-03': {
     description: 'Nested dialogs',
-    file: 'dialog/dialog-03',
+    file: 'dialog-03',
     name: 'Dialog 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -1300,7 +1300,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-04': {
     description: 'Dialog with close confirmation',
-    file: 'dialog/dialog-04',
+    file: 'dialog-04',
     name: 'Dialog 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -1308,7 +1308,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-05': {
     description: 'Dialog with long content',
-    file: 'dialog/dialog-05',
+    file: 'dialog-05',
     name: 'Dialog 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -1316,7 +1316,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-06': {
     description: 'Dialog with bare footer',
-    file: 'dialog/dialog-06',
+    file: 'dialog-06',
     name: 'Dialog 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -1324,7 +1324,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-07': {
     description: '',
-    file: 'dialog/dialog-07',
+    file: 'dialog-07',
     name: 'Dialog 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -1332,7 +1332,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-08': {
     description: '',
-    file: 'dialog/dialog-08',
+    file: 'dialog-08',
     name: 'Dialog 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -1340,7 +1340,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-09': {
     description: '',
-    file: 'dialog/dialog-09',
+    file: 'dialog-09',
     name: 'Dialog 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -1348,7 +1348,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-10': {
     description: '',
-    file: 'dialog/dialog-10',
+    file: 'dialog-10',
     name: 'Dialog 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -1356,7 +1356,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-11': {
     description: '',
-    file: 'dialog/dialog-11',
+    file: 'dialog-11',
     name: 'Dialog 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -1364,7 +1364,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-12.todo': {
     description: '',
-    file: 'dialog/dialog-12.todo',
+    file: 'dialog-12.todo',
     name: 'Dialog 12.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -1372,7 +1372,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-13': {
     description: '',
-    file: 'dialog/dialog-13',
+    file: 'dialog-13',
     name: 'Dialog 13',
     npmDependencies: [],
     registryDependencies: [],
@@ -1380,7 +1380,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-14': {
     description: '',
-    file: 'dialog/dialog-14',
+    file: 'dialog-14',
     name: 'Dialog 14',
     npmDependencies: [],
     registryDependencies: [],
@@ -1388,7 +1388,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-15': {
     description: '',
-    file: 'dialog/dialog-15',
+    file: 'dialog-15',
     name: 'Dialog 15',
     npmDependencies: [],
     registryDependencies: [],
@@ -1396,7 +1396,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-16.todo': {
     description: '',
-    file: 'dialog/dialog-16.todo',
+    file: 'dialog-16.todo',
     name: 'Dialog 16.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -1404,7 +1404,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-17.todo': {
     description: '',
-    file: 'dialog/dialog-17.todo',
+    file: 'dialog-17.todo',
     name: 'Dialog 17.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -1412,7 +1412,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-18': {
     description: '',
-    file: 'dialog/dialog-18',
+    file: 'dialog-18',
     name: 'Dialog 18',
     npmDependencies: [],
     registryDependencies: [],
@@ -1420,7 +1420,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-19': {
     description: '',
-    file: 'dialog/dialog-19',
+    file: 'dialog-19',
     name: 'Dialog 19',
     npmDependencies: [],
     registryDependencies: [],
@@ -1428,7 +1428,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-20': {
     description: '',
-    file: 'dialog/dialog-20',
+    file: 'dialog-20',
     name: 'Dialog 20',
     npmDependencies: [],
     registryDependencies: [],
@@ -1436,7 +1436,7 @@ const particles: RegistryParticuleData = {
   },
   'dialog-21.todo': {
     description: '',
-    file: 'dialog/dialog-21.todo',
+    file: 'dialog-21.todo',
     name: 'Dialog 21.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -1444,7 +1444,7 @@ const particles: RegistryParticuleData = {
   },
   'empty-01': {
     description: 'Empty state with icon and actions',
-    file: 'empty/empty-01',
+    file: 'empty-01',
     name: 'Empty 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -1452,7 +1452,7 @@ const particles: RegistryParticuleData = {
   },
   'input-01': {
     description: 'Basic input',
-    file: 'input/input-01',
+    file: 'input-01',
     name: 'Input 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -1460,7 +1460,7 @@ const particles: RegistryParticuleData = {
   },
   'input-02': {
     description: 'Small input',
-    file: 'input/input-02',
+    file: 'input-02',
     name: 'Input 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -1468,7 +1468,7 @@ const particles: RegistryParticuleData = {
   },
   'input-03': {
     description: 'Large input',
-    file: 'input/input-03',
+    file: 'input-03',
     name: 'Input 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -1476,7 +1476,7 @@ const particles: RegistryParticuleData = {
   },
   'input-04': {
     description: 'Disabled input',
-    file: 'input/input-04',
+    file: 'input-04',
     name: 'Input 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -1484,7 +1484,7 @@ const particles: RegistryParticuleData = {
   },
   'input-05': {
     description: 'File input',
-    file: 'input/input-05',
+    file: 'input-05',
     name: 'Input 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -1492,7 +1492,7 @@ const particles: RegistryParticuleData = {
   },
   'input-06': {
     description: 'Input with label',
-    file: 'input/input-06',
+    file: 'input-06',
     name: 'Input 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -1500,7 +1500,7 @@ const particles: RegistryParticuleData = {
   },
   'input-07': {
     description: 'Input with button using Group',
-    file: 'input/input-07',
+    file: 'input-07',
     name: 'Input 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -1508,7 +1508,7 @@ const particles: RegistryParticuleData = {
   },
   'input-08': {
     description: 'Input with start text and end tooltip',
-    file: 'input/input-08',
+    file: 'input-08',
     name: 'Input 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -1516,7 +1516,7 @@ const particles: RegistryParticuleData = {
   },
   'input-09': {
     description: 'Password input with toggle visibility',
-    file: 'input/input-09',
+    file: 'input-09',
     name: 'Input 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -1524,7 +1524,7 @@ const particles: RegistryParticuleData = {
   },
   'input-10': {
     description: 'Input group mimicking a URL bar',
-    file: 'input/input-10',
+    file: 'input-10',
     name: 'Input 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -1532,7 +1532,7 @@ const particles: RegistryParticuleData = {
   },
   'input-11': {
     description: 'Input group with keyboard shortcut',
-    file: 'input/input-11',
+    file: 'input-11',
     name: 'Input 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -1540,7 +1540,7 @@ const particles: RegistryParticuleData = {
   },
   'input-12': {
     description: 'Input group with start loading spinner',
-    file: 'input/input-12',
+    file: 'input-12',
     name: 'Input 12',
     npmDependencies: [],
     registryDependencies: [],
@@ -1548,7 +1548,7 @@ const particles: RegistryParticuleData = {
   },
   'input-13': {
     description: 'Input with label and required indicator',
-    file: 'input/input-13',
+    file: 'input-13',
     name: 'Input 13',
     npmDependencies: [],
     registryDependencies: [],
@@ -1556,7 +1556,7 @@ const particles: RegistryParticuleData = {
   },
   'input-14': {
     description: 'Input with optional label',
-    file: 'input/input-14',
+    file: 'input-14',
     name: 'Input 14',
     npmDependencies: [],
     registryDependencies: [],
@@ -1564,7 +1564,7 @@ const particles: RegistryParticuleData = {
   },
   'input-15': {
     description: 'Input with custom border and background',
-    file: 'input/input-15',
+    file: 'input-15',
     name: 'Input 15',
     npmDependencies: [],
     registryDependencies: [],
@@ -1572,7 +1572,7 @@ const particles: RegistryParticuleData = {
   },
   'input-16': {
     description: 'Input group with end loading spinner',
-    file: 'input/input-16',
+    file: 'input-16',
     name: 'Input 16',
     npmDependencies: [],
     registryDependencies: [],
@@ -1580,7 +1580,7 @@ const particles: RegistryParticuleData = {
   },
   'input-17': {
     description: 'Read-only input',
-    file: 'input/input-17',
+    file: 'input-17',
     name: 'Input 17',
     npmDependencies: [],
     registryDependencies: [],
@@ -1588,7 +1588,7 @@ const particles: RegistryParticuleData = {
   },
   'input-18': {
     description: 'Input with characters remaining counter',
-    file: 'input/input-18',
+    file: 'input-18',
     name: 'Input 18',
     npmDependencies: [],
     registryDependencies: [],
@@ -1596,7 +1596,7 @@ const particles: RegistryParticuleData = {
   },
   'input-19': {
     description: 'Pill-shaped input',
-    file: 'input/input-19',
+    file: 'input-19',
     name: 'Input 19',
     npmDependencies: [],
     registryDependencies: [],
@@ -1604,7 +1604,7 @@ const particles: RegistryParticuleData = {
   },
   'input-20': {
     description: '',
-    file: 'input/input-20',
+    file: 'input-20',
     name: 'Input 20',
     npmDependencies: [],
     registryDependencies: [],
@@ -1612,7 +1612,7 @@ const particles: RegistryParticuleData = {
   },
   'input-21': {
     description: '',
-    file: 'input/input-21',
+    file: 'input-21',
     name: 'Input 21',
     npmDependencies: [],
     registryDependencies: [],
@@ -1620,7 +1620,7 @@ const particles: RegistryParticuleData = {
   },
   'input-22': {
     description: '',
-    file: 'input/input-22',
+    file: 'input-22',
     name: 'Input 22',
     npmDependencies: [],
     registryDependencies: [],
@@ -1628,7 +1628,7 @@ const particles: RegistryParticuleData = {
   },
   'input-23': {
     description: '',
-    file: 'input/input-23',
+    file: 'input-23',
     name: 'Input 23',
     npmDependencies: [],
     registryDependencies: [],
@@ -1636,7 +1636,7 @@ const particles: RegistryParticuleData = {
   },
   'input-24': {
     description: '',
-    file: 'input/input-24',
+    file: 'input-24',
     name: 'Input 24',
     npmDependencies: [],
     registryDependencies: [],
@@ -1644,7 +1644,7 @@ const particles: RegistryParticuleData = {
   },
   'input-25': {
     description: '',
-    file: 'input/input-25',
+    file: 'input-25',
     name: 'Input 25',
     npmDependencies: [],
     registryDependencies: [],
@@ -1652,7 +1652,7 @@ const particles: RegistryParticuleData = {
   },
   'input-26': {
     description: '',
-    file: 'input/input-26',
+    file: 'input-26',
     name: 'Input 26',
     npmDependencies: [],
     registryDependencies: [],
@@ -1660,7 +1660,7 @@ const particles: RegistryParticuleData = {
   },
   'input-27': {
     description: '',
-    file: 'input/input-27',
+    file: 'input-27',
     name: 'Input 27',
     npmDependencies: [],
     registryDependencies: [],
@@ -1668,7 +1668,7 @@ const particles: RegistryParticuleData = {
   },
   'input-28': {
     description: '',
-    file: 'input/input-28',
+    file: 'input-28',
     name: 'Input 28',
     npmDependencies: [],
     registryDependencies: [],
@@ -1676,7 +1676,7 @@ const particles: RegistryParticuleData = {
   },
   'input-29': {
     description: '',
-    file: 'input/input-29',
+    file: 'input-29',
     name: 'Input 29',
     npmDependencies: [],
     registryDependencies: [],
@@ -1684,7 +1684,7 @@ const particles: RegistryParticuleData = {
   },
   'input-30': {
     description: '',
-    file: 'input/input-30',
+    file: 'input-30',
     name: 'Input 30',
     npmDependencies: [],
     registryDependencies: [],
@@ -1692,7 +1692,7 @@ const particles: RegistryParticuleData = {
   },
   'input-31': {
     description: '',
-    file: 'input/input-31',
+    file: 'input-31',
     name: 'Input 31',
     npmDependencies: [],
     registryDependencies: [],
@@ -1700,7 +1700,7 @@ const particles: RegistryParticuleData = {
   },
   'input-32': {
     description: '',
-    file: 'input/input-32',
+    file: 'input-32',
     name: 'Input 32',
     npmDependencies: [],
     registryDependencies: [],
@@ -1708,7 +1708,7 @@ const particles: RegistryParticuleData = {
   },
   'input-33': {
     description: '',
-    file: 'input/input-33',
+    file: 'input-33',
     name: 'Input 33',
     npmDependencies: [],
     registryDependencies: [],
@@ -1716,7 +1716,7 @@ const particles: RegistryParticuleData = {
   },
   'input-34': {
     description: '',
-    file: 'input/input-34',
+    file: 'input-34',
     name: 'Input 34',
     npmDependencies: [],
     registryDependencies: [],
@@ -1724,7 +1724,7 @@ const particles: RegistryParticuleData = {
   },
   'input-35': {
     description: '',
-    file: 'input/input-35',
+    file: 'input-35',
     name: 'Input 35',
     npmDependencies: [],
     registryDependencies: [],
@@ -1732,7 +1732,7 @@ const particles: RegistryParticuleData = {
   },
   'input-36': {
     description: '',
-    file: 'input/input-36',
+    file: 'input-36',
     name: 'Input 36',
     npmDependencies: [],
     registryDependencies: [],
@@ -1740,7 +1740,7 @@ const particles: RegistryParticuleData = {
   },
   'input-37.todo': {
     description: '',
-    file: 'input/input-37.todo',
+    file: 'input-37.todo',
     name: 'Input 37.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -1748,7 +1748,7 @@ const particles: RegistryParticuleData = {
   },
   'input-38.todo': {
     description: '',
-    file: 'input/input-38.todo',
+    file: 'input-38.todo',
     name: 'Input 38.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -1756,7 +1756,7 @@ const particles: RegistryParticuleData = {
   },
   'input-39.todo': {
     description: '',
-    file: 'input/input-39.todo',
+    file: 'input-39.todo',
     name: 'Input 39.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -1764,7 +1764,7 @@ const particles: RegistryParticuleData = {
   },
   'input-40.todo': {
     description: '',
-    file: 'input/input-40.todo',
+    file: 'input-40.todo',
     name: 'Input 40.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -1772,7 +1772,7 @@ const particles: RegistryParticuleData = {
   },
   'input-41.todo': {
     description: '',
-    file: 'input/input-41.todo',
+    file: 'input-41.todo',
     name: 'Input 41.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -1780,7 +1780,7 @@ const particles: RegistryParticuleData = {
   },
   'input-42': {
     description: '',
-    file: 'input/input-42',
+    file: 'input-42',
     name: 'Input 42',
     npmDependencies: [],
     registryDependencies: [],
@@ -1788,7 +1788,7 @@ const particles: RegistryParticuleData = {
   },
   'input-43': {
     description: '',
-    file: 'input/input-43',
+    file: 'input-43',
     name: 'Input 43',
     npmDependencies: [],
     registryDependencies: [],
@@ -1796,7 +1796,7 @@ const particles: RegistryParticuleData = {
   },
   'input-44': {
     description: '',
-    file: 'input/input-44',
+    file: 'input-44',
     name: 'Input 44',
     npmDependencies: [],
     registryDependencies: [],
@@ -1804,7 +1804,7 @@ const particles: RegistryParticuleData = {
   },
   'input-45': {
     description: '',
-    file: 'input/input-45',
+    file: 'input-45',
     name: 'Input 45',
     npmDependencies: [],
     registryDependencies: [],
@@ -1812,7 +1812,7 @@ const particles: RegistryParticuleData = {
   },
   'input-46': {
     description: '',
-    file: 'input/input-46',
+    file: 'input-46',
     name: 'Input 46',
     npmDependencies: [],
     registryDependencies: [],
@@ -1820,7 +1820,7 @@ const particles: RegistryParticuleData = {
   },
   'input-47.todo': {
     description: '',
-    file: 'input/input-47.todo',
+    file: 'input-47.todo',
     name: 'Input 47.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -1828,7 +1828,7 @@ const particles: RegistryParticuleData = {
   },
   'input-48.todo': {
     description: '',
-    file: 'input/input-48.todo',
+    file: 'input-48.todo',
     name: 'Input 48.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -1836,7 +1836,7 @@ const particles: RegistryParticuleData = {
   },
   'input-49.todo': {
     description: '',
-    file: 'input/input-49.todo',
+    file: 'input-49.todo',
     name: 'Input 49.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -1844,7 +1844,7 @@ const particles: RegistryParticuleData = {
   },
   'input-50.todo': {
     description: '',
-    file: 'input/input-50.todo',
+    file: 'input-50.todo',
     name: 'Input 50.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -1852,7 +1852,7 @@ const particles: RegistryParticuleData = {
   },
   'input-51': {
     description: '',
-    file: 'input/input-51',
+    file: 'input-51',
     name: 'Input 51',
     npmDependencies: [],
     registryDependencies: [],
@@ -1860,7 +1860,7 @@ const particles: RegistryParticuleData = {
   },
   'input-52': {
     description: '',
-    file: 'input/input-52',
+    file: 'input-52',
     name: 'Input 52',
     npmDependencies: [],
     registryDependencies: [],
@@ -1868,7 +1868,7 @@ const particles: RegistryParticuleData = {
   },
   'input-53': {
     description: '',
-    file: 'input/input-53',
+    file: 'input-53',
     name: 'Input 53',
     npmDependencies: [],
     registryDependencies: [],
@@ -1876,7 +1876,7 @@ const particles: RegistryParticuleData = {
   },
   'input-54': {
     description: '',
-    file: 'input/input-54',
+    file: 'input-54',
     name: 'Input 54',
     npmDependencies: [],
     registryDependencies: [],
@@ -1884,7 +1884,7 @@ const particles: RegistryParticuleData = {
   },
   'input-55': {
     description: '',
-    file: 'input/input-55',
+    file: 'input-55',
     name: 'Input 55',
     npmDependencies: [],
     registryDependencies: [],
@@ -1892,7 +1892,7 @@ const particles: RegistryParticuleData = {
   },
   'input-56': {
     description: '',
-    file: 'input/input-56',
+    file: 'input-56',
     name: 'Input 56',
     npmDependencies: [],
     registryDependencies: [],
@@ -1900,7 +1900,7 @@ const particles: RegistryParticuleData = {
   },
   'input-57.todo': {
     description: '',
-    file: 'input/input-57.todo',
+    file: 'input-57.todo',
     name: 'Input 57.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -1908,7 +1908,7 @@ const particles: RegistryParticuleData = {
   },
   'input-58.todo': {
     description: '',
-    file: 'input/input-58.todo',
+    file: 'input-58.todo',
     name: 'Input 58.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -1916,7 +1916,7 @@ const particles: RegistryParticuleData = {
   },
   'input-59.todo': {
     description: '',
-    file: 'input/input-59.todo',
+    file: 'input-59.todo',
     name: 'Input 59.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -1924,7 +1924,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-01': {
     description: '',
-    file: 'notification/notification-01',
+    file: 'notification-01',
     name: 'Notification 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -1932,7 +1932,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-02': {
     description: '',
-    file: 'notification/notification-02',
+    file: 'notification-02',
     name: 'Notification 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -1940,7 +1940,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-03': {
     description: '',
-    file: 'notification/notification-03',
+    file: 'notification-03',
     name: 'Notification 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -1948,7 +1948,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-04': {
     description: '',
-    file: 'notification/notification-04',
+    file: 'notification-04',
     name: 'Notification 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -1956,7 +1956,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-05': {
     description: '',
-    file: 'notification/notification-05',
+    file: 'notification-05',
     name: 'Notification 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -1964,7 +1964,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-06': {
     description: '',
-    file: 'notification/notification-06',
+    file: 'notification-06',
     name: 'Notification 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -1972,7 +1972,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-07': {
     description: '',
-    file: 'notification/notification-07',
+    file: 'notification-07',
     name: 'Notification 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -1980,7 +1980,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-08': {
     description: '',
-    file: 'notification/notification-08',
+    file: 'notification-08',
     name: 'Notification 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -1988,7 +1988,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-09': {
     description: '',
-    file: 'notification/notification-09',
+    file: 'notification-09',
     name: 'Notification 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -1996,7 +1996,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-10': {
     description: '',
-    file: 'notification/notification-10',
+    file: 'notification-10',
     name: 'Notification 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -2004,7 +2004,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-11': {
     description: '',
-    file: 'notification/notification-11',
+    file: 'notification-11',
     name: 'Notification 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -2012,7 +2012,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-12': {
     description: '',
-    file: 'notification/notification-12',
+    file: 'notification-12',
     name: 'Notification 12',
     npmDependencies: [],
     registryDependencies: [],
@@ -2020,7 +2020,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-13': {
     description: '',
-    file: 'notification/notification-13',
+    file: 'notification-13',
     name: 'Notification 13',
     npmDependencies: [],
     registryDependencies: [],
@@ -2028,7 +2028,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-14': {
     description: '',
-    file: 'notification/notification-14',
+    file: 'notification-14',
     name: 'Notification 14',
     npmDependencies: [],
     registryDependencies: [],
@@ -2036,7 +2036,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-15': {
     description: '',
-    file: 'notification/notification-15',
+    file: 'notification-15',
     name: 'Notification 15',
     npmDependencies: [],
     registryDependencies: [],
@@ -2044,7 +2044,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-16': {
     description: '',
-    file: 'notification/notification-16',
+    file: 'notification-16',
     name: 'Notification 16',
     npmDependencies: [],
     registryDependencies: [],
@@ -2052,7 +2052,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-17': {
     description: '',
-    file: 'notification/notification-17',
+    file: 'notification-17',
     name: 'Notification 17',
     npmDependencies: [],
     registryDependencies: [],
@@ -2060,7 +2060,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-18': {
     description: '',
-    file: 'notification/notification-18',
+    file: 'notification-18',
     name: 'Notification 18',
     npmDependencies: [],
     registryDependencies: [],
@@ -2068,7 +2068,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-19.todo': {
     description: '',
-    file: 'notification/notification-19.todo',
+    file: 'notification-19.todo',
     name: 'Notification 19.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -2076,7 +2076,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-20.todo': {
     description: '',
-    file: 'notification/notification-20.todo',
+    file: 'notification-20.todo',
     name: 'Notification 20.todo',
     npmDependencies: [],
     registryDependencies: [],
@@ -2084,7 +2084,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-21': {
     description: '',
-    file: 'notification/notification-21',
+    file: 'notification-21',
     name: 'Notification 21',
     npmDependencies: [],
     registryDependencies: [],
@@ -2092,7 +2092,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-22': {
     description: '',
-    file: 'notification/notification-22',
+    file: 'notification-22',
     name: 'Notification 22',
     npmDependencies: [],
     registryDependencies: [],
@@ -2100,7 +2100,7 @@ const particles: RegistryParticuleData = {
   },
   'notification-23': {
     description: '',
-    file: 'notification/notification-23',
+    file: 'notification-23',
     name: 'Notification 23',
     npmDependencies: [],
     registryDependencies: [],
@@ -2108,7 +2108,7 @@ const particles: RegistryParticuleData = {
   },
   'pagination-01': {
     description: 'Pagination example',
-    file: 'pagination/pagination-01',
+    file: 'pagination-01',
     name: 'Pagination 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -2116,7 +2116,7 @@ const particles: RegistryParticuleData = {
   },
   'pagination-02': {
     description: 'Pagination with previous and next buttons only',
-    file: 'pagination/pagination-02',
+    file: 'pagination-02',
     name: 'Pagination 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -2124,7 +2124,7 @@ const particles: RegistryParticuleData = {
   },
   'pagination-03': {
     description: 'Pagination with select, and previous and next buttons',
-    file: 'pagination/pagination-03',
+    file: 'pagination-03',
     name: 'Pagination 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -2132,7 +2132,7 @@ const particles: RegistryParticuleData = {
   },
   'pagination-04': {
     description: '',
-    file: 'pagination/pagination-04',
+    file: 'pagination-04',
     name: 'Pagination 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -2140,7 +2140,7 @@ const particles: RegistryParticuleData = {
   },
   'pagination-05': {
     description: '',
-    file: 'pagination/pagination-05',
+    file: 'pagination-05',
     name: 'Pagination 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -2148,7 +2148,7 @@ const particles: RegistryParticuleData = {
   },
   'pagination-06': {
     description: '',
-    file: 'pagination/pagination-06',
+    file: 'pagination-06',
     name: 'Pagination 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -2156,7 +2156,7 @@ const particles: RegistryParticuleData = {
   },
   'pagination-07': {
     description: '',
-    file: 'pagination/pagination-07',
+    file: 'pagination-07',
     name: 'Pagination 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -2164,7 +2164,7 @@ const particles: RegistryParticuleData = {
   },
   'pagination-08': {
     description: '',
-    file: 'pagination/pagination-08',
+    file: 'pagination-08',
     name: 'Pagination 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -2172,7 +2172,7 @@ const particles: RegistryParticuleData = {
   },
   'pagination-09': {
     description: '',
-    file: 'pagination/pagination-09',
+    file: 'pagination-09',
     name: 'Pagination 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -2180,7 +2180,7 @@ const particles: RegistryParticuleData = {
   },
   'pagination-10': {
     description: '',
-    file: 'pagination/pagination-10',
+    file: 'pagination-10',
     name: 'Pagination 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -2188,7 +2188,7 @@ const particles: RegistryParticuleData = {
   },
   'pagination-11': {
     description: '',
-    file: 'pagination/pagination-11',
+    file: 'pagination-11',
     name: 'Pagination 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -2196,7 +2196,7 @@ const particles: RegistryParticuleData = {
   },
   'pagination-12': {
     description: '',
-    file: 'pagination/pagination-12',
+    file: 'pagination-12',
     name: 'Pagination 12',
     npmDependencies: [],
     registryDependencies: [],
@@ -2204,7 +2204,7 @@ const particles: RegistryParticuleData = {
   },
   'popover-01': {
     description: 'Popover with a form',
-    file: 'popover/popover-01',
+    file: 'popover-01',
     name: 'Popover 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -2212,7 +2212,7 @@ const particles: RegistryParticuleData = {
   },
   'popover-02': {
     description: 'Popover with close button',
-    file: 'popover/popover-02',
+    file: 'popover-02',
     name: 'Popover 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -2220,7 +2220,7 @@ const particles: RegistryParticuleData = {
   },
   'popover-03': {
     description: 'Animated popovers',
-    file: 'popover/popover-03',
+    file: 'popover-03',
     name: 'Popover 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -2228,7 +2228,7 @@ const particles: RegistryParticuleData = {
   },
   'popover-04': {
     description: '',
-    file: 'popover/popover-04',
+    file: 'popover-04',
     name: 'Popover 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -2236,7 +2236,7 @@ const particles: RegistryParticuleData = {
   },
   'popover-05': {
     description: '',
-    file: 'popover/popover-05',
+    file: 'popover-05',
     name: 'Popover 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -2244,7 +2244,7 @@ const particles: RegistryParticuleData = {
   },
   'popover-06': {
     description: '',
-    file: 'popover/popover-06',
+    file: 'popover-06',
     name: 'Popover 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -2252,7 +2252,7 @@ const particles: RegistryParticuleData = {
   },
   'popover-07': {
     description: '',
-    file: 'popover/popover-07',
+    file: 'popover-07',
     name: 'Popover 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -2260,7 +2260,7 @@ const particles: RegistryParticuleData = {
   },
   'popover-08': {
     description: '',
-    file: 'popover/popover-08',
+    file: 'popover-08',
     name: 'Popover 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -2268,7 +2268,7 @@ const particles: RegistryParticuleData = {
   },
   'popover-09': {
     description: '',
-    file: 'popover/popover-09',
+    file: 'popover-09',
     name: 'Popover 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -2276,7 +2276,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-01': {
     description: '',
-    file: 'radio/radio-01',
+    file: 'radio-01',
     name: 'Radio 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -2284,7 +2284,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-02': {
     description: '',
-    file: 'radio/radio-02',
+    file: 'radio-02',
     name: 'Radio 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -2292,7 +2292,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-03': {
     description: '',
-    file: 'radio/radio-03',
+    file: 'radio-03',
     name: 'Radio 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -2300,7 +2300,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-04': {
     description: '',
-    file: 'radio/radio-04',
+    file: 'radio-04',
     name: 'Radio 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -2308,7 +2308,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-05': {
     description: '',
-    file: 'radio/radio-05',
+    file: 'radio-05',
     name: 'Radio 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -2316,7 +2316,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-06': {
     description: '',
-    file: 'radio/radio-06',
+    file: 'radio-06',
     name: 'Radio 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -2324,7 +2324,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-07': {
     description: '',
-    file: 'radio/radio-07',
+    file: 'radio-07',
     name: 'Radio 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -2332,7 +2332,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-08': {
     description: '',
-    file: 'radio/radio-08',
+    file: 'radio-08',
     name: 'Radio 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -2340,7 +2340,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-09': {
     description: '',
-    file: 'radio/radio-09',
+    file: 'radio-09',
     name: 'Radio 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -2348,7 +2348,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-10': {
     description: '',
-    file: 'radio/radio-10',
+    file: 'radio-10',
     name: 'Radio 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -2356,7 +2356,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-11': {
     description: '',
-    file: 'radio/radio-11',
+    file: 'radio-11',
     name: 'Radio 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -2364,7 +2364,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-12': {
     description: '',
-    file: 'radio/radio-12',
+    file: 'radio-12',
     name: 'Radio 12',
     npmDependencies: [],
     registryDependencies: [],
@@ -2372,7 +2372,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-13': {
     description: '',
-    file: 'radio/radio-13',
+    file: 'radio-13',
     name: 'Radio 13',
     npmDependencies: [],
     registryDependencies: [],
@@ -2380,7 +2380,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-14': {
     description: '',
-    file: 'radio/radio-14',
+    file: 'radio-14',
     name: 'Radio 14',
     npmDependencies: [],
     registryDependencies: [],
@@ -2388,7 +2388,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-15': {
     description: '',
-    file: 'radio/radio-15',
+    file: 'radio-15',
     name: 'Radio 15',
     npmDependencies: [],
     registryDependencies: [],
@@ -2396,7 +2396,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-16': {
     description: '',
-    file: 'radio/radio-16',
+    file: 'radio-16',
     name: 'Radio 16',
     npmDependencies: [],
     registryDependencies: [],
@@ -2404,7 +2404,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-17': {
     description: '',
-    file: 'radio/radio-17',
+    file: 'radio-17',
     name: 'Radio 17',
     npmDependencies: [],
     registryDependencies: [],
@@ -2412,7 +2412,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-18': {
     description: '',
-    file: 'radio/radio-18',
+    file: 'radio-18',
     name: 'Radio 18',
     npmDependencies: [],
     registryDependencies: [],
@@ -2420,7 +2420,7 @@ const particles: RegistryParticuleData = {
   },
   'radio-19': {
     description: '',
-    file: 'radio/radio-19',
+    file: 'radio-19',
     name: 'Radio 19',
     npmDependencies: [],
     registryDependencies: [],
@@ -2428,7 +2428,7 @@ const particles: RegistryParticuleData = {
   },
   'select-01': {
     description: 'Basic select',
-    file: 'select/select-01',
+    file: 'select-01',
     name: 'Select 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -2436,7 +2436,7 @@ const particles: RegistryParticuleData = {
   },
   'select-02': {
     description: 'Small select',
-    file: 'select/select-02',
+    file: 'select-02',
     name: 'Select 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -2444,7 +2444,7 @@ const particles: RegistryParticuleData = {
   },
   'select-03': {
     description: 'Large select',
-    file: 'select/select-03',
+    file: 'select-03',
     name: 'Select 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -2452,7 +2452,7 @@ const particles: RegistryParticuleData = {
   },
   'select-05': {
     description: 'Select without item alignment',
-    file: 'select/select-05',
+    file: 'select-05',
     name: 'Select 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -2460,7 +2460,7 @@ const particles: RegistryParticuleData = {
   },
   'select-15': {
     description: 'Pill-shaped select trigger',
-    file: 'select/select-15',
+    file: 'select-15',
     name: 'Select 15',
     npmDependencies: [],
     registryDependencies: [],
@@ -2468,7 +2468,7 @@ const particles: RegistryParticuleData = {
   },
   'select-16': {
     description: 'Select with left text label',
-    file: 'select/select-16',
+    file: 'select-16',
     name: 'Select 16',
     npmDependencies: [],
     registryDependencies: [],
@@ -2476,7 +2476,7 @@ const particles: RegistryParticuleData = {
   },
   'select-17': {
     description: 'Select with country flags',
-    file: 'select/select-17',
+    file: 'select-17',
     name: 'Select 17',
     npmDependencies: [],
     registryDependencies: [],
@@ -2484,7 +2484,7 @@ const particles: RegistryParticuleData = {
   },
   'select-18': {
     description: 'Select with description in options only',
-    file: 'select/select-18',
+    file: 'select-18',
     name: 'Select 18',
     npmDependencies: [],
     registryDependencies: [],
@@ -2492,7 +2492,7 @@ const particles: RegistryParticuleData = {
   },
   'select-19': {
     description: 'Select with avatars',
-    file: 'select/select-19',
+    file: 'select-19',
     name: 'Select 19',
     npmDependencies: [],
     registryDependencies: [],
@@ -2500,7 +2500,7 @@ const particles: RegistryParticuleData = {
   },
   'select-20': {
     description: 'Rich select with avatars and usernames',
-    file: 'select/select-20',
+    file: 'select-20',
     name: 'Select 20',
     npmDependencies: [],
     registryDependencies: [],
@@ -2508,7 +2508,7 @@ const particles: RegistryParticuleData = {
   },
   'select-21': {
     description: 'Auto width select',
-    file: 'select/select-21',
+    file: 'select-21',
     name: 'Select 21',
     npmDependencies: [],
     registryDependencies: [],
@@ -2516,7 +2516,7 @@ const particles: RegistryParticuleData = {
   },
   'select-22': {
     description: 'Select with custom border and background',
-    file: 'select/select-22',
+    file: 'select-22',
     name: 'Select 22',
     npmDependencies: [],
     registryDependencies: [],
@@ -2524,7 +2524,7 @@ const particles: RegistryParticuleData = {
   },
   'select-23': {
     description: 'Select with label',
-    file: 'select/select-23',
+    file: 'select-23',
     name: 'Select 23',
     npmDependencies: [],
     registryDependencies: [],
@@ -2532,7 +2532,7 @@ const particles: RegistryParticuleData = {
   },
   'select-24': {
     description: '',
-    file: 'select/select-24',
+    file: 'select-24',
     name: 'Select 24',
     npmDependencies: [],
     registryDependencies: [],
@@ -2540,7 +2540,7 @@ const particles: RegistryParticuleData = {
   },
   'select-25': {
     description: '',
-    file: 'select/select-25',
+    file: 'select-25',
     name: 'Select 25',
     npmDependencies: [],
     registryDependencies: [],
@@ -2548,7 +2548,7 @@ const particles: RegistryParticuleData = {
   },
   'select-26': {
     description: '',
-    file: 'select/select-26',
+    file: 'select-26',
     name: 'Select 26',
     npmDependencies: [],
     registryDependencies: [],
@@ -2556,7 +2556,7 @@ const particles: RegistryParticuleData = {
   },
   'select-27': {
     description: '',
-    file: 'select/select-27',
+    file: 'select-27',
     name: 'Select 27',
     npmDependencies: [],
     registryDependencies: [],
@@ -2564,7 +2564,7 @@ const particles: RegistryParticuleData = {
   },
   'select-28': {
     description: '',
-    file: 'select/select-28',
+    file: 'select-28',
     name: 'Select 28',
     npmDependencies: [],
     registryDependencies: [],
@@ -2572,7 +2572,7 @@ const particles: RegistryParticuleData = {
   },
   'select-29': {
     description: '',
-    file: 'select/select-29',
+    file: 'select-29',
     name: 'Select 29',
     npmDependencies: [],
     registryDependencies: [],
@@ -2580,7 +2580,7 @@ const particles: RegistryParticuleData = {
   },
   'select-30': {
     description: '',
-    file: 'select/select-30',
+    file: 'select-30',
     name: 'Select 30',
     npmDependencies: [],
     registryDependencies: [],
@@ -2588,7 +2588,7 @@ const particles: RegistryParticuleData = {
   },
   'select-31': {
     description: '',
-    file: 'select/select-31',
+    file: 'select-31',
     name: 'Select 31',
     npmDependencies: [],
     registryDependencies: [],
@@ -2596,7 +2596,7 @@ const particles: RegistryParticuleData = {
   },
   'select-32': {
     description: '',
-    file: 'select/select-32',
+    file: 'select-32',
     name: 'Select 32',
     npmDependencies: [],
     registryDependencies: [],
@@ -2604,7 +2604,7 @@ const particles: RegistryParticuleData = {
   },
   'select-33': {
     description: '',
-    file: 'select/select-33',
+    file: 'select-33',
     name: 'Select 33',
     npmDependencies: [],
     registryDependencies: [],
@@ -2612,7 +2612,7 @@ const particles: RegistryParticuleData = {
   },
   'select-34': {
     description: '',
-    file: 'select/select-34',
+    file: 'select-34',
     name: 'Select 34',
     npmDependencies: [],
     registryDependencies: [],
@@ -2620,7 +2620,7 @@ const particles: RegistryParticuleData = {
   },
   'select-35': {
     description: '',
-    file: 'select/select-35',
+    file: 'select-35',
     name: 'Select 35',
     npmDependencies: [],
     registryDependencies: [],
@@ -2628,7 +2628,7 @@ const particles: RegistryParticuleData = {
   },
   'select-36': {
     description: '',
-    file: 'select/select-36',
+    file: 'select-36',
     name: 'Select 36',
     npmDependencies: [],
     registryDependencies: [],
@@ -2636,7 +2636,7 @@ const particles: RegistryParticuleData = {
   },
   'select-37': {
     description: '',
-    file: 'select/select-37',
+    file: 'select-37',
     name: 'Select 37',
     npmDependencies: [],
     registryDependencies: [],
@@ -2644,7 +2644,7 @@ const particles: RegistryParticuleData = {
   },
   'select-38': {
     description: '',
-    file: 'select/select-38',
+    file: 'select-38',
     name: 'Select 38',
     npmDependencies: [],
     registryDependencies: [],
@@ -2652,7 +2652,7 @@ const particles: RegistryParticuleData = {
   },
   'select-39': {
     description: '',
-    file: 'select/select-39',
+    file: 'select-39',
     name: 'Select 39',
     npmDependencies: [],
     registryDependencies: [],
@@ -2660,7 +2660,7 @@ const particles: RegistryParticuleData = {
   },
   'select-40': {
     description: '',
-    file: 'select/select-40',
+    file: 'select-40',
     name: 'Select 40',
     npmDependencies: [],
     registryDependencies: [],
@@ -2668,7 +2668,7 @@ const particles: RegistryParticuleData = {
   },
   'select-41': {
     description: '',
-    file: 'select/select-41',
+    file: 'select-41',
     name: 'Select 41',
     npmDependencies: [],
     registryDependencies: [],
@@ -2676,7 +2676,7 @@ const particles: RegistryParticuleData = {
   },
   'select-42': {
     description: '',
-    file: 'select/select-42',
+    file: 'select-42',
     name: 'Select 42',
     npmDependencies: [],
     registryDependencies: [],
@@ -2684,7 +2684,7 @@ const particles: RegistryParticuleData = {
   },
   'select-43': {
     description: '',
-    file: 'select/select-43',
+    file: 'select-43',
     name: 'Select 43',
     npmDependencies: [],
     registryDependencies: [],
@@ -2692,7 +2692,7 @@ const particles: RegistryParticuleData = {
   },
   'select-44': {
     description: '',
-    file: 'select/select-44',
+    file: 'select-44',
     name: 'Select 44',
     npmDependencies: [],
     registryDependencies: [],
@@ -2700,7 +2700,7 @@ const particles: RegistryParticuleData = {
   },
   'select-45': {
     description: '',
-    file: 'select/select-45',
+    file: 'select-45',
     name: 'Select 45',
     npmDependencies: [],
     registryDependencies: [],
@@ -2708,7 +2708,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-01': {
     description: 'Basic slider',
-    file: 'slider/slider-01',
+    file: 'slider-01',
     name: 'Slider 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -2716,7 +2716,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-02': {
     description: 'Slider with label and value',
-    file: 'slider/slider-02',
+    file: 'slider-02',
     name: 'Slider 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -2724,7 +2724,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-03': {
     description: 'Disabled slider',
-    file: 'slider/slider-03',
+    file: 'slider-03',
     name: 'Slider 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -2732,7 +2732,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-04': {
     description: 'Slider with reference labels',
-    file: 'slider/slider-04',
+    file: 'slider-04',
     name: 'Slider 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -2740,7 +2740,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-05': {
     description: 'Slider with ticks',
-    file: 'slider/slider-05',
+    file: 'slider-05',
     name: 'Slider 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -2748,7 +2748,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-06': {
     description: 'Slider with labels above',
-    file: 'slider/slider-06',
+    file: 'slider-06',
     name: 'Slider 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -2756,7 +2756,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-07': {
     description: 'Range slider',
-    file: 'slider/slider-07',
+    file: 'slider-07',
     name: 'Slider 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -2764,7 +2764,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-08': {
     description: 'Slider with 3 thumbs',
-    file: 'slider/slider-08',
+    file: 'slider-08',
     name: 'Slider 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -2772,7 +2772,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-09': {
     description: 'Range slider with collision behavior none',
-    file: 'slider/slider-09',
+    file: 'slider-09',
     name: 'Slider 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -2780,7 +2780,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-10': {
     description: 'Range slider with collision behavior swap',
-    file: 'slider/slider-10',
+    file: 'slider-10',
     name: 'Slider 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -2788,7 +2788,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-11': {
     description: 'Slider with icons',
-    file: 'slider/slider-11',
+    file: 'slider-11',
     name: 'Slider 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -2796,7 +2796,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-12': {
     description: 'Slider with input',
-    file: 'slider/slider-12',
+    file: 'slider-12',
     name: 'Slider 12',
     npmDependencies: [],
     registryDependencies: [],
@@ -2804,7 +2804,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-13': {
     description: 'Range slider with inputs',
-    file: 'slider/slider-13',
+    file: 'slider-13',
     name: 'Slider 13',
     npmDependencies: [],
     registryDependencies: [],
@@ -2812,7 +2812,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-14': {
     description: 'Slider with increment and decrement buttons',
-    file: 'slider/slider-14',
+    file: 'slider-14',
     name: 'Slider 14',
     npmDependencies: [],
     registryDependencies: [],
@@ -2820,7 +2820,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-15': {
     description: 'Price range slider',
-    file: 'slider/slider-15',
+    file: 'slider-15',
     name: 'Slider 15',
     npmDependencies: [],
     registryDependencies: [],
@@ -2828,7 +2828,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-16': {
     description: 'Emoji rating slider',
-    file: 'slider/slider-16',
+    file: 'slider-16',
     name: 'Slider 16',
     npmDependencies: [],
     registryDependencies: [],
@@ -2836,7 +2836,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-17': {
     description: 'Vertical slider',
-    file: 'slider/slider-17',
+    file: 'slider-17',
     name: 'Slider 17',
     npmDependencies: [],
     registryDependencies: [],
@@ -2844,7 +2844,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-18': {
     description: 'Vertical range slider',
-    file: 'slider/slider-18',
+    file: 'slider-18',
     name: 'Slider 18',
     npmDependencies: [],
     registryDependencies: [],
@@ -2852,7 +2852,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-19': {
     description: 'Vertical slider with input',
-    file: 'slider/slider-19',
+    file: 'slider-19',
     name: 'Slider 19',
     npmDependencies: [],
     registryDependencies: [],
@@ -2860,7 +2860,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-20': {
     description: 'Equalizer with vertical sliders',
-    file: 'slider/slider-20',
+    file: 'slider-20',
     name: 'Slider 20',
     npmDependencies: [],
     registryDependencies: [],
@@ -2868,7 +2868,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-21': {
     description: 'Object position sliders with reset',
-    file: 'slider/slider-21',
+    file: 'slider-21',
     name: 'Slider 21',
     npmDependencies: [],
     registryDependencies: [],
@@ -2876,7 +2876,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-22': {
     description: 'Price slider with histogram',
-    file: 'slider/slider-22',
+    file: 'slider-22',
     name: 'Slider 22',
     npmDependencies: [],
     registryDependencies: [],
@@ -2884,7 +2884,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-23': {
     description: 'Slider in form',
-    file: 'slider/slider-23',
+    file: 'slider-23',
     name: 'Slider 23',
     npmDependencies: [],
     registryDependencies: [],
@@ -2892,7 +2892,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-24': {
     description: '',
-    file: 'slider/slider-24',
+    file: 'slider-24',
     name: 'Slider 24',
     npmDependencies: [],
     registryDependencies: [],
@@ -2900,7 +2900,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-25': {
     description: '',
-    file: 'slider/slider-25',
+    file: 'slider-25',
     name: 'Slider 25',
     npmDependencies: [],
     registryDependencies: [],
@@ -2908,7 +2908,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-26': {
     description: '',
-    file: 'slider/slider-26',
+    file: 'slider-26',
     name: 'Slider 26',
     npmDependencies: [],
     registryDependencies: [],
@@ -2916,7 +2916,7 @@ const particles: RegistryParticuleData = {
   },
   'slider-27': {
     description: '',
-    file: 'slider/slider-27',
+    file: 'slider-27',
     name: 'Slider 27',
     npmDependencies: [],
     registryDependencies: [],
@@ -2924,7 +2924,7 @@ const particles: RegistryParticuleData = {
   },
   'switch-01': {
     description: 'Basic switch',
-    file: 'switch/switch-01',
+    file: 'switch-01',
     name: 'Switch 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -2932,7 +2932,7 @@ const particles: RegistryParticuleData = {
   },
   'switch-02': {
     description: 'Disabled switch',
-    file: 'switch/switch-02',
+    file: 'switch-02',
     name: 'Switch 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -2940,7 +2940,7 @@ const particles: RegistryParticuleData = {
   },
   'switch-03': {
     description: 'Switch with description',
-    file: 'switch/switch-03',
+    file: 'switch-03',
     name: 'Switch 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -2948,7 +2948,7 @@ const particles: RegistryParticuleData = {
   },
   'switch-04': {
     description: 'Switch card',
-    file: 'switch/switch-04',
+    file: 'switch-04',
     name: 'Switch 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -2956,7 +2956,7 @@ const particles: RegistryParticuleData = {
   },
   'switch-05': {
     description: 'Switch in form',
-    file: 'switch/switch-05',
+    file: 'switch-05',
     name: 'Switch 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -2964,7 +2964,7 @@ const particles: RegistryParticuleData = {
   },
   'switch-06': {
     description: 'Custom size switch',
-    file: 'switch/switch-06',
+    file: 'switch-06',
     name: 'Switch 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -2972,7 +2972,7 @@ const particles: RegistryParticuleData = {
   },
   'switch-07': {
     description: '',
-    file: 'switch/switch-07',
+    file: 'switch-07',
     name: 'Switch 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -2980,7 +2980,7 @@ const particles: RegistryParticuleData = {
   },
   'switch-08': {
     description: '',
-    file: 'switch/switch-08',
+    file: 'switch-08',
     name: 'Switch 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -2988,7 +2988,7 @@ const particles: RegistryParticuleData = {
   },
   'switch-09': {
     description: '',
-    file: 'switch/switch-09',
+    file: 'switch-09',
     name: 'Switch 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -2996,7 +2996,7 @@ const particles: RegistryParticuleData = {
   },
   'switch-10': {
     description: '',
-    file: 'switch/switch-10',
+    file: 'switch-10',
     name: 'Switch 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -3004,7 +3004,7 @@ const particles: RegistryParticuleData = {
   },
   'switch-11': {
     description: '',
-    file: 'switch/switch-11',
+    file: 'switch-11',
     name: 'Switch 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -3012,7 +3012,7 @@ const particles: RegistryParticuleData = {
   },
   'switch-12': {
     description: '',
-    file: 'switch/switch-12',
+    file: 'switch-12',
     name: 'Switch 12',
     npmDependencies: [],
     registryDependencies: [],
@@ -3020,7 +3020,7 @@ const particles: RegistryParticuleData = {
   },
   'switch-13': {
     description: '',
-    file: 'switch/switch-13',
+    file: 'switch-13',
     name: 'Switch 13',
     npmDependencies: [],
     registryDependencies: [],
@@ -3028,7 +3028,7 @@ const particles: RegistryParticuleData = {
   },
   'switch-14': {
     description: '',
-    file: 'switch/switch-14',
+    file: 'switch-14',
     name: 'Switch 14',
     npmDependencies: [],
     registryDependencies: [],
@@ -3036,7 +3036,7 @@ const particles: RegistryParticuleData = {
   },
   'switch-15': {
     description: '',
-    file: 'switch/switch-15',
+    file: 'switch-15',
     name: 'Switch 15',
     npmDependencies: [],
     registryDependencies: [],
@@ -3044,7 +3044,7 @@ const particles: RegistryParticuleData = {
   },
   'switch-16': {
     description: '',
-    file: 'switch/switch-16',
+    file: 'switch-16',
     name: 'Switch 16',
     npmDependencies: [],
     registryDependencies: [],
@@ -3052,7 +3052,7 @@ const particles: RegistryParticuleData = {
   },
   'switch-17': {
     description: '',
-    file: 'switch/switch-17',
+    file: 'switch-17',
     name: 'Switch 17',
     npmDependencies: [],
     registryDependencies: [],
@@ -3060,7 +3060,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-01': {
     description: '',
-    file: 'tab/tab-01',
+    file: 'tab-01',
     name: 'Tab 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -3068,7 +3068,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-02': {
     description: '',
-    file: 'tab/tab-02',
+    file: 'tab-02',
     name: 'Tab 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -3076,7 +3076,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-03': {
     description: '',
-    file: 'tab/tab-03',
+    file: 'tab-03',
     name: 'Tab 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -3084,7 +3084,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-04': {
     description: '',
-    file: 'tab/tab-04',
+    file: 'tab-04',
     name: 'Tab 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -3092,7 +3092,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-05': {
     description: '',
-    file: 'tab/tab-05',
+    file: 'tab-05',
     name: 'Tab 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -3100,7 +3100,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-06': {
     description: '',
-    file: 'tab/tab-06',
+    file: 'tab-06',
     name: 'Tab 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -3108,7 +3108,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-07': {
     description: '',
-    file: 'tab/tab-07',
+    file: 'tab-07',
     name: 'Tab 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -3116,7 +3116,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-08': {
     description: '',
-    file: 'tab/tab-08',
+    file: 'tab-08',
     name: 'Tab 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -3124,7 +3124,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-09': {
     description: '',
-    file: 'tab/tab-09',
+    file: 'tab-09',
     name: 'Tab 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -3132,7 +3132,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-10': {
     description: '',
-    file: 'tab/tab-10',
+    file: 'tab-10',
     name: 'Tab 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -3140,7 +3140,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-11': {
     description: '',
-    file: 'tab/tab-11',
+    file: 'tab-11',
     name: 'Tab 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -3148,7 +3148,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-12': {
     description: '',
-    file: 'tab/tab-12',
+    file: 'tab-12',
     name: 'Tab 12',
     npmDependencies: [],
     registryDependencies: [],
@@ -3156,7 +3156,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-13': {
     description: '',
-    file: 'tab/tab-13',
+    file: 'tab-13',
     name: 'Tab 13',
     npmDependencies: [],
     registryDependencies: [],
@@ -3164,7 +3164,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-14': {
     description: '',
-    file: 'tab/tab-14',
+    file: 'tab-14',
     name: 'Tab 14',
     npmDependencies: [],
     registryDependencies: [],
@@ -3172,7 +3172,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-15': {
     description: '',
-    file: 'tab/tab-15',
+    file: 'tab-15',
     name: 'Tab 15',
     npmDependencies: [],
     registryDependencies: [],
@@ -3180,7 +3180,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-16': {
     description: '',
-    file: 'tab/tab-16',
+    file: 'tab-16',
     name: 'Tab 16',
     npmDependencies: [],
     registryDependencies: [],
@@ -3188,7 +3188,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-17': {
     description: '',
-    file: 'tab/tab-17',
+    file: 'tab-17',
     name: 'Tab 17',
     npmDependencies: [],
     registryDependencies: [],
@@ -3196,7 +3196,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-18': {
     description: '',
-    file: 'tab/tab-18',
+    file: 'tab-18',
     name: 'Tab 18',
     npmDependencies: [],
     registryDependencies: [],
@@ -3204,7 +3204,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-19': {
     description: '',
-    file: 'tab/tab-19',
+    file: 'tab-19',
     name: 'Tab 19',
     npmDependencies: [],
     registryDependencies: [],
@@ -3212,7 +3212,7 @@ const particles: RegistryParticuleData = {
   },
   'tab-20': {
     description: '',
-    file: 'tab/tab-20',
+    file: 'tab-20',
     name: 'Tab 20',
     npmDependencies: [],
     registryDependencies: [],
@@ -3220,7 +3220,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-01': {
     description: 'Basic textarea',
-    file: 'textarea/textarea-01',
+    file: 'textarea-01',
     name: 'Textarea 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -3228,7 +3228,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-02': {
     description: 'Small textarea',
-    file: 'textarea/textarea-02',
+    file: 'textarea-02',
     name: 'Textarea 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -3236,7 +3236,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-03': {
     description: 'Large textarea',
-    file: 'textarea/textarea-03',
+    file: 'textarea-03',
     name: 'Textarea 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -3244,7 +3244,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-04': {
     description: 'Disabled textarea',
-    file: 'textarea/textarea-04',
+    file: 'textarea-04',
     name: 'Textarea 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -3252,7 +3252,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-05': {
     description: 'Textarea with label',
-    file: 'textarea/textarea-05',
+    file: 'textarea-05',
     name: 'Textarea 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -3260,7 +3260,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-06': {
     description: 'Textarea in form',
-    file: 'textarea/textarea-06',
+    file: 'textarea-06',
     name: 'Textarea 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -3268,7 +3268,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-07': {
     description: 'Textarea with label and required indicator',
-    file: 'textarea/textarea-07',
+    file: 'textarea-07',
     name: 'Textarea 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -3276,7 +3276,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-08': {
     description: 'Textarea with optional label',
-    file: 'textarea/textarea-08',
+    file: 'textarea-08',
     name: 'Textarea 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -3284,7 +3284,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-09': {
     description: 'Textarea with custom border and background',
-    file: 'textarea/textarea-09',
+    file: 'textarea-09',
     name: 'Textarea 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -3292,7 +3292,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-10': {
     description: 'Read-only textarea',
-    file: 'textarea/textarea-10',
+    file: 'textarea-10',
     name: 'Textarea 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -3300,7 +3300,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-11': {
     description: 'Textarea with characters remaining counter',
-    file: 'textarea/textarea-11',
+    file: 'textarea-11',
     name: 'Textarea 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -3308,7 +3308,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-12': {
     description: 'Textarea field with required indicator',
-    file: 'textarea/textarea-12',
+    file: 'textarea-12',
     name: 'Textarea 12',
     npmDependencies: [],
     registryDependencies: [],
@@ -3316,7 +3316,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-13': {
     description: 'Shorter textarea with fixed height',
-    file: 'textarea/textarea-13',
+    file: 'textarea-13',
     name: 'Textarea 13',
     npmDependencies: [],
     registryDependencies: [],
@@ -3324,7 +3324,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-14': {
     description: 'Textarea with button aligned right',
-    file: 'textarea/textarea-14',
+    file: 'textarea-14',
     name: 'Textarea 14',
     npmDependencies: [],
     registryDependencies: [],
@@ -3332,7 +3332,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-15': {
     description: 'Textarea with button aligned left',
-    file: 'textarea/textarea-15',
+    file: 'textarea-15',
     name: 'Textarea 15',
     npmDependencies: [],
     registryDependencies: [],
@@ -3340,7 +3340,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-16': {
     description: '',
-    file: 'textarea/textarea-16',
+    file: 'textarea-16',
     name: 'Textarea 16',
     npmDependencies: [],
     registryDependencies: [],
@@ -3348,7 +3348,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-17': {
     description: '',
-    file: 'textarea/textarea-17',
+    file: 'textarea-17',
     name: 'Textarea 17',
     npmDependencies: [],
     registryDependencies: [],
@@ -3356,7 +3356,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-18': {
     description: '',
-    file: 'textarea/textarea-18',
+    file: 'textarea-18',
     name: 'Textarea 18',
     npmDependencies: [],
     registryDependencies: [],
@@ -3364,7 +3364,7 @@ const particles: RegistryParticuleData = {
   },
   'textarea-19': {
     description: '',
-    file: 'textarea/textarea-19',
+    file: 'textarea-19',
     name: 'Textarea 19',
     npmDependencies: [],
     registryDependencies: [],
@@ -3372,7 +3372,7 @@ const particles: RegistryParticuleData = {
   },
   'timeline-01': {
     description: '',
-    file: 'timeline/timeline-01',
+    file: 'timeline-01',
     name: 'Timeline 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -3380,7 +3380,7 @@ const particles: RegistryParticuleData = {
   },
   'timeline-02': {
     description: '',
-    file: 'timeline/timeline-02',
+    file: 'timeline-02',
     name: 'Timeline 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -3388,7 +3388,7 @@ const particles: RegistryParticuleData = {
   },
   'timeline-03': {
     description: '',
-    file: 'timeline/timeline-03',
+    file: 'timeline-03',
     name: 'Timeline 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -3396,7 +3396,7 @@ const particles: RegistryParticuleData = {
   },
   'timeline-04': {
     description: '',
-    file: 'timeline/timeline-04',
+    file: 'timeline-04',
     name: 'Timeline 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -3404,7 +3404,7 @@ const particles: RegistryParticuleData = {
   },
   'timeline-05': {
     description: '',
-    file: 'timeline/timeline-05',
+    file: 'timeline-05',
     name: 'Timeline 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -3412,7 +3412,7 @@ const particles: RegistryParticuleData = {
   },
   'timeline-06': {
     description: '',
-    file: 'timeline/timeline-06',
+    file: 'timeline-06',
     name: 'Timeline 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -3420,7 +3420,7 @@ const particles: RegistryParticuleData = {
   },
   'timeline-07': {
     description: '',
-    file: 'timeline/timeline-07',
+    file: 'timeline-07',
     name: 'Timeline 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -3428,7 +3428,7 @@ const particles: RegistryParticuleData = {
   },
   'timeline-08': {
     description: '',
-    file: 'timeline/timeline-08',
+    file: 'timeline-08',
     name: 'Timeline 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -3436,7 +3436,7 @@ const particles: RegistryParticuleData = {
   },
   'timeline-09': {
     description: '',
-    file: 'timeline/timeline-09',
+    file: 'timeline-09',
     name: 'Timeline 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -3444,7 +3444,7 @@ const particles: RegistryParticuleData = {
   },
   'timeline-10': {
     description: '',
-    file: 'timeline/timeline-10',
+    file: 'timeline-10',
     name: 'Timeline 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -3452,7 +3452,7 @@ const particles: RegistryParticuleData = {
   },
   'timeline-11': {
     description: '',
-    file: 'timeline/timeline-11',
+    file: 'timeline-11',
     name: 'Timeline 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -3460,7 +3460,7 @@ const particles: RegistryParticuleData = {
   },
   'timeline-12': {
     description: '',
-    file: 'timeline/timeline-12',
+    file: 'timeline-12',
     name: 'Timeline 12',
     npmDependencies: [],
     registryDependencies: [],
@@ -3468,7 +3468,7 @@ const particles: RegistryParticuleData = {
   },
   'tooltip-01': {
     description: 'Basic tooltip',
-    file: 'tooltip/tooltip-01',
+    file: 'tooltip-01',
     name: 'Tooltip 01',
     npmDependencies: [],
     registryDependencies: [],
@@ -3476,7 +3476,7 @@ const particles: RegistryParticuleData = {
   },
   'tooltip-02': {
     description: 'Grouped tooltips',
-    file: 'tooltip/tooltip-02',
+    file: 'tooltip-02',
     name: 'Tooltip 02',
     npmDependencies: [],
     registryDependencies: [],
@@ -3484,7 +3484,7 @@ const particles: RegistryParticuleData = {
   },
   'tooltip-03': {
     description: 'Toggle group animated tooltip',
-    file: 'tooltip/tooltip-03',
+    file: 'tooltip-03',
     name: 'Tooltip 03',
     npmDependencies: [],
     registryDependencies: [],
@@ -3492,7 +3492,7 @@ const particles: RegistryParticuleData = {
   },
   'tooltip-04': {
     description: 'Vertical group with animated tooltip',
-    file: 'tooltip/tooltip-04',
+    file: 'tooltip-04',
     name: 'Tooltip 04',
     npmDependencies: [],
     registryDependencies: [],
@@ -3500,7 +3500,7 @@ const particles: RegistryParticuleData = {
   },
   'tooltip-05': {
     description: '',
-    file: 'tooltip/tooltip-05',
+    file: 'tooltip-05',
     name: 'Tooltip 05',
     npmDependencies: [],
     registryDependencies: [],
@@ -3508,7 +3508,7 @@ const particles: RegistryParticuleData = {
   },
   'tooltip-06': {
     description: '',
-    file: 'tooltip/tooltip-06',
+    file: 'tooltip-06',
     name: 'Tooltip 06',
     npmDependencies: [],
     registryDependencies: [],
@@ -3516,7 +3516,7 @@ const particles: RegistryParticuleData = {
   },
   'tooltip-07': {
     description: '',
-    file: 'tooltip/tooltip-07',
+    file: 'tooltip-07',
     name: 'Tooltip 07',
     npmDependencies: [],
     registryDependencies: [],
@@ -3524,7 +3524,7 @@ const particles: RegistryParticuleData = {
   },
   'tooltip-08': {
     description: '',
-    file: 'tooltip/tooltip-08',
+    file: 'tooltip-08',
     name: 'Tooltip 08',
     npmDependencies: [],
     registryDependencies: [],
@@ -3532,7 +3532,7 @@ const particles: RegistryParticuleData = {
   },
   'tooltip-09': {
     description: '',
-    file: 'tooltip/tooltip-09',
+    file: 'tooltip-09',
     name: 'Tooltip 09',
     npmDependencies: [],
     registryDependencies: [],
@@ -3540,7 +3540,7 @@ const particles: RegistryParticuleData = {
   },
   'tooltip-10': {
     description: '',
-    file: 'tooltip/tooltip-10',
+    file: 'tooltip-10',
     name: 'Tooltip 10',
     npmDependencies: [],
     registryDependencies: [],
@@ -3548,7 +3548,7 @@ const particles: RegistryParticuleData = {
   },
   'tooltip-11': {
     description: '',
-    file: 'tooltip/tooltip-11',
+    file: 'tooltip-11',
     name: 'Tooltip 11',
     npmDependencies: [],
     registryDependencies: [],
@@ -3556,7 +3556,7 @@ const particles: RegistryParticuleData = {
   },
   'tooltip-12': {
     description: '',
-    file: 'tooltip/tooltip-12',
+    file: 'tooltip-12',
     name: 'Tooltip 12',
     npmDependencies: [],
     registryDependencies: [],

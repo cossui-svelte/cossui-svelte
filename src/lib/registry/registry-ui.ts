@@ -144,6 +144,15 @@ const categories: RegistryUiData = {
     npmDependencies: [],
     registryDependencies: []
   },
+  'context-menu': {
+    category: 'ui',
+    description: '',
+    folder: 'context-menu',
+    isnew: false,
+    name: 'Context Menu',
+    npmDependencies: [],
+    registryDependencies: []
+  },
   dialog: {
     category: 'ui',
     description: 'A popup that opens on top of the entire page.',
