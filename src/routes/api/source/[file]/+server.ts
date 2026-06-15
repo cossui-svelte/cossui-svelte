@@ -5,7 +5,6 @@ import { createHighlighter } from 'shiki';
 import { particles } from '$lib/registry/registry-particles';
 import type { RequestHandler } from './$types';
 
-
 const highlighterPromise = createHighlighter({
   langs: ['svelte'],
   themes: ['github-light', 'github-dark']
