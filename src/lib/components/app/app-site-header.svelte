@@ -49,7 +49,7 @@
   <MobileNav class="flex lg:hidden" items={navItems} {tree} /> -->
   {/snippet}
 
-  <div class="mt-2 flex gap-2">
+  <div class="flex gap-2">
     <Button variant="ghost">
       <a href="/docs">Docs</a>
     </Button>
