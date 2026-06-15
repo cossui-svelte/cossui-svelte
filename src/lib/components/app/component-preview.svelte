@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { HTMLAttributes } from "svelte/elements";
   import { cn } from "$lib/utils";
-  import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
+  import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
   import ComponentSource from "$lib/components/app/component-source.svelte";
   // import { Index } from "$lib/registry/__index__";
 
@@ -17,16 +17,17 @@
     hideCode?: boolean;
   } = $props();
 
-  const Component = $derived(Index[name]?.component);
+  const component = $derived(Index[name]?.component);
   const metaClassName = $derived(Index[name]?.meta?.className);
 </script>
 
-{#if !Component}
+{#if !component}
   <p class="text-muted-foreground text-sm">
     Component
     <code
       class="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-[.8125rem]"
     >
+      HEHE
       {name}
     </code>
     not found in registry.
@@ -39,7 +40,7 @@
     {...restProps}
   >
     {#snippet children()}
-      <svelte:component this={Component} />
+      <svelte:component this={component} />
     {/snippet}
     {#snippet source()}
       <ComponentSource collapsible={false} {name} />

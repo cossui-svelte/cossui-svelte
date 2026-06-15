@@ -1,5 +1,5 @@
 <script lang="ts">
-    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
+    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
     import CopyIcon from "@lucide/svelte/icons/copy";
     import CutIcon from "@lucide/svelte/icons/scissors";
     import PasteIcon from "@lucide/svelte/icons/clipboard";

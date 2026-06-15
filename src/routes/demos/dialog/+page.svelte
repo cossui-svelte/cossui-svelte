@@ -1,5 +1,5 @@
 <script lang="ts">
-    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
+    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
     import { Button, buttonVariants } from "$lib/components/ui/button";
     import {
         Dialog,

@@ -1,5 +1,5 @@
 <script>
-    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
+    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
     import { defaults, superForm } from "sveltekit-superforms";
     import { valibot } from "sveltekit-superforms/adapters";
     import * as v from "valibot";

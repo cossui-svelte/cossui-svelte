@@ -1,5 +1,5 @@
 <script lang="ts">
-    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
+    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
     import {
         OTPField,
         OTPFieldInput,
@@ -28,13 +28,31 @@
             }}
         >
             {#snippet children({ cells })}
-                <OTPFieldInput aria-invalid={invalid || undefined} cell={cells[0]} />
-                <OTPFieldInput aria-invalid={invalid || undefined} cell={cells[1]} />
-                <OTPFieldInput aria-invalid={invalid || undefined} cell={cells[2]} />
+                <OTPFieldInput
+                    aria-invalid={invalid || undefined}
+                    cell={cells[0]}
+                />
+                <OTPFieldInput
+                    aria-invalid={invalid || undefined}
+                    cell={cells[1]}
+                />
+                <OTPFieldInput
+                    aria-invalid={invalid || undefined}
+                    cell={cells[2]}
+                />
                 <OTPFieldSeparator />
-                <OTPFieldInput aria-invalid={invalid || undefined} cell={cells[3]} />
-                <OTPFieldInput aria-invalid={invalid || undefined} cell={cells[4]} />
-                <OTPFieldInput aria-invalid={invalid || undefined} cell={cells[5]} />
+                <OTPFieldInput
+                    aria-invalid={invalid || undefined}
+                    cell={cells[3]}
+                />
+                <OTPFieldInput
+                    aria-invalid={invalid || undefined}
+                    cell={cells[4]}
+                />
+                <OTPFieldInput
+                    aria-invalid={invalid || undefined}
+                    cell={cells[5]}
+                />
             {/snippet}
         </OTPField>
         {#if !valid && !invalid}

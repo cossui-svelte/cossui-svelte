@@ -1,6 +1,6 @@
 <script lang="ts">
     import { Button } from "$lib/components/ui/button";
-    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
+    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
 
     import Circle from "@lucide/svelte/icons/circle";
     import ChevronDown from "@lucide/svelte/icons/chevron-down";
@@ -16,7 +16,10 @@
     } from "$lib/components/ui/tooltip";
     import { Kbd, KbdGroup } from "$lib/components/ui/kbd";
     import { BoldIcon, ItalicIcon, UnderlineIcon } from "@lucide/svelte";
-    import { ToggleGroup, ToggleGroupItem } from "$lib/components/ui/toggle-group";
+    import {
+        ToggleGroup,
+        ToggleGroupItem,
+    } from "$lib/components/ui/toggle-group";
 </script>
 
 <ComponentPreviewTabs>
@@ -38,7 +41,11 @@
             <Tooltip>
                 <TooltipTrigger>
                     {#snippet child({ props })}
-                        <ToggleGroupItem aria-label="Toggle bold" value="bold" {...props}>
+                        <ToggleGroupItem
+                            aria-label="Toggle bold"
+                            value="bold"
+                            {...props}
+                        >
                             <BoldIcon />
                         </ToggleGroupItem>
                     {/snippet}
@@ -48,7 +55,11 @@
             <Tooltip>
                 <TooltipTrigger>
                     {#snippet child({ props })}
-                        <ToggleGroupItem aria-label="Toggle italic" value="italic" {...props}>
+                        <ToggleGroupItem
+                            aria-label="Toggle italic"
+                            value="italic"
+                            {...props}
+                        >
                             <ItalicIcon />
                         </ToggleGroupItem>
                     {/snippet}
@@ -58,7 +69,11 @@
             <Tooltip>
                 <TooltipTrigger>
                     {#snippet child({ props })}
-                        <ToggleGroupItem aria-label="Toggle underline" value="underline" {...props}>
+                        <ToggleGroupItem
+                            aria-label="Toggle underline"
+                            value="underline"
+                            {...props}
+                        >
                             <UnderlineIcon />
                         </ToggleGroupItem>
                     {/snippet}
@@ -68,7 +83,6 @@
         </ToggleGroup>
     </TooltipProvider>
 </ComponentPreviewTabs>
-
 
 <ComponentPreviewTabs>
     <div class="inline-grid w-fit grid-cols-3 gap-1">

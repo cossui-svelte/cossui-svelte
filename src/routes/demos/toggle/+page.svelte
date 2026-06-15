@@ -1,5 +1,5 @@
 <script lang="ts">
-    import ComponentPreviewTabs from "$lib/components/app/component-preview-tabs.svelte";
+    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
     import { Toggle } from "$lib/components/ui/toggle";
     import BookmarkIcon from "@lucide/svelte/icons/bookmark";
 </script>
