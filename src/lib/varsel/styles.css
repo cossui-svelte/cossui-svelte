@@ -148,8 +148,7 @@
 
 /* Bubble pulse applied to an active toast when re-triggered with the same id */
 .vs-bubble {
-	animation: vs-bubble 0.32s cubic-bezier(0.5, 1, 0.89, 1)
-		/* animation: vs-bubble 0.4s var(--ease-vs-pop) forwards; */
+	animation: vs-bubble 0.32s cubic-bezier(0.5, 1, 0.89, 1);
 }
 
 @keyframes vs-bubble {
