@@ -13,7 +13,6 @@ const config = {
   paths: {
     '$assets/*': ['./src/lib/assets'],
     '$data/*': ['./src/lib/data'],
-    '$helpers/*': ['./src/lib/helpers'],
     '$lib/*': ['./src/lib/*']
   },
   project: ['src/**/*.{svelte,ts,js}'],

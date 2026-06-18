@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-vercel';
+import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -17,7 +17,6 @@ const config = {
     alias: {
       $assets: './src/lib/assets',
       $data: './src/lib/data',
-      $helpers: './src/lib/helpers',
       $lib: './src/lib'
     },
     prerender: {

@@ -62,7 +62,6 @@ export default defineConfig({
     alias: [
       { find: '$assets', replacement: path.resolve('./src/lib/assets') },
       { find: '$data', replacement: path.resolve('./src/lib/data') },
-      { find: '$helpers', replacement: path.resolve('./src/lib/helpers') },
       { find: '$lib', replacement: path.resolve('./src/lib') }
     ]
   },
