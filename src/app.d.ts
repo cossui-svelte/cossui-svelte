@@ -15,6 +15,11 @@ declare global {
         title: string;
       };
     }
+    interface Platform {
+      cf: CfProperties;
+      ctx: ExecutionContext;
+      env: Env;
+    }
     // interface PageState {}
     // interface Platform {}
   }

@@ -5,17 +5,18 @@
   "devDependencies": {
     "@aejkatappaja/phantom-ui": "^1.3.0",
     "@internationalized/date": "^3.12.2",
-    "@lucide/svelte": "^1.20.0",
+    "@lucide/svelte": "^1.21.0",
     "@shikijs/langs": "^4.2.0",
     "@shikijs/themes": "^4.2.0",
     "@sveltejs/adapter-auto": "^7.0.1",
-    "@sveltejs/enhanced-img": "^0.10.4",
-    "@sveltejs/kit": "^2.65.2",
+    "@sveltejs/adapter-cloudflare": "^7.2.9",
+    "@sveltejs/enhanced-img": "^0.11.0",
+    "@sveltejs/kit": "^2.66.0",
     "@sveltejs/vite-plugin-svelte": "^7.1.2",
     "@tailwindcss/vite": "^4.3.1",
     "@tanstack/table-core": "^8.21.3",
     "@types/inputmask": "^5.0.7",
-    "@types/node": "^25.9.3",
+    "@types/node": "^26.0.0",
     "@typescript/native-preview": "latest",
     "bits-ui": "^2.18.1",
     "clsx": "^2.1.1",
@@ -34,25 +35,29 @@
     "typescript": "^6.0.3",
     "valibot": "^1.4.1",
     "vite": "^8.0.16",
-    "vitest": "^4.1.9"
+    "vitest": "^4.1.9",
+    "wrangler": "^4.103.0"
   },
   "license": "AGPL-3.0-or-later",
   "name": "coss-ui-svelte",
-  "packageManager": "pnpm@10.34.3",
+  "packageManager": "pnpm@10.34.4",
   "peerDependencies": {
     "svelte": "^5.56.3"
   },
   "scripts": {
     "build": "vite build",
-    "check": "pnpx svelte-check-native --workspace .",
+    "cf-typegen": "wrangler types src/worker-configuration.d.ts",
+    "check": "svelte-kit sync && pnpx svelte-check-native --workspace .",
     "clean": "rm -rf node_modules dist build .svelte-kit",
+    "deploy": "pnpm run build && wrangler pages deploy",
     "dev": "vite",
     "format": "biome format --write . && biome check . --fix",
     "generate:registry": "tsx scripts/createParticuleRegistry.ts -w src/lib/registry/registry-particles.ts && pnpm tsx scripts/createUiRegistry.ts -w src/lib/registry/registry-ui.ts && pnpm format",
     "generate:registry2": "tsx scripts/createComponentRegistryTypes.ts && pnpm format",
     "lint:audit": "pnpx knip --max-show-issues 20",
     "lint:typecheck": "tsc --noEmit",
-    "optimize:icons": " tsx ./scripts/transformLucideImports.ts"
+    "optimize:icons": " tsx ./scripts/transformLucideImports.ts",
+    "prepare": "svelte-kit sync || echo ''"
   },
   "type": "module",
   "version": "0.1.1"

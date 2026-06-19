@@ -32,6 +32,7 @@
       "knip.ts",
       "postcss.config.mjs",
       "!node_modules",
+      "!src/worker-configuration.d.ts",
       "!pnpm-lock.yaml",
       "!pnpm-workspace.yaml",
       "!dist",
