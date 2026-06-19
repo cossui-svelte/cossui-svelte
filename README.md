@@ -1,6 +1,11 @@
 ![logo](./static/favicon.svg)
 
-# Cossui-Svelte (unofficial)
+# Coss UI-Svelte (unofficial)
+
+The project is an unofficial port of Coss UI to Svelte.
+I first discovered the  [unofficial port of Origin UI](https://github.com/max-got/originui-svelte) and was impressed by its look and feel. I later learned that Origin UI had been acquired by Coss UI, and that an upgraded widget library was available — but only for React.
+
+Acknowledging that the Svelte ecosystem lacked an equivalent, this project attempts to brings those upgraded components to Svelte 5.
 
 ## Star History
 
@@ -14,7 +19,6 @@
 - [TailwindCSS v4](https://tailwindcss.com) - An easy to use CSS framework with beautiful UI
 - [Versel](https://github.com/66HEX/varsel) - A headless toast component
 - [Vaul](https://github.com/quanghle/autopilot-vaul-svelte) - An headless, gesture-driven drawer component
-- [Lucide Icons](https://lucide.dev)
 - [Phantom-UI](https://github.com/Aejkatappaja/phantom-ui) - An elegant structure-aware skeleton loader
 - [FormSnap & Superforms](https://superforms.rocks/) - A full featured headless validation frameworks
 
