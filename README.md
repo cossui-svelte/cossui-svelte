@@ -22,9 +22,14 @@ Acknowledging that the Svelte ecosystem lacked an equivalent, this project attem
 - [Phantom-UI](https://github.com/Aejkatappaja/phantom-ui) - An elegant structure-aware skeleton loader
 - [FormSnap & Superforms](https://superforms.rocks/) - A full featured headless validation frameworks
 
+Other good source of inspiration, sometimes with full component logic just copy/pasted (full credits to their authors):
+
+- [ShadCN Svelte](https://www.shadcn-svelte.com/)
+- [Unofficial port of Origin UI](https://github.com/max-got/originui-svelte)
+
 ## Differences from the original
 
-The Original [Coss UI](https://cossui.com/) is built with Next.js and BaseUI. This is a built with Svelte and BitsUI.
+The Original [Coss UI](https://cossui.com/) is built with Next.js and BaseUI. This port is built with Svelte and BitsUI.
 
 - [x] [Svelte](https://svelte.dev) instead of ~~Next.js~~
 - [x] [Lucide Svelte](https://lucide.dev/guide/packages/lucide-svelte) instead of ~~Lucide React~~
