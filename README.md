@@ -2,10 +2,15 @@
 
 # Coss UI-Svelte (unofficial)
 
-The project is an unofficial port of Coss UI to Svelte.
-I first discovered the  [unofficial port of Origin UI](https://github.com/max-got/originui-svelte) and was impressed by its look and feel. I later learned that Origin UI had been acquired by Coss UI, and that an upgraded widget library was available — but only for React.
+This project is an unofficial port of Coss UI for Svelte.
 
-Acknowledging that the Svelte ecosystem lacked an equivalent, this project attempts to brings those upgraded components to Svelte 5.
+I first found the unofficial [Svelte port of Origin UI](https://github.com/max-got/originui-svelte) and liked its look and feel. Later, I learned that Origin UI was acquired by Coss UI and that an updated component library existed, but only for React.
+
+Since there was no Svelte option, this project aims to bring those updated components to Svelte 5.
+
+Along the way, I also noticed that even Coss UI is missing some strong components available in Bits UI and Origin UI.
+
+*__"The most intuitive framework needs strong, consistent, and fully featured components."__*
 
 ## Star History
 
