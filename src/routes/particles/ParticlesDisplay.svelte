@@ -1,6 +1,6 @@
 <script lang="ts">
 	// import { Skeleton } from "$lib/components/ui/skeleton";
-	import { particles } from "$lib/registry/registry-particles.js";
+	import { allParticles } from "$lib/registry/registry-particles.js";
 	// import { getCategorySortOrder } from "$lib/registry/registry-categories.js";
 	import type { RegistryCategory } from "$lib/registry/registry-categories.js";
 	import ParticleCard from "./ParticleCard.svelte";
@@ -13,7 +13,7 @@
 	let { selectedCategories }: Props = $props();
 
 	function calculateRelevanceWeight(
-		particle: (typeof particles)[number],
+		particle: (typeof allParticles)[number],
 		searchTerms: RegistryCategory[],
 	): number {
 		let weight = 0;
@@ -30,7 +30,7 @@
 	}
 
 	const filteredParticles = $derived(
-		Object.values(particles)
+		Object.values(allParticles)
 			.filter((p) => {
 				const cats = p.tags ?? [];
 				return selectedCategories.every((v) => cats.includes(v));

@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { page } from "$app/state";
 	import { goto } from "$app/navigation";
-	import { particles } from "$lib/registry/registry-particles";
+	import { allParticles } from "$lib/registry/registry-particles";
 	import { getCategorySortOrder } from "$lib/registry/registry-categories";
 	import SearchField, { type SearchItem } from "./SearchField.svelte";
 	import { browser } from "$app/environment";
 
 	const uniqueCategories = Array.from(
 		// new Set(particles.flatMap((p) => p.categories ?? [])),
-		new Set(Object.values(particles).flatMap((p) => p.tags)),
+		new Set(Object.values(allParticles).flatMap((p) => p.tags)),
 	).sort((a, b) => getCategorySortOrder(a) - getCategorySortOrder(b));
 
 	const searchItems: SearchItem[] = uniqueCategories.map((category) => ({

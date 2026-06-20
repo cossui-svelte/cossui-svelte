@@ -1,16 +1,7 @@
 import { type RequestHandler } from '@sveltejs/kit';
+import { allComponents } from '$lib/registry/registry-components';
 
-// Grab all index files (or any .svelte file) inside $lib/components sub-folders.
-// Each key looks like: /src/lib/components/blog/index.svelte
-// Adjust the glob pattern to match your actual file structure.
-const componentModules = import.meta.glob('/src/lib/components/*/**/*.svelte');
-
-function deriveSlug(path: string): string {
-  // '/src/lib/components/blog/index.svelte' → 'blog'
-  // '/src/lib/components/about/Hero.svelte'  → 'about'
-  const match = path.match(/\/src\/lib\/components\/([^/]+)/u);
-  return match ? match[1] : '';
-}
+export const prerender = true;
 
 function buildUrl(origin: string, slug: string): string {
   return `${origin}/${slug}`;
@@ -51,26 +42,16 @@ export const GET: RequestHandler = ({ url }) => {
   ).join('');
 
   // ---------------------------------------------------------------------------
-  // Dynamic entries derived from $lib/components sub-folders
+  // Dynamic entries — one per component in the registry
   // ---------------------------------------------------------------------------
-  const staticSlugs = new Set(STATIC_URLS.map((u) => u.slug));
-
-  const dynamicSlugs = [
-    ...new Set(
-      Object.keys(componentModules)
-        .map(deriveSlug)
-        .filter((s) => Boolean(s) && !staticSlugs.has(s)) // skip duplicates
-    )
-  ];
-
-  const dynamicEntries = dynamicSlugs
+  const dynamicEntries = Object.values(allComponents)
     .map(
-      (slug) => `
+      ({ folder }) => `
   <url>
-    <loc>${buildUrl(origin, slug)}</loc>
+    <loc>${buildUrl(origin, `docs/${folder}`)}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>`
     )
     .join('');

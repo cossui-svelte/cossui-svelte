@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { error } from '@sveltejs/kit';
 import { createHighlighter } from 'shiki';
-import { particles } from '$lib/registry/registry-particles';
+import { allParticles } from '$lib/registry/registry-particles';
 import type { RequestHandler } from './$types';
 
 const highlighterPromise = createHighlighter({
@@ -16,7 +16,7 @@ export const GET: RequestHandler = async ({ params }) => {
     error(400, 'Invalid file parameter');
   }
 
-  const meta = particles[params.file];
+  const meta = allParticles[params.file];
 
   if (!meta) {
     error(403, 'Not allowed');

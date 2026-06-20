@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Search from "@lucide/svelte/icons/search";
 	import Tag from "@lucide/svelte/icons/tag";
-	import { particles } from "$lib/registry/registry-particles";
+	import { allParticles } from "$lib/registry/registry-particles";
 	import { getCategorySortOrder } from "$lib/registry/registry-categories.js";
 	import {
 		Combobox,
@@ -55,7 +55,7 @@
 				continue;
 			}
 			const testValues = [...selectedValues, item.value];
-			const hasMatches = Object.values(particles).some((p) => {
+			const hasMatches = Object.values(allParticles).some((p) => {
 				const cats = p.tags ?? [];
 				return testValues.every((v) => cats.includes(v));
 			});

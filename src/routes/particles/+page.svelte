@@ -3,7 +3,7 @@
 	import PageHeader from "$lib/components/app/page-header.svelte";
 	import PageHeaderHeading from "$lib/components/app/page-header-heading.svelte";
 	import PageHeaderDescription from "$lib/components/app/page-header-description.svelte";
-	import { particles } from "$lib/registry/registry-particles";
+	import { allParticles } from "$lib/registry/registry-particles";
 
 	import {
 		isValidRegistryCategory,
@@ -13,7 +13,7 @@
 	import ParticlesDisplay from "./ParticlesDisplay.svelte";
 	import { browser } from "$app/environment";
 
-	const particleCount = particles.length;
+	const particleCount = allParticles.length;
 	const description = `Discover ${particleCount} ready-to-use particles, the building blocks of your design system. Filter by category to find the perfect component for your project.`;
 
 	const selectedCategories = $derived(() => {

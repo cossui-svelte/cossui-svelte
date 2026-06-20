@@ -22,7 +22,7 @@ const writeFlag = process.argv.includes('-w');
 const writeArgIdx = process.argv.indexOf('-w');
 const outputFile = writeArgIdx !== -1 && process.argv[writeArgIdx + 1] && !process.argv[writeArgIdx + 1].startsWith('-')
     ? process.argv[writeArgIdx + 1]
-    : 'registry-ui.ts';
+    : 'registry-components.ts';
 
 function toName(id: string): string {
     return id
@@ -80,15 +80,15 @@ export interface RegistryUIEntry {
     name: string;
     description: string;
     folder: string; // relative to src/lib/components/ui/
-    category: "ui" | "extra"; // for now, just a simple category to separate "core" UI components from extra ones
+    category: "ui" | "origin-ui" | "bits-ui" | "extra"; // for now, just a simple category to separate "core" UI components from extra ones
     isnew: boolean; // whether this is a new component that should be highlighted in the UI
     npmDependencies: string[];
     registryDependencies: string[];
 }
 
 export type RegistryUiData = Record<string, RegistryUIEntry>;
-const categories: RegistryUiData = ${json};
-export { categories };
+const allComponents: RegistryUiData = ${json};
+export { allComponents };
 `;
 
     if (writeFlag) {

@@ -82,8 +82,8 @@ export interface RegistryParticuleEntry {
 }
 
 export type RegistryParticuleData = Record<string, RegistryParticuleEntry>;
-const particles: RegistryParticuleData = ${json};
-export { particles };
+const allParticles: RegistryParticuleData = ${json};
+export { allParticles };
 `;
 
     if (writeFlag) {

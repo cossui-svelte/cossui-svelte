@@ -6,7 +6,7 @@
  * !!!!!!!!!!
  */
 export interface RegistryUIEntry {
-  category: 'ui' | 'extra'; // for now, just a simple category to separate "core" UI components from extra ones
+  category: 'ui' | 'origin-ui' | 'bits-ui' | 'extra'; // for now, just a simple category to separate "core" UI components from extra ones
   description: string;
   folder: string; // relative to src/lib/components/ui/
   isnew: boolean; // whether this is a new component that should be highlighted in the UI
@@ -16,7 +16,7 @@ export interface RegistryUIEntry {
 }
 
 export type RegistryUiData = Record<string, RegistryUIEntry>;
-const categories: RegistryUiData = {
+const allComponents: RegistryUiData = {
   accordion: {
     category: 'ui',
     description: 'A set of collapsible panels with headings and content.',
@@ -565,4 +565,4 @@ const categories: RegistryUiData = {
   }
 };
 
-export { categories };
+export { allComponents };

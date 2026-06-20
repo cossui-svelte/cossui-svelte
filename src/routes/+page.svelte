@@ -15,12 +15,12 @@
     CardPanel,
   } from "$lib/components/ui/card";
 
-  import { categories } from "$lib/registry/registry-ui";
-  import { particles } from "$lib/registry/registry-particles";
+  import { allComponents } from "$lib/registry/registry-components";
+  import { allParticles } from "$lib/registry/registry-particles";
 
   const description = "Built for developers and AI.";
 
-  const particleCount = particles.size;
+  const particleCount = allParticles.size;
 </script>
 
 <svelte:head>
@@ -93,7 +93,7 @@
     <div
       class="grid gap-6 pt-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 xl:grid-cols-4"
     >
-      {#each Object.entries(categories) as [id, meta]}
+      {#each Object.entries(allComponents) as [id, meta]}
         {@render categoryCard(id, meta.name, meta.description, meta.isnew)}
       {/each}
     </div>

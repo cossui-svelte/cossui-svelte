@@ -1,7 +1,7 @@
 // This file contains extra meta-data, to add into the registry
 // it is edited manually
 
-import { type RegistryUiData } from './createUiRegistry';
+import { type RegistryUiData } from './createComponentRegistry';
 
 const registryCategory: RegistryUiData = {
 	accordion: {
