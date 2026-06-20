@@ -256,6 +256,11 @@ const registryCategory: RegistryUiData = {
 		category: "ui",
 		isnew: false,
 	},
+		'split-pane': {
+		description: "A component to layout resizable panels with a draggable divider.",
+		category: "extra",
+		isnew: false,
+	},
 	switch: {
 		description: "A control that indicates whether a setting is on or off.",
 		category: "ui",

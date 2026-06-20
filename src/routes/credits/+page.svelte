@@ -1,14 +1,48 @@
 
-<h2>Raison d'être</h2>
-<p>
-This project is an unofficial port of Coss UI for Svelte.
+<main class="container py-12 md:py-16">
+  <article class="mx-auto max-w-2xl space-y-6 text-foreground">
+    <h2 class="font-heading text-3xl font-semibold tracking-tight">
+      Raison d'être
+    </h2>
 
-I first found the unofficial [Svelte port of Origin UI](https://github.com/max-got/originui-svelte) and liked its look and feel. Later, I learned that Origin UI was acquired by Coss UI and that an updated component library existed, but only for React.
+    <p class="text-base/7 text-muted-foreground">
+      This project is an unofficial port of Coss UI for Svelte.
+    </p>
 
-Since there was no Svelte option, this project aims to bring those updated components to Svelte 5.
+    <p class="text-base/7 text-muted-foreground">
+      I first found the unofficial
+      <a
+        href="https://github.com/max-got/originui-svelte"
+        class="text-foreground underline underline-offset-4 hover:text-foreground/70 transition-colors"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Svelte port of Origin UI</a>
+      and liked its look and feel. Later, I learned that Origin UI was acquired
+      by Coss UI and that an updated component library existed, but only for
+      React.
+    </p>
 
-Along the way, I noticed that even Coss UI lacks some of the components found in Bits UI and Origin UI. So after exploring through 3rd party projects and pull requests, I brought everything together under one umbrella, mainly for my personal use.
+    <p class="text-base/7 text-muted-foreground">
+      Since there was no Svelte option, this project aims to bring those updated
+      components to Svelte 5.
+    </p>
 
-*__"The most intuitive framework needs strong, consistent, and fully featured components."__*
+    <p class="text-base/7 text-muted-foreground">
+      Along the way, I noticed that even Coss UI lacks some of the components
+      found in Bits UI and Origin UI. So after exploring through tons of 3rd party
+      projects and forgotten pull requests, I brought everything together under one
+      umbrella.
+    </p>
 
-</p>
+    <p class="text-base/7 text-muted-foreground">
+      My aim: a single location for all the components I need, with a consistent
+      look and feel. No more extensive research to find the
+      right component library, and no more mixing and matching components from
+      different libraries that don't work well together.
+    </p>
+
+    <p class="pt-2 font-heading text-lg font-medium italic text-foreground">
+      "A full set of good looking components, for the most intuitive web framework."
+    </p>
+  </article>
+</main>

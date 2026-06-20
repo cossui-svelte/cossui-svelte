@@ -437,6 +437,15 @@ const categories: RegistryUiData = {
     npmDependencies: [],
     registryDependencies: []
   },
+  'split-pane': {
+    category: 'extra',
+    description: 'A component to layout resizable panels with a draggable divider.',
+    folder: 'split-pane',
+    isnew: false,
+    name: 'Split Pane',
+    npmDependencies: [],
+    registryDependencies: []
+  },
   stepper: {
     category: 'origin-ui',
     description: 'A component for displaying a series of steps in a process.',

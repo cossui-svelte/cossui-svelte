@@ -12,6 +12,7 @@
   import Search from "@lucide/svelte/icons/search";
   import Check from "@lucide/svelte/icons/check";
   import ImageIcon from "@lucide/svelte/icons/image";
+  import GripVertical from "@lucide/svelte/icons/grip-vertical";
   import MousePointer2 from "@lucide/svelte/icons/mouse-pointer-2";
   import TextCursor from "@lucide/svelte/icons/text-cursor";
   import UserRound from "@lucide/svelte/icons/user-round";
@@ -745,6 +746,30 @@
   <div
     class="size-8 rotate-45 rounded-full border-3 border-muted-foreground/20 border-t-primary"
   ></div>
+{:else if slug === "split-pane"}
+  <div class="flex max-w-50 flex-1 gap-1.5">
+    <div class={cardCls("flex-1 [--radius-2xl:12px]")}>
+      <div class={cpCls("flex flex-col gap-2 p-3")}>
+        {@render textSnip("w-[70%]")}
+        {@render textSnip("w-[90%]", "secondary")}
+        {@render textSnip("w-[60%]", "secondary")}
+      </div>
+    </div>
+    <div class="flex items-center">
+      <div
+        class="flex h-8 w-3 items-center justify-center rounded-full border bg-card shadow-sm"
+      >
+        {@render iconSnip(GripVertical, "size-2.5")}
+      </div>
+    </div>
+    <div class={cardCls("flex-1 [--radius-2xl:12px]")}>
+      <div class={cpCls("flex flex-col gap-2 p-3")}>
+        {@render textSnip("w-[55%]", "secondary")}
+        {@render textSnip("w-[80%]", "secondary")}
+        {@render textSnip("w-[65%]", "secondary")}
+      </div>
+    </div>
+  </div>
 {:else if slug === "stepper"}
   <div class="flex max-w-50 flex-1 items-center">
     <div
