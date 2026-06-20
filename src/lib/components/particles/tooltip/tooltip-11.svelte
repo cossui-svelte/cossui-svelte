@@ -3,24 +3,24 @@
 	import FriendImg02 from '$assets/avatar-20-05.jpg?w=20&h=20&enhanced';
 	import FriendImg03 from '$assets/avatar-20-06.jpg?w=20&h=20&enhanced';
 	import AvatarImg from '$assets/avatar-40-05.jpg?w=40&h=40&enhanced';
-	import { HoverCard, HoverCardContent, HoverCardTrigger } from '$lib/components/ui/hover-card';
+	import { HoverCard, LinkPreviewContent, LinkPreviewTrigger } from '$lib/components/ui/link-preview';
 </script>
 
 <HoverCard>
 	<div class="flex items-center gap-3">
 		<enhanced:img class="shrink-0 rounded-full" src={AvatarImg} alt="Avatar" />
 		<div class="space-y-0.5">
-			<HoverCardTrigger>
+			<LinkPreviewTrigger>
 				{#snippet child({ props })}
 					<a class="text-sm font-medium hover:underline" href="#title" {...props}>
 						Keith Kennedy
 					</a>
 				{/snippet}
-			</HoverCardTrigger>
+			</LinkPreviewTrigger>
 			<p class="text-xs text-muted-foreground">@k.kennedy</p>
 		</div>
 	</div>
-	<HoverCardContent>
+	<LinkPreviewContent>
 		<div class="space-y-3">
 			<div class="flex items-center gap-3">
 				<enhanced:img class="shrink-0 rounded-full" src={AvatarImg} alt="Avatar" />
@@ -54,5 +54,5 @@
 				<div class="text-xs text-muted-foreground">3 mutual friends</div>
 			</div>
 		</div>
-	</HoverCardContent>
+	</LinkPreviewContent>
 </HoverCard>

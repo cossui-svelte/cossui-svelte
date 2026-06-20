@@ -4,13 +4,13 @@
 	import AvatarImg from "$assets/avatar-40-04.jpg?w=40&h=40&enhanced";
 	import {
 		HoverCard,
-		HoverCardContent,
-		HoverCardTrigger,
-	} from "$lib/components/ui/hover-card";
+		LinkPreviewContent,
+		LinkPreviewTrigger,
+	} from "$lib/components/ui/link-preview";
 </script>
 
 <HoverCard>
-	<HoverCardTrigger>
+	<LinkPreviewTrigger>
 		{#snippet child({ props })}
 			<Button
 				class="size-auto overflow-hidden rounded-full bg-transparent p-0 hover:bg-transparent"
@@ -21,8 +21,8 @@
 				<enhanced:img class=" size-10" src={AvatarImg} alt="Avatar" />
 			</Button>
 		{/snippet}
-	</HoverCardTrigger>
-	<HoverCardContent class="w-[340px]">
+	</LinkPreviewTrigger>
+	<LinkPreviewContent class="w-[340px]">
 		<div class="flex items-start gap-3">
 			<div class="shrink-0">
 				<enhanced:img
@@ -38,5 +38,5 @@
 				</p>
 			</div>
 		</div>
-	</HoverCardContent>
+	</LinkPreviewContent>
 </HoverCard>
