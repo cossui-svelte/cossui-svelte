@@ -32,6 +32,9 @@ export default defineConfig({
     }
   },
   customLogger: logger,
+  esbuild: {
+    legalComments: 'none'
+  },
   optimizeDeps: {
     exclude: ['@vinejs/vine']
   },
