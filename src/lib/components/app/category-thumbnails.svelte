@@ -11,6 +11,8 @@
   import Plus from "@lucide/svelte/icons/plus";
   import Search from "@lucide/svelte/icons/search";
   import Check from "@lucide/svelte/icons/check";
+  import ImageIcon from "@lucide/svelte/icons/image";
+  import MousePointer2 from "@lucide/svelte/icons/mouse-pointer-2";
   import TextCursor from "@lucide/svelte/icons/text-cursor";
   import UserRound from "@lucide/svelte/icons/user-round";
   import X from "@lucide/svelte/icons/x";
@@ -339,6 +341,26 @@
       </div>
     </div>
   </div>
+{:else if slug === "cropper"}
+  <div class="flex max-w-50 flex-1 flex-col items-center gap-4">
+    <div class="relative flex w-full items-center justify-center p-5">
+      <div
+        class="absolute inset-0 rounded-lg border-2 border-dashed border-muted-foreground/25"
+      ></div>
+      <div class={cardCls("w-24 [--radius-2xl:12px]")}>
+        <div class={cpCls("flex items-center justify-center p-5")}>
+          {@render iconSnip(ImageIcon, "size-6 text-muted-foreground/30")}
+        </div>
+      </div>
+    </div>
+    <div class="flex w-[60%] items-center">
+      <div class="h-px flex-1 bg-muted-foreground/20"></div>
+      <div
+        class="size-4 shrink-0 rounded-full bg-linear-to-b from-card to-card/90 shadow-xs dark:from-background/90 dark:to-background border border-border"
+      ></div>
+      <div class="h-px flex-1 bg-muted-foreground/20"></div>
+    </div>
+  </div>
 {:else if slug === "date-picker"}
   <div class={cardCls("[--radius-2xl:14px]", false)}>
     <div class={cpCls("flex items-center gap-2 p-3")}>
@@ -393,6 +415,21 @@
   <div class="flex max-w-50 flex-1 flex-col gap-4">
     {@render formField()}
     {@render formField()}
+  </div>
+{:else if slug === "file-upload"}
+  <div class="flex max-w-50 flex-1 items-center">
+    <div
+      class="h-20 w-32 shrink-0 rounded-xl border-2 border-dashed border-muted-foreground/25"
+    ></div>
+    <div class={cardCls("-ms-8 w-28 shrink-0 [--radius-2xl:14px]")}>
+      <div class={cpCls("flex flex-col gap-3 p-4")}>
+        {@render textSnip()}
+        {@render textSnip("w-[70%]", "secondary")}
+        <div class="flex justify-end">
+          {@render iconSnip(MousePointer2, "text-foreground")}
+        </div>
+      </div>
+    </div>
   </div>
 {:else if slug === "form"}
   <div class="flex max-w-50 flex-1 flex-col gap-4">
@@ -708,6 +745,32 @@
   <div
     class="size-8 rotate-45 rounded-full border-3 border-muted-foreground/20 border-t-primary"
   ></div>
+{:else if slug === "stepper"}
+  <div class="flex max-w-50 flex-1 items-center">
+    <div
+      class="flex size-8 shrink-0 items-center justify-center rounded-full bg-foreground"
+    >
+      {@render iconSnip(Check, "size-3 text-background")}
+    </div>
+    <div class="h-px flex-1 bg-muted-foreground/20"></div>
+    <div
+      class="flex size-8 shrink-0 items-center justify-center rounded-full bg-foreground text-xs font-medium text-background"
+    >
+      2
+    </div>
+    <div class="h-px flex-1 bg-muted-foreground/20"></div>
+    <div
+      class="flex size-8 shrink-0 items-center justify-center rounded-full border bg-card text-xs font-medium text-muted-foreground/60 shadow-sm"
+    >
+      3
+    </div>
+    <div class="h-px flex-1 bg-muted-foreground/20"></div>
+    <div
+      class="flex size-8 shrink-0 items-center justify-center rounded-full border bg-card text-xs font-medium text-muted-foreground/40 shadow-sm"
+    >
+      4
+    </div>
+  </div>
 {:else if slug === "switch"}
   <div class="h-6 w-10 rounded-full bg-muted-foreground/20 p-0.5">
     <div
@@ -845,5 +908,30 @@
       </div>
     </div>
     {@render iconSnip(Info)}
+  </div>
+{:else if slug === "tree"}
+  <div class={cardCls("max-w-44 [--radius-2xl:14px]")}>
+    <div class={cpCls("flex flex-col gap-2.5 p-3")}>
+      <div class="flex items-center gap-1.5">
+        {@render iconSnip(ChevronDown, "size-3 shrink-0")}
+        {@render textSnip("w-[55%]")}
+      </div>
+      <div class="flex items-center gap-1.5 ps-3.5">
+        {@render iconSnip(ChevronRight, "size-3 shrink-0")}
+        {@render textSnip("w-[45%]", "secondary")}
+      </div>
+      <div class="flex items-center gap-1.5 ps-3.5">
+        {@render iconSnip(ChevronDown, "size-3 shrink-0")}
+        {@render textSnip("w-[50%]", "secondary")}
+      </div>
+      <div class="flex items-center gap-1.5 ps-7">
+        <div class="size-3 shrink-0"></div>
+        <div class="h-1.5 w-[40%] rounded-full bg-primary"></div>
+      </div>
+      <div class="flex items-center gap-1.5 ps-7">
+        <div class="size-3 shrink-0"></div>
+        {@render textSnip("w-[45%]", "secondary")}
+      </div>
+    </div>
   </div>
 {/if}

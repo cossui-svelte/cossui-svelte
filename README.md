@@ -8,7 +8,7 @@ I first found the unofficial [Svelte port of Origin UI](https://github.com/max-g
 
 Since there was no Svelte option, this project aims to bring those updated components to Svelte 5.
 
-Along the way, I also noticed that even Coss UI is missing some strong components available in Bits UI and Origin UI.
+Along the way, I noticed that even Coss UI lacks some of the components found in Bits UI and Origin UI. So after exploring through 3rd party projects and pull requests, I brought everything together under one umbrella, mainly for my personal use.
 
 *__"The most intuitive framework needs strong, consistent, and fully featured components."__*
 

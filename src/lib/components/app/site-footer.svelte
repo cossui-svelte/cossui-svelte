@@ -13,7 +13,7 @@
     class="text-xs container flex w-full flex-col items-center justify-center gap-2 px-4 sm:px-6"
   >
     <p>
-      Built by
+      Designed by
       <a class="font-heading text-foreground" href="/">coss.com</a>. Ported to
       Svelte by
       <a class="font-heading text-foreground" href="https://github.com/orefalo"
@@ -22,7 +22,7 @@
       – open source, open heart, open mind.
     </p>
     <p class="italic">
-      This project would have not been posible without <a
+      This project is not affiliated with Coss.com. It would have not been possible without <a
         class="font-heading text-foreground"
         href="/credits">full credits</a
       >

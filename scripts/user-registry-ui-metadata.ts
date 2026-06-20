@@ -90,6 +90,12 @@ const registryCategory: RegistryUiData = {
 		category: "ui",
 		isnew: true,
 	},
+	cropper: {
+		description: "A component for cropping images with a resizable and movable selection area.",
+		category: "origin-ui",
+		isnew: false,
+	},
+
 	"date-picker": {
 		description: "A date picker component built with Calendar and Popover.",
 		category: "ui",
@@ -118,6 +124,11 @@ const registryCategory: RegistryUiData = {
 	fieldset: {
 		description: "A native fieldset element with a legend.",
 		category: "ui",
+		isnew: false,
+	},
+	'file-upload': {
+		description: "A component for uploading files with drag-and-drop support.",
+		category: "origin-ui",
 		isnew: false,
 	},
 	form: {
@@ -210,6 +221,11 @@ const registryCategory: RegistryUiData = {
 		category: "ui",
 		isnew: false,
 	},
+	stepper: {
+		description: "A component for displaying a series of steps in a process.",
+		category: "origin-ui",
+		isnew: false,
+	},
 	select: {
 		description: "A common form component for choosing a predefined value in a dropdown menu.",
 		category: "ui",
@@ -256,7 +272,7 @@ const registryCategory: RegistryUiData = {
 		isnew: false,
 	},
 	textarea: {
-		description: "A native textarea element.",
+		description: "A native textarea element for multi-line text input.",
 		category: "ui",
 		isnew: false,
 	},
@@ -290,6 +306,11 @@ const registryCategory: RegistryUiData = {
 		category: "ui",
 		isnew: false,
 	},
+	tree: {
+		description: "A component for displaying a hierarchical tree of items.",
+		category: "origin-ui",
+		isnew: true
+	}
 };
 
 export default registryCategory;

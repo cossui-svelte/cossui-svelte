@@ -153,6 +153,15 @@ const categories: RegistryUiData = {
     npmDependencies: [],
     registryDependencies: []
   },
+  cropper: {
+    category: 'origin-ui',
+    description: 'A component for cropping images with a resizable and movable selection area.',
+    folder: 'cropper',
+    isnew: false,
+    name: 'Cropper',
+    npmDependencies: [],
+    registryDependencies: []
+  },
   dialog: {
     category: 'ui',
     description: 'A popup that opens on top of the entire page.',
@@ -196,6 +205,15 @@ const categories: RegistryUiData = {
     folder: 'fieldset',
     isnew: false,
     name: 'Fieldset',
+    npmDependencies: [],
+    registryDependencies: []
+  },
+  'file-upload': {
+    category: 'origin-ui',
+    description: 'A component for uploading files with drag-and-drop support.',
+    folder: 'file-upload',
+    isnew: false,
+    name: 'File Upload',
     npmDependencies: [],
     registryDependencies: []
   },
@@ -419,6 +437,15 @@ const categories: RegistryUiData = {
     npmDependencies: [],
     registryDependencies: []
   },
+  stepper: {
+    category: 'origin-ui',
+    description: 'A component for displaying a series of steps in a process.',
+    folder: 'stepper',
+    isnew: false,
+    name: 'Stepper',
+    npmDependencies: [],
+    registryDependencies: []
+  },
   switch: {
     category: 'ui',
     description: 'A control that indicates whether a setting is on or off.',
@@ -448,7 +475,7 @@ const categories: RegistryUiData = {
   },
   textarea: {
     category: 'ui',
-    description: 'A native textarea element.',
+    description: 'A native textarea element for multi-line text input.',
     folder: 'textarea',
     isnew: false,
     name: 'Textarea',
@@ -507,6 +534,15 @@ const categories: RegistryUiData = {
     folder: 'tooltip',
     isnew: false,
     name: 'Tooltip',
+    npmDependencies: [],
+    registryDependencies: []
+  },
+  tree: {
+    category: 'origin-ui',
+    description: 'A component for displaying a hierarchical tree of items.',
+    folder: 'tree',
+    isnew: true,
+    name: 'Tree',
     npmDependencies: [],
     registryDependencies: []
   }
