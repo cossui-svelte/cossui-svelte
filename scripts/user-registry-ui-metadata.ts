@@ -25,6 +25,11 @@ const registryCategory: RegistryUiData = {
 		category: "ui",
 		isnew: false,
 	},
+	"aspect-ratio": {
+		description: "Displays content within a desired ratio.",
+		category: "bits-ui",
+		isnew: false
+	},
 	avatar: {
 		description: "An image element with a fallback for representing the user.",
 		category: "ui",
@@ -146,9 +151,9 @@ const registryCategory: RegistryUiData = {
 		category: "ui",
 		isnew: false,
 	},
-	"hover-card": {
-		description: "A popup that appears when an element is hovered, showing additional information for sighted users.",
-		category: "origin-ui",
+	"link-preview": {
+		description: "A popup that appears when an element is hovered, showing preview information.",
+		category: "bits-ui",
 		isnew: false,
 	},
 	input: {

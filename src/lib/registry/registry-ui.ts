@@ -44,6 +44,15 @@ const categories: RegistryUiData = {
     npmDependencies: [],
     registryDependencies: []
   },
+  'aspect-ratio': {
+    category: 'bits-ui',
+    description: 'Displays content within a desired ratio.',
+    folder: 'aspect-ratio',
+    isnew: false,
+    name: 'Aspect Ratio',
+    npmDependencies: [],
+    registryDependencies: []
+  },
   autocomplete: {
     category: 'ui',
     description: 'An input that suggests options as you type.',
@@ -244,16 +253,6 @@ const categories: RegistryUiData = {
     npmDependencies: [],
     registryDependencies: []
   },
-  'hover-card': {
-    category: 'origin-ui',
-    description:
-      'A popup that appears when an element is hovered, showing additional information for sighted users.',
-    folder: 'hover-card',
-    isnew: false,
-    name: 'Hover Card',
-    npmDependencies: [],
-    registryDependencies: []
-  },
   input: {
     category: 'ui',
     description: 'A native input element.',
@@ -288,6 +287,15 @@ const categories: RegistryUiData = {
     folder: 'label',
     isnew: false,
     name: 'Label',
+    npmDependencies: [],
+    registryDependencies: []
+  },
+  'link-preview': {
+    category: 'bits-ui',
+    description: 'A popup that appears when an element is hovered, showing preview information.',
+    folder: 'link-preview',
+    isnew: false,
+    name: 'Link Preview',
     npmDependencies: [],
     registryDependencies: []
   },

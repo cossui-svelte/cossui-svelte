@@ -178,6 +178,12 @@
       </div>
     </div>
   </div>
+{:else if slug === "aspect-ratio"}
+  <div class={cardCls("w-full [--radius-2xl:12px]")}>
+    <div class="aspect-video flex items-center justify-center">
+      {@render iconSnip(ImageIcon, "size-8 text-muted-foreground/25")}
+    </div>
+  </div>
 {:else if slug === "autocomplete"}
   <div class="flex max-w-50 flex-1 flex-col gap-2">
     <div class={cardCls("[--radius-2xl:12px]", false)}>
@@ -537,6 +543,26 @@
     </div>
   </div>
 
+{:else if slug === "link-preview"}
+  <div class="flex max-w-50 flex-1 flex-col items-start gap-2">
+    <div class="border-b border-primary pb-0.5">
+      <div class="h-1.5 w-14 rounded-full bg-primary/70"></div>
+    </div>
+    <div class={cardCls("[--radius-2xl:10px]")}>
+      <div class={cpCls("flex gap-3 p-3")}>
+        <div
+          class="flex size-10 shrink-0 items-center justify-center rounded-md bg-muted-foreground/10"
+        >
+          {@render iconSnip(ImageIcon, "text-muted-foreground/25")}
+        </div>
+        <div class="flex flex-1 flex-col gap-2">
+          {@render textSnip("w-[70%]")}
+          {@render textSnip(undefined, "secondary")}
+          {@render textSnip("w-[60%]", "secondary")}
+        </div>
+      </div>
+    </div>
+  </div>
 {:else if slug === "context-menu"}
   <div class="flex max-w-50 flex-1 flex-col">
     <div
