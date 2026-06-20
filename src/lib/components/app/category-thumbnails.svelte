@@ -10,6 +10,7 @@
   import Minus from "@lucide/svelte/icons/minus";
   import Plus from "@lucide/svelte/icons/plus";
   import Search from "@lucide/svelte/icons/search";
+  import Check from "@lucide/svelte/icons/check";
   import TextCursor from "@lucide/svelte/icons/text-cursor";
   import UserRound from "@lucide/svelte/icons/user-round";
   import X from "@lucide/svelte/icons/x";
@@ -749,6 +750,28 @@
       {@render textSnip("w-[60%]")}
       {@render textSnip("opacity-0")}
       {@render textSnip("opacity-0")}
+    </div>
+  </div>
+{:else if slug === "timeline"}
+  <div class="flex max-w-50 flex-1 items-center">
+    <div
+      class="flex size-7 shrink-0 items-center justify-center rounded-full border-2 border-primary/20"
+    >
+      {@render iconSnip(Check, "size-3 text-primary")}
+    </div>
+    <div class="h-0.5 flex-1 bg-primary/20"></div>
+    <div class={cardCls("size-10 shrink-0 [--radius-2xl:9999px]")}>
+      <div class={cpCls("flex items-center justify-center p-0")}>
+        <div class="flex size-full items-center justify-center rounded-full">
+          {@render iconSnip(Check)}
+        </div>
+      </div>
+    </div>
+    <div class="h-0.5 flex-1 bg-primary/20"></div>
+    <div
+      class="flex size-7 shrink-0 items-center justify-center rounded-full border-2 border-primary/20"
+    >
+      {@render iconSnip(Check, "size-3 text-muted-foreground/40")}
     </div>
   </div>
 {:else if slug === "toast"}
