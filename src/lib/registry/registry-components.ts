@@ -245,7 +245,7 @@ const allComponents: RegistryUiData = {
     description: 'A component for uploading files with drag-and-drop support.',
     folder: 'file-upload',
     isnew: false,
-    istodo: false,
+    istodo: true,
     name: 'File Upload',
     npmDependencies: [],
     registryDependencies: []
@@ -498,7 +498,7 @@ const allComponents: RegistryUiData = {
     description: 'A component to layout resizable panels with a draggable divider.',
     folder: 'split-pane',
     isnew: false,
-    istodo: false,
+    istodo: true,
     name: 'Split Pane',
     npmDependencies: [],
     registryDependencies: []
@@ -619,7 +619,7 @@ const allComponents: RegistryUiData = {
     description: 'A component for displaying a hierarchical tree of items.',
     folder: 'tree',
     isnew: true,
-    istodo: false,
+    istodo: true,
     name: 'Tree',
     npmDependencies: [],
     registryDependencies: []

@@ -15,7 +15,9 @@
         TooltipTrigger,
     } from "$lib/components/ui/tooltip";
     import { Kbd, KbdGroup } from "$lib/components/ui/kbd";
-    import { BoldIcon, ItalicIcon, UnderlineIcon } from "@lucide/svelte";
+    import BoldIcon from "@lucide/svelte/icons/Bold";
+    import ItalicIcon from "@lucide/svelte/icons/Italic";
+    import UnderlineIcon from "@lucide/svelte/icons/Underline";
     import {
         ToggleGroup,
         ToggleGroupItem,

@@ -1,9 +1,9 @@
 <script lang="ts">
 	import ContentImg from '$assets/dialog-content.png?w=382&h=216&enhanced';
-	import { HoverCard, LinkPreviewContent, LinkPreviewTrigger } from '$lib/components/ui/link-preview';
+	import { LinkPreview, LinkPreviewContent, LinkPreviewTrigger } from '$lib/components/ui/link-preview';
 </script>
 
-<HoverCard>
+<LinkPreview>
 	<LinkPreviewTrigger>
 		{#snippet child({ props })}
 			<a
@@ -32,4 +32,4 @@
 			</div>
 		</div>
 	</LinkPreviewContent>
-</HoverCard>
+</LinkPreview>

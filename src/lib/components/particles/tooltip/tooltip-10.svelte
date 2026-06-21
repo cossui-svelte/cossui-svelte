@@ -3,13 +3,13 @@
 
 	import AvatarImg from "$assets/avatar-40-04.jpg?w=40&h=40&enhanced";
 	import {
-		HoverCard,
+		LinkPreview,
 		LinkPreviewContent,
 		LinkPreviewTrigger,
 	} from "$lib/components/ui/link-preview";
 </script>
 
-<HoverCard>
+<LinkPreview>
 	<LinkPreviewTrigger>
 		{#snippet child({ props })}
 			<Button
@@ -39,4 +39,4 @@
 			</div>
 		</div>
 	</LinkPreviewContent>
-</HoverCard>
+</LinkPreview>

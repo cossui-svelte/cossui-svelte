@@ -39,17 +39,6 @@ export default defineConfig({
     exclude: ['@vinejs/vine']
   },
   plugins: [
-    {
-      // Rolldown doesn't support wildcard package exports (./*.svelte); this plugin
-      // catches svelte-remixicon icon imports before other resolvers.
-      enforce: 'pre',
-      name: 'svelte-remixicon-resolver',
-      resolveId(source: string) {
-        const match = source.match(/^svelte-remixicon\/(Ri\w+\.svelte)$/);
-        if (match)
-          return path.resolve(process.cwd(), 'node_modules/svelte-remixicon/dist/icons/', match[1]);
-      }
-    },
     tailwindcss(),
     enhancedImages(),
     sveltekit()

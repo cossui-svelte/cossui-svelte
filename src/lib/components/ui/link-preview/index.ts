@@ -1,9 +1,7 @@
 /* eslint-disable perfectionist/sort-named-exports */
+import { LinkPreview } from 'bits-ui';
 
-import { LinkPreview as LinkPreviewPrimitive } from 'bits-ui';
+const { Root: LinkPreviewCard, Trigger: LinkPreviewTrigger } = LinkPreview;
 
-const Root = LinkPreviewPrimitive.Root;
-const Trigger = LinkPreviewPrimitive.Trigger;
-
-export { default as LinkPreviewPrimitiveContent } from './link-preview-content.svelte';
-export { Root as LinkPreviewPrimitiveCard, Trigger as LinkPreviewPrimitiveTrigger };
+export { default as LinkPreviewContent } from './link-preview-content.svelte';
+export { LinkPreview, LinkPreviewCard, LinkPreviewTrigger };

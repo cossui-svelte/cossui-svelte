@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { getContext } from 'svelte';
 	import { cn } from '$lib/utils';
-	import { CheckIcon, LoaderCircleIcon } from '@lucide/svelte';
+	import CheckIcon from "@lucide/svelte/icons/check-icon";
+	import LoaderCircleIcon from "@lucide/svelte/icons/loader-circle-icon";
 
 	type StepState = 'active' | 'completed' | 'inactive' | 'loading';
 

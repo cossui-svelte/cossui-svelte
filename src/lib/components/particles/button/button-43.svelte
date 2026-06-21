@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { Button } from "$lib/components/ui/button";
 
-	import RiFacebookFill from "svelte-remixicon/RiFacebookFill.svelte";
-	import RiGithubFill from "svelte-remixicon/RiGithubFill.svelte";
-	import RiGoogleFill from "svelte-remixicon/RiGoogleFill.svelte";
-	import RiTwitterXFill from "svelte-remixicon/RiTwitterXFill.svelte";
+	import RiFacebookFill from "svelte-remix/FacebookFillLogos.svelte";
+	import RiGithubFill from "svelte-remix/GithubFillLogos.svelte";
+	import RiGoogleFill from "svelte-remix/GoogleFillLogos.svelte";
+	import RiTwitterXFill from "svelte-remix/TwitterXFillLogos.svelte";
 </script>
 
 <div class="flex flex-wrap gap-2">

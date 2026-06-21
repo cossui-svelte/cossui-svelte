@@ -75,9 +75,9 @@ importers:
       svelte-check:
         specifier: ^4.6.0
         version: 4.6.0(picomatch@4.0.4)(svelte@5.56.3)(typescript@6.0.3)
-      svelte-remixicon:
-        specifier: ^2.10.0
-        version: 2.10.0(svelte@5.56.3)
+      svelte-remix:
+        specifier: ^3.0.1
+        version: 3.0.1(svelte@5.56.3)
       svelte-tel-input:
         specifier: ^4.2.0
         version: 4.2.0(svelte@5.56.3)
@@ -1519,10 +1519,10 @@ packages:
     peerDependencies:
       svelte: ^3.0.0 || ^4.0.0 || ^5.0.0-next.1
 
-  svelte-remixicon@2.10.0:
-    resolution: {integrity: sha512-ILhivEdMj1nlRRuZ/NKIAOX6Mv3BIrUYz5u5UF3ly2LmQws68+eMZRyj0X8c0Us9wDAIs5tz1MPqHDy18jmXYg==}
+  svelte-remix@3.0.1:
+    resolution: {integrity: sha512-ctxia0JPCEAsnqMkVAdQ41icr2/HiuWwwqBQdBNhgJZw8OcwEb8TXMDI8qrybnlWVJc2dRxfaMIumBCF26xvhg==}
     peerDependencies:
-      svelte: ^3.54.0 || ^4.0.0 || ^5.0.0
+      svelte: ^5.0.0
 
   svelte-tel-input@4.2.0:
     resolution: {integrity: sha512-ggUNYngtJYNfgVjSmXalhpx4MMbCisA2bRHWZfKO9uIUDa03XLm28MTZr+IN/hR4gpV0qTurm+tl+k5kgbmqfQ==}
@@ -3078,7 +3078,7 @@ snapshots:
     dependencies:
       svelte: 5.56.3
 
-  svelte-remixicon@2.10.0(svelte@5.56.3):
+  svelte-remix@3.0.1(svelte@5.56.3):
     dependencies:
       svelte: 5.56.3
 

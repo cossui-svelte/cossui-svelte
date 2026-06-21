@@ -2,7 +2,7 @@
 	import { Label } from "$lib/components/ui/label";
 	import { RadioGroup, RadioGroupItem } from "$lib/components/ui/radio-group";
 
-	import IconStarFill from "svelte-remixicon/RiStarFill.svelte";
+	import IconStarFill from "svelte-remix/StarFillSystem.svelte";
 
 	let selectedValue = $state("all");
 </script>

@@ -4,7 +4,7 @@
 	import { cn } from "$lib/utils";
 
 	import {
-		LinkPreview as HoverCardPrimitive,
+		LinkPreview as LinkPreviewPrimitive,
 		type WithoutChildren,
 	} from "bits-ui";
 
@@ -17,15 +17,15 @@
 		showArrow = false,
 		sideOffset = 4,
 		...restProps
-	}: WithoutChildren<HoverCardPrimitive.ContentProps> & {
+	}: WithoutChildren<LinkPreviewPrimitive.ContentProps> & {
 		children: Snippet;
-		portalProps?: HoverCardPrimitive.PortalProps;
+		portalProps?: LinkPreviewPrimitive.PortalProps;
 		showArrow?: boolean;
 	} = $props();
 </script>
 
-<HoverCardPrimitive.Portal {...portalProps}>
-	<HoverCardPrimitive.Content
+<LinkPreviewPrimitive.Portal {...portalProps}>
+	<LinkPreviewPrimitive.Content
 		bind:ref
 		{sideOffset}
 		{align}
@@ -37,9 +37,9 @@
 	>
 		{@render children()}
 		{#if showArrow}
-			<HoverCardPrimitive.Arrow
+			<LinkPreviewPrimitive.Arrow
 				class="text-popover -my-px drop-shadow-[0_1px_0_hsl(var(--border))]"
 			/>
 		{/if}
-	</HoverCardPrimitive.Content>
-</HoverCardPrimitive.Portal>
+	</LinkPreviewPrimitive.Content>
+</LinkPreviewPrimitive.Portal>

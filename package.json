@@ -23,7 +23,7 @@
     "inputmask": "^5.0.9",
     "shiki": "^4.2.0",
     "svelte-check": "^4.6.0",
-    "svelte-remixicon": "^2.10.0",
+    "svelte-remix": "^3.0.1",
     "svelte-tel-input": "^4.2.0",
     "svelte-toolbelt": "^0.10.6",
     "sveltekit-superforms": "^2.30.1",
