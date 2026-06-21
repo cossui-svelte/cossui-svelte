@@ -15,7 +15,7 @@
     CardPanel,
   } from "$lib/components/ui/card";
 
-  import { allComponents } from "$lib/registry/registry-components";
+  import { allComponents, type RegistryUIEntry } from "$lib/registry/registry-components";
   import { allParticles } from "$lib/registry/registry-particles";
 
   const description = "Built for developers and AI.";
@@ -24,17 +24,13 @@
 </script>
 
 <svelte:head>
-  <title
-    >A new, modern UI component library built on top of Bits UI - coss ui-svelte</title
-  >
+  <title>A new, modern UI component library built on top of BitsUI - coss ui-svelte</title>
   <meta name="description" content={description} />
 </svelte:head>
 
 {#snippet categoryCard(
   slug: string,
-  name: string,
-  desc: string | undefined,
-  isNew: boolean,
+  meta: RegistryUIEntry
 )}
   {@const href = `particles?tags=${slug}`}
   <CardFrame
@@ -43,17 +39,20 @@
     <CardFrameHeader class="static grid grid-rows-[auto_1fr]">
       <CardFrameTitle class="font-heading text-base">
         <h2>
-          <a class="before:absolute before:inset-0" {href}>{name}</a>
+          <a class="before:absolute before:inset-0" {href}>{meta.name}</a>
         </h2>
       </CardFrameTitle>
       <CardFrameDescription class="line-clamp-2 sm:h-[2lh]">
-        <p>{desc || "\u00A0"}</p>
+        <p>{meta.description || "\u00A0"}</p>
       </CardFrameDescription>
     </CardFrameHeader>
     <Card
       class="pointer-events-none min-h-55 flex-1 flex-col flex-wrap overflow-x-auto bg-[color-mix(in_srgb,var(--color-card),var(--color-sidebar))] dark:bg-background"
     >
-      {#if isNew}
+
+      {#if meta.isnew}
+       <Badge class="absolute inset-e-3 top-3" variant="warning">To do</Badge>
+      {:else if meta.isnew}
         <Badge class="absolute inset-e-3 top-3" variant="info">New</Badge>
       {/if}
       <CardPanel
@@ -94,7 +93,7 @@
       class="grid gap-6 pt-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 xl:grid-cols-4"
     >
       {#each Object.entries(allComponents) as [id, meta]}
-        {@render categoryCard(id, meta.name, meta.description, meta.isnew)}
+        {@render categoryCard(id, meta)}
       {/each}
     </div>
   </div>

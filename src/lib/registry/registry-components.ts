@@ -10,6 +10,7 @@ export interface RegistryUIEntry {
   description: string;
   folder: string; // relative to src/lib/components/ui/
   isnew: boolean; // whether this is a new component that should be highlighted in the UI
+  istodo: boolean; // wether this is an identified component that needs to be worked on
   name: string;
   npmDependencies: string[];
   registryDependencies: string[];
@@ -22,6 +23,7 @@ const allComponents: RegistryUiData = {
     description: 'A set of collapsible panels with headings and content.',
     folder: 'accordion',
     isnew: false,
+    istodo: false,
     name: 'Accordion',
     npmDependencies: [],
     registryDependencies: []
@@ -31,6 +33,7 @@ const allComponents: RegistryUiData = {
     description: 'A callout for displaying important information.',
     folder: 'alert',
     isnew: false,
+    istodo: false,
     name: 'Alert',
     npmDependencies: [],
     registryDependencies: []
@@ -40,6 +43,7 @@ const allComponents: RegistryUiData = {
     description: 'A dialog that requires user response to proceed.',
     folder: 'alert-dialog',
     isnew: false,
+    istodo: false,
     name: 'Alert Dialog',
     npmDependencies: [],
     registryDependencies: []
@@ -49,6 +53,7 @@ const allComponents: RegistryUiData = {
     description: 'Displays content within a desired ratio.',
     folder: 'aspect-ratio',
     isnew: false,
+    istodo: false,
     name: 'Aspect Ratio',
     npmDependencies: [],
     registryDependencies: []
@@ -58,6 +63,7 @@ const allComponents: RegistryUiData = {
     description: 'An input that suggests options as you type.',
     folder: 'autocomplete',
     isnew: false,
+    istodo: false,
     name: 'Autocomplete',
     npmDependencies: [],
     registryDependencies: []
@@ -67,6 +73,7 @@ const allComponents: RegistryUiData = {
     description: 'An image element with a fallback for representing the user.',
     folder: 'avatar',
     isnew: false,
+    istodo: false,
     name: 'Avatar',
     npmDependencies: [],
     registryDependencies: []
@@ -76,6 +83,7 @@ const allComponents: RegistryUiData = {
     description: 'A badge or a component that looks like a badge.',
     folder: 'badge',
     isnew: false,
+    istodo: false,
     name: 'Badge',
     npmDependencies: [],
     registryDependencies: []
@@ -85,6 +93,7 @@ const allComponents: RegistryUiData = {
     description: 'Displays the path to the current resource using a hierarchy of links.',
     folder: 'breadcrumb',
     isnew: false,
+    istodo: false,
     name: 'Breadcrumb',
     npmDependencies: [],
     registryDependencies: []
@@ -94,6 +103,7 @@ const allComponents: RegistryUiData = {
     description: 'A button or a component that looks like a button.',
     folder: 'button',
     isnew: false,
+    istodo: false,
     name: 'Button',
     npmDependencies: [],
     registryDependencies: []
@@ -103,6 +113,7 @@ const allComponents: RegistryUiData = {
     description: 'A content container for grouping related information.',
     folder: 'card',
     isnew: false,
+    istodo: false,
     name: 'Card',
     npmDependencies: [],
     registryDependencies: []
@@ -112,6 +123,7 @@ const allComponents: RegistryUiData = {
     description: 'A control allowing the user to toggle between checked and not checked.',
     folder: 'checkbox',
     isnew: false,
+    istodo: false,
     name: 'Checkbox',
     npmDependencies: [],
     registryDependencies: []
@@ -121,6 +133,7 @@ const allComponents: RegistryUiData = {
     description: 'Provides shared state to a series of checkboxes.',
     folder: 'checkbox-group',
     isnew: false,
+    istodo: false,
     name: 'Checkbox Group',
     npmDependencies: [],
     registryDependencies: []
@@ -130,6 +143,7 @@ const allComponents: RegistryUiData = {
     description: 'A collapsible panel controlled by a button trigger.',
     folder: 'collapsible',
     isnew: false,
+    istodo: false,
     name: 'Collapsible',
     npmDependencies: [],
     registryDependencies: []
@@ -139,6 +153,7 @@ const allComponents: RegistryUiData = {
     description: 'An input combined with a list of predefined items to select.',
     folder: 'combobox',
     isnew: false,
+    istodo: false,
     name: 'Combobox',
     npmDependencies: [],
     registryDependencies: []
@@ -149,6 +164,7 @@ const allComponents: RegistryUiData = {
       'A command palette component built with Dialog and Autocomplete for searching and executing commands.',
     folder: 'command',
     isnew: false,
+    istodo: false,
     name: 'Command',
     npmDependencies: [],
     registryDependencies: []
@@ -158,6 +174,7 @@ const allComponents: RegistryUiData = {
     description: 'A menu that opens on right-click, providing contextual actions.',
     folder: 'context-menu',
     isnew: true,
+    istodo: false,
     name: 'Context Menu',
     npmDependencies: [],
     registryDependencies: []
@@ -167,6 +184,7 @@ const allComponents: RegistryUiData = {
     description: 'A component for cropping images with a resizable and movable selection area.',
     folder: 'cropper',
     isnew: false,
+    istodo: false,
     name: 'Cropper',
     npmDependencies: [],
     registryDependencies: []
@@ -176,6 +194,7 @@ const allComponents: RegistryUiData = {
     description: 'A popup that opens on top of the entire page.',
     folder: 'dialog',
     isnew: false,
+    istodo: false,
     name: 'Dialog',
     npmDependencies: [],
     registryDependencies: []
@@ -186,6 +205,7 @@ const allComponents: RegistryUiData = {
       'A panel that slides in from the edge of the screen with swipe gestures, snap points, and nested drawer support.',
     folder: 'drawer',
     isnew: true,
+    istodo: false,
     name: 'Drawer',
     npmDependencies: [],
     registryDependencies: []
@@ -195,6 +215,7 @@ const allComponents: RegistryUiData = {
     description: 'A container for displaying empty state information.',
     folder: 'empty',
     isnew: false,
+    istodo: false,
     name: 'Empty',
     npmDependencies: [],
     registryDependencies: []
@@ -204,6 +225,7 @@ const allComponents: RegistryUiData = {
     description: 'A component that provides labelling and validation for form controls.',
     folder: 'field',
     isnew: false,
+    istodo: false,
     name: 'Field',
     npmDependencies: [],
     registryDependencies: []
@@ -213,6 +235,7 @@ const allComponents: RegistryUiData = {
     description: 'A native fieldset element with a legend.',
     folder: 'fieldset',
     isnew: false,
+    istodo: false,
     name: 'Fieldset',
     npmDependencies: [],
     registryDependencies: []
@@ -222,6 +245,7 @@ const allComponents: RegistryUiData = {
     description: 'A component for uploading files with drag-and-drop support.',
     folder: 'file-upload',
     isnew: false,
+    istodo: false,
     name: 'File Upload',
     npmDependencies: [],
     registryDependencies: []
@@ -231,6 +255,7 @@ const allComponents: RegistryUiData = {
     description: 'A form wrapper component that simplifies validation and submission.',
     folder: 'form',
     isnew: false,
+    istodo: false,
     name: 'Form',
     npmDependencies: [],
     registryDependencies: []
@@ -240,6 +265,7 @@ const allComponents: RegistryUiData = {
     description: 'A framed container for grouping related information.',
     folder: 'frame',
     isnew: false,
+    istodo: false,
     name: 'Frame',
     npmDependencies: [],
     registryDependencies: []
@@ -249,6 +275,7 @@ const allComponents: RegistryUiData = {
     description: 'A component for visually grouping a series of controls.',
     folder: 'group',
     isnew: false,
+    istodo: false,
     name: 'Group',
     npmDependencies: [],
     registryDependencies: []
@@ -258,6 +285,7 @@ const allComponents: RegistryUiData = {
     description: 'A native input element.',
     folder: 'input',
     isnew: false,
+    istodo: false,
     name: 'Input',
     npmDependencies: [],
     registryDependencies: []
@@ -268,6 +296,7 @@ const allComponents: RegistryUiData = {
       'A flexible component for grouping inputs with addons, buttons, and other elements.',
     folder: 'input-group',
     isnew: false,
+    istodo: false,
     name: 'Input Group',
     npmDependencies: [],
     registryDependencies: []
@@ -277,6 +306,7 @@ const allComponents: RegistryUiData = {
     description: 'A component for displaying keyboard keys and shortcuts.',
     folder: 'kbd',
     isnew: false,
+    istodo: false,
     name: 'Kbd',
     npmDependencies: [],
     registryDependencies: []
@@ -286,6 +316,7 @@ const allComponents: RegistryUiData = {
     description: 'Renders an accessible label associated with controls.',
     folder: 'label',
     isnew: false,
+    istodo: false,
     name: 'Label',
     npmDependencies: [],
     registryDependencies: []
@@ -295,6 +326,7 @@ const allComponents: RegistryUiData = {
     description: 'A popup that appears when an element is hovered, showing preview information.',
     folder: 'link-preview',
     isnew: false,
+    istodo: false,
     name: 'Link Preview',
     npmDependencies: [],
     registryDependencies: []
@@ -304,6 +336,7 @@ const allComponents: RegistryUiData = {
     description: 'A list of actions in a dropdown, enhanced with keyboard navigation.',
     folder: 'menu',
     isnew: true,
+    istodo: false,
     name: 'Menu',
     npmDependencies: [],
     registryDependencies: []
@@ -313,6 +346,7 @@ const allComponents: RegistryUiData = {
     description: 'A graphical display of a numeric value within a range.',
     folder: 'meter',
     isnew: false,
+    istodo: false,
     name: 'Meter',
     npmDependencies: [],
     registryDependencies: []
@@ -322,6 +356,7 @@ const allComponents: RegistryUiData = {
     description: 'A numeric input element with increment and decrement buttons, and a scrub area.',
     folder: 'number-field',
     isnew: false,
+    istodo: false,
     name: 'Number Field',
     npmDependencies: [],
     registryDependencies: []
@@ -331,6 +366,7 @@ const allComponents: RegistryUiData = {
     description: 'A segmented input for one-time passwords and verification codes.',
     folder: 'otp-field',
     isnew: true,
+    istodo: false,
     name: 'Otp Field',
     npmDependencies: [],
     registryDependencies: []
@@ -340,6 +376,7 @@ const allComponents: RegistryUiData = {
     description: 'A pagination with page navigation, next and previous links.',
     folder: 'pagination',
     isnew: false,
+    istodo: false,
     name: 'Pagination',
     npmDependencies: [],
     registryDependencies: []
@@ -349,6 +386,7 @@ const allComponents: RegistryUiData = {
     description: 'An accessible popup anchored to a button.',
     folder: 'popover',
     isnew: false,
+    istodo: false,
     name: 'Popover',
     npmDependencies: [],
     registryDependencies: []
@@ -359,6 +397,7 @@ const allComponents: RegistryUiData = {
       'A popup that appears when a link is hovered, showing a preview for sighted users.',
     folder: 'preview-card',
     isnew: false,
+    istodo: false,
     name: 'Preview Card',
     npmDependencies: [],
     registryDependencies: []
@@ -368,6 +407,7 @@ const allComponents: RegistryUiData = {
     description: 'Displays the status of a task that takes a long time.',
     folder: 'progress',
     isnew: false,
+    istodo: false,
     name: 'Progress',
     npmDependencies: [],
     registryDependencies: []
@@ -378,6 +418,7 @@ const allComponents: RegistryUiData = {
       'A set of checkable buttons where no more than one of the buttons can be checked at a time.',
     folder: 'radio-group',
     isnew: false,
+    istodo: false,
     name: 'Radio Group',
     npmDependencies: [],
     registryDependencies: []
@@ -387,6 +428,7 @@ const allComponents: RegistryUiData = {
     description: 'A native scroll container with custom scrollbars.',
     folder: 'scroll-area',
     isnew: false,
+    istodo: false,
     name: 'Scroll Area',
     npmDependencies: [],
     registryDependencies: []
@@ -396,6 +438,7 @@ const allComponents: RegistryUiData = {
     description: 'A common form component for choosing a predefined value in a dropdown menu.',
     folder: 'select',
     isnew: false,
+    istodo: false,
     name: 'Select',
     npmDependencies: [],
     registryDependencies: []
@@ -405,6 +448,7 @@ const allComponents: RegistryUiData = {
     description: 'A separator element accessible to screen readers.',
     folder: 'separator',
     isnew: false,
+    istodo: false,
     name: 'Separator',
     npmDependencies: [],
     registryDependencies: []
@@ -414,6 +458,7 @@ const allComponents: RegistryUiData = {
     description: 'A flyout that opens from the side of the screen, based on the dialog component.',
     folder: 'sheet',
     isnew: false,
+    istodo: false,
     name: 'Sheet',
     npmDependencies: [],
     registryDependencies: []
@@ -423,6 +468,7 @@ const allComponents: RegistryUiData = {
     description: 'A loading state skeleton for your components.',
     folder: 'skeleton',
     isnew: false,
+    istodo: false,
     name: 'Skeleton',
     npmDependencies: [],
     registryDependencies: []
@@ -432,6 +478,7 @@ const allComponents: RegistryUiData = {
     description: 'An input where the user selects a value from within a given range.',
     folder: 'slider',
     isnew: false,
+    istodo: false,
     name: 'Slider',
     npmDependencies: [],
     registryDependencies: []
@@ -441,6 +488,7 @@ const allComponents: RegistryUiData = {
     description: 'An indicator that can be used to show a loading state.',
     folder: 'spinner',
     isnew: false,
+    istodo: false,
     name: 'Spinner',
     npmDependencies: [],
     registryDependencies: []
@@ -450,6 +498,7 @@ const allComponents: RegistryUiData = {
     description: 'A component to layout resizable panels with a draggable divider.',
     folder: 'split-pane',
     isnew: false,
+    istodo: false,
     name: 'Split Pane',
     npmDependencies: [],
     registryDependencies: []
@@ -459,6 +508,7 @@ const allComponents: RegistryUiData = {
     description: 'A component for displaying a series of steps in a process.',
     folder: 'stepper',
     isnew: false,
+    istodo: false,
     name: 'Stepper',
     npmDependencies: [],
     registryDependencies: []
@@ -468,6 +518,7 @@ const allComponents: RegistryUiData = {
     description: 'A control that indicates whether a setting is on or off.',
     folder: 'switch',
     isnew: false,
+    istodo: false,
     name: 'Switch',
     npmDependencies: [],
     registryDependencies: []
@@ -477,6 +528,7 @@ const allComponents: RegistryUiData = {
     description: 'A simple table component for displaying tabular data.',
     folder: 'table',
     isnew: false,
+    istodo: false,
     name: 'Table',
     npmDependencies: [],
     registryDependencies: []
@@ -486,6 +538,7 @@ const allComponents: RegistryUiData = {
     description: 'A component for toggling between related panels on the same page.',
     folder: 'tabs',
     isnew: false,
+    istodo: false,
     name: 'Tabs',
     npmDependencies: [],
     registryDependencies: []
@@ -495,6 +548,7 @@ const allComponents: RegistryUiData = {
     description: 'A native textarea element for multi-line text input.',
     folder: 'textarea',
     isnew: false,
+    istodo: false,
     name: 'Textarea',
     npmDependencies: [],
     registryDependencies: []
@@ -504,6 +558,7 @@ const allComponents: RegistryUiData = {
     description: 'A component for displaying a series of events in chronological order.',
     folder: 'timeline',
     isnew: false,
+    istodo: false,
     name: 'Timeline',
     npmDependencies: [],
     registryDependencies: []
@@ -513,6 +568,7 @@ const allComponents: RegistryUiData = {
     description: 'A temporary notification that appears on screen to inform users.',
     folder: 'toast',
     isnew: false,
+    istodo: false,
     name: 'Toast',
     npmDependencies: [],
     registryDependencies: []
@@ -522,6 +578,7 @@ const allComponents: RegistryUiData = {
     description: 'A two-state button that can be toggled on or off.',
     folder: 'toggle',
     isnew: false,
+    istodo: false,
     name: 'Toggle',
     npmDependencies: [],
     registryDependencies: []
@@ -531,6 +588,7 @@ const allComponents: RegistryUiData = {
     description: 'Provides a shared state to a series of toggle buttons.',
     folder: 'toggle-group',
     isnew: false,
+    istodo: false,
     name: 'Toggle Group',
     npmDependencies: [],
     registryDependencies: []
@@ -540,6 +598,7 @@ const allComponents: RegistryUiData = {
     description: 'A container for grouping a set of buttons and controls.',
     folder: 'toolbar',
     isnew: false,
+    istodo: false,
     name: 'Toolbar',
     npmDependencies: [],
     registryDependencies: []
@@ -550,6 +609,7 @@ const allComponents: RegistryUiData = {
       'A popup that appears when an element is hovered or focused, showing a hint for sighted users.',
     folder: 'tooltip',
     isnew: false,
+    istodo: false,
     name: 'Tooltip',
     npmDependencies: [],
     registryDependencies: []
@@ -559,6 +619,7 @@ const allComponents: RegistryUiData = {
     description: 'A component for displaying a hierarchical tree of items.',
     folder: 'tree',
     isnew: true,
+    istodo: false,
     name: 'Tree',
     npmDependencies: [],
     registryDependencies: []

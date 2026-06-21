@@ -1,14 +1,15 @@
 /// <reference types="node" />
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import customMetaData from './user-registry-ui-metadata.js';
+import customMetaData from './custom-component-metadata.js';
 
 export interface RegistryUIEntry {
     name?: string;
     description: string;
     folder?: string; // relative to src/lib/components/ui/
     category: "ui" | "origin-ui" | "bits-ui" | "extra"; // for now, just a simple category to separate "core" UI components from extra ones
-    isnew?: boolean; // whether this is a new component that should be highlighted in the UI
+    isnew?: boolean; // wether this is a new component that should be highlighted in the UI
+    istodo?: boolean; // wether this is an identified component that needs to be worked on
     npmDependencies?: string[];
     registryDependencies?: string[];
 }
@@ -58,6 +59,7 @@ async function scanExamples(): Promise<void> {
                 description: meta?.description ?? '',
                 folder: `${category}`,
                 isnew: meta?.isnew ?? false,
+                  istodo: meta?.istodo ?? false,
                 npmDependencies: [],
                 registryDependencies: []
             };
@@ -82,6 +84,7 @@ export interface RegistryUIEntry {
     folder: string; // relative to src/lib/components/ui/
     category: "ui" | "origin-ui" | "bits-ui" | "extra"; // for now, just a simple category to separate "core" UI components from extra ones
     isnew: boolean; // whether this is a new component that should be highlighted in the UI
+    istodo: boolean; // wether this is an identified component that needs to be worked on
     npmDependencies: string[];
     registryDependencies: string[];
 }

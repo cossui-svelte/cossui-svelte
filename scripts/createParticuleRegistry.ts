@@ -1,7 +1,7 @@
 /// <reference types="node" />
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import userRegistry from './user-registry-particule-metadata.js';
+import userRegistry from './custom-particule-metadata.js';
 
 export interface RegistryParticuleEntry {
     name?: string;
