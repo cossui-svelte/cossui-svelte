@@ -17,7 +17,13 @@
 		"not_found_handling": "single-page-application"
 	},
 	"observability": {
-		"enabled": true
+		"logs": {
+			"enabled": false,
+			"invocation_logs": true
+		},
+		"traces": {
+			"enabled": false
+		}
 	},
 	"upload_source_maps": false
 }
