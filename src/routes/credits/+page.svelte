@@ -6,7 +6,7 @@
     </h2>
 
     <p class="text-base/7 text-muted-foreground">
-      This project is an unofficial port of Coss UI for Svelte.
+      This project is an unofficial port of the Coss UI components to Svelte.
     </p>
 
     <p class="text-base/7 text-muted-foreground">
@@ -35,10 +35,10 @@
     </p>
 
     <p class="text-base/7 text-muted-foreground">
-      My aim: a single location for all the components I need, with a consistent
-      look and feel. No more extensive research to find the
-      right component library, and no more mixing and matching components from
-      different libraries that don't work well together.
+    My aim is to keep every component in one place, with a consistent
+      look and feel — so there's no lengthy search for the right library, and
+      no patching components from different libraries that don't play
+      nicely together.
     </p>
 
     <p class="pt-2 font-heading text-lg font-medium italic text-foreground">

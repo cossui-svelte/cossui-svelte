@@ -7,7 +7,7 @@
 >
   <div
     aria-hidden="true"
-    class="before:-left-[11.5px] before:-ml-1 after:-right-[11.5px] after:-mr-1 container pointer-events-none absolute inset-0 z-50 before:absolute before:top-[-3.5px] before:z-1 before:size-2 before:rounded-[2px] before:border before:border-border before:bg-popover before:bg-clip-padding before:shadow-xs after:absolute after:top-[-3.5px] after:z-1 after:size-2 after:rounded-[2px] after:border after:border-border after:bg-background after:bg-clip-padding after:shadow-xs dark:after:bg-clip-border dark:before:bg-clip-border"
+    class="before:left-[-11.5px] before:-ml-1 after:right-[-11.5px] after:-mr-1 container pointer-events-none absolute inset-0 z-50 before:absolute before:top-[-3.5px] before:z-1 before:size-2 before:rounded-[2px] before:border before:border-border before:bg-popover before:bg-clip-padding before:shadow-xs after:absolute after:top-[-3.5px] after:z-1 after:size-2 after:rounded-[2px] after:border after:border-border after:bg-background after:bg-clip-padding after:shadow-xs dark:after:bg-clip-border dark:before:bg-clip-border"
   ></div>
   <div
     class="text-xs container flex w-full flex-col items-center justify-center gap-2 px-4 sm:px-6"
@@ -22,7 +22,7 @@
       – open source, open heart, open mind.
     </p>
     <p class="italic">
-      This project is not affiliated with Coss.com. It would have not been possible without <a
+      This project is not affiliated with coss.com. <a
         class="font-heading text-foreground"
         href="/credits">full credits</a
       >
