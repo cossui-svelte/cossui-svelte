@@ -13,7 +13,7 @@
 	import ParticlesDisplay from "./ParticlesDisplay.svelte";
 	import { browser } from "$app/environment";
 
-	const particleCount = allParticles.length;
+	const particleCount = Object.keys(allParticles).length;
 	const description = `Discover ${particleCount} ready-to-use particles, the building blocks of your design system. Filter by category to find the perfect component for your project.`;
 
 	const selectedCategories = $derived(() => {

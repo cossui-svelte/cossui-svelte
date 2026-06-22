@@ -1,7 +1,7 @@
 import type { Component } from 'svelte';
 
 export interface RegistryParticuleEntry {
-  component: Component;
+  component: () => Promise<{ default: Component }>;
   description: string;
   // relative to src/lib/components/
   file: string;
@@ -222,18 +222,17 @@ function idToName(id: string): string {
 }
 
 const modules = import.meta.glob<{ default: Component }>(
-  '../components/particles/**/*.svelte',
-  { eager: true }
+  '../components/particles/**/*.svelte'
 );
 
 const allParticles: RegistryParticuleData = Object.fromEntries(
-  Object.entries(modules).map(([path, mod]) => {
+  Object.entries(modules).map(([path, loader]) => {
     const id = path.match(/\/([^/]+)\.svelte$/)?.[1] ?? '';
     const meta = metadata[id] ?? {};
     return [
       id,
       {
-        component: mod.default,
+        component: loader,
         description: meta.description ?? '',
         file: id,
         name: idToName(id),

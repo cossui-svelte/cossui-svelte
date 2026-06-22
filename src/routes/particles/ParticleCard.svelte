@@ -31,8 +31,10 @@
 			class="flex items-center justify-center p-4"
 		>
 			<p class="text-muted-foreground text-sm">
-				WE SHOULD RENDER THE PREVIEW HERE
-				{particle.name}
+			{#await particle.component() then { default: Comp }}
+  <Comp />
+{/await}
+		
 			</p>
 		</div>
 	{/snippet}
