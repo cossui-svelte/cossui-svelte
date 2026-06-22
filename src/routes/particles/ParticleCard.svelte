@@ -20,7 +20,7 @@
 		colSpan?: number;
 	} = $props();
 
-	const cossuiUrl = "https://coss.ui/";
+	const cossuiUrl = "https://cossui-svelte.com/";
 </script>
 
 <ParticleCardContainer class={className} {colSpan}>
@@ -32,8 +32,8 @@
 		>
 			<p class="text-muted-foreground text-sm">
 			{#await particle.component() then { default: Comp }}
-  <Comp />
-{/await}
+  				<Comp />
+			{/await}
 		
 			</p>
 		</div>
