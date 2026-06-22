@@ -11,18 +11,26 @@ const highlighterPromise = createHighlighter({
 });
 
 export const GET: RequestHandler = async ({ params }) => {
+
+  console.log(params)
+
+  const id = params.file;
   // validate the file parameter
-  if (!/^[a-z0-9-]+$/.test(params.file)) {
+  if (!/^[a-z0-9-]+$/.test(id)) {
     error(400, 'Invalid file parameter');
   }
 
-  const meta = allParticles[params.file];
+  const meta = allParticles[id];
+
+  console.log(meta)
 
   if (!meta) {
     error(403, 'Not allowed');
   }
 
-  const filePath = join(process.cwd(), 'src/lib/components/particles', `${meta.file}.svelte`);
+
+
+  const filePath = join(process.cwd(), `src/lib/components/particles/${meta.folder}/${meta.file}.svelte`);
 
   try {
     const source = readFileSync(filePath, 'utf-8');

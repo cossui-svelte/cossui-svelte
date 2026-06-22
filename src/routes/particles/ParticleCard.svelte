@@ -1,11 +1,10 @@
 <script lang="ts">
 	import Info from "@lucide/svelte/icons/info";
+	import Copy from "@lucide/svelte/icons/copy";
+	import Check from "@lucide/svelte/icons/check";
 	import { Button } from "$lib/components/ui/button";
-	import {
-		Drawer,
-		DrawerPopup,
-		DrawerTrigger,
-	} from "$lib/components/ui/drawer";
+	import { Drawer, DrawerPopup } from "$lib/components/ui/drawer";
+	import { ScrollArea } from "$lib/components/ui/scroll-area";
 	import CodeBlockCommand from "$lib/components/app/code-block-command.svelte";
 	import ParticleCardContainer from "./ParticleCardContainer.svelte";
 	import type { RegistryParticuleEntry } from "$lib/registry/registry-particles";
@@ -21,6 +20,42 @@
 	} = $props();
 
 	const cossuiUrl = "https://cossui-svelte.com/";
+
+    let drawerOpen = $state(false);
+    let drawerName = $state<string>("");
+    let sourceFile = $state<string | null>(null);
+    let sourceHtml = $state<string>("");
+    let sourceRaw = $state<string>("");
+    let loadingSource = $state(false);
+    let copied = $state(false);
+
+    async function viewSource(file: string, name: string) {
+        if (drawerOpen && sourceFile === file) {
+            closeDrawer();
+            return;
+        }
+        drawerName = name;
+        sourceFile = file;
+        drawerOpen = true;
+        loadingSource = true;
+        sourceHtml = "";
+        sourceRaw = "";
+        const res = await fetch(`/api/source/${file}`);
+        const data = await res.json();
+        sourceHtml = data.html;
+        sourceRaw = data.raw;
+        loadingSource = false;
+    }
+
+    function closeDrawer() {
+        drawerOpen = false;
+        setTimeout(() => {
+            sourceFile = null;
+            sourceHtml = "";
+            sourceRaw = "";
+        }, 300);
+    }
+
 </script>
 
 <ParticleCardContainer class={className} {colSpan}>
@@ -45,17 +80,13 @@
 			<span class="truncate">{particle.description ?? ""}</span>
 		</p>
 		<div class="flex items-center gap-1.5">
-			<Drawer position="right">
-				<DrawerTrigger>
-					{#snippet child({ props })}
-						<Button
-							{...props}
-							class="text-sm"
-							size="sm"
-							variant="outline">View code</Button
-						>
-					{/snippet}
-				</DrawerTrigger>
+			<Button
+				class="text-sm"
+				size="sm"
+				variant="outline"
+				onclick={() => viewSource(particle.file, particle.name)}
+			>View code</Button>
+			<Drawer position="right" open={drawerOpen} onOpenChange={(v) => { if (!v) closeDrawer(); }}>
 				<DrawerPopup
 					class="max-w-4xl"
 					showBar
@@ -76,17 +107,36 @@
 								/>
 							</figure>
 						</div>
-						<div
-							class="flex h-full flex-1 flex-col overflow-hidden"
-						>
-							<div
-								class="flex items-center justify-between gap-2"
-							>
+						<div class="flex h-full flex-1 flex-col overflow-hidden">
+							<div class="flex items-center justify-between gap-2">
 								<h2 class="mt-6 mb-4 font-semibold text-xl">
-									Code
+									{drawerName}
 								</h2>
-								<p>WE SHOULD RENDER THE CODE HERE</p>
+								<button
+									class="rounded p-1.5 opacity-70 hover:opacity-100"
+									onclick={async () => {
+										await navigator.clipboard.writeText(sourceRaw);
+										copied = true;
+										setTimeout(() => (copied = false), 2000);
+									}}
+									type="button"
+								>
+									{#if copied}
+										<Check class="size-4" strokeWidth={2} />
+									{:else}
+										<Copy class="size-4" strokeWidth={2} />
+									{/if}
+								</button>
 							</div>
+							{#if loadingSource}
+								<div class="flex flex-1 items-center justify-center text-muted-foreground text-sm">
+									Loading…
+								</div>
+							{:else if sourceHtml}
+								<ScrollArea class="flex-1 overflow-hidden rounded-md border">
+									{@html sourceHtml}
+								</ScrollArea>
+							{/if}
 						</div>
 					</div>
 				</DrawerPopup>

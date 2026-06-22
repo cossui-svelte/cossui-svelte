@@ -5,6 +5,7 @@ export interface RegistryParticuleEntry {
   description: string;
   // relative to src/lib/components/
   file: string;
+  folder:string;
   name: string;
   npmDependencies: string[];
   registryDependencies: string[];
@@ -301,6 +302,8 @@ const modules = import.meta.glob<{ default: Component }>('../components/particle
 const allParticles: RegistryParticuleData = Object.fromEntries(
   Object.entries(modules).map(([path, loader]) => {
     const id = path.match(/\/([^/]+)\.svelte$/)?.[1] ?? '';
+    // const relpath = path.match(/\/([^/]+\/[^/]+)\.svelte$/)?.[1] ?? '';
+    const folder = path.match(/\/([^/]+)\/[^/]+\.svelte$/)?.[1] ?? '';
     const meta = metadata[id] ?? {};
     return [
       id,
@@ -308,6 +311,7 @@ const allParticles: RegistryParticuleData = Object.fromEntries(
         component: loader,
         description: meta.description ?? '',
         file: id,
+        folder: folder,
         name: idToName(id),
         npmDependencies: meta.npmDependencies ?? [],
         registryDependencies: meta.registryDependencies ?? [],
