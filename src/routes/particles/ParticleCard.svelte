@@ -66,12 +66,9 @@
 			data-slot="preview"
 			class="flex items-center justify-center p-4"
 		>
-			<p class="text-muted-foreground text-sm">
 			{#await particle.component() then { default: Comp }}
-  				<Comp />
+				<Comp />
 			{/await}
-		
-			</p>
 		</div>
 	{/snippet}
 
@@ -101,10 +98,10 @@
 							</h2>
 							<figure>
 								<CodeBlockCommand
-									__bun__="bunx --bun shadcn@latest add @coss/{particle.name}"
-									__npm__="npx shadcn@latest add @coss/{particle.name}"
-									__pnpm__="pnpm dlx shadcn@latest add @coss/{particle.name}"
-									__yarn__="yarn dlx shadcn@latest add @coss/{particle.name}"
+									__bun__={`bunx --bun shadcn@latest add @coss/${particle.name}`}
+									__npm__={`npx shadcn@latest add @coss/${particle.name}`}
+									__pnpm__={`pnpm dlx shadcn@latest add @coss/${particle.name}`}
+									__yarn__={`yarn dlx shadcn@latest add @coss/${particle.name}`}
 								/>
 							</figure>
 						</div>
@@ -135,7 +132,7 @@
 								</div>
 							{:else if sourceHtml}
 
-							  <ComponentSource collapsible={false} src="accordion-01"/>
+							  <ComponentSource collapsible={false} src={particle.file}/>
 
 								<ScrollArea class="flex-1 overflow-hidden rounded-md border">
 								 <div class="px-4 py-3.5 font-mono text-[.8125rem]">

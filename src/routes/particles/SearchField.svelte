@@ -32,10 +32,10 @@
 	} = $props();
 
 	let inputValue = $state("");
-	let open = $state(selectedItems.length === 0);
+	let isOpen = $state(selectedItems.length === 0);
 
 	$effect(() => {
-		if (selectedItems.length === 0) open = true;
+		if (selectedItems.length === 0) isOpen = true;
 	});
 
 	const selectedValues = $derived(selectedItems.map((i) => i.value));
@@ -87,7 +87,7 @@
 			.filter((i): i is SearchItem => !!i);
 		onItemsChange(newItems);
 		inputValue = "";
-		open = false;
+		isOpen = false;
 	}
 
 	function removeItem(value: string) {
@@ -100,8 +100,8 @@
 		type="multiple"
 		value={selectedValues}
 		onValueChange={handleValueChange}
-		{open}
-		onOpenChange={(v) => (open = v)}
+		{isOpen}
+		onOpenChange={(v) => (isOpen = v)}
 		inputValue={inputValue}
 	>
 		<ComboboxChips>

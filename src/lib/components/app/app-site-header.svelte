@@ -60,9 +60,11 @@
 
   <MainNav class="hidden lg:flex" items={navItems} />
 
+  <!-- 
+  SEARCH DOCS
   <div class="mx-2 hidden w-full flex-1 md:flex md:w-auto md:flex-none">
     <CommandMenu {navItems} {tree} />
-  </div>
+  </div> -->
 
   <Separator class="h-5 max-md:hidden" orientation="vertical" />
 </SiteHeaderBase>

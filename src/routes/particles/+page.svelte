@@ -15,7 +15,7 @@
 	const particleCount = Object.keys(allParticles).length;
 	const description = `Discover ${particleCount} ready-to-use particles, the building blocks of your design system. Filter by category to find the perfect component for your project.`;
 
-	const selectedCategories = $derived(() => {
+	const selectedCategories = $derived.by(() => {
 		if (!browser) return { hasInvalid: false, valid: [] };
 
 		const rawCategories =
@@ -46,13 +46,13 @@
 
 	<SearchContainer />
 
-	{#if selectedCategories().hasInvalid}
+	{#if selectedCategories.hasInvalid}
 		<div class="text-center">
 			<p class="text-muted-foreground">
 				No particles found for the selected filters
 			</p>
 		</div>
-	{:else if selectedCategories().valid.length > 0}
-		<ParticlesDisplay selectedCategories={selectedCategories().valid} />
+	{:else if selectedCategories.valid.length > 0}
+		<ParticlesDisplay selectedCategories={selectedCategories.valid} />
 	{/if}
 </div>
