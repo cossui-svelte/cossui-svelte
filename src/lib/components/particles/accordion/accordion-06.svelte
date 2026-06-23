@@ -1,17 +1,16 @@
 <script lang="ts">
-	import {
-		Accordion,
-		AccordionItem,
-		AccordionTrigger,
-		AccordionContent,
-	} from "$lib/components/ui/accordion";
-
 	import AtSign from "@lucide/svelte/icons/at-sign";
 	import Command from "@lucide/svelte/icons/command";
 	import Eclipse from "@lucide/svelte/icons/eclipse";
 	import Plus from "@lucide/svelte/icons/plus";
 	import Zap from "@lucide/svelte/icons/zap";
 	import { Accordion as AccordionPrimitive } from "bits-ui";
+	import {
+		Accordion,
+		AccordionContent,
+		AccordionItem,
+		AccordionTrigger,
+	} from "$lib/components/ui/accordion";
 
 	const items = [
 		{

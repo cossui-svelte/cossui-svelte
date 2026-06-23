@@ -1,13 +1,12 @@
 <script lang="ts">
 	import { Button } from "$lib/components/ui/button";
-
-	import ContentImg from "$assets/dialog-content.png?w=764&h=432&enhanced";
 	import {
 		Tooltip,
 		TooltipContent,
 		TooltipProvider,
 		TooltipTrigger,
 	} from "$lib/components/ui/tooltip";
+	import ContentImg from "$assets/dialog-content.png?w=764&h=432&enhanced";
 </script>
 
 <TooltipProvider delayDuration={0}>

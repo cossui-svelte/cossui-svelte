@@ -1,8 +1,7 @@
 <script lang="ts">
+	import Inputmask from "inputmask";
 	import { Input } from "$lib/components/ui/input";
 	import { Label } from "$lib/components/ui/label";
-
-	import Inputmask from "inputmask";
 
 	let inputElement = $state<HTMLInputElement | null>(null);
 

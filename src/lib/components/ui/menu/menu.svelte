@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
   import { DropdownMenu } from "bits-ui";
+  import type { Snippet } from "svelte";
 
   type Props = DropdownMenu.RootProps & { children?: Snippet };
 

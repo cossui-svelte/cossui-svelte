@@ -1,16 +1,16 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
   import { DropdownMenu } from "bits-ui";
-  import { cn } from "$lib/utils";
+  import type { Snippet } from "svelte";
   import type { HTMLAnchorAttributes } from "svelte/elements";
+  import { cn } from "$lib/utils";
 
   interface Props extends Omit<DropdownMenu.ItemProps, "children"> {
     children?: Snippet;
-    inset?: boolean;
-    variant?: "default" | "destructive";
     href?: HTMLAnchorAttributes["href"];
-    target?: HTMLAnchorAttributes["target"];
+    inset?: boolean;
     rel?: HTMLAnchorAttributes["rel"];
+    target?: HTMLAnchorAttributes["target"];
+    variant?: "default" | "destructive";
   }
 
   let {

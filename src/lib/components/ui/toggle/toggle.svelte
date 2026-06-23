@@ -2,9 +2,9 @@
 	import { Toggle as TogglePrimitive } from "bits-ui";
 	import { cn } from "$lib/utils";
 	import {
-		toggleVariants,
 		type ToggleSize,
 		type ToggleVariant,
+		toggleVariants,
 	} from "./toggle-variants";
 
 	type ToggleProps = TogglePrimitive.RootProps & {

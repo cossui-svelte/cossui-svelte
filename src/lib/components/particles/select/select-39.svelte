@@ -3,10 +3,10 @@
 	import {
 		Select,
 		SelectContent,
-		SelectItem,
-		SelectTrigger,
 		SelectGroup,
 		SelectGroupLabel,
+		SelectItem,
+		SelectTrigger,
 	} from "$lib/components/ui/select";
 	import { cn } from "$lib/utils";
 

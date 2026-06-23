@@ -7,7 +7,6 @@
 		SelectTrigger,
 	} from "$lib/components/ui/select";
 	import { cn } from "$lib/utils";
-
 	import Avatar01 from "$assets/avatar-40-01.jpg?w=80&h=80&enhanced";
 	import Avatar02 from "$assets/avatar-40-02.jpg?w=80&h=80&enhanced";
 	import Avatar03 from "$assets/avatar-40-03.jpg?w=80&h=80&enhanced";

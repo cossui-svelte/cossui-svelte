@@ -1,9 +1,4 @@
 <script lang="ts">
-  import PageHeaderDescription from "$lib/components/app/page-header-description.svelte";
-  import PageHeaderHeading from "$lib/components/app/page-header-heading.svelte";
-  import PageHeader from "$lib/components/app/page-header.svelte";
-  import CategoryThumbnail from "$lib/components/app/category-thumbnails.svelte";
-
   import { Badge } from "$lib/components/ui/badge";
   import { Button } from "$lib/components/ui/button";
   import {
@@ -14,7 +9,10 @@
     CardFrameTitle,
     CardPanel,
   } from "$lib/components/ui/card";
-
+  import CategoryThumbnail from "$lib/components/app/category-thumbnails.svelte";
+  import PageHeader from "$lib/components/app/page-header.svelte";
+  import PageHeaderDescription from "$lib/components/app/page-header-description.svelte";
+  import PageHeaderHeading from "$lib/components/app/page-header-heading.svelte";
   import { allComponents, type RegistryUIEntry } from "$lib/registry/registry-components";
   import { allParticles } from "$lib/registry/registry-particles";
 

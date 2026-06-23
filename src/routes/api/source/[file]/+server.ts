@@ -1,10 +1,10 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { error } from '@sveltejs/kit';
+import { highlighter as highlighterPromise } from '$lib/components/app/shiki';
 // import { createHighlighter } from 'shiki';
 import { allParticles } from '$lib/registry/registry-particles';
 import type { RequestHandler } from './$types';
-import { highlighter as highlighterPromise } from '$lib/components/app/shiki';
 
 // const highlighterPromise = createHighlighter({
 //   langs: ['svelte'],

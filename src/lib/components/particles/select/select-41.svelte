@@ -1,9 +1,7 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button";
-	import { Label } from "$lib/components/ui/label";
-
 	import Check from "@lucide/svelte/icons/check";
 	import ChevronDown from "@lucide/svelte/icons/chevron-down";
+	import { Button } from "$lib/components/ui/button";
 	import {
 		Command,
 		CommandEmpty,
@@ -12,6 +10,7 @@
 		CommandItem,
 		CommandList,
 	} from "$lib/components/ui/command";
+	import { Label } from "$lib/components/ui/label";
 	import {
 		Popover,
 		PopoverContent,

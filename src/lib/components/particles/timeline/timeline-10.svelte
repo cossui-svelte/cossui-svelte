@@ -4,15 +4,16 @@
 		TimelineContent,
 		TimelineItem,
 	} from "$lib/components/ui/timeline";
+
 	type ActionType = "create" | "edit" | "post" | "reply";
 
 	import type { Icon as IconType } from "@lucide/svelte";
-
 	import BookOpenIcon from "@lucide/svelte/icons/book-open";
 	import MessageCircleIcon from "@lucide/svelte/icons/message-circle";
 	import PencilIcon from "@lucide/svelte/icons/pencil";
 	import PlusIcon from "@lucide/svelte/icons/plus";
 	import Avatar02 from "$lib/assets/avatar-40-02.jpg?w=48&h=48&enhanced";
+
 	const items: {
 		action: ActionType;
 		date: Date;

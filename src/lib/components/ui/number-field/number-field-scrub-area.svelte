@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
-  import type { HTMLAttributes } from "svelte/elements";
   import { getContext } from "svelte";
+  import type { HTMLAttributes } from "svelte/elements";
   import { Label } from "$lib/components/ui/label";
   import { cn } from "$lib/utils";
   import {
@@ -10,8 +10,8 @@
   } from "./number-field.svelte";
 
   interface Props extends HTMLAttributes<HTMLSpanElement> {
-    label: string;
     children?: Snippet;
+    label: string;
   }
 
   let { label, class: className, children, ...restProps }: Props = $props();

@@ -1,11 +1,10 @@
 <script lang="ts">
+  import PanelLeft from "@lucide/svelte/icons/panel-left";
   import type { Snippet } from "svelte";
   import type { HTMLButtonAttributes } from "svelte/elements";
-  import PanelLeft from "@lucide/svelte/icons/panel-left";
-
-  import { getSidebarContext } from "./sidebar-context.js";
-  import { cn } from "$lib/utils";
   import { Button } from "$lib/components/ui/button";
+  import { cn } from "$lib/utils";
+  import { getSidebarContext } from "./sidebar-context.js";
 
   interface Props extends HTMLButtonAttributes {
     children?: Snippet;

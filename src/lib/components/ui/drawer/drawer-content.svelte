@@ -1,14 +1,14 @@
 <script lang="ts">
-	import { Drawer as DrawerPrimitive } from "$lib/vaul";
-	import { cn, type WithoutChildrenOrChild } from "$lib/utils";
-	import { getContext, type ComponentProps } from "svelte";
-	import { buttonVariants } from "$lib/components/ui/button/button-variants";
 	import XIcon from "@lucide/svelte/icons/x";
-	import DrawerViewport from "./drawer-viewport.svelte";
+	import { type ComponentProps, getContext } from "svelte";
+	import { buttonVariants } from "$lib/components/ui/button/button-variants";
+	import { cn, type WithoutChildrenOrChild } from "$lib/utils";
+	import { Drawer as DrawerPrimitive } from "$lib/vaul";
+	import DrawerBar from "./drawer-bar.svelte";
+	import DrawerClose from "./drawer-close.svelte";
 	import DrawerOverlay from "./drawer-overlay.svelte";
 	import DrawerPortal from "./drawer-portal.svelte";
-	import DrawerClose from "./drawer-close.svelte";
-	import DrawerBar from "./drawer-bar.svelte";
+	import DrawerViewport from "./drawer-viewport.svelte";
 
 	type DrawerPosition = "right" | "left" | "top" | "bottom";
 

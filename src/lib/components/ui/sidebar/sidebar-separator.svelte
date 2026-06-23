@@ -4,8 +4,8 @@
   import { cn } from "$lib/utils";
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
-    orientation?: "horizontal" | "vertical";
     decorative?: boolean;
+    orientation?: "horizontal" | "vertical";
   }
 
   let { class: className, ...restProps }: Props = $props();

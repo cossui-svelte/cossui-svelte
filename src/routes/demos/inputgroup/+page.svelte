@@ -1,5 +1,9 @@
 <script lang="ts">
-    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
+    import ArrowRightIcon from "@lucide/svelte/icons/arrow-right";
+    import CheckIcon from "@lucide/svelte/icons/check";
+    import CopyIcon from "@lucide/svelte/icons/copy";
+    import InfoIcon from "@lucide/svelte/icons/info";
+    import SearchIcon from "@lucide/svelte/icons/search";
     import { Badge } from "$lib/components/ui/badge";
     import { Button } from "$lib/components/ui/button";
     import {
@@ -20,11 +24,7 @@
         TooltipPopup,
         TooltipTrigger,
     } from "$lib/components/ui/tooltip";
-    import ArrowRightIcon from "@lucide/svelte/icons/arrow-right";
-    import CheckIcon from "@lucide/svelte/icons/check";
-    import CopyIcon from "@lucide/svelte/icons/copy";
-    import InfoIcon from "@lucide/svelte/icons/info";
-    import SearchIcon from "@lucide/svelte/icons/search";
+    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
 </script>
 
 <ComponentPreviewTabs>

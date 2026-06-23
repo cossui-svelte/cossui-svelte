@@ -1,9 +1,8 @@
 <script lang="ts">
-	import { Input } from "$lib/components/ui/input";
-	import { Label } from "$lib/components/ui/label";
-
 	import Eye from "@lucide/svelte/icons/eye";
 	import EyeOff from "@lucide/svelte/icons/eye-off";
+	import { Input } from "$lib/components/ui/input";
+	import { Label } from "$lib/components/ui/label";
 
 	let isVisible = $state(false);
 

@@ -1,13 +1,12 @@
 <script lang="ts">
-	import { Input } from "$lib/components/ui/input";
-	import { Button } from "$lib/components/ui/button";
-
 	import Check from "@lucide/svelte/icons/check";
 	import Copy from "@lucide/svelte/icons/copy";
 	import RiCodeFill from "svelte-remix/CodeFillDevelopment.svelte";
 	import RiFacebookFill from "svelte-remix/FacebookFillLogos.svelte";
 	import RiMailLine from "svelte-remix/MailLineBusiness.svelte";
 	import RiTwitterXFill from "svelte-remix/TwitterXFillLogos.svelte";
+	import { Button } from "$lib/components/ui/button";
+	import { Input } from "$lib/components/ui/input";
 	import {
 		Popover,
 		PopoverContent,

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { box, mergeProps } from "svelte-toolbelt";
-	import type { LegendProps } from "./types.js";
-	import { useId } from "$lib/formsnap/internal/utils/id.js";
 	import { useLegend } from "$lib/formsnap/formsnap.svelte.js";
+	import { useId } from "$lib/formsnap/internal/utils/id.js";
+	import type { LegendProps } from "./types.js";
 
 	let {
 		id = useId(),

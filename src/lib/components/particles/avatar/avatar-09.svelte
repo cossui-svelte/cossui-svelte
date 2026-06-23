@@ -1,11 +1,10 @@
 <script lang="ts">
-	import { Badge } from "$lib/components/ui/badge";
-
 	import {
 		Avatar,
 		AvatarFallback,
 		AvatarImage,
 	} from "$lib/components/ui/avatar";
+	import { Badge } from "$lib/components/ui/badge";
 </script>
 
 <div class="relative">

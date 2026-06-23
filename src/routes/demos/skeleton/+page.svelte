@@ -1,5 +1,6 @@
 <script lang="ts">
-    import ComponentPreviewTab from "$lib/components/app/docs/component-preview-tabs.svelte";
+    import UserRoundPlusIcon from "@lucide/svelte/icons/user-round-plus";
+    import UsersRoundIcon from "@lucide/svelte/icons/users-round";
     import {
         Avatar,
         AvatarFallback,
@@ -7,8 +8,7 @@
     } from "$lib/components/ui/avatar";
     import { Button } from "$lib/components/ui/button";
     import { Skeleton } from "$lib/components/ui/skeleton";
-    import UserRoundPlusIcon from "@lucide/svelte/icons/user-round-plus";
-    import UsersRoundIcon from "@lucide/svelte/icons/users-round";
+    import ComponentPreviewTab from "$lib/components/app/docs/component-preview-tabs.svelte";
 
     let loading = $state(true);
 

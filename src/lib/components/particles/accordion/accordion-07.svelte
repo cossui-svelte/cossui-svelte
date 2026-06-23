@@ -1,12 +1,11 @@
 <script lang="ts">
-	import {
-		Accordion,
-		AccordionItem,
-		AccordionContent,
-	} from "$lib/components/ui/accordion";
-
 	import ChevronDown from "@lucide/svelte/icons/chevron-down";
 	import { Accordion as AccordionPrimitive } from "bits-ui";
+	import {
+		Accordion,
+		AccordionContent,
+		AccordionItem,
+	} from "$lib/components/ui/accordion";
 
 	const items = [
 		{

@@ -1,26 +1,24 @@
 <script lang="ts">
-  import { cn } from "$lib/utils";
-  import { config } from "$lib/hooks/use-pkgmgr-config.svelte";
+  import Check from "@lucide/svelte/icons/check";
+  import Copy from "@lucide/svelte/icons/copy";
+  import Terminal from "@lucide/svelte/icons/terminal";
+  import { buttonVariants } from "$lib/components/ui/button";
+  import { ScrollArea } from "$lib/components/ui/scroll-area";
+  import { Tabs, TabsList, TabsPanel, TabsTab } from "$lib/components/ui/tabs";
   import {
     Tooltip,
+    TooltipPopup,
     TooltipProvider,
     TooltipTrigger,
-    TooltipPopup,
   } from "$lib/components/ui/tooltip";
-
-  import { buttonVariants } from "$lib/components/ui/button";
-  import { Tabs, TabsList, TabsTab, TabsPanel } from "$lib/components/ui/tabs";
-  import { ScrollArea } from "$lib/components/ui/scroll-area";
-
-  import Terminal from "@lucide/svelte/icons/terminal";
-  import Copy from "@lucide/svelte/icons/copy";
-  import Check from "@lucide/svelte/icons/check";
+  import { config } from "$lib/hooks/use-pkgmgr-config.svelte";
+  import { cn } from "$lib/utils";
 
   interface Props {
-    __npm__?: string;
-    __yarn__?: string;
-    __pnpm__?: string;
     __bun__?: string;
+    __npm__?: string;
+    __pnpm__?: string;
+    __yarn__?: string;
   }
 
   let { __npm__, __yarn__, __pnpm__, __bun__ }: Props = $props();

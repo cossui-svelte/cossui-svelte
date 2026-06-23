@@ -1,10 +1,10 @@
 <script lang="ts">
+	import ChevronRight from "@lucide/svelte/icons/chevron-right";
+	import { cn } from "$lib/utils";
 	import PaginationLink, {
 		type Props as PaginationLinkProps,
 	} from "./pagination-link.svelte";
-	import { cn } from "$lib/utils";
 
-	import ChevronRight from "@lucide/svelte/icons/chevron-right";
 	let {
 		class: className,
 		ref = $bindable(null),

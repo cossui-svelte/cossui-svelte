@@ -1,6 +1,6 @@
 <script lang="ts">
-    import type { Snippet } from "svelte";
     import { LinkPreview } from "bits-ui";
+    import type { Snippet } from "svelte";
 
     type Props = LinkPreview.TriggerProps & { children?: Snippet };
 

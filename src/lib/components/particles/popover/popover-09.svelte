@@ -1,13 +1,10 @@
 <script lang="ts">
 	import type { Icon as IconType } from "@lucide/svelte";
-
-	import { Button } from "$lib/components/ui/button";
-
 	import Club from "@lucide/svelte/icons/club";
 	import Diamond from "@lucide/svelte/icons/diamond";
 	import Heart from "@lucide/svelte/icons/heart";
 	import Spade from "@lucide/svelte/icons/spade";
-
+	import { Button } from "$lib/components/ui/button";
 	import {
 		Popover,
 		PopoverContent,

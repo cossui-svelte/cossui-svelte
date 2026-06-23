@@ -1,22 +1,22 @@
 <script lang="ts">
-  import { cn } from "$lib/utils";
-  import CircleAlert from "@lucide/svelte/icons/circle-alert";
   import Calendar from "@lucide/svelte/icons/calendar";
+  import Check from "@lucide/svelte/icons/check";
   import ChevronDown from "@lucide/svelte/icons/chevron-down";
   import ChevronLeft from "@lucide/svelte/icons/chevron-left";
   import ChevronRight from "@lucide/svelte/icons/chevron-right";
+  import CircleAlert from "@lucide/svelte/icons/circle-alert";
   import Ellipsis from "@lucide/svelte/icons/ellipsis";
+  import GripVertical from "@lucide/svelte/icons/grip-vertical";
+  import ImageIcon from "@lucide/svelte/icons/image";
   import Info from "@lucide/svelte/icons/info";
   import Minus from "@lucide/svelte/icons/minus";
+  import MousePointer2 from "@lucide/svelte/icons/mouse-pointer-2";
   import Plus from "@lucide/svelte/icons/plus";
   import Search from "@lucide/svelte/icons/search";
-  import Check from "@lucide/svelte/icons/check";
-  import ImageIcon from "@lucide/svelte/icons/image";
-  import GripVertical from "@lucide/svelte/icons/grip-vertical";
-  import MousePointer2 from "@lucide/svelte/icons/mouse-pointer-2";
   import TextCursor from "@lucide/svelte/icons/text-cursor";
   import UserRound from "@lucide/svelte/icons/user-round";
   import X from "@lucide/svelte/icons/x";
+  import { cn } from "$lib/utils";
 
   interface Props {
     slug: string;

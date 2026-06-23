@@ -1,5 +1,4 @@
 <script lang="ts">
-    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
     import PauseIcon from "@lucide/svelte/icons/pause";
     import PlayIcon from "@lucide/svelte/icons/play";
     import SkipBackIcon from "@lucide/svelte/icons/skip-back";
@@ -22,6 +21,7 @@
         MenuSubTrigger,
         MenuTrigger,
     } from "$lib/components/ui/menu";
+    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
 </script>
 
 <ComponentPreviewTabs>

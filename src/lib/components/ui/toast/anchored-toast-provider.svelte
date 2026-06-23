@@ -1,18 +1,18 @@
 <script lang="ts">
-	import { Portal } from "bits-ui";
 	import CircleAlertIcon from "@lucide/svelte/icons/circle-alert";
 	import CircleCheckIcon from "@lucide/svelte/icons/circle-check";
 	import InfoIcon from "@lucide/svelte/icons/info";
 	import LoaderCircleIcon from "@lucide/svelte/icons/loader-circle";
 	import TriangleAlertIcon from "@lucide/svelte/icons/triangle-alert";
+	import { Portal } from "bits-ui";
 	import type { Snippet } from "svelte";
-	import { scale } from "svelte/transition";
 	import { cubicOut } from "svelte/easing";
-	import { cn } from "$lib/utils";
+	import { scale } from "svelte/transition";
 	import { buttonVariants } from "$lib/components/ui/button";
+	import { cn } from "$lib/utils";
 	import {
-		anchoredToastManager,
 		type AnchoredToastData,
+		anchoredToastManager,
 	} from "./toast-manager.svelte";
 
 	interface Props {
@@ -56,7 +56,7 @@
 			ok: boolean;
 		} {
 			const anchor = getAnchorEl(t);
-			if (!anchor) return { top: 0, left: 0, ok: false };
+			if (!anchor) return { left: 0, ok: false, top: 0 };
 
 			const ar = anchor.getBoundingClientRect();
 			const er = el.getBoundingClientRect();
@@ -115,7 +115,7 @@
 				Math.min(top, window.innerHeight - er.height - 4),
 			);
 
-			return { top, left, ok: true };
+			return { left, ok: true, top };
 		}
 
 		function setup(t: AnchoredToastData) {
@@ -139,8 +139,8 @@
 			ro.observe(anchor);
 			ro.observe(el);
 			window.addEventListener("scroll", update, {
-				passive: true,
 				capture: true,
+				passive: true,
 			});
 			window.addEventListener("resize", update, { passive: true });
 
@@ -154,10 +154,10 @@
 		setup(toast);
 
 		return {
-			update: setup,
 			destroy() {
 				if (cleanup) cleanup();
 			},
+			update: setup,
 		};
 	}
 </script>

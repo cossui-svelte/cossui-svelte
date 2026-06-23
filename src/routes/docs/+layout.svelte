@@ -1,6 +1,6 @@
 <script lang="ts">
-    import SidebarProvider from "$lib/components/ui/sidebar/sidebar-provider.svelte";
     import type { Snippet } from "svelte";
+    import SidebarProvider from "$lib/components/ui/sidebar/sidebar-provider.svelte";
 
     let { children }: { children: Snippet } = $props();
 </script>

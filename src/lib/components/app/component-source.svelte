@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { browser } from "$app/environment";
   import type { HTMLAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils";
   import CodeBlock from "$lib/components/app/code-block.svelte";
   import CodeCollapsibleWrapper from "$lib/components/app/code-collapsible-wrapper.svelte";
+  import { cn } from "$lib/utils";
+  import { browser } from "$app/environment";
 
   let {
     // name,

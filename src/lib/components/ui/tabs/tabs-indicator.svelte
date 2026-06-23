@@ -2,8 +2,8 @@
   import type { Snippet } from "svelte";
 
   interface Props {
-    class?: string;
     children?: Snippet;
+    class?: string;
     [key: string]: unknown;
   }
 
@@ -31,7 +31,7 @@
       w = offsetW;
       h = offsetH;
     }
-    return { width: w, height: h };
+    return { height: h, width: w };
   }
 
   function measure(): void {
@@ -92,8 +92,8 @@
 
     const mutationObserver = new MutationObserver(measure);
     mutationObserver.observe(tabsList, {
-      attributes: true,
       attributeFilter: ["data-state"],
+      attributes: true,
       subtree: true,
     });
 

@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Root from "./root.svelte";
-	import { getCtx } from "../ctx.js";
-	import type { Props } from "./types.js";
 	import type { Snippet } from "svelte";
+	import { getCtx } from "../ctx.js";
+	import Root from "./root.svelte";
+	import type { Props } from "./types.js";
 
 	let {
 		onDrag,

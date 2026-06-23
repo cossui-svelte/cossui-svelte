@@ -1,23 +1,22 @@
 <script lang="ts">
-	import { page } from "$app/state";
 	import PageHeader from "$lib/components/app/page-header.svelte";
-	import PageHeaderHeading from "$lib/components/app/page-header-heading.svelte";
 	import PageHeaderDescription from "$lib/components/app/page-header-description.svelte";
-	import { allParticles } from "$lib/registry/registry-particles";
-
+	import PageHeaderHeading from "$lib/components/app/page-header-heading.svelte";
 	import {
 		isValidRegistryCategory,
 		type RegistryCategory,
 	} from "$lib/registry/registry-categories.js";
-	import SearchContainer from "./SearchContainer.svelte";
+	import { allParticles } from "$lib/registry/registry-particles";
 	import ParticlesDisplay from "./ParticlesDisplay.svelte";
+	import SearchContainer from "./SearchContainer.svelte";
 	import { browser } from "$app/environment";
+	import { page } from "$app/state";
 
 	const particleCount = Object.keys(allParticles).length;
 	const description = `Discover ${particleCount} ready-to-use particles, the building blocks of your design system. Filter by category to find the perfect component for your project.`;
 
 	const selectedCategories = $derived(() => {
-		if (!browser) return { valid: [], hasInvalid: false };
+		if (!browser) return { hasInvalid: false, valid: [] };
 
 		const rawCategories =
 			page.url.searchParams.get("tags")?.split(",").filter(Boolean) ?? [];
@@ -28,7 +27,7 @@
 		const hasInvalid = rawCategories.some(
 			(c) => !isValidRegistryCategory(c),
 		);
-		return { valid: validCategories, hasInvalid };
+		return { hasInvalid, valid: validCategories };
 	});
 </script>
 

@@ -1,6 +1,6 @@
 <script lang="ts">
-    import ComponentPreviewTab from "$lib/components/app/docs/component-preview-tabs.svelte";
     import { Slider } from "$lib/components/ui/slider";
+    import ComponentPreviewTab from "$lib/components/app/docs/component-preview-tabs.svelte";
 </script>
 
 <ComponentPreviewTab>

@@ -1,7 +1,6 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button";
-
 	import Plus from "@lucide/svelte/icons/plus";
+	import { Button } from "$lib/components/ui/button";
 </script>
 
 <Button variant="outline" class="aspect-square max-sm:p-0">

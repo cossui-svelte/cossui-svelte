@@ -1,11 +1,11 @@
 <script lang="ts">
-    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
+    import { Label } from "$lib/components/ui/label";
     import {
         OTPField,
         OTPFieldInput,
         OTPFieldSeparator,
     } from "$lib/components/ui/otp-field";
-    import { Label } from "$lib/components/ui/label";
+    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
 
     let value = $state("");
     let invalid = $state(false);

@@ -1,13 +1,13 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
   import { Popover as PopoverPrimitive, type WithoutChildren } from "bits-ui";
+  import type { Snippet } from "svelte";
   import { cn } from "$lib/utils";
 
   interface Props extends WithoutChildren<PopoverPrimitive.ContentProps> {
     children?: Snippet;
-    tooltipStyle?: boolean;
-    showArrow?: boolean;
     portalProps?: PopoverPrimitive.PortalProps;
+    showArrow?: boolean;
+    tooltipStyle?: boolean;
   }
 
   let {

@@ -1,8 +1,7 @@
 <script lang="ts">
-	import { cn } from "$lib/utils";
-
 	import Check from "@lucide/svelte/icons/check";
 	import { Select as SelectPrimitive, type WithoutChild } from "bits-ui";
+	import { cn } from "$lib/utils";
 
 	let {
 		children: childrenProp,

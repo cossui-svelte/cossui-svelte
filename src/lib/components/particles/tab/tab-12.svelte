@@ -1,12 +1,11 @@
 <script lang="ts">
-	import { Badge } from "$lib/components/ui/badge";
-
 	import Box from "@lucide/svelte/icons/box";
 	import ChartLine from "@lucide/svelte/icons/chart-line";
 	import House from "@lucide/svelte/icons/house";
 	import PanelsTopLeft from "@lucide/svelte/icons/panels-top-left";
 	import Settings from "@lucide/svelte/icons/settings";
 	import UsersRound from "@lucide/svelte/icons/users-round";
+	import { Badge } from "$lib/components/ui/badge";
 	import { ScrollArea, Scrollbar } from "$lib/components/ui/scroll-area";
 	import {
 		Tabs,

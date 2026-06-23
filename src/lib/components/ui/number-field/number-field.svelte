@@ -1,14 +1,14 @@
 <script lang="ts" module>
   export interface NumberFieldContext {
-    readonly fieldId: string;
-    readonly value: number | undefined;
-    readonly min: number | undefined;
-    readonly max: number | undefined;
-    readonly step: number;
-    readonly disabled: boolean;
-    increment(): void;
     decrement(): void;
+    readonly disabled: boolean;
+    readonly fieldId: string;
+    increment(): void;
+    readonly max: number | undefined;
+    readonly min: number | undefined;
     setValue(v: number): void;
+    readonly step: number;
+    readonly value: number | undefined;
   }
 
   export const NUMBER_FIELD_CONTEXT_KEY = Symbol.for("cossui:number-field");
@@ -16,19 +16,19 @@
 
 <script lang="ts">
   import type { Snippet } from "svelte";
-  import type { HTMLAttributes } from "svelte/elements";
   import { setContext } from "svelte";
+  import type { HTMLAttributes } from "svelte/elements";
   import { cn } from "$lib/utils";
 
   interface Props extends Omit<HTMLAttributes<HTMLDivElement>, "id"> {
-    id?: string;
-    size?: "sm" | "default" | "lg";
-    value?: number;
-    min?: number;
-    max?: number;
-    step?: number;
-    disabled?: boolean;
     children?: Snippet;
+    disabled?: boolean;
+    id?: string;
+    max?: number;
+    min?: number;
+    size?: "sm" | "default" | "lg";
+    step?: number;
+    value?: number;
   }
 
   let {
@@ -70,27 +70,27 @@
   }
 
   setContext<NumberFieldContext>(NUMBER_FIELD_CONTEXT_KEY, {
+    decrement,
+    get disabled() {
+      return disabled;
+    },
     get fieldId() {
       return fieldId;
     },
-    get value() {
-      return value;
+    increment,
+    get max() {
+      return max;
     },
     get min() {
       return min;
     },
-    get max() {
-      return max;
-    },
+    setValue,
     get step() {
       return step;
     },
-    get disabled() {
-      return disabled;
+    get value() {
+      return value;
     },
-    increment,
-    decrement,
-    setValue,
   });
 </script>
 

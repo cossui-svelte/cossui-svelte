@@ -1,8 +1,6 @@
 <script lang="ts">
 	import Search from "@lucide/svelte/icons/search";
 	import Tag from "@lucide/svelte/icons/tag";
-	import { allParticles } from "$lib/registry/registry-particles";
-	import { getCategorySortOrder } from "$lib/registry/registry-categories.js";
 	import {
 		Combobox,
 		ComboboxChip,
@@ -15,6 +13,8 @@
 		ComboboxPopup,
 		ComboboxSeparator,
 	} from "$lib/components/ui/combobox";
+	import { getCategorySortOrder } from "$lib/registry/registry-categories.js";
+	import { allParticles } from "$lib/registry/registry-particles";
 
 	export interface SearchItem {
 		label: string;
@@ -78,7 +78,7 @@
 				getCategorySortOrder(a.value) - getCategorySortOrder(b.value),
 		);
 
-		return { enabled: sortedEnabled, disabled: sortedDisabled };
+		return { disabled: sortedDisabled, enabled: sortedEnabled };
 	});
 
 	function handleValueChange(newValues: string[]) {

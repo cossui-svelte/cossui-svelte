@@ -1,4 +1,7 @@
 <script lang="ts">
+	import MonitorCog from "@lucide/svelte/icons/monitor-cog";
+	import Moon from "@lucide/svelte/icons/moon";
+	import Sun from "@lucide/svelte/icons/sun";
 	import { Label } from "$lib/components/ui/label";
 	import {
 		Select,
@@ -6,10 +9,6 @@
 		SelectItem,
 		SelectTrigger,
 	} from "$lib/components/ui/select";
-
-	import MonitorCog from "@lucide/svelte/icons/monitor-cog";
-	import Moon from "@lucide/svelte/icons/moon";
-	import Sun from "@lucide/svelte/icons/sun";
 
 	const items = [
 		{ icon: Sun, label: "Light", value: "s1" },

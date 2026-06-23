@@ -1,14 +1,14 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
   import { Combobox } from "bits-ui";
+  import type { Snippet } from "svelte";
   import { cn } from "$lib/utils";
 
   interface Props extends Combobox.ContentProps {
-    children?: Snippet;
     align?: "start" | "center" | "end";
-    sideOffset?: number;
     alignOffset?: number;
+    children?: Snippet;
     side?: "top" | "right" | "bottom" | "left";
+    sideOffset?: number;
   }
 
   let {

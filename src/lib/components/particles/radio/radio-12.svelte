@@ -1,9 +1,8 @@
 <script lang="ts">
-	import { RadioGroup, RadioGroupItem } from "$lib/components/ui/radio-group";
-
 	import IconApple from "svelte-remix/AppleFillLogos.svelte";
 	import IconBankCard from "svelte-remix/BankCardLineFinance.svelte";
 	import IconPaypal from "svelte-remix/PaypalLineLogos.svelte";
+	import { RadioGroup, RadioGroupItem } from "$lib/components/ui/radio-group";
 
 	const items = [
 		{ Icon: IconBankCard, id: "radio-12-cc", label: "Card", value: "cc" },

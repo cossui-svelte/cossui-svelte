@@ -1,8 +1,7 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button";
-
 	import ChevronDownIcon from "@lucide/svelte/icons/chevron-down";
 	import ChevronUpIcon from "@lucide/svelte/icons/chevron-up";
+	import { Button } from "$lib/components/ui/button";
 
 	let isExpanded = $state(false);
 

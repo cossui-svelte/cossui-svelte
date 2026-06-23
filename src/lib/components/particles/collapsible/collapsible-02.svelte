@@ -1,13 +1,13 @@
 <script lang="ts">
     import ChevronDownIcon from "@lucide/svelte/icons/chevron-down";
+    import TrashIcon from "@lucide/svelte/icons/trash";
+    import { Button } from "$lib/components/ui/button";
     import {
         Collapsible,
         CollapsiblePanel,
         CollapsibleTrigger,
     } from "$lib/components/ui/collapsible";
     import { Frame, FrameHeader, FramePanel } from "$lib/components/ui/frame";
-    import TrashIcon from "@lucide/svelte/icons/trash";
-    import { Button } from "$lib/components/ui/button";
 </script>
 
 <Frame class="w-full">

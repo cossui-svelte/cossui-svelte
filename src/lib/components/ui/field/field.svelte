@@ -1,7 +1,7 @@
 <script lang="ts">
+  import { type ComponentProps } from "svelte";
   import { Field } from "$lib/formsnap";
   import { cn } from "$lib/utils";
-  import { type ComponentProps } from "svelte";
   import { getFormContext } from "../form/form-context.svelte";
 
   let {

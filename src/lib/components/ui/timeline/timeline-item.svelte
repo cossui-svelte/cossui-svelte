@@ -1,10 +1,8 @@
 <script lang="ts">
 	import type { WithElementRef } from 'bits-ui';
 	import type { HTMLAttributes } from 'svelte/elements';
-
-	import { useTimeline } from './timeline-context.svelte';
-
 	import { cn } from '$lib/utils';
+	import { useTimeline } from './timeline-context.svelte';
 
 	type Props = WithElementRef<HTMLAttributes<HTMLDivElement>> & {
 		step: number;

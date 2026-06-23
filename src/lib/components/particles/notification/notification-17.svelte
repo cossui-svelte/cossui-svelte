@@ -1,7 +1,6 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button";
-
 	import X from "@lucide/svelte/icons/x";
+	import { Button } from "$lib/components/ui/button";
 	import Avatar from "$assets/avatar-32-01.jpg";
 </script>
 

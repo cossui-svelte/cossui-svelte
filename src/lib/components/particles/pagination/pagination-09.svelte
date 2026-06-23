@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { usePagination } from '$lib/hooks/use-pagination.svelte';
-
 	import ChevronLeft from '@lucide/svelte/icons/chevron-left';
 	import ChevronRight from '@lucide/svelte/icons/chevron-right';
 	import {
@@ -11,6 +9,7 @@
 		PaginationLink
 	} from '$lib/components/ui/pagination';
 	import { Select, SelectContent, SelectItem, SelectTrigger } from '$lib/components/ui/select';
+	import { usePagination } from '$lib/hooks/use-pagination.svelte';
 
 	type PaginationProps = {
 		currentPage: number;

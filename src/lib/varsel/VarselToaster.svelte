@@ -3,10 +3,10 @@
 	 * Main module exports for the Varsel library.
 	 */
 	export {
-		toast,
 		type ToastData,
 		type ToastInvoker,
 		type ToastPosition,
+		toast,
 	} from "./internals";
 </script>
 
@@ -21,13 +21,13 @@
 	 * Place this component once in your application's root layout (e.g., `+layout.svelte`).
 	 */
 	import { onMount } from "svelte";
-	import VarselManager from "./VarselManager.svelte";
 	import {
-		toastState,
-		toasterInstanceManager,
 		type ToastData,
 		type ToastPosition,
+		toasterInstanceManager,
+		toastState,
 	} from "./internals";
+	import VarselManager from "./VarselManager.svelte";
 
 	let {
 		expandedGap = undefined,

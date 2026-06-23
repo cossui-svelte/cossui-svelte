@@ -1,7 +1,7 @@
 <script lang="ts">
+  import { Tooltip } from "bits-ui";
   import type { Snippet } from "svelte";
   import type { HTMLButtonAttributes } from "svelte/elements";
-  import { Tooltip } from "bits-ui";
   import { tv, type VariantProps } from "tailwind-variants";
   import { getSidebarContext } from "./sidebar-context.js";
 
@@ -30,12 +30,12 @@
 
   // Intentionally loose to support both Tooltip.Trigger and svelte:element spreading
   interface Props extends Omit<HTMLButtonAttributes, "size"> {
+    children?: Snippet;
     href?: string;
     isActive?: boolean;
-    variant?: ButtonVariants["variant"];
     size?: ButtonVariants["size"];
     tooltip?: string | Record<string, unknown>;
-    children?: Snippet;
+    variant?: ButtonVariants["variant"];
   }
 
   let {
@@ -52,7 +52,7 @@
   const ctx = getSidebarContext();
 
   const buttonClass = $derived(
-    sidebarMenuButtonVariants({ size, variant, class: className as string | undefined }),
+    sidebarMenuButtonVariants({ class: className as string | undefined, size, variant }),
   );
   const tooltipText = $derived(
     typeof tooltip === "string" ? tooltip : undefined,

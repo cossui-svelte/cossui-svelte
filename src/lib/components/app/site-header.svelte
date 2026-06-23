@@ -11,10 +11,10 @@
   }
 
   interface Props {
-    products: ProductItem[];
-    mobileNav?: Snippet;
     children?: Snippet;
     currentProduct?: string;
+    mobileNav?: Snippet;
+    products: ProductItem[];
   }
 
   let { products, mobileNav, children, currentProduct }: Props = $props();

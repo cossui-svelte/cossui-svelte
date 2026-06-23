@@ -3,16 +3,16 @@
 
 	const inputGroupButtonVariants = tv({
 		base: "cn-input-group-button flex items-center shadow-none",
-		variants: {
-			size: {
-				xs: "cn-input-group-button-size-xs",
-				sm: "cn-input-group-button-size-sm",
-				"icon-xs": "cn-input-group-button-size-icon-xs",
-				"icon-sm": "cn-input-group-button-size-icon-sm",
-			},
-		},
 		defaultVariants: {
 			size: "xs",
+		},
+		variants: {
+			size: {
+				"icon-sm": "cn-input-group-button-size-icon-sm",
+				"icon-xs": "cn-input-group-button-size-icon-xs",
+				sm: "cn-input-group-button-size-sm",
+				xs: "cn-input-group-button-size-xs",
+			},
 		},
 	});
 
@@ -22,9 +22,9 @@
 </script>
 
 <script lang="ts">
-	import { cn } from "$lib/utils";
 	import type { ComponentProps } from "svelte";
 	import { Button } from "$lib/components/ui/button";
+	import { cn } from "$lib/utils";
 
 	let {
 		ref = $bindable(null),

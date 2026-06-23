@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
   import { DropdownMenu } from "bits-ui";
+  import type { Snippet } from "svelte";
   import { cn } from "$lib/utils";
 
   interface Props extends Omit<DropdownMenu.CheckboxItemProps, "children"> {

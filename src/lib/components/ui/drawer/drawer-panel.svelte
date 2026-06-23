@@ -5,10 +5,10 @@
   import { ScrollArea } from "../scroll-area";
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
-    scrollFade?: boolean;
-    scrollable?: boolean;
     allowSelection?: boolean;
     children?: Snippet;
+    scrollable?: boolean;
+    scrollFade?: boolean;
   }
 
   let {

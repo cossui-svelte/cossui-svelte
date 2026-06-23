@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Clock from "@lucide/svelte/icons/clock";
 	import { Label } from "$lib/components/ui/label";
 	import {
 		Select,
@@ -6,8 +7,6 @@
 		SelectItem,
 		SelectTrigger,
 	} from "$lib/components/ui/select";
-
-	import Clock from "@lucide/svelte/icons/clock";
 
 	const items = [
 		{ label: "00:00 AM - 11:59 PM", value: "s1" },

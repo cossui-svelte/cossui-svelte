@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { Input } from "$lib/components/ui/input";
-	import { Textarea } from "$lib/components/ui/textarea";
+	import Check from "@lucide/svelte/icons/check";
+	import ImagePlus from "@lucide/svelte/icons/image-plus";
+	import X from "@lucide/svelte/icons/x";
 	import { Button, buttonVariants } from "$lib/components/ui/button";
 	import {
 		Dialog,
@@ -12,13 +13,11 @@
 		DialogTitle,
 		DialogTrigger,
 	} from "$lib/components/ui/dialog";
+	import { Input } from "$lib/components/ui/input";
 	import { Label } from "$lib/components/ui/label";
+	import { Textarea } from "$lib/components/ui/textarea";
 	import { useCharacterLimit } from "$lib/hooks/use-character-limit.svelte";
 	import { useImageUpload } from "$lib/hooks/use-image-upload.svelte";
-
-	import Check from "@lucide/svelte/icons/check";
-	import ImagePlus from "@lucide/svelte/icons/image-plus";
-	import X from "@lucide/svelte/icons/x";
 
 	const bioLimit = useCharacterLimit(
 		180,

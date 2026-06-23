@@ -1,8 +1,7 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button";
-
 	import Rocket from "@lucide/svelte/icons/rocket";
 	import X from "@lucide/svelte/icons/x";
+	import { Button } from "$lib/components/ui/button";
 
 	let visible = $state(true);
 </script>

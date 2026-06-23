@@ -1,7 +1,7 @@
 <script lang="ts">
+      import { toggleMode } from "mode-watcher";
       import { Button } from "$lib/components/ui/button";
       import { cn } from "$lib/utils";
-      import { toggleMode } from "mode-watcher";
 
       type Props = {
             class?: string;

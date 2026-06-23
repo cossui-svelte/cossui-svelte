@@ -9,6 +9,7 @@
 		TimelineSeparator,
 		TimelineTitle
 	} from '$lib/components/ui/timeline';
+
 	const items = [
 		{
 			date: '15 minutes ago',

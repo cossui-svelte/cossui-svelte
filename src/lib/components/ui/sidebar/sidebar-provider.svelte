@@ -11,10 +11,10 @@
   const SIDEBAR_KEYBOARD_SHORTCUT = "b";
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
-    defaultOpen?: boolean;
-    open?: boolean;
-    onOpenChange?: (open: boolean) => void;
     children?: Snippet;
+    defaultOpen?: boolean;
+    onOpenChange?: (open: boolean) => void;
+    open?: boolean;
   }
 
   let {
@@ -86,19 +86,19 @@
   });
 
   setSidebarContext({
-    get state() {
-      return sidebarState;
+    get isMobile() {
+      return isMobile;
     },
     get open() {
       return open;
     },
-    setOpen,
     get openMobile() {
       return openMobile;
     },
+    setOpen,
     setOpenMobile,
-    get isMobile() {
-      return isMobile;
+    get state() {
+      return sidebarState;
     },
     toggleSidebar,
   });

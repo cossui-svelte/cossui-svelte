@@ -1,14 +1,14 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
   import { Tabs } from "bits-ui";
+  import type { Snippet } from "svelte";
   import { cn } from "$lib/utils";
   import TabsIndicator from "./tabs-indicator.svelte";
 
   type TabsVariant = "default" | "underline";
 
   interface Props extends Tabs.ListProps {
-    variant?: TabsVariant;
     children?: Snippet;
+    variant?: TabsVariant;
   }
 
   let {

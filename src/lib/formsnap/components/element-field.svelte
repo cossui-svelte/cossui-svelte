@@ -1,5 +1,6 @@
 <script lang="ts" module>
 	import type { FormPathLeaves as _FormPathLeaves } from "sveltekit-superforms";
+
 	type T = unknown;
 	type U = unknown;
 </script>
@@ -9,8 +10,8 @@
 	generics="T extends Record<string, unknown>, U extends _FormPathLeaves<T>"
 >
 	import { box } from "svelte-toolbelt";
-	import type { ElementFieldProps } from "./types.js";
 	import { useElementField } from "$lib/formsnap/formsnap.svelte.js";
+	import type { ElementFieldProps } from "./types.js";
 
 	let { form, name, children }: ElementFieldProps<T, U> = $props();
 

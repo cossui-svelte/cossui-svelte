@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { superForm } from "sveltekit-superforms";
     import {
         Field,
         FieldDescription,
@@ -6,7 +7,6 @@
     } from "$lib/components/ui/field";
     import { Form } from "$lib/components/ui/form";
     import { Input } from "$lib/components/ui/input";
-    import { superForm } from "sveltekit-superforms";
 
     let { data } = $props();
     const formConfig = superForm(data.form);

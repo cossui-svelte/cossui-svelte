@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
   import { ContextMenu } from "bits-ui";
+  import type { Snippet } from "svelte";
 
   interface Props extends ContextMenu.RadioGroupProps {
     children?: Snippet;

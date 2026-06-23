@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { box, mergeProps } from "svelte-toolbelt";
-	import type { LabelProps } from "./types.js";
-	import { useId } from "$lib/formsnap/internal/utils/id.js";
 	import {
 		getField,
 		getFormControl2,
 		useLabel,
 	} from "$lib/formsnap/formsnap.svelte.js";
+	import { useId } from "$lib/formsnap/internal/utils/id.js";
+	import type { LabelProps } from "./types.js";
 
 	let {
 		id = useId(),

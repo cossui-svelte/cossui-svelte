@@ -1,11 +1,11 @@
 <script lang="ts">
-    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
     import {
         Tabs,
         TabsList,
-        TabsTab,
         TabsPanel,
+        TabsTab,
     } from "$lib/components/ui/tabs";
+    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
 </script>
 
 <ComponentPreviewTabs>

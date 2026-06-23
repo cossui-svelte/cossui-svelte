@@ -1,12 +1,12 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
   import { Tooltip } from "bits-ui";
+  import type { Snippet } from "svelte";
   import { cn } from "$lib/utils";
 
   interface Props extends Tooltip.ContentProps {
     children?: Snippet;
-    sideOffset?: number;
     showArrow?: boolean;
+    sideOffset?: number;
   }
 
   let {

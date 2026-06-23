@@ -1,5 +1,6 @@
 <script lang="ts">
-    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
+    import { valibotClient } from "sveltekit-superforms/adapters";
+    import { superForm } from "sveltekit-superforms/client";
     import { Button, buttonVariants } from "$lib/components/ui/button";
     import {
         Dialog,
@@ -12,12 +13,10 @@
         DialogTitle,
         DialogTrigger,
     } from "$lib/components/ui/dialog";
-
     import { Field, FieldLabel } from "$lib/components/ui/field";
     import { Form } from "$lib/components/ui/form";
     import { Input } from "$lib/components/ui/input";
-    import { valibotClient } from "sveltekit-superforms/adapters";
-    import { superForm } from "sveltekit-superforms/client";
+    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
     import { schema } from "./schema.js";
 
     let { data } = $props();

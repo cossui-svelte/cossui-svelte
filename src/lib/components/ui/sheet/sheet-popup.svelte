@@ -1,14 +1,14 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import { Dialog } from "bits-ui";
   import X from "@lucide/svelte/icons/x";
+  import { Dialog } from "bits-ui";
+  import type { Snippet } from "svelte";
   import { cn } from "$lib/utils";
 
   interface Props extends DialogContentProps {
     children?: Snippet;
+    showCloseButton?: boolean;
     side?: "right" | "left" | "top" | "bottom";
     variant?: "default" | "inset";
-    showCloseButton?: boolean;
   }
 
   let {

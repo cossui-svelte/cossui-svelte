@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { setContext } from 'svelte';
 	import type { Snippet } from 'svelte';
+	import { setContext } from 'svelte';
 	import { cn } from '$lib/utils';
 
 	let {
@@ -24,18 +24,18 @@
 		get activeStep() {
 			return step;
 		},
-		setActiveStep: (newStep: number) => {
-			step = newStep;
-		},
-		get orientation() {
-			return orientation;
-		},
-		get totalSteps() {
-			return totalSteps;
-		},
 		incrementTotalSteps: () => {
 			totalSteps++;
 			return totalSteps; // Return the new total for StepperItem to use as its step number
+		}, 
+		get orientation() {
+			return orientation;
+		},
+		setActiveStep: (newStep: number) => {
+			step = newStep;
+		},
+		get totalSteps() {
+			return totalSteps;
 		}
 	};
 	setContext('StepperContext', stepperContext);

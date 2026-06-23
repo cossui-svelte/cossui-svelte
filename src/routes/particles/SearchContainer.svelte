@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { page } from "$app/state";
-	import { goto } from "$app/navigation";
-	import { allParticles } from "$lib/registry/registry-particles";
 	import { getCategorySortOrder } from "$lib/registry/registry-categories";
+	import { allParticles } from "$lib/registry/registry-particles";
 	import SearchField, { type SearchItem } from "./SearchField.svelte";
 	import { browser } from "$app/environment";
+	import { goto } from "$app/navigation";
+	import { page } from "$app/state";
 
 	const uniqueCategories = Array.from(
 		// new Set(particles.flatMap((p) => p.categories ?? [])),

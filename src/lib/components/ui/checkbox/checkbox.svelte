@@ -1,7 +1,6 @@
 <script lang="ts">
-	import { cn } from '$lib/utils.js';
-
 	import { Checkbox as CheckboxPrimitive } from 'bits-ui';
+	import { cn } from '$lib/utils.js';
 
 	let {
 		checked = $bindable(false),

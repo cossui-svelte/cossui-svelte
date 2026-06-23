@@ -1,12 +1,18 @@
 <script lang="ts">
-    import { Button } from "$lib/components/ui/button";
-    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
-
-    import Circle from "@lucide/svelte/icons/circle";
+    import BoldIcon from "@lucide/svelte/icons/Bold";
     import ChevronDown from "@lucide/svelte/icons/chevron-down";
     import ChevronLeft from "@lucide/svelte/icons/chevron-left";
     import ChevronRight from "@lucide/svelte/icons/chevron-right";
     import ChevronUp from "@lucide/svelte/icons/chevron-up";
+    import Circle from "@lucide/svelte/icons/circle";
+    import ItalicIcon from "@lucide/svelte/icons/Italic";
+    import UnderlineIcon from "@lucide/svelte/icons/Underline";
+    import { Button } from "$lib/components/ui/button";
+    import { Kbd, KbdGroup } from "$lib/components/ui/kbd";
+    import {
+        ToggleGroup,
+        ToggleGroupItem,
+    } from "$lib/components/ui/toggle-group";
     import {
         Tooltip,
         TooltipContent,
@@ -14,14 +20,7 @@
         TooltipProvider,
         TooltipTrigger,
     } from "$lib/components/ui/tooltip";
-    import { Kbd, KbdGroup } from "$lib/components/ui/kbd";
-    import BoldIcon from "@lucide/svelte/icons/Bold";
-    import ItalicIcon from "@lucide/svelte/icons/Italic";
-    import UnderlineIcon from "@lucide/svelte/icons/Underline";
-    import {
-        ToggleGroup,
-        ToggleGroupItem,
-    } from "$lib/components/ui/toggle-group";
+    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
 </script>
 
 <ComponentPreviewTabs>

@@ -1,6 +1,6 @@
 <script>
-    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
     import { Separator } from "$lib/components/ui/separator";
+    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
 </script>
 
 <ComponentPreviewTabs>

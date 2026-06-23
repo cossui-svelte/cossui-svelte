@@ -1,12 +1,4 @@
 <script lang="ts">
-	/**
-	 * @component
-	 * @description
-	 * Internal component responsible for grouping toasts by position and calculating
-	 * their stacking offsets (both collapsed and expanded).
-	 * It handles the "hover to expand" logic and manages the lifecycle of toast groups.
-	 */
-	import VarselItem from "./VarselItem.svelte";
 	import {
 		ANIMATION_CONFIG,
 		FOCUSABLE_SELECTORS,
@@ -15,6 +7,14 @@
 		type ToastData,
 		type ToastPosition,
 	} from "./internals";
+	/**
+	 * @component
+	 * @description
+	 * Internal component responsible for grouping toasts by position and calculating
+	 * their stacking offsets (both collapsed and expanded).
+	 * It handles the "hover to expand" logic and manages the lifecycle of toast groups.
+	 */
+	import VarselItem from "./VarselItem.svelte";
 
 	let {
 		toasts = [],
@@ -43,12 +43,12 @@
 	} = $props();
 
 	const createPositionMap = <T,>(value: () => T): Record<ToastPosition, T> => ({
-		"top-left": value(),
-		"top-center": value(),
-		"top-right": value(),
-		"bottom-left": value(),
 		"bottom-center": value(),
+		"bottom-left": value(),
 		"bottom-right": value(),
+		"top-center": value(),
+		"top-left": value(),
+		"top-right": value(),
 	});
 
 	let heights = $state<Record<string, number>>({});
@@ -73,12 +73,12 @@
 	let collapsedOffsetData = $state<{
 		byPosition: Record<ToastPosition, number[]>;
 		byId: Record<string, number>;
-	}>({ byPosition: createPositionMap<number[]>(() => []), byId: {} });
+	}>({ byId: {}, byPosition: createPositionMap<number[]>(() => []) });
 
 	let expandedOffsetData = $state<{
 		byPosition: Record<ToastPosition, number[]>;
 		byId: Record<string, number>;
-	}>({ byPosition: createPositionMap<number[]>(() => []), byId: {} });
+	}>({ byId: {}, byPosition: createPositionMap<number[]>(() => []) });
 
 	let positionEntries = $derived(
 		Object.entries(toastsByPosition) as [ToastPosition, PositionedToast[]][],
@@ -134,8 +134,8 @@
 
 				return {
 					...toast,
-					position: position,
 					index: stackIndex,
+					position: position,
 					renderIndex: orderIndex,
 					total: list.length,
 				};
@@ -242,7 +242,7 @@
 		}
 
 		previousCollapsedOffsets = byId;
-		collapsedOffsetData = { byPosition, byId };
+		collapsedOffsetData = { byId, byPosition };
 	});
 
 	// Calculate expandedOffsetData
@@ -294,7 +294,7 @@
 		}
 
 		previousExpandedOffsets = byId;
-		expandedOffsetData = { byPosition, byId };
+		expandedOffsetData = { byId, byPosition };
 	});
 
 	$effect(() => {

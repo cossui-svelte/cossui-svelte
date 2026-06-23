@@ -1,9 +1,8 @@
 <script lang="ts">
-	import { Label } from "$lib/components/ui/label";
-	import { cn } from "$lib/utils";
-
 	import Minus from "@lucide/svelte/icons/minus";
 	import { PinInput, type PinInputCell } from "bits-ui";
+	import { Label } from "$lib/components/ui/label";
+	import { cn } from "$lib/utils";
 
 	let value = $state("");
 	const uid = $props.id();

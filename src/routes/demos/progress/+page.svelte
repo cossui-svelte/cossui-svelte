@@ -1,5 +1,4 @@
 <script>
-    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
     import {
         Progress,
         ProgressIndicator,
@@ -7,6 +6,7 @@
         ProgressTrack,
         ProgressValue,
     } from "$lib/components/ui/progress";
+    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
 
     let value = $state(60);
 </script>

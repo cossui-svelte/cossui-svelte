@@ -1,11 +1,11 @@
 <script lang="ts">
-    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
     import {
         Accordion,
+        AccordionContent,
         AccordionItem,
         AccordionTrigger,
-        AccordionContent,
     } from "$lib/components/ui/accordion";
+    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
 
     const items = [
         {

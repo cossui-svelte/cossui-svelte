@@ -1,12 +1,12 @@
 <script lang="ts">
-  import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
   import { Button } from "$lib/components/ui/button";
   import {
     AnchoredToastProvider,
-    ToastProvider,
     anchoredToastManager,
+    ToastProvider,
     toastManager,
   } from "$lib/components/ui/toast";
+  import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
 
   const DEDUP_ID = "coss-demo-dedup-toast";
 </script>

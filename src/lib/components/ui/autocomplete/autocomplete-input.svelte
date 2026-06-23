@@ -1,17 +1,17 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import { Combobox } from "bits-ui";
   import ChevronsUpDown from "@lucide/svelte/icons/chevrons-up-down";
+  import { Combobox } from "bits-ui";
+  import type { Snippet } from "svelte";
   import { cn } from "$lib/utils";
-  import AutocompleteTrigger from "./autocomplete-trigger.svelte";
   import AutocompleteClear from "./autocomplete-clear.svelte";
+  import AutocompleteTrigger from "./autocomplete-trigger.svelte";
 
   interface Props extends Omit<Combobox.InputProps, "size"> {
-    showTrigger?: boolean;
-    showClear?: boolean;
-    startAddon?: Snippet;
-    size?: "sm" | "default" | "lg" | number;
     clearProps?: { onclick?: () => void; class?: string };
+    showClear?: boolean;
+    showTrigger?: boolean;
+    size?: "sm" | "default" | "lg" | number;
+    startAddon?: Snippet;
     triggerProps?: { class?: string };
   }
 

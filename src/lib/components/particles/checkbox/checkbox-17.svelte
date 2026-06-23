@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { Checkbox } from "$lib/components/ui/checkbox";
 	import {
-		CheckboxTree,
 		type CheckBoxTreeNode,
+		CheckboxTree,
 	} from "$lib/components/ui/checkbox-group";
 	import { Label } from "$lib/components/ui/label";
 

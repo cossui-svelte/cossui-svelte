@@ -1,5 +1,9 @@
 <script lang="ts">
-  import { cn } from "$lib/utils";
+  import Atom from "@lucide/svelte/icons/atom";
+  import BookOpen from "@lucide/svelte/icons/book-open";
+  import CornerDownLeft from "@lucide/svelte/icons/corner-down-left";
+  import Search from "@lucide/svelte/icons/search";
+  import { buttonVariants } from "$lib/components/ui/button";
   import {
     Dialog,
     DialogContent,
@@ -7,37 +11,33 @@
     DialogPortal,
     DialogTrigger,
   } from "$lib/components/ui/dialog";
-  import Search from "@lucide/svelte/icons/search";
-  import CornerDownLeft from "@lucide/svelte/icons/corner-down-left";
-  import Atom from "@lucide/svelte/icons/atom";
-  import BookOpen from "@lucide/svelte/icons/book-open";
-  import { buttonVariants } from "$lib/components/ui/button";
   import { Kbd, KbdGroup } from "$lib/components/ui/kbd";
   import { useIsMac } from "$lib/hooks/use-is-mac.svelte";
+  import { cn } from "$lib/utils";
 
   interface PageItem {
-    value: string;
-    label: string;
-    url: string;
     isComponent: boolean;
     keywords?: string[];
+    label: string;
+    url: string;
+    value: string;
   }
 
   interface PageGroup {
-    value: string;
     items: PageItem[];
+    value: string;
   }
 
   interface PageNode {
-    type: "page";
     name: string | unknown;
+    type: "page";
     url: string;
   }
 
   interface FolderNode {
-    type: "folder";
-    name: string | unknown;
     children: (PageNode | FolderNode)[];
+    name: string | unknown;
+    type: "folder";
   }
 
   interface NavTree {
@@ -45,9 +45,9 @@
   }
 
   interface Props {
-    tree?: NavTree;
     navItems?: { href: string; label: string }[];
     packageManager?: "pnpm" | "npm" | "yarn" | "bun";
+    tree?: NavTree;
   }
 
   let { tree, navItems, packageManager = "pnpm" }: Props = $props();

@@ -1,17 +1,16 @@
 <script lang="ts">
-  import { cn } from "$lib/utils";
-
+  import {
+    Slider as SliderPrimitive,
+    type WithoutChildrenOrChild,
+  } from "bits-ui";
+  import { on } from "svelte/events";
   import {
     Tooltip,
     TooltipContent,
     TooltipProvider,
     TooltipTrigger,
   } from "$lib/components/ui/tooltip";
-  import {
-    Slider as SliderPrimitive,
-    type WithoutChildrenOrChild,
-  } from "bits-ui";
-  import { on } from "svelte/events";
+  import { cn } from "$lib/utils";
 
   let {
     class: className,

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
+    import { superForm } from "sveltekit-superforms";
     import {
         Field,
         FieldDescription,
@@ -8,7 +8,7 @@
     import { Fieldset, FieldsetLegend } from "$lib/components/ui/fieldset";
     import { Form } from "$lib/components/ui/form";
     import { Input } from "$lib/components/ui/input";
-    import { superForm } from "sveltekit-superforms";
+    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
 
     let { data } = $props();
     const formConfig = superForm(data.form);

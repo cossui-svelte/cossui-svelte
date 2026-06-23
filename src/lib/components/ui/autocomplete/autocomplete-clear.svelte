@@ -1,7 +1,7 @@
 <script lang="ts">
+  import X from "@lucide/svelte/icons/x";
   import type { Snippet } from "svelte";
   import type { HTMLButtonAttributes } from "svelte/elements";
-  import X from "@lucide/svelte/icons/x";
   import { cn } from "$lib/utils";
 
   interface Props extends HTMLButtonAttributes {

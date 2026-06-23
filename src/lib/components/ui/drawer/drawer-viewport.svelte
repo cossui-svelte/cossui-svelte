@@ -6,9 +6,9 @@
   type DrawerPosition = "right" | "left" | "top" | "bottom";
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
+    children?: Snippet;
     position?: DrawerPosition;
     variant?: "default" | "straight" | "inset";
-    children?: Snippet;
   }
 
   let {

@@ -1,9 +1,9 @@
 <script lang="ts">
+  import { Dialog as DialogPrimitive } from "bits-ui";
   import type { Snippet } from "svelte";
   import type { HTMLAttributes } from "svelte/elements";
-  import { Dialog as DialogPrimitive } from "bits-ui";
-  import { cn } from "$lib/utils";
   import { DialogBackdrop, DialogPortal } from "$lib/components/ui/dialog";
+  import { cn } from "$lib/utils";
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
     children?: Snippet;

@@ -1,8 +1,7 @@
 <script lang="ts">
+	import { DateField } from "bits-ui";
 	import { Label } from "$lib/components/ui/label";
 	import { useLocale } from "$lib/hooks/use-locale.svelte";
-
-	import { DateField } from "bits-ui";
 
 	const localeCtx = useLocale();
 </script>

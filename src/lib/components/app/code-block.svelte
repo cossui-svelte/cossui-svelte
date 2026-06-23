@@ -1,23 +1,23 @@
 <script lang="ts">
-  import { cn } from "$lib/utils";
-  import { ScrollArea } from "$lib/components/ui/scroll-area";
+  import Check from "@lucide/svelte/icons/check";
+  import Copy from "@lucide/svelte/icons/copy";
+  import FileCode from "@lucide/svelte/icons/file-code";
   import { buttonVariants } from "$lib/components/ui/button";
+  import { ScrollArea } from "$lib/components/ui/scroll-area";
   import {
     Tooltip,
+    TooltipPopup,
     TooltipProvider,
     TooltipTrigger,
-    TooltipPopup,
   } from "$lib/components/ui/tooltip";
-  import Copy from "@lucide/svelte/icons/copy";
-  import Check from "@lucide/svelte/icons/check";
-  import FileCode from "@lucide/svelte/icons/file-code";
+  import { cn } from "$lib/utils";
 
   interface Props {
     code: string;
-    language: string;
-    title?: string;
     copyButton?: boolean;
+    language: string;
     showLineNumbers?: boolean;
+    title?: string;
   }
 
   let {

@@ -1,9 +1,8 @@
 <script lang="ts">
+	import { mergeProps, type WithElementRef } from 'bits-ui';
 	import type { Snippet } from 'svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
-
 	import { cn } from '$lib/utils';
-	import { mergeProps, type WithElementRef } from 'bits-ui';
 
 	type Props = WithElementRef<HTMLAttributes<HTMLTimeElement>> & {
 		child?: Snippet<[{ props: HTMLAttributes<HTMLTimeElement> }]>;

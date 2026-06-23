@@ -4,9 +4,9 @@
   import { cn } from "$lib/utils";
 
   interface Props extends HTMLAnchorAttributes {
-    size?: "sm" | "md";
-    isActive?: boolean;
     children?: Snippet;
+    isActive?: boolean;
+    size?: "sm" | "md";
   }
 
   let {

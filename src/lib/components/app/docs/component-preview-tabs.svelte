@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
-  import { cn } from "$lib/utils";
   import { Tabs, TabsList, TabsTab } from "$lib/components/ui/tabs";
+  import { cn } from "$lib/utils";
 
   let {
     class: className,

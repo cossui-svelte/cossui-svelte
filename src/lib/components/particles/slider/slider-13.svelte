@@ -1,9 +1,8 @@
 <script lang="ts">
-	import { Label } from "$lib/components/ui/label";
-	import { Slider } from "$lib/components/ui/slider";
-
 	import Volume2 from "@lucide/svelte/icons/volume-2";
 	import VolumeX from "@lucide/svelte/icons/volume-x";
+	import { Label } from "$lib/components/ui/label";
+	import { Slider } from "$lib/components/ui/slider";
 
 	let value = $state(25);
 </script>

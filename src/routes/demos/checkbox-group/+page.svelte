@@ -1,10 +1,9 @@
 <script lang="ts">
+    import { Checkbox } from "$lib/components/ui/checkbox";
     import { CheckboxGroup } from "$lib/components/ui/checkbox-group";
-
     import CheckboxTree, {
         type TreeNode,
     } from "$lib/components/ui/checkbox-group/checkbox-tree.svelte";
-    import { Checkbox } from "$lib/components/ui/checkbox";
     import { Label } from "$lib/components/ui/label";
     import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
 

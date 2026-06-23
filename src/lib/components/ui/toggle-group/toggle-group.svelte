@@ -1,14 +1,14 @@
 <script lang="ts" module>
 	import { getContext, setContext } from "svelte";
 	import {
-		type ToggleVariant,
 		type ToggleSize,
+		type ToggleVariant,
 	} from "$lib/components/ui/toggle";
 
 	interface ToggleGroupProps {
-		variant?: ToggleVariant;
-		size?: ToggleSize;
 		orientation?: Orientation;
+		size?: ToggleSize;
+		variant?: ToggleVariant;
 	}
 
 	export function setToggleGroupCtx(props: ToggleGroupProps) {
@@ -22,8 +22,8 @@
 
 <script lang="ts">
 	import {
-		ToggleGroup as ToggleGroupPrimitive,
 		type Orientation,
+		ToggleGroup as ToggleGroupPrimitive,
 	} from "bits-ui";
 	import { cn } from "$lib/utils";
 
@@ -39,14 +39,14 @@
 	}: ToggleGroupPrimitive.RootProps & ToggleGroupProps = $props();
 
 	setToggleGroupCtx({
-		get variant() {
-			return variant;
+		get orientation() {
+			return orientation;
 		},
 		get size() {
 			return size;
 		},
-		get orientation() {
-			return orientation;
+		get variant() {
+			return variant;
 		},
 	});
 </script>

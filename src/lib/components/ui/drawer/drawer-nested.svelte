@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Drawer as DrawerPrimitive } from "$lib/vaul";
 	import { setContext } from "svelte";
+	import { Drawer as DrawerPrimitive } from "$lib/vaul";
 
 	type Position = "top" | "bottom" | "left" | "right";
 

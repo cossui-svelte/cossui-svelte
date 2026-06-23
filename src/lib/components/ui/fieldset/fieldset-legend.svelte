@@ -1,7 +1,7 @@
 <script lang="ts">
+  import type { ComponentProps } from "svelte";
   import { Legend } from "$lib/formsnap";
   import { cn } from "$lib/utils";
-  import type { ComponentProps } from "svelte";
 
   let {
     ref = $bindable(null),

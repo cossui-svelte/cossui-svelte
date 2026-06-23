@@ -1,8 +1,7 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button";
-
 	import CircleCheck from "@lucide/svelte/icons/circle-check";
 	import X from "@lucide/svelte/icons/x";
+	import { Button } from "$lib/components/ui/button";
 	import { toastManager } from "$lib/components/ui/toast";
 
 	function openToast() {

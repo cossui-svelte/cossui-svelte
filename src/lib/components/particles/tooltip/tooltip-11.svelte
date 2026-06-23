@@ -1,9 +1,9 @@
 <script lang="ts">
+	import { LinkPreview, LinkPreviewContent, LinkPreviewTrigger } from '$lib/components/ui/link-preview';
 	import FriendImg01 from '$assets/avatar-20-04.jpg?w=20&h=20&enhanced';
 	import FriendImg02 from '$assets/avatar-20-05.jpg?w=20&h=20&enhanced';
 	import FriendImg03 from '$assets/avatar-20-06.jpg?w=20&h=20&enhanced';
 	import AvatarImg from '$assets/avatar-40-05.jpg?w=40&h=40&enhanced';
-	import { LinkPreview, LinkPreviewContent, LinkPreviewTrigger } from '$lib/components/ui/link-preview';
 </script>
 
 <LinkPreview>

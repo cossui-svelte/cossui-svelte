@@ -1,13 +1,13 @@
 <script lang="ts">
-  import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
   import {
     NumberField,
-    NumberFieldGroup,
-    NumberFieldInput,
-    NumberFieldIncrement,
     NumberFieldDecrement,
+    NumberFieldGroup,
+    NumberFieldIncrement,
+    NumberFieldInput,
     NumberFieldScrubArea,
   } from "$lib/components/ui/number-field";
+  import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
 
   let value = $state(0);
 </script>

@@ -1,4 +1,7 @@
 <script lang="ts">
+	import Check from "@lucide/svelte/icons/check";
+	import Copy from "@lucide/svelte/icons/copy";
+	import UserRoundPlus from "@lucide/svelte/icons/user-round-plus";
 	import { Button, buttonVariants } from "$lib/components/ui/button";
 	import {
 		Dialog,
@@ -18,10 +21,6 @@
 		TooltipProvider,
 		TooltipTrigger,
 	} from "$lib/components/ui/tooltip";
-
-	import Check from "@lucide/svelte/icons/check";
-	import Copy from "@lucide/svelte/icons/copy";
-	import UserRoundPlus from "@lucide/svelte/icons/user-round-plus";
 	import { cn } from "$lib/utils";
 
 	let input = $state<HTMLInputElement | null>(null);

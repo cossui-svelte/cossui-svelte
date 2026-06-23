@@ -1,21 +1,21 @@
 <script lang="ts">
-  import SiteHeaderBase from "./site-header.svelte";
+  import { Button } from "$lib/components/ui/button";
   import { Separator } from "$lib/components/ui/separator";
   import CommandMenu from "./command-menu.svelte";
   import MainNav from "./main-nav.svelte";
-  import { Button } from "$lib/components/ui/button";
+  import SiteHeaderBase from "./site-header.svelte";
 
   interface PageNode {
-    type: "page";
     name: string | unknown;
+    type: "page";
     url: string;
   }
 
   interface FolderNode {
-    type: "folder";
     $id?: string;
-    name: string | unknown;
     children: (PageNode | FolderNode)[];
+    name: string | unknown;
+    type: "folder";
   }
 
   interface NavTree {
@@ -29,10 +29,10 @@
   }
 
   interface Props {
-    navItems?: { href: string; label: string }[];
-    tree?: NavTree;
     currentProduct?: string;
+    navItems?: { href: string; label: string }[];
     products?: ProductItem[];
+    tree?: NavTree;
   }
 
   let {

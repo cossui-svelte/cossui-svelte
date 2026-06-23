@@ -1,5 +1,6 @@
 <script lang="ts" module>
 	import type { FormPath as _FormPath } from "sveltekit-superforms";
+
 	type T = unknown;
 	type U = unknown;
 </script>
@@ -9,10 +10,10 @@
 	generics="T extends Record<string, unknown>, U extends _FormPath<T>"
 >
 	import { box, mergeProps, useRefById } from "svelte-toolbelt";
-	import type { FieldsetProps } from "./types.js";
-	import Field from "./field.svelte";
 	import { getDataFsError } from "$lib/formsnap/internal/utils/attributes.js";
 	import { useId } from "$lib/formsnap/internal/utils/id.js";
+	import Field from "./field.svelte";
+	import type { FieldsetProps } from "./types.js";
 
 	let {
 		id = useId(),
@@ -34,8 +35,8 @@
 
 	const mergedProps = $derived(
 		mergeProps(restProps, {
-			id,
 			"data-fs-fieldset": "",
+			id,
 		}),
 	);
 </script>

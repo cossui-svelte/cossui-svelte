@@ -1,7 +1,7 @@
 <script lang="ts">
     import type { ComponentProps } from "svelte";
-    import { cn } from "$lib/utils";
     import { Separator } from "$lib/components/ui/separator";
+    import { cn } from "$lib/utils";
     import { getToggleGroupCtx } from "./toggle-group.svelte";
 
     let {

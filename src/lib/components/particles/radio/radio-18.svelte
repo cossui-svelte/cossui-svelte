@@ -1,8 +1,7 @@
 <script lang="ts">
-	import { RadioGroup, RadioGroupItem } from '$lib/components/ui/radio-group/index.js';
-
 	import IconCheck from '@lucide/svelte/icons/check';
 	import IconMinus from '@lucide/svelte/icons/minus';
+	import { RadioGroup, RadioGroupItem } from '$lib/components/ui/radio-group/index.js';
 	import UiDark from '$assets/ui-dark.png?enhanced';
 	import UiLight from '$assets/ui-light.png?enhanced';
 	import UiSystem from '$assets/ui-system.png?enhanced';

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
   import { Popover } from "bits-ui";
+  import type { Snippet } from "svelte";
 
   type Props = Popover.TriggerProps & { children?: Snippet };
 

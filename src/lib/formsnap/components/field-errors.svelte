@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { box, mergeProps } from "svelte-toolbelt";
-	import type { FieldErrorsProps } from "./types.js";
-	import { useId } from "$lib/formsnap/internal/utils";
 	import { useFieldErrors } from "$lib/formsnap/formsnap.svelte.js";
+	import { useId } from "$lib/formsnap/internal/utils";
+	import type { FieldErrorsProps } from "./types.js";
 
 	let {
 		id = useId(),

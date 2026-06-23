@@ -1,8 +1,8 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import type { HTMLAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils";
   import { ScrollArea } from "$lib/components/ui/scroll-area";
+  import { cn } from "$lib/utils";
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
     children?: Snippet;

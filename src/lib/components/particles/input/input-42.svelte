@@ -1,13 +1,12 @@
 <script lang="ts">
-	import { Label } from "$lib/components/ui/label";
-	import { useLocale } from "$lib/hooks/use-locale.svelte";
-	import { cn } from "$lib/utils";
-
 	import { getLocalTimeZone, today } from "@internationalized/date";
 	import Calendar from "@lucide/svelte/icons/calendar";
 	import ChevronLeft from "@lucide/svelte/icons/chevron-left";
 	import ChevronRight from "@lucide/svelte/icons/chevron-right";
 	import { type DateRange, DateRangePicker } from "bits-ui";
+	import { Label } from "$lib/components/ui/label";
+	import { useLocale } from "$lib/hooks/use-locale.svelte";
+	import { cn } from "$lib/utils";
 
 	let now = today(getLocalTimeZone());
 	let value: DateRange = $state({ end: undefined, start: undefined });

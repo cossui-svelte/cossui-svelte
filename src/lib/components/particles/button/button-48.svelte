@@ -1,9 +1,7 @@
 <script lang="ts">
-	import type { EventHandler } from "svelte/elements";
-
-	import { Button } from "$lib/components/ui/button";
-
 	import IconCircleUserRound from "@lucide/svelte/icons/circle-user-round";
+	import type { EventHandler } from "svelte/elements";
+	import { Button } from "$lib/components/ui/button";
 
 	let fileInput: HTMLInputElement;
 	let files = $state<FileList | null>(null);

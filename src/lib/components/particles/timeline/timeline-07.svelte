@@ -1,8 +1,4 @@
 <script lang="ts">
-	import Avatar01 from '$lib/assets/avatar-40-01.jpg?w=48&h=48&enhanced';
-	import Avatar02 from '$lib/assets/avatar-40-02.jpg?w=48&h=48&enhanced';
-	import Avatar03 from '$lib/assets/avatar-40-03.jpg?w=48&h=48&enhanced';
-	import Avatar05 from '$lib/assets/avatar-40-05.jpg?w=48&h=48&enhanced';
 	import {
 		Timeline,
 		TimelineContent,
@@ -13,6 +9,10 @@
 		TimelineSeparator,
 		TimelineTitle
 	} from '$lib/components/ui/timeline';
+	import Avatar01 from '$lib/assets/avatar-40-01.jpg?w=48&h=48&enhanced';
+	import Avatar02 from '$lib/assets/avatar-40-02.jpg?w=48&h=48&enhanced';
+	import Avatar03 from '$lib/assets/avatar-40-03.jpg?w=48&h=48&enhanced';
+	import Avatar05 from '$lib/assets/avatar-40-05.jpg?w=48&h=48&enhanced';
 
 	const items = [
 		{

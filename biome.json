@@ -25,6 +25,7 @@
     "includes": [
       "src/**/*.ts",
       "src/**/*.js",
+      "src/**/*.svelte",
       "tsconfig.json",
       "vite.config.ts",
       "svelte.config.js",
@@ -39,7 +40,6 @@
       "!build",
       "!.svelte-kit",
       "!**/*.log",
-      "!**/*.old",
       "!**/*.old"
     ]
   },
@@ -51,6 +51,12 @@
     "indentWidth": 2,
     "lineEnding": "lf",
     "lineWidth": 100
+  },
+  "html": {
+    "experimentalFullSupportEnabled": true,
+    "formatter": {
+      "indentScriptAndStyle": false
+    }
   },
   "javascript": {
     "formatter": {

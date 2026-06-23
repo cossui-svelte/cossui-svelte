@@ -1,18 +1,18 @@
 <script lang="ts" module>
   export interface MeterContext {
-    readonly value: number;
-    readonly min: number;
     readonly max: number;
+    readonly min: number;
     readonly percentage: number;
+    readonly value: number;
   }
 
   export const METER_CONTEXT_KEY = Symbol.for("cossui:meter");
 </script>
 
 <script lang="ts">
+  import { Meter as MeterPrimitive } from "bits-ui";
   import type { Snippet } from "svelte";
   import { setContext } from "svelte";
-  import { Meter as MeterPrimitive } from "bits-ui";
   import { cn } from "$lib/utils";
 
   type Props = MeterPrimitive.RootProps & { children?: Snippet };
@@ -29,17 +29,17 @@
   let percentage = $derived(((value - min) / (max - min)) * 100);
 
   setContext<MeterContext>(METER_CONTEXT_KEY, {
-    get value() {
-      return value;
+    get max() {
+      return max;
     },
     get min() {
       return min;
     },
-    get max() {
-      return max;
-    },
     get percentage() {
       return percentage;
+    },
+    get value() {
+      return value;
     },
   });
 </script>

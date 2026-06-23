@@ -1,12 +1,12 @@
 <script lang="ts">
-    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
     import { Label } from "$lib/components/ui/label";
     import {
         Select,
-        SelectTrigger,
         SelectContent,
         SelectItem,
+        SelectTrigger,
     } from "$lib/components/ui/select";
+    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
 
     const items = [
         { label: "Svelte", value: "s1" },

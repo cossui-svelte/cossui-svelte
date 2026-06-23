@@ -2,12 +2,11 @@
   import type { Snippet } from "svelte";
   import type { HTMLAttributes } from "svelte/elements";
   import { cn } from "$lib/utils";
-
   import { type GroupVariants, groupVariants } from "./groupVariants";
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
-    orientation?: GroupVariants;
     children?: Snippet;
+    orientation?: GroupVariants;
   }
 
   let {

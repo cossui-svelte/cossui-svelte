@@ -1,16 +1,14 @@
 <script lang="ts">
+	import XIcon from "@lucide/svelte/icons/x";
 	import {
 		Dialog as DialogPrimitive,
 		type WithoutChildrenOrChild,
 	} from "bits-ui";
-	import type { Snippet, ComponentProps } from "svelte";
+	import type { ComponentProps, Snippet } from "svelte";
 	import { Button } from "$lib/components/ui/button";
-	import XIcon from "@lucide/svelte/icons/x";
-
-	import DialogPortal from "./dialog-portal.svelte";
-	import DialogOverlay from "./dialog-backdrop.svelte";
-
 	import { cn } from "$lib/utils";
+	import DialogOverlay from "./dialog-backdrop.svelte";
+	import DialogPortal from "./dialog-portal.svelte";
 
 	let {
 		ref = $bindable(null),

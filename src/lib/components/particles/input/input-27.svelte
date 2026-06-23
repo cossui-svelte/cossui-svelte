@@ -1,13 +1,11 @@
 <script lang="ts">
-	import type { EventHandler } from "svelte/elements";
-
-	import { Input } from "$lib/components/ui/input";
-	import { Label } from "$lib/components/ui/label";
-
 	import LoaderCircle from "@lucide/svelte/icons/loader-circle";
 	import Mic from "@lucide/svelte/icons/mic";
 	import Search from "@lucide/svelte/icons/search";
 	import { onDestroy } from "svelte";
+	import type { EventHandler } from "svelte/elements";
+	import { Input } from "$lib/components/ui/input";
+	import { Label } from "$lib/components/ui/label";
 
 	let inputValue = $state("");
 	let isLoading = $state(false);

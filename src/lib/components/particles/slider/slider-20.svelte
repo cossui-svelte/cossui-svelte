@@ -1,10 +1,9 @@
 <script lang="ts">
+	import Minus from "@lucide/svelte/icons/minus";
+	import Plus from "@lucide/svelte/icons/plus";
 	import { Button } from "$lib/components/ui/button";
 	import { Label } from "$lib/components/ui/label";
 	import { Slider } from "$lib/components/ui/slider";
-
-	import Minus from "@lucide/svelte/icons/minus";
-	import Plus from "@lucide/svelte/icons/plus";
 
 	const min = 0;
 	const max = 200;

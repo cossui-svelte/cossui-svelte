@@ -1,19 +1,19 @@
 <script lang="ts" module>
   export interface ProgressContext {
-    readonly value: number | null;
-    readonly min: number;
-    readonly max: number;
-    readonly percentage: number;
     readonly indeterminate: boolean;
+    readonly max: number;
+    readonly min: number;
+    readonly percentage: number;
+    readonly value: number | null;
   }
 
   export const PROGRESS_CONTEXT_KEY = Symbol.for("cossui:progress");
 </script>
 
 <script lang="ts">
+  import { Progress as ProgressPrimitive } from "bits-ui";
   import type { Snippet } from "svelte";
   import { setContext } from "svelte";
-  import { Progress as ProgressPrimitive } from "bits-ui";
   import { cn } from "$lib/utils";
   import ProgressIndicator from "./progress-indicator.svelte";
   import ProgressTrack from "./progress-track.svelte";
@@ -35,20 +35,20 @@
   );
 
   setContext<ProgressContext>(PROGRESS_CONTEXT_KEY, {
-    get value() {
-      return value as number | null;
-    },
-    get min() {
-      return min;
+    get indeterminate() {
+      return indeterminate;
     },
     get max() {
       return max;
     },
+    get min() {
+      return min;
+    },
     get percentage() {
       return percentage;
     },
-    get indeterminate() {
-      return indeterminate;
+    get value() {
+      return value as number | null;
     },
   });
 </script>

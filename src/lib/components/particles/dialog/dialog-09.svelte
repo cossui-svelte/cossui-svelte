@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Mail from "@lucide/svelte/icons/mail";
 	import { Button, buttonVariants } from "$lib/components/ui/button";
 	import {
 		Dialog,
@@ -11,8 +12,6 @@
 		DialogTrigger,
 	} from "$lib/components/ui/dialog";
 	import { Input } from "$lib/components/ui/input";
-
-	import Mail from "@lucide/svelte/icons/mail";
 </script>
 
 <Dialog>

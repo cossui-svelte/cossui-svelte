@@ -1,4 +1,5 @@
 <script lang="ts">
+	import RotateCcw from "@lucide/svelte/icons/rotate-ccw";
 	import { Button } from "$lib/components/ui/button";
 	import { Input } from "$lib/components/ui/input";
 	import { Label } from "$lib/components/ui/label";
@@ -9,8 +10,6 @@
 		TooltipProvider,
 		TooltipTrigger,
 	} from "$lib/components/ui/tooltip";
-
-	import RotateCcw from "@lucide/svelte/icons/rotate-ccw";
 
 	const min = 0;
 	const max = 2;

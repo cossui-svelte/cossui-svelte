@@ -1,7 +1,7 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import { getContext } from 'svelte';
 	import { cn } from '$lib/utils';
-	import type { Snippet } from 'svelte';
 
 	interface StepperContextValue {
 		activeStep: number;
@@ -9,9 +9,9 @@
 	}
 
 	interface StepItemContextValue {
-		step: number;
 		isDisabled: boolean;
 		orientation: 'horizontal' | 'vertical';
+		step: number;
 	}
 
 	let {

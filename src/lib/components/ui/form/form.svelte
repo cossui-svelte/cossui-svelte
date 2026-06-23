@@ -1,8 +1,8 @@
 <script lang="ts" generics="T extends Record<string, unknown>">
   import type { HTMLFormAttributes } from "svelte/elements";
+  import { type SuperForm } from "sveltekit-superforms";
   import { cn, type WithElementRef } from "$lib/utils";
   import { setFormContext } from "./form-context.svelte";
-  import { type SuperForm } from "sveltekit-superforms";
 
   let {
     ref = $bindable(null),

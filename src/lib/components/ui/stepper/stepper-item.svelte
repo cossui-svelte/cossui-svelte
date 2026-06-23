@@ -1,21 +1,21 @@
 <script lang="ts">
-	import { getContext, setContext, onMount, type Snippet } from 'svelte';
+	import { getContext, onMount, type Snippet, setContext } from 'svelte';
 	import { cn } from '$lib/utils';
 
 	type StepState = 'active' | 'completed' | 'inactive' | 'loading';
 
 	interface StepperContextValue {
 		activeStep: number;
-		orientation: 'horizontal' | 'vertical';
 		incrementTotalSteps: () => number;
+		orientation: 'horizontal' | 'vertical';
 	}
 
 	interface StepItemContextValue {
-		step: number;
-		state: StepState;
 		isDisabled: boolean;
 		isLoading: boolean;
 		orientation: 'horizontal' | 'vertical';
+		state: StepState;
+		step: number;
 	}
 
 	let {
@@ -63,12 +63,6 @@
 	});
 
 	const stepItemCtx: StepItemContextValue = {
-		get step() {
-			return itemStep;
-		},
-		get state() {
-			return itemState;
-		},
 		get isDisabled() {
 			return disabled;
 		},
@@ -77,6 +71,12 @@
 		},
 		get orientation() {
 			return stepperCtx.orientation;
+		}, 
+		get state() {
+			return itemState;
+		},
+		get step() {
+			return itemStep;
 		}
 	};
 

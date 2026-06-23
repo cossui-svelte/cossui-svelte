@@ -1,8 +1,7 @@
 <script lang="ts">
-    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
+    import PasteIcon from "@lucide/svelte/icons/clipboard";
     import CopyIcon from "@lucide/svelte/icons/copy";
     import CutIcon from "@lucide/svelte/icons/scissors";
-    import PasteIcon from "@lucide/svelte/icons/clipboard";
     import TrashIcon from "@lucide/svelte/icons/trash";
     import {
         ContextMenu,
@@ -20,6 +19,7 @@
         ContextMenuSubTrigger,
         ContextMenuTrigger,
     } from "$lib/components/ui/context-menu";
+    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
 </script>
 
 <ComponentPreviewTabs>

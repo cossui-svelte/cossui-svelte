@@ -11,9 +11,9 @@
 	import { Select, SelectContent, SelectItem, SelectTrigger } from '$lib/components/ui/select';
 
 	const sections = [
-		{ value: 'documentation', label: 'Documentation', href: '#title' },
-		{ value: 'themes', label: 'Themes', href: '#title' },
-		{ value: 'github', label: 'GitHub', href: '#title' }
+		{ href: '#title', label: 'Documentation', value: 'documentation' },
+		{ href: '#title', label: 'Themes', value: 'themes' },
+		{ href: '#title', label: 'GitHub', value: 'github' }
 	];
 
 	let selected = $state<string | undefined>(undefined);

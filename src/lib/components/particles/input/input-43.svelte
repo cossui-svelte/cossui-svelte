@@ -1,8 +1,4 @@
 <script lang="ts">
-	import { Label } from "$lib/components/ui/label";
-	import { useLocale } from "$lib/hooks/use-locale.svelte";
-	import { cn } from "$lib/utils";
-
 	import {
 		type DateValue,
 		getLocalTimeZone,
@@ -17,6 +13,9 @@
 		DateRangePicker,
 		type DateRangeValidator,
 	} from "bits-ui";
+	import { Label } from "$lib/components/ui/label";
+	import { useLocale } from "$lib/hooks/use-locale.svelte";
+	import { cn } from "$lib/utils";
 
 	let now = today(getLocalTimeZone());
 	let value: DateRange = $state({ end: undefined, start: undefined });

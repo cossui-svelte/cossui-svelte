@@ -1,10 +1,8 @@
 <script lang="ts">
 	import type { WithElementRef } from "bits-ui";
 	import type { HTMLAttributes } from "svelte/elements";
-
-	import { setTimelineContext } from "./timeline-context.svelte";
-
 	import { cn } from "$lib/utils";
+	import { setTimelineContext } from "./timeline-context.svelte";
 
 	type TimelineProps = WithElementRef<HTMLAttributes<HTMLDivElement>> & {
 		defaultValue?: number;

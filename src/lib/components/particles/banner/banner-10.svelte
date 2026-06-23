@@ -1,8 +1,7 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button";
-
 	import TicketPercent from "@lucide/svelte/icons/ticket-percent";
 	import X from "@lucide/svelte/icons/x";
+	import { Button } from "$lib/components/ui/button";
 
 	// Setting 9h 45m 24s from now for demo purposes
 	const saleEndDate = new Date(

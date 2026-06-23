@@ -1,12 +1,10 @@
 <script lang="ts">
-	import type { CountryCode } from "svelte-tel-input/types";
-	import type { ChangeEventHandler } from "svelte/elements";
-
-	import { Label } from "$lib/components/ui/label";
-
 	import ChevronDown from "@lucide/svelte/icons/chevron-down";
 	import Phone from "@lucide/svelte/icons/phone";
+	import type { ChangeEventHandler } from "svelte/elements";
 	import { countries, TelInput } from "svelte-tel-input";
+	import type { CountryCode } from "svelte-tel-input/types";
+	import { Label } from "$lib/components/ui/label";
 	import "svelte-tel-input/styles/flags.css";
 
 	let selectedCountry = $state<CountryCode | null>(null);

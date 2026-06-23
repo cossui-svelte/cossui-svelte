@@ -1,22 +1,22 @@
 <script lang="ts" module>
-  import { getContext, setContext } from "svelte";
   import type { Snippet } from "svelte";
+  import { getContext, setContext } from "svelte";
 
   interface ComboboxCtx {
-    readonly multiple: boolean;
-    readonly value: string | string[] | undefined;
     readonly chipsEl: HTMLElement | null;
+    clearValue(): void;
     readonly filterText: string;
     readonly hasVisibleItems: boolean;
+    readonly multiple: boolean;
+    removeLastValue(): void;
+    setChipsEl(el: HTMLElement | null): void;
+    setFilterText(v: string): void;
+    setInputEl(el: HTMLInputElement | null): void;
+    setOpen(v: boolean): void;
     readonly showClear: boolean;
     readonly showTrigger: boolean;
     readonly startAddon: Snippet | undefined;
-    clearValue(): void;
-    setChipsEl(el: HTMLElement | null): void;
-    setInputEl(el: HTMLInputElement | null): void;
-    setOpen(v: boolean): void;
-    setFilterText(v: string): void;
-    removeLastValue(): void;
+    readonly value: string | string[] | undefined;
   }
 
   const COMBOBOX_CTX_KEY = Symbol("combobox");
@@ -31,8 +31,8 @@
 </script>
 
 <script lang="ts">
-  import { tick } from "svelte";
   import { Combobox } from "bits-ui";
+  import { tick } from "svelte";
 
   type DefaultValue = string | { label?: string; value: string };
 
@@ -129,9 +129,9 @@
       tick().then(() => {
         inputEl?.dispatchEvent(
           new KeyboardEvent("keydown", {
-            key: "ArrowDown",
             bubbles: true,
             cancelable: true,
+            key: "ArrowDown",
           }),
         );
       });
@@ -152,29 +152,8 @@
   }
 
   setComboboxCtx({
-    get multiple() {
-      return type === "multiple";
-    },
-    get value() {
-      return internalValue;
-    },
     get chipsEl() {
       return chipsEl;
-    },
-    get filterText() {
-      return filterText;
-    },
-    get hasVisibleItems() {
-      return hasVisibleItems;
-    },
-    get showClear() {
-      return showClear;
-    },
-    get showTrigger() {
-      return showTrigger;
-    },
-    get startAddon() {
-      return startAddon;
     },
     clearValue() {
       const empty = type === "multiple" ? ([] as string[]) : undefined;
@@ -183,22 +162,14 @@
       value = empty as never;
       onValueChange?.(empty as never);
     },
-    setChipsEl(el) {
-      chipsEl = el;
+    get filterText() {
+      return filterText;
     },
-    setInputEl(el) {
-      inputEl = el;
+    get hasVisibleItems() {
+      return hasVisibleItems;
     },
-    setOpen(v) {
-      internalOpen = v;
-      open = v as never;
-      onOpenChange?.(v);
-    },
-    setFilterText(v) {
-      filterText = v;
-      // Track typed text in multiple mode so clearing inputValueProxy in
-      // handleValueChange registers as an actual change that Svelte will push.
-      if (type === "multiple") inputValueProxy = v;
+    get multiple() {
+      return type === "multiple";
     },
     removeLastValue() {
       if (type === "multiple") {
@@ -214,6 +185,35 @@
         value = undefined as never;
         onValueChange?.(undefined as never);
       }
+    },
+    setChipsEl(el) {
+      chipsEl = el;
+    },
+    setFilterText(v) {
+      filterText = v;
+      // Track typed text in multiple mode so clearing inputValueProxy in
+      // handleValueChange registers as an actual change that Svelte will push.
+      if (type === "multiple") inputValueProxy = v;
+    },
+    setInputEl(el) {
+      inputEl = el;
+    },
+    setOpen(v) {
+      internalOpen = v;
+      open = v as never;
+      onOpenChange?.(v);
+    },
+    get showClear() {
+      return showClear;
+    },
+    get showTrigger() {
+      return showTrigger;
+    },
+    get startAddon() {
+      return startAddon;
+    },
+    get value() {
+      return internalValue;
     },
   });
 </script>

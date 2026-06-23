@@ -1,7 +1,6 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button";
-
 	import Plus from "@lucide/svelte/icons/plus";
+	import { Button } from "$lib/components/ui/button";
 
 	let open = $state(false);
 

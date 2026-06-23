@@ -9,6 +9,7 @@
 		TimelineSeparator,
 		TimelineTitle
 	} from '$lib/components/ui/timeline';
+
 	const items = [
 		{
 			date: 'Mar 15, 2024',

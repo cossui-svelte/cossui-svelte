@@ -1,12 +1,11 @@
 <script lang="ts">
 	import { Button } from "$lib/components/ui/button";
-
-	import AvatarImg from "$assets/avatar-40-04.jpg?w=40&h=40&enhanced";
 	import {
 		LinkPreview,
 		LinkPreviewContent,
 		LinkPreviewTrigger,
 	} from "$lib/components/ui/link-preview";
+	import AvatarImg from "$assets/avatar-40-04.jpg?w=40&h=40&enhanced";
 </script>
 
 <LinkPreview>

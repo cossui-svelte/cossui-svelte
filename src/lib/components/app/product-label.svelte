@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { page } from "$app/state";
   import { Badge } from "$lib/components/ui/badge";
+  import { page } from "$app/state";
 
   interface ProductItem {
     href: string;
@@ -9,8 +9,8 @@
   }
 
   interface Props {
-    items: ProductItem[];
     currentProduct?: string;
+    items: ProductItem[];
   }
 
   let { items, currentProduct }: Props = $props();

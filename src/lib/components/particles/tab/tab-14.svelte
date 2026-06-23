@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { Badge } from "$lib/components/ui/badge";
-
 	import {
 		Tabs,
 		TabsContent,

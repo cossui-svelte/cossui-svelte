@@ -1,17 +1,17 @@
 <script lang="ts">
+  import { Dialog } from "bits-ui";
   import type { Snippet } from "svelte";
   import type { HTMLAttributes } from "svelte/elements";
-  import { Dialog } from "bits-ui";
+  import { cn } from "$lib/utils";
   import Sheet from "../sheet/sheet.svelte";
   import SheetPopup from "../sheet/sheet-popup.svelte";
   import { getSidebarContext } from "./sidebar-context.js";
-  import { cn } from "$lib/utils";
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
+    children?: Snippet;
+    collapsible?: "offcanvas" | "icon" | "none";
     side?: "left" | "right";
     variant?: "sidebar" | "floating" | "inset";
-    collapsible?: "offcanvas" | "icon" | "none";
-    children?: Snippet;
   }
 
   let {

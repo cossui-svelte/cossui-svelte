@@ -1,5 +1,4 @@
 <script>
-    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
     import {
         Breadcrumb,
         BreadcrumbEllipsis,
@@ -16,6 +15,7 @@
         MenuPopup,
         MenuTrigger,
     } from "$lib/components/ui/menu";
+    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
 </script>
 
 <ComponentPreviewTabs>

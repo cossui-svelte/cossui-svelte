@@ -1,13 +1,13 @@
 <script lang="ts">
-  import { Spinner } from "$lib/components/ui/spinner";
   import { Button } from "bits-ui";
+  import type { Snippet } from "svelte";
+  import { Spinner } from "$lib/components/ui/spinner";
   import { cn } from "$lib/utils";
   import {
-    buttonVariants,
     type ButtonSize,
     type ButtonVariant,
+    buttonVariants,
   } from "./button-variants";
-  import type { Snippet } from "svelte";
 
   let {
     class: className,

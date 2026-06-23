@@ -1,12 +1,11 @@
 <script lang="ts">
+	import ChevronDown from "@lucide/svelte/icons/chevron-down";
 	import {
 		Accordion,
+		AccordionContent,
 		AccordionItem,
 		AccordionTrigger,
-		AccordionContent,
 	} from "$lib/components/ui/accordion";
-
-	import ChevronDown from "@lucide/svelte/icons/chevron-down";
 	import {
 		Collapsible,
 		CollapsibleContent,

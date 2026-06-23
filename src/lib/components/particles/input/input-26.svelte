@@ -1,9 +1,8 @@
 <script lang="ts">
-	import { Input } from "$lib/components/ui/input";
-	import { Label } from "$lib/components/ui/label";
-
 	import ArrowRight from "@lucide/svelte/icons/arrow-right";
 	import Search from "@lucide/svelte/icons/search";
+	import { Input } from "$lib/components/ui/input";
+	import { Label } from "$lib/components/ui/label";
 
 	const uid = $props.id();
 </script>

@@ -1,10 +1,9 @@
 <script lang="ts">
-	import { Label } from "$lib/components/ui/label";
-
 	import ChevronFirst from "@lucide/svelte/icons/chevron-first";
 	import ChevronLast from "@lucide/svelte/icons/chevron-last";
 	import ChevronLeft from "@lucide/svelte/icons/chevron-left";
 	import ChevronRight from "@lucide/svelte/icons/chevron-right";
+	import { Label } from "$lib/components/ui/label";
 	import {
 		Pagination,
 		PaginationContent,

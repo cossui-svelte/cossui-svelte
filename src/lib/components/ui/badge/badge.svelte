@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { type BadgeVariants, badgeVariants } from "./badgeVariants";
   import type { HTMLAnchorAttributes } from "svelte/elements";
   import { cn, type WithElementRef } from "$lib/utils";
+  import { type BadgeVariants, badgeVariants } from "./badgeVariants";
 
   let {
     ref = $bindable(null),

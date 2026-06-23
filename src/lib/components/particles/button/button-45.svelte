@@ -1,10 +1,9 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button";
-
 	import RiFacebookFill from "svelte-remix/FacebookFillLogos.svelte";
 	import RiGithubFill from "svelte-remix/GithubFillLogos.svelte";
 	import RiGoogleFill from "svelte-remix/GoogleFillLogos.svelte";
 	import RiTwitterXFill from "svelte-remix/TwitterXFillLogos.svelte";
+	import { Button } from "$lib/components/ui/button";
 </script>
 
 <div class="flex flex-col gap-2">

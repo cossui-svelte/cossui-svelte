@@ -1,4 +1,5 @@
 <script lang="ts">
+	import CircleAlert from "@lucide/svelte/icons/circle-alert";
 	import { Button, buttonVariants } from "$lib/components/ui/button";
 	import {
 		Dialog,
@@ -12,8 +13,6 @@
 	} from "$lib/components/ui/dialog";
 	import { Input } from "$lib/components/ui/input";
 	import { Label } from "$lib/components/ui/label";
-
-	import CircleAlert from "@lucide/svelte/icons/circle-alert";
 	import { PROJECT_NAME } from "$lib/config";
 
 	let inputValue = $state("");

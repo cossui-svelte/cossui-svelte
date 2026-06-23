@@ -1,10 +1,9 @@
 <script lang="ts">
+	import RotateCcw from "@lucide/svelte/icons/rotate-ccw";
 	import { Button } from "$lib/components/ui/button";
 	import { Input } from "$lib/components/ui/input";
 	import { Label } from "$lib/components/ui/label";
 	import { Slider } from "$lib/components/ui/slider";
-
-	import RotateCcw from "@lucide/svelte/icons/rotate-ccw";
 
 	const defaultValue = 0;
 	const min = -10;

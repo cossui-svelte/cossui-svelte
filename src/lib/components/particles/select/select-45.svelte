@@ -1,7 +1,4 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button";
-	import { Label } from "$lib/components/ui/label";
-
 	import Blocks from "@lucide/svelte/icons/blocks";
 	import Brain from "@lucide/svelte/icons/brain";
 	import LineChart from "@lucide/svelte/icons/chart-line";
@@ -13,6 +10,7 @@
 	import Network from "@lucide/svelte/icons/network";
 	import Search from "@lucide/svelte/icons/search";
 	import Server from "@lucide/svelte/icons/server";
+	import { Button } from "$lib/components/ui/button";
 	import {
 		Command,
 		CommandEmpty,
@@ -21,6 +19,7 @@
 		CommandItem,
 		CommandList,
 	} from "$lib/components/ui/command";
+	import { Label } from "$lib/components/ui/label";
 	import {
 		Popover,
 		PopoverContent,

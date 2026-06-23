@@ -3,14 +3,14 @@
 
 	export const emptyMediaVariants = tv({
 		base: "cn-empty-media flex shrink-0 items-center justify-center [&_svg]:pointer-events-none [&_svg]:shrink-0",
+		defaultVariants: {
+			variant: "default",
+		},
 		variants: {
 			variant: {
 				default: "cn-empty-media-default",
 				icon: "cn-empty-media-icon",
 			},
-		},
-		defaultVariants: {
-			variant: "default",
 		},
 	});
 
@@ -20,8 +20,8 @@
 </script>
 
 <script lang="ts">
-	import { cn, type WithElementRef } from "$lib/utils";
 	import type { HTMLAttributes } from "svelte/elements";
+	import { cn, type WithElementRef } from "$lib/utils";
 
 	let {
 		ref = $bindable(null),

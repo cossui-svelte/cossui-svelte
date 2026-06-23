@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Drawer as DrawerPrimitive } from "$lib/vaul";
 	import { cn } from "$lib/utils";
+	import { Drawer as DrawerPrimitive } from "$lib/vaul";
 
 	let {
 		ref = $bindable(null),

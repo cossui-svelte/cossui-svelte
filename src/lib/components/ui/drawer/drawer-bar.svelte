@@ -1,7 +1,7 @@
 <script lang="ts">
+	import { getContext } from "svelte";
 	import type { HTMLAttributes } from "svelte/elements";
 	import { cn, type WithElementRef } from "$lib/utils";
-	import { getContext } from "svelte";
 
 	type DrawerPosition = "right" | "left" | "top" | "bottom";
 

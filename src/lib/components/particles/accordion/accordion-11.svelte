@@ -1,9 +1,9 @@
 <script lang="ts">
 	import {
 		Accordion,
+		AccordionContent,
 		AccordionItem,
 		AccordionTrigger,
-		AccordionContent,
 	} from "$lib/components/ui/accordion";
 
 	const items = [

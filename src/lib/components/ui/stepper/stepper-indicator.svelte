@@ -1,15 +1,15 @@
 <script lang="ts">
-	import { getContext } from 'svelte';
-	import { cn } from '$lib/utils';
 	import CheckIcon from "@lucide/svelte/icons/check-icon";
 	import LoaderCircleIcon from "@lucide/svelte/icons/loader-circle-icon";
+	import { getContext } from 'svelte';
+	import { cn } from '$lib/utils';
 
 	type StepState = 'active' | 'completed' | 'inactive' | 'loading';
 
 	interface StepItemContextValue {
-		step: number;
-		state: StepState;
 		isLoading: boolean;
+		state: StepState;
+		step: number;
 	}
 
 	let {

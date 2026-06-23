@@ -1,8 +1,7 @@
 <script lang="ts">
+	import { PinInput, type PinInputCell } from "bits-ui";
 	import { Label } from "$lib/components/ui/label";
 	import { cn } from "$lib/utils";
-
-	import { PinInput, type PinInputCell } from "bits-ui";
 
 	let value = $state("");
 	const uid = $props.id();

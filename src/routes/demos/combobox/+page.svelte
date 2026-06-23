@@ -1,5 +1,5 @@
 <script lang="ts">
-    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
+    import SearchIcon from "@lucide/svelte/icons/search";
     import {
         Combobox,
         ComboboxChip,
@@ -16,7 +16,7 @@
         ComboboxSeparator,
     } from "$lib/components/ui/combobox";
     import { Label } from "$lib/components/ui/label";
-    import SearchIcon from "@lucide/svelte/icons/search";
+    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
 
     const items = [
         { label: "Apple", value: "apple" },

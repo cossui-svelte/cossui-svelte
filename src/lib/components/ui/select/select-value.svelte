@@ -3,8 +3,8 @@
 	import { cn } from "$lib/utils";
 
 	interface Props {
-		placeholder?: string;
 		class?: string;
+		placeholder?: string;
 	}
 
 	let { placeholder = "", class: className }: Props = $props();

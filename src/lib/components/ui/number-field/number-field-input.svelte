@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { HTMLInputAttributes } from "svelte/elements";
   import { getContext } from "svelte";
+  import type { HTMLInputAttributes } from "svelte/elements";
   import { cn } from "$lib/utils";
   import {
     NUMBER_FIELD_CONTEXT_KEY,

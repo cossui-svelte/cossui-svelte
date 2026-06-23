@@ -1,4 +1,9 @@
 <script lang="ts">
+	import CircleAlertIcon from "@lucide/svelte/icons/circle-alert";
+	import CircleCheckIcon from "@lucide/svelte/icons/circle-check";
+	import InfoIcon from "@lucide/svelte/icons/info";
+	import LoaderCircleIcon from "@lucide/svelte/icons/loader-circle";
+	import TriangleAlertIcon from "@lucide/svelte/icons/triangle-alert";
 	/**
 	 * @component
 	 * @description
@@ -9,29 +14,24 @@
 	import { buttonVariants } from "$lib/components/ui/button";
 	import {
 		ANIMATION_CONFIG,
+		cn,
 		FOCUSABLE_SELECTORS,
 		focusManager,
+		getDefaultSwipeDirections,
 		isFocusVisible,
 		POSITION_CONFIGS,
+		type PositionedToast,
 		SWIPE_DISMISS_THRESHOLD,
 		SWIPE_DISMISS_VELOCITY,
 		SWIPE_EXIT_DISTANCE,
 		SWIPE_REVERSE_CANCEL_THRESHOLD,
-		cn,
-		getDefaultSwipeDirections,
+		type SwipeAxis,
+		type SwipeDirection,
+		type ToastPosition,
 		toastContainerVariants,
 		toastContentVariants,
 		toastState,
-		type PositionedToast,
-		type ToastPosition,
-		type SwipeAxis,
-		type SwipeDirection,
 	} from "./internals";
-	import CircleAlertIcon from "@lucide/svelte/icons/circle-alert";
-	import CircleCheckIcon from "@lucide/svelte/icons/circle-check";
-	import InfoIcon from "@lucide/svelte/icons/info";
-	import LoaderCircleIcon from "@lucide/svelte/icons/loader-circle";
-	import TriangleAlertIcon from "@lucide/svelte/icons/triangle-alert";
 	import { hasVariantIcon, type IconVariant } from "./variant-icons";
 
 	const VARIANT_ICONS: Record<IconVariant, typeof CircleAlertIcon> = {
@@ -279,7 +279,7 @@
 		}
 
 		animationState = "exiting";
-		toastState.update(id, { shouldClose: true, isLeaving: true });
+		toastState.update(id, { isLeaving: true, shouldClose: true });
 	};
 
 	$effect(() => {
@@ -734,8 +734,8 @@
 		const transform = `translate(calc(${translateX}px + var(--swipe-translate-x, 0px)), calc(${translateY}px + var(--swipe-translate-y, 0px))) scale(${scaleValue})`;
 
 		return {
-			transform,
 			opacity: opacityValue,
+			transform,
 		};
 	});
 

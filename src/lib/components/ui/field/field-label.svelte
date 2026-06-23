@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { Label } from "$lib/formsnap";
-  import type { HTMLAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils";
   import type { LabelRootProps } from "bits-ui";
+  import type { HTMLAttributes } from "svelte/elements";
+  import { Label } from "$lib/formsnap";
+  import { cn } from "$lib/utils";
 
   let {
     ref = $bindable(null),

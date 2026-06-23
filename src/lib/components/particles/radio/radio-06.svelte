@@ -1,8 +1,7 @@
 <script lang="ts">
+	import IconStarFill from "svelte-remix/StarFillSystem.svelte";
 	import { Label } from "$lib/components/ui/label";
 	import { RadioGroup, RadioGroupItem } from "$lib/components/ui/radio-group";
-
-	import IconStarFill from "svelte-remix/StarFillSystem.svelte";
 
 	let selectedValue = $state("all");
 </script>

@@ -1,7 +1,7 @@
 <script lang="ts">
+  import { Checkbox } from "bits-ui";
   import type { Snippet } from "svelte";
   import { cn } from "$lib/utils";
-  import { Checkbox } from "bits-ui";
 
   interface Props extends Checkbox.GroupProps {
     children?: Snippet;

@@ -1,13 +1,13 @@
 <script>
-    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
     import { defaults, superForm } from "sveltekit-superforms";
     import { valibot } from "sveltekit-superforms/adapters";
     import * as v from "valibot";
-    import { Form } from "$lib/components/ui/form";
-    import { Textarea } from "$lib/components/ui/textarea";
-    import { Field, FieldError, FieldLabel } from "$lib/components/ui/field";
     import { Button } from "$lib/components/ui/button";
+    import { Field, FieldError, FieldLabel } from "$lib/components/ui/field";
+    import { Form } from "$lib/components/ui/form";
     import { Label } from "$lib/components/ui/label";
+    import { Textarea } from "$lib/components/ui/textarea";
+    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
 
     let loading = $state(false);
 
@@ -29,14 +29,14 @@
     });
 
     const form = superForm(defaults(valibot(schema)), {
-        SPA: true,
-        validators: valibot(schema),
         onUpdate({ form }) {
             if (form.valid) {
                 // do your thing — fetch, store write, etc.
                 console.log("valid", form.data);
             }
         },
+        SPA: true,
+        validators: valibot(schema),
     });
 </script>
 

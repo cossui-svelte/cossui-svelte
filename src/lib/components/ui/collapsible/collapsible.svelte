@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
   import { Collapsible } from "bits-ui";
+  import type { Snippet } from "svelte";
 
   type Props = Collapsible.RootProps & { children?: Snippet };
 

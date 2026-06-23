@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { HTMLAttributes } from "svelte/elements";
   import { getContext } from "svelte";
+  import type { HTMLAttributes } from "svelte/elements";
   import { cn } from "$lib/utils";
   import {
     PROGRESS_CONTEXT_KEY,

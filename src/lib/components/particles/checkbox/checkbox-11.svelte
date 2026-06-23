@@ -1,9 +1,8 @@
 <script lang="ts">
 	import type { TransitionEventHandler } from "svelte/elements";
-
 	import { Checkbox } from "$lib/components/ui/checkbox";
-	import { Label } from "$lib/components/ui/label";
 	import { Input } from "$lib/components/ui/input";
+	import { Label } from "$lib/components/ui/label";
 
 	let checked = $state(false);
 	let inputElement: HTMLInputElement | null = $state(null);

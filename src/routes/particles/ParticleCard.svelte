@@ -1,14 +1,14 @@
 <script lang="ts">
-	import Info from "@lucide/svelte/icons/info";
-	import Copy from "@lucide/svelte/icons/copy";
 	import Check from "@lucide/svelte/icons/check";
+	import Copy from "@lucide/svelte/icons/copy";
+	import Info from "@lucide/svelte/icons/info";
 	import { Button } from "$lib/components/ui/button";
 	import { Drawer, DrawerPopup } from "$lib/components/ui/drawer";
 	import { ScrollArea } from "$lib/components/ui/scroll-area";
 	import CodeBlockCommand from "$lib/components/app/code-block-command.svelte";
-	import ParticleCardContainer from "./ParticleCardContainer.svelte";
-	import type { RegistryParticuleEntry } from "$lib/registry/registry-particles";
     import ComponentSource from "$lib/components/app/component-source.svelte";
+	import type { RegistryParticuleEntry } from "$lib/registry/registry-particles";
+	import ParticleCardContainer from "./ParticleCardContainer.svelte";
 
 	let {
 		particle,

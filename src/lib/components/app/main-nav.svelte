@@ -1,11 +1,11 @@
 <script lang="ts">
+  import { buttonVariants } from "$lib/components/ui/button";
   import { cn } from "$lib/utils";
   import { page } from "$app/state";
-  import { buttonVariants } from "$lib/components/ui/button";
 
   interface Props {
-    items: { href: string; label: string }[];
     class?: string;
+    items: { href: string; label: string }[];
   }
 
   let { items, class: className }: Props = $props();

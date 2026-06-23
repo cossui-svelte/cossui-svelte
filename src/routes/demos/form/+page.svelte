@@ -1,31 +1,29 @@
 <script lang="ts">
-    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
-
+    import { superForm } from "sveltekit-superforms";
+    import { valibotClient } from "sveltekit-superforms/adapters";
     import { Button } from "$lib/components/ui/button";
     import { Field, FieldError, FieldLabel } from "$lib/components/ui/field";
     import { Form } from "$lib/components/ui/form";
     import { Input } from "$lib/components/ui/input";
-
-    import { superForm } from "sveltekit-superforms";
-    import { valibotClient } from "sveltekit-superforms/adapters";
+    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
     import { schema } from "./schema";
 
     let { data } = $props();
 
     const formConfig = superForm(data.form, {
-        SPA: true,
         delayMs: 500,
-        timeoutMs: 8000,
-        validators: valibotClient(schema),
-        validationMethod: "oninput",
-        scrollToError: "smooth",
-        resetForm: true,
         async onUpdated({ form }) {
             if (form.valid) {
                 await new Promise((r) => setTimeout(r, 2000));
                 alert("Form submitted successfully!");
             }
         },
+        resetForm: true,
+        SPA: true,
+        scrollToError: "smooth",
+        timeoutMs: 8000,
+        validationMethod: "oninput",
+        validators: valibotClient(schema),
     });
 
     const { form: formData, submitting, delayed } = formConfig;

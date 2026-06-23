@@ -1,9 +1,8 @@
 <script lang="ts">
+	import ListFilter from "@lucide/svelte/icons/list-filter";
 	import { Button } from "$lib/components/ui/button";
 	import { Checkbox } from "$lib/components/ui/checkbox";
 	import { Label } from "$lib/components/ui/label";
-
-	import ListFilter from "@lucide/svelte/icons/list-filter";
 	import {
 		Popover,
 		PopoverContent,

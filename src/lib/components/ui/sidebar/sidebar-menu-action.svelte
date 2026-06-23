@@ -4,8 +4,8 @@
   import { cn } from "$lib/utils";
 
   interface Props extends HTMLButtonAttributes {
-    showOnHover?: boolean;
     children?: Snippet;
+    showOnHover?: boolean;
   }
 
   let {

@@ -1,4 +1,6 @@
 <script lang="ts">
+	import CheckIcon from "@lucide/svelte/icons/check";
+	import CopyIcon from "@lucide/svelte/icons/copy";
 	import { Button } from "$lib/components/ui/button";
 	import {
 		Tooltip,
@@ -7,9 +9,6 @@
 		TooltipTrigger,
 	} from "$lib/components/ui/tooltip";
 	import { cn } from "$lib/utils";
-
-	import CheckIcon from "@lucide/svelte/icons/check";
-	import CopyIcon from "@lucide/svelte/icons/copy";
 
 	let copied = $state(false);
 

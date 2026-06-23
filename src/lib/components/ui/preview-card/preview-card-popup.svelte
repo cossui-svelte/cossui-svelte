@@ -1,11 +1,11 @@
 <script lang="ts">
-    import type { Snippet } from "svelte";
     import { LinkPreview } from "bits-ui";
+    import type { Snippet } from "svelte";
     import { cn } from "$lib/utils";
 
     interface Props extends LinkPreview.ContentProps {
-        children?: Snippet;
         align?: LinkPreview.ContentProps["align"];
+        children?: Snippet;
         sideOffset?: LinkPreview.ContentProps["sideOffset"];
     }
 

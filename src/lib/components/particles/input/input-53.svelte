@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Check from "@lucide/svelte/icons/check";
+	import Copy from "@lucide/svelte/icons/copy";
 	import { Input } from "$lib/components/ui/input";
 	import { Label } from "$lib/components/ui/label";
 	import {
@@ -8,9 +10,6 @@
 		TooltipTrigger,
 	} from "$lib/components/ui/tooltip";
 	import { cn } from "$lib/utils";
-
-	import Check from "@lucide/svelte/icons/check";
-	import Copy from "@lucide/svelte/icons/copy";
 
 	let copied = $state(false);
 	let inputElement = $state<HTMLInputElement | null>(null);

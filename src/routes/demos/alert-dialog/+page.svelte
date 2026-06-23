@@ -1,5 +1,4 @@
 <script>
-    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
     import {
         AlertDialog,
         AlertDialogClose,
@@ -11,6 +10,7 @@
         AlertDialogTrigger,
     } from "$lib/components/ui/alert-dialog";
     import { Button, buttonVariants } from "$lib/components/ui/button";
+    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
 </script>
 
 <ComponentPreviewTabs>
