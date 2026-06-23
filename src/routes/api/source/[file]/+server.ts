@@ -4,7 +4,7 @@ import { error } from '@sveltejs/kit';
 // import { createHighlighter } from 'shiki';
 import { allParticles } from '$lib/registry/registry-particles';
 import type { RequestHandler } from './$types';
-import {highlighter as highlighterPromise} from "./shiki"
+import { highlighter as highlighterPromise } from './shiki';
 
 // const highlighterPromise = createHighlighter({
 //   langs: ['svelte'],
@@ -12,10 +12,9 @@ import {highlighter as highlighterPromise} from "./shiki"
 // });
 
 export const GET: RequestHandler = async ({ params }) => {
-
   const id = params.file;
 
- console.log(id);
+  console.log(id);
 
   // validate the file parameter
   if (!/^[a-z0-9-]+$/.test(id)) {
@@ -35,7 +34,7 @@ export const GET: RequestHandler = async ({ params }) => {
     `src/lib/components/particles/${meta.folder}/${meta.file}.svelte`
   );
 
- console.log(filePath);
+  console.log(filePath);
 
   try {
     const source = readFileSync(filePath, 'utf-8');
@@ -47,8 +46,8 @@ export const GET: RequestHandler = async ({ params }) => {
     return new Response(JSON.stringify({ html, raw: source }), {
       headers: { 'content-type': 'application/json' }
     });
-  } catch(e) {
-    console.log(e)
+  } catch (e) {
+    console.log(e);
     error(404, 'File not found');
   }
 };

@@ -2,7 +2,6 @@ const config = {
   compilers: {
     svelte: (text: string) => [...text.matchAll(/import[^;]+/gu)].join('\n')
   },
-  ignoreDependencies: ['tw-animate-css'],
   ignoreIssues: {
     'src/lib/components/ui/**': ['exports', 'types', 'files'],
     'src/lib/formsnap/**': ['exports', 'types', 'files'],
