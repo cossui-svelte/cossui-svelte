@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Button } from "../ui/button";
-  import GithubIcon from "svelte-remix/GithubFillLogos.svelte";
+  import GithubIcon from "svelte-remix/GithubLineLogos.svelte";
   import { onMount } from "svelte";
 
   export const FALLBACK_STAR_COUNT = 8000;
