@@ -13,7 +13,7 @@
 
 <Accordion.Content
   bind:ref
-  class="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+  class="w-full overflow-hidden text-muted-foreground text-sm transition-[height] duration-200 ease-out data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
   data-slot="accordion-panel"
   {...restProps}
 >

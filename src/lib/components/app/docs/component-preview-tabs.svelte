@@ -39,10 +39,10 @@
       data-active={tab === "preview"}
     >
       <div
-        class="flex h-[450px] w-full justify-center overflow-y-auto p-10 data-[align=start]:items-start data-[align=end]:items-end data-[align=center]:items-center max-sm:px-6"
+        class="flex h-[450px] w-full overflow-y-auto p-10 data-[align=start]:items-start data-[align=end]:items-end data-[align=center]:items-center max-sm:px-6"
         data-align={align}
       >
-        <div data-slot="preview">
+        <div data-slot="preview" class="w-full flex flex-col items-center">
           {@render children?.()}
         </div>
       </div>
