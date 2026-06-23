@@ -4,7 +4,7 @@ import { error } from '@sveltejs/kit';
 // import { createHighlighter } from 'shiki';
 import { allParticles } from '$lib/registry/registry-particles';
 import type { RequestHandler } from './$types';
-import { highlighter as highlighterPromise } from './shiki';
+import { highlighter as highlighterPromise } from '$lib/components/app/shiki';
 
 // const highlighterPromise = createHighlighter({
 //   langs: ['svelte'],
