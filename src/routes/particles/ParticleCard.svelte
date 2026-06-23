@@ -8,6 +8,7 @@
 	import CodeBlockCommand from "$lib/components/app/code-block-command.svelte";
 	import ParticleCardContainer from "./ParticleCardContainer.svelte";
 	import type { RegistryParticuleEntry } from "$lib/registry/registry-particles";
+    import ComponentSource from "$lib/components/app/component-source.svelte";
 
 	let {
 		particle,
@@ -133,8 +134,13 @@
 									Loading…
 								</div>
 							{:else if sourceHtml}
+
+							  <ComponentSource collapsible={false} src="accordion-01"/>
+
 								<ScrollArea class="flex-1 overflow-hidden rounded-md border">
+								 <div class="px-4 py-3.5 font-mono text-[.8125rem]">
 									{@html sourceHtml}
+								</div>
 								</ScrollArea>
 							{/if}
 						</div>

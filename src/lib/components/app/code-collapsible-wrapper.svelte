@@ -30,12 +30,12 @@
     <Separator class="mx-1.5 h-5" orientation="vertical" />
   </div>
   <CollapsiblePanel
-    class="[&>figure]:md:!mx-0 relative mt-6 h-full overflow-hidden data-closed:max-h-64 [&>figure]:mt-0"
+    class="[&>figure]:md:mx-0! relative mt-6 h-full overflow-hidden data-closed:max-h-64 [&>figure]:mt-0"
   >
     {@render children?.()}
   </CollapsiblePanel>
   <CollapsibleTrigger
-    class="absolute inset-x-0 -bottom-2 flex h-20 cursor-pointer items-center justify-center rounded-b-lg bg-gradient-to-b from-transparent via-50% via-background to-background font-medium text-muted-foreground text-sm transition-colors hover:text-foreground group-data-open/collapsible:hidden"
+    class="absolute inset-x-0 -bottom-2 flex h-20 cursor-pointer items-center justify-center rounded-b-lg bg-linear-to-b from-transparent via-50% via-background to-background font-medium text-muted-foreground text-sm transition-colors hover:text-foreground group-data-open/collapsible:hidden"
   >
     {isOpened ? "Collapse" : "Expand"}
   </CollapsibleTrigger>

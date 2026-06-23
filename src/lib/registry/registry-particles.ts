@@ -5,7 +5,7 @@ export interface RegistryParticuleEntry {
   description: string;
   // relative to src/lib/components/
   file: string;
-  folder:string;
+  folder: string;
   name: string;
   npmDependencies: string[];
   registryDependencies: string[];

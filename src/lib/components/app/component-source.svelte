@@ -6,33 +6,34 @@
   import CodeCollapsibleWrapper from "$lib/components/app/code-collapsible-wrapper.svelte";
 
   let {
-    name,
+    // name,
     src,
     title,
     language,
     collapsible = true,
     class: className,
   }: HTMLAttributes<HTMLDivElement> & {
-    name?: string;
+    // name?: string;
     src?: string;
     title?: string;
     language?: string;
     collapsible?: boolean;
+    class?:string
   } = $props();
 
   async function loadCode(): Promise<string | undefined> {
-    if (!name && !src) return undefined;
+    if (/*!name &&*/ !src) return undefined;
 
-    if (name) {
-      if (!browser) {
-        const item = await getRegistryItem(name);
-        return item?.files?.[0]?.content;
-      }
-      const resp = await fetch(`/api/registry/${encodeURIComponent(name)}`);
-      if (!resp.ok) return undefined;
-      const data = await resp.json();
-      return data.content;
-    }
+    // if (name) {
+    //   // if (!browser) {
+    //   //   const item = await getRegistryItem(name);
+    //   //   return item?.files?.[0]?.content;
+    //   // }
+    //   const resp = await fetch(`/api/source/${name}`);
+    //   if (!resp.ok) return undefined;
+    //   const data = await resp.json();
+    //   return data.content;
+    // }
 
     if (src) {
       if (!browser) {
@@ -41,7 +42,7 @@
         return readFile(join(process.cwd(), src), "utf-8");
       }
       const resp = await fetch(
-        `/api/source-file?src=${encodeURIComponent(src)}`,
+        `/api/source/${encodeURIComponent(src)}`,
       );
       if (!resp.ok) return undefined;
       return resp.text();
