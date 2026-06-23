@@ -9,7 +9,7 @@
 </script>
 
 <Collapsible.Trigger
-  class={cn("cursor-pointer", className)}
+  class={cn("cursor-pointer [&_svg]:transition-transform [&_svg]:duration-200", className)}
   data-slot="collapsible-trigger"
   {...restProps}
 >

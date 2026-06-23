@@ -137,6 +137,8 @@ const metadata: Record<string, ParticleMeta> = {
   'checkbox-03': { description: 'Checkbox with description', tags: ['checkbox'] },
   'checkbox-04': { description: 'Card-style checkbox', tags: ['checkbox'] },
   'checkbox-05': { description: 'Checkbox form', tags: ['checkbox', 'form'] },
+  'collapsible-01': { description: 'Basic checkbox', tags: ['collapsible'] },
+  'collapsible-02': { description: 'Basic checkbox', tags: ['collapsible'] },
   'dialog-01': { description: 'Dialog with form', tags: ['dialog'] },
   'dialog-02': { description: 'Dialog opened from menu', tags: ['dialog', 'dropdown', 'menu'] },
   'dialog-03': { description: 'Nested dialogs', tags: ['dialog'] },
