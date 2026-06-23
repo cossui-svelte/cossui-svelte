@@ -1,17 +1,3 @@
-<script>
-    import {
-        Pagination,
-        PaginationContent,
-        PaginationEllipsis,
-        PaginationItem,
-        PaginationLink,
-        PaginationNext,
-        PaginationPrevious,
-    } from "$lib/components/ui/pagination";
-    import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
-</script>
-
-<ComponentPreviewTabs>
     <Pagination>
         <PaginationContent>
             <PaginationItem>
@@ -34,4 +20,3 @@
             </PaginationItem>
         </PaginationContent>
     </Pagination>
-</ComponentPreviewTabs>

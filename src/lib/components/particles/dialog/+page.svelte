@@ -17,7 +17,7 @@
     import { Form } from "$lib/components/ui/form";
     import { Input } from "$lib/components/ui/input";
     import ComponentPreviewTabs from "$lib/components/app/docs/component-preview-tabs.svelte";
-    import { schema } from "./schema.js";
+    import { schema } from "../../../../routes/demos/dialog/schema.js";
 
     let { data } = $props();
 
