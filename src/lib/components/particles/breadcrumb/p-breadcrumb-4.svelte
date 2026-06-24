@@ -1,0 +1,49 @@
+<script lang="ts">
+  import Folders from "@lucide/svelte/icons/folders";
+  import {
+    Breadcrumb,
+    BreadcrumbItem,
+    BreadcrumbLink,
+    BreadcrumbList,
+    BreadcrumbPage,
+    BreadcrumbSeparator,
+  } from "$lib/components/ui/breadcrumb";
+  import { buttonVariants } from "$lib/components/ui/button";
+  import {
+    Menu,
+    MenuLinkItem,
+    MenuPopup,
+    MenuTrigger,
+  } from "$lib/components/ui/menu";
+</script>
+
+<Breadcrumb>
+  <BreadcrumbList>
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/">Home</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <Menu>
+        <MenuTrigger
+          aria-label="More pages"
+          class={buttonVariants({ variant: "ghost", size: "icon-sm" }) + " -m-1.5 text-muted-foreground"}
+        >
+          <Folders aria-hidden="true" />
+        </MenuTrigger>
+        <MenuPopup align="start">
+          <MenuLinkItem href="/docs">Docs</MenuLinkItem>
+          <MenuLinkItem href="/particles">Particles</MenuLinkItem>
+        </MenuPopup>
+      </Menu>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/docs/">Components</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+    </BreadcrumbItem>
+  </BreadcrumbList>
+</Breadcrumb>

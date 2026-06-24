@@ -1,0 +1,39 @@
+<script lang="ts">
+  import { Checkbox } from "$lib/components/ui/checkbox";
+  import { CheckboxGroup } from "$lib/components/ui/checkbox-group";
+  import { Label } from "$lib/components/ui/label";
+
+  const frameworks = [
+    { id: "next", name: "Next.js" },
+    { id: "vite", name: "Vite" },
+    { id: "astro", name: "Astro" },
+  ];
+
+  const allIds = frameworks.map((f) => f.id);
+
+  let value = $state<string[]>([]);
+
+  let parentChecked = $derived(value.length === allIds.length);
+  let parentIndeterminate = $derived(value.length > 0 && value.length < allIds.length);
+
+  function toggleAll() {
+    value = parentChecked ? [] : [...allIds];
+  }
+</script>
+
+<CheckboxGroup aria-labelledby="frameworks-caption" bind:value>
+  <Label id="frameworks-caption">
+    <Checkbox
+      checked={parentChecked}
+      indeterminate={parentIndeterminate}
+      onCheckedChange={toggleAll}
+    />
+    Frameworks
+  </Label>
+  {#each frameworks as framework (framework.id)}
+    <Label class="ms-4">
+      <Checkbox value={framework.id} />
+      {framework.name}
+    </Label>
+  {/each}
+</CheckboxGroup>
