@@ -5,7 +5,7 @@
   import { Tabs, TabsList, TabsPanel, TabsTab } from "$lib/components/ui/tabs";
 </script>
 
-<Tabs class="items-center" defaultValue="tab-1">
+<Tabs class="items-center" value="tab-1">
   <div class="border-b">
     <TabsList variant="underline">
       <TabsTab class="h-auto! flex-col gap-1.5 py-[calc(--spacing(2)-1px)]" value="tab-1">

@@ -7,7 +7,7 @@
 </script>
 
 <TooltipProvider>
-  <Tabs class="items-center" defaultValue="tab-1">
+  <Tabs class="items-center" value="tab-1">
     <TabsList>
       <Tooltip>
         <TooltipTrigger>

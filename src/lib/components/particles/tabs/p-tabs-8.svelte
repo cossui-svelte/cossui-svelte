@@ -5,7 +5,7 @@
   import { Tabs, TabsList, TabsPanel, TabsTab } from "$lib/components/ui/tabs";
 </script>
 
-<Tabs class="items-center" defaultValue="tab-1">
+<Tabs class="items-center" value="tab-1">
   <TabsList>
     <TabsTab aria-label="Overview" value="tab-1">
       <HouseIcon aria-hidden="true" />

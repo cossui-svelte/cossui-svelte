@@ -2,7 +2,7 @@
   import { Tabs, TabsList, TabsPanel, TabsTab } from "$lib/components/ui/tabs";
 </script>
 
-<Tabs defaultValue="tab-1">
+<Tabs value="tab-1">
   <TabsList>
     <TabsTab value="tab-1">Tab 1</TabsTab>
     <TabsTab value="tab-2">Tab 2</TabsTab>

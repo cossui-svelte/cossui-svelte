@@ -5,7 +5,7 @@
   import { Tabs, TabsList, TabsPanel, TabsTab } from "$lib/components/ui/tabs";
 </script>
 
-<Tabs defaultValue="tab-1">
+<Tabs value="tab-1">
   <div class="border-b">
     <TabsList variant="underline">
       <TabsTab value="tab-1">

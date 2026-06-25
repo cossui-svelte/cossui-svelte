@@ -18,7 +18,7 @@
 
 <form class="flex flex-col gap-4" onsubmit={handleSubmit}>
   <Label>
-    <Switch name="marketing" defaultChecked />
+    <Switch name="marketing" checked={true} />
     Enable marketing emails
   </Label>
   <Button {loading} type="submit">Submit</Button>
