@@ -14,10 +14,10 @@
     navigator.clipboard.writeText("https://coss.com");
     isCopied = true;
     anchoredToastManager.add({
-      tooltipStyle: true,
-      positionerProps: { anchor },
       duration: toastTimeout,
+      positionerProps: { anchor },
       title: "Copied!",
+      tooltipStyle: true,
     });
     setTimeout(() => { isCopied = false; }, toastTimeout);
   }

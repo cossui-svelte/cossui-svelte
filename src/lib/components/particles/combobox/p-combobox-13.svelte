@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Search from "@lucide/svelte/icons/search";
   import {
     Combobox,
     ComboboxEmpty,
@@ -7,7 +8,6 @@
     ComboboxList,
     ComboboxPopup,
   } from "$lib/components/ui/combobox";
-  import Search from "@lucide/svelte/icons/search";
 
   const items = [
     { label: "Apple", value: "apple" },

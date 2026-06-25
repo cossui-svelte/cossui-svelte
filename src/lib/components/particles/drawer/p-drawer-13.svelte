@@ -1,10 +1,10 @@
 <script lang="ts">
+  import ChevronRight from "@lucide/svelte/icons/chevron-right";
   import Copy from "@lucide/svelte/icons/copy";
   import Ellipsis from "@lucide/svelte/icons/ellipsis";
   import Pencil from "@lucide/svelte/icons/pencil";
   import Share from "@lucide/svelte/icons/share";
   import Trash from "@lucide/svelte/icons/trash";
-  import ChevronRight from "@lucide/svelte/icons/chevron-right";
   import { buttonVariants } from "$lib/components/ui/button";
   import {
     Drawer,

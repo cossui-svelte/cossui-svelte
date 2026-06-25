@@ -23,14 +23,14 @@
   import { Kbd, KbdGroup } from "$lib/components/ui/kbd";
 
   interface Item {
-    value: string;
     label: string;
     shortcut?: string;
+    value: string;
   }
 
   interface Group {
-    value: string;
     items: Item[];
+    value: string;
   }
 
   const suggestions: Item[] = [

@@ -17,10 +17,10 @@
     }
     if (pressed && toggleEl) {
       toastId = anchoredToastManager.add({
-        tooltipStyle: true,
-        positionerProps: { anchor: toggleEl },
         duration: toastTimeout,
+        positionerProps: { anchor: toggleEl },
         title: "Bookmarked!",
+        tooltipStyle: true,
         type: "success",
       });
     }

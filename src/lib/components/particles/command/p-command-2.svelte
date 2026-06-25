@@ -10,9 +10,9 @@
   import {
     Command,
     CommandCollection,
-    CommandEmpty,
     CommandDialog,
     CommandDialogPopup,
+    CommandEmpty,
     CommandFooter,
     CommandGroup,
     CommandGroupLabel,
@@ -31,15 +31,15 @@
   import { Spinner } from "$lib/components/ui/spinner";
 
   interface Item {
-    value: string;
+    keywords?: string[];
     label: string;
     shortcut?: string;
-    keywords?: string[];
+    value: string;
   }
 
   interface Group {
-    value: string;
     items: Item[];
+    value: string;
   }
 
   const commandGroups: Group[] = [
@@ -93,13 +93,13 @@ You can customize project settings at any time by clicking the settings icon in 
   }
 
   interface AIState {
+    error: string | null;
+    isGenerating: boolean;
     mode: boolean;
     query: string;
-    submittedQuery: string;
-    response: string;
     referenceLinks: Array<{ title: string; url: string }>;
-    isGenerating: boolean;
-    error: string | null;
+    response: string;
+    submittedQuery: string;
   }
 
   const initialAIState: AIState = {

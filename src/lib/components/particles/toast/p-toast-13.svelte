@@ -10,11 +10,11 @@
   function handleSave(e: MouseEvent) {
     const anchor = e.currentTarget as HTMLElement;
     anchoredToastManager.add({
-      tooltipStyle: true,
+      duration: toastTimeout,
       id: ANCHORED_SAVE_ERROR_TOAST_ID,
       positionerProps: { anchor, sideOffset: 6 },
-      duration: toastTimeout,
       title: "Couldn't save draft",
+      tooltipStyle: true,
       type: "error",
     });
   }

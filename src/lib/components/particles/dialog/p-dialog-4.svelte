@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { Button, buttonVariants } from "$lib/components/ui/button";
   import {
     AlertDialog,
     AlertDialogClose,
@@ -9,6 +8,7 @@
     AlertDialogPopup,
     AlertDialogTitle,
   } from "$lib/components/ui/alert-dialog";
+  import { Button, buttonVariants } from "$lib/components/ui/button";
   import {
     Dialog,
     DialogClose,

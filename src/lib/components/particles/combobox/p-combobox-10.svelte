@@ -15,9 +15,9 @@
 
   interface Country {
     code: string;
-    value: string;
     continent: string;
     label: string;
+    value: string;
   }
 
   const countries: Country[] = [
