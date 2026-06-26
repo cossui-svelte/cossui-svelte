@@ -155,6 +155,7 @@
       try {
         await navigator.clipboard.writeText(copyPayload);
       } catch (err) {
+        // biome-ignore lint/suspicious/noConsole: it is in a try/catch
         console.error("Failed to copy:", err);
       }
     }
