@@ -39,6 +39,7 @@
 
 <div
   class="relative not-has-[>*.w-full]:w-fit w-full text-foreground has-disabled:opacity-64"
+  data-slot="autocomplete-input-group"
 >
   {#if startAddon}
     <div
@@ -70,6 +71,7 @@
         size === "lg" && "h-9.5 leading-9.5 sm:h-8.5 sm:leading-8.5",
         className,
       )}
+      autocomplete="off"
       {...restProps}
     />
   </span>
