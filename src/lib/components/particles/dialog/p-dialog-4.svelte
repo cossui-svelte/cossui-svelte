@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { z } from "zod";
   import {
     AlertDialog,
     AlertDialogClose,
@@ -23,10 +24,23 @@
   import { Field } from "$lib/components/ui/field";
   import { Form } from "$lib/components/ui/form";
   import { Textarea } from "$lib/components/ui/textarea";
+  import { createForm } from "$lib/hooks/use-superform";
 
   let dialogOpen = $state(false);
   let confirmOpen = $state(false);
   let value = $state("");
+
+  const schema = z.object({
+    v: z.string().min(1),
+  });
+
+  const superform = createForm({
+    initialData:{v:"some text"},
+    onUpdated: () => {
+      dialogOpen = false;
+    },
+    schema,
+  });
 </script>
 
 <Dialog
@@ -41,7 +55,9 @@
 >
   <DialogTrigger
     class={buttonVariants({ variant: "outline" })}
-    onclick={() => { dialogOpen = true; }}
+    onclick={() => {
+      dialogOpen = true;
+    }}
   >
     Compose
   </DialogTrigger>
@@ -50,20 +66,16 @@
       <DialogTitle>New message</DialogTitle>
       <DialogDescription>Type something and try closing.</DialogDescription>
     </DialogHeader>
-    <Form
-      class="contents"
-      onsubmit={(e) => {
-        e.preventDefault();
-        dialogOpen = false;
-      }}
-    >
+    <Form {superform} class="contents">
       <DialogPanel>
-        <Field>
+        <Field name="v">
           <Textarea bind:value />
         </Field>
       </DialogPanel>
       <DialogFooter>
-        <DialogClose class={buttonVariants({ variant: "ghost" })}>Cancel</DialogClose>
+        <DialogClose class={buttonVariants({ variant: "ghost" })}
+          >Cancel</DialogClose
+        >
         <Button
           onclick={() => {
             value = "";

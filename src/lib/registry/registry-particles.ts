@@ -46,26 +46,17 @@ const modules = import.meta.glob<{ default: Component }>('../components/particle
 const allParticles: RegistryParticuleData = Object.fromEntries(
   Object.entries(modules).map(([path, loader]) => {
     const id = path.match(/\/([^/]+)\.svelte$/)?.[1] ?? '';
-    // const relpath = path.match(/\/([^/]+\/[^/]+)\.svelte$/)?.[1] ?? '';
     const folder = path.match(/\/([^/]+)\/[^/]+\.svelte$/)?.[1] ?? '';
-    const meta = metadata[id] ?? {};
-    return [
-      id,
-      {
-        component: loader,
-        description: meta.description ?? '',
-        file: id,
-        folder: folder,
-        meta: {
-          class: meta.meta?.class,
-          colSpan: meta.meta?.colSpan
-        },
-        name: idToName(id),
-        npmDependencies: meta.npmDependencies ?? [],
-        registryDependencies: meta.registryDependencies ?? [],
-        tags: meta.tags ?? []
-      }
-    ];
+    const entry = (metadata[id] ?? {}) as unknown as RegistryParticuleEntry;
+    entry.component = loader;
+    entry.description ??= '';
+    entry.file = id;
+    entry.folder = folder;
+    entry.name = idToName(id);
+    entry.npmDependencies ??= [];
+    entry.registryDependencies ??= [];
+    entry.tags ??= [];
+    return [id, entry];
   })
 );
 

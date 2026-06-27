@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { z } from "zod";
   import { Button, buttonVariants } from "$lib/components/ui/button";
   import {
     Dialog,
@@ -14,6 +15,17 @@
   import { Field, FieldLabel } from "$lib/components/ui/field";
   import { Form } from "$lib/components/ui/form";
   import { Input } from "$lib/components/ui/input";
+  import { createForm } from "$lib/hooks/use-superform";
+
+  const schema = z.object({
+    name: z.string().min(1),
+    username: z.string().min(1),
+  });
+
+  const superform = createForm({
+    initialData: { name: "Margaret Welsh", username: "@maggie.welsh" },
+    schema,
+  });
 </script>
 
 <Dialog>
@@ -27,19 +39,21 @@
         Make changes to your profile here. Click save when you're done.
       </DialogDescription>
     </DialogHeader>
-    <Form class="contents">
+    <Form {superform} class="contents">
       <DialogPanel class="grid gap-4">
-        <Field>
+        <Field name="name">
           <FieldLabel>Name</FieldLabel>
           <Input value="Margaret Welsh" type="text" />
         </Field>
-        <Field>
+        <Field name="username">
           <FieldLabel>Username</FieldLabel>
           <Input value="@maggie.welsh" type="text" />
         </Field>
       </DialogPanel>
       <DialogFooter variant="bare">
-        <DialogClose class={buttonVariants({ variant: "ghost" })}>Cancel</DialogClose>
+        <DialogClose class={buttonVariants({ variant: "ghost" })}
+          >Cancel</DialogClose
+        >
         <Button type="submit">Save</Button>
       </DialogFooter>
     </Form>

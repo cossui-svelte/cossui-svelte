@@ -1,5 +1,5 @@
 import { defaults, superForm } from 'sveltekit-superforms';
-import { zod } from 'sveltekit-superforms/adapters';
+import { zod4 } from 'sveltekit-superforms/adapters';
 import type { ZodType, z } from 'zod';
 
 type SchemaForm<TSchema extends ZodType> = {
@@ -26,13 +26,13 @@ export function createForm<T extends Record<string, unknown>>(
 
 export function createForm(options: any) {
   if (options.schema) {
-    return superForm(defaults(options.initialData, zod(options.schema)), {
+    return superForm(defaults(options.initialData, zod4(options.schema)), {
       onUpdate({ form }) {
         if (form.valid) options.onUpdated?.(form.data);
       },
       resetForm: false,
       SPA: true,
-      validators: zod(options.schema)
+      validators: zod4(options.schema)
     });
   }
 

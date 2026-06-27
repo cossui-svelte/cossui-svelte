@@ -47,11 +47,11 @@
             </DialogDescription>
           </DialogHeader>
           <DialogPanel class="grid gap-4">
-            <Field>
+            <Field name="name">
               <FieldLabel>Name</FieldLabel>
               <Input value="Bora Baloglu" type="text" />
             </Field>
-            <Field>
+            <Field name="email">
               <FieldLabel>Email</FieldLabel>
               <Input value="bora@example.com" type="text" />
             </Field>
