@@ -31,10 +31,10 @@
   });
 
   const superform = createForm({
-    schema,
     onUpdated: (data) => {
       alert(`Favorite item: ${data.item}`);
     },
+    schema,
   });
 
   const { submitting } = superform;

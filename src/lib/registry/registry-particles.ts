@@ -1994,7 +1994,7 @@ const metadata: Record<string, ParticleMeta> = {
 };
 
 function idToName(id: string): string {
-  const match = id.match(/^(.*)-(\d+)$/);
+  const match = id.match(/^p-(.*)-(\d+)$/);
   if (!match) return id;
   const [, category, num] = match;
   return (

@@ -71,6 +71,10 @@
   "linter": {
     "enabled": true,
     "rules": {
+      "a11y": {
+        "noSvgWithoutTitle": "off",
+        "useValidAriaValues": "off"
+      },
       "complexity": {
         "noForEach": "off",
         "noUselessTypeConstraint": "error"

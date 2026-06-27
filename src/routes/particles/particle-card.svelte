@@ -4,11 +4,10 @@
 	import Info from "@lucide/svelte/icons/info";
 	import { Button } from "$lib/components/ui/button";
 	import { Drawer, DrawerPopup } from "$lib/components/ui/drawer";
-	import { ScrollArea } from "$lib/components/ui/scroll-area";
 	import CodeBlockCommand from "$lib/components/app/code-block-command.svelte";
     import ComponentSource from "$lib/components/app/component-source.svelte";
 	import type { RegistryParticuleEntry } from "$lib/registry/registry-particles";
-	import ParticleCardContainer from "./ParticleCardContainer.svelte";
+	import ParticleCardContainer from "./particle-card-container.svelte";
 
 	let {
 		particle,
@@ -19,8 +18,6 @@
 		class?: string;
 		colSpan?: number;
 	} = $props();
-
-	const cossuiUrl = "https://cossui-svelte.com/";
 
     let drawerOpen = $state(false);
     let drawerName = $state<string>("");
@@ -64,7 +61,6 @@
 		<div
 			data-particle
 			data-slot="preview"
-			class="flex items-center justify-center p-4"
 		>
 			{#await particle.component() then { default: Comp }}
 				<Comp />
@@ -131,14 +127,7 @@
 									Loading…
 								</div>
 							{:else if sourceHtml}
-
-							  <ComponentSource collapsible={false} src={particle.file}/>
-
-								<ScrollArea class="flex-1 overflow-hidden rounded-md border">
-								 <div class="px-4 py-3.5 font-mono text-[.8125rem]">
-									{@html sourceHtml}
-								</div>
-								</ScrollArea>
+								<ComponentSource collapsible={false} src={particle.file} />
 							{/if}
 						</div>
 					</div>

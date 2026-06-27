@@ -7,8 +7,8 @@
 		type RegistryCategory,
 	} from "$lib/registry/registry-categories.js";
 	import { allParticles } from "$lib/registry/registry-particles";
-	import ParticlesDisplay from "./ParticlesDisplay.svelte";
-	import SearchContainer from "./SearchContainer.svelte";
+	import ParticlesDisplay from "./particles-display.svelte";
+	import SearchContainer from "./search-container.svelte";
 	import { browser } from "$app/environment";
 	import { page } from "$app/state";
 

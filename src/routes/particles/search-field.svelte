@@ -40,7 +40,7 @@
 
 	const selectedValues = $derived(selectedItems.map((i) => i.value));
 
-	const groupedItems = $derived(() => {
+	const groupedItems = $derived.by(() => {
 		const q = inputValue.toLowerCase();
 		const visible = q
 			? items.filter((i) => i.label.toLowerCase().includes(q))
@@ -100,7 +100,7 @@
 		type="multiple"
 		value={selectedValues}
 		onValueChange={handleValueChange}
-		{isOpen}
+		open={isOpen}
 		onOpenChange={(v) => (isOpen = v)}
 		inputValue={inputValue}
 	>
@@ -128,7 +128,7 @@
 
 		<ComboboxPopup>
 			<ComboboxList>
-				{#if groupedItems().enabled.length === 0 && groupedItems().disabled.length === 0}
+				{#if groupedItems.enabled.length === 0 && groupedItems.disabled.length === 0}
 					<div
 						class="p-2 text-center text-muted-foreground text-sm"
 					>
@@ -136,10 +136,10 @@
 					</div>
 				{/if}
 
-				{#if groupedItems().enabled.length > 0}
+				{#if groupedItems.enabled.length > 0}
 					<ComboboxGroup>
 						<ComboboxGroupLabel>Filter particles</ComboboxGroupLabel>
-						{#each groupedItems().enabled as item (item.value)}
+						{#each groupedItems.enabled as item (item.value)}
 							<ComboboxItem value={item.value} label={item.label}>
 								{#snippet children()}
 									<Tag
@@ -153,11 +153,11 @@
 					</ComboboxGroup>
 				{/if}
 
-				{#if groupedItems().disabled.length > 0}
+				{#if groupedItems.disabled.length > 0}
 					<ComboboxSeparator />
 					<ComboboxGroup>
 						<ComboboxGroupLabel>No matches</ComboboxGroupLabel>
-						{#each groupedItems().disabled as item (item.value)}
+						{#each groupedItems.disabled as item (item.value)}
 							<ComboboxItem
 								value={item.value}
 								label={item.label}
