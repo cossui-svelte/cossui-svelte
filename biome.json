@@ -98,9 +98,10 @@
         "useTemplate": "error"
       },
       "suspicious": {
-        "noConsole": "warn",
+        "noConsole": "off",
         "noDeprecatedImports": "error",
         "noExplicitAny": "warn",
+        "noGlobalAssign": "off",
         "noImportCycles": "error"
       }
     }

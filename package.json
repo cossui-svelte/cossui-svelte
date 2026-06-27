@@ -51,7 +51,7 @@
     "check": "svelte-kit sync && pnpx svelte-check-native --workspace .",
     "dev": "vite",
     "format": "biome check . --fix",
-    "generate:registry": "pnpm tsx scripts/createComponentRegistry.ts -w src/lib/registry/registry-components.ts && pnpm format",
+    "generate:registry": "pnpm tsx scripts/createComponentRegistry.ts -w src/lib/registry/registry-components.ts && npx tsx scripts/generateParticleMetadata.ts && pnpm format",
     "lint:audit": "pnpx knip --max-show-issues 20",
     "lint:typecheck": "tsc --noEmit",
     "mrproper": "rm -rf node_modules dist build .svelte-kit",

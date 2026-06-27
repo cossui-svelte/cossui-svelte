@@ -91,13 +91,15 @@
       </AutocompleteStatus>
       <AutocompleteList>
         {#each movieItems as item (item.value)}
-          {@const movie = searchResults.find((m) => m.id === item.value)!}
-          <AutocompleteItem label={item.label} value={item.value}>
-            <div class="flex w-full flex-col gap-1">
-              <div class="font-medium">{movie.title}</div>
-              <div class="text-muted-foreground text-xs">{movie.year}</div>
-            </div>
-          </AutocompleteItem>
+          {@const movie = searchResults.find((m) => m.id === item.value)}
+          {#if movie}
+            <AutocompleteItem label={item.label} value={item.value}>
+              <div class="flex w-full flex-col gap-1">
+                <div class="font-medium">{movie.title}</div>
+                <div class="text-muted-foreground text-xs">{movie.year}</div>
+              </div>
+            </AutocompleteItem>
+          {/if}
         {/each}
       </AutocompleteList>
     </AutocompletePopup>

@@ -17,7 +17,7 @@ export const GET: RequestHandler = async ({ params }) => {
   console.log(id);
 
   // validate the file parameter
-  if (!/^[a-z0-9-]+$/.test(id)) {
+  if (!/^p-[a-z0-9-]+$/.test(id)) {
     error(400, 'Invalid file parameter');
   }
 

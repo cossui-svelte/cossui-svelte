@@ -17,8 +17,9 @@
 
   const matchingItem = $derived.by(() => {
     if (currentProduct) {
+      const normalizedCurrentProduct = currentProduct.toLowerCase();
       return items.find(
-        (item) => item.label.toLowerCase() === currentProduct!.toLowerCase(),
+        (item) => item.label.toLowerCase() === normalizedCurrentProduct,
       );
     }
 

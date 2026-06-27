@@ -86,9 +86,8 @@
   <TooltipProvider>
     <Tooltip>
       <TooltipTrigger>
-        {#snippet child({ props }: { props: Record<string, unknown> })}
+        {#snippet child()}
           <button
-            {...props}
             class={cn(
               buttonVariants({ size: "icon", variant: "ghost" }),
               "absolute top-1.5 right-1.5 z-3 size-9 opacity-70 hover:opacity-100 focus-visible:opacity-100 sm:size-8",

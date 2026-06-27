@@ -25,7 +25,6 @@
 	class={cn(
 		"relative flex min-w-0",
 		colSpan === 2 && "lg:col-span-2",
-		"**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64",
 		className,
 	)}
 >

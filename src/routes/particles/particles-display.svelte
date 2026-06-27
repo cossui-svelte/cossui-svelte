@@ -55,7 +55,10 @@
 		class="grid flex-1 items-stretch gap-9 pb-12 lg:grid-cols-2 lg:gap-6 xl:gap-9"
 	>
 		{#each filteredParticles as particle (particle.name)}
-			<ParticleCard {particle} />
+			{@const className = particle.meta?.class as string | undefined}
+			{@const colSpan = particle.meta?.colSpan as number | undefined}
+
+			<ParticleCard {particle} class={className} {colSpan} />
 		{/each}
 	</div>
 {/if}
