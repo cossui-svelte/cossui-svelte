@@ -73,6 +73,7 @@
     "rules": {
       "a11y": {
         "noSvgWithoutTitle": "off",
+        "useSemanticElements": "off",
         "useValidAriaValues": "off"
       },
       "complexity": {
@@ -80,6 +81,7 @@
         "noUselessTypeConstraint": "error"
       },
       "correctness": {
+        "noUnusedFunctionParameters": "off",
         "noUnusedImports": "error",
         "noUnusedVariables": "warn",
         "useExhaustiveDependencies": "off"
