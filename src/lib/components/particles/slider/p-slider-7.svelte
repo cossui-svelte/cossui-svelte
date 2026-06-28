@@ -2,4 +2,4 @@
   import { Slider } from "$lib/components/ui/slider";
 </script>
 
-<Slider defaultValue={[25, 75]} />
+<Slider value={[25, 75]} />

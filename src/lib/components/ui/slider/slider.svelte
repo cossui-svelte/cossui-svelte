@@ -1,7 +1,12 @@
 <script lang="ts">
   import { Slider as SliderPrimitive } from "bits-ui";
   import { on } from "svelte/events";
-  import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "$lib/components/ui/tooltip";
+  import {
+    Tooltip,
+    TooltipContent,
+    TooltipProvider,
+    TooltipTrigger,
+  } from "$lib/components/ui/tooltip";
   import { cn } from "$lib/utils";
 
   let {
@@ -10,7 +15,6 @@
     ref = $bindable(null),
     showTooltip = false,
     tooltipContent,
-    type = "single",
     value = $bindable(),
     ...restProps
   }: {
@@ -19,10 +23,11 @@
     ref?: HTMLElement | null;
     showTooltip?: boolean;
     tooltipContent?: (value: number) => number | string;
-    type?: "single" | "multiple";
     value?: number | number[];
     [key: string]: unknown;
   } = $props();
+
+  const type =(Array.isArray(value) && value.length > 1) ? "multiple": "single"
 
   let tooltipOpen = $state(false);
 
@@ -56,7 +61,7 @@
   type={type as never}
   class={cn(
     "relative flex touch-none items-center select-none data-disabled:pointer-events-none data-[orientation=horizontal]:w-full data-[orientation=horizontal]:min-w-44 data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:flex-col data-disabled:opacity-64",
-    className
+    className,
   )}
   data-slot="slider"
   {...restProps}
@@ -94,7 +99,9 @@
               class="border-input bg-popover text-muted-foreground animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 overflow-hidden rounded-md border px-2 py-1 text-xs outline-hidden"
             >
               {#if Array.isArray(value)}
-                {tooltipContent ? tooltipContent(value[thumbItem.index]!) : value[thumbItem.index]!}
+                {tooltipContent
+                  ? tooltipContent(value[thumbItem.index]!)
+                  : value[thumbItem.index]!}
               {:else}
                 {tooltipContent ? tooltipContent(value!) : value!}
               {/if}

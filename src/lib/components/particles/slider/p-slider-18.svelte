@@ -3,5 +3,5 @@
 </script>
 
 <div class="flex h-40 items-center justify-center">
-  <Slider defaultValue={[25, 75]} orientation="vertical" />
+  <Slider value={[25, 75]} orientation="vertical" />
 </div>

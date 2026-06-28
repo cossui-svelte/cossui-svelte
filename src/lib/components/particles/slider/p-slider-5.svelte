@@ -8,7 +8,7 @@
 </script>
 
 <div>
-  <Slider aria-label="Value selector" defaultValue={5} {max} />
+  <Slider aria-label="Value selector" value={5} {max} />
   <div
     aria-label="Value scale from 0 to 12"
     class="mt-3 flex w-full items-center justify-between gap-1 px-2.5 font-medium text-muted-foreground text-xs"

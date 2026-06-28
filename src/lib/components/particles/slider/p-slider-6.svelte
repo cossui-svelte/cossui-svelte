@@ -10,5 +10,5 @@
     <span>Low</span>
     <span>High</span>
   </div>
-  <Slider aria-label="Intensity level from low to high" defaultValue={50} step={10} />
+  <Slider aria-label="Intensity level from low to high" value={50} step={10} />
 </div>

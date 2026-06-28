@@ -4,5 +4,5 @@
 
 <Slider
   aria-label="Dual thumb slider"
-  defaultValue={[25, 75]}
+  value={[25, 75]}
 />

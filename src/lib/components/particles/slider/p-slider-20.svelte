@@ -14,7 +14,7 @@
   {#each bands as band (band.label)}
     <Slider
       aria-label={band.label}
-      defaultValue={band.value}
+      value={band.value}
       max={5}
       min={-5}
       orientation="vertical"
