@@ -27,7 +27,7 @@
       <Menu>
         <MenuTrigger
           aria-label="More pages"
-          class={buttonVariants({size: "icon-sm", variant: "ghost" }) + " -m-1.5 text-muted-foreground"}
+          class={buttonVariants({ variant: "ghost" , size: "icon-sm"}) + " -m-1.5 text-muted-foreground"}
         >
           <Folders aria-hidden="true" />
         </MenuTrigger>

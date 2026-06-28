@@ -51,6 +51,7 @@ const tagCategories = [
   'table',
   'tabs',
   'textarea',
+
   'toast',
   'toggle',
   'toggle-group',
@@ -80,6 +81,7 @@ export const registryCategories = [
   'tanstack',
   'text-editor',
   'time',
+  'timeline',
   'timezone',
   'upload',
   'validation',

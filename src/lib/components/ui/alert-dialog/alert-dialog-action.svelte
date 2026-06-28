@@ -23,7 +23,7 @@
 	bind:ref
 	data-slot="alert-dialog-action"
 	class={cn(
-		buttonVariants({ variant, size }),
+		buttonVariants({ size , variant}),
 		"cn-alert-dialog-action",
 		className,
 	)}

@@ -1,6 +1,9 @@
 <script lang="ts">
-  import { buttonVariants } from "$lib/components/ui/button";
+  import { Button, buttonVariants } from "$lib/components/ui/button";
+  import { Field } from "$lib/components/ui/field";
+  import { Form } from "$lib/components/ui/form";
   import { Input } from "$lib/components/ui/input";
+  import { Label } from "$lib/components/ui/label";
   import {
     Sheet,
     SheetClose,
@@ -15,7 +18,9 @@
 </script>
 
 <Sheet>
-  <SheetTrigger class={buttonVariants({ variant: "outline" })}>Open Sheet</SheetTrigger>
+  <SheetTrigger class={buttonVariants({ variant: "outline" })}
+    >Open Sheet</SheetTrigger
+  >
   <SheetPopup variant="inset">
     <SheetHeader>
       <SheetTitle>Edit profile</SheetTitle>
@@ -23,21 +28,23 @@
         Make changes to your profile here. Click save when you're done.
       </SheetDescription>
     </SheetHeader>
-    <form class="contents">
+    <Form class="contents">
       <SheetPanel class="grid gap-4">
-        <div class="flex flex-col gap-1.5">
-          <label class="text-sm font-medium">Name</label>
+        <Field class="flex flex-col gap-1.5">
+          <Label class="text-sm font-medium">Name</Label>
           <Input value="Margaret Welsh" type="text" />
-        </div>
-        <div class="flex flex-col gap-1.5">
-          <label class="text-sm font-medium">Username</label>
+        </Field>
+        <Field class="flex flex-col gap-1.5">
+          <Label class="text-sm font-medium">Username</Label>
           <Input value="@maggie.welsh" type="text" />
-        </div>
+        </Field>
       </SheetPanel>
       <SheetFooter>
-        <SheetClose class={buttonVariants({ variant: "ghost" })}>Cancel</SheetClose>
-        <button type="submit" class={buttonVariants()}>Save</button>
+        <SheetClose class={buttonVariants({ variant: "ghost" })}
+          >Cancel</SheetClose
+        >
+        <Button type="submit" class={buttonVariants()}>Save</Button>
       </SheetFooter>
-    </form>
+    </Form>
   </SheetPopup>
 </Sheet>

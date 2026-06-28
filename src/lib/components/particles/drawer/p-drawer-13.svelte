@@ -54,7 +54,7 @@
   <Drawer>
     <DrawerTrigger
       aria-label="Open menu"
-      class={buttonVariants({ variant: "outline", size: "icon" })}
+      class={buttonVariants({  size: "icon", variant: "outline" })}
     >
       <Ellipsis aria-hidden />
     </DrawerTrigger>
@@ -181,7 +181,7 @@
   <Menu>
     <MenuTrigger
       aria-label="Open menu"
-      class={buttonVariants({ variant: "outline", size: "icon" })}
+      class={buttonVariants({ size: "icon",variant: "outline" })}
     >
       <Ellipsis aria-hidden />
     </MenuTrigger>

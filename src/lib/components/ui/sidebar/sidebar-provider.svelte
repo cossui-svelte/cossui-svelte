@@ -104,7 +104,7 @@
   });
 
   const inlineStyle = $derived(
-    `--sidebar-width: ${SIDEBAR_WIDTH}; --sidebar-width-icon: ${SIDEBAR_WIDTH_ICON}${style ? "; " + style : ""}`,
+    `--sidebar-width: ${SIDEBAR_WIDTH}; --sidebar-width-icon: ${SIDEBAR_WIDTH_ICON}${style ? `; ${style}` : ""}`,
   );
 </script>
 

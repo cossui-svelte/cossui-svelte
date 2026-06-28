@@ -1,5 +1,7 @@
 <script lang="ts">
   import { Button } from "$lib/components/ui/button";
+  import { Field, FieldError, FieldLabel } from "$lib/components/ui/field";
+  import { Form } from "$lib/components/ui/form";
   import { Textarea } from "$lib/components/ui/textarea";
 
   let loading = $state(false);
@@ -14,11 +16,11 @@
   }
 </script>
 
-<form class="flex w-full max-w-64 flex-col gap-4" onsubmit={handleSubmit}>
-  <div class="flex flex-col gap-1.5">
-    <label class="text-sm font-medium" for="message-6">Message</label>
-    <Textarea id="message-6" name="message" placeholder="Type your message here" required />
-    <p class="text-destructive text-sm hidden peer-[:invalid]:block">This field is required.</p>
-  </div>
+<Form class="flex w-full max-w-64 flex-col gap-4" {onsubmit}>
+  <Field>
+    <FieldLabel>Message</FieldLabel>
+    <Textarea name="message" placeholder="Type your message here" required />
+    <FieldError>This field is required.</FieldError>
+  </Field>
   <Button {loading} type="submit">Submit</Button>
-</form>
+</Form>

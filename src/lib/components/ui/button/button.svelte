@@ -26,7 +26,7 @@
 </script>
 
 <Button.Root
-  class={cn(buttonVariants({ variant, size }), className)}
+  class={cn(buttonVariants({ size , variant}), className)}
   data-slot="button"
   {...restProps}
 >

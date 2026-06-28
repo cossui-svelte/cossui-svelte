@@ -10,7 +10,7 @@
     name = uid(),
     children: childrenProp,
     ...restProps
-  }: Omit<ComponentProps<typeof Field>, "form"> & {
+  }: Omit<ComponentProps<typeof Field>, "form"|"name"> & {
     class?: string;
     name?: string;
   } = $props();

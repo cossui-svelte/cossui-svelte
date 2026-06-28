@@ -239,7 +239,6 @@ const registryCategory: RegistryUiData = {
 	'split-pane': {
 		description: "A component to layout resizable panels with a draggable divider.",
 		category: "extra",
-
 		istodo: true
 	},
 	switch: {
@@ -265,17 +264,14 @@ const registryCategory: RegistryUiData = {
 	timeline: {
 		description: "A component for displaying a series of events in chronological order.",
 		category: "origin-ui",
-
 	},
 	toast: {
 		description: "A temporary notification that appears on screen to inform users.",
 		category: "ui",
-
 	},
 	toggle: {
 		description: "A two-state button that can be toggled on or off.",
 		category: "ui",
-
 	},
 	"toggle-group": {
 		description: "Provides a shared state to a series of toggle buttons.",

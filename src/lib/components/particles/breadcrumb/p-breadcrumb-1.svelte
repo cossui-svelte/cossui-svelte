@@ -25,7 +25,7 @@
     <BreadcrumbSeparator />
     <BreadcrumbItem>
       <Menu>
-        <MenuTrigger class={buttonVariants({ variant: "ghost", size: "icon-sm" }) + " -m-1.5 text-muted-foreground"}>
+        <MenuTrigger class={buttonVariants({ size: "icon-sm", variant: "ghost" }) + " -m-1.5 text-muted-foreground"}>
           <BreadcrumbEllipsis />
         </MenuTrigger>
         <MenuPopup align="start">

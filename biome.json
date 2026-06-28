@@ -73,6 +73,7 @@
     "rules": {
       "a11y": {
         "noSvgWithoutTitle": "off",
+        "useAriaPropsForRole": "off",
         "useSemanticElements": "off",
         "useValidAnchor": "off",
         "useValidAriaValues": "off"
