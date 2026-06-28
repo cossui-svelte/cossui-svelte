@@ -73,7 +73,7 @@
             } else {
                 checkedNodes.delete(n.id);
             }
-            n.children?.forEach((child) => toggleNode(child, check));
+            n.children?.forEach((child) => {toggleNode(child, check)});
         }
 
         const currentStatus = isChecked(node);

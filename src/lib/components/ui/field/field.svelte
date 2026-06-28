@@ -1,16 +1,18 @@
 <script lang="ts">
   import { type ComponentProps } from "svelte";
   import { Field } from "$lib/formsnap";
+  import { uid } from "$lib/hooks/use-uid";
   import { cn } from "$lib/utils";
   import { getFormContext } from "../form/form-context.svelte";
 
   let {
     class: className,
-    name,
+    name = uid(),
     children: childrenProp,
     ...restProps
   }: Omit<ComponentProps<typeof Field>, "form"> & {
     class?: string;
+    name?: string;
   } = $props();
 
   const form = getFormContext();

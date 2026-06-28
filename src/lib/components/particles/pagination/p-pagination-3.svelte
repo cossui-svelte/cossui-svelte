@@ -18,13 +18,13 @@
     currentPage?: number;
     resultsPerPage?: number;
     totalPages?: number;
-    totalResults: number;
+    totalResults?: number;
   }
 
   let {
     currentPage: initialPage = 1,
     totalPages = 10,
-    totalResults,
+    totalResults = 100,
     resultsPerPage = 10,
   }: Props = $props();
 

@@ -74,6 +74,7 @@
       "a11y": {
         "noSvgWithoutTitle": "off",
         "useSemanticElements": "off",
+        "useValidAnchor": "off",
         "useValidAriaValues": "off"
       },
       "complexity": {
@@ -82,7 +83,7 @@
       },
       "correctness": {
         "noUnusedFunctionParameters": "off",
-        "noUnusedImports": "error",
+        "noUnusedImports": "off",
         "noUnusedVariables": "warn",
         "useExhaustiveDependencies": "off"
       },

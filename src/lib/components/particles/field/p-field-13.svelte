@@ -1,11 +1,11 @@
 <script lang="ts">
   import { Checkbox } from '$lib/components/ui/checkbox';
   import { CheckboxGroup } from '$lib/components/ui/checkbox-group';
-  import { Field, FieldItem, FieldLabel } from '$lib/components/ui/field';
+  import { FieldItem, FieldLabel } from '$lib/components/ui/field';
   import { Fieldset, FieldsetLegend } from '$lib/components/ui/fieldset';
 </script>
 
-<Fieldset class="gap-2" name="frameworks">
+<Fieldset class="gap-2">
   <FieldsetLegend class="font-medium text-sm">Frameworks</FieldsetLegend>
   <CheckboxGroup value={['react']}>
     <FieldItem>
