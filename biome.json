@@ -80,7 +80,7 @@
         "noUselessTypeConstraint": "error"
       },
       "correctness": {
-        "noUnusedImports": "warn",
+        "noUnusedImports": "error",
         "noUnusedVariables": "warn",
         "useExhaustiveDependencies": "off"
       },
