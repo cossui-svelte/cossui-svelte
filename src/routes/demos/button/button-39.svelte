@@ -1,0 +1,13 @@
+<script lang="ts">
+	import ChevronRightIcon from "@lucide/svelte/icons/chevron-right";
+	import { Button } from "$lib/components/ui/button";
+</script>
+
+<Button class="relative pe-12">
+	Next
+	<span
+		class="pointer-events-none absolute inset-y-0 end-0 flex w-9 items-center justify-center bg-primary-foreground/15"
+	>
+		<ChevronRightIcon class="opacity-60" size={16} aria-hidden="true" />
+	</span>
+</Button>

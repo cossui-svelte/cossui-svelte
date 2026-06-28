@@ -1,0 +1,166 @@
+<script lang="ts">
+	import Blocks from "@lucide/svelte/icons/blocks";
+	import Brain from "@lucide/svelte/icons/brain";
+	import LineChart from "@lucide/svelte/icons/chart-line";
+	import ChevronDown from "@lucide/svelte/icons/chevron-down";
+	import Cpu from "@lucide/svelte/icons/cpu";
+	import Database from "@lucide/svelte/icons/database";
+	import Globe from "@lucide/svelte/icons/globe";
+	import Layout from "@lucide/svelte/icons/layout-template";
+	import Network from "@lucide/svelte/icons/network";
+	import Search from "@lucide/svelte/icons/search";
+	import Server from "@lucide/svelte/icons/server";
+	import { Button } from "$lib/components/ui/button";
+	import {
+		Command,
+		CommandEmpty,
+		CommandGroup,
+		CommandInput,
+		CommandItem,
+		CommandList,
+	} from "$lib/components/ui/command";
+	import { Label } from "$lib/components/ui/label";
+	import {
+		Popover,
+		PopoverContent,
+		PopoverTrigger,
+	} from "$lib/components/ui/popover";
+
+	let open = $state(false);
+	let value = $state("");
+	const items = [
+		{
+			icon: LineChart,
+			label: "Analytics Platform",
+			number: 2451,
+			value: "analytics platform",
+		},
+		{
+			icon: Brain,
+			label: "AI Services",
+			number: 1832,
+			value: "ai services",
+		},
+		{
+			icon: Database,
+			label: "Database Systems",
+			number: 1654,
+			value: "database systems",
+		},
+		{
+			icon: Cpu,
+			label: "Compute Resources",
+			number: 943,
+			value: "compute resources",
+		},
+		{
+			icon: Network,
+			label: "Network Services",
+			number: 832,
+			value: "network services",
+		},
+		{
+			icon: Globe,
+			label: "Web Services",
+			number: 654,
+			value: "web services",
+		},
+		{
+			icon: Search,
+			label: "Monitoring Tools",
+			number: 432,
+			value: "monitoring tools",
+		},
+		{
+			icon: Server,
+			label: "Server Management",
+			number: 321,
+			value: "server management",
+		},
+		{
+			icon: Blocks,
+			label: "Infrastructure",
+			number: 234,
+			value: "infrastructure",
+		},
+		{
+			icon: Layout,
+			label: "Frontend Services",
+			number: 123,
+			value: "frontend services",
+		},
+	] as const;
+
+	const selectedItem = $derived(items.find((item) => item.value === value));
+
+	function handleSelect(currentValue: string) {
+		value = currentValue;
+		open = false;
+	}
+</script>
+
+<div class="space-y-2">
+	<Label>Options with icon and number</Label>
+	<Popover bind:open>
+		<PopoverTrigger>
+			{#snippet child({ props })}
+				<Button
+					variant="outline"
+					role="combobox"
+					aria-expanded={open}
+					class="w-full justify-between bg-background px-3 font-normal outline-offset-0 hover:bg-background focus-visible:border-ring focus-visible:outline-[3px] focus-visible:outline-ring/20"
+					{...props}
+				>
+					{#if value && selectedItem}
+						{@const IconComponent = selectedItem.icon}
+						<span class="flex min-w-0 items-center gap-2">
+							<IconComponent
+								class="h-4 w-4 text-muted-foreground"
+							/>
+							<span class="truncate">{selectedItem.label}</span>
+						</span>
+					{:else}
+						<span class="text-muted-foreground"
+							>Select service category</span
+						>
+					{/if}
+					<ChevronDown
+						size={16}
+						stroke-width={2}
+						class="shrink-0 text-muted-foreground/80"
+						aria-hidden="true"
+					/>
+				</Button>
+			{/snippet}
+		</PopoverTrigger>
+		<PopoverContent
+			class="w-full min-w-[var(--bits-popover-anchor-width)] p-0"
+			align="start"
+		>
+			<Command>
+				<CommandInput placeholder="Search services..." />
+				<CommandList>
+					<CommandEmpty>No service found.</CommandEmpty>
+					<CommandGroup>
+						{#each items as item (item.value)}
+							<CommandItem
+								value={item.value}
+								onSelect={() => handleSelect(item.value)}
+							>
+								<div class="flex items-center gap-2">
+									<item.icon
+										class="h-4 w-4 text-muted-foreground"
+									/>
+									{item.label}
+								</div>
+								<span class="text-xs text-muted-foreground">
+									{item.number.toLocaleString()}
+								</span>
+							</CommandItem>
+						{/each}
+					</CommandGroup>
+				</CommandList>
+			</Command>
+		</PopoverContent>
+	</Popover>
+</div>

@@ -1,0 +1,44 @@
+<script lang="ts">
+	import Clock from "@lucide/svelte/icons/clock";
+	import { Label } from "$lib/components/ui/label";
+	import {
+		Select,
+		SelectContent,
+		SelectItem,
+		SelectTrigger,
+	} from "$lib/components/ui/select";
+
+	const items = [
+		{ label: "00:00 AM - 11:59 PM", value: "s1" },
+		{ label: "01:00 AM - 12:59 PM", value: "s2" },
+		{ label: "02:00 AM - 01:59 PM", value: "s3" },
+		{ label: "03:00 AM - 02:59 PM", value: "s4" },
+	];
+
+	let value = $state("s1");
+
+	const selected = $derived(items.find((i) => i.value === value));
+
+	const uid = $props.id();
+</script>
+
+<div class="space-y-2">
+	<Label for={uid}>Select with icon</Label>
+	<Select type="single" bind:value>
+		<SelectTrigger class="relative ps-9" id={uid}>
+			<div
+				class="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-muted-foreground/80 group-has-[[disabled]]:opacity-50"
+			>
+				<Clock size={16} strokeWidth={2} aria-hidden="true" />
+			</div>
+			{selected?.label ?? "Select a time"}
+		</SelectTrigger>
+		<SelectContent>
+			{#each items as item (item.value)}
+				<SelectItem value={item.value}>
+					{item.label}
+				</SelectItem>
+			{/each}
+		</SelectContent>
+	</Select>
+</div>

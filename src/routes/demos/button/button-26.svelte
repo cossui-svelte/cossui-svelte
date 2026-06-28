@@ -1,0 +1,27 @@
+<script lang="ts">
+	import ChevronDownIcon from "@lucide/svelte/icons/chevron-down";
+	import ChevronUpIcon from "@lucide/svelte/icons/chevron-up";
+	import { Button } from "$lib/components/ui/button";
+</script>
+
+<div class="shadow-xs inline-flex -space-x-px rounded-full rtl:space-x-reverse">
+	<Button
+		class="rounded-none shadow-none first:rounded-s-full last:rounded-e-full focus-visible:z-10"
+		size="icon"
+		aria-label="Upvote"
+	>
+		<ChevronUpIcon size={16} aria-hidden="true" />
+	</Button>
+	<span
+		class="flex items-center bg-primary px-1 text-sm font-medium text-primary-foreground"
+	>
+		235
+	</span>
+	<Button
+		class="rounded-none shadow-none first:rounded-s-full last:rounded-e-full focus-visible:z-10"
+		size="icon"
+		aria-label="Downvote"
+	>
+		<ChevronDownIcon size={16} aria-hidden="true" />
+	</Button>
+</div>

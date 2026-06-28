@@ -1,0 +1,23 @@
+<script lang="ts">
+	import ChevronDownIcon from "@lucide/svelte/icons/chevron-down";
+	import PinIcon from "@lucide/svelte/icons/pin";
+	import { Button } from "$lib/components/ui/button";
+</script>
+
+<div
+	class="shadow-xs inline-flex divide-x divide-primary-foreground/30 rounded-md rtl:space-x-reverse"
+>
+	<Button
+		class="rounded-none shadow-none first:rounded-s-md last:rounded-e-md focus-visible:z-10"
+		size="icon"
+		aria-label="Options"
+	>
+		<ChevronDownIcon size={16} aria-hidden="true" />
+	</Button>
+	<Button
+		class="rounded-none shadow-none first:rounded-s-md last:rounded-e-md focus-visible:z-10"
+	>
+		<PinIcon class="-ms-1 opacity-60" size={16} aria-hidden="true" />
+		Pinned
+	</Button>
+</div>
