@@ -55,7 +55,7 @@
   {orientation}
   type={type as never}
   class={cn(
-    "flex touch-none select-none data-disabled:pointer-events-none data-[orientation=horizontal]:w-full data-[orientation=horizontal]:min-w-44 data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:flex-col data-disabled:opacity-64",
+    "relative flex touch-none items-center select-none data-disabled:pointer-events-none data-[orientation=horizontal]:w-full data-[orientation=horizontal]:min-w-44 data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:flex-col data-disabled:opacity-64",
     className
   )}
   data-slot="slider"
