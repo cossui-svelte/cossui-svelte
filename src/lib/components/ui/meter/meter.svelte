@@ -14,6 +14,8 @@
   import type { Snippet } from "svelte";
   import { setContext } from "svelte";
   import { cn } from "$lib/utils";
+  import MeterTrack from "./meter-track.svelte";
+  import MeterIndicator from "./meter-indicator.svelte";
 
   type Props = MeterPrimitive.RootProps & { children?: Snippet };
 
@@ -55,15 +57,8 @@
   {#if children}
     {@render children()}
   {:else}
-    <div
-      class="block h-2 w-full overflow-hidden bg-input"
-      data-slot="meter-track"
-    >
-      <div
-        class="bg-primary transition-all duration-500"
-        data-slot="meter-indicator"
-        style="width: {percentage}%"
-      ></div>
-    </div>
+    <MeterTrack>
+      <MeterIndicator />
+    </MeterTrack>
   {/if}
 </MeterPrimitive.Root>
