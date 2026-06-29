@@ -3,37 +3,40 @@
   import CodeBlock from "$lib/components/app/code-block.svelte";
   import CodeCollapsibleWrapper from "$lib/components/app/code-collapsible-wrapper.svelte";
   import { cn } from "$lib/utils";
+  import type { SourceResponse } from "../../../routes/api/source/[file]/+server";
   import { browser } from "$app/environment";
 
+  interface Props extends HTMLAttributes<HTMLDivElement> {
+    class?: string;
+    collapsible?: boolean;
+    language?: string;
+    name?: string;
+    src?: string;
+    title?: string;
+  }
+
   let {
-    // name,
+    name,
     src,
     title,
     language,
     collapsible = true,
     class: className,
-  }: HTMLAttributes<HTMLDivElement> & {
-    // name?: string;
-    src?: string;
-    title?: string;
-    language?: string;
-    collapsible?: boolean;
-    class?:string
-  } = $props();
+  }: Props = $props();
 
   async function loadCode(): Promise<string | undefined> {
-    if (/*!name &&*/ !src) return undefined;
+    if (!name && !src) return undefined;
 
-    // if (name) {
-    //   // if (!browser) {
-    //   //   const item = await getRegistryItem(name);
-    //   //   return item?.files?.[0]?.content;
-    //   // }
-    //   const resp = await fetch(`/api/source/${name}`);
-    //   if (!resp.ok) return undefined;
-    //   const data = await resp.json();
-    //   return data.content;
-    // }
+    if (name) {
+      // if (!browser) {
+      //   const item = await getRegistryItem(name);
+      //   return item?.files?.[0]?.content;
+      // }
+      const resp = await fetch(`/api/source/${name}`);
+      if (!resp.ok) return undefined;
+      const data = await resp.json() as SourceResponse;
+      return data.raw;
+    }
 
     if (src) {
       if (!browser) {
@@ -41,11 +44,10 @@
         const { join } = await import("node:path");
         return readFile(join(process.cwd(), src), "utf-8");
       }
-      const resp = await fetch(
-        `/api/source/${encodeURIComponent(src)}`,
-      );
+      const resp = await fetch(`/api/source/${src}`);
       if (!resp.ok) return undefined;
-      return resp.text();
+      const data = await resp.json() as SourceResponse;
+      return data.raw;
     }
   }
 

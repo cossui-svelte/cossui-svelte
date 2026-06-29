@@ -6,6 +6,8 @@ import { highlighter as highlighterPromise } from '$lib/components/app/shiki';
 import { allParticles } from '$lib/registry/registry-particles';
 import type { RequestHandler } from './$types';
 
+export type SourceResponse = { html: string; raw: string };
+
 // const highlighterPromise = createHighlighter({
 //   langs: ['svelte'],
 //   themes: ['github-light', 'github-dark']

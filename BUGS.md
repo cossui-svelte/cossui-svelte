@@ -1,10 +1,10 @@
 * GROUP bug with menu '...'
 * PROGRESS with a simple value - does not work
-* Drawer nested, do not stack properly on top of each others
+* Drawer nested, do not stack properly on top of each others, the position is off
 * Breadcrumb - ... is aligned, but it takes a hack
 * global.css seems off from the original code base
-* I still get font flicker on window resize
 * Not a real bug - combobox-list.svelte is using a DIV rather than the scrollarea. fix it, it is commit f99d67ca16adad03890bb7126cf26f4041e676d4
+* combobox with long popup won't scroll
 
 * DONE Drawer with style inset, shows a white bar (css issue)
 * DONE Collapsible animation
