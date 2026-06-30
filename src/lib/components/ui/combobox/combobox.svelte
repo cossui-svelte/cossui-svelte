@@ -113,7 +113,7 @@
     if (open !== undefined) internalOpen = open;
   });
 
-  function _handleValueChange(v: string | string[]) {
+  function handleValueChange(v: string | string[]) {
     internalValue = v;
     value = v as never;
     onValueChange?.(v as never);
@@ -151,7 +151,7 @@
     return items.some((i) => (i.label ?? i.value).toLowerCase().includes(q));
   });
 
-  function _handleOpenChange(v: boolean) {
+  function handleOpenChange(v: boolean) {
     internalOpen = v;
     open = v as never;
     onOpenChange?.(v);
@@ -238,16 +238,14 @@
 </script>
 
 <Combobox.Root
-  {...{
-    type,
-    value: internalValue,
-    onValueChange: handleValueChange,
-    open: internalOpen,
-    onOpenChange: handleOpenChange,
-    inputValue: inputValueProxy,
-    items,
-    ...restProps,
-  } as Combobox.RootProps}
+  {type}
+  value={internalValue}
+  open={internalOpen}
+  onValueChange={handleValueChange}
+  onOpenChange={handleOpenChange}
+  inputValue={inputValueProxy}
+  {items}
+  {...restProps}
 >
   {@render children?.()}
 </Combobox.Root>
