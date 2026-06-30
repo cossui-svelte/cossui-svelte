@@ -1,47 +1,55 @@
 <script lang="ts">
-  import { Button } from "$lib/components/ui/button";
-  import { Checkbox } from "$lib/components/ui/checkbox";
-  import { CheckboxGroup } from "$lib/components/ui/checkbox-group";
-  import { FieldItem, FieldLabel } from "$lib/components/ui/field";
-  import { Fieldset, FieldsetLegend } from "$lib/components/ui/fieldset";
-  import { Form } from "$lib/components/ui/form";
+  import { z } from 'zod';
+  import { Button } from '$lib/components/ui/button';
+  import { Checkbox } from '$lib/components/ui/checkbox';
+  import { CheckboxGroup } from '$lib/components/ui/checkbox-group';
+  import { Field, FieldError, FieldItem, FieldLabel } from '$lib/components/ui/field';
+  import { Fieldset, FieldsetLegend } from '$lib/components/ui/fieldset';
+  import { Form, FormDebug } from '$lib/components/ui/form';
+  import { createForm } from '$lib/hooks/use-superform';
 
-  let loading = $state(false);
+  const schema = z.object({
+    frameworks: z.array(z.string()).min(1, { message: 'Please select at least one framework.' }),
+  });
 
-  async function onsubmit(e: SubmitEvent) {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget as HTMLFormElement);
-    loading = true;
-    await new Promise((r) => setTimeout(r, 800));
-    loading = false;
-    const frameworks = formData.getAll("frameworks") as string[];
-    alert(`Selected: ${frameworks.join(", ") || "none"}`);
-  }
+  const superform = createForm({
+    initialData: { frameworks: ['next'] },
+    onUpdated: ({ frameworks }) => alert(`Selected: ${frameworks.join(', ')}`),
+    schema,
+  });
+
+  const { form, submitting } = superform;
 </script>
 
-<Form class="flex w-full max-w-[160px] flex-col gap-4" {onsubmit}>
-  <Fieldset>
-    <FieldsetLegend class="font-medium text-sm">Frameworks</FieldsetLegend>
-    <CheckboxGroup value={["next"]}>
-      <FieldItem>
-        <FieldLabel>
-          <Checkbox value="next" />
-          Next.js
-        </FieldLabel>
-      </FieldItem>
-      <FieldItem>
-        <FieldLabel>
-          <Checkbox value="vite" />
-          Vite
-        </FieldLabel>
-      </FieldItem>
-      <FieldItem>
-        <FieldLabel>
-          <Checkbox value="astro" />
-          Astro
-        </FieldLabel>
-      </FieldItem>
-    </CheckboxGroup>
-  </Fieldset>
-  <Button {loading} type="submit">Submit</Button>
+<Form class="flex w-full max-w-[160px] flex-col gap-4" {superform}>
+  <Field name="frameworks">
+    <Fieldset>
+      <FieldsetLegend class="font-medium text-sm">Frameworks</FieldsetLegend>
+      <CheckboxGroup value={$form.frameworks as string[]} onValueChange={(v) => ($form.frameworks = v)}>
+        <FieldItem>
+          <FieldLabel>
+            <Checkbox value="next" />
+            Next.js
+          </FieldLabel>
+        </FieldItem>
+        <FieldItem>
+          <FieldLabel>
+            <Checkbox value="vite" />
+            Vite
+          </FieldLabel>
+        </FieldItem>
+        <FieldItem>
+          <FieldLabel>
+            <Checkbox value="astro" />
+            Astro
+          </FieldLabel>
+        </FieldItem>
+      </CheckboxGroup>
+    </Fieldset>
+    <FieldError />
+  </Field>
+
+  <Button loading={$submitting} type="submit">Submit</Button>
+
+  <FormDebug formData={form} />
 </Form>

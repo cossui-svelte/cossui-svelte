@@ -1,9 +1,11 @@
 <script lang="ts">
   import { Field, FieldDescription, FieldItem, FieldLabel } from '$lib/components/ui/field';
   import { Fieldset, FieldsetLegend } from '$lib/components/ui/fieldset';
+    import { Form } from '$lib/components/ui/form';
   import { Radio, RadioGroup } from '$lib/components/ui/radio-group';
 </script>
 
+<Form>
 <Fieldset class="gap-2" name="plan">
   <FieldsetLegend class="font-medium text-sm">Choose Plan</FieldsetLegend>
   <RadioGroup value="free">
@@ -19,3 +21,4 @@
   </RadioGroup>
   <FieldDescription>Select the plan that fits your needs.</FieldDescription>
 </Fieldset>
+</Form>
