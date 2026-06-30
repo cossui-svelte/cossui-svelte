@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { z } from 'zod';
+  import { Button } from '$lib/components/ui/button';
   import {
     Combobox,
     ComboboxChip,
@@ -9,7 +11,9 @@
     ComboboxList,
     ComboboxPopup,
   } from '$lib/components/ui/combobox';
-  import { Field, FieldDescription, FieldLabel } from '$lib/components/ui/field';
+  import { Field, FieldDescription, FieldError, FieldLabel } from '$lib/components/ui/field';
+  import { Form } from '$lib/components/ui/form';
+  import { createForm } from '$lib/hooks/use-superform';
 
   const items = [
     { label: 'Apple', value: 'apple' },
@@ -24,29 +28,49 @@
     { label: 'Strawberry', value: 'strawberry' },
   ];
 
-  let value = $state([items[0], items[4]]);
+  const schema = z.object({
+    fruits: z.array(z.string()).min(1, { message: 'Please select at least one fruit.' }),
+  });
+
+  const superform = createForm({
+    initialData: { fruits: ['apple', 'mango'] },
+    onUpdated: ({ fruits }) => alert(`Selected: ${fruits.join(', ')}`),
+    schema,
+  });
+
+  const { form, submitting } = superform;
+
+  let value = $state<string[]>($form.fruits as string[]);
+
+  $effect(() => {
+    $form.fruits = value;
+  });
 </script>
 
-<Field name="fruits">
-  <FieldLabel>Fruits</FieldLabel>
-  <Combobox bind:value {items} type="multiple">
-    <ComboboxChips>
-      {#each value as item (item.value)}
-        <ComboboxChip aria-label={item.label}>{item.label}</ComboboxChip>
-      {/each}
-      <ComboboxChipsInput
-        aria-label="Select items"
-        placeholder={value.length > 0 ? undefined : 'Select items…'}
-      />
-    </ComboboxChips>
-    <ComboboxPopup>
-      <ComboboxEmpty>No items found.</ComboboxEmpty>
-      <ComboboxList>
-        {#each items as item (item.value)}
-          <ComboboxItem label={item.label} value={item.value}>{item.label}</ComboboxItem>
+<Form class="flex w-full flex-col gap-4" {superform}>
+  <Field name="fruits">
+    <FieldLabel>Fruits</FieldLabel>
+    <Combobox bind:value {items} type="multiple">
+      <ComboboxChips>
+        {#each value as v (v)}
+          <ComboboxChip aria-label={v}>{items.find((i) => i.value === v)?.label ?? v}</ComboboxChip>
         {/each}
-      </ComboboxList>
-    </ComboboxPopup>
-  </Combobox>
-  <FieldDescription>Select multiple items.</FieldDescription>
-</Field>
+        <ComboboxChipsInput
+          aria-label="Select items"
+          placeholder={value.length > 0 ? undefined : 'Select items…'}
+        />
+      </ComboboxChips>
+      <ComboboxPopup>
+        <ComboboxEmpty>No items found.</ComboboxEmpty>
+        <ComboboxList>
+          {#each items as item (item.value)}
+            <ComboboxItem label={item.label} value={item.value}>{item.label}</ComboboxItem>
+          {/each}
+        </ComboboxList>
+      </ComboboxPopup>
+    </Combobox>
+    <FieldDescription>Select multiple items.</FieldDescription>
+    <FieldError />
+  </Field>
+  <Button loading={$submitting} type="submit">Submit</Button>
+</Form>

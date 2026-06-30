@@ -1,12 +1,32 @@
 <script lang="ts">
-  import { Field, FieldLabel } from "$lib/components/ui/field";
-  import { Textarea } from "$lib/components/ui/textarea";
+  import { z } from 'zod';
+  import { Button } from '$lib/components/ui/button';
+  import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';
+  import { Form } from '$lib/components/ui/form';
+  import { Textarea } from '$lib/components/ui/textarea';
+  import { createForm } from '$lib/hooks/use-superform';
+
+  const schema = z.object({
+    message: z.string().min(1, { message: 'Please fill out this field.' }),
+  });
+
+  const superform = createForm({
+    onUpdated: (data) => {
+      alert(`Message: ${data.message}`);
+    },
+    schema,
+  });
+
+  const { submitting } = superform;
 </script>
 
-<Field class="flex flex-col gap-1.5">
-  <FieldLabel class="text-sm font-medium" for="message-12">
-    Message <span class="text-destructive-foreground">*</span>
-  </FieldLabel>
-  <Textarea id="message-12" placeholder="Type your message here" required />
-  <p class="text-destructive text-sm">Please fill out this field.</p>
-</Field>
+<Form class="flex w-full flex-col gap-4" {superform}>
+  <Field name="message">
+    <FieldLabel class="text-sm font-medium">
+      Message <span class="text-destructive-foreground">*</span>
+    </FieldLabel>
+    <Textarea placeholder="Type your message here" />
+    <FieldError />
+  </Field>
+  <Button loading={$submitting} type="submit">Submit</Button>
+</Form>
