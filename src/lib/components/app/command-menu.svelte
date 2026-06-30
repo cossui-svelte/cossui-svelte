@@ -220,7 +220,6 @@
       <div class="flex items-center gap-2 border-b px-4 py-3">
         <Search class="size-4 shrink-0 text-muted-foreground" strokeWidth={2} />
         <input
-          autofocus
           bind:value={query}
           class="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground"
           placeholder="Search documentation…"

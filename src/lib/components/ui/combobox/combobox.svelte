@@ -113,7 +113,7 @@
     if (open !== undefined) internalOpen = open;
   });
 
-  function handleValueChange(v: string | string[]) {
+  function _handleValueChange(v: string | string[]) {
     internalValue = v;
     value = v as never;
     onValueChange?.(v as never);
@@ -151,7 +151,7 @@
     return items.some((i) => (i.label ?? i.value).toLowerCase().includes(q));
   });
 
-  function handleOpenChange(v: boolean) {
+  function _handleOpenChange(v: boolean) {
     internalOpen = v;
     open = v as never;
     onOpenChange?.(v);

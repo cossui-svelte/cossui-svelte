@@ -39,6 +39,7 @@
 		return isEven ? "animate-toast-success-even" : "animate-toast-success-odd";
 	}
 
+	// biome-ignore lint/correctness/noUnusedVariables: there is a use:floating plus bas
 	function floating(el: HTMLElement, toast: AnchoredToastData) {
 		let cleanup: (() => void) | null = null;
 
@@ -173,7 +174,7 @@
 		<Portal>
 			<div
 				use:floating={toast}
-				transition:scale={{ duration: 150, start: 0.98, opacity: 0, easing: cubicOut }}
+				transition:scale={{ duration: 150, easing: cubicOut, opacity: 0, start: 0.98  }}
 				class={cn(
 					"fixed z-50 max-w-[min(16rem,var(--available-width,16rem))]",
 					"text-balance border bg-popover not-dark:bg-clip-padding",
@@ -248,6 +249,7 @@
 
 						{#if toast.action}
 							<button
+							    type="button"
 								class={buttonVariants({ size: "xs" })}
 								data-slot="toast-action"
 								onclick={toast.action.onclick}
