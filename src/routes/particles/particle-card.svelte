@@ -1,11 +1,8 @@
 <script lang="ts">
-	import Check from "@lucide/svelte/icons/check";
-	import Copy from "@lucide/svelte/icons/copy";
 	import Info from "@lucide/svelte/icons/info";
 	import { Button } from "$lib/components/ui/button";
 	import { Drawer, DrawerPopup } from "$lib/components/ui/drawer";
-	import { Spinner } from "$lib/components/ui/spinner";
-	import CodeBlockCommand from "$lib/components/app/code-block-command.svelte";
+	import { Spinner } from "$lib/components/ui/spinner";	
 	import ComponentSource from "$lib/components/app/component-source.svelte";
 	import type { RegistryParticuleEntry } from "$lib/registry/registry-particles";
 	import ParticleCardContainer from "./particle-card-container.svelte";
@@ -36,23 +33,23 @@
 		drawerName = name;
 		sourceFile = file;
 		drawerOpen = true;
-	//	loadingSource = true;
-	//	sourceHtml = "";
-	//	sourceRaw = "";
-	//	const res = await fetch(`/api/source/${file}`);
-	//	const data = await res.json();
-	//	console.log(data);
-	//	sourceHtml = data.html;
-	//	sourceRaw = data.raw;
-	//	loadingSource = false;
+		//	loadingSource = true;
+		//	sourceHtml = "";
+		//	sourceRaw = "";
+		//	const res = await fetch(`/api/source/${file}`);
+		//	const data = await res.json();
+		//	console.log(data);
+		//	sourceHtml = data.html;
+		//	sourceRaw = data.raw;
+		//	loadingSource = false;
 	}
 
 	function closeDrawer() {
 		drawerOpen = false;
 		setTimeout(() => {
 			sourceFile = null;
-		//	sourceHtml = "";
-//sourceRaw = "";
+			//	sourceHtml = "";
+			//sourceRaw = "";
 		}, 300);
 	}
 </script>
@@ -85,7 +82,7 @@
 					variant="straight"
 				>
 					<div class="flex flex-1 flex-col overflow-hidden p-6">
-						<div>
+						<!-- <div>
 							<h2 class="mb-4 font-semibold text-xl">
 								Installation
 							</h2>
@@ -97,7 +94,7 @@
 									__yarn__={`yarn dlx shadcn@latest add @coss/${particle.name}`}
 								/>
 							</figure>
-						</div>
+						</div> -->
 						<div
 							class="flex h-full flex-1 flex-col overflow-hidden"
 						>
@@ -135,11 +132,11 @@
 									<Spinner /> Loading…
 								</div>
 							{:else if sourceHtml} -->
-								<ComponentSource
-									class="flex min-h-0 flex-1 flex-col *:data-rehype-pretty-code-figure:mt-0"
-									collapsible={false}
-									src={particle.file}
-								/>
+							<ComponentSource
+								class="flex min-h-0 flex-1 flex-col *:data-rehype-pretty-code-figure:mt-0"
+								collapsible={false}
+								src={particle.file}
+							/>
 							<!-- {/if} -->
 						</div>
 					</div>
@@ -149,8 +146,10 @@
 	{/snippet}
 
 	{#snippet children()}
-		<div data-particle data-slot="preview">
-			{#await particle.component() then { default: Comp }}
+		<div data-particle data-slot="preview" class="flex items-center justify-center">
+			{#await particle.component()}
+				<Spinner/>
+			{:then { default: Comp }}
 				<Comp />
 			{/await}
 		</div>
