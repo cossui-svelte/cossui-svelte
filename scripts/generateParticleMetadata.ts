@@ -1,7 +1,8 @@
 /// <reference types="node" />
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import registry from './registry.json' with { type: 'json' };
+import cossuiRegistry from './registry.json' with { type: 'json' };
+import { custom_metadata } from './registry-customui';
 
 const OUTPUT = path.resolve('src/lib/registry/generated-metadata.ts');
 
@@ -15,7 +16,7 @@ interface RegistryItem {
   type?: string;
 }
 
-const particles = (registry.items as RegistryItem[]).filter((item) =>
+const particles = (cossuiRegistry.items as RegistryItem[]).filter((item) =>
   item.name?.startsWith('p-')
 );
 
@@ -36,15 +37,38 @@ function renderEntry(item: RegistryItem): string {
   return `  ${JSON.stringify(item.name)}: {\n${lines.join(',\n')}\n  }`;
 }
 
-const body = particles.map(renderEntry).join(',\n');
+type CustomItem = { description?: string; tags?: string[]; registryDependencies?: string[]; meta?: { class?: string; colSpan?: number } };
+
+function renderCustomEntry(name: string, item: CustomItem): string {
+  const lines: string[] = [];
+  if (item.description) lines.push(`    description: ${JSON.stringify(item.description)}`);
+  if (item.tags?.length) lines.push(`    tags: ${JSON.stringify(item.tags)}`);
+  if (item.registryDependencies?.length)
+    lines.push(`    registryDependencies: ${JSON.stringify(item.registryDependencies)}`);
+  if (item.meta) {
+    const metaParts: string[] = [];
+    if (item.meta.class) metaParts.push(`class: ${JSON.stringify(item.meta.class)}`);
+    if (item.meta.colSpan) metaParts.push(`colSpan: ${item.meta.colSpan}`);
+    lines.push(`    meta: { ${metaParts.join(', ')} }`);
+  }
+  return `  ${JSON.stringify(name)}: {\n${lines.join(',\n')}\n  }`;
+}
+
+const customEntries = Object.entries(custom_metadata).map(([name, item]) =>
+  renderCustomEntry(name, item as CustomItem)
+);
+
+const body = [...particles.map(renderEntry), ...customEntries].join(',\n');
 
 const output = `// this file is generated from one of the /scripts/
-import type { ParticleMeta } from "./registry-particles";
+import type { ParticleMetaDefinition } from './registry-particles';
 
-export const metadata: Record<string, ParticleMeta> = {
+export const metadata: Record<string, ParticleMetaDefinition> = {
 ${body}
 };
 `;
+
+
 
 await fs.writeFile(OUTPUT, output, 'utf-8');
 console.log(`Written ${particles.length} entries to ${OUTPUT}`);

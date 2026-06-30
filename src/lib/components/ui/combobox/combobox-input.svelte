@@ -2,8 +2,8 @@
   import ChevronsUpDown from "@lucide/svelte/icons/chevrons-up-down";
   import { Combobox } from "bits-ui";
   import type { Snippet } from "svelte";
-  import type { HTMLButtonAttributes } from "svelte/elements";
   import { getContext } from "svelte";
+  import type { HTMLButtonAttributes } from "svelte/elements";
   import { cn } from "$lib/utils";
   import { getComboboxCtx, INSIDE_COMBOBOX_POPUP } from "./combobox.svelte";
   import ComboboxClear from "./combobox-clear.svelte";

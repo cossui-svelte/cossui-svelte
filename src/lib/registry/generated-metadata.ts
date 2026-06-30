@@ -84,6 +84,30 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     registryDependencies: ['alert-dialog', 'button'],
     tags: ['alert-dialog', 'dialog']
   },
+  'p-aspect-ratio-1': {
+    description: 'Ratio 1:1',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]:h-fit' },
+    registryDependencies: ['aspect-ratio'],
+    tags: ['aspect-ratio']
+  },
+  'p-aspect-ratio-2': {
+    description: 'Ratio 9:16',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]:h-fit' },
+    registryDependencies: ['aspect-ratio'],
+    tags: ['aspect-ratio']
+  },
+  'p-aspect-ratio-3': {
+    description: 'Ratio 16:9',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]:h-fit' },
+    registryDependencies: ['aspect-ratio'],
+    tags: ['aspect-ratio']
+  },
+  'p-aspect-ratio-4': {
+    description: 'Ratio 21:9',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]:h-fit' },
+    registryDependencies: ['aspect-ratio'],
+    tags: ['aspect-ratio']
+  },
   'p-autocomplete-1': {
     description: 'Basic autocomplete',
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' },
@@ -1268,7 +1292,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     description: 'Empty state with icon and actions',
     npmDependencies: ['lucide-react'],
     registryDependencies: ['button', 'empty'],
-    tags: ['empty']
+    tags: ['empty-state']
   },
   'p-field-1': {
     description: 'Field with description',

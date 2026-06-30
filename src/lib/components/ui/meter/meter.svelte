@@ -14,8 +14,8 @@
   import type { Snippet } from "svelte";
   import { setContext } from "svelte";
   import { cn } from "$lib/utils";
-  import MeterTrack from "./meter-track.svelte";
   import MeterIndicator from "./meter-indicator.svelte";
+  import MeterTrack from "./meter-track.svelte";
 
   type Props = MeterPrimitive.RootProps & { children?: Snippet };
 

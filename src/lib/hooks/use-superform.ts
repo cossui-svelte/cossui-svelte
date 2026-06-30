@@ -40,7 +40,7 @@ export function createForm(options: any) {
 
   // Manual mode: no validator, caller owns validity via onUpdate
   return superForm(defaults(options.initialData), {
-       id: uid(),
+    id: uid(),
     onUpdate: options.onUpdate ?? (({ form }) => options.onUpdated?.(form.data)),
     resetForm: false,
     SPA: true,
