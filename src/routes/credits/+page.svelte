@@ -44,5 +44,6 @@
     <p class="pt-2 font-heading text-lg font-medium italic text-foreground">
       "A full set of good looking components, for the most intuitive web framework."
     </p>
+    <p align="right">Olivier refalo</p>
   </article>
 </main>

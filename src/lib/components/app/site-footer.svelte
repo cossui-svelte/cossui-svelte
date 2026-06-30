@@ -16,8 +16,8 @@
       Designed by
       <a class="font-heading text-foreground" href="/">coss.com</a>. Ported to
       Svelte by
-      <a class="font-heading text-foreground" href="https://github.com/orefalo"
-        >orefalo</a
+      <a class="font-heading text-foreground" href="https://github.com/cossui-svelte"
+        >the cossui-svelte community</a
       >
       – open source, open heart, open mind.
     </p>
