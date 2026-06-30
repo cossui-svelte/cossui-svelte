@@ -1,3 +1,4 @@
+* p-checkbox-group 3/4/5 create a recursive rendering issue
 * GROUP bug with menu '...'
 * PROGRESS with a simple value - does not work
 * Drawer nested, do not stack properly on top of each others, the position is off

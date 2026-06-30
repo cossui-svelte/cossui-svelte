@@ -21,7 +21,7 @@
   }
 </script>
 
-<CheckboxGroup aria-labelledby="frameworks-caption" bind:value>
+<CheckboxGroup aria-labelledby="frameworks-caption" {value}>
   <Label id="frameworks-caption">
     <Checkbox
       checked={parentChecked}
