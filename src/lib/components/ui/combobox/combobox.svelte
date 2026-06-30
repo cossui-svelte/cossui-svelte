@@ -3,12 +3,14 @@
   import { getContext, setContext } from "svelte";
 
   interface ComboboxCtx {
+    readonly anchorEl: HTMLElement | null;
     readonly chipsEl: HTMLElement | null;
     clearValue(): void;
     readonly filterText: string;
     readonly hasVisibleItems: boolean;
     readonly multiple: boolean;
     removeLastValue(): void;
+    setAnchorEl(el: HTMLElement | null): void;
     setChipsEl(el: HTMLElement | null): void;
     setFilterText(v: string): void;
     setInputEl(el: HTMLInputElement | null): void;
@@ -22,6 +24,7 @@
   }
 
   const COMBOBOX_CTX_KEY = Symbol("combobox");
+  export const INSIDE_COMBOBOX_POPUP = Symbol("inside-combobox-popup");
 
   export function setComboboxCtx(ctx: ComboboxCtx): void {
     setContext(COMBOBOX_CTX_KEY, ctx);
@@ -65,6 +68,7 @@
     ...restProps
   }: Props = $props();
 
+  let anchorEl = $state<HTMLElement | null>(null);
   let chipsEl = $state<HTMLElement | null>(null);
   let inputEl = $state<HTMLInputElement | null>(null);
   let triggerEl = $state<HTMLElement | null>(null);
@@ -155,6 +159,9 @@
   }
 
   setComboboxCtx({
+    get anchorEl() {
+      return anchorEl;
+    },
     get chipsEl() {
       return chipsEl;
     },
@@ -188,6 +195,9 @@
         value = undefined as never;
         onValueChange?.(undefined as never);
       }
+    },
+    setAnchorEl(el) {
+      anchorEl = el;
     },
     setChipsEl(el) {
       chipsEl = el;

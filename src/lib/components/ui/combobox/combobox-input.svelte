@@ -3,8 +3,9 @@
   import { Combobox } from "bits-ui";
   import type { Snippet } from "svelte";
   import type { HTMLButtonAttributes } from "svelte/elements";
+  import { getContext } from "svelte";
   import { cn } from "$lib/utils";
-  import { getComboboxCtx } from "./combobox.svelte";
+  import { getComboboxCtx, INSIDE_COMBOBOX_POPUP } from "./combobox.svelte";
   import ComboboxClear from "./combobox-clear.svelte";
   import ComboboxTrigger from "./combobox-trigger.svelte";
 
@@ -35,7 +36,15 @@
   const effectiveShowClear = $derived(showClear ?? ctx?.showClear ?? false);
   const effectiveStartAddon = $derived(startAddon ?? ctx?.startAddon);
 
+  const insidePopup = getContext<boolean>(INSIDE_COMBOBOX_POPUP) ?? false;
+
+  let outerRef = $state<HTMLElement | null>(null);
   let inputRef = $state<HTMLInputElement | null>(null);
+  $effect(() => {
+    if (insidePopup) return;
+    ctx?.setAnchorEl(outerRef);
+    return () => ctx?.setAnchorEl(null);
+  });
   $effect(() => {
     ctx?.setInputEl(inputRef);
     return () => ctx?.setInputEl(null);
@@ -67,6 +76,7 @@
 </script>
 
 <div
+  bind:this={outerRef}
   class="relative not-has-[>*.w-full]:w-fit w-full text-foreground has-disabled:opacity-64"
 >
   {#if effectiveStartAddon}

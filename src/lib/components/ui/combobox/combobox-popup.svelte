@@ -1,8 +1,9 @@
 <script lang="ts">
   import { Combobox } from "bits-ui";
   import type { Snippet } from "svelte";
+  import { setContext } from "svelte";
   import { cn } from "$lib/utils";
-  import { getComboboxCtx } from "./combobox.svelte";
+  import { getComboboxCtx, INSIDE_COMBOBOX_POPUP } from "./combobox.svelte";
 
   interface Props extends Combobox.ContentProps {
     align?: "start" | "center" | "end";
@@ -22,8 +23,10 @@
     ...restProps
   }: Props = $props();
 
+  setContext(INSIDE_COMBOBOX_POPUP, true);
+
   const ctx = getComboboxCtx();
-  const customAnchor = $derived(ctx?.triggerEl ?? null);
+  const customAnchor = $derived(ctx?.anchorEl ?? ctx?.triggerEl ?? null);
 </script>
 
 <Combobox.Portal>
