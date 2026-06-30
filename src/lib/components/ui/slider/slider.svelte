@@ -98,13 +98,8 @@
               sideOffset={8}
               class="border-input bg-popover text-muted-foreground animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 overflow-hidden rounded-md border px-2 py-1 text-xs outline-hidden"
             >
-              {#if Array.isArray(value)}
-                {tooltipContent
-                  ? tooltipContent(value[thumbItem.index]!)
-                  : value[thumbItem.index]!}
-              {:else}
-                {tooltipContent ? tooltipContent(value!) : value!}
-              {/if}
+              {@const v = Array.isArray(value) ? (value[thumbItem.index] ?? 0) : (value ?? 0)}
+              {tooltipContent ? tooltipContent(v) : v}
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>

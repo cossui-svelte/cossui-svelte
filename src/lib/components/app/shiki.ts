@@ -10,7 +10,7 @@ const bundledLanguages = {
 };
 
 /** The languages configured for the highlighter (`text` is handled by Shiki without a bundled grammar). */
-export type SupportedLanguage = keyof typeof bundledLanguages | 'text';
+// export type SupportedLanguage = keyof typeof bundledLanguages | 'text';
 
 /** A preloaded highlighter instance. */
 export const highlighter = createHighlighterCore({

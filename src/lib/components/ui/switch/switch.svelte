@@ -2,8 +2,6 @@
   import { Switch as SwitchPrimitive } from "bits-ui";
   import { cn } from "$lib/utils";
 
-  type Props = SwitchPrimitive.RootProps;
-
   let {
     checked = $bindable(false),
     class: className,

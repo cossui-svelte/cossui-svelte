@@ -16,6 +16,7 @@
   import TextCursor from "@lucide/svelte/icons/text-cursor";
   import UserRound from "@lucide/svelte/icons/user-round";
   import X from "@lucide/svelte/icons/x";
+  import { type Component } from "svelte";
   import { cn } from "$lib/utils";
 
   interface Props {
@@ -43,7 +44,7 @@
 
 <!-- ── Primitive snippets ──────────────────────────────────────────────────── -->
 
-{#snippet iconSnip(IconComp: any, cls?: string)}
+{#snippet iconSnip(IconComp: Component, cls?: string)}
   <IconComp class={cn("size-4 text-muted-foreground/88", cls)} />
 {/snippet}
 
