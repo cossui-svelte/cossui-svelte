@@ -2,6 +2,7 @@
   import { Combobox } from "bits-ui";
   import type { Snippet } from "svelte";
   import { cn } from "$lib/utils";
+  import { getComboboxCtx } from "./combobox.svelte";
 
   interface Props extends Combobox.ContentProps {
     align?: "start" | "center" | "end";
@@ -20,6 +21,9 @@
     align = "start",
     ...restProps
   }: Props = $props();
+
+  const ctx = getComboboxCtx();
+  const customAnchor = $derived(ctx?.triggerEl ?? null);
 </script>
 
 <Combobox.Portal>
@@ -34,6 +38,7 @@
     {sideOffset}
     {alignOffset}
     {align}
+    customAnchor={customAnchor || undefined}
     {...restProps}
   >
     <div

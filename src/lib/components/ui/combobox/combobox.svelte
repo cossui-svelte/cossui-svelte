@@ -13,9 +13,11 @@
     setFilterText(v: string): void;
     setInputEl(el: HTMLInputElement | null): void;
     setOpen(v: boolean): void;
+    setTriggerEl(el: HTMLElement | null): void;
     readonly showClear: boolean;
     readonly showTrigger: boolean;
     readonly startAddon: Snippet | undefined;
+    readonly triggerEl: HTMLElement | null;
     readonly value: string | string[] | undefined;
   }
 
@@ -65,6 +67,7 @@
 
   let chipsEl = $state<HTMLElement | null>(null);
   let inputEl = $state<HTMLInputElement | null>(null);
+  let triggerEl = $state<HTMLElement | null>(null);
 
   // Resolve value string and display label from defaultValue (computed once).
   const defaultVal =
@@ -203,6 +206,9 @@
       open = v as never;
       onOpenChange?.(v);
     },
+    setTriggerEl(el) {
+      triggerEl = el;
+    },
     get showClear() {
       return showClear;
     },
@@ -211,6 +217,9 @@
     },
     get startAddon() {
       return startAddon;
+    },
+    get triggerEl() {
+      return triggerEl;
     },
     get value() {
       return internalValue;
