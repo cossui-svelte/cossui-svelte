@@ -79,7 +79,7 @@
 				<DrawerClose
 					aria-label="Close"
 					class={cn(
-						buttonVariants({ variant: "ghost", size: "icon" }),
+						buttonVariants({size: "icon",  variant: "ghost" }),
 						"absolute inset-e-2 top-2",
 					)}
 				>

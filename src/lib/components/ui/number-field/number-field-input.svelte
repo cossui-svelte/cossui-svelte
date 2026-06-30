@@ -19,7 +19,7 @@
   function handleChange(e: Event) {
     const input = e.currentTarget as HTMLInputElement;
     const v = parseFloat(input.value);
-    if (!isNaN(v)) {
+    if (!Number.isNaN(v)) {
       ctx?.setValue(v);
     }
   }

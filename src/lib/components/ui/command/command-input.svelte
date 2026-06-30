@@ -17,7 +17,6 @@
       <Search />
     </div>
     <Command.Input
-      autofocus
       class={cn(
         "h-9.5 w-full rounded-lg bg-transparent ps-9 pe-3 text-base outline-none placeholder:text-muted-foreground/72 sm:h-8.5 sm:text-sm",
         className,

@@ -19,7 +19,7 @@
       class={cn("text-destructive-foreground text-xs", className)}
     >
       {#if childrenProp}
-        {@render childrenProp({ errors, errorProps })}
+        {@render childrenProp({ errorProps, errors })}
       {:else}
         {#each errors as error}
           <div {...errorProps}>{error}</div>

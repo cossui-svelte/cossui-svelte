@@ -38,7 +38,7 @@
   }
 </script>
 
-<!-- biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> -->
+<!-- biome-ignore lint/a11y/useKeyWithClickEvents: abc -->
 <div
   bind:this={el}
   class={cn(

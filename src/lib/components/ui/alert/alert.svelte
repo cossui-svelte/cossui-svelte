@@ -17,7 +17,7 @@
     },
   });
 
-  type AlertVariants = VariantProps<typeof alertVariants>;
+  // type AlertVariants = VariantProps<typeof alertVariants>;
 </script>
 
 <script lang="ts">

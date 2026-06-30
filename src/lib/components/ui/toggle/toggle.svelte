@@ -26,6 +26,6 @@
 	bind:ref
 	bind:pressed
 	data-slot="toggle"
-	class={cn(toggleVariants({ variant, size }), className)}
+	class={cn(toggleVariants({ size, variant }), className)}
 	{...restProps}
 />
