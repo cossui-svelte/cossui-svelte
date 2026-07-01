@@ -20,6 +20,10 @@ Along the way, I noticed that even Coss UI lacks some of the components found in
 
 [![Star History Chart](https://api.star-history.com/svg?repos=cossui-svelte/cossui-svelte&type=Date)](https://star-history.com/#cossui-svelte/cossui-svelte&Date)
 
+## Contributors
+
+[![Contributors](https://contrib.rocks/image?repo=cossui-svelte/cossui-svelte)](https://github.com/cossui-svelte/cossui-svelte/graphs/contributors)
+
 ## Acknowledgements
 
 - [Coss UI](https://cossui.com/) - The original project that this Svelte version is copied from
