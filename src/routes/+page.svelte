@@ -48,7 +48,7 @@
       class="pointer-events-none min-h-55 flex-1 flex-col flex-wrap overflow-x-auto bg-[color-mix(in_srgb,var(--color-card),var(--color-sidebar))] dark:bg-background"
     >
 
-      {#if meta.isnew}
+      {#if meta.istodo}
        <Badge class="absolute inset-e-3 top-3" variant="warning">To do</Badge>
       {:else if meta.isnew}
         <Badge class="absolute inset-e-3 top-3" variant="info">New</Badge>

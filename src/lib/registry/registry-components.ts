@@ -184,7 +184,7 @@ const allComponents: RegistryUiData = {
     description: 'A component for cropping images with a resizable and movable selection area.',
     folder: 'cropper',
     isnew: false,
-    istodo: false,
+    istodo: true,
     name: 'Cropper',
     npmDependencies: [],
     registryDependencies: []
@@ -468,7 +468,7 @@ const allComponents: RegistryUiData = {
     description: 'A loading state skeleton for your components.',
     folder: 'skeleton',
     isnew: false,
-    istodo: false,
+    istodo: true,
     name: 'Skeleton',
     npmDependencies: [],
     registryDependencies: []
@@ -508,7 +508,7 @@ const allComponents: RegistryUiData = {
     description: 'A component for displaying a series of steps in a process.',
     folder: 'stepper',
     isnew: false,
-    istodo: false,
+    istodo: true,
     name: 'Stepper',
     npmDependencies: [],
     registryDependencies: []
@@ -528,7 +528,7 @@ const allComponents: RegistryUiData = {
     description: 'A simple table component for displaying tabular data.',
     folder: 'table',
     isnew: false,
-    istodo: false,
+    istodo: true,
     name: 'Table',
     npmDependencies: [],
     registryDependencies: []
@@ -598,7 +598,7 @@ const allComponents: RegistryUiData = {
     description: 'A container for grouping a set of buttons and controls.',
     folder: 'toolbar',
     isnew: false,
-    istodo: false,
+    istodo: true,
     name: 'Toolbar',
     npmDependencies: [],
     registryDependencies: []
@@ -618,7 +618,7 @@ const allComponents: RegistryUiData = {
     category: 'origin-ui',
     description: 'A component for displaying a hierarchical tree of items.',
     folder: 'tree',
-    isnew: true,
+    isnew: false,
     istodo: true,
     name: 'Tree',
     npmDependencies: [],

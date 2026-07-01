@@ -83,6 +83,7 @@ const registryCategory: RegistryUiData = {
 	cropper: {
 		description: "A component for cropping images with a resizable and movable selection area.",
 		category: "origin-ui",
+		istodo: true
 	},
 	"date-picker": {
 		description: "A date picker component built with Calendar and Popover.",
@@ -196,6 +197,11 @@ const registryCategory: RegistryUiData = {
 		category: "ui",
 
 	},
+	"rich-editor": {
+		description: "A rich text editor component with formatting options.",
+		category: "extra",
+		istodo: true
+	},
 	"scroll-area": {
 		description: "A native scroll container with custom scrollbars.",
 		category: "ui",
@@ -204,7 +210,7 @@ const registryCategory: RegistryUiData = {
 	stepper: {
 		description: "A component for displaying a series of steps in a process.",
 		category: "origin-ui",
-
+	istodo: true
 	},
 	select: {
 		description: "A common form component for choosing a predefined value in a dropdown menu.",
@@ -224,7 +230,7 @@ const registryCategory: RegistryUiData = {
 	skeleton: {
 		description: "A loading state skeleton for your components.",
 		category: "ui",
-
+	istodo: true
 	},
 	slider: {
 		description: "An input where the user selects a value from within a given range.",
@@ -249,7 +255,7 @@ const registryCategory: RegistryUiData = {
 	table: {
 		description: "A simple table component for displaying tabular data.",
 		category: "ui",
-
+	istodo: true
 	},
 	tabs: {
 		description: "A component for toggling between related panels on the same page.",
@@ -281,6 +287,7 @@ const registryCategory: RegistryUiData = {
 	toolbar: {
 		description: "A container for grouping a set of buttons and controls.",
 		category: "ui",
+			istodo: true
 
 	},
 	tooltip: {
@@ -291,7 +298,6 @@ const registryCategory: RegistryUiData = {
 	tree: {
 		description: "A component for displaying a hierarchical tree of items.",
 		category: "origin-ui",
-		isnew: true,
 		istodo: true
 	}
 };
