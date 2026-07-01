@@ -29,7 +29,7 @@
 				<Check size={24} />
 			{/if}
 		</span>
-		<span class="flex items-center gap-2">
+		<span class="col-start-2 flex min-w-0 items-center gap-2">
 			{#if childrenProp}
 				{@render childrenProp({ highlighted, selected })}
 			{:else}

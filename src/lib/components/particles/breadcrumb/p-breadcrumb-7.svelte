@@ -16,9 +16,9 @@
   } from "$lib/components/ui/select";
 
   const items = [
-    { label: "Orion", value: "orion" },
-    { label: "Sigma", value: "sigma" },
-    { label: "Dorado", value: "dorado" },
+    { label: "Orion", value: "Orion" },
+    { label: "Sigma", value: "Sigma" },
+    { label: "Dorado", value: "Dorado" },
   ];
 </script>
 
@@ -29,7 +29,7 @@
     </BreadcrumbItem>
     <BreadcrumbSeparator />
     <BreadcrumbItem>
-      <Select aria-label="Select database" value="orion">
+      <Select aria-label="Select database" value="Orion">
         <SelectTrigger size="sm">
           <Database />
           <SelectValue />

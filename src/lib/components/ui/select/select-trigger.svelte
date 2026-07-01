@@ -27,7 +27,7 @@
 	data-slot="select-trigger"
 	{...restProps}
 >
-	<span class="pointer-events-none">
+	<span class="pointer-events-none flex items-center gap-2">
 		{@render children?.()}
 	</span>
 	<ChevronsUpDown class="-me-1 size-4.5 opacity-80 sm:size-4" />
