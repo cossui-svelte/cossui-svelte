@@ -3,7 +3,7 @@
 
 import { type RegistryUiData } from './createComponentRegistry';
 
-const registryCategory: RegistryUiData = {
+export const custom_components_metadata: RegistryUiData = {
 	accordion: {
 		description: "A set of collapsible panels with headings and content.",
 		category: "ui",
@@ -302,4 +302,4 @@ const registryCategory: RegistryUiData = {
 	}
 };
 
-export default registryCategory;
+

@@ -2126,6 +2126,12 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     registryDependencies: ['field', 'fieldset', 'radio-group'],
     tags: ['radio-group', 'form']
   },
+  'p-rich-editor-1': {
+    description: 'Basic rich editor examples',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['rich-editor'],
+    tags: ['rich-editor']
+  },
   'p-scroll-area-1': {
     description: 'Basic scroll area',
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' },

@@ -1,5 +1,5 @@
 
-export const custom_metadata = {
+export const custom_particle_metadata = {
   'p-aspect-ratio-1': {
     description: 'Ratio 1:1',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
@@ -95,5 +95,11 @@ export const custom_metadata = {
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
     registryDependencies: ['timeline'],
     tags: ['timeline']
+  },
+  'p-rich-editor-1': {
+    description: 'Basic rich editor examples',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['rich-editor'],
+    tags: ['rich-editor']
   },
 }

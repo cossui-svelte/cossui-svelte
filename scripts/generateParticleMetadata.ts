@@ -2,7 +2,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import cossuiRegistry from './registry.json' with { type: 'json' };
-import { custom_metadata } from './registry-customui';
+import { custom_particle_metadata } from './custom-particule-metadata'
 
 const OUTPUT = path.resolve('src/lib/registry/generated-metadata.ts');
 
@@ -54,7 +54,7 @@ function renderCustomEntry(name: string, item: CustomItem): string {
   return `  ${JSON.stringify(name)}: {\n${lines.join(',\n')}\n  }`;
 }
 
-const customEntries = Object.entries(custom_metadata).map(([name, item]) =>
+const customEntries = Object.entries(custom_particle_metadata).map(([name, item]) =>
   renderCustomEntry(name, item as CustomItem)
 );
 

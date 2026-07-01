@@ -1,7 +1,7 @@
 /// <reference types="node" />
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import customMetaData from './custom-component-metadata.js';
+import {custom_components_metadata} from './custom-component-metadata.js';
 
 export interface RegistryUIEntry {
     name?: string;
@@ -52,7 +52,7 @@ async function scanExamples(): Promise<void> {
         const indexPath = path.join(SOURCE_DIR, category, "index.ts");
         if (await fileExists(indexPath)) {
 
-            const meta = customMetaData[category];
+            const meta = custom_components_metadata[category];
             const component: RegistryUIEntry = {
                 name: toName(category),
                 category: meta?.category ?? 'ui',
