@@ -51,7 +51,6 @@ const tagCategories = [
   'table',
   'tabs',
   'textarea',
-
   'toast',
   'toggle',
   'toggle-group',

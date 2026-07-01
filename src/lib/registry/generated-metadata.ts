@@ -2743,6 +2743,78 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     registryDependencies: ['button', 'textarea'],
     tags: ['button', 'textarea']
   },
+  'p-timeline-1': {
+    description: 'Ratio 1:1',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['timeline'],
+    tags: ['timeline']
+  },
+  'p-timeline-2': {
+    description: 'Ratio 1:1',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['timeline'],
+    tags: ['timeline']
+  },
+  'p-timeline-3': {
+    description: 'Ratio 1:1',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['timeline'],
+    tags: ['timeline']
+  },
+  'p-timeline-4': {
+    description: 'Ratio 1:1',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['timeline'],
+    tags: ['timeline']
+  },
+  'p-timeline-5': {
+    description: 'Ratio 1:1',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['timeline'],
+    tags: ['timeline']
+  },
+  'p-timeline-6': {
+    description: 'Ratio 1:1',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['timeline'],
+    tags: ['timeline']
+  },
+  'p-timeline-7': {
+    description: 'Ratio 1:1',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['timeline'],
+    tags: ['timeline']
+  },
+  'p-timeline-8': {
+    description: 'Ratio 1:1',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['timeline'],
+    tags: ['timeline']
+  },
+  'p-timeline-9': {
+    description: 'Ratio 1:1',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['timeline'],
+    tags: ['timeline']
+  },
+  'p-timeline-10': {
+    description: 'Ratio 1:1',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['timeline'],
+    tags: ['timeline']
+  },
+  'p-timeline-11': {
+    description: 'Ratio 1:1',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['timeline'],
+    tags: ['timeline']
+  },
+  'p-timeline-12': {
+    description: 'Ratio 1:1',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['timeline'],
+    tags: ['timeline']
+  },
   'p-toast-1': {
     description: 'Default stacked toast with title and description',
     registryDependencies: ['button', 'toast'],
