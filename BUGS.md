@@ -7,7 +7,7 @@
 * Form Controls need to be rethought - first then should apply to complex elements such as sliders and number fields, second the must handle defaultValue
 * Search all particle Lable - many of the form validations are failing, fix them
 * tooltips
-* 
+* combobox multiple - when typing manually and there is a match, the matched content should disapear from the combo input
 
 * DONE combobox with long popup won't scroll
 * DONE Not a real bug - combobox-list.svelte is using a DIV rather than the scrollarea. fix it, it is commit f99d67ca16adad03890bb7126cf26f4041e676d4
