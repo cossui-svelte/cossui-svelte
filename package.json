@@ -46,8 +46,8 @@
   "scripts": {
     "biome:migrate": "biome migrate --write",
     "build": "vite build",
-    "cf-typegen": "wrangler types src/worker-configuration.d.ts",
     "cf:deploy": "pnpm run build && wrangler deploy",
+    "cf:typegen": "wrangler types src/worker-configuration.d.ts",
     "check": "svelte-kit sync && pnpx svelte-check-native --workspace .",
     "dev": "vite",
     "format": "biome check . --fix",
