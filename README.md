@@ -12,9 +12,13 @@ Along the way, I noticed that even Coss UI lacks some of the components found in
 
 *__"The most intuitive framework needs strong, consistent, and fully featured components."__*
 
+## ShowCase
+
+[CossUI-Svelte ShowCase](https://www.cossui-svelte.com)
+
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=orefalo/cossui-svelte&type=Date)](https://star-history.com/#orefalo/cossui-svelte&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=cossui-svelte/cossui-svelte&type=Date)](https://star-history.com/#cossui-svelte/cossui-svelte&Date)
 
 ## Acknowledgements
 
@@ -39,6 +43,7 @@ The Original [Coss UI](https://cossui.com/) is built with Next.js and BaseUI. Th
 - [x] [Svelte](https://svelte.dev) instead of ~~Next.js~~
 - [x] [Lucide Svelte](https://lucide.dev/guide/packages/lucide-svelte) instead of ~~Lucide React~~
 - [x] [Bits UI](https://bits-ui.com/docs/introduction) instead of ~~Base UI~~
+- [x] Form/Field/Fieldset are leveraging the power of [FormSnap & Superforms](https://superforms.rocks/)
+- [x] Phantom component is trivial, thanks to [Phantom-UI](@aejkatappaja/phantom-ui)
 
 A few components are built differently, reflecting the intuitive conventions of the Svelte ecosystem and its frameworks.
-
