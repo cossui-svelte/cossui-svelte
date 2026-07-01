@@ -34,7 +34,7 @@
 		size = "default",
 		orientation = "horizontal",
 		variant = "default",
-		//	type = "single",
+		type = "multiple",
 		...restProps
 	}: ToggleGroupPrimitive.RootProps & ToggleGroupProps = $props();
 
@@ -56,8 +56,9 @@ Discriminated Unions + Destructing (required for bindable) do not
 get along, so we shut typescript up by casting `value` to `never`.
 -->
 <ToggleGroupPrimitive.Root
-	bind:value
+	bind:value={value as never}
 	bind:ref
+	type={type as never}
 	{orientation}
 	data-slot="toggle-group"
 	data-variant={variant}

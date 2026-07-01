@@ -185,17 +185,14 @@ export const custom_components_metadata: RegistryUiData = {
 	"preview-card": {
 		description: "A popup that appears when a link is hovered, showing a preview for sighted users.",
 		category: "ui",
-
 	},
 	progress: {
 		description: "Displays the status of a task that takes a long time.",
 		category: "ui",
-
 	},
 	"radio-group": {
 		description: "A set of checkable buttons where no more than one of the buttons can be checked at a time.",
 		category: "ui",
-
 	},
 	"rich-editor": {
 		description: "A rich text editor component with formatting options.",
@@ -210,7 +207,7 @@ export const custom_components_metadata: RegistryUiData = {
 	stepper: {
 		description: "A component for displaying a series of steps in a process.",
 		category: "origin-ui",
-	istodo: true
+		istodo: true
 	},
 	select: {
 		description: "A common form component for choosing a predefined value in a dropdown menu.",
@@ -230,17 +227,15 @@ export const custom_components_metadata: RegistryUiData = {
 	skeleton: {
 		description: "A loading state skeleton for your components.",
 		category: "ui",
-	istodo: true
+		istodo: true
 	},
 	slider: {
 		description: "An input where the user selects a value from within a given range.",
 		category: "ui",
-
 	},
 	spinner: {
 		description: "An indicator that can be used to show a loading state.",
 		category: "ui",
-
 	},
 	'split-pane': {
 		description: "A component to layout resizable panels with a draggable divider.",
@@ -250,17 +245,15 @@ export const custom_components_metadata: RegistryUiData = {
 	switch: {
 		description: "A control that indicates whether a setting is on or off.",
 		category: "ui",
-
 	},
 	table: {
 		description: "A simple table component for displaying tabular data.",
 		category: "ui",
-	istodo: true
+		istodo: true
 	},
 	tabs: {
 		description: "A component for toggling between related panels on the same page.",
 		category: "ui",
-
 	},
 	textarea: {
 		description: "A native textarea element for multi-line text input.",
@@ -287,13 +280,10 @@ export const custom_components_metadata: RegistryUiData = {
 	toolbar: {
 		description: "A container for grouping a set of buttons and controls.",
 		category: "ui",
-			istodo: true
-
 	},
 	tooltip: {
 		description: "A popup that appears when an element is hovered or focused, showing a hint for sighted users.",
 		category: "ui",
-
 	},
 	tree: {
 		description: "A component for displaying a hierarchical tree of items.",

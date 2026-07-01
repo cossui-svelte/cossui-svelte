@@ -598,7 +598,7 @@ const allComponents: RegistryUiData = {
     description: 'A container for grouping a set of buttons and controls.',
     folder: 'toolbar',
     isnew: false,
-    istodo: true,
+    istodo: false,
     name: 'Toolbar',
     npmDependencies: [],
     registryDependencies: []

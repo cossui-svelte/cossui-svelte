@@ -4,7 +4,7 @@
 
   type Props = Separator.RootProps;
 
-  let { class: className, ...restProps }: Props = $props();
+  let { class: className, orientation = "vertical", ...restProps }: Props = $props();
 </script>
 
 <Separator.Root
@@ -13,5 +13,6 @@
     className,
   )}
   data-slot="toolbar-separator"
+  {orientation}
   {...restProps}
 />

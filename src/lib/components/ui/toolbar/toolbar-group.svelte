@@ -5,12 +5,18 @@
 
   type Props = Toolbar.GroupProps & { children?: Snippet };
 
-  let { class: className, children, ...restProps }: Props = $props();
+  let {
+    class: className,
+    children,
+    type = "single",
+    ...restProps
+  }: Props = $props();
 </script>
 
 <Toolbar.Group
   class={cn("flex items-center gap-1", className)}
   data-slot="toolbar-group"
+  {type}
   {...restProps}
 >
   {@render children?.()}

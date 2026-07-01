@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Bold from "@lucide/svelte/icons/bold";
   import Calendar from "@lucide/svelte/icons/calendar";
   import Check from "@lucide/svelte/icons/check";
   import ChevronDown from "@lucide/svelte/icons/chevron-down";
@@ -9,11 +10,14 @@
   import GripVertical from "@lucide/svelte/icons/grip-vertical";
   import ImageIcon from "@lucide/svelte/icons/image";
   import Info from "@lucide/svelte/icons/info";
+  import Italic from "@lucide/svelte/icons/italic";
+  import ListIcon from "@lucide/svelte/icons/list";
   import Minus from "@lucide/svelte/icons/minus";
   import MousePointer2 from "@lucide/svelte/icons/mouse-pointer-2";
   import Plus from "@lucide/svelte/icons/plus";
   import Search from "@lucide/svelte/icons/search";
   import TextCursor from "@lucide/svelte/icons/text-cursor";
+  import Underline from "@lucide/svelte/icons/underline";
   import UserRound from "@lucide/svelte/icons/user-round";
   import X from "@lucide/svelte/icons/x";
   import { type Component } from "svelte";
@@ -685,6 +689,26 @@
   <div class="flex max-w-28 flex-1 flex-col gap-3">
     {@render radioItem()}
     {@render radioItem(true)}
+  </div>
+{:else if slug === "rich-editor"}
+  <div class={cardCls("max-w-50 [--radius-2xl:14px]")}>
+    <div class={cpCls("flex flex-col gap-0 p-0")}>
+      <div class="flex items-center gap-1 border-b border-border p-2">
+        <div
+          class="flex size-6 items-center justify-center rounded-sm bg-muted-foreground/8"
+        >
+          {@render iconSnip(Bold, "size-3")}
+        </div>
+        {@render iconSnip(Italic, "size-3")}
+        {@render iconSnip(Underline, "size-3")}
+        {@render iconSnip(ListIcon, "size-3")}
+      </div>
+      <div class="flex flex-col gap-2 p-4">
+        {@render textSnip("w-[70%]")}
+        {@render textSnip("w-[90%]", "secondary")}
+        {@render textSnip("w-[60%]", "secondary")}
+      </div>
+    </div>
   </div>
 {:else if slug === "scroll-area"}
   <div class={cardCls("max-w-36 [--radius-2xl:14px]")}>

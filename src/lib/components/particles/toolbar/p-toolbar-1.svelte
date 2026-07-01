@@ -31,7 +31,7 @@
 
 <TooltipProvider>
   <Toolbar>
-    <ToggleGroup class="border-none p-0" defaultValue={["left"]}>
+    <ToggleGroup class="border-none p-0" value={["left"]}>
       <Tooltip>
         <TooltipTrigger>
           {#snippet child({ props })}
@@ -63,8 +63,8 @@
         <TooltipPopup sideOffset={8}>Align right</TooltipPopup>
       </Tooltip>
     </ToggleGroup>
-    <ToolbarSeparator />
-    <ToolbarGroup>
+    <ToolbarSeparator/>
+    <ToolbarGroup type="single">
       <Tooltip>
         <TooltipTrigger>
           {#snippet child({ props })}
@@ -87,7 +87,7 @@
       </Tooltip>
     </ToolbarGroup>
     <ToolbarSeparator />
-    <ToolbarGroup>
+    <ToolbarGroup type="single">
       <Select value={selected} onValueChange={(v) => { selected = v; }}>
         <Tooltip>
           <TooltipTrigger>
@@ -107,7 +107,7 @@
       </Select>
     </ToolbarGroup>
     <ToolbarSeparator />
-    <ToolbarGroup>
+    <ToolbarGroup type="single">
       <Button>Save</Button>
     </ToolbarGroup>
   </Toolbar>
