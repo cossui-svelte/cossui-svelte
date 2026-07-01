@@ -1,7 +1,8 @@
 <script lang="ts">
+  import { z } from "zod";
   import { Button } from "$lib/components/ui/button";
   import { Card, CardPanel } from "$lib/components/ui/card";
-  import { Field, FieldLabel } from "$lib/components/ui/field";
+  import { Field, FieldError, FieldLabel } from "$lib/components/ui/field";
   import { Form } from "$lib/components/ui/form";
   import {
     Frame,
@@ -17,13 +18,31 @@
     SelectTrigger,
     SelectValue,
   } from "$lib/components/ui/select";
+  import { createForm } from "$lib/hooks/use-superform";
 
   const frameworkOptions = [
     { label: "Next.js", value: "next" },
     { label: "Vite", value: "vite" },
     { label: "Remix", value: "remix" },
     { label: "Astro", value: "astro" },
-  ];
+  ] as const;
+
+  const schema = z.object({
+    framework: z.enum(["next", "vite", "remix", "astro"], {
+      message: "Please select a framework.",
+    }),
+    name: z.string().min(1, "Project name is required."),
+  });
+
+  const superform = createForm({
+    initialData: { framework: "next" as const },
+    onUpdated: (data) => {
+      alert(`Deploying "${data.name}" with ${data.framework}`);
+    },
+    schema,
+  });
+
+  const { submitting } = superform;
 </script>
 
 <Frame class="w-full max-w-xs">
@@ -33,12 +52,13 @@
   </FrameHeader>
   <Card>
     <CardPanel>
-      <Form class="flex w-full flex-col gap-4">
-        <Field>
+      <Form class="flex w-full flex-col gap-4" {superform}>
+        <Field name="name">
           <FieldLabel>Name</FieldLabel>
           <Input placeholder="Name of your project" type="text" />
+          <FieldError />
         </Field>
-        <Field>
+        <Field name="framework">
           <FieldLabel>Framework</FieldLabel>
           <Select value="next">
             <SelectTrigger>
@@ -50,8 +70,9 @@
               {/each}
             </SelectPopup>
           </Select>
+          <FieldError />
         </Field>
-        <Button class="w-full" type="submit">Deploy</Button>
+        <Button class="w-full" loading={$submitting} type="submit">Deploy</Button>
       </Form>
     </CardPanel>
   </Card>

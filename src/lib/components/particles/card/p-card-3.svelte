@@ -1,5 +1,6 @@
 <script lang="ts">
   import ShieldAlert from "@lucide/svelte/icons/shield-alert";
+  import { z } from "zod";
   import { Button } from "$lib/components/ui/button";
   import {
     Card,
@@ -9,9 +10,24 @@
     CardPanel,
     CardTitle,
   } from "$lib/components/ui/card";
-  import { Field, FieldLabel } from "$lib/components/ui/field";
+  import { Field, FieldError, FieldLabel } from "$lib/components/ui/field";
   import { Form } from "$lib/components/ui/form";
   import { Input } from "$lib/components/ui/input";
+  import { createForm } from "$lib/hooks/use-superform";
+
+  const schema = z.object({
+    email: z.email("Please enter a valid email."),
+    password: z.string().min(8, "Password must be at least 8 characters."),
+  });
+
+  const superform = createForm({
+    onUpdated: (data) => {
+      alert(`Logging in as ${data.email}`);
+    },
+    schema,
+  });
+
+  const { submitting } = superform;
 </script>
 
 <Card class="w-full max-w-xs">
@@ -20,16 +36,18 @@
     <CardDescription>Enter email and password to login</CardDescription>
   </CardHeader>
   <CardPanel>
-    <Form class="flex w-full flex-col gap-4">
-      <Field>
+    <Form class="flex w-full flex-col gap-4" {superform}>
+      <Field name="email">
         <FieldLabel>Email</FieldLabel>
         <Input placeholder="Enter your email" type="email" />
+        <FieldError />
       </Field>
-      <Field>
+      <Field name="password">
         <FieldLabel>Password</FieldLabel>
         <Input placeholder="Enter your password" type="password" />
+        <FieldError />
       </Field>
-      <Button class="w-full" type="submit">Login</Button>
+      <Button class="w-full" loading={$submitting} type="submit">Login</Button>
     </Form>
   </CardPanel>
   <CardFooter class="border-t">
