@@ -10,7 +10,7 @@ Since there was no Svelte option, this project aims to bring those updated compo
 
 Along the way, I noticed that even Coss UI lacks some of the components found in Bits UI and Origin UI. So after exploring through 3rd party projects and pull requests, I brought everything together under one umbrella, mainly for my personal use.
 
-*__"The most intuitive framework needs strong, consistent, and fully featured components."__*
+*__"A full set of good looking components, for the most intuitive web framework."__*
 
 ## ShowCase
 
@@ -48,6 +48,6 @@ The Original [Coss UI](https://cossui.com/) is built with Next.js and BaseUI. Th
 - [x] [Lucide Svelte](https://lucide.dev/guide/packages/lucide-svelte) instead of ~~Lucide React~~
 - [x] [Bits UI](https://bits-ui.com/docs/introduction) instead of ~~Base UI~~
 - [x] Form/Field/Fieldset are leveraging the power of [FormSnap & Superforms](https://superforms.rocks/)
-- [x] Phantom component is trivial, thanks to [Phantom-UI](@aejkatappaja/phantom-ui)
+- [x] Skeleton component now trivial, thanks to [Phantom-UI](@aejkatappaja/phantom-ui)
 
 A few components are built differently, reflecting the intuitive conventions of the Svelte ecosystem and its frameworks.
