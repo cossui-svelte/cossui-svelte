@@ -37,7 +37,7 @@
     <p class="text-base/7 text-muted-foreground">
     My aim is to keep every component in one place, with a consistent
       look and feel — so there's no lengthy search for the right library, and
-      no patching components from different libraries that don't play
+      no patching components from different sources that don't play
       nicely together.
     </p>
 
