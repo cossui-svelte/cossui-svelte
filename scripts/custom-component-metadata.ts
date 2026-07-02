@@ -1,7 +1,7 @@
 // This file contains extra meta-data, to add into the registry
 // it is edited manually
 
-import { type RegistryUiData } from './createComponentRegistry';
+import { type RegistryUiData } from './generateComponentRegistry';
 
 export const custom_components_metadata: RegistryUiData = {
 	accordion: {
@@ -54,6 +54,10 @@ export const custom_components_metadata: RegistryUiData = {
 	card: {
 		description: "A content container for grouping related information.",
 		category: "ui",
+	},
+	chart: {
+		description: "A chart component for visualizing data in various formats.",
+		category: "shadcn-ui",
 	},
 	checkbox: {
 		description: "A control allowing the user to toggle between checked and not checked.",

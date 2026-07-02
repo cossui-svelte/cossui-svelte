@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { getCategorySortOrder } from "$lib/registry/registry-categories";
 	import { allParticles } from "$lib/registry/registry-particles";
+	import { getCategorySortOrder } from "$lib/registry/registry-tags";
 	import SearchField, { type SearchItem } from "./search-field.svelte";
 	import { browser } from "$app/environment";
 	import { goto } from "$app/navigation";

@@ -2,11 +2,11 @@
 	import PageHeader from "$lib/components/app/page-header.svelte";
 	import PageHeaderDescription from "$lib/components/app/page-header-description.svelte";
 	import PageHeaderHeading from "$lib/components/app/page-header-heading.svelte";
+	import { allParticles } from "$lib/registry/registry-particles";
 	import {
 		isValidRegistryCategory,
 		type RegistryCategory,
-	} from "$lib/registry/registry-categories.js";
-	import { allParticles } from "$lib/registry/registry-particles";
+	} from "$lib/registry/registry-tags.js";
 	import ParticlesDisplay from "./particles-display.svelte";
 	import SearchContainer from "./search-container.svelte";
 	import { browser } from "$app/environment";

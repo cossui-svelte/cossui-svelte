@@ -13,7 +13,7 @@
   import PageHeader from "$lib/components/app/page-header.svelte";
   import PageHeaderDescription from "$lib/components/app/page-header-description.svelte";
   import PageHeaderHeading from "$lib/components/app/page-header-heading.svelte";
-  import { allComponents, type RegistryUIEntry } from "$lib/registry/registry-components";
+  import { allComponents, type RegistryUIEntry } from "$lib/registry/generated-registry-components";
   import { allParticles } from "$lib/registry/registry-particles";
 
   const description = "Built for developers and AI.";

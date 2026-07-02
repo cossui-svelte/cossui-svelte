@@ -1,8 +1,8 @@
 <script lang="ts">
-	// import { getCategorySortOrder } from "$lib/registry/registry-categories.js";
-	import type { RegistryCategory } from "$lib/registry/registry-categories.js";
 	// import { Skeleton } from "$lib/components/ui/skeleton";
 	import { allParticles } from "$lib/registry/registry-particles.js";
+	// import { getCategorySortOrder } from "$lib/registry/registry-categories.js";
+	import type { RegistryCategory } from "$lib/registry/registry-tags.js";
 	import ParticleCard from "./particle-card.svelte";
 
 	// import ParticleCardContainer from "./ParticleCardContainer.svelte";

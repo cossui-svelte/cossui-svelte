@@ -13,8 +13,8 @@
 		ComboboxPopup,
 		ComboboxSeparator,
 	} from "$lib/components/ui/combobox";
-	import { getCategorySortOrder } from "$lib/registry/registry-categories.js";
 	import { allParticles } from "$lib/registry/registry-particles";
+	import { getCategorySortOrder } from "$lib/registry/registry-tags.js";
 
 	export interface SearchItem {
 		label: string;

@@ -1,5 +1,5 @@
 import { type RequestHandler } from '@sveltejs/kit';
-import { allComponents } from '$lib/registry/registry-components';
+import { allComponents } from '$lib/registry/generated-registry-components';
 
 export const prerender = true;
 
