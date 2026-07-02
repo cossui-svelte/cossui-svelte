@@ -876,6 +876,12 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     registryDependencies: ['button', 'card', 'empty'],
     tags: ['card', 'frame']
   },
+  'p-chart-1': {
+    description: 'Crops images to a specific aspect ratio and size',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['chart'],
+    tags: ['chart']
+  },
   'p-checkbox-1': {
     description: 'Basic checkbox',
     registryDependencies: ['checkbox', 'label'],
@@ -1114,6 +1120,12 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-sm' },
     registryDependencies: ['context-menu'],
     tags: ['context-menu', 'menu', 'switch']
+  },
+  'p-cropper-1': {
+    description: 'Crops images to a specific aspect ratio and size',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['cropper'],
+    tags: ['cropper']
   },
   'p-date-picker-1': {
     description: 'Basic date picker',
@@ -2479,7 +2491,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     tags: ['spinner']
   },
   'p-split-pane-1': {
-    description: 'Basic split pane examples',
+    description: 'Split pane with resizable panels',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
     registryDependencies: ['split-pane'],
     tags: ['split-pane']
@@ -3015,8 +3027,8 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     registryDependencies: ['button', 'group', 'tooltip'],
     tags: ['tooltip']
   },
-  tree: {
-    description: 'Basic tree examples',
+  'p-tree-1': {
+    description: 'Show a tree structure with nodes and children',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
     registryDependencies: ['tree'],
     tags: ['tree']

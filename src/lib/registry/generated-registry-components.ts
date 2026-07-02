@@ -112,7 +112,7 @@ const allComponents: RegistryUiData = {
     description: 'A date picker component with range and multi-select support.',
     folder: 'calendar',
     isnew: false,
-    istodo: false,
+    istodo: true,
     name: 'Calendar',
     npmDependencies: [],
     registryDependencies: []
@@ -132,7 +132,7 @@ const allComponents: RegistryUiData = {
     description: 'A chart component for visualizing data in various formats.',
     folder: 'chart',
     isnew: false,
-    istodo: false,
+    istodo: true,
     name: 'Chart',
     npmDependencies: [],
     registryDependencies: []

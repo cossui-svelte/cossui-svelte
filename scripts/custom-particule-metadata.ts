@@ -109,15 +109,27 @@ export const custom_particle_metadata = {
     tags: ['stepper']
   },
   'p-split-pane-1': {
-    description: 'Basic split pane examples',
+    description: 'Split pane with resizable panels',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
     registryDependencies: ['split-pane'],
     tags: ['split-pane']
   },
-  'tree': {
-    description: 'Basic tree examples',
+  'p-tree-1': {
+    description: 'Show a tree structure with nodes and children',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
     registryDependencies: ['tree'],
     tags: ['tree']
+  },
+  'p-cropper-1': {
+    description: 'Crops images to a specific aspect ratio and size',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['cropper'],
+    tags: ['cropper']
+  },
+  'p-chart-1': {
+    description: 'Crops images to a specific aspect ratio and size',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['chart'],
+    tags: ['chart']
   },
 }
