@@ -1,5 +1,8 @@
 // All registry categories in display order
 // used during rendering
+
+
+// TODO: I should calculate this
 const tagCategories = [
   // UI components
   'accordion',
@@ -40,6 +43,7 @@ const tagCategories = [
   'preview-card',
   'progress',
   'radio-group',
+  'rich-editor',
   'scroll-area',
   'select',
   'separator',
@@ -47,15 +51,19 @@ const tagCategories = [
   'skeleton',
   'slider',
   'spinner',
+  'split-pane',
+  'stepper',
   'switch',
   'table',
   'tabs',
   'textarea',
+  'timeline',
   'toast',
   'toggle',
   'toggle-group',
   'toolbar',
-  'tooltip'
+  'tooltip',
+  'tree'
 ] as const;
 
 // This is used by the search to find particules
@@ -80,7 +88,6 @@ export const registryCategories = [
   'tanstack',
   'text-editor',
   'time',
-  'timeline',
   'timezone',
   'upload',
   'validation',

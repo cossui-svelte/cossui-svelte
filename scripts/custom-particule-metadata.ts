@@ -102,4 +102,22 @@ export const custom_particle_metadata = {
     registryDependencies: ['rich-editor'],
     tags: ['rich-editor']
   },
+  'p-stepper-1': {
+    description: 'Basic stepper examples',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['stepper'],
+    tags: ['stepper']
+  },
+  'p-split-pane-1': {
+    description: 'Basic split pane examples',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['split-pane'],
+    tags: ['split-pane']
+  },
+  'tree': {
+    description: 'Basic tree examples',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['tree'],
+    tags: ['tree']
+  },
 }

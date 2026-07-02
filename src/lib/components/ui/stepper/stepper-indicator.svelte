@@ -1,6 +1,6 @@
 <script lang="ts">
-	import CheckIcon from "@lucide/svelte/icons/check-icon";
-	import LoaderCircleIcon from "@lucide/svelte/icons/loader-circle-icon";
+	import CheckIcon from "@lucide/svelte/icons/check";
+	import LoaderCircleIcon from "@lucide/svelte/icons/loader-circle";
 	import { getContext } from 'svelte';
 	import { cn } from '$lib/utils';
 

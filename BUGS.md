@@ -21,3 +21,8 @@
 * DONE - METER - this is not a bug.. but the ends should be round
 * DONE - toplevel padding
 * DONE ACCORDIONS - no animations, custom + still show an anchor
+
+TODO:
+
+* bring these particules  https://github.com/max-got/originui-svelte/pull/74/changes#diff-6fba7ce7af673abb0664807b5dd0eedd11491641888296d9a0ee99d431c779b7
+* check for any origin particule with no coosui equivalent
