@@ -15,6 +15,8 @@
   interface Props {
     code: string;
     copyButton?: boolean;
+    /** Pre-rendered HTML from server-side highlighting. When provided, skips client-side shiki entirely. */
+    html?: string;
     language: string;
     showLineNumbers?: boolean;
     title?: string;
@@ -24,6 +26,7 @@
     code,
     language,
     title,
+    html,
     copyButton = true,
     showLineNumbers = true,
   }: Props = $props();
@@ -32,18 +35,15 @@
   let timeoutId: ReturnType<typeof setTimeout> | undefined;
 
   async function getHighlightedCode(src: string, lang: string): Promise<string> {
-    const { createHighlighter } = await import("shiki");
-    const highlighter = await createHighlighter({
-      langs: [lang],
-      themes: ["github-light", "github-dark"],
-    });
-    return highlighter.codeToHtml(src, {
+    const { highlighter } = await import("$lib/components/app/shiki");
+    const hl = await highlighter;
+    return hl.codeToHtml(src, {
       lang,
-      themes: { dark: "github-dark", light: "github-light" },
+      themes: { dark: "github-dark-default", light: "github-light-default" },
     });
   }
 
-  const highlightedCode = $derived(getHighlightedCode(code, language));
+  const highlightedCode = $derived(html ?? getHighlightedCode(code, language));
 
   async function copyToClipboard() {
     try {

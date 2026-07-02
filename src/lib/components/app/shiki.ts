@@ -4,7 +4,6 @@ import { createHighlighterCore } from 'shiki/core';
 import { createJavaScriptRegexEngine } from 'shiki/engine/javascript';
 
 const bundledLanguages = {
-  // bash: () => import('@shikijs/langs/bash'),
   svelte: () => import('@shikijs/langs/svelte'),
   typescript: () => import('@shikijs/langs/typescript')
 };
