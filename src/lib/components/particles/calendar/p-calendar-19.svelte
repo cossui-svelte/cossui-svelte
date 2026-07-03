@@ -38,16 +38,15 @@
 
 <div class="flex max-sm:flex-col">
   <Calendar
+    bind:value={date}
     class="max-sm:pb-3 sm:pe-5"
     {isDateDisabled}
     onValueChange={(newDate) => {
       if (newDate) {
-        date = newDate;
         time = undefined;
       }
     }}
     type="single"
-    value={date}
   />
   <div class="relative w-full max-sm:h-48 sm:w-40">
     <div class="absolute inset-0 max-sm:border-t">

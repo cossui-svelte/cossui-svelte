@@ -1,10 +1,8 @@
 <script lang="ts">
-  import { type DateValue, getLocalTimeZone, today } from "@internationalized/date";
-  import { Calendar as CalendarPrimitive } from "bits-ui";
-  import * as Calendar from "$lib/components/ui/calendar";
+  import { type DateValue, getDayOfWeek, getLocalTimeZone, today } from "@internationalized/date";
+  import { Calendar, Day } from "$lib/components/ui/calendar";
 
-  let placeholder = $state<DateValue>(today(getLocalTimeZone()));
-  let value = $state<DateValue | undefined>(today(getLocalTimeZone()));
+  let value = $state(today(getLocalTimeZone()));
 
   function getWeekNumber(date: DateValue): number {
     const d = date.toDate(getLocalTimeZone());
@@ -20,65 +18,18 @@
   }
 </script>
 
-<CalendarPrimitive.Root
-  bind:placeholder
-  bind:value={value as never}
-  class="cn-calendar bg-background w-fit [--cell-size:--spacing(10)] sm:[--cell-size:--spacing(9)]"
-  fixedWeeks
-  type="single"
-  weekdayFormat="short"
->
-  {#snippet children({ months, weekdays })}
-    <Calendar.Months>
-      <Calendar.Nav>
-        <Calendar.PrevButton />
-        <Calendar.NextButton />
-      </Calendar.Nav>
-      {#each months as month (month)}
-        <Calendar.Month>
-          <Calendar.Header>
-            <Calendar.Caption
-              bind:placeholder
-              captionLayout="label"
-              locale="en-US"
-              month={month.value}
-              monthFormat="long"
-              monthIndex={0}
-              months={undefined}
-              yearFormat="numeric"
-              years={undefined}
-            />
-          </Calendar.Header>
-          <Calendar.Grid>
-            <Calendar.GridHead>
-              <Calendar.GridRow class="select-none">
-                <Calendar.HeadCell>
-                  <span class="inline-flex size-(--cell-size) items-center justify-center">Wk</span>
-                </Calendar.HeadCell>
-                {#each weekdays as weekday, i (i)}
-                  <Calendar.HeadCell>{weekday.slice(0, 2)}</Calendar.HeadCell>
-                {/each}
-              </Calendar.GridRow>
-            </Calendar.GridHead>
-            <Calendar.GridBody>
-              {#each month.weeks as weekDates (weekDates)}
-                <Calendar.GridRow class="mt-2 w-full">
-                  <th class="text-muted-foreground w-(--cell-size) text-[0.8rem] font-normal">
-                    <span class="inline-flex size-(--cell-size) items-center justify-center">
-                      {getWeekNumber(weekDates[0])}
-                    </span>
-                  </th>
-                  {#each weekDates as date (date)}
-                    <Calendar.Cell {date} month={month.value}>
-                      <Calendar.Day />
-                    </Calendar.Cell>
-                  {/each}
-                </Calendar.GridRow>
-              {/each}
-            </Calendar.GridBody>
-          </Calendar.Grid>
-        </Calendar.Month>
-      {/each}
-    </Calendar.Months>
+<Calendar bind:value fixedWeeks type="single">
+  {#snippet day({ day: date })}
+    {@const isWeekStart = getDayOfWeek(date, "en-US") === 0}
+    <Day class="relative">
+      {#snippet children({ day: dayLabel })}
+        {dayLabel}
+        {#if isWeekStart}
+          <span class="-top-1 pointer-events-none absolute left-0.5 text-[0.6rem] text-muted-foreground">
+            {getWeekNumber(date)}
+          </span>
+        {/if}
+      {/snippet}
+    </Day>
   {/snippet}
-</CalendarPrimitive.Root>
+</Calendar>
