@@ -293,6 +293,18 @@
       </div>
     </div>
   </div>
+{:else if slug === "chart"}
+  <div class={cardCls("max-w-36 [--radius-2xl:14px]")}>
+    <div class={cpCls("flex items-end gap-2 p-4")}>
+      <div class="h-6 w-full rounded-sm bg-muted-foreground/20"></div>
+      <div class="h-10 w-full rounded-sm bg-muted-foreground/20"></div>
+      <div
+        class="h-16 w-full rounded-sm bg-linear-to-b from-(--btn-from) to-(--btn-to)"
+      ></div>
+      <div class="h-8 w-full rounded-sm bg-muted-foreground/20"></div>
+      <div class="h-12 w-full rounded-sm bg-muted-foreground/20"></div>
+    </div>
+  </div>
 {:else if slug === "checkbox"}
   <div class="flex max-w-28 flex-1 flex-col gap-3">
     {@render checkboxItem()}
