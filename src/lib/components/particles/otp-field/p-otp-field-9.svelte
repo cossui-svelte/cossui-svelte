@@ -12,7 +12,6 @@
       {#each cells as cell, i}
         <OTPFieldInput
           aria-label={`Character ${i + 1} of ${OTP_LENGTH}`}
-          class="placeholder:text-muted-foreground focus-visible:placeholder:text-transparent"
           placeholder="•"
           {cell}
         />

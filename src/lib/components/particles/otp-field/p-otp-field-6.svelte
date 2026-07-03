@@ -24,7 +24,13 @@
 
 <div class="flex flex-col items-center gap-2">
   <Label>Tier code</Label>
-  <OTPField maxlength={OTP_LENGTH} inputmode="numeric" bind:value onValueChange={handleValueChange}>
+  <OTPField
+    maxlength={OTP_LENGTH}
+    inputmode="numeric"
+    pattern="^[0-3]+$"
+    bind:value
+    onValueChange={handleValueChange}
+  >
     {#snippet children({ cells })}
       {#each cells as cell, i}
         <OTPFieldInput
