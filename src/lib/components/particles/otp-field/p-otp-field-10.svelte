@@ -10,7 +10,7 @@
   <OTPField maxlength={OTP_LENGTH}>
     {#snippet children({ cells })}
       {#each cells as cell, i}
-        <OTPFieldInput aria-label={`Character ${i + 1} of ${OTP_LENGTH}`} {cell} />
+        <OTPFieldInput aria-label={`Character ${i + 1} of ${OTP_LENGTH}`} {cell} mask />
       {/each}
     {/snippet}
   </OTPField>

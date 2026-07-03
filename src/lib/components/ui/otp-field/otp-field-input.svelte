@@ -7,8 +7,12 @@
     cell,
     class: className,
     placeholder,
+    mask = false,
     ...restProps
-  }: OTPFieldPrimitive.CellProps & { placeholder?: string } = $props();
+  }: OTPFieldPrimitive.CellProps & {
+    placeholder?: string;
+    mask?: boolean;
+  } = $props();
 </script>
 
 <OTPFieldPrimitive.Cell
@@ -22,7 +26,7 @@
   {...restProps}
 >
   {#if cell.char}
-    {cell.char}
+    {mask ? "•" : cell.char}
   {:else if placeholder && !cell.isActive}
     <span class="text-muted-foreground">{placeholder}</span>
   {/if}
