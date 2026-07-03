@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type DateValue, DateFormatter, getLocalTimeZone, today } from "@internationalized/date";
+  import { DateFormatter, type DateValue, getLocalTimeZone, today } from "@internationalized/date";
   import { Calendar } from "$lib/components/ui/calendar";
   import { ScrollArea } from "$lib/components/ui/scroll-area";
   import { ToggleGroup, ToggleGroupItem } from "$lib/components/ui/toggle-group";

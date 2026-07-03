@@ -452,6 +452,16 @@ const allComponents: RegistryUiData = {
     npmDependencies: [],
     registryDependencies: []
   },
+  'range-calendar': {
+    category: 'ui',
+    description: '',
+    folder: 'range-calendar',
+    isnew: false,
+    istodo: false,
+    name: 'Range Calendar',
+    npmDependencies: [],
+    registryDependencies: []
+  },
   'rich-editor': {
     category: 'extra',
     description: 'A rich text editor component with formatting options.',
@@ -567,7 +577,7 @@ const allComponents: RegistryUiData = {
     description: 'A simple table component for displaying tabular data.',
     folder: 'table',
     isnew: false,
-    istodo: true,
+    istodo: false,
     name: 'Table',
     npmDependencies: [],
     registryDependencies: []

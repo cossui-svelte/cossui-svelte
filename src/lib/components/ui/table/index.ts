@@ -9,6 +9,7 @@ import Head from './table-head.svelte';
 import Header from './table-header.svelte';
 import Row from './table-row.svelte';
 
+export type { TableVariant } from './table.svelte';
 export {
   Body as TableBody,
   Caption as TableCaption,

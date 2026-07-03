@@ -15,9 +15,9 @@ import {
   PrevButton,
   YearSelect
 } from '$lib/components/ui/calendar';
+import Root from './range-calendar.svelte';
 import Cell from './range-calendar-cell.svelte';
 import Day from './range-calendar-day.svelte';
-import Root from './range-calendar.svelte';
 
 export {
   Caption,

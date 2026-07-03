@@ -11,7 +11,10 @@
 </script>
 
 <caption
-  class={cn("mt-4 text-muted-foreground text-sm", className)}
+  class={cn(
+    "in-data-[variant=card]:my-4 mt-4 text-muted-foreground text-sm",
+    className,
+  )}
   data-slot="table-caption"
   {...restProps}
 >

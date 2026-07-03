@@ -238,7 +238,6 @@ export const custom_components_metadata: RegistryUiData = {
 	table: {
 		description: "A simple table component for displaying tabular data.",
 		category: "ui",
-		istodo: true
 	},
 	tabs: {
 		description: "A component for toggling between related panels on the same page.",
