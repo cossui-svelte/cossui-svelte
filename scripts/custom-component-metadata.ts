@@ -15,12 +15,10 @@ export const custom_components_metadata: RegistryUiData = {
 	"alert-dialog": {
 		description: "A dialog that requires user response to proceed.",
 		category: "ui",
-
 	},
 	autocomplete: {
 		description: "An input that suggests options as you type.",
 		category: "ui",
-
 	},
 	"aspect-ratio": {
 		description: "Displays content within a desired ratio.",
@@ -29,7 +27,6 @@ export const custom_components_metadata: RegistryUiData = {
 	avatar: {
 		description: "An image element with a fallback for representing the user.",
 		category: "ui",
-
 	},
 	badge: {
 		description: "A badge or a component that looks like a badge.",
@@ -106,7 +103,6 @@ export const custom_components_metadata: RegistryUiData = {
 	empty: {
 		description: "A container for displaying empty state information.",
 		category: "ui",
-
 	},
 	field: {
 		description: "A component that provides labelling and validation for form controls.",
@@ -140,22 +136,18 @@ export const custom_components_metadata: RegistryUiData = {
 	input: {
 		description: "A native input element.",
 		category: "ui",
-
 	},
 	"input-group": {
 		description: "A flexible component for grouping inputs with addons, buttons, and other elements.",
 		category: "ui",
-
 	},
 	kbd: {
 		description: "A component for displaying keyboard keys and shortcuts.",
 		category: "ui",
-
 	},
 	label: {
 		description: "Renders an accessible label associated with controls.",
 		category: "ui",
-
 	},
 	menu: {
 		description: "A list of actions in a dropdown, enhanced with keyboard navigation.",
@@ -165,12 +157,10 @@ export const custom_components_metadata: RegistryUiData = {
 	meter: {
 		description: "A graphical display of a numeric value within a range.",
 		category: "ui",
-
 	},
 	"number-field": {
 		description: "A numeric input element with increment and decrement buttons, and a scrub area.",
 		category: "ui",
-
 	},
 	"otp-field": {
 		description: "A segmented input for one-time passwords and verification codes.",
@@ -180,12 +170,10 @@ export const custom_components_metadata: RegistryUiData = {
 	pagination: {
 		description: "A pagination with page navigation, next and previous links.",
 		category: "ui",
-
 	},
 	popover: {
 		description: "An accessible popup anchored to a button.",
 		category: "ui",
-
 	},
 	"preview-card": {
 		description: "A popup that appears when a link is hovered, showing a preview for sighted users.",
@@ -207,7 +195,6 @@ export const custom_components_metadata: RegistryUiData = {
 	"scroll-area": {
 		description: "A native scroll container with custom scrollbars.",
 		category: "ui",
-
 	},
 	stepper: {
 		description: "A component for displaying a series of steps in a process.",
@@ -216,12 +203,10 @@ export const custom_components_metadata: RegistryUiData = {
 	select: {
 		description: "A common form component for choosing a predefined value in a dropdown menu.",
 		category: "ui",
-
 	},
 	separator: {
 		description: "A separator element accessible to screen readers.",
 		category: "ui",
-
 	},
 	sheet: {
 		description: "A flyout that opens from the side of the screen, based on the dialog component.",
@@ -262,7 +247,6 @@ export const custom_components_metadata: RegistryUiData = {
 	textarea: {
 		description: "A native textarea element for multi-line text input.",
 		category: "ui",
-
 	},
 	timeline: {
 		description: "A component for displaying a series of events in chronological order.",
