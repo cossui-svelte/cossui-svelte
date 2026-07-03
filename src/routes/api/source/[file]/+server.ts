@@ -1,10 +1,10 @@
-import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { error } from '@sveltejs/kit';
 import { highlighter as highlighterPromise } from '$lib/components/app/shiki';
 // import { createHighlighter } from 'shiki';
 import { allParticles } from '$lib/registry/registry-particles';
 import type { RequestHandler } from './$types';
+import { read } from '$app/server';
 
 export type SourceResponse = { html: string; raw: string };
 
@@ -39,7 +39,9 @@ export const GET: RequestHandler = async ({ params }) => {
   console.log(filePath);
 
   try {
-    const source = readFileSync(filePath, 'utf-8');
+    console.log('Reading file:', filePath);
+    const asset = read(filePath);
+    const source = await asset.text();
     const highlighter = await highlighterPromise;
     const html = highlighter.codeToHtml(source, {
       lang: 'svelte',

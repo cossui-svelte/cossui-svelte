@@ -112,7 +112,7 @@ const allComponents: RegistryUiData = {
     description: 'A date picker component with range and multi-select support.',
     folder: 'calendar',
     isnew: false,
-    istodo: true,
+    istodo: false,
     name: 'Calendar',
     npmDependencies: [],
     registryDependencies: []

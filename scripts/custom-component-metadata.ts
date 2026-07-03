@@ -50,7 +50,6 @@ export const custom_components_metadata: RegistryUiData = {
 	calendar: {
 		description: "A date picker component with range and multi-select support.",
 		category: "ui",
-		istodo: true
 	},
 	card: {
 		description: "A content container for grouping related information.",

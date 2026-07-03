@@ -34,21 +34,21 @@
     }
 
     if (src) {
-      if (!browser) {
-        const { readFile } = await import("node:fs/promises");
-        const { join } = await import("node:path");
-        const { highlighter: highlighterPromise } = await import(
-          "$lib/components/app/shiki"
-        );
-        const raw = await readFile(join(process.cwd(), src), "utf-8");
-        const highlighter = await highlighterPromise;
-        const lang = language ?? title?.split(".").pop() ?? "svelte";
-        const html = highlighter.codeToHtml(raw, {
-          lang,
-          themes: { dark: "github-dark-default", light: "github-light-default" },
-        });
-        return { html, raw };
-      }
+      // if (!browser) {
+      //   const { readFile } = await import("node:fs/promises");
+      //   const { join } = await import("node:path");
+      //   const { highlighter: highlighterPromise } = await import(
+      //     "$lib/components/app/shiki"
+      //   );
+      //   const raw = await readFile(join(process.cwd(), src), "utf-8");
+      //   const highlighter = await highlighterPromise;
+      //   const lang = language ?? title?.split(".").pop() ?? "svelte";
+      //   const html = highlighter.codeToHtml(raw, {
+      //     lang,
+      //     themes: { dark: "github-dark-default", light: "github-light-default" },
+      //   });
+      //   return { html, raw };
+      // }
       const resp = await fetch(`/api/source/${src}`);
       if (!resp.ok) return undefined;
       return (await resp.json()) as SourceResponse;

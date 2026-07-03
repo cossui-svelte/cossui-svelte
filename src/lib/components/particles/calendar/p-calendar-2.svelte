@@ -5,4 +5,8 @@
   let value = $state(today(getLocalTimeZone()));
 </script>
 
-<Calendar type="single" bind:value />
+<Calendar
+  bind:value
+  class="[--cell-size:--spacing(11)] sm:[--cell-size:--spacing(10)]"
+  type="single"
+/>
