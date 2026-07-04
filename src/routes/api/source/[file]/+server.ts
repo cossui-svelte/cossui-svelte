@@ -1,5 +1,3 @@
-import { join } from 'node:path';
-import { readFile } from 'node:fs/promises';
 import { error } from '@sveltejs/kit';
 import { highlighter } from '$lib/components/app/shiki';
 
@@ -8,11 +6,15 @@ import type { RequestHandler } from './$types';
 
 export type SourceResponse = { html: string; raw: string };
 
+// Bundled at build time so the source is available in the deployed Worker,
+// which has no filesystem access to read from src/ at request time.
+const particleSources = import.meta.glob('/src/lib/components/particles/**/*.svelte', {
+  query: '?raw',
+  import: 'default'
+});
 
 export const GET: RequestHandler = async ({ params }) => {
   const id = params.file;
-
-  console.log(id);
 
   // validate the file parameter
   if (!/^p-[a-z0-9-]+$/.test(id)) {
@@ -21,32 +23,24 @@ export const GET: RequestHandler = async ({ params }) => {
 
   const meta = allParticles[id];
 
-  console.log(meta);
-
   if (!meta) {
     error(403, 'Not allowed');
   }
 
-  const filePath = join(
-    process.cwd(),
-    `src/lib/components/particles/${meta.folder}/${meta.file}.svelte`
-  );
+  const filePath = `/src/lib/components/particles/${meta.folder}/${meta.file}.svelte`;
+  const loadSource = particleSources[filePath];
 
-  console.log(filePath);
-
-  try {
-    console.log('Reading file:', filePath);
-    const source = await readFile(filePath, 'utf-8');
-
-    const html = highlighter.codeToHtml(source, {
-      lang: 'svelte',
-      themes: { dark: 'github-dark-default', light: 'github-light-default' }
-    });
-    return new Response(JSON.stringify({ html, raw: source }), {
-      headers: { 'content-type': 'application/json' }
-    });
-  } catch (e) {
-    console.log(e);
+  if (!loadSource) {
     error(404, 'File not found');
   }
+
+  const source = (await loadSource()) as string;
+
+  const html = highlighter.codeToHtml(source, {
+    lang: 'svelte',
+    themes: { dark: 'github-dark-default', light: 'github-light-default' }
+  });
+  return new Response(JSON.stringify({ html, raw: source }), {
+    headers: { 'content-type': 'application/json' }
+  });
 };
