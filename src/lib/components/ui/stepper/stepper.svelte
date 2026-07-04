@@ -45,8 +45,8 @@
 	role="group"
 	aria-label="Stepper"
 	class={cn(
-		'flex w-full flex-wrap items-start justify-between gap-2',
-		orientation === 'horizontal' ? 'flex-row' : 'flex-col',
+		'flex w-full flex-wrap items-start justify-between',
+		orientation === 'horizontal' ? 'flex-row gap-2' : 'flex-col',
 		className
 	)}
 	{...restProps}

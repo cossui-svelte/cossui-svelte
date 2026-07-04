@@ -39,7 +39,7 @@
           </div>
         </StepperTrigger>
         {#if step < steps.length}
-          <StepperSeparator class="absolute top-6 -bottom-3.5 left-5 -order-1 m-0 -translate-x-1/2" />
+          <StepperSeparator class="absolute top-6 -bottom-1.5 left-5 -order-1 m-0 -translate-x-1/2" />
         {/if}
       </StepperItem>
     {/each}
