@@ -1,7 +1,7 @@
 <script lang="ts">
 	import CheckIcon from "@lucide/svelte/icons/check";
 	import LoaderCircleIcon from "@lucide/svelte/icons/loader-circle";
-	import { getContext } from 'svelte';
+	import { getContext, type Snippet } from 'svelte';
 	import { cn } from '$lib/utils';
 
 	type StepState = 'active' | 'completed' | 'inactive' | 'loading';
@@ -14,9 +14,11 @@
 
 	let {
 		className = '',
+		children,
 		...restProps
 	}: {
 		className?: string;
+		children?: Snippet;
 	} = $props();
 
 	const stepItemCtx = getContext<StepItemContextValue>('StepItemContext');
@@ -37,7 +39,9 @@
 	data-state={stepItemCtx.state}
 	{...restProps}
 >
-	{#if stepItemCtx.isLoading}
+	{#if children}
+		{@render children()}
+	{:else if stepItemCtx.isLoading}
 		<LoaderCircleIcon class="size-4 animate-spin" />
 	{:else if stepItemCtx.state === 'completed'}
 		<CheckIcon class="size-4" />
