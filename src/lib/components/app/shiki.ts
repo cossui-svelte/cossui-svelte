@@ -12,7 +12,7 @@ const bundledLanguages = {
 // export type SupportedLanguage = keyof typeof bundledLanguages | 'text';
 
 /** A preloaded highlighter instance. */
-export const highlighter = createHighlighterCore({
+export const highlighter = await createHighlighterCore({
   engine: createJavaScriptRegexEngine(),
   langs: Object.entries(bundledLanguages).map(([_, lang]) => lang),
   themes: [

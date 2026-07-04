@@ -1,17 +1,13 @@
 import { join } from 'node:path';
+import { readFile } from 'node:fs/promises';
 import { error } from '@sveltejs/kit';
-import { highlighter as highlighterPromise } from '$lib/components/app/shiki';
-// import { createHighlighter } from 'shiki';
+import { highlighter } from '$lib/components/app/shiki';
+
 import { allParticles } from '$lib/registry/registry-particles';
 import type { RequestHandler } from './$types';
-import { read } from '$app/server';
 
 export type SourceResponse = { html: string; raw: string };
 
-// const highlighterPromise = createHighlighter({
-//   langs: ['svelte'],
-//   themes: ['github-light', 'github-dark']
-// });
 
 export const GET: RequestHandler = async ({ params }) => {
   const id = params.file;
@@ -40,9 +36,8 @@ export const GET: RequestHandler = async ({ params }) => {
 
   try {
     console.log('Reading file:', filePath);
-    const asset = read(filePath);
-    const source = await asset.text();
-    const highlighter = await highlighterPromise;
+    const source = await readFile(filePath, 'utf-8');
+
     const html = highlighter.codeToHtml(source, {
       lang: 'svelte',
       themes: { dark: 'github-dark-default', light: 'github-light-default' }
