@@ -20,17 +20,17 @@
   }: Partial<CropperProps> = $props()
 
   const state = new CropperState({
-    crop: () => crop,
-    onCropChange: (point: Point) => (crop = point),
-    zoom: () => zoom,
-    onZoomChange: (newZoom: number) => (zoom = newZoom),
-    minZoom: () => minZoom,
-    maxZoom: () => maxZoom,
     aspect: () => aspect,
+    crop: () => crop,
     cropSize: () => cropSize,
-    restrictPosition: () => restrictPosition,
-    zoomSpeed: () => zoomSpeed,
+    maxZoom: () => maxZoom,
+    minZoom: () => minZoom,
+    onCropChange: (point: Point) => (crop = point),
     oncropcomplete: event => oncropcomplete?.(event),
+    onZoomChange: (newZoom: number) => (zoom = newZoom),
+    restrictPosition: () => restrictPosition,
+    zoom: () => zoom,
+    zoomSpeed: () => zoomSpeed,
   })
 </script>
 

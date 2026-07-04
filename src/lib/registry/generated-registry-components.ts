@@ -557,7 +557,7 @@ const allComponents: RegistryUiData = {
     description: 'A component for displaying a series of steps in a process.',
     folder: 'stepper',
     isnew: false,
-    istodo: false,
+    istodo: true,
     name: 'Stepper',
     npmDependencies: [],
     registryDependencies: []

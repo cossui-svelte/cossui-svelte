@@ -85,8 +85,8 @@ importers:
         specifier: ^0.10.6
         version: 0.10.6(@sveltejs/kit@2.69.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.56.4)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.0)(yaml@2.9.0)))(svelte@5.56.4)(typescript@6.0.3)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.0)(yaml@2.9.0)))(svelte@5.56.4)
       sveltekit-superforms:
-        specifier: ^2.30.1
-        version: 2.30.1(@sveltejs/kit@2.69.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.56.4)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.0)(yaml@2.9.0)))(svelte@5.56.4)(typescript@6.0.3)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.0)(yaml@2.9.0)))(svelte@5.56.4)(typescript@6.0.3)
+        specifier: ^2.30.2
+        version: 2.30.2(@sveltejs/kit@2.69.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.56.4)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.0)(yaml@2.9.0)))(svelte@5.56.4)(typescript@6.0.3)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.0)(yaml@2.9.0)))(svelte@5.56.4)(typescript@6.0.3)
       tailwind-merge:
         specifier: ^3.6.0
         version: 3.6.0
@@ -121,11 +121,11 @@ packages:
     resolution: {integrity: sha512-+FGxwoLFtQ3bNNbBfoCMPP0ZeJS8EY0hgtSGvt5q3B191ACBxeEol8MjorOf1MC5wjxY1aqyJEm7y0Q4UWpEzw==}
     hasBin: true
 
-  '@ark/schema@0.56.0':
-    resolution: {integrity: sha512-ECg3hox/6Z/nLajxXqNhgPtNdHWC9zNsDyskwO28WinoFEnWow4IsERNz9AnXRhTZJnYIlAJ4uGn3nlLk65vZA==}
+  '@ark/schema@0.56.1':
+    resolution: {integrity: sha512-1Cf2g9nKD8K/3JGRu+gCCfYw5d4qR8YLLjDs5W5kpmaButCYWAPFUJqSXyBATPjglzCd4tIkp398iPYVs8MjRA==}
 
-  '@ark/util@0.56.0':
-    resolution: {integrity: sha512-BghfRC8b9pNs3vBoDJhcta0/c1J1rsoS1+HgVUreMFPdhz/CRAKReAu57YEllNaSy98rWAdY1gE+gFup7OXpgA==}
+  '@ark/util@0.56.1':
+    resolution: {integrity: sha512-Tp1rTik3q5Z+jAeeDxr5JZpmVIw0miti1ykSEHyZv5Pw3TIJl2xbN6KTacOxITp0l3s9ytlrWd30Zvqcy5vzoQ==}
 
   '@babel/runtime@7.29.7':
     resolution: {integrity: sha512-Nq8OhGWiZIZGV6hLHoyAKLLcJihP/xFeBMGJoUrxTX2psI8dCifzLhZISFb+VWS3wFMRDmCGw5R+dOySCqPLhw==}
@@ -1035,11 +1035,11 @@ packages:
     resolution: {integrity: sha512-Z/ZeOgVl7bcSYZ/u/rh0fOpvEpq//LZmdbkXyc7syVzjPAhfOa9ebsdTSjEBDU4vs5nC98Kfduj1uFo0qyET3g==}
     engines: {node: '>= 0.4'}
 
-  arkregex@0.0.6:
-    resolution: {integrity: sha512-9mvuMKQuibfWhBrsNYhsKhNb6k9oEHoAJ/FvDiqe8h+E9Siwe0/cro1WVOGgpajXQ9ZHd24yCOf2k35Q/QqUQw==}
+  arkregex@0.0.7:
+    resolution: {integrity: sha512-O/Ltrn9EUSn3ui0KVzfyrWGDUsHlzKxDVBtpQxL/6JmLRMAZAebfSNf/A/J5Ny5S6QIwrXX+RfXsu888HMs35A==}
 
-  arktype@2.2.1:
-    resolution: {integrity: sha512-CWPJxNoSxrS+NYGB3ufwc/blFonESEW5vBQyYPVS0rf4STu8VWoAWfKJSl5vVVm56h4yxpwbODeYwy6XFKvojA==}
+  arktype@2.2.2:
+    resolution: {integrity: sha512-YYf1xhL2dh5aPZFlsY0RAsxv5HZqfLGLptH2ZP3JidTmsGRW8VOymhPjjMTkerL12vR2YtX0SK4c1mATtae8SA==}
 
   assertion-error@2.0.1:
     resolution: {integrity: sha512-Izi8RQcffqCeNVgFigKli1ssklIbpHnCYc6AknXGYoB6grJqyeby7jv12JUQgmTAnIDnbck1uxksT4dzN3PWBA==}
@@ -1537,8 +1537,8 @@ packages:
     resolution: {integrity: sha512-/d0QHehmRuJW8gVz395MTkPcPozxzdjBMBE8oEYGz8O3b9KTMzzQ9ZHJQLuFKOHOPQbU6kx/X4iid/EBBzH7iw==}
     engines: {node: '>=18'}
 
-  sveltekit-superforms@2.30.1:
-    resolution: {integrity: sha512-wBzyqsE0idvEJWuNJ+HCiAtdxa7Z55GZ8jmtlVHJfonrk9bRYC49MoPaloYyFoYuU3QPy6Omna/Qzn1kaIkgew==}
+  sveltekit-superforms@2.30.2:
+    resolution: {integrity: sha512-6sR70ZfjFMAfdNure/Bu26o1rY32+WGxebko1L8jUFS+qZw5fxIHBPkUaTpNBkOIlJZ/UJwoNCYCm5xK2Z7Kqw==}
     peerDependencies:
       '@sveltejs/kit': 1.x || 2.x
       svelte: 3.x || 4.x || >=5.0.0-next.51
@@ -1597,8 +1597,8 @@ packages:
   ts-algebra@2.0.0:
     resolution: {integrity: sha512-FPAhNPFMrkwz76P7cdjdmiShwMynZYN6SgOujD1urY4oNm80Ou9oMdmbR45LotcKOXoy7wSmHkRFE6Mxbrhefw==}
 
-  ts-deepmerge@7.0.3:
-    resolution: {integrity: sha512-Du/ZW2RfwV/D4cmA5rXafYjBQVuvu4qGiEEla4EmEHVHgRdx68Gftx7i66jn2bzHPwSVZY36Ae6OuDn9el4ZKA==}
+  ts-deepmerge@8.0.0:
+    resolution: {integrity: sha512-133O+10nJmVI8w5xeVZPEv5PIrv7iaUae07wv1aH8XJH95Ur6YIhWAPhPyP1YPlbPS9fCVcNIZTu7m8urRVF0A==}
     engines: {node: '>=14.13.1'}
 
   tslib@2.8.1:
@@ -1613,8 +1613,8 @@ packages:
     resolution: {integrity: sha512-RAH822pAdBgcNMAfWnCBU3CFZcfZ/i1eZjwFU/dsLKumyuuP3niueg2UAukXYF0E2AAoc82ZSSf9J0WQBinzHA==}
     engines: {node: '>=12.20'}
 
-  typebox@1.2.17:
-    resolution: {integrity: sha512-FHB10V5OI+MBKQ9N4CS4FTpdTiPwjAwkS9cjXt4uBULFE2zNOYu4A6iAR4GZVPcujSD6uCQjY1fqnOsjn/SLPQ==}
+  typebox@1.3.3:
+    resolution: {integrity: sha512-URXGUE31PJDQC+PtRMJeLdF4kmmOdFoVPikPCtV2oOIhUpNpppEdIz7W8bH8cFYPYHdDpaRvqwdegMTmHliudg==}
 
   typescript@6.0.3:
     resolution: {integrity: sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==}
@@ -1646,8 +1646,8 @@ packages:
   unist-util-visit@5.1.0:
     resolution: {integrity: sha512-m+vIdyeCOpdr/QeQCu2EzxX/ohgS8KbnPDgFni4dQsfSCtpz8UqDyY5GjRru8PDKuYn7Fq19j1CQ+nJSsGKOzg==}
 
-  valibot@1.4.1:
-    resolution: {integrity: sha512-klCmFTz2jeDluy9RwX+F884TCiogtdBJ/YaxSx1EOBYXa3NXNWj8kR1jjN8rzluwojJVWWaHJ4r1U5LfICnM3g==}
+  valibot@1.4.2:
+    resolution: {integrity: sha512-gjdCvJ6d3RyHAneqxMYMW9QMCwYMb3jpOO0IyHZV1bnRHFBHrX3VkIILt5XYR0WhwHiH7Mty8ovuPZ/O3gamrg==}
     peerDependencies:
       typescript: '>=5'
     peerDependenciesMeta:
@@ -1830,12 +1830,12 @@ snapshots:
     dependencies:
       lit: 3.3.3
 
-  '@ark/schema@0.56.0':
+  '@ark/schema@0.56.1':
     dependencies:
-      '@ark/util': 0.56.0
+      '@ark/util': 0.56.1
     optional: true
 
-  '@ark/util@0.56.0':
+  '@ark/util@0.56.1':
     optional: true
 
   '@babel/runtime@7.29.7':
@@ -2475,9 +2475,9 @@ snapshots:
 
   '@ungap/structured-clone@1.3.1': {}
 
-  '@valibot/to-json-schema@1.7.1(valibot@1.4.1(typescript@6.0.3))':
+  '@valibot/to-json-schema@1.7.1(valibot@1.4.2(typescript@6.0.3))':
     dependencies:
-      valibot: 1.4.1(typescript@6.0.3)
+      valibot: 1.4.2(typescript@6.0.3)
     optional: true
 
   '@vinejs/compiler@3.0.0':
@@ -2540,16 +2540,16 @@ snapshots:
 
   aria-query@5.3.1: {}
 
-  arkregex@0.0.6:
+  arkregex@0.0.7:
     dependencies:
-      '@ark/util': 0.56.0
+      '@ark/util': 0.56.1
     optional: true
 
-  arktype@2.2.1:
+  arktype@2.2.2:
     dependencies:
-      '@ark/schema': 0.56.0
-      '@ark/util': 0.56.0
-      arkregex: 0.0.6
+      '@ark/schema': 0.56.1
+      '@ark/util': 0.56.1
+      arkregex: 0.0.7
     optional: true
 
   assertion-error@2.0.1: {}
@@ -3104,27 +3104,27 @@ snapshots:
     transitivePeerDependencies:
       - '@typescript-eslint/types'
 
-  sveltekit-superforms@2.30.1(@sveltejs/kit@2.69.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.56.4)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.0)(yaml@2.9.0)))(svelte@5.56.4)(typescript@6.0.3)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.0)(yaml@2.9.0)))(svelte@5.56.4)(typescript@6.0.3):
+  sveltekit-superforms@2.30.2(@sveltejs/kit@2.69.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.56.4)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.0)(yaml@2.9.0)))(svelte@5.56.4)(typescript@6.0.3)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.0)(yaml@2.9.0)))(svelte@5.56.4)(typescript@6.0.3):
     dependencies:
       '@sveltejs/kit': 2.69.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.56.4)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.0)(yaml@2.9.0)))(svelte@5.56.4)(typescript@6.0.3)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.0)(yaml@2.9.0))
       devalue: 5.8.1
       memoize-weak: 1.0.2
       svelte: 5.56.4
-      ts-deepmerge: 7.0.3
+      ts-deepmerge: 8.0.0
     optionalDependencies:
       '@exodus/schemasafe': 1.3.0
       '@standard-schema/spec': 1.1.0
       '@typeschema/class-validator': 0.3.0(class-validator@0.14.4)
-      '@valibot/to-json-schema': 1.7.1(valibot@1.4.1(typescript@6.0.3))
+      '@valibot/to-json-schema': 1.7.1(valibot@1.4.2(typescript@6.0.3))
       '@vinejs/vine': 3.0.1
-      arktype: 2.2.1
+      arktype: 2.2.2
       class-validator: 0.14.4
       effect: 3.21.4
       joi: 17.13.4
       json-schema-to-ts: 3.1.1
       superstruct: 2.0.2
-      typebox: 1.2.17
-      valibot: 1.4.1(typescript@6.0.3)
+      typebox: 1.3.3
+      valibot: 1.4.2(typescript@6.0.3)
       yup: 1.7.1
       zod: 4.4.3
       zod-v3-to-json-schema: 4.0.0(zod@4.4.3)
@@ -3170,7 +3170,7 @@ snapshots:
   ts-algebra@2.0.0:
     optional: true
 
-  ts-deepmerge@7.0.3: {}
+  ts-deepmerge@8.0.0: {}
 
   tslib@2.8.1: {}
 
@@ -3183,7 +3183,7 @@ snapshots:
   type-fest@2.19.0:
     optional: true
 
-  typebox@1.2.17:
+  typebox@1.3.3:
     optional: true
 
   typescript@6.0.3: {}
@@ -3219,7 +3219,7 @@ snapshots:
       unist-util-is: 6.0.1
       unist-util-visit-parents: 6.0.2
 
-  valibot@1.4.1(typescript@6.0.3):
+  valibot@1.4.2(typescript@6.0.3):
     optionalDependencies:
       typescript: 6.0.3
     optional: true

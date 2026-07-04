@@ -4,20 +4,27 @@
 
 	type SingleRootProps = Extract<SelectPrimitive.RootProps, { type: 'single' }>;
 	type SelectItem = { label: string; value: string };
-	type Props = Omit<SingleRootProps, 'type'> & {
-		type?: 'single' | 'multiple';
+	type Props = (SelectPrimitive.RootProps | (Omit<SingleRootProps, 'type'> & { type?: undefined })) & {
 		items?: SelectItem[];
 	};
 
-	let { type = 'single', value = $bindable(), items = [], ...restProps }: Props = $props();
+	let { value = $bindable<string | string[] | undefined>(), items = [], ...rootProps }: Props = $props();
+
+	// Recombine `type` with the rest of the discriminated-union props so
+	// they stay correlated (SelectPrimitive.RootProps' value shape depends on type).
+	const rootPropsWithType = $derived({
+		...rootProps,
+		type: rootProps.type ?? 'single'
+	} as SelectPrimitive.RootProps);
 
 	setContext('coss-select', {
 		getLabel: () => {
 			if (value == null) return '';
-			const match = items.find((i) => i.value === value);
-			return match?.label ?? String(value);
+			const scalar = Array.isArray(value) ? value[0] : value;
+			const match = items.find((i) => i.value === scalar);
+			return match?.label ?? String(scalar ?? '');
 		}
 	});
 </script>
 
-<SelectPrimitive.Root {type} bind:value {...(restProps as any)} />
+<SelectPrimitive.Root {...rootPropsWithType} bind:value={() => value as never, (v) => (value = v)} />

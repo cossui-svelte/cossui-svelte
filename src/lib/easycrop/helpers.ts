@@ -1,4 +1,4 @@
-import type { ImageSize, Point, Size } from './types.js'
+import type { ImageSize, Point, Size } from './types.js';
 
 /**
  * Compute the dimension of the crop area based on image size and aspect ratio
@@ -9,14 +9,14 @@ import type { ImageSize, Point, Size } from './types.js'
 export function getCropSize(imgWidth: number, imgHeight: number, aspect: number) {
   if (imgWidth >= imgHeight * aspect) {
     return {
-      width: imgHeight * aspect,
       height: imgHeight,
-    }
+      width: imgHeight * aspect
+    };
   }
   return {
-    width: imgWidth,
     height: imgWidth / aspect,
-  }
+    width: imgWidth
+  };
 }
 
 /**
@@ -35,8 +35,8 @@ export function restrictPosition(
 ): Point {
   return {
     x: restrictPositionCoord(position.x, imageSize.width, cropSize.width, zoom),
-    y: restrictPositionCoord(position.y, imageSize.height, cropSize.height, zoom),
-  }
+    y: restrictPositionCoord(position.y, imageSize.height, cropSize.height, zoom)
+  };
 }
 
 function restrictPositionCoord(
@@ -46,14 +46,14 @@ function restrictPositionCoord(
   zoom: number
 ) {
   // Default max position calculation
-  const maxPosition = Math.abs((imageSize * zoom) / 2 - cropSize / 2)
+  const maxPosition = Math.abs((imageSize * zoom) / 2 - cropSize / 2);
 
   // Limit the image's position to inside the cropBox
-  return Math.min(maxPosition, Math.max(position, -maxPosition))
+  return Math.min(maxPosition, Math.max(position, -maxPosition));
 }
 
 export function getDistanceBetweenPoints(pointA: Point, pointB: Point) {
-  return Math.sqrt(Math.pow(pointA.y - pointB.y, 2) + Math.pow(pointA.x - pointB.x, 2))
+  return Math.sqrt((pointA.y - pointB.y) ** 2 + (pointA.x - pointB.x) ** 2);
 }
 
 /**
@@ -74,8 +74,10 @@ export function computeCroppedArea(
   zoom: number,
   restrictPosition = true
 ) {
-  const limitAreaFn = restrictPosition ? limitArea : noOp
+  const limitAreaFn = restrictPosition ? limitArea : noOp;
   const croppedAreaPercentages = {
+    height: limitAreaFn(100, ((cropSize.height / imgSize.height) * 100) / zoom),
+    width: limitAreaFn(100, ((cropSize.width / imgSize.width) * 100) / zoom),
     x: limitAreaFn(
       100,
       (((imgSize.width - cropSize.width / zoom) / 2 - crop.x / zoom) / imgSize.width) * 100
@@ -83,23 +85,21 @@ export function computeCroppedArea(
     y: limitAreaFn(
       100,
       (((imgSize.height - cropSize.height / zoom) / 2 - crop.y / zoom) / imgSize.height) * 100
-    ),
-    width: limitAreaFn(100, ((cropSize.width / imgSize.width) * 100) / zoom),
-    height: limitAreaFn(100, ((cropSize.height / imgSize.height) * 100) / zoom),
-  }
+    )
+  };
 
   // we compute the pixels size naively
   const widthInPixels = limitAreaFn(
     imgSize.naturalWidth,
     (croppedAreaPercentages.width * imgSize.naturalWidth) / 100,
     true
-  )
+  );
   const heightInPixels = limitAreaFn(
     imgSize.naturalHeight,
     (croppedAreaPercentages.height * imgSize.naturalHeight) / 100,
     true
-  )
-  const isImgWiderThanHigh = imgSize.naturalWidth >= imgSize.naturalHeight * aspect
+  );
+  const isImgWiderThanHigh = imgSize.naturalWidth >= imgSize.naturalHeight * aspect;
 
   // then we ensure the width and height exactly match the aspect (to avoid rounding approximations)
   // if the image is wider than high, when zoom is 0, the crop height will be equals to iamge height
@@ -107,13 +107,13 @@ export function computeCroppedArea(
   // Otherwise, we compute the height from width and aspect.
   const sizePixels = isImgWiderThanHigh
     ? {
-        width: Math.round(heightInPixels * aspect),
         height: heightInPixels,
+        width: Math.round(heightInPixels * aspect)
       }
     : {
-        width: widthInPixels,
         height: Math.round(widthInPixels / aspect),
-      }
+        width: widthInPixels
+      };
   const croppedAreaPixels = {
     ...sizePixels,
     x: limitAreaFn(
@@ -125,9 +125,9 @@ export function computeCroppedArea(
       imgSize.naturalHeight - sizePixels.height,
       (croppedAreaPercentages.y * imgSize.naturalHeight) / 100,
       true
-    ),
-  }
-  return { croppedAreaPercentages, croppedAreaPixels }
+    )
+  };
+  return { croppedAreaPercentages, croppedAreaPixels };
 }
 
 /**
@@ -137,12 +137,12 @@ export function computeCroppedArea(
  * @param shouldRound
  */
 function limitArea(max: number, value: number, shouldRound = false) {
-  const v = shouldRound ? Math.round(value) : value
-  return Math.min(max, Math.max(0, v))
+  const v = shouldRound ? Math.round(value) : value;
+  return Math.min(max, Math.max(0, v));
 }
 
 function noOp(max: number, value: number) {
-  return value
+  return value;
 }
 
 /**
@@ -153,6 +153,6 @@ function noOp(max: number, value: number) {
 export function getCenter(a: Point, b: Point) {
   return {
     x: (b.x + a.x) / 2,
-    y: (b.y + a.y) / 2,
-  }
+    y: (b.y + a.y) / 2
+  };
 }

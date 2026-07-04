@@ -39,7 +39,6 @@
 		return isEven ? "animate-toast-success-even" : "animate-toast-success-odd";
 	}
 
-	// biome-ignore lint/correctness/noUnusedVariables: there is a use:floating plus bas
 	function floating(el: HTMLElement, toast: AnchoredToastData) {
 		let cleanup: (() => void) | null = null;
 

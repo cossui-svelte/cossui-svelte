@@ -22,5 +22,5 @@
 	bind:open
 	bind:activeSnapPoint
 	direction={position}
-	{...restProps as any}
+	{...restProps}
 />

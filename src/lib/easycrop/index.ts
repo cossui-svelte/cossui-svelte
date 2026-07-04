@@ -1,5 +1,5 @@
-import Cropper from './Cropper.svelte'
+import Cropper from './Cropper.svelte';
 
-export * from './types.js'
-export { CropperState, type CropperStateOptions } from './cropperState.svelte.js'
-export default Cropper
+export { CropperState, type CropperStateOptions } from './cropperState.svelte.js';
+export * from './types.js';
+export default Cropper;
