@@ -1867,6 +1867,12 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     registryDependencies: ['kbd'],
     tags: ['kbd']
   },
+  'p-link-preview-1': {
+    description: 'A component that displays a preview of a link on mouse hover',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['link-preview'],
+    tags: ['link-preview']
+  },
   'p-menu-1': {
     description: 'Basic menu',
     registryDependencies: ['button', 'menu'],
