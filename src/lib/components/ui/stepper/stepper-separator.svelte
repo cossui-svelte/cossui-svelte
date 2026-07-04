@@ -13,10 +13,10 @@
 	}
 
 	let {
-		className = '',
+		class: className = '',
 		...restProps
 	}: {
-		className?: string;
+		class?: string;
 	} = $props();
 
 	const stepperCtx = getContext<StepperContextValue>('StepperContext');

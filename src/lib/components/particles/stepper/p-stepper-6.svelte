@@ -25,7 +25,7 @@
 <div class="mx-auto max-w-xl space-y-8 text-center">
   <Stepper bind:step={currentStep}>
     {#each steps as step (step)}
-      <StepperItem className="not-last:flex-1" loading={isLoading} {step}>
+      <StepperItem class="not-last:flex-1" loading={isLoading} {step}>
         <StepperTrigger>
           <StepperIndicator />
         </StepperTrigger>

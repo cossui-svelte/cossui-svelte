@@ -22,7 +22,7 @@
 <div class="flex w-full max-w-md flex-col gap-6">
   <Stepper bind:step>
     {#each steps as { title, description }, i (title)}
-      <StepperItem step={i + 1} className="flex-1">
+      <StepperItem step={i + 1} class="flex-1">
         <StepperTrigger>
           <StepperIndicator />
           <div class="flex flex-col items-start">

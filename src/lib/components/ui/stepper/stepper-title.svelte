@@ -3,11 +3,11 @@
 	import { cn } from '$lib/utils';
 
 	let {
-		className = '',
+		class: className = '',
 		children,
 		...restProps
 	}: {
-		className?: string;
+		class?: string;
 		children?: Snippet;
 	} = $props();
 </script>

@@ -31,8 +31,8 @@
 <div class="space-y-8 text-center">
   <Stepper orientation="vertical" step={2}>
     {#each steps as { step, title, description } (step)}
-      <StepperItem className="relative not-last:flex-1 items-start" {step}>
-        <StepperTrigger className="flex-row items-start gap-x-3 rounded pb-8 last:pb-0">
+      <StepperItem class="relative not-last:flex-1 items-start" {step}>
+        <StepperTrigger class="flex-row items-start gap-x-3 rounded pb-8 last:pb-0">
           <StepperIndicator />
           <div class="space-y-0.5 text-left">
             <StepperTitle>{title}</StepperTitle>
@@ -40,7 +40,7 @@
           </div>
         </StepperTrigger>
         {#if step < steps.length}
-          <StepperSeparator className="absolute top-6 left-5 -order-1 m-0 h-[calc(100%-1.5rem)] -translate-x-1/2" />
+          <StepperSeparator class="absolute top-6 -bottom-3.5 left-5 -order-1 m-0 -translate-x-1/2" />
         {/if}
       </StepperItem>
     {/each}

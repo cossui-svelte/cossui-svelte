@@ -27,15 +27,15 @@
 <div class="space-y-8 text-center">
   <Stepper step={2}>
     {#each steps as { step, title } (step)}
-      <StepperItem className="not-last:flex-1 max-md:items-start" {step}>
-        <StepperTrigger className="rounded max-md:flex-col">
+      <StepperItem class="not-last:flex-1 max-md:items-start" {step}>
+        <StepperTrigger class="rounded max-md:flex-col">
           <StepperIndicator />
           <div class="text-center md:text-left">
             <StepperTitle>{title}</StepperTitle>
           </div>
         </StepperTrigger>
         {#if step < steps.length}
-          <StepperSeparator className="max-md:mt-3.5 md:mx-4" />
+          <StepperSeparator class="max-md:mt-3.5 md:mx-4" />
         {/if}
       </StepperItem>
     {/each}

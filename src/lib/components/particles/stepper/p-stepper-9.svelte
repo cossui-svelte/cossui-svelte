@@ -21,11 +21,11 @@
     >
       <ChevronLeftIcon aria-hidden="true" size={16} />
     </Button>
-    <Stepper className="gap-1" bind:step={currentStep}>
+    <Stepper class="gap-1" bind:step={currentStep}>
       {#each steps as step (step)}
-        <StepperItem className="flex-1" {step}>
-          <StepperTrigger className="w-full flex-col items-start gap-2">
-            <StepperIndicator className="h-1 w-full bg-border">
+        <StepperItem class="flex-1" {step}>
+          <StepperTrigger class="w-full flex-col items-start gap-2">
+            <StepperIndicator class="h-1 w-full bg-border">
               <span class="sr-only">{step}</span>
             </StepperIndicator>
           </StepperTrigger>

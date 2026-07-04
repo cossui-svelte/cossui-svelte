@@ -6,13 +6,13 @@
 	let {
 		step = $bindable(1),
 		orientation = 'horizontal',
-		className = '',
+		class: className = '',
 		children,
 		...restProps
 	}: {
 		step: number;
 		orientation?: 'horizontal' | 'vertical';
-		className?: string;
+		class?: string;
 		children?: Snippet;
 	} = $props();
 
@@ -45,7 +45,7 @@
 	role="group"
 	aria-label="Stepper"
 	class={cn(
-		'flex w-full flex-wrap items-center justify-between gap-2',
+		'flex w-full flex-wrap items-start justify-between gap-2',
 		orientation === 'horizontal' ? 'flex-row' : 'flex-col',
 		className
 	)}

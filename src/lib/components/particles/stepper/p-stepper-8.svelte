@@ -28,11 +28,11 @@
 </script>
 
 <div class="mx-auto max-w-xl space-y-8 text-center">
-  <Stepper className="items-start gap-4" step={2}>
+  <Stepper class="gap-4" step={2}>
     {#each steps as { step, title } (step)}
-      <StepperItem className="flex-1" {step}>
-        <StepperTrigger className="w-full flex-col items-start gap-2 rounded">
-          <StepperIndicator className="h-1 w-full bg-border">
+      <StepperItem class="flex-1" {step}>
+        <StepperTrigger class="w-full flex-col items-start gap-2 rounded">
+          <StepperIndicator class="h-1 w-full bg-border">
             <span class="sr-only">{step}</span>
           </StepperIndicator>
           <div class="space-y-0.5">

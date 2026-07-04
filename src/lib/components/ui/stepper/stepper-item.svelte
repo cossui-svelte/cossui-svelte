@@ -23,7 +23,7 @@
 		completed = false,
 		disabled = false,
 		loading = false,
-		className = '',
+		class: className = '',
 		children,
 		...restProps
 	}: {
@@ -31,7 +31,7 @@
 		completed?: boolean;
 		disabled?: boolean;
 		loading?: boolean;
-		className?: string;
+		class?: string;
 		children?: Snippet;
 	} = $props();
 

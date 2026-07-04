@@ -13,11 +13,11 @@
 	}
 
 	let {
-		className = '',
+		class: className = '',
 		children,
 		...restProps
 	}: {
-		className?: string;
+		class?: string;
 		children?: Snippet;
 	} = $props();
 

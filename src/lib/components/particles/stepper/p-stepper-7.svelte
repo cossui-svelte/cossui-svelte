@@ -12,7 +12,7 @@
 
 <div class="mx-auto max-w-xl space-y-8 text-center">
   <Stepper step={2}>
-    <StepperItem className="not-last:flex-1" step={1}>
+    <StepperItem class="not-last:flex-1" step={1}>
       <StepperTrigger>
         <StepperIndicator>
           <enhanced:img alt="Mike Palmer" class="rounded-full" src={avatar} />
@@ -20,13 +20,13 @@
       </StepperTrigger>
       <StepperSeparator />
     </StepperItem>
-    <StepperItem className="not-last:flex-1" loading step={2}>
+    <StepperItem class="not-last:flex-1" loading step={2}>
       <StepperTrigger>
         <StepperIndicator />
       </StepperTrigger>
       <StepperSeparator />
     </StepperItem>
-    <StepperItem className="not-last:flex-1" step={3}>
+    <StepperItem class="not-last:flex-1" step={3}>
       <StepperTrigger>
         <StepperIndicator>
           <Shuffle aria-hidden="true" size={14} />

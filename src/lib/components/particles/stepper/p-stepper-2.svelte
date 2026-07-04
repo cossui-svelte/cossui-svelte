@@ -13,7 +13,7 @@
 <div class="mx-auto max-w-xl space-y-8 text-center">
   <Stepper step={2}>
     {#each steps as step (step)}
-      <StepperItem className="not-last:flex-1" {step}>
+      <StepperItem class="not-last:flex-1" {step}>
         <StepperTrigger>
           <StepperIndicator>{step}</StepperIndicator>
         </StepperTrigger>
