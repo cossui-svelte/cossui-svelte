@@ -35,7 +35,7 @@
 		'group-data-[state=completed]/step:bg-primary',
 		'group-data-[state=active]/step:bg-border',
 		'group-data-[state=inactive]/step:bg-border',
-		stepperCtx.orientation === 'horizontal' ? 'h-px flex-1' : 'min-h-4 w-px flex-auto -mb-1.5 -mt-1.5',
+		stepperCtx.orientation === 'horizontal' ? 'h-px flex-1 -ml-2 -mr-4' : 'min-h-4 w-px flex-auto -mb-1.5 -mt-1.5',
 		className
 	)}
 	data-orientation={stepperCtx.orientation}

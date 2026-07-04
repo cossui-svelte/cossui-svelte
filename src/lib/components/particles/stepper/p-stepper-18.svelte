@@ -31,7 +31,7 @@
 <div class="space-y-8 text-center">
   <Stepper orientation="vertical" step={2}>
     {#each steps as { step, title, description } (step)}
-      <StepperItem class="relative not-last:flex-1 items-start" {step}>
+      <StepperItem class="relative not-last:flex-1 items-start self-stretch" {step}>
         <StepperTrigger class="flex-row items-start gap-x-3 rounded pb-8 last:pb-0">
           <StepperIndicator />
           <div class="space-y-0.5 text-left">

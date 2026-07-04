@@ -2504,73 +2504,73 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   },
   'p-stepper-1': {
     description: 'Basic stepper examples',
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl' },
     registryDependencies: ['stepper'],
     tags: ['stepper']
   },
   'p-stepper-2': {
     description: 'Stepper with numbers only',
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl' },
     registryDependencies: ['stepper'],
     tags: ['stepper']
   },
   'p-stepper-3': {
     description: 'Stepper with numbers and checkmarks',
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl' },
     registryDependencies: ['stepper'],
     tags: ['stepper']
   },
   'p-stepper-4': {
     description: 'Stepper with tiny buttons and checkmarks',
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl' },
     registryDependencies: ['stepper'],
     tags: ['stepper']
   },
   'p-stepper-5': {
     description: 'Controlled stepper with checkmarks',
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl' },
     registryDependencies: ['stepper'],
     tags: ['stepper']
   },
   'p-stepper-6': {
     description: 'Controlled stepper with checkmarks and loading state',
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl' },
     registryDependencies: ['stepper'],
     tags: ['stepper']
   },
   'p-stepper-7': {
     description: 'Stepper with mixed elements',
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl' },
     registryDependencies: ['stepper'],
     tags: ['stepper']
   },
   'p-stepper-8': {
     description: 'Stepper with labels',
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl' },
     registryDependencies: ['stepper'],
     tags: ['stepper']
   },
   'p-stepper-9': {
     description: 'Paginated stepper',
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl' },
     registryDependencies: ['stepper'],
     tags: ['stepper']
   },
   'p-stepper-10': {
     description: 'Progress stepper',
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl' },
     registryDependencies: ['stepper'],
     tags: ['stepper']
   },
   'p-stepper-11': {
     description: 'Stepper with titles and descriptions',
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl' },
     registryDependencies: ['stepper'],
     tags: ['stepper']
   },
   'p-stepper-12': {
     description: 'Stepper with inline titles',
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl' },
     registryDependencies: ['stepper'],
     tags: ['stepper']
   },

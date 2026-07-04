@@ -35,7 +35,7 @@
           </div>
         </StepperTrigger>
         {#if step < steps.length}
-          <StepperSeparator class="max-md:mt-3.5 md:mx-4" />
+          <StepperSeparator class="mx-0 max-md:mt-3.5 md:mx-4" />
         {/if}
       </StepperItem>
     {/each}
