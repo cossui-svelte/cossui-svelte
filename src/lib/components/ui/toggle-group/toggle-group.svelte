@@ -34,9 +34,12 @@
 		size = "default",
 		orientation = "horizontal",
 		variant = "default",
-		type = "multiple",
+		multiple = false,
 		...restProps
-	}: ToggleGroupPrimitive.RootProps & ToggleGroupProps = $props();
+	}: Omit<ToggleGroupPrimitive.RootProps, "type" | "value"> & {
+		value?: string | string[];
+		multiple?: boolean;
+	} & ToggleGroupProps = $props();
 
 	setToggleGroupCtx({
 		get orientation() {
@@ -58,7 +61,7 @@ get along, so we shut typescript up by casting `value` to `never`.
 <ToggleGroupPrimitive.Root
 	bind:value={value as never}
 	bind:ref
-	type={type as never}
+	type={(multiple ? "multiple" : "single") as never}
 	{orientation}
 	data-slot="toggle-group"
 	data-variant={variant}

@@ -12,7 +12,7 @@
 </script>
 
 <TooltipProvider>
-  <ToggleGroup defaultValue={["bold"]} type="multiple">
+  <ToggleGroup value={["bold"]} multiple>
     <Tooltip>
       <TooltipTrigger>
         {#snippet child({ props })}

@@ -55,7 +55,7 @@
           <div class="flex shrink-0 items-center font-medium text-sm sm:h-8 sm:px-5">
             {dayFormatter.format(date.toDate(getLocalTimeZone()))}
           </div>
-          <ToggleGroup bind:value={time} class="grid w-full gap-1.5 max-sm:grid-cols-2 sm:px-5" type="single">
+          <ToggleGroup bind:value={time} class="grid w-full gap-1.5 max-sm:grid-cols-2 sm:px-5">
             {#each timeSlots as { time: timeSlot, available } (timeSlot)}
               <ToggleGroupItem disabled={!available} size="sm" value={timeSlot} variant="outline">
                 {timeSlot}

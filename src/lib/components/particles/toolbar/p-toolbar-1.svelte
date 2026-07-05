@@ -31,7 +31,7 @@
 
 <TooltipProvider>
   <Toolbar>
-    <ToggleGroup class="border-none p-0" value={["left"]}>
+    <ToggleGroup class="border-none p-0" value={["left"]} multiple>
       <Tooltip>
         <TooltipTrigger>
           {#snippet child({ props })}

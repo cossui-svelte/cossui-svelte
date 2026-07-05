@@ -5,7 +5,7 @@
   import { ToggleGroup, ToggleGroupItem } from "$lib/components/ui/toggle-group";
 </script>
 
-<ToggleGroup defaultValue={["bold"]} type="multiple">
+<ToggleGroup value={["bold"]} multiple>
   <ToggleGroupItem aria-label="Toggle bold" value="bold">
     <BoldIcon />
   </ToggleGroupItem>
