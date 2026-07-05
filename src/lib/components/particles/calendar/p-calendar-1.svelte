@@ -5,4 +5,4 @@
   let value = $state(today(getLocalTimeZone()));
 </script>
 
-<Calendar type="single" bind:value />
+<Calendar mode="single" bind:value />

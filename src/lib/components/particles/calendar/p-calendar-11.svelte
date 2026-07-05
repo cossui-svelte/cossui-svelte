@@ -8,5 +8,5 @@
 <Calendar
   bind:value
   class="[&_header]:me-[calc(var(--cell-size)*2)] [&_header]:ms-0 [&_header]:justify-start [&_nav]:justify-end"
-  type="single"
+  mode="single"
 />

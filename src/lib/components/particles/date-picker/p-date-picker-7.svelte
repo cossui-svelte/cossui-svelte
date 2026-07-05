@@ -29,6 +29,6 @@
     </span>
   </PopoverTrigger>
   <PopoverPopup>
-    <Calendar bind:value type="multiple" />
+    <Calendar bind:value mode="multiple" />
   </PopoverPopup>
 </Popover>

@@ -18,7 +18,7 @@
   }
 </script>
 
-<Calendar bind:value fixedWeeks type="single">
+<Calendar bind:value fixedWeeks mode="single">
   {#snippet day({ day: date })}
     {@const isWeekStart = getDayOfWeek(date, "en-US") === 0}
     <Day class="relative">

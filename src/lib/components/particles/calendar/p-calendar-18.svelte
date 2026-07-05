@@ -45,7 +45,7 @@
     bind:placeholder
     bind:value
     onValueChange={handleCalendarSelect}
-    type="single"
+    mode="single"
   />
   <Form class="flex flex-col gap-2" {superform}>
     <Field class="flex-row items-center gap-3" name="time">

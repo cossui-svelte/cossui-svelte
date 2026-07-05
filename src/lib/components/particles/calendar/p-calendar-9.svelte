@@ -5,7 +5,7 @@
   let value = $state(today(getLocalTimeZone()));
 </script>
 
-<Calendar bind:value type="single">
+<Calendar bind:value mode="single">
   {#snippet day()}
     <Day class="rounded-full" />
   {/snippet}

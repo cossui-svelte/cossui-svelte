@@ -3,7 +3,7 @@
 	import { Calendar as CalendarPrimitive } from "bits-ui";
 	import type { Snippet } from "svelte";
 	import type { ButtonVariant } from "$lib/components/ui/button";
-	import { cn, type WithoutChildrenOrChild } from "$lib/utils";
+	import { cn, type RenameTypeToMode, type WithoutChildrenOrChild } from "$lib/utils";
 	import * as Calendar from "./index.js";
 
 	let {
@@ -21,8 +21,9 @@
 		yearFormat = "numeric",
 		day,
 		disableDaysOutsideMonth = false,
+		mode,
 		...restProps
-	}: WithoutChildrenOrChild<CalendarPrimitive.RootProps> & {
+	}: WithoutChildrenOrChild<RenameTypeToMode<CalendarPrimitive.RootProps>> & {
 		buttonVariant?: ButtonVariant;
 		captionLayout?: "dropdown" | "dropdown-months" | "dropdown-years" | "label";
 		months?: CalendarPrimitive.MonthSelectProps["months"];
@@ -47,6 +48,7 @@ get along, so we shut typescript up by casting `value` to `never`.
 	bind:value={value as never}
 	bind:ref
 	bind:placeholder
+	type={mode as never}
 	{weekdayFormat}
 	{disableDaysOutsideMonth}
 	class={cn(

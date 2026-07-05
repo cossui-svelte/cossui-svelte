@@ -11,4 +11,4 @@
   ]);
 </script>
 
-<Calendar bind:value type="multiple" />
+<Calendar bind:value mode="multiple" />

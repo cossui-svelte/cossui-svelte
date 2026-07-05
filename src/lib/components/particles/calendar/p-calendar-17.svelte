@@ -63,7 +63,7 @@
     bind:placeholder
     bind:value
     onValueChange={handleCalendarSelect}
-    type="single"
+    mode="single"
   />
   <Field class="flex-row items-center gap-4" name="date">
     <FieldLabel class="whitespace-nowrap">Enter date</FieldLabel>

@@ -46,7 +46,7 @@
         time = undefined;
       }
     }}
-    type="single"
+    mode="single"
   />
   <div class="relative w-full max-sm:h-48 sm:w-40">
     <div class="absolute inset-0 max-sm:border-t">

@@ -82,6 +82,6 @@
     bind:value={date}
     class="max-sm:pb-3 sm:ps-5"
     {isDateDisabled}
-    type="single"
+    mode="single"
   />
 </div>

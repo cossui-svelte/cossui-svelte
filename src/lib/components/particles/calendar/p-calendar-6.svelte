@@ -9,4 +9,4 @@
   const years = Array.from({ length: maxValue.year - minValue.year + 1 }, (_, i) => minValue.year + i);
 </script>
 
-<Calendar bind:value captionLayout="dropdown" {maxValue} {minValue} type="single" {years} />
+<Calendar bind:value captionLayout="dropdown" {maxValue} {minValue} mode="single" {years} />

@@ -56,7 +56,7 @@
           </Button>
         </div>
       </div>
-      <Calendar bind:placeholder bind:value class="max-sm:pb-3 sm:ps-2" type="single" />
+      <Calendar bind:placeholder bind:value class="max-sm:pb-3 sm:ps-2" mode="single" />
     </div>
   </PopoverPopup>
 </Popover>

@@ -51,6 +51,6 @@
     </InputGroupAddon>
   </InputGroup>
   <PopoverPopup align="start" alignOffset={-4} sideOffset={8}>
-    <Calendar bind:placeholder bind:value onValueChange={handleSelect} type="single" />
+    <Calendar bind:placeholder bind:value onValueChange={handleSelect} mode="single" />
   </PopoverPopup>
 </Popover>

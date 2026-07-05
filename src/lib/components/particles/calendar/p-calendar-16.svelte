@@ -11,7 +11,7 @@
 </script>
 
 <div class="flex flex-col items-start gap-2">
-  <Calendar bind:placeholder bind:value type="single" />
+  <Calendar bind:placeholder bind:value mode="single" />
   <Button
     onclick={() => {
       value = todayValue;

@@ -22,7 +22,7 @@
       {value ? df.format(value.toDate(getLocalTimeZone())) : "Pick a date"}
     </PopoverTrigger>
     <PopoverPopup>
-      <Calendar bind:value captionLayout="dropdown" type="single" />
+      <Calendar bind:value captionLayout="dropdown" mode="single" />
     </PopoverPopup>
   </Popover>
 </div>

@@ -14,6 +14,6 @@
   captionLayout="dropdown-years"
   {maxValue}
   {minValue}
-  type="single"
+  mode="single"
   {years}
 />

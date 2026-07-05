@@ -14,6 +14,6 @@
   captionLayout="dropdown"
   class="[&_nav]:hidden"
   {minValue}
-  type="single"
+  mode="single"
   {years}
 />

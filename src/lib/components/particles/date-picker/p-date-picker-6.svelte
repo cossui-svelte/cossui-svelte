@@ -23,6 +23,6 @@
     {value ? df.format(value.toDate(getLocalTimeZone())) : "Pick a date"}
   </PopoverTrigger>
   <PopoverPopup>
-    <Calendar bind:value onValueChange={handleSelect} type="single" />
+    <Calendar bind:value onValueChange={handleSelect} mode="single" />
   </PopoverPopup>
 </Popover>

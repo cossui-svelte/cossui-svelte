@@ -25,7 +25,7 @@
   {isDateDisabled}
   numberOfMonths={2}
   pagedNavigation
-  type="single"
+  mode="single"
 >
   {#snippet day({ day: date })}
     {@const price = mockPriceData[date.toString()]}

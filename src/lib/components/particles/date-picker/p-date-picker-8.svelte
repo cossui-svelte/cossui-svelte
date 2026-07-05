@@ -19,6 +19,6 @@
     <ChevronsUpDown class="-me-1 size-4.5 opacity-80 sm:size-4" />
   </PopoverTrigger>
   <PopoverPopup>
-    <Calendar bind:value type="single" />
+    <Calendar bind:value mode="single" />
   </PopoverPopup>
 </Popover>
