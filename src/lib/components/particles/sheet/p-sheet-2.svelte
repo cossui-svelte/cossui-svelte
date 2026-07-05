@@ -47,11 +47,11 @@
       <SheetPanel class="grid gap-4">
         <Field name="name" class="flex flex-col gap-1.5">
           <Label class="text-sm font-medium">Name</Label>
-          <Input type="text" />
+          <Input  value="Margaret Welsh" type="text" />
         </Field>
         <Field name="username" class="flex flex-col gap-1.5">
           <Label class="text-sm font-medium">Username</Label>
-          <Input type="text" />
+          <Input value="@maggie.welsh" type="text" />
         </Field>
       </SheetPanel>
       <SheetFooter>

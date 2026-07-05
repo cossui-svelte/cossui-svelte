@@ -1,6 +1,5 @@
 import { error } from '@sveltejs/kit';
 import { highlighter } from '$lib/components/app/shiki';
-
 import { allParticles } from '$lib/registry/registry-particles';
 import type { RequestHandler } from './$types';
 
@@ -9,8 +8,8 @@ export type SourceResponse = { html: string; raw: string };
 // Bundled at build time so the source is available in the deployed Worker,
 // which has no filesystem access to read from src/ at request time.
 const particleSources = import.meta.glob('/src/lib/components/particles/**/*.svelte', {
-  query: '?raw',
-  import: 'default'
+  import: 'default',
+  query: '?raw'
 });
 
 export const GET: RequestHandler = async ({ params }) => {

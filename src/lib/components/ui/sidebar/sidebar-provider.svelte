@@ -53,6 +53,7 @@
       _open = value;
     }
     try {
+      // biome-ignore lint/suspicious/noDocumentCookie: CookieStore API isn't supported in all browsers (Safari, Firefox)
       document.cookie = `${SIDEBAR_COOKIE_NAME}=${value}; max-age=${SIDEBAR_COOKIE_MAX_AGE}; path=/`;
     } catch {
       // ignore cookie errors
