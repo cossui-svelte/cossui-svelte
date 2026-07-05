@@ -7,7 +7,6 @@
   import {
     Sheet,
     SheetClose,
-    SheetContent,
     SheetDescription,
     SheetFooter,
     SheetHeader,
@@ -43,25 +42,23 @@
         Make changes to your profile here. Click save when you're done.
       </SheetDescription>
     </SheetHeader>
-    <SheetContent>
-      <Form {superform} class="contents">
-        <SheetPanel class="grid gap-4">
-          <Field name="name">
-            <FieldLabel>Name</FieldLabel>
-            <Input type="text" />
-          </Field>
-          <Field name="username">
-            <FieldLabel>Username</FieldLabel>
-            <Input type="text" />
-          </Field>
-        </SheetPanel>
-        <SheetFooter>
-          <SheetClose class={buttonVariants({ variant: "ghost" })}
-            >Cancel</SheetClose
-          >
-          <Button type="submit" class={buttonVariants()}>Save</Button>
-        </SheetFooter>
-      </Form>
-    </SheetContent>
+    <Form {superform} class="contents">
+      <SheetPanel class="grid gap-4">
+        <Field name="name">
+          <FieldLabel>Name</FieldLabel>
+          <Input type="text" />
+        </Field>
+        <Field name="username">
+          <FieldLabel>Username</FieldLabel>
+          <Input type="text" />
+        </Field>
+      </SheetPanel>
+      <SheetFooter>
+        <SheetClose class={buttonVariants({ variant: "ghost" })}
+          >Cancel</SheetClose
+        >
+        <Button type="submit" class={buttonVariants()}>Save</Button>
+      </SheetFooter>
+    </Form>
   </SheetPopup>
 </Sheet>

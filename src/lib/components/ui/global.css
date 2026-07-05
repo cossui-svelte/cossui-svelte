@@ -71,7 +71,15 @@
   --tw-exit-translate-y: --value([*]);
 }
 @utility slide-out-to-left { --tw-exit-translate-x: -100%; }
+@utility slide-out-to-left-* {
+  --tw-exit-translate-x: calc(--value(integer) * var(--spacing) * -1);
+  --tw-exit-translate-x: --value([*]);
+}
 @utility slide-out-to-right { --tw-exit-translate-x: 100%; }
+@utility slide-out-to-right-* {
+  --tw-exit-translate-x: calc(--value(integer) * var(--spacing));
+  --tw-exit-translate-x: --value([*]);
+}
 
 @custom-variant dark (&:is(.dark *));
 @custom-variant fixed (&:is(.layout-fixed *));
