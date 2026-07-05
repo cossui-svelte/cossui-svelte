@@ -28,12 +28,12 @@ Along the way, I noticed that even Coss UI lacks some of the components found in
 
 - [Coss UI](https://cossui.com/) - The original project that this Svelte version is copied from
 - [Bits UI](https://bits-ui.com) - The foundational headless UI library 
-- [Svelte/SvelteKit](https://svelte.dev) - The most intuitive frontend framework
+- [Svelte/SvelteKit](https://svelte.dev) - The building the easiest to use and most intuitive frontend framework
 - [TailwindCSS v4](https://tailwindcss.com) - An easy to use CSS framework with beautiful UI
 - [Versel](https://github.com/66HEX/varsel) - A headless toast component
 - [Vaul](https://github.com/quanghle/autopilot-vaul-svelte) - An headless, gesture-driven drawer component
 - [Phantom-UI](https://github.com/Aejkatappaja/phantom-ui) - An elegant structure-aware skeleton loader
-- [FormSnap & Superforms](https://superforms.rocks/) - A full featured headless validation frameworks
+- [FormSnap & Superforms](https://superforms.rocks/) - A full featured headless validation framework
 
 Other good source of inspiration, sometimes with full component logic just copy/pasted (full credits to their authors):
 
