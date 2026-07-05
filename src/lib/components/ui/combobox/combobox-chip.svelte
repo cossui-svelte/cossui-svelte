@@ -25,7 +25,7 @@
   data-slot="combobox-chip"
   {...restProps}
 >
-<div class="flex items-center gap-1.5">
+<div class="flex items-center">
   {@render children?.()}
   <ComboboxChipRemove {...removeProps} />
 </div>

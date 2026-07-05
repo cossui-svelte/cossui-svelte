@@ -102,21 +102,26 @@
 		onValueChange={handleValueChange}
 		open={isOpen}
 		onOpenChange={(v) => (isOpen = v)}
-		inputValue={inputValue}
+		{inputValue}
 	>
-		<ComboboxChips>
+		<ComboboxChips
+			class="rounded-xl p-[calc(--spacing(2)-1px)] before:rounded-xl **:data-[slot=combobox-start-addon]:[&_svg]:-me-0.5"
+		>
 			{#snippet startAddon()}
-				<Search class="size-4 text-muted-foreground" strokeWidth={2} />
+				<Search class="size-5.5 sm:size-5" strokeWidth={2} />
 			{/snippet}
 			{#each selectedItems as item (item.value)}
 				<ComboboxChip
 					removeProps={{ onclick: () => removeItem(item.value) }}
 				>
-					<Tag class="size-3 opacity-80" strokeWidth={2} />
-					{item.label}
+					<div class="flex items-center gap-1.5">
+						<Tag class="size-3 opacity-80" strokeWidth={2} />
+						<span>{item.label}</span>
+					</div>
 				</ComboboxChip>
 			{/each}
 			<ComboboxChipsInput
+				size="lg"
 				oninput={(e) =>
 					(inputValue = (e.currentTarget as HTMLInputElement).value)}
 				placeholder={selectedItems.length === 0
@@ -129,16 +134,15 @@
 		<ComboboxPopup>
 			<ComboboxList>
 				{#if groupedItems.enabled.length === 0 && groupedItems.disabled.length === 0}
-					<div
-						class="p-2 text-center text-muted-foreground text-sm"
-					>
+					<div class="p-2 text-center text-muted-foreground text-sm">
 						No filters found.
 					</div>
 				{/if}
 
 				{#if groupedItems.enabled.length > 0}
 					<ComboboxGroup>
-						<ComboboxGroupLabel>Filter particles</ComboboxGroupLabel>
+						<ComboboxGroupLabel>Filter particles</ComboboxGroupLabel
+						>
 						{#each groupedItems.enabled as item (item.value)}
 							<ComboboxItem value={item.value} label={item.label}>
 								{#snippet children()}
