@@ -58,7 +58,7 @@
 <Form class="flex w-full max-w-64 flex-col gap-4" {superform}>
   <Field name="items">
     <FieldLabel>Favorite items</FieldLabel>
-    <Combobox type="multiple" bind:value {items}>
+    <Combobox multiple bind:value {items}>
       <ComboboxChips>
         {#each value as v (v)}
           <ComboboxChip aria-label={getLabel(v)} removeProps={{ onclick: () => removeItem(v) }}>

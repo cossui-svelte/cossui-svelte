@@ -50,7 +50,7 @@
 <Form class="flex w-full flex-col gap-4" {superform}>
   <Field name="fruits">
     <FieldLabel>Fruits</FieldLabel>
-    <Combobox bind:value {items} type="multiple">
+    <Combobox bind:value {items} multiple>
       <ComboboxChips>
         {#each value as v (v)}
           <ComboboxChip aria-label={v}>{items.find((i) => i.value === v)?.label ?? v}</ComboboxChip>

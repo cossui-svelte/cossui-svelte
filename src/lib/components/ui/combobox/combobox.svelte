@@ -43,7 +43,7 @@
 
   type Props = Omit<Combobox.RootProps, "type"> & {
     children?: Snippet;
-    type?: "single" | "multiple";
+    multiple?: boolean;
     defaultValue?: DefaultValue;
     autoHighlight?: boolean;
     showClear?: boolean;
@@ -53,7 +53,7 @@
 
   let {
     children,
-    type = "single",
+    multiple = false,
     value = $bindable(),
     onValueChange,
     open = $bindable(),
@@ -118,7 +118,7 @@
     value = v as never;
     onValueChange?.(v as never);
     // Keep inputValueProxy in sync so re-renders don't push a stale "" back to bits-ui.
-    if (type !== "multiple") {
+    if (!multiple) {
       const selected = v as string;
       inputValueProxy = selected
         ? (items?.find((i) => i.value === selected)?.label ?? selected)
@@ -166,7 +166,7 @@
       return chipsEl;
     },
     clearValue() {
-      const empty = type === "multiple" ? ([] as string[]) : undefined;
+      const empty = multiple ? ([] as string[]) : undefined;
       internalValue = empty;
       inputValueProxy = "";
       value = empty as never;
@@ -179,10 +179,10 @@
       return hasVisibleItems;
     },
     get multiple() {
-      return type === "multiple";
+      return multiple;
     },
     removeLastValue() {
-      if (type === "multiple") {
+      if (multiple) {
         const current = internalValue as string[] | undefined;
         if (!current?.length) return;
         const next = current.slice(0, -1);
@@ -206,7 +206,7 @@
       filterText = v;
       // Track typed text in multiple mode so clearing inputValueProxy in
       // handleValueChange registers as an actual change that Svelte will push.
-      if (type === "multiple") inputValueProxy = v;
+      if (multiple) inputValueProxy = v;
     },
     setInputEl(el) {
       inputEl = el;
@@ -238,8 +238,8 @@
 </script>
 
 <Combobox.Root
-  {type}
-  value={internalValue}
+  type={(multiple ? "multiple" : "single") as never}
+  value={internalValue as never}
   open={internalOpen}
   onValueChange={handleValueChange}
   onOpenChange={handleOpenChange}

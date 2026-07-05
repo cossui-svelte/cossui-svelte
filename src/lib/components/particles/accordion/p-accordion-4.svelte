@@ -11,7 +11,7 @@
 </script>
 
 <div class="flex w-full flex-col gap-4">
-  <Accordion class="w-full" type="multiple" bind:value>
+  <Accordion class="w-full" multiple bind:value>
     <AccordionItem value="item-1">
       <AccordionTrigger>What is Base UI?</AccordionTrigger>
       <AccordionPanel>

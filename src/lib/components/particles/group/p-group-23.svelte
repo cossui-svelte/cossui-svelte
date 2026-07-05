@@ -72,7 +72,7 @@
     Member
   </GroupText>
   <GroupSeparator />
-  <Combobox type="multiple" bind:value={selectedIds}>
+  <Combobox multiple bind:value={selectedIds}>
     <ComboboxTrigger
       class={cn(
         buttonVariants({ size: "sm", variant: "outline" }),

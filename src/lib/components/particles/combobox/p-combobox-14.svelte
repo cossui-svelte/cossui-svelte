@@ -35,7 +35,7 @@
   }
 </script>
 
-<Combobox type="multiple" bind:value {items}>
+<Combobox multiple bind:value {items}>
   <ComboboxChips>
     {#snippet startAddon()}<Search />{/snippet}
     {#each value as v (v)}

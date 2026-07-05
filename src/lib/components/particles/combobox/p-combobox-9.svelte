@@ -34,7 +34,7 @@
   }
 </script>
 
-<Combobox type="multiple" bind:value {items}>
+<Combobox multiple bind:value {items}>
   <ComboboxChips>
     {#each value as v (v)}
       <ComboboxChip aria-label={getLabel(v)} removeProps={{ onclick: () => removeItem(v) }}>

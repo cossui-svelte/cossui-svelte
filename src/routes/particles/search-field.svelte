@@ -97,7 +97,7 @@
 
 <div class="mx-auto max-w-2xl">
 	<Combobox
-		type="multiple"
+		multiple
 		value={selectedValues}
 		onValueChange={handleValueChange}
 		open={isOpen}

@@ -25,6 +25,7 @@
 		type Orientation,
 		ToggleGroup as ToggleGroupPrimitive,
 	} from "bits-ui";
+	import type { HTMLAttributes } from "svelte/elements";
 	import { cn } from "$lib/utils";
 
 	let {
@@ -36,9 +37,14 @@
 		variant = "default",
 		multiple = false,
 		...restProps
-	}: Omit<ToggleGroupPrimitive.RootProps, "type" | "value"> & {
+	}: HTMLAttributes<HTMLDivElement> & {
+		ref?: HTMLDivElement | null;
 		value?: string | string[];
 		multiple?: boolean;
+		disabled?: boolean;
+		loop?: boolean;
+		rovingFocus?: boolean;
+		onValueChange?: (value: string | string[]) => void;
 	} & ToggleGroupProps = $props();
 
 	setToggleGroupCtx({
@@ -78,5 +84,5 @@ get along, so we shut typescript up by casting `value` to `never`.
 				: "*:not-first:not-data-[slot=separator]:before:-top-[0.5px] *:not-last:not-data-[slot=separator]:before:-bottom-[0.5px] flex-col *:not-first:rounded-t-none *:not-last:rounded-b-none *:not-first:border-t-0 *:not-last:border-b-0 *:not-first:before:rounded-t-none *:not-last:before:rounded-b-none *:data-[slot=toggle]:not-last:before:hidden dark:*:last:before:hidden dark:*:first:before:block",
 		className,
 	)}
-	{...restProps}
+	{...(restProps as Record<string, unknown>)}
 />

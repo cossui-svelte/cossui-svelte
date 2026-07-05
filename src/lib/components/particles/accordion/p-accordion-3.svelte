@@ -7,7 +7,7 @@
   } from "$lib/components/ui/accordion";
 </script>
 
-<Accordion class="w-full" type="multiple">
+<Accordion class="w-full" multiple>
   <AccordionItem value="item-1">
     <AccordionTrigger>What is Base UI?</AccordionTrigger>
     <AccordionPanel>
