@@ -23,7 +23,7 @@
   <meta
     name="description"
     content="coss ui-svelte is a collection of accessible, and composable Svelte components. Built on top of Bits UI and styled with Tailwind CSS"
-    title="coss ui-svelte - A new, modern UI component library built on top of Bits UI. Built for developers and AI"
+    title="coss ui-svelte - A new, modern UI component library built on top of Bits UI. Built for developers and AI (coming soon)"
   />
 </svelte:head>
 
