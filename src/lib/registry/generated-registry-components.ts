@@ -454,7 +454,7 @@ const allComponents: RegistryUiData = {
   },
   'range-calendar': {
     category: 'ui',
-    description: '',
+    description: 'A calendar component for selecting a date range.',
     folder: 'range-calendar',
     isnew: false,
     istodo: false,
@@ -509,6 +509,17 @@ const allComponents: RegistryUiData = {
     isnew: false,
     istodo: false,
     name: 'Sheet',
+    npmDependencies: [],
+    registryDependencies: []
+  },
+  sidebar: {
+    category: 'shadcn-ui',
+    description:
+      'A sidebar that can be toggled open and closed, providing navigation or additional content.',
+    folder: 'sidebar',
+    isnew: false,
+    istodo: true,
+    name: 'Sidebar',
     npmDependencies: [],
     registryDependencies: []
   },

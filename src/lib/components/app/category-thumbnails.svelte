@@ -702,6 +702,37 @@
     {@render radioItem()}
     {@render radioItem(true)}
   </div>
+{:else if slug === "range-calendar"}
+  <div class={cardCls("max-w-36 [--radius-2xl:14px]")}>
+    <div class={cpCls("flex flex-col gap-4 p-4")}>
+      <div class="flex items-center gap-2">
+        {@render iconSnip(ChevronLeft)}
+        {@render textSnip("w-[60%]", "secondary")}
+        {@render iconSnip(ChevronRight)}
+      </div>
+      <div class="flex items-center gap-2">
+        {@render textSnip("flex-1", "secondary")}
+        {@render textSnip("flex-1", "secondary")}
+        {@render textSnip("flex-1")}
+        {@render textSnip("flex-1 bg-transparent")}
+        {@render textSnip("flex-1")}
+      </div>
+      <div class="flex items-center gap-2">
+        {@render textSnip("flex-1")}
+        {@render textSnip("flex-1 bg-transparent")}
+        <div class="h-1.5 flex-1 rounded-full bg-primary"></div>
+        <div class="h-1.5 flex-1 rounded-full bg-primary/25"></div>
+        <div class="h-1.5 flex-1 rounded-full bg-primary"></div>
+      </div>
+      <div class="flex items-center gap-2">
+        {@render textSnip("flex-1")}
+        {@render textSnip("flex-1")}
+        {@render textSnip("flex-1 bg-transparent")}
+        {@render textSnip("flex-1", "secondary")}
+        {@render textSnip("flex-1", "secondary")}
+      </div>
+    </div>
+  </div>
 {:else if slug === "rich-editor"}
   <div class={cardCls("max-w-50 [--radius-2xl:14px]")}>
     <div class={cpCls("flex flex-col gap-0 p-0")}>
@@ -784,6 +815,20 @@
         </div>
       </div>
     </div>
+  </div>
+{:else if slug === "sidebar"}
+  <div class="flex h-full flex-1 gap-2">
+    <div class={cardCls("h-full max-w-16 shrink-0 [--radius-2xl:14px]")}>
+      <div class={cpCls("flex flex-col gap-3 p-3")}>
+        <div class="rounded-sm bg-primary p-2">
+          {@render iconSnip(ListIcon, "text-primary-foreground")}
+        </div>
+        {@render iconSnip(Search, "mx-auto")}
+        {@render iconSnip(Calendar, "mx-auto")}
+        {@render iconSnip(UserRound, "mx-auto")}
+      </div>
+    </div>
+    <div class="flex-1 rounded-xl border border-input border-dashed"></div>
   </div>
 {:else if slug === "skeleton"}
   <div
