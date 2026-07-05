@@ -1,9 +1,16 @@
 {
+  "config": {
+    "cz-customizable": {
+      "config": ".cz-config.cjs"
+    }
+  },
   "dependencies": {
     "mode-watcher": "^1.1.0"
   },
   "devDependencies": {
     "@aejkatappaja/phantom-ui": "^1.4.0",
+    "@commitlint/cli": "^21.2.0",
+    "@commitlint/config-conventional": "^21.2.0",
     "@internationalized/date": "^3.12.2",
     "@lucide/svelte": "^1.23.0",
     "@shikijs/langs": "^4.3.1",
@@ -17,9 +24,10 @@
     "@tanstack/table-core": "^8.21.3",
     "@types/inputmask": "^5.0.7",
     "@types/node": "^26.1.0",
-    "@typescript/native-preview": "latest",
     "bits-ui": "^2.18.1",
     "clsx": "^2.1.1",
+    "cz-customizable": "^7.5.4",
+    "husky": "^9.1.7",
     "inputmask": "^5.0.9",
     "shiki": "^4.3.1",
     "svelte-check": "^4.7.1",
@@ -48,16 +56,17 @@
     "build": "vite build",
     "cf:deploy": "pnpm run build && wrangler deploy",
     "cf:typegen": "wrangler types src/worker-configuration.d.ts",
+    "commit": "tsx ./node_modules/cz-customizable/standalone.js",
     "dev": "vite",
     "format": "biome check . --fix",
-    "generate:registry": "pnpm tsx scripts/generateComponentRegistry.ts -w src/lib/registry/generated-registry-components.ts && npx tsx scripts/generateParticleRegistry.ts && pnpm format",
+    "generate:registry": "tsx scripts/generateComponentRegistry.ts -w src/lib/registry/generated-registry-components.ts && tsx scripts/generateParticleRegistry.ts && pnpm format",
     "lint:audit": "pnpx knip --max-show-issues 20",
-    "lint:check": "svelte-kit sync && pnpx svelte-check --tsgo-experimental-api --workspace .",
+    "lint:check": "svelte-kit sync && pnpx svelte-check --workspace .",
     "lint:typecheck": "tsc --noEmit",
     "mrproper": "rm -rf node_modules dist build .svelte-kit",
-    "optimize:icons": " tsx ./scripts/transformLucideImports.ts",
-    "prepare": "svelte-kit sync || echo ''"
+    "optimize:icons": "tsx ./scripts/transformLucideImports.ts",
+    "prepare": "husky && svelte-kit sync || echo ''"
   },
   "type": "module",
-  "version": "0.9.1"
+  "version": "0.9.3"
 }

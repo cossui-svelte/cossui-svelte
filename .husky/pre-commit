@@ -1,0 +1,2 @@
+# Run format & lint before commit
+pnpm run format
