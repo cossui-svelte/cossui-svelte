@@ -11,6 +11,7 @@
   import {
     Tooltip,
     TooltipPopup,
+    TooltipProvider,
     TooltipTrigger,
   } from "$lib/components/ui/tooltip";
 
@@ -22,7 +23,9 @@
     clearTimeout(timer);
     if (inputValue) {
       isLoading = true;
-      timer = setTimeout(() => { isLoading = false; }, 500);
+      timer = setTimeout(() => {
+        isLoading = false;
+      }, 500);
     } else {
       isLoading = false;
     }
@@ -30,29 +33,35 @@
   });
 </script>
 
-<InputGroup>
-  <InputGroupAddon>
-    {#if isLoading}
-      <LoaderCircle aria-label="Loading..." class="animate-spin" role="status" />
-    {:else}
-      <Search aria-hidden="true" />
-    {/if}
-  </InputGroupAddon>
-  <InputGroupInput
-    aria-label="Search"
-    bind:value={inputValue}
-    placeholder="Search..."
-    type="search"
-  />
-  <InputGroupAddon align="inline-end">
-    <Tooltip>
-      <TooltipTrigger
-        aria-label="Voice search"
-        class={buttonVariants({ size: "icon-xs", variant: "ghost" })}
-      >
-        <Mic aria-hidden="true" />
-      </TooltipTrigger>
-      <TooltipPopup>Voice search</TooltipPopup>
-    </Tooltip>
-  </InputGroupAddon>
-</InputGroup>
+<TooltipProvider>
+  <InputGroup>
+    <InputGroupAddon>
+      {#if isLoading}
+        <LoaderCircle
+          aria-label="Loading..."
+          class="animate-spin"
+          role="status"
+        />
+      {:else}
+        <Search aria-hidden="true" />
+      {/if}
+    </InputGroupAddon>
+    <InputGroupInput
+      aria-label="Search"
+      bind:value={inputValue}
+      placeholder="Search..."
+      type="search"
+    />
+    <InputGroupAddon align="inline-end">
+      <Tooltip>
+        <TooltipTrigger
+          aria-label="Voice search"
+          class={buttonVariants({ size: "icon-xs", variant: "ghost" })}
+        >
+          <Mic aria-hidden="true" />
+        </TooltipTrigger>
+        <TooltipPopup>Voice search</TooltipPopup>
+      </Tooltip>
+    </InputGroupAddon>
+  </InputGroup>
+</TooltipProvider>

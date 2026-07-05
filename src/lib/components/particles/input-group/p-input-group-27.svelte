@@ -17,6 +17,7 @@
   import {
     Tooltip,
     TooltipPopup,
+    TooltipProvider,
     TooltipTrigger,
   } from "$lib/components/ui/tooltip";
 
@@ -39,6 +40,7 @@
   }
 </script>
 
+<TooltipProvider>
 <InputGroup>
   <InputGroupTextarea
     class="font-mono"
@@ -74,3 +76,4 @@
     </Tooltip>
   </InputGroupAddon>
 </InputGroup>
+</TooltipProvider>

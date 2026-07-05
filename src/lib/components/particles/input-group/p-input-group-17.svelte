@@ -17,36 +17,39 @@
   import {
     Tooltip,
     TooltipPopup,
+    TooltipProvider,
     TooltipTrigger,
   } from "$lib/components/ui/tooltip";
 </script>
 
-<InputGroup>
-  <InputGroupTextarea placeholder="Ask, Search or Chat…" />
-  <InputGroupAddon align="block-end">
-    <Menu>
-      <MenuTrigger
-        aria-label="Add files"
-        class={`rounded-full ${buttonVariants({ size: "icon-sm", variant: "ghost" })}`}
-      >
-        <Plus />
-      </MenuTrigger>
-      <MenuPopup align="start">
-        <MenuItem>Add photos &amp; files</MenuItem>
-        <MenuItem>Create image</MenuItem>
-        <MenuItem>Thinking</MenuItem>
-        <MenuItem>Deep research</MenuItem>
-      </MenuPopup>
-    </Menu>
-    <InputGroupText class="ml-auto">78% used</InputGroupText>
-    <Tooltip>
-      <TooltipTrigger
-        aria-label="Send"
-        class={`rounded-full ${buttonVariants({ size: "icon-sm", variant: "default" })}`}
-      >
-        <ArrowUp />
-      </TooltipTrigger>
-      <TooltipPopup>Send</TooltipPopup>
-    </Tooltip>
-  </InputGroupAddon>
-</InputGroup>
+<TooltipProvider>
+  <InputGroup>
+    <InputGroupTextarea placeholder="Ask, Search or Chat…" />
+    <InputGroupAddon align="block-end">
+      <Menu>
+        <MenuTrigger
+          aria-label="Add files"
+          class={`rounded-full ${buttonVariants({ size: "icon-sm", variant: "ghost" })}`}
+        >
+          <Plus />
+        </MenuTrigger>
+        <MenuPopup align="start">
+          <MenuItem>Add photos &amp; files</MenuItem>
+          <MenuItem>Create image</MenuItem>
+          <MenuItem>Thinking</MenuItem>
+          <MenuItem>Deep research</MenuItem>
+        </MenuPopup>
+      </Menu>
+      <InputGroupText class="ml-auto">78% used</InputGroupText>
+      <Tooltip>
+        <TooltipTrigger
+          aria-label="Send"
+          class={`rounded-full ${buttonVariants({ size: "icon-sm", variant: "default" })}`}
+        >
+          <ArrowUp />
+        </TooltipTrigger>
+        <TooltipPopup>Send</TooltipPopup>
+      </Tooltip>
+    </InputGroupAddon>
+  </InputGroup>
+</TooltipProvider>
