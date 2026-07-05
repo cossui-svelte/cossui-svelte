@@ -10,7 +10,7 @@
 /* Sans (Variable Font) */
 @font-face {
   font-family: "CalSansUI";
-  src: url("/fonts/CalSansUI[MODE,wght].woff2") format("woff2");
+  src: url("/fonts/CalSansUI[wght,GEOM].woff2") format("woff2");
   font-weight: 300 700;
   font-style: normal;
 
@@ -19,8 +19,8 @@
 /* Heading */
 @font-face {
   font-family: "CalSansHeading";
-  src: url("/fonts/CalSans-SemiBold.woff2") format("woff2");
-  font-weight: 600;
+  src: url("/fonts/CalSans-Regular.woff2") format("woff2");
+  font-weight: 400 600;
   font-style: normal;
 
 }
