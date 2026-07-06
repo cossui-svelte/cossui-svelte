@@ -3,7 +3,11 @@
   import { CropperRoot } from '$lib/image-cropper';
   import { cn } from '$lib/utils.js';
 
-  let { class: className, ...restProps }: ComponentProps<typeof CropperRoot> = $props();
+  let {
+    class: className,
+    zoom = $bindable(1),
+    ...restProps
+  }: ComponentProps<typeof CropperRoot> = $props();
 </script>
 
 <CropperRoot
@@ -12,5 +16,6 @@
     'relative flex w-full cursor-move touch-none items-center justify-center overflow-hidden focus:outline-none',
     className
   )}
+  bind:zoom
   {...restProps}
 />

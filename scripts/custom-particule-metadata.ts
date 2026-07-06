@@ -228,6 +228,66 @@ export const custom_particle_metadata = {
     registryDependencies: ['cropper'],
     tags: ['cropper']
   },
+  'p-cropper-2': {
+    description: 'Basic cropper',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['cropper'],
+    tags: ['cropper']
+  },
+  'p-cropper-3': {
+    description: 'Cropper with aspect ratio 16:9',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['cropper'],
+    tags: ['cropper']
+  },
+  'p-cropper-4': {
+    description: 'Cropper with custom crop area color',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['cropper'],
+    tags: ['cropper']
+  },
+  'p-cropper-5': {
+    description: 'Cropper with custom mask overlay',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['cropper'],
+    tags: ['cropper']
+  },
+  'p-cropper-6': {
+    description: 'Cropper with full size crop area',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['cropper'],
+    tags: ['cropper']
+  },
+  'p-cropper-7': {
+    description: 'Cropper with full-rounded mask',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['cropper'],
+    tags: ['cropper']
+  },
+  'p-cropper-8': {
+    description: 'Cropper with zoom slider',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['cropper', 'slider'],
+    tags: ['cropper']
+  },
+  'p-cropper-9': {
+    description: 'Cropper with custom zoom limits',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['cropper'],
+    tags: ['cropper']
+  },
+  'p-cropper-10': {
+    description: 'Cropper with crop data output',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['cropper'],
+    tags: ['cropper']
+  },
+  'p-cropper-11': {
+    description: 'Cropper with image preview',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['cropper', 'button'],
+    tags: ['cropper']
+  },
   'p-chart-1': {
     description: 'Crops images to a specific aspect ratio and size',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
