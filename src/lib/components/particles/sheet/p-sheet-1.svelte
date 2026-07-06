@@ -46,11 +46,11 @@
       <SheetPanel class="grid gap-4">
         <Field name="name">
           <FieldLabel>Name</FieldLabel>
-          <Input value="Margaret Welsh" type="text" />
+          <Input type="text" />
         </Field>
         <Field name="username">
           <FieldLabel>Username</FieldLabel>
-          <Input value="@maggie.welsh" type="text" />
+          <Input type="text" />
         </Field>
       </SheetPanel>
       <SheetFooter>

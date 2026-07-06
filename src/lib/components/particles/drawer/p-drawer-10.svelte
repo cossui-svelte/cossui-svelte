@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { z } from "zod";
   import { Button, buttonVariants } from "$lib/components/ui/button";
   import {
     Drawer,
@@ -14,6 +15,22 @@
   import { Field, FieldLabel } from "$lib/components/ui/field";
   import { Form } from "$lib/components/ui/form";
   import { Input } from "$lib/components/ui/input";
+  import { createForm } from "$lib/hooks/use-superform";
+
+  const schema = z.object({
+    name: z.string().min(1),
+    username: z.string().min(1),
+  });
+
+  const defaultFooterForm = createForm({
+    initialData: { name: "Margaret Welsh", username: "@maggie.welsh" },
+    schema,
+  });
+
+  const bareFooterForm = createForm({
+    initialData: { name: "Margaret Welsh", username: "@maggie.welsh" },
+    schema,
+  });
 </script>
 
 <div class="flex flex-wrap gap-2">
@@ -28,20 +45,20 @@
           Make changes to your profile here. Click save when you're done.
         </DrawerDescription>
       </DrawerHeader>
-      <Form class="contents">
+      <Form superform={defaultFooterForm} class="contents">
         <DrawerPanel class="grid gap-4">
-          <Field>
+          <Field name="name">
             <FieldLabel>Name</FieldLabel>
-            <Input value="Margaret Welsh" type="text" />
+            <Input type="text" />
           </Field>
-          <Field>
+          <Field name="username">
             <FieldLabel>Username</FieldLabel>
-            <Input value="@maggie.welsh" type="text" />
+            <Input type="text" />
           </Field>
         </DrawerPanel>
         <DrawerFooter>
           <DrawerClose class={buttonVariants({ variant: "ghost" })}>Cancel</DrawerClose>
-          <Button>Save</Button>
+          <Button type="submit">Save</Button>
         </DrawerFooter>
       </Form>
     </DrawerPopup>
@@ -58,20 +75,20 @@
           Make changes to your profile here. Click save when you're done.
         </DrawerDescription>
       </DrawerHeader>
-      <Form class="contents">
+      <Form superform={bareFooterForm} class="contents">
         <DrawerPanel class="grid gap-4">
-          <Field>
+          <Field name="name">
             <FieldLabel>Name</FieldLabel>
-            <Input value="Margaret Welsh" type="text" />
+            <Input type="text" />
           </Field>
-          <Field>
+          <Field name="username">
             <FieldLabel>Username</FieldLabel>
-            <Input value="@maggie.welsh" type="text" />
+            <Input type="text" />
           </Field>
         </DrawerPanel>
         <DrawerFooter variant="bare">
           <DrawerClose class={buttonVariants({ variant: "ghost" })}>Cancel</DrawerClose>
-          <Button>Save</Button>
+          <Button type="submit">Save</Button>
         </DrawerFooter>
       </Form>
     </DrawerPopup>
