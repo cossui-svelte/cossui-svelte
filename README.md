@@ -40,14 +40,82 @@ Other good source of inspiration, sometimes with full component logic just copy/
 - [ShadCN Svelte](https://www.shadcn-svelte.com/)
 - [Unofficial port of Origin UI](https://github.com/max-got/originui-svelte)
 
-## Differences from the original
+### Differences from the original
 
-The Original [Coss UI](https://cossui.com/) is built with Next.js and BaseUI. This port is built with Svelte and BitsUI.
+The Original [Coss UI](https://cossui.com/) is built with Next.js and BaseUI. This port is built with **Svelte** and **BitsUI**.
 
-- [x] [Svelte](https://svelte.dev) instead of ~~Next.js~~
+- [x] [SvelteKit](https://svelte.dev) instead of ~~Next.js~~
 - [x] [Lucide Svelte](https://lucide.dev/guide/packages/lucide-svelte) instead of ~~Lucide React~~
 - [x] [Bits UI](https://bits-ui.com/docs/introduction) instead of ~~Base UI~~
 - [x] Form/Field/Fieldset are leveraging the power of [FormSnap & Superforms](https://superforms.rocks/)
-- [x] Skeleton component now trivial, thanks to [Phantom-UI](@aejkatappaja/phantom-ui)
+- [x] Skeleton component is now trivial, thanks to [Phantom-UI](@aejkatappaja/phantom-ui)
 
 A few components are built differently, reflecting the intuitive conventions of the Svelte ecosystem and its frameworks.
+
+
+## Contributing
+
+If you have a great feature, feel free to fork the project and submit your changes back as a PR.
+
+### Building
+
+We recommend to use `pnpm` package manager.
+
+To setup (or update) the project, process as such:
+
+1. Install PNPM (if not already installed), for example via `npm install -g pnpm`
+2. Clone the repository `git clone git@github.com:cossui-svelte/cossui-svelte.git && cd cossui-svelte`
+3. Run `pnpm install`from within the project folder
+4. Run `pnpm dev` to spin up a local development server
+
+### Commiting changes
+
+- run `pnpm commit`
+
+The script above is an neat helper to produce properly formatted commintlint messages. If you are already familiar with the syntax, you may prefix your commit messages as follows:
+
+- **fix**: A bug fix, increments X.X.9
+- **feat**: A new feature, increments X.9.X
+- **refactor**: A code change that neither fixes a bug nor adds a feature
+- **revert:** for a revert commit
+- **chore**: Changes that affect the build system or CICD
+- **docs**: Documentation only changes
+
+adding a tailing **'!'** marks the commit as a **BREAKING CHANGE** - and will affect version numbering.
+
+###### Commit Subject
+
+The commit subject must contains a succinct description of the change:
+
+- use the imperative, present tense: "change" not "changed" nor "changes"
+- don't capitalize the first letter
+- no dot (.) at the end
+
+### Branching Policy
+
+#### Update main branch
+`git checkout main`
+`git pull origin main`
+
+#### Merge feature branch locally
+`git merge feature/user-profile`
+
+#### Push changes to remote
+`git push origin main`
+
+#### Delete feature branch
+`git branch -d feature/user-profile`
+`git push origin --delete feature/user-profile`
+
+### Examples
+
+#### Feature development
+`git checkout -b feature/user-authentication`
+`git checkout -b feature/JIRA-123-payment-gateway`
+
+#### Bug fixes
+`git checkout -b fix/login-timeout`
+`git checkout -b bugfix/GH-456-header-alignment`
+
+#### Refactoring
+`git checkout -b refactor/api-client`
