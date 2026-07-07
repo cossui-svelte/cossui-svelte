@@ -98,7 +98,7 @@
   });
 </script>
 
-<div class="flex flex-col items-center gap-2">
+<div class="flex w-full flex-col items-center gap-2">
   <div class="flex w-full flex-col gap-4 md:flex-row">
     <Cropper
       class="h-64 md:flex-1"

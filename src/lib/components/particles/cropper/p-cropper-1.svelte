@@ -170,7 +170,7 @@
   });
 </script>
 
-<div class="flex flex-col items-center gap-2">
+<div class="flex w-full flex-col items-center gap-2">
   <div class="relative inline-flex">
     <button
       aria-label={finalImageUrl ? 'Change image' : 'Upload image'}
@@ -271,7 +271,7 @@
       rel="noreferrer"
       target="_blank"
     >
-      cropper
+      Cropper
     </a>
   </p>
 </div>

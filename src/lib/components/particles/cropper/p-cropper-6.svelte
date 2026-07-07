@@ -2,7 +2,7 @@
   import { Cropper, CropperCropArea, CropperDescription, CropperImage } from '$lib/components/ui/cropper';
 </script>
 
-<div class="flex flex-col items-center gap-2">
+<div class="flex w-full flex-col items-center gap-2">
   <Cropper
     class="aspect-square size-80"
     cropPadding={0}

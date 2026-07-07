@@ -2,7 +2,7 @@
   import { Cropper, CropperCropArea, CropperDescription, CropperImage } from '$lib/components/ui/cropper';
 </script>
 
-<div class="flex flex-col items-center gap-2">
+<div class="flex w-full flex-col items-center gap-2">
   <Cropper
     class="h-80"
     image="https://raw.githubusercontent.com/origin-space/origin-images/refs/heads/main/cropper-01_bcxaic.jpg"

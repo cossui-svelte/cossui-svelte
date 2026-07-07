@@ -5,7 +5,7 @@
   let zoom = $state(1);
 </script>
 
-<div class="flex flex-col items-center gap-2">
+<div class="flex w-full flex-col items-center gap-2">
   <div class="flex w-full flex-col gap-4">
     <Cropper
       class="h-80"
