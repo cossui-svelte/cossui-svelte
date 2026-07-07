@@ -1741,6 +1741,30 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     registryDependencies: ['input'],
     tags: ['input']
   },
+  'p-input-100': {
+    description: 'Credit card number input with auto-formatting',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['input', 'label'],
+    tags: ['input']
+  },
+  'p-input-101': {
+    description: 'Credit card expiry date input with auto-formatting',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['input', 'label'],
+    tags: ['input']
+  },
+  'p-input-102': {
+    description: 'Credit card CVC/code input with auto-formatting',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['input', 'label'],
+    tags: ['input']
+  },
+  'p-input-103': {
+    description: 'Combined credit card number, expiry, and CVC inputs with auto-formatting',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['input', 'label'],
+    tags: ['input']
+  },
   'p-input-group-1': {
     description: 'Basic input group',
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' },
