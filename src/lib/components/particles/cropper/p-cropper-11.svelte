@@ -55,7 +55,7 @@
   }
 
   const ORIGINAL_IMAGE_URL =
-    'https://raw.githubusercontent.com/origin-space/origin-images/refs/heads/main/cropper-10_k24zxk.jpg';
+    '/img/cropper/cropper-10_k24zxk.jpg';
 
   let croppedAreaPixels = $state<Area | null>(null);
   let croppedImageUrl = $state<string | null>(null);
@@ -124,16 +124,4 @@
       </div>
     </div>
   </div>
-
-  <p aria-live="polite" class="mt-2 text-muted-foreground text-xs" role="region">
-    Cropper with image preview &middot;
-    <a
-      class="underline hover:text-foreground"
-      href="https://github.com/origin-space/image-cropper"
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      API
-    </a>
-  </p>
 </div>

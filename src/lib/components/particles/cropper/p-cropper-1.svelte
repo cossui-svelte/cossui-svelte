@@ -255,23 +255,6 @@
   </Dialog>
 
   <p aria-live="polite" class="mt-2 text-muted-foreground text-xs" role="region">
-    Avatar
-    <a
-      class="underline hover:text-foreground"
-      href="https://github.com/cosscom/coss/blob/main/apps/origin/docs/use-file-upload.md"
-      rel="noreferrer"
-      target="_blank"
-    >
-      uploader
-    </a>
-    with
-    <a
-      class="underline hover:text-foreground"
-      href="https://github.com/origin-space/image-cropper"
-      rel="noreferrer"
-      target="_blank"
-    >
-      Cropper
-    </a>
+    Click the avatar to update the image
   </p>
 </div>
