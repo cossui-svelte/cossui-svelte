@@ -203,7 +203,7 @@ const allComponents: RegistryUiData = {
     description: 'A component for cropping images with a resizable and movable selection area.',
     folder: 'cropper',
     isnew: false,
-    istodo: true,
+    istodo: false,
     name: 'Cropper',
     npmDependencies: [],
     registryDependencies: []

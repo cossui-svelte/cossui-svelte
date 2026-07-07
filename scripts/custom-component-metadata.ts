@@ -84,8 +84,7 @@ export const custom_components_metadata: RegistryUiData = {
 	},
 	cropper: {
 		description: "A component for cropping images with a resizable and movable selection area.",
-		category: "origin-ui",
-		istodo: true
+		category: "origin-ui"
 	},
 	"date-picker": {
 		description: "A date picker component built with Calendar and Popover.",
