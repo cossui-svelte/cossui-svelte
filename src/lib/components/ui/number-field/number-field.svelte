@@ -95,7 +95,7 @@
 </script>
 
 <div
-  class={cn("flex w-full flex-col items-start gap-2", className)}
+  class={cn("flex w-full flex-col items-start", className)}
   data-size={size}
   data-slot="number-field"
   data-disabled={disabled ? "" : undefined}
