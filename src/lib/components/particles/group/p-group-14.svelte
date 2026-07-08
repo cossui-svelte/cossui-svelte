@@ -28,7 +28,7 @@
 <Group aria-label="Payment amount">
   <Group aria-label="Amount input">
     <Select bind:value={currency}>
-      <SelectTrigger class="w-fit min-w-none">
+      <SelectTrigger class="w-fit min-w-none min-h-8.5 sm:min-h-7.5">
         <SelectValue />
       </SelectTrigger>
       <SelectPopup class="min-w-48">
@@ -41,7 +41,9 @@
     </Select>
     <GroupSeparator />
     <NumberField aria-label="Enter the amount" class="gap-0" bind:value={amount}>
-      <NumberFieldGroup>
+      <NumberFieldGroup
+        class="rounded-s-none border-s-0 before:inset-s-[-0.5px] before:rounded-s-none"
+      >
         <NumberFieldInput class="text-left" />
       </NumberFieldGroup>
     </NumberField>

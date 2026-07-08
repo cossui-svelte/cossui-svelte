@@ -11,10 +11,6 @@
   const initialValues = { x: -2, y: 4, z: 2 };
 
   let values = $state({ ...initialValues });
-
-  function updateValue(axis: keyof typeof values, v: number | null) {
-    values[axis] = v ?? 0;
-  }
 </script>
 
 <fieldset class="flex w-full flex-col gap-4 border-0 p-0 m-0">
@@ -35,8 +31,7 @@
           class="w-16"
           {max}
           {min}
-          value={values[axis]}
-          onValueChange={(v) => updateValue(axis, v)}
+          bind:value={values[axis]}
           size="sm"
         >
           <NumberFieldGroup>

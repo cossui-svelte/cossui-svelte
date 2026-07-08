@@ -118,8 +118,7 @@
         aria-label="Minimum price"
         max={values[1]}
         {min}
-        onValueChange={(v) => updateValue(0, v)}
-        value={values[0]}
+        bind:value={() => values[0], (v) => updateValue(0, v)}
       >
         <NumberFieldInput class="text-left" />
       </NumberField>
@@ -132,8 +131,7 @@
         aria-label="Maximum price"
         {max}
         min={values[0]}
-        onValueChange={(v) => updateValue(1, v)}
-        value={values[1]}
+        bind:value={() => values[1], (v) => updateValue(1, v)}
       >
         <NumberFieldInput class="text-left" />
       </NumberField>

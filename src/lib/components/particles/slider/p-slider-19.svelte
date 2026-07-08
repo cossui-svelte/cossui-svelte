@@ -21,8 +21,7 @@
     class="w-16"
     {max}
     {min}
-    {value}
-    onValueChange={(v) => { value = v ?? min; }}
+    bind:value
     size="sm"
   >
     <NumberFieldGroup>

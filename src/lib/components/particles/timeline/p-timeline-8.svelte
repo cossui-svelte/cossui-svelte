@@ -53,12 +53,12 @@
 				'group-data-[orientation=vertical]/timeline:even:text-right',
 				'group-data-[orientation=vertical]/timeline:even:ml-0',
 				'group-data-[orientation=vertical]/timeline:even:mr-8',
-				'group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-indicator]]:even:-right-6',
-				'group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-indicator]]:even:left-auto',
-				'group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-indicator]]:even:translate-x-1/2',
-				'group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-separator]]:even:-right-6',
-				'group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-separator]]:even:left-auto',
-				'group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-separator]]:even:translate-x-1/2'
+				'group-data-[orientation=vertical]/timeline:even:**:data-[slot=timeline-indicator]:-right-6',
+				'group-data-[orientation=vertical]/timeline:even:**:data-[slot=timeline-indicator]:left-auto',
+				'group-data-[orientation=vertical]/timeline:even:**:data-[slot=timeline-indicator]:translate-x-1/2',
+				'group-data-[orientation=vertical]/timeline:even:**:data-[slot=timeline-separator]:-right-6',
+				'group-data-[orientation=vertical]/timeline:even:**:data-[slot=timeline-separator]:left-auto',
+				'group-data-[orientation=vertical]/timeline:even:**:data-[slot=timeline-separator]:translate-x-1/2'
 			]}
 		>
 			<TimelineHeader>

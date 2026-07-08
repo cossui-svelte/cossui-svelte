@@ -7,7 +7,7 @@
     StepperSeparator,
     StepperTrigger,
   } from "$lib/components/ui/stepper";
-  import avatar from "$lib/assets/avatar-40-05.jpg?w=32&h=32&enhanced";
+  import avatar from "$assets/avatar-40-05.jpg";
 </script>
 
 <div class="mx-auto max-w-xl space-y-8 text-center">
