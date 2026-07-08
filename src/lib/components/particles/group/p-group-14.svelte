@@ -40,10 +40,8 @@
       </SelectPopup>
     </Select>
     <GroupSeparator />
-    <NumberField aria-label="Enter the amount" class="gap-0" bind:value={amount}>
-      <NumberFieldGroup
-        class="rounded-s-none border-s-0 before:inset-s-[-0.5px] before:rounded-s-none"
-      >
+    <NumberField aria-label="Enter the amount" bind:value={amount}>
+      <NumberFieldGroup>
         <NumberFieldInput class="text-left" />
       </NumberFieldGroup>
     </NumberField>
