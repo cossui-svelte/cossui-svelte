@@ -14,6 +14,7 @@
     orientation = "horizontal",
     ref = $bindable(null),
     showTooltip = false,
+    thumbCollisionBehavior = "swap",
     tooltipContent,
     value = $bindable(),
     ...restProps
@@ -22,12 +23,48 @@
     orientation?: "horizontal" | "vertical";
     ref?: HTMLElement | null;
     showTooltip?: boolean;
+    /** Whether thumbs swap position (push past one another) or can overlap/cross when dragged into each other. */
+    thumbCollisionBehavior?: "swap" | "none";
     tooltipContent?: (value: number) => number | string;
     value?: number | number[];
     [key: string]: unknown;
   } = $props();
 
   const type =(Array.isArray(value) && value.length > 1) ? "multiple": "single"
+
+  // bits-ui's own `autoSort` prevents crossing by swapping which thumb is
+  // "active" at the collision point, which reads as a jump/handoff rather
+  // than a push. We disable it below and instead push the neighboring
+  // thumb(s) in lockstep with whichever thumb is actually being dragged,
+  // so the same thumb stays under the pointer the whole time.
+  function handleBitsUiValueChange(newValue: number | number[]) {
+    if (
+      thumbCollisionBehavior === "none" ||
+      !Array.isArray(newValue) ||
+      newValue.length < 2
+    ) {
+      value = newValue;
+      return;
+    }
+    const prev = Array.isArray(value) ? value : newValue;
+    let changedIdx = 0;
+    let maxDelta = -1;
+    for (let i = 0; i < newValue.length; i++) {
+      const delta = Math.abs((newValue[i] ?? 0) - (prev[i] ?? newValue[i] ?? 0));
+      if (delta > maxDelta) {
+        maxDelta = delta;
+        changedIdx = i;
+      }
+    }
+    const result = [...newValue];
+    for (let i = changedIdx + 1; i < result.length; i++) {
+      if (result[i] < result[i - 1]) result[i] = result[i - 1];
+    }
+    for (let i = changedIdx - 1; i >= 0; i--) {
+      if (result[i] > result[i + 1]) result[i] = result[i + 1];
+    }
+    value = result;
+  }
 
   let tooltipOpen = $state(false);
 
@@ -56,7 +93,11 @@
 
 <SliderPrimitive.Root
   bind:ref
-  bind:value={value as never}
+  bind:value={
+    () => value as never,
+    (v: never) => handleBitsUiValueChange(v as number | number[])
+  }
+  autoSort={false}
   {orientation}
   type={type as never}
   class={cn(
