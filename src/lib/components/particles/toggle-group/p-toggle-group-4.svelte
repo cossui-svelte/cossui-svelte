@@ -9,7 +9,7 @@
   } from "$lib/components/ui/toggle-group";
 </script>
 
-<ToggleGroup value={["bold"]} variant="outline">
+<ToggleGroup value="bold" variant="outline">
   <ToggleGroupItem aria-label="Toggle bold" value="bold">
     <BoldIcon />
   </ToggleGroupItem>
