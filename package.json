@@ -15,7 +15,6 @@
     "@lucide/svelte": "^1.23.0",
     "@shikijs/langs": "^4.3.1",
     "@shikijs/themes": "^4.3.1",
-    "@sveltejs/adapter-auto": "^7.0.1",
     "@sveltejs/adapter-cloudflare": "^7.2.9",
     "@sveltejs/enhanced-img": "^0.11.0",
     "@sveltejs/kit": "^2.69.2",
@@ -27,6 +26,7 @@
     "bits-ui": "^2.18.1",
     "cleave-zen": "^0.0.17",
     "clsx": "^2.1.1",
+    "commit-and-tag-version": "^12.7.3",
     "cz-customizable": "^7.5.4",
     "husky": "^9.1.7",
     "inputmask": "^5.0.9",
@@ -52,6 +52,10 @@
   "peerDependencies": {
     "svelte": "^5.56.4"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cossui-svelte/cossui-svelte.git"
+  },
   "scripts": {
     "biome:migrate": "biome migrate --write",
     "build": "vite build",
@@ -66,8 +70,10 @@
     "lint:typecheck": "tsc --noEmit",
     "mrproper": "rm -rf node_modules dist build .svelte-kit",
     "optimize:icons": "tsx ./scripts/transformLucideImports.ts",
-    "prepare": "husky && svelte-kit sync || echo ''"
+    "prepare": "husky && svelte-kit sync || echo ''",
+    "release": "commit-and-tag-version",
+    "release:dry": "commit-and-tag-version --dry-run"
   },
   "type": "module",
-  "version": "0.9.3"
+  "version": "0.9.4"
 }
