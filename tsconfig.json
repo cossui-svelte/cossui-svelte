@@ -1,4 +1,5 @@
 {
+  "compilerOptions": { "noImplicitAny": false, "skipLibCheck": true },
   "exclude": ["**/*.old", "**/*.old/**"],
   "extends": "./.svelte-kit/tsconfig.json"
 }
