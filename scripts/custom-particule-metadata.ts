@@ -300,4 +300,28 @@ export const custom_particle_metadata = {
     registryDependencies: ['link-preview'],
     tags: ['link-preview']
   },
+  'p-input-100': {
+    description: 'Credit card number input with auto-formatting',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['input', 'label'],
+    tags: ['input', 'credit-card']
+  },
+  'p-input-101': {
+    description: 'Credit card expiry date input with auto-formatting',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['input', 'label'],
+    tags: ['input', 'credit-card']
+  },
+  'p-input-102': {
+    description: 'Credit card CVC/code input with auto-formatting',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['input', 'label'],
+    tags: ['input', 'credit-card']
+  },
+  'p-input-103': {
+    description: 'Combined credit card number, expiry, and CVC inputs with auto-formatting',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['input', 'label'],
+    tags: ['input', 'credit-card']
+  },
 }

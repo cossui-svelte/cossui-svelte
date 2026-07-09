@@ -125,7 +125,16 @@
         : "";
     } else {
       // For multiple, clear the input so the user can search for the next chip.
+      // bits-ui's internal SelectMultipleRootState.toggleItem always sets its own
+      // inputValue to the selected item's label (chips-unaware), overwriting
+      // inputValueProxy right after this runs. Force a real DOM input event so
+      // bits-ui's oninput handler resyncs its internal state back to "".
       inputValueProxy = "";
+      tick().then(() => {
+        if (!inputEl) return;
+        inputEl.value = "";
+        inputEl.dispatchEvent(new Event("input", { bubbles: true }));
+      });
     }
   }
 

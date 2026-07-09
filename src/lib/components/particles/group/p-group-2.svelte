@@ -4,7 +4,7 @@
   import { buttonVariants } from "$lib/components/ui/button";
   import { Group, GroupSeparator } from "$lib/components/ui/group";
   import { Input } from "$lib/components/ui/input";
-  import { Tooltip, TooltipPopup, TooltipTrigger } from "$lib/components/ui/tooltip";
+  import { Tooltip, TooltipPopup, TooltipProvider, TooltipTrigger } from "$lib/components/ui/tooltip";
 
   let inputValue = $state("https://coss.com");
   let isCopied = $state(false);
@@ -16,6 +16,7 @@
   }
 </script>
 
+<TooltipProvider>
 <Group aria-label="Url input">
   <Input aria-label="Url" bind:value={inputValue} type="text" />
   <GroupSeparator />
@@ -23,6 +24,7 @@
     <TooltipTrigger
       aria-label="Copy"
       class={buttonVariants({ size: "icon", variant: "outline" })}
+      data-slot="button"
       onclick={copyToClipboard}
     >
       {#if isCopied}
@@ -36,3 +38,4 @@
     </TooltipPopup>
   </Tooltip>
 </Group>
+</TooltipProvider>

@@ -23,8 +23,7 @@
     class="w-10"
     max={values[1]}
     {min}
-    onValueChange={(v) => updateValue(0, v)}
-    value={values[0]}
+    bind:value={() => values[0], (v) => updateValue(0, v)}
     size="sm"
   >
     <NumberFieldGroup>
@@ -43,8 +42,7 @@
     class="w-10"
     {max}
     min={values[0]}
-    onValueChange={(v) => updateValue(1, v)}
-    value={values[1]}
+    bind:value={() => values[1], (v) => updateValue(1, v)}
     size="sm"
   >
     <NumberFieldGroup>
