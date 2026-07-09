@@ -50,11 +50,11 @@
   const moreCount = $derived(Math.max(0, matched.length - limit));
 </script>
 
-<Autocomplete
-  items={visibleItems}
-  onInputValueChange={(v) => (filterText = v)}
->
-  <AutocompleteInput placeholder="e.g. feature" />
+<Autocomplete items={visibleItems}>
+  <AutocompleteInput
+    oninput={(e) => (filterText = e.currentTarget.value)}
+    placeholder="e.g. feature"
+  />
   <AutocompletePopup>
     <AutocompleteEmpty>No tags found.</AutocompleteEmpty>
     <AutocompleteList>

@@ -5,7 +5,7 @@
 
   type Props = Command.InputProps;
 
-  let { class: className, ...restProps }: Props = $props();
+  let { ref = $bindable(null), class: className, ...restProps }: Props = $props();
 </script>
 
 <div class="px-2.5 py-1.5">
@@ -17,6 +17,7 @@
       <Search />
     </div>
     <Command.Input
+      bind:ref
       class={cn(
         "h-9.5 w-full rounded-lg bg-transparent ps-9 pe-3 text-base outline-none placeholder:text-muted-foreground/72 sm:h-8.5 sm:text-sm",
         className,

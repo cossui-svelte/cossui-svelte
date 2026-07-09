@@ -1,4 +1,4 @@
-import { defaults, superForm, type SuperForm } from 'sveltekit-superforms';
+import { defaults, type SuperForm, superForm } from 'sveltekit-superforms';
 import { zod4 } from 'sveltekit-superforms/adapters';
 import type { ZodType, z } from 'zod';
 import { uid } from './use-uid';
@@ -21,9 +21,7 @@ export function createForm<TSchema extends ZodType<Record<string, unknown>>>(
   options: SchemaForm<TSchema>
 ): SuperForm<z.output<TSchema>>;
 
-export function createForm<T extends Record<string, unknown>>(
-  options: ManualForm<T>
-): SuperForm<T>;
+export function createForm<T extends Record<string, unknown>>(options: ManualForm<T>): SuperForm<T>;
 
 export function createForm(
   options: SchemaForm<ZodType<Record<string, unknown>>> | ManualForm<Record<string, unknown>>

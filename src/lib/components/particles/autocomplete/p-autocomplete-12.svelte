@@ -70,8 +70,11 @@
   const movieItems = $derived(searchResults.map((m) => ({ label: m.title, value: m.id })));
 </script>
 
-<Autocomplete items={movieItems} onInputValueChange={(v) => (searchValue = v)}>
-  <AutocompleteInput placeholder="e.g. Pulp Fiction or 1994" />
+<Autocomplete items={movieItems}>
+  <AutocompleteInput
+    oninput={(e) => (searchValue = e.currentTarget.value)}
+    placeholder="e.g. Pulp Fiction or 1994"
+  />
   {#if searchValue}
     <AutocompletePopup aria-busy={isLoading || undefined}>
       <AutocompleteStatus class="text-muted-foreground">

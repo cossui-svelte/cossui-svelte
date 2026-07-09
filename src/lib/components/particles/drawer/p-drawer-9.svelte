@@ -20,7 +20,6 @@
   position="bottom"
   bind:activeSnapPoint={snapPoint}
   snapPoints={[...snapPoints]}
-  snapToSequentialPoints
 >
   <DrawerTrigger class={buttonVariants({ variant: "outline" })}>
     With snap points

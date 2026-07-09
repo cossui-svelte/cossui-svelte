@@ -867,7 +867,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     tags: ['card', 'form', 'frame']
   },
   'p-card-11': {
-    description: 'CardFrame with header action',
+    description: 'Cardframe with header action',
     meta: {
       class:
         '**:data-[slot=preview]:w-full **:data-[slot=preview]:flex **:data-[slot=preview]:justify-center'
@@ -2772,7 +2772,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     tags: ['table']
   },
   'p-table-6': {
-    description: 'CardFrame with TanStack Table and checkboxes',
+    description: 'Cardframe with TanStack Table and checkboxes',
     meta: {
       class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl',
       colSpan: 2
@@ -2782,7 +2782,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     tags: ['card', 'checkbox', 'table', 'tanstack']
   },
   'p-table-7': {
-    description: 'CardFrame with card-style table',
+    description: 'Cardframe with card-style table',
     meta: {
       class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl',
       colSpan: 2
@@ -2791,7 +2791,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     tags: ['card', 'table']
   },
   'p-table-8': {
-    description: 'CardFrame with TanStack Table, sorting, and pagination',
+    description: 'Cardframe with TanStack Table, sorting, and pagination',
     meta: {
       class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl',
       colSpan: 2

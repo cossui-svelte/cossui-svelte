@@ -3,7 +3,13 @@
   import { Button } from "$lib/components/ui/button";
   import { Field, FieldError, FieldLabel } from "$lib/components/ui/field";
   import { Form } from "$lib/components/ui/form";
-  import { Select, SelectItem, SelectPopup, SelectTrigger, SelectValue } from "$lib/components/ui/select";
+  import {
+    Select,
+    SelectItem,
+    SelectPopup,
+    SelectTrigger,
+    SelectValue,
+  } from "$lib/components/ui/select";
   import { createForm } from "$lib/hooks/use-superform";
 
   const items = [
@@ -30,12 +36,13 @@
   <Field name="framework">
     <FieldLabel>Framework</FieldLabel>
     <Select
-      aria-label="Select framework"
       name="framework"
       value={$form.framework}
-      onValueChange={(v) => { $form.framework = v as string; }}
+      onValueChange={(v) => {
+        $form.framework = v as string;
+      }}
     >
-      <SelectTrigger>
+      <SelectTrigger aria-label="Select framework">
         <SelectValue placeholder="Select a framework" />
       </SelectTrigger>
       <SelectPopup>

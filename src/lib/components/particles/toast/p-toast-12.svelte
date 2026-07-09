@@ -19,8 +19,8 @@
   }
 </script>
 
-<Tooltip>
-  <TooltipTrigger delay={0}>
+<Tooltip delay={0}>
+  <TooltipTrigger>
     {#snippet child({ props })}
       <Button
         aria-label="Save"

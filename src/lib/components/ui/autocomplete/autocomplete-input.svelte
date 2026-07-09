@@ -3,6 +3,7 @@
   import { Combobox } from "bits-ui";
   import type { Snippet } from "svelte";
   import { cn } from "$lib/utils";
+  import { getAutocompleteCtx } from "./autocomplete.svelte";
   import AutocompleteClear from "./autocomplete-clear.svelte";
   import AutocompleteTrigger from "./autocomplete-trigger.svelte";
 
@@ -27,6 +28,13 @@
   }: Props = $props();
 
   let containerEl: HTMLSpanElement | null = $state(null);
+  let inputRef: HTMLInputElement | null = $state(null);
+
+  const ctx = getAutocompleteCtx();
+  $effect(() => {
+    ctx?.setInputEl(inputRef);
+    return () => ctx?.setInputEl(null);
+  });
 
   function defaultClear() {
     const input = containerEl?.querySelector("input");
@@ -57,6 +65,7 @@
     data-slot="autocomplete-input"
   >
     <Combobox.Input
+      bind:ref={inputRef}
       class={cn(
         "h-8.5 w-full min-w-0 rounded-[inherit] px-[calc(--spacing(3)-1px)] leading-8.5 outline-none placeholder:text-muted-foreground/72 sm:h-7.5 sm:leading-7.5 [transition:background-color_5000000s_ease-in-out_0s]",
         startAddon &&
