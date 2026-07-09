@@ -6,9 +6,9 @@
     children?: Snippet;
   }
 
-  let { children, ...restProps }: Props = $props();
+  let { children, value = $bindable(undefined), ...restProps }: Props = $props();
 </script>
 
-<ContextMenu.RadioGroup data-slot="context-menu-radio-group" {...restProps}>
+<ContextMenu.RadioGroup bind:value data-slot="context-menu-radio-group" {...restProps}>
   {@render children?.()}
 </ContextMenu.RadioGroup>

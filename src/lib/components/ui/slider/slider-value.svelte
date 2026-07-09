@@ -1,12 +1,12 @@
 <script lang="ts">
-  import type { HTMLSpanAttributes } from "svelte/elements";
+  import type { HTMLAttributes } from "svelte/elements";
   import { cn } from "$lib/utils";
 
   let {
     class: className,
     value,
     ...restProps
-  }: HTMLSpanAttributes & {
+  }: HTMLAttributes<HTMLSpanElement> & {
     value?: number | number[];
   } = $props();
 </script>

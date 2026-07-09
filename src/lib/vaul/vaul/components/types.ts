@@ -98,6 +98,13 @@ export type Props = {
   onActiveSnapPointChange?: OnChangeFn<number | string | null>;
 
   /**
+   * Whether to lock the body scroll and treat the drawer as a modal.
+   *
+   * @default true
+   */
+  modal?: CreateVaulProps['modal'] & {};
+
+  /**
    * Whether the drawer is able to be dismissed naturally.
    * If `true` the user can swipe or press outside the drawer to close it,
    * if `false` you must provide another way to close the drawer, via

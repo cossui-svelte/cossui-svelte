@@ -51,9 +51,7 @@
       style="--sidebar-width: 18rem;"
     >
       <DialogTitle class="sr-only">Sidebar</DialogTitle>
-      <DialogDescription class="sr-only"
-        >Displays the mobile sidebar.</DialogDescription
-      >
+      <DialogDescription class="sr-only">Displays the mobile sidebar.</DialogDescription>
       <div class="flex h-full w-full flex-col">
         {@render children?.()}
       </div>

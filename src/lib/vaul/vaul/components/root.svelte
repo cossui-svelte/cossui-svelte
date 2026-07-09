@@ -21,6 +21,7 @@
 		onDrag,
 		onClose,
 		dismissible,
+		modal = true,
 		direction = "bottom",
 		children,
 	}: Props = $props();
@@ -38,6 +39,7 @@
 		direction,
 		dismissible,
 		fadeFromIndex,
+		modal,
 		nested,
 		onActiveSnapPointChange: ({ next }: { curr: number | string | null; next: number | string | null }) => {
 			if (next === undefined && snapPoints && activeSnapPoint !== next) {
@@ -99,6 +101,10 @@
 
 	$effect(() => {
 		updateOption("dismissible", dismissible);
+	});
+
+	$effect(() => {
+		updateOption("modal", modal);
 	});
 
 	$effect(() => {

@@ -10,7 +10,7 @@
       const res = await fetch(
         FOLLOWER_COUNT,
       );
-      const data = await res.json();
+      const data = (await res.json()) as { repo?: { stars?: number } };
       return data.repo?.stars ?? FALLBACK_STAR_COUNT;
     } catch (error) {
       console.info(error)

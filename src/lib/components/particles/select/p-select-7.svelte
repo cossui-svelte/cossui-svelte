@@ -23,7 +23,7 @@
   <SelectTrigger aria-label="Select languages">
     <span class="flex-1 truncate">{languages[selected] ?? "Select languages…"}</span>
   </SelectTrigger>
-  <SelectPopup alignItemWithTrigger={false}>
+  <SelectPopup>
     {#each values as value (value)}
       <SelectItem {value}>{languages[value]}</SelectItem>
     {/each}

@@ -8,7 +8,7 @@
     value = $bindable(""),
     size = "default",
     ...restProps
-  }: OTPFieldPrimitive.RootProps & {
+  }: Omit<OTPFieldPrimitive.RootProps, "size"> & {
     size?: "default" | "lg";
   } = $props();
 </script>

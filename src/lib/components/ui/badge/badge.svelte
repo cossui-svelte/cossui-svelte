@@ -24,7 +24,7 @@
   bind:this={ref}
   data-slot="badge"
   {href}
-  class={cn(badgeVariants({ className, size, variant }))}
+  class={cn(badgeVariants({ size, variant }), className)}
   {...restProps}
 >
   {@render children?.()}

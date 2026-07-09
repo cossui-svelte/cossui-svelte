@@ -29,8 +29,8 @@
     </BreadcrumbItem>
     <BreadcrumbSeparator />
     <BreadcrumbItem>
-      <Select aria-label="Select database" value="Orion">
-        <SelectTrigger size="sm">
+      <Select value="Orion">
+        <SelectTrigger aria-label="Select database" size="sm">
           <Database />
           <SelectValue />
         </SelectTrigger>
