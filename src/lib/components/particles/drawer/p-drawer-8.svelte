@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { z } from "zod";
   import { Button, buttonVariants } from "$lib/components/ui/button";
   import {
     Drawer,
@@ -12,8 +13,20 @@
     DrawerTitle,
     DrawerTrigger,
   } from "$lib/components/ui/drawer";
-  import { Field, FieldLabel } from "$lib/components/ui/field";
+  import { Field, FieldError, FieldLabel } from "$lib/components/ui/field";
+  import { Form } from "$lib/components/ui/form";
   import { Input } from "$lib/components/ui/input";
+  import { createForm } from "$lib/hooks/use-superform";
+
+  const schema = z.object({
+    email: z.string().email("Please enter a valid email."),
+    name: z.string().min(1, { message: "Please enter a name." }),
+  });
+
+  const superform = createForm({
+    initialData: { email: "bora@example.com", name: "Bora Baloglu" },
+    schema,
+  });
 </script>
 
 <Drawer position="right">
@@ -47,20 +60,24 @@
               Make changes to the member's information.
             </DrawerDescription>
           </DrawerHeader>
-          <DrawerPanel class="grid gap-4">
-            <Field>
-              <FieldLabel>Name</FieldLabel>
-              <Input value="Bora Baloglu" type="text" />
-            </Field>
-            <Field>
-              <FieldLabel>Email</FieldLabel>
-              <Input value="bora@example.com" type="email" />
-            </Field>
-          </DrawerPanel>
-          <DrawerFooter>
-            <DrawerClose class={buttonVariants({ variant: "ghost" })}>Cancel</DrawerClose>
-            <Button type="submit">Save changes</Button>
-          </DrawerFooter>
+          <Form {superform} class="contents">
+            <DrawerPanel class="grid gap-4">
+              <Field name="name">
+                <FieldLabel>Name</FieldLabel>
+                <Input type="text" />
+                <FieldError />
+              </Field>
+              <Field name="email">
+                <FieldLabel>Email</FieldLabel>
+                <Input type="email" />
+                <FieldError />
+              </Field>
+            </DrawerPanel>
+            <DrawerFooter>
+              <DrawerClose class={buttonVariants({ variant: "ghost" })}>Cancel</DrawerClose>
+              <Button type="submit">Save changes</Button>
+            </DrawerFooter>
+          </Form>
         </DrawerPopup>
       </DrawerNestedRoot>
     </DrawerFooter>
