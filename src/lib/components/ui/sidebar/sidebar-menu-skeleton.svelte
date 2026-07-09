@@ -1,6 +1,5 @@
 <script lang="ts">
   import type { HTMLAttributes } from "svelte/elements";
-  import { Skeleton } from "$lib/components/ui/skeleton";
   import { cn } from "$lib/utils";
 
   interface Props extends HTMLAttributes<HTMLDivElement> {

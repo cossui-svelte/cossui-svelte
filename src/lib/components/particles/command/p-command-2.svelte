@@ -27,7 +27,6 @@
   import { Input } from "$lib/components/ui/input";
   import { Kbd, KbdGroup } from "$lib/components/ui/kbd";
   import { ScrollArea } from "$lib/components/ui/scroll-area";
-  import { Skeleton } from "$lib/components/ui/skeleton";
   import { Spinner } from "$lib/components/ui/spinner";
 
   interface Item {
@@ -372,28 +371,6 @@ You can customize project settings at any time by clicking the settings icon in 
               {#if aiState.error}
                 <div aria-live="polite" class="text-destructive text-sm" role="alert">
                   {aiState.error}
-                </div>
-              {/if}
-
-              {#if aiState.isGenerating}
-                <div class="flex flex-col gap-4">
-                  <div class="flex flex-col gap-2">
-                    <Skeleton class="h-4 w-full" />
-                    <Skeleton class="h-4 w-full" />
-                    <Skeleton class="h-4 w-full" />
-                    <Skeleton class="h-4 w-1/2" />
-                  </div>
-                  <div class="flex flex-col gap-2">
-                    <Skeleton class="h-4 w-full" />
-                    <Skeleton class="h-4 w-full" />
-                    <Skeleton class="h-4 w-3/4" />
-                  </div>
-                  <div class="flex flex-col gap-2">
-                    <Skeleton class="h-4 w-full" />
-                    <Skeleton class="h-4 w-full" />
-                    <Skeleton class="h-4 w-full" />
-                    <Skeleton class="h-4 w-3/5" />
-                  </div>
                 </div>
               {/if}
 
