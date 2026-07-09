@@ -104,10 +104,10 @@
           {#snippet child({ props })}
             <Button
               aria-label="Cancel download"
-              onclick={handleCancel}
               size="icon"
               variant="outline"
               {...props}
+              onclick={handleCancel}
             >
               <X aria-hidden="true" />
             </Button>
