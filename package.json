@@ -40,7 +40,7 @@
     "tailwind-variants": "^3.2.2",
     "tailwindcss": "^4.3.2",
     "tsx": "^4.23.0",
-    "typescript": "^7.0.2",
+    "typescript": "^6.0.3",
     "vite": "^8.1.4",
     "vitest": "^4.1.10",
     "wrangler": "^4.107.1",
