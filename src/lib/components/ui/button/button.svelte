@@ -10,6 +10,7 @@
   } from "./button-variants";
 
   let {
+    ref = $bindable(null),
     class: className,
     variant,
     size,
@@ -26,6 +27,7 @@
 </script>
 
 <Button.Root
+  bind:ref
   class={cn(buttonVariants({ size , variant}), className)}
   data-slot="button"
   {...restProps}
