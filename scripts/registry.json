@@ -2143,6 +2143,9 @@
           "type": "registry:block"
         }
       ],
+      "meta": {
+        "className": "**:data-[slot=preview]:flex"
+      },
       "name": "p-badge-19",
       "registryDependencies": [
         "@coss/badge",
@@ -9862,6 +9865,113 @@
       "name": "p-switch-6",
       "registryDependencies": [
         "@coss/switch"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "switch",
+        "combobox",
+        "popover",
+        "time"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "description": "Weekly availability editor with time range combobox pickers",
+      "files": [
+        {
+          "path": "registry/default/particles/p-switch-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl",
+        "colSpan": 2
+      },
+      "name": "p-switch-7",
+      "registryDependencies": [
+        "@coss/button",
+        "@coss/checkbox",
+        "@coss/checkbox-group",
+        "@coss/combobox",
+        "@coss/label",
+        "@coss/popover",
+        "@coss/select",
+        "@coss/switch",
+        "@coss/tooltip"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "switch",
+        "combobox",
+        "group",
+        "popover",
+        "time"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "description": "Weekly availability editor with grouped time range controls",
+      "files": [
+        {
+          "path": "registry/default/particles/p-switch-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl",
+        "colSpan": 2
+      },
+      "name": "p-switch-8",
+      "registryDependencies": [
+        "@coss/button",
+        "@coss/checkbox",
+        "@coss/checkbox-group",
+        "@coss/combobox",
+        "@coss/group",
+        "@coss/label",
+        "@coss/popover",
+        "@coss/switch",
+        "@coss/tooltip"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "switch",
+        "combobox",
+        "group",
+        "popover",
+        "time"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "description": "Weekly availability editor with From/To labeled time groups",
+      "files": [
+        {
+          "path": "registry/default/particles/p-switch-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl",
+        "colSpan": 2
+      },
+      "name": "p-switch-9",
+      "registryDependencies": [
+        "@coss/button",
+        "@coss/checkbox",
+        "@coss/checkbox-group",
+        "@coss/combobox",
+        "@coss/group",
+        "@coss/label",
+        "@coss/popover",
+        "@coss/switch",
+        "@coss/tooltip"
       ],
       "type": "registry:block"
     },

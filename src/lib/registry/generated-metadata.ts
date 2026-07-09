@@ -362,6 +362,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   },
   'p-badge-19': {
     description: 'Selectable badge with checkbox',
+    meta: { class: '**:data-[slot=preview]:flex' },
     npmDependencies: ['lucide-react'],
     registryDependencies: ['badge', 'checkbox'],
     tags: ['badge', 'checkbox']
@@ -867,7 +868,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     tags: ['card', 'form', 'frame']
   },
   'p-card-11': {
-    description: 'Cardframe with header action',
+    description: 'CardFrame with header action',
     meta: {
       class:
         '**:data-[slot=preview]:w-full **:data-[slot=preview]:flex **:data-[slot=preview]:justify-center'
@@ -1745,25 +1746,25 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     description: 'Credit card number input with auto-formatting',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
     registryDependencies: ['input', 'label'],
-    tags: ['input']
+    tags: ['input', 'credit-card']
   },
   'p-input-101': {
     description: 'Credit card expiry date input with auto-formatting',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
     registryDependencies: ['input', 'label'],
-    tags: ['input']
+    tags: ['input', 'credit-card']
   },
   'p-input-102': {
     description: 'Credit card CVC/code input with auto-formatting',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
     registryDependencies: ['input', 'label'],
-    tags: ['input']
+    tags: ['input', 'credit-card']
   },
   'p-input-103': {
     description: 'Combined credit card number, expiry, and CVC inputs with auto-formatting',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
     registryDependencies: ['input', 'label'],
-    tags: ['input']
+    tags: ['input', 'credit-card']
   },
   'p-input-group-1': {
     description: 'Basic input group',
@@ -2724,6 +2725,66 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     registryDependencies: ['switch'],
     tags: ['switch']
   },
+  'p-switch-7': {
+    description: 'Weekly availability editor with time range combobox pickers',
+    meta: {
+      class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl',
+      colSpan: 2
+    },
+    npmDependencies: ['lucide-react'],
+    registryDependencies: [
+      'button',
+      'checkbox',
+      'checkbox-group',
+      'combobox',
+      'label',
+      'popover',
+      'select',
+      'switch',
+      'tooltip'
+    ],
+    tags: ['switch', 'combobox', 'popover', 'time']
+  },
+  'p-switch-8': {
+    description: 'Weekly availability editor with grouped time range controls',
+    meta: {
+      class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl',
+      colSpan: 2
+    },
+    npmDependencies: ['lucide-react'],
+    registryDependencies: [
+      'button',
+      'checkbox',
+      'checkbox-group',
+      'combobox',
+      'group',
+      'label',
+      'popover',
+      'switch',
+      'tooltip'
+    ],
+    tags: ['switch', 'combobox', 'group', 'popover', 'time']
+  },
+  'p-switch-9': {
+    description: 'Weekly availability editor with From/To labeled time groups',
+    meta: {
+      class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl',
+      colSpan: 2
+    },
+    npmDependencies: ['lucide-react'],
+    registryDependencies: [
+      'button',
+      'checkbox',
+      'checkbox-group',
+      'combobox',
+      'group',
+      'label',
+      'popover',
+      'switch',
+      'tooltip'
+    ],
+    tags: ['switch', 'combobox', 'group', 'popover', 'time']
+  },
   'p-table-1': {
     description: 'Basic table',
     meta: {
@@ -2772,7 +2833,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     tags: ['table']
   },
   'p-table-6': {
-    description: 'Cardframe with TanStack Table and checkboxes',
+    description: 'CardFrame with TanStack Table and checkboxes',
     meta: {
       class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl',
       colSpan: 2
@@ -2782,7 +2843,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     tags: ['card', 'checkbox', 'table', 'tanstack']
   },
   'p-table-7': {
-    description: 'Cardframe with card-style table',
+    description: 'CardFrame with card-style table',
     meta: {
       class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl',
       colSpan: 2
@@ -2791,7 +2852,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     tags: ['card', 'table']
   },
   'p-table-8': {
-    description: 'Cardframe with TanStack Table, sorting, and pagination',
+    description: 'CardFrame with TanStack Table, sorting, and pagination',
     meta: {
       class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl',
       colSpan: 2
