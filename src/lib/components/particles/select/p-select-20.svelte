@@ -30,8 +30,8 @@
   const selectedUser = $derived(users.find((u) => u.value === selected) ?? users[0]);
 </script>
 
-<Select aria-label="Select user" value={selected} onValueChange={(v) => { selected = v; }}>
-  <SelectTrigger class="h-auto py-1.5">
+<Select value={selected} onValueChange={(v) => { selected = v; }}>
+  <SelectTrigger aria-label="Select user" class="h-auto py-1.5">
     <span class="flex items-center gap-2">
       <Avatar class="size-8">
         <AvatarImage alt={selectedUser.label} src={selectedUser.avatar} />

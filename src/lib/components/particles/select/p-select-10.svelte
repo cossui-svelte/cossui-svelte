@@ -12,8 +12,8 @@
   const selectedItem = $derived(items.find((i) => i.value === selected) ?? items[0]);
 </script>
 
-<Select aria-label="Select framework with command" value={selected} onValueChange={(v) => { selected = v; }}>
-  <SelectTrigger class="py-1">
+<Select value={selected} onValueChange={(v) => { selected = v; }}>
+  <SelectTrigger aria-label="Select framework with command" class="py-1">
     <span class="flex flex-col">
       <span class="truncate">{selectedItem.label}</span>
       <span class="truncate text-muted-foreground text-xs">{selectedItem.description}</span>

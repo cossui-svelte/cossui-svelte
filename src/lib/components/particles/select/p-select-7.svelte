@@ -19,8 +19,8 @@
   let selected = $state("javascript");
 </script>
 
-<Select aria-label="Select languages" value={selected} onValueChange={(v) => { selected = v; }}>
-  <SelectTrigger>
+<Select value={selected} onValueChange={(v) => { selected = v; }}>
+  <SelectTrigger aria-label="Select languages">
     <span class="flex-1 truncate">{languages[selected] ?? "Select languages…"}</span>
   </SelectTrigger>
   <SelectPopup alignItemWithTrigger={false}>

@@ -17,8 +17,8 @@
   ];
 </script>
 
-<Select aria-label="Select framework">
-  <SelectTrigger>
+<Select>
+  <SelectTrigger aria-label="Select framework">
     <SelectValue placeholder="Select framework" />
   </SelectTrigger>
   <SelectPopup>

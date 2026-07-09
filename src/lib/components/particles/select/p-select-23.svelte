@@ -13,8 +13,8 @@
 
 <div class="flex flex-col gap-1.5">
   <span class="text-sm font-medium">Fruits</span>
-  <Select aria-label="Select fruit" value={selected} onValueChange={(v) => { selected = v; }}>
-    <SelectTrigger>
+  <Select value={selected} onValueChange={(v) => { selected = v; }}>
+    <SelectTrigger aria-label="Select fruit">
       <span class="flex-1 truncate">{selectedLabel}</span>
     </SelectTrigger>
     <SelectPopup>

@@ -16,8 +16,8 @@
   const selectedItem = $derived(items.find((i) => i.value === selected) ?? items[0]);
 </script>
 
-<Select aria-label="Select category" value={selected} onValueChange={(v) => { selected = v; }}>
-  <SelectTrigger>
+<Select value={selected} onValueChange={(v) => { selected = v; }}>
+  <SelectTrigger aria-label="Select category">
     <span class="flex items-center gap-2">
       <svelte:component this={selectedItem.icon} />
       <span class="truncate">{selectedItem.label}</span>

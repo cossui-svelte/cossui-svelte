@@ -34,8 +34,8 @@
   const selectedItem = $derived(allItems.find((i) => i.value === selected) ?? allItems[0]);
 </script>
 
-<Select aria-label="Select country" value={selected} onValueChange={(v) => { selected = v; }}>
-  <SelectTrigger>
+<Select value={selected} onValueChange={(v) => { selected = v; }}>
+  <SelectTrigger aria-label="Select country">
     <span class="flex items-center gap-2">
       <span class="text-base leading-none">{selectedItem.flag}</span>
       <span class="truncate">{selectedItem.label}</span>

@@ -11,8 +11,8 @@
   const selectedItem = $derived(items.find((i) => i.value === selected) ?? items[1]);
 </script>
 
-<Select aria-label="Select plan" value={selected} onValueChange={(v) => { selected = v; }}>
-  <SelectTrigger>
+<Select value={selected} onValueChange={(v) => { selected = v; }}>
+  <SelectTrigger aria-label="Select plan">
     <span class="flex-1 truncate">{selectedItem.label}</span>
   </SelectTrigger>
   <SelectPopup>

@@ -11,8 +11,8 @@
   const selectedLabel = $derived(items.find((i) => i.value === selected)?.label ?? "");
 </script>
 
-<Select aria-label="Select framework" value={selected} onValueChange={(v) => { selected = v; }}>
-  <SelectTrigger class="border-transparent bg-muted shadow-none before:hidden">
+<Select value={selected} onValueChange={(v) => { selected = v; }}>
+  <SelectTrigger aria-label="Select framework" class="border-transparent bg-muted shadow-none before:hidden">
     <span class="flex-1 truncate">{selectedLabel}</span>
   </SelectTrigger>
   <SelectPopup>

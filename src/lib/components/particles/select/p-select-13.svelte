@@ -33,8 +33,8 @@
   const selectedItem = $derived(formattedTimezones.find((tz) => tz.value === selected));
 </script>
 
-<Select aria-label="Select timezone" value={selected} onValueChange={(v) => { selected = v; }}>
-  <SelectTrigger>
+<Select value={selected} onValueChange={(v) => { selected = v; }}>
+  <SelectTrigger aria-label="Select timezone">
     <span class="flex-1 truncate">{selectedItem?.label ?? selected}</span>
   </SelectTrigger>
   <SelectPopup>

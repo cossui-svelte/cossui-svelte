@@ -13,8 +13,8 @@
   const selectedItem = $derived(items.find((i) => i.value === selected) ?? items[0]);
 </script>
 
-<Select aria-label="Select status" value={selected} onValueChange={(v) => { selected = v; }}>
-  <SelectTrigger>
+<Select value={selected} onValueChange={(v) => { selected = v; }}>
+  <SelectTrigger aria-label="Select status">
     <span class="flex items-center gap-2">
       <span aria-hidden="true" class={`size-2 rounded-full ${selectedItem.color}`}></span>
       <span class="truncate">{selectedItem.label}</span>

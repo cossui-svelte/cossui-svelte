@@ -8,8 +8,8 @@
   ];
 </script>
 
-<Select aria-label="Select framework">
-  <SelectTrigger size="sm">
+<Select>
+  <SelectTrigger aria-label="Select framework" size="sm">
     <SelectValue placeholder="Select framework" />
   </SelectTrigger>
   <SelectPopup>
