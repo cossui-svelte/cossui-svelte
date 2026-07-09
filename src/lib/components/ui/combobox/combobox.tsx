@@ -1,11 +1,11 @@
 "use client";
 
 import { Combobox as ComboboxPrimitive } from "@base-ui/react/combobox";
-import { Input } from "@coss/ui/components/input";
-import { ScrollArea } from "@coss/ui/components/scroll-area";
-import { cn } from "@coss/ui/lib/utils";
 import { ChevronsUpDownIcon, XIcon } from "lucide-react";
 import * as React from "react";
+import { cn } from "@/registry/default/lib/utils";
+import { Input } from "@/registry/default/ui/input";
+import { ScrollArea } from "@/registry/default/ui/scroll-area";
 
 export const ComboboxContext: React.Context<{
   chipsRef: React.RefObject<Element | null> | null;
@@ -308,11 +308,8 @@ export function ComboboxRow({
   );
 }
 
-export function ComboboxValue({
-  ...props
-}: ComboboxPrimitive.Value.Props): React.ReactElement {
-  return <ComboboxPrimitive.Value data-slot="combobox-value" {...props} />;
-}
+export const ComboboxValue: typeof ComboboxPrimitive.Value =
+  ComboboxPrimitive.Value;
 
 export function ComboboxList({
   className,
@@ -361,13 +358,8 @@ export function ComboboxStatus({
   );
 }
 
-export function ComboboxCollection(
-  props: ComboboxPrimitive.Collection.Props,
-): React.ReactElement {
-  return (
-    <ComboboxPrimitive.Collection data-slot="combobox-collection" {...props} />
-  );
-}
+export const ComboboxCollection: typeof ComboboxPrimitive.Collection =
+  ComboboxPrimitive.Collection;
 
 export function ComboboxChips({
   className,

@@ -223,13 +223,8 @@ export function AutocompleteRow({
   );
 }
 
-export function AutocompleteValue({
-  ...props
-}: AutocompletePrimitive.Value.Props): React.ReactElement {
-  return (
-    <AutocompletePrimitive.Value data-slot="autocomplete-value" {...props} />
-  );
-}
+export const AutocompleteValue: typeof AutocompletePrimitive.Value =
+  AutocompletePrimitive.Value;
 
 export function AutocompleteList({
   className,
@@ -283,16 +278,8 @@ export function AutocompleteStatus({
   );
 }
 
-export function AutocompleteCollection({
-  ...props
-}: AutocompletePrimitive.Collection.Props): React.ReactElement {
-  return (
-    <AutocompletePrimitive.Collection
-      data-slot="autocomplete-collection"
-      {...props}
-    />
-  );
-}
+export const AutocompleteCollection: typeof AutocompletePrimitive.Collection =
+  AutocompletePrimitive.Collection;
 
 export function AutocompleteTrigger({
   className,

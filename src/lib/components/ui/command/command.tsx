@@ -1,6 +1,9 @@
 "use client";
 
 import { Dialog as CommandDialogPrimitive } from "@base-ui/react/dialog";
+import { SearchIcon } from "lucide-react";
+import type * as React from "react";
+import { cn } from "@/registry/default/lib/utils";
 import {
   Autocomplete,
   AutocompleteCollection,
@@ -11,10 +14,7 @@ import {
   AutocompleteItem,
   AutocompleteList,
   AutocompleteSeparator,
-} from "@coss/ui/components/autocomplete";
-import { cn } from "@coss/ui/lib/utils";
-import { SearchIcon } from "lucide-react";
-import type * as React from "react";
+} from "@/registry/default/ui/autocomplete";
 
 export const CommandDialog: typeof CommandDialogPrimitive.Root =
   CommandDialogPrimitive.Root;
@@ -200,11 +200,7 @@ export function CommandGroupLabel({
   );
 }
 
-export function CommandCollection({
-  ...props
-}: React.ComponentProps<typeof AutocompleteCollection>): React.ReactElement {
-  return <AutocompleteCollection data-slot="command-collection" {...props} />;
-}
+export const CommandCollection = AutocompleteCollection;
 
 export function CommandItem({
   className,

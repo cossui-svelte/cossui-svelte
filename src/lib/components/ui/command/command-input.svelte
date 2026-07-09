@@ -8,7 +8,7 @@
   let { ref = $bindable(null), class: className, ...restProps }: Props = $props();
 </script>
 
-<div class="px-2.5 py-1.5">
+<div class="shrink-0 px-2.5 py-1.5">
   <div class="relative flex items-center">
     <div
       aria-hidden="true"
