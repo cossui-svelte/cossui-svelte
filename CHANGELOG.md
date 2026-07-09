@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.9.5](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.4...v0.9.5) (2026-07-09)
+
+
+### 🐛 Bug Fixes
+
+* command scroll area was missing ([6b6cd69](https://github.com/cossui-svelte/cossui-svelte/commit/6b6cd69501891aadbcf5beae2401ffad57950839))
+* fixing toast button particules ([2ab291f](https://github.com/cossui-svelte/cossui-svelte/commit/2ab291ff0ef174720b921050fb85e08944d49bde))
+* new/updated particules from upstream ([22846fc](https://github.com/cossui-svelte/cossui-svelte/commit/22846fce4b2781679a421396e7d6e5900c35d20b))
+* partial command fix ([aa6bcf7](https://github.com/cossui-svelte/cossui-svelte/commit/aa6bcf7a669ee85932e964797c1d06ea0094efc6))
+* skeleton particles ([477245a](https://github.com/cossui-svelte/cossui-svelte/commit/477245a7f61fe890ca13fba65207ee6ce5d19fda))
+* svelte-check ([cbfbbe8](https://github.com/cossui-svelte/cossui-svelte/commit/cbfbbe884d5f8a87ca9f150befe1a39ce705ff1b))
+
+
+### 🚚 Chores
+
+* deps ([0a614e0](https://github.com/cossui-svelte/cossui-svelte/commit/0a614e0aa76044e89f4914c300c43ce278674dc9))
+* pnpm lock and versionrc ([8222103](https://github.com/cossui-svelte/cossui-svelte/commit/8222103e1c6e5d193cf60079dc1754c0a427d217))
+
 ## 0.9.4 (2026-07-09)
 
 
