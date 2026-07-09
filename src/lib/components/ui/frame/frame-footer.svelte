@@ -3,8 +3,7 @@
     import type { HTMLAttributes } from "svelte/elements";
     import { cn } from "$lib/utils";
 
-    // TODO extends React.ComponentProps<"footer">
-    interface Props extends HTMLAttributes<HTMLDivElement> {
+    interface Props extends HTMLAttributes<HTMLElement> {
         children?: Snippet;
     }
 

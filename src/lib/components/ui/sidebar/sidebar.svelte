@@ -1,10 +1,12 @@
 <script lang="ts">
-  import { Dialog } from "bits-ui";
   import type { Snippet } from "svelte";
   import type { HTMLAttributes } from "svelte/elements";
+  import {
+    DialogDescription,
+    DialogTitle,
+  } from "$lib/components/ui/dialog";
+  import { Sheet, SheetPopup } from "$lib/components/ui/sheet";
   import { cn } from "$lib/utils";
-  import Sheet from "../sheet/sheet.svelte";
-  import SheetPopup from "../sheet/sheet-popup.svelte";
   import { getSidebarContext } from "./sidebar-context.js";
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
@@ -51,7 +53,9 @@
       style="--sidebar-width: 18rem;"
     >
       <DialogTitle class="sr-only">Sidebar</DialogTitle>
-      <DialogDescription class="sr-only">Displays the mobile sidebar.</DialogDescription>
+      <DialogDescription class="sr-only"
+        >Displays the mobile sidebar.</DialogDescription
+      >
       <div class="flex h-full w-full flex-col">
         {@render children?.()}
       </div>

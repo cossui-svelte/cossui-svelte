@@ -22,8 +22,9 @@
 </script>
 
 <script lang="ts">
-	import type { ComponentProps } from "svelte";
-	import { Button } from "$lib/components/ui/button";
+	import type { Snippet } from "svelte";
+	import type { HTMLButtonAttributes } from "svelte/elements";
+	import { Button, type ButtonVariant } from "$lib/components/ui/button";
 	import { cn } from "$lib/utils";
 
 	let {
@@ -34,8 +35,13 @@
 		variant = "ghost",
 		size = "xs",
 		...restProps
-	}: Omit<ComponentProps<typeof Button>, "href" | "size"> & {
+	}: Omit<HTMLButtonAttributes, "type"> & {
+		ref?: HTMLElement | null;
+		type?: HTMLButtonAttributes["type"];
+		variant?: ButtonVariant;
 		size?: InputGroupButtonSize;
+		children?: Snippet;
+		loading?: boolean;
 	} = $props();
 </script>
 
