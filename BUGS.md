@@ -1,16 +1,17 @@
 * p-checkbox-group 3/4/5 create a recursive rendering issue
-* GROUP bug with menu '...'
-* PROGRESS with a simple value - does not work
 * IMPROVEMENT - Drawer nested, do not stack properly on top of each others, the position is off
 * Breadcrumb - ... is aligned, but it takes a hack
 * global.css seems off from the original code base
 * Form Controls need to be rethought - first then should apply to complex elements such as sliders and number fields, second the must handle defaultValue
-* tooltips
-* combobox multiple - when typing manually and there is a match, the matched content should disapear from the combo input
-* p-toogle-8 has an issue
 * Table - the outer table border should be darker
-* OTPField needs a size attribute
+* toast-12 13 have bugs
 
+* DONE tooltips
+* DONE GROUP bug with menu '...'
+* DONE PROGRESS with a simple value - does not work
+* DONE combobox multiple - when typing manually and there is a match, the matched content should disapear from the combo input
+* DONE p-toogle-8 has an issue
+* DONE OTPField needs a size attribute
 * DONE p-combobox-9 - duplication of content on compobox
 * DONE p-group-2 fails
 * DONE p-group-14 css issue
