@@ -61,7 +61,7 @@
     "build": "vite build",
     "cf:deploy": "pnpm run build && wrangler deploy",
     "cf:typegen": "wrangler types src/worker-configuration.d.ts",
-    "check": "svelte-kit sync && pnpx svelte-check --workspace .",
+    "check": "svelte-kit sync && svelte-check --workspace .",
     "commit": "tsx ./node_modules/cz-customizable/standalone.js",
     "dev": "vite",
     "format": "biome check . --fix",
