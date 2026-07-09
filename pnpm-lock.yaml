@@ -28,8 +28,8 @@ importers:
         specifier: ^3.12.2
         version: 3.12.2
       '@lucide/svelte':
-        specifier: ^1.23.0
-        version: 1.23.0(svelte@5.56.4)
+        specifier: ^1.24.0
+        version: 1.24.0(svelte@5.56.4)
       '@shikijs/langs':
         specifier: ^4.3.1
         version: 4.3.1
@@ -654,8 +654,8 @@ packages:
   '@lit/reactive-element@2.1.2':
     resolution: {integrity: sha512-pbCDiVMnne1lYUIaYNN5wrwQXDtHaYtg7YEFPeW+hws6U47WeFvISGUWekPGKWOP1ygrs0ef0o1VJMk1exos5A==}
 
-  '@lucide/svelte@1.23.0':
-    resolution: {integrity: sha512-3LQbKXx9vId6Nx4E2Nu2qwgJfdmr5+CVeVJbxe5cy+HcnCRd9QVVtZXqvgBYAV1OJrPmQAf9/3gJWLCpASC/Ng==}
+  '@lucide/svelte@1.24.0':
+    resolution: {integrity: sha512-yXwewA7ANQ5hfaSDrvsecosWjZn5RglzeXUZRSnxeANBskpNwblOkEJTqD0ujDdNKIKL8E9eVc2U/P3ziJr7OA==}
     peerDependencies:
       svelte: ^5
 
@@ -3311,7 +3311,7 @@ snapshots:
     dependencies:
       '@lit-labs/ssr-dom-shim': 1.6.0
 
-  '@lucide/svelte@1.23.0(svelte@5.56.4)':
+  '@lucide/svelte@1.24.0(svelte@5.56.4)':
     dependencies:
       svelte: 5.56.4
 
