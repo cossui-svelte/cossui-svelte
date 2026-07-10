@@ -133,7 +133,7 @@ const allComponents: RegistryUiData = {
     description: 'A chart component for visualizing data in various formats.',
     folder: 'chart',
     isnew: false,
-    istodo: true,
+    istodo: false,
     npmDependencies: [],
     registryDependencies: []
   },

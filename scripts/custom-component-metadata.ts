@@ -55,7 +55,6 @@ export const custom_components_metadata: RegistryUiData = {
 	chart: {
 		description: "A chart component for visualizing data in various formats.",
 		category: "shadcn-ui",
-		istodo: true
 	},
 	checkbox: {
 		description: "A control allowing the user to toggle between checked and not checked.",
