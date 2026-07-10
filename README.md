@@ -18,10 +18,6 @@ Along the way, I noticed that even Coss UI lacks some of the components found in
 
 ## Star History
 
-## Star History
-
-## Star History
-
 [![Star History Chart](https://api.star-history.com/chart?repos=cossui-svelte/cossui-svelte&type=date&legend=top-left&sealed_token=6_UYNKxcgUaJGjNL2rNTp_86ri5nOTsTcwjekEYrwRU_GFnHj7p_xL5ciFQsmYUOvajPQs74TzYGJjaTyDG2zp9pO9cvVtUaCHbYRHOzhYE6cq1X4Wgq0g)](https://www.star-history.com/?type=date&repos=cossui-svelte%2Fcossui-svelte)
 
 ## Contributors
