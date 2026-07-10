@@ -17,6 +17,7 @@
     unstyled = false,
     value = $bindable(),
     type,
+    autocomplete = "off",
     ...restProps
   }: Props = $props();
 
@@ -50,6 +51,7 @@
           bind:this={ref}
           bind:value
           {type}
+          {autocomplete}
           size={typeof size === "number" ? size : undefined}
           {...restProps}
           {...props}
@@ -63,6 +65,7 @@
       data-slot="input"
       bind:value
       {type}
+      {autocomplete}
       size={typeof size === "number" ? size : undefined}
       {...restProps}
     />

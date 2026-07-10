@@ -1,8 +1,7 @@
 <script lang="ts">
   import { z } from 'zod';
   import { Field, FieldDescription, FieldLabel } from '$lib/components/ui/field';
-  import { Fieldset } from '$lib/components/ui/fieldset';
-  import FieldsetLegend from '$lib/components/ui/fieldset/fieldset-legend.svelte';
+  import { Fieldset, FieldsetLegend } from '$lib/components/ui/fieldset';
   import { Form } from '$lib/components/ui/form';
   import { Input } from '$lib/components/ui/input';
   import { createForm } from '$lib/hooks/use-superform';
