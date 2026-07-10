@@ -29,6 +29,7 @@
     "commit-and-tag-version": "^12.7.3",
     "cz-customizable": "^7.5.4",
     "d3-scale": "^4.0.2",
+    "d3-shape": "^3.2.0",
     "husky": "^9.1.7",
     "inputmask": "^5.0.9",
     "layerchart": "^2.0.1",

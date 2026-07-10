@@ -289,11 +289,67 @@ export const custom_particle_metadata = {
     tags: ['cropper']
   },
   'p-chart-1': {
-    description: 'Crops images to a specific aspect ratio and size',
+    description: 'Radial Chart with Labels',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
     registryDependencies: ['chart'],
     tags: ['chart']
   },
+  'p-chart-2': {
+    description: 'Radial Chart with Text',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['chart'],
+    tags: ['chart']
+  },
+  'p-chart-3': {
+    description: 'Radial Chart - Stacked',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['chart'],
+    tags: ['chart']
+  },
+  'p-chart-4': {
+    description: 'Radar Chart - Custom Labelp',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['chart'],
+    tags: ['chart']
+  },
+  'p-chart-5': {
+    description: 'Area Chart - Axes',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['chart'],
+    tags: ['chart']
+  },
+  'p-chart-6': {
+    description: 'Line Chart with Labels',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['chart'],
+    tags: ['chart']
+  },
+  'p-chart-7': {
+    description: 'Pie Chart - Interactive',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['chart'],
+    tags: ['chart']
+  },
+  'p-chart-8': {
+    description: 'Pie Chart - Custom Label',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['chart'],
+    tags: ['chart']
+  },
+
+  'p-chart-9': {
+    description: 'Bar Chart - Multiple',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['chart'],
+    tags: ['chart']
+  },
+  'p-chart-10': {
+    description: 'Bar Chart - Horizontal Mixed',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['chart'],
+    tags: ['chart']
+  },
+
   'p-link-preview-1': {
     description: 'A component that displays a preview of a link on mouse hover',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },

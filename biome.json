@@ -16,7 +16,7 @@
           }
         },
         "useSortedInterfaceMembers": "on",
-        "useSortedKeys": "on"
+        "useSortedKeys": "off"
       }
     },
     "enabled": true

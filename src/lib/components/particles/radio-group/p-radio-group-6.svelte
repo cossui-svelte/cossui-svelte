@@ -103,7 +103,7 @@
       >
       <RadioGroup bind:value={$form.theme} class="flex-row gap-4">
         {#each items as item (item.value)}
-          <FieldItem key={item.value}>
+          <FieldItem>
             <FieldLabel class="cursor-pointer flex-col">
               <Radio class="peer sr-only absolute" value={item.value} />
               <span
