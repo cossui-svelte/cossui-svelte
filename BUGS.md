@@ -3,9 +3,12 @@
 * global.css seems off from the original code base
 * Form Controls need to be rethought - first then should apply to complex elements such as sliders and number fields, second the must handle defaultValue
 * Table - the outer table border should be darker
-* toast-12 13 have bugs
-* Issue with particule generation script, the meta.class is not copied over
 
+* Issue with particule generation script, the meta.class is not copied over
+* add the bundle version in the footer
+
+* DONE toast-12 13 have bugs
+* DONE p-radio-group-6 bugs
 * DONE Breadcrumb - ... is aligned, but it takes a hack
 * DONE p-checkbox-group 3/4/5 create a recursive rendering issue
 * DONE tooltips
