@@ -78,5 +78,5 @@
     "release:dry": "commit-and-tag-version --dry-run"
   },
   "type": "module",
-  "version": "0.9.5"
+  "version": "0.9.6"
 }

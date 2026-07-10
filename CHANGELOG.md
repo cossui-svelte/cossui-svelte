@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.9.6](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.5...v0.9.6) (2026-07-10)
+
+
+### ✨ Features
+
+* add the version in the footer ([76ba407](https://github.com/cossui-svelte/cossui-svelte/commit/76ba407a328fc049489500099b953a81e16240cc))
+* chart component; taken from shadcn-svelte. ty ([3f71071](https://github.com/cossui-svelte/cossui-svelte/commit/3f710714473d8b0906824d0111d35762f61f8575))
+
+
+### 🐛 Bug Fixes
+
+* chart is completed ([c7cc2fd](https://github.com/cossui-svelte/cossui-svelte/commit/c7cc2fd5e103ab5548009c0afea27b6528e13141))
+* default autocomplete to off ([08251d9](https://github.com/cossui-svelte/cossui-svelte/commit/08251d91308e73d2092b6bc17a6bcc2c69141848))
+* p-toggle-group default value ([8eee74c](https://github.com/cossui-svelte/cossui-svelte/commit/8eee74c36fe47c94a757227e13917bcc61ce4073))
+* radio-group-6 ([e0959fc](https://github.com/cossui-svelte/cossui-svelte/commit/e0959fc3e0aa6fa0a90047e4acf46b08b20cd078))
+
+
+### 📝 Documentation
+
+* bugs update ([aa586f5](https://github.com/cossui-svelte/cossui-svelte/commit/aa586f5cfbd9c61a664d6126713092bcedfdb521))
+* update bugs status ([0d04c1a](https://github.com/cossui-svelte/cossui-svelte/commit/0d04c1a3ad54accffdbcd4ac202b3f27a2254a06))
+
+
+### 🚚 Chores
+
+* deps + relax formatting policy ([fb6eb49](https://github.com/cossui-svelte/cossui-svelte/commit/fb6eb491ba4e2d74dc7cdf1005dbff444116380c))
+
 ## [0.9.5](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.4...v0.9.5) (2026-07-09)
 
 
