@@ -1,5 +1,5 @@
 <script lang="ts">
-  // No script needed for this component
+  const version = __APP_VERSION__;
 </script>
 
 <footer
@@ -22,6 +22,7 @@
       – open source, open heart, open mind.
     </p>
     <p class="italic">
+    v{version}, 
       This project is not affiliated with coss.com. <a
         class="font-heading text-foreground"
         href="/credits">full credits</a

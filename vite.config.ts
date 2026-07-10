@@ -7,6 +7,7 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import tailwindcss from '@tailwindcss/vite';
 // import { visualizer } from 'rollup-plugin-visualizer';
 import { createLogger, defineConfig } from 'vite';
+import pkg from './package.json' with { type: 'json' };
 
 const logger = createLogger();
 const loggerWarn = logger.warn.bind(logger);
@@ -32,6 +33,9 @@ export default defineConfig({
     }
   },
   customLogger: logger,
+  define: {
+    __APP_VERSION__: JSON.stringify(pkg.version)
+  },
   esbuild: {
     legalComments: 'none'
   },
