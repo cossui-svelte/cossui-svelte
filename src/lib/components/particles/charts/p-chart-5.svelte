@@ -21,7 +21,7 @@
 </script>
 
 
-		<Chart config={chartConfig} class="flex-1 p-6 mx-auto max-h-[250px]">
+		<Chart config={chartConfig} class="grow p-6 h-87.5">
 			<AreaChart
 				data={chartData}
 				x="date"

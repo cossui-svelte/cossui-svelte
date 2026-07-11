@@ -18,7 +18,7 @@
     } satisfies ChartConfig;
 </script>
 
-<Chart config={chartConfig} class="flex-1 p-8 mx-auto aspect-square max-h-[250px]">
+<Chart config={chartConfig} class="grow p-8 h-87.5">
     <LineChart
         points={{ r: 4 }}
         labels={{ offset: 12 }}

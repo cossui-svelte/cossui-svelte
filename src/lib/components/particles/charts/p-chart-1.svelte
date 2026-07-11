@@ -25,7 +25,7 @@
 	} satisfies ChartConfig;
 </script>
 
-<Chart config={chartConfig} class="flex-1 p-4 aspect-square max-h-[250px]">
+<Chart config={chartConfig} class="grow p-2 h-87.5">
 	<ArcChart
 		label="browser"
 		value="visitors"

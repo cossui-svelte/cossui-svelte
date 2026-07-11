@@ -31,7 +31,7 @@
     const months = $derived(desktopData.map((item) => item.month));
 </script>
 
-<Chart {id} config={chartConfig} class="flex-1 p-4 mx-auto aspect-square max-h-[250px]">
+<Chart {id} config={chartConfig} class="grow p-4 h-87.5">
     <PieChart
         data={desktopData}
         label="month"

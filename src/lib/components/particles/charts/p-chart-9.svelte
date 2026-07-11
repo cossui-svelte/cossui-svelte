@@ -20,7 +20,7 @@
 </script>
 
 
-    <Chart config={chartConfig} class="flex-1 p-12 mx-auto aspect-square max-h-[250px]">
+    <Chart config={chartConfig} class="grow p-12 h-87.5">
       <BarChart
         data={chartData}
         xScale={scaleBand().padding(0.25)}

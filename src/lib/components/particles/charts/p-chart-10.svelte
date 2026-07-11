@@ -22,7 +22,7 @@
     } satisfies ChartConfig;
 </script>
 
-<Chart config={chartConfig} class="flex-1 p-12 mx-auto"> ">
+<Chart config={chartConfig} class="grow p-12 h-87.5">
     <BarChart
         data={chartData}
         orientation="horizontal"
