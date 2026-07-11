@@ -222,6 +222,48 @@ export const custom_particle_metadata = {
     registryDependencies: ['tree'],
     tags: ['tree']
   },
+  'p-tree-2': {
+    description: 'Basic tree with vertical lines',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['tree'],
+    tags: ['tree']
+  },
+  'p-tree-3': {
+    description: 'Basic tree with icons',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['tree'],
+    tags: ['tree']
+  },
+  'p-tree-4': {
+    description: 'Basic tree with caret icon on the right',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['tree'],
+    tags: ['tree']
+  },
+  'p-tree-5': {
+    description: 'Tree with multi-select and drag and drop',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['tree'],
+    tags: ['tree']
+  },
+  'p-tree-6': {
+    description: 'Tree with renaming (press F2 to rename)',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['tree'],
+    tags: ['tree']
+  },
+  'p-tree-7': {
+    description: 'Tree with search highlight',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['tree', 'input'],
+    tags: ['tree']
+  },
+  'p-tree-8': {
+    description: 'Tree with filtering',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['tree', 'input'],
+    tags: ['tree']
+  },
   'p-cropper-1': {
     description: 'Crops images to a specific aspect ratio and size',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },

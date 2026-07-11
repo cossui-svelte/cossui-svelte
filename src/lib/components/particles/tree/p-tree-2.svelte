@@ -1,5 +1,4 @@
 <script lang="ts">
-	import type { ItemInstance } from '@headless-tree/core';
 	import { hotkeysCoreFeature, syncDataLoaderFeature } from '@headless-tree/core';
 	import { Tree, TreeItem, TreeLabel, useTree } from '$lib/components/ui/tree';
 
@@ -41,54 +40,54 @@
 
 	const tree = useTree<Item>({
 		dataLoader: {
-			getChildren: (itemId: string) => items[itemId].children ?? [],
-			getItem: (itemId: string) => items[itemId]
+			getChildren: (itemId) => items[itemId].children ?? [],
+			getItem: (itemId) => items[itemId]
 		},
 		features: [syncDataLoaderFeature, hotkeysCoreFeature],
-		getItemName: (item: ItemInstance<Item>) => item.getItemData().name,
+		getItemName: (item) => item.getItemData().name,
 		indent,
 		initialState: {
 			expandedItems: ['engineering', 'frontend', 'design-system']
 		},
-		isItemFolder: (item: ItemInstance<Item>) => (item.getItemData()?.children?.length ?? 0) > 0,
+		isItemFolder: (item) => (item.getItemData()?.children?.length ?? 0) > 0,
 		rootItemId: 'company'
 	});
 </script>
 
 <div class="flex h-full flex-col gap-2 *:first:grow">
-	<Tree
-		class="relative before:absolute before:inset-0 before:-ms-1 before:bg-[repeating-linear-gradient(to_right,transparent_0,transparent_calc(var(--tree-indent)-1px),var(--border)_calc(var(--tree-indent)-1px),var(--border)_calc(var(--tree-indent)))]"
-		{indent}
-		{tree}
-	>
-		{#each tree.current.getItems() as item (item.getId())}
-			<TreeItem {item}>
-				<TreeLabel
-					class="before:bg-background relative before:absolute before:inset-x-0 before:-inset-y-0.5 before:-z-10"
-				>
-					{item.getItemData().name}
-				</TreeLabel>
-			</TreeItem>
-		{/each}
-	</Tree>
-	<p aria-live="polite" role="region" class="text-muted-foreground mt-2 text-xs">
-		Basic tree with no extra features ∙
-		<a
-			href="https://headless-tree.lukasbach.com"
-			class="hover:text-foreground underline"
-			target="_blank"
-			rel="noopener noreferrer"
+	<div>
+		<Tree
+			class="relative before:absolute before:inset-0 before:-ms-1 before:bg-[repeating-linear-gradient(to_right,transparent_0,transparent_calc(var(--tree-indent)-1px),hsl(var(--border))_calc(var(--tree-indent)-1px),hsl(var(--border))_calc(var(--tree-indent)))]"
+			{indent}
+			{tree}
 		>
-			Headless Tree
-		</a>
-		∙
-		<a
-			href="https://github.com/max-got/originui-svelte/blob/main/src/lib/components/ui/tree/use-tree.svelte.ts"
-			class="hover:text-foreground underline"
-			target="_blank"
-			rel="noopener noreferrer"
-		>
-			Svelte Integration
-		</a>
-	</p>
+			{#each tree.current.getItems() as item (item.getId())}
+				<TreeItem {item}>
+					<TreeLabel
+						class="before:bg-background relative before:absolute before:inset-x-0 before:-inset-y-0.5 before:-z-10"
+					/>
+				</TreeItem>
+			{/each}
+		</Tree>
+		<p aria-live="polite" role="region" class="text-muted-foreground mt-2 text-xs">
+			Basic tree with vertical lines ∙
+			<a
+				href="https://headless-tree.lukasbach.com"
+				class="hover:text-foreground underline"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				Headless Tree
+			</a>
+			∙
+			<a
+				href="https://github.com/max-got/originui-svelte/blob/main/src/lib/components/ui/tree/use-tree.svelte.ts"
+				class="hover:text-foreground underline"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				Svelte Integration
+			</a>
+		</p>
+	</div>
 </div>

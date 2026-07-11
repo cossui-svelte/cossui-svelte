@@ -280,8 +280,7 @@ export const custom_components_metadata: RegistryUiData = {
 	},
 	tree: {
 		description: "A component for displaying a hierarchical tree of items.",
-		category: "origin-ui",
-		istodo: true
+		category: "origin-ui"
 	}
 };
 

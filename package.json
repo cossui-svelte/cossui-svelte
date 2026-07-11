@@ -33,11 +33,13 @@
     "husky": "^9.1.7",
     "inputmask": "^5.0.9",
     "layerchart": "^2.0.1",
+    "runed": "0.37.1",
     "shiki": "^4.3.1",
     "svelte-check": "^4.7.2",
     "svelte-remix": "^3.0.1",
     "svelte-tel-input": "^4.3.1",
     "svelte-toolbelt": "^0.10.6",
+    "@headless-tree/core": "^1.7.0",
     "sveltekit-superforms": "^2.30.2",
     "tailwind-merge": "^3.6.0",
     "tailwind-variants": "^3.2.2",
@@ -51,7 +53,7 @@
   },
   "license": "MIT",
   "name": "coss-ui-svelte",
-  "packageManager": "pnpm@10.34.4",
+  "packageManager": "pnpm@10.34.5",
   "peerDependencies": {
     "svelte": "^5.56.4"
   },
