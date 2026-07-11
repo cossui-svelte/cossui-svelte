@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.9.7](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.6...v0.9.7) (2026-07-11)
+
+
+### ✨ Features
+
+* tree ([06e5d9c](https://github.com/cossui-svelte/cossui-svelte/commit/06e5d9ca1f8eba99d2a514a41a23d8ba213c183e))
+
+
+### 🚚 Chores
+
+* cosmetics ([bee8e49](https://github.com/cossui-svelte/cossui-svelte/commit/bee8e49956548d3a3f63092a6af163d4b6ace1b8))
+
 ## [0.9.6](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.5...v0.9.6) (2026-07-10)
 
 
