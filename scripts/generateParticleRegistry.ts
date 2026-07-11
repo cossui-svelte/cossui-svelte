@@ -4,7 +4,7 @@ import path from 'node:path';
 import cossuiRegistry from './registry.json' with { type: 'json' };
 import { custom_particle_metadata } from './custom-particule-metadata'
 
-const OUTPUT = path.resolve('src/lib/registry/generated-metadata.ts');
+const OUTPUT = path.resolve('src/lib/registry/generated-particle-metadata.ts');
 
 interface RegistryItem {
   name: string;

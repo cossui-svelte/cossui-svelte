@@ -529,7 +529,7 @@ const allComponents: RegistryUiData = {
     description: 'A loading state skeleton for your components.',
     folder: 'skeleton',
     isnew: false,
-    istodo: true,
+    istodo: false,
     npmDependencies: [],
     registryDependencies: []
   },

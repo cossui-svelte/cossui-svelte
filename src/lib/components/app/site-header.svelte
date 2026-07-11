@@ -3,7 +3,8 @@
   import GithubLink from "./github-link.svelte";
   import ModeSwitcher from "./mode-switcher.svelte";
   import ProductLabel from "./product-label.svelte";
-  import ProductsDropdown from "./products-dropdown.svelte";
+
+  // import ProductsDropdown from "./products-dropdown.svelte";
 
   interface ProductItem {
     href: string;
@@ -39,7 +40,7 @@
     </div>
     <div class="ms-auto flex items-center gap-2 md:flex-1 md:justify-end">
       {@render children?.()}
-      <ProductsDropdown items={products} />
+      <!-- <ProductsDropdown items={products} /> -->
       <GithubLink />
       <ModeSwitcher />
     </div>

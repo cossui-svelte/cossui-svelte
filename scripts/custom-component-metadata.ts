@@ -224,7 +224,6 @@ export const custom_components_metadata: RegistryUiData = {
 	skeleton: {
 		description: "A loading state skeleton for your components.",
 		category: "ui",
-		istodo: true
 	},
 	slider: {
 		description: "An input where the user selects a value from within a given range.",

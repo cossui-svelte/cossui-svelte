@@ -1,5 +1,5 @@
 import type { Component } from 'svelte';
-import { metadata } from './generated-metadata';
+import { metadata } from './generated-particle-metadata';
 
 // this one is typically done by hand
 export type ParticleMetaDefinition = {

@@ -2,11 +2,10 @@
 * IMPROVEMENT - Drawer nested, do not stack properly on top of each others, the position is off
 * global.css seems off from the original code base
 * Form Controls need to be rethought - first then should apply to complex elements such as sliders and number fields, second the must handle defaultValue
-* Table - the outer table border should be darker
-
 * Issue with particule generation script, the meta.class is not copied over
 * add the bundle version in the footer
 
+* DONE Not a bug, Table - the outer table border should be darker
 * DONE toast-12 13 have bugs
 * DONE p-radio-group-6 bugs
 * DONE Breadcrumb - ... is aligned, but it takes a hack
@@ -40,6 +39,8 @@ TODO:
 
 * bring these INPUT particules  https://github.com/max-got/originui-svelte/pull/74/changes#diff-6fba7ce7af673abb0664807b5dd0eedd11491641888296d9a0ee99d431c779b7
 * check for any origin particule with no coosui equivalent
+* bring tree & tanstack tables
+* bring file upload
 
 to port from origin -
 
