@@ -28,7 +28,6 @@
     title,
     html,
     copyButton = true,
-    showLineNumbers = true,
   }: Props = $props();
 
   let isCopied = $state(false);

@@ -1,7 +1,7 @@
 <script lang="ts">
   import Ellipsis from "@lucide/svelte/icons/ellipsis";
   import { Badge } from "$lib/components/ui/badge";
-  import { Button, buttonVariants } from "$lib/components/ui/button";
+  import { buttonVariants } from "$lib/components/ui/button";
   import {
     InputGroup,
     InputGroupAddon,

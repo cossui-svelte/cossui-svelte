@@ -21,7 +21,7 @@
 	let drawerName = $state<string>("");
 	// let sourceFile = $state<string | null>(null);
 
-	async function viewSource(file: string, name: string) {
+	async function viewSource(_file: string, name: string) {
 		if (drawerOpen /*&& sourceFile === file*/) {
 			closeDrawer();
 			return;
@@ -90,17 +90,15 @@
 		</div>
 	{/snippet}
 
-	{#snippet children()}
-		<div
-			data-particle
-			data-slot="preview"
-			class="flex items-center justify-center"
-		>
-			{#await particle.component()}
-				<Spinner />
-			{:then { default: Comp }}
-				<Comp />
-			{/await}
-		</div>
-	{/snippet}
+	<div
+		data-particle
+		data-slot="preview"
+		class="flex items-center justify-center"
+	>
+		{#await particle.component()}
+			<Spinner />
+		{:then { default: Comp }}
+			<Comp />
+		{/await}
+	</div>
 </ParticleCardContainer>

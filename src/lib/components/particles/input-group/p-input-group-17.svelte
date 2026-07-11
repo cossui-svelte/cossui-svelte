@@ -1,7 +1,7 @@
 <script lang="ts">
   import ArrowUp from "@lucide/svelte/icons/arrow-up";
   import Plus from "@lucide/svelte/icons/plus";
-  import { Button, buttonVariants } from "$lib/components/ui/button";
+  import { buttonVariants } from "$lib/components/ui/button";
   import {
     InputGroup,
     InputGroupAddon,

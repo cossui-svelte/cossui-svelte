@@ -12,7 +12,7 @@
   import SiteHeader from "$lib/components/app/app-site-header.svelte";
   import SiteFooter from "$lib/components/app/site-footer.svelte";
 
-  let { children, data }: { children: Snippet; data: LayoutData } = $props();
+  let { children, data: _data }: { children: Snippet; data: LayoutData } = $props();
 </script>
 
 <svelte:head>

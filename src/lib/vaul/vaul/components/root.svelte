@@ -30,7 +30,6 @@
 		states: { activeSnapPoint: localActiveSnapPoint, isOpen },
 		methods: { closeDrawer, openDrawer, cleanup },
 		updateOption,
-		// svelte-ignore state_referenced_locally
 	} = setCtx({
 		backgroundColor,
 		closeThreshold,

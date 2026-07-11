@@ -1,4 +1,4 @@
-<script lang="ts" generics="T extends Record<string, unknown>">
+<script lang="ts">
   import type { ComponentProps, Snippet } from "svelte";
   import { Fieldset } from "$lib/formsnap";
   import { uid } from "$lib/hooks/use-uid";

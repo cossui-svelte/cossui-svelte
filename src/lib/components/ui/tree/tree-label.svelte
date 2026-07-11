@@ -6,7 +6,6 @@
 	import { cn } from '$lib/utils';
 	import { useTreeContext } from './tree-context.svelte';
 
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	interface TreeItemLabelProps<T = unknown> extends HTMLAttributes<HTMLElement> {
 		item?: ItemInstance<T>;
 	}
@@ -30,7 +29,7 @@
 	<span
 		data-slot="tree-item-label"
 		class={cn(
-			'bg-background hover:bg-accent data-[selected=true]:bg-accent group-data-[selected=true]/tree-item:text-accent-foreground flex items-center gap-1 rounded-sm ps-7 pe-2 py-1.5  text-sm transition-colors [&_svg]:pointer-events-none [&_svg]:shrink-0',
+			'bg-background hover:bg-accent data-[selected=true]:bg-accent group-data-[selected=true]/tree-item:text-accent-foreground flex items-center gap-1 rounded-sm ps-7 pe-2 py-1.5 text-sm transition-colors [&_svg]:pointer-events-none [&_svg]:shrink-0',
 			'group-data-[drag-target=true]/tree-item:bg-accent group-data-[selected=true]/tree-item:bg-accent group-data-[search-match=true]/tree-item:bg-blue-400/20',
 			'group-focus-visible/tree-item:ring-ring/50 group-focus-visible/tree-item:ring-[3px] group-focus-visible/tree-item:outline-none',
 			className

@@ -3,7 +3,7 @@
   import { cn } from "$lib/utils";
   import { getSidebarContext } from "./sidebar-context.js";
 
-  interface Props extends HTMLButtonAttributes {}
+  type Props = HTMLButtonAttributes;
 
   let { class: className, ...restProps }: Props = $props();
 

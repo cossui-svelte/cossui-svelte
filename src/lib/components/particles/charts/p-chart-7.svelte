@@ -27,8 +27,6 @@
     const activeIndex = $derived(
         desktopData.findIndex((item) => item.month === activeMonth),
     );
-
-    const months = $derived(desktopData.map((item) => item.month));
 </script>
 
 <Chart {id} config={chartConfig} class="grow p-4 h-87.5">

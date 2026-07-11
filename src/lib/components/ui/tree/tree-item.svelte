@@ -8,7 +8,6 @@
 	import TreeContextProvider from './tree-context-provider.svelte';
 	import type { ReactiveItemInstance } from './use-tree.svelte';
 
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	interface TreeItemProps<T = unknown> extends HTMLAttributes<HTMLElement> {
 		child?: Snippet<[{ props: HTMLAttributes<HTMLElement> }]>;
 		indent?: number;

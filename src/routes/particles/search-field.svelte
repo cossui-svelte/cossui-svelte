@@ -145,13 +145,11 @@
 						>
 						{#each groupedItems.enabled as item (item.value)}
 							<ComboboxItem value={item.value} label={item.label}>
-								{#snippet children()}
-									<Tag
-										class="size-3.5 opacity-80"
-										strokeWidth={2}
-									/>
-									{item.label}
-								{/snippet}
+								<Tag
+									class="size-3.5 opacity-80"
+									strokeWidth={2}
+								/>
+								{item.label}
 							</ComboboxItem>
 						{/each}
 					</ComboboxGroup>
@@ -167,13 +165,11 @@
 								label={item.label}
 								disabled
 							>
-								{#snippet children()}
-									<Tag
-										class="size-3.5 opacity-80"
-										strokeWidth={2}
-									/>
-									{item.label}
-								{/snippet}
+								<Tag
+									class="size-3.5 opacity-80"
+									strokeWidth={2}
+								/>
+								{item.label}
 							</ComboboxItem>
 						{/each}
 					</ComboboxGroup>

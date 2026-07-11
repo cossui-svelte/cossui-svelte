@@ -4,7 +4,6 @@
   import CodeCollapsibleWrapper from "$lib/components/app/code-collapsible-wrapper.svelte";
   import { cn } from "$lib/utils";
   import type { SourceResponse } from "../../../routes/api/source/[file]/+server";
-  import { browser } from "$app/environment";
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
     class?: string;

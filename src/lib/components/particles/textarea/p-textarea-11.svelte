@@ -34,7 +34,7 @@
       placeholder="Type your message here"
     />
     <FieldDescription>
-      <span class="tabular-nums">{maxlength - value.length}</span>{" "}
+      <span class="tabular-nums">{maxlength - value.length}</span>
       characters left
     </FieldDescription>
   </Field>

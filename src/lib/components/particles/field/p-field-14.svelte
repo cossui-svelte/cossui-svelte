@@ -1,7 +1,7 @@
 <script lang="ts">
   import { z } from 'zod';
   import { Button } from '$lib/components/ui/button';
-  import { Field, FieldDescription, FieldItem, FieldLabel } from '$lib/components/ui/field';
+  import { FieldDescription, FieldItem, FieldLabel } from '$lib/components/ui/field';
   import { Fieldset, FieldsetLegend } from '$lib/components/ui/fieldset';
   import { Form } from '$lib/components/ui/form';
   import { Radio, RadioGroup } from '$lib/components/ui/radio-group';

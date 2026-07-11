@@ -9,7 +9,7 @@
     class: className,
     children,
     superform,
-    onsubmit,
+    onsubmit: _onsubmit,
     ...restProps
   }: WithElementRef<
     HTMLFormAttributes & {

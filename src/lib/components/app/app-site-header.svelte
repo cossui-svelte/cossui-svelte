@@ -1,7 +1,6 @@
 <script lang="ts">
   import { Button } from "$lib/components/ui/button";
   import { Separator } from "$lib/components/ui/separator";
-  import CommandMenu from "./command-menu.svelte";
   import MainNav from "./main-nav.svelte";
   import SiteHeaderBase from "./site-header.svelte";
 
@@ -37,7 +36,6 @@
 
   let {
     navItems = [],
-    tree,
     currentProduct = "ui",
     products = [],
   }: Props = $props();

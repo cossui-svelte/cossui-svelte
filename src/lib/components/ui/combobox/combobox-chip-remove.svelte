@@ -3,7 +3,7 @@
   import type { HTMLButtonAttributes } from "svelte/elements";
   import { cn } from "$lib/utils";
 
-  interface Props extends HTMLButtonAttributes {}
+  type Props = HTMLButtonAttributes;
 
   let { class: className, ...restProps }: Props = $props();
 </script>
