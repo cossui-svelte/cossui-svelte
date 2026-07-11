@@ -102,24 +102,5 @@
 			{/each}
 		</Tree>
 	</div>
-	<p aria-live="polite" role="region" class="text-muted-foreground mt-2 text-xs">
-		Tree with renaming (press F2 to rename) ∙
-		<a
-			href="https://headless-tree.lukasbach.com"
-			class="hover:text-foreground underline"
-			target="_blank"
-			rel="noopener noreferrer"
-		>
-			Headless Tree
-		</a>
-		∙
-		<a
-			href="https://github.com/max-got/originui-svelte/blob/main/src/lib/components/ui/tree/use-tree.svelte.ts"
-			class="hover:text-foreground underline"
-			target="_blank"
-			rel="noopener noreferrer"
-		>
-			Svelte Integration
-		</a>
-	</p>
+
 </div>

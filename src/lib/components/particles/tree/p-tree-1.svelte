@@ -71,24 +71,4 @@
 			</TreeItem>
 		{/each}
 	</Tree>
-	<p aria-live="polite" role="region" class="text-muted-foreground mt-2 text-xs">
-		Basic tree with no extra features ∙
-		<a
-			href="https://headless-tree.lukasbach.com"
-			class="hover:text-foreground underline"
-			target="_blank"
-			rel="noopener noreferrer"
-		>
-			Headless Tree
-		</a>
-		∙
-		<a
-			href="https://github.com/max-got/originui-svelte/blob/main/src/lib/components/ui/tree/use-tree.svelte.ts"
-			class="hover:text-foreground underline"
-			target="_blank"
-			rel="noopener noreferrer"
-		>
-			Svelte Integration
-		</a>
-	</p>
 </div>

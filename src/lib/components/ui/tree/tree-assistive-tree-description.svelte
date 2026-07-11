@@ -40,7 +40,7 @@
 				return itemNames
 					? `Dragging ${itemNames}. Current position: ${position}. ${navGuide}`
 					: `Current position: ${position}. ${navGuide}`;
-			case AssistiveDndState.None:
+			// case AssistiveDndState.None:
 			default:
 				return `Press ${hotkeys.startDrag.hotkey} to move selected items`;
 		}

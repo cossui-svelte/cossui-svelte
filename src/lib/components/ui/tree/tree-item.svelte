@@ -9,7 +9,7 @@
 	import type { ReactiveItemInstance } from './use-tree.svelte';
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	interface TreeItemProps<T = any> extends HTMLAttributes<HTMLElement> {
+	interface TreeItemProps<T = unknown> extends HTMLAttributes<HTMLElement> {
 		child?: Snippet<[{ props: HTMLAttributes<HTMLElement> }]>;
 		indent?: number;
 		item: ReactiveItemInstance<T>;
@@ -60,11 +60,14 @@
 	});
 </script>
 
-<TreeContextProvider currentItem={item} indent={treeContext.indent}>
+<TreeContextProvider
+	currentItem={item as unknown as ReactiveItemInstance<unknown>}
+	indent={treeContext.indent}
+>
 	{#if child}
 		{@render child({ props: mergedProps })}
 	{:else}
-		<button {...mergedProps}>
+		<button type="button" {...mergedProps}>
 			{@render children?.()}
 		</button>
 	{/if}

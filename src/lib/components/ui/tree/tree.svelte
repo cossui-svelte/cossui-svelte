@@ -15,7 +15,7 @@
 
 	treeContext.set({
 		indent,
-		tree: tree
+		tree: tree as unknown as ReactiveTree<unknown> | undefined
 	});
 
 	const containerProps = $derived.by(() =>

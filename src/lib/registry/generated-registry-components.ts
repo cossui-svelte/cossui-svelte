@@ -680,7 +680,7 @@ const allComponents: RegistryUiData = {
     description: 'A component for displaying a hierarchical tree of items.',
     folder: 'tree',
     isnew: false,
-    istodo: true,
+    istodo: false,
     npmDependencies: [],
     registryDependencies: []
   }

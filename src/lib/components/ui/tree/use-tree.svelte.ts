@@ -87,7 +87,7 @@ type ReactiveItemInstance<T> = ItemInstance<T> & {
 };
 
 export class ReactiveTree<T> {
-  #tree = $state.raw<TreeInstance<T>>()!;
+  #tree = $state.raw<TreeInstance<T>>() as TreeInstance<T>;
   #subscribe: () => void;
   #itemProxies = new WeakMap<ItemInstance<T>, ReactiveItemInstance<T>>();
 
@@ -143,8 +143,9 @@ export class ReactiveTree<T> {
 
   // Create a reactive proxy for an item instance
   #createReactiveItemProxy(item: ItemInstance<T>): ReactiveItemInstance<T> {
-    if (this.#itemProxies.has(item)) {
-      return this.#itemProxies.get(item)!;
+    const existingProxy = this.#itemProxies.get(item);
+    if (existingProxy) {
+      return existingProxy;
     }
 
     const proxy = new Proxy(item, {
