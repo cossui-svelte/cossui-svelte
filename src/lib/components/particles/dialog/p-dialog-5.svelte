@@ -16,7 +16,7 @@
   <DialogTrigger class={buttonVariants({ variant: "outline" })}>
     Terms &amp; Conditions
   </DialogTrigger>
-  <DialogPopup class="sm:max-w-md" showCloseButton={false}>
+  <DialogPopup class="max-h-[85vh] sm:max-w-md" showCloseButton={false}>
     <DialogHeader>
       <DialogTitle>Terms &amp; Conditions</DialogTitle>
     </DialogHeader>
