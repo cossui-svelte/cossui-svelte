@@ -8,7 +8,22 @@ const config = {
     'src/lib/varsel/**': ['exports', 'types', 'files'],
     'src/lib/vaul/**': ['exports', 'types', 'files']
   },
-
+  "entry": [
+    "src/routes/+layout.ts",
+    "src/routes/+layout.server.ts",
+    "src/routes/+page.ts",
+    "src/routes/+page.svelte",
+    "src/routes/+page.server.ts",
+    "src/hooks.server.ts"
+  ],
+  "ignoreDependencies": [
+    "@sveltejs/adapter-auto",
+    "@sveltejs/adapter-cloudflare",
+    "@sveltejs/kit"
+  ],
+  "ignoreUnresolved": [
+    "./$types"
+  ],
   paths: {
     '$assets/*': ['./src/lib/assets'],
     '$data/*': ['./src/lib/data'],
