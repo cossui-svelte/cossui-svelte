@@ -422,4 +422,10 @@ export const custom_particle_metadata = {
     registryDependencies: ['input', 'label'],
     tags: ['input', 'credit-card']
   },
+    'p-input-147': {
+    description: 'Phone number input with country code selection and auto-formatting',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['input', 'label'],
+    tags: ['input', 'phone', 'tel']
+  },
 }

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { resolve } from "$app/paths";
   import { Badge } from "$lib/components/ui/badge";
   import { Button } from "$lib/components/ui/button";
   import {
@@ -30,14 +31,16 @@
   slug: string,
   meta: RegistryUIEntry
 )}
-  {@const href = `particles?tags=${slug}`}
   <CardFrame
     class="after:-inset-1.25 after:-z-1 w-full after:pointer-events-none after:absolute after:rounded-[calc(var(--radius-xl)+4px)] after:border after:border-border/64"
   >
     <CardFrameHeader class="static grid grid-rows-[auto_1fr]">
       <CardFrameTitle class="font-heading text-base">
         <h2>
-          <a class="before:absolute before:inset-0" {href}>{meta.name}</a>
+          <a
+            class="before:absolute before:inset-0"
+            href={`${resolve("/particles")}?tags=${slug}`}
+          >{meta.name}</a>
         </h2>
       </CardFrameTitle>
       <CardFrameDescription class="line-clamp-2 sm:h-[2lh]">
@@ -70,10 +73,10 @@
     <PageHeaderDescription>{description}</PageHeaderDescription>
     <div class="mt-2 flex gap-2">
       <Button size="lg">
-        <a href="/docs">Get started</a>
+        <a href={resolve("/docs")}>Get started</a>
       </Button>
       <Button size="lg" variant="outline">
-        <a href="/particles">Browse {particleCount} particles</a>
+        <a href={resolve("/particles")}>Browse {particleCount} particles</a>
       </Button>
     </div>
   </PageHeader>
@@ -90,7 +93,7 @@
     <div
       class="grid gap-6 pt-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 xl:grid-cols-4"
     >
-      {#each Object.entries(allComponents) as [id, meta]}
+      {#each Object.entries(allComponents) as [id, meta] (id)}
         {@render categoryCard(id, meta)}
       {/each}
     </div>

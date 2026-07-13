@@ -19,7 +19,7 @@
     }}
   >
     {#snippet children({ cells })}
-      {#each cells as cell, i}
+      {#each cells as cell, i (i)}
         <OTPFieldInput
           aria-invalid={invalid || undefined}
           aria-label={`Character ${i + 1} of ${OTP_LENGTH}`}

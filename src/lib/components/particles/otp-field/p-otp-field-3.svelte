@@ -7,11 +7,11 @@
 
 <OTPField aria-label="Verification code" maxlength={OTP_LENGTH}>
   {#snippet children({ cells })}
-    {#each cells.slice(0, GROUP_LENGTH) as cell, i}
+    {#each cells.slice(0, GROUP_LENGTH) as cell, i (i)}
       <OTPFieldInput aria-label={`Character ${i + 1} of ${OTP_LENGTH}`} {cell} />
     {/each}
     <OTPFieldSeparator />
-    {#each cells.slice(GROUP_LENGTH) as cell, i}
+    {#each cells.slice(GROUP_LENGTH) as cell, i (i)}
       <OTPFieldInput aria-label={`Character ${i + GROUP_LENGTH + 1} of ${OTP_LENGTH}`} {cell} />
     {/each}
   {/snippet}

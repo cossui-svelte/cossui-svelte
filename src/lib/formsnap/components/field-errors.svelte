@@ -49,7 +49,7 @@ A component that renders the container for validation errors for a [Field](https
 		{#if children}
 			{@render children(fieldErrorsState.snippetProps)}
 		{:else}
-			{#each fieldErrorsState.field.errors as error}
+			{#each fieldErrorsState.field.errors as error, i (i + error)}
 				<div {...fieldErrorsState.errorProps}>{error}</div>
 			{/each}
 		{/if}

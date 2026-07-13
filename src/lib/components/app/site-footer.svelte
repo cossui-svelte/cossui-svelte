@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { resolve } from "$app/paths";
+
   const version = __APP_VERSION__;
 </script>
 
@@ -14,7 +16,7 @@
   >
     <p>
       Designed by
-      <a class="font-heading text-foreground" href="/">coss.com</a>. Ported to
+      <a class="font-heading text-foreground" href={resolve("/")}>coss.com</a>. Ported to
       Svelte by
       <a class="font-heading text-foreground" href="https://github.com/cossui-svelte"
         >the cossui-svelte community</a
@@ -25,7 +27,7 @@
     v{version}, 
       This project is not affiliated with coss.com. <a
         class="font-heading text-foreground"
-        href="/credits">full credits</a
+        href={resolve("/credits")}>full credits</a
       >
     </p>
   </div>

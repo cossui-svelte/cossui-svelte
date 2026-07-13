@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { resolve } from "$app/paths";
   import {
     ContextMenu,
     ContextMenuItem,
@@ -14,12 +15,12 @@
   <ContextMenuPopup>
     <ContextMenuItem>
       {#snippet child({ props })}
-        <a href="/docs" {...props}>Docs</a>
+        <a href={resolve("/docs")} {...props}>Docs</a>
       {/snippet}
     </ContextMenuItem>
     <ContextMenuItem>
       {#snippet child({ props })}
-        <a href="/particles" {...props}>Particles</a>
+        <a href={resolve("/particles")} {...props}>Particles</a>
       {/snippet}
     </ContextMenuItem>
   </ContextMenuPopup>

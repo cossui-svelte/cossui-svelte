@@ -36,6 +36,7 @@
   {...restProps}
 >
   {#snippet child({ props })}
+    <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- href is caller-supplied; the caller resolves the route, not this generic menu-item primitive -->
     <a {href} {target} {rel} {...props}>
       {@render children?.()}
     </a>

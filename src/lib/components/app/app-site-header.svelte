@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { resolve } from "$app/paths";
   import { Button } from "$lib/components/ui/button";
   import { Separator } from "$lib/components/ui/separator";
   import MainNav from "./main-nav.svelte";
@@ -49,10 +50,10 @@
 
   <div class="flex gap-2">
     <Button variant="ghost">
-      <a href="/docs">Docs</a>
+      <a href={resolve("/docs")}>Docs</a>
     </Button>
     <Button variant="ghost">
-      <a href="/particles">Particles</a>
+      <a href={resolve("/particles")}>Particles</a>
     </Button>
   </div>
 

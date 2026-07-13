@@ -4,6 +4,7 @@
 * Form Controls need to be rethought - first then should apply to complex elements such as sliders and number fields, second the must handle defaultValue
 * Issue with particule generation script, the meta.class is not copied over
 * add the bundle version in the footer
+* p-select-13 bugs, no entries in the select list
 
 * DONE Not a bug, Table - the outer table border should be darker
 * DONE toast-12 13 have bugs

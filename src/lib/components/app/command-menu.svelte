@@ -242,9 +242,9 @@
                 {group.value}
               </div>
               {#each group.items as item (item.value)}
-                <a
+                <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- item.url comes from the pre-built docs/particles content tree, already app-relative -->
+                <a href={item.url}
                   class="flex w-full items-center gap-2 rounded-md px-2 py-2 text-sm transition-colors hover:bg-accent focus:bg-accent focus:outline-none"
-                  href={item.url}
                   onclick={() => {
                     open = false;
                   }}

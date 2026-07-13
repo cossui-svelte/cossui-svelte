@@ -3348,5 +3348,11 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     tags: ['input', 'credit-card'],
     registryDependencies: ['input', 'label'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-input-147': {
+    description: 'Phone number input with country code selection and auto-formatting',
+    tags: ['input', 'phone', 'tel'],
+    registryDependencies: ['input', 'label'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   }
 };

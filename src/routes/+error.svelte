@@ -6,6 +6,7 @@
 	import PageHeaderDescription from "$lib/components/app/page-header-description.svelte";
 	import PageHeaderHeading from "$lib/components/app/page-header-heading.svelte";
 	import { page } from "$app/state";
+	import { resolve } from "$app/paths";
 </script>
 
 <svelte:head>
@@ -24,7 +25,7 @@
 		</PageHeaderDescription>
 		<div class="mt-4">
 			<Button class="group" size="lg">
-				<a class="flex items-center gap-1" href="/">
+				<a class="flex items-center gap-1" href={resolve("/")}>
 					<RiArrowLeftLine
 						aria-hidden="true"
 						class="opacity-60"

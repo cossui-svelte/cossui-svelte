@@ -9,7 +9,7 @@
   <Label>Access code</Label>
   <OTPField maxlength={OTP_LENGTH}>
     {#snippet children({ cells })}
-      {#each cells as cell, i}
+      {#each cells as cell, i (i)}
         <OTPFieldInput aria-label={`Character ${i + 1} of ${OTP_LENGTH}`} {cell} mask />
       {/each}
     {/snippet}

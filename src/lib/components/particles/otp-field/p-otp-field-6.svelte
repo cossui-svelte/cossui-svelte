@@ -32,7 +32,7 @@
     onValueChange={handleValueChange}
   >
     {#snippet children({ cells })}
-      {#each cells as cell, i}
+      {#each cells as cell, i (i)}
         <OTPFieldInput
           aria-invalid={(invalidPulse > 0 && focusedIndex === i) || undefined}
           aria-label={`Character ${i + 1} of ${OTP_LENGTH}`}
