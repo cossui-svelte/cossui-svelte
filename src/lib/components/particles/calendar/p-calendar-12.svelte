@@ -1,12 +1,13 @@
 <script lang="ts">
   import { type DateValue, getDayOfWeek, getLocalTimeZone, today } from "@internationalized/date";
+  import { SvelteDate } from "svelte/reactivity";
   import { Calendar, Day } from "$lib/components/ui/calendar";
 
   let value = $state(today(getLocalTimeZone()));
 
   function getWeekNumber(date: DateValue): number {
     const d = date.toDate(getLocalTimeZone());
-    const target = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+    const target = new SvelteDate(d.getFullYear(), d.getMonth(), d.getDate());
     const dayNr = (target.getDay() + 6) % 7;
     target.setDate(target.getDate() - dayNr + 3);
     const firstThursday = target.getTime();

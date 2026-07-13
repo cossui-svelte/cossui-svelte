@@ -7,6 +7,7 @@
 		type ToastData,
 		type ToastPosition,
 	} from "./internals";
+	import { SvelteMap, SvelteSet } from "svelte/reactivity";
 	/**
 	 * @component
 	 * @description
@@ -53,8 +54,8 @@
 
 	let heights = $state<Record<string, number>>({});
 	let hovered = $state<Record<ToastPosition, boolean>>(createPositionMap(() => false));
-	let heldToasts = $state<Record<ToastPosition, Set<string>>>(
-		createPositionMap(() => new Set<string>()),
+	let heldToasts = $state<Record<ToastPosition, SvelteSet<string>>>(
+		createPositionMap(() => new SvelteSet<string>()),
 	);
 	let isWindowFocused = $state(
 		typeof document === "undefined" ? true : document.visibilityState !== "hidden",
@@ -91,8 +92,8 @@
 		toastId: string,
 		isHolding: boolean,
 	) => {
-		const current = heldToasts[position] ?? new Set<string>();
-		const next = new Set(current);
+		const current = heldToasts[position] ?? new SvelteSet<string>();
+		const next = new SvelteSet(current);
 		if (isHolding) {
 			next.add(toastId);
 		} else {
@@ -119,7 +120,7 @@
 			const activeToasts = list.filter(
 				(toast) => !toast.isLeaving && !toast.shouldClose,
 			);
-			const activeIndexMap = new Map<string, number>();
+			const activeIndexMap = new SvelteMap<string, number>();
 			activeToasts.forEach((toast, activeIndex) => {
 				activeIndexMap.set(toast.id, activeIndex);
 			});

@@ -35,6 +35,7 @@
 		const newUrl = tags
 			? `${page.url.pathname}?tags=${encodeURIComponent(tags)}`
 			: page.url.pathname;
+		// eslint-disable-next-line svelte/no-navigation-without-resolve -- newUrl is built from the current page's already-resolved pathname, not a static route literal, so it can't be passed through resolve()
 		goto(newUrl, { noScroll: true });
 	}
 </script>

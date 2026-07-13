@@ -105,6 +105,7 @@
     {#await highlightedCode}
       <div class="px-4 py-3.5 font-mono text-[.8125rem]">{code}</div>
     {:then html}
+      <!-- eslint-disable-next-line svelte/no-at-html-tags -- html is Shiki-generated markup from developer-authored source/language props, not user input -->
       {@html html}
     {:catch}
       <div class="px-4 py-3.5 font-mono text-[.8125rem]">{code}</div>

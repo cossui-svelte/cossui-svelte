@@ -80,10 +80,19 @@ You can customize project settings at any time by clicking the settings icon in 
     { title: "Project Settings", url: "/docs/projects/settings" },
   ];
 
+  function escapeHTML(value: string): string {
+    return value
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#39;");
+  }
+
   function markdownToSafeHTML(markdown: string): string {
     return markdown
       .split("\n\n")
-      .map((para) => `<p>${para}</p>`)
+      .map((para) => `<p>${escapeHTML(para)}</p>`)
       .join("");
   }
 
@@ -379,6 +388,7 @@ You can customize project settings at any time by clicking the settings icon in 
                   aria-live="polite"
                   class="text-muted-foreground text-sm **:[a]:underline **:[a]:underline-offset-4 **:[code]:rounded-md **:[code]:bg-muted **:[code]:px-[0.3rem] **:[code]:py-[0.2rem] **:[code]:font-mono **:[p]:not-first:mt-3 **:[p]:leading-relaxed **:[strong,a]:font-medium **:[strong,a]:text-foreground"
                 >
+                  <!-- eslint-disable-next-line svelte/no-at-html-tags -- markdownToSafeHTML escapes all HTML special characters before wrapping in <p> tags -->
                   {@html markdownToSafeHTML(aiState.response)}
                 </div>
                 {#if aiState.referenceLinks.length > 0}

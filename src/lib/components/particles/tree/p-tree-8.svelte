@@ -12,6 +12,7 @@
 	import FolderIcon from '@lucide/svelte/icons/folder';
 	import FolderOpenIcon from '@lucide/svelte/icons/folder-open';
 	import type { ChangeEventHandler, FocusEventHandler } from 'svelte/elements';
+	import { SvelteSet } from 'svelte/reactivity';
 	import {Input} from '$lib/components/ui/input';
 	import { Tree, TreeItem, TreeLabel, useTree } from '$lib/components/ui/tree';
 
@@ -112,7 +113,7 @@
 			.map((item) => item.getId());
 
 		// Then, find all parent IDs of matching items
-		const parentIds = new Set<string>();
+		const parentIds = new SvelteSet<string>();
 		directMatches.forEach((matchId) => {
 			let item = allItems.find((i) => i.getId() === matchId);
 			while (item?.getParent?.()) {
@@ -127,7 +128,7 @@
 		});
 
 		// Find all children of matching items
-		const childrenIds = new Set<string>();
+		const childrenIds = new SvelteSet<string>();
 		directMatches.forEach((matchId) => {
 			const item = allItems.find((i) => i.getId() === matchId);
 			if (item?.isFolder()) {

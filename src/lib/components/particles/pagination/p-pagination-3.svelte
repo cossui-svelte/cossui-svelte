@@ -28,8 +28,6 @@
     resultsPerPage = 10,
   }: Props = $props();
 
-  let currentPage = $state(initialPage);
-
   const resultRanges = $derived(
     Array.from({ length: totalPages }, (_, i) => {
       const start = i * resultsPerPage + 1;
@@ -38,11 +36,9 @@
     }),
   );
 
-  let selectedRange = $state(String(currentPage));
+  let selectedRange = $state(String(initialPage));
 
-  $effect(() => {
-    currentPage = Number(selectedRange);
-  });
+  let currentPage = $derived(Number(selectedRange));
 </script>
 
 <div class="flex items-center justify-between gap-2">
@@ -72,7 +68,7 @@
           isDisabled={currentPage === 1}
           onclick={(e: MouseEvent) => {
             e.preventDefault();
-            if (currentPage > 1) { currentPage--; selectedRange = String(currentPage); }
+            if (currentPage > 1) selectedRange = String(currentPage - 1);
           }}
         />
       </PaginationItem>
@@ -83,7 +79,7 @@
           isDisabled={currentPage === totalPages}
           onclick={(e: MouseEvent) => {
             e.preventDefault();
-            if (currentPage < totalPages) { currentPage++; selectedRange = String(currentPage); }
+            if (currentPage < totalPages) selectedRange = String(currentPage + 1);
           }}
         />
       </PaginationItem>

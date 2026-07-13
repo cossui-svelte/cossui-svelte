@@ -39,7 +39,7 @@
         <h2>
           <a
             class="before:absolute before:inset-0"
-            href={`${resolve("/particles")}?tags=${slug}`}
+            href={resolve(`/particles?tags=${slug}`)}
           >{meta.name}</a>
         </h2>
       </CardFrameTitle>

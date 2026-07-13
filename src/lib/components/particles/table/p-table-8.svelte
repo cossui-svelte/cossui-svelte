@@ -119,17 +119,13 @@
   );
 
   const pageSize = 10;
-  let pageIndex = $state(0);
   let selectedRange = $state("1");
 
+  let pageIndex = $derived(Number(selectedRange) - 1);
+
   function goToPage(index: number) {
-    pageIndex = index;
     selectedRange = String(index + 1);
   }
-
-  $effect(() => {
-    pageIndex = Number(selectedRange) - 1;
-  });
 
   const pageCount = $derived(Math.ceil(flights.length / pageSize));
   const pageRows = $derived(sortedFlights.slice(pageIndex * pageSize, pageIndex * pageSize + pageSize));
