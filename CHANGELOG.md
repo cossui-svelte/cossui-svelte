@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.9.8](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.7...v0.9.8) (2026-07-14)
+
+
+### 🐛 Bug Fixes
+
+* 2nd eslint pass ([a937554](https://github.com/cossui-svelte/cossui-svelte/commit/a937554f7654b9c2358f5bf8f48bd398fd840194))
+* chart heigth sizing ([da3424c](https://github.com/cossui-svelte/cossui-svelte/commit/da3424cbcc2ffd1fcf4dcfb45eb3f809c9614c85))
+* dialog particle ([87dd378](https://github.com/cossui-svelte/cossui-svelte/commit/87dd378cbb2c22ba16d99ddbccc9cdfce3dba7ba))
+* first proper eslint pass + tel input fix ([546992e](https://github.com/cossui-svelte/cossui-svelte/commit/546992e43b45e163810a0ffaa4b387460327a797))
+* registry generation, layout attributes were missing ([8c8baae](https://github.com/cossui-svelte/cossui-svelte/commit/8c8baae6ed2b1bbb23d3e187fc58425edfeef264))
+* tree ([f482ce9](https://github.com/cossui-svelte/cossui-svelte/commit/f482ce995465886af0824fc9d457448d227c3f86))
+
+
+### 🚚 Chores
+
+* add eslint for *.svelte files only ([6bf9782](https://github.com/cossui-svelte/cossui-svelte/commit/6bf9782cd51b5385072dcabfddbd29c0976478ae))
+* code formatting ([acecbdb](https://github.com/cossui-svelte/cossui-svelte/commit/acecbdb701ecbd7801441eebc604f3c3c26bac1a))
+* knip config update ([e94a462](https://github.com/cossui-svelte/cossui-svelte/commit/e94a462ce9c817b2675d7c7c95a2903d459ed62e))
+
 ## [0.9.7](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.6...v0.9.7) (2026-07-11)
 
 
