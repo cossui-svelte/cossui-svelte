@@ -3035,73 +3035,73 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     description: 'Basic stepper examples',
     tags: ['stepper'],
     registryDependencies: ['stepper'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl' }
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-stepper-2': {
     description: 'Stepper with numbers only',
     tags: ['stepper'],
     registryDependencies: ['stepper'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl' }
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-stepper-3': {
     description: 'Stepper with numbers and checkmarks',
     tags: ['stepper'],
     registryDependencies: ['stepper'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl' }
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-stepper-4': {
     description: 'Stepper with tiny buttons and checkmarks',
     tags: ['stepper'],
     registryDependencies: ['stepper'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl' }
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-stepper-5': {
     description: 'Controlled stepper with checkmarks',
     tags: ['stepper'],
     registryDependencies: ['stepper'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl' }
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-stepper-6': {
     description: 'Controlled stepper with checkmarks and loading state',
     tags: ['stepper'],
     registryDependencies: ['stepper'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl' }
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-stepper-7': {
     description: 'Stepper with mixed elements',
     tags: ['stepper'],
     registryDependencies: ['stepper'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl' }
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-stepper-8': {
     description: 'Stepper with labels',
     tags: ['stepper'],
     registryDependencies: ['stepper'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl' }
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-stepper-9': {
     description: 'Paginated stepper',
     tags: ['stepper'],
     registryDependencies: ['stepper'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl' }
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-stepper-10': {
     description: 'Progress stepper',
     tags: ['stepper'],
     registryDependencies: ['stepper'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl' }
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-stepper-11': {
     description: 'Stepper with titles and descriptions',
     tags: ['stepper'],
     registryDependencies: ['stepper'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl' }
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-stepper-12': {
     description: 'Stepper with inline titles',
     tags: ['stepper'],
     registryDependencies: ['stepper'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl' }
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-stepper-13': {
     description: 'Stepper with inline titles and descriptions',

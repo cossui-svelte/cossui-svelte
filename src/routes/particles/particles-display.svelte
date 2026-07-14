@@ -19,7 +19,7 @@
 			const normalizedTerm = term.replace(/\s+/g, "-");
 			if (particle.name.startsWith(`p-${normalizedTerm}-`)) weight += 30;
 			const deps = particle.registryDependencies ?? [];
-			if (deps.some((dep) => dep === `@coss/${normalizedTerm}`))
+			if (deps.some((dep) => dep === normalizedTerm))
 				weight += 20;
 			const cats = particle.tags ?? [];
 			if (cats[0] === term) weight += 10;
