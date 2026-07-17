@@ -61,7 +61,7 @@
   },
   "license": "MIT",
   "name": "coss-ui-svelte",
-  "packageManager": "pnpm@10.34.5",
+  "packageManager": "pnpm@11.13.1",
   "peerDependencies": {
     "svelte": "^5.56.6"
   },

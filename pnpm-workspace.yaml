@@ -3,9 +3,9 @@ allowBuilds:
   sharp: true
   workerd: true
 minimumReleaseAgeExclude:
-  - '@types/node@25.9.0'
-  - tsx@4.22.2
-  - svelte@5.55.8
+  - '@types/node@25.9.0 || 25.9.1'
+  - tsx@4.22.2 || 4.22.3
+  - svelte@5.55.8 || 5.56.6
   - '@shikijs/core@4.1.0'
   - '@shikijs/engine-javascript@4.1.0'
   - '@shikijs/engine-oniguruma@4.1.0'
@@ -13,10 +13,8 @@ minimumReleaseAgeExclude:
   - '@shikijs/primitive@4.1.0'
   - '@shikijs/themes@4.1.0'
   - '@shikijs/types@4.1.0'
-  - '@types/node@25.9.1'
   - postcss@8.5.15
   - shiki@4.1.0
-  - tsx@4.22.3
   - '@vitest/expect@4.1.7'
   - '@vitest/mocker@4.1.7'
   - '@vitest/pretty-format@4.1.7'
@@ -25,3 +23,7 @@ minimumReleaseAgeExclude:
   - '@vitest/spy@4.1.7'
   - '@vitest/utils@4.1.7'
   - vitest@4.1.7
+  - '@lucide/svelte@1.25.0'
+  - '@sveltejs/kit@2.70.0'
+  - miniflare@4.20260714.0
+  - wrangler@4.112.0
