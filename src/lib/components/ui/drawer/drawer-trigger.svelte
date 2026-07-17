@@ -1,8 +1,28 @@
 <script lang="ts">
-	import { Drawer as DrawerPrimitive } from "$lib/vaul";
+	import { Dialog } from "bits-ui";
+	import { getCtx } from "./ctx.js";
 
-	let { ref = $bindable(null), ...restProps }: DrawerPrimitive.TriggerProps =
-		$props();
+	let {
+		ref = $bindable(null),
+		children,
+		class: className,
+		...restProps
+	}: Dialog.TriggerProps = $props();
+
+	const {
+		refs: { triggerRef },
+	} = getCtx();
+
+	$effect(() => {
+		if (ref) triggerRef.set(ref as HTMLButtonElement);
+	});
 </script>
 
-<DrawerPrimitive.Trigger bind:ref data-slot="drawer-trigger" {...restProps} />
+<Dialog.Trigger
+	bind:ref
+	data-slot="drawer-trigger"
+	class={className}
+	{...restProps}
+>
+	{@render children?.()}
+</Dialog.Trigger>

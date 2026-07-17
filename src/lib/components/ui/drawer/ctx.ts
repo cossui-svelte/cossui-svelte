@@ -1,6 +1,6 @@
 import { getContext, setContext } from 'svelte';
-import { getOptionUpdater } from '../internal/helpers/options.js';
-import { type CreateVaulProps, createVaul } from '../internal/vaul.js';
+import { getOptionUpdater } from './internal/helpers/options.js';
+import { type CreateVaulProps, createVaul } from './internal/vaul.js';
 
 const VAUL_ROOT = Symbol('VAUL_ROOT');
 

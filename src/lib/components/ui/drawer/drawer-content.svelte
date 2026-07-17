@@ -1,19 +1,22 @@
 <script lang="ts">
 	import XIcon from "@lucide/svelte/icons/x";
+	import { Dialog } from "bits-ui";
 	import { type ComponentProps, getContext } from "svelte";
 	import { buttonVariants } from "$lib/components/ui/button/button-variants";
 	import { cn, type WithoutChildrenOrChild } from "$lib/utils";
-	import { Drawer as DrawerPrimitive } from "$lib/vaul";
+	import { getCtx } from "./ctx.js";
 	import DrawerBar from "./drawer-bar.svelte";
 	import DrawerClose from "./drawer-close.svelte";
 	import DrawerOverlay from "./drawer-overlay.svelte";
 	import DrawerPortal from "./drawer-portal.svelte";
 	import DrawerViewport from "./drawer-viewport.svelte";
+	import DrawerVisible from "./drawer-visible.svelte";
 
 	type DrawerPosition = "right" | "left" | "top" | "bottom";
 
 	let {
 		ref = $bindable(null),
+		style = "",
 		class: className,
 		portalProps,
 		children,
@@ -22,7 +25,7 @@
 		variant = "default",
 		showBar = false,
 		...restProps
-	}: DrawerPrimitive.ContentProps & {
+	}: Dialog.ContentProps & {
 		showCloseButton?: boolean;
 		position?: DrawerPosition;
 		variant?: "default" | "straight" | "inset";
@@ -36,14 +39,51 @@
 		"drawer-position",
 	);
 	const position = $derived(positionProp ?? ctx?.position() ?? "bottom");
+
+	const {
+		refs: { drawerRef },
+		states: { visible },
+		helpers: { getContentStyle },
+		methods: { onPress, onDrag, onRelease },
+		options: { direction },
+	} = getCtx();
+
+	$effect(() => {
+		if (ref) drawerRef.set(ref as HTMLDivElement);
+	});
+
+	let contentStyle = $derived($getContentStyle(style));
 </script>
 
 <DrawerPortal {...portalProps}>
 	<DrawerOverlay />
 	<DrawerViewport {position} {variant}>
-		<DrawerPrimitive.Content
+		<Dialog.Content
 			bind:ref
+			style={contentStyle}
+			onpointerdown={(e) => {
+				onPress(e);
+			}}
+			onpointerup={(e) => {
+				onRelease(e);
+			}}
+			onpointermove={(e) => {
+				onDrag(e);
+			}}
+			ontouchend={(e) => {
+				onRelease(e);
+			}}
+			ontouchmove={(e) => {
+				onDrag(e);
+			}}
+			interactOutsideBehavior="ignore"
+			escapeKeydownBehavior="ignore"
+			preventScroll={false}
+			trapFocus={false}
 			data-slot="drawer-popup"
+			data-vaul-drawer=""
+			data-vaul-drawer-direction={$direction}
+			data-vaul-drawer-visible={$visible ? "true" : "false"}
 			class={cn(
 				"relative flex max-h-full min-h-0 w-full min-w-0 flex-col pointer-events-auto bg-popover not-dark:bg-clip-padding text-popover-foreground shadow-lg/5 outline-none will-change-transform",
 				"before:pointer-events-none before:absolute before:inset-0 before:shadow-[0_1px_--theme(--color-black/4%)] dark:before:shadow-[0_-1px_--theme(--color-white/6%)]",
@@ -74,6 +114,7 @@
 			)}
 			{...restProps}
 		>
+			<DrawerVisible />
 			{@render children?.()}
 			{#if showCloseButton}
 				<DrawerClose
@@ -89,6 +130,6 @@
 			{#if showBar}
 				<DrawerBar />
 			{/if}
-		</DrawerPrimitive.Content>
+		</Dialog.Content>
 	</DrawerViewport>
 </DrawerPortal>

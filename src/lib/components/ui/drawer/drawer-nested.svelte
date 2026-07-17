@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { setContext } from "svelte";
-	import { Drawer as DrawerPrimitive } from "$lib/vaul";
+	import { getCtx } from "./ctx.js";
+	import Drawer from "./drawer.svelte";
+	import type { Props } from "./types.js";
 
 	type Position = "top" | "bottom" | "left" | "right";
 
@@ -9,18 +10,41 @@
 		open = $bindable(false),
 		activeSnapPoint = $bindable(null),
 		position = "bottom" as Position,
+		onDrag,
+		onOpenChange,
 		...restProps
-	}: DrawerPrimitive.Props & {
+	}: Omit<Props, "direction"> & {
 		position?: Position;
 	} = $props();
 
-	setContext("drawer-position", { position: () => position });
+	const {
+		methods: { onNestedDrag, onNestedRelease, onNestedOpenChange },
+	} = getCtx();
+
+	if (!onNestedDrag) {
+		throw new Error("DrawerNestedRoot must be a child of a Drawer");
+	}
 </script>
 
-<DrawerPrimitive.NestedRoot
+<Drawer
+	nested={true}
 	{shouldScaleBackground}
 	bind:open
 	bind:activeSnapPoint
-	direction={position}
+	{position}
+	onClose={() => {
+		onNestedOpenChange(false);
+	}}
+	onDrag={(e, p) => {
+		onNestedDrag(e, p);
+		onDrag?.(e, p);
+	}}
+	onOpenChange={(o) => {
+		if (o) {
+			onNestedOpenChange(o);
+		}
+		onOpenChange?.(o);
+	}}
+	onRelease={onNestedRelease}
 	{...restProps}
 />

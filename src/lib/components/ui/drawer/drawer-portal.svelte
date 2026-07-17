@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { Drawer as DrawerPrimitive } from "$lib/vaul";
+	import { Dialog } from "bits-ui";
 
-	let { ...restProps }: DrawerPrimitive.PortalProps = $props();
+	let { ...restProps }: Dialog.PortalProps = $props();
 </script>
 
-<DrawerPrimitive.Portal {...restProps} />
+<Dialog.Portal {...restProps} />
