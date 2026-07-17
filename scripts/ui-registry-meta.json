@@ -1,0 +1,1153 @@
+[
+  {
+    "name": "accordion",
+    "type": "registry:ui",
+    "categories": [
+      "accordion"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/accordion",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "@lucide/svelte",
+      "bits-ui"
+    ]
+  },
+  {
+    "name": "alert",
+    "type": "registry:ui",
+    "categories": [
+      "alert"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/alert",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "tailwind-variants"
+    ]
+  },
+  {
+    "name": "alert-dialog",
+    "type": "registry:ui",
+    "categories": [
+      "alert-dialog",
+      "button"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/alert-dialog",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "bits-ui"
+    ],
+    "registryDependencies": [
+      "@coss/button"
+    ]
+  },
+  {
+    "name": "aspect-ratio",
+    "type": "registry:ui",
+    "categories": [
+      "aspect-ratio"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/aspect-ratio",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "bits-ui"
+    ]
+  },
+  {
+    "name": "autocomplete",
+    "type": "registry:ui",
+    "categories": [
+      "autocomplete",
+      "scroll-area"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/autocomplete",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "@lucide/svelte",
+      "bits-ui"
+    ],
+    "registryDependencies": [
+      "@coss/scroll-area"
+    ]
+  },
+  {
+    "name": "avatar",
+    "type": "registry:ui",
+    "categories": [
+      "avatar"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/avatar",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "bits-ui"
+    ]
+  },
+  {
+    "name": "badge",
+    "type": "registry:ui",
+    "categories": [
+      "badge"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/badge",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "tailwind-variants"
+    ]
+  },
+  {
+    "name": "breadcrumb",
+    "type": "registry:ui",
+    "categories": [
+      "breadcrumb"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/breadcrumb",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "@lucide/svelte"
+    ]
+  },
+  {
+    "name": "button",
+    "type": "registry:ui",
+    "categories": [
+      "button",
+      "spinner"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/button",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "bits-ui",
+      "tailwind-variants"
+    ],
+    "registryDependencies": [
+      "@coss/spinner"
+    ]
+  },
+  {
+    "name": "calendar",
+    "type": "registry:ui",
+    "categories": [
+      "calendar",
+      "button"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/calendar",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "@internationalized/date",
+      "@lucide/svelte",
+      "bits-ui"
+    ],
+    "registryDependencies": [
+      "@coss/button"
+    ]
+  },
+  {
+    "name": "card",
+    "type": "registry:ui",
+    "categories": [
+      "card"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/card",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "chart",
+    "type": "registry:ui",
+    "categories": [
+      "chart"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/chart",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "layerchart"
+    ]
+  },
+  {
+    "name": "checkbox",
+    "type": "registry:ui",
+    "categories": [
+      "checkbox"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/checkbox",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "bits-ui"
+    ]
+  },
+  {
+    "name": "checkbox-group",
+    "type": "registry:ui",
+    "categories": [
+      "checkbox-group"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/checkbox-group",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "bits-ui"
+    ]
+  },
+  {
+    "name": "collapsible",
+    "type": "registry:ui",
+    "categories": [
+      "collapsible"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/collapsible",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "bits-ui"
+    ]
+  },
+  {
+    "name": "combobox",
+    "type": "registry:ui",
+    "categories": [
+      "combobox"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/combobox",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "@lucide/svelte",
+      "bits-ui"
+    ]
+  },
+  {
+    "name": "command",
+    "type": "registry:ui",
+    "categories": [
+      "command",
+      "dialog",
+      "scroll-area"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/command",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "@lucide/svelte",
+      "bits-ui"
+    ],
+    "registryDependencies": [
+      "@coss/dialog",
+      "@coss/scroll-area"
+    ]
+  },
+  {
+    "name": "context-menu",
+    "type": "registry:ui",
+    "categories": [
+      "context-menu",
+      "kbd"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/context-menu",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "@lucide/svelte",
+      "bits-ui"
+    ],
+    "registryDependencies": [
+      "@coss/kbd"
+    ]
+  },
+  {
+    "name": "cropper",
+    "type": "registry:ui",
+    "categories": [
+      "cropper"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/cropper",
+        "type": "registry:ui"
+      }
+    ],
+    "registryDependencies": [
+      "@coss/image-cropper"
+    ]
+  },
+  {
+    "name": "date-picker",
+    "type": "registry:ui",
+    "categories": [
+      "date-picker"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/date-picker",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "dialog",
+    "type": "registry:ui",
+    "categories": [
+      "dialog",
+      "button",
+      "scroll-area"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/dialog",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "@lucide/svelte",
+      "bits-ui"
+    ],
+    "registryDependencies": [
+      "@coss/button",
+      "@coss/scroll-area"
+    ]
+  },
+  {
+    "name": "drawer",
+    "type": "registry:ui",
+    "categories": [
+      "drawer",
+      "button"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/drawer",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "@lucide/svelte"
+    ],
+    "registryDependencies": [
+      "@coss/button",
+      "@coss/vaul"
+    ]
+  },
+  {
+    "name": "empty",
+    "type": "registry:ui",
+    "categories": [
+      "empty"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/empty",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "tailwind-variants"
+    ]
+  },
+  {
+    "name": "field",
+    "type": "registry:ui",
+    "categories": [
+      "field"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/field",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "bits-ui"
+    ],
+    "registryDependencies": [
+      "@coss/formsnap",
+      "@coss/hooks"
+    ]
+  },
+  {
+    "name": "fieldset",
+    "type": "registry:ui",
+    "categories": [
+      "fieldset"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/fieldset",
+        "type": "registry:ui"
+      }
+    ],
+    "registryDependencies": [
+      "@coss/formsnap",
+      "@coss/hooks"
+    ]
+  },
+  {
+    "name": "file-upload",
+    "type": "registry:ui",
+    "categories": [
+      "file-upload"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/file-upload",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "form",
+    "type": "registry:ui",
+    "categories": [
+      "form"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/form",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "bits-ui",
+      "sveltekit-superforms"
+    ]
+  },
+  {
+    "name": "frame",
+    "type": "registry:ui",
+    "categories": [
+      "frame"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/frame",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "group",
+    "type": "registry:ui",
+    "categories": [
+      "group",
+      "separator"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/group",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "tailwind-variants"
+    ],
+    "registryDependencies": [
+      "@coss/separator"
+    ]
+  },
+  {
+    "name": "input",
+    "type": "registry:ui",
+    "categories": [
+      "input"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/input",
+        "type": "registry:ui"
+      }
+    ],
+    "registryDependencies": [
+      "@coss/formsnap"
+    ]
+  },
+  {
+    "name": "input-group",
+    "type": "registry:ui",
+    "categories": [
+      "input-group",
+      "button",
+      "input",
+      "textarea"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/input-group",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "tailwind-variants"
+    ],
+    "registryDependencies": [
+      "@coss/button",
+      "@coss/input",
+      "@coss/textarea"
+    ]
+  },
+  {
+    "name": "kbd",
+    "type": "registry:ui",
+    "categories": [
+      "kbd"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/kbd",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "label",
+    "type": "registry:ui",
+    "categories": [
+      "label"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/label",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "bits-ui"
+    ]
+  },
+  {
+    "name": "link-preview",
+    "type": "registry:ui",
+    "categories": [
+      "link-preview"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/link-preview",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "bits-ui"
+    ]
+  },
+  {
+    "name": "menu",
+    "type": "registry:ui",
+    "categories": [
+      "menu"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/menu",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "@lucide/svelte",
+      "bits-ui"
+    ]
+  },
+  {
+    "name": "meter",
+    "type": "registry:ui",
+    "categories": [
+      "meter"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/meter",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "bits-ui"
+    ]
+  },
+  {
+    "name": "number-field",
+    "type": "registry:ui",
+    "categories": [
+      "number-field",
+      "label"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/number-field",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "@lucide/svelte"
+    ],
+    "registryDependencies": [
+      "@coss/label"
+    ]
+  },
+  {
+    "name": "otp-field",
+    "type": "registry:ui",
+    "categories": [
+      "otp-field"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/otp-field",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "bits-ui"
+    ]
+  },
+  {
+    "name": "pagination",
+    "type": "registry:ui",
+    "categories": [
+      "pagination",
+      "button"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/pagination",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "@lucide/svelte",
+      "bits-ui"
+    ],
+    "registryDependencies": [
+      "@coss/button"
+    ]
+  },
+  {
+    "name": "popover",
+    "type": "registry:ui",
+    "categories": [
+      "popover"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/popover",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "bits-ui"
+    ]
+  },
+  {
+    "name": "preview-card",
+    "type": "registry:ui",
+    "categories": [
+      "preview-card"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/preview-card",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "bits-ui"
+    ]
+  },
+  {
+    "name": "progress",
+    "type": "registry:ui",
+    "categories": [
+      "progress"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/progress",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "bits-ui"
+    ]
+  },
+  {
+    "name": "radio-group",
+    "type": "registry:ui",
+    "categories": [
+      "radio-group"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/radio-group",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "bits-ui"
+    ]
+  },
+  {
+    "name": "range-calendar",
+    "type": "registry:ui",
+    "categories": [
+      "range-calendar",
+      "button",
+      "calendar"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/range-calendar",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "@internationalized/date",
+      "bits-ui"
+    ],
+    "registryDependencies": [
+      "@coss/button",
+      "@coss/calendar"
+    ]
+  },
+  {
+    "name": "rich-editor",
+    "type": "registry:ui",
+    "categories": [
+      "rich-editor"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/rich-editor",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "scroll-area",
+    "type": "registry:ui",
+    "categories": [
+      "scroll-area"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/scroll-area",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "bits-ui"
+    ]
+  },
+  {
+    "name": "select",
+    "type": "registry:ui",
+    "categories": [
+      "select"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/select",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "@lucide/svelte",
+      "bits-ui",
+      "tailwind-variants"
+    ]
+  },
+  {
+    "name": "separator",
+    "type": "registry:ui",
+    "categories": [
+      "separator"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/separator",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "bits-ui"
+    ]
+  },
+  {
+    "name": "sheet",
+    "type": "registry:ui",
+    "categories": [
+      "sheet"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/sheet",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "@lucide/svelte",
+      "bits-ui"
+    ]
+  },
+  {
+    "name": "sidebar",
+    "type": "registry:ui",
+    "categories": [
+      "sidebar",
+      "button",
+      "dialog",
+      "scroll-area",
+      "separator",
+      "sheet"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/sidebar",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "@lucide/svelte",
+      "bits-ui",
+      "tailwind-variants"
+    ],
+    "registryDependencies": [
+      "@coss/button",
+      "@coss/dialog",
+      "@coss/scroll-area",
+      "@coss/separator",
+      "@coss/sheet"
+    ]
+  },
+  {
+    "name": "skeleton",
+    "type": "registry:ui",
+    "categories": [
+      "skeleton"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/skeleton",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "@aejkatappaja/phantom-ui"
+    ]
+  },
+  {
+    "name": "slider",
+    "type": "registry:ui",
+    "categories": [
+      "slider",
+      "tooltip"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/slider",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "bits-ui"
+    ],
+    "registryDependencies": [
+      "@coss/tooltip"
+    ]
+  },
+  {
+    "name": "spinner",
+    "type": "registry:ui",
+    "categories": [
+      "spinner"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/spinner",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "@lucide/svelte"
+    ]
+  },
+  {
+    "name": "split-pane",
+    "type": "registry:ui",
+    "categories": [
+      "split-pane"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/split-pane",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "stepper",
+    "type": "registry:ui",
+    "categories": [
+      "stepper"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/stepper",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "@lucide/svelte"
+    ]
+  },
+  {
+    "name": "switch",
+    "type": "registry:ui",
+    "categories": [
+      "switch"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/switch",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "bits-ui"
+    ]
+  },
+  {
+    "name": "table",
+    "type": "registry:ui",
+    "categories": [
+      "table"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/table",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "tabs",
+    "type": "registry:ui",
+    "categories": [
+      "tabs"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/tabs",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "bits-ui"
+    ]
+  },
+  {
+    "name": "textarea",
+    "type": "registry:ui",
+    "categories": [
+      "textarea"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/textarea",
+        "type": "registry:ui"
+      }
+    ],
+    "registryDependencies": [
+      "@coss/formsnap"
+    ]
+  },
+  {
+    "name": "timeline",
+    "type": "registry:ui",
+    "categories": [
+      "timeline"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/timeline",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "bits-ui"
+    ]
+  },
+  {
+    "name": "toast",
+    "type": "registry:ui",
+    "categories": [
+      "toast",
+      "button"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/toast",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "@lucide/svelte",
+      "bits-ui"
+    ],
+    "registryDependencies": [
+      "@coss/button",
+      "@coss/varsel"
+    ]
+  },
+  {
+    "name": "toggle",
+    "type": "registry:ui",
+    "categories": [
+      "toggle"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/toggle",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "bits-ui",
+      "tailwind-variants"
+    ]
+  },
+  {
+    "name": "toggle-group",
+    "type": "registry:ui",
+    "categories": [
+      "toggle-group",
+      "separator",
+      "toggle"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/toggle-group",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "bits-ui"
+    ],
+    "registryDependencies": [
+      "@coss/separator",
+      "@coss/toggle"
+    ]
+  },
+  {
+    "name": "toolbar",
+    "type": "registry:ui",
+    "categories": [
+      "toolbar"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/toolbar",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "bits-ui"
+    ]
+  },
+  {
+    "name": "tooltip",
+    "type": "registry:ui",
+    "categories": [
+      "tooltip"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/tooltip",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "bits-ui"
+    ]
+  },
+  {
+    "name": "tree",
+    "type": "registry:ui",
+    "categories": [
+      "tree"
+    ],
+    "files": [
+      {
+        "path": "src/lib/components/ui/tree",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "@headless-tree/core",
+      "@lucide/svelte",
+      "bits-ui",
+      "runed",
+      "svelte-toolbelt"
+    ]
+  }
+]

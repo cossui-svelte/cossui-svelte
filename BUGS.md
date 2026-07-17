@@ -6,6 +6,7 @@
 * add the bundle version in the footer
 * p-select-13 bugs, no entries in the select list
 
+* DONE bring these INPUT particules  https://github.com/max-got/originui-svelte/pull/74/changes#diff-6fba7ce7af673abb0664807b5dd0eedd11491641888296d9a0ee99d431c779b7
 * DONE Not a bug, Table - the outer table border should be darker
 * DONE toast-12 13 have bugs
 * DONE p-radio-group-6 bugs
@@ -37,8 +38,8 @@
 * DONE ACCORDIONS - no animations, custom + still show an anchor
 
 TODO:
-
-* bring these INPUT particules  https://github.com/max-got/originui-svelte/pull/74/changes#diff-6fba7ce7af673abb0664807b5dd0eedd11491641888296d9a0ee99d431c779b7
+* Port Carousel from ShadCN 
+* Port Tags, Swappable & Viewport from https://trioxide.obelus.fi/components/swappable
 * check for any origin particule with no coosui equivalent
 * bring tree & tanstack tables
 * bring file upload
