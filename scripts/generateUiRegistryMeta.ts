@@ -118,7 +118,7 @@ async function analyzeComponent(componentDir: string, componentName: string): Pr
 			}
 
 			// other top-level $lib/* folders are vendored internal modules (e.g. $lib/formsnap,
-			// $lib/vaul, $lib/varsel, $lib/image-cropper). They're reported as registryDependencies
+			// $lib/vaul, $lib/varsel). They're reported as registryDependencies
 			// but aren't ui categories, so they don't feed into `categories` below.
 			// $lib/utils is the one exception: a single ubiquitous helper assumed always present.
 			if (specifier.startsWith('$lib/')) {

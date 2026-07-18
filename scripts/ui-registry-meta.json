@@ -329,9 +329,6 @@
         "path": "src/lib/components/ui/cropper",
         "type": "registry:ui"
       }
-    ],
-    "registryDependencies": [
-      "@coss/image-cropper"
     ]
   },
   {
