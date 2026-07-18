@@ -12,7 +12,7 @@ type PrimitiveLabelAttributes = Primitive<HTMLLabelAttributes>;
 /**
  * Props for the [Description](https://formsnap.dev/docs/components/description) component.
  */
-export type DescriptionPropsWithoutHTML = WithChild<Record<string, never>>;
+export type DescriptionPropsWithoutHTML = WithChild;
 
 export type DescriptionProps = DescriptionPropsWithoutHTML &
   Without<PrimitiveDivAttributes, DescriptionPropsWithoutHTML>;
@@ -97,7 +97,7 @@ export type ControlProps = {
   children?: Snippet<[{ props: Expand<ControlAttrs> }]>;
 };
 
-export type LabelPropsWithoutHTML = WithChild<Record<string, never>>;
+export type LabelPropsWithoutHTML = WithChild;
 
 /**
  * Props for the [Label](https://formsnap.dev/docs/components/label) component.
@@ -109,7 +109,8 @@ export type LabelProps = LabelPropsWithoutHTML &
  * Props for the [FieldErrors](https://formsnap.dev/docs/components/field-errors) component.
  */
 export type FieldErrorsPropsWithoutHTML = WithChild<
-  Record<string, never>,
+  // biome-ignore lint/complexity/noBannedTypes: WithChild's own default for "no extra props" is `{}`; an index-signature type here (e.g. Record<string, never>) breaks Without<T, U>'s `Omit<T, keyof U>` by blanking out every prop
+  {},
   {
     errors: string[];
     errorProps: Record<string, unknown>;

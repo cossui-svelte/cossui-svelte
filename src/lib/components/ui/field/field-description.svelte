@@ -2,11 +2,12 @@
   import { box, mergeProps } from 'svelte-toolbelt';
   import { cn, type WithElementRef } from '$lib/utils';
   import { useDescription } from '$lib/components/ui/form/form-field-state.svelte.js';
-  import { useId } from '$lib/components/ui/form/internal/id';
   import type { DescriptionProps } from './types.js';
 
+  const uid = $props.id();
+
   let {
-    id = useId(),
+    id = uid,
     ref = $bindable(null),
     class: className,
     children,
