@@ -37,13 +37,17 @@
     schema,
   });
 
-  const { submitting } = superform;
+  const { form, submitting } = superform;
 </script>
 
 <Form class="flex w-full max-w-64 flex-col gap-4" {superform}>
   <Field name="item">
     <FieldLabel>Favorite item</FieldLabel>
-    <Autocomplete {items}>
+    <Autocomplete
+      {items}
+      onValueChange={(v) => ($form.item = v as string)}
+      value={$form.item}
+    >
       <AutocompleteInput placeholder="Search items…" />
       <AutocompletePopup>
         <AutocompleteEmpty>No items found.</AutocompleteEmpty>

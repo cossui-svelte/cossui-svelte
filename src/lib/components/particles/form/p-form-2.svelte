@@ -20,18 +20,18 @@
     schema
   });
 
-  const { submitting } = superform;
+  const { form, submitting } = superform;
 </script>
 
 <Form class="flex w-full max-w-64 flex-col gap-4" {superform}>
   <Field name="name">
     <FieldLabel>Name</FieldLabel>
-    <Input placeholder="Enter name" />
+    <Input bind:value={$form.name} placeholder="Enter name" />
     <FieldError />
   </Field>
   <Field name="age">
     <FieldLabel>Age</FieldLabel>
-    <Input placeholder="Enter age" />
+    <Input bind:value={$form.age} placeholder="Enter age" />
     <FieldError />
   </Field>
   <Button loading={$submitting} type="submit">Submit</Button>

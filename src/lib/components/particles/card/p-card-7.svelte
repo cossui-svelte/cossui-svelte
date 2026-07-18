@@ -45,7 +45,7 @@
     schema,
   });
 
-  const { submitting } = superform;
+  const { form, submitting } = superform;
 </script>
 
 <CardFrame class="w-full max-w-xs">
@@ -58,12 +58,12 @@
       <Form class="flex w-full flex-col gap-4" {superform}>
         <Field name="name">
           <FieldLabel>Name</FieldLabel>
-          <Input placeholder="Name of your project" type="text" />
+          <Input bind:value={$form.name} placeholder="Name of your project" type="text" />
           <FieldError />
         </Field>
         <Field name="framework">
           <FieldLabel>Framework</FieldLabel>
-          <Select value="next">
+          <Select bind:value={$form.framework}>
             <SelectTrigger>
               <SelectValue />
             </SelectTrigger>

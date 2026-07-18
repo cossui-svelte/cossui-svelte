@@ -27,7 +27,7 @@
     schema,
   });
 
-  const { submitting } = superform;
+  const { form, submitting } = superform;
 </script>
 
 <Card class="w-full max-w-xs">
@@ -39,12 +39,12 @@
     <Form class="flex w-full flex-col gap-4" {superform}>
       <Field name="email">
         <FieldLabel>Email</FieldLabel>
-        <Input placeholder="Enter your email" type="email" />
+        <Input bind:value={$form.email} placeholder="Enter your email" type="email" />
         <FieldError />
       </Field>
       <Field name="password">
         <FieldLabel>Password</FieldLabel>
-        <Input placeholder="Enter your password" type="password" />
+        <Input bind:value={$form.password} placeholder="Enter your password" type="password" />
         <FieldError />
       </Field>
       <Button class="w-full" loading={$submitting} type="submit">Login</Button>

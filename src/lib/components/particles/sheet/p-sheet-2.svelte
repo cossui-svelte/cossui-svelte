@@ -30,6 +30,8 @@
     },
     schema,
   });
+
+  const { form } = superform;
 </script>
 
 <Sheet>
@@ -47,11 +49,11 @@
       <SheetPanel class="grid gap-4">
         <Field name="name" class="flex flex-col gap-1.5">
           <Label class="text-sm font-medium">Name</Label>
-          <Input type="text" />
+          <Input bind:value={$form.name} type="text" />
         </Field>
         <Field name="username" class="flex flex-col gap-1.5">
           <Label class="text-sm font-medium">Username</Label>
-          <Input type="text" />
+          <Input bind:value={$form.username} type="text" />
         </Field>
       </SheetPanel>
       <SheetFooter>

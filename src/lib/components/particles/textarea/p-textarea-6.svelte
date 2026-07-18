@@ -17,13 +17,13 @@
     schema,
   });
 
-  const { submitting } = superform;
+  const { form, submitting } = superform;
 </script>
 
 <Form class="flex w-full max-w-64 flex-col gap-4" {superform}>
   <Field name="message">
     <FieldLabel>Message</FieldLabel>
-    <Textarea placeholder="Type your message here" />
+    <Textarea bind:value={$form.message} placeholder="Type your message here" />
     <FieldError />
   </Field>
   <Button loading={$submitting} type="submit">Submit</Button>

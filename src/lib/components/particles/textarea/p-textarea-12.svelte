@@ -17,7 +17,7 @@
     schema,
   });
 
-  const { submitting } = superform;
+  const { form, submitting } = superform;
 </script>
 
 <Form class="flex w-full flex-col gap-4" {superform}>
@@ -25,7 +25,7 @@
     <FieldLabel class="text-sm font-medium">
       Message <span class="text-destructive-foreground">*</span>
     </FieldLabel>
-    <Textarea placeholder="Type your message here" />
+    <Textarea bind:value={$form.message} placeholder="Type your message here" />
     <FieldError />
   </Field>
   <Button loading={$submitting} type="submit">Submit</Button>
