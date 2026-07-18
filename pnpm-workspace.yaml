@@ -27,3 +27,4 @@ minimumReleaseAgeExclude:
   - '@sveltejs/kit@2.70.0'
   - miniflare@4.20260714.0
   - wrangler@4.112.0
+  - commit-and-tag-version@13.0.0

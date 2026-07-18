@@ -28,7 +28,7 @@
     "bits-ui": "^2.18.1",
     "cleave-zen": "^0.0.17",
     "clsx": "^2.1.1",
-    "commit-and-tag-version": "^12.7.3",
+    "commit-and-tag-version": "^13.0.0",
     "cz-customizable": "^7.5.4",
     "d3-scale": "^4.0.2",
     "d3-shape": "^3.2.0",
@@ -61,7 +61,7 @@
   },
   "license": "MIT",
   "name": "coss-ui-svelte",
-  "packageManager": "pnpm@11.13.1",
+  "packageManager": "pnpm@11.14.0",
   "peerDependencies": {
     "svelte": "^5.56.6"
   },
@@ -77,7 +77,7 @@
     "check": "svelte-kit sync && svelte-check --workspace .",
     "commit": "tsx ./node_modules/cz-customizable/standalone.js",
     "dev": "vite",
-    "format": "eslint --fix && biome check . --fix",
+    "format": "biome check . --fix && eslint --fix",
     "generate:registry": "tsx scripts/generateComponentRegistry.ts -w src/lib/registry/generated-registry-components.ts && tsx scripts/generateParticleRegistry.ts && pnpm format",
     "lint:audit": "pnpx knip --max-show-issues 20",
     "lint:typecheck": "tsc --noEmit",
