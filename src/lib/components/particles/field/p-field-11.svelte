@@ -23,13 +23,13 @@
     schema,
   });
 
-  const { submitting } = superform;
+  const { form, submitting } = superform;
 </script>
 
 <Form class="flex w-full flex-col gap-4" {superform}>
   <Field name="country">
     <FieldLabel>Country</FieldLabel>
-    <Select>
+    <Select bind:value={$form.country}>
       <SelectTrigger>
         <SelectValue placeholder="Select a country" />
       </SelectTrigger>

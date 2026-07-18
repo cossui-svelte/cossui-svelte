@@ -11,19 +11,20 @@
   });
 
   const superform = createForm({
+    initialData: { notifications: false },
     onUpdated: (data) => {
       alert(`Email notifications: ${data.notifications ?? false}`);
     },
     schema,
   });
 
-  const { submitting } = superform;
+  const { form, submitting } = superform;
 </script>
 
 <Form class="flex w-full flex-col gap-4" {superform}>
   <Field name="notifications">
     <FieldLabel>
-      <Switch />
+      <Switch bind:checked={$form.notifications} />
       Email notifications
     </FieldLabel>
   </Field>

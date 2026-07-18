@@ -22,6 +22,7 @@
   });
 
   const superform = createForm({
+    initialData: { newsletter: false },
     onUpdated: (data) => {
       alert(
         `Full name: ${data.fullName}\nEmail: ${data.email}\nRole: ${data.role ?? ''}\nNewsletter: ${data.newsletter ?? false}`
@@ -30,25 +31,25 @@
     schema,
   });
 
-  const { submitting } = superform;
+  const { form, submitting } = superform;
 </script>
 
 <Form class="flex w-full flex-col gap-4" {superform}>
   <Field name="fullName">
     <FieldLabel>Full Name <span class="text-destructive">*</span></FieldLabel>
-    <Input placeholder="John Doe" type="text" />
+    <Input bind:value={$form.fullName} placeholder="John Doe" type="text" />
     <FieldError />
   </Field>
 
   <Field name="email">
     <FieldLabel>Email <span class="text-destructive">*</span></FieldLabel>
-    <Input placeholder="john@example.com" type="email" />
+    <Input bind:value={$form.email} placeholder="john@example.com" type="email" />
     <FieldError />
   </Field>
 
   <Field name="role">
     <FieldLabel>Role</FieldLabel>
-    <Select>
+    <Select bind:value={$form.role}>
       <SelectTrigger>
         <SelectValue placeholder="Select your role" />
       </SelectTrigger>
@@ -64,7 +65,7 @@
 
   <Field name="newsletter">
     <div class="flex items-center gap-2">
-      <Checkbox />
+      <Checkbox bind:checked={$form.newsletter as boolean | undefined} />
       <FieldLabel class="cursor-pointer">Subscribe to newsletter</FieldLabel>
     </div>
   </Field>

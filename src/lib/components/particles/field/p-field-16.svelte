@@ -18,13 +18,13 @@
     schema,
   });
 
-  const { submitting } = superform;
+  const { form, submitting } = superform;
 </script>
 
 <Form class="flex w-full flex-col gap-4" {superform}>
   <Field class="items-stretch gap-3" name="volume">
     <FieldLabel>Volume</FieldLabel>
-    <Slider value={50} />
+    <Slider bind:value={$form.volume} />
     <FieldDescription>This is an optional field</FieldDescription>
     <FieldError />
   </Field>

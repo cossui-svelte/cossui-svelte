@@ -17,13 +17,13 @@
     schema,
   });
 
-  const { submitting } = superform;
+  const { form, submitting } = superform;
 </script>
 
 <Form class="flex w-full flex-col gap-4" {superform}>
   <Field name="bio">
     <FieldLabel>Bio</FieldLabel>
-    <Textarea placeholder="Tell us about yourself…" />
+    <Textarea bind:value={$form.bio} placeholder="Tell us about yourself…" />
     <FieldDescription>Write a short bio. Maximum 500 characters.</FieldDescription>
     <FieldError />
   </Field>

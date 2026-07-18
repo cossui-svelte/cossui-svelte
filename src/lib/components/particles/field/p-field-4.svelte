@@ -17,13 +17,13 @@
     schema,
   });
 
-  const { submitting } = superform;
+  const { form, submitting } = superform;
 </script>
 
 <Form class="flex w-full flex-col gap-4" {superform}>
   <Field name="email">
     <FieldLabel>Email</FieldLabel>
-    <Input placeholder="Enter your email" type="email" />
+    <Input bind:value={$form.email} placeholder="Enter your email" type="email" />
     <FieldError />
   </Field>
   <Button loading={$submitting} type="submit">Submit</Button>

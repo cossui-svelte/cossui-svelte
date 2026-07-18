@@ -25,12 +25,12 @@
     schema,
   });
 
-  const { submitting } = superform;
+  const { form, submitting } = superform;
 </script>
 
 <Form class="flex w-full flex-col gap-4" {superform}>
   <Field name="quantity">
-    <NumberField max={100} min={1} value={1}>
+    <NumberField bind:value={$form.quantity} max={100} min={1}>
       <NumberFieldScrubArea label="Quantity" />
       <NumberFieldGroup>
         <NumberFieldDecrement />

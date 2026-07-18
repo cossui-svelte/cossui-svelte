@@ -37,13 +37,13 @@
     schema,
   });
 
-  const { submitting } = superform;
+  const { form, submitting } = superform;
 </script>
 
 <Form class="flex w-full flex-col gap-4" {superform}>
   <Field name="fruit">
     <FieldLabel>Fruits</FieldLabel>
-    <Combobox {items}>
+    <Combobox bind:value={$form.fruit} {items}>
       <ComboboxInput aria-label="Select an item" placeholder="Select an item..." />
       <ComboboxPopup>
         <ComboboxEmpty>No results found.</ComboboxEmpty>
