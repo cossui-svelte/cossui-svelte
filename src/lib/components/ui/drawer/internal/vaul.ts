@@ -169,7 +169,7 @@ export function createVaul(props: CreateVaulProps) {
   let cachedWrapperEl: Element | null = null;
 
   function getWrapperEl(): Element | null {
-    if (!cachedWrapperEl || !cachedWrapperEl.isConnected) {
+    if (!cachedWrapperEl?.isConnected) {
       cachedWrapperEl = document.querySelector('[data-vaul-drawer-wrapper]');
     }
     return cachedWrapperEl;
@@ -789,7 +789,9 @@ export function createVaul(props: CreateVaulProps) {
     });
 
     return () => {
-      marked.forEach((el) => el.classList.remove('vaul-scrollable'));
+      marked.forEach((el) => {
+        el.classList.remove('vaul-scrollable');
+      });
     };
   });
 

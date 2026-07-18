@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { extractErrorArray } from './errors.js';
-import { getValueAtPath } from './path.js';
+import { extractErrorArray } from './errors';
+import { getValueAtPath } from './path';
 
 const errorsCases = [
   {
@@ -186,29 +186,26 @@ const taintedCases = [
 ];
 
 describe('getValueAtPath', () => {
-  it.each(errorsCases)('should return the correct value for the given errors path - %#', ({
-    input,
-    path,
-    expected
-  }) => {
-    expect(getValueAtPath(path, input)).toEqual(expected);
-  });
-  it.each(taintedCases)('should return the correct value for the given tainted path - %#', ({
-    input,
-    path,
-    expected
-  }) => {
-    expect(getValueAtPath(path, input)).toEqual(expected);
-  });
+  it.each(errorsCases)(
+    'should return the correct value for the given errors path - %#',
+    ({ input, path, expected }) => {
+      expect(getValueAtPath(path, input)).toEqual(expected);
+    }
+  );
+  it.each(taintedCases)(
+    'should return the correct value for the given tainted path - %#',
+    ({ input, path, expected }) => {
+      expect(getValueAtPath(path, input)).toEqual(expected);
+    }
+  );
 });
 
 describe('extractErrorArray', () => {
-  it.each(errorsCases)('should extract the correct error array for the given path - %#', ({
-    input,
-    path,
-    expected
-  }) => {
-    const realExpected = expected === undefined ? [] : expected;
-    expect(extractErrorArray(getValueAtPath(path, input))).toEqual(realExpected);
-  });
+  it.each(errorsCases)(
+    'should extract the correct error array for the given path - %#',
+    ({ input, path, expected }) => {
+      const realExpected = expected === undefined ? [] : expected;
+      expect(extractErrorArray(getValueAtPath(path, input))).toEqual(realExpected);
+    }
+  );
 });

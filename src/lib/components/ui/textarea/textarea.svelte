@@ -1,8 +1,8 @@
 <script lang="ts">
   import type { HTMLTextareaAttributes } from "svelte/elements";
-  import { Control } from "$lib/formsnap";
-  import { getField } from "$lib/formsnap/formsnap.svelte";
   import { cn } from "$lib/utils";
+  import { FieldControl as Control } from "../field";
+  import { getField } from "../form/form-field-state.svelte.js";
 
   interface Props extends HTMLTextareaAttributes {
     ref?: HTMLTextAreaElement | null;

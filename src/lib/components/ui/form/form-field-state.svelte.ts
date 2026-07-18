@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { getContext, hasContext, setContext } from 'svelte';
 import { fromStore } from 'svelte/store';
 import {
@@ -8,7 +9,7 @@ import {
   useRefById,
   type WithRefProps
 } from 'svelte-toolbelt';
-import type { FormPath, InputConstraint, InputConstraints } from 'sveltekit-superforms';
+import type { FormPath, InputConstraint, InputConstraints, SuperForm } from 'sveltekit-superforms';
 import type { FormPathArrays, TaintedFields, ValidationErrors } from 'sveltekit-superforms/client';
 import type {
   ControlAttrs,
@@ -16,18 +17,30 @@ import type {
   ErrorAttrs,
   FieldErrorsAttrs,
   LabelAttrs
-} from './attrs.types.js';
-import type { FsSuperForm } from './components/types.js';
+} from './form-field-attrs.js';
 import type { PrimitiveFromIndex } from './internal/types.js';
 import {
   getAriaDescribedBy,
   getAriaInvalid,
   getAriaRequired,
   getDataFsError
-} from './internal/utils/attributes.js';
-import { extractErrorArray } from './internal/utils/errors.js';
-import { useId } from './internal/utils/id.js';
-import { getValueAtPath } from './internal/utils/path.js';
+} from './internal/attributes';
+import { extractErrorArray } from './internal/errors';
+import { useId } from './internal/id';
+import { getValueAtPath } from './internal/path';
+
+export type FsSuperForm<T extends Record<string, unknown>, M = any> = Omit<
+  SuperForm<T, M>,
+  'validate' | 'validateForm' | 'enhance' | 'isTainted' | 'reset' | 'options' | 'restore'
+> & {
+  validate?: any;
+  validateForm?: any;
+  enhance?: any;
+  isTainted?: any;
+  reset?: any;
+  options?: any;
+  restore?: any;
+};
 
 type SvelteBox<T> = {
   current: T;
@@ -40,7 +53,6 @@ type FieldState<T extends Record<string, unknown>, U extends FormPath<T>> =
 type FormFieldStateProps<
   T extends Record<string, unknown>,
   U extends FormPath<T>,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   M = any
 > = ReadableBoxedValues<{
   form: FsSuperForm<T, M>;
@@ -108,7 +120,6 @@ class FormFieldState<T extends Record<string, unknown>, U extends FormPath<T>> {
 type ElementFieldStateProps<
   T extends Record<string, unknown>,
   U extends FormPath<T>,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   M = any
 > = ReadableBoxedValues<{
   form: FsSuperForm<T, M>;
@@ -434,9 +445,9 @@ export function useControl(props: ControlStateProps) {
   return setContext(FORM_CONTROL_CTX, new ControlState(props, getField()));
 }
 
-// export function _getFormControl() {
-//   return getContext<ControlState>(FORM_CONTROL_CTX);
-// }
+export function getFormControl2() {
+  return getContext<ControlState>(FORM_CONTROL_CTX);
+}
 
 export function useLabel(props: LabelStateProps) {
   const control = hasContext(FORM_CONTROL_CTX)
@@ -521,10 +532,6 @@ export type UseFormControlProps = {
   id?: Getter<string | undefined | null>;
 };
 
-export function getFormControl2() {
-  return getContext<ControlState>(FORM_CONTROL_CTX);
-}
-
 export function useFormControl(props: UseFormControlProps) {
   const controlState = getContext<ControlState>(FORM_CONTROL_CTX);
   const id = $derived(props.id ? props.id() : undefined);
@@ -550,15 +557,3 @@ export function useFormControl(props: UseFormControlProps) {
     }
   };
 }
-
-// /**
-//  * Use `useFormControl` instead.
-//  * @deprecated
-//  */
-// export const getFormControl = useFormControl;
-
-// /**
-//  * Use `useFormField` instead.
-//  * @deprecated
-//  */
-// export const getFormField = useFormField;

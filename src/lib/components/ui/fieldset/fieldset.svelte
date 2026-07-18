@@ -1,31 +1,53 @@
 <script lang="ts">
-  import type { ComponentProps, Snippet } from "svelte";
-  import { Fieldset } from "$lib/formsnap";
-  import { uid } from "$lib/hooks/use-uid";
-  import { cn } from "$lib/utils";
-  import { getFormContext } from "../form/form-context.svelte";
+  import type { Snippet } from 'svelte';
+  import { box, mergeProps, useRefById } from 'svelte-toolbelt';
+  import { uid } from '$lib/hooks/use-uid';
+  import { cn } from '$lib/utils';
+  import { getFormContext } from '$lib/components/ui/form/form-context.svelte';
+  import { useField } from '$lib/components/ui/form/form-field-state.svelte.js';
+  import { getDataFsError } from '$lib/components/ui/form/internal/attributes';
+  import { useId } from '$lib/components/ui/form/internal/id';
+  import type { FieldsetProps } from './types.js';
 
   let {
     ref = $bindable(null),
+    id = useId(),
     class: className,
     name = uid(),
     children,
     ...restProps
-  }: Omit<ComponentProps<typeof Fieldset>, "form" | "name"> & {
+  }: Omit<FieldsetProps<Record<string, unknown>, string>, 'form' | 'name'> & {
     children: Snippet;
     name?: string;
   } = $props();
 
   const form = getFormContext();
+
+  const fieldState = useField({
+    form: box.with(() => form),
+    name: box.with(() => name)
+  });
+
+  useRefById({
+    id: box.with(() => id),
+    ref: box.with(
+      () => ref,
+      (v) => (ref = v)
+    )
+  });
+
+  const mergedProps = $derived(
+    mergeProps(
+      {
+        'data-slot': 'fieldset',
+        class: cn('flex w-full max-w-64 flex-col gap-6', className),
+        ...restProps
+      },
+      { 'data-fs-fieldset': '', id }
+    )
+  );
 </script>
 
-<Fieldset
-  bind:ref
-  {form}
-  data-slot="fieldset"
-  {name}
-  class={cn("flex w-full max-w-64 flex-col gap-6", className)}
-  {...restProps}
->
+<fieldset {...mergedProps} data-fs-error={getDataFsError(fieldState.errors)}>
   {@render children?.()}
-</Fieldset>
+</fieldset>

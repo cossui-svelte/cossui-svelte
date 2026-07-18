@@ -46,7 +46,7 @@ export function getAriaRequired(constraints: Record<string, unknown>) {
  * control given the current validation errors.
  */
 export function getAriaInvalid(errors: string[] | undefined) {
-  return errors && errors.length ? 'true' : undefined;
+  return errors?.length ? 'true' : undefined;
 }
 
 /**
@@ -54,5 +54,5 @@ export function getAriaInvalid(errors: string[] | undefined) {
  * given the current validation errors.
  */
 export function getDataFsError(errors: string[] | undefined): string | undefined {
-  return errors && errors.length ? '' : undefined;
+  return errors?.length ? '' : undefined;
 }

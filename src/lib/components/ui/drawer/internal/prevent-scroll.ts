@@ -10,15 +10,16 @@ export function isScrollable(node: Element): boolean {
 }
 
 export function getScrollParent(node: Element): Element {
-  if (isScrollable(node)) {
-    node = node.parentElement as HTMLElement;
+  let n = node;
+  if (isScrollable(n)) {
+    n = n.parentElement as HTMLElement;
   }
 
-  while (node && !isScrollable(node)) {
-    node = node.parentElement as HTMLElement;
+  while (n && !isScrollable(n)) {
+    n = n.parentElement as HTMLElement;
   }
 
-  return node || document.scrollingElement || document.documentElement;
+  return n || document.scrollingElement || document.documentElement;
 }
 
 // The number of active usePreventScroll calls. Used to determine whether to revert back to the original page style/scroll position
@@ -252,14 +253,16 @@ function setStyle(element: HTMLElement, style: string, value: string) {
 function scrollIntoView(target: Element) {
   const { documentElement, body, scrollingElement } = document;
 
+  let t = target;
+
   const root = scrollingElement || documentElement;
-  while (target && target !== root) {
+  while (t && t !== root) {
     // Find the parent scrollable element and adjust the scroll position if the target is not already in view.
-    const scrollable = getScrollParent(target);
-    if (scrollable !== documentElement && scrollable !== body && scrollable !== target) {
+    const scrollable = getScrollParent(t);
+    if (scrollable !== documentElement && scrollable !== body && scrollable !== t) {
       const scrollableTop = scrollable.getBoundingClientRect().top;
-      const targetTop = target.getBoundingClientRect().top;
-      const targetBottom = target.getBoundingClientRect().bottom;
+      const targetTop = t.getBoundingClientRect().top;
+      const targetBottom = t.getBoundingClientRect().bottom;
       const keyboardHeight = scrollable.getBoundingClientRect().bottom;
 
       if (targetBottom > keyboardHeight) {
@@ -268,6 +271,6 @@ function scrollIntoView(target: Element) {
     }
 
     //@ts-expect-error - target is not root so it must have a parentElement
-    target = scrollable.parentElement;
+    t = scrollable.parentElement;
   }
 }

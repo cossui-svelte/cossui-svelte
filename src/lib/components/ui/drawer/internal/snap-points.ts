@@ -45,7 +45,7 @@ export function handleSnapPoints({
   const activeSnapPointIndex = derived(
     [snapPoints, activeSnapPoint],
     ([$snapPoints, $activeSnapPoint]) =>
-      $snapPoints?.findIndex((snapPoint) => snapPoint === $activeSnapPoint) ?? null
+      ($activeSnapPoint === null ? null : $snapPoints?.indexOf($activeSnapPoint)) ?? null
   );
 
   const snapPointsOffset = derived([snapPoints, direction], ([$snapPoints, $direction]) => {
@@ -93,7 +93,7 @@ export function handleSnapPoints({
     if ($activeSnapPoint && $drawerRef) {
       const $snapPoints = get(snapPoints);
       const $snapPointsOffset = get(snapPointsOffset);
-      const newIndex = $snapPoints?.findIndex((snapPoint) => snapPoint === $activeSnapPoint) ?? -1;
+      const newIndex = $snapPoints?.indexOf($activeSnapPoint) ?? -1;
       if ($snapPointsOffset && newIndex !== -1 && typeof $snapPointsOffset[newIndex] === 'number') {
         snapToPoint($snapPointsOffset[newIndex] as number, newIndex);
       }
@@ -106,7 +106,7 @@ export function handleSnapPoints({
       const newSnapPointIndex =
         knownIndex !== undefined && knownIndex !== null
           ? knownIndex
-          : ($snapPointsOffset?.findIndex((snapPointDim) => snapPointDim === dimension) ?? null);
+          : ($snapPointsOffset?.indexOf(dimension) ?? null);
 
       const $drawerRef = get(drawerRef);
       const $direction = get(direction);

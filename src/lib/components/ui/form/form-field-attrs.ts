@@ -52,7 +52,7 @@ export type LabelAttrs = {
   'data-fs-label': string;
 
   /** Any additional props provided to the `<Form.Label />` component */
-  [key: string]: any;
+  [key: string]: unknown;
 };
 
 /**
@@ -76,7 +76,7 @@ export type FieldErrorsAttrs = {
   'aria-live': 'assertive' | 'polite';
 
   /** Any additional props provided to `<Form.Validation />` */
-  [key: string]: any;
+  [key: string]: unknown;
 };
 
 /**
@@ -114,7 +114,7 @@ export type LegendAttrs = {
   'data-fs-error': string | undefined;
 
   /* Any additional props provided to `<Form.Legend />` */
-  [key: string]: any;
+  [key: string]: unknown;
 };
 
 /**
@@ -141,7 +141,7 @@ export type DescriptionAttrs = {
   'data-fs-error': string | undefined;
 
   /* Any additional props provided to `<Form.Description />` */
-  [key: string]: any;
+  [key: string]: unknown;
 };
 
 /**
@@ -165,5 +165,5 @@ export type FieldsetAttrs = {
   'data-fs-error': string | undefined;
 
   /* Any additional props provided to `<Fieldset />` */
-  [key: string]: any;
+  [key: string]: unknown;
 };

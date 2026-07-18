@@ -1,5 +1,3 @@
-import type { ReadableBox, WritableBox } from 'svelte-toolbelt';
-
 export type PrimitiveFromIndex<
   T extends Record<string, unknown>,
   U extends string
@@ -10,8 +8,6 @@ export type PrimitiveFromIndex<
       : never
     : never
   : never;
-
-export type Box<T> = ReadableBox<T> | WritableBox<T>;
 
 /**
  * We override the `id` prop type to not allow it to be `null`. We rely on the

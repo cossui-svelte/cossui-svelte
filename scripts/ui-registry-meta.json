@@ -417,10 +417,12 @@
       }
     ],
     "dependencies": [
-      "bits-ui"
+      "bits-ui",
+      "svelte-toolbelt",
+      "sveltekit-superforms"
     ],
     "registryDependencies": [
-      "@coss/formsnap",
+      "@coss/form",
       "@coss/hooks"
     ]
   },
@@ -436,8 +438,12 @@
         "type": "registry:ui"
       }
     ],
+    "dependencies": [
+      "svelte-toolbelt",
+      "sveltekit-superforms"
+    ],
     "registryDependencies": [
-      "@coss/formsnap",
+      "@coss/form",
       "@coss/hooks"
     ]
   },
@@ -468,6 +474,7 @@
     ],
     "dependencies": [
       "bits-ui",
+      "svelte-toolbelt",
       "sveltekit-superforms"
     ]
   },
@@ -517,7 +524,8 @@
       }
     ],
     "registryDependencies": [
-      "@coss/formsnap"
+      "@coss/field",
+      "@coss/form"
     ]
   },
   {
@@ -1015,7 +1023,8 @@
       }
     ],
     "registryDependencies": [
-      "@coss/formsnap"
+      "@coss/field",
+      "@coss/form"
     ]
   },
   {

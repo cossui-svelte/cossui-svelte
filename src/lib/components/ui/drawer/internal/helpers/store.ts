@@ -3,7 +3,7 @@ import type { Readable, Updater, Writable } from 'svelte/store';
 import { derived, writable } from 'svelte/store';
 
 /** Local type definitions for Svelte 5 compatibility (these were removed from svelte/store exports) */
-type Stores = Readable<unknown> | [Readable<unknown>, ...Array<Readable<unknown>>];
+type Stores = Readable<unknown> | [Readable<unknown>, ...Readable<unknown>[]];
 
 type StoresValues<T> =
   T extends Readable<infer U> ? U : { [K in keyof T]: T[K] extends Readable<infer U> ? U : never };
@@ -19,7 +19,7 @@ type StoresValues<T> =
  */
 export function effect<S extends Stores>(
   stores: S,
-  fn: (values: StoresValues<S>) => (() => void) | void
+  fn: (values: StoresValues<S>) => (() => void) | undefined
 ): () => void {
   if (typeof document === 'undefined') {
     return () => {};
@@ -64,7 +64,9 @@ export function derivedWithUnsubscribe<S extends Stores, T>(
 
   const unsubscribe = () => {
     // Call all of the unsubscribe functions from the previous run of the function
-    unsubscribers.forEach((fn) => fn());
+    unsubscribers.forEach((fn) => {
+      fn();
+    });
     // Clear the list of unsubscribe functions
     unsubscribers = [];
   };
