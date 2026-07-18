@@ -1,6 +1,6 @@
 <script lang="ts">
 	
-	import RiArrowLeftLine from "svelte-remix/ArrowLeftLineArrows.svelte";
+	import RiArrowLeftLine from "$lib/icons/ArrowLeftLineArrows.svelte";
 	import { Button } from "$lib/components/ui/button";
 	import PageHeader from "$lib/components/app/page-header.svelte";
 	import PageHeaderDescription from "$lib/components/app/page-header-description.svelte";

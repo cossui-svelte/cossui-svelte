@@ -120,9 +120,6 @@ importers:
       svelte-eslint-parser:
         specifier: ^1.8.0
         version: 1.8.0(svelte@5.56.6(@typescript-eslint/types@8.64.0))
-      svelte-remix:
-        specifier: ^3.0.1
-        version: 3.0.1(svelte@5.56.6(@typescript-eslint/types@8.64.0))
       svelte-tel-input:
         specifier: ^4.3.2
         version: 4.3.2(svelte@5.56.6(@typescript-eslint/types@8.64.0))
@@ -3116,11 +3113,6 @@ packages:
     resolution: {integrity: sha512-T6mqZrySltPCDwfKXWQ6zehipVLk4GWfH1zCMGgRtLlOIFPuw58ZxVYxVvotMJgJaurKi1i14viB2GIRKXeJTQ==}
     peerDependencies:
       svelte: ^3.0.0 || ^4.0.0 || ^5.0.0-next.1
-
-  svelte-remix@3.0.1:
-    resolution: {integrity: sha512-ctxia0JPCEAsnqMkVAdQ41icr2/HiuWwwqBQdBNhgJZw8OcwEb8TXMDI8qrybnlWVJc2dRxfaMIumBCF26xvhg==}
-    peerDependencies:
-      svelte: ^5.0.0
 
   svelte-tel-input@4.3.2:
     resolution: {integrity: sha512-0u6Q0h+codaF0Ztm2eY/sQXQGFkGr03+Nc0TxeQBGf1vla6ntm4NqOGRd+0iWv9Qh+UDXXLEn7zqd2StHdOQqw==}
@@ -6700,10 +6692,6 @@ snapshots:
       svelte: 5.56.6(@typescript-eslint/types@8.64.0)
 
   svelte-parse-markup@0.1.5(svelte@5.56.6(@typescript-eslint/types@8.64.0)):
-    dependencies:
-      svelte: 5.56.6(@typescript-eslint/types@8.64.0)
-
-  svelte-remix@3.0.1(svelte@5.56.6(@typescript-eslint/types@8.64.0)):
     dependencies:
       svelte: 5.56.6(@typescript-eslint/types@8.64.0)
 

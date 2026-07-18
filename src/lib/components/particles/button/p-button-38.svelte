@@ -1,7 +1,7 @@
 <script lang="ts">
-  import RiGithubFill from "svelte-remix/GithubFillLogos.svelte";
-  import RiGoogleFill from "svelte-remix/GoogleFillLogos.svelte";
-  import RiTwitterXFill from "svelte-remix/TwitterXFillLogos.svelte";
+  import RiGithubFill from "$lib/icons/GithubFillLogos.svelte";
+  import RiGoogleFill from "$lib/icons/GoogleFillLogos.svelte";
+  import RiTwitterXFill from "$lib/icons/TwitterXFillLogos.svelte";
   import { Button } from "$lib/components/ui/button";
 </script>
 
