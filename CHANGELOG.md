@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.9.9](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.8...v0.9.9) (2026-07-18)
+
+### 🐛 Bug Fixes
+
+* binding on fields ([827782d](https://github.com/cossui-svelte/cossui-svelte/commit/827782dc62eeffb8b8fb95f8a2793f3425c2be7d))
+* get around vite cache issue with large icon sets ([b12f83e](https://github.com/cossui-svelte/cossui-svelte/commit/b12f83e2d029840d7c92722724381f3baebae2e9))
+* inline $lib/cropper ([ca21e29](https://github.com/cossui-svelte/cossui-svelte/commit/ca21e296e4d7629a9259a929909c02aa11925418))
+* inline formsnap ([f838262](https://github.com/cossui-svelte/cossui-svelte/commit/f838262a732e8ed6c44fbfb483622c098881bb9d))
+* inline vaul inside the container ([5a7fc85](https://github.com/cossui-svelte/cossui-svelte/commit/5a7fc85ce7b9736902c6b72fa95a510ecdca47d3))
+* slider-23 + a typing issue ([c6b67c1](https://github.com/cossui-svelte/cossui-svelte/commit/c6b67c1ab45e732b9abf3857e6316ff6c8acc5b7))
+
+### 🚚 Chores
+
+* deps ([8ff329d](https://github.com/cossui-svelte/cossui-svelte/commit/8ff329d401a1fdca762307d7146d6db5bdcca3e6))
+* deps ([1c48074](https://github.com/cossui-svelte/cossui-svelte/commit/1c48074752eba8534166c40d0920b3081cf05db9))
+* deps update ([9f7556e](https://github.com/cossui-svelte/cossui-svelte/commit/9f7556ea2569e88b0f01bd20c660fa658b11b72f))
+* update pnpm ([b6b4bb3](https://github.com/cossui-svelte/cossui-svelte/commit/b6b4bb32781df54208e06d3c045d3d0e8c35f998))
 ## [0.9.8](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.7...v0.9.8) (2026-07-14)
 
 
