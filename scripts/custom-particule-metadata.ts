@@ -428,4 +428,88 @@ export const custom_particle_metadata = {
     registryDependencies: ['input', 'label'],
     tags: ['input', 'phone', 'tel']
   },
+  'p-file-upload-1': {
+    description: 'Basic image uploader',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['file-upload'],
+    tags: ['file-upload']
+  },
+  'p-file-upload-2': {
+    description: 'Avatar upload button',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['file-upload'],
+    tags: ['file-upload']
+  },
+  'p-file-upload-3': {
+    description: 'Avatar uploader with droppable area',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['file-upload'],
+    tags: ['file-upload']
+  },
+  'p-file-upload-4': {
+    description: 'Single image uploader with max size',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['file-upload'],
+    tags: ['file-upload']
+  },
+  'p-file-upload-5': {
+    description: 'Single image uploader with max size, drop area and button',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['file-upload'],
+    tags: ['file-upload']
+  },
+  'p-file-upload-6': {
+    description: 'Multiple image uploader with image grid',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['file-upload'],
+    tags: ['file-upload']
+  },
+  'p-file-upload-7': {
+    description: 'Multiple image uploader with image list',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['file-upload'],
+    tags: ['file-upload']
+  },
+  'p-file-upload-8': {
+    description: 'Single file uploader with max size',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['file-upload'],
+    tags: ['file-upload']
+  },
+  'p-file-upload-9': {
+    description: 'Multiple files uploader with list',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['file-upload'],
+    tags: ['file-upload']
+  },
+  'p-file-upload-10': {
+    description: 'Multiple files uploader with list inside the drop area',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['file-upload'],
+    tags: ['file-upload']
+  },
+  'p-file-upload-11': {
+    description: 'Multiple files uploader with table',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['file-upload', 'button'],
+    tags: ['file-upload']
+  },
+  'p-file-upload-12': {
+    description: 'Mixed content uploader with card grid',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['file-upload'],
+    tags: ['file-upload']
+  },
+  'p-file-upload-13': {
+    description: 'File uploader with simulated progress tracking',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['file-upload'],
+    tags: ['file-upload']
+  },
+  'p-file-upload-14': {
+    description: 'Avatar uploader with crop dialog',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['file-upload', 'cropper', 'dialog'],
+    tags: ['file-upload', 'cropper']
+  },
 }

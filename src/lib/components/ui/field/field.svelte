@@ -1,14 +1,15 @@
 <script lang="ts">
   import { box } from 'svelte-toolbelt';
-  import { uid } from '$lib/hooks/use-uid';
   import { cn } from '$lib/utils';
   import { getFormContext } from '$lib/components/ui/form/form-context.svelte';
   import { useField } from '$lib/components/ui/form/form-field-state.svelte.js';
   import type { FieldProps } from './types.js';
 
+  const uid = $props.id();
+
   let {
     class: className,
-    name = uid(),
+    name = uid,
     children: childrenProp,
     ...restProps
   }: Omit<FieldProps<Record<string, unknown>, string>, 'form' | 'name'> & {

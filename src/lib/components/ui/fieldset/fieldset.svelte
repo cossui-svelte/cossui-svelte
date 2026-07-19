@@ -1,7 +1,6 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { box, mergeProps, useRefById } from 'svelte-toolbelt';
-  import { uid } from '$lib/hooks/use-uid';
   import { cn } from '$lib/utils';
   import { getFormContext } from '$lib/components/ui/form/form-context.svelte';
   import { useField } from '$lib/components/ui/form/form-field-state.svelte.js';
@@ -9,11 +8,13 @@
   import { useId } from '$lib/components/ui/form/internal/id';
   import type { FieldsetProps } from './types.js';
 
+  const uid = $props.id();
+
   let {
     ref = $bindable(null),
     id = useId(),
     class: className,
-    name = uid(),
+    name = uid,
     children,
     ...restProps
   }: Omit<FieldsetProps<Record<string, unknown>, string>, 'form' | 'name'> & {
