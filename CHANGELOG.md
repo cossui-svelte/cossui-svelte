@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.9.10](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.9...v0.9.10) (2026-07-19)
+
+### ✨ Features
+
+* file upload particules ([8d4a8cc](https://github.com/cossui-svelte/cossui-svelte/commit/8d4a8cc832366295cc4f80a4ab2a8a93a3ff6664))
+
+### 🐛 Bug Fixes
+
+* remaining of the binding issues ([dc16937](https://github.com/cossui-svelte/cossui-svelte/commit/dc1693721cf40e1d79ee8f539ddf4c70847b1307))
 ## [0.9.9](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.8...v0.9.9) (2026-07-18)
 
 ### 🐛 Bug Fixes
