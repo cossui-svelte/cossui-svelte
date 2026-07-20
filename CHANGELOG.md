@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.9.11](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.10...v0.9.11) (2026-07-20)
+
+### ✨ Features
+
+* stepper is graduating ([e6a9ad7](https://github.com/cossui-svelte/cossui-svelte/commit/e6a9ad7c814b08616957567cf3dc4713b6b4fb01))
+
+### 🐛 Bug Fixes
+
+* add a more moture cropper example ([c780471](https://github.com/cossui-svelte/cossui-svelte/commit/c7804712bf93d1752e8e94496b730065250feb1e))
+* stepper particules ([e623d0a](https://github.com/cossui-svelte/cossui-svelte/commit/e623d0ae53503168d67f2247f311b1ddaddebbb6))
+
+### 🚚 Chores
+
+* deps ([5d4e9b4](https://github.com/cossui-svelte/cossui-svelte/commit/5d4e9b40f0c070552f66b542c9dcadc4d23696c5))
 ## [0.9.10](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.9...v0.9.10) (2026-07-19)
 
 ### ✨ Features
