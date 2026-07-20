@@ -23,7 +23,4 @@
       </StepperItem>
     {/each}
   </Stepper>
-  <p aria-live="polite" class="mt-2 text-muted-foreground text-xs" role="region">
-    Vertical stepper with numbers and checkmarks
-  </p>
 </div>

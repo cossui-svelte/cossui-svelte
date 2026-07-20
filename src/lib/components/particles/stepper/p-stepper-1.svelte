@@ -19,7 +19,7 @@
   let step = $state(1);
 </script>
 
-<div class="flex w-full max-w-md flex-col gap-6">
+<div class="space-y-8 w-full">
   <Stepper bind:step>
     {#each steps as { title, description }, i (title)}
       <StepperItem step={i + 1} class="flex-1">

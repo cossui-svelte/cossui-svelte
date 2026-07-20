@@ -24,7 +24,7 @@
   ];
 </script>
 
-<div class="space-y-8 text-center">
+<div class="space-y-8 text-center w-full">
   <Stepper step={2}>
     {#each steps as { step, title } (step)}
       <StepperItem class="not-last:flex-1 max-md:items-start" {step}>
@@ -40,7 +40,4 @@
       </StepperItem>
     {/each}
   </Stepper>
-  <p aria-live="polite" class="mt-2 text-muted-foreground text-xs" role="region">
-    Stepper with inline titles
-  </p>
 </div>

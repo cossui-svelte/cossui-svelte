@@ -3103,18 +3103,6 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     registryDependencies: ['stepper'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
-  'p-stepper-13': {
-    description: 'Stepper with inline titles and descriptions',
-    tags: ['stepper'],
-    registryDependencies: ['stepper'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
-  },
-  'p-stepper-14': {
-    description: 'Stepper with inline titles and descriptions (reversed)',
-    tags: ['stepper'],
-    registryDependencies: ['stepper'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
-  },
   'p-stepper-15': {
     description: 'Vertical stepper with numbers and checkmarks',
     tags: ['stepper'],

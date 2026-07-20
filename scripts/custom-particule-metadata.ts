@@ -174,18 +174,6 @@ export const custom_particle_metadata = {
     registryDependencies: ['stepper'],
     tags: ['stepper']
   },
-  'p-stepper-13': {
-    description: 'Stepper with inline titles and descriptions',
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
-    registryDependencies: ['stepper'],
-    tags: ['stepper']
-  },
-  'p-stepper-14': {
-    description: 'Stepper with inline titles and descriptions (reversed)',
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
-    registryDependencies: ['stepper'],
-    tags: ['stepper']
-  },
   'p-stepper-15': {
     description: 'Vertical stepper with numbers and checkmarks',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },

@@ -27,12 +27,14 @@
   ];
 </script>
 
-<div class="mx-auto max-w-xl space-y-8 text-center">
-  <Stepper class="gap-4" step={2}>
+<div class="mx-auto max-w-xl space-y-8 text-center w-full">
+  <Stepper class="gap-1" step={2}>
     {#each steps as { step, title } (step)}
       <StepperItem class="flex-1" {step}>
         <StepperTrigger class="w-full flex-col items-start gap-2 rounded">
-          <StepperIndicator class="h-1 w-full bg-border">
+          <StepperIndicator
+            class="h-1 w-full bg-muted data-[state=active]:bg-primary data-[state=completed]:bg-primary"
+          >
             <span class="sr-only">{step}</span>
           </StepperIndicator>
           <div class="space-y-0.5">
@@ -42,7 +44,4 @@
       </StepperItem>
     {/each}
   </Stepper>
-  <p aria-live="polite" class="mt-2 text-muted-foreground text-xs" role="region">
-    Stepper with labels
-  </p>
 </div>

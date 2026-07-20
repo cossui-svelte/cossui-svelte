@@ -10,7 +10,7 @@
   import avatar from "$assets/avatar-40-05.jpg";
 </script>
 
-<div class="mx-auto max-w-xl space-y-8 text-center">
+<div class="mx-auto max-w-xl space-y-8 text-center w-full">
   <Stepper step={2}>
     <StepperItem class="not-last:flex-1" step={1}>
       <StepperTrigger>
@@ -35,7 +35,4 @@
       </StepperTrigger>
     </StepperItem>
   </Stepper>
-  <p aria-live="polite" class="mt-2 text-muted-foreground text-xs" role="region">
-    Stepper with mixed elements
-  </p>
 </div>

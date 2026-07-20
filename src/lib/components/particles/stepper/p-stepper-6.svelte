@@ -22,7 +22,7 @@
   }
 </script>
 
-<div class="mx-auto max-w-xl space-y-8 text-center">
+<div class="mx-auto max-w-xl space-y-8 text-center w-full">
   <Stepper bind:step={currentStep}>
     {#each steps as step (step)}
       <StepperItem class="not-last:flex-1" loading={isLoading} {step}>
@@ -48,7 +48,4 @@
       Next step
     </Button>
   </div>
-  <p aria-live="polite" class="mt-2 text-muted-foreground text-xs" role="region">
-    Controlled stepper with checkmarks and loading state
-  </p>
 </div>

@@ -44,7 +44,4 @@
       Next step
     </Button>
   </div>
-  <p aria-live="polite" class="mt-2 text-muted-foreground text-xs" role="region">
-    Controlled vertical stepper with checkmarks
-  </p>
 </div>

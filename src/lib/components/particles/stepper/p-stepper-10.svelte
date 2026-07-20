@@ -7,13 +7,15 @@
   let currentStep = $state(1);
 </script>
 
-<div class="mx-auto max-w-xl space-y-8 text-center">
+<div class="mx-auto max-w-xl space-y-8 text-center w-full">
   <div class="space-y-3">
-    <Stepper bind:step={currentStep}>
+    <Stepper bind:step={currentStep} class="gap-0">
       {#each steps as step (step)}
         <StepperItem class="flex-1" {step}>
-          <StepperTrigger class="w-full flex-col items-start gap-2">
-            <StepperIndicator class="h-2 w-full rounded-none bg-border">
+          <StepperTrigger class="w-full flex-col items-start gap-2 px-0">
+            <StepperIndicator
+              class="h-2 w-full rounded-none border-0 bg-border data-[state=active]:bg-primary data-[state=completed]:bg-primary"
+            >
               <span class="sr-only">{step}</span>
             </StepperIndicator>
           </StepperTrigger>
@@ -42,7 +44,4 @@
       Next step
     </Button>
   </div>
-  <p aria-live="polite" class="mt-2 text-muted-foreground text-xs" role="region">
-    Progress stepper
-  </p>
 </div>
