@@ -330,6 +330,12 @@ export const custom_particle_metadata = {
     registryDependencies: ['cropper', 'button'],
     tags: ['cropper']
   },
+  'p-cropper-12': {
+    description: 'Cropper with aspect ratio switcher and grid overlay',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['cropper', 'button'],
+    tags: ['cropper']
+  },
   'p-chart-1': {
     description: 'Radial Chart with Labels',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },

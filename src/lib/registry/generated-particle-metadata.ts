@@ -3259,6 +3259,12 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     registryDependencies: ['cropper', 'button'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
+  'p-cropper-12': {
+    description: 'Cropper with aspect ratio switcher and grid overlay',
+    tags: ['cropper'],
+    registryDependencies: ['cropper', 'button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
   'p-chart-1': {
     description: 'Radial Chart with Labels',
     tags: ['chart'],
