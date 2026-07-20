@@ -28,3 +28,4 @@ minimumReleaseAgeExclude:
   - miniflare@4.20260714.0
   - wrangler@4.112.0
   - commit-and-tag-version@13.0.0
+  - eslint-plugin-svelte@3.22.0
