@@ -200,7 +200,6 @@ export const custom_components_metadata: RegistryUiData = {
 	stepper: {
 		description: "A component for displaying a series of steps in a process.",
 		category: "origin-ui",
-		istodo: true
 	},
 	select: {
 		description: "A common form component for choosing a predefined value in a dropdown menu.",
