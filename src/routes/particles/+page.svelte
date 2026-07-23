@@ -9,7 +9,7 @@
 	} from "$lib/registry/registry-tags.js";
 	import ParticlesDisplay from "./particles-display.svelte";
 	import SearchContainer from "./search-container.svelte";
-	import { browser } from "$app/environment";
+	import { browser } from "$app/env";
 	import { page } from "$app/state";
 
 	const particleCount = Object.keys(allParticles).length;

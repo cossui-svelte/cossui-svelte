@@ -21,6 +21,9 @@ const config = {
     },
     prerender: {
       handleMissingId: 'ignore'
+    },
+    experimental: {
+      explicitEnvironmentVariables: true
     }
   },
   preprocess: vitePreprocess(),

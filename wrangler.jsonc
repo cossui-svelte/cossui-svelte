@@ -13,7 +13,7 @@
 	"main": ".svelte-kit/cloudflare/_worker.js",
 	"assets": {
 		"directory": ".svelte-kit/cloudflare",// check this matches adapter output
-    	"run_worker_first": ["/api/*"],   
+    	"run_worker_first": ["/api/*", "/_app/env.js", "/_app/env.script.js"],   
 		"binding": "ASSETS",
 		"not_found_handling": "single-page-application"
 	},

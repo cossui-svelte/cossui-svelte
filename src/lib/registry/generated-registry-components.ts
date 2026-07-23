@@ -410,6 +410,16 @@ const allComponents: RegistryUiData = {
     npmDependencies: [],
     registryDependencies: []
   },
+  'places-autocomplete': {
+    name: 'Places Autocomplete',
+    category: 'ui',
+    description: '',
+    folder: 'places-autocomplete',
+    isnew: false,
+    istodo: false,
+    npmDependencies: [],
+    registryDependencies: []
+  },
   popover: {
     name: 'Popover',
     category: 'ui',

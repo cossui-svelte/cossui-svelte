@@ -2,7 +2,7 @@
 	import { allParticles } from "$lib/registry/registry-particles";
 	import { getCategorySortOrder } from "$lib/registry/registry-tags";
 	import SearchField, { type SearchItem } from "./search-field.svelte";
-	import { browser } from "$app/environment";
+	import { browser } from "$app/env";
 	import { goto } from "$app/navigation";
 	import { page } from "$app/state";
 

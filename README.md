@@ -34,6 +34,7 @@ Along the way, I noticed that even Coss UI lacks some of the components found in
 - [Vaul](https://github.com/quanghle/autopilot-vaul-svelte) - An headless, gesture-driven drawer component
 - [Phantom-UI](https://github.com/Aejkatappaja/phantom-ui) - An elegant structure-aware skeleton loader
 - [FormSnap & Superforms](https://superforms.rocks/) - A full featured headless validation framework
+- [Places autocomplete](https://github.com/gurbaaz27/shadcn-google-maps) - Address validation based on gmap
 
 Other good source of inspiration, sometimes with full component logic just copy/pasted (full credits to their authors):
 
