@@ -75,7 +75,7 @@
     "cf:typegen": "wrangler types src/worker-configuration.d.ts",
     "check": "svelte-kit sync && svelte-check --workspace .",
     "commit": "tsx ./node_modules/cz-customizable/standalone.js",
-    "dev": "vite",
+    "dev": "vite dev --open --host",
     "format": "biome check . --fix && eslint --fix",
     "generate:registry": "tsx scripts/generateComponentRegistry.ts -w src/lib/registry/generated-registry-components.ts && tsx scripts/generateParticleRegistry.ts && pnpm format",
     "lint:audit": "pnpx knip --max-show-issues 20",

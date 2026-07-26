@@ -4,28 +4,29 @@
 
   import "../app.css";
 
+  import { page } from "$app/state";
   import { ModeWatcher } from "mode-watcher";
   import {
     AnchoredToastProvider,
     ToastProvider,
   } from "$lib/components/ui/toast";
+  import SeoHead from "$lib/components/app/seo-head.svelte";
   import SiteHeader from "$lib/components/app/app-site-header.svelte";
   import SiteFooter from "$lib/components/app/site-footer.svelte";
 
+  const DEFAULT_SEO = {
+    description:
+      "coss ui-svelte is a collection of accessible, and composable Svelte components. Built on top of Bits UI and styled with Tailwind CSS.",
+    title:
+      "coss ui-svelte - A new, modern UI component library built on top of Bits UI. Built for developers and AI.",
+  };
+
   let { children, data: _data }: { children: Snippet; data: LayoutData } = $props();
+
+  const seo = $derived({ ...DEFAULT_SEO, ...page.data.SEO });
 </script>
 
-<svelte:head>
-  <title>
-    coss ui-svelte - A new, modern UI component library built on top of Bits UI.
-    Built for developers and AI.
-  </title>
-  <meta
-    name="description"
-    content="coss ui-svelte is a collection of accessible, and composable Svelte components. Built on top of Bits UI and styled with Tailwind CSS"
-    title="coss ui-svelte - A new, modern UI component library built on top of Bits UI. Built for developers and AI (coming soon)"
-  />
-</svelte:head>
+<SeoHead title={seo.title} description={seo.description} image={seo.image} type={seo.type} />
 
 <ModeWatcher defaultMode="system" disableTransitions />
 <ToastProvider>

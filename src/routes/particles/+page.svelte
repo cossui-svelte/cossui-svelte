@@ -11,9 +11,12 @@
 	import SearchContainer from "./search-container.svelte";
 	import { browser } from "$app/env";
 	import { page } from "$app/state";
+	import type { PageData } from "./$types";
+
+	let { data }: { data: PageData } = $props();
 
 	const particleCount = Object.keys(allParticles).length;
-	const description = `Discover ${particleCount} ready-to-use particles, the building blocks of your design system. Filter by category to find the perfect component for your project.`;
+	const description = data.SEO.description;
 
 	const selectedCategories = $derived.by(() => {
 		if (!browser) return { hasInvalid: false, valid: [] };
@@ -30,11 +33,6 @@
 		return { hasInvalid, valid: validCategories };
 	});
 </script>
-
-<svelte:head>
-	<title>Browse Particles - coss ui</title>
-	<meta name="description" content={description} />
-</svelte:head>
 
 <div class="container w-full">
 	<PageHeader class="*:pb-8!">

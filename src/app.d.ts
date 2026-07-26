@@ -12,7 +12,9 @@ declare global {
     interface PageData {
       SEO?: {
         description: string;
+        image?: string;
         title: string;
+        type?: 'article' | 'website';
       };
     }
     interface Platform {

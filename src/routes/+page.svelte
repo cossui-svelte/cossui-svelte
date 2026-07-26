@@ -16,16 +16,14 @@
   import PageHeaderHeading from "$lib/components/app/page-header-heading.svelte";
   import { allComponents, type RegistryUIEntry } from "$lib/registry/generated-registry-components";
   import { allParticles } from "$lib/registry/registry-particles";
+  import type { PageData } from "./$types";
 
-  const description = "Built for developers and AI.";
+  let { data }: { data: PageData } = $props();
+
+  const description = data.SEO.description;
 
   const particleCount = Object.keys(allParticles).length;
 </script>
-
-<svelte:head>
-  <title>A new, modern UI component library built on top of BitsUI - coss ui-svelte</title>
-  <meta name="description" content={description} />
-</svelte:head>
 
 {#snippet categoryCard(
   slug: string,
