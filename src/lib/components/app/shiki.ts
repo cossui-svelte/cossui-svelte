@@ -19,5 +19,6 @@ export const highlighter = await createHighlighterCore({
     import('@shikijs/themes/github-light-default'),
     import('@shikijs/themes/github-dark-default'),
     import('@shikijs/themes/vesper')
-  ]
+  ],
+  
 });

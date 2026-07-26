@@ -34,12 +34,6 @@
 @import "$lib/components/ui/global.css";
 
 @layer base {
-  @supports (font: -apple-system-body) and (-webkit-appearance: none) {
-    [data-wrapper] {
-      @apply min-[1800px]:border-t;
-    }
-  }
-
   a:active,
   button:active {
     @apply opacity-72 md:opacity-100;
