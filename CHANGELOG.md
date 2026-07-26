@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.9.12](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.11...v0.9.12) (2026-07-26)
+
+### ✨ Features
+
+* improve SEO meta-data ([316ad4a](https://github.com/cossui-svelte/cossui-svelte/commit/316ad4ab1bb782ca903fe9d72c4f022d00435e76))
+* places autocomplete is live ([64ef410](https://github.com/cossui-svelte/cossui-svelte/commit/64ef410e89332d640f5dd032ab340685fc6f1b74))
+
+### 🐛 Bug Fixes
+
+* font preload issue on the site ([a7aeaa6](https://github.com/cossui-svelte/cossui-svelte/commit/a7aeaa66c6d720e0b71d0fed03a8de02509d82db))
+
+### ♻️ Code Refactoring
+
+* cleanup css ([a94b9d1](https://github.com/cossui-svelte/cossui-svelte/commit/a94b9d12a8a622f0a9beb75e4ff1142da4672b54))
+* we are maturing, remove all .tsx files ([29f70f8](https://github.com/cossui-svelte/cossui-svelte/commit/29f70f8e8db4f4222e185de0a1f74c4cdd3a6c54))
+
+### 📝 Documentation
+
+* update BUGS.md ([63aafed](https://github.com/cossui-svelte/cossui-svelte/commit/63aafeddf068a438c5a8b38e748a299e1095375b))
+
+### 🚚 Chores
+
+* biome upgrade and formatting ([af9a761](https://github.com/cossui-svelte/cossui-svelte/commit/af9a76134cdbbf426ba79cdfe29518d0694ce457))
+* deps ([f03921e](https://github.com/cossui-svelte/cossui-svelte/commit/f03921ebcca866236b26d2353364a8e09a18a5cb))
+* deps ([a271313](https://github.com/cossui-svelte/cossui-svelte/commit/a271313d6fb0c63a64b6257ea546b5cd9b56258b))
 ## [0.9.11](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.10...v0.9.11) (2026-07-20)
 
 ### ✨ Features
