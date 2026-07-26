@@ -3468,5 +3468,11 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     tags: ['autocomplete', 'places', 'google', 'address'],
     registryDependencies: ['places-autocomplete', 'toast'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-colorpicker-1': {
+    description: 'Color picker with swatches',
+    tags: ['colorpicker', 'color', 'input'],
+    registryDependencies: ['slider', 'checkbox', 'input', 'button', 'label'],
+    meta: { class: '**:data-[slot=card]:overflow-visible **:data-[slot=card]:[clip-path:none]!' }
   }
 };

@@ -37,6 +37,7 @@
     "@tailwindcss/vite": "^4.3.3",
     "@tanstack/table-core": "^8.21.3",
     "@types/node": "^26.1.2",
+    "colord": "^2.9.3",
     "commit-and-tag-version": "^13.1.2",
     "cz-customizable": "^7.5.4",
     "eslint": "^10.8.0",

@@ -543,4 +543,10 @@ export const custom_particle_metadata = {
     registryDependencies: ['places-autocomplete', 'toast'],
     tags: ['autocomplete', 'places', 'google', 'address']
   },
+  'p-colorpicker-1': {
+    description: 'Color picker with swatches',
+    meta: { class: '**:data-[slot=card]:overflow-visible **:data-[slot=card]:[clip-path:none]!' },
+    registryDependencies: ['slider', 'checkbox', 'input', 'button', 'label'],
+    tags: ['colorpicker', 'color', 'input']
+  },
 }
