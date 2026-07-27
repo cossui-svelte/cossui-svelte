@@ -40,7 +40,7 @@
 			// Animation base
 			"duration-200 fill-mode-both will-change-transform",
 			"data-[state=open]:animate-in data-[state=closed]:animate-out",
-			"data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0",
+			"data-[state=open]:fade-in data-[state=closed]:fade-out",
 			// Desktop (sm+): centered dialog with zoom
 			"sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2",
 			"sm:rounded-xl",

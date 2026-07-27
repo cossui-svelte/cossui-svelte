@@ -41,7 +41,7 @@
       class={cn(
         "pointer-events-auto relative flex max-h-full min-h-0 w-full min-w-0 flex-col bg-popover not-dark:bg-clip-padding text-popover-foreground shadow-lg/5 duration-200 ease-in-out will-change-transform before:pointer-events-none before:absolute before:inset-0 before:shadow-[0_1px_--theme(--color-black/4%)] max-sm:before:hidden dark:before:shadow-[0_-1px_--theme(--color-white/6%)]",
         "data-[state=open]:animate-in data-[state=closed]:animate-out",
-        "data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0",
+        "data-[state=open]:fade-in data-[state=closed]:fade-out",
         side === "bottom" &&
           "border-t data-[state=open]:slide-in-from-bottom-8 data-[state=closed]:slide-out-to-bottom-8",
         side === "top" &&
