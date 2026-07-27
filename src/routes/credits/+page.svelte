@@ -119,6 +119,16 @@
           rel="noopener noreferrer">Places autocomplete</a
         > - Address validation based on gmap
       </li>
+      <li>
+        <a
+          href="https://svelte-awesome-color-picker.vercel.app"
+          class="text-foreground underline underline-offset-4 hover:text-foreground/70 transition-colors"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          - Awesome ColorPicker</a
+        >
+      </li>
     </ul>
 
     <p class="text-base/7 text-muted-foreground">
