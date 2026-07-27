@@ -2,7 +2,7 @@
 	import PageHeader from "$lib/components/app/page-header.svelte";
 	import PageHeaderDescription from "$lib/components/app/page-header-description.svelte";
 	import PageHeaderHeading from "$lib/components/app/page-header-heading.svelte";
-	import { allParticles } from "$lib/registry/registry-particles";
+	
 	import {
 		isValidRegistryCategory,
 		type RegistryCategory,
@@ -15,7 +15,6 @@
 
 	let { data }: { data: PageData } = $props();
 
-	const particleCount = Object.keys(allParticles).length;
 	const description = data.SEO.description;
 
 	const selectedCategories = $derived.by(() => {

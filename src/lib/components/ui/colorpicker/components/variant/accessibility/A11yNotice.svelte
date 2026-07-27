@@ -46,7 +46,7 @@
 	<span class="title">
 		{getTexts().nbGradeSummary(count)}
 	</span>
-	{#each _a11yColors as { trueColors, contrast, placeholder, size }}
+	{#each _a11yColors as { trueColors, contrast, placeholder, size }, i (i)}
 		<components.a11ySingleNotice
 			{...trueColors}
 			{contrast}
@@ -58,6 +58,7 @@
 	{/each}
 	{#if getTexts().guidelines}
 		<span class="guidelines">
+			<!-- eslint-disable-next-line svelte/no-at-html-tags -- guidelines is developer-supplied markup from a11yTexts config, not user input -->
 			{@html getTexts().guidelines}
 		</span>
 	{/if}

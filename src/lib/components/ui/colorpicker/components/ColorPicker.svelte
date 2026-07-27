@@ -275,7 +275,7 @@
 	});
 
 	$effect(() => {
-		isUndefined;
+		void isUndefined;
 		updateColor();
 	});
 

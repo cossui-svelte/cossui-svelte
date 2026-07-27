@@ -22,6 +22,15 @@
 
   const canonical = $derived(`${SITE_URL}${page.url.pathname}`);
   const ogImage = $derived(image.startsWith("http") ? image : `${SITE_URL}${image}`);
+
+  // Escape characters that could close the surrounding <script> tag or be
+  // misinterpreted as HTML if they appear inside a string value of jsonLd.
+  function serializeJsonLd(data: Record<string, unknown>) {
+    return JSON.stringify(data)
+      .replace(/</g, "\\u003c")
+      .replace(/>/g, "\\u003e")
+      .replace(/&/g, "\\u0026");
+  }
 </script>
 
 <svelte:head>
@@ -45,6 +54,7 @@
   <meta name="twitter:image" content={ogImage} />
 
   {#if jsonLd}
-    {@html `<script type="application/ld+json">${JSON.stringify(jsonLd)}</` + `script>`}
+    <!-- eslint-disable-next-line svelte/no-at-html-tags -- jsonLd is escaped via serializeJsonLd to prevent script-tag breakout -->
+    {@html `<script type="application/ld+json">${serializeJsonLd(jsonLd)}</` + `script>`}
   {/if}
 </svelte:head>

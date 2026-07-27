@@ -29,4 +29,3 @@ minimumReleaseAgeExclude:
   - wrangler@4.112.0
   - commit-and-tag-version@13.0.0 || 13.1.0 || 13.1.2
   - eslint-plugin-svelte@3.22.0
-  - svelte-check@4.7.4

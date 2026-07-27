@@ -23,6 +23,7 @@ export const custom_components_metadata: RegistryUiData = {
 	"aspect-ratio": {
 		description: "Displays content within a desired ratio.",
 		category: "bits-ui",
+		isnew: true,
 	},
 	avatar: {
 		description: "An image element with a fallback for representing the user.",
@@ -55,6 +56,7 @@ export const custom_components_metadata: RegistryUiData = {
 	chart: {
 		description: "A chart component for visualizing data in various formats.",
 		category: "shadcn-ui",
+		isnew: true,
 	},
 	checkbox: {
 		description: "A control allowing the user to toggle between checked and not checked.",
@@ -67,6 +69,11 @@ export const custom_components_metadata: RegistryUiData = {
 	collapsible: {
 		description: "A collapsible panel controlled by a button trigger.",
 		category: "ui",
+	},
+	colorpicker: {
+		description: "A specialized dropdown for selecting colors.",
+		category: "extra",
+		isnew: true,
 	},
 	combobox: {
 		description: "An input combined with a list of predefined items to select.",
@@ -83,7 +90,8 @@ export const custom_components_metadata: RegistryUiData = {
 	},
 	cropper: {
 		description: "A component for cropping images with a resizable and movable selection area.",
-		category: "origin-ui"
+		category: "origin-ui",
+		isnew: true,
 	},
 	"date-picker": {
 		description: "A date picker component built with Calendar and Popover.",
@@ -200,6 +208,7 @@ export const custom_components_metadata: RegistryUiData = {
 	stepper: {
 		description: "A component for displaying a series of steps in a process.",
 		category: "origin-ui",
+		isnew: true,
 	},
 	select: {
 		description: "A common form component for choosing a predefined value in a dropdown menu.",
@@ -278,7 +287,8 @@ export const custom_components_metadata: RegistryUiData = {
 	},
 	tree: {
 		description: "A component for displaying a hierarchical tree of items.",
-		category: "origin-ui"
+		category: "origin-ui",
+		isnew: true,
 	}
 };
 

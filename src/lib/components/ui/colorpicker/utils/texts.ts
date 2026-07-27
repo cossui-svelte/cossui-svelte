@@ -32,7 +32,7 @@ export const defaultA11yTexts = {
 export type Texts = typeof defaultTexts;
 export type A11yTexts = typeof defaultA11yTexts;
 
-export type DeepPartial<T> = T extends Function
+export type DeepPartial<T> = T extends (...args: never) => unknown
   ? T
   : T extends object
     ? { [P in keyof T]?: DeepPartial<T[P]> }

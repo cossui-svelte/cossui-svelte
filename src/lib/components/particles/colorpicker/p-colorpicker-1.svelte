@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ColorPicker from "$lib/colorpicker";
+  import ColorPicker from "$lib/components/ui/colorpicker";
 
   let hex = $state("#4f46e5");
 </script>

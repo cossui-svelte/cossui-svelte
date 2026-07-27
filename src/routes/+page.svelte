@@ -10,7 +10,7 @@
     CardFrameTitle,
     CardPanel,
   } from "$lib/components/ui/card";
-  import CategoryThumbnail from "$lib/components/app/category-thumbnails.svelte";
+  import CategoryThumbnail from "$lib/components/app/component-thumbnails.svelte";
   import PageHeader from "$lib/components/app/page-header.svelte";
   import PageHeaderDescription from "$lib/components/app/page-header-description.svelte";
   import PageHeaderHeading from "$lib/components/app/page-header-heading.svelte";

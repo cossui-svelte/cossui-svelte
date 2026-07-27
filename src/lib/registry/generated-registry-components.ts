@@ -52,7 +52,7 @@ const allComponents: RegistryUiData = {
     category: 'bits-ui',
     description: 'Displays content within a desired ratio.',
     folder: 'aspect-ratio',
-    isnew: false,
+    isnew: true,
     istodo: false,
     npmDependencies: [],
     registryDependencies: []
@@ -132,7 +132,7 @@ const allComponents: RegistryUiData = {
     category: 'shadcn-ui',
     description: 'A chart component for visualizing data in various formats.',
     folder: 'chart',
-    isnew: false,
+    isnew: true,
     istodo: false,
     npmDependencies: [],
     registryDependencies: []
@@ -163,6 +163,16 @@ const allComponents: RegistryUiData = {
     description: 'A collapsible panel controlled by a button trigger.',
     folder: 'collapsible',
     isnew: false,
+    istodo: false,
+    npmDependencies: [],
+    registryDependencies: []
+  },
+  colorpicker: {
+    name: 'Colorpicker',
+    category: 'extra',
+    description: 'A specialized dropdown for selecting colors.',
+    folder: 'colorpicker',
+    isnew: true,
     istodo: false,
     npmDependencies: [],
     registryDependencies: []
@@ -203,7 +213,7 @@ const allComponents: RegistryUiData = {
     category: 'origin-ui',
     description: 'A component for cropping images with a resizable and movable selection area.',
     folder: 'cropper',
-    isnew: false,
+    isnew: true,
     istodo: false,
     npmDependencies: [],
     registryDependencies: []
@@ -578,7 +588,7 @@ const allComponents: RegistryUiData = {
     category: 'origin-ui',
     description: 'A component for displaying a series of steps in a process.',
     folder: 'stepper',
-    isnew: false,
+    isnew: true,
     istodo: false,
     npmDependencies: [],
     registryDependencies: []
@@ -689,7 +699,7 @@ const allComponents: RegistryUiData = {
     category: 'origin-ui',
     description: 'A component for displaying a hierarchical tree of items.',
     folder: 'tree',
-    isnew: false,
+    isnew: true,
     istodo: false,
     npmDependencies: [],
     registryDependencies: []

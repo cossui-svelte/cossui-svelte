@@ -14,6 +14,7 @@
   import ListIcon from "@lucide/svelte/icons/list";
   import Minus from "@lucide/svelte/icons/minus";
   import MousePointer2 from "@lucide/svelte/icons/mouse-pointer-2";
+  import Pipette from "@lucide/svelte/icons/pipette";
   import Plus from "@lucide/svelte/icons/plus";
   import Search from "@lucide/svelte/icons/search";
   import TextCursor from "@lucide/svelte/icons/text-cursor";
@@ -328,6 +329,17 @@
         {@render textSnip("w-[80%]", "secondary")}
         {@render textSnip("w-[70%]", "secondary")}
       </div>
+    </div>
+  </div>
+{:else if slug === "colorpicker"}
+  <div class={cardCls("[--radius-2xl:14px]", false)}>
+    <div class={cpCls("flex items-center gap-3 px-4 py-3.5")}>
+      <div
+        class="size-7 shrink-0 rounded-md ring-1 ring-inset ring-black/10 dark:ring-white/10"
+        style="background: conic-gradient(from 90deg, oklch(0.7 0.24 0), oklch(0.7 0.24 60), oklch(0.7 0.24 120), oklch(0.7 0.24 180), oklch(0.7 0.24 240), oklch(0.7 0.24 300), oklch(0.7 0.24 360))"
+      ></div>
+      {@render textSnip("flex-1")}
+      {@render iconSnip(Pipette)}
     </div>
   </div>
 {:else if slug === "combobox"}
