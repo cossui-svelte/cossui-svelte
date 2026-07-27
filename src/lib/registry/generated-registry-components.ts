@@ -639,7 +639,7 @@ const allComponents: RegistryUiData = {
     description: 'A component for displaying a series of events in chronological order.',
     folder: 'timeline',
     isnew: false,
-    istodo: false,
+    istodo: true,
     npmDependencies: [],
     registryDependencies: []
   },

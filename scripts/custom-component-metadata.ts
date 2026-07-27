@@ -264,6 +264,7 @@ export const custom_components_metadata: RegistryUiData = {
 	timeline: {
 		description: "A component for displaying a series of events in chronological order.",
 		category: "origin-ui",
+		istodo: true
 	},
 	toast: {
 		description: "A temporary notification that appears on screen to inform users.",
