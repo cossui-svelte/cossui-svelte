@@ -75,7 +75,7 @@ class FormFieldState<T extends Record<string, unknown>, U extends FormPath<T>> {
     () =>
       (getValueAtPath(this.#name.current, structuredClone(this.#formConstraints.current)) as
         | Record<string, unknown>
-        | undefined) ?? {}
+        | undefined) ?? ({} as Record<string, unknown>)
   );
   tainted = $derived.by(() =>
     this.#formTainted.current
@@ -145,7 +145,10 @@ class ElementFieldState<T extends Record<string, unknown>, U extends FormPath<T>
     extractErrorArray(getValueAtPath(this.#name.current, this.#formErrors.current))
   );
   constraints = $derived.by(
-    () => getValueAtPath(this.#name.current, this.#formConstraints.current) ?? {}
+    () =>
+      (getValueAtPath(this.#name.current, this.#formConstraints.current) as
+        | Record<string, unknown>
+        | undefined) ?? ({} as Record<string, unknown>)
   );
   tainted = $derived.by(() =>
     this.#formTainted.current
