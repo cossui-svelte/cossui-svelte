@@ -49,7 +49,7 @@
     lastX = e.clientX;
     if (delta !== 0) {
       const change = delta * ctx.step;
-      ctx.setValue((ctx.value ?? 0) + change);
+      ctx.applyDelta(change);
     }
   }
 
