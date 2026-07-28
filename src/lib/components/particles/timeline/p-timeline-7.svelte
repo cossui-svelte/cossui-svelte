@@ -56,7 +56,7 @@
 	{#each items as item (item.id)}
 		<TimelineItem
 			step={item.id}
-			class="group-data-[orientation=vertical]/timeline:[&:not(:last-child)]:ms-10 group-data-[orientation=vertical]/timeline:[&:not(:last-child)]:pb-8"
+			class="group-data-[orientation=vertical]/timeline:ms-10 group-data-[orientation=vertical]/timeline:not-last:pb-8"
 		>
 			<TimelineHeader>
 				<TimelineSeparator

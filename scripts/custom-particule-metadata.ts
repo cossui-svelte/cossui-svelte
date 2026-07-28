@@ -25,73 +25,73 @@ export const custom_particle_metadata = {
     tags: ['aspect-ratio']
   },
   'p-timeline-1': {
-    description: 'Ratio 1:1',
+    description: 'The most basic vertical timeline',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
     registryDependencies: ['timeline'],
     tags: ['timeline']
   },
   'p-timeline-2': {
-    description: 'Ratio 1:1',
+    description: 'A more complex timeline',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
     registryDependencies: ['timeline'],
     tags: ['timeline']
   },
   'p-timeline-3': {
-    description: 'Ratio 1:1',
+    description: 'A more complex timeline with embeded dates',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
     registryDependencies: ['timeline'],
     tags: ['timeline']
   },
   'p-timeline-4': {
-    description: 'Ratio 1:1',
+    description: 'A Basic vertical timeline',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
     registryDependencies: ['timeline'],
     tags: ['timeline']
   },
   'p-timeline-5': {
-    description: 'Ratio 1:1',
+    description: 'A vertical timeline with progress indicator',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
     registryDependencies: ['timeline'],
     tags: ['timeline']
   },
   'p-timeline-6': {
-    description: 'Ratio 1:1',
+    description: 'A timeline with icons',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
     registryDependencies: ['timeline'],
     tags: ['timeline']
   },
   'p-timeline-7': {
-    description: 'Ratio 1:1',
+    description: 'A timeline with images',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
     registryDependencies: ['timeline'],
     tags: ['timeline']
   },
   'p-timeline-8': {
-    description: 'Ratio 1:1',
+    description: 'A timeline with titles and dates',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
     registryDependencies: ['timeline'],
     tags: ['timeline']
   },
   'p-timeline-9': {
-    description: 'Ratio 1:1',
+    description: 'A timeline as an array',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
     registryDependencies: ['timeline'],
     tags: ['timeline']
   },
   'p-timeline-10': {
-    description: 'Ratio 1:1',
+    description: 'A timeline showing an activity tracker',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
     registryDependencies: ['timeline'],
     tags: ['timeline']
   },
   'p-timeline-11': {
-    description: 'Ratio 1:1',
+    description: 'Horizontal timeline with dates below',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
     registryDependencies: ['timeline'],
     tags: ['timeline']
   },
   'p-timeline-12': {
-    description: 'Ratio 1:1',
+    description: 'Horizontal timeline with dates above',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
     registryDependencies: ['timeline'],
     tags: ['timeline']
