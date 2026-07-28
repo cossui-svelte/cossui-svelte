@@ -4,6 +4,7 @@
 * p-group-14 css bug
 * Bring origin tables 12-20, + 9-11
 * Add origin input-29
+* Border style is off - p-input-147  phone input
 
 * DONE add the bundle version in the footer
 * DONE Issue with particule generation script, the meta.class is not copied over

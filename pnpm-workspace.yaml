@@ -3,7 +3,7 @@ allowBuilds:
   sharp: true
   workerd: true
 minimumReleaseAgeExclude:
-  - '@types/node@25.9.0 || 25.9.1'
+  - '@types/node@25.9.0 || 25.9.1 || 26.1.2'
   - tsx@4.22.2 || 4.22.3
   - svelte@5.55.8 || 5.56.6 || 5.56.7
   - '@shikijs/core@4.1.0'
@@ -27,5 +27,6 @@ minimumReleaseAgeExclude:
   - '@sveltejs/kit@2.70.0'
   - miniflare@4.20260714.0
   - wrangler@4.112.0
-  - commit-and-tag-version@13.0.0 || 13.1.0
+  - commit-and-tag-version@13.0.0 || 13.1.0 || 13.1.2
   - eslint-plugin-svelte@3.22.0
+  - svelte-check@4.7.4
