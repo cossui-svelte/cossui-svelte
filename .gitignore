@@ -12,3 +12,4 @@ stats.html
 .env
 .env.*
 .dev.vars
+.playwright-mcp
