@@ -422,6 +422,26 @@ export const custom_particle_metadata = {
     registryDependencies: ['input', 'label'],
     tags: ['input', 'phone', 'tel']
   },
+  'p-input-155': {
+    description: 'Input with input mask',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    npmDependencies: ['inputmask'],
+    registryDependencies: ['input', 'label'],
+    tags: ['input', 'label', 'mask']
+  },
+  'p-input-156': {
+    description: 'Timestamp input with input mask',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    npmDependencies: ['inputmask'],
+    registryDependencies: ['input', 'label'],
+    tags: ['input', 'label', 'mask', 'timestamp']
+  },
+  'p-input-157': {
+    description: 'Numeric range input with min and max fields',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['input', 'label'],
+    tags: ['input', 'label', 'range', 'number']
+  },
   'p-file-upload-1': {
     description: 'Basic image uploader',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },

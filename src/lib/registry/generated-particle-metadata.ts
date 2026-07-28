@@ -3349,6 +3349,24 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     registryDependencies: ['input', 'label'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
+  'p-input-155': {
+    description: 'Input with input mask',
+    tags: ['input', 'label', 'mask'],
+    registryDependencies: ['input', 'label'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-input-156': {
+    description: 'Timestamp input with input mask',
+    tags: ['input', 'label', 'mask', 'timestamp'],
+    registryDependencies: ['input', 'label'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-input-157': {
+    description: 'Numeric range input with min and max fields',
+    tags: ['input', 'label', 'range', 'number'],
+    registryDependencies: ['input', 'label'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
   'p-file-upload-1': {
     description: 'Basic image uploader',
     tags: ['file-upload'],
