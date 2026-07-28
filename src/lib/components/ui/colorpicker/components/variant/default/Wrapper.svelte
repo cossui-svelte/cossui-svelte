@@ -23,21 +23,6 @@
 	{@render children()}
 </div>
 
-<!-- 
-@component Default variant wrapper
-
-**Import**
-this component is the default variant and cannot be imported
-
-**Use**
-N.A.
-
-**Props**
-@prop wrapper: HTMLElement | undefined — DOM element of the wrapper element
-@prop isOpen: boolean — indicator of the popup state
-@prop isDialog: boolean — if set to true, the wrapper should have a dialog role and be absolute. It should be relative otherwise
-@prop children: import('svelte').Snippet — children
--->
 <style>
 	div {
 		padding: 8px;

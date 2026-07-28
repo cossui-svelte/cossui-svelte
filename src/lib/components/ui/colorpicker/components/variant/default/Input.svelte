@@ -37,24 +37,6 @@
 	{label}
 </label>
 
-<!-- 
-@component button to open the color picker. Also provides a hidden input with the hex value selected by the user
-to fallback to color picker to the default browser one if a problem happens. This component cannot be imported
-directly but can be overridden.
-
-**Import**
-_N.A._
-
-**Use**
-_N.A._
-
-**Props**
-@prop labelElement: HTMLLabelElement | undefined — DOM element of the label wrapper
-@prop hex: string | null — hex color
-@prop label: string — input label
-@prop name: string | undefined = undefined — input name, useful in a native form
-@prop dir: 'ltr' | 'rtl' — directionality left to right, or right to left
--->
 <style>
 	label {
 		display: inline-flex;

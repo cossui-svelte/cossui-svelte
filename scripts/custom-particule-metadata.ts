@@ -549,4 +549,34 @@ export const custom_particle_metadata = {
     registryDependencies: ['slider', 'checkbox', 'input', 'button', 'label'],
     tags: ['colorpicker', 'color', 'input']
   },
+  'p-colorpicker-2': {
+    description: 'Minimal color picker without swatches',
+    meta: { class: '**:data-[slot=card]:overflow-visible **:data-[slot=card]:[clip-path:none]!' },
+    registryDependencies: ['slider', 'checkbox', 'input', 'button', 'label'],
+    tags: ['colorpicker', 'color', 'input']
+  },
+  'p-colorpicker-3': {
+    description: 'Color picker with custom swatches and no text input',
+    meta: { class: '**:data-[slot=card]:overflow-visible **:data-[slot=card]:[clip-path:none]!' },
+    registryDependencies: ['slider', 'checkbox', 'input', 'button', 'label'],
+    tags: ['colorpicker', 'color', 'input']
+  },
+  'p-colorpicker-4': {
+    description: 'Color picker using the Chrome variant layout with horizontal slider',
+    meta: { class: '**:data-[slot=card]:overflow-visible **:data-[slot=card]:[clip-path:none]!' },
+    registryDependencies: ['slider', 'checkbox', 'input', 'button', 'label'],
+    tags: ['colorpicker', 'color', 'input']
+  },
+  'p-colorpicker-5': {
+    description: 'Color picker with custom swatches and no text input',
+    meta: { class: '**:data-[slot=card]:overflow-visible **:data-[slot=card]:[clip-path:none]!' },
+    registryDependencies: ['slider', 'checkbox', 'input', 'button', 'label'],
+    tags: ['colorpicker', 'color', 'input']
+  },
+  'p-colorpicker-6': {
+    description: 'Color picker with custom swatches and no text input',
+    meta: { class: '**:data-[slot=card]:overflow-visible **:data-[slot=card]:[clip-path:none]!' },
+    registryDependencies: ['slider', 'checkbox', 'input', 'button', 'label'],
+    tags: ['colorpicker', 'color', 'input']
+  },
 }

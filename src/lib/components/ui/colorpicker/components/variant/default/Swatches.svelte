@@ -30,8 +30,8 @@
 <style>
 	.swatches {
 		display: grid;
-		grid-template-columns: var(--cp-swatch-grid-template-columns, repeat(auto-fit, minmax(24px, 1fr)));
-		gap: 8px;
+		grid-template-columns: var(--cp-swatch-grid-template-columns, repeat(auto-fit, minmax(16px, 1fr)));
+		gap: 6px;
 		width: 100%;
 		height: 100%;
 		margin-top: 8px;
@@ -42,6 +42,7 @@
 		margin: 0;
 		padding: 0;
 		border: none;
+		border-radius: var(--cp-swatch-border-radius, 4px);
 		width: 100%;
 		aspect-ratio: 1 / 1;
 		height: auto;

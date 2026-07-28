@@ -4,9 +4,8 @@ import { default as A11yNotice } from './components/variant/accessibility/A11yNo
 import { default as A11ySingleNotice } from './components/variant/accessibility/A11ySingleNotice.svelte';
 import { default as ChromeWrapper } from './components/variant/chrome-picker/Wrapper.svelte';
 
-export default ColorPicker;
-
 export type { HsvaColor, RgbaColor } from 'colord';
+export { ColorPicker };
 
 export const ChromeVariant = {
   wrapper: ChromeWrapper
