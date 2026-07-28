@@ -2,32 +2,34 @@
 	import {Input} from '$lib/components/ui/input';
 	import {Label} from '$lib/components/ui/label';
 
-	import Inputmask from 'inputmask';
+	import { formatTime, registerCursorTracker } from 'cleave-zen';
+	import type { Attachment } from 'svelte/attachments';
 
-	let inputElement = $state<HTMLInputElement | null>(null);
+	const timestampAttachment: Attachment<HTMLInputElement> = (input) => {
+		const unregisterCursorTracker = registerCursorTracker({
+			delimiter: ':',
+			input
+		});
 
-	$effect(() => {
-		if (!inputElement) return;
-		const im = new Inputmask('99:99:99', {
-			placeholder: '-',
-			showMaskOnHover: false
-		}).mask(inputElement);
+		const handleInput = (event: Event) => {
+			const target = event.target as HTMLInputElement;
+			target.value = formatTime(target.value, {
+				timePattern: ['h', 'm', 's']
+			});
+		};
 
-		return () => im.remove();
-	});
+		input.addEventListener('input', handleInput);
+
+		return () => {
+			input.removeEventListener('input', handleInput);
+			unregisterCursorTracker();
+		};
+	};
 
 	const uid = $props.id();
 </script>
 
 <div class="*:not-first:mt-2">
 	<Label for={uid}>Timestamp</Label>
-	<Input id={uid} placeholder="00:00:00" type="text" bind:ref={inputElement} />
-	<p class="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
-		Built with <a
-			class="hover:text-foreground underline"
-			href="https://github.com/RobinHerbots/inputmask"
-			target="_blank"
-			rel="noopener nofollow">inputmask</a
-		>
-	</p>
+	<Input id={uid} placeholder="00:00:00" type="text" {@attach timestampAttachment} />
 </div>

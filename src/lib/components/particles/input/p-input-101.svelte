@@ -36,14 +36,4 @@
 		class="peer pe-11"
 		{@attach expiryAttachment}
 	/>
-	<p class="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
-		Built with <a
-			class="hover:text-foreground underline"
-			href="https://github.com/nosir/cleave-zen"
-			target="_blank"
-			rel="noopener nofollow"
-		>
-			cleave-zen
-		</a>
-	</p>
 </div>
