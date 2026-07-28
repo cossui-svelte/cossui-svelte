@@ -1,11 +1,15 @@
 <script lang="ts">
 	import Info from "@lucide/svelte/icons/info";
+	import ScanEye from "@lucide/svelte/icons/scan-eye";
+	import FileBraces from "@lucide/svelte/icons/file-braces";
+	
+	import { goto } from "$app/navigation";
 	import { Button } from "$lib/components/ui/button";
 	import { Drawer, DrawerPopup } from "$lib/components/ui/drawer";
 	import { Spinner } from "$lib/components/ui/spinner";
-	import ComponentSource from "$lib/components/app/component-source.svelte";
 	import type { RegistryParticuleEntry } from "$lib/registry/registry-particles";
 	import ParticleCardContainer from "./particle-card-container.svelte";
+    import ComponentSource from "$lib/components/app/component-source.svelte";
 
 	let {
 		particle,
@@ -46,12 +50,15 @@
 			<span class="truncate">{particle.description ?? ""}</span>
 		</p>
 		<div class="flex items-center gap-1.5">
+			<Button size="sm" onclick={() => goto(`/particle/${particle.file}`)}
+				><ScanEye/></Button
+			>
 			<Button
 				class="text-sm"
 				size="sm"
 				variant="outline"
 				onclick={() => viewSource(particle.file, particle.name)}
-				>View code</Button
+				><FileBraces/>View code</Button
 			>
 			<Drawer
 				position="right"
