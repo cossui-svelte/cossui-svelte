@@ -3,33 +3,32 @@
 	import { countries, TelInput } from "svelte-tel-input";
 	import "svelte-tel-input/styles/flags.css";
 
-	import type { ChangeEventHandler } from "svelte/elements";
+	import { Group, GroupSeparator } from "$lib/components/ui/group";
 	import { Label } from "$lib/components/ui/label";
+	import {
+		Select,
+		SelectItem,
+		SelectPopup,
+		SelectTrigger,
+	} from "$lib/components/ui/select";
 
-	import ChevronDown from "@lucide/svelte/icons/chevron-down";
 	import Phone from "@lucide/svelte/icons/phone";
 
 	let selectedCountry = $state<CountryCode | null>(null);
 	let value = $state("");
-
-	const handleCountryChange: ChangeEventHandler<HTMLSelectElement> = (e) => {
-		const { value } = e.currentTarget;
-		selectedCountry = (value as CountryCode) || null;
-	};
 
 	const uid = $props.id();
 </script>
 
 <div class="*:not-first:mt-2" dir="ltr">
 	<Label for={uid}>Phone number input</Label>
-	<div class="flex rounded-lg shadow-xs shadow-black/4">
-		<div
-			class="border-input bg-background text-muted-foreground ring-offset-background focus-within:border-ring focus-within:text-foreground focus-within:ring-ring/30 hover:bg-accent hover:text-foreground relative inline-flex items-center self-stretch rounded-l-lg border py-2 ps-3 pe-2 transition-shadow focus-within:z-10 focus-within:ring-2 focus-within:ring-offset-2 focus-within:outline-hidden has-disabled:pointer-events-none has-disabled:opacity-50"
+	<Group aria-label="Phone number">
+		<Select
+			value={selectedCountry ?? ""}
+			onValueChange={(v: string) => (selectedCountry = (v || null) as CountryCode)}
 		>
-			<div class="inline-flex items-center gap-1" aria-hidden="true">
-				<span
-					class="flex h-[16px] w-5 items-center overflow-hidden rounded-sm"
-				>
+			<SelectTrigger class="w-fit min-w-none gap-1 px-3" aria-label="Select country">
+				<span class="flex h-[16px] w-5 items-center overflow-hidden rounded-sm">
 					{#if selectedCountry}
 						<span
 							class="flag flag-{selectedCountry.toLowerCase()} h-[13px]! w-5!"
@@ -39,31 +38,33 @@
 						<Phone size={16} aria-hidden="true" />
 					{/if}
 				</span>
-				<span class="text-muted-foreground/80">
-					<ChevronDown size={16} aria-hidden="true" />
-				</span>
-			</div>
-			<select
-				onchange={handleCountryChange}
-				class="absolute inset-0 text-sm opacity-0"
-				aria-label="Select country"
-			>
-				<option value="">Select a country</option>
+			</SelectTrigger>
+			<SelectPopup class="w-72">
 				{#each countries as country (country.id)}
-					<option value={country.iso2}>
-						{country.label}
-					</option>
+					<SelectItem value={country.iso2} label={country.label}>
+						<span
+							class="flag flag-{country.iso2.toLowerCase()} h-[13px]! w-5! shrink-0"
+							aria-hidden="true"
+						></span>
+						<span class="truncate">{country.label}</span>
+					</SelectItem>
 				{/each}
-			</select>
-		</div>
-		<TelInput
-			id={uid}
-			required
-			placeholder="Enter phone number"
-			class="border-input bg-background text-foreground ring-offset-background placeholder:text-muted-foreground/70 focus-visible:border-ring focus-visible:ring-ring/30 -ml-px flex h-9 w-full rounded-lg rounded-l-none border px-3 py-2 text-sm shadow-none shadow-black/[.04] transition-shadow focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50"
-			bind:country={selectedCountry}
-			bind:value
-			initialFormat="international"
-		/>
-	</div>
+			</SelectPopup>
+		</Select>
+		<GroupSeparator />
+		<span
+			data-slot="input-control"
+			class="border-input bg-background text-foreground not-dark:bg-clip-padding ring-ring/24 dark:bg-input/32 relative inline-flex w-full rounded-lg border text-base shadow-xs/5 transition-shadow before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-lg)-1px)] not-has-disabled:not-has-focus-visible:before:shadow-[0_1px_--theme(--color-black/4%)] has-focus-visible:border-ring has-focus-visible:shadow-none has-focus-visible:ring-[3px] has-disabled:opacity-64 sm:text-sm dark:not-has-disabled:not-has-focus-visible:before:shadow-[0_-1px_--theme(--color-white/6%)]"
+		>
+			<TelInput
+				id={uid}
+				required
+				placeholder="Enter phone number"
+				class="h-8.5 sm:h-7.5 sm:leading-7.5 placeholder:text-muted-foreground/72 w-full min-w-0 rounded-[inherit] px-[calc(--spacing(3)-1px)] leading-8.5 outline-none disabled:cursor-not-allowed disabled:opacity-50"
+				bind:country={selectedCountry}
+				bind:value
+				initialFormat="international"
+			/>
+		</span>
+	</Group>
 </div>
