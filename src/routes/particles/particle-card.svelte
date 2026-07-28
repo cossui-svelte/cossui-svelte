@@ -50,7 +50,7 @@
 			<span class="truncate">{particle.description ?? ""}</span>
 		</p>
 		<div class="flex items-center gap-1.5">
-			<Button size="sm" onclick={() => goto(`/particle/${particle.file}`)}
+			<Button class="text-sm" size="sm" onclick={() => goto(`/particle/${particle.file}`)}
 				><ScanEye/></Button
 			>
 			<Button
