@@ -64,26 +64,6 @@
 	{/if}
 </div>
 
-<!-- 
-@component Accessibility notice — this component is meant to be used with the A11yVariant object as a variant to display the accessibility notice.
-
-**Import**
-```js
-import { A11yVariant } from 'svelte-awesome-color-picker';
-```
-
-**Use**
-```svelte
-<ColorPicker bind:hex components={A11yVariant} />
-```
-
-**Props**
-@prop components: Pick&lt;Components, 'a11ySingleNotice'&gt; — customize the ColorPicker component parts. Can be used to display a Chrome variant or an Accessibility Notice
-@prop hex: string — hex color
-@prop a11yColors: Array&lt;A11yColor&gt; — define the accessibility examples in the color picker
-@prop a11yLevel: 'AA' | 'AAA' — required WCAG contrast level
-@prop a11yTexts: A11yTextsPartial | undefined = undefined — all a11y translation tokens used in the library; override with translations if necessary; see [full object type](https://github.com/Ennoriel/svelte-awesome-color-picker/blob/master/src/lib/utils/texts.ts)
--->
 <style>
 	.a11y-notice {
 		display: grid;

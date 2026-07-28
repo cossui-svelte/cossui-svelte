@@ -121,6 +121,7 @@ export const custom_components_metadata: RegistryUiData = {
 	'file-upload': {
 		description: "A component for uploading files with drag-and-drop support.",
 		category: "origin-ui",
+		isnew: true,
 	},
 	form: {
 		description: "A form wrapper component that simplifies validation and submission.",

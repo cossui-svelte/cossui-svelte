@@ -3,7 +3,7 @@ const config = {
     svelte: (text: string) => [...text.matchAll(/import[^;]+/gu)].join('\n')
   },
   ignoreIssues: {
-    // 'src/lib/components/ui/**': ['exports', 'types', 'files'],
+    'src/lib/components/ui/**': ['exports', 'types', 'files'],
     'src/lib/varsel/**': ['exports', 'types', 'files']
   },
   // entry: [
@@ -19,7 +19,7 @@ const config = {
     '$data/*': ['./src/lib/data'],
     '$lib/*': ['./src/lib/*']
   },
-  project: ['src/**/*.{svelte,ts,js}'],
+  project: ['src/**/*.{svelte,ts,js,css}'],
   svelte: {
     entry: [
       'src/routes/**/+*.{svelte,ts,js}',

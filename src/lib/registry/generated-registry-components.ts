@@ -284,7 +284,7 @@ const allComponents: RegistryUiData = {
     category: 'origin-ui',
     description: 'A component for uploading files with drag-and-drop support.',
     folder: 'file-upload',
-    isnew: false,
+    isnew: true,
     istodo: false,
     npmDependencies: [],
     registryDependencies: []

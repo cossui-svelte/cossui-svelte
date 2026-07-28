@@ -14,6 +14,7 @@
     DialogTitle
   } from '$lib/components/ui/dialog';
   import { Slider } from '$lib/components/ui/slider';
+  import { useFileUpload } from '$lib/hooks/use-file-upload.svelte';
 
   type Area = { x: number; y: number; width: number; height: number };
 
@@ -67,9 +68,9 @@
     }
   }
 
-  let fileInputEl = $state<HTMLInputElement | null>(null);
-  let isDragging = $state(false);
-  let previewUrl = $state<string | null>(null);
+  const fileUpload = useFileUpload({ accept: 'image/*' });
+  const previewUrl = $derived(fileUpload.files[0]?.preview ?? null);
+
   let finalImageUrl = $state<string | null>(null);
   let isDialogOpen = $state(false);
   let croppedAreaPixels = $state<Area | null>(null);
@@ -77,52 +78,9 @@
 
   let previousPreviewUrl: string | null = null;
 
-  function setPreviewFromFiles(files: FileList | null) {
-    const file = files?.[0];
-    if (!file) return;
-    if (previewUrl) {
-      URL.revokeObjectURL(previewUrl);
-    }
-    previewUrl = URL.createObjectURL(file);
-  }
-
-  function openFileDialog() {
-    fileInputEl?.click();
-  }
-
-  function handleFileChange(e: Event) {
-    setPreviewFromFiles((e.currentTarget as HTMLInputElement).files);
-  }
-
-  function handleDragEnter(e: DragEvent) {
-    e.preventDefault();
-    isDragging = true;
-  }
-
-  function handleDragLeave(e: DragEvent) {
-    e.preventDefault();
-    isDragging = false;
-  }
-
-  function handleDragOver(e: DragEvent) {
-    e.preventDefault();
-  }
-
-  function handleDrop(e: DragEvent) {
-    e.preventDefault();
-    isDragging = false;
-    setPreviewFromFiles(e.dataTransfer?.files ?? null);
-  }
-
   function removePreview() {
-    if (previewUrl) {
-      URL.revokeObjectURL(previewUrl);
-    }
-    previewUrl = null;
+    fileUpload.clearFiles();
     croppedAreaPixels = null;
-    if (fileInputEl) {
-      fileInputEl.value = '';
-    }
   }
 
   async function handleApply() {
@@ -175,12 +133,12 @@
     <button
       aria-label={finalImageUrl ? 'Change image' : 'Upload image'}
       class="relative flex size-16 items-center justify-center overflow-hidden rounded-full border border-input border-dashed outline-none transition-colors hover:bg-accent/50 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 has-disabled:pointer-events-none has-[img]:border-none has-disabled:opacity-50 data-[dragging=true]:bg-accent/50"
-      data-dragging={isDragging || undefined}
-      onclick={openFileDialog}
-      ondragenter={handleDragEnter}
-      ondragleave={handleDragLeave}
-      ondragover={handleDragOver}
-      ondrop={handleDrop}
+      data-dragging={fileUpload.isDragging || undefined}
+      onclick={fileUpload.openFileDialog}
+      ondragenter={fileUpload.handleDragEnter}
+      ondragleave={fileUpload.handleDragLeave}
+      ondragover={fileUpload.handleDragOver}
+      ondrop={fileUpload.handleDrop}
       type="button"
     >
       {#if finalImageUrl}
@@ -202,13 +160,11 @@
       </Button>
     {/if}
     <input
-      bind:this={fileInputEl}
-      accept="image/*"
+      bind:this={fileUpload.fileInput}
+      {...fileUpload.inputProps}
       aria-label="Upload image file"
       class="sr-only"
-      onchange={handleFileChange}
       tabindex={-1}
-      type="file"
     />
   </div>
 

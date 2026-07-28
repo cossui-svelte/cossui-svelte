@@ -23,25 +23,6 @@
 	{@render children()}
 </div>
 
-<!-- 
-@component Chrome variant wrapper — this component is meant to be used with the ChromeVariant object to display a Chrome like variant.
-
-**Import**
-```js
-import { ChromeVariant } from 'svelte-awesome-color-picker';
-```
-
-**Use**
-```svelte
-<ColorPicker bind:hex components={ChromeVariant} />
-```
-
-**Props**
-@prop wrapper: HTMLElement | undefined — DOM element of the wrapper element
-@prop isOpen: boolean — indicator of the popup state
-@prop isDialog: boolean — if set to true, the wrapper should have a dialog role and be absolute. It should be relative otherwise
-@prop children: import('svelte').Snippet — children
--->
 <style>
 	div {
 		background-color: var(--cp-bg-color, white);

@@ -5,19 +5,18 @@
     InputGroupInput,
     InputGroupText,
   } from "$lib/components/ui/input-group";
+  import { useCharacterLimit } from "$lib/hooks/use-character-limit.svelte";
 
-  const maxLength = 14;
-  let value = $state("");
+  const charLimit = useCharacterLimit(14);
 </script>
 
 <InputGroup>
   <InputGroupInput
     aria-label="Username"
-    maxlength={maxLength}
-    oninput={(e) => { value = (e.currentTarget as HTMLInputElement).value; }}
+    maxlength={charLimit.maxLength}
     placeholder="Enter username"
     type="text"
-    {value}
+    bind:value={charLimit.value}
   />
   <InputGroupAddon align="inline-end">
     <InputGroupText
@@ -25,7 +24,7 @@
       class="text-xs tabular-nums"
       role="status"
     >
-      {value.length}/{maxLength}
+      {charLimit.characterCount}/{charLimit.maxLength}
     </InputGroupText>
   </InputGroupAddon>
 </InputGroup>

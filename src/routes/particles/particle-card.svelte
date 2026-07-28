@@ -2,14 +2,15 @@
 	import Info from "@lucide/svelte/icons/info";
 	import ScanEye from "@lucide/svelte/icons/scan-eye";
 	import FileBraces from "@lucide/svelte/icons/file-braces";
-	
+
 	import { goto } from "$app/navigation";
+	import { resolve } from "$app/paths";
 	import { Button } from "$lib/components/ui/button";
 	import { Drawer, DrawerPopup } from "$lib/components/ui/drawer";
 	import { Spinner } from "$lib/components/ui/spinner";
 	import type { RegistryParticuleEntry } from "$lib/registry/registry-particles";
 	import ParticleCardContainer from "./particle-card-container.svelte";
-    import ComponentSource from "$lib/components/app/component-source.svelte";
+	import ComponentSource from "$lib/components/app/particle-source.svelte";
 
 	let {
 		particle,
@@ -23,23 +24,18 @@
 
 	let drawerOpen = $state(false);
 	let drawerName = $state<string>("");
-	// let sourceFile = $state<string | null>(null);
 
 	async function viewSource(_file: string, name: string) {
-		if (drawerOpen /*&& sourceFile === file*/) {
+		if (drawerOpen) {
 			closeDrawer();
 			return;
 		}
 		drawerName = name;
-		// sourceFile = file;
 		drawerOpen = true;
 	}
 
 	function closeDrawer() {
 		drawerOpen = false;
-		// setTimeout(() => {
-		// 	sourceFile = null;
-		// }, 300);
 	}
 </script>
 
@@ -50,15 +46,18 @@
 			<span class="truncate">{particle.description ?? ""}</span>
 		</p>
 		<div class="flex items-center gap-1.5">
-			<Button class="text-sm" size="sm" onclick={() => goto(`/particle/${particle.file}`)}
-				><ScanEye/></Button
+			<Button
+				class="text-sm"
+				size="sm"
+				onclick={() => goto(resolve("/particle/[id]", { id: particle.file }))}
+				><ScanEye /></Button
 			>
 			<Button
 				class="text-sm"
 				size="sm"
 				variant="outline"
 				onclick={() => viewSource(particle.file, particle.name)}
-				><FileBraces/>View code</Button
+				><FileBraces />View code</Button
 			>
 			<Drawer
 				position="right"
