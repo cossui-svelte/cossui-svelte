@@ -4,7 +4,7 @@ const config = {
   },
   ignoreIssues: {
     // 'src/lib/components/ui/**': ['exports', 'types', 'files'],
-    'src/lib/varsel/**': ['exports', 'types', 'files'],
+    'src/lib/varsel/**': ['exports', 'types', 'files']
   },
   // entry: [
   //   'src/routes/+layout.ts',
