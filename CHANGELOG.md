@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.9.13](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.12...v0.9.13) (2026-07-28)
+
+### ✨ Features
+
+* add /particle/id for single particle view ([7d9523a](https://github.com/cossui-svelte/cossui-svelte/commit/7d9523a5d61b1bf93a3c3749fdfebc8c334c96bc))
+
+### 🐛 Bug Fixes
+
+* add a currency formatter to this input group particule ([25084c4](https://github.com/cossui-svelte/cossui-svelte/commit/25084c4beebe4b458f8580746a17c6e21238c19d))
+* number fields with step 0.1 need to be rounded ([a546048](https://github.com/cossui-svelte/cossui-svelte/commit/a546048bb05fbb11ffda8886c652762f5e9a0789))
+* particule-card button size ([8d44cf3](https://github.com/cossui-svelte/cossui-svelte/commit/8d44cf3bdefd21bb59df07499376d9827e78f311))
+* phone particle border ([a0a31e9](https://github.com/cossui-svelte/cossui-svelte/commit/a0a31e99bf073a9c34312ff283a6bcacf845ba7b))
+* remove unused particles ([e5f056c](https://github.com/cossui-svelte/cossui-svelte/commit/e5f056c70b2eaac2c4670bdd3d8af6b881eaa221))
+* select scroll button 1pixel gaps ([6f0e921](https://github.com/cossui-svelte/cossui-svelte/commit/6f0e92195973dd42bd95508510df37662b914ca3))
+
+### ♻️ Code Refactoring
+
+* knip cleaning ([844af9b](https://github.com/cossui-svelte/cossui-svelte/commit/844af9b92af82d0aa22208c4427a4d39330e459b))
+* swap inputmask for cleave-zen ([9ca3471](https://github.com/cossui-svelte/cossui-svelte/commit/9ca3471f3ab64f090ef77f4d556b9afc8af25e29))
+
+### 🚚 Chores
+
+* deps ([ac5f2c2](https://github.com/cossui-svelte/cossui-svelte/commit/ac5f2c20ae05b643bdbfd987599e115f1ba0a90f))
+* deps reorgs ([dfd2d88](https://github.com/cossui-svelte/cossui-svelte/commit/dfd2d88a86cd549ee9d8d045f3f0829845189738))
 ## [0.9.12](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.11...v0.9.12) (2026-07-26)
 
 ### ✨ Features
