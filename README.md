@@ -18,7 +18,13 @@ Along the way, I noticed that even Coss UI lacks some of the components found in
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/chart?repos=cossui-svelte/cossui-svelte&type=date&legend=top-left&sealed_token=6_UYNKxcgUaJGjNL2rNTp_86ri5nOTsTcwjekEYrwRU_GFnHj7p_xL5ciFQsmYUOvajPQs74TzYGJjaTyDG2zp9pO9cvVtUaCHbYRHOzhYE6cq1X4Wgq0g)](https://www.star-history.com/?type=date&repos=cossui-svelte%2Fcossui-svelte)
+<a href="https://www.star-history.com/?repos=cossui-svelte%2Fcossui-svelte&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=cossui-svelte/cossui-svelte&type=date&theme=dark&legend=top-left&sealed_token=M4HW4n7KguTD-r4cBbHMPrZT4oaFlxwETtAy3jUbKCnw51EfXwPyssIn8ceVDumXFo75rSiF0drTvAiFw7fGdvzu8RsiSSMgWW2X1Zm2Ay8cGdu3_WzI7A" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=cossui-svelte/cossui-svelte&type=date&legend=top-left&sealed_token=M4HW4n7KguTD-r4cBbHMPrZT4oaFlxwETtAy3jUbKCnw51EfXwPyssIn8ceVDumXFo75rSiF0drTvAiFw7fGdvzu8RsiSSMgWW2X1Zm2Ay8cGdu3_WzI7A" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=cossui-svelte/cossui-svelte&type=date&legend=top-left&sealed_token=M4HW4n7KguTD-r4cBbHMPrZT4oaFlxwETtAy3jUbKCnw51EfXwPyssIn8ceVDumXFo75rSiF0drTvAiFw7fGdvzu8RsiSSMgWW2X1Zm2Ay8cGdu3_WzI7A" />
+ </picture>
+</a>
 
 ## Contributors
 
