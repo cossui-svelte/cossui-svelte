@@ -19,4 +19,4 @@
 
 </script>
 
-<ColorPicker {hex} {rgb} {hsv} nullable />
+<ColorPicker swatches={["#ef4444", "#f97316", "#eab308", "#22c55e", "#4f46e5", "#a855f7"]} />

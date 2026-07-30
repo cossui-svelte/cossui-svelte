@@ -41,7 +41,7 @@ Along the way, I noticed that even Coss UI lacks some of the components found in
 - [Phantom-UI](https://github.com/Aejkatappaja/phantom-ui) - An elegant structure-aware skeleton loader
 - [FormSnap & Superforms](https://superforms.rocks/) - A full featured headless validation framework
 - [Places Autocomplete](https://github.com/gurbaaz27/shadcn-google-maps) - Address validation based on gmap
-- [Awesome ColorPicker](https://svelte-awesome-color-picker.vercel.app/)
+- [Huey ColorPicker](https://hueycolor.pages.dev/)
 
 Other good source of inspiration, sometimes with full component logic just copy/pasted (full credits to their authors):
 

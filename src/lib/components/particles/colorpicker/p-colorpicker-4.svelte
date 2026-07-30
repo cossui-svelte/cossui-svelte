@@ -1,5 +1,5 @@
 <script>
-	import { ColorPicker, ChromeVariant } from "$lib/components/ui/colorpicker";
+	import { ColorPicker } from "$lib/components/ui/colorpicker";
 
 	let hex = $state("#1d916bb8");
 
@@ -22,6 +22,6 @@
 	bind:rgb
 	bind:hsv
 	bind:hex
-	components={ChromeVariant}
-	sliderDirection="horizontal"
+
+	showInputs={false} showColorDropper={false}  showSaturationArea={false}
 />

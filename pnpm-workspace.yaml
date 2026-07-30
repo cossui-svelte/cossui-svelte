@@ -25,8 +25,8 @@ minimumReleaseAgeExclude:
   - vitest@4.1.7
   - '@lucide/svelte@1.25.0 || 1.27.0'
   - '@sveltejs/kit@2.70.0'
-  - miniflare@4.20260714.0
-  - wrangler@4.112.0
+  - miniflare@4.20260714.0 || 4.20260722.1
+  - wrangler@4.112.0 || 4.115.0
   - commit-and-tag-version@13.0.0 || 13.1.0 || 13.1.2
   - eslint-plugin-svelte@3.22.0
   - '@biomejs/biome@2.5.6'
@@ -38,3 +38,4 @@ minimumReleaseAgeExclude:
   - '@biomejs/cli-linux-x64@2.5.6'
   - '@biomejs/cli-win32-arm64@2.5.6'
   - '@biomejs/cli-win32-x64@2.5.6'
+  - layerchart@2.0.3

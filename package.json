@@ -7,6 +7,8 @@
   "dependencies": {
     "@aejkatappaja/phantom-ui": "^1.4.0",
     "@headless-tree/core": "^1.7.0",
+    "@hueycolor/core": "^1.0.1",
+    "@hueycolor/svelte": "^1.0.1",
     "@internationalized/date": "^3.12.2",
     "@lucide/svelte": "^1.27.0",
     "@shikijs/langs": "^4.3.1",
@@ -16,7 +18,7 @@
     "clsx": "^2.1.1",
     "d3-scale": "^4.0.2",
     "d3-shape": "^3.2.0",
-    "layerchart": "^2.0.2",
+    "layerchart": "^2.0.3",
     "mode-watcher": "^1.1.0",
     "runed": "0.37.1",
     "shiki": "^4.3.1",
@@ -37,7 +39,6 @@
     "@sveltejs/vite-plugin-svelte": "^7.2.0",
     "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^26.1.2",
-    "colord": "^2.9.3",
     "commit-and-tag-version": "^13.1.2",
     "cz-customizable": "^7.5.4",
     "eslint": "^10.8.0",
@@ -52,11 +53,11 @@
     "typescript-eslint": "^8.65.0",
     "vite": "^8.1.5",
     "vitest": "^4.1.10",
-    "wrangler": "^4.114.0"
+    "wrangler": "^4.115.0"
   },
   "license": "MIT",
   "name": "coss-ui-svelte",
-  "packageManager": "pnpm@11.17.0",
+  "packageManager": "pnpm@11.18.0",
   "peerDependencies": {
     "svelte": "^5.56.8"
   },

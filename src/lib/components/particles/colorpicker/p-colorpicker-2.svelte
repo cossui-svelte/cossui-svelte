@@ -4,4 +4,4 @@
   let hex = $state("#4f46e5");
 </script>
 
-<ColorPicker bind:hex label="Pick a color" />
+<ColorPicker bind:hex showInputs={false} showColorDropper={false} label="Pick a color" />

@@ -121,13 +121,13 @@
       </li>
       <li>
         <a
-          href="https://svelte-awesome-color-picker.vercel.app"
+          href="https://hueycolor.pages.dev/"
           class="text-foreground underline underline-offset-4 hover:text-foreground/70 transition-colors"
           target="_blank"
           rel="noopener noreferrer"
         >
-          - Awesome ColorPicker</a
-        >
+          - Huey</a
+        > - Neat reusable ColorPicker
       </li>
     </ul>
 
