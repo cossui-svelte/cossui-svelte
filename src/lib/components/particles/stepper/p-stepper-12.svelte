@@ -28,7 +28,7 @@
   <Stepper step={2}>
     {#each steps as { step, title } (step)}
       <StepperItem class="not-last:flex-1 max-md:items-start" {step}>
-        <StepperTrigger class="rounded max-md:flex-col">
+        <StepperTrigger class="rounded-md max-md:flex-col">
           <StepperIndicator />
           <div class="text-center md:text-left">
             <StepperTitle>{title}</StepperTitle>

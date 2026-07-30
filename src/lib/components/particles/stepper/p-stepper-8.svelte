@@ -31,7 +31,7 @@
   <Stepper class="gap-1" step={2}>
     {#each steps as { step, title } (step)}
       <StepperItem class="flex-1" {step}>
-        <StepperTrigger class="w-full flex-col items-start gap-2 rounded">
+        <StepperTrigger class="w-full flex-col items-start gap-2 rounded-md">
           <StepperIndicator
             class="h-1 w-full bg-muted data-[state=active]:bg-primary data-[state=completed]:bg-primary"
           >

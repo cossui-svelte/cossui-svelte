@@ -36,7 +36,7 @@
         {step}
       >
         <StepperTrigger
-          class="flex-row items-start gap-x-3 rounded pb-8 last:pb-0"
+          class="flex-row items-start gap-x-3 rounded-md pb-8 last:pb-0"
         >
           <StepperIndicator />
           <div class="space-y-0.5 text-left">

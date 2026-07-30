@@ -240,7 +240,7 @@
               <!-- Upload progress bar -->
               {#if fileProgress && !fileProgress.completed}
                 <div class="mt-1 flex items-center gap-2">
-                  <div class="h-1.5 w-full overflow-hidden rounded-full bg-gray-100">
+                  <div class="h-1.5 w-full overflow-hidden rounded-full bg-muted">
                     <div
                       class="h-full bg-primary transition-all duration-300 ease-out"
                       style="width: {fileProgress.progress}%"

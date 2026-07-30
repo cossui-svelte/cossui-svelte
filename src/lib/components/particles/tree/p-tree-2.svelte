@@ -57,7 +57,7 @@
 <div class="flex h-full flex-col gap-2 *:first:grow">
 	<div>
 		<Tree
-			class="relative before:absolute before:inset-0 before:-ms-1 before:bg-[repeating-linear-gradient(to_right,transparent_0,transparent_calc(var(--tree-indent)-1px),hsl(var(--border))_calc(var(--tree-indent)-1px),hsl(var(--border))_calc(var(--tree-indent)))]"
+			class="relative before:absolute before:inset-0 before:-ms-1 before:bg-[repeating-linear-gradient(to_right,transparent_0,transparent_calc(var(--tree-indent)-1px),var(--border)_calc(var(--tree-indent)-1px),var(--border)_calc(var(--tree-indent)))]"
 			{indent}
 			{tree}
 		>

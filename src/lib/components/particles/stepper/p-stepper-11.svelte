@@ -32,7 +32,7 @@
   <Stepper step={2}>
     {#each steps as { step, title, description } (step)}
       <StepperItem class="not-last:flex-1" {step}>
-        <StepperTrigger class="gap-3 rounded">
+        <StepperTrigger class="gap-3 rounded-md">
           <StepperIndicator />
           <div class="-order-1 space-y-0.5 text-left">
             <StepperTitle>{title}</StepperTitle>

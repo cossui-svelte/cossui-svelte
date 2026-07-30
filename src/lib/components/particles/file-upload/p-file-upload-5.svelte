@@ -58,16 +58,14 @@
     </div>
 
     {#if previewUrl}
-      <div class="absolute top-4 right-4">
-        <button
-          aria-label="Remove image"
-          class="z-50 flex size-8 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white outline-none transition-[color,box-shadow] hover:bg-black/80 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50"
-          onclick={() => fileUpload.removeFile(fileUpload.files[0]?.id)}
-          type="button"
-        >
-          <X aria-hidden="true" class="size-4" />
-        </button>
-      </div>
+      <Button
+        aria-label="Remove image"
+        class="absolute top-4 right-4 size-8 rounded-full shadow-none"
+        onclick={() => fileUpload.removeFile(fileUpload.files[0]?.id)}
+        size="icon"
+      >
+        <X aria-hidden="true" class="size-4" />
+      </Button>
     {/if}
   </div>
 
