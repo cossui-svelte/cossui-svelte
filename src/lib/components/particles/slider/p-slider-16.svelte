@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Slider } from "$lib/components/ui/slider";
+  import { Slider } from '$lib/components/ui/slider';
 
-  const labels = ["Awful", "Poor", "Okay", "Good", "Amazing"];
+  const labels = ['Awful', 'Poor', 'Okay', 'Good', 'Amazing'];
 
   let value = $state(3);
 </script>

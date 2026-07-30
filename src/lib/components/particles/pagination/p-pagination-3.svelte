@@ -4,15 +4,15 @@
     PaginationContent,
     PaginationItem,
     PaginationNext,
-    PaginationPrevious,
-  } from "$lib/components/ui/pagination";
+    PaginationPrevious
+  } from '$lib/components/ui/pagination';
   import {
     Select,
     SelectItem,
     SelectPopup,
     SelectTrigger,
-    SelectValue,
-  } from "$lib/components/ui/select";
+    SelectValue
+  } from '$lib/components/ui/select';
 
   interface Props {
     currentPage?: number;
@@ -25,7 +25,7 @@
     currentPage: initialPage = 1,
     totalPages = 10,
     totalResults = 100,
-    resultsPerPage = 10,
+    resultsPerPage = 10
   }: Props = $props();
 
   const resultRanges = $derived(
@@ -33,7 +33,7 @@
       const start = i * resultsPerPage + 1;
       const end = Math.min((i + 1) * resultsPerPage, totalResults);
       return { label: `${start}-${end}`, value: String(i + 1) };
-    }),
+    })
   );
 
   let selectedRange = $state(String(initialPage));

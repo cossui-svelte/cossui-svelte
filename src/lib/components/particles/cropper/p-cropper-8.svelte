@@ -1,5 +1,10 @@
 <script lang="ts">
-  import { Cropper, CropperCropArea, CropperDescription, CropperImage } from '$lib/components/ui/cropper';
+  import {
+    Cropper,
+    CropperCropArea,
+    CropperDescription,
+    CropperImage
+  } from '$lib/components/ui/cropper';
   import { Slider } from '$lib/components/ui/slider';
 
   let zoom = $state(1);
@@ -7,11 +12,7 @@
 
 <div class="flex w-full flex-col items-center gap-2">
   <div class="flex w-full flex-col gap-4">
-    <Cropper
-      class="h-80"
-      image="/img/cropper/cropper-07_scsejv.jpg"
-      bind:zoom
-    >
+    <Cropper class="h-80" image="/img/cropper/cropper-07_scsejv.jpg" bind:zoom>
       <CropperDescription />
       <CropperImage />
       <CropperCropArea />

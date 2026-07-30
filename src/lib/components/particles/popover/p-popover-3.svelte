@@ -1,21 +1,17 @@
 <script lang="ts">
-  import Bell from "@lucide/svelte/icons/bell";
-  import User from "@lucide/svelte/icons/user";
-  import {
-    Avatar,
-    AvatarFallback,
-    AvatarImage,
-  } from "$lib/components/ui/avatar";
-  import { Button, buttonVariants } from "$lib/components/ui/button";
+  import Bell from '@lucide/svelte/icons/bell';
+  import User from '@lucide/svelte/icons/user';
+  import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
+  import { Button, buttonVariants } from '$lib/components/ui/button';
   import {
     Popover,
     PopoverDescription,
     PopoverPopup,
     PopoverTitle,
-    PopoverTrigger,
-  } from "$lib/components/ui/popover";
+    PopoverTrigger
+  } from '$lib/components/ui/popover';
 
-  type ActivePanel = "notifications" | "profile" | null;
+  type ActivePanel = 'notifications' | 'profile' | null;
 
   let open = $state(false);
   let activePanel = $state<ActivePanel>(null);
@@ -29,16 +25,16 @@
 <div class="flex gap-2">
   <button
     aria-label="Notifications"
-    class={buttonVariants({ size: "icon", variant: "outline" })}
-    onclick={() => openWith("notifications")}
+    class={buttonVariants({ size: 'icon', variant: 'outline' })}
+    onclick={() => openWith('notifications')}
     type="button"
   >
     <Bell aria-hidden="true" />
   </button>
   <button
     aria-label="Profile"
-    class={buttonVariants({ size: "icon", variant: "outline" })}
-    onclick={() => openWith("profile")}
+    class={buttonVariants({ size: 'icon', variant: 'outline' })}
+    onclick={() => openWith('profile')}
     type="button"
   >
     <User aria-hidden="true" />
@@ -46,12 +42,10 @@
   <Popover bind:open>
     <PopoverTrigger class="hidden" aria-hidden tabindex={-1} />
     <PopoverPopup class="min-w-none">
-      {#if activePanel === "notifications"}
+      {#if activePanel === 'notifications'}
         <PopoverTitle class="text-base">Notifications</PopoverTitle>
-        <PopoverDescription>
-          You have no new notifications at this time.
-        </PopoverDescription>
-      {:else if activePanel === "profile"}
+        <PopoverDescription>You have no new notifications at this time.</PopoverDescription>
+      {:else if activePanel === 'profile'}
         <div class="w-48">
           <div class="flex items-center gap-3">
             <Avatar>

@@ -1,6 +1,11 @@
 <script lang="ts">
   import { Button } from '$lib/components/ui/button';
-  import { Cropper, CropperCropArea, CropperDescription, CropperImage } from '$lib/components/ui/cropper';
+  import {
+    Cropper,
+    CropperCropArea,
+    CropperDescription,
+    CropperImage
+  } from '$lib/components/ui/cropper';
 
   type Area = { x: number; y: number; width: number; height: number };
 
@@ -54,8 +59,7 @@
     }
   }
 
-  const ORIGINAL_IMAGE_URL =
-    '/img/cropper/cropper-10_k24zxk.jpg';
+  const ORIGINAL_IMAGE_URL = '/img/cropper/cropper-10_k24zxk.jpg';
 
   let croppedAreaPixels = $state<Area | null>(null);
   let croppedImageUrl = $state<string | null>(null);

@@ -1,10 +1,6 @@
 <script lang="ts">
-  import {
-    InputGroup,
-    InputGroupAddon,
-    InputGroupInput,
-  } from "$lib/components/ui/input-group";
-  import { Kbd } from "$lib/components/ui/kbd";
+  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';
+  import { Kbd } from '$lib/components/ui/kbd';
 </script>
 
 <InputGroup>

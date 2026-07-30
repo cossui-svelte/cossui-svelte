@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ContextMenu } from "bits-ui";
+  import { ContextMenu } from 'bits-ui';
 
   let { ref = $bindable(null), ...restProps }: ContextMenu.TriggerProps = $props();
 </script>

@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { Combobox } from "bits-ui";
-  import type { Snippet } from "svelte";
-  import { cn } from "$lib/utils";
-  import { getComboboxCtx } from "./combobox.svelte";
+  import { Combobox } from 'bits-ui';
+  import type { Snippet } from 'svelte';
+  import { cn } from '$lib/utils';
+  import { getComboboxCtx } from './combobox.svelte';
 
   interface Props extends Combobox.TriggerProps {
     children?: Snippet;
@@ -18,11 +18,6 @@
   });
 </script>
 
-<Combobox.Trigger
-  bind:ref
-  class={cn(className)}
-  data-slot="combobox-trigger"
-  {...restProps}
->
+<Combobox.Trigger bind:ref class={cn(className)} data-slot="combobox-trigger" {...restProps}>
   {@render children?.()}
 </Combobox.Trigger>

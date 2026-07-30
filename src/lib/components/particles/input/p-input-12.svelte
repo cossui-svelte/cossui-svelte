@@ -1,10 +1,6 @@
 <script lang="ts">
-  import {
-    InputGroup,
-    InputGroupAddon,
-    InputGroupInput,
-  } from "$lib/components/ui/input-group";
-  import { Spinner } from "$lib/components/ui/spinner";
+  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';
+  import { Spinner } from '$lib/components/ui/spinner';
 </script>
 
 <InputGroup>

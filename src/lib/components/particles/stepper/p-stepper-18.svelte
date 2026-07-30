@@ -6,38 +6,33 @@
     StepperItem,
     StepperSeparator,
     StepperTitle,
-    StepperTrigger,
-  } from "$lib/components/ui/stepper";
+    StepperTrigger
+  } from '$lib/components/ui/stepper';
 
   const steps = [
     {
-      description: "Desc for step one",
+      description: 'Desc for step one',
       step: 1,
-      title: "Step One",
+      title: 'Step One'
     },
     {
-      description: "Desc for step two",
+      description: 'Desc for step two',
       step: 2,
-      title: "Step Two",
+      title: 'Step Two'
     },
     {
-      description: "Desc for step three",
+      description: 'Desc for step three',
       step: 3,
-      title: "Step Three",
-    },
+      title: 'Step Three'
+    }
   ];
 </script>
 
 <div class="space-y-8 text-center">
   <Stepper orientation="vertical" step={2}>
     {#each steps as { step, title, description } (step)}
-      <StepperItem
-        class="relative not-last:flex-1 items-start self-stretch"
-        {step}
-      >
-        <StepperTrigger
-          class="flex-row items-start gap-x-3 rounded-md pb-8 last:pb-0"
-        >
+      <StepperItem class="relative not-last:flex-1 items-start self-stretch" {step}>
+        <StepperTrigger class="flex-row items-start gap-x-3 rounded-md pb-8 last:pb-0">
           <StepperIndicator />
           <div class="space-y-0.5 text-left">
             <StepperTitle>{title}</StepperTitle>

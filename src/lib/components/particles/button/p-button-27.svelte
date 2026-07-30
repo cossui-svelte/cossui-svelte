@@ -1,7 +1,7 @@
 <script lang="ts">
-  import QrCode from "@lucide/svelte/icons/qr-code";
-  import { Button } from "$lib/components/ui/button";
-  import { Group, GroupSeparator } from "$lib/components/ui/group";
+  import QrCode from '@lucide/svelte/icons/qr-code';
+  import { Button } from '$lib/components/ui/button';
+  import { Group, GroupSeparator } from '$lib/components/ui/group';
 </script>
 
 <Group>

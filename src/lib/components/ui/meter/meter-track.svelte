@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import type { HTMLAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils";
+  import type { Snippet } from 'svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
+  import { cn } from '$lib/utils';
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
     children?: Snippet;
@@ -11,10 +11,7 @@
 </script>
 
 <div
-  class={cn(
-    "block rounded-full h-2 w-full overflow-hidden bg-input",
-    className,
-  )}
+  class={cn('block rounded-full h-2 w-full overflow-hidden bg-input', className)}
   data-slot="meter-track"
   {...restProps}
 >

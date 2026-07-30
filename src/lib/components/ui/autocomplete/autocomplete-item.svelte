@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Combobox } from "bits-ui";
-  import type { Snippet } from "svelte";
-  import { cn } from "$lib/utils";
+  import { Combobox } from 'bits-ui';
+  import type { Snippet } from 'svelte';
+  import { cn } from '$lib/utils';
 
   type Props = Combobox.ItemProps & { children?: Snippet };
 
@@ -10,8 +10,8 @@
 
 <Combobox.Item
   class={cn(
-    "flex min-h-8 cursor-default select-none items-center rounded-sm px-2 py-1 text-base outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-64 sm:min-h-7 sm:text-sm",
-    className,
+    'flex min-h-8 cursor-default select-none items-center rounded-sm px-2 py-1 text-base outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-64 sm:min-h-7 sm:text-sm',
+    className
   )}
   data-slot="autocomplete-item"
   {...restProps}

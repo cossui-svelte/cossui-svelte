@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Tabs, TabsList, TabsPanel, TabsTab } from "$lib/components/ui/tabs";
+  import { Tabs, TabsList, TabsPanel, TabsTab } from '$lib/components/ui/tabs';
 </script>
 
 <Tabs class="w-full flex-row" value="tab-1" orientation="vertical">

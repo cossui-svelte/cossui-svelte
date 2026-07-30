@@ -1,7 +1,7 @@
 <script lang="ts">
-  import X from "@lucide/svelte/icons/x";
-  import type { HTMLButtonAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils";
+  import X from '@lucide/svelte/icons/x';
+  import type { HTMLButtonAttributes } from 'svelte/elements';
+  import { cn } from '$lib/utils';
 
   type Props = HTMLButtonAttributes;
 
@@ -12,7 +12,7 @@
   aria-label="Remove"
   class={cn(
     "h-full shrink-0 cursor-pointer px-1.5 opacity-80 hover:opacity-100 [&_svg:not([class*='size-'])]:size-4 sm:[&_svg:not([class*='size-'])]:size-3.5",
-    className,
+    className
   )}
   data-slot="combobox-chip-remove"
   type="button"

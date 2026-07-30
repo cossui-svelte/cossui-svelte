@@ -1,16 +1,22 @@
 <script lang="ts">
-  import ChevronDown from "@lucide/svelte/icons/chevron-down";
-  import Trash from "@lucide/svelte/icons/trash";
-  import { Button, buttonVariants } from "$lib/components/ui/button";
-  import { Collapsible, CollapsiblePanel, CollapsibleTrigger } from "$lib/components/ui/collapsible";
-  import { Frame, FrameHeader, FramePanel } from "$lib/components/ui/frame";
-  import { cn } from "$lib/utils";
+  import ChevronDown from '@lucide/svelte/icons/chevron-down';
+  import Trash from '@lucide/svelte/icons/trash';
+  import { Button, buttonVariants } from '$lib/components/ui/button';
+  import {
+    Collapsible,
+    CollapsiblePanel,
+    CollapsibleTrigger
+  } from '$lib/components/ui/collapsible';
+  import { Frame, FrameHeader, FramePanel } from '$lib/components/ui/frame';
+  import { cn } from '$lib/utils';
 </script>
 
 <Frame class="w-full">
   <Collapsible>
     <FrameHeader class="flex-row items-center justify-between px-2 py-2">
-      <CollapsibleTrigger class={cn(buttonVariants({ variant: "ghost" }), "data-[state=open]:[&_svg]:rotate-180")}>
+      <CollapsibleTrigger
+        class={cn(buttonVariants({ variant: 'ghost' }), 'data-[state=open]:[&_svg]:rotate-180')}
+      >
         <ChevronDown class="size-4" aria-hidden />
         Section header
       </CollapsibleTrigger>

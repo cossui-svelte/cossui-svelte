@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { HTMLAttributes } from "svelte/elements";
-  import { cn, type WithElementRef } from "$lib/utils";
+  import type { HTMLAttributes } from 'svelte/elements';
+  import { cn, type WithElementRef } from '$lib/utils';
 
   let {
     ref = $bindable(null),
@@ -13,7 +13,7 @@
 <span
   bind:this={ref}
   aria-current="page"
-  class={cn("font-normal text-foreground", className)}
+  class={cn('font-normal text-foreground', className)}
   data-slot="breadcrumb-page"
   {...restProps}
 >

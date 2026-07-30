@@ -1,18 +1,13 @@
 <script lang="ts">
-  import CornerUpLeft from "@lucide/svelte/icons/corner-up-left";
-  import Star from "@lucide/svelte/icons/star";
-  import { buttonVariants } from "$lib/components/ui/button";
-  import {
-    PreviewCard,
-    PreviewCardTrigger,
-  } from "$lib/components/ui/preview-card";
-  import PreviewCardPopup from "$lib/components/ui/preview-card/preview-card-popup.svelte";
+  import CornerUpLeft from '@lucide/svelte/icons/corner-up-left';
+  import Star from '@lucide/svelte/icons/star';
+  import { buttonVariants } from '$lib/components/ui/button';
+  import { PreviewCard, PreviewCardTrigger } from '$lib/components/ui/preview-card';
+  import PreviewCardPopup from '$lib/components/ui/preview-card/preview-card-popup.svelte';
 </script>
 
 <PreviewCard>
-  <PreviewCardTrigger class={buttonVariants({ variant: "ghost" })}>
-    coss.com/ui
-  </PreviewCardTrigger>
+  <PreviewCardTrigger class={buttonVariants({ variant: 'ghost' })}>coss.com/ui</PreviewCardTrigger>
   <PreviewCardPopup>
     <div class="flex flex-col gap-4">
       <div class="flex flex-col gap-1">

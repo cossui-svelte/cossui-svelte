@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { type DateValue, getLocalTimeZone, today } from "@internationalized/date";
-  import { RangeCalendar } from "$lib/components/ui/range-calendar";
+  import { type DateValue, getLocalTimeZone, today } from '@internationalized/date';
+  import { RangeCalendar } from '$lib/components/ui/range-calendar';
 
   const todayValue = today(getLocalTimeZone());
   const blockedRange1 = { from: todayValue.add({ days: 14 }), to: todayValue.add({ days: 16 }) };

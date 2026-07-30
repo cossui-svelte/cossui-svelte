@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Input } from "$lib/components/ui/input";
-  import { useCharacterLimit } from "$lib/hooks/use-character-limit.svelte";
+  import { Input } from '$lib/components/ui/input';
+  import { useCharacterLimit } from '$lib/hooks/use-character-limit.svelte';
 
   const charLimit = useCharacterLimit(14);
 </script>

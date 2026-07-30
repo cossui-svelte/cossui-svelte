@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Label } from "$lib/components/ui/label";
-  import { OTPField, OTPFieldInput } from "$lib/components/ui/otp-field";
+  import { Label } from '$lib/components/ui/label';
+  import { OTPField, OTPFieldInput } from '$lib/components/ui/otp-field';
 
   const OTP_LENGTH = 6;
 </script>
@@ -10,11 +10,7 @@
   <OTPField maxlength={OTP_LENGTH}>
     {#snippet children({ cells })}
       {#each cells as cell, i (i)}
-        <OTPFieldInput
-          aria-label={`Character ${i + 1} of ${OTP_LENGTH}`}
-          placeholder="•"
-          {cell}
-        />
+        <OTPFieldInput aria-label={`Character ${i + 1} of ${OTP_LENGTH}`} placeholder="•" {cell} />
       {/each}
     {/snippet}
   </OTPField>

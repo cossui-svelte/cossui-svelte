@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, buttonVariants } from "$lib/components/ui/button";
+  import { Button, buttonVariants } from '$lib/components/ui/button';
   import {
     Dialog,
     DialogClose,
@@ -8,12 +8,12 @@
     DialogPanel,
     DialogPopup,
     DialogTitle,
-    DialogTrigger,
-  } from "$lib/components/ui/dialog";
+    DialogTrigger
+  } from '$lib/components/ui/dialog';
 </script>
 
 <Dialog>
-  <DialogTrigger class={buttonVariants({ variant: "outline" })}>
+  <DialogTrigger class={buttonVariants({ variant: 'outline' })}>
     Terms &amp; Conditions
   </DialogTrigger>
   <DialogPopup class="max-h-[85vh] sm:max-w-md" showCloseButton={false}>
@@ -26,9 +26,9 @@
           <div class="flex flex-col gap-1">
             <p><strong>Acceptance of Terms</strong></p>
             <p>
-              By accessing and using this website, users agree to comply with and be bound by
-              these Terms of Service. Users who do not agree with these terms should discontinue
-              use of the website immediately.
+              By accessing and using this website, users agree to comply with and be bound by these
+              Terms of Service. Users who do not agree with these terms should discontinue use of
+              the website immediately.
             </p>
           </div>
           <div class="flex flex-col gap-1">
@@ -44,17 +44,16 @@
             <p><strong>Content Usage and Restrictions</strong></p>
             <p>
               The website and its original content are protected by intellectual property laws.
-              Users may not reproduce, distribute, modify, create derivative works, or
-              commercially exploit any content without explicit written permission from the
-              website owners.
+              Users may not reproduce, distribute, modify, create derivative works, or commercially
+              exploit any content without explicit written permission from the website owners.
             </p>
           </div>
           <div class="flex flex-col gap-1">
             <p><strong>Limitation of Liability</strong></p>
             <p>
-              The website provides content "as is" without any warranties. The website owners
-              shall not be liable for direct, indirect, incidental, consequential, or punitive
-              damages arising from user interactions with the platform.
+              The website provides content "as is" without any warranties. The website owners shall
+              not be liable for direct, indirect, incidental, consequential, or punitive damages
+              arising from user interactions with the platform.
             </p>
           </div>
           <div class="flex flex-col gap-1">
@@ -69,16 +68,15 @@
           <div class="flex flex-col gap-1">
             <p><strong>Modifications to Terms</strong></p>
             <p>
-              The website reserves the right to modify these terms at any time. Continued use
-              of the website after changes constitutes acceptance of the new terms.
+              The website reserves the right to modify these terms at any time. Continued use of the
+              website after changes constitutes acceptance of the new terms.
             </p>
           </div>
           <div class="flex flex-col gap-1">
             <p><strong>Termination Clause</strong></p>
             <p>
-              The website may terminate or suspend user access without prior notice for
-              violations of these terms or for any other reason deemed appropriate by the
-              administration.
+              The website may terminate or suspend user access without prior notice for violations
+              of these terms or for any other reason deemed appropriate by the administration.
             </p>
           </div>
           <div class="flex flex-col gap-1">
@@ -92,7 +90,7 @@
       </div>
     </DialogPanel>
     <DialogFooter>
-      <DialogClose class={buttonVariants({ variant: "ghost" })}>Cancel</DialogClose>
+      <DialogClose class={buttonVariants({ variant: 'ghost' })}>Cancel</DialogClose>
       <Button type="button">I agree</Button>
     </DialogFooter>
   </DialogPopup>

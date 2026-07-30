@@ -1,7 +1,7 @@
 <script lang="ts">
-  import CheckIcon from "@lucide/svelte/icons/check";
-  import { Badge } from "$lib/components/ui/badge";
-  import { Checkbox } from "$lib/components/ui/checkbox";
+  import CheckIcon from '@lucide/svelte/icons/check';
+  import { Badge } from '$lib/components/ui/badge';
+  import { Checkbox } from '$lib/components/ui/checkbox';
 
   const id = $props.id();
 </script>
@@ -11,10 +11,7 @@
 >
   <Checkbox class="peer hidden" checked {id} />
   <CheckIcon aria-hidden="true" className="hidden peer-data-checked:block" />
-  <label
-    class="cursor-pointer select-none after:absolute after:inset-0"
-    for={id}
-  >
+  <label class="cursor-pointer select-none after:absolute after:inset-0" for={id}>
     Selectable
   </label>
 </Badge>

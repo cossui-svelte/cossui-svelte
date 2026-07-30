@@ -9,7 +9,7 @@
     AutocompleteItem,
     AutocompleteList,
     AutocompletePopup,
-    AutocompleteSeparator,
+    AutocompleteSeparator
   } from '$lib/components/ui/autocomplete';
 
   type Tag = { id: string; label: string; group: 'Status' | 'Priority' | 'Team' };
@@ -56,14 +56,14 @@
     { group: 'Team', id: 't-architecture', label: 'Architecture' },
     { group: 'Team', id: 't-ux', label: 'UX' },
     { group: 'Team', id: 't-ui', label: 'UI' },
-    { group: 'Team', id: 't-management', label: 'Management' },
+    { group: 'Team', id: 't-management', label: 'Management' }
   ];
 
   const groupOrder = ['Status', 'Priority', 'Team'] as const;
 
   const groupedTags = groupOrder.map((groupName) => ({
     items: tagsData.filter((t) => t.group === groupName),
-    value: groupName,
+    value: groupName
   }));
 
   const flatItems = tagsData.map((t) => ({ label: t.label, value: t.id }));

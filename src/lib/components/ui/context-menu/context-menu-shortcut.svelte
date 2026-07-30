@@ -1,8 +1,8 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import type { HTMLAttributes } from "svelte/elements";
-  import Kbd from "$lib/components/ui/kbd/kbd.svelte";
-  import { cn } from "$lib/utils";
+  import type { Snippet } from 'svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
+  import Kbd from '$lib/components/ui/kbd/kbd.svelte';
+  import { cn } from '$lib/utils';
 
   interface Props extends HTMLAttributes<HTMLElement> {
     children?: Snippet;
@@ -13,7 +13,7 @@
 </script>
 
 <Kbd
-  class={cn("ms-auto text-muted-foreground/72 tracking-widest", className)}
+  class={cn('ms-auto text-muted-foreground/72 tracking-widest', className)}
   data-slot="context-menu-shortcut"
   {...restProps}
 >

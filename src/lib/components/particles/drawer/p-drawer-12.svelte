@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { z } from "zod";
-  import { Button, buttonVariants } from "$lib/components/ui/button";
+  import { z } from 'zod';
+  import { Button, buttonVariants } from '$lib/components/ui/button';
   import {
     Dialog,
     DialogClose,
@@ -10,8 +10,8 @@
     DialogPanel,
     DialogPopup,
     DialogTitle,
-    DialogTrigger,
-  } from "$lib/components/ui/dialog";
+    DialogTrigger
+  } from '$lib/components/ui/dialog';
   import {
     Drawer,
     DrawerClose,
@@ -21,37 +21,39 @@
     DrawerPanel,
     DrawerPopup,
     DrawerTitle,
-    DrawerTrigger,
-  } from "$lib/components/ui/drawer";
-  import { Field, FieldLabel } from "$lib/components/ui/field";
-  import { Form } from "$lib/components/ui/form";
-  import { Input } from "$lib/components/ui/input";
-  import { createForm } from "$lib/hooks/use-superform";
+    DrawerTrigger
+  } from '$lib/components/ui/drawer';
+  import { Field, FieldLabel } from '$lib/components/ui/field';
+  import { Form } from '$lib/components/ui/form';
+  import { Input } from '$lib/components/ui/input';
+  import { createForm } from '$lib/hooks/use-superform';
 
   let isMobile = $state(false);
 
   const schema = z.object({
     name: z.string().min(1),
-    username: z.string().min(1),
+    username: z.string().min(1)
   });
 
   const superform = createForm({
-    initialData: { name: "Margaret Welsh", username: "@maggie.welsh" },
-    schema,
+    initialData: { name: 'Margaret Welsh', username: '@maggie.welsh' },
+    schema
   });
 
   $effect(() => {
-    const mq = window.matchMedia("(max-width: 767px)");
+    const mq = window.matchMedia('(max-width: 767px)');
     isMobile = mq.matches;
-    const handler = (e: MediaQueryListEvent) => { isMobile = e.matches; };
-    mq.addEventListener("change", handler);
-    return () => mq.removeEventListener("change", handler);
+    const handler = (e: MediaQueryListEvent) => {
+      isMobile = e.matches;
+    };
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
   });
 </script>
 
 {#if isMobile}
   <Drawer>
-    <DrawerTrigger class={buttonVariants({ variant: "outline" })}>Open</DrawerTrigger>
+    <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Open</DrawerTrigger>
     <DrawerPopup showBar>
       <DrawerHeader>
         <DrawerTitle>Edit profile</DrawerTitle>
@@ -71,7 +73,7 @@
           </Field>
         </DrawerPanel>
         <DrawerFooter>
-          <DrawerClose class={buttonVariants({ variant: "ghost" })}>Cancel</DrawerClose>
+          <DrawerClose class={buttonVariants({ variant: 'ghost' })}>Cancel</DrawerClose>
           <Button type="submit">Save</Button>
         </DrawerFooter>
       </Form>
@@ -79,7 +81,7 @@
   </Drawer>
 {:else}
   <Dialog>
-    <DialogTrigger class={buttonVariants({ variant: "outline" })}>Open</DialogTrigger>
+    <DialogTrigger class={buttonVariants({ variant: 'outline' })}>Open</DialogTrigger>
     <DialogPopup class="sm:max-w-sm">
       <DialogHeader>
         <DialogTitle>Edit profile</DialogTitle>
@@ -99,7 +101,7 @@
           </Field>
         </DialogPanel>
         <DialogFooter>
-          <DialogClose class={buttonVariants({ variant: "ghost" })}>Cancel</DialogClose>
+          <DialogClose class={buttonVariants({ variant: 'ghost' })}>Cancel</DialogClose>
           <Button type="submit">Save</Button>
         </DialogFooter>
       </Form>

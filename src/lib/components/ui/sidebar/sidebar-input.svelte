@@ -1,10 +1,10 @@
 <script lang="ts">
-  import type { HTMLInputAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils";
-  import Input from "../input/input.svelte";
+  import type { HTMLInputAttributes } from 'svelte/elements';
+  import { cn } from '$lib/utils';
+  import Input from '../input/input.svelte';
 
-  interface Props extends Omit<HTMLInputAttributes, "size"> {
-    size?: "sm" | "default" | "lg" | number;
+  interface Props extends Omit<HTMLInputAttributes, 'size'> {
+    size?: 'sm' | 'default' | 'lg' | number;
     unstyled?: boolean;
   }
 
@@ -12,7 +12,7 @@
 </script>
 
 <Input
-  class={cn("h-8 w-full bg-background shadow-none", className)}
+  class={cn('h-8 w-full bg-background shadow-none', className)}
   data-sidebar="input"
   data-slot="sidebar-input"
   {...restProps}

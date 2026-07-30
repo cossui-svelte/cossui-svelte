@@ -1,10 +1,6 @@
 <script lang="ts">
-  import Search from "@lucide/svelte/icons/search";
-  import {
-    InputGroup,
-    InputGroupAddon,
-    InputGroupInput,
-  } from "$lib/components/ui/input-group";
+  import Search from '@lucide/svelte/icons/search';
+  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';
 </script>
 
 <InputGroup>

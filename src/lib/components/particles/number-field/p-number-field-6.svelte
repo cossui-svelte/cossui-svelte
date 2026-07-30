@@ -5,8 +5,8 @@
     NumberFieldGroup,
     NumberFieldIncrement,
     NumberFieldInput,
-    NumberFieldScrubArea,
-  } from "$lib/components/ui/number-field";
+    NumberFieldScrubArea
+  } from '$lib/components/ui/number-field';
 </script>
 
 <NumberField value={0}>

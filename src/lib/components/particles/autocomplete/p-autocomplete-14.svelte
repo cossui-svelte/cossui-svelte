@@ -6,7 +6,7 @@
     AutocompleteInput,
     AutocompleteItem,
     AutocompleteList,
-    AutocompletePopup,
+    AutocompletePopup
   } from '$lib/components/ui/autocomplete';
 
   const items = [
@@ -19,7 +19,7 @@
     { label: 'Peach', value: 'peach' },
     { label: 'Pear', value: 'pear' },
     { label: 'Pineapple', value: 'pineapple' },
-    { label: 'Strawberry', value: 'strawberry' },
+    { label: 'Strawberry', value: 'strawberry' }
   ];
 </script>
 

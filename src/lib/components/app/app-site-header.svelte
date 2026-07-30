@@ -1,13 +1,13 @@
 <script lang="ts">
-  import { resolve } from "$app/paths";
-  import { Button } from "$lib/components/ui/button";
-  import { Separator } from "$lib/components/ui/separator";
-  import MainNav from "./main-nav.svelte";
-  import SiteHeaderBase from "./site-header.svelte";
+  import { resolve } from '$app/paths';
+  import { Button } from '$lib/components/ui/button';
+  import { Separator } from '$lib/components/ui/separator';
+  import MainNav from './main-nav.svelte';
+  import SiteHeaderBase from './site-header.svelte';
 
   interface PageNode {
     name: string | unknown;
-    type: "page";
+    type: 'page';
     url: string;
   }
 
@@ -15,7 +15,7 @@
     $id?: string;
     children: (PageNode | FolderNode)[];
     name: string | unknown;
-    type: "folder";
+    type: 'folder';
   }
 
   interface NavTree {
@@ -35,11 +35,7 @@
     tree?: NavTree;
   }
 
-  let {
-    navItems = [],
-    currentProduct = "ui",
-    products = [],
-  }: Props = $props();
+  let { navItems = [], currentProduct = 'ui', products = [] }: Props = $props();
 </script>
 
 <SiteHeaderBase {currentProduct} {products}>
@@ -50,10 +46,10 @@
 
   <div class="flex gap-2">
     <Button variant="ghost">
-      <a href={resolve("/docs")}>Docs</a>
+      <a href={resolve('/docs')}>Docs</a>
     </Button>
     <Button variant="ghost">
-      <a href={resolve("/particles")}>Particles</a>
+      <a href={resolve('/particles')}>Particles</a>
     </Button>
   </div>
 

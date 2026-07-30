@@ -1,12 +1,12 @@
 <script lang="ts">
-    import { LinkPreview } from "bits-ui";
-    import type { Snippet } from "svelte";
+  import { LinkPreview } from 'bits-ui';
+  import type { Snippet } from 'svelte';
 
-    type Props = LinkPreview.RootProps & { children?: Snippet };
+  type Props = LinkPreview.RootProps & { children?: Snippet };
 
-    let { children, ...restProps }: Props = $props();
+  let { children, ...restProps }: Props = $props();
 </script>
 
 <LinkPreview.Root {...restProps}>
-    {@render children?.()}
+  {@render children?.()}
 </LinkPreview.Root>

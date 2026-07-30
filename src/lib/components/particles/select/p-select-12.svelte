@@ -1,19 +1,24 @@
 <script lang="ts">
-  import { Select, SelectItem, SelectPopup, SelectTrigger } from "$lib/components/ui/select";
+  import { Select, SelectItem, SelectPopup, SelectTrigger } from '$lib/components/ui/select';
 
   const items = [
-    { disabled: false, label: "Next.js", value: "next" },
-    { disabled: false, label: "Vite", value: "vite" },
-    { disabled: true, label: "Astro (coming soon)", value: "astro" },
-    { disabled: true, label: "Remix (coming soon)", value: "remix" },
-    { disabled: false, label: "Nuxt", value: "nuxt" },
+    { disabled: false, label: 'Next.js', value: 'next' },
+    { disabled: false, label: 'Vite', value: 'vite' },
+    { disabled: true, label: 'Astro (coming soon)', value: 'astro' },
+    { disabled: true, label: 'Remix (coming soon)', value: 'remix' },
+    { disabled: false, label: 'Nuxt', value: 'nuxt' }
   ];
 
-  let selected = $state("next");
-  const selectedLabel = $derived(items.find((i) => i.value === selected)?.label ?? "");
+  let selected = $state('next');
+  const selectedLabel = $derived(items.find((i) => i.value === selected)?.label ?? '');
 </script>
 
-<Select value={selected} onValueChange={(v) => { selected = v; }}>
+<Select
+  value={selected}
+  onValueChange={(v) => {
+    selected = v;
+  }}
+>
   <SelectTrigger aria-label="Select framework">
     <span class="flex-1 truncate">{selectedLabel}</span>
   </SelectTrigger>

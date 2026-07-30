@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ScrollArea } from "$lib/components/ui/scroll-area";
+  import { ScrollArea } from '$lib/components/ui/scroll-area';
 
   const tags = Array.from({ length: 50 }, (_, i) => `v1.0.0-alpha.${i}`);
 </script>

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { page } from "$app/state";
-  import { PROJECT_NAME, SITE_URL } from "$lib/config";
+  import { page } from '$app/state';
+  import { PROJECT_NAME, SITE_URL } from '$lib/config';
 
   interface Props {
     description: string;
@@ -8,28 +8,28 @@
     jsonLd?: Record<string, unknown>;
     noindex?: boolean;
     title: string;
-    type?: "article" | "website";
+    type?: 'article' | 'website';
   }
 
   let {
     description,
-    image = "/img/abstract.png",
+    image = '/img/abstract.png',
     jsonLd,
     noindex = false,
     title,
-    type = "website",
+    type = 'website'
   }: Props = $props();
 
   const canonical = $derived(`${SITE_URL}${page.url.pathname}`);
-  const ogImage = $derived(image.startsWith("http") ? image : `${SITE_URL}${image}`);
+  const ogImage = $derived(image.startsWith('http') ? image : `${SITE_URL}${image}`);
 
   // Escape characters that could close the surrounding <script> tag or be
   // misinterpreted as HTML if they appear inside a string value of jsonLd.
   function serializeJsonLd(data: Record<string, unknown>) {
     return JSON.stringify(data)
-      .replace(/</g, "\\u003c")
-      .replace(/>/g, "\\u003e")
-      .replace(/&/g, "\\u0026");
+      .replace(/</g, '\\u003c')
+      .replace(/>/g, '\\u003e')
+      .replace(/&/g, '\\u0026');
   }
 </script>
 

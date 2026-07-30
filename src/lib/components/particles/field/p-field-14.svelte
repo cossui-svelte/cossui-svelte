@@ -8,13 +8,13 @@
   import { createForm } from '$lib/hooks/use-superform';
 
   const schema = z.object({
-    plan: z.string(),
+    plan: z.string()
   });
 
   const superform = createForm({
     initialData: { plan: 'free' },
     onUpdated: ({ plan }) => alert(`Selected plan: ${plan}`),
-    schema,
+    schema
   });
 
   const { form, submitting } = superform;

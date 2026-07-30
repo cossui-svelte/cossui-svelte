@@ -43,7 +43,10 @@
         </div>
       {:else}
         <div class="flex flex-col items-center justify-center px-4 py-3 text-center">
-          <div aria-hidden="true" class="mb-2 flex size-11 shrink-0 items-center justify-center rounded-full border bg-background">
+          <div
+            aria-hidden="true"
+            class="mb-2 flex size-11 shrink-0 items-center justify-center rounded-full border bg-background"
+          >
             <ImageUp class="size-4 opacity-60" />
           </div>
           <p class="mb-1.5 font-medium text-sm">Drop your image here or click to browse</p>

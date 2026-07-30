@@ -13,7 +13,12 @@
   const state = getCropperContext();
 </script>
 
-<div id={state.descriptionId} data-slot="cropper-description" class={cn('sr-only', className)} {...restProps}>
+<div
+  id={state.descriptionId}
+  data-slot="cropper-description"
+  class={cn('sr-only', className)}
+  {...restProps}
+>
   {#if children}
     {@render children()}
   {:else}

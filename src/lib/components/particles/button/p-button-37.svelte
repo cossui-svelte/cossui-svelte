@@ -1,13 +1,13 @@
 <script lang="ts">
-  import Plus from "@lucide/svelte/icons/plus";
-  import { Button } from "$lib/components/ui/button";
+  import Plus from '@lucide/svelte/icons/plus';
+  import { Button } from '$lib/components/ui/button';
 
   let open = $state(false);
 </script>
 
 <Button
   aria-expanded={open}
-  aria-label={open ? "Close menu" : "Open menu"}
+  aria-label={open ? 'Close menu' : 'Open menu'}
   class="rounded-full before:rounded-full"
   onclick={() => (open = !open)}
   size="icon"

@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { WithElementRef } from "bits-ui";
-  import type { HTMLAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils";
+  import type { WithElementRef } from 'bits-ui';
+  import type { HTMLAttributes } from 'svelte/elements';
+  import { cn } from '$lib/utils';
 
   let {
     ref = $bindable(null),
@@ -11,11 +11,6 @@
   }: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();
 </script>
 
-<div
-  bind:this={ref}
-  class={cn("flex", className)}
-  data-slot="field-item"
-  {...restProps}
->
+<div bind:this={ref} class={cn('flex', className)} data-slot="field-item" {...restProps}>
   {@render children?.()}
 </div>

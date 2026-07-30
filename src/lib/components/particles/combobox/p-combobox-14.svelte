@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Search from "@lucide/svelte/icons/search";
+  import Search from '@lucide/svelte/icons/search';
   import {
     Combobox,
     ComboboxChip,
@@ -8,20 +8,20 @@
     ComboboxEmpty,
     ComboboxItem,
     ComboboxList,
-    ComboboxPopup,
-  } from "$lib/components/ui/combobox";
+    ComboboxPopup
+  } from '$lib/components/ui/combobox';
 
   const items = [
-    { label: "Apple", value: "apple" },
-    { label: "Banana", value: "banana" },
-    { label: "Orange", value: "orange" },
-    { label: "Grape", value: "grape" },
-    { label: "Strawberry", value: "strawberry" },
-    { label: "Mango", value: "mango" },
-    { label: "Pineapple", value: "pineapple" },
-    { label: "Kiwi", value: "kiwi" },
-    { label: "Peach", value: "peach" },
-    { label: "Pear", value: "pear" },
+    { label: 'Apple', value: 'apple' },
+    { label: 'Banana', value: 'banana' },
+    { label: 'Orange', value: 'orange' },
+    { label: 'Grape', value: 'grape' },
+    { label: 'Strawberry', value: 'strawberry' },
+    { label: 'Mango', value: 'mango' },
+    { label: 'Pineapple', value: 'pineapple' },
+    { label: 'Kiwi', value: 'kiwi' },
+    { label: 'Peach', value: 'peach' },
+    { label: 'Pear', value: 'pear' }
   ];
 
   let value = $state<string[]>([items[0].value, items[3].value]);
@@ -45,7 +45,7 @@
     {/each}
     <ComboboxChipsInput
       aria-label="Select a item"
-      placeholder={value.length > 0 ? undefined : "Select a item..."}
+      placeholder={value.length > 0 ? undefined : 'Select a item...'}
     />
   </ComboboxChips>
   <ComboboxPopup>

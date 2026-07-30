@@ -1,8 +1,8 @@
 <script lang="ts">
-  import BoldIcon from "@lucide/svelte/icons/bold";
-  import ItalicIcon from "@lucide/svelte/icons/italic";
-  import UnderlineIcon from "@lucide/svelte/icons/underline";
-  import { Toggle } from "$lib/components/ui/toggle";
+  import BoldIcon from '@lucide/svelte/icons/bold';
+  import ItalicIcon from '@lucide/svelte/icons/italic';
+  import UnderlineIcon from '@lucide/svelte/icons/underline';
+  import { Toggle } from '$lib/components/ui/toggle';
 </script>
 
 <div class="flex items-center gap-1">

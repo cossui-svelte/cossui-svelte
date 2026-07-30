@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button } from "$lib/components/ui/button";
+  import { Button } from '$lib/components/ui/button';
   import {
     Stepper,
     StepperDescription,
@@ -7,13 +7,13 @@
     StepperItem,
     StepperSeparator,
     StepperTitle,
-    StepperTrigger,
-  } from "$lib/components/ui/stepper";
+    StepperTrigger
+  } from '$lib/components/ui/stepper';
 
   const steps = [
-    { description: "Create your account", title: "Account" },
-    { description: "Add your address", title: "Address" },
-    { description: "Review and submit", title: "Review" },
+    { description: 'Create your account', title: 'Account' },
+    { description: 'Add your address', title: 'Address' },
+    { description: 'Review and submit', title: 'Review' }
   ];
 
   let step = $state(1);
@@ -38,11 +38,7 @@
   </Stepper>
 
   <div class="flex justify-between">
-    <Button
-      variant="outline"
-      disabled={step === 1}
-      onclick={() => (step = Math.max(1, step - 1))}
-    >
+    <Button variant="outline" disabled={step === 1} onclick={() => (step = Math.max(1, step - 1))}>
       Previous
     </Button>
     <Button

@@ -10,7 +10,7 @@
     SelectContent,
     SelectItem,
     SelectTrigger,
-    SelectValue,
+    SelectValue
   } from '$lib/components/ui/select';
   import { createForm } from '$lib/hooks/use-superform';
 
@@ -18,7 +18,7 @@
     email: z.string().email({ message: 'Please enter a valid email.' }),
     fullName: z.string().min(1, { message: 'Please enter a valid name.' }),
     newsletter: z.boolean().optional(),
-    role: z.string().optional(),
+    role: z.string().optional()
   });
 
   const superform = createForm({
@@ -28,7 +28,7 @@
         `Full name: ${data.fullName}\nEmail: ${data.email}\nRole: ${data.role ?? ''}\nNewsletter: ${data.newsletter ?? false}`
       );
     },
-    schema,
+    schema
   });
 
   const { form, submitting } = superform;

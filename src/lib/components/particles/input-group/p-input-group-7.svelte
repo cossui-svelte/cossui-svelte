@@ -1,29 +1,17 @@
 <script lang="ts">
-  import Info from "@lucide/svelte/icons/info";
-  import { buttonVariants } from "$lib/components/ui/button";
-  import {
-    InputGroup,
-    InputGroupAddon,
-    InputGroupInput,
-  } from "$lib/components/ui/input-group";
-  import {
-    Popover,
-    PopoverPopup,
-    PopoverTrigger,
-  } from "$lib/components/ui/popover";
+  import Info from '@lucide/svelte/icons/info';
+  import { buttonVariants } from '$lib/components/ui/button';
+  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';
+  import { Popover, PopoverPopup, PopoverTrigger } from '$lib/components/ui/popover';
 </script>
 
 <InputGroup>
-  <InputGroupInput
-    aria-label="Password"
-    placeholder="Password"
-    type="password"
-  />
+  <InputGroupInput aria-label="Password" placeholder="Password" type="password" />
   <InputGroupAddon align="inline-end">
     <Popover>
       <PopoverTrigger
         aria-label="Password requirements"
-        class={buttonVariants({ size: "icon-xs", variant: "ghost" })}
+        class={buttonVariants({ size: 'icon-xs', variant: 'ghost' })}
       >
         <Info />
       </PopoverTrigger>

@@ -1,20 +1,15 @@
 <script lang="ts">
-  import Folders from "@lucide/svelte/icons/folders";
+  import Folders from '@lucide/svelte/icons/folders';
   import {
     Breadcrumb,
     BreadcrumbItem,
     BreadcrumbLink,
     BreadcrumbList,
     BreadcrumbPage,
-    BreadcrumbSeparator,
-  } from "$lib/components/ui/breadcrumb";
-  import { buttonVariants } from "$lib/components/ui/button";
-  import {
-    Menu,
-    MenuLinkItem,
-    MenuPopup,
-    MenuTrigger,
-  } from "$lib/components/ui/menu";
+    BreadcrumbSeparator
+  } from '$lib/components/ui/breadcrumb';
+  import { buttonVariants } from '$lib/components/ui/button';
+  import { Menu, MenuLinkItem, MenuPopup, MenuTrigger } from '$lib/components/ui/menu';
 </script>
 
 <Breadcrumb>
@@ -27,7 +22,7 @@
       <Menu>
         <MenuTrigger
           aria-label="More pages"
-          class={`${buttonVariants({size:"icon-sm",variant:"ghost"})}·-m-1.5·text-muted-foreground`}
+          class={`${buttonVariants({ size: 'icon-sm', variant: 'ghost' })}·-m-1.5·text-muted-foreground`}
         >
           <Folders aria-hidden="true" />
         </MenuTrigger>

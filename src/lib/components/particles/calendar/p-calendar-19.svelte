@@ -1,35 +1,35 @@
 <script lang="ts">
-  import { DateFormatter, type DateValue, getLocalTimeZone, today } from "@internationalized/date";
-  import { Calendar } from "$lib/components/ui/calendar";
-  import { ScrollArea } from "$lib/components/ui/scroll-area";
-  import { ToggleGroup, ToggleGroupItem } from "$lib/components/ui/toggle-group";
+  import { DateFormatter, type DateValue, getLocalTimeZone, today } from '@internationalized/date';
+  import { Calendar } from '$lib/components/ui/calendar';
+  import { ScrollArea } from '$lib/components/ui/scroll-area';
+  import { ToggleGroup, ToggleGroupItem } from '$lib/components/ui/toggle-group';
 
   const todayValue = today(getLocalTimeZone());
   let date = $state<DateValue>(todayValue);
   let time = $state<string | undefined>(undefined);
 
   const timeSlots = [
-    { available: false, time: "09:00" },
-    { available: false, time: "09:30" },
-    { available: true, time: "10:00" },
-    { available: true, time: "10:30" },
-    { available: true, time: "11:00" },
-    { available: true, time: "11:30" },
-    { available: false, time: "12:00" },
-    { available: true, time: "12:30" },
-    { available: true, time: "13:00" },
-    { available: true, time: "13:30" },
-    { available: true, time: "14:00" },
-    { available: false, time: "14:30" },
-    { available: false, time: "15:00" },
-    { available: true, time: "15:30" },
-    { available: true, time: "16:00" },
-    { available: true, time: "16:30" },
-    { available: true, time: "17:00" },
-    { available: true, time: "17:30" },
+    { available: false, time: '09:00' },
+    { available: false, time: '09:30' },
+    { available: true, time: '10:00' },
+    { available: true, time: '10:30' },
+    { available: true, time: '11:00' },
+    { available: true, time: '11:30' },
+    { available: false, time: '12:00' },
+    { available: true, time: '12:30' },
+    { available: true, time: '13:00' },
+    { available: true, time: '13:30' },
+    { available: true, time: '14:00' },
+    { available: false, time: '14:30' },
+    { available: false, time: '15:00' },
+    { available: true, time: '15:30' },
+    { available: true, time: '16:00' },
+    { available: true, time: '16:30' },
+    { available: true, time: '17:00' },
+    { available: true, time: '17:30' }
   ];
 
-  const dayFormatter = new DateFormatter("en-US", { day: "numeric", weekday: "long" });
+  const dayFormatter = new DateFormatter('en-US', { day: 'numeric', weekday: 'long' });
 
   function isDateDisabled(d: DateValue): boolean {
     return d.compare(todayValue) < 0;

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Accordion } from "bits-ui";
-  import { cn, type WithoutChild } from "$lib/utils";
+  import { Accordion } from 'bits-ui';
+  import { cn, type WithoutChild } from '$lib/utils';
 
   let {
     ref = $bindable(null),
@@ -17,7 +17,7 @@
   data-slot="accordion-panel"
   {...restProps}
 >
-  <div class={cn("pt-0 pb-4", className)}>
+  <div class={cn('pt-0 pb-4', className)}>
     {@render children?.()}
   </div>
 </Accordion.Content>

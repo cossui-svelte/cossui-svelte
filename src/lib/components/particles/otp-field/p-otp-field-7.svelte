@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { Label } from "$lib/components/ui/label";
-  import { OTPField, OTPFieldInput } from "$lib/components/ui/otp-field";
+  import { Label } from '$lib/components/ui/label';
+  import { OTPField, OTPFieldInput } from '$lib/components/ui/otp-field';
 
   const OTP_LENGTH = 6;
 
-  let value = $state("");
+  let value = $state('');
   let invalid = $state(false);
-  const valid = $derived(value.length === OTP_LENGTH && value === "123456");
+  const valid = $derived(value.length === OTP_LENGTH && value === '123456');
 </script>
 
 <div class="flex flex-col items-center gap-2">
@@ -15,7 +15,7 @@
     maxlength={OTP_LENGTH}
     bind:value
     onValueChange={(v) => {
-      invalid = v.length === OTP_LENGTH ? v !== "123456" : false;
+      invalid = v.length === OTP_LENGTH ? v !== '123456' : false;
     }}
   >
     {#snippet children({ cells })}

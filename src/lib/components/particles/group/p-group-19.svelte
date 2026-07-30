@@ -1,21 +1,21 @@
 <script lang="ts">
-  import { Group, GroupSeparator } from "$lib/components/ui/group";
-  import { Input } from "$lib/components/ui/input";
+  import { Group, GroupSeparator } from '$lib/components/ui/group';
+  import { Input } from '$lib/components/ui/input';
   import {
     Select,
     SelectItem,
     SelectPopup,
     SelectTrigger,
-    SelectValue,
-  } from "$lib/components/ui/select";
+    SelectValue
+  } from '$lib/components/ui/select';
 
   const domains = [
-    { label: ".com", value: "com" },
-    { label: ".org", value: "org" },
-    { label: ".net", value: "net" },
+    { label: '.com', value: 'com' },
+    { label: '.org', value: 'org' },
+    { label: '.net', value: 'net' }
   ];
 
-  let domain = $state("com");
+  let domain = $state('com');
 </script>
 
 <Group aria-label="Domain input">

@@ -7,7 +7,7 @@
     ComboboxInput,
     ComboboxItem,
     ComboboxList,
-    ComboboxPopup,
+    ComboboxPopup
   } from '$lib/components/ui/combobox';
   import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';
   import { Form } from '$lib/components/ui/form';
@@ -23,16 +23,16 @@
     { label: 'Pineapple', value: 'pineapple' },
     { label: 'Kiwi', value: 'kiwi' },
     { label: 'Peach', value: 'peach' },
-    { label: 'Pear', value: 'pear' },
+    { label: 'Pear', value: 'pear' }
   ];
 
   const schema = z.object({
-    item: z.string().min(1, { message: 'Please select a item.' }),
+    item: z.string().min(1, { message: 'Please select a item.' })
   });
 
   const superform = createForm({
     onUpdated: ({ item }) => alert(`Favorite item: ${item}`),
-    schema,
+    schema
   });
 
   const { form, submitting } = superform;

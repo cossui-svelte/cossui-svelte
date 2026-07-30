@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { getContext } from "svelte";
-  import type { HTMLAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils";
-  import { METER_CONTEXT_KEY, type MeterContext } from "./meter.svelte";
+  import { getContext } from 'svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
+  import { cn } from '$lib/utils';
+  import { METER_CONTEXT_KEY, type MeterContext } from './meter.svelte';
 
   type Props = HTMLAttributes<HTMLDivElement>;
 
@@ -12,7 +12,7 @@
 </script>
 
 <div
-  class={cn("h-full bg-primary transition-all duration-500", className)}
+  class={cn('h-full bg-primary transition-all duration-500', className)}
   data-slot="meter-indicator"
   style="width: {ctx.percentage}%"
   {...restProps}

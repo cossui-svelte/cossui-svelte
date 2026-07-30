@@ -71,9 +71,15 @@
 {/snippet}
 
 {#snippet filePreview(file: FileWithPreview)}
-  <div class="flex aspect-square items-center justify-center overflow-hidden rounded-t-[inherit] bg-accent">
+  <div
+    class="flex aspect-square items-center justify-center overflow-hidden rounded-t-[inherit] bg-accent"
+  >
     {#if file.file.type.startsWith('image/') && file.preview}
-      <img alt={file.file.name} class="size-full rounded-t-[inherit] object-cover" src={file.preview} />
+      <img
+        alt={file.file.name}
+        class="size-full rounded-t-[inherit] object-cover"
+        src={file.preview}
+      />
     {:else}
       {@render fileIcon(file)}
     {/if}
@@ -135,11 +141,16 @@
       </div>
     {:else}
       <div class="flex flex-col items-center justify-center px-4 py-3 text-center">
-        <div aria-hidden="true" class="mb-2 flex size-11 shrink-0 items-center justify-center rounded-full border bg-background">
+        <div
+          aria-hidden="true"
+          class="mb-2 flex size-11 shrink-0 items-center justify-center rounded-full border bg-background"
+        >
           <Image class="size-4 opacity-60" />
         </div>
         <p class="mb-1.5 font-medium text-sm">Drop your files here</p>
-        <p class="text-muted-foreground text-xs">Max {maxFiles} files &middot; Up to {maxSizeMB}MB</p>
+        <p class="text-muted-foreground text-xs">
+          Max {maxFiles} files &middot; Up to {maxSizeMB}MB
+        </p>
         <Button class="mt-4" onclick={fileUpload.openFileDialog} variant="outline">
           <Upload aria-hidden="true" class="-ms-1 opacity-60" />
           Select images

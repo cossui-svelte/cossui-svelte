@@ -7,21 +7,21 @@
     AlertDialogHeader,
     AlertDialogPopup,
     AlertDialogTitle,
-    AlertDialogTrigger,
-  } from "$lib/components/ui/alert-dialog";
-  import { Button, buttonVariants } from "$lib/components/ui/button";
+    AlertDialogTrigger
+  } from '$lib/components/ui/alert-dialog';
+  import { Button, buttonVariants } from '$lib/components/ui/button';
 </script>
 
 <AlertDialog>
-  <AlertDialogTrigger class={buttonVariants({ variant: "destructive-outline" })}>
+  <AlertDialogTrigger class={buttonVariants({ variant: 'destructive-outline' })}>
     Delete Account
   </AlertDialogTrigger>
   <AlertDialogPopup>
     <AlertDialogHeader>
       <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
       <AlertDialogDescription>
-        This action cannot be undone. This will permanently delete your
-        account and remove your data from our servers.
+        This action cannot be undone. This will permanently delete your account and remove your data
+        from our servers.
       </AlertDialogDescription>
     </AlertDialogHeader>
     <AlertDialogFooter variant="bare">

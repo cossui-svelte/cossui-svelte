@@ -7,14 +7,14 @@
   import { createForm } from '$lib/hooks/use-superform';
 
   const schema = z.object({
-    message: z.string().min(1, { message: 'Please fill out this field.' }),
+    message: z.string().min(1, { message: 'Please fill out this field.' })
   });
 
   const superform = createForm({
     onUpdated: (data) => {
       alert(`Message: ${data.message}`);
     },
-    schema,
+    schema
   });
 
   const { form, submitting } = superform;

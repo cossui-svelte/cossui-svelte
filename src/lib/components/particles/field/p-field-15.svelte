@@ -7,7 +7,7 @@
   import { createForm } from '$lib/hooks/use-superform';
 
   const schema = z.object({
-    notifications: z.boolean().optional(),
+    notifications: z.boolean().optional()
   });
 
   const superform = createForm({
@@ -15,7 +15,7 @@
     onUpdated: (data) => {
       alert(`Email notifications: ${data.notifications ?? false}`);
     },
-    schema,
+    schema
   });
 
   const { form, submitting } = superform;

@@ -7,7 +7,7 @@
   import { createForm } from '$lib/hooks/use-superform';
 
   const schema = z.object({
-    email: z.email({ message: 'Please enter a valid email.' }),
+    email: z.email({ message: 'Please enter a valid email.' })
   });
 
   const superform = createForm({ schema });

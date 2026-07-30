@@ -1,16 +1,16 @@
 <script lang="ts">
-  import Check from "@lucide/svelte/icons/check";
-  import Copy from "@lucide/svelte/icons/copy";
-  import FileCode from "@lucide/svelte/icons/file-code";
-  import { buttonVariants } from "$lib/components/ui/button";
-  import { ScrollArea } from "$lib/components/ui/scroll-area";
+  import Check from '@lucide/svelte/icons/check';
+  import Copy from '@lucide/svelte/icons/copy';
+  import FileCode from '@lucide/svelte/icons/file-code';
+  import { buttonVariants } from '$lib/components/ui/button';
+  import { ScrollArea } from '$lib/components/ui/scroll-area';
   import {
     Tooltip,
     TooltipPopup,
     TooltipProvider,
-    TooltipTrigger,
-  } from "$lib/components/ui/tooltip";
-  import { cn } from "$lib/utils";
+    TooltipTrigger
+  } from '$lib/components/ui/tooltip';
+  import { cn } from '$lib/utils';
 
   interface Props {
     code: string;
@@ -22,23 +22,17 @@
     title?: string;
   }
 
-  let {
-    code,
-    language,
-    title,
-    html,
-    copyButton = true,
-  }: Props = $props();
+  let { code, language, title, html, copyButton = true }: Props = $props();
 
   let isCopied = $state(false);
   let timeoutId: ReturnType<typeof setTimeout> | undefined;
 
   async function getHighlightedCode(src: string, lang: string): Promise<string> {
-    const { highlighter } = await import("$lib/components/app/shiki");
+    const { highlighter } = await import('$lib/components/app/shiki');
     const hl = await highlighter;
     return hl.codeToHtml(src, {
       lang,
-      themes: { dark: "github-dark-default", light: "github-light-default" },
+      themes: { dark: 'github-dark-default', light: 'github-light-default' }
     });
   }
 
@@ -53,7 +47,7 @@
         isCopied = false;
       }, 2000);
     } catch (err) {
-      console.error("Failed to copy:", err);
+      console.error('Failed to copy:', err);
     }
   }
 </script>
@@ -77,8 +71,8 @@
             <button
               {...props}
               class={cn(
-                buttonVariants({ size: "icon", variant: "ghost" }),
-                "absolute top-1.5 right-1.5 z-3 size-9 opacity-70 hover:opacity-100 focus-visible:opacity-100 sm:size-8",
+                buttonVariants({ size: 'icon', variant: 'ghost' }),
+                'absolute top-1.5 right-1.5 z-3 size-9 opacity-70 hover:opacity-100 focus-visible:opacity-100 sm:size-8'
               )}
               data-slot="copy-button"
               onclick={copyToClipboard}
@@ -94,7 +88,7 @@
           {/snippet}
         </TooltipTrigger>
         <TooltipPopup>
-          {isCopied ? "Copied" : "Copy to Clipboard"}
+          {isCopied ? 'Copied' : 'Copy to Clipboard'}
         </TooltipPopup>
       </Tooltip>
     </TooltipProvider>

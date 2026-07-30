@@ -7,14 +7,14 @@
   import { createForm } from '$lib/hooks/use-superform';
 
   const schema = z.object({
-    bio: z.string().max(500, { message: 'Bio must be 500 characters or fewer.' }),
+    bio: z.string().max(500, { message: 'Bio must be 500 characters or fewer.' })
   });
 
   const superform = createForm({
     onUpdated: (data) => {
       alert(`Bio: ${data.bio}`);
     },
-    schema,
+    schema
   });
 
   const { form, submitting } = superform;

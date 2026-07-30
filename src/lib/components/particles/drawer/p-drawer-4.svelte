@@ -1,18 +1,18 @@
 <script lang="ts">
-  import { buttonVariants } from "$lib/components/ui/button";
+  import { buttonVariants } from '$lib/components/ui/button';
   import {
     Drawer,
     DrawerHeader,
     DrawerPanel,
     DrawerPopup,
     DrawerTitle,
-    DrawerTrigger,
-  } from "$lib/components/ui/drawer";
+    DrawerTrigger
+  } from '$lib/components/ui/drawer';
 </script>
 
 <div class="flex flex-wrap gap-2">
   <Drawer position="right">
-    <DrawerTrigger class={buttonVariants({ variant: "outline" })}>Right</DrawerTrigger>
+    <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Right</DrawerTrigger>
     <DrawerPopup variant="inset">
       <DrawerHeader>
         <DrawerTitle>Right</DrawerTitle>
@@ -24,7 +24,7 @@
   </Drawer>
 
   <Drawer position="left">
-    <DrawerTrigger class={buttonVariants({ variant: "outline" })}>Left</DrawerTrigger>
+    <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Left</DrawerTrigger>
     <DrawerPopup variant="inset">
       <DrawerHeader>
         <DrawerTitle>Left</DrawerTitle>
@@ -36,7 +36,7 @@
   </Drawer>
 
   <Drawer position="top">
-    <DrawerTrigger class={buttonVariants({ variant: "outline" })}>Top</DrawerTrigger>
+    <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Top</DrawerTrigger>
     <DrawerPopup variant="inset">
       <DrawerHeader>
         <DrawerTitle>Top</DrawerTitle>
@@ -48,7 +48,7 @@
   </Drawer>
 
   <Drawer>
-    <DrawerTrigger class={buttonVariants({ variant: "outline" })}>Bottom</DrawerTrigger>
+    <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Bottom</DrawerTrigger>
     <DrawerPopup variant="inset">
       <DrawerHeader>
         <DrawerTitle>Bottom</DrawerTitle>

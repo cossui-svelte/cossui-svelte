@@ -9,12 +9,12 @@
     NumberFieldGroup,
     NumberFieldIncrement,
     NumberFieldInput,
-    NumberFieldScrubArea,
+    NumberFieldScrubArea
   } from '$lib/components/ui/number-field';
   import { createForm } from '$lib/hooks/use-superform';
 
   const schema = z.object({
-    quantity: z.number().min(1).max(100),
+    quantity: z.number().min(1).max(100)
   });
 
   const superform = createForm({
@@ -22,7 +22,7 @@
     onUpdated: (data) => {
       alert(`Quantity: ${data.quantity}`);
     },
-    schema,
+    schema
   });
 
   const { form, submitting } = superform;

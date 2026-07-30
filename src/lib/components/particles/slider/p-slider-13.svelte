@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { NumberField, NumberFieldGroup, NumberFieldInput } from "$lib/components/ui/number-field";
-  import { Slider } from "$lib/components/ui/slider";
+  import { NumberField, NumberFieldGroup, NumberFieldInput } from '$lib/components/ui/number-field';
+  import { Slider } from '$lib/components/ui/slider';
 
   const min = 0;
   const max = 50;

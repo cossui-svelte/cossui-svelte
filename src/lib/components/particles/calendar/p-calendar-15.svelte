@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { type DateValue, getLocalTimeZone, today } from "@internationalized/date";
-  import { Button } from "$lib/components/ui/button";
-  import { Calendar } from "$lib/components/ui/calendar";
+  import { type DateValue, getLocalTimeZone, today } from '@internationalized/date';
+  import { Button } from '$lib/components/ui/button';
+  import { Calendar } from '$lib/components/ui/calendar';
 
   const todayValue = today(getLocalTimeZone());
   const selectedDay = todayValue.subtract({ days: 28 });

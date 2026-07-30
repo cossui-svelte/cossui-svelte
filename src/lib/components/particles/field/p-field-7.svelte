@@ -6,7 +6,7 @@
     AutocompleteInput,
     AutocompleteItem,
     AutocompleteList,
-    AutocompletePopup,
+    AutocompletePopup
   } from '$lib/components/ui/autocomplete';
   import { Button } from '$lib/components/ui/button';
   import { Field, FieldDescription, FieldError, FieldLabel } from '$lib/components/ui/field';
@@ -23,18 +23,18 @@
     { label: 'Peach', value: 'peach' },
     { label: 'Pear', value: 'pear' },
     { label: 'Pineapple', value: 'pineapple' },
-    { label: 'Strawberry', value: 'strawberry' },
+    { label: 'Strawberry', value: 'strawberry' }
   ];
 
   const schema = z.object({
-    fruit: z.string().min(1, { message: 'Please select a fruit.' }),
+    fruit: z.string().min(1, { message: 'Please select a fruit.' })
   });
 
   const superform = createForm({
     onUpdated: (data) => {
       alert(`Fruit: ${data.fruit}`);
     },
-    schema,
+    schema
   });
 
   const { form, submitting } = superform;
@@ -43,11 +43,7 @@
 <Form class="flex w-full flex-col gap-4" {superform}>
   <Field name="fruit">
     <FieldLabel>Fruits</FieldLabel>
-    <Autocomplete
-      {items}
-      onValueChange={(v) => ($form.fruit = v as string)}
-      value={$form.fruit}
-    >
+    <Autocomplete {items} onValueChange={(v) => ($form.fruit = v as string)} value={$form.fruit}>
       <AutocompleteInput aria-label="Search items" placeholder="Search items…" />
       <AutocompletePopup>
         <AutocompleteEmpty>No items found.</AutocompleteEmpty>

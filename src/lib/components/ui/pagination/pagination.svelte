@@ -1,26 +1,21 @@
 <script lang="ts">
-	import type { WithElementRef } from "bits-ui";
-	import type { Snippet } from "svelte";
-	import type { SvelteHTMLElements } from "svelte/elements";
-	import { cn } from "$lib/utils";
+  import type { WithElementRef } from 'bits-ui';
+  import type { Snippet } from 'svelte';
+  import type { SvelteHTMLElements } from 'svelte/elements';
+  import { cn } from '$lib/utils';
 
-	type Props = WithElementRef<SvelteHTMLElements["nav"]> & {
-		children: Snippet;
-	};
+  type Props = WithElementRef<SvelteHTMLElements['nav']> & {
+    children: Snippet;
+  };
 
-	let {
-		children,
-		class: className,
-		ref = $bindable(null),
-		...restProps
-	}: Props = $props();
+  let { children, class: className, ref = $bindable(null), ...restProps }: Props = $props();
 </script>
 
 <nav
-	aria-label="pagination"
-	class={cn("mx-auto flex w-full justify-center", className)}
-	data-slot="pagination"
-	{...restProps}
+  aria-label="pagination"
+  class={cn('mx-auto flex w-full justify-center', className)}
+  data-slot="pagination"
+  {...restProps}
 >
-	{@render children()}
+  {@render children()}
 </nav>

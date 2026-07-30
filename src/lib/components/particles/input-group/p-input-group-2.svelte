@@ -1,10 +1,6 @@
 <script lang="ts">
-  import Mail from "@lucide/svelte/icons/mail";
-  import {
-    InputGroup,
-    InputGroupAddon,
-    InputGroupInput,
-  } from "$lib/components/ui/input-group";
+  import Mail from '@lucide/svelte/icons/mail';
+  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';
 </script>
 
 <InputGroup>

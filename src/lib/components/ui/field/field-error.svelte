@@ -31,7 +31,10 @@
   class={cn('text-destructive-foreground text-xs', className)}
 >
   {#if childrenProp}
-    {@render childrenProp({ errorProps: fieldErrorsState.errorProps, errors: fieldErrorsState.field.errors })}
+    {@render childrenProp({
+      errorProps: fieldErrorsState.errorProps,
+      errors: fieldErrorsState.field.errors
+    })}
   {:else}
     {#each fieldErrorsState.field.errors as error, i (i + error)}
       <div {...fieldErrorsState.errorProps}>{error}</div>

@@ -214,8 +214,12 @@
               data-uploading={isUploading || undefined}
             >
               <div class="flex items-center justify-between gap-2">
-                <div class="flex items-center gap-3 overflow-hidden in-data-[uploading=true]:opacity-50">
-                  <div class="flex aspect-square size-10 shrink-0 items-center justify-center rounded border">
+                <div
+                  class="flex items-center gap-3 overflow-hidden in-data-[uploading=true]:opacity-50"
+                >
+                  <div
+                    class="flex aspect-square size-10 shrink-0 items-center justify-center rounded border"
+                  >
                     {@render fileIcon(file)}
                   </div>
                   <div class="flex min-w-0 flex-col gap-0.5">
@@ -246,7 +250,9 @@
                       style="width: {fileProgress.progress}%"
                     ></div>
                   </div>
-                  <span class="w-10 text-muted-foreground text-xs tabular-nums">{fileProgress.progress}%</span>
+                  <span class="w-10 text-muted-foreground text-xs tabular-nums"
+                    >{fileProgress.progress}%</span
+                  >
                 </div>
               {/if}
             </div>
@@ -255,11 +261,16 @@
       </div>
     {:else}
       <div class="flex flex-col items-center justify-center px-4 py-3 text-center">
-        <div aria-hidden="true" class="mb-2 flex size-11 shrink-0 items-center justify-center rounded-full border bg-background">
+        <div
+          aria-hidden="true"
+          class="mb-2 flex size-11 shrink-0 items-center justify-center rounded-full border bg-background"
+        >
           <Image class="size-4 opacity-60" />
         </div>
         <p class="mb-1.5 font-medium text-sm">Drop your files here</p>
-        <p class="text-muted-foreground text-xs">Max {maxFiles} files &middot; Up to {maxSizeMB}MB</p>
+        <p class="text-muted-foreground text-xs">
+          Max {maxFiles} files &middot; Up to {maxSizeMB}MB
+        </p>
         <Button class="mt-4" onclick={fileUpload.openFileDialog} variant="outline">
           <Upload aria-hidden="true" class="-ms-1 opacity-60" />
           Select images

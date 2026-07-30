@@ -1,22 +1,22 @@
 <script lang="ts">
-  import { Group, GroupSeparator } from "$lib/components/ui/group";
-  import { Input } from "$lib/components/ui/input";
+  import { Group, GroupSeparator } from '$lib/components/ui/group';
+  import { Input } from '$lib/components/ui/input';
   import {
     Select,
     SelectItem,
     SelectPopup,
     SelectTrigger,
-    SelectValue,
-  } from "$lib/components/ui/select";
+    SelectValue
+  } from '$lib/components/ui/select';
 
   const protocols = [
-    { label: "https://", value: "https" },
-    { label: "http://", value: "http" },
-    { label: "ftp://", value: "ftp" },
-    { label: "sftp://", value: "sftp" },
+    { label: 'https://', value: 'https' },
+    { label: 'http://', value: 'http' },
+    { label: 'ftp://', value: 'ftp' },
+    { label: 'sftp://', value: 'sftp' }
   ];
 
-  let protocol = $state("https");
+  let protocol = $state('https');
 </script>
 
 <Group aria-label="URL input">

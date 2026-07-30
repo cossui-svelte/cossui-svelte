@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Command } from "bits-ui";
-  import { cn } from "$lib/utils";
+  import { Command } from 'bits-ui';
+  import { cn } from '$lib/utils';
 
   type Props = Command.SeparatorProps;
 
@@ -8,7 +8,7 @@
 </script>
 
 <Command.Separator
-  class={cn("my-2 h-px bg-border", className)}
+  class={cn('my-2 h-px bg-border', className)}
   data-slot="command-separator"
   {...restProps}
 />

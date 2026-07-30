@@ -5,7 +5,12 @@
   import ZoomInIcon from '@lucide/svelte/icons/zoom-in';
   import ZoomOutIcon from '@lucide/svelte/icons/zoom-out';
   import { Button } from '$lib/components/ui/button';
-  import { Cropper, CropperCropArea, CropperDescription, CropperImage } from '$lib/components/ui/cropper';
+  import {
+    Cropper,
+    CropperCropArea,
+    CropperDescription,
+    CropperImage
+  } from '$lib/components/ui/cropper';
   import {
     Dialog,
     DialogFooter,
@@ -142,7 +147,13 @@
       type="button"
     >
       {#if finalImageUrl}
-        <img alt="User avatar" class="size-full object-cover" height={64} src={finalImageUrl} width={64} />
+        <img
+          alt="User avatar"
+          class="size-full object-cover"
+          height={64}
+          src={finalImageUrl}
+          width={64}
+        />
       {:else}
         <div aria-hidden="true">
           <CircleUserRoundIcon class="size-4 opacity-60" />

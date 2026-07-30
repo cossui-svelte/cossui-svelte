@@ -1,10 +1,10 @@
 <script lang="ts">
-  import PanelLeft from "@lucide/svelte/icons/panel-left";
-  import type { Snippet } from "svelte";
-  import type { HTMLButtonAttributes } from "svelte/elements";
-  import { Button } from "$lib/components/ui/button";
-  import { cn } from "$lib/utils";
-  import { getSidebarContext } from "./sidebar-context.js";
+  import PanelLeft from '@lucide/svelte/icons/panel-left';
+  import type { Snippet } from 'svelte';
+  import type { HTMLButtonAttributes } from 'svelte/elements';
+  import { Button } from '$lib/components/ui/button';
+  import { cn } from '$lib/utils';
+  import { getSidebarContext } from './sidebar-context.js';
 
   interface Props extends HTMLButtonAttributes {
     children?: Snippet;
@@ -14,16 +14,14 @@
 
   const ctx = getSidebarContext();
 
-  function handleClick(
-    event: MouseEvent & { currentTarget: EventTarget & HTMLButtonElement },
-  ) {
+  function handleClick(event: MouseEvent & { currentTarget: EventTarget & HTMLButtonElement }) {
     onclick?.(event);
     ctx.toggleSidebar();
   }
 </script>
 
 <Button
-  class={cn("size-7", className)}
+  class={cn('size-7', className)}
   data-sidebar="trigger"
   data-slot="sidebar-trigger"
   onclick={handleClick}

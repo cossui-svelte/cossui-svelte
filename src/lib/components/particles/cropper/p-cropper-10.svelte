@@ -1,5 +1,10 @@
 <script lang="ts">
-  import { Cropper, CropperCropArea, CropperDescription, CropperImage } from '$lib/components/ui/cropper';
+  import {
+    Cropper,
+    CropperCropArea,
+    CropperDescription,
+    CropperImage
+  } from '$lib/components/ui/cropper';
 
   type Area = { x: number; y: number; width: number; height: number };
 
@@ -20,7 +25,10 @@
     </Cropper>
 
     {#if cropData}
-      <pre class="overflow-auto rounded-md border bg-muted px-4 py-3 font-mono text-foreground/80 text-xs"><code>{JSON.stringify(cropData, null, 2)}</code></pre>
+      <pre
+        class="overflow-auto rounded-md border bg-muted px-4 py-3 font-mono text-foreground/80 text-xs"><code
+          >{JSON.stringify(cropData, null, 2)}</code
+        ></pre>
     {/if}
   </div>
 </div>

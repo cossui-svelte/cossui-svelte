@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Avatar as AvatarPrimitive } from "bits-ui";
-  import { cn } from "$lib/utils";
+  import { Avatar as AvatarPrimitive } from 'bits-ui';
+  import { cn } from '$lib/utils';
 
   let {
     ref = $bindable(null),
@@ -12,8 +12,8 @@
 <AvatarPrimitive.Fallback
   bind:ref
   class={cn(
-    "flex size-full items-center justify-center rounded-[inherit] bg-secondary text-xs",
-    className,
+    'flex size-full items-center justify-center rounded-[inherit] bg-secondary text-xs',
+    className
   )}
   data-slot="avatar-fallback"
   {...restProps}

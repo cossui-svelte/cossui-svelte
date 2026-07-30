@@ -1,25 +1,20 @@
 <script lang="ts">
-  import ArrowUp from "@lucide/svelte/icons/arrow-up";
-  import Plus from "@lucide/svelte/icons/plus";
-  import { buttonVariants } from "$lib/components/ui/button";
+  import ArrowUp from '@lucide/svelte/icons/arrow-up';
+  import Plus from '@lucide/svelte/icons/plus';
+  import { buttonVariants } from '$lib/components/ui/button';
   import {
     InputGroup,
     InputGroupAddon,
     InputGroupText,
-    InputGroupTextarea,
-  } from "$lib/components/ui/input-group";
-  import {
-    Menu,
-    MenuItem,
-    MenuPopup,
-    MenuTrigger,
-  } from "$lib/components/ui/menu";
+    InputGroupTextarea
+  } from '$lib/components/ui/input-group';
+  import { Menu, MenuItem, MenuPopup, MenuTrigger } from '$lib/components/ui/menu';
   import {
     Tooltip,
     TooltipPopup,
     TooltipProvider,
-    TooltipTrigger,
-  } from "$lib/components/ui/tooltip";
+    TooltipTrigger
+  } from '$lib/components/ui/tooltip';
 </script>
 
 <TooltipProvider>
@@ -29,7 +24,7 @@
       <Menu>
         <MenuTrigger
           aria-label="Add files"
-          class={`rounded-full ${buttonVariants({ size: "icon-sm", variant: "ghost" })}`}
+          class={`rounded-full ${buttonVariants({ size: 'icon-sm', variant: 'ghost' })}`}
         >
           <Plus />
         </MenuTrigger>
@@ -44,7 +39,7 @@
       <Tooltip>
         <TooltipTrigger
           aria-label="Send"
-          class={`rounded-full ${buttonVariants({ size: "icon-sm", variant: "default" })}`}
+          class={`rounded-full ${buttonVariants({ size: 'icon-sm', variant: 'default' })}`}
         >
           <ArrowUp />
         </TooltipTrigger>

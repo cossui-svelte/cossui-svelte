@@ -3,8 +3,8 @@
     Progress,
     ProgressIndicator,
     ProgressLabel,
-    ProgressTrack,
-  } from "$lib/components/ui/progress";
+    ProgressTrack
+  } from '$lib/components/ui/progress';
 
   const value = 502;
   const max = 512;

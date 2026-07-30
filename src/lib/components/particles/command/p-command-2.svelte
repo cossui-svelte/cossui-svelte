@@ -1,12 +1,12 @@
 <script lang="ts">
-  import ArrowDown from "@lucide/svelte/icons/arrow-down";
-  import ArrowLeft from "@lucide/svelte/icons/arrow-left";
-  import ArrowUp from "@lucide/svelte/icons/arrow-up";
-  import CircleHelp from "@lucide/svelte/icons/circle-help";
-  import CornerDownLeft from "@lucide/svelte/icons/corner-down-left";
-  import Search from "@lucide/svelte/icons/search";
-  import Sparkles from "@lucide/svelte/icons/sparkles";
-  import { Button } from "$lib/components/ui/button";
+  import ArrowDown from '@lucide/svelte/icons/arrow-down';
+  import ArrowLeft from '@lucide/svelte/icons/arrow-left';
+  import ArrowUp from '@lucide/svelte/icons/arrow-up';
+  import CircleHelp from '@lucide/svelte/icons/circle-help';
+  import CornerDownLeft from '@lucide/svelte/icons/corner-down-left';
+  import Search from '@lucide/svelte/icons/search';
+  import Sparkles from '@lucide/svelte/icons/sparkles';
+  import { Button } from '$lib/components/ui/button';
   import {
     Command,
     CommandCollection,
@@ -21,13 +21,13 @@
     CommandList,
     CommandPanel,
     CommandSeparator,
-    CommandShortcut,
-  } from "$lib/components/ui/command";
-  import { EmptyMedia } from "$lib/components/ui/empty";
-  import { Input } from "$lib/components/ui/input";
-  import { Kbd, KbdGroup } from "$lib/components/ui/kbd";
-  import { ScrollArea } from "$lib/components/ui/scroll-area";
-  import { Spinner } from "$lib/components/ui/spinner";
+    CommandShortcut
+  } from '$lib/components/ui/command';
+  import { EmptyMedia } from '$lib/components/ui/empty';
+  import { Input } from '$lib/components/ui/input';
+  import { Kbd, KbdGroup } from '$lib/components/ui/kbd';
+  import { ScrollArea } from '$lib/components/ui/scroll-area';
+  import { Spinner } from '$lib/components/ui/spinner';
 
   interface Item {
     keywords?: string[];
@@ -44,28 +44,28 @@
   const commandGroups: Group[] = [
     {
       items: [
-        { keywords: ["dash"], label: "Dashboard", shortcut: "d", value: "dashboard" },
-        { keywords: ["proj"], label: "Projects", shortcut: "p", value: "projects" },
-        { keywords: ["team"], label: "Team", shortcut: "t", value: "team" },
+        { keywords: ['dash'], label: 'Dashboard', shortcut: 'd', value: 'dashboard' },
+        { keywords: ['proj'], label: 'Projects', shortcut: 'p', value: 'projects' },
+        { keywords: ['team'], label: 'Team', shortcut: 't', value: 'team' }
       ],
-      value: "Pages",
+      value: 'Pages'
     },
     {
       items: [
-        { keywords: ["prof"], label: "Profile", shortcut: "p s", value: "profile" },
-        { keywords: ["acc"], label: "Account", shortcut: "a s", value: "account" },
-        { keywords: ["pref"], label: "Preferences", shortcut: "p r", value: "preferences" },
+        { keywords: ['prof'], label: 'Profile', shortcut: 'p s', value: 'profile' },
+        { keywords: ['acc'], label: 'Account', shortcut: 'a s', value: 'account' },
+        { keywords: ['pref'], label: 'Preferences', shortcut: 'p r', value: 'preferences' }
       ],
-      value: "Settings",
+      value: 'Settings'
     },
     {
       items: [
-        { keywords: ["docs"], label: "Documentation", shortcut: "d o", value: "docs" },
-        { keywords: ["sup"], label: "Support", shortcut: "s u", value: "support" },
-        { keywords: ["feed"], label: "Feedback", shortcut: "f b", value: "feedback" },
+        { keywords: ['docs'], label: 'Documentation', shortcut: 'd o', value: 'docs' },
+        { keywords: ['sup'], label: 'Support', shortcut: 's u', value: 'support' },
+        { keywords: ['feed'], label: 'Feedback', shortcut: 'f b', value: 'feedback' }
       ],
-      value: "Help",
-    },
+      value: 'Help'
+    }
   ];
 
   const MOCK_AI_RESPONSE = `To create a new project, navigate to the Projects page and click the "New Project" button in the top right corner. You'll be prompted to enter a project name and description.
@@ -75,25 +75,25 @@ Once created, you can invite team members by clicking the "Share" button and ent
 You can customize project settings at any time by clicking the settings icon in the project header. For more information, see the Project Settings documentation.`;
 
   const MOCK_REFERENCE_LINKS = [
-    { title: "Creating Projects", url: "/docs/projects/create" },
-    { title: "Team Collaboration", url: "/docs/team/collaborate" },
-    { title: "Project Settings", url: "/docs/projects/settings" },
+    { title: 'Creating Projects', url: '/docs/projects/create' },
+    { title: 'Team Collaboration', url: '/docs/team/collaborate' },
+    { title: 'Project Settings', url: '/docs/projects/settings' }
   ];
 
   function escapeHTML(value: string): string {
     return value
-      .replaceAll("&", "&amp;")
-      .replaceAll("<", "&lt;")
-      .replaceAll(">", "&gt;")
-      .replaceAll('"', "&quot;")
-      .replaceAll("'", "&#39;");
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#39;');
   }
 
   function markdownToSafeHTML(markdown: string): string {
     return markdown
-      .split("\n\n")
+      .split('\n\n')
       .map((para) => `<p>${escapeHTML(para)}</p>`)
-      .join("");
+      .join('');
   }
 
   function contains(a: string, b: string): boolean {
@@ -114,15 +114,15 @@ You can customize project settings at any time by clicking the settings icon in 
     error: null,
     isGenerating: false,
     mode: false,
-    query: "",
+    query: '',
     referenceLinks: [],
-    response: "",
-    submittedQuery: "",
+    response: '',
+    submittedQuery: ''
   };
 
   let open = $state(false);
   let aiState = $state<AIState>({ ...initialAIState });
-  let searchQuery = $state("");
+  let searchQuery = $state('');
   let aiInputEl = $state<HTMLInputElement | null>(null);
   let searchInputEl = $state<HTMLInputElement | null>(null);
   let abortController = $state<AbortController | null>(null);
@@ -139,7 +139,7 @@ You can customize project settings at any time by clicking the settings icon in 
 
   function handleBackToSearch() {
     resetAIState();
-    searchQuery = "";
+    searchQuery = '';
     commandResetKey += 1;
     searchInputEl?.focus();
   }
@@ -156,18 +156,18 @@ You can customize project settings at any time by clicking the settings icon in 
       ...aiState,
       error: null,
       isGenerating: true,
-      query: "",
+      query: '',
       referenceLinks: [],
-      response: "",
-      submittedQuery: query,
+      response: '',
+      submittedQuery: query
     };
 
     try {
       await new Promise<void>((resolve, reject) => {
         const timeout = setTimeout(resolve, 1500);
-        controller.signal.addEventListener("abort", () => {
+        controller.signal.addEventListener('abort', () => {
           clearTimeout(timeout);
-          reject(new Error("aborted"));
+          reject(new Error('aborted'));
         });
       });
 
@@ -177,40 +177,44 @@ You can customize project settings at any time by clicking the settings icon in 
         ...aiState,
         isGenerating: false,
         referenceLinks: MOCK_REFERENCE_LINKS,
-        response: MOCK_AI_RESPONSE,
+        response: MOCK_AI_RESPONSE
       };
     } catch (error) {
-      if (error instanceof Error && error.message === "aborted") return;
+      if (error instanceof Error && error.message === 'aborted') return;
       if (controller.signal.aborted) return;
-      aiState = { ...aiState, error: "Failed to generate response. Please try again.", isGenerating: false };
+      aiState = {
+        ...aiState,
+        error: 'Failed to generate response. Please try again.',
+        isGenerating: false
+      };
     }
   }
 
   function handleAskAI() {
     const currentQuery = searchQuery;
-    searchQuery = "";
+    searchQuery = '';
     if (currentQuery.trim()) {
       aiState = { ...aiState, mode: true };
       handleGenerateAI(currentQuery);
     } else {
-      aiState = { ...aiState, mode: true, query: "" };
+      aiState = { ...aiState, mode: true, query: '' };
       aiInputEl?.focus();
     }
   }
 
   const hasResults = $derived(
     !searchQuery.trim() ||
-    commandGroups.some((group) =>
-      group.items.some(
-        (item) => contains(item.label, searchQuery) || contains(item.value, searchQuery),
-      ),
-    ),
+      commandGroups.some((group) =>
+        group.items.some(
+          (item) => contains(item.label, searchQuery) || contains(item.value, searchQuery)
+        )
+      )
   );
 
   function handleOpenChange(newOpen: boolean) {
     open = newOpen;
     if (!newOpen) {
-      searchQuery = "";
+      searchQuery = '';
       resetAIState();
     }
   }
@@ -218,14 +222,14 @@ You can customize project settings at any time by clicking the settings icon in 
   $effect(() => {
     if (!open || !aiState.mode) return;
     function handleEscape(e: KeyboardEvent) {
-      if (e.key === "Escape") {
+      if (e.key === 'Escape') {
         e.preventDefault();
         e.stopPropagation();
         handleBackToSearch();
       }
     }
-    document.addEventListener("keydown", handleEscape, true);
-    return () => document.removeEventListener("keydown", handleEscape, true);
+    document.addEventListener('keydown', handleEscape, true);
+    return () => document.removeEventListener('keydown', handleEscape, true);
   });
 
   $effect(() => {
@@ -235,7 +239,12 @@ You can customize project settings at any time by clicking the settings icon in 
   });
 </script>
 
-<Button onclick={() => { open = true; }} variant="outline">Cmdk with AI</Button>
+<Button
+  onclick={() => {
+    open = true;
+  }}
+  variant="outline">Cmdk with AI</Button
+>
 
 <CommandDialog {open} onOpenChange={handleOpenChange}>
   <CommandDialogPopup>
@@ -245,10 +254,15 @@ You can customize project settings at any time by clicking the settings icon in 
           <div class="relative flex items-center *:first:flex-1">
             <CommandInput
               bind:ref={searchInputEl}
-              oninput={(e) => { searchQuery = (e.currentTarget as HTMLInputElement).value; }}
+              oninput={(e) => {
+                searchQuery = (e.currentTarget as HTMLInputElement).value;
+              }}
               onkeydown={(e) => {
-                if (e.key === "Tab") { e.preventDefault(); handleAskAI(); }
-                if (e.key === "Enter" && !hasResults && searchQuery.trim()) {
+                if (e.key === 'Tab') {
+                  e.preventDefault();
+                  handleAskAI();
+                }
+                if (e.key === 'Enter' && !hasResults && searchQuery.trim()) {
                   e.preventDefault();
                   handleAskAI();
                 }
@@ -344,10 +358,15 @@ You can customize project settings at any time by clicking the settings icon in 
                 aria-label="AI query input"
                 class="border-transparent! bg-transparent! shadow-none before:hidden has-focus-visible:ring-0 *:data-[slot=input]:ps-[calc(--spacing(8.5)-1px)] sm:*:data-[slot=input]:ps-[calc(--spacing(8)-1px)]"
                 disabled={aiState.isGenerating}
-                oninput={(e) => { aiState = { ...aiState, query: (e.currentTarget as HTMLInputElement).value }; }}
+                oninput={(e) => {
+                  aiState = { ...aiState, query: (e.currentTarget as HTMLInputElement).value };
+                }}
                 onkeydown={(e) => {
-                  if (e.key === "Enter" && !aiState.isGenerating) handleGenerateAI();
-                  if (e.key === "Escape") { e.preventDefault(); handleBackToSearch(); }
+                  if (e.key === 'Enter' && !aiState.isGenerating) handleGenerateAI();
+                  if (e.key === 'Escape') {
+                    e.preventDefault();
+                    handleBackToSearch();
+                  }
                 }}
                 placeholder="Ask AI anything…"
                 size="lg"
@@ -417,7 +436,7 @@ You can customize project settings at any time by clicking the settings icon in 
               <div class="flex h-5 items-center justify-center">
                 <CircleHelp class="size-3" />
               </div>
-              You asked: <span>"{aiState.submittedQuery}"</span>
+              You asked:<span>"{aiState.submittedQuery}"</span>
             </div>
           {:else}
             <div class="flex items-center gap-2">

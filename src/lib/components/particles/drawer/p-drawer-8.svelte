@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { z } from "zod";
-  import { Button, buttonVariants } from "$lib/components/ui/button";
+  import { z } from 'zod';
+  import { Button, buttonVariants } from '$lib/components/ui/button';
   import {
     Drawer,
     DrawerClose,
@@ -11,28 +11,26 @@
     DrawerPanel,
     DrawerPopup,
     DrawerTitle,
-    DrawerTrigger,
-  } from "$lib/components/ui/drawer";
-  import { Field, FieldError, FieldLabel } from "$lib/components/ui/field";
-  import { Form } from "$lib/components/ui/form";
-  import { Input } from "$lib/components/ui/input";
-  import { createForm } from "$lib/hooks/use-superform";
+    DrawerTrigger
+  } from '$lib/components/ui/drawer';
+  import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';
+  import { Form } from '$lib/components/ui/form';
+  import { Input } from '$lib/components/ui/input';
+  import { createForm } from '$lib/hooks/use-superform';
 
   const schema = z.object({
-    email: z.string().email("Please enter a valid email."),
-    name: z.string().min(1, { message: "Please enter a name." }),
+    email: z.string().email('Please enter a valid email.'),
+    name: z.string().min(1, { message: 'Please enter a name.' })
   });
 
   const superform = createForm({
-    initialData: { email: "bora@example.com", name: "Bora Baloglu" },
-    schema,
+    initialData: { email: 'bora@example.com', name: 'Bora Baloglu' },
+    schema
   });
 </script>
 
 <Drawer position="right">
-  <DrawerTrigger class={buttonVariants({ variant: "outline" })}>
-    Nested inset drawers
-  </DrawerTrigger>
+  <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Nested inset drawers</DrawerTrigger>
   <DrawerPopup variant="inset">
     <DrawerHeader>
       <DrawerTitle>Manage team member</DrawerTitle>
@@ -50,15 +48,11 @@
     </DrawerPanel>
     <DrawerFooter>
       <DrawerNestedRoot position="right">
-        <DrawerTrigger class={buttonVariants({ variant: "outline" })}>
-          Edit details
-        </DrawerTrigger>
+        <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Edit details</DrawerTrigger>
         <DrawerPopup variant="inset">
           <DrawerHeader>
             <DrawerTitle>Edit details</DrawerTitle>
-            <DrawerDescription>
-              Make changes to the member's information.
-            </DrawerDescription>
+            <DrawerDescription>Make changes to the member's information.</DrawerDescription>
           </DrawerHeader>
           <Form {superform} class="contents">
             <DrawerPanel class="grid gap-4">
@@ -74,7 +68,7 @@
               </Field>
             </DrawerPanel>
             <DrawerFooter>
-              <DrawerClose class={buttonVariants({ variant: "ghost" })}>Cancel</DrawerClose>
+              <DrawerClose class={buttonVariants({ variant: 'ghost' })}>Cancel</DrawerClose>
               <Button type="submit">Save changes</Button>
             </DrawerFooter>
           </Form>

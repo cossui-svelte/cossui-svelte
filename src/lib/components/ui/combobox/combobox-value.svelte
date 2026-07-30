@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import type { HTMLAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils";
+  import type { Snippet } from 'svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
+  import { cn } from '$lib/utils';
 
   interface Props extends HTMLAttributes<HTMLSpanElement> {
     children?: Snippet;
@@ -9,17 +9,11 @@
     value?: string;
   }
 
-  let {
-    class: className,
-    children,
-    placeholder,
-    value,
-    ...restProps
-  }: Props = $props();
+  let { class: className, children, placeholder, value, ...restProps }: Props = $props();
 </script>
 
 <span
-  class={cn(!value && "text-muted-foreground", className)}
+  class={cn(!value && 'text-muted-foreground', className)}
   data-slot="combobox-value"
   {...restProps}
 >

@@ -6,27 +6,20 @@
     readonly value: number;
   }
 
-  export const METER_CONTEXT_KEY = Symbol.for("cossui:meter");
+  export const METER_CONTEXT_KEY = Symbol.for('cossui:meter');
 </script>
 
 <script lang="ts">
-  import { Meter as MeterPrimitive } from "bits-ui";
-  import type { Snippet } from "svelte";
-  import { setContext } from "svelte";
-  import { cn } from "$lib/utils";
-  import MeterIndicator from "./meter-indicator.svelte";
-  import MeterTrack from "./meter-track.svelte";
+  import { Meter as MeterPrimitive } from 'bits-ui';
+  import type { Snippet } from 'svelte';
+  import { setContext } from 'svelte';
+  import { cn } from '$lib/utils';
+  import MeterIndicator from './meter-indicator.svelte';
+  import MeterTrack from './meter-track.svelte';
 
   type Props = MeterPrimitive.RootProps & { children?: Snippet };
 
-  let {
-    class: className,
-    value = 0,
-    min = 0,
-    max = 100,
-    children,
-    ...restProps
-  }: Props = $props();
+  let { class: className, value = 0, min = 0, max = 100, children, ...restProps }: Props = $props();
 
   let percentage = $derived(((value - min) / (max - min)) * 100);
 
@@ -42,12 +35,12 @@
     },
     get value() {
       return value;
-    },
+    }
   });
 </script>
 
 <MeterPrimitive.Root
-  class={cn("flex w-full flex-col gap-2", className)}
+  class={cn('flex w-full flex-col gap-2', className)}
   data-slot="meter"
   {value}
   {min}

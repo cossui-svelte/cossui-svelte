@@ -1,9 +1,14 @@
 <script lang="ts">
-  import HouseIcon from "@lucide/svelte/icons/house";
-  import PanelsTopLeftIcon from "@lucide/svelte/icons/panels-top-left";
-  import SettingsIcon from "@lucide/svelte/icons/settings";
-  import { Tabs, TabsList, TabsPanel, TabsTab } from "$lib/components/ui/tabs";
-  import { Tooltip, TooltipPopup, TooltipProvider, TooltipTrigger } from "$lib/components/ui/tooltip";
+  import HouseIcon from '@lucide/svelte/icons/house';
+  import PanelsTopLeftIcon from '@lucide/svelte/icons/panels-top-left';
+  import SettingsIcon from '@lucide/svelte/icons/settings';
+  import { Tabs, TabsList, TabsPanel, TabsTab } from '$lib/components/ui/tabs';
+  import {
+    Tooltip,
+    TooltipPopup,
+    TooltipProvider,
+    TooltipTrigger
+  } from '$lib/components/ui/tooltip';
 </script>
 
 <TooltipProvider>

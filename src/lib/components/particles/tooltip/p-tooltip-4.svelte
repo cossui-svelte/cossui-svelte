@@ -1,15 +1,15 @@
 <script lang="ts">
-  import LinkIcon from "@lucide/svelte/icons/link";
-  import MailIcon from "@lucide/svelte/icons/mail";
-  import Share2Icon from "@lucide/svelte/icons/share-2";
-  import { Button } from "$lib/components/ui/button";
-  import { Group, GroupSeparator } from "$lib/components/ui/group";
+  import LinkIcon from '@lucide/svelte/icons/link';
+  import MailIcon from '@lucide/svelte/icons/mail';
+  import Share2Icon from '@lucide/svelte/icons/share-2';
+  import { Button } from '$lib/components/ui/button';
+  import { Group, GroupSeparator } from '$lib/components/ui/group';
   import {
     Tooltip,
     TooltipPopup,
     TooltipProvider,
-    TooltipTrigger,
-  } from "$lib/components/ui/tooltip";
+    TooltipTrigger
+  } from '$lib/components/ui/tooltip';
 </script>
 
 <TooltipProvider>

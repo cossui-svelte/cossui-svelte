@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import type { HTMLAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils";
+  import type { Snippet } from 'svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
+  import { cn } from '$lib/utils';
 
   interface Props extends HTMLAttributes<HTMLUListElement> {
     children?: Snippet;
@@ -11,7 +11,7 @@
 </script>
 
 <ul
-  class={cn("flex w-full min-w-0 flex-col gap-1", className)}
+  class={cn('flex w-full min-w-0 flex-col gap-1', className)}
   data-sidebar="menu"
   data-slot="sidebar-menu"
   {...restProps}

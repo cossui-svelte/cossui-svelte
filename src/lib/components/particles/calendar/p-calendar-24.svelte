@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { type DateValue, getLocalTimeZone, today } from "@internationalized/date";
-  import { Calendar, Day } from "$lib/components/ui/calendar";
-  import { cn } from "$lib/utils";
+  import { type DateValue, getLocalTimeZone, today } from '@internationalized/date';
+  import { Calendar, Day } from '$lib/components/ui/calendar';
+  import { cn } from '$lib/utils';
 
   const GOOD_PRICE_THRESHOLD = 100;
 
@@ -37,10 +37,10 @@
           {#if price}
             <span
               class={cn(
-                "font-normal text-xs",
+                'font-normal text-xs',
                 isGoodPrice
-                  ? "text-emerald-500"
-                  : "in-data-selected:text-primary-foreground/70 text-muted-foreground"
+                  ? 'text-emerald-500'
+                  : 'in-data-selected:text-primary-foreground/70 text-muted-foreground'
               )}
             >
               ${price}

@@ -1,32 +1,32 @@
 <script lang="ts">
-  import { z } from "zod";
-  import { Button } from "$lib/components/ui/button";
-  import { Field, FieldError, FieldLabel } from "$lib/components/ui/field";
-  import { Form } from "$lib/components/ui/form";
+  import { z } from 'zod';
+  import { Button } from '$lib/components/ui/button';
+  import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';
+  import { Form } from '$lib/components/ui/form';
   import {
     Select,
     SelectItem,
     SelectPopup,
     SelectTrigger,
-    SelectValue,
-  } from "$lib/components/ui/select";
-  import { createForm } from "$lib/hooks/use-superform";
+    SelectValue
+  } from '$lib/components/ui/select';
+  import { createForm } from '$lib/hooks/use-superform';
 
   const items = [
-    { label: "Next.js", value: "next" },
-    { label: "Vite", value: "vite" },
-    { label: "Astro", value: "astro" },
+    { label: 'Next.js', value: 'next' },
+    { label: 'Vite', value: 'vite' },
+    { label: 'Astro', value: 'astro' }
   ];
 
   const schema = z.object({
-    framework: z.string().min(1, "Please select a framework."),
+    framework: z.string().min(1, 'Please select a framework.')
   });
 
   const superform = createForm({
     onUpdated: (data) => {
       alert(`Framework: ${data.framework}`);
     },
-    schema,
+    schema
   });
 
   const { form, submitting } = superform;

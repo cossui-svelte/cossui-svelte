@@ -1,18 +1,14 @@
 <script lang="ts">
-  import Image from "@lucide/svelte/icons/image";
-  import Paperclip from "@lucide/svelte/icons/paperclip";
-  import { Button, buttonVariants } from "$lib/components/ui/button";
-  import {
-    InputGroup,
-    InputGroupAddon,
-    InputGroupTextarea,
-  } from "$lib/components/ui/input-group";
+  import Image from '@lucide/svelte/icons/image';
+  import Paperclip from '@lucide/svelte/icons/paperclip';
+  import { Button, buttonVariants } from '$lib/components/ui/button';
+  import { InputGroup, InputGroupAddon, InputGroupTextarea } from '$lib/components/ui/input-group';
   import {
     Tooltip,
     TooltipPopup,
     TooltipProvider,
-    TooltipTrigger,
-  } from "$lib/components/ui/tooltip";
+    TooltipTrigger
+  } from '$lib/components/ui/tooltip';
 </script>
 
 <InputGroup>
@@ -23,7 +19,7 @@
         <Tooltip>
           <TooltipTrigger
             aria-label="Attach file"
-            class={buttonVariants({ size: "icon-sm", variant: "ghost" })}
+            class={buttonVariants({ size: 'icon-sm', variant: 'ghost' })}
           >
             <Paperclip />
           </TooltipTrigger>
@@ -32,7 +28,7 @@
         <Tooltip>
           <TooltipTrigger
             aria-label="Insert image"
-            class={buttonVariants({ size: "icon-sm", variant: "ghost" })}
+            class={buttonVariants({ size: 'icon-sm', variant: 'ghost' })}
           >
             <Image />
           </TooltipTrigger>

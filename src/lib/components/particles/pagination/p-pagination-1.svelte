@@ -6,8 +6,8 @@
     PaginationItem,
     PaginationLink,
     PaginationNext,
-    PaginationPrevious,
-  } from "$lib/components/ui/pagination";
+    PaginationPrevious
+  } from '$lib/components/ui/pagination';
 </script>
 
 <Pagination>

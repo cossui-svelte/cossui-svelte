@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Badge } from "$lib/components/ui/badge";
-  import { CardFrame } from "$lib/components/ui/card";
-  import { Checkbox } from "$lib/components/ui/checkbox";
+  import { Badge } from '$lib/components/ui/badge';
+  import { CardFrame } from '$lib/components/ui/card';
+  import { Checkbox } from '$lib/components/ui/checkbox';
   import {
     Table,
     TableBody,
@@ -9,10 +9,10 @@
     TableFooter,
     TableHead,
     TableHeader,
-    TableRow,
-  } from "$lib/components/ui/table";
+    TableRow
+  } from '$lib/components/ui/table';
 
-  type Status = "Paid" | "Unpaid" | "Pending" | "Failed";
+  type Status = 'Paid' | 'Unpaid' | 'Pending' | 'Failed';
 
   type Project = {
     id: string;
@@ -23,24 +23,24 @@
   };
 
   const data: Project[] = [
-    { budget: 12500, id: "1", project: "Website Redesign", status: "Paid", team: "Frontend Team" },
-    { budget: 8750, id: "2", project: "Mobile App", status: "Unpaid", team: "Mobile Team" },
-    { budget: 5200, id: "3", project: "API Integration", status: "Pending", team: "Backend Team" },
-    { budget: 3800, id: "4", project: "Database Migration", status: "Paid", team: "DevOps Team" },
-    { budget: 7200, id: "5", project: "User Dashboard", status: "Paid", team: "UX Team" },
-    { budget: 2100, id: "6", project: "Security Audit", status: "Failed", team: "Security Team" },
+    { budget: 12500, id: '1', project: 'Website Redesign', status: 'Paid', team: 'Frontend Team' },
+    { budget: 8750, id: '2', project: 'Mobile App', status: 'Unpaid', team: 'Mobile Team' },
+    { budget: 5200, id: '3', project: 'API Integration', status: 'Pending', team: 'Backend Team' },
+    { budget: 3800, id: '4', project: 'Database Migration', status: 'Paid', team: 'DevOps Team' },
+    { budget: 7200, id: '5', project: 'User Dashboard', status: 'Paid', team: 'UX Team' },
+    { budget: 2100, id: '6', project: 'Security Audit', status: 'Failed', team: 'Security Team' }
   ];
 
   function getStatusColor(status: Status) {
     switch (status) {
-      case "Paid":
-        return "bg-emerald-500";
-      case "Unpaid":
-        return "bg-muted-foreground/64";
-      case "Pending":
-        return "bg-amber-500";
-      case "Failed":
-        return "bg-red-500";
+      case 'Paid':
+        return 'bg-emerald-500';
+      case 'Unpaid':
+        return 'bg-muted-foreground/64';
+      case 'Pending':
+        return 'bg-amber-500';
+      case 'Failed':
+        return 'bg-red-500';
     }
   }
 
@@ -54,11 +54,11 @@
   }
 
   const totalBudget = data.reduce((sum, project) => sum + project.budget, 0);
-  const formattedTotal = new Intl.NumberFormat("en-US", {
-    currency: "USD",
+  const formattedTotal = new Intl.NumberFormat('en-US', {
+    currency: 'USD',
     maximumFractionDigits: 0,
     minimumFractionDigits: 0,
-    style: "currency",
+    style: 'currency'
   }).format(totalBudget);
 </script>
 
@@ -82,7 +82,7 @@
     </TableHeader>
     <TableBody>
       {#each data as row (row.id)}
-        <TableRow data-state={rowSelection[row.id] ? "selected" : undefined}>
+        <TableRow data-state={rowSelection[row.id] ? 'selected' : undefined}>
           <TableCell>
             <Checkbox
               aria-label="Select row"
@@ -93,17 +93,18 @@
           <TableCell class="font-medium">{row.project}</TableCell>
           <TableCell>
             <Badge variant="outline">
-              <span aria-hidden="true" class={`size-1.5 rounded-full ${getStatusColor(row.status)}`}></span>
+              <span aria-hidden="true" class={`size-1.5 rounded-full ${getStatusColor(row.status)}`}
+              ></span>
               {row.status}
             </Badge>
           </TableCell>
           <TableCell>{row.team}</TableCell>
           <TableCell class="text-right">
-            {new Intl.NumberFormat("en-US", {
-              currency: "USD",
+            {new Intl.NumberFormat('en-US', {
+              currency: 'USD',
               maximumFractionDigits: 0,
               minimumFractionDigits: 0,
-              style: "currency",
+              style: 'currency'
             }).format(row.budget)}
           </TableCell>
         </TableRow>

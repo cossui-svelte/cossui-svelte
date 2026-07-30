@@ -13,7 +13,7 @@
   const superform = createForm({
     onUpdated: (data) => {
       alert(`Email: ${data.email}`);
-    }, 
+    },
     schema
   });
 

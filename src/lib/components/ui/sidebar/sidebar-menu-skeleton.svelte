@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { HTMLAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils";
+  import type { HTMLAttributes } from 'svelte/elements';
+  import { cn } from '$lib/utils';
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
     showIcon?: boolean;
@@ -13,7 +13,7 @@
 </script>
 
 <div
-  class={cn("flex h-8 items-center gap-2 rounded-lg px-2", className)}
+  class={cn('flex h-8 items-center gap-2 rounded-lg px-2', className)}
   data-sidebar="menu-skeleton"
   data-slot="sidebar-menu-skeleton"
   {...restProps}

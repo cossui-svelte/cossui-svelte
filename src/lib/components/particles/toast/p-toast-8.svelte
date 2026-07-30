@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Button } from "$lib/components/ui/button";
-  import { Spinner } from "$lib/components/ui/spinner";
-  import { anchoredToastManager } from "$lib/components/ui/toast";
+  import { Button } from '$lib/components/ui/button';
+  import { Spinner } from '$lib/components/ui/spinner';
+  import { anchoredToastManager } from '$lib/components/ui/toast';
 
   let isSubmitting = $state(false);
   let toastId: string | null = null;
@@ -25,15 +25,15 @@
     new Promise<void>((_, reject) => {
       setTimeout(() => {
         isSubmitting = false;
-        reject(new Error("The server is not responding. Please try again later."));
+        reject(new Error('The server is not responding. Please try again later.'));
       }, 2000);
     }).catch((error: Error) => {
       if (submitEl) {
         toastId = anchoredToastManager.add({
           description: error.message,
           positionerProps: { anchor: submitEl, sideOffset: 4 },
-          title: "Error submitting form",
-          type: "error",
+          title: 'Error submitting form',
+          type: 'error'
         });
       }
     });

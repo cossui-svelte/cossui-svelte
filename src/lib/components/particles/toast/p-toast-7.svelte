@@ -1,29 +1,29 @@
 <script lang="ts">
-  import CheckIcon from "@lucide/svelte/icons/check";
-  import CopyIcon from "@lucide/svelte/icons/copy";
-  import { Button } from "$lib/components/ui/button";
-  import { anchoredToastManager } from "$lib/components/ui/toast";
+  import CheckIcon from '@lucide/svelte/icons/check';
+  import CopyIcon from '@lucide/svelte/icons/copy';
+  import { Button } from '$lib/components/ui/button';
+  import { anchoredToastManager } from '$lib/components/ui/toast';
   import {
     Tooltip,
     TooltipPopup,
     TooltipProvider,
-    TooltipTrigger,
-  } from "$lib/components/ui/tooltip";
+    TooltipTrigger
+  } from '$lib/components/ui/tooltip';
 
   const toastTimeout = 2000;
-  
+
   let isCopied = $state(false);
 
   function handleCopy(e: MouseEvent) {
     if (isCopied) return;
     const anchor = e.currentTarget as HTMLButtonElement;
-    navigator.clipboard.writeText("https://cossui-svelte.com");
+    navigator.clipboard.writeText('https://cossui-svelte.com');
     isCopied = true;
     anchoredToastManager.add({
       duration: toastTimeout,
       positionerProps: { anchor },
-      title: "Copied!",
-      tooltipStyle: true,
+      title: 'Copied!',
+      tooltipStyle: true
     });
     setTimeout(() => {
       isCopied = false;

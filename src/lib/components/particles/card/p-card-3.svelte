@@ -1,30 +1,30 @@
 <script lang="ts">
-  import ShieldAlert from "@lucide/svelte/icons/shield-alert";
-  import { z } from "zod";
-  import { Button } from "$lib/components/ui/button";
+  import ShieldAlert from '@lucide/svelte/icons/shield-alert';
+  import { z } from 'zod';
+  import { Button } from '$lib/components/ui/button';
   import {
     Card,
     CardDescription,
     CardFooter,
     CardHeader,
     CardPanel,
-    CardTitle,
-  } from "$lib/components/ui/card";
-  import { Field, FieldError, FieldLabel } from "$lib/components/ui/field";
-  import { Form } from "$lib/components/ui/form";
-  import { Input } from "$lib/components/ui/input";
-  import { createForm } from "$lib/hooks/use-superform";
+    CardTitle
+  } from '$lib/components/ui/card';
+  import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';
+  import { Form } from '$lib/components/ui/form';
+  import { Input } from '$lib/components/ui/input';
+  import { createForm } from '$lib/hooks/use-superform';
 
   const schema = z.object({
-    email: z.email("Please enter a valid email."),
-    password: z.string().min(8, "Password must be at least 8 characters."),
+    email: z.email('Please enter a valid email.'),
+    password: z.string().min(8, 'Password must be at least 8 characters.')
   });
 
   const superform = createForm({
     onUpdated: (data) => {
       alert(`Logging in as ${data.email}`);
     },
-    schema,
+    schema
   });
 
   const { form, submitting } = superform;

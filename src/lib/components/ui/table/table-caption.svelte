@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import type { HTMLAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils";
+  import type { Snippet } from 'svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
+  import { cn } from '$lib/utils';
 
   interface Props extends HTMLAttributes<HTMLElement> {
     children?: Snippet;
@@ -11,10 +11,7 @@
 </script>
 
 <caption
-  class={cn(
-    "in-data-[variant=card]:my-4 mt-4 text-muted-foreground text-sm",
-    className,
-  )}
+  class={cn('in-data-[variant=card]:my-4 mt-4 text-muted-foreground text-sm', className)}
   data-slot="table-caption"
   {...restProps}
 >

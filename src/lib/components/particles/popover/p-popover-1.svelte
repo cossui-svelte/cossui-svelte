@@ -1,17 +1,17 @@
 <script lang="ts">
-  import { Button, buttonVariants } from "$lib/components/ui/button";
+  import { Button, buttonVariants } from '$lib/components/ui/button';
   import {
     Popover,
     PopoverDescription,
     PopoverPopup,
     PopoverTitle,
-    PopoverTrigger,
-  } from "$lib/components/ui/popover";
-  import { Textarea } from "$lib/components/ui/textarea";
+    PopoverTrigger
+  } from '$lib/components/ui/popover';
+  import { Textarea } from '$lib/components/ui/textarea';
 </script>
 
 <Popover>
-  <PopoverTrigger class={buttonVariants({ variant: "outline" })}>Open Popover</PopoverTrigger>
+  <PopoverTrigger class={buttonVariants({ variant: 'outline' })}>Open Popover</PopoverTrigger>
   <PopoverPopup class="w-80">
     <div class="mb-4">
       <PopoverTitle class="text-base">Send us feedback</PopoverTitle>

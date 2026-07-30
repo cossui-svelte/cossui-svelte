@@ -1,9 +1,9 @@
 <script lang="ts">
-  import HouseIcon from "@lucide/svelte/icons/house";
-  import InboxIcon from "@lucide/svelte/icons/inbox";
-  import SettingsIcon from "@lucide/svelte/icons/settings";
-  import { Badge } from "$lib/components/ui/badge";
-  import { Tabs, TabsList, TabsPanel, TabsTab } from "$lib/components/ui/tabs";
+  import HouseIcon from '@lucide/svelte/icons/house';
+  import InboxIcon from '@lucide/svelte/icons/inbox';
+  import SettingsIcon from '@lucide/svelte/icons/settings';
+  import { Badge } from '$lib/components/ui/badge';
+  import { Tabs, TabsList, TabsPanel, TabsTab } from '$lib/components/ui/tabs';
 </script>
 
 <Tabs class="items-center" value="tab-1">

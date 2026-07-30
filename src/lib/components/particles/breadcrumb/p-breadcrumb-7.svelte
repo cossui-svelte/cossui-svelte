@@ -1,24 +1,24 @@
 <script lang="ts">
-  import Database from "@lucide/svelte/icons/database";
+  import Database from '@lucide/svelte/icons/database';
   import {
     Breadcrumb,
     BreadcrumbItem,
     BreadcrumbLink,
     BreadcrumbList,
-    BreadcrumbSeparator,
-  } from "$lib/components/ui/breadcrumb";
+    BreadcrumbSeparator
+  } from '$lib/components/ui/breadcrumb';
   import {
     Select,
     SelectItem,
     SelectPopup,
     SelectTrigger,
-    SelectValue,
-  } from "$lib/components/ui/select";
+    SelectValue
+  } from '$lib/components/ui/select';
 
   const items = [
-    { label: "Orion", value: "Orion" },
-    { label: "Sigma", value: "Sigma" },
-    { label: "Dorado", value: "Dorado" },
+    { label: 'Orion', value: 'Orion' },
+    { label: 'Sigma', value: 'Sigma' },
+    { label: 'Dorado', value: 'Dorado' }
   ];
 </script>
 

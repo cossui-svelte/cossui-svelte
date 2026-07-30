@@ -1,11 +1,11 @@
 <script lang="ts" module>
-  import { RadioGroup } from "bits-ui";
+  import { RadioGroup } from 'bits-ui';
 
   export const RadioGroupItem = RadioGroup.Item;
 </script>
 
 <script lang="ts">
-  import { cn } from "$lib/utils";
+  import { cn } from '$lib/utils';
 
   let {
     children,
@@ -19,7 +19,7 @@
 <RadioGroup.Root
   bind:ref
   bind:value
-  class={cn("flex flex-col gap-3", className)}
+  class={cn('flex flex-col gap-3', className)}
   data-slot="radio-group"
   {...restProps}
 >

@@ -3,23 +3,23 @@
     InputGroup,
     InputGroupAddon,
     InputGroupInput,
-    InputGroupText,
-  } from "$lib/components/ui/input-group";
-  import { formatNumeral, NumeralThousandGroupStyles } from "cleave-zen";
-  import type { Attachment } from "svelte/attachments";
+    InputGroupText
+  } from '$lib/components/ui/input-group';
+  import { formatNumeral, NumeralThousandGroupStyles } from 'cleave-zen';
+  import type { Attachment } from 'svelte/attachments';
 
   const currencyAttachment: Attachment<HTMLInputElement> = (input) => {
     const handleInput = (event: Event) => {
       const target = event.target as HTMLInputElement;
       target.value = formatNumeral(target.value, {
         numeralThousandsGroupStyle: NumeralThousandGroupStyles.THOUSAND,
-        numeralDecimalScale: 2,
+        numeralDecimalScale: 2
       });
     };
 
-    input.addEventListener("input", handleInput);
+    input.addEventListener('input', handleInput);
 
-    return () => input.removeEventListener("input", handleInput);
+    return () => input.removeEventListener('input', handleInput);
   };
 </script>
 

@@ -6,15 +6,15 @@
     getLocalTimeZone,
     startOfMonth,
     startOfYear,
-    today,
-  } from "@internationalized/date";
-  import { Button } from "$lib/components/ui/button";
-  import { RangeCalendar } from "$lib/components/ui/range-calendar";
+    today
+  } from '@internationalized/date';
+  import { Button } from '$lib/components/ui/button';
+  import { RangeCalendar } from '$lib/components/ui/range-calendar';
 
   const todayValue = today(getLocalTimeZone());
   const yesterday = {
     end: todayValue.subtract({ days: 1 }),
-    start: todayValue.subtract({ days: 1 }),
+    start: todayValue.subtract({ days: 1 })
   };
   const last7Days = { end: todayValue, start: todayValue.subtract({ days: 6 }) };
   const last30Days = { end: todayValue, start: todayValue.subtract({ days: 29 }) };
@@ -26,7 +26,9 @@
   const lastYear = { end: endOfYear(lastYearValue), start: startOfYear(lastYearValue) };
 
   let placeholder = $state<DateValue>(todayValue);
-  let date = $state<{ end: DateValue | undefined; start: DateValue | undefined } | undefined>(last7Days);
+  let date = $state<{ end: DateValue | undefined; start: DateValue | undefined } | undefined>(
+    last7Days
+  );
 
   function isDateDisabled(d: DateValue): boolean {
     return d.compare(todayValue) > 0;
@@ -126,10 +128,5 @@
       </Button>
     </div>
   </div>
-  <RangeCalendar
-    bind:placeholder
-    bind:value={date}
-    class="max-sm:pb-3 sm:ps-5"
-    {isDateDisabled}
-  />
+  <RangeCalendar bind:placeholder bind:value={date} class="max-sm:pb-3 sm:ps-5" {isDateDisabled} />
 </div>

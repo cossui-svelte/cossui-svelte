@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { Label } from "$lib/components/ui/label";
+  import { Label } from '$lib/components/ui/label';
   import {
     NumberField,
     NumberFieldDecrement,
     NumberFieldGroup,
     NumberFieldIncrement,
-    NumberFieldInput,
-  } from "$lib/components/ui/number-field";
+    NumberFieldInput
+  } from '$lib/components/ui/number-field';
 </script>
 
 <div class="flex flex-col items-start gap-2">

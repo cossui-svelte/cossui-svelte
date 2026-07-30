@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { getContext } from "svelte";
-  import type { HTMLAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils";
-  import { METER_CONTEXT_KEY, type MeterContext } from "./meter.svelte";
+  import { getContext } from 'svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
+  import { cn } from '$lib/utils';
+  import { METER_CONTEXT_KEY, type MeterContext } from './meter.svelte';
 
   type Props = HTMLAttributes<HTMLSpanElement>;
 
@@ -12,7 +12,7 @@
 </script>
 
 <span
-  class={cn("text-foreground text-sm tabular-nums", className)}
+  class={cn('text-foreground text-sm tabular-nums', className)}
   data-slot="meter-value"
   {...restProps}>{Math.round(ctx.percentage)}%</span
 >

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Slider } from "$lib/components/ui/slider";
+  import { Slider } from '$lib/components/ui/slider';
 
   const min = 5;
   const max = 1240;

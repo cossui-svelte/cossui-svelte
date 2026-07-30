@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Combobox } from "bits-ui";
-  import type { Snippet } from "svelte";
-  import { cn } from "$lib/utils";
+  import { Combobox } from 'bits-ui';
+  import type { Snippet } from 'svelte';
+  import { cn } from '$lib/utils';
 
   type Props = Combobox.GroupProps & { children?: Snippet };
 
@@ -9,7 +9,7 @@
 </script>
 
 <Combobox.Group
-  class={cn("[[role=group]+&]:mt-1.5", className)}
+  class={cn('[[role=group]+&]:mt-1.5', className)}
   data-slot="combobox-group"
   {...restProps}
 >

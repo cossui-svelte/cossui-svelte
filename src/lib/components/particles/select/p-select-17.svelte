@@ -1,40 +1,53 @@
 <script lang="ts">
-  import { Select, SelectGroup, SelectGroupLabel, SelectItem, SelectPopup, SelectSeparator, SelectTrigger } from "$lib/components/ui/select";
+  import {
+    Select,
+    SelectGroup,
+    SelectGroupLabel,
+    SelectItem,
+    SelectPopup,
+    SelectSeparator,
+    SelectTrigger
+  } from '$lib/components/ui/select';
 
   const countries = [
     {
-      continent: "America",
+      continent: 'America',
       items: [
-        { flag: "🇺🇸", label: "United States", value: "us" },
-        { flag: "🇨🇦", label: "Canada", value: "ca" },
-        { flag: "🇲🇽", label: "Mexico", value: "mx" },
-      ],
+        { flag: '🇺🇸', label: 'United States', value: 'us' },
+        { flag: '🇨🇦', label: 'Canada', value: 'ca' },
+        { flag: '🇲🇽', label: 'Mexico', value: 'mx' }
+      ]
     },
     {
-      continent: "Europe",
+      continent: 'Europe',
       items: [
-        { flag: "🇬🇧", label: "United Kingdom", value: "gb" },
-        { flag: "🇫🇷", label: "France", value: "fr" },
-        { flag: "🇩🇪", label: "Germany", value: "de" },
-      ],
+        { flag: '🇬🇧', label: 'United Kingdom', value: 'gb' },
+        { flag: '🇫🇷', label: 'France', value: 'fr' },
+        { flag: '🇩🇪', label: 'Germany', value: 'de' }
+      ]
     },
     {
-      continent: "Asia",
+      continent: 'Asia',
       items: [
-        { flag: "🇨🇳", label: "China", value: "cn" },
-        { flag: "🇯🇵", label: "Japan", value: "jp" },
-        { flag: "🇮🇳", label: "India", value: "in" },
-      ],
-    },
+        { flag: '🇨🇳', label: 'China', value: 'cn' },
+        { flag: '🇯🇵', label: 'Japan', value: 'jp' },
+        { flag: '🇮🇳', label: 'India', value: 'in' }
+      ]
+    }
   ];
 
   const allItems = countries.flatMap((c) => c.items);
 
-  let selected = $state("ca");
+  let selected = $state('ca');
   const selectedItem = $derived(allItems.find((i) => i.value === selected) ?? allItems[0]);
 </script>
 
-<Select value={selected} onValueChange={(v) => { selected = v; }}>
+<Select
+  value={selected}
+  onValueChange={(v) => {
+    selected = v;
+  }}
+>
   <SelectTrigger aria-label="Select country">
     <span class="flex items-center gap-2">
       <span class="text-base leading-none">{selectedItem.flag}</span>

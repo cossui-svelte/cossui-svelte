@@ -1,21 +1,21 @@
 <script lang="ts">
-  import { Separator } from "bits-ui";
-  import { cn } from "$lib/utils";
+  import { Separator } from 'bits-ui';
+  import { cn } from '$lib/utils';
 
   let {
     ref = $bindable(null),
     class: className,
-    orientation = "horizontal",
+    orientation = 'horizontal',
     ...restProps
   }: Separator.RootProps & {
-    orientation?: "horizontal" | "vertical";
+    orientation?: 'horizontal' | 'vertical';
   } = $props();
 </script>
 
 <Separator.Root
   class={cn(
     "shrink-0 bg-border data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px data-[orientation=vertical]:not-[[class^='h-']]:not-[[class*='_h-']]:self-stretch",
-    className,
+    className
   )}
   data-slot="separator"
   {orientation}

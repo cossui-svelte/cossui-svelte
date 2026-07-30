@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Search from "@lucide/svelte/icons/search";
+  import Search from '@lucide/svelte/icons/search';
   import {
     Combobox,
     ComboboxEmpty,
@@ -8,21 +8,21 @@
     ComboboxList,
     ComboboxPopup,
     ComboboxTrigger,
-    ComboboxValue,
-  } from "$lib/components/ui/combobox";
-  import { selectTriggerVariants } from "$lib/components/ui/select";
+    ComboboxValue
+  } from '$lib/components/ui/combobox';
+  import { selectTriggerVariants } from '$lib/components/ui/select';
 
   const items = [
-    { label: "Apple", value: "apple" },
-    { label: "Banana", value: "banana" },
-    { label: "Orange", value: "orange" },
-    { label: "Grape", value: "grape" },
-    { label: "Strawberry", value: "strawberry" },
-    { label: "Mango", value: "mango" },
-    { label: "Pineapple", value: "pineapple" },
-    { label: "Kiwi", value: "kiwi" },
-    { label: "Peach", value: "peach" },
-    { label: "Pear", value: "pear" },
+    { label: 'Apple', value: 'apple' },
+    { label: 'Banana', value: 'banana' },
+    { label: 'Orange', value: 'orange' },
+    { label: 'Grape', value: 'grape' },
+    { label: 'Strawberry', value: 'strawberry' },
+    { label: 'Mango', value: 'mango' },
+    { label: 'Pineapple', value: 'pineapple' },
+    { label: 'Kiwi', value: 'kiwi' },
+    { label: 'Peach', value: 'peach' },
+    { label: 'Pear', value: 'pear' }
   ];
 
   let value = $state<string | undefined>(undefined);

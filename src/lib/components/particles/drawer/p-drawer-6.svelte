@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { buttonVariants } from "$lib/components/ui/button";
+  import { buttonVariants } from '$lib/components/ui/button';
   import {
     Drawer,
     DrawerClose,
@@ -8,16 +8,14 @@
     DrawerPanel,
     DrawerPopup,
     DrawerTitle,
-    DrawerTrigger,
-  } from "$lib/components/ui/drawer";
+    DrawerTrigger
+  } from '$lib/components/ui/drawer';
 
   const boxes = Array.from({ length: 48 }, (_, i) => i);
 </script>
 
 <Drawer>
-  <DrawerTrigger class={buttonVariants({ variant: "outline" })}>
-    Scrollable content
-  </DrawerTrigger>
+  <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Scrollable content</DrawerTrigger>
   <DrawerPopup showBar>
     <DrawerHeader>
       <DrawerTitle>Scrollable content</DrawerTitle>
@@ -30,7 +28,7 @@
       </div>
     </DrawerPanel>
     <DrawerFooter>
-      <DrawerClose class={buttonVariants({ variant: "outline" })}>Close</DrawerClose>
+      <DrawerClose class={buttonVariants({ variant: 'outline' })}>Close</DrawerClose>
     </DrawerFooter>
   </DrawerPopup>
 </Drawer>

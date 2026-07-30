@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { type DateValue, getDayOfWeek, getLocalTimeZone, today } from "@internationalized/date";
-  import { SvelteDate } from "svelte/reactivity";
-  import { Calendar, Day } from "$lib/components/ui/calendar";
+  import { type DateValue, getDayOfWeek, getLocalTimeZone, today } from '@internationalized/date';
+  import { SvelteDate } from 'svelte/reactivity';
+  import { Calendar, Day } from '$lib/components/ui/calendar';
 
   let value = $state(today(getLocalTimeZone()));
 
@@ -21,12 +21,14 @@
 
 <Calendar bind:value fixedWeeks mode="single">
   {#snippet day({ day: date })}
-    {@const isWeekStart = getDayOfWeek(date, "en-US") === 0}
+    {@const isWeekStart = getDayOfWeek(date, 'en-US') === 0}
     <Day class="relative">
       {#snippet children({ day: dayLabel })}
         {dayLabel}
         {#if isWeekStart}
-          <span class="-top-1 pointer-events-none absolute left-0.5 text-[0.6rem] text-muted-foreground">
+          <span
+            class="-top-1 pointer-events-none absolute left-0.5 text-[0.6rem] text-muted-foreground"
+          >
             {getWeekNumber(date)}
           </span>
         {/if}

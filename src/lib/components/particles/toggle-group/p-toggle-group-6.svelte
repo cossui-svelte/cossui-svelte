@@ -1,11 +1,11 @@
 <script lang="ts">
-  import BoldIcon from "@lucide/svelte/icons/bold";
-  import ItalicIcon from "@lucide/svelte/icons/italic";
-  import UnderlineIcon from "@lucide/svelte/icons/underline";
-  import { ToggleGroup, ToggleGroupItem } from "$lib/components/ui/toggle-group";
+  import BoldIcon from '@lucide/svelte/icons/bold';
+  import ItalicIcon from '@lucide/svelte/icons/italic';
+  import UnderlineIcon from '@lucide/svelte/icons/underline';
+  import { ToggleGroup, ToggleGroupItem } from '$lib/components/ui/toggle-group';
 </script>
 
-<ToggleGroup value={["bold"]} multiple disabled>
+<ToggleGroup value={['bold']} multiple disabled>
   <ToggleGroupItem aria-label="Toggle bold" value="bold">
     <BoldIcon />
   </ToggleGroupItem>

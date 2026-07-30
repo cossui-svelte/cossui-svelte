@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Progress } from "$lib/components/ui/progress";
+  import { Progress } from '$lib/components/ui/progress';
 
   let value = $state(20);
 

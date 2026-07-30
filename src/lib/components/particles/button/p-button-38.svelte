@@ -1,8 +1,8 @@
 <script lang="ts">
-  import RiGithubFill from "$lib/icons/GithubFillLogos.svelte";
-  import RiGoogleFill from "$lib/icons/GoogleFillLogos.svelte";
-  import RiTwitterXFill from "$lib/icons/TwitterXFillLogos.svelte";
-  import { Button } from "$lib/components/ui/button";
+  import RiGithubFill from '$lib/icons/GithubFillLogos.svelte';
+  import RiGoogleFill from '$lib/icons/GoogleFillLogos.svelte';
+  import RiTwitterXFill from '$lib/icons/TwitterXFillLogos.svelte';
+  import { Button } from '$lib/components/ui/button';
 </script>
 
 <div class="flex flex-col gap-2">

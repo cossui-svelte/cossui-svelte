@@ -1,16 +1,19 @@
 <script lang="ts">
-  import MapPin from "@lucide/svelte/icons/map-pin";
+  import MapPin from '@lucide/svelte/icons/map-pin';
   import {
     Autocomplete,
     AutocompleteInput,
     AutocompleteItem,
     AutocompleteList,
     AutocompletePopup,
-    AutocompleteStatus,
-  } from "$lib/components/ui/autocomplete";
-  import { cn } from "$lib/utils";
-  import { PlacesAutocompleteState, type SelectedPlace } from "./places-autocomplete-state.svelte.js";
-  import { GooglePlacesScript } from "./use-google-places-script.svelte.js";
+    AutocompleteStatus
+  } from '$lib/components/ui/autocomplete';
+  import { cn } from '$lib/utils';
+  import {
+    PlacesAutocompleteState,
+    type SelectedPlace
+  } from './places-autocomplete-state.svelte.js';
+  import { GooglePlacesScript } from './use-google-places-script.svelte.js';
 
   const DEFAULT_DEBOUNCE_MS = 300;
 
@@ -34,19 +37,19 @@
     class: className,
     countryCode,
     debounceMs = DEFAULT_DEBOUNCE_MS,
-    defaultValue = "",
+    defaultValue = '',
     disabled = false,
     inputClass,
     onPlaceSelect,
     onValueChange,
-    placeholder = "Start typing an address",
+    placeholder = 'Start typing an address',
     showPoweredByGoogle = true,
-    value = $bindable(),
+    value = $bindable()
   }: Props = $props();
 
   let internalValue = $state(defaultValue);
   const isControlled = $derived(value !== undefined);
-  const inputValue = $derived(isControlled ? (value ?? "") : internalValue);
+  const inputValue = $derived(isControlled ? (value ?? '') : internalValue);
 
   function setInputValue(nextValue: string) {
     if (!isControlled) {
@@ -57,7 +60,7 @@
   }
 
   const googlePlacesScript = new GooglePlacesScript({
-    apiKey: () => apiKey,
+    apiKey: () => apiKey
   });
 
   const autocompleteState = new PlacesAutocompleteState({
@@ -65,7 +68,7 @@
     debounceMs: () => debounceMs,
     isLoaded: () => googlePlacesScript.isLoaded,
     onPlaceSelect,
-    onValueChange: setInputValue,
+    onValueChange: setInputValue
   });
 
   $effect(() => () => autocompleteState.destroy());
@@ -78,7 +81,7 @@
   }
 </script>
 
-<div class={cn("relative w-full max-w-xl", className)}>
+<div class={cn('relative w-full max-w-xl', className)}>
   <Autocomplete
     autoHighlight
     {inputValue}
@@ -91,7 +94,7 @@
   >
     <div class="relative">
       <AutocompleteInput
-        class={cn(showPoweredByGoogle && "pr-28", inputClass)}
+        class={cn(showPoweredByGoogle && 'pr-28', inputClass)}
         disabled={disabled || !googlePlacesScript.hasApiKey}
         oninput={(event) => {
           const nextValue = event.currentTarget.value;
@@ -116,8 +119,8 @@
     <AutocompletePopup>
       <AutocompleteList>
         {#each autocompleteState.suggestions as suggestion (suggestion.id)}
-          {@const [primary, ...secondaryParts] = suggestion.label.split(",")}
-          {@const secondary = secondaryParts.join(",").trim()}
+          {@const [primary, ...secondaryParts] = suggestion.label.split(',')}
+          {@const secondary = secondaryParts.join(',').trim()}
           <AutocompleteItem label={suggestion.label} value={suggestion.id}>
             <span class="flex w-full items-start gap-3">
               <MapPin class="mt-0.5 h-4 w-4 shrink-0 text-primary" />

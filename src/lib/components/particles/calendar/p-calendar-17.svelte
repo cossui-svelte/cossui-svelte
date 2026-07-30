@@ -1,18 +1,18 @@
 <script lang="ts">
-  import { type DateValue, getLocalTimeZone, parseDate, today } from "@internationalized/date";
-  import CalendarIcon from "@lucide/svelte/icons/calendar";
-  import { z } from "zod";
-  import { Button } from "$lib/components/ui/button";
-  import { Calendar } from "$lib/components/ui/calendar";
-  import { Field, FieldError, FieldLabel } from "$lib/components/ui/field";
-  import { Form } from "$lib/components/ui/form";
-  import { InputGroup, InputGroupAddon, InputGroupInput } from "$lib/components/ui/input-group";
-  import { createForm } from "$lib/hooks/use-superform";
+  import { type DateValue, getLocalTimeZone, parseDate, today } from '@internationalized/date';
+  import CalendarIcon from '@lucide/svelte/icons/calendar';
+  import { z } from 'zod';
+  import { Button } from '$lib/components/ui/button';
+  import { Calendar } from '$lib/components/ui/calendar';
+  import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';
+  import { Form } from '$lib/components/ui/form';
+  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';
+  import { createForm } from '$lib/hooks/use-superform';
 
   const todayValue = today(getLocalTimeZone());
 
   const schema = z.object({
-    date: z.string().min(1, { message: "Please select a date." }),
+    date: z.string().min(1, { message: 'Please select a date.' })
   });
 
   const superform = createForm({
@@ -20,7 +20,7 @@
     onUpdated: (data) => {
       alert(`Selected date: ${data.date}`);
     },
-    schema,
+    schema
   });
 
   const { form: formData, submitting } = superform;
@@ -30,7 +30,7 @@
 
   function handleCalendarSelect(selectedDate: DateValue | undefined) {
     if (!selectedDate) {
-      $formData.date = "";
+      $formData.date = '';
       value = undefined;
       return;
     }
@@ -59,12 +59,7 @@
 </script>
 
 <Form class="flex flex-col gap-2" {superform}>
-  <Calendar
-    bind:placeholder
-    bind:value
-    onValueChange={handleCalendarSelect}
-    mode="single"
-  />
+  <Calendar bind:placeholder bind:value onValueChange={handleCalendarSelect} mode="single" />
   <Field class="flex-row items-center gap-4" name="date">
     <FieldLabel class="whitespace-nowrap">Enter date</FieldLabel>
     <InputGroup>

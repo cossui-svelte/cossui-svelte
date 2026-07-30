@@ -1,37 +1,33 @@
 <script lang="ts">
-  import AlignCenterIcon from "@lucide/svelte/icons/align-center";
-  import AlignLeftIcon from "@lucide/svelte/icons/align-left";
-  import AlignRightIcon from "@lucide/svelte/icons/align-right";
-  import DollarSignIcon from "@lucide/svelte/icons/dollar-sign";
-  import PercentIcon from "@lucide/svelte/icons/percent";
-  import { Button } from "$lib/components/ui/button";
-  import { Select, SelectItem, SelectPopup, SelectTrigger } from "$lib/components/ui/select";
-  import { ToggleGroup, ToggleGroupItem } from "$lib/components/ui/toggle-group";
-  import {
-    Toolbar,
-    ToolbarGroup,
-    ToolbarSeparator,
-  } from "$lib/components/ui/toolbar";
+  import AlignCenterIcon from '@lucide/svelte/icons/align-center';
+  import AlignLeftIcon from '@lucide/svelte/icons/align-left';
+  import AlignRightIcon from '@lucide/svelte/icons/align-right';
+  import DollarSignIcon from '@lucide/svelte/icons/dollar-sign';
+  import PercentIcon from '@lucide/svelte/icons/percent';
+  import { Button } from '$lib/components/ui/button';
+  import { Select, SelectItem, SelectPopup, SelectTrigger } from '$lib/components/ui/select';
+  import { ToggleGroup, ToggleGroupItem } from '$lib/components/ui/toggle-group';
+  import { Toolbar, ToolbarGroup, ToolbarSeparator } from '$lib/components/ui/toolbar';
   import {
     Tooltip,
     TooltipPopup,
     TooltipProvider,
-    TooltipTrigger,
-  } from "$lib/components/ui/tooltip";
+    TooltipTrigger
+  } from '$lib/components/ui/tooltip';
 
   const items = [
-    { label: "Helvetica", value: "helvetica" },
-    { label: "Arial", value: "arial" },
-    { label: "Times New Roman", value: "times-new-roman" },
+    { label: 'Helvetica', value: 'helvetica' },
+    { label: 'Arial', value: 'arial' },
+    { label: 'Times New Roman', value: 'times-new-roman' }
   ];
 
-  let selected = $state("helvetica");
-  const selectedLabel = $derived(items.find((i) => i.value === selected)?.label ?? "");
+  let selected = $state('helvetica');
+  const selectedLabel = $derived(items.find((i) => i.value === selected)?.label ?? '');
 </script>
 
 <TooltipProvider>
   <Toolbar>
-    <ToggleGroup class="border-none p-0" value={["left"]} multiple>
+    <ToggleGroup class="border-none p-0" value={['left']} multiple>
       <Tooltip>
         <TooltipTrigger>
           {#snippet child({ props })}
@@ -63,7 +59,7 @@
         <TooltipPopup sideOffset={8}>Align right</TooltipPopup>
       </Tooltip>
     </ToggleGroup>
-    <ToolbarSeparator/>
+    <ToolbarSeparator />
     <ToolbarGroup type="single">
       <Tooltip>
         <TooltipTrigger>
@@ -88,7 +84,12 @@
     </ToolbarGroup>
     <ToolbarSeparator />
     <ToolbarGroup type="single">
-      <Select value={selected} onValueChange={(v) => { selected = v; }}>
+      <Select
+        value={selected}
+        onValueChange={(v) => {
+          selected = v;
+        }}
+      >
         <Tooltip>
           <TooltipTrigger>
             {#snippet child({ props })}

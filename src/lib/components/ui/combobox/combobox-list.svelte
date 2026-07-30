@@ -1,8 +1,8 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import type { HTMLAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils";
-  import { getComboboxCtx } from "./combobox.svelte";
+  import type { Snippet } from 'svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
+  import { cn } from '$lib/utils';
+  import { getComboboxCtx } from './combobox.svelte';
 
   interface Props extends HTMLAttributes<HTMLUListElement> {
     children?: Snippet;
@@ -20,10 +20,7 @@
   style="max-height: min(var(--bits-combobox-content-available-height, 100vh), 23rem)"
 >
   <ul
-    class={cn(
-      hasVisible && "scroll-py-1 px-1 py-1",
-      className,
-    )}
+    class={cn(hasVisible && 'scroll-py-1 px-1 py-1', className)}
     data-slot="combobox-list"
     {...restProps}
   >

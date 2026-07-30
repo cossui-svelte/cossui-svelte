@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Tooltip } from "bits-ui";
+  import { Tooltip } from 'bits-ui';
 
-  interface Props extends Omit<Tooltip.RootProps, "delayDuration"> {
+  interface Props extends Omit<Tooltip.RootProps, 'delayDuration'> {
     delay?: number;
   }
 
@@ -13,9 +13,4 @@
   }: Props = $props();
 </script>
 
-<Tooltip.Root
-  bind:open
-  bind:triggerId
-  delayDuration={delay}
-  {...restProps}
-/>
+<Tooltip.Root bind:open bind:triggerId delayDuration={delay} {...restProps} />

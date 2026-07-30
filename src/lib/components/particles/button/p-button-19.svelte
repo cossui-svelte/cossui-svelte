@@ -1,7 +1,7 @@
 <script lang="ts">
-  import ChevronDown from "@lucide/svelte/icons/chevron-down";
-  import ChevronUp from "@lucide/svelte/icons/chevron-up";
-  import { Button } from "$lib/components/ui/button";
+  import ChevronDown from '@lucide/svelte/icons/chevron-down';
+  import ChevronUp from '@lucide/svelte/icons/chevron-up';
+  import { Button } from '$lib/components/ui/button';
 
   let isExpanded = $state(false);
 </script>
@@ -13,7 +13,7 @@
   onclick={() => (isExpanded = !isExpanded)}
   variant="ghost"
 >
-  {isExpanded ? "Show less" : "Show more"}
+  {isExpanded ? 'Show less' : 'Show more'}
   {#if isExpanded}
     <ChevronUp aria-hidden="true" class="-me-1" />
   {:else}

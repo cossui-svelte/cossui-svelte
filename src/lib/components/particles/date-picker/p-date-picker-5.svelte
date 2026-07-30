@@ -1,14 +1,14 @@
 <script lang="ts">
-  import { type DateValue, getLocalTimeZone, parseDate, today } from "@internationalized/date";
-  import CalendarIcon from "@lucide/svelte/icons/calendar";
-  import { buttonVariants } from "$lib/components/ui/button";
-  import { Calendar } from "$lib/components/ui/calendar";
-  import { InputGroup, InputGroupAddon, InputGroupInput } from "$lib/components/ui/input-group";
-  import { Popover, PopoverPopup, PopoverTrigger } from "$lib/components/ui/popover";
+  import { type DateValue, getLocalTimeZone, parseDate, today } from '@internationalized/date';
+  import CalendarIcon from '@lucide/svelte/icons/calendar';
+  import { buttonVariants } from '$lib/components/ui/button';
+  import { Calendar } from '$lib/components/ui/calendar';
+  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';
+  import { Popover, PopoverPopup, PopoverTrigger } from '$lib/components/ui/popover';
 
   let value = $state<DateValue | undefined>(undefined);
   let placeholder = $state<DateValue>(today(getLocalTimeZone()));
-  let inputValue = $state("");
+  let inputValue = $state('');
 
   function handleInputChange(e: Event & { currentTarget: HTMLInputElement }) {
     const raw = e.currentTarget.value;
@@ -29,7 +29,7 @@
   }
 
   function handleSelect(selected: DateValue | undefined) {
-    inputValue = selected ? selected.toString() : "";
+    inputValue = selected ? selected.toString() : '';
     if (selected) placeholder = selected;
   }
 </script>
@@ -45,7 +45,10 @@
       value={inputValue}
     />
     <InputGroupAddon>
-      <PopoverTrigger aria-label="Select date" class={buttonVariants({ size: "icon-xs", variant: "ghost" })}>
+      <PopoverTrigger
+        aria-label="Select date"
+        class={buttonVariants({ size: 'icon-xs', variant: 'ghost' })}
+      >
         <CalendarIcon aria-hidden="true" />
       </PopoverTrigger>
     </InputGroupAddon>

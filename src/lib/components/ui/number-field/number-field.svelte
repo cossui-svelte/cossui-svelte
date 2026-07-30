@@ -12,22 +12,22 @@
     readonly value: number | undefined;
   }
 
-  export const NUMBER_FIELD_CONTEXT_KEY = Symbol.for("cossui:number-field");
+  export const NUMBER_FIELD_CONTEXT_KEY = Symbol.for('cossui:number-field');
 </script>
 
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import { setContext } from "svelte";
-  import type { HTMLAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils";
+  import type { Snippet } from 'svelte';
+  import { setContext } from 'svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
+  import { cn } from '$lib/utils';
 
-  interface Props extends Omit<HTMLAttributes<HTMLDivElement>, "id"> {
+  interface Props extends Omit<HTMLAttributes<HTMLDivElement>, 'id'> {
     children?: Snippet;
     disabled?: boolean;
     id?: string;
     max?: number;
     min?: number;
-    size?: "sm" | "default" | "lg";
+    size?: 'sm' | 'default' | 'lg';
     step?: number;
     value?: number;
   }
@@ -35,7 +35,7 @@
   let {
     id,
     class: className,
-    size = "default",
+    size = 'default',
     value = $bindable<number | undefined>(undefined),
     min,
     max,
@@ -46,9 +46,7 @@
   }: Props = $props();
 
   // Generate a unique ID if none is provided
-  let generatedId = $state(
-    `number-field-${Math.random().toString(36).slice(2, 9)}`,
-  );
+  let generatedId = $state(`number-field-${Math.random().toString(36).slice(2, 9)}`);
   let fieldId = $derived(id ?? generatedId);
 
   function clamp(v: number): number {
@@ -63,8 +61,8 @@
   function getDecimalPlaces(n: number): number {
     if (!Number.isFinite(n)) return 0;
     const str = n.toString();
-    if (str.includes("e-")) return Number(str.split("e-")[1]);
-    const dotIndex = str.indexOf(".");
+    if (str.includes('e-')) return Number(str.split('e-')[1]);
+    const dotIndex = str.indexOf('.');
     return dotIndex === -1 ? 0 : str.length - dotIndex - 1;
   }
 
@@ -113,15 +111,15 @@
     },
     get value() {
       return value;
-    },
+    }
   });
 </script>
 
 <div
-  class={cn("flex w-full flex-col items-start", className)}
+  class={cn('flex w-full flex-col items-start', className)}
   data-size={size}
   data-slot="number-field"
-  data-disabled={disabled ? "" : undefined}
+  data-disabled={disabled ? '' : undefined}
   id={fieldId}
   {...restProps}
 >

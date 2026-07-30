@@ -98,9 +98,13 @@
         </div>
         <div class="w-full space-y-2">
           {#each fileUpload.files as file (file.id)}
-            <div class="flex items-center justify-between gap-2 rounded-lg border bg-background p-2 pe-3">
+            <div
+              class="flex items-center justify-between gap-2 rounded-lg border bg-background p-2 pe-3"
+            >
               <div class="flex items-center gap-3 overflow-hidden">
-                <div class="flex aspect-square size-10 shrink-0 items-center justify-center rounded border">
+                <div
+                  class="flex aspect-square size-10 shrink-0 items-center justify-center rounded border"
+                >
                   {@render fileIcon(file)}
                 </div>
                 <div class="flex min-w-0 flex-col gap-0.5">
@@ -131,7 +135,10 @@
       </div>
     {:else}
       <div class="flex flex-col items-center justify-center text-center">
-        <div aria-hidden="true" class="mb-2 flex size-11 shrink-0 items-center justify-center rounded-full border bg-background">
+        <div
+          aria-hidden="true"
+          class="mb-2 flex size-11 shrink-0 items-center justify-center rounded-full border bg-background"
+        >
           <File class="size-4 opacity-60" />
         </div>
         <p class="mb-1.5 font-medium text-sm">Upload files</p>

@@ -1,8 +1,8 @@
 <script lang="ts">
-  import MinusIcon from "@lucide/svelte/icons/minus";
-  import PlusIcon from "@lucide/svelte/icons/plus";
-  import { Button } from "$lib/components/ui/button";
-  import { Slider } from "$lib/components/ui/slider";
+  import MinusIcon from '@lucide/svelte/icons/minus';
+  import PlusIcon from '@lucide/svelte/icons/plus';
+  import { Button } from '$lib/components/ui/button';
+  import { Slider } from '$lib/components/ui/slider';
 
   const min = 0;
   const max = 200;
@@ -17,24 +17,21 @@
     <Button
       aria-label="Decrease value"
       disabled={value === min}
-      onclick={() => { value = Math.max(min, value - step); }}
+      onclick={() => {
+        value = Math.max(min, value - step);
+      }}
       size="icon"
       variant="outline"
     >
       <MinusIcon aria-hidden="true" />
     </Button>
-    <Slider
-      aria-label="Credits slider"
-      class="flex-1"
-      {max}
-      {min}
-      {step}
-      bind:value
-    />
+    <Slider aria-label="Credits slider" class="flex-1" {max} {min} {step} bind:value />
     <Button
       aria-label="Increase value"
       disabled={value === max}
-      onclick={() => { value = Math.min(max, value + step); }}
+      onclick={() => {
+        value = Math.min(max, value + step);
+      }}
       size="icon"
       variant="outline"
     >

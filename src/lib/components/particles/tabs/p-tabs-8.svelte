@@ -1,8 +1,8 @@
 <script lang="ts">
-  import HouseIcon from "@lucide/svelte/icons/house";
-  import PanelsTopLeftIcon from "@lucide/svelte/icons/panels-top-left";
-  import SettingsIcon from "@lucide/svelte/icons/settings";
-  import { Tabs, TabsList, TabsPanel, TabsTab } from "$lib/components/ui/tabs";
+  import HouseIcon from '@lucide/svelte/icons/house';
+  import PanelsTopLeftIcon from '@lucide/svelte/icons/panels-top-left';
+  import SettingsIcon from '@lucide/svelte/icons/settings';
+  import { Tabs, TabsList, TabsPanel, TabsTab } from '$lib/components/ui/tabs';
 </script>
 
 <Tabs class="items-center" value="tab-1">

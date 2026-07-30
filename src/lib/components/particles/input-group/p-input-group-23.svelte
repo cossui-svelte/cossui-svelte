@@ -1,21 +1,17 @@
 <script lang="ts">
-  import LoaderCircle from "@lucide/svelte/icons/loader-circle";
-  import Mic from "@lucide/svelte/icons/mic";
-  import Search from "@lucide/svelte/icons/search";
-  import { buttonVariants } from "$lib/components/ui/button";
-  import {
-    InputGroup,
-    InputGroupAddon,
-    InputGroupInput,
-  } from "$lib/components/ui/input-group";
+  import LoaderCircle from '@lucide/svelte/icons/loader-circle';
+  import Mic from '@lucide/svelte/icons/mic';
+  import Search from '@lucide/svelte/icons/search';
+  import { buttonVariants } from '$lib/components/ui/button';
+  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';
   import {
     Tooltip,
     TooltipPopup,
     TooltipProvider,
-    TooltipTrigger,
-  } from "$lib/components/ui/tooltip";
+    TooltipTrigger
+  } from '$lib/components/ui/tooltip';
 
-  let inputValue = $state("");
+  let inputValue = $state('');
   let isLoading = $state(false);
   let timer: ReturnType<typeof setTimeout> | undefined;
 
@@ -37,11 +33,7 @@
   <InputGroup>
     <InputGroupAddon>
       {#if isLoading}
-        <LoaderCircle
-          aria-label="Loading..."
-          class="animate-spin"
-          role="status"
-        />
+        <LoaderCircle aria-label="Loading..." class="animate-spin" role="status" />
       {:else}
         <Search aria-hidden="true" />
       {/if}
@@ -56,7 +48,7 @@
       <Tooltip>
         <TooltipTrigger
           aria-label="Voice search"
-          class={buttonVariants({ size: "icon-xs", variant: "ghost" })}
+          class={buttonVariants({ size: 'icon-xs', variant: 'ghost' })}
         >
           <Mic aria-hidden="true" />
         </TooltipTrigger>

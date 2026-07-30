@@ -1,16 +1,8 @@
 <script lang="ts">
-  import Info from "@lucide/svelte/icons/info";
-  import { buttonVariants } from "$lib/components/ui/button";
-  import {
-    InputGroup,
-    InputGroupAddon,
-    InputGroupInput,
-  } from "$lib/components/ui/input-group";
-  import {
-    Popover,
-    PopoverPopup,
-    PopoverTrigger,
-  } from "$lib/components/ui/popover";
+  import Info from '@lucide/svelte/icons/info';
+  import { buttonVariants } from '$lib/components/ui/button';
+  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';
+  import { Popover, PopoverPopup, PopoverTrigger } from '$lib/components/ui/popover';
 </script>
 
 <InputGroup>
@@ -25,7 +17,7 @@
     <Popover>
       <PopoverTrigger
         aria-label="More info"
-        class={buttonVariants({ size: "icon-xs", variant: "ghost" })}
+        class={buttonVariants({ size: 'icon-xs', variant: 'ghost' })}
       >
         <Info />
       </PopoverTrigger>

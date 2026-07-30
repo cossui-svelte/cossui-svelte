@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import type { HTMLAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils";
+  import type { Snippet } from 'svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
+  import { cn } from '$lib/utils';
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
     children?: Snippet;
@@ -11,10 +11,7 @@
 </script>
 
 <div
-  class={cn(
-    "px-3 py-2 font-medium text-muted-foreground text-xs empty:m-0 empty:p-0",
-    className,
-  )}
+  class={cn('px-3 py-2 font-medium text-muted-foreground text-xs empty:m-0 empty:p-0', className)}
   data-slot="autocomplete-status"
   {...restProps}
 >

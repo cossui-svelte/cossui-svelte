@@ -1,15 +1,15 @@
 <script lang="ts">
-  import Book from "@lucide/svelte/icons/book";
-  import Route from "@lucide/svelte/icons/route";
-  import { Button } from "$lib/components/ui/button";
+  import Book from '@lucide/svelte/icons/book';
+  import Route from '@lucide/svelte/icons/route';
+  import { Button } from '$lib/components/ui/button';
   import {
     Empty,
     EmptyContent,
     EmptyDescription,
     EmptyHeader,
     EmptyMedia,
-    EmptyTitle,
-  } from "$lib/components/ui/empty";
+    EmptyTitle
+  } from '$lib/components/ui/empty';
 </script>
 
 <Empty>

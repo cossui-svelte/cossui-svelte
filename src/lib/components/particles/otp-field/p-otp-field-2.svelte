@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { OTPField, OTPFieldInput } from "$lib/components/ui/otp-field";
+  import { OTPField, OTPFieldInput } from '$lib/components/ui/otp-field';
 
   const OTP_LENGTH = 4;
 </script>

@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { Button } from "$lib/components/ui/button";
+  import { Button } from '$lib/components/ui/button';
   import {
     LinkPreviewCard,
     LinkPreviewContent,
-    LinkPreviewTrigger,
-  } from "$lib/components/ui/link-preview";
+    LinkPreviewTrigger
+  } from '$lib/components/ui/link-preview';
 </script>
 
 <LinkPreviewCard closeDelay={100} openDelay={10}>

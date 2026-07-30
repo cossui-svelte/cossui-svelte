@@ -1,10 +1,10 @@
 <script lang="ts">
-  import ChevronDown from "@lucide/svelte/icons/chevron-down";
-  import ChevronLeft from "@lucide/svelte/icons/chevron-left";
-  import ChevronRight from "@lucide/svelte/icons/chevron-right";
-  import ChevronUp from "@lucide/svelte/icons/chevron-up";
-  import Circle from "@lucide/svelte/icons/circle";
-  import { Button } from "$lib/components/ui/button";
+  import ChevronDown from '@lucide/svelte/icons/chevron-down';
+  import ChevronLeft from '@lucide/svelte/icons/chevron-left';
+  import ChevronRight from '@lucide/svelte/icons/chevron-right';
+  import ChevronUp from '@lucide/svelte/icons/chevron-up';
+  import Circle from '@lucide/svelte/icons/circle';
+  import { Button } from '$lib/components/ui/button';
 </script>
 
 <div class="inline-grid w-fit grid-cols-3 gap-1">

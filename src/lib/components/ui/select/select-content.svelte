@@ -1,40 +1,38 @@
 <script lang="ts">
-	import { Select as SelectPrimitive, type WithoutChild } from "bits-ui";
-	import { cn } from "$lib/utils";
-	import SelectScrollDownButton from "./select-scroll-down-button.svelte";
-	import SelectScrollUpButton from "./select-scroll-up-button.svelte";
+  import { Select as SelectPrimitive, type WithoutChild } from 'bits-ui';
+  import { cn } from '$lib/utils';
+  import SelectScrollDownButton from './select-scroll-down-button.svelte';
+  import SelectScrollUpButton from './select-scroll-up-button.svelte';
 
-	let {
-		children,
-		class: className,
-		portalProps,
-		ref = $bindable(null),
-		sideOffset = 4,
-		...restProps
-	}: WithoutChild<SelectPrimitive.ContentProps> & {
-		portalProps?: SelectPrimitive.PortalProps;
-	} = $props();
+  let {
+    children,
+    class: className,
+    portalProps,
+    ref = $bindable(null),
+    sideOffset = 4,
+    ...restProps
+  }: WithoutChild<SelectPrimitive.ContentProps> & {
+    portalProps?: SelectPrimitive.PortalProps;
+  } = $props();
 </script>
 
 <SelectPrimitive.Portal {...portalProps}>
-	<SelectPrimitive.Content
-		bind:ref
-		{sideOffset}
-		class={cn(
-			"border-input bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out data-[state=open]:fade-in data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 relative z-50 max-h-[min(24rem,var(--bits-select-content-available-height))] min-w-(--bits-select-anchor-width,8rem) overflow-clip rounded-lg border shadow-lg shadow-black/5 **:[[role=group]]:py-1",
-			className,
-		)}
-		{...restProps}
-	>
-		<SelectScrollUpButton />
-		<SelectPrimitive.Viewport
-			class={cn(
-				"max-h-[var(--bits-select-content-available-height)] overflow-y-auto p-1",
-			)}
-			data-slot="select-list"
-		>
-			{@render children?.()}
-		</SelectPrimitive.Viewport>
-		<SelectScrollDownButton />
-	</SelectPrimitive.Content>
+  <SelectPrimitive.Content
+    bind:ref
+    {sideOffset}
+    class={cn(
+      'border-input bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out data-[state=open]:fade-in data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 relative z-50 max-h-[min(24rem,var(--bits-select-content-available-height))] min-w-(--bits-select-anchor-width,8rem) overflow-clip rounded-lg border shadow-lg shadow-black/5 **:[[role=group]]:py-1',
+      className
+    )}
+    {...restProps}
+  >
+    <SelectScrollUpButton />
+    <SelectPrimitive.Viewport
+      class={cn('max-h-[var(--bits-select-content-available-height)] overflow-y-auto p-1')}
+      data-slot="select-list"
+    >
+      {@render children?.()}
+    </SelectPrimitive.Viewport>
+    <SelectScrollDownButton />
+  </SelectPrimitive.Content>
 </SelectPrimitive.Portal>

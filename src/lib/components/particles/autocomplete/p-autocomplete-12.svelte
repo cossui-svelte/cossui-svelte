@@ -5,7 +5,7 @@
     AutocompleteItem,
     AutocompleteList,
     AutocompletePopup,
-    AutocompleteStatus,
+    AutocompleteStatus
   } from '$lib/components/ui/autocomplete';
   import { Spinner } from '$lib/components/ui/spinner';
 
@@ -19,7 +19,7 @@
     { id: '5', title: '12 Angry Men', year: 1957 },
     { id: '8', title: 'Pulp Fiction', year: 1994 },
     { id: '11', title: 'Forrest Gump', year: 1994 },
-    { id: '14', title: 'Inception', year: 2010 },
+    { id: '14', title: 'Inception', year: 2010 }
   ];
 
   async function searchMovies(query: string): Promise<Movie[]> {

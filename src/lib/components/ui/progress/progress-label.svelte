@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import type { HTMLAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils";
+  import type { Snippet } from 'svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
+  import { cn } from '$lib/utils';
 
   interface Props extends HTMLAttributes<HTMLSpanElement> {
     children?: Snippet;
@@ -11,7 +11,7 @@
 </script>
 
 <span
-  class={cn("font-medium text-foreground text-sm", className)}
+  class={cn('font-medium text-foreground text-sm', className)}
   data-slot="progress-label"
   {...restProps}
 >

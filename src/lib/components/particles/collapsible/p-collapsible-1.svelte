@@ -1,10 +1,16 @@
 <script lang="ts">
-  import ChevronDown from "@lucide/svelte/icons/chevron-down";
-  import { Collapsible, CollapsiblePanel, CollapsibleTrigger } from "$lib/components/ui/collapsible";
+  import ChevronDown from '@lucide/svelte/icons/chevron-down';
+  import {
+    Collapsible,
+    CollapsiblePanel,
+    CollapsibleTrigger
+  } from '$lib/components/ui/collapsible';
 </script>
 
 <Collapsible>
-  <CollapsibleTrigger class="inline-flex items-center gap-2 font-medium text-sm data-[state=open]:[&_svg]:rotate-180">
+  <CollapsibleTrigger
+    class="inline-flex items-center gap-2 font-medium text-sm data-[state=open]:[&_svg]:rotate-180"
+  >
     Show recovery keys
     <ChevronDown class="size-4 transition-transform" />
   </CollapsibleTrigger>

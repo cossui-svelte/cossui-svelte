@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Separator } from "$lib/components/ui/separator";
+  import { Separator } from '$lib/components/ui/separator';
 </script>
 
 <div class="max-w-72">

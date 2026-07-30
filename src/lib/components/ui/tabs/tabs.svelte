@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Tabs } from "bits-ui";
-  import type { Snippet } from "svelte";
-  import { cn } from "$lib/utils";
+  import { Tabs } from 'bits-ui';
+  import type { Snippet } from 'svelte';
+  import { cn } from '$lib/utils';
 
   type Props = Tabs.RootProps & { children?: Snippet };
 
@@ -9,10 +9,7 @@
 </script>
 
 <Tabs.Root
-  class={cn(
-    "flex flex-col gap-2 data-[orientation=vertical]:flex-row",
-    className,
-  )}
+  class={cn('flex flex-col gap-2 data-[orientation=vertical]:flex-row', className)}
   data-slot="tabs"
   {...restProps}
 >

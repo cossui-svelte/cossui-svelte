@@ -1,17 +1,13 @@
 <script lang="ts">
-  import Info from "@lucide/svelte/icons/info";
-  import { buttonVariants } from "$lib/components/ui/button";
-  import {
-    InputGroup,
-    InputGroupAddon,
-    InputGroupInput,
-  } from "$lib/components/ui/input-group";
+  import Info from '@lucide/svelte/icons/info';
+  import { buttonVariants } from '$lib/components/ui/button';
+  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';
   import {
     Tooltip,
     TooltipPopup,
     TooltipProvider,
-    TooltipTrigger,
-  } from "$lib/components/ui/tooltip";
+    TooltipTrigger
+  } from '$lib/components/ui/tooltip';
 </script>
 
 <TooltipProvider>
@@ -20,7 +16,7 @@
       <Tooltip>
         <TooltipTrigger
           aria-label="More information"
-          class={buttonVariants({ size: "icon-xs", variant: "ghost" })}
+          class={buttonVariants({ size: 'icon-xs', variant: 'ghost' })}
         >
           <Info />
         </TooltipTrigger>

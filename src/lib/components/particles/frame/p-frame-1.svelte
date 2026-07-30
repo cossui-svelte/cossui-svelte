@@ -5,8 +5,8 @@
     FrameFooter,
     FrameHeader,
     FramePanel,
-    FrameTitle,
-  } from "$lib/components/ui/frame";
+    FrameTitle
+  } from '$lib/components/ui/frame';
 </script>
 
 <Frame class="w-full">

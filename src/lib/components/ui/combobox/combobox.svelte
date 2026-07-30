@@ -1,6 +1,6 @@
 <script lang="ts" module>
-  import type { Snippet } from "svelte";
-  import { getContext, setContext } from "svelte";
+  import type { Snippet } from 'svelte';
+  import { getContext, setContext } from 'svelte';
 
   interface ComboboxCtx {
     readonly anchorEl: HTMLElement | null;
@@ -23,8 +23,8 @@
     readonly value: string | string[] | undefined;
   }
 
-  const COMBOBOX_CTX_KEY = Symbol("combobox");
-  export const INSIDE_COMBOBOX_POPUP = Symbol("inside-combobox-popup");
+  const COMBOBOX_CTX_KEY = Symbol('combobox');
+  export const INSIDE_COMBOBOX_POPUP = Symbol('inside-combobox-popup');
 
   export function setComboboxCtx(ctx: ComboboxCtx): void {
     setContext(COMBOBOX_CTX_KEY, ctx);
@@ -36,12 +36,12 @@
 </script>
 
 <script lang="ts">
-  import { Combobox } from "bits-ui";
-  import { tick } from "svelte";
+  import { Combobox } from 'bits-ui';
+  import { tick } from 'svelte';
 
   type DefaultValue = string | { label?: string; value: string };
 
-  type Props = Omit<Combobox.RootProps, "type"> & {
+  type Props = Omit<Combobox.RootProps, 'type'> & {
     children?: Snippet;
     multiple?: boolean;
     defaultValue?: DefaultValue;
@@ -77,20 +77,20 @@
   const defaultVal =
     defaultValue === undefined
       ? undefined
-      : typeof defaultValue === "string"
+      : typeof defaultValue === 'string'
         ? defaultValue
         : defaultValue.value;
 
   const defaultLabel =
     defaultValue === undefined
-      ? ""
-      : typeof defaultValue === "string"
+      ? ''
+      : typeof defaultValue === 'string'
         ? defaultValue
         : (defaultValue.label ?? defaultValue.value);
 
   // internalValue — uses controlled `value` when provided, otherwise defaultValue.
   let internalValue = $state<string | string[] | undefined>(
-    value !== undefined ? (value as string | string[] | undefined) : defaultVal,
+    value !== undefined ? (value as string | string[] | undefined) : defaultVal
   );
 
   // inputValueProxy — two-way bound to bits-ui's inputValue so the input field
@@ -103,8 +103,7 @@
   // Only sync value when it is defined so defaultValue is not overwritten
   // in pure uncontrolled usage.
   $effect(() => {
-    if (value !== undefined)
-      internalValue = value as string | string[] | undefined;
+    if (value !== undefined) internalValue = value as string | string[] | undefined;
   });
   $effect(() => {
     if (externalInputValue !== undefined) inputValueProxy = externalInputValue;
@@ -122,33 +121,33 @@
       const selected = v as string;
       inputValueProxy = selected
         ? (items?.find((i) => i.value === selected)?.label ?? selected)
-        : "";
+        : '';
     } else {
       // For multiple, clear the input so the user can search for the next chip.
       // bits-ui's internal SelectMultipleRootState.toggleItem always sets its own
       // inputValue to the selected item's label (chips-unaware), overwriting
       // inputValueProxy right after this runs. Force a real DOM input event so
       // bits-ui's oninput handler resyncs its internal state back to "".
-      inputValueProxy = "";
+      inputValueProxy = '';
       tick().then(() => {
         if (!inputEl) return;
-        inputEl.value = "";
-        inputEl.dispatchEvent(new Event("input", { bubbles: true }));
+        inputEl.value = '';
+        inputEl.dispatchEvent(new Event('input', { bubbles: true }));
       });
     }
   }
 
-  let filterText = $state("");
+  let filterText = $state('');
 
   $effect(() => {
     if (internalOpen && autoHighlight) {
       tick().then(() => {
         inputEl?.dispatchEvent(
-          new KeyboardEvent("keydown", {
+          new KeyboardEvent('keydown', {
             bubbles: true,
             cancelable: true,
-            key: "ArrowDown",
-          }),
+            key: 'ArrowDown'
+          })
         );
       });
     }
@@ -164,7 +163,7 @@
     internalOpen = v;
     open = v as never;
     onOpenChange?.(v);
-    if (v) filterText = "";
+    if (v) filterText = '';
   }
 
   setComboboxCtx({
@@ -177,7 +176,7 @@
     clearValue() {
       const empty = multiple ? ([] as string[]) : undefined;
       internalValue = empty;
-      inputValueProxy = "";
+      inputValueProxy = '';
       value = empty as never;
       onValueChange?.(empty as never);
     },
@@ -200,7 +199,7 @@
         onValueChange?.(next as never);
       } else {
         internalValue = undefined;
-        inputValueProxy = "";
+        inputValueProxy = '';
         value = undefined as never;
         onValueChange?.(undefined as never);
       }
@@ -242,12 +241,12 @@
     },
     get value() {
       return internalValue;
-    },
+    }
   });
 </script>
 
 <Combobox.Root
-  type={(multiple ? "multiple" : "single") as never}
+  type={(multiple ? 'multiple' : 'single') as never}
   value={internalValue as never}
   open={internalOpen}
   onValueChange={handleValueChange}

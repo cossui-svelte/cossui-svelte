@@ -1,10 +1,6 @@
 <script lang="ts">
-  import { Button } from "$lib/components/ui/button";
-  import {
-    InputGroup,
-    InputGroupAddon,
-    InputGroupInput,
-  } from "$lib/components/ui/input-group";
+  import { Button } from '$lib/components/ui/button';
+  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';
 </script>
 
 <InputGroup>

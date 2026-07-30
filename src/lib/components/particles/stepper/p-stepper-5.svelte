@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { Button } from "$lib/components/ui/button";
+  import { Button } from '$lib/components/ui/button';
   import {
     Stepper,
     StepperIndicator,
     StepperItem,
     StepperSeparator,
-    StepperTrigger,
-  } from "$lib/components/ui/stepper";
+    StepperTrigger
+  } from '$lib/components/ui/stepper';
 
   const steps = [1, 2, 3, 4];
 

@@ -1,19 +1,15 @@
 <script lang="ts">
-  import Info from "@lucide/svelte/icons/info";
-  import Star from "@lucide/svelte/icons/star";
-  import { Button, buttonVariants } from "$lib/components/ui/button";
-  import {
-    InputGroup,
-    InputGroupAddon,
-    InputGroupInput,
-  } from "$lib/components/ui/input-group";
+  import Info from '@lucide/svelte/icons/info';
+  import Star from '@lucide/svelte/icons/star';
+  import { Button, buttonVariants } from '$lib/components/ui/button';
+  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';
   import {
     Popover,
     PopoverDescription,
     PopoverPopup,
     PopoverTitle,
-    PopoverTrigger,
-  } from "$lib/components/ui/popover";
+    PopoverTrigger
+  } from '$lib/components/ui/popover';
 
   let isFavorite = $state(false);
 </script>
@@ -21,7 +17,7 @@
 <InputGroup class="[--radius-lg:9999px] [--radius:9999rem]">
   <Popover>
     <InputGroupAddon>
-      <PopoverTrigger class={buttonVariants({ size: "icon-xs", variant: "secondary" })}>
+      <PopoverTrigger class={buttonVariants({ size: 'icon-xs', variant: 'secondary' })}>
         <Info />
       </PopoverTrigger>
     </InputGroupAddon>
@@ -35,7 +31,13 @@
   <InputGroupAddon class="pl-1.5 text-muted-foreground">https://</InputGroupAddon>
   <InputGroupInput aria-label="Url" class="*:[input]:ps-1!" type="text" />
   <InputGroupAddon align="inline-end">
-    <Button onclick={() => { isFavorite = !isFavorite; }} size="icon-xs" variant="ghost">
+    <Button
+      onclick={() => {
+        isFavorite = !isFavorite;
+      }}
+      size="icon-xs"
+      variant="ghost"
+    >
       <Star
         class="data-[favorite=true]:fill-primary data-[favorite=true]:stroke-primary"
         data-favorite={isFavorite}

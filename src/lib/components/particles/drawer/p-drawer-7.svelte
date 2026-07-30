@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { buttonVariants } from "$lib/components/ui/button";
+  import { buttonVariants } from '$lib/components/ui/button';
   import {
     Drawer,
     DrawerClose,
@@ -10,14 +10,12 @@
     DrawerPanel,
     DrawerPopup,
     DrawerTitle,
-    DrawerTrigger,
-  } from "$lib/components/ui/drawer";
+    DrawerTrigger
+  } from '$lib/components/ui/drawer';
 </script>
 
 <Drawer>
-  <DrawerTrigger class={buttonVariants({ variant: "outline" })}>
-    Nested drawers
-  </DrawerTrigger>
+  <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Nested drawers</DrawerTrigger>
   <DrawerPopup showBar>
     <DrawerHeader class="text-center">
       <DrawerTitle>First step</DrawerTitle>
@@ -26,9 +24,9 @@
       </DrawerDescription>
     </DrawerHeader>
     <DrawerFooter variant="bare" class="justify-center sm:justify-center">
-      <DrawerClose class={buttonVariants({ variant: "ghost" })}>Cancel</DrawerClose>
+      <DrawerClose class={buttonVariants({ variant: 'ghost' })}>Cancel</DrawerClose>
       <DrawerNestedRoot>
-        <DrawerTrigger class={buttonVariants({ variant: "outline" })}>Continue</DrawerTrigger>
+        <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Continue</DrawerTrigger>
         <DrawerPopup showBar>
           <DrawerHeader class="text-center">
             <DrawerTitle>Second step</DrawerTitle>
@@ -42,9 +40,9 @@
             </div>
           </DrawerPanel>
           <DrawerFooter variant="bare" class="justify-center sm:justify-center">
-            <DrawerClose class={buttonVariants({ variant: "ghost" })}>Back</DrawerClose>
+            <DrawerClose class={buttonVariants({ variant: 'ghost' })}>Back</DrawerClose>
             <DrawerNestedRoot>
-              <DrawerTrigger class={buttonVariants({ variant: "outline" })}>Continue</DrawerTrigger>
+              <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Continue</DrawerTrigger>
               <DrawerPopup showBar>
                 <DrawerHeader class="text-center">
                   <DrawerTitle>Third step</DrawerTitle>

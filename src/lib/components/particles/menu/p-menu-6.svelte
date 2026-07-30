@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { buttonVariants } from "$lib/components/ui/button";
+  import { buttonVariants } from '$lib/components/ui/button';
   import {
     Menu,
     MenuGroup,
@@ -7,12 +7,12 @@
     MenuItem,
     MenuPopup,
     MenuSeparator,
-    MenuTrigger,
-  } from "$lib/components/ui/menu";
+    MenuTrigger
+  } from '$lib/components/ui/menu';
 </script>
 
 <Menu>
-  <MenuTrigger class={buttonVariants({ variant: "outline" })}>Open menu</MenuTrigger>
+  <MenuTrigger class={buttonVariants({ variant: 'outline' })}>Open menu</MenuTrigger>
   <MenuPopup>
     <MenuGroup>
       <MenuGroupLabel>Account</MenuGroupLabel>

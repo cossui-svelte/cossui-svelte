@@ -1,19 +1,19 @@
 <script lang="ts">
-  import ArrowRight from "@lucide/svelte/icons/arrow-right";
-  import Mic from "@lucide/svelte/icons/mic";
-  import { buttonVariants } from "$lib/components/ui/button";
+  import ArrowRight from '@lucide/svelte/icons/arrow-right';
+  import Mic from '@lucide/svelte/icons/mic';
+  import { buttonVariants } from '$lib/components/ui/button';
   import {
     InputGroup,
     InputGroupAddon,
     InputGroupText,
-    InputGroupTextarea,
-  } from "$lib/components/ui/input-group";
+    InputGroupTextarea
+  } from '$lib/components/ui/input-group';
   import {
     Tooltip,
     TooltipPopup,
     TooltipProvider,
-    TooltipTrigger,
-  } from "$lib/components/ui/tooltip";
+    TooltipTrigger
+  } from '$lib/components/ui/tooltip';
 </script>
 
 <TooltipProvider>
@@ -23,7 +23,7 @@
       <Tooltip>
         <TooltipTrigger
           aria-label="Voice message"
-          class={`rounded-full ${buttonVariants({ size: "icon-sm", variant: "ghost" })}`}
+          class={`rounded-full ${buttonVariants({ size: 'icon-sm', variant: 'ghost' })}`}
         >
           <Mic />
         </TooltipTrigger>
@@ -35,7 +35,7 @@
       <Tooltip>
         <TooltipTrigger
           aria-label="Send message"
-          class={`rounded-full ${buttonVariants({ size: "icon-sm" })}`}
+          class={`rounded-full ${buttonVariants({ size: 'icon-sm' })}`}
         >
           <ArrowRight />
         </TooltipTrigger>

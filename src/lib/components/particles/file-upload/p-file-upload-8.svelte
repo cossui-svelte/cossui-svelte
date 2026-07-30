@@ -46,11 +46,16 @@
     />
 
     <div class="flex flex-col items-center justify-center text-center">
-      <div aria-hidden="true" class="mb-2 flex size-11 shrink-0 items-center justify-center rounded-full border bg-background">
+      <div
+        aria-hidden="true"
+        class="mb-2 flex size-11 shrink-0 items-center justify-center rounded-full border bg-background"
+      >
         <Upload class="size-4 opacity-60" />
       </div>
       <p class="mb-1.5 font-medium text-sm">Upload file</p>
-      <p class="text-muted-foreground text-xs">Drag & drop or click to browse (max. {formatBytes(maxSize)})</p>
+      <p class="text-muted-foreground text-xs">
+        Drag & drop or click to browse (max. {formatBytes(maxSize)})
+      </p>
     </div>
   </div>
 

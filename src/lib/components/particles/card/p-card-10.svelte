@@ -1,47 +1,47 @@
 <script lang="ts">
-  import CircleAlert from "@lucide/svelte/icons/circle-alert";
-  import { z } from "zod";
-  import { Button } from "$lib/components/ui/button";
-  import { Card, CardPanel } from "$lib/components/ui/card";
-  import { Field, FieldError, FieldLabel } from "$lib/components/ui/field";
-  import { Form } from "$lib/components/ui/form";
+  import CircleAlert from '@lucide/svelte/icons/circle-alert';
+  import { z } from 'zod';
+  import { Button } from '$lib/components/ui/button';
+  import { Card, CardPanel } from '$lib/components/ui/card';
+  import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';
+  import { Form } from '$lib/components/ui/form';
   import {
     Frame,
     FrameDescription,
     FrameFooter,
     FrameHeader,
-    FrameTitle,
-  } from "$lib/components/ui/frame";
-  import { Input } from "$lib/components/ui/input";
+    FrameTitle
+  } from '$lib/components/ui/frame';
+  import { Input } from '$lib/components/ui/input';
   import {
     Select,
     SelectItem,
     SelectPopup,
     SelectTrigger,
-    SelectValue,
-  } from "$lib/components/ui/select";
-  import { createForm } from "$lib/hooks/use-superform";
+    SelectValue
+  } from '$lib/components/ui/select';
+  import { createForm } from '$lib/hooks/use-superform';
 
   const frameworkOptions = [
-    { label: "Next.js", value: "next" },
-    { label: "Vite", value: "vite" },
-    { label: "Remix", value: "remix" },
-    { label: "Astro", value: "astro" },
+    { label: 'Next.js', value: 'next' },
+    { label: 'Vite', value: 'vite' },
+    { label: 'Remix', value: 'remix' },
+    { label: 'Astro', value: 'astro' }
   ] as const;
 
   const schema = z.object({
-    framework: z.enum(["next", "vite", "remix", "astro"], {
-      message: "Please select a framework.",
+    framework: z.enum(['next', 'vite', 'remix', 'astro'], {
+      message: 'Please select a framework.'
     }),
-    name: z.string().min(1, "Project name is required."),
+    name: z.string().min(1, 'Project name is required.')
   });
 
   const superform = createForm({
-    initialData: { framework: "next" as const },
+    initialData: { framework: 'next' as const },
     onUpdated: (data) => {
       alert(`Deploying "${data.name}" with ${data.framework}`);
     },
-    schema,
+    schema
   });
 
   const { form, submitting } = superform;

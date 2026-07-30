@@ -1,97 +1,99 @@
 <script lang="ts" module>
-    /**
-     * IMPORTANT: This component was built for demo purposes only and has not been tested in production.
-     * It serves as a proof of concept for a checkbox tree implementation.
-     * If you're interested in collaborating to create a more robust, production-ready
-     * headless component, your contributions are welcome!
-     */
+  /**
+   * IMPORTANT: This component was built for demo purposes only and has not been tested in production.
+   * It serves as a proof of concept for a checkbox tree implementation.
+   * If you're interested in collaborating to create a more robust, production-ready
+   * headless component, your contributions are welcome!
+   */
 </script>
 
 <script lang="ts">
-    import type { Snippet } from "svelte";
-    import { SvelteSet } from "svelte/reactivity";
+  import type { Snippet } from 'svelte';
+  import { SvelteSet } from 'svelte/reactivity';
 
-    interface CheckBoxTreeNode {
-        children?: CheckBoxTreeNode[];
-        defaultChecked?: boolean;
-        id: string;
-        indeterminate?: boolean;
-        label: string;
+  interface CheckBoxTreeNode {
+    children?: CheckBoxTreeNode[];
+    defaultChecked?: boolean;
+    id: string;
+    indeterminate?: boolean;
+    label: string;
+  }
+
+  interface RenderNodeProps {
+    checked: boolean;
+    children: RenderNodeProps[];
+    id: string;
+    indeterminate?: boolean;
+    label: string;
+    onCheckedChange: () => void;
+  }
+
+  let {
+    renderNode,
+    tree
+  }: {
+    renderNode: Snippet<[RenderNodeProps]>;
+    tree: CheckBoxTreeNode;
+  } = $props();
+
+  const checkedNodes = new SvelteSet<string>();
+
+  // Initialize checked nodes (Self-invoking function)
+  (function initializeCheckedNodes(node: CheckBoxTreeNode) {
+    if (node.defaultChecked) {
+      checkedNodes.add(node.id);
+    }
+    node.children?.forEach(initializeCheckedNodes);
+  })(tree);
+
+  function isChecked(node: CheckBoxTreeNode): boolean {
+    if (!node.children) {
+      return checkedNodes.has(node.id);
     }
 
-    interface RenderNodeProps {
-        checked: boolean;
-        children: RenderNodeProps[];
-        id: string;
-        indeterminate?: boolean;
-        label: string;
-        onCheckedChange: () => void;
+    const childrenChecked = node.children.map(isChecked);
+    if (childrenChecked.every((status) => status === true)) {
+      return true;
     }
 
-    let {
-        renderNode,
-        tree,
-    }: {
-        renderNode: Snippet<[RenderNodeProps]>;
-        tree: CheckBoxTreeNode;
-    } = $props();
+    return false;
+  }
 
-    const checkedNodes = new SvelteSet<string>();
+  function isIndeterminate(node: CheckBoxTreeNode): boolean {
+    if (!node.children?.length) return false;
 
-    // Initialize checked nodes (Self-invoking function)
-    (function initializeCheckedNodes(node: CheckBoxTreeNode) {
-        if (node.defaultChecked) {
-            checkedNodes.add(node.id);
-        }
-        node.children?.forEach(initializeCheckedNodes);
-    })(tree);
+    const childrenChecked = node.children.map(isChecked);
+    return childrenChecked.some(Boolean) && !childrenChecked.every(Boolean);
+  }
 
-    function isChecked(node: CheckBoxTreeNode): boolean {
-        if (!node.children) {
-            return checkedNodes.has(node.id);
-        }
-
-        const childrenChecked = node.children.map(isChecked);
-        if (childrenChecked.every((status) => status === true)) {
-            return true;
-        }
-
-        return false;
+  function handleCheck(node: CheckBoxTreeNode) {
+    function toggleNode(n: CheckBoxTreeNode, check: boolean) {
+      if (check) {
+        checkedNodes.add(n.id);
+      } else {
+        checkedNodes.delete(n.id);
+      }
+      n.children?.forEach((child) => {
+        toggleNode(child, check);
+      });
     }
 
-    function isIndeterminate(node: CheckBoxTreeNode): boolean {
-        if (!node.children?.length) return false;
+    const currentStatus = isChecked(node);
+    const newCheck = currentStatus !== true;
 
-        const childrenChecked = node.children.map(isChecked);
-        return childrenChecked.some(Boolean) && !childrenChecked.every(Boolean);
-    }
+    toggleNode(node, newCheck);
+  }
 
-    function handleCheck(node: CheckBoxTreeNode) {
-        function toggleNode(n: CheckBoxTreeNode, check: boolean) {
-            if (check) {
-                checkedNodes.add(n.id);
-            } else {
-                checkedNodes.delete(n.id);
-            }
-            n.children?.forEach((child) => {toggleNode(child, check)});
-        }
-
-        const currentStatus = isChecked(node);
-        const newCheck = currentStatus !== true;
-
-        toggleNode(node, newCheck);
-    }
-
-    function renderTreeNode(node: CheckBoxTreeNode): RenderNodeProps {
-        return {
-            checked: isChecked(node),
-            children: node.children?.map(renderTreeNode) ?? [],
-            id: node.id,
-            indeterminate: isIndeterminate(node),
-            label: node.label,
-            onCheckedChange: () => handleCheck(node),
-        };
-    }
+  function renderTreeNode(node: CheckBoxTreeNode): RenderNodeProps {
+    return {
+      checked: isChecked(node),
+      children: node.children?.map(renderTreeNode) ?? [],
+      id: node.id,
+      indeterminate: isIndeterminate(node),
+      label: node.label,
+      onCheckedChange: () => handleCheck(node)
+    };
+  }
 </script>
 
 {@render renderNode(renderTreeNode(tree))}

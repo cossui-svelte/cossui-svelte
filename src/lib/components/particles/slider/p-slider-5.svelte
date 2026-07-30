@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Slider } from "$lib/components/ui/slider";
-  import { cn } from "$lib/utils";
+  import { Slider } from '$lib/components/ui/slider';
+  import { cn } from '$lib/utils';
 
   const max = 12;
   const skipInterval = 2;
@@ -16,13 +16,9 @@
   >
     {#each ticks as i (i)}
       <span class="flex w-0 flex-col items-center justify-center gap-2">
-        <span
-          class={cn(
-            "h-1 w-px bg-muted-foreground/72",
-            i % skipInterval !== 0 && "h-0.5",
-          )}
+        <span class={cn('h-1 w-px bg-muted-foreground/72', i % skipInterval !== 0 && 'h-0.5')}
         ></span>
-        <span class={cn(i % skipInterval !== 0 && "opacity-0")}>{i}</span>
+        <span class={cn(i % skipInterval !== 0 && 'opacity-0')}>{i}</span>
       </span>
     {/each}
   </div>

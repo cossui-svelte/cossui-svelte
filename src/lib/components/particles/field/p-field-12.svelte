@@ -7,14 +7,14 @@
   import { createForm } from '$lib/hooks/use-superform';
 
   const schema = z.object({
-    terms: z.boolean(),
+    terms: z.boolean()
   });
 
   const superform = createForm({
     onUpdated: (data) => {
       alert(`Terms accepted: ${data.terms}`);
     },
-    schema,
+    schema
   });
 
   const { form: formData, submitting } = superform;

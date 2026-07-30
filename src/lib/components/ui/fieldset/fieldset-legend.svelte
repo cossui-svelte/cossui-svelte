@@ -24,7 +24,11 @@
 
   const mergedProps = $derived(
     mergeProps(
-      { 'data-slot': 'fieldset-legend', class: cn('font-semibold text-foreground', className), ...restProps },
+      {
+        'data-slot': 'fieldset-legend',
+        class: cn('font-semibold text-foreground', className),
+        ...restProps
+      },
       legendState.props
     )
   );

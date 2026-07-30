@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Button } from "$lib/components/ui/button";
-  import { Label } from "$lib/components/ui/label";
-  import { Radio, RadioGroup } from "$lib/components/ui/radio-group";
+  import { Button } from '$lib/components/ui/button';
+  import { Label } from '$lib/components/ui/label';
+  import { Radio, RadioGroup } from '$lib/components/ui/radio-group';
 
   let loading = $state(false);
 
@@ -11,7 +11,7 @@
     loading = true;
     await new Promise((r) => setTimeout(r, 800));
     loading = false;
-    alert(`Selected: ${formData.get("frameworks")}`);
+    alert(`Selected: ${formData.get('frameworks')}`);
   }
 </script>
 

@@ -1,10 +1,16 @@
 <script lang="ts">
-  import { Select, SelectItem, SelectPopup, SelectTrigger, SelectValue } from "$lib/components/ui/select";
+  import {
+    Select,
+    SelectItem,
+    SelectPopup,
+    SelectTrigger,
+    SelectValue
+  } from '$lib/components/ui/select';
 
   const items = [
-    { label: "Next.js", value: "next" },
-    { label: "Vite", value: "vite" },
-    { label: "Astro", value: "astro" },
+    { label: 'Next.js', value: 'next' },
+    { label: 'Vite', value: 'vite' },
+    { label: 'Astro', value: 'astro' }
   ];
 </script>
 

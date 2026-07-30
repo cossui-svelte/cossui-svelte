@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { buttonVariants } from "$lib/components/ui/button";
-  import { cn } from "$lib/utils";
-  import { page } from "$app/state";
+  import { buttonVariants } from '$lib/components/ui/button';
+  import { cn } from '$lib/utils';
+  import { page } from '$app/state';
 
   interface Props {
     class?: string;
@@ -11,13 +11,14 @@
   let { items, class: className }: Props = $props();
 </script>
 
-<nav class={cn("items-center gap-2", className)}>
+<nav class={cn('items-center gap-2', className)}>
   {#each items as item (item.href)}
     <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- item.href is caller-supplied nav data, already app-relative -->
-    <a href={item.href}
+    <a
+      href={item.href}
       class={cn(
-        buttonVariants({ variant: "ghost" }),
-        page.url.pathname.includes(item.href) && "text-primary",
+        buttonVariants({ variant: 'ghost' }),
+        page.url.pathname.includes(item.href) && 'text-primary'
       )}
       data-pressed={page.url.pathname.includes(item.href) || undefined}
     >

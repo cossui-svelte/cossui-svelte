@@ -5,22 +5,22 @@
     StepperItem,
     StepperSeparator,
     StepperTitle,
-    StepperTrigger,
-  } from "$lib/components/ui/stepper";
+    StepperTrigger
+  } from '$lib/components/ui/stepper';
 
   const steps = [
     {
       step: 1,
-      title: "Step One",
+      title: 'Step One'
     },
     {
       step: 2,
-      title: "Step Two",
+      title: 'Step Two'
     },
     {
       step: 3,
-      title: "Step Three",
-    },
+      title: 'Step Three'
+    }
   ];
 </script>
 

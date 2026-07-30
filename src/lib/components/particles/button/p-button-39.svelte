@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { Button } from "$lib/components/ui/button";
+  import { Button } from '$lib/components/ui/button';
 
   let open = $state(false);
 </script>
 
 <Button
   aria-expanded={open}
-  aria-label={open ? "Close menu" : "Open menu"}
+  aria-label={open ? 'Close menu' : 'Open menu'}
   onclick={() => (open = !open)}
   size="icon"
   variant="outline"

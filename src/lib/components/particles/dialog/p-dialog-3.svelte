@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { z } from "zod";
-  import { Button, buttonVariants } from "$lib/components/ui/button";
+  import { z } from 'zod';
+  import { Button, buttonVariants } from '$lib/components/ui/button';
   import {
     Dialog,
     DialogClose,
@@ -10,28 +10,26 @@
     DialogPanel,
     DialogPopup,
     DialogTitle,
-    DialogTrigger,
-  } from "$lib/components/ui/dialog";
-  import { Field, FieldError, FieldLabel } from "$lib/components/ui/field";
-  import { Form } from "$lib/components/ui/form";
-  import { Input } from "$lib/components/ui/input";
-  import { createForm } from "$lib/hooks/use-superform";
+    DialogTrigger
+  } from '$lib/components/ui/dialog';
+  import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';
+  import { Form } from '$lib/components/ui/form';
+  import { Input } from '$lib/components/ui/input';
+  import { createForm } from '$lib/hooks/use-superform';
 
   const schema = z.object({
-    email: z.email("Please enter a valid email."),
-    name: z.string().min(1, { message: "Please enter a name." }),
+    email: z.email('Please enter a valid email.'),
+    name: z.string().min(1, { message: 'Please enter a name.' })
   });
 
   const superform = createForm({
-    initialData: { email: "bora@example.com", name: "Bora Baloglu" },
-    schema,
+    initialData: { email: 'bora@example.com', name: 'Bora Baloglu' },
+    schema
   });
 </script>
 
 <Dialog>
-  <DialogTrigger class={buttonVariants({ variant: "outline" })}>
-    Open parent
-  </DialogTrigger>
+  <DialogTrigger class={buttonVariants({ variant: 'outline' })}>Open parent</DialogTrigger>
   <DialogPopup showCloseButton={false}>
     <DialogHeader>
       <DialogTitle>Manage team member</DialogTitle>
@@ -49,15 +47,11 @@
     </DialogPanel>
     <DialogFooter>
       <Dialog>
-        <DialogTrigger class={buttonVariants({ variant: "outline" })}>
-          Edit details
-        </DialogTrigger>
+        <DialogTrigger class={buttonVariants({ variant: 'outline' })}>Edit details</DialogTrigger>
         <DialogPopup showCloseButton={false}>
           <DialogHeader>
             <DialogTitle>Edit details</DialogTitle>
-            <DialogDescription>
-              Make changes to the member's information.
-            </DialogDescription>
+            <DialogDescription>Make changes to the member's information.</DialogDescription>
           </DialogHeader>
           <Form {superform} class="contents">
             <DialogPanel class="grid gap-4">
@@ -73,7 +67,7 @@
               </Field>
             </DialogPanel>
             <DialogFooter>
-              <DialogClose class={buttonVariants({ variant: "ghost" })}>Cancel</DialogClose>
+              <DialogClose class={buttonVariants({ variant: 'ghost' })}>Cancel</DialogClose>
               <Button type="submit">Save changes</Button>
             </DialogFooter>
           </Form>

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { getLocalTimeZone, today } from "@internationalized/date";
-  import { RangeCalendar } from "$lib/components/ui/range-calendar";
+  import { getLocalTimeZone, today } from '@internationalized/date';
+  import { RangeCalendar } from '$lib/components/ui/range-calendar';
 
   const todayValue = today(getLocalTimeZone());
   let value = $state({ end: todayValue.add({ days: 25 }), start: todayValue });

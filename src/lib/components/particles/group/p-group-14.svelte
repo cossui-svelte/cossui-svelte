@@ -1,27 +1,23 @@
 <script lang="ts">
-  import ArrowRight from "@lucide/svelte/icons/arrow-right";
-  import { Button } from "$lib/components/ui/button";
-  import { Group, GroupSeparator } from "$lib/components/ui/group";
-  import {
-    NumberField,
-    NumberFieldGroup,
-    NumberFieldInput,
-  } from "$lib/components/ui/number-field";
+  import ArrowRight from '@lucide/svelte/icons/arrow-right';
+  import { Button } from '$lib/components/ui/button';
+  import { Group, GroupSeparator } from '$lib/components/ui/group';
+  import { NumberField, NumberFieldGroup, NumberFieldInput } from '$lib/components/ui/number-field';
   import {
     Select,
     SelectItem,
     SelectPopup,
     SelectTrigger,
-    SelectValue,
-  } from "$lib/components/ui/select";
+    SelectValue
+  } from '$lib/components/ui/select';
 
   const currencies = [
-    { label: "US Dollar", value: "$" },
-    { label: "Euro", value: "€" },
-    { label: "British Pound", value: "£" },
+    { label: 'US Dollar', value: '$' },
+    { label: 'Euro', value: '€' },
+    { label: 'British Pound', value: '£' }
   ];
 
-  let currency = $state("$");
+  let currency = $state('$');
   let amount = $state(10);
 </script>
 

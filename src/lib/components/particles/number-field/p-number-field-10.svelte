@@ -1,23 +1,29 @@
 <script lang="ts">
-  import { Button } from "$lib/components/ui/button";
+  import { Button } from '$lib/components/ui/button';
   import {
     NumberField,
     NumberFieldDecrement,
     NumberFieldGroup,
     NumberFieldIncrement,
     NumberFieldInput,
-    NumberFieldScrubArea,
-  } from "$lib/components/ui/number-field";
+    NumberFieldScrubArea
+  } from '$lib/components/ui/number-field';
 
   let quantity = $state(1);
   let loading = $state(false);
-  let error = $state("");
+  let error = $state('');
 
   async function handleSubmit(e: SubmitEvent) {
     e.preventDefault();
-    error = "";
-    if (quantity < 1) { error = "Quantity must be at least 1."; return; }
-    if (quantity > 100) { error = "Maximum quantity is 100."; return; }
+    error = '';
+    if (quantity < 1) {
+      error = 'Quantity must be at least 1.';
+      return;
+    }
+    if (quantity > 100) {
+      error = 'Maximum quantity is 100.';
+      return;
+    }
     loading = true;
     await new Promise((r) => setTimeout(r, 800));
     loading = false;

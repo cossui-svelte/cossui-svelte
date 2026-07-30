@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { buttonVariants } from "$lib/components/ui/button";
+  import { buttonVariants } from '$lib/components/ui/button';
   import {
     Drawer,
     DrawerDescription,
@@ -7,23 +7,17 @@
     DrawerPanel,
     DrawerPopup,
     DrawerTitle,
-    DrawerTrigger,
-  } from "$lib/components/ui/drawer";
+    DrawerTrigger
+  } from '$lib/components/ui/drawer';
 
-  const snapPoints = ["300px", 1] as const;
+  const snapPoints = ['300px', 1] as const;
   let snapPoint = $state<(typeof snapPoints)[number] | null>(snapPoints[0]);
 
   const boxes = Array.from({ length: 48 }, (_, i) => i);
 </script>
 
-<Drawer
-  position="bottom"
-  bind:activeSnapPoint={snapPoint}
-  snapPoints={[...snapPoints]}
->
-  <DrawerTrigger class={buttonVariants({ variant: "outline" })}>
-    With snap points
-  </DrawerTrigger>
+<Drawer position="bottom" bind:activeSnapPoint={snapPoint} snapPoints={[...snapPoints]}>
+  <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>With snap points</DrawerTrigger>
   <DrawerPopup showBar>
     <DrawerHeader>
       <DrawerTitle>Snap Points</DrawerTitle>

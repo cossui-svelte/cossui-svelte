@@ -1,18 +1,18 @@
 <script lang="ts">
-  import BoldIcon from "@lucide/svelte/icons/bold";
-  import ItalicIcon from "@lucide/svelte/icons/italic";
-  import UnderlineIcon from "@lucide/svelte/icons/underline";
-  import { ToggleGroup, ToggleGroupItem } from "$lib/components/ui/toggle-group";
+  import BoldIcon from '@lucide/svelte/icons/bold';
+  import ItalicIcon from '@lucide/svelte/icons/italic';
+  import UnderlineIcon from '@lucide/svelte/icons/underline';
+  import { ToggleGroup, ToggleGroupItem } from '$lib/components/ui/toggle-group';
   import {
     Tooltip,
     TooltipPopup,
     TooltipProvider,
-    TooltipTrigger,
-  } from "$lib/components/ui/tooltip";
+    TooltipTrigger
+  } from '$lib/components/ui/tooltip';
 </script>
 
 <TooltipProvider>
-  <ToggleGroup value={["bold"]} multiple>
+  <ToggleGroup value={['bold']} multiple>
     <Tooltip>
       <TooltipTrigger>
         {#snippet child({ props })}

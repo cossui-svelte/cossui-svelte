@@ -1,7 +1,7 @@
 <script lang="ts">
-  import ChevronDown from "@lucide/svelte/icons/chevron-down";
-  import { Accordion } from "bits-ui";
-  import { cn, type WithoutChild } from "$lib/utils";
+  import ChevronDown from '@lucide/svelte/icons/chevron-down';
+  import { Accordion } from 'bits-ui';
+  import { cn, type WithoutChild } from '$lib/utils';
 
   let {
     ref = $bindable(null),
@@ -14,8 +14,8 @@
 <Accordion.Header class="flex">
   <Accordion.Trigger
     class={cn(
-      "flex flex-1 cursor-pointer items-start justify-between gap-4 rounded-md py-4 text-left font-medium text-sm outline-none transition-all focus-visible:ring-[3px] focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-64 data-[state=open]:*:data-[slot=accordion-indicator]:rotate-180",
-      className,
+      'flex flex-1 cursor-pointer items-start justify-between gap-4 rounded-md py-4 text-left font-medium text-sm outline-none transition-all focus-visible:ring-[3px] focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-64 data-[state=open]:*:data-[slot=accordion-indicator]:rotate-180',
+      className
     )}
     data-slot="accordion-trigger"
     {...restProps}

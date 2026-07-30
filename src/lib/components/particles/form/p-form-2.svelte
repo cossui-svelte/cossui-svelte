@@ -9,14 +9,14 @@
   const schema = z.object({
     age: z.coerce
       .number({ message: 'Please enter a number.' })
-      .positive({ message: 'Number must be positive.' }), 
+      .positive({ message: 'Number must be positive.' }),
     name: z.string().min(1, { message: 'Please enter a name.' })
   });
 
   const superform = createForm({
     onUpdated: (data) => {
       alert(`Name: ${data.name}\nAge: ${data.age}`);
-    }, 
+    },
     schema
   });
 

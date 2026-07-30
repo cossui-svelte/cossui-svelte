@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { DateFormatter, type DateValue, getLocalTimeZone, today } from "@internationalized/date";
-  import CalendarIcon from "@lucide/svelte/icons/calendar";
-  import { Button, buttonVariants } from "$lib/components/ui/button";
-  import { Calendar } from "$lib/components/ui/calendar";
-  import { Popover, PopoverPopup, PopoverTrigger } from "$lib/components/ui/popover";
-  import { cn } from "$lib/utils";
+  import { DateFormatter, type DateValue, getLocalTimeZone, today } from '@internationalized/date';
+  import CalendarIcon from '@lucide/svelte/icons/calendar';
+  import { Button, buttonVariants } from '$lib/components/ui/button';
+  import { Calendar } from '$lib/components/ui/calendar';
+  import { Popover, PopoverPopup, PopoverTrigger } from '$lib/components/ui/popover';
+  import { cn } from '$lib/utils';
 
-  const df = new DateFormatter("en-US", { dateStyle: "long" });
+  const df = new DateFormatter('en-US', { dateStyle: 'long' });
   const todayValue = today(getLocalTimeZone());
 
   let value = $state<DateValue | undefined>(undefined);
@@ -19,15 +19,20 @@
 </script>
 
 <Popover>
-  <PopoverTrigger class={cn(buttonVariants({ variant: "outline" }), "w-full justify-start")}>
+  <PopoverTrigger class={cn(buttonVariants({ variant: 'outline' }), 'w-full justify-start')}>
     <CalendarIcon aria-hidden="true" />
-    {value ? df.format(value.toDate(getLocalTimeZone())) : "Pick a date"}
+    {value ? df.format(value.toDate(getLocalTimeZone())) : 'Pick a date'}
   </PopoverTrigger>
   <PopoverPopup>
     <div class="flex max-sm:flex-col">
       <div class="relative py-1 ps-1 max-sm:order-1 max-sm:border-t">
         <div class="flex h-full flex-col sm:border-e sm:pe-3">
-          <Button class="w-full justify-start" onclick={() => setPreset(todayValue)} size="sm" variant="ghost">
+          <Button
+            class="w-full justify-start"
+            onclick={() => setPreset(todayValue)}
+            size="sm"
+            variant="ghost"
+          >
             Today
           </Button>
           <Button

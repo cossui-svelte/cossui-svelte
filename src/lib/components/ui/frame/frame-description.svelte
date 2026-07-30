@@ -1,19 +1,19 @@
 <script lang="ts">
-    import type { Snippet } from "svelte";
-    import type { HTMLAttributes } from "svelte/elements";
-    import { cn } from "$lib/utils";
+  import type { Snippet } from 'svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
+  import { cn } from '$lib/utils';
 
-    interface Props extends HTMLAttributes<HTMLDivElement> {
-        children?: Snippet;
-    }
+  interface Props extends HTMLAttributes<HTMLDivElement> {
+    children?: Snippet;
+  }
 
-    let { class: className, children, ...restProps }: Props = $props();
+  let { class: className, children, ...restProps }: Props = $props();
 </script>
 
 <div
-    class={cn("text-muted-foreground text-sm", className)}
-    data-slot="frame-panel-description"
-    {...restProps}
+  class={cn('text-muted-foreground text-sm', className)}
+  data-slot="frame-panel-description"
+  {...restProps}
 >
-    {@render children?.()}
+  {@render children?.()}
 </div>

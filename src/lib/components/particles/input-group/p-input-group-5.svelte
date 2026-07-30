@@ -3,8 +3,8 @@
     InputGroup,
     InputGroupAddon,
     InputGroupInput,
-    InputGroupText,
-  } from "$lib/components/ui/input-group";
+    InputGroupText
+  } from '$lib/components/ui/input-group';
 </script>
 
 <InputGroup>

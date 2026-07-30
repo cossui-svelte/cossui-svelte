@@ -1,8 +1,8 @@
 <script lang="ts" generics="T extends Record<string, unknown>">
-  import type { WithElementRef } from "bits-ui";
-  import type { HTMLFormAttributes } from "svelte/elements";
-  import type { SuperForm } from "sveltekit-superforms";
-  import { setFormContext } from "./form-context.svelte";
+  import type { WithElementRef } from 'bits-ui';
+  import type { HTMLFormAttributes } from 'svelte/elements';
+  import type { SuperForm } from 'sveltekit-superforms';
+  import { setFormContext } from './form-context.svelte';
 
   let {
     ref = $bindable(null),
@@ -17,7 +17,7 @@
     }
   > = $props();
 
-   setFormContext(superform);
+  setFormContext(superform);
 </script>
 
 <form

@@ -9,7 +9,7 @@
     ComboboxEmpty,
     ComboboxItem,
     ComboboxList,
-    ComboboxPopup,
+    ComboboxPopup
   } from '$lib/components/ui/combobox';
   import { Field, FieldDescription, FieldError, FieldLabel } from '$lib/components/ui/field';
   import { Form } from '$lib/components/ui/form';
@@ -25,17 +25,17 @@
     { label: 'Peach', value: 'peach' },
     { label: 'Pear', value: 'pear' },
     { label: 'Pineapple', value: 'pineapple' },
-    { label: 'Strawberry', value: 'strawberry' },
+    { label: 'Strawberry', value: 'strawberry' }
   ];
 
   const schema = z.object({
-    fruits: z.array(z.string()).min(1, { message: 'Please select at least one fruit.' }),
+    fruits: z.array(z.string()).min(1, { message: 'Please select at least one fruit.' })
   });
 
   const superform = createForm({
     initialData: { fruits: ['apple', 'mango'] },
     onUpdated: ({ fruits }) => alert(`Selected: ${fruits.join(', ')}`),
-    schema,
+    schema
   });
 
   const { form, submitting } = superform;

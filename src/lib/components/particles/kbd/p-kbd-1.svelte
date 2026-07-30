@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Kbd, KbdGroup } from "$lib/components/ui/kbd";
+  import { Kbd, KbdGroup } from '$lib/components/ui/kbd';
 </script>
 
 <div class="flex flex-col gap-4">

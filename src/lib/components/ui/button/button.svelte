@@ -1,13 +1,9 @@
 <script lang="ts">
-  import { Button } from "bits-ui";
-  import type { Snippet } from "svelte";
-  import { Spinner } from "$lib/components/ui/spinner";
-  import { cn } from "$lib/utils";
-  import {
-    type ButtonSize,
-    type ButtonVariant,
-    buttonVariants,
-  } from "./button-variants";
+  import { Button } from 'bits-ui';
+  import type { Snippet } from 'svelte';
+  import { Spinner } from '$lib/components/ui/spinner';
+  import { cn } from '$lib/utils';
+  import { type ButtonSize, type ButtonVariant, buttonVariants } from './button-variants';
 
   let {
     ref = $bindable(null),
@@ -28,7 +24,7 @@
 
 <Button.Root
   bind:ref
-  class={cn(buttonVariants({ size , variant}), className)}
+  class={cn(buttonVariants({ size, variant }), className)}
   data-slot="button"
   {...restProps}
 >

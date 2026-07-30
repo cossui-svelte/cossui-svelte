@@ -1,24 +1,20 @@
 <script lang="ts">
-  import { ContextMenu } from "bits-ui";
-  import type { Snippet } from "svelte";
-  import { cn } from "$lib/utils";
+  import { ContextMenu } from 'bits-ui';
+  import type { Snippet } from 'svelte';
+  import { cn } from '$lib/utils';
 
-  interface Props extends Omit<ContextMenu.RadioItemProps, "children"> {
+  interface Props extends Omit<ContextMenu.RadioItemProps, 'children'> {
     children?: Snippet;
   }
 
-  let {
-    children: userContent,
-    class: className,
-    ...restProps
-  }: Props = $props();
+  let { children: userContent, class: className, ...restProps }: Props = $props();
 </script>
 
 <ContextMenu.RadioItem
   closeOnSelect={false}
   class={cn(
     "grid min-h-8 in-data-[side=none]:min-w-[calc(var(--anchor-width)+1.25rem)] cursor-default grid-cols-[.75rem_1fr] items-center gap-2 rounded-sm py-1 ps-2 pe-4 text-base text-foreground outline-none data-disabled:pointer-events-none data-highlighted:bg-accent data-highlighted:text-accent-foreground data-disabled:opacity-64 sm:min-h-7 sm:text-sm [&_svg:not([class*='size-'])]:size-4.5 sm:[&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
-    className,
+    className
   )}
   data-slot="context-menu-radio-item"
   {...restProps}

@@ -1,19 +1,17 @@
 <script lang="ts">
-  import { onMount } from "svelte";
-  import { FOLLOWER_COUNT, GITHUB_PROJECT} from "$lib/config";
-  import { Button } from "../ui/button";
+  import { onMount } from 'svelte';
+  import { FOLLOWER_COUNT, GITHUB_PROJECT } from '$lib/config';
+  import { Button } from '../ui/button';
 
   export const FALLBACK_STAR_COUNT = 8000;
 
   async function getGithubStarCount() {
     try {
-      const res = await fetch(
-        FOLLOWER_COUNT,
-      );
+      const res = await fetch(FOLLOWER_COUNT);
       const data = (await res.json()) as { repo?: { stars?: number } };
       return data.repo?.stars ?? FALLBACK_STAR_COUNT;
     } catch (error) {
-      console.info(error)
+      console.info(error);
       return FALLBACK_STAR_COUNT;
     }
   }

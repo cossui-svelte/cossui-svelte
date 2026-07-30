@@ -8,7 +8,7 @@
 
   const schema = z.object({
     company: z.string(),
-    taxId: z.string(),
+    taxId: z.string()
   });
 
   const superform = createForm({ schema });
@@ -16,7 +16,9 @@
 
 <Form {superform} class="contents">
   <Fieldset class="flex w-full flex-col gap-6" data-slot="fieldset">
-    <FieldsetLegend class="font-semibold text-foreground" data-slot="fieldset-legend">Billing Details</FieldsetLegend>
+    <FieldsetLegend class="font-semibold text-foreground" data-slot="fieldset-legend"
+      >Billing Details</FieldsetLegend
+    >
 
     <Field name="company">
       <FieldLabel>Company</FieldLabel>

@@ -4,8 +4,8 @@
     ProgressIndicator,
     ProgressLabel,
     ProgressTrack,
-    ProgressValue,
-  } from "$lib/components/ui/progress";
+    ProgressValue
+  } from '$lib/components/ui/progress';
 </script>
 
 <Progress value={60}>

@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Collapsible } from "bits-ui";
-  import type { Snippet } from "svelte";
-  import { cn } from "$lib/utils";
+  import { Collapsible } from 'bits-ui';
+  import type { Snippet } from 'svelte';
+  import { cn } from '$lib/utils';
 
   type Props = Collapsible.TriggerProps & { children?: Snippet };
 
@@ -9,7 +9,7 @@
 </script>
 
 <Collapsible.Trigger
-  class={cn("cursor-pointer [&_svg]:transition-transform [&_svg]:duration-200", className)}
+  class={cn('cursor-pointer [&_svg]:transition-transform [&_svg]:duration-200', className)}
   data-slot="collapsible-trigger"
   {...restProps}
 >

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { z } from "zod";
+  import { z } from 'zod';
   import {
     AlertDialog,
     AlertDialogClose,
@@ -7,9 +7,9 @@
     AlertDialogFooter,
     AlertDialogHeader,
     AlertDialogPopup,
-    AlertDialogTitle,
-  } from "$lib/components/ui/alert-dialog";
-  import { Button, buttonVariants } from "$lib/components/ui/button";
+    AlertDialogTitle
+  } from '$lib/components/ui/alert-dialog';
+  import { Button, buttonVariants } from '$lib/components/ui/button';
   import {
     Dialog,
     DialogClose,
@@ -19,27 +19,27 @@
     DialogPanel,
     DialogPopup,
     DialogTitle,
-    DialogTrigger,
-  } from "$lib/components/ui/dialog";
-  import { Field } from "$lib/components/ui/field";
-  import { Form } from "$lib/components/ui/form";
-  import { Textarea } from "$lib/components/ui/textarea";
-  import { createForm } from "$lib/hooks/use-superform";
+    DialogTrigger
+  } from '$lib/components/ui/dialog';
+  import { Field } from '$lib/components/ui/field';
+  import { Form } from '$lib/components/ui/form';
+  import { Textarea } from '$lib/components/ui/textarea';
+  import { createForm } from '$lib/hooks/use-superform';
 
   let dialogOpen = $state(false);
   let confirmOpen = $state(false);
-  let value = $state("");
+  let value = $state('');
 
   const schema = z.object({
-    v: z.string().min(1),
+    v: z.string().min(1)
   });
 
   const superform = createForm({
-    initialData:{v:"some text"},
+    initialData: { v: 'some text' },
     onUpdated: () => {
       dialogOpen = false;
     },
-    schema,
+    schema
   });
 </script>
 
@@ -54,7 +54,7 @@
   }}
 >
   <DialogTrigger
-    class={buttonVariants({ variant: "outline" })}
+    class={buttonVariants({ variant: 'outline' })}
     onclick={() => {
       dialogOpen = true;
     }}
@@ -73,12 +73,10 @@
         </Field>
       </DialogPanel>
       <DialogFooter>
-        <DialogClose class={buttonVariants({ variant: "ghost" })}
-          >Cancel</DialogClose
-        >
+        <DialogClose class={buttonVariants({ variant: 'ghost' })}>Cancel</DialogClose>
         <Button
           onclick={() => {
-            value = "";
+            value = '';
             dialogOpen = false;
           }}
         >
@@ -98,13 +96,11 @@
       </AlertDialogDescription>
     </AlertDialogHeader>
     <AlertDialogFooter>
-      <AlertDialogClose class={buttonVariants({ variant: "ghost" })}>
-        Keep editing
-      </AlertDialogClose>
+      <AlertDialogClose class={buttonVariants({ variant: 'ghost' })}>Keep editing</AlertDialogClose>
       <Button
         variant="destructive"
         onclick={() => {
-          value = "";
+          value = '';
           confirmOpen = false;
           dialogOpen = false;
         }}

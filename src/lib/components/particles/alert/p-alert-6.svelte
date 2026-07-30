@@ -1,10 +1,6 @@
 <script lang="ts">
-  import TriangleAlert from "@lucide/svelte/icons/triangle-alert";
-  import {
-    Alert,
-    AlertDescription,
-    AlertTitle,
-  } from "$lib/components/ui/alert";
+  import TriangleAlert from '@lucide/svelte/icons/triangle-alert';
+  import { Alert, AlertDescription, AlertTitle } from '$lib/components/ui/alert';
 </script>
 
 <Alert variant="warning">

@@ -1,26 +1,19 @@
 <script lang="ts">
-  import Mic from "@lucide/svelte/icons/mic";
-  import Paperclip from "@lucide/svelte/icons/paperclip";
-  import { Button, buttonVariants } from "$lib/components/ui/button";
-  import { Group } from "$lib/components/ui/group";
-  import {
-    InputGroup,
-    InputGroupAddon,
-    InputGroupInput,
-  } from "$lib/components/ui/input-group";
+  import Mic from '@lucide/svelte/icons/mic';
+  import Paperclip from '@lucide/svelte/icons/paperclip';
+  import { Button, buttonVariants } from '$lib/components/ui/button';
+  import { Group } from '$lib/components/ui/group';
+  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';
   import {
     Tooltip,
     TooltipContent,
     TooltipProvider,
-    TooltipTrigger,
-  } from "$lib/components/ui/tooltip";
+    TooltipTrigger
+  } from '$lib/components/ui/tooltip';
 </script>
 
 <TooltipProvider>
-  <Group
-    aria-label="Message composer"
-    class="[--radius-lg:9999px] [--radius:9999rem]"
-  >
+  <Group aria-label="Message composer" class="[--radius-lg:9999px] [--radius:9999rem]">
     <Group aria-label="Attachments">
       <Button aria-label="Attach file" size="icon" variant="outline">
         <Paperclip aria-hidden />
@@ -33,7 +26,7 @@
           <Tooltip>
             <TooltipTrigger
               aria-label="Voice Mode"
-              class={buttonVariants({ size: "icon-xs", variant: "ghost" })}
+              class={buttonVariants({ size: 'icon-xs', variant: 'ghost' })}
             >
               <Mic aria-hidden />
             </TooltipTrigger>

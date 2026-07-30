@@ -1,11 +1,11 @@
 <script module lang="ts">
-  import { getContext, setContext } from "svelte";
+  import { getContext, setContext } from 'svelte';
 
   interface AutocompleteCtx {
     setInputEl(el: HTMLInputElement | null): void;
   }
 
-  const AUTOCOMPLETE_CTX_KEY = Symbol("autocomplete");
+  const AUTOCOMPLETE_CTX_KEY = Symbol('autocomplete');
 
   export function setAutocompleteCtx(ctx: AutocompleteCtx): void {
     setContext(AUTOCOMPLETE_CTX_KEY, ctx);
@@ -17,12 +17,12 @@
 </script>
 
 <script lang="ts">
-  import { Combobox } from "bits-ui";
-  import type { Snippet } from "svelte";
-  import { tick } from "svelte";
+  import { Combobox } from 'bits-ui';
+  import type { Snippet } from 'svelte';
+  import { tick } from 'svelte';
 
-  type SingleRootProps = Extract<Combobox.RootProps, { type: "single" }>;
-  type Props = (Combobox.RootProps | (Omit<SingleRootProps, "type"> & { type?: undefined })) & {
+  type SingleRootProps = Extract<Combobox.RootProps, { type: 'single' }>;
+  type Props = (Combobox.RootProps | (Omit<SingleRootProps, 'type'> & { type?: undefined })) & {
     /**
      * Whether to automatically highlight the first item when the popup opens.
      *
@@ -57,7 +57,7 @@
     if (internalOpen && autoHighlight) {
       tick().then(() => {
         inputEl?.dispatchEvent(
-          new KeyboardEvent("keydown", { bubbles: true, cancelable: true, key: "ArrowDown" }),
+          new KeyboardEvent('keydown', { bubbles: true, cancelable: true, key: 'ArrowDown' })
         );
       });
     }
@@ -66,7 +66,7 @@
   setAutocompleteCtx({
     setInputEl(el) {
       inputEl = el;
-    },
+    }
   });
 </script>
 

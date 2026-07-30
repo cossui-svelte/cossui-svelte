@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Command } from "bits-ui";
-  import type { Snippet } from "svelte";
-  import { cn } from "$lib/utils";
+  import { Command } from 'bits-ui';
+  import type { Snippet } from 'svelte';
+  import { cn } from '$lib/utils';
 
   type Props = Command.ItemProps & { children?: Snippet };
 
@@ -10,8 +10,8 @@
 
 <Command.Item
   class={cn(
-    "flex min-h-8 cursor-default select-none items-center rounded-sm px-2 py-1.5 text-base outline-none data-disabled:pointer-events-none data-selected:bg-accent data-selected:text-accent-foreground data-disabled:opacity-64 sm:min-h-7 sm:text-sm",
-    className,
+    'flex min-h-8 cursor-default select-none items-center rounded-sm px-2 py-1.5 text-base outline-none data-disabled:pointer-events-none data-selected:bg-accent data-selected:text-accent-foreground data-disabled:opacity-64 sm:min-h-7 sm:text-sm',
+    className
   )}
   data-slot="command-item"
   {...restProps}

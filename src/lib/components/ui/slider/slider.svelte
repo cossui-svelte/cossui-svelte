@@ -1,36 +1,36 @@
 <script lang="ts">
-  import { Slider as SliderPrimitive } from "bits-ui";
-  import { on } from "svelte/events";
+  import { Slider as SliderPrimitive } from 'bits-ui';
+  import { on } from 'svelte/events';
   import {
     Tooltip,
     TooltipContent,
     TooltipProvider,
-    TooltipTrigger,
-  } from "$lib/components/ui/tooltip";
-  import { cn } from "$lib/utils";
+    TooltipTrigger
+  } from '$lib/components/ui/tooltip';
+  import { cn } from '$lib/utils';
 
   let {
     class: className,
-    orientation = "horizontal",
+    orientation = 'horizontal',
     ref = $bindable(null),
     showTooltip = false,
-    thumbCollisionBehavior = "swap",
+    thumbCollisionBehavior = 'swap',
     tooltipContent,
     value = $bindable(),
     ...restProps
   }: {
     class?: string;
-    orientation?: "horizontal" | "vertical";
+    orientation?: 'horizontal' | 'vertical';
     ref?: HTMLElement | null;
     showTooltip?: boolean;
     /** Whether thumbs swap position (push past one another) or can overlap/cross when dragged into each other. */
-    thumbCollisionBehavior?: "swap" | "none";
+    thumbCollisionBehavior?: 'swap' | 'none';
     tooltipContent?: (value: number) => number | string;
     value?: number | number[];
     [key: string]: unknown;
   } = $props();
 
-  const type =(Array.isArray(value) && value.length > 1) ? "multiple": "single"
+  const type = Array.isArray(value) && value.length > 1 ? 'multiple' : 'single';
 
   // bits-ui's own `autoSort` prevents crossing by swapping which thumb is
   // "active" at the collision point, which reads as a jump/handoff rather
@@ -38,11 +38,7 @@
   // thumb(s) in lockstep with whichever thumb is actually being dragged,
   // so the same thumb stays under the pointer the whole time.
   function handleBitsUiValueChange(newValue: number | number[]) {
-    if (
-      thumbCollisionBehavior === "none" ||
-      !Array.isArray(newValue) ||
-      newValue.length < 2
-    ) {
+    if (thumbCollisionBehavior === 'none' || !Array.isArray(newValue) || newValue.length < 2) {
       value = newValue;
       return;
     }
@@ -78,7 +74,7 @@
 
   $effect(() => {
     if (showTooltip) {
-      return on(document, "pointerup", handlePointerUp);
+      return on(document, 'pointerup', handlePointerUp);
     }
   });
 </script>
@@ -93,16 +89,13 @@
 
 <SliderPrimitive.Root
   bind:ref
-  bind:value={
-    () => value as never,
-    (v: never) => handleBitsUiValueChange(v as number | number[])
-  }
+  bind:value={() => value as never, (v: never) => handleBitsUiValueChange(v as number | number[])}
   autoSort={false}
   {orientation}
   type={type as never}
   class={cn(
-    "relative flex touch-none items-center select-none data-disabled:pointer-events-none data-[orientation=horizontal]:w-full data-[orientation=horizontal]:min-w-44 data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:flex-col data-disabled:opacity-64",
-    className,
+    'relative flex touch-none items-center select-none data-disabled:pointer-events-none data-[orientation=horizontal]:w-full data-[orientation=horizontal]:min-w-44 data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:flex-col data-disabled:opacity-64',
+    className
   )}
   data-slot="slider"
   {...restProps}
@@ -130,12 +123,12 @@
                 {@render thumb({
                   index: thumbItem.index,
                   ...props,
-                  onpointerdown: handlePointerDown,
+                  onpointerdown: handlePointerDown
                 })}
               {/snippet}
             </TooltipTrigger>
             <TooltipContent
-              side={orientation === "vertical" ? "right" : "top"}
+              side={orientation === 'vertical' ? 'right' : 'top'}
               sideOffset={8}
               class="border-input bg-popover text-muted-foreground animate-in fade-in zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 overflow-hidden rounded-md border px-2 py-1 text-xs outline-hidden"
             >

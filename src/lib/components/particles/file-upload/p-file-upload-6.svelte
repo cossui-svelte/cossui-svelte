@@ -72,7 +72,12 @@
       <div class="flex w-full flex-col gap-3">
         <div class="flex items-center justify-between gap-2">
           <h3 class="truncate font-medium text-sm">Uploaded Files ({fileUpload.files.length})</h3>
-          <Button disabled={fileUpload.files.length >= maxFiles} onclick={fileUpload.openFileDialog} size="sm" variant="outline">
+          <Button
+            disabled={fileUpload.files.length >= maxFiles}
+            onclick={fileUpload.openFileDialog}
+            size="sm"
+            variant="outline"
+          >
             <Upload aria-hidden="true" class="-ms-0.5 size-3.5 opacity-60" />
             Add more
           </Button>
@@ -81,7 +86,11 @@
         <div class="grid grid-cols-2 gap-4 md:grid-cols-3">
           {#each fileUpload.files as file (file.id)}
             <div class="relative aspect-square rounded-md bg-accent">
-              <img alt={file.file.name} class="size-full rounded-[inherit] object-cover" src={file.preview} />
+              <img
+                alt={file.file.name}
+                class="size-full rounded-[inherit] object-cover"
+                src={file.preview}
+              />
               <Button
                 aria-label="Remove image"
                 class="absolute -top-2 -right-2 size-6 rounded-full border-2 border-background shadow-none focus-visible:border-background"
@@ -96,7 +105,10 @@
       </div>
     {:else}
       <div class="flex flex-col items-center justify-center px-4 py-3 text-center">
-        <div aria-hidden="true" class="mb-2 flex size-11 shrink-0 items-center justify-center rounded-full border bg-background">
+        <div
+          aria-hidden="true"
+          class="mb-2 flex size-11 shrink-0 items-center justify-center rounded-full border bg-background"
+        >
           <Image class="size-4 opacity-60" />
         </div>
         <p class="mb-1.5 font-medium text-sm">Drop your images here</p>

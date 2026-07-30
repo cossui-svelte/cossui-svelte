@@ -1,11 +1,8 @@
 <script lang="ts">
-  import { getContext } from "svelte";
-  import type { HTMLAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils";
-  import {
-    PROGRESS_CONTEXT_KEY,
-    type ProgressContext,
-  } from "./progress.svelte";
+  import { getContext } from 'svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
+  import { cn } from '$lib/utils';
+  import { PROGRESS_CONTEXT_KEY, type ProgressContext } from './progress.svelte';
 
   type Props = HTMLAttributes<HTMLSpanElement>;
 
@@ -15,7 +12,7 @@
 </script>
 
 <span
-  class={cn("text-foreground text-sm tabular-nums", className)}
+  class={cn('text-foreground text-sm tabular-nums', className)}
   data-slot="progress-value"
   {...restProps}
 >

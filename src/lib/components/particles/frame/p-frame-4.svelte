@@ -4,9 +4,9 @@
     FrameDescription,
     FrameHeader,
     FramePanel,
-    FrameTitle,
-  } from "$lib/components/ui/frame";
-  import { Separator } from "$lib/components/ui/separator";
+    FrameTitle
+  } from '$lib/components/ui/frame';
+  import { Separator } from '$lib/components/ui/separator';
 </script>
 
 <Frame class="w-full">

@@ -96,11 +96,16 @@
       class="sr-only"
     />
     <div class="flex flex-col items-center justify-center text-center">
-      <div aria-hidden="true" class="mb-2 flex size-11 shrink-0 items-center justify-center rounded-full border bg-background">
+      <div
+        aria-hidden="true"
+        class="mb-2 flex size-11 shrink-0 items-center justify-center rounded-full border bg-background"
+      >
         <File class="size-4 opacity-60" />
       </div>
       <p class="mb-1.5 font-medium text-sm">Upload files</p>
-      <p class="text-muted-foreground text-xs">Max {maxFiles} files &middot; Up to {formatBytes(maxSize)}</p>
+      <p class="text-muted-foreground text-xs">
+        Max {maxFiles} files &middot; Up to {formatBytes(maxSize)}
+      </p>
       <Button class="mt-4" onclick={fileUpload.openFileDialog} variant="outline">
         <Upload aria-hidden="true" class="-ms-1 opacity-60" />
         Select files

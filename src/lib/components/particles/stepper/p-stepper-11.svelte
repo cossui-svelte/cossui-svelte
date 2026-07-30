@@ -6,25 +6,25 @@
     StepperItem,
     StepperSeparator,
     StepperTitle,
-    StepperTrigger,
-  } from "$lib/components/ui/stepper";
+    StepperTrigger
+  } from '$lib/components/ui/stepper';
 
   const steps = [
     {
-      description: "Desc for step one",
+      description: 'Desc for step one',
       step: 1,
-      title: "Step One",
+      title: 'Step One'
     },
     {
-      description: "Desc for step two",
+      description: 'Desc for step two',
       step: 2,
-      title: "Step Two",
+      title: 'Step Two'
     },
     {
-      description: "Desc for step three",
+      description: 'Desc for step three',
       step: 3,
-      title: "Step Three",
-    },
+      title: 'Step Three'
+    }
   ];
 </script>
 

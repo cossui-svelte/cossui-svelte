@@ -10,5 +10,5 @@
     id: box.with(() => id)
   });
 </script>
-  
+
 {@render children?.({ props: controlState.props })}

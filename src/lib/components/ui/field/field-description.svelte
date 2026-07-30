@@ -25,7 +25,11 @@
 
   const mergedProps = $derived(
     mergeProps(
-      { 'data-slot': 'field-description', class: cn('text-muted-foreground text-xs', className), ...restProps },
+      {
+        'data-slot': 'field-description',
+        class: cn('text-muted-foreground text-xs', className),
+        ...restProps
+      },
       descriptionState.props
     )
   );

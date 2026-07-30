@@ -1,17 +1,13 @@
 <script lang="ts">
-  import { Accordion } from "bits-ui";
-  import { cn } from "$lib/utils";
+  import { Accordion } from 'bits-ui';
+  import { cn } from '$lib/utils';
 
-  let {
-    ref = $bindable(null),
-    class: className,
-    ...restProps
-  }: Accordion.ItemProps = $props();
+  let { ref = $bindable(null), class: className, ...restProps }: Accordion.ItemProps = $props();
 </script>
 
 <Accordion.Item
   bind:ref
-  class={cn("border-b last:border-b-0", className)}
+  class={cn('border-b last:border-b-0', className)}
   data-slot="accordion-item"
   {...restProps}
 />

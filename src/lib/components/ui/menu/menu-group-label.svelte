@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { DropdownMenu } from "bits-ui";
-  import type { Snippet } from "svelte";
-  import { cn } from "$lib/utils";
+  import { DropdownMenu } from 'bits-ui';
+  import type { Snippet } from 'svelte';
+  import { cn } from '$lib/utils';
 
   interface Props extends DropdownMenu.GroupHeadingProps {
     children?: Snippet;
@@ -13,8 +13,8 @@
 
 <DropdownMenu.GroupHeading
   class={cn(
-    "px-2 py-1.5 font-medium text-muted-foreground text-xs data-inset:ps-9 sm:data-inset:ps-8",
-    className,
+    'px-2 py-1.5 font-medium text-muted-foreground text-xs data-inset:ps-9 sm:data-inset:ps-8',
+    className
   )}
   data-inset={inset}
   data-slot="menu-label"

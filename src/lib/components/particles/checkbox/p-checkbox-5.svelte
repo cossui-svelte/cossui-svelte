@@ -1,18 +1,18 @@
 <script lang="ts">
-  import { z } from "zod";
-  import { Button } from "$lib/components/ui/button";
-  import { Checkbox } from "$lib/components/ui/checkbox";
-  import { Field, FieldLabel } from "$lib/components/ui/field";
-  import { Form } from "$lib/components/ui/form";
-  import { createForm } from "$lib/hooks/use-superform";
+  import { z } from 'zod';
+  import { Button } from '$lib/components/ui/button';
+  import { Checkbox } from '$lib/components/ui/checkbox';
+  import { Field, FieldLabel } from '$lib/components/ui/field';
+  import { Form } from '$lib/components/ui/form';
+  import { createForm } from '$lib/hooks/use-superform';
 
   const schema = z.object({
-    terms: z.boolean(),
+    terms: z.boolean()
   });
 
   const superform = createForm({
     onUpdated: (data) => alert(`Terms: ${data.terms}`),
-    schema,
+    schema
   });
 
   const { form: formData, submitting } = superform;

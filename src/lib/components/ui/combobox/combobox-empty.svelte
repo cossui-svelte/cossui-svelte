@@ -1,8 +1,8 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import type { HTMLAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils";
-  import { getComboboxCtx } from "./combobox.svelte";
+  import type { Snippet } from 'svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
+  import { cn } from '$lib/utils';
+  import { getComboboxCtx } from './combobox.svelte';
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
     children?: Snippet;
@@ -16,10 +16,7 @@
 
 {#if visible}
   <div
-    class={cn(
-      "p-2 text-center text-base text-muted-foreground sm:text-sm",
-      className,
-    )}
+    class={cn('p-2 text-center text-base text-muted-foreground sm:text-sm', className)}
     data-slot="combobox-empty"
     {...restProps}
   >

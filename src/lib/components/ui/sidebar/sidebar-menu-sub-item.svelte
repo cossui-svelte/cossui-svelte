@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import type { HTMLAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils";
+  import type { Snippet } from 'svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
+  import { cn } from '$lib/utils';
 
   interface Props extends HTMLAttributes<HTMLLIElement> {
     children?: Snippet;
@@ -11,7 +11,7 @@
 </script>
 
 <li
-  class={cn("group/menu-sub-item relative", className)}
+  class={cn('group/menu-sub-item relative', className)}
   data-sidebar="menu-sub-item"
   data-slot="sidebar-menu-sub-item"
   {...restProps}

@@ -1,19 +1,19 @@
 <script lang="ts">
-  import Atom from "@lucide/svelte/icons/atom";
-  import BookOpen from "@lucide/svelte/icons/book-open";
-  import CornerDownLeft from "@lucide/svelte/icons/corner-down-left";
-  import Search from "@lucide/svelte/icons/search";
-  import { buttonVariants } from "$lib/components/ui/button";
+  import Atom from '@lucide/svelte/icons/atom';
+  import BookOpen from '@lucide/svelte/icons/book-open';
+  import CornerDownLeft from '@lucide/svelte/icons/corner-down-left';
+  import Search from '@lucide/svelte/icons/search';
+  import { buttonVariants } from '$lib/components/ui/button';
   import {
     Dialog,
     DialogContent,
     DialogOverlay,
     DialogPortal,
-    DialogTrigger,
-  } from "$lib/components/ui/dialog";
-  import { Kbd, KbdGroup } from "$lib/components/ui/kbd";
-  import { useIsMac } from "$lib/hooks/use-is-mac.svelte";
-  import { cn } from "$lib/utils";
+    DialogTrigger
+  } from '$lib/components/ui/dialog';
+  import { Kbd, KbdGroup } from '$lib/components/ui/kbd';
+  import { useIsMac } from '$lib/hooks/use-is-mac.svelte';
+  import { cn } from '$lib/utils';
 
   interface PageItem {
     isComponent: boolean;
@@ -30,14 +30,14 @@
 
   interface PageNode {
     name: string | unknown;
-    type: "page";
+    type: 'page';
     url: string;
   }
 
   interface FolderNode {
     children: (PageNode | FolderNode)[];
     name: string | unknown;
-    type: "folder";
+    type: 'folder';
   }
 
   interface NavTree {
@@ -46,16 +46,16 @@
 
   interface Props {
     navItems?: { href: string; label: string }[];
-    packageManager?: "pnpm" | "npm" | "yarn" | "bun";
+    packageManager?: 'pnpm' | 'npm' | 'yarn' | 'bun';
     tree?: NavTree;
   }
 
-  let { tree, navItems, packageManager = "pnpm" }: Props = $props();
+  let { tree, navItems, packageManager = 'pnpm' }: Props = $props();
 
   let open = $state(false);
-  let query = $state("");
-  let selectedType = $state<"page" | "component" | null>(null);
-  let copyPayload = $state("");
+  let query = $state('');
+  let selectedType = $state<'page' | 'component' | null>(null);
+  let copyPayload = $state('');
 
   // Detect macOS
   let isMac = useIsMac();
@@ -69,29 +69,29 @@
         groups.push({
           items: navItems.map((item) => ({
             isComponent: false,
-            keywords: ["nav", "navigation", item.label.toLowerCase()],
+            keywords: ['nav', 'navigation', item.label.toLowerCase()],
             label: item.label,
             url: item.href,
-            value: `Navigation ${item.label}`,
+            value: `Navigation ${item.label}`
           })),
-          value: "Pages",
+          value: 'Pages'
         });
       }
 
       if (tree) {
         tree.children.forEach((group) => {
-          if (group.type === "folder") {
+          if (group.type === 'folder') {
             const items: PageItem[] = [];
             group.children.forEach((item) => {
-              if (item.type === "page") {
-                const isComponent = item.url.includes("/components/");
-                const itemName = String(item.name ?? "");
+              if (item.type === 'page') {
+                const isComponent = item.url.includes('/components/');
+                const itemName = String(item.name ?? '');
                 items.push({
                   isComponent,
-                  keywords: isComponent ? ["component"] : undefined,
+                  keywords: isComponent ? ['component'] : undefined,
                   label: itemName,
                   url: item.url,
-                  value: itemName ? `${String(group.name)} ${itemName}` : "",
+                  value: itemName ? `${String(group.name)} ${itemName}` : ''
                 });
               }
             });
@@ -103,7 +103,7 @@
       }
 
       return groups;
-    })(),
+    })()
   );
 
   // Filter items based on search query
@@ -116,28 +116,27 @@
           ...group,
           items: group.items.filter(
             (item) =>
-              item.label.toLowerCase().includes(q) ||
-              item.keywords?.some((k) => k.includes(q)),
-          ),
+              item.label.toLowerCase().includes(q) || item.keywords?.some((k) => k.includes(q))
+          )
         }))
         .filter((group) => group.items.length > 0);
-    })(),
+    })()
   );
 
   function handleItemHighlight(item: PageItem) {
     if (item.isComponent) {
-      const componentName = item.url.split("/").pop();
-      selectedType = "component";
+      const componentName = item.url.split('/').pop();
+      selectedType = 'component';
       const registryItem = `@coss/${componentName}`;
       let cmd: string;
       switch (packageManager) {
-        case "pnpm":
+        case 'pnpm':
           cmd = `pnpm dlx shadcn@latest add ${registryItem}`;
           break;
-        case "bun":
+        case 'bun':
           cmd = `bunx --bun shadcn@latest add ${registryItem}`;
           break;
-        case "yarn":
+        case 'yarn':
           cmd = `yarn dlx shadcn@latest add ${registryItem}`;
           break;
         default:
@@ -145,8 +144,8 @@
       }
       copyPayload = cmd;
     } else {
-      selectedType = "page";
-      copyPayload = "";
+      selectedType = 'page';
+      copyPayload = '';
     }
   }
 
@@ -155,14 +154,14 @@
       try {
         await navigator.clipboard.writeText(copyPayload);
       } catch (err) {
-        console.error("Failed to copy:", err);
+        console.error('Failed to copy:', err);
       }
     }
   }
 
   $effect(() => {
     function handleKeyDown(e: KeyboardEvent) {
-      if ((e.key === "k" && (e.metaKey || e.ctrlKey)) || e.key === "/") {
+      if ((e.key === 'k' && (e.metaKey || e.ctrlKey)) || e.key === '/') {
         if (
           (e.target instanceof HTMLElement && e.target.isContentEditable) ||
           e.target instanceof HTMLInputElement ||
@@ -175,15 +174,15 @@
         open = !open;
       }
 
-      if (e.key === "c" && (e.metaKey || e.ctrlKey) && open) {
-        if (selectedType === "page" || selectedType === "component") {
+      if (e.key === 'c' && (e.metaKey || e.ctrlKey) && open) {
+        if (selectedType === 'page' || selectedType === 'component') {
           copyPayloadToClipboard();
         }
       }
     }
 
-    document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
   });
 </script>
 
@@ -193,10 +192,7 @@
     {#snippet child({ props })}
       <button
         {...props}
-        class={cn(
-          buttonVariants({ variant: "outline" }),
-          "gap-2 text-muted-foreground",
-        )}
+        class={cn(buttonVariants({ variant: 'outline' }), 'gap-2 text-muted-foreground')}
         type="button"
       >
         <Search class="size-4" strokeWidth={2} />
@@ -230,20 +226,17 @@
       <!-- Results -->
       <div class="max-h-[60vh] overflow-y-auto p-2">
         {#if filteredGroups.length === 0}
-          <div class="px-4 py-8 text-center text-muted-foreground text-sm">
-            No results found.
-          </div>
+          <div class="px-4 py-8 text-center text-muted-foreground text-sm">No results found.</div>
         {:else}
           {#each filteredGroups as group (group.value)}
             <div class="mb-2">
-              <div
-                class="px-2 py-1.5 text-muted-foreground text-xs font-medium"
-              >
+              <div class="px-2 py-1.5 text-muted-foreground text-xs font-medium">
                 {group.value}
               </div>
               {#each group.items as item (item.value)}
                 <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- item.url comes from the pre-built docs/particles content tree, already app-relative -->
-                <a href={item.url}
+                <a
+                  href={item.url}
                   class="flex w-full items-center gap-2 rounded-md px-2 py-2 text-sm transition-colors hover:bg-accent focus:bg-accent focus:outline-none"
                   onclick={() => {
                     open = false;

@@ -1,10 +1,6 @@
 <script lang="ts">
-  import { Badge } from "$lib/components/ui/badge";
-  import {
-    InputGroup,
-    InputGroupAddon,
-    InputGroupInput,
-  } from "$lib/components/ui/input-group";
+  import { Badge } from '$lib/components/ui/badge';
+  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';
 </script>
 
 <InputGroup>

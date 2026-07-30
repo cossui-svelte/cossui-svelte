@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Skeleton } from "$lib/components/ui/skeleton";
+  import { Skeleton } from '$lib/components/ui/skeleton';
 </script>
 
 <Skeleton loading={true} class="flex w-full max-w-92 items-center gap-4">

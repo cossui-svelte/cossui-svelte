@@ -1,19 +1,28 @@
 <script lang="ts">
-  import { Select, SelectGroup, SelectGroupLabel, SelectItem, SelectPopup, SelectSeparator, SelectTrigger, SelectValue } from "$lib/components/ui/select";
+  import {
+    Select,
+    SelectGroup,
+    SelectGroupLabel,
+    SelectItem,
+    SelectPopup,
+    SelectSeparator,
+    SelectTrigger,
+    SelectValue
+  } from '$lib/components/ui/select';
 
   const frontend = [
-    { label: "Next.js", value: "next" },
-    { label: "Vite", value: "vite" },
-    { label: "Astro", value: "astro" },
+    { label: 'Next.js', value: 'next' },
+    { label: 'Vite', value: 'vite' },
+    { label: 'Astro', value: 'astro' }
   ];
 
   const backend = [
-    { label: "Express", value: "express" },
-    { label: "NestJS", value: "nestjs" },
-    { label: "Fastify", value: "fastify" },
-    { label: "Django", value: "django" },
-    { label: "Flask", value: "flask" },
-    { label: "Rails", value: "rails" },
+    { label: 'Express', value: 'express' },
+    { label: 'NestJS', value: 'nestjs' },
+    { label: 'Fastify', value: 'fastify' },
+    { label: 'Django', value: 'django' },
+    { label: 'Flask', value: 'flask' },
+    { label: 'Rails', value: 'rails' }
   ];
 </script>
 

@@ -3,29 +3,31 @@
     Accordion,
     AccordionItem,
     AccordionPanel,
-    AccordionTrigger,
-  } from "$lib/components/ui/accordion";
+    AccordionTrigger
+  } from '$lib/components/ui/accordion';
 
   const items = [
     {
-      content: "Base UI is a library of high-quality unstyled React components for design systems and web apps.",
-      id: "1",
-      title: "What is Base UI?",
+      content:
+        'Base UI is a library of high-quality unstyled React components for design systems and web apps.',
+      id: '1',
+      title: 'What is Base UI?'
     },
     {
-      content: 'Head to the "Quick start" guide in the docs. If you\'ve used unstyled libraries before, you\'ll feel at home.',
-      id: "2",
-      title: "How do I get started?",
+      content:
+        'Head to the "Quick start" guide in the docs. If you\'ve used unstyled libraries before, you\'ll feel at home.',
+      id: '2',
+      title: 'How do I get started?'
     },
     {
-      content: "Of course! Base UI is free and open source.",
-      id: "3",
-      title: "Can I use it for my project?",
-    },
+      content: 'Of course! Base UI is free and open source.',
+      id: '3',
+      title: 'Can I use it for my project?'
+    }
   ];
 </script>
 
-<Accordion class="w-full" value={["3"]} multiple>
+<Accordion class="w-full" value={['3']} multiple>
   {#each items as item (item.id)}
     <AccordionItem value={item.id}>
       <AccordionTrigger>{item.title}</AccordionTrigger>

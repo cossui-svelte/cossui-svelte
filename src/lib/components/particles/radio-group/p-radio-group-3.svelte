@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Label } from "$lib/components/ui/label";
-  import { Radio, RadioGroup } from "$lib/components/ui/radio-group";
+  import { Label } from '$lib/components/ui/label';
+  import { Radio, RadioGroup } from '$lib/components/ui/radio-group';
 </script>
 
 <RadioGroup value="r-1">

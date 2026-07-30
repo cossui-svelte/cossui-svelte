@@ -8,19 +8,19 @@
     SelectContent,
     SelectItem,
     SelectTrigger,
-    SelectValue,
+    SelectValue
   } from '$lib/components/ui/select';
   import { createForm } from '$lib/hooks/use-superform';
 
   const schema = z.object({
-    country: z.string().optional(),
+    country: z.string().optional()
   });
 
   const superform = createForm({
     onUpdated: (data) => {
       alert(`Country: ${data.country ?? 'none'}`);
     },
-    schema,
+    schema
   });
 
   const { form, submitting } = superform;

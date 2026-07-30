@@ -1,20 +1,20 @@
 <script lang="ts">
-  import { Label } from "$lib/components/ui/label";
-  import { OTPField, OTPFieldInput } from "$lib/components/ui/otp-field";
+  import { Label } from '$lib/components/ui/label';
+  import { OTPField, OTPFieldInput } from '$lib/components/ui/otp-field';
 
   const OTP_LENGTH = 6;
 
-  let value = $state("");
+  let value = $state('');
   let focusedIndex = $state(0);
   let invalidPulse = $state(0);
-  let statusMessage = $state("");
+  let statusMessage = $state('');
   let invalidTimer: ReturnType<typeof setTimeout> | undefined;
 
   function clearInvalidFeedback() {
     clearTimeout(invalidTimer);
     invalidTimer = undefined;
     invalidPulse = 0;
-    statusMessage = "";
+    statusMessage = '';
   }
 
   function handleValueChange() {
@@ -37,7 +37,9 @@
           aria-invalid={(invalidPulse > 0 && focusedIndex === i) || undefined}
           aria-label={`Character ${i + 1} of ${OTP_LENGTH}`}
           {cell}
-          onfocus={() => { focusedIndex = i; }}
+          onfocus={() => {
+            focusedIndex = i;
+          }}
         />
       {/each}
     {/snippet}

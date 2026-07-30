@@ -1,9 +1,9 @@
 <script lang="ts">
-  import type { HTMLAttributes } from "svelte/elements";
-  import CodeBlock from "$lib/components/app/code-block.svelte";
-  import CodeCollapsibleWrapper from "$lib/components/app/code-collapsible-wrapper.svelte";
-  import { cn } from "$lib/utils";
-  import type { SourceResponse } from "../../../routes/api/source/[file]/+server";
+  import type { HTMLAttributes } from 'svelte/elements';
+  import CodeBlock from '$lib/components/app/code-block.svelte';
+  import CodeCollapsibleWrapper from '$lib/components/app/code-collapsible-wrapper.svelte';
+  import { cn } from '$lib/utils';
+  import type { SourceResponse } from '../../../routes/api/source/[file]/+server';
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
     class?: string;
@@ -14,14 +14,7 @@
     title?: string;
   }
 
-  let {
-    name,
-    src,
-    title,
-    language,
-    collapsible = true,
-    class: className,
-  }: Props = $props();
+  let { name, src, title, language, collapsible = true, class: className }: Props = $props();
 
   async function loadCode(): Promise<SourceResponse | undefined> {
     if (!name && !src) return undefined;
@@ -44,9 +37,9 @@
 
 {#await codePromise then result}
   {#if result}
-    {@const lang = language ?? title?.split(".").pop() ?? "svelte"}
+    {@const lang = language ?? title?.split('.').pop() ?? 'svelte'}
     {#if !collapsible}
-      <div class={cn("relative", className)}>
+      <div class={cn('relative', className)}>
         <CodeBlock code={result.raw} html={result.html} language={lang} {title} />
       </div>
     {:else}

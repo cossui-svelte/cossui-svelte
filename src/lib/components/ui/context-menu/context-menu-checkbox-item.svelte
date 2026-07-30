@@ -1,18 +1,18 @@
 <script lang="ts">
-  import { ContextMenu } from "bits-ui";
-  import type { Snippet } from "svelte";
-  import { cn } from "$lib/utils";
+  import { ContextMenu } from 'bits-ui';
+  import type { Snippet } from 'svelte';
+  import { cn } from '$lib/utils';
 
-  interface Props extends Omit<ContextMenu.CheckboxItemProps, "children"> {
+  interface Props extends Omit<ContextMenu.CheckboxItemProps, 'children'> {
     children?: Snippet;
-    variant?: "default" | "switch";
+    variant?: 'default' | 'switch';
   }
 
   let {
     checked = $bindable(false),
     children: userContent,
     class: className,
-    variant = "default",
+    variant = 'default',
     ...restProps
   }: Props = $props();
 </script>
@@ -22,16 +22,14 @@
   closeOnSelect={false}
   class={cn(
     "grid min-h-8 in-data-[side=none]:min-w-[calc(var(--anchor-width)+1.25rem)] cursor-default items-center gap-2 rounded-sm py-1 ps-2 text-base text-foreground outline-none data-disabled:pointer-events-none data-highlighted:bg-accent data-highlighted:text-accent-foreground data-disabled:opacity-64 sm:min-h-7 sm:text-sm [&_svg:not([class*='size-'])]:size-4.5 sm:[&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
-    variant === "switch"
-      ? "grid-cols-[1fr_auto] gap-4 pe-1.5"
-      : "grid-cols-[.75rem_1fr] pe-4",
-    className,
+    variant === 'switch' ? 'grid-cols-[1fr_auto] gap-4 pe-1.5' : 'grid-cols-[.75rem_1fr] pe-4',
+    className
   )}
   data-slot="context-menu-checkbox-item"
   {...restProps}
 >
   {#snippet children({ checked }: { checked: boolean; indeterminate: boolean })}
-    {#if variant === "switch"}
+    {#if variant === 'switch'}
       <span class="col-start-1">{@render userContent?.()}</span>
       <span
         class="inset-shadow-[0_1px_--theme(--color-black/4%)] inline-flex h-[calc(var(--thumb-size)+2px)] w-[calc(var(--thumb-size)*2-2px)] shrink-0 items-center rounded-full p-px outline-none transition-[background-color,box-shadow] duration-200 [--thumb-size:--spacing(4)] focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background sm:[--thumb-size:--spacing(3)]"

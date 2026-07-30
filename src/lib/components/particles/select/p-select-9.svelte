@@ -1,22 +1,27 @@
 <script lang="ts">
-  import Code2Icon from "@lucide/svelte/icons/code-2";
-  import GlobeIcon from "@lucide/svelte/icons/globe";
-  import LayersIcon from "@lucide/svelte/icons/layers";
-  import ZapIcon from "@lucide/svelte/icons/zap";
-  import { Select, SelectItem, SelectPopup, SelectTrigger } from "$lib/components/ui/select";
+  import Code2Icon from '@lucide/svelte/icons/code-2';
+  import GlobeIcon from '@lucide/svelte/icons/globe';
+  import LayersIcon from '@lucide/svelte/icons/layers';
+  import ZapIcon from '@lucide/svelte/icons/zap';
+  import { Select, SelectItem, SelectPopup, SelectTrigger } from '$lib/components/ui/select';
 
   const items = [
-    { icon: LayersIcon, label: "Components", value: "components" },
-    { icon: ZapIcon, label: "Performance", value: "performance" },
-    { icon: GlobeIcon, label: "Network", value: "network" },
-    { icon: Code2Icon, label: "Development", value: "development" },
+    { icon: LayersIcon, label: 'Components', value: 'components' },
+    { icon: ZapIcon, label: 'Performance', value: 'performance' },
+    { icon: GlobeIcon, label: 'Network', value: 'network' },
+    { icon: Code2Icon, label: 'Development', value: 'development' }
   ];
 
-  let selected = $state("components");
+  let selected = $state('components');
   const selectedItem = $derived(items.find((i) => i.value === selected) ?? items[0]);
 </script>
 
-<Select value={selected} onValueChange={(v) => { selected = v; }}>
+<Select
+  value={selected}
+  onValueChange={(v) => {
+    selected = v;
+  }}
+>
   <SelectTrigger aria-label="Select category">
     <span class="flex items-center gap-2">
       <svelte:component this={selectedItem.icon} />

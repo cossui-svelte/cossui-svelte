@@ -1,13 +1,10 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import { getContext } from "svelte";
-  import type { HTMLAttributes } from "svelte/elements";
-  import { Label } from "$lib/components/ui/label";
-  import { cn } from "$lib/utils";
-  import {
-    NUMBER_FIELD_CONTEXT_KEY,
-    type NumberFieldContext,
-  } from "./number-field.svelte";
+  import type { Snippet } from 'svelte';
+  import { getContext } from 'svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
+  import { Label } from '$lib/components/ui/label';
+  import { cn } from '$lib/utils';
+  import { NUMBER_FIELD_CONTEXT_KEY, type NumberFieldContext } from './number-field.svelte';
 
   interface Props extends HTMLAttributes<HTMLSpanElement> {
     children?: Snippet;
@@ -20,7 +17,7 @@
 
   if (!ctx) {
     throw new Error(
-      "NumberFieldScrubArea must be used within a NumberField component for accessibility.",
+      'NumberFieldScrubArea must be used within a NumberField component for accessibility.'
     );
   }
 
@@ -62,7 +59,7 @@
 
 <span
   bind:this={scrubEl}
-  class={cn("flex cursor-ew-resize select-none", className)}
+  class={cn('flex cursor-ew-resize select-none', className)}
   data-slot="number-field-scrub-area"
   role="presentation"
   onpointerdown={handlePointerDown}

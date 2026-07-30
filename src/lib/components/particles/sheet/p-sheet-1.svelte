@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { z } from "zod";
-  import { Button, buttonVariants } from "$lib/components/ui/button";
-  import { Field, FieldLabel } from "$lib/components/ui/field";
-  import { Form } from "$lib/components/ui/form";
-  import { Input } from "$lib/components/ui/input";
+  import { z } from 'zod';
+  import { Button, buttonVariants } from '$lib/components/ui/button';
+  import { Field, FieldLabel } from '$lib/components/ui/field';
+  import { Form } from '$lib/components/ui/form';
+  import { Input } from '$lib/components/ui/input';
   import {
     Sheet,
     SheetClose,
@@ -13,30 +13,28 @@
     SheetPanel,
     SheetPopup,
     SheetTitle,
-    SheetTrigger,
-  } from "$lib/components/ui/sheet";
-  import { createForm } from "$lib/hooks/use-superform";
+    SheetTrigger
+  } from '$lib/components/ui/sheet';
+  import { createForm } from '$lib/hooks/use-superform';
 
   const schema = z.object({
     name: z.string().min(1),
-    username: z.string().min(1),
+    username: z.string().min(1)
   });
 
   const superform = createForm({
-    initialData: { name: "Margaret Welsh", username: "@maggie.welsh" },
+    initialData: { name: 'Margaret Welsh', username: '@maggie.welsh' },
     onUpdated: (data) => {
       alert(`Saved: ${data.name} / ${data.username}`);
     },
-    schema,
+    schema
   });
 
   const { form } = superform;
 </script>
 
 <Sheet>
-  <SheetTrigger class={buttonVariants({ variant: "outline" })}
-    >Open Sheet</SheetTrigger
-  >
+  <SheetTrigger class={buttonVariants({ variant: 'outline' })}>Open Sheet</SheetTrigger>
   <SheetPopup>
     <SheetHeader>
       <SheetTitle>Edit profile</SheetTitle>
@@ -56,9 +54,7 @@
         </Field>
       </SheetPanel>
       <SheetFooter>
-        <SheetClose class={buttonVariants({ variant: "ghost" })}
-          >Cancel</SheetClose
-        >
+        <SheetClose class={buttonVariants({ variant: 'ghost' })}>Cancel</SheetClose>
         <Button type="submit" class={buttonVariants()}>Save</Button>
       </SheetFooter>
     </Form>

@@ -1,13 +1,13 @@
 <script lang="ts">
-  import BookmarkIcon from "@lucide/svelte/icons/bookmark";
-  import { anchoredToastManager } from "$lib/components/ui/toast";
-  import { Toggle } from "$lib/components/ui/toggle";
+  import BookmarkIcon from '@lucide/svelte/icons/bookmark';
+  import { anchoredToastManager } from '$lib/components/ui/toast';
+  import { Toggle } from '$lib/components/ui/toggle';
   import {
     Tooltip,
     TooltipPopup,
     TooltipProvider,
-    TooltipTrigger,
-  } from "$lib/components/ui/tooltip";
+    TooltipTrigger
+  } from '$lib/components/ui/tooltip';
 
   let bookmarked = $state(false);
   let toggleEl: HTMLElement | null = null;
@@ -24,9 +24,9 @@
       toastId = anchoredToastManager.add({
         duration: toastTimeout,
         positionerProps: { anchor: toggleEl },
-        title: "Bookmarked!",
+        title: 'Bookmarked!',
         tooltipStyle: true,
-        type: "success",
+        type: 'success'
       });
     }
   }
@@ -37,7 +37,7 @@
     <TooltipTrigger>
       {#snippet child({ props })}
         <Toggle
-          aria-label={bookmarked ? "Remove bookmark" : "Bookmark this"}
+          aria-label={bookmarked ? 'Remove bookmark' : 'Bookmark this'}
           bind:ref={toggleEl}
           bind:pressed={bookmarked}
           onPressedChange={handlePressedChange}
@@ -48,7 +48,7 @@
       {/snippet}
     </TooltipTrigger>
     <TooltipPopup>
-      <p>{bookmarked ? "Remove bookmark" : "Bookmark this"}</p>
+      <p>{bookmarked ? 'Remove bookmark' : 'Bookmark this'}</p>
     </TooltipPopup>
   </Tooltip>
 </TooltipProvider>

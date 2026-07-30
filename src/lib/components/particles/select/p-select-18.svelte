@@ -1,17 +1,22 @@
 <script lang="ts">
-  import { Select, SelectItem, SelectPopup, SelectTrigger } from "$lib/components/ui/select";
+  import { Select, SelectItem, SelectPopup, SelectTrigger } from '$lib/components/ui/select';
 
   const items = [
-    { description: "Ideal for individuals", label: "Standard Plan", value: "standard" },
-    { description: "For professional users", label: "Pro Plan", value: "pro" },
-    { description: "Built for large teams", label: "Enterprise Plan", value: "enterprise" },
+    { description: 'Ideal for individuals', label: 'Standard Plan', value: 'standard' },
+    { description: 'For professional users', label: 'Pro Plan', value: 'pro' },
+    { description: 'Built for large teams', label: 'Enterprise Plan', value: 'enterprise' }
   ];
 
-  let selected = $state("pro");
+  let selected = $state('pro');
   const selectedItem = $derived(items.find((i) => i.value === selected) ?? items[1]);
 </script>
 
-<Select value={selected} onValueChange={(v) => { selected = v; }}>
+<Select
+  value={selected}
+  onValueChange={(v) => {
+    selected = v;
+  }}
+>
   <SelectTrigger aria-label="Select plan">
     <span class="flex-1 truncate">{selectedItem.label}</span>
   </SelectTrigger>

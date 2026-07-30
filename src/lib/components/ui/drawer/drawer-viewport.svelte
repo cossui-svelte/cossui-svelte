@@ -1,21 +1,21 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import type { HTMLAttributes } from "svelte/elements";
-  import { cn, type WithElementRef } from "$lib/utils";
+  import type { Snippet } from 'svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
+  import { cn, type WithElementRef } from '$lib/utils';
 
-  type DrawerPosition = "right" | "left" | "top" | "bottom";
+  type DrawerPosition = 'right' | 'left' | 'top' | 'bottom';
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
     children?: Snippet;
     position?: DrawerPosition;
-    variant?: "default" | "straight" | "inset";
+    variant?: 'default' | 'straight' | 'inset';
   }
 
   let {
     ref = $bindable(null),
     class: className,
-    position = "bottom",
-    variant = "default",
+    position = 'bottom',
+    variant = 'default',
     children,
     ...restProps
   }: WithElementRef<Props> = $props();
@@ -24,15 +24,15 @@
 <div
   bind:this={ref}
   class={cn(
-    "fixed inset-0 z-50 touch-none pointer-events-none [--bleed:--spacing(12)] [--inset:--spacing(0)]",
-    position === "bottom" && "grid grid-rows-[1fr_auto] pt-12",
-    position === "top" && "grid grid-rows-[auto_1fr] pb-12",
-    position === "left" && "flex justify-start",
-    position === "right" && "flex justify-end",
-    variant === "inset" && "px-(--inset) sm:[--inset:--spacing(4)]",
-    variant === "inset" && position !== "bottom" && "pt-(--inset)",
-    variant === "inset" && position !== "top" && "pb-(--inset)",
-    className,
+    'fixed inset-0 z-50 touch-none pointer-events-none [--bleed:--spacing(12)] [--inset:--spacing(0)]',
+    position === 'bottom' && 'grid grid-rows-[1fr_auto] pt-12',
+    position === 'top' && 'grid grid-rows-[auto_1fr] pb-12',
+    position === 'left' && 'flex justify-start',
+    position === 'right' && 'flex justify-end',
+    variant === 'inset' && 'px-(--inset) sm:[--inset:--spacing(4)]',
+    variant === 'inset' && position !== 'bottom' && 'pt-(--inset)',
+    variant === 'inset' && position !== 'top' && 'pb-(--inset)',
+    className
   )}
   data-slot="drawer-viewport"
   {...restProps}

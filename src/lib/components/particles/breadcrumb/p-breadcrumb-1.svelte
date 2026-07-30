@@ -6,15 +6,10 @@
     BreadcrumbLink,
     BreadcrumbList,
     BreadcrumbPage,
-    BreadcrumbSeparator,
-  } from "$lib/components/ui/breadcrumb";
-  import { buttonVariants } from "$lib/components/ui/button";
-  import {
-    Menu,
-    MenuLinkItem,
-    MenuPopup,
-    MenuTrigger,
-  } from "$lib/components/ui/menu";
+    BreadcrumbSeparator
+  } from '$lib/components/ui/breadcrumb';
+  import { buttonVariants } from '$lib/components/ui/button';
+  import { Menu, MenuLinkItem, MenuPopup, MenuTrigger } from '$lib/components/ui/menu';
 </script>
 
 <Breadcrumb>
@@ -25,7 +20,9 @@
     <BreadcrumbSeparator />
     <BreadcrumbItem>
       <Menu>
-        <MenuTrigger class={`${buttonVariants({size:"icon-sm",variant:"ghost"})}·-m-1.5·text-muted-foreground`}>
+        <MenuTrigger
+          class={`${buttonVariants({ size: 'icon-sm', variant: 'ghost' })}·-m-1.5·text-muted-foreground`}
+        >
           <BreadcrumbEllipsis />
         </MenuTrigger>
         <MenuPopup align="start">

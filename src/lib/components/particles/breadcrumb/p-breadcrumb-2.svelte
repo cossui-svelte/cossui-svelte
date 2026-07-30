@@ -5,8 +5,8 @@
     BreadcrumbLink,
     BreadcrumbList,
     BreadcrumbPage,
-    BreadcrumbSeparator,
-  } from "$lib/components/ui/breadcrumb";
+    BreadcrumbSeparator
+  } from '$lib/components/ui/breadcrumb';
 </script>
 
 <Breadcrumb>
@@ -14,11 +14,11 @@
     <BreadcrumbItem>
       <BreadcrumbLink href="/">Home</BreadcrumbLink>
     </BreadcrumbItem>
-    <BreadcrumbSeparator> / </BreadcrumbSeparator>
+    <BreadcrumbSeparator>/</BreadcrumbSeparator>
     <BreadcrumbItem>
       <BreadcrumbLink href="/docs/">Components</BreadcrumbLink>
     </BreadcrumbItem>
-    <BreadcrumbSeparator> / </BreadcrumbSeparator>
+    <BreadcrumbSeparator>/</BreadcrumbSeparator>
     <BreadcrumbItem>
       <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
     </BreadcrumbItem>

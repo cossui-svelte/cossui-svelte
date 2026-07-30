@@ -16,7 +16,13 @@
       class="relative flex size-9 shrink-0 items-center justify-center overflow-hidden rounded-md border border-input"
     >
       {#if previewUrl}
-        <img alt="Upload preview" class="size-full object-cover" height={32} src={previewUrl} width={32} />
+        <img
+          alt="Upload preview"
+          class="size-full object-cover"
+          height={32}
+          src={previewUrl}
+          width={32}
+        />
       {:else}
         <div aria-hidden="true">
           <CircleUserRound class="opacity-60" size={16} />

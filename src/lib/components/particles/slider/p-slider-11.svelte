@@ -1,7 +1,7 @@
 <script lang="ts">
-  import Volume2Icon from "@lucide/svelte/icons/volume-2";
-  import VolumeXIcon from "@lucide/svelte/icons/volume-x";
-  import { Slider } from "$lib/components/ui/slider";
+  import Volume2Icon from '@lucide/svelte/icons/volume-2';
+  import VolumeXIcon from '@lucide/svelte/icons/volume-x';
+  import { Slider } from '$lib/components/ui/slider';
 
   let value = $state(25);
 </script>

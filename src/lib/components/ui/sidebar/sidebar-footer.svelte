@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import type { HTMLAttributes } from "svelte/elements";
-  import { cn } from "$lib/utils";
+  import type { Snippet } from 'svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
+  import { cn } from '$lib/utils';
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
     children?: Snippet;
@@ -11,7 +11,7 @@
 </script>
 
 <div
-  class={cn("flex flex-col gap-2 p-2", className)}
+  class={cn('flex flex-col gap-2 p-2', className)}
   data-sidebar="footer"
   data-slot="sidebar-footer"
   {...restProps}

@@ -4,8 +4,8 @@
     NumberFieldDecrement,
     NumberFieldGroup,
     NumberFieldIncrement,
-    NumberFieldInput,
-  } from "$lib/components/ui/number-field";
+    NumberFieldInput
+  } from '$lib/components/ui/number-field';
 </script>
 
 <NumberField value={42} disabled>

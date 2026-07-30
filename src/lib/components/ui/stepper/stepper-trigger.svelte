@@ -1,53 +1,53 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
-	import { getContext } from 'svelte';
-	import { cn } from '$lib/utils';
+  import type { Snippet } from 'svelte';
+  import { getContext } from 'svelte';
+  import { cn } from '$lib/utils';
 
-	interface StepperContextValue {
-		activeStep: number;
-		setActiveStep: (step: number) => void;
-	}
+  interface StepperContextValue {
+    activeStep: number;
+    setActiveStep: (step: number) => void;
+  }
 
-	interface StepItemContextValue {
-		isDisabled: boolean;
-		orientation: 'horizontal' | 'vertical';
-		step: number;
-	}
+  interface StepItemContextValue {
+    isDisabled: boolean;
+    orientation: 'horizontal' | 'vertical';
+    step: number;
+  }
 
-	let {
-		class: className = '',
-		children,
-		...restProps
-	}: {
-		class?: string;
-		children?: Snippet;
-	} = $props();
+  let {
+    class: className = '',
+    children,
+    ...restProps
+  }: {
+    class?: string;
+    children?: Snippet;
+  } = $props();
 
-	const stepperCtx = getContext<StepperContextValue>('StepperContext');
-	const stepItemCtx = getContext<StepItemContextValue>('StepItemContext');
+  const stepperCtx = getContext<StepperContextValue>('StepperContext');
+  const stepItemCtx = getContext<StepItemContextValue>('StepItemContext');
 
-	if (!stepperCtx || !stepItemCtx) {
-		throw new Error('StepperTrigger must be used within a StepperItem, which is within a Stepper');
-	}
+  if (!stepperCtx || !stepItemCtx) {
+    throw new Error('StepperTrigger must be used within a StepperItem, which is within a Stepper');
+  }
 
-	function handleClick() {
-		if (!stepItemCtx.isDisabled) {
-			stepperCtx.setActiveStep(stepItemCtx.step);
-		}
-	}
+  function handleClick() {
+    if (!stepItemCtx.isDisabled) {
+      stepperCtx.setActiveStep(stepItemCtx.step);
+    }
+  }
 </script>
 
 <button
-	type="button"
-	data-slot="stepper-trigger"
-	class={cn(
-		'group/trigger ring-offset-background focus-visible:ring-ring inline-flex items-center gap-x-2 rounded-md px-2 py-1.5 text-sm font-medium focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50',
-		stepItemCtx.orientation === 'vertical' ? 'w-full flex-col items-start gap-y-1.5' : '',
-		className
-	)}
-	disabled={stepItemCtx.isDisabled}
-	onclick={handleClick}
-	{...restProps}
+  type="button"
+  data-slot="stepper-trigger"
+  class={cn(
+    'group/trigger ring-offset-background focus-visible:ring-ring inline-flex items-center gap-x-2 rounded-md px-2 py-1.5 text-sm font-medium focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50',
+    stepItemCtx.orientation === 'vertical' ? 'w-full flex-col items-start gap-y-1.5' : '',
+    className
+  )}
+  disabled={stepItemCtx.isDisabled}
+  onclick={handleClick}
+  {...restProps}
 >
-	{@render children?.()}
+  {@render children?.()}
 </button>

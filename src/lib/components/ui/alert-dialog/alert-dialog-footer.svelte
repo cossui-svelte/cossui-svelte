@@ -1,29 +1,29 @@
 <script lang="ts">
-	import type { HTMLAttributes } from "svelte/elements";
-	import { cn, type WithElementRef } from "$lib/utils";
+  import type { HTMLAttributes } from 'svelte/elements';
+  import { cn, type WithElementRef } from '$lib/utils';
 
-	let {
-		ref = $bindable(null),
-		class: className,
-		children,
-		variant = "default",
-		...restProps
-	}: WithElementRef<HTMLAttributes<HTMLDivElement>> & {
-		variant?: "default" | "bare";
-	} = $props();
+  let {
+    ref = $bindable(null),
+    class: className,
+    children,
+    variant = 'default',
+    ...restProps
+  }: WithElementRef<HTMLAttributes<HTMLDivElement>> & {
+    variant?: 'default' | 'bare';
+  } = $props();
 </script>
 
 <div
-	bind:this={ref}
-	data-slot="alert-dialog-footer"
-	class={cn(
-		"flex flex-col-reverse gap-2 px-6 sm:flex-row sm:justify-end sm:rounded-b-[calc(var(--radius-2xl)-1px)] max-sm:[&_button]:w-full",
-		variant === "default" && "border-t bg-muted/72 py-4",
-		variant === "bare" &&
-			"in-[[data-slot=alert-dialog-popup]:has([data-slot=alert-dialog-panel])]:pt-3 pt-4 pb-6",
-		className,
-	)}
-	{...restProps}
+  bind:this={ref}
+  data-slot="alert-dialog-footer"
+  class={cn(
+    'flex flex-col-reverse gap-2 px-6 sm:flex-row sm:justify-end sm:rounded-b-[calc(var(--radius-2xl)-1px)] max-sm:[&_button]:w-full',
+    variant === 'default' && 'border-t bg-muted/72 py-4',
+    variant === 'bare' &&
+      'in-[[data-slot=alert-dialog-popup]:has([data-slot=alert-dialog-panel])]:pt-3 pt-4 pb-6',
+    className
+  )}
+  {...restProps}
 >
-	{@render children?.()}
+  {@render children?.()}
 </div>

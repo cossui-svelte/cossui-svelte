@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Badge } from "$lib/components/ui/badge";
+  import { Badge } from '$lib/components/ui/badge';
   import {
     Table,
     TableBody,
@@ -7,8 +7,8 @@
     TableFooter,
     TableHead,
     TableHeader,
-    TableRow,
-  } from "$lib/components/ui/table";
+    TableRow
+  } from '$lib/components/ui/table';
 </script>
 
 <Table class="w-full" variant="card">

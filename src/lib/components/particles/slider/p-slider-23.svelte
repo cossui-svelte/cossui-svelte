@@ -1,26 +1,26 @@
 <script lang="ts">
-  import { z } from "zod";
-  import { Button } from "$lib/components/ui/button";
-  import { Field, FieldDescription } from "$lib/components/ui/field";
-  import { Fieldset, FieldsetLegend } from "$lib/components/ui/fieldset";
-  import { Form } from "$lib/components/ui/form";
-  import { Slider } from "$lib/components/ui/slider";
-  import { createForm } from "$lib/hooks/use-superform";
+  import { z } from 'zod';
+  import { Button } from '$lib/components/ui/button';
+  import { Field, FieldDescription } from '$lib/components/ui/field';
+  import { Fieldset, FieldsetLegend } from '$lib/components/ui/fieldset';
+  import { Form } from '$lib/components/ui/form';
+  import { Slider } from '$lib/components/ui/slider';
+  import { createForm } from '$lib/hooks/use-superform';
 
   const schema = z.object({
-    volume: z.array(z.number()),
+    volume: z.array(z.number())
   });
 
   const superform = createForm({
     initialData: { volume: [25, 75] },
-    onUpdated: ({ volume }) => alert(`Volume: ${volume.join(", ")}`),
-    schema,
+    onUpdated: ({ volume }) => alert(`Volume: ${volume.join(', ')}`),
+    schema
   });
 
   const { form, submitting } = superform;
 
   const displayValue = $derived(
-    Array.isArray($form.volume) ? $form.volume.join(" – ") : $form.volume,
+    Array.isArray($form.volume) ? $form.volume.join(' – ') : $form.volume
   );
 </script>
 

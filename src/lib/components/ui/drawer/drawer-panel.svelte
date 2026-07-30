@@ -1,8 +1,8 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import type { HTMLAttributes } from "svelte/elements";
-  import { cn, type WithElementRef } from "$lib/utils";
-  import { ScrollArea } from "../scroll-area";
+  import type { Snippet } from 'svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
+  import { cn, type WithElementRef } from '$lib/utils';
+  import { ScrollArea } from '../scroll-area';
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
     allowSelection?: boolean;
@@ -23,10 +23,10 @@
 
   const panelClass = $derived(
     cn(
-      "p-6 in-[[data-slot=drawer-popup]:has([data-slot=drawer-header])]:pt-1 in-[[data-slot=drawer-popup]:has([data-slot=drawer-footer]:not(.border-t))]:pb-1",
-      !allowSelection && "cursor-default",
-      className,
-    ),
+      'p-6 in-[[data-slot=drawer-popup]:has([data-slot=drawer-header])]:pt-1 in-[[data-slot=drawer-popup]:has([data-slot=drawer-footer]:not(.border-t))]:pb-1',
+      !allowSelection && 'cursor-default',
+      className
+    )
   );
 </script>
 
@@ -37,12 +37,7 @@
     </div>
   </ScrollArea>
 {:else}
-  <div
-    bind:this={ref}
-    class={panelClass}
-    data-slot="drawer-panel"
-    {...restProps}
-  >
+  <div bind:this={ref} class={panelClass} data-slot="drawer-panel" {...restProps}>
     {@render children?.()}
   </div>
 {/if}

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
+  import type { Snippet } from 'svelte';
 
   interface Props {
     children?: Snippet;
@@ -18,7 +18,7 @@
   let width = $state(0);
   let height = $state(0);
   let isTabSelected = $state(false);
-  let orientation = $state<"horizontal" | "vertical">("horizontal");
+  let orientation = $state<'horizontal' | 'vertical'>('horizontal');
 
   function getCssDimensions(element: Element): { width: number; height: number } {
     const css = getComputedStyle(element);
@@ -46,7 +46,7 @@
     }
 
     isTabSelected = true;
-    orientation = (tabsList.dataset.orientation as "horizontal" | "vertical") ?? "horizontal";
+    orientation = (tabsList.dataset.orientation as 'horizontal' | 'vertical') ?? 'horizontal';
 
     const { width: computedWidth, height: computedHeight } = getCssDimensions(activeTab);
     const { width: tabListWidth, height: tabListHeight } = getCssDimensions(tabsList);
@@ -55,21 +55,15 @@
 
     const scaleX = tabListWidth > 0 ? tabsListRect.width / tabListWidth : 1;
     const scaleY = tabListHeight > 0 ? tabsListRect.height / tabListHeight : 1;
-    const hasNonZeroScale =
-      Math.abs(scaleX) > Number.EPSILON && Math.abs(scaleY) > Number.EPSILON;
+    const hasNonZeroScale = Math.abs(scaleX) > Number.EPSILON && Math.abs(scaleY) > Number.EPSILON;
 
     let newLeft: number;
     let newTop: number;
 
     if (hasNonZeroScale) {
       newLeft =
-        (tabRect.left - tabsListRect.left) / scaleX +
-        tabsList.scrollLeft -
-        tabsList.clientLeft;
-      newTop =
-        (tabRect.top - tabsListRect.top) / scaleY +
-        tabsList.scrollTop -
-        tabsList.clientTop;
+        (tabRect.left - tabsListRect.left) / scaleX + tabsList.scrollLeft - tabsList.clientLeft;
+      newTop = (tabRect.top - tabsListRect.top) / scaleY + tabsList.scrollTop - tabsList.clientTop;
     } else {
       newLeft = activeTab.offsetLeft;
       newTop = activeTab.offsetTop;
@@ -92,9 +86,9 @@
 
     const mutationObserver = new MutationObserver(measure);
     mutationObserver.observe(tabsList, {
-      attributeFilter: ["data-state"],
+      attributeFilter: ['data-state'],
       attributes: true,
-      subtree: true,
+      subtree: true
     });
 
     const resizeObserver = new ResizeObserver(measure);
@@ -103,12 +97,12 @@
       resizeObserver.observe(trigger);
     }
 
-    tabsList.addEventListener("scroll", measure);
+    tabsList.addEventListener('scroll', measure);
 
     return () => {
       mutationObserver.disconnect();
       resizeObserver.disconnect();
-      tabsList.removeEventListener("scroll", measure);
+      tabsList.removeEventListener('scroll', measure);
     };
   });
 
@@ -120,9 +114,9 @@
           `--active-tab-top: ${top}px`,
           `--active-tab-bottom: ${bottom}px`,
           `--active-tab-width: ${width}px`,
-          `--active-tab-height: ${height}px`,
-        ].join("; ")
-      : "",
+          `--active-tab-height: ${height}px`
+        ].join('; ')
+      : ''
   );
 
   let displayIndicator = $derived(isTabSelected && width > 0 && height > 0);

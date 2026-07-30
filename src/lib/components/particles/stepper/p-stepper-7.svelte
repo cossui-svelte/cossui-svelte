@@ -1,13 +1,13 @@
 <script lang="ts">
-  import Shuffle from "@lucide/svelte/icons/shuffle";
+  import Shuffle from '@lucide/svelte/icons/shuffle';
   import {
     Stepper,
     StepperIndicator,
     StepperItem,
     StepperSeparator,
-    StepperTrigger,
-  } from "$lib/components/ui/stepper";
-  import avatar from "$assets/avatar-40-05.jpg";
+    StepperTrigger
+  } from '$lib/components/ui/stepper';
+  import avatar from '$assets/avatar-40-05.jpg';
 </script>
 
 <div class="mx-auto max-w-xl space-y-8 text-center w-full">

@@ -1,9 +1,9 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import { resolve } from "$app/paths";
-  import GithubLink from "./github-link.svelte";
-  import ModeSwitcher from "./mode-switcher.svelte";
-  import ProductLabel from "./product-label.svelte";
+  import type { Snippet } from 'svelte';
+  import { resolve } from '$app/paths';
+  import GithubLink from './github-link.svelte';
+  import ModeSwitcher from './mode-switcher.svelte';
+  import ProductLabel from './product-label.svelte';
 
   // import ProductsDropdown from "./products-dropdown.svelte";
 
@@ -29,10 +29,8 @@
     class="container relative flex h-(--header-height) w-full items-center justify-between gap-2 px-4 sm:px-6"
   >
     {@render mobileNav?.()}
-    <div
-      class="-mt-0.5 flex shrink-0 items-center gap-1.5 font-heading text-2xl sm:text-[1.625em]"
-    >
-      <a aria-label="Home" href={resolve("/")}
+    <div class="-mt-0.5 flex shrink-0 items-center gap-1.5 font-heading text-2xl sm:text-[1.625em]">
+      <a aria-label="Home" href={resolve('/')}
         >coss<span class="text-muted-foreground/64">.ui</span>
         <span class="text-rose-400">svelte (unofficial)</span>
       </a>

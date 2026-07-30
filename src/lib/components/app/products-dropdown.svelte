@@ -1,8 +1,8 @@
 <script lang="ts">
-  import ChevronDown from "@lucide/svelte/icons/chevron-down";
-  import { Badge } from "$lib/components/ui/badge";
-  import { buttonVariants } from "$lib/components/ui/button";
-  import { Menu, MenuLinkItem, MenuPopup, MenuTrigger } from "$lib/components/ui/menu";
+  import ChevronDown from '@lucide/svelte/icons/chevron-down';
+  import { Badge } from '$lib/components/ui/badge';
+  import { buttonVariants } from '$lib/components/ui/button';
+  import { Menu, MenuLinkItem, MenuPopup, MenuTrigger } from '$lib/components/ui/menu';
 
   interface ProductItem {
     href: string;
@@ -16,14 +16,14 @@
 
   let { items }: Props = $props();
 
-  const gatewayOrigin: string = import.meta.env.VITE_COSS_URL ?? "";
-  const uiGatewayOrigin: string = import.meta.env.VITE_COSS_UI_URL ?? "";
+  const gatewayOrigin: string = import.meta.env.VITE_COSS_URL ?? '';
+  const uiGatewayOrigin: string = import.meta.env.VITE_COSS_UI_URL ?? '';
 
   function getLinkHref(item: ProductItem): {
     href: string;
     isExternal: boolean;
   } {
-    const isHomePage = item.href === "/";
+    const isHomePage = item.href === '/';
     if (gatewayOrigin && !isHomePage) {
       return { href: `${gatewayOrigin}${item.href}`, isExternal: true };
     }
@@ -32,22 +32,17 @@
     }
     return { href: item.href, isExternal: false };
   }
-
 </script>
 
 <Menu>
-  <MenuTrigger class={buttonVariants({ variant: "ghost" })}>
+  <MenuTrigger class={buttonVariants({ variant: 'ghost' })}>
     Products
     <ChevronDown class="size-4" />
   </MenuTrigger>
   <MenuPopup align="center" sideOffset={4}>
     {#each items as item (item.href)}
       {@const { href, isExternal } = getLinkHref(item)}
-      <MenuLinkItem
-        {href}
-        target={isExternal ? "_self" : undefined}
-        class="group justify-between"
-      >
+      <MenuLinkItem {href} target={isExternal ? '_self' : undefined} class="group justify-between">
         <span class="font-heading in-data-highlighted:text-foreground text-muted-foreground">
           {item.label}
         </span>

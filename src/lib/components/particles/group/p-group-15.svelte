@@ -1,31 +1,31 @@
 <script lang="ts">
-  import Search from "@lucide/svelte/icons/search";
-  import { Button } from "$lib/components/ui/button";
-  import { Group, GroupSeparator } from "$lib/components/ui/group";
-  import { Input } from "$lib/components/ui/input";
+  import Search from '@lucide/svelte/icons/search';
+  import { Button } from '$lib/components/ui/button';
+  import { Group, GroupSeparator } from '$lib/components/ui/group';
+  import { Input } from '$lib/components/ui/input';
   import {
     Select,
     SelectItem,
     SelectPopup,
     SelectTrigger,
-    SelectValue,
-  } from "$lib/components/ui/select";
+    SelectValue
+  } from '$lib/components/ui/select';
 
   const protocols = [
-    { label: "http", value: "http" },
-    { label: "https", value: "https" },
-    { label: "http + https", value: "both" },
+    { label: 'http', value: 'http' },
+    { label: 'https', value: 'https' },
+    { label: 'http + https', value: 'both' }
   ];
 
   const subdomains = [
-    { label: "Subdomains", value: "none" },
-    { label: "www", value: "www" },
-    { label: "api", value: "api" },
-    { label: "cdn", value: "cdn" },
+    { label: 'Subdomains', value: 'none' },
+    { label: 'www', value: 'www' },
+    { label: 'api', value: 'api' },
+    { label: 'cdn', value: 'cdn' }
   ];
 
-  let protocol = $state("both");
-  let subdomain = $state("none");
+  let protocol = $state('both');
+  let subdomain = $state('none');
 </script>
 
 <Group aria-label="URL search">

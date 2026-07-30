@@ -1,26 +1,26 @@
 <script lang="ts">
-  import { type DateValue, getLocalTimeZone, today } from "@internationalized/date";
-  import ClockIcon from "@lucide/svelte/icons/clock";
-  import { z } from "zod";
-  import { Button } from "$lib/components/ui/button";
-  import { Calendar } from "$lib/components/ui/calendar";
-  import { Field, FieldError, FieldLabel } from "$lib/components/ui/field";
-  import { Form } from "$lib/components/ui/form";
-  import { InputGroup, InputGroupAddon, InputGroupInput } from "$lib/components/ui/input-group";
-  import { createForm } from "$lib/hooks/use-superform";
+  import { type DateValue, getLocalTimeZone, today } from '@internationalized/date';
+  import ClockIcon from '@lucide/svelte/icons/clock';
+  import { z } from 'zod';
+  import { Button } from '$lib/components/ui/button';
+  import { Calendar } from '$lib/components/ui/calendar';
+  import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';
+  import { Form } from '$lib/components/ui/form';
+  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';
+  import { createForm } from '$lib/hooks/use-superform';
 
   const todayValue = today(getLocalTimeZone());
 
   const schema = z.object({
-    time: z.string().min(1, { message: "Please enter a time." }),
+    time: z.string().min(1, { message: 'Please enter a time.' })
   });
 
   const superform = createForm({
-    initialData: { time: "12:00:00" },
+    initialData: { time: '12:00:00' },
     onUpdated: (data) => {
       alert(`Selected time: ${data.time}`);
     },
-    schema,
+    schema
   });
 
   const { form: formData, submitting } = superform;
@@ -41,12 +41,7 @@
 </script>
 
 <div class="flex flex-col gap-2">
-  <Calendar
-    bind:placeholder
-    bind:value
-    onValueChange={handleCalendarSelect}
-    mode="single"
-  />
+  <Calendar bind:placeholder bind:value onValueChange={handleCalendarSelect} mode="single" />
   <Form class="flex flex-col gap-2" {superform}>
     <Field class="flex-row items-center gap-3" name="time">
       <FieldLabel class="whitespace-nowrap text-xs">Enter time</FieldLabel>

@@ -6,7 +6,7 @@
     AutocompleteItem,
     AutocompleteList,
     AutocompletePopup,
-    AutocompleteStatus,
+    AutocompleteStatus
   } from '$lib/components/ui/autocomplete';
 
   const limit = 7;
@@ -35,7 +35,7 @@
     { label: 'Perl', value: 'lang-perl' },
     { label: 'Lua', value: 'lang-lua' },
     { label: 'OCaml', value: 'lang-ocaml' },
-    { label: 'F#', value: 'lang-fsharp' },
+    { label: 'F#', value: 'lang-fsharp' }
   ];
 
   let filterText = $state('');

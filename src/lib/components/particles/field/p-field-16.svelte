@@ -7,7 +7,7 @@
   import { createForm } from '$lib/hooks/use-superform';
 
   const schema = z.object({
-    volume: z.number().optional(),
+    volume: z.number().optional()
   });
 
   const superform = createForm({
@@ -15,7 +15,7 @@
     onUpdated: (data) => {
       alert(`Volume: ${data.volume ?? 50}`);
     },
-    schema,
+    schema
   });
 
   const { form, submitting } = superform;
