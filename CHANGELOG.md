@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.9.14](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.13...v0.9.14) (2026-07-30)
+
+### ✨ Features
+
+* add more colorpicker particules ([e0dd408](https://github.com/cossui-svelte/cossui-svelte/commit/e0dd408f91671e12fa266c1e5651c2890f892125))
+* colorpicker ([9305b6c](https://github.com/cossui-svelte/cossui-svelte/commit/9305b6c18759ef1d602ddea859e5eeacd51f3bfc))
+* two more table particles from origin ([f0683a4](https://github.com/cossui-svelte/cossui-svelte/commit/f0683a46c334358168fd9aefa82f24feff2b2c54))
+
+### 🐛 Bug Fixes
+
+* align css definition to the master theme ([36d8f89](https://github.com/cossui-svelte/cossui-svelte/commit/36d8f897a7d48cfd22b1361f71ebc1402a8b0d3c))
+* colorpicker ([7a8fb71](https://github.com/cossui-svelte/cossui-svelte/commit/7a8fb718ea47542366002ae16c537987226ed7e9))
+* colorpicker particules ([795f52a](https://github.com/cossui-svelte/cossui-svelte/commit/795f52a466eea827270898bca69a0c94c6dba29e))
+* colorpicker using huey ([f72df63](https://github.com/cossui-svelte/cossui-svelte/commit/f72df6345846af0259ac4df1ac85d752c823c34b))
+* timeline labels & particule alignment issue ([23134df](https://github.com/cossui-svelte/cossui-svelte/commit/23134df7ba55e650680da7db8f98d344a30eb2a4))
+
+### ♻️ Code Refactoring
+
+* component metadata ([bb4b5f9](https://github.com/cossui-svelte/cossui-svelte/commit/bb4b5f9a74af0497b3da186c4307208e26c1ac04))
+* form typing issues ([f12567c](https://github.com/cossui-svelte/cossui-svelte/commit/f12567c8b9423412ccbf320e19043532d44f7ec7))
+* knip recommendations and cleanups ([567bb60](https://github.com/cossui-svelte/cossui-svelte/commit/567bb605e21bb42c3de3b54606f1ed6af4dc06af))
+* tailwind class rewrite ([63abd13](https://github.com/cossui-svelte/cossui-svelte/commit/63abd132a4875899a88394ee3450adca82984912))
+* tailwind classes ([c556ab2](https://github.com/cossui-svelte/cossui-svelte/commit/c556ab288e5d94a75196d1cab1da6bdda240d61a))
+
+### 📝 Documentation
+
+* add colorpicker credits ([efb296b](https://github.com/cossui-svelte/cossui-svelte/commit/efb296b501eae7f6c6ba6aa558842be1a8970088))
+
+### 🚚 Chores
+
+* deps ([7b5a183](https://github.com/cossui-svelte/cossui-svelte/commit/7b5a1839c2568de60503546d6aed55d748ba1a6a))
 ## [0.9.13](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.12...v0.9.13) (2026-07-28)
 
 ### ✨ Features
