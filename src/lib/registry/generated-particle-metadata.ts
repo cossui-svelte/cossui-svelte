@@ -3313,6 +3313,18 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     registryDependencies: ['chart'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
+  'p-table-9': {
+    description: 'Vertical table',
+    tags: ['table'],
+    registryDependencies: ['table'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
+  },
+  'p-table-10': {
+    description: 'Table with sticky header',
+    tags: ['table'],
+    registryDependencies: ['table'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
+  },
   'p-link-preview-1': {
     description: 'A component that displays a preview of a link on mouse hover',
     tags: ['link-preview'],

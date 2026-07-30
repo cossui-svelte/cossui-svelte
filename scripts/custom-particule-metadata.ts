@@ -385,7 +385,18 @@ export const custom_particle_metadata = {
     registryDependencies: ['chart'],
     tags: ['chart']
   },
-
+  'p-table-9': {
+    description: 'Vertical table',
+    meta: { class: "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl", colSpan: 2 },
+    registryDependencies: ['table'],
+    tags: ['table']
+  },
+  'p-table-10': {
+    description: 'Table with sticky header',
+    meta: { class: "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl", colSpan: 2 },
+    registryDependencies: ['table'],
+    tags: ['table']
+  },
   'p-link-preview-1': {
     description: 'A component that displays a preview of a link on mouse hover',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
