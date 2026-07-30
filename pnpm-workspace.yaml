@@ -23,10 +23,10 @@ minimumReleaseAgeExclude:
   - '@vitest/spy@4.1.7'
   - '@vitest/utils@4.1.7'
   - vitest@4.1.7
-  - '@lucide/svelte@1.25.0 || 1.27.0'
-  - '@sveltejs/kit@2.70.0'
-  - miniflare@4.20260714.0 || 4.20260722.1
-  - wrangler@4.112.0 || 4.115.0
+  - '@lucide/svelte@1.25.0 || 1.27.0 || 1.28.0'
+  - '@sveltejs/kit@2.70.0 || 2.70.2'
+  - miniflare@4.20260714.0 || 4.20260722.1 || 4.20260730.0
+  - wrangler@4.112.0 || 4.115.0 || 4.116.0
   - commit-and-tag-version@13.0.0 || 13.1.0 || 13.1.2
   - eslint-plugin-svelte@3.22.0
   - '@biomejs/biome@2.5.6'
@@ -39,3 +39,10 @@ minimumReleaseAgeExclude:
   - '@biomejs/cli-win32-arm64@2.5.6'
   - '@biomejs/cli-win32-x64@2.5.6'
   - layerchart@2.0.3
+  - '@cloudflare/workerd-darwin-64@1.20260730.1'
+  - '@cloudflare/workerd-darwin-arm64@1.20260730.1'
+  - '@cloudflare/workerd-linux-64@1.20260730.1'
+  - '@cloudflare/workerd-linux-arm64@1.20260730.1'
+  - '@cloudflare/workerd-windows-64@1.20260730.1'
+  - vite@8.2.0
+  - workerd@1.20260730.1
