@@ -1,12 +1,11 @@
 <script lang="ts">
   import {ColorPicker} from "$lib/components/ui/colorpicker";
 
-  let hex = $state("#4f46e5");
+  let color = $state("#4f46e5");
 </script>
 
 <ColorPicker
-  bind:hex
-  label="Pick a color"
+  bind:color
   showInputs={false} showColorDropper={false} 
   showSaturationArea={false}
   showColorSliders={false}

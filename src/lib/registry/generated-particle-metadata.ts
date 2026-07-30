@@ -3470,31 +3470,31 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-colorpicker-1': {
-    description: 'Color picker with swatches',
+    description: 'Full featured Color picker',
     tags: ['colorpicker', 'color', 'input'],
     registryDependencies: ['slider', 'checkbox', 'input', 'button', 'label'],
     meta: { class: '**:data-[slot=card]:overflow-visible **:data-[slot=card]:[clip-path:none]!' }
   },
   'p-colorpicker-2': {
-    description: 'Minimal color picker without swatches',
+    description: 'Minimal color picker with sliders',
     tags: ['colorpicker', 'color', 'input'],
     registryDependencies: ['slider', 'checkbox', 'input', 'button', 'label'],
     meta: { class: '**:data-[slot=card]:overflow-visible **:data-[slot=card]:[clip-path:none]!' }
   },
   'p-colorpicker-3': {
-    description: 'Color picker with custom swatches and no text input',
+    description: 'Non editable swatches Color picker',
     tags: ['colorpicker', 'color', 'input'],
     registryDependencies: ['slider', 'checkbox', 'input', 'button', 'label'],
     meta: { class: '**:data-[slot=card]:overflow-visible **:data-[slot=card]:[clip-path:none]!' }
   },
   'p-colorpicker-4': {
-    description: 'Color picker using the Chrome variant layout with horizontal slider',
+    description: 'Sliders only',
     tags: ['colorpicker', 'color', 'input'],
     registryDependencies: ['slider', 'checkbox', 'input', 'button', 'label'],
     meta: { class: '**:data-[slot=card]:overflow-visible **:data-[slot=card]:[clip-path:none]!' }
   },
   'p-colorpicker-5': {
-    description: 'Color picker with custom swatches and no text input',
+    description: 'Color picker with custom swatches and text input',
     tags: ['colorpicker', 'color', 'input'],
     registryDependencies: ['slider', 'checkbox', 'input', 'button', 'label'],
     meta: { class: '**:data-[slot=card]:overflow-visible **:data-[slot=card]:[clip-path:none]!' }

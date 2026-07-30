@@ -1,7 +1,7 @@
 <script lang="ts">
   import { ColorPicker } from "$lib/components/ui/colorpicker";
 
-  let hex = $state("#4f46e5");
+  let color = $state("#4f46e5");
 
   let swatches = $state<string[]>([
     "#FF3B30",
@@ -25,4 +25,4 @@
   ]);
 </script>
 
-<ColorPicker bind:hex label="Pick a color" {swatches} isTextInput={false} />
+<ColorPicker bind:color {swatches} />

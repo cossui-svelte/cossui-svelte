@@ -1,6 +1,6 @@
 <script lang="ts">
     import PipetteIcon from "@lucide/svelte/icons/pipette";
-    import { hueyColor } from "@hueycolor/core";
+    import { type HueyColor } from "@hueycolor/core";
     import {
         AlphaInput,
         AlphaSlider,
@@ -24,6 +24,7 @@
     import ColorPickerSwatches from "./color-picker-swatches.svelte";
 
     let {
+        color = $bindable(),
         swatches = $bindable(),
         showSaturationArea = true,
         showInputs = true,
@@ -31,6 +32,7 @@
         showColorSliders = true,
         swatchesEditable = true,
     }: {
+        color: string | HueyColor
         swatches?: string[];
         showSaturationArea?: boolean;
         showInputs?: boolean;
@@ -39,7 +41,7 @@
         swatchesEditable?: boolean;
     } = $props();
 
-    let color = $state(hueyColor("#acff00"));
+    // let color = $state(hueyColor("#acff00"));
     let colorFormat = $state<"hex" | "hsl" | "rgb">("hex");
 
     const inputBase =
