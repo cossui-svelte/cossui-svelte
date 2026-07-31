@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.9.15](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.14...v0.9.15) (2026-07-31)
+
+### ✨ Features
+
+* places-autocomplete is graduating ([1df8e4e](https://github.com/cossui-svelte/cossui-svelte/commit/1df8e4ee07f53f76c29180e64c98a57ec1bf6050))
+
+### 🐛 Bug Fixes
+
+* format Svelte files with Prettier ([6f99b54](https://github.com/cossui-svelte/cossui-svelte/commit/6f99b5487a0c48b47b5d4a627b153e3dd2c032f5))
+* improve colorpicker demos ([d64aeed](https://github.com/cossui-svelte/cossui-svelte/commit/d64aeed4a68cf9f0e7998042c8ccb5212099f6ac))
+
+### 🚚 Chores
+
+* deps + commit is now cz ([e257b65](https://github.com/cossui-svelte/cossui-svelte/commit/e257b659eaa17cfcc6984901f8420923dca20e18))
 ## [0.9.14](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.13...v0.9.14) (2026-07-30)
 
 ### ✨ Features
