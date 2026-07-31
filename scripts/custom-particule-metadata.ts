@@ -537,11 +537,11 @@ export const custom_particle_metadata = {
     registryDependencies: ['file-upload', 'cropper', 'dialog'],
     tags: ['file-upload', 'cropper']
   },
-  'p-autocomplete-100': {
+  'p-places-autocomplete-1': {
     description: 'Address validation powered by the Google Places API',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
     registryDependencies: ['places-autocomplete', 'toast'],
-    tags: ['autocomplete', 'places', 'google', 'address']
+    tags: ['places-autocomplete', 'autocomplete', 'places', 'google', 'address']
   },
   'p-colorpicker-1': {
     description: 'Full featured Color picker',

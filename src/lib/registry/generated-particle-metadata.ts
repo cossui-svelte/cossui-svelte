@@ -3463,9 +3463,9 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     registryDependencies: ['file-upload', 'cropper', 'dialog'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-autocomplete-100': {
+  'p-places-autocomplete-1': {
     description: 'Address validation powered by the Google Places API',
-    tags: ['autocomplete', 'places', 'google', 'address'],
+    tags: ['places-autocomplete', 'autocomplete', 'places', 'google', 'address'],
     registryDependencies: ['places-autocomplete', 'toast'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
