@@ -12,6 +12,7 @@
   import Info from '@lucide/svelte/icons/info';
   import Italic from '@lucide/svelte/icons/italic';
   import ListIcon from '@lucide/svelte/icons/list';
+  import MapPin from '@lucide/svelte/icons/map-pin';
   import Minus from '@lucide/svelte/icons/minus';
   import MousePointer2 from '@lucide/svelte/icons/mouse-pointer-2';
   import Pipette from '@lucide/svelte/icons/pipette';
@@ -645,6 +646,33 @@
     <div class={cardCls('w-fit [--radius-2xl:12px]')}>
       <div class={cpCls('flex items-center gap-2 p-2')}>
         {@render iconSnip(ChevronRight)}
+      </div>
+    </div>
+  </div>
+{:else if slug === 'places-autocomplete'}
+  <div class="flex max-w-50 flex-1 flex-col gap-2">
+    <div class={cardCls('[--radius-2xl:12px]', false)}>
+      <div class={cpCls('flex items-center gap-2 px-4 py-2')}>
+        {@render iconSnip(MapPin)}
+        {@render textSnip('w-[55%]')}
+      </div>
+    </div>
+    <div class={cardCls('[--radius-2xl:10px]')}>
+      <div class={cpCls('flex flex-col gap-3 p-3')}>
+        <div class="flex items-start gap-2">
+          {@render iconSnip(MapPin, 'mt-0.5 shrink-0')}
+          <div class="flex flex-1 flex-col gap-1.5">
+            {@render textSnip('w-[70%]')}
+            {@render textSnip('w-[50%]', 'secondary')}
+          </div>
+        </div>
+        <div class="flex items-start gap-2">
+          {@render iconSnip(MapPin, 'mt-0.5 shrink-0')}
+          <div class="flex flex-1 flex-col gap-1.5">
+            {@render textSnip('w-[60%]')}
+            {@render textSnip('w-[45%]', 'secondary')}
+          </div>
+        </div>
       </div>
     </div>
   </div>

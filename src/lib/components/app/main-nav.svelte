@@ -13,7 +13,7 @@
 
 <nav class={cn('items-center gap-2', className)}>
   {#each items as item (item.href)}
-    <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- item.href is caller-supplied nav data, already app-relative -->
+    <!-- eslint-disable svelte/no-navigation-without-resolve -- item.href is caller-supplied nav data, already app-relative -->
     <a
       href={item.href}
       class={cn(
@@ -24,5 +24,6 @@
     >
       {item.label}
     </a>
+    <!-- eslint-enable svelte/no-navigation-without-resolve -->
   {/each}
 </nav>

@@ -234,7 +234,7 @@
                 {group.value}
               </div>
               {#each group.items as item (item.value)}
-                <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- item.url comes from the pre-built docs/particles content tree, already app-relative -->
+                <!-- eslint-disable svelte/no-navigation-without-resolve -- item.url comes from the pre-built docs/particles content tree, already app-relative -->
                 <a
                   href={item.url}
                   class="flex w-full items-center gap-2 rounded-md px-2 py-2 text-sm transition-colors hover:bg-accent focus:bg-accent focus:outline-none"
@@ -251,6 +251,7 @@
                   {/if}
                   <span class="flex-1">{item.label}</span>
                 </a>
+                <!-- eslint-enable svelte/no-navigation-without-resolve -->
               {/each}
             </div>
           {/each}

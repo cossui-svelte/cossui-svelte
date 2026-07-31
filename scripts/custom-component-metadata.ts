@@ -177,6 +177,11 @@ export const custom_components_metadata: RegistryUiData = {
 		description: "A pagination with page navigation, next and previous links.",
 		category: "ui",
 	},
+	"places-autocomplete": {
+		description: "An address or place validation autocomplete using GoogleAPI",
+		category: "extra",
+		isnew: true,
+	},
 	popover: {
 		description: "An accessible popup anchored to a button.",
 		category: "ui",
@@ -265,7 +270,7 @@ export const custom_components_metadata: RegistryUiData = {
 	timeline: {
 		description: "A component for displaying a series of events in chronological order.",
 		category: "origin-ui",
-		istodo: true
+		isnew: true
 	},
 	toast: {
 		description: "A temporary notification that appears on screen to inform users.",

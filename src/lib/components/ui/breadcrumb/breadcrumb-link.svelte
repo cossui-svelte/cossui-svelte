@@ -11,13 +11,14 @@
   }: WithElementRef<HTMLAnchorAttributes> = $props();
 </script>
 
-<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- href is caller-supplied; the caller resolves the route, not this generic link primitive -->
+<!-- eslint-disable svelte/no-navigation-without-resolve -- href is caller-supplied; the caller resolves the route, not this generic link primitive -->
 <a
-  bind:this={ref}
   {href}
+  bind:this={ref}
   class={cn('transition-colors hover:text-foreground', className)}
   data-slot="breadcrumb-link"
   {...restProps}
 >
   {@render children?.()}
 </a>
+<!-- eslint-enable svelte/no-navigation-without-resolve -->

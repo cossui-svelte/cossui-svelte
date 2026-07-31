@@ -422,10 +422,10 @@ const allComponents: RegistryUiData = {
   },
   'places-autocomplete': {
     name: 'Places Autocomplete',
-    category: 'ui',
-    description: '',
+    category: 'extra',
+    description: 'An address or place validation autocomplete using GoogleAPI',
     folder: 'places-autocomplete',
-    isnew: false,
+    isnew: true,
     istodo: false,
     npmDependencies: [],
     registryDependencies: []
@@ -638,8 +638,8 @@ const allComponents: RegistryUiData = {
     category: 'origin-ui',
     description: 'A component for displaying a series of events in chronological order.',
     folder: 'timeline',
-    isnew: false,
-    istodo: true,
+    isnew: true,
+    istodo: false,
     npmDependencies: [],
     registryDependencies: []
   },
