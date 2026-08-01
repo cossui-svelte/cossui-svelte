@@ -18,6 +18,7 @@
   import Pipette from '@lucide/svelte/icons/pipette';
   import Plus from '@lucide/svelte/icons/plus';
   import Search from '@lucide/svelte/icons/search';
+  import Star from '@lucide/svelte/icons/star';
   import TextCursor from '@lucide/svelte/icons/text-cursor';
   import Underline from '@lucide/svelte/icons/underline';
   import UserRound from '@lucide/svelte/icons/user-round';
@@ -878,6 +879,14 @@
         {@render textSnip('w-[65%]', 'secondary')}
       </div>
     </div>
+  </div>
+{:else if slug === 'starrating'}
+  <div class="flex items-center gap-1">
+    {@render iconSnip(Star, 'fill-current text-foreground')}
+    {@render iconSnip(Star, 'fill-current text-foreground')}
+    {@render iconSnip(Star, 'fill-current text-foreground')}
+    {@render iconSnip(Star, 'fill-current text-foreground')}
+    {@render iconSnip(Star, 'text-muted-foreground/20')}
   </div>
 {:else if slug === 'stepper'}
   <div class="flex max-w-50 flex-1 items-center">

@@ -251,6 +251,11 @@ export const custom_components_metadata: RegistryUiData = {
 		category: "extra",
 		istodo: true
 	},
+	starrating: {
+		description: "A control for selecting or displaying a rating using stars.",
+		category: "ui",
+		isnew: true,
+	},
 	switch: {
 		description: "A control that indicates whether a setting is on or off.",
 		category: "ui",

@@ -583,6 +583,16 @@ const allComponents: RegistryUiData = {
     npmDependencies: [],
     registryDependencies: []
   },
+  starrating: {
+    name: 'Starrating',
+    category: 'ui',
+    description: 'A control for selecting or displaying a rating using stars.',
+    folder: 'starrating',
+    isnew: true,
+    istodo: false,
+    npmDependencies: [],
+    registryDependencies: []
+  },
   stepper: {
     name: 'Stepper',
     category: 'origin-ui',

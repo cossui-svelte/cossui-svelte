@@ -585,4 +585,40 @@ export const custom_particle_metadata = {
     registryDependencies: ['slider', 'checkbox', 'input', 'button', 'label'],
     tags: ['colorpicker', 'color', 'input']
   },
+  'p-starrating-1': {
+    description: 'Basic interactive star rating',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['starrating'],
+    tags: ['starrating']
+  },
+  'p-starrating-2': {
+    description: 'Half-star precision rating with live value display',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['starrating'],
+    tags: ['starrating']
+  },
+  'p-starrating-3': {
+    description: 'Readonly rating with review count',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['starrating'],
+    tags: ['starrating']
+  },
+  'p-starrating-4': {
+    description: 'Star rating inside a form field',
+    meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' },
+    registryDependencies: ['starrating', 'field', 'form', 'button'],
+    tags: ['starrating', 'form']
+  },
+  'p-starrating-5': {
+    description: 'Star rating with a different color per star',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['starrating'],
+    tags: ['starrating']
+  },
+  'p-starrating-6': {
+    description: 'Heart rating using a custom icon',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['starrating'],
+    tags: ['starrating']
+  },
 }

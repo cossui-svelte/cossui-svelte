@@ -1,42 +1,42 @@
 // All registry categories in display order
 // used during rendering
 
-// import { allComponents } from './generated-registry-components';
+import { allComponents } from './generated-registry-components';
 
-// const allComponentKeys = Object.keys(allComponents);
+const allComponentKeys = Object.keys(allComponents);
 
-// // This is used by the search to find particules
-// export const registryCategories = [
-//   // UI components
-//   ...allComponentKeys,
-//   // Features and states
+// This is used by the search to find particules
+export const registryCategories = [
+  // UI components
+  ...allComponentKeys,
+  // Features and states
 
-//   // TODO - this should be moved to the custom-file at the source of the transformation
-//   'async',
-//   'copy',
-//   'credit-card',
-//   'disabled',
-//   'error',
-//   'file',
-//   'filter',
-//   'info',
-//   'loading',
-//   'multiselect',
-//   'password',
-//   'search',
-//   'sort',
-//   'success',
-//   'tag',
-//   'tanstack',
-//   'text-editor',
-//   'time',
-//   'timezone',
-//   'upload',
-//   'validation',
-//   'warning'
-// ] as const;
+  // TODO - this should be moved to the custom-file at the source of the transformation
+  'async',
+  'copy',
+  'credit-card',
+  'disabled',
+  'error',
+  'file',
+  'filter',
+  'info',
+  'loading',
+  'multiselect',
+  'password',
+  'search',
+  'sort',
+  'success',
+  'tag',
+  'tanstack',
+  'text-editor',
+  'time',
+  'timezone',
+  'upload',
+  'validation',
+  'warning'
+] as const;
 
-// export type RegistryCategory = (typeof registryCategories)[number];
+export type RegistryCategory = (typeof registryCategories)[number];
 
 // Ordered list of categories for display sorting — add new categories here in preferred order
 const CATEGORY_ORDER: string[] = [];
