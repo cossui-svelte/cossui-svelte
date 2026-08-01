@@ -3379,6 +3379,12 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     registryDependencies: ['input', 'label'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
+  'p-input-200': {
+    description: 'IP address, subnet mask, and gateway inputs with auto-formatting',
+    tags: ['input', 'label', 'mask', 'ip', 'network'],
+    registryDependencies: ['input', 'label'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
   'p-file-upload-1': {
     description: 'Basic image uploader',
     tags: ['file-upload'],

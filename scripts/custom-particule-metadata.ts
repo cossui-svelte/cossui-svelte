@@ -453,6 +453,12 @@ export const custom_particle_metadata = {
     registryDependencies: ['input', 'label'],
     tags: ['input', 'label', 'range', 'number']
   },
+  'p-input-200': {
+    description: 'IP address, subnet mask, and gateway inputs with auto-formatting',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['input', 'label'],
+    tags: ['input', 'label', 'mask', 'ip', 'network']
+  },
   'p-file-upload-1': {
     description: 'Basic image uploader',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
