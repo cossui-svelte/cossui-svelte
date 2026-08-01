@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { CreditCardIcon } from '@lucide/svelte';
+  import CreditCardIcon from "@lucide/svelte/icons/credit-card-icon";
   import {
     DefaultCreditCardDelimiter,
     DefaultDateDelimiter,
