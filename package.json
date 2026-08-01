@@ -5,14 +5,14 @@
     }
   },
   "dependencies": {
-    "@aejkatappaja/phantom-ui": "^1.5.0",
+    "@aejkatappaja/phantom-ui": "^1.6.1",
     "@headless-tree/core": "^1.7.0",
     "@hueycolor/core": "^1.0.1",
     "@hueycolor/svelte": "^1.0.1",
     "@internationalized/date": "^3.12.2",
     "@lucide/svelte": "^1.28.0",
-    "@shikijs/langs": "^4.3.1",
-    "@shikijs/themes": "^4.3.1",
+    "@shikijs/langs": "^4.4.1",
+    "@shikijs/themes": "^4.4.1",
     "bits-ui": "^2.18.1",
     "cleave-zen": "^0.0.17",
     "clsx": "^2.1.1",
@@ -21,7 +21,7 @@
     "layerchart": "^2.0.4",
     "mode-watcher": "^1.1.0",
     "runed": "0.37.1",
-    "shiki": "^4.3.1",
+    "shiki": "^4.4.1",
     "svelte-tel-input": "^4.3.2",
     "svelte-toolbelt": "^0.10.6",
     "sveltekit-superforms": "^2.30.2",
@@ -55,7 +55,7 @@
     "typescript-eslint": "^8.65.0",
     "vite": "^8.2.0",
     "vitest": "^4.1.10",
-    "wrangler": "^4.116.0"
+    "wrangler": "^4.118.0"
   },
   "license": "MIT",
   "name": "coss-ui-svelte",
