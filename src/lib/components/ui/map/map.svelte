@@ -364,7 +364,10 @@
 <div
   bind:this={mapContainer}
   data-slot="map"
-  class={cn('relative h-full w-full overflow-hidden rounded-xl', className)}
+  class={cn(
+    'relative h-full w-full overflow-hidden rounded-xl [clip-path:inset(0_round_var(--radius-xl))]',
+    className
+  )}
   {...restProps}
 >
   {#if !isLoaded || loading}
