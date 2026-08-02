@@ -155,6 +155,11 @@ export const custom_components_metadata: RegistryUiData = {
 		description: "Renders an accessible label associated with controls.",
 		category: "ui",
 	},
+	map: {
+		description: "An interactive map with markers, popups, tooltips, and routes, powered by MapLibre GL.",
+		category: "extra",
+		isnew: true,
+	},
 	menu: {
 		description: "A list of actions in a dropdown, enhanced with keyboard navigation.",
 		category: "ui",
@@ -250,6 +255,11 @@ export const custom_components_metadata: RegistryUiData = {
 		description: "A component to layout resizable panels with a draggable divider.",
 		category: "extra",
 		istodo: true
+	},
+	starrating: {
+		description: "A control for selecting or displaying a rating using stars.",
+		category: "ui",
+		isnew: true,
 	},
 	switch: {
 		description: "A control that indicates whether a setting is on or off.",

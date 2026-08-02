@@ -370,6 +370,17 @@ const allComponents: RegistryUiData = {
     npmDependencies: [],
     registryDependencies: []
   },
+  map: {
+    name: 'Map',
+    category: 'extra',
+    description:
+      'An interactive map with markers, popups, tooltips, and routes, powered by MapLibre GL.',
+    folder: 'map',
+    isnew: true,
+    istodo: false,
+    npmDependencies: [],
+    registryDependencies: []
+  },
   menu: {
     name: 'Menu',
     category: 'ui',
@@ -580,6 +591,16 @@ const allComponents: RegistryUiData = {
     folder: 'split-pane',
     isnew: false,
     istodo: true,
+    npmDependencies: [],
+    registryDependencies: []
+  },
+  starrating: {
+    name: 'Starrating',
+    category: 'ui',
+    description: 'A control for selecting or displaying a rating using stars.',
+    folder: 'starrating',
+    isnew: true,
+    istodo: false,
     npmDependencies: [],
     registryDependencies: []
   },

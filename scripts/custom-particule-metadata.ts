@@ -453,6 +453,12 @@ export const custom_particle_metadata = {
     registryDependencies: ['input', 'label'],
     tags: ['input', 'label', 'range', 'number']
   },
+  'p-input-200': {
+    description: 'IP address, subnet mask, and gateway inputs with auto-formatting',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['input', 'label'],
+    tags: ['input', 'label', 'mask', 'ip', 'network']
+  },
   'p-file-upload-1': {
     description: 'Basic image uploader',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
@@ -578,5 +584,83 @@ export const custom_particle_metadata = {
     meta: { class: '**:data-[slot=card]:overflow-visible **:data-[slot=card]:[clip-path:none]!' },
     registryDependencies: ['slider', 'checkbox', 'input', 'button', 'label'],
     tags: ['colorpicker', 'color', 'input']
+  },
+  'p-starrating-1': {
+    description: 'Basic interactive star rating',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['starrating'],
+    tags: ['starrating']
+  },
+  'p-starrating-2': {
+    description: 'Half-star precision rating with live value display',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['starrating'],
+    tags: ['starrating']
+  },
+  'p-starrating-3': {
+    description: 'Readonly rating with review count',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['starrating'],
+    tags: ['starrating']
+  },
+  'p-starrating-4': {
+    description: 'Star rating inside a form field',
+    meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' },
+    registryDependencies: ['starrating', 'field', 'form', 'button'],
+    tags: ['starrating', 'form']
+  },
+  'p-starrating-5': {
+    description: 'Star rating with a different color per star',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['starrating'],
+    tags: ['starrating']
+  },
+  'p-starrating-6': {
+    description: 'Heart rating using a custom icon',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['starrating'],
+    tags: ['starrating']
+  },
+  'p-map-1': {
+    description: 'Global analytics map with markers sized by active users per city',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['map'],
+    tags: ['map']
+  },
+  'p-map-2': {
+    description: 'Global shipping routes visualized as animated arcs from a hub on a rotating globe',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['map'],
+    tags: ['map']
+  },
+  'p-map-3': {
+    description: 'Delivery tracking map with animated route and courier marker',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['map'],
+    tags: ['map']
+  },
+  'p-map-4': {
+    description: 'EV charging stations with live availability status markers',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['map'],
+    tags: ['map']
+  },
+  'p-map-5': {
+    description: 'Destination picker with animated fly-to transitions',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['map', 'button'],
+    tags: ['map']
+  },
+  'p-map-6': {
+    description: 'Cycling trail map with route line and activity stats overlay',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['map'],
+    tags: ['map']
+  },
+  'p-map-7': {
+    description: 'Heatmap-style markers showing visitor traffic hotspots',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['map'],
+    tags: ['map']
   },
 }

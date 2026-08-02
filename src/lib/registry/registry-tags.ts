@@ -3,13 +3,15 @@
 
 import { allComponents } from './generated-registry-components';
 
-const tagCategories = Object.keys(allComponents);
+const allComponentKeys = Object.keys(allComponents);
 
 // This is used by the search to find particules
 export const registryCategories = [
   // UI components
-  ...tagCategories,
+  ...allComponentKeys,
   // Features and states
+
+  // TODO - this should be moved to the custom-file at the source of the transformation
   'async',
   'copy',
   'credit-card',

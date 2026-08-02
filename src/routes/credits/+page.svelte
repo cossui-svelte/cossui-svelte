@@ -122,9 +122,20 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          - Huey</a
-        > - Neat reusable ColorPicker
+          Huey</a
+        > - A composable ColorPicker
       </li>
+      <li>
+        <a
+          href="https://mapcn-svelte.vercel.app/)"
+          class="text-foreground underline underline-offset-4 hover:text-foreground/70 transition-colors"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          MapCN-Svelte</a
+        > - A full featured map component
+      </li>
+
     </ul>
 
     <p class="text-base/7 text-muted-foreground">

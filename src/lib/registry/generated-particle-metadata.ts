@@ -3379,6 +3379,12 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     registryDependencies: ['input', 'label'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
+  'p-input-200': {
+    description: 'IP address, subnet mask, and gateway inputs with auto-formatting',
+    tags: ['input', 'label', 'mask', 'ip', 'network'],
+    registryDependencies: ['input', 'label'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
   'p-file-upload-1': {
     description: 'Basic image uploader',
     tags: ['file-upload'],
@@ -3504,5 +3510,84 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     tags: ['colorpicker', 'color', 'input'],
     registryDependencies: ['slider', 'checkbox', 'input', 'button', 'label'],
     meta: { class: '**:data-[slot=card]:overflow-visible **:data-[slot=card]:[clip-path:none]!' }
+  },
+  'p-starrating-1': {
+    description: 'Basic interactive star rating',
+    tags: ['starrating'],
+    registryDependencies: ['starrating'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-starrating-2': {
+    description: 'Half-star precision rating with live value display',
+    tags: ['starrating'],
+    registryDependencies: ['starrating'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-starrating-3': {
+    description: 'Readonly rating with review count',
+    tags: ['starrating'],
+    registryDependencies: ['starrating'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-starrating-4': {
+    description: 'Star rating inside a form field',
+    tags: ['starrating', 'form'],
+    registryDependencies: ['starrating', 'field', 'form', 'button'],
+    meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
+  },
+  'p-starrating-5': {
+    description: 'Star rating with a different color per star',
+    tags: ['starrating'],
+    registryDependencies: ['starrating'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-starrating-6': {
+    description: 'Heart rating using a custom icon',
+    tags: ['starrating'],
+    registryDependencies: ['starrating'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-map-1': {
+    description: 'Global analytics map with markers sized by active users per city',
+    tags: ['map'],
+    registryDependencies: ['map'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-map-2': {
+    description:
+      'Global shipping routes visualized as animated arcs from a hub on a rotating globe',
+    tags: ['map'],
+    registryDependencies: ['map'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-map-3': {
+    description: 'Delivery tracking map with animated route and courier marker',
+    tags: ['map'],
+    registryDependencies: ['map'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-map-4': {
+    description: 'EV charging stations with live availability status markers',
+    tags: ['map'],
+    registryDependencies: ['map'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-map-5': {
+    description: 'Destination picker with animated fly-to transitions',
+    tags: ['map'],
+    registryDependencies: ['map', 'button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-map-6': {
+    description: 'Cycling trail map with route line and activity stats overlay',
+    tags: ['map'],
+    registryDependencies: ['map'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-map-7': {
+    description: 'Heatmap-style markers showing visitor traffic hotspots',
+    tags: ['map'],
+    registryDependencies: ['map'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   }
 };

@@ -18,6 +18,7 @@
   import Pipette from '@lucide/svelte/icons/pipette';
   import Plus from '@lucide/svelte/icons/plus';
   import Search from '@lucide/svelte/icons/search';
+  import Star from '@lucide/svelte/icons/star';
   import TextCursor from '@lucide/svelte/icons/text-cursor';
   import Underline from '@lucide/svelte/icons/underline';
   import UserRound from '@lucide/svelte/icons/user-round';
@@ -587,6 +588,104 @@
       </div>
     </div>
   </div>
+{:else if slug === 'map'}
+  <div class={cardCls('overflow-hidden [--radius-2xl:14px]', false)}>
+    <div class="relative h-28 w-full shrink-0 grow-0 overflow-hidden bg-muted-foreground/6">
+      <svg
+        viewBox="0 0 320 128"
+        preserveAspectRatio="xMidYMid slice"
+        class="absolute inset-0 h-full w-full"
+      >
+        <!-- park -->
+        <path
+          d="M-10,18 C42,-8 76,12 58,50 C42,82 -8,72 -14,44 Z"
+          class="fill-muted-foreground/10"
+        />
+        <!-- river -->
+        <path
+          d="M-10,8 C36,26 18,52 66,64 C124,78 116,44 172,40 C226,36 232,72 288,78 C308,80 320,88 330,94"
+          class="stroke-muted-foreground/14"
+          stroke-width="13"
+          stroke-linecap="round"
+          fill="none"
+        />
+        <path
+          d="M-10,8 C36,26 18,52 66,64 C124,78 116,44 172,40 C226,36 232,72 288,78 C308,80 320,88 330,94"
+          class="stroke-muted-foreground/26"
+          stroke-width="3"
+          stroke-linecap="round"
+          fill="none"
+        />
+        <!-- city blocks -->
+        <rect
+          x="96"
+          y="6"
+          width="46"
+          height="30"
+          rx="3"
+          transform="rotate(-8 119 21)"
+          class="fill-muted-foreground/16"
+        />
+        <rect
+          x="18"
+          y="80"
+          width="42"
+          height="32"
+          rx="3"
+          transform="rotate(-3 39 96)"
+          class="fill-muted-foreground/16"
+        />
+        <!-- relief / elevation contours -->
+        <path
+          d="M215,70 C240,55 275,58 292,80 C305,98 285,118 255,115 C225,112 205,95 215,70 Z"
+          class="stroke-muted-foreground/12"
+          stroke-width="1.3"
+          fill="none"
+        />
+        <path
+          d="M228,72 C246,62 270,64 282,80 C291,93 278,106 258,104 C238,102 224,90 228,72 Z"
+          class="stroke-muted-foreground/17"
+          stroke-width="1.3"
+          fill="none"
+        />
+        <path
+          d="M240,76 C250,70 264,72 270,82 C275,90 267,98 256,97 C246,96 237,86 240,76 Z"
+          class="stroke-muted-foreground/22"
+          stroke-width="1.3"
+          fill="none"
+        />
+        <!-- avenues -->
+        <path
+          d="M-10,54 C60,44 112,62 172,52 C224,44 272,56 330,50"
+          class="stroke-muted-foreground/30"
+          stroke-width="3"
+          stroke-linecap="round"
+          fill="none"
+        />
+        <path
+          d="M146,-10 C132,32 152,66 128,138"
+          class="stroke-muted-foreground/30"
+          stroke-width="3"
+          stroke-linecap="round"
+          fill="none"
+        />
+        <!-- streets -->
+        <path d="M-10,96 L330,84" class="stroke-muted-foreground/18" stroke-width="1.5" />
+        <path d="M78,-10 L100,138" class="stroke-muted-foreground/18" stroke-width="1.5" />
+        <path d="M242,-10 L222,138" class="stroke-muted-foreground/18" stroke-width="1.5" />
+        <path d="M-10,10 L330,112" class="stroke-muted-foreground/12" stroke-width="1.5" />
+      </svg>
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="relative flex flex-col items-center">
+          <div class="absolute bottom-0.5 h-1.5 w-4 rounded-full bg-foreground/25 blur-[2px]"></div>
+          {@render iconSnip(
+            MapPin,
+            'relative size-9 fill-current text-foreground/55 stroke-foreground/20 drop-shadow-sm'
+          )}
+        </div>
+      </div>
+    </div>
+  </div>
 {:else if slug === 'menu'}
   <div class="flex max-w-50 flex-1 flex-col items-end gap-2">
     <div class={cardCls('w-fit [--radius-2xl:12px]')}>
@@ -878,6 +977,14 @@
         {@render textSnip('w-[65%]', 'secondary')}
       </div>
     </div>
+  </div>
+{:else if slug === 'starrating'}
+  <div class="flex items-center gap-1">
+    {@render iconSnip(Star, 'fill-current text-foreground')}
+    {@render iconSnip(Star, 'fill-current text-foreground')}
+    {@render iconSnip(Star, 'fill-current text-foreground')}
+    {@render iconSnip(Star, 'fill-current text-foreground')}
+    {@render iconSnip(Star, 'text-muted-foreground/20')}
   </div>
 {:else if slug === 'stepper'}
   <div class="flex max-w-50 flex-1 items-center">

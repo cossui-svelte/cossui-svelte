@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { CreditCardIcon } from '@lucide/svelte';
+  import CreditCardIcon from '@lucide/svelte/icons/credit-card';
   import { DefaultCreditCardDelimiter, formatCreditCard, registerCursorTracker } from 'cleave-zen';
   import type { Attachment } from 'svelte/attachments';
   import { Input } from '$lib/components/ui/input';
