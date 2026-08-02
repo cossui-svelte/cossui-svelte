@@ -361,31 +361,41 @@
   });
 </script>
 
+<!--
+  Rounding/clipping lives on this outer wrapper rather than on the div MapLibre owns
+  directly below. Firefox promotes the map's WebGL canvas to its own compositor layer,
+  which can escape `overflow-hidden`/`rounded-*` applied to the same element that hosts
+  it. Clipping via a genuine ancestor avoids that.
+  `isolate` + `will-change-transform` force this wrapper onto its own compositor layer
+  up front — without a hint like this nearby (e.g. a sibling using `backdrop-filter`),
+  Firefox doesn't reliably recompute the clip against the canvas's layer.
+-->
 <div
-  bind:this={mapContainer}
   data-slot="map"
   class={cn(
-    'relative h-full w-full overflow-hidden rounded-xl [clip-path:inset(0_round_var(--radius-xl))]',
+    'relative isolate h-full w-full overflow-hidden rounded-xl will-change-transform [clip-path:inset(0_round_var(--radius-xl))]',
     className
   )}
   {...restProps}
 >
-  {#if !isLoaded || loading}
-    <div
-      class="bg-background/50 absolute inset-0 z-10 flex items-center justify-center backdrop-blur-xs"
-    >
-      <div class="flex gap-1">
-        <span class="bg-muted-foreground/60 size-1.5 animate-pulse rounded-full"></span>
-        <span
-          class="bg-muted-foreground/60 size-1.5 animate-pulse rounded-full [animation-delay:150ms]"
-        ></span>
-        <span
-          class="bg-muted-foreground/60 size-1.5 animate-pulse rounded-full [animation-delay:300ms]"
-        ></span>
+  <div bind:this={mapContainer} class="relative h-full w-full">
+    {#if !isLoaded || loading}
+      <div
+        class="bg-background/50 absolute inset-0 z-10 flex items-center justify-center backdrop-blur-xs"
+      >
+        <div class="flex gap-1">
+          <span class="bg-muted-foreground/60 size-1.5 animate-pulse rounded-full"></span>
+          <span
+            class="bg-muted-foreground/60 size-1.5 animate-pulse rounded-full [animation-delay:150ms]"
+          ></span>
+          <span
+            class="bg-muted-foreground/60 size-1.5 animate-pulse rounded-full [animation-delay:300ms]"
+          ></span>
+        </div>
       </div>
-    </div>
-  {/if}
-  {#if map}
-    {@render children?.()}
-  {/if}
+    {/if}
+    {#if map}
+      {@render children?.()}
+    {/if}
+  </div>
 </div>

@@ -1,11 +1,12 @@
 * IMPROVEMENT - Drawer nested, do not stack properly on top of each others, the position is off
-* Form Controls need to be rethought - first then should apply to complex elements such as sliders and number fields, second the must handle defaultValue
 * p-select-13 bugs, no entries in the select list
 * p-group-14 css bug
-* Bring origin tables 12-20, + 9-11
-* Add origin input-29
+* TODO: Bring origin tables 12-20, + 9-11
+* TODO: Add origin input-29
 * Border style is off - p-input-147  phone input
+* Firefox - p-map-* don't show round corners
 
+* DONE Form Controls need to be rethought - first then should apply to complex elements such as sliders and number fields, second the must handle defaultValue
 * DONE add the bundle version in the footer
 * DONE Issue with particule generation script, the meta.class is not copied over
 * DONE global.css seems off from the original code base

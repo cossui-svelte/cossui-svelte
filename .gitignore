@@ -13,3 +13,4 @@ stats.html
 .env.*
 .dev.vars
 .playwright-mcp
+.svelte-doctor/*
