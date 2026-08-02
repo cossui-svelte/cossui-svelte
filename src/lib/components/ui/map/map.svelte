@@ -2,6 +2,7 @@
   import { onMount, onDestroy, setContext, untrack } from 'svelte';
   import MapLibreGL from 'maplibre-gl';
   import 'maplibre-gl/dist/maplibre-gl.css';
+  import type { HTMLAttributes } from 'svelte/elements';
   import { browser } from '$app/environment';
   import { cn } from '$lib/utils.js';
   import { resolveMapTheme } from './theme';
@@ -52,7 +53,7 @@
     pitch: number;
   };
 
-  interface Props {
+  interface Props extends Omit<HTMLAttributes<HTMLDivElement>, 'children' | 'class'> {
     children?: import('svelte').Snippet;
     class?: string;
     styles?: {
@@ -115,7 +116,8 @@
     viewport,
     onviewportchange,
     onstyleloaded,
-    loading = false
+    loading = false,
+    ...restProps
   }: Props = $props();
 
   let mapContainer: HTMLDivElement;
@@ -361,7 +363,9 @@
 
 <div
   bind:this={mapContainer}
+  data-slot="map"
   class={cn('relative h-full w-full overflow-hidden rounded-xl', className)}
+  {...restProps}
 >
   {#if !isLoaded || loading}
     <div

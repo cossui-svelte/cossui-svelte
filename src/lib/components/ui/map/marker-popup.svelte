@@ -1,16 +1,14 @@
 <script lang="ts">
   import { getContext } from 'svelte';
   import MapLibreGL, { type PopupOptions } from 'maplibre-gl';
+  import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '$lib/utils.js';
   import X from '@lucide/svelte/icons/x';
 
-  interface Props {
-    longitude: number;
-    latitude: number;
+  interface Props extends Omit<HTMLAttributes<HTMLDivElement>, 'children' | 'class'> {
     children?: import('svelte').Snippet;
     class?: string;
     closeButton?: boolean;
-    onclose?: () => void;
     offset?: PopupOptions['offset'];
     anchor?: PopupOptions['anchor'];
     closeOnClick?: boolean;
@@ -20,49 +18,37 @@
   }
 
   let {
-    longitude,
-    latitude,
     children,
     class: className,
     closeButton = false,
-    onclose,
     offset = 16,
     anchor,
     closeOnClick,
     closeOnMove,
     focusAfterOpen,
-    maxWidth
+    maxWidth,
+    ...restProps
   }: Props = $props();
 
-  const mapCtx = getContext<{
+  const markerCtx = getContext<{
+    getMarker: () => MapLibreGL.Marker | null;
+    getElement: () => HTMLDivElement | null;
     getMap: () => MapLibreGL.Map | null;
-    isLoaded: () => boolean;
-  }>('map');
-
-  const markerCtx =
-    getContext<{
-      isDraggable?: () => boolean;
-    }>('marker') || {};
+    isReady: () => boolean;
+    isDraggable?: () => boolean;
+    isDragging?: () => boolean;
+  }>('marker');
 
   let popup: MapLibreGL.Popup | null = null;
   let wrapperElement: HTMLDivElement | null = $state(null);
+  let shouldStayOpen = $state(false);
 
-  // Create popup when map is ready
+  // Create popup when marker is ready
   $effect(() => {
-    const map = mapCtx.getMap();
-    const loaded = mapCtx.isLoaded();
+    const marker = markerCtx.getMarker();
+    const ready = markerCtx.isReady();
 
-    if (!loaded || !map || !wrapperElement) return;
-
-    // Validate coordinates
-    if (
-      typeof longitude !== 'number' ||
-      typeof latitude !== 'number' ||
-      Number.isNaN(longitude) ||
-      Number.isNaN(latitude)
-    ) {
-      return;
-    }
+    if (!ready || !marker || !wrapperElement) return;
 
     // Create popup container
     const container = document.createElement('div');
@@ -74,21 +60,18 @@
       className: 'maplibre-popup-transparent'
     };
 
-    // If marker is draggable, preserve popup state during movement
-    if (markerCtx.isDraggable?.()) {
-      popupOptions.closeOnMove = false;
-    }
-
     if (anchor !== undefined) popupOptions.anchor = anchor;
     if (closeOnClick !== undefined) popupOptions.closeOnClick = closeOnClick;
     if (closeOnMove !== undefined) popupOptions.closeOnMove = closeOnMove;
     if (focusAfterOpen !== undefined) popupOptions.focusAfterOpen = focusAfterOpen;
 
+    // If marker is draggable, preserve popup state during movement
+    if (markerCtx.isDraggable?.()) {
+      popupOptions.closeOnMove = false;
+    }
+
     // Create popup
-    const popupInstance = new MapLibreGL.Popup(popupOptions)
-      .setDOMContent(container)
-      .setLngLat([longitude, latitude])
-      .addTo(map);
+    const popupInstance = new MapLibreGL.Popup(popupOptions).setDOMContent(container);
 
     if (maxWidth) {
       popupInstance.setMaxWidth(maxWidth);
@@ -96,11 +79,31 @@
       popupInstance.setMaxWidth('none');
     }
 
+    // Attach popup to marker
+    marker.setPopup(popupInstance);
     popup = popupInstance;
 
-    // Handle close event
-    const handleClose = () => onclose?.();
-    popupInstance.on('close', handleClose);
+    // Prevent popup from closing during drag
+    $effect(() => {
+      const isDragging = markerCtx.isDragging?.();
+      if (isDragging && popupInstance.isOpen()) {
+        shouldStayOpen = true;
+      }
+    });
+
+    // Reopen popup after drag if it was open
+    $effect(() => {
+      const isDragging = markerCtx.isDragging?.();
+      if (!isDragging && shouldStayOpen && !popupInstance.isOpen()) {
+        // Small delay to ensure popup has finished closing
+        setTimeout(() => {
+          if (!popupInstance.isOpen()) {
+            marker.togglePopup();
+          }
+          shouldStayOpen = false;
+        }, 10);
+      }
+    });
 
     // Move content to popup container
     while (wrapperElement.firstChild) {
@@ -108,52 +111,37 @@
     }
 
     return () => {
-      popupInstance.off('close', handleClose);
-
       // Move content back
       while (container.firstChild) {
         wrapperElement?.appendChild(container.firstChild);
       }
 
-      if (popupInstance.isOpen()) {
-        popupInstance.remove();
-      }
+      popupInstance.remove();
       popup = null;
     };
-  });
-
-  // Update position when coordinates change
-  $effect(() => {
-    if (!popup) return;
-    if (
-      typeof longitude !== 'number' ||
-      typeof latitude !== 'number' ||
-      Number.isNaN(longitude) ||
-      Number.isNaN(latitude)
-    ) {
-      return;
-    }
-
-    const current = popup.getLngLat();
-    if (!current || current.lng !== longitude || current.lat !== latitude) {
-      popup.setLngLat([longitude, latitude]);
-    }
-    popup.setOffset(offset ?? 16);
-    popup.setMaxWidth(maxWidth ?? 'none');
   });
 
   function handleClose() {
     popup?.remove();
   }
+
+  $effect(() => {
+    if (!popup) return;
+
+    popup.setOffset(offset ?? 16);
+    popup.setMaxWidth(maxWidth ?? 'none');
+  });
 </script>
 
 <div bind:this={wrapperElement} style="display: contents;">
   <div
+    data-slot="marker-popup"
     class={cn(
       'bg-popover text-popover-foreground relative max-w-62 rounded-md border p-3 shadow-md',
       'animate-in fade-in-0 zoom-in-95 duration-200 ease-out',
       className
     )}
+    {...restProps}
   >
     {#if closeButton}
       <button

@@ -1,9 +1,10 @@
 <script lang="ts">
   import { getContext } from 'svelte';
   import MapLibreGL, { type PopupOptions } from 'maplibre-gl';
+  import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '$lib/utils.js';
 
-  interface Props {
+  interface Props extends Omit<HTMLAttributes<HTMLDivElement>, 'children' | 'class'> {
     children?: import('svelte').Snippet;
     class?: string;
     offset?: PopupOptions['offset'];
@@ -11,7 +12,7 @@
     maxWidth?: string;
   }
 
-  let { children, class: className, offset = 16, anchor, maxWidth }: Props = $props();
+  let { children, class: className, offset = 16, anchor, maxWidth, ...restProps }: Props = $props();
 
   const markerCtx = getContext<{
     getMarker: () => MapLibreGL.Marker | null;
@@ -92,11 +93,13 @@
 
 <div bind:this={wrapperElement} style="display: contents;">
   <div
+    data-slot="marker-tooltip"
     class={cn(
       'bg-foreground text-background pointer-events-none rounded-md px-2 py-1 text-xs text-balance shadow-md',
       'animate-in fade-in-0 zoom-in-95 duration-200 ease-out',
       className
     )}
+    {...restProps}
   >
     {@render children?.()}
   </div>
