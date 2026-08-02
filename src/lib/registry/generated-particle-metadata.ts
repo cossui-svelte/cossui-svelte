@@ -3546,5 +3546,48 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     tags: ['starrating'],
     registryDependencies: ['starrating'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-map-1': {
+    description: 'Global analytics map with markers sized by active users per city',
+    tags: ['map'],
+    registryDependencies: ['map'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-map-2': {
+    description:
+      'Global shipping routes visualized as animated arcs from a hub on a rotating globe',
+    tags: ['map'],
+    registryDependencies: ['map'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-map-3': {
+    description: 'Delivery tracking map with animated route and courier marker',
+    tags: ['map'],
+    registryDependencies: ['map'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-map-4': {
+    description: 'EV charging stations with live availability status markers',
+    tags: ['map'],
+    registryDependencies: ['map'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-map-5': {
+    description: 'Destination picker with animated fly-to transitions',
+    tags: ['map'],
+    registryDependencies: ['map', 'button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-map-6': {
+    description: 'Cycling trail map with route line and activity stats overlay',
+    tags: ['map'],
+    registryDependencies: ['map'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-map-7': {
+    description: 'Heatmap-style markers showing visitor traffic hotspots',
+    tags: ['map'],
+    registryDependencies: ['map'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   }
 };

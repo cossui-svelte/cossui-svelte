@@ -58,6 +58,14 @@ export default tseslint.config(
 			"svelte/prefer-svelte-reactivity": "warn",
 			"svelte/prefer-writable-derived": "warn",
 			"svelte/no-at-html-tags": "warn",
+
+			// The map components (src/lib/components/ui/map) bridge
+			// Svelte-rendered content into MapLibre GL's imperative
+			// popup/marker DOM API, which requires handing it a real DOM
+			// node. That's an unavoidable interop requirement with a
+			// third-party library, not a bug, so this rule is downgraded
+			// rather than mechanically "fixed".
+			"svelte/no-dom-manipulating": "off",
 		},
 	},
 );

@@ -10,7 +10,6 @@
     "@hueycolor/core": "^1.0.1",
     "@hueycolor/svelte": "^1.0.1",
     "@internationalized/date": "^3.12.2",
-    "@lucide/svelte": "^1.28.0",
     "@shikijs/langs": "^4.4.1",
     "@shikijs/themes": "^4.4.1",
     "bits-ui": "^2.18.1",
@@ -27,9 +26,13 @@
     "sveltekit-superforms": "^2.30.2",
     "tailwind-merge": "^3.6.0",
     "tailwind-variants": "^3.3.0",
-    "zod": "^4.4.3"
+    "zod": "^4.4.3",
+    "maplibre-gl": "^5.24.0"
   },
   "devDependencies": {
+    "@lucide/svelte": "^1.28.0",
+    "@types/d3-shape": "^3.1.8",
+    "@types/geojson": "^7946.0.16",
     "@biomejs/biome": "^2.5.6",
     "@commitlint/cli": "^21.2.1",
     "@commitlint/config-conventional": "^21.2.0",

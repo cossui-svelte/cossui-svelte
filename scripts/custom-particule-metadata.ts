@@ -621,4 +621,46 @@ export const custom_particle_metadata = {
     registryDependencies: ['starrating'],
     tags: ['starrating']
   },
+  'p-map-1': {
+    description: 'Global analytics map with markers sized by active users per city',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['map'],
+    tags: ['map']
+  },
+  'p-map-2': {
+    description: 'Global shipping routes visualized as animated arcs from a hub on a rotating globe',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['map'],
+    tags: ['map']
+  },
+  'p-map-3': {
+    description: 'Delivery tracking map with animated route and courier marker',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['map'],
+    tags: ['map']
+  },
+  'p-map-4': {
+    description: 'EV charging stations with live availability status markers',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['map'],
+    tags: ['map']
+  },
+  'p-map-5': {
+    description: 'Destination picker with animated fly-to transitions',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['map', 'button'],
+    tags: ['map']
+  },
+  'p-map-6': {
+    description: 'Cycling trail map with route line and activity stats overlay',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['map'],
+    tags: ['map']
+  },
+  'p-map-7': {
+    description: 'Heatmap-style markers showing visitor traffic hotspots',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['map'],
+    tags: ['map']
+  },
 }
