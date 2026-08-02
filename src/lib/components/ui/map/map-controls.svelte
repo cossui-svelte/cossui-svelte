@@ -1,6 +1,7 @@
 <script lang="ts">
   import { getContext } from 'svelte';
   import MapLibreGL from 'maplibre-gl';
+  import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '$lib/utils.js';
   import Plus from '@lucide/svelte/icons/plus';
   import Minus from '@lucide/svelte/icons/minus';
@@ -8,7 +9,7 @@
   import Maximize from '@lucide/svelte/icons/maximize';
   import Loader2 from '@lucide/svelte/icons/loader-2';
 
-  interface Props {
+  interface Props extends Omit<HTMLAttributes<HTMLDivElement>, 'class'> {
     position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
     showZoom?: boolean;
     showCompass?: boolean;
@@ -25,7 +26,8 @@
     showLocate = false,
     showFullscreen = false,
     class: className,
-    onlocate
+    onlocate,
+    ...restProps
   }: Props = $props();
 
   const mapCtx = getContext<{
@@ -125,7 +127,11 @@
 </script>
 
 {#if loaded}
-  <div class={cn('absolute z-10 flex flex-col gap-1.5', positionClasses[position], className)}>
+  <div
+    data-slot="map-controls"
+    class={cn('absolute z-10 flex flex-col gap-1.5', positionClasses[position], className)}
+    {...restProps}
+  >
     {#if showZoom}
       <div
         class="border-border bg-background [&>button:not(:last-child)]:border-border flex flex-col overflow-hidden rounded-md border shadow-sm [&>button:not(:last-child)]:border-b"

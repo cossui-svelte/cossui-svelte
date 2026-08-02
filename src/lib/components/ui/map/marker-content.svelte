@@ -1,14 +1,15 @@
 <script lang="ts">
   import { getContext } from 'svelte';
   import MapLibreGL from 'maplibre-gl';
+  import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '$lib/utils.js';
 
-  interface Props {
+  interface Props extends Omit<HTMLAttributes<HTMLDivElement>, 'children' | 'class'> {
     children?: import('svelte').Snippet;
     class?: string;
   }
 
-  let { children, class: className }: Props = $props();
+  let { children, class: className, ...restProps }: Props = $props();
 
   const markerCtx = getContext<{
     getMarker: () => MapLibreGL.Marker | null;
@@ -45,7 +46,7 @@
 
 <!-- Hidden wrapper that holds content until marker is ready -->
 <div bind:this={wrapperElement} style="display: contents;">
-  <div class={cn('relative cursor-pointer', className)}>
+  <div data-slot="marker-content" class={cn('relative cursor-pointer', className)} {...restProps}>
     {#if children}
       {@render children()}
     {:else}
