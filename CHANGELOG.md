@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.9.16](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.15...v0.9.16) (2026-08-02)
+
+### ✨ Features
+
+* add an IP input particule ([d1f3cc1](https://github.com/cossui-svelte/cossui-svelte/commit/d1f3cc152a5288cd5be41bb4f65c732177efc902))
+* map component is graduating ([073e466](https://github.com/cossui-svelte/cossui-svelte/commit/073e466d261ccaf9d36cab99707ccdfad9dd30f5))
+* starrating component is maturing ([1f63e90](https://github.com/cossui-svelte/cossui-svelte/commit/1f63e9020b568bc035827ec87042bc8084289b4a))
+
+### 🐛 Bug Fixes
+
+* cleanup ([6501959](https://github.com/cossui-svelte/cossui-svelte/commit/65019595b47209e7c6bfa8a541eb40b6a27ed2c8))
+* place-autocomplete particle not showing on the right category ([3fe389d](https://github.com/cossui-svelte/cossui-svelte/commit/3fe389dc8a7f6145d12ccc843c17d2bdc2a12139))
+
+### ♻️ Code Refactoring
+
+* icons ([ac11f66](https://github.com/cossui-svelte/cossui-svelte/commit/ac11f668151dab73a8b6234f1ce8425dfda537c4))
+
+### 🚚 Chores
+
+* deps ([a96f05d](https://github.com/cossui-svelte/cossui-svelte/commit/a96f05d4c7b72bfaf825989d537f1475b643b860))
 ## [0.9.15](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.14...v0.9.15) (2026-07-31)
 
 ### ✨ Features
