@@ -13,7 +13,7 @@
 <div
   bind:this={ref}
   data-slot="alert-dialog-media"
-  class={cn('cn-alert-dialog-media', className)}
+  class={cn(className)}
   {...restProps}
 >
   {@render children?.()}
