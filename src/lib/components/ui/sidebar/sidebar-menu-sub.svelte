@@ -1,23 +1,23 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
+  import { cn, type WithElementRef } from '$lib/utils.js';
   import type { HTMLAttributes } from 'svelte/elements';
-  import { cn } from '$lib/utils';
 
-  interface Props extends HTMLAttributes<HTMLUListElement> {
-    children?: Snippet;
-  }
-
-  let { class: className, children, ...restProps }: Props = $props();
+  let {
+    ref = $bindable(null),
+    class: className,
+    children,
+    ...restProps
+  }: WithElementRef<HTMLAttributes<HTMLUListElement>> = $props();
 </script>
 
 <ul
+  bind:this={ref}
+  data-slot="sidebar-menu-sub"
+  data-sidebar="menu-sub"
   class={cn(
-    'mx-3.5 flex min-w-0 translate-x-px flex-col gap-1 border-sidebar-border border-l px-2.5 py-0.5',
-    'group-data-[collapsible=icon]:hidden',
+    'mx-3.5 flex min-w-0 translate-x-px flex-col gap-1 border-l border-sidebar-border px-2.5 py-0.5 group-data-[collapsible=icon]:hidden',
     className
   )}
-  data-sidebar="menu-sub"
-  data-slot="sidebar-menu-sub"
   {...restProps}
 >
   {@render children?.()}

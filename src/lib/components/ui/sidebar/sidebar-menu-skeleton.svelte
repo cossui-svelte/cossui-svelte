@@ -1,29 +1,39 @@
 <script lang="ts">
+  import { Skeleton } from '$lib/components/ui/skeleton';
+  import { cn, type WithElementRef } from '$lib/utils.js';
   import type { HTMLAttributes } from 'svelte/elements';
-  import { cn } from '$lib/utils';
 
-  interface Props extends HTMLAttributes<HTMLDivElement> {
+  let {
+    ref = $bindable(null),
+    class: className,
+    // showIcon = false,
+    children,
+    ...restProps
+  }: WithElementRef<HTMLAttributes<HTMLElement>> & {
     showIcon?: boolean;
-  }
+  } = $props();
 
-  let { class: className, showIcon = false, ...restProps }: Props = $props();
-
-  // Random width between 50–90% computed once at init
-  const width = `${Math.floor(Math.random() * 40) + 50}%`;
+  // Random width between 50% and 90%
+  // const width = `${Math.floor(Math.random() * 40) + 50}%`;
 </script>
 
 <div
-  class={cn('flex h-8 items-center gap-2 rounded-lg px-2', className)}
-  data-sidebar="menu-skeleton"
+  bind:this={ref}
   data-slot="sidebar-menu-skeleton"
+  data-sidebar="menu-skeleton"
+  class={cn('flex h-8 items-center gap-2 rounded-xl px-2', className)}
   {...restProps}
 >
-  {#if showIcon}
-    <div class="size-4 rounded-lg" data-sidebar="menu-skeleton-icon"></div>
+  <Skeleton>
+    {@render children?.()}
+  </Skeleton>
+  <!-- {#if showIcon}
+    <Skeleton class="size-4 rounded-xl" data-sidebar="menu-skeleton-icon" />
   {/if}
-  <div
+  <Skeleton
     class="h-4 max-w-(--skeleton-width) flex-1"
     data-sidebar="menu-skeleton-text"
     style="--skeleton-width: {width};"
-  ></div>
+  />
+  -->
 </div>

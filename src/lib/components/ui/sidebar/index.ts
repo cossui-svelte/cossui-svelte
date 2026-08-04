@@ -1,3 +1,4 @@
+export { useSidebar } from './context.svelte.js';
 export { default as Sidebar } from './sidebar.svelte';
 export { default as SidebarContent } from './sidebar-content.svelte';
 export { default as SidebarFooter } from './sidebar-footer.svelte';

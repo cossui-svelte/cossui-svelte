@@ -1,24 +1,33 @@
 <script lang="ts">
+  import { cn, type WithElementRef } from '$lib/utils.js';
   import type { Snippet } from 'svelte';
   import type { HTMLAttributes } from 'svelte/elements';
-  import { cn } from '$lib/utils';
 
-  interface Props extends HTMLAttributes<HTMLDivElement> {
-    children?: Snippet;
-  }
+  let {
+    ref = $bindable(null),
+    children,
+    child,
+    class: className,
+    ...restProps
+  }: WithElementRef<HTMLAttributes<HTMLElement>> & {
+    child?: Snippet<[{ props: Record<string, unknown> }]>;
+  } = $props();
 
-  let { class: className, children, ...restProps }: Props = $props();
+  const mergedProps = $derived({
+    class: cn(
+      'flex h-8 shrink-0 items-center rounded-xl px-3 text-xs font-medium text-sidebar-foreground/70 outline-hidden ring-sidebar-ring transition-[margin,opacity] duration-200 ease-linear group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0 focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0',
+      className
+    ),
+    'data-slot': 'sidebar-group-label',
+    'data-sidebar': 'group-label',
+    ...restProps
+  });
 </script>
 
-<div
-  class={cn(
-    'flex h-8 shrink-0 items-center rounded-lg px-2 font-medium text-sidebar-foreground text-xs outline-hidden ring-sidebar-ring transition-[margin,opacity] duration-200 ease-linear focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0',
-    'group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0',
-    className
-  )}
-  data-sidebar="group-label"
-  data-slot="sidebar-group-label"
-  {...restProps}
->
-  {@render children?.()}
-</div>
+{#if child}
+  {@render child({ props: mergedProps })}
+{:else}
+  <div bind:this={ref} {...mergedProps}>
+    {@render children?.()}
+  </div>
+{/if}

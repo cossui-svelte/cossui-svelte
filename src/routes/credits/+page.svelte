@@ -135,7 +135,6 @@
           MapCN-Svelte</a
         > - A full featured map component
       </li>
-
     </ul>
 
     <p class="text-base/7 text-muted-foreground">

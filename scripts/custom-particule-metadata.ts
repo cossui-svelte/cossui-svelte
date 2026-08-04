@@ -663,4 +663,10 @@ export const custom_particle_metadata = {
     registryDependencies: ['map'],
     tags: ['map']
   },
+  'p-sidebar-1': {
+    description: 'Basic application sidebar with a navigation menu',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 },
+    registryDependencies: ['sidebar'],
+    tags: ['sidebar']
+  },
 }

@@ -1,26 +1,33 @@
 <script lang="ts">
+  import { cn, type WithElementRef } from '$lib/utils.js';
   import type { Snippet } from 'svelte';
   import type { HTMLButtonAttributes } from 'svelte/elements';
-  import { cn } from '$lib/utils';
 
-  interface Props extends HTMLButtonAttributes {
-    children?: Snippet;
-  }
+  let {
+    ref = $bindable(null),
+    class: className,
+    children,
+    child,
+    ...restProps
+  }: WithElementRef<HTMLButtonAttributes> & {
+    child?: Snippet<[{ props: Record<string, unknown> }]>;
+  } = $props();
 
-  let { class: className, children, ...restProps }: Props = $props();
+  const mergedProps = $derived({
+    class: cn(
+      'absolute top-3.5 right-3 flex aspect-square w-5 items-center justify-center rounded-xl p-0 text-sidebar-foreground outline-hidden ring-sidebar-ring transition-transform hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 group-data-[collapsible=icon]:hidden after:absolute after:-inset-2 md:after:hidden [&>svg]:size-4 [&>svg]:shrink-0',
+      className
+    ),
+    'data-slot': 'sidebar-group-action',
+    'data-sidebar': 'group-action',
+    ...restProps
+  });
 </script>
 
-<button
-  class={cn(
-    "absolute top-3.5 right-3 flex aspect-square w-5 items-center justify-center rounded-lg p-0 text-sidebar-foreground outline-hidden ring-sidebar-ring transition-transform hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 [&>svg:not([class*='size-'])]:size-4 [&>svg]:shrink-0",
-    'after:absolute after:-inset-2 md:after:hidden',
-    'group-data-[collapsible=icon]:hidden',
-    className
-  )}
-  data-sidebar="group-action"
-  data-slot="sidebar-group-action"
-  type="button"
-  {...restProps}
->
-  {@render children?.()}
-</button>
+{#if child}
+  {@render child({ props: mergedProps })}
+{:else}
+  <button bind:this={ref} {...mergedProps}>
+    {@render children?.()}
+  </button>
+{/if}

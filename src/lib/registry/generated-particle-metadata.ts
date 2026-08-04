@@ -3589,5 +3589,11 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     tags: ['map'],
     registryDependencies: ['map'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-sidebar-1': {
+    description: 'Basic application sidebar with a navigation menu',
+    tags: ['sidebar'],
+    registryDependencies: ['sidebar'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   }
 };
