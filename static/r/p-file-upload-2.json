@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-file-upload-2",
+	"title": "File upload 2",
+	"description": "Avatar upload button",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-file-upload-2.svelte",
+			"target": "$lib/components/particles/file-upload/p-file-upload-2.svelte",
+			"content": "<script lang=\"ts\">\n  import CircleUserRound from '@lucide/svelte/icons/circle-user-round';\n  import X from '@lucide/svelte/icons/x';\n  import { Button } from '$lib/components/ui/button';\n  import { useFileUpload } from '$lib/hooks/use-file-upload.svelte';\n\n  const fileUpload = useFileUpload({ accept: 'image/*' });\n\n  const previewUrl = $derived(fileUpload.files[0]?.preview ?? null);\n  const fileName = $derived(fileUpload.files[0]?.file.name ?? null);\n</script>\n\n<div class=\"flex flex-col items-center gap-2\">\n  <div class=\"relative inline-flex\">\n    <Button\n      aria-label={previewUrl ? 'Change image' : 'Upload image'}\n      class=\"relative size-16 overflow-hidden p-0 shadow-none\"\n      onclick={fileUpload.openFileDialog}\n      variant=\"outline\"\n    >\n      {#if previewUrl}\n        <img\n          alt=\"Upload preview\"\n          class=\"size-full object-cover\"\n          height={64}\n          src={previewUrl}\n          style=\"object-fit: cover;\"\n          width={64}\n        />\n      {:else}\n        <div aria-hidden=\"true\">\n          <CircleUserRound class=\"size-4 opacity-60\" />\n        </div>\n      {/if}\n    </Button>\n    {#if previewUrl}\n      <Button\n        aria-label=\"Remove image\"\n        class=\"absolute -top-2 -right-2 size-6 rounded-full border-2 border-background shadow-none focus-visible:border-background\"\n        onclick={() => fileUpload.removeFile(fileUpload.files[0]?.id)}\n        size=\"icon\"\n      >\n        <X class=\"size-3.5\" />\n      </Button>\n    {/if}\n    <input\n      bind:this={fileUpload.fileInput}\n      {...fileUpload.inputProps}\n      aria-label=\"Upload image file\"\n      class=\"sr-only\"\n      tabindex={-1}\n    />\n  </div>\n  {#if fileName}\n    <p class=\"text-muted-foreground text-xs\">{fileName}</p>\n  {/if}\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"file-upload",
+		"button",
+		"use-file-upload"
+	],
+	"dependencies": []
+}

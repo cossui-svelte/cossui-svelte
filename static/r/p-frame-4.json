@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-frame-4",
+	"title": "Frame 4",
+	"description": "Frame with multiple stacked panels",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-frame-4.svelte",
+			"target": "$lib/components/particles/frame/p-frame-4.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    Frame,\n    FrameDescription,\n    FrameHeader,\n    FramePanel,\n    FrameTitle\n  } from '$lib/components/ui/frame';\n  import { Separator } from '$lib/components/ui/separator';\n</script>\n\n<Frame class=\"w-full\">\n  <FrameHeader>\n    <FrameTitle>Section header</FrameTitle>\n    <FrameDescription>Brief description about the section</FrameDescription>\n  </FrameHeader>\n  <FramePanel class=\"p-0\">\n    <div class=\"p-5\">\n      <h2 class=\"font-semibold text-sm\">Stacked panel</h2>\n      <p class=\"text-muted-foreground text-sm\">Section description</p>\n    </div>\n    <Separator />\n    <div class=\"p-5\">\n      <h2 class=\"font-semibold text-sm\">Stacked panel</h2>\n      <p class=\"text-muted-foreground text-sm\">Section description</p>\n    </div>\n  </FramePanel>\n</Frame>\n"
+		}
+	],
+	"registryDependencies": [
+		"frame",
+		"separator"
+	],
+	"dependencies": []
+}

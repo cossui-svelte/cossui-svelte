@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-toggle-5",
+	"title": "Toggle 5",
+	"description": "Large toggle",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-toggle-5.svelte",
+			"target": "$lib/components/particles/toggle/p-toggle-5.svelte",
+			"content": "<script lang=\"ts\">\n  import { Toggle } from '$lib/components/ui/toggle';\n</script>\n\n<Toggle size=\"lg\" variant=\"outline\">Large</Toggle>\n"
+		}
+	],
+	"registryDependencies": [
+		"toggle"
+	],
+	"dependencies": []
+}

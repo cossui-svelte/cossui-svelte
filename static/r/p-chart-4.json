@@ -1,0 +1,23 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-chart-4",
+	"title": "Chart 4",
+	"description": "Radar Chart - Custom Labelp",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-chart-4.svelte",
+			"target": "$lib/components/particles/charts/p-chart-4.svelte",
+			"content": "<script lang=\"ts\">\n  import { scaleBand } from 'd3-scale';\n  import { curveLinearClosed } from 'd3-shape';\n  import { Axis, LineChart, Text } from 'layerchart';\n  import { Chart, type ChartConfig, ChartTooltip } from '$lib/components/ui/chart';\n\n  const chartData = [\n    { desktop: 186, mobile: 80, month: 'January' },\n    { desktop: 305, mobile: 200, month: 'February' },\n    { desktop: 237, mobile: 120, month: 'March' },\n    { desktop: 73, mobile: 190, month: 'April' },\n    { desktop: 209, mobile: 130, month: 'May' },\n    { desktop: 214, mobile: 140, month: 'June' }\n  ];\n\n  const chartConfig = {\n    desktop: { color: 'var(--chart-1)', label: 'Desktop' },\n    mobile: { color: 'var(--chart-2)', label: 'Mobile' }\n  } satisfies ChartConfig;\n</script>\n\n<Chart config={chartConfig} class=\"grow p-12 h-87.5\">\n  <LineChart\n    data={chartData}\n    series={[\n      {\n        key: 'desktop',\n        label: 'Desktop',\n        color: chartConfig.desktop.color,\n        props: {\n          fill: chartConfig.desktop.color,\n          fillOpacity: 0.6\n        }\n      },\n      {\n        key: 'mobile',\n        label: 'Mobile',\n        color: chartConfig.mobile.color,\n        props: {\n          fill: chartConfig.mobile.color\n        }\n      }\n    ]}\n    radial\n    x=\"month\"\n    xScale={scaleBand()}\n    padding={12}\n    props={{\n      spline: {\n        curve: curveLinearClosed,\n        stroke: '0',\n        motion: 'tween'\n      },\n      xAxis: {\n        tickLength: 0\n      },\n      yAxis: {\n        format: () => ''\n      },\n      grid: {\n        radialY: 'linear'\n      },\n      tooltip: {\n        context: {\n          mode: 'voronoi'\n        }\n      },\n      highlight: {\n        lines: false,\n        points: { r: 4 }\n      }\n    }}\n  >\n    {#snippet axis()}\n      <Axis placement=\"angle\" tickLength={0}>\n        {#snippet tickLabel({ props, index })}\n          {@const y = props.y\n            ? typeof props.y === 'number'\n              ? props.y\n              : typeof props.y === 'string'\n                ? Number.parseInt(props.y, 10)\n                : 0\n            : 0}\n          {@const data = chartData[index]}\n          <Text {...props} {y} value=\"{data.desktop} / {data.mobile}\" class=\"fill-foreground\" />\n          <Text {...props} y={y + 14} />\n        {/snippet}\n      </Axis>\n      <Axis placement=\"radius\" format={() => ''} />\n    {/snippet}\n    {#snippet tooltip()}\n      <ChartTooltip />\n    {/snippet}\n  </LineChart>\n</Chart>\n"
+		}
+	],
+	"registryDependencies": [
+		"chart"
+	],
+	"dependencies": [
+		"d3-scale@^4.0.2",
+		"d3-shape@^3.2.0",
+		"layerchart@^2.0.4"
+	]
+}

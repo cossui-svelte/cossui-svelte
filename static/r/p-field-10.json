@@ -1,0 +1,25 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-field-10",
+	"title": "Field 10",
+	"description": "Field with textarea",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-field-10.svelte",
+			"target": "$lib/components/particles/field/p-field-10.svelte",
+			"content": "<script lang=\"ts\">\n  import { z } from 'zod';\n  import { Button } from '$lib/components/ui/button';\n  import { Field, FieldDescription, FieldError, FieldLabel } from '$lib/components/ui/field';\n  import { Form } from '$lib/components/ui/form';\n  import { Textarea } from '$lib/components/ui/textarea';\n  import { createForm } from '$lib/hooks/use-superform';\n\n  const schema = z.object({\n    bio: z.string().max(500, { message: 'Bio must be 500 characters or fewer.' })\n  });\n\n  const superform = createForm({\n    onUpdated: (data) => {\n      alert(`Bio: ${data.bio}`);\n    },\n    schema\n  });\n\n  const { form, submitting } = superform;\n</script>\n\n<Form class=\"flex w-full flex-col gap-4\" {superform}>\n  <Field name=\"bio\">\n    <FieldLabel>Bio</FieldLabel>\n    <Textarea bind:value={$form.bio} placeholder=\"Tell us about yourself…\" />\n    <FieldDescription>Write a short bio. Maximum 500 characters.</FieldDescription>\n    <FieldError />\n  </Field>\n  <Button loading={$submitting} type=\"submit\">Submit</Button>\n</Form>\n"
+		}
+	],
+	"registryDependencies": [
+		"field",
+		"textarea",
+		"button",
+		"form",
+		"use-superform"
+	],
+	"dependencies": [
+		"zod@^4.4.3"
+	]
+}

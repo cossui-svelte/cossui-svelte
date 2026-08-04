@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-button-18",
+	"title": "Button 18",
+	"description": "Custom loading button with manual Spinner",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-button-18.svelte",
+			"target": "$lib/components/particles/button/p-button-18.svelte",
+			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n  import { Spinner } from '$lib/components/ui/spinner';\n</script>\n\n<Button disabled>\n  <Spinner />\n  Loading...\n</Button>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"spinner"
+	],
+	"dependencies": []
+}

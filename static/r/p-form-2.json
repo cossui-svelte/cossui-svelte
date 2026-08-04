@@ -1,0 +1,26 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-form-2",
+	"title": "Form 2",
+	"description": "Form with zod validation",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-form-2.svelte",
+			"target": "$lib/components/particles/form/p-form-2.svelte",
+			"content": "<script lang=\"ts\">\n  import { z } from 'zod';\n  import { Button } from '$lib/components/ui/button';\n  import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';\n  import { Form } from '$lib/components/ui/form';\n  import { Input } from '$lib/components/ui/input';\n  import { createForm } from '$lib/hooks/use-superform';\n\n  const schema = z.object({\n    age: z.coerce\n      .number({ message: 'Please enter a number.' })\n      .positive({ message: 'Number must be positive.' }),\n    name: z.string().min(1, { message: 'Please enter a name.' })\n  });\n\n  const superform = createForm({\n    onUpdated: (data) => {\n      alert(`Name: ${data.name}\\nAge: ${data.age}`);\n    },\n    schema\n  });\n\n  const { form, submitting } = superform;\n</script>\n\n<Form class=\"flex w-full max-w-64 flex-col gap-4\" {superform}>\n  <Field name=\"name\">\n    <FieldLabel>Name</FieldLabel>\n    <Input bind:value={$form.name} placeholder=\"Enter name\" />\n    <FieldError />\n  </Field>\n  <Field name=\"age\">\n    <FieldLabel>Age</FieldLabel>\n    <Input bind:value={$form.age} placeholder=\"Enter age\" />\n    <FieldError />\n  </Field>\n  <Button loading={$submitting} type=\"submit\">Submit</Button>\n</Form>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"field",
+		"form",
+		"input",
+		"use-superform"
+	],
+	"dependencies": [
+		"zod",
+		"zod@^4.4.3"
+	]
+}

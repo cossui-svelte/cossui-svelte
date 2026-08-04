@@ -1,0 +1,24 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-number-field-10",
+	"title": "Number field 10",
+	"description": "Number field in form",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-number-field-10.svelte",
+			"target": "$lib/components/particles/number-field/p-number-field-10.svelte",
+			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n  import {\n    NumberField,\n    NumberFieldDecrement,\n    NumberFieldGroup,\n    NumberFieldIncrement,\n    NumberFieldInput,\n    NumberFieldScrubArea\n  } from '$lib/components/ui/number-field';\n\n  let quantity = $state(1);\n  let loading = $state(false);\n  let error = $state('');\n\n  async function handleSubmit(e: SubmitEvent) {\n    e.preventDefault();\n    error = '';\n    if (quantity < 1) {\n      error = 'Quantity must be at least 1.';\n      return;\n    }\n    if (quantity > 100) {\n      error = 'Maximum quantity is 100.';\n      return;\n    }\n    loading = true;\n    await new Promise((r) => setTimeout(r, 800));\n    loading = false;\n    alert(`Quantity: ${quantity}`);\n  }\n</script>\n\n<form class=\"flex w-full max-w-64 flex-col gap-4\" onsubmit={handleSubmit}>\n  <div class=\"flex flex-col items-start gap-2\">\n    <NumberField bind:value={quantity} max={100} min={1}>\n      <NumberFieldScrubArea label=\"Quantity\" />\n      <NumberFieldGroup>\n        <NumberFieldDecrement />\n        <NumberFieldInput />\n        <NumberFieldIncrement />\n      </NumberFieldGroup>\n    </NumberField>\n    {#if error}\n      <p class=\"text-destructive text-xs\">{error}</p>\n    {/if}\n  </div>\n  <Button {loading} type=\"submit\">Submit</Button>\n</form>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"field",
+		"form",
+		"number-field"
+	],
+	"dependencies": [
+		"zod"
+	]
+}

@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-input-8",
+	"title": "Input 8",
+	"description": "Input with start text and end tooltip",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-input-8.svelte",
+			"target": "$lib/components/particles/input/p-input-8.svelte",
+			"content": "<script lang=\"ts\">\n  import Info from '@lucide/svelte/icons/info';\n  import { buttonVariants } from '$lib/components/ui/button';\n  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';\n  import { Popover, PopoverPopup, PopoverTrigger } from '$lib/components/ui/popover';\n</script>\n\n<InputGroup>\n  <InputGroupInput\n    aria-label=\"Set your URL\"\n    class=\"*:[input]:ps-0!\"\n    placeholder=\"coss.com\"\n    type=\"text\"\n  />\n  <InputGroupAddon>https://</InputGroupAddon>\n  <InputGroupAddon align=\"inline-end\">\n    <Popover>\n      <PopoverTrigger\n        aria-label=\"More info\"\n        class={buttonVariants({ size: 'icon-xs', variant: 'ghost' })}\n      >\n        <Info />\n      </PopoverTrigger>\n      <PopoverPopup side=\"top\" tooltipStyle>\n        <p>The URL of your website</p>\n      </PopoverPopup>\n    </Popover>\n  </InputGroupAddon>\n</InputGroup>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"input-group",
+		"popover"
+	],
+	"dependencies": []
+}

@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-textarea-10",
+	"title": "Textarea 10",
+	"description": "Read-only textarea",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-textarea-10.svelte",
+			"target": "$lib/components/particles/textarea/p-textarea-10.svelte",
+			"content": "<script lang=\"ts\">\n  import { Textarea } from '$lib/components/ui/textarea';\n\n  const id = $props.id();\n</script>\n\n<Textarea {id} class=\"read-only:bg-muted\" value=\"This is a read-only textarea\" readonly />\n"
+		}
+	],
+	"registryDependencies": [
+		"textarea"
+	],
+	"dependencies": []
+}

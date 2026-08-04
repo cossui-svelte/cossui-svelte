@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-menu-5",
+	"title": "Menu 5",
+	"description": "Menu with link",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-menu-5.svelte",
+			"target": "$lib/components/particles/menu/p-menu-5.svelte",
+			"content": "<script lang=\"ts\">\n  import { buttonVariants } from '$lib/components/ui/button';\n  import { Menu, MenuLinkItem, MenuPopup, MenuTrigger } from '$lib/components/ui/menu';\n</script>\n\n<Menu>\n  <MenuTrigger class={buttonVariants({ variant: 'outline' })}>Open menu</MenuTrigger>\n  <MenuPopup>\n    <MenuLinkItem href=\"/docs\">Docs</MenuLinkItem>\n    <MenuLinkItem href=\"/particles\">Particles</MenuLinkItem>\n  </MenuPopup>\n</Menu>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"menu"
+	],
+	"dependencies": []
+}

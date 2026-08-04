@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-number-field-5",
+	"title": "Number field 5",
+	"description": "Number field with label",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-number-field-5.svelte",
+			"target": "$lib/components/particles/number-field/p-number-field-5.svelte",
+			"content": "<script lang=\"ts\">\n  import { Label } from '$lib/components/ui/label';\n  import {\n    NumberField,\n    NumberFieldDecrement,\n    NumberFieldGroup,\n    NumberFieldIncrement,\n    NumberFieldInput\n  } from '$lib/components/ui/number-field';\n</script>\n\n<div class=\"flex flex-col items-start gap-2\">\n  <Label for=\"quantity-5\">Quantity</Label>\n  <NumberField value={0} id=\"quantity-5\">\n    <NumberFieldGroup>\n      <NumberFieldDecrement />\n      <NumberFieldInput />\n      <NumberFieldIncrement />\n    </NumberFieldGroup>\n  </NumberField>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"label",
+		"number-field"
+	],
+	"dependencies": []
+}

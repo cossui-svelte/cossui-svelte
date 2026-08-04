@@ -1,0 +1,63 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "toolbar",
+	"title": "Toolbar",
+	"description": "A container for grouping a set of buttons and controls.",
+	"type": "registry:ui",
+	"files": [
+		{
+			"type": "registry:ui",
+			"path": "toolbar/index.ts",
+			"target": "$lib/components/ui/toolbar/index.ts",
+			"content": "export { default as Toolbar } from './toolbar.svelte';\nexport { default as ToolbarButton } from './toolbar-button.svelte';\nexport { default as ToolbarGroup } from './toolbar-group.svelte';\nexport { default as ToolbarGroupItem } from './toolbar-group-item.svelte';\nexport { default as ToolbarInput } from './toolbar-input.svelte';\nexport { default as ToolbarLink } from './toolbar-link.svelte';\nexport { default as ToolbarSeparator } from './toolbar-separator.svelte';\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "toolbar/toolbar-button.svelte",
+			"target": "$lib/components/ui/toolbar/toolbar-button.svelte",
+			"content": "<script lang=\"ts\">\n  import { Toolbar } from 'bits-ui';\n  import type { Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  type Props = Toolbar.ButtonProps & { children?: Snippet };\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<Toolbar.Button class={cn(className)} data-slot=\"toolbar-button\" {...restProps}>\n  {@render children?.()}\n</Toolbar.Button>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "toolbar/toolbar-group-item.svelte",
+			"target": "$lib/components/ui/toolbar/toolbar-group-item.svelte",
+			"content": "<script lang=\"ts\">\n  import { Toolbar } from 'bits-ui';\n  import type { Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  type Props = Toolbar.GroupItemProps & { children?: Snippet };\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<Toolbar.GroupItem class={cn(className)} data-slot=\"toolbar-group-item\" {...restProps}>\n  {@render children?.()}\n</Toolbar.GroupItem>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "toolbar/toolbar-group.svelte",
+			"target": "$lib/components/ui/toolbar/toolbar-group.svelte",
+			"content": "<script lang=\"ts\">\n  import { Toolbar } from 'bits-ui';\n  import type { Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  type Props = Toolbar.GroupProps & { children?: Snippet };\n\n  let { class: className, children, type = 'single', ...restProps }: Props = $props();\n</script>\n\n<Toolbar.Group\n  class={cn('flex items-center gap-1', className)}\n  data-slot=\"toolbar-group\"\n  {type}\n  {...restProps}\n>\n  {@render children?.()}\n</Toolbar.Group>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "toolbar/toolbar-input.svelte",
+			"target": "$lib/components/ui/toolbar/toolbar-input.svelte",
+			"content": "<script lang=\"ts\">\n  import type { HTMLInputAttributes } from 'svelte/elements';\n  import { cn } from '$lib/utils';\n\n  type Props = HTMLInputAttributes;\n\n  let { class: className, ...restProps }: Props = $props();\n</script>\n\n<input class={cn(className)} data-slot=\"toolbar-input\" {...restProps} />\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "toolbar/toolbar-link.svelte",
+			"target": "$lib/components/ui/toolbar/toolbar-link.svelte",
+			"content": "<script lang=\"ts\">\n  import { Toolbar } from 'bits-ui';\n  import type { Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  type Props = Toolbar.LinkProps & { children?: Snippet };\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<Toolbar.Link class={cn(className)} data-slot=\"toolbar-link\" {...restProps}>\n  {@render children?.()}\n</Toolbar.Link>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "toolbar/toolbar-separator.svelte",
+			"target": "$lib/components/ui/toolbar/toolbar-separator.svelte",
+			"content": "<script lang=\"ts\">\n  import { Separator } from 'bits-ui';\n  import { cn } from '$lib/utils';\n\n  type Props = Separator.RootProps;\n\n  let { class: className, orientation = 'vertical', ...restProps }: Props = $props();\n</script>\n\n<Separator.Root\n  class={cn(\n    \"shrink-0 bg-border data-[orientation=horizontal]:my-0.5 data-[orientation=vertical]:my-1.5 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px data-[orientation=vertical]:not-[[class^='h-']]:not-[[class*='_h-']]:self-stretch\",\n    className\n  )}\n  data-slot=\"toolbar-separator\"\n  {orientation}\n  {...restProps}\n/>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "toolbar/toolbar.svelte",
+			"target": "$lib/components/ui/toolbar/toolbar.svelte",
+			"content": "<script lang=\"ts\">\n  import { Toolbar } from 'bits-ui';\n  import type { Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  type Props = Toolbar.RootProps & { children?: Snippet };\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<Toolbar.Root\n  class={cn(\n    'relative flex gap-2 rounded-xl border bg-card not-dark:bg-clip-padding p-1 text-card-foreground',\n    className\n  )}\n  data-slot=\"toolbar\"\n  {...restProps}\n>\n  {@render children?.()}\n</Toolbar.Root>\n"
+		}
+	],
+	"registryDependencies": [
+		"utils"
+	],
+	"dependencies": [
+		"bits-ui@^2.18.1"
+	]
+}

@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-meter-4",
+	"title": "Meter 4",
+	"description": "Meter with range",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-meter-4.svelte",
+			"target": "$lib/components/particles/meter/p-meter-4.svelte",
+			"content": "<script lang=\"ts\">\n  import { Meter, MeterIndicator, MeterLabel, MeterTrack } from '$lib/components/ui/meter';\n</script>\n\n<Meter max={1000} min={500} value={700}>\n  <div class=\"flex items-center justify-between gap-2\">\n    <MeterLabel>Bandwidth (Mbps)</MeterLabel>\n    <span class=\"text-foreground text-sm tabular-nums\" data-slot=\"meter-value\">700</span>\n  </div>\n  <MeterTrack>\n    <MeterIndicator />\n  </MeterTrack>\n</Meter>\n"
+		}
+	],
+	"registryDependencies": [
+		"meter"
+	],
+	"dependencies": []
+}

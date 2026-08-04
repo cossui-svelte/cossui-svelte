@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-link-preview-1",
+	"title": "Link preview 1",
+	"description": "A component that displays a preview of a link on mouse hover",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-link-preview-1.svelte",
+			"target": "$lib/components/particles/link-preview/p-link-preview-1.svelte",
+			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n  import {\n    LinkPreviewCard,\n    LinkPreviewContent,\n    LinkPreviewTrigger\n  } from '$lib/components/ui/link-preview';\n</script>\n\n<LinkPreviewCard closeDelay={100} openDelay={10}>\n  <LinkPreviewTrigger>\n    {#snippet child({ props })}\n      <Button variant=\"link\" {...props}>Link (Please mouse hover)</Button>\n    {/snippet}\n  </LinkPreviewTrigger>\n  <LinkPreviewContent class=\"flex w-64 flex-col gap-0.5\">\n    <div class=\"font-semibold\">@svelte</div>\n    <div>The Svelte Framework – created and maintained by @vercel.</div>\n    <div class=\"mt-1 text-xs text-muted-foreground\">Joined December 2021</div>\n  </LinkPreviewContent>\n</LinkPreviewCard>\n"
+		}
+	],
+	"registryDependencies": [
+		"link-preview",
+		"button"
+	],
+	"dependencies": []
+}

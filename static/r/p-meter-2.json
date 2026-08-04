@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-meter-2",
+	"title": "Meter 2",
+	"description": "Simple meter",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-meter-2.svelte",
+			"target": "$lib/components/particles/meter/p-meter-2.svelte",
+			"content": "<script lang=\"ts\">\n  import { Meter } from '$lib/components/ui/meter';\n</script>\n\n<Meter value={50} />\n"
+		}
+	],
+	"registryDependencies": [
+		"meter"
+	],
+	"dependencies": []
+}

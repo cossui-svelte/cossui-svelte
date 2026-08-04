@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-avatar-6",
+	"title": "Avatar 6",
+	"description": "Avatar with user icon fallback",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-avatar-6.svelte",
+			"target": "$lib/components/particles/avatar/p-avatar-6.svelte",
+			"content": "<script lang=\"ts\">\n  import User from '@lucide/svelte/icons/user';\n  import { Avatar, AvatarFallback } from '$lib/components/ui/avatar';\n</script>\n\n<Avatar>\n  <AvatarFallback>\n    <User class=\"size-4\" />\n  </AvatarFallback>\n</Avatar>\n"
+		}
+	],
+	"registryDependencies": [
+		"avatar"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

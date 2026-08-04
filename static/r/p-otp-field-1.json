@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-otp-field-1",
+	"title": "Otp field 1",
+	"description": "Basic OTP field",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-otp-field-1.svelte",
+			"target": "$lib/components/particles/otp-field/p-otp-field-1.svelte",
+			"content": "<script lang=\"ts\">\n  import { OTPField, OTPFieldInput } from '$lib/components/ui/otp-field';\n\n  const OTP_LENGTH = 6;\n</script>\n\n<OTPField aria-label=\"One-time password\" maxlength={OTP_LENGTH}>\n  {#snippet children({ cells })}\n    {#each cells as cell, i (i)}\n      <OTPFieldInput aria-label={`Character ${i + 1} of ${OTP_LENGTH}`} {cell} />\n    {/each}\n  {/snippet}\n</OTPField>\n"
+		}
+	],
+	"registryDependencies": [
+		"otp-field"
+	],
+	"dependencies": []
+}

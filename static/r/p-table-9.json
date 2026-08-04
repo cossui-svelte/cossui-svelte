@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-table-9",
+	"title": "Table 9",
+	"description": "Vertical table",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-table-9.svelte",
+			"target": "$lib/components/particles/table/p-table-9.svelte",
+			"content": "<script lang=\"ts\">\n  import { Table, TableBody, TableCell, TableRow } from '$lib/components/ui/table';\n</script>\n\n<div class=\"mx-auto max-w-lg\">\n  <div class=\"bg-background overflow-hidden rounded-md border\">\n    <Table>\n      <TableBody>\n        <TableRow class=\"*:border-border hover:bg-transparent [&>:not(:last-child)]:border-r\">\n          <TableCell class=\"bg-muted/50 py-2 font-medium\">Name</TableCell>\n          <TableCell class=\"py-2\">David Kim</TableCell>\n        </TableRow>\n        <TableRow class=\"*:border-border hover:bg-transparent [&>:not(:last-child)]:border-r\">\n          <TableCell class=\"bg-muted/50 py-2 font-medium\">Email</TableCell>\n          <TableCell class=\"py-2\">d.kim@company.com</TableCell>\n        </TableRow>\n        <TableRow class=\"*:border-border hover:bg-transparent [&>:not(:last-child)]:border-r\">\n          <TableCell class=\"bg-muted/50 py-2 font-medium\">Location</TableCell>\n          <TableCell class=\"py-2\">Seoul, KR</TableCell>\n        </TableRow>\n        <TableRow class=\"*:border-border hover:bg-transparent [&>:not(:last-child)]:border-r\">\n          <TableCell class=\"bg-muted/50 py-2 font-medium\">Status</TableCell>\n          <TableCell class=\"py-2\">Active</TableCell>\n        </TableRow>\n        <TableRow class=\"*:border-border hover:bg-transparent [&>:not(:last-child)]:border-r\">\n          <TableCell class=\"bg-muted/50 py-2 font-medium\">Balance</TableCell>\n          <TableCell class=\"py-2\">$1,000.00</TableCell>\n        </TableRow>\n      </TableBody>\n    </Table>\n  </div>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"table"
+	],
+	"dependencies": []
+}

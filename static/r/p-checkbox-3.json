@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-checkbox-3",
+	"title": "Checkbox 3",
+	"description": "Checkbox with description",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-checkbox-3.svelte",
+			"target": "$lib/components/particles/checkbox/p-checkbox-3.svelte",
+			"content": "<script lang=\"ts\">\n  import { Checkbox } from '$lib/components/ui/checkbox';\n  import { Label } from '$lib/components/ui/label';\n\n  const id = $props.id();\n</script>\n\n<div class=\"flex items-start gap-2\">\n  <Checkbox checked {id} />\n  <div class=\"flex flex-col gap-1\">\n    <Label for={id}>Accept terms and conditions</Label>\n    <p class=\"text-muted-foreground text-xs\">\n      By clicking this checkbox, you agree to the terms and conditions.\n    </p>\n  </div>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"checkbox",
+		"label"
+	],
+	"dependencies": []
+}

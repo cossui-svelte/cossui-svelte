@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-menu-3",
+	"title": "Menu 3",
+	"description": "Menu with checkbox",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-menu-3.svelte",
+			"target": "$lib/components/particles/menu/p-menu-3.svelte",
+			"content": "<script lang=\"ts\">\n  import { buttonVariants } from '$lib/components/ui/button';\n  import { Menu, MenuCheckboxItem, MenuPopup, MenuTrigger } from '$lib/components/ui/menu';\n\n  let autoSave = $state(true);\n  let notifications = $state(false);\n</script>\n\n<Menu>\n  <MenuTrigger class={buttonVariants({ variant: 'outline' })}>Open menu</MenuTrigger>\n  <MenuPopup>\n    <MenuCheckboxItem\n      checked={autoSave}\n      onCheckedChange={(v) => {\n        autoSave = v;\n      }}>Auto save</MenuCheckboxItem\n    >\n    <MenuCheckboxItem\n      checked={notifications}\n      onCheckedChange={(v) => {\n        notifications = v;\n      }}>Notifications</MenuCheckboxItem\n    >\n  </MenuPopup>\n</Menu>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"menu"
+	],
+	"dependencies": []
+}

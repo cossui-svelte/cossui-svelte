@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-tabs-9",
+	"title": "Tabs 9",
+	"description": "Tabs with underline and icon on top",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-tabs-9.svelte",
+			"target": "$lib/components/particles/tabs/p-tabs-9.svelte",
+			"content": "<script lang=\"ts\">\n  import BoxIcon from '@lucide/svelte/icons/box';\n  import HouseIcon from '@lucide/svelte/icons/house';\n  import PanelsTopLeftIcon from '@lucide/svelte/icons/panels-top-left';\n  import { Tabs, TabsList, TabsPanel, TabsTab } from '$lib/components/ui/tabs';\n</script>\n\n<Tabs class=\"items-center\" value=\"tab-1\">\n  <div class=\"border-b\">\n    <TabsList variant=\"underline\">\n      <TabsTab class=\"h-auto! flex-col gap-1.5 py-[calc(--spacing(2)-1px)]\" value=\"tab-1\">\n        <HouseIcon aria-hidden=\"true\" class=\"opacity-60\" size={16} />\n        Overview\n      </TabsTab>\n      <TabsTab class=\"h-auto! flex-col gap-1.5 py-[calc(--spacing(2)-1px)]\" value=\"tab-2\">\n        <PanelsTopLeftIcon aria-hidden=\"true\" class=\"opacity-60\" size={16} />\n        Projects\n      </TabsTab>\n      <TabsTab class=\"h-auto! flex-col gap-1.5 py-[calc(--spacing(2.5)-1px)]\" value=\"tab-3\">\n        <BoxIcon aria-hidden=\"true\" class=\"opacity-60\" size={16} />\n        Packages\n      </TabsTab>\n    </TabsList>\n  </div>\n  <TabsPanel value=\"tab-1\">\n    <p class=\"p-4 text-center text-muted-foreground text-xs\">Overview content</p>\n  </TabsPanel>\n  <TabsPanel value=\"tab-2\">\n    <p class=\"p-4 text-center text-muted-foreground text-xs\">Projects content</p>\n  </TabsPanel>\n  <TabsPanel value=\"tab-3\">\n    <p class=\"p-4 text-center text-muted-foreground text-xs\">Packages content</p>\n  </TabsPanel>\n</Tabs>\n"
+		}
+	],
+	"registryDependencies": [
+		"tabs"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

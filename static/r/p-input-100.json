@@ -1,0 +1,22 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-input-100",
+	"title": "Input 100",
+	"description": "Credit card number input with auto-formatting",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-input-100.svelte",
+			"target": "$lib/components/particles/input/p-input-100.svelte",
+			"content": "<script lang=\"ts\">\n  import CreditCardIcon from '@lucide/svelte/icons/credit-card';\n  import { DefaultCreditCardDelimiter, formatCreditCard, registerCursorTracker } from 'cleave-zen';\n  import type { Attachment } from 'svelte/attachments';\n  import { Input } from '$lib/components/ui/input';\n  import { Label } from '$lib/components/ui/label';\n\n  const cardNumberAttachment: Attachment<HTMLInputElement> = (input) => {\n    const unregisterCursorTracker = registerCursorTracker({\n      delimiter: DefaultCreditCardDelimiter,\n      input\n    });\n\n    const handleInput = (event: Event) => {\n      const target = event.target as HTMLInputElement;\n      target.value = formatCreditCard(target.value);\n    };\n\n    input.addEventListener('input', handleInput);\n\n    return () => {\n      input.removeEventListener('input', handleInput);\n      unregisterCursorTracker();\n    };\n  };\n</script>\n\n<div class=\"*:not-first:mt-2\">\n  <Label for=\"input-48\">Card Number</Label>\n  <div class=\"relative\">\n    <Input\n      id=\"input-48\"\n      type=\"text\"\n      placeholder=\"Card number\"\n      autocomplete=\"cc-number\"\n      class=\"peer pe-11\"\n      {@attach cardNumberAttachment}\n    />\n    <div\n      class=\"text-muted-foreground pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 peer-disabled:opacity-50\"\n    >\n      <CreditCardIcon class=\"size-4\" />\n      <span class=\"sr-only\">Card Provider</span>\n    </div>\n  </div>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"input",
+		"label"
+	],
+	"dependencies": [
+		"cleave-zen@^0.0.17"
+	]
+}

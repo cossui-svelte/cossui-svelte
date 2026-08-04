@@ -1,0 +1,23 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-calendar-7",
+	"title": "Calendar 7",
+	"description": "Calendar with disabled dates",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-calendar-7.svelte",
+			"target": "$lib/components/particles/calendar/p-calendar-7.svelte",
+			"content": "<script lang=\"ts\">\n  import { type DateValue, getLocalTimeZone, today } from '@internationalized/date';\n  import { RangeCalendar } from '$lib/components/ui/range-calendar';\n\n  const todayValue = today(getLocalTimeZone());\n  const blockedRange1 = { from: todayValue.add({ days: 14 }), to: todayValue.add({ days: 16 }) };\n  const blockedRange2 = { from: todayValue.add({ days: 23 }), to: todayValue.add({ days: 24 }) };\n\n  function isDateDisabled(date: DateValue): boolean {\n    if (date.compare(todayValue) <= 0) return true;\n    const weekday = date.toDate(getLocalTimeZone()).getDay();\n    if (weekday === 0 || weekday === 6) return true;\n    if (date.compare(blockedRange1.from) >= 0 && date.compare(blockedRange1.to) <= 0) return true;\n    if (date.compare(blockedRange2.from) >= 0 && date.compare(blockedRange2.to) <= 0) return true;\n    return false;\n  }\n</script>\n\n<RangeCalendar excludeDisabled {isDateDisabled} />\n"
+		}
+	],
+	"registryDependencies": [
+		"calendar",
+		"range-calendar"
+	],
+	"dependencies": [
+		"date-fns",
+		"@internationalized/date@^3.12.3"
+	]
+}

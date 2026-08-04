@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-alert-5",
+	"title": "Alert 5",
+	"description": "Success alert",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-alert-5.svelte",
+			"target": "$lib/components/particles/alert/p-alert-5.svelte",
+			"content": "<script lang=\"ts\">\n  import CircleCheck from '@lucide/svelte/icons/circle-check';\n  import { Alert, AlertDescription, AlertTitle } from '$lib/components/ui/alert';\n</script>\n\n<Alert variant=\"success\">\n  <CircleCheck />\n  <AlertTitle>Heads up!</AlertTitle>\n  <AlertDescription>Describe what can be done about it here.</AlertDescription>\n</Alert>\n"
+		}
+	],
+	"registryDependencies": [
+		"alert"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

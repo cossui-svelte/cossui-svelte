@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-map-7",
+	"title": "Map 7",
+	"description": "Heatmap-style markers showing visitor traffic hotspots",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-map-7.svelte",
+			"target": "$lib/components/particles/map/p-map-7.svelte",
+			"content": "<script lang=\"ts\">\n  import { Map, MapMarker, MarkerContent, MarkerTooltip } from '$lib/components/ui/map';\n  import Flame from '@lucide/svelte/icons/flame';\n  import TrendingUp from '@lucide/svelte/icons/trending-up';\n</script>\n\n<Map class=\"h-80\" center={[-73.99, 40.735]} zoom={10}>\n  <MapMarker longitude={-73.9857} latitude={40.7484}>\n    <MarkerContent>\n      <div class=\"relative flex items-center justify-center\">\n        <div class=\"absolute size-12 rounded-full bg-orange-500/30\"></div>\n        <div class=\"absolute size-7 rounded-full bg-orange-500/40\"></div>\n        <div\n          class=\"rounded-full bg-linear-to-br from-orange-500 to-red-500 p-1.5 shadow-lg shadow-orange-500/50\"\n        >\n          <Flame class=\"size-3.5 text-white\" />\n        </div>\n      </div>\n    </MarkerContent>\n    <MarkerTooltip>\n      <p class=\"font-medium\">Times Square</p>\n      <div class=\"flex items-center gap-1\">\n        <TrendingUp class=\"size-3 text-green-500\" />\n        <span class=\"text-xs text-green-500\">2.4k visitors</span>\n      </div>\n    </MarkerTooltip>\n  </MapMarker>\n  <MapMarker longitude={-73.9654} latitude={40.7829}>\n    <MarkerContent>\n      <div class=\"relative flex items-center justify-center\">\n        <div class=\"absolute size-10 rounded-full bg-rose-500/30\"></div>\n        <div\n          class=\"rounded-full bg-linear-to-br from-rose-500 to-pink-500 p-1.5 shadow-lg shadow-rose-500/50\"\n        >\n          <Flame class=\"size-3 text-white\" />\n        </div>\n      </div>\n    </MarkerContent>\n    <MarkerTooltip>\n      <p class=\"font-medium\">Central Park</p>\n      <div class=\"flex items-center gap-1\">\n        <TrendingUp class=\"size-3 text-green-500\" />\n        <span class=\"text-xs text-green-500\">1.8k visitors</span>\n      </div>\n    </MarkerTooltip>\n  </MapMarker>\n  <MapMarker longitude={-74.0445} latitude={40.6892}>\n    <MarkerContent>\n      <div class=\"relative flex items-center justify-center\">\n        <div class=\"absolute size-8 rounded-full bg-amber-500/30\"></div>\n        <div\n          class=\"rounded-full bg-linear-to-br from-amber-500 to-yellow-500 p-1 shadow-lg shadow-amber-500/50\"\n        >\n          <Flame class=\"size-2.5 text-white\" />\n        </div>\n      </div>\n    </MarkerContent>\n    <MarkerTooltip>\n      <p class=\"font-medium\">Statue of Liberty</p>\n      <div class=\"flex items-center gap-1\">\n        <TrendingUp class=\"size-3 text-green-500\" />\n        <span class=\"text-xs text-green-500\">890 visitors</span>\n      </div>\n    </MarkerTooltip>\n  </MapMarker>\n</Map>\n"
+		}
+	],
+	"registryDependencies": [
+		"map"
+	],
+	"dependencies": []
+}

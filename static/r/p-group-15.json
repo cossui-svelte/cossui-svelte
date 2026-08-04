@@ -1,0 +1,22 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-group-15",
+	"title": "Group 15",
+	"description": "Group with search",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-group-15.svelte",
+			"target": "$lib/components/particles/group/p-group-15.svelte",
+			"content": "<script lang=\"ts\">\n  import Search from '@lucide/svelte/icons/search';\n  import { Button } from '$lib/components/ui/button';\n  import { Group, GroupSeparator } from '$lib/components/ui/group';\n  import { Input } from '$lib/components/ui/input';\n  import {\n    Select,\n    SelectItem,\n    SelectPopup,\n    SelectTrigger,\n    SelectValue\n  } from '$lib/components/ui/select';\n\n  const protocols = [\n    { label: 'http', value: 'http' },\n    { label: 'https', value: 'https' },\n    { label: 'http + https', value: 'both' }\n  ];\n\n  const subdomains = [\n    { label: 'Subdomains', value: 'none' },\n    { label: 'www', value: 'www' },\n    { label: 'api', value: 'api' },\n    { label: 'cdn', value: 'cdn' }\n  ];\n\n  let protocol = $state('both');\n  let subdomain = $state('none');\n</script>\n\n<Group aria-label=\"URL search\">\n  <Select bind:value={protocol}>\n    <SelectTrigger class=\"w-fit min-w-none\">\n      <SelectValue />\n    </SelectTrigger>\n    <SelectPopup>\n      {#each protocols as p (p.value)}\n        <SelectItem value={p.value}>{p.label}</SelectItem>\n      {/each}\n    </SelectPopup>\n  </Select>\n  <GroupSeparator />\n  <Input aria-label=\"URL\" class=\"flex-1\" value=\"coss.com\" type=\"text\" />\n  <GroupSeparator />\n  <Select bind:value={subdomain}>\n    <SelectTrigger class=\"w-fit min-w-none\">\n      <SelectValue />\n    </SelectTrigger>\n    <SelectPopup>\n      {#each subdomains as s (s.value)}\n        <SelectItem value={s.value}>{s.label}</SelectItem>\n      {/each}\n    </SelectPopup>\n  </Select>\n  <GroupSeparator />\n  <Button aria-label=\"Search\" size=\"icon\" variant=\"outline\">\n    <Search aria-hidden />\n  </Button>\n</Group>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"group",
+		"input",
+		"select"
+	],
+	"dependencies": []
+}

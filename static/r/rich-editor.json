@@ -1,0 +1,17 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "rich-editor",
+	"title": "Rich Editor",
+	"description": "A rich text editor component with formatting options.",
+	"type": "registry:ui",
+	"files": [
+		{
+			"type": "registry:ui",
+			"path": "rich-editor/index.ts",
+			"target": "$lib/components/ui/rich-editor/index.ts",
+			"content": ""
+		}
+	],
+	"registryDependencies": [],
+	"dependencies": []
+}

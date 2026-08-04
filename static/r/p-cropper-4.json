@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-cropper-4",
+	"title": "Cropper 4",
+	"description": "Cropper with custom crop area color",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-cropper-4.svelte",
+			"target": "$lib/components/particles/cropper/p-cropper-4.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    Cropper,\n    CropperCropArea,\n    CropperDescription,\n    CropperImage\n  } from '$lib/components/ui/cropper';\n</script>\n\n<div class=\"flex w-full flex-col items-center gap-2\">\n  <Cropper class=\"h-80\" image=\"/img/cropper/cropper-03_uym8r0.jpg\">\n    <CropperDescription />\n    <CropperImage />\n    <CropperCropArea class=\"border-blue-500\" />\n  </Cropper>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"cropper"
+	],
+	"dependencies": []
+}

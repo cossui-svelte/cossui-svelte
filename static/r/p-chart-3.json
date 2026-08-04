@@ -1,0 +1,22 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-chart-3",
+	"title": "Chart 3",
+	"description": "Radial Chart - Stacked",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-chart-3.svelte",
+			"target": "$lib/components/particles/charts/p-chart-3.svelte",
+			"content": "<script lang=\"ts\">\n  import { scaleBand } from 'd3-scale';\n  import { Bar, BarChart } from 'layerchart';\n  import { Chart, type ChartConfig, ChartTooltip } from '$lib/components/ui/chart';\n\n  const chartData = [\n    { browser: 'chrome', visitors: 187, color: 'var(--color-chrome)' },\n    { browser: 'safari', visitors: 200, color: 'var(--color-safari)' },\n    { browser: 'firefox', visitors: 275, color: 'var(--color-firefox)' },\n    { browser: 'edge', visitors: 173, color: 'var(--color-edge)' },\n    { browser: 'other', visitors: 90, color: 'var(--color-other)' }\n  ];\n\n  const chartConfig = {\n    visitors: { label: 'Visitors' },\n    chrome: { label: 'Chrome', color: 'var(--chart-1)' },\n    safari: { label: 'Safari', color: 'var(--chart-2)' },\n    firefox: { label: 'Firefox', color: 'var(--chart-3)' },\n    edge: { label: 'Edge', color: 'var(--chart-4)' },\n    other: { label: 'Other', color: 'var(--chart-5)' }\n  } satisfies ChartConfig;\n</script>\n\n<Chart config={chartConfig} class=\"grow p-12 h-87.5\">\n  <BarChart\n    data={chartData}\n    x=\"browser\"\n    c=\"color\"\n    y=\"visitors\"\n    cRange={chartData.map((c) => c.color)}\n    xScale={scaleBand().padding(0.25)}\n    axis=\"x\"\n    rule={false}\n    props={{\n      xAxis: {\n        format: (d) => chartConfig[d as keyof typeof chartConfig].label\n      },\n      highlight: { area: { fill: 'none' } }\n    }}\n  >\n    {#snippet tooltip()}\n      <ChartTooltip hideLabel nameKey=\"visitors\" />\n    {/snippet}\n    {#snippet marks({ context })}\n      {@const s = context.series.visibleSeries[0]}\n      {#each chartData as data, i (i)}\n        {#if i === 2}\n          <!-- The \"active\" bar -->\n          <Bar\n            seriesKey={s.key}\n            {...s.props}\n            rounded=\"all\"\n            radius={8}\n            motion=\"tween\"\n            fill={data.color}\n            {data}\n            fillOpacity={0.8}\n            stroke={data.color}\n            strokeWidth={2}\n            stroke-dasharray={4}\n            stroke-dashoffset={4}\n          />\n        {:else}\n          <Bar\n            seriesKey={s.key}\n            {...s.props}\n            rounded=\"all\"\n            radius={8}\n            fill={data.color}\n            {data}\n            motion=\"tween\"\n          />\n        {/if}\n      {/each}\n    {/snippet}\n  </BarChart>\n</Chart>\n"
+		}
+	],
+	"registryDependencies": [
+		"chart"
+	],
+	"dependencies": [
+		"d3-scale@^4.0.2",
+		"layerchart@^2.0.4"
+	]
+}

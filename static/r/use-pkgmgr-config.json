@@ -1,0 +1,16 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "use-pkgmgr-config",
+	"title": "Use Pkgmgr Config",
+	"type": "registry:hook",
+	"files": [
+		{
+			"type": "registry:hook",
+			"path": "use-pkgmgr-config.svelte.ts",
+			"target": "$lib/hooks/use-pkgmgr-config.svelte.ts",
+			"content": "export type PackageManager = 'pnpm' | 'npm' | 'yarn' | 'bun';\n\nlet packageManager = $state<PackageManager>('pnpm');\n\nexport const config = {\n  get packageManager(): PackageManager {\n    return packageManager;\n  },\n  set packageManager(value: PackageManager) {\n    packageManager = value;\n  }\n};\n"
+		}
+	],
+	"registryDependencies": [],
+	"dependencies": []
+}

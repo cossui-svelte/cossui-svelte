@@ -1,0 +1,25 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-field-3",
+	"title": "Field 3",
+	"description": "Field in disabled state",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-field-3.svelte",
+			"target": "$lib/components/particles/field/p-field-3.svelte",
+			"content": "<script lang=\"ts\">\n  import { z } from 'zod';\n  import { Button } from '$lib/components/ui/button';\n  import { Field, FieldDescription, FieldError, FieldLabel } from '$lib/components/ui/field';\n  import { Form } from '$lib/components/ui/form';\n  import { Input } from '$lib/components/ui/input';\n  import { createForm } from '$lib/hooks/use-superform';\n\n  const schema = z.object({\n    email: z.email({ message: 'Please enter a valid email.' })\n  });\n\n  const superform = createForm({\n    onUpdated: (data) => {\n      alert(`Email: ${data.email}`);\n    },\n    schema\n  });\n\n  const { submitting } = superform;\n</script>\n\n<Form class=\"flex w-full flex-col gap-4\" {superform}>\n  <Field name=\"email\">\n    <FieldLabel>Email</FieldLabel>\n    <Input disabled placeholder=\"Enter your email\" type=\"email\" />\n    <FieldDescription>This field is currently disabled.</FieldDescription>\n    <FieldError />\n  </Field>\n  <Button loading={$submitting} type=\"submit\">Submit</Button>\n</Form>\n"
+		}
+	],
+	"registryDependencies": [
+		"field",
+		"input",
+		"button",
+		"form",
+		"use-superform"
+	],
+	"dependencies": [
+		"zod@^4.4.3"
+	]
+}

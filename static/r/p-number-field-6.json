@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-number-field-6",
+	"title": "Number field 6",
+	"description": "Number field with scrub",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-number-field-6.svelte",
+			"target": "$lib/components/particles/number-field/p-number-field-6.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    NumberField,\n    NumberFieldDecrement,\n    NumberFieldGroup,\n    NumberFieldIncrement,\n    NumberFieldInput,\n    NumberFieldScrubArea\n  } from '$lib/components/ui/number-field';\n</script>\n\n<NumberField value={0}>\n  <NumberFieldScrubArea label=\"Quantity\" />\n  <NumberFieldGroup>\n    <NumberFieldDecrement />\n    <NumberFieldInput />\n    <NumberFieldIncrement />\n  </NumberFieldGroup>\n</NumberField>\n"
+		}
+	],
+	"registryDependencies": [
+		"number-field"
+	],
+	"dependencies": []
+}

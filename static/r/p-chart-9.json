@@ -1,0 +1,22 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-chart-9",
+	"title": "Chart 9",
+	"description": "Bar Chart - Multiple",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-chart-9.svelte",
+			"target": "$lib/components/particles/charts/p-chart-9.svelte",
+			"content": "<script lang=\"ts\">\n  import { scaleBand } from 'd3-scale';\n  import { BarChart } from 'layerchart';\n  import { cubicInOut } from 'svelte/easing';\n  import { Chart, type ChartConfig, ChartTooltip } from '$lib/components/ui/chart';\n\n  const chartData = [\n    { desktop: 186, mobile: 80, month: 'January' },\n    { desktop: 305, mobile: 200, month: 'February' },\n    { desktop: 237, mobile: 120, month: 'March' },\n    { desktop: 73, mobile: 190, month: 'April' },\n    { desktop: 209, mobile: 130, month: 'May' },\n    { desktop: 214, mobile: 140, month: 'June' }\n  ];\n\n  const chartConfig = {\n    desktop: { color: 'var(--chart-1)', label: 'Desktop' },\n    mobile: { color: 'var(--chart-2)', label: 'Mobile' }\n  } satisfies ChartConfig;\n</script>\n\n<Chart config={chartConfig} class=\"grow p-12 h-87.5\">\n  <BarChart\n    data={chartData}\n    xScale={scaleBand().padding(0.25)}\n    x=\"month\"\n    axis=\"x\"\n    series={[\n      { key: 'desktop', label: 'Desktop', color: chartConfig.desktop.color },\n      { key: 'mobile', label: 'Mobile', color: chartConfig.mobile.color }\n    ]}\n    x1Scale={scaleBand().paddingInner(0.2)}\n    seriesLayout=\"group\"\n    rule={false}\n    props={{\n      bars: {\n        stroke: 'none',\n        strokeWidth: 0,\n        rounded: 'all',\n        motion: { type: 'tween', duration: 500, easing: cubicInOut }\n      },\n      highlight: { area: { fill: 'none' } },\n      xAxis: { format: (d) => d.slice(0, 3) }\n    }}\n  >\n    {#snippet tooltip()}\n      <ChartTooltip indicator=\"dashed\" />\n    {/snippet}\n  </BarChart>\n</Chart>\n"
+		}
+	],
+	"registryDependencies": [
+		"chart"
+	],
+	"dependencies": [
+		"d3-scale@^4.0.2",
+		"layerchart@^2.0.4"
+	]
+}

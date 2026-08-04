@@ -1,0 +1,23 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-calendar-23",
+	"title": "Calendar 23",
+	"description": "Three months calendar",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-calendar-23.svelte",
+			"target": "$lib/components/particles/calendar/p-calendar-23.svelte",
+			"content": "<script lang=\"ts\">\n  import { getLocalTimeZone, today } from '@internationalized/date';\n  import { RangeCalendar } from '$lib/components/ui/range-calendar';\n\n  const todayValue = today(getLocalTimeZone());\n  let value = $state({ end: todayValue.add({ days: 48 }), start: todayValue });\n</script>\n\n<RangeCalendar\n  bind:value\n  class=\"**:data-outside-month:invisible [&>div]:gap-8 md:[&>div]:flex-row sm:[&>div]:flex-col\"\n  numberOfMonths={3}\n  pagedNavigation\n/>\n"
+		}
+	],
+	"registryDependencies": [
+		"calendar",
+		"range-calendar"
+	],
+	"dependencies": [
+		"date-fns",
+		"@internationalized/date@^3.12.3"
+	]
+}

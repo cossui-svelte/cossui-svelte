@@ -1,0 +1,25 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-field-15",
+	"title": "Field 15",
+	"description": "Field with toggle switch",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-field-15.svelte",
+			"target": "$lib/components/particles/field/p-field-15.svelte",
+			"content": "<script lang=\"ts\">\n  import { z } from 'zod';\n  import { Button } from '$lib/components/ui/button';\n  import { Field, FieldLabel } from '$lib/components/ui/field';\n  import { Form } from '$lib/components/ui/form';\n  import { Switch } from '$lib/components/ui/switch';\n  import { createForm } from '$lib/hooks/use-superform';\n\n  const schema = z.object({\n    notifications: z.boolean().optional()\n  });\n\n  const superform = createForm({\n    initialData: { notifications: false },\n    onUpdated: (data) => {\n      alert(`Email notifications: ${data.notifications ?? false}`);\n    },\n    schema\n  });\n\n  const { form, submitting } = superform;\n</script>\n\n<Form class=\"flex w-full flex-col gap-4\" {superform}>\n  <Field name=\"notifications\">\n    <FieldLabel>\n      <Switch bind:checked={$form.notifications} />\n      Email notifications\n    </FieldLabel>\n  </Field>\n  <Button loading={$submitting} type=\"submit\">Submit</Button>\n</Form>\n"
+		}
+	],
+	"registryDependencies": [
+		"field",
+		"switch",
+		"button",
+		"form",
+		"use-superform"
+	],
+	"dependencies": [
+		"zod@^4.4.3"
+	]
+}

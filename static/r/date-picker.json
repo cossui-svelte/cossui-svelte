@@ -1,0 +1,17 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "date-picker",
+	"title": "Date Picker",
+	"description": "A date picker component built with Calendar and Popover.",
+	"type": "registry:ui",
+	"files": [
+		{
+			"type": "registry:ui",
+			"path": "date-picker/index.ts",
+			"target": "$lib/components/ui/date-picker/index.ts",
+			"content": ""
+		}
+	],
+	"registryDependencies": [],
+	"dependencies": []
+}

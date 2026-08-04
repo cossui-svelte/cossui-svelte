@@ -1,0 +1,26 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-date-picker-4",
+	"title": "Date picker 4",
+	"description": "Date picker with presets",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-date-picker-4.svelte",
+			"target": "$lib/components/particles/date-picker/p-date-picker-4.svelte",
+			"content": "<script lang=\"ts\">\n  import { DateFormatter, type DateValue, getLocalTimeZone, today } from '@internationalized/date';\n  import CalendarIcon from '@lucide/svelte/icons/calendar';\n  import { Button, buttonVariants } from '$lib/components/ui/button';\n  import { Calendar } from '$lib/components/ui/calendar';\n  import { Popover, PopoverPopup, PopoverTrigger } from '$lib/components/ui/popover';\n  import { cn } from '$lib/utils';\n\n  const df = new DateFormatter('en-US', { dateStyle: 'long' });\n  const todayValue = today(getLocalTimeZone());\n\n  let value = $state<DateValue | undefined>(undefined);\n  let placeholder = $state<DateValue>(todayValue);\n\n  function setPreset(date: DateValue) {\n    value = date;\n    placeholder = date;\n  }\n</script>\n\n<Popover>\n  <PopoverTrigger class={cn(buttonVariants({ variant: 'outline' }), 'w-full justify-start')}>\n    <CalendarIcon aria-hidden=\"true\" />\n    {value ? df.format(value.toDate(getLocalTimeZone())) : 'Pick a date'}\n  </PopoverTrigger>\n  <PopoverPopup>\n    <div class=\"flex max-sm:flex-col\">\n      <div class=\"relative py-1 ps-1 max-sm:order-1 max-sm:border-t\">\n        <div class=\"flex h-full flex-col sm:border-e sm:pe-3\">\n          <Button\n            class=\"w-full justify-start\"\n            onclick={() => setPreset(todayValue)}\n            size=\"sm\"\n            variant=\"ghost\"\n          >\n            Today\n          </Button>\n          <Button\n            class=\"w-full justify-start\"\n            onclick={() => setPreset(todayValue.add({ days: 1 }))}\n            size=\"sm\"\n            variant=\"ghost\"\n          >\n            Tomorrow\n          </Button>\n          <Button\n            class=\"w-full justify-start\"\n            onclick={() => setPreset(todayValue.add({ days: 3 }))}\n            size=\"sm\"\n            variant=\"ghost\"\n          >\n            In 3 days\n          </Button>\n          <Button\n            class=\"w-full justify-start\"\n            onclick={() => setPreset(todayValue.add({ days: 7 }))}\n            size=\"sm\"\n            variant=\"ghost\"\n          >\n            In a week\n          </Button>\n        </div>\n      </div>\n      <Calendar bind:placeholder bind:value class=\"max-sm:pb-3 sm:ps-2\" mode=\"single\" />\n    </div>\n  </PopoverPopup>\n</Popover>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"calendar",
+		"popover",
+		"utils"
+	],
+	"dependencies": [
+		"date-fns",
+		"@lucide/svelte",
+		"@internationalized/date@^3.12.3"
+	]
+}

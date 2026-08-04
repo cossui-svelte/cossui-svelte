@@ -1,0 +1,22 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-group-11",
+	"title": "Group 11",
+	"description": "Group with popup",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-group-11.svelte",
+			"target": "$lib/components/particles/group/p-group-11.svelte",
+			"content": "<script lang=\"ts\">\n  import ChevronDown from '@lucide/svelte/icons/chevron-down';\n  import GitFork from '@lucide/svelte/icons/git-fork';\n  import { Badge } from '$lib/components/ui/badge';\n  import { Button, buttonVariants } from '$lib/components/ui/button';\n  import { Group, GroupSeparator } from '$lib/components/ui/group';\n  import {\n    Popover,\n    PopoverDescription,\n    PopoverPopup,\n    PopoverTitle,\n    PopoverTrigger\n  } from '$lib/components/ui/popover';\n</script>\n\n<Group aria-label=\"Repository actions\">\n  <Button variant=\"outline\">\n    <GitFork aria-hidden />\n    Fork\n    <Badge variant=\"secondary\">48</Badge>\n  </Button>\n  <GroupSeparator />\n  <Popover>\n    <PopoverTrigger\n      aria-label=\"Send options\"\n      class={buttonVariants({ size: 'icon', variant: 'outline' })}\n    >\n      <ChevronDown aria-hidden />\n    </PopoverTrigger>\n    <PopoverPopup align=\"end\" class=\"w-64\">\n      <PopoverTitle class=\"text-base\">Existing forks</PopoverTitle>\n      <PopoverDescription>You don't have any forks of this repository.</PopoverDescription>\n    </PopoverPopup>\n  </Popover>\n</Group>\n"
+		}
+	],
+	"registryDependencies": [
+		"badge",
+		"button",
+		"group",
+		"popover"
+	],
+	"dependencies": []
+}

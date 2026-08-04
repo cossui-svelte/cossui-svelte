@@ -1,0 +1,17 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "file-upload",
+	"title": "File Upload",
+	"description": "A component for uploading files with drag-and-drop support.",
+	"type": "registry:ui",
+	"files": [
+		{
+			"type": "registry:ui",
+			"path": "file-upload/index.ts",
+			"target": "$lib/components/ui/file-upload/index.ts",
+			"content": ""
+		}
+	],
+	"registryDependencies": [],
+	"dependencies": []
+}

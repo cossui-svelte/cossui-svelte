@@ -1,0 +1,24 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-calendar-21",
+	"title": "Calendar 21",
+	"description": "Range calendar with date presets",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-calendar-21.svelte",
+			"target": "$lib/components/particles/calendar/p-calendar-21.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    type DateValue,\n    endOfMonth,\n    endOfYear,\n    getLocalTimeZone,\n    startOfMonth,\n    startOfYear,\n    today\n  } from '@internationalized/date';\n  import { Button } from '$lib/components/ui/button';\n  import { RangeCalendar } from '$lib/components/ui/range-calendar';\n\n  const todayValue = today(getLocalTimeZone());\n  const yesterday = {\n    end: todayValue.subtract({ days: 1 }),\n    start: todayValue.subtract({ days: 1 })\n  };\n  const last7Days = { end: todayValue, start: todayValue.subtract({ days: 6 }) };\n  const last30Days = { end: todayValue, start: todayValue.subtract({ days: 29 }) };\n  const monthToDate = { end: todayValue, start: startOfMonth(todayValue) };\n  const lastMonthValue = todayValue.subtract({ months: 1 });\n  const lastMonth = { end: endOfMonth(lastMonthValue), start: startOfMonth(lastMonthValue) };\n  const yearToDate = { end: todayValue, start: startOfYear(todayValue) };\n  const lastYearValue = todayValue.subtract({ years: 1 });\n  const lastYear = { end: endOfYear(lastYearValue), start: startOfYear(lastYearValue) };\n\n  let placeholder = $state<DateValue>(todayValue);\n  let date = $state<{ end: DateValue | undefined; start: DateValue | undefined } | undefined>(\n    last7Days\n  );\n\n  function isDateDisabled(d: DateValue): boolean {\n    return d.compare(todayValue) > 0;\n  }\n</script>\n\n<div class=\"flex max-sm:flex-col\">\n  <div class=\"relative py-1 ps-1 max-sm:order-1 max-sm:border-t\">\n    <div class=\"flex h-full flex-col sm:border-e sm:pe-3\">\n      <Button\n        class=\"w-full justify-start\"\n        onclick={() => {\n          date = { end: todayValue, start: todayValue };\n          placeholder = todayValue;\n        }}\n        size=\"sm\"\n        variant=\"ghost\"\n      >\n        Today\n      </Button>\n      <Button\n        class=\"w-full justify-start\"\n        onclick={() => {\n          date = yesterday;\n          placeholder = yesterday.end;\n        }}\n        size=\"sm\"\n        variant=\"ghost\"\n      >\n        Yesterday\n      </Button>\n      <Button\n        class=\"w-full justify-start\"\n        onclick={() => {\n          date = last7Days;\n          placeholder = last7Days.end;\n        }}\n        size=\"sm\"\n        variant=\"ghost\"\n      >\n        Last 7 days\n      </Button>\n      <Button\n        class=\"w-full justify-start\"\n        onclick={() => {\n          date = last30Days;\n          placeholder = last30Days.end;\n        }}\n        size=\"sm\"\n        variant=\"ghost\"\n      >\n        Last 30 days\n      </Button>\n      <Button\n        class=\"w-full justify-start\"\n        onclick={() => {\n          date = monthToDate;\n          placeholder = monthToDate.end;\n        }}\n        size=\"sm\"\n        variant=\"ghost\"\n      >\n        Month to date\n      </Button>\n      <Button\n        class=\"w-full justify-start\"\n        onclick={() => {\n          date = lastMonth;\n          placeholder = lastMonth.end;\n        }}\n        size=\"sm\"\n        variant=\"ghost\"\n      >\n        Last month\n      </Button>\n      <Button\n        class=\"w-full justify-start\"\n        onclick={() => {\n          date = yearToDate;\n          placeholder = yearToDate.end;\n        }}\n        size=\"sm\"\n        variant=\"ghost\"\n      >\n        Year to date\n      </Button>\n      <Button\n        class=\"w-full justify-start\"\n        onclick={() => {\n          date = lastYear;\n          placeholder = lastYear.end;\n        }}\n        size=\"sm\"\n        variant=\"ghost\"\n      >\n        Last year\n      </Button>\n    </div>\n  </div>\n  <RangeCalendar bind:placeholder bind:value={date} class=\"max-sm:pb-3 sm:ps-5\" {isDateDisabled} />\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"calendar",
+		"button",
+		"range-calendar"
+	],
+	"dependencies": [
+		"date-fns",
+		"@internationalized/date@^3.12.3"
+	]
+}

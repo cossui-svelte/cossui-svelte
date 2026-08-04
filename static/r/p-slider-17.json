@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-slider-17",
+	"title": "Slider 17",
+	"description": "Vertical slider",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-slider-17.svelte",
+			"target": "$lib/components/particles/slider/p-slider-17.svelte",
+			"content": "<script lang=\"ts\">\n  import { Slider } from '$lib/components/ui/slider';\n</script>\n\n<Slider value={50} orientation=\"vertical\" />\n"
+		}
+	],
+	"registryDependencies": [
+		"slider"
+	],
+	"dependencies": []
+}

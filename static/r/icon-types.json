@@ -1,0 +1,16 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "icon-types",
+	"title": "Icon Types",
+	"type": "registry:lib",
+	"files": [
+		{
+			"type": "registry:lib",
+			"path": "types.ts",
+			"target": "$lib/icons/types.ts",
+			"content": "import type { SVGAttributes } from 'svelte/elements';\n\ntype TitleType = {\n  id?: string;\n  title?: string;\n};\ntype DescType = {\n  id?: string;\n  desc?: string;\n};\nexport interface BaseProps extends SVGAttributes<SVGElement> {\n  color?: string;\n  focusable?: 'true' | 'false' | 'auto';\n  role?: string;\n  size?: string;\n}\nexport interface Props extends BaseProps {\n  ariaLabel?: string;\n  desc?: DescType;\n  title?: TitleType;\n}\n"
+		}
+	],
+	"registryDependencies": [],
+	"dependencies": []
+}

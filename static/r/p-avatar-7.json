@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-avatar-7",
+	"title": "Avatar 7",
+	"description": "Avatar with emerald status dot",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-avatar-7.svelte",
+			"target": "$lib/components/particles/avatar/p-avatar-7.svelte",
+			"content": "<script lang=\"ts\">\n  import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';\n</script>\n\n<div class=\"relative\">\n  <Avatar>\n    <AvatarImage\n      alt=\"User\"\n      src=\"https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?w=128&h=128&dpr=2&q=80\"\n    />\n    <AvatarFallback>LT</AvatarFallback>\n  </Avatar>\n  <span\n    aria-hidden=\"true\"\n    class=\"absolute end-0 bottom-0 size-2 rounded-full bg-emerald-500 outline-2 outline-background\"\n  />\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"avatar"
+	],
+	"dependencies": []
+}

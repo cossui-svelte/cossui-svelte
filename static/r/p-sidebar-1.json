@@ -1,0 +1,17 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-sidebar-1",
+	"title": "Sidebar 1",
+	"description": "",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-sidebar-1.svelte",
+			"target": "$lib/components/particles/sidebar/p-sidebar-1.svelte",
+			"content": "TO DO\n"
+		}
+	],
+	"registryDependencies": [],
+	"dependencies": []
+}

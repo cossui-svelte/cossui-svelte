@@ -1,0 +1,22 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-input-102",
+	"title": "Input 102",
+	"description": "Credit card CVC/code input with auto-formatting",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-input-102.svelte",
+			"target": "$lib/components/particles/input/p-input-102.svelte",
+			"content": "<script lang=\"ts\">\n  import { formatGeneral } from 'cleave-zen';\n  import type { Attachment } from 'svelte/attachments';\n  import { Input } from '$lib/components/ui/input';\n  import { Label } from '$lib/components/ui/label';\n\n  const cvcAttachment: Attachment<HTMLInputElement> = (input) => {\n    const handleInput = (event: Event) => {\n      const target = event.target as HTMLInputElement;\n      target.value = formatGeneral(target.value, {\n        blocks: [4],\n        numericOnly: true\n      });\n    };\n\n    input.addEventListener('input', handleInput);\n\n    return () => input.removeEventListener('input', handleInput);\n  };\n</script>\n\n<div class=\"*:not-first:mt-2\">\n  <Label for=\"input-50\">Code</Label>\n  <Input\n    id=\"input-50\"\n    type=\"text\"\n    placeholder=\"CVC\"\n    autocomplete=\"cc-csc\"\n    class=\"peer pe-11\"\n    {@attach cvcAttachment}\n  />\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"input",
+		"label"
+	],
+	"dependencies": [
+		"cleave-zen@^0.0.17"
+	]
+}

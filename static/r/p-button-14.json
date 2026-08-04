@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-button-14",
+	"title": "Button 14",
+	"description": "Small icon button",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-button-14.svelte",
+			"target": "$lib/components/particles/button/p-button-14.svelte",
+			"content": "<script lang=\"ts\">\n  import Plus from '@lucide/svelte/icons/plus';\n  import { Button } from '$lib/components/ui/button';\n</script>\n\n<Button aria-label=\"Add\" size=\"icon-sm\">\n  <Plus aria-hidden=\"true\" />\n</Button>\n"
+		}
+	],
+	"registryDependencies": [
+		"button"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

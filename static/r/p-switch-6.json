@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-switch-6",
+	"title": "Switch 6",
+	"description": "Custom size switch",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-switch-6.svelte",
+			"target": "$lib/components/particles/switch/p-switch-6.svelte",
+			"content": "<script lang=\"ts\">\n  import { Switch } from '$lib/components/ui/switch';\n</script>\n\n<Switch class=\"[--thumb-size:--spacing(4)] sm:[--thumb-size:--spacing(3)]\" />\n"
+		}
+	],
+	"registryDependencies": [
+		"switch"
+	],
+	"dependencies": []
+}

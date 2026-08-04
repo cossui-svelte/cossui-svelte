@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-toggle-1",
+	"title": "Toggle 1",
+	"description": "Basic toggle",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-toggle-1.svelte",
+			"target": "$lib/components/particles/toggle/p-toggle-1.svelte",
+			"content": "<script lang=\"ts\">\n  import { Toggle } from '$lib/components/ui/toggle';\n</script>\n\n<Toggle>Toggle</Toggle>\n"
+		}
+	],
+	"registryDependencies": [
+		"toggle"
+	],
+	"dependencies": []
+}

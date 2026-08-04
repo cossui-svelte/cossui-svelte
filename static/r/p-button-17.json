@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-button-17",
+	"title": "Button 17",
+	"description": "Link rendered as button",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-button-17.svelte",
+			"target": "$lib/components/particles/button/p-button-17.svelte",
+			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n</script>\n\n<Button href=\"/\">Link</Button>\n"
+		}
+	],
+	"registryDependencies": [
+		"button"
+	],
+	"dependencies": []
+}

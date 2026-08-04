@@ -1,0 +1,23 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-calendar-15",
+	"title": "Calendar 15",
+	"description": "Calendar with current month button",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-calendar-15.svelte",
+			"target": "$lib/components/particles/calendar/p-calendar-15.svelte",
+			"content": "<script lang=\"ts\">\n  import { type DateValue, getLocalTimeZone, today } from '@internationalized/date';\n  import { Button } from '$lib/components/ui/button';\n  import { Calendar } from '$lib/components/ui/calendar';\n\n  const todayValue = today(getLocalTimeZone());\n  const selectedDay = todayValue.subtract({ days: 28 });\n\n  let placeholder = $state<DateValue>(selectedDay);\n  let value = $state<DateValue | undefined>(selectedDay);\n</script>\n\n<div class=\"flex flex-col items-start gap-2\">\n  <Calendar bind:placeholder bind:value mode=\"single\" />\n  <Button onclick={() => (placeholder = todayValue)} size=\"sm\" variant=\"outline\">\n    Current month\n  </Button>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"calendar",
+		"button"
+	],
+	"dependencies": [
+		"date-fns",
+		"@internationalized/date@^3.12.3"
+	]
+}

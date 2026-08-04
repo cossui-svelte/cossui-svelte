@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-group-7",
+	"title": "Group 7",
+	"description": "Group with start text",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-group-7.svelte",
+			"target": "$lib/components/particles/group/p-group-7.svelte",
+			"content": "<script lang=\"ts\">\n  import { Group, GroupSeparator, GroupText } from '$lib/components/ui/group';\n  import { Input } from '$lib/components/ui/input';\n</script>\n\n<Group aria-label=\"Domain input\">\n  <GroupText>https://</GroupText>\n  <GroupSeparator />\n  <Input aria-label=\"Domain\" id=\"domain\" value=\"coss.com\" type=\"text\" />\n</Group>\n"
+		}
+	],
+	"registryDependencies": [
+		"group",
+		"input",
+		"label"
+	],
+	"dependencies": []
+}

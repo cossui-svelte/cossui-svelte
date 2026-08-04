@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-select-1",
+	"title": "Select 1",
+	"description": "Basic select",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-select-1.svelte",
+			"target": "$lib/components/particles/select/p-select-1.svelte",
+			"content": "<script lang=\"ts\">\n  import { Select, SelectItem, SelectPopup, SelectTrigger } from '$lib/components/ui/select';\n\n  const items = [\n    { label: 'Next.js', value: 'next' },\n    { label: 'Vite', value: 'vite' },\n    { label: 'Astro', value: 'astro' }\n  ];\n\n  let selected = $state('next');\n  const selectedLabel = $derived(items.find((i) => i.value === selected)?.label ?? '');\n</script>\n\n<Select\n  value={selected}\n  onValueChange={(v) => {\n    selected = v;\n  }}\n>\n  <SelectTrigger aria-label=\"Select framework\">\n    <span class=\"flex-1 truncate\">{selectedLabel}</span>\n  </SelectTrigger>\n  <SelectPopup>\n    {#each items as { label, value } (value)}\n      <SelectItem {value}>{label}</SelectItem>\n    {/each}\n  </SelectPopup>\n</Select>\n"
+		}
+	],
+	"registryDependencies": [
+		"select"
+	],
+	"dependencies": []
+}

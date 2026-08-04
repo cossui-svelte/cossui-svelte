@@ -1,0 +1,55 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "frame",
+	"title": "Frame",
+	"description": "A framed container for grouping related information.",
+	"type": "registry:ui",
+	"files": [
+		{
+			"type": "registry:ui",
+			"path": "frame/frame-description.svelte",
+			"target": "$lib/components/ui/frame/frame-description.svelte",
+			"content": "<script lang=\"ts\">\n  import type { Snippet } from 'svelte';\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn } from '$lib/utils';\n\n  interface Props extends HTMLAttributes<HTMLDivElement> {\n    children?: Snippet;\n  }\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<div\n  class={cn('text-muted-foreground text-sm', className)}\n  data-slot=\"frame-panel-description\"\n  {...restProps}\n>\n  {@render children?.()}\n</div>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "frame/frame-footer.svelte",
+			"target": "$lib/components/ui/frame/frame-footer.svelte",
+			"content": "<script lang=\"ts\">\n  import type { Snippet } from 'svelte';\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn } from '$lib/utils';\n\n  interface Props extends HTMLAttributes<HTMLElement> {\n    children?: Snippet;\n  }\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<footer class={cn('px-5 py-4', className)} data-slot=\"frame-panel-footer\" {...restProps}>\n  {@render children?.()}\n</footer>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "frame/frame-header.svelte",
+			"target": "$lib/components/ui/frame/frame-header.svelte",
+			"content": "<script lang=\"ts\">\n  import type { Snippet } from 'svelte';\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn } from '$lib/utils';\n\n  interface Props extends HTMLAttributes<HTMLHeadElement> {\n    children?: Snippet;\n  }\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<header\n  class={cn('flex flex-col px-5 py-4', className)}\n  data-slot=\"frame-panel-header\"\n  {...restProps}\n>\n  {@render children?.()}\n</header>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "frame/frame-panel.svelte",
+			"target": "$lib/components/ui/frame/frame-panel.svelte",
+			"content": "<script lang=\"ts\">\n  import type { Snippet } from 'svelte';\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn } from '$lib/utils';\n\n  interface Props extends HTMLAttributes<HTMLDivElement> {\n    children?: Snippet;\n  }\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<div\n  class={cn(\n    'relative rounded-xl border bg-background bg-clip-padding p-5 shadow-xs/5 before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-xl)-1px)] before:shadow-[0_1px_--theme(--color-black/4%)] dark:before:shadow-[0_-1px_--theme(--color-white/6%)]',\n    className\n  )}\n  data-slot=\"frame-panel\"\n  {...restProps}\n>\n  {@render children?.()}\n</div>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "frame/frame-title.svelte",
+			"target": "$lib/components/ui/frame/frame-title.svelte",
+			"content": "<script lang=\"ts\">\n  import type { Snippet } from 'svelte';\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn } from '$lib/utils';\n\n  interface Props extends HTMLAttributes<HTMLDivElement> {\n    children?: Snippet;\n  }\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<div class={cn('font-semibold text-sm', className)} data-slot=\"frame-panel-title\" {...restProps}>\n  {@render children?.()}\n</div>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "frame/frame.svelte",
+			"target": "$lib/components/ui/frame/frame.svelte",
+			"content": "<script lang=\"ts\">\n  import type { Snippet } from 'svelte';\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn } from '$lib/utils';\n\n  interface Props extends HTMLAttributes<HTMLDivElement> {\n    children?: Snippet;\n  }\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<div\n  class={cn(\n    'relative flex flex-col rounded-2xl bg-muted/72 p-1',\n    '*:[[data-slot=frame-panel]+[data-slot=frame-panel]]:mt-1',\n    className\n  )}\n  data-slot=\"frame\"\n  {...restProps}\n>\n  {@render children?.()}\n</div>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "frame/index.ts",
+			"target": "$lib/components/ui/frame/index.ts",
+			"content": "export { default as Frame } from './frame.svelte';\nexport { default as FrameDescription } from './frame-description.svelte';\nexport { default as FrameFooter } from './frame-footer.svelte';\nexport { default as FrameHeader } from './frame-header.svelte';\nexport { default as FramePanel } from './frame-panel.svelte';\nexport { default as FrameTitle } from './frame-title.svelte';\n"
+		}
+	],
+	"registryDependencies": [
+		"utils"
+	],
+	"dependencies": []
+}

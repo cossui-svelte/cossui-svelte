@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-drawer-2",
+	"title": "Drawer 2",
+	"description": "Bottom drawer without drag bar",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-drawer-2.svelte",
+			"target": "$lib/components/particles/drawer/p-drawer-2.svelte",
+			"content": "<script lang=\"ts\">\n  import { buttonVariants } from '$lib/components/ui/button';\n  import {\n    Drawer,\n    DrawerClose,\n    DrawerDescription,\n    DrawerFooter,\n    DrawerHeader,\n    DrawerPopup,\n    DrawerTitle,\n    DrawerTrigger\n  } from '$lib/components/ui/drawer';\n</script>\n\n<Drawer>\n  <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Open drawer</DrawerTrigger>\n  <DrawerPopup>\n    <DrawerHeader class=\"text-center\">\n      <DrawerTitle>Notifications</DrawerTitle>\n      <DrawerDescription>This is the description of the drawer.</DrawerDescription>\n    </DrawerHeader>\n    <DrawerFooter variant=\"bare\" class=\"justify-center sm:justify-center\">\n      <DrawerClose class={buttonVariants({ variant: 'outline' })}>Close</DrawerClose>\n    </DrawerFooter>\n  </DrawerPopup>\n</Drawer>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"drawer"
+	],
+	"dependencies": []
+}

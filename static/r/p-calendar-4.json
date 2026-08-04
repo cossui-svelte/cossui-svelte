@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-calendar-4",
+	"title": "Calendar 4",
+	"description": "Calendar with month/year dropdown navigation",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-calendar-4.svelte",
+			"target": "$lib/components/particles/calendar/p-calendar-4.svelte",
+			"content": "<script lang=\"ts\">\n  import { CalendarDate, getLocalTimeZone, today } from '@internationalized/date';\n  import { Calendar } from '$lib/components/ui/calendar';\n\n  let value = $state(today(getLocalTimeZone()));\n\n  const minValue = new CalendarDate(1930, 1, 1);\n  const maxValue = new CalendarDate(2030, 12, 31);\n  const years = Array.from(\n    { length: maxValue.year - minValue.year + 1 },\n    (_, i) => minValue.year + i\n  );\n</script>\n\n<Calendar bind:value captionLayout=\"dropdown\" {maxValue} {minValue} mode=\"single\" {years} />\n"
+		}
+	],
+	"registryDependencies": [
+		"calendar"
+	],
+	"dependencies": [
+		"@internationalized/date@^3.12.3"
+	]
+}

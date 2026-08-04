@@ -1,0 +1,22 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-chart-10",
+	"title": "Chart 10",
+	"description": "Bar Chart - Horizontal Mixed",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-chart-10.svelte",
+			"target": "$lib/components/particles/charts/p-chart-10.svelte",
+			"content": "<script lang=\"ts\">\n  import { scaleBand } from 'd3-scale';\n  import { BarChart } from 'layerchart';\n  import { cubicInOut } from 'svelte/easing';\n  import { Chart, type ChartConfig, ChartTooltip } from '$lib/components/ui/chart';\n\n  const chartData = [\n    { browser: 'chrome', color: 'var(--color-chrome)', visitors: 275 },\n    { browser: 'safari', color: 'var(--color-safari)', visitors: 200 },\n    { browser: 'firefox', color: 'var(--color-firefox)', visitors: 187 },\n    { browser: 'edge', color: 'var(--color-edge)', visitors: 173 },\n    { browser: 'other', color: 'var(--color-other)', visitors: 90 }\n  ];\n\n  const chartConfig = {\n    chrome: { color: 'var(--chart-1)', label: 'Chrome' },\n    edge: { color: 'var(--chart-4)', label: 'Edge' },\n    firefox: { color: 'var(--chart-3)', label: 'Firefox' },\n    other: { color: 'var(--chart-5)', label: 'Other' },\n    safari: { color: 'var(--chart-2)', label: 'Safari' },\n    visitors: { label: 'Visitors' }\n  } satisfies ChartConfig;\n</script>\n\n<Chart config={chartConfig} class=\"grow p-12 h-87.5\">\n  <BarChart\n    data={chartData}\n    orientation=\"horizontal\"\n    yScale={scaleBand().padding(0.25)}\n    y=\"browser\"\n    x=\"visitors\"\n    cRange={chartData.map((c) => c.color)}\n    c=\"color\"\n    padding={{ left: 48 }}\n    grid={false}\n    rule={false}\n    axis=\"y\"\n    props={{\n      bars: {\n        stroke: 'none',\n        radius: 5,\n        rounded: 'all',\n        motion: { type: 'tween', duration: 500, easing: cubicInOut }\n      },\n      highlight: { area: { fill: 'none' } },\n      yAxis: {\n        format: (d) => chartConfig[d as keyof typeof chartConfig].label,\n        tickLabelProps: {\n          svgProps: {\n            x: -16\n          }\n        }\n      }\n    }}\n  >\n    {#snippet tooltip()}\n      <ChartTooltip hideLabel nameKey=\"visitors\" />\n    {/snippet}\n  </BarChart>\n</Chart>\n"
+		}
+	],
+	"registryDependencies": [
+		"chart"
+	],
+	"dependencies": [
+		"d3-scale@^4.0.2",
+		"layerchart@^2.0.4"
+	]
+}

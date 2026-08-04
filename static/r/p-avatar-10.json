@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-avatar-10",
+	"title": "Avatar 10",
+	"description": "Avatar with notification badge",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-avatar-10.svelte",
+			"target": "$lib/components/particles/avatar/p-avatar-10.svelte",
+			"content": "<script lang=\"ts\">\n  import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';\n  import { Badge } from '$lib/components/ui/badge';\n</script>\n\n<div class=\"relative\">\n  <Avatar>\n    <AvatarImage\n      alt=\"User\"\n      src=\"https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?w=128&h=128&dpr=2&q=80\"\n    />\n    <AvatarFallback>LT</AvatarFallback>\n  </Avatar>\n  <Badge\n    class=\"absolute -end-1 -top-1 rounded-full outline-2 outline-background outline-solid\"\n    size=\"sm\"\n  >\n    6\n  </Badge>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"avatar",
+		"badge"
+	],
+	"dependencies": []
+}

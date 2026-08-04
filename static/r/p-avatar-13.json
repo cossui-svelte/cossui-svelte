@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-avatar-13",
+	"title": "Avatar 13",
+	"description": "Small overlapping avatar group",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-avatar-13.svelte",
+			"target": "$lib/components/particles/avatar/p-avatar-13.svelte",
+			"content": "<script lang=\"ts\">\n  import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';\n</script>\n\n<div class=\"flex -space-x-1.5\">\n  <Avatar class=\"size-6 ring-2 ring-background\">\n    <AvatarImage\n      alt=\"U1\"\n      src=\"https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?w=72&h=72&dpr=2&q=80\"\n    />\n    <AvatarFallback>U1</AvatarFallback>\n  </Avatar>\n  <Avatar class=\"size-6 ring-2 ring-background\">\n    <AvatarImage\n      alt=\"U2\"\n      src=\"https://images.unsplash.com/photo-1628157588553-5eeea00af15c?w=72&h=72&dpr=2&q=80\"\n    />\n    <AvatarFallback>U2</AvatarFallback>\n  </Avatar>\n  <Avatar class=\"size-6 ring-2 ring-background\">\n    <AvatarImage\n      alt=\"U3\"\n      src=\"https://images.unsplash.com/photo-1655874819398-c6dfbec68ac7?w=72&h=72&dpr=2&q=80\"\n    />\n    <AvatarFallback>U3</AvatarFallback>\n  </Avatar>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"avatar"
+	],
+	"dependencies": []
+}

@@ -1,0 +1,24 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-textarea-11",
+	"title": "Textarea 11",
+	"description": "Textarea with characters remaining counter",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-textarea-11.svelte",
+			"target": "$lib/components/particles/textarea/p-textarea-11.svelte",
+			"content": "<script lang=\"ts\">\n  import { z } from 'zod';\n  import { Field, FieldDescription, FieldLabel } from '$lib/components/ui/field';\n  import { Form } from '$lib/components/ui/form';\n  import { Textarea } from '$lib/components/ui/textarea';\n  import { createForm } from '$lib/hooks/use-superform';\n\n  const maxlength = 280;\n\n  const schema = z.object({\n    message: z.string().max(maxlength)\n  });\n\n  const superform = createForm({\n    initialData: { message: '' },\n    schema\n  });\n\n  const { form } = superform;\n\n  let value = $state($form.message as string);\n\n  $effect(() => {\n    $form.message = value;\n  });\n</script>\n\n<Form {superform}>\n  <Field name=\"message\">\n    <FieldLabel class=\"sr-only\">Message</FieldLabel>\n    <Textarea {maxlength} bind:value placeholder=\"Type your message here\" />\n    <FieldDescription>\n      <span class=\"tabular-nums\">{maxlength - value.length}</span>\n      characters left\n    </FieldDescription>\n  </Field>\n</Form>\n"
+		}
+	],
+	"registryDependencies": [
+		"field",
+		"textarea",
+		"form",
+		"use-superform"
+	],
+	"dependencies": [
+		"zod@^4.4.3"
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-toast-6",
+	"title": "Toast 6",
+	"description": "Stacked toasts with varying content height",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-toast-6.svelte",
+			"target": "$lib/components/particles/toast/p-toast-6.svelte",
+			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n  import { toastManager } from '$lib/components/ui/toast';\n\n  const TEXTS = [\n    'Short message.',\n    'A bit longer message that spans two lines.',\n    'This is a longer description that intentionally takes more vertical space to demonstrate stacking with varying heights.',\n    'An even longer description that should span multiple lines so we can verify the clamped collapsed height and smooth expansion animation when hovering or focusing the viewport.'\n  ];\n\n  let count = $state(0);\n\n  function createToast() {\n    count++;\n    const description = TEXTS[Math.floor(Math.random() * TEXTS.length)];\n    toastManager.add({\n      description,\n      title: `Toast ${count} created`\n    });\n  }\n</script>\n\n<Button onclick={createToast} variant=\"outline\">With Varying Heights</Button>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"toast"
+	],
+	"dependencies": []
+}

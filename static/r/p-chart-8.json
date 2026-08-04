@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-chart-8",
+	"title": "Chart 8",
+	"description": "Pie Chart - Custom Label",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-chart-8.svelte",
+			"target": "$lib/components/particles/charts/p-chart-8.svelte",
+			"content": "<script lang=\"ts\">\n  import { Arc, PieChart, Text } from 'layerchart';\n  import { Chart, type ChartConfig, ChartTooltip } from '$lib/components/ui/chart';\n\n  const chartData = [\n    { browser: 'chrome', color: 'var(--color-chrome)', visitors: 275 },\n    { browser: 'safari', color: 'var(--color-safari)', visitors: 200 },\n    { browser: 'firefox', color: 'var(--color-firefox)', visitors: 187 },\n    { browser: 'edge', color: 'var(--color-edge)', visitors: 173 },\n    { browser: 'other', color: 'var(--color-other)', visitors: 90 }\n  ];\n\n  const chartConfig = {\n    chrome: { color: 'var(--chart-1)', label: 'Chrome' },\n    edge: { color: 'var(--chart-4)', label: 'Edge' },\n    firefox: { color: 'var(--chart-3)', label: 'Firefox' },\n    other: { color: 'var(--chart-5)', label: 'Other' },\n    safari: { color: 'var(--chart-2)', label: 'Safari' },\n    visitors: { label: 'Visitors' }\n  } satisfies ChartConfig;\n</script>\n\n<Chart config={chartConfig} class=\"grow p-12 h-87.5\">\n  <PieChart\n    data={chartData}\n    key=\"browser\"\n    value=\"visitors\"\n    cRange={chartData.map((d) => d.color)}\n    c=\"color\"\n    props={{\n      pie: {\n        motion: 'tween'\n      }\n    }}\n  >\n    {#snippet tooltip()}\n      <ChartTooltip hideLabel />\n    {/snippet}\n    {#snippet arc({ props, visibleData, index })}\n      <Arc {...props}>\n        {#snippet children({ getArcTextProps })}\n          <Text\n            value={visibleData[index].visitors}\n            {...getArcTextProps('outer', {\n              startOffset: '50%',\n              outerPadding: 10\n            })}\n            class=\"fill-foreground\"\n          />\n        {/snippet}\n      </Arc>\n    {/snippet}\n  </PieChart>\n</Chart>\n"
+		}
+	],
+	"registryDependencies": [
+		"chart"
+	],
+	"dependencies": [
+		"layerchart@^2.0.4"
+	]
+}

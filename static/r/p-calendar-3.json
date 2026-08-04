@@ -1,0 +1,22 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-calendar-3",
+	"title": "Calendar 3",
+	"description": "Calendar with date range selection",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-calendar-3.svelte",
+			"target": "$lib/components/particles/calendar/p-calendar-3.svelte",
+			"content": "<script lang=\"ts\">\n  import { getLocalTimeZone, today } from '@internationalized/date';\n  import { RangeCalendar } from '$lib/components/ui/range-calendar';\n\n  const start = today(getLocalTimeZone());\n  let value = $state({ end: start.add({ days: 7 }), start });\n</script>\n\n<RangeCalendar bind:value />\n"
+		}
+	],
+	"registryDependencies": [
+		"calendar",
+		"range-calendar"
+	],
+	"dependencies": [
+		"@internationalized/date@^3.12.3"
+	]
+}

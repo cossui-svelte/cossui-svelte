@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-pagination-2",
+	"title": "Pagination 2",
+	"description": "Pagination with previous and next buttons only",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-pagination-2.svelte",
+			"target": "$lib/components/particles/pagination/p-pagination-2.svelte",
+			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n  import { Pagination, PaginationContent, PaginationItem } from '$lib/components/ui/pagination';\n\n  interface Props {\n    currentPage?: number;\n    totalPages?: number;\n  }\n\n  let { currentPage = 1, totalPages = 5 }: Props = $props();\n</script>\n\n<Pagination>\n  <PaginationContent class=\"w-full justify-between gap-2\">\n    <PaginationItem>\n      <Button\n        disabled={currentPage === 1}\n        href={currentPage === 1 ? undefined : `#/page/${currentPage - 1}`}\n        variant=\"outline\"\n      >\n        Previous\n      </Button>\n    </PaginationItem>\n    <PaginationItem>\n      <Button\n        disabled={currentPage === totalPages}\n        href={currentPage === totalPages ? undefined : `#/page/${currentPage + 1}`}\n        variant=\"outline\"\n      >\n        Next\n      </Button>\n    </PaginationItem>\n  </PaginationContent>\n</Pagination>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"pagination"
+	],
+	"dependencies": []
+}

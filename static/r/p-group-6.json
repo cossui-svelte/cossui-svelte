@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-group-6",
+	"title": "Group 6",
+	"description": "Group with default button",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-group-6.svelte",
+			"target": "$lib/components/particles/group/p-group-6.svelte",
+			"content": "<script lang=\"ts\">\n  import Archive from '@lucide/svelte/icons/archive';\n  import Ellipsis from '@lucide/svelte/icons/ellipsis';\n  import Files from '@lucide/svelte/icons/files';\n  import Film from '@lucide/svelte/icons/film';\n  import Pencil from '@lucide/svelte/icons/pencil';\n  import Share from '@lucide/svelte/icons/share';\n  import Trash from '@lucide/svelte/icons/trash';\n  import { Button, buttonVariants } from '$lib/components/ui/button';\n  import { Group, GroupSeparator } from '$lib/components/ui/group';\n  import { Menu, MenuItem, MenuPopup, MenuTrigger } from '$lib/components/ui/menu';\n</script>\n\n<Group aria-label=\"File actions\">\n  <Button>\n    <Files aria-hidden />\n    Files\n  </Button>\n  <GroupSeparator class=\"bg-primary/72\" />\n  <Button>\n    <Film aria-hidden />\n    Media\n  </Button>\n  <GroupSeparator class=\"bg-primary/72\" />\n  <Menu>\n    <MenuTrigger aria-label=\"Menu\" class={buttonVariants({ size: 'icon' })}>\n      <Ellipsis class=\"size-4\" aria-hidden />\n    </MenuTrigger>\n    <MenuPopup align=\"end\">\n      <MenuItem>\n        <Pencil aria-hidden />\n        Edit\n      </MenuItem>\n      <MenuItem>\n        <Archive aria-hidden />\n        Archive\n      </MenuItem>\n      <MenuItem>\n        <Share aria-hidden />\n        Share\n      </MenuItem>\n      <MenuItem variant=\"destructive\">\n        <Trash aria-hidden />\n        Delete\n      </MenuItem>\n    </MenuPopup>\n  </Menu>\n</Group>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"group",
+		"menu"
+	],
+	"dependencies": []
+}

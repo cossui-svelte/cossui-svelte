@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-stepper-2",
+	"title": "Stepper 2",
+	"description": "Stepper with numbers only",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-stepper-2.svelte",
+			"target": "$lib/components/particles/stepper/p-stepper-2.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    Stepper,\n    StepperIndicator,\n    StepperItem,\n    StepperSeparator,\n    StepperTrigger\n  } from '$lib/components/ui/stepper';\n\n  const steps = [1, 2, 3, 4];\n</script>\n\n<div class=\"mx-auto max-w-xl space-y-8 text-center w-full\">\n  <Stepper step={2}>\n    {#each steps as step (step)}\n      <StepperItem class=\"not-last:flex-1\" {step}>\n        <StepperTrigger>\n          <StepperIndicator>{step}</StepperIndicator>\n        </StepperTrigger>\n        {#if step < steps.length}\n          <StepperSeparator />\n        {/if}\n      </StepperItem>\n    {/each}\n  </Stepper>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"stepper"
+	],
+	"dependencies": []
+}

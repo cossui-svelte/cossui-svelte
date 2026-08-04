@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-slider-7",
+	"title": "Slider 7",
+	"description": "Range slider",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-slider-7.svelte",
+			"target": "$lib/components/particles/slider/p-slider-7.svelte",
+			"content": "<script lang=\"ts\">\n  import { Slider } from '$lib/components/ui/slider';\n</script>\n\n<Slider value={[25, 75]} />\n"
+		}
+	],
+	"registryDependencies": [
+		"slider"
+	],
+	"dependencies": []
+}

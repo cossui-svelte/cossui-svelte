@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-button-32",
+	"title": "Button 32",
+	"description": "Button with notification badge",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-button-32.svelte",
+			"target": "$lib/components/particles/button/p-button-32.svelte",
+			"content": "<script lang=\"ts\">\n  import { Badge } from '$lib/components/ui/badge';\n  import { Button } from '$lib/components/ui/button';\n</script>\n\n<Button variant=\"outline\">\n  Messages\n  <Badge class=\"-me-1\" variant=\"outline\">18</Badge>\n</Button>\n"
+		}
+	],
+	"registryDependencies": [
+		"badge",
+		"button"
+	],
+	"dependencies": []
+}

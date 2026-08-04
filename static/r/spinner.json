@@ -1,0 +1,25 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "spinner",
+	"title": "Spinner",
+	"description": "An indicator that can be used to show a loading state.",
+	"type": "registry:ui",
+	"files": [
+		{
+			"type": "registry:ui",
+			"path": "spinner/index.ts",
+			"target": "$lib/components/ui/spinner/index.ts",
+			"content": "export { default as Spinner } from './spinner.svelte';\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "spinner/spinner.svelte",
+			"target": "$lib/components/ui/spinner/spinner.svelte",
+			"content": "<script lang=\"ts\">\n  import LoaderCircle from '@lucide/svelte/icons/loader-circle';\n  import { cn } from '$lib/utils';\n\n  let { class: className, ...restProps }: { class?: string } = $props();\n</script>\n\n<LoaderCircle\n  aria-label=\"Loading\"\n  class={cn('animate-spin', className)}\n  role=\"status\"\n  {...restProps}\n/>\n"
+		}
+	],
+	"registryDependencies": [
+		"utils"
+	],
+	"dependencies": []
+}

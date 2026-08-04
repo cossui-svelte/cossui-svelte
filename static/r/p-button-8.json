@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-button-8",
+	"title": "Button 8",
+	"description": "Extra-small button",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-button-8.svelte",
+			"target": "$lib/components/particles/button/p-button-8.svelte",
+			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n</script>\n\n<Button size=\"xs\">Button</Button>\n"
+		}
+	],
+	"registryDependencies": [
+		"button"
+	],
+	"dependencies": []
+}

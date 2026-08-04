@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-textarea-9",
+	"title": "Textarea 9",
+	"description": "Textarea with custom border and background",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-textarea-9.svelte",
+			"target": "$lib/components/particles/textarea/p-textarea-9.svelte",
+			"content": "<script lang=\"ts\">\n  import { Textarea } from '$lib/components/ui/textarea';\n</script>\n\n<Textarea\n  aria-label=\"Message\"\n  class=\"border-transparent bg-muted shadow-none before:hidden\"\n  placeholder=\"Type your message here\"\n/>\n"
+		}
+	],
+	"registryDependencies": [
+		"textarea"
+	],
+	"dependencies": []
+}

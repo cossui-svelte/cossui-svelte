@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-chart-7",
+	"title": "Chart 7",
+	"description": "Pie Chart - Interactive",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-chart-7.svelte",
+			"target": "$lib/components/particles/charts/p-chart-7.svelte",
+			"content": "<script lang=\"ts\">\n  import { Arc, PieChart, Text } from 'layerchart';\n  import { Chart, type ChartConfig, ChartTooltip } from '$lib/components/ui/chart';\n\n  const desktopData = [\n    { color: 'var(--color-january)', desktop: 186, month: 'january' },\n    { color: 'var(--color-february)', desktop: 305, month: 'february' },\n    { color: 'var(--color-march)', desktop: 237, month: 'march' },\n    { color: 'var(--color-april)', desktop: 173, month: 'april' },\n    { color: 'var(--color-may)', desktop: 209, month: 'may' }\n  ];\n\n  const chartConfig = {\n    april: { color: 'var(--chart-4)', label: 'April' },\n    desktop: { label: 'Desktop' },\n    february: { color: 'var(--chart-2)', label: 'February' },\n    january: { color: 'var(--chart-1)', label: 'January' },\n    march: { color: 'var(--chart-3)', label: 'March' },\n    may: { color: 'var(--chart-5)', label: 'May' }\n  } satisfies ChartConfig;\n\n  let activeMonth = $state(desktopData[0].month);\n\n  const id = 'pie-interactive';\n\n  const activeIndex = $derived(desktopData.findIndex((item) => item.month === activeMonth));\n</script>\n\n<Chart {id} config={chartConfig} class=\"grow p-4 h-87.5\">\n  <PieChart\n    data={desktopData}\n    label=\"month\"\n    key=\"month\"\n    value=\"desktop\"\n    c=\"color\"\n    props={{\n      pie: {\n        sort: (a, b) => {\n          const monthOrder = ['january', 'february', 'march', 'april', 'may'];\n          return monthOrder.indexOf(a.month) - monthOrder.indexOf(b.month);\n        },\n        motion: 'tween'\n      }\n    }}\n    innerRadius={60}\n    padding={29}\n  >\n    {#snippet aboveMarks()}\n      <Text\n        value={desktopData[activeIndex].desktop.toLocaleString()}\n        textAnchor=\"middle\"\n        verticalAnchor=\"middle\"\n        class=\"fill-foreground !text-3xl font-bold\"\n        dy={3}\n      />\n      <Text\n        value=\"Visitors\"\n        textAnchor=\"middle\"\n        verticalAnchor=\"middle\"\n        class=\"!fill-muted-foreground text-muted-foreground\"\n        dy={22}\n      />\n    {/snippet}\n    {#snippet arc({ props, index })}\n      {@const isActive = index === activeIndex}\n      {@const arcProps = isActive ? { ...props, outerRadius: 60, innerRadius: 105 } : props}\n\n      {#if isActive}\n        <g>\n          <Arc {...arcProps} />\n          <Arc {...arcProps} outerRadius={107} innerRadius={119} />\n        </g>\n      {:else}\n        <Arc {...arcProps} />\n      {/if}\n    {/snippet}\n    {#snippet tooltip()}\n      <ChartTooltip\n        labelKey=\"visitors\"\n        nameKey=\"month\"\n        indicator=\"line\"\n        labelFormatter={(_, payload) => {\n          return chartConfig[payload?.[0].key as keyof typeof chartConfig].label;\n        }}\n      />\n    {/snippet}\n  </PieChart>\n</Chart>\n"
+		}
+	],
+	"registryDependencies": [
+		"chart"
+	],
+	"dependencies": [
+		"layerchart@^2.0.4"
+	]
+}

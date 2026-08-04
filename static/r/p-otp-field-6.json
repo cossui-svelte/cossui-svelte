@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-otp-field-6",
+	"title": "Otp field 6",
+	"description": "OTP field with custom sanitization",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-otp-field-6.svelte",
+			"target": "$lib/components/particles/otp-field/p-otp-field-6.svelte",
+			"content": "<script lang=\"ts\">\n  import { Label } from '$lib/components/ui/label';\n  import { OTPField, OTPFieldInput } from '$lib/components/ui/otp-field';\n\n  const OTP_LENGTH = 6;\n\n  let value = $state('');\n  let focusedIndex = $state(0);\n  let invalidPulse = $state(0);\n  let statusMessage = $state('');\n  let invalidTimer: ReturnType<typeof setTimeout> | undefined;\n\n  function clearInvalidFeedback() {\n    clearTimeout(invalidTimer);\n    invalidTimer = undefined;\n    invalidPulse = 0;\n    statusMessage = '';\n  }\n\n  function handleValueChange() {\n    clearInvalidFeedback();\n  }\n</script>\n\n<div class=\"flex flex-col items-center gap-2\">\n  <Label>Tier code</Label>\n  <OTPField\n    maxlength={OTP_LENGTH}\n    inputmode=\"numeric\"\n    pattern=\"^[0-3]+$\"\n    bind:value\n    onValueChange={handleValueChange}\n  >\n    {#snippet children({ cells })}\n      {#each cells as cell, i (i)}\n        <OTPFieldInput\n          aria-invalid={(invalidPulse > 0 && focusedIndex === i) || undefined}\n          aria-label={`Character ${i + 1} of ${OTP_LENGTH}`}\n          {cell}\n          onfocus={() => {\n            focusedIndex = i;\n          }}\n        />\n      {/each}\n    {/snippet}\n  </OTPField>\n  <p class=\"text-muted-foreground text-xs\">Digits 0-3 only.</p>\n  <span aria-live=\"polite\" class=\"sr-only\">{statusMessage}</span>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"otp-field",
+		"field",
+		"label"
+	],
+	"dependencies": []
+}

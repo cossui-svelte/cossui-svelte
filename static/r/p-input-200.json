@@ -1,0 +1,22 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-input-200",
+	"title": "Input 200",
+	"description": "IP address, subnet mask, and gateway inputs with auto-formatting",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-input-200.svelte",
+			"target": "$lib/components/particles/input/p-input-200.svelte",
+			"content": "<script lang=\"ts\">\n  import { registerCursorTracker } from 'cleave-zen';\n  import type { Attachment } from 'svelte/attachments';\n  import { Input } from '$lib/components/ui/input';\n  import { Label } from '$lib/components/ui/label';\n\n  // Groups digits into up to 4 dot-separated octets, capping each at 255 by\n  // rolling any digit that would overflow it into the start of the next octet.\n  function formatIPv4(value: string): string {\n    const digits = value.replace(/\\D/g, '');\n    const octets = [''];\n\n    for (const digit of digits) {\n      const last = octets.length - 1;\n      const candidate = octets[last] + digit;\n      if (octets[last].length < 3 && Number(candidate) <= 255) {\n        octets[last] = candidate;\n      } else if (octets.length < 4) {\n        octets.push(digit);\n      }\n    }\n\n    return octets.join('.');\n  }\n\n  const ipv4Attachment: Attachment<HTMLInputElement> = (input) => {\n    const unregisterCursorTracker = registerCursorTracker({\n      delimiter: '.',\n      input\n    });\n\n    const handleInput = (event: Event) => {\n      const target = event.target as HTMLInputElement;\n      target.value = formatIPv4(target.value);\n    };\n\n    input.addEventListener('input', handleInput);\n\n    return () => {\n      input.removeEventListener('input', handleInput);\n      unregisterCursorTracker();\n    };\n  };\n</script>\n\n<div class=\"space-y-4\">\n  <div class=\"*:not-first:mt-2\">\n    <Label for=\"input-200-ip\">IP Address</Label>\n    <Input\n      id=\"input-200-ip\"\n      type=\"text\"\n      inputmode=\"decimal\"\n      placeholder=\"192.168.1.1\"\n      {@attach ipv4Attachment}\n    />\n  </div>\n  <div class=\"*:not-first:mt-2\">\n    <Label for=\"input-200-subnet\">Subnet Mask</Label>\n    <Input\n      id=\"input-200-subnet\"\n      type=\"text\"\n      inputmode=\"decimal\"\n      placeholder=\"255.255.255.0\"\n      {@attach ipv4Attachment}\n    />\n  </div>\n  <div class=\"*:not-first:mt-2\">\n    <Label for=\"input-200-gateway\">Gateway</Label>\n    <Input\n      id=\"input-200-gateway\"\n      type=\"text\"\n      inputmode=\"decimal\"\n      placeholder=\"192.168.1.254\"\n      {@attach ipv4Attachment}\n    />\n  </div>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"input",
+		"label"
+	],
+	"dependencies": [
+		"cleave-zen@^0.0.17"
+	]
+}

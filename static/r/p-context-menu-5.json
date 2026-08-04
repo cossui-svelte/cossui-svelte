@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-context-menu-5",
+	"title": "Context menu 5",
+	"description": "Context menu with group labels",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-context-menu-5.svelte",
+			"target": "$lib/components/particles/context-menu/p-context-menu-5.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    ContextMenu,\n    ContextMenuGroup,\n    ContextMenuGroupLabel,\n    ContextMenuItem,\n    ContextMenuPopup,\n    ContextMenuSeparator,\n    ContextMenuTrigger\n  } from '$lib/components/ui/context-menu';\n</script>\n\n<ContextMenu>\n  <ContextMenuTrigger\n    class=\"flex h-32 w-full max-w-sm items-center justify-center rounded-lg border border-dashed text-muted-foreground text-sm\"\n  >\n    Right click here\n  </ContextMenuTrigger>\n  <ContextMenuPopup>\n    <ContextMenuGroup>\n      <ContextMenuGroupLabel>File</ContextMenuGroupLabel>\n      <ContextMenuItem>Rename</ContextMenuItem>\n      <ContextMenuItem>Duplicate</ContextMenuItem>\n    </ContextMenuGroup>\n    <ContextMenuSeparator />\n    <ContextMenuGroup>\n      <ContextMenuGroupLabel>Share</ContextMenuGroupLabel>\n      <ContextMenuItem>Send copy</ContextMenuItem>\n      <ContextMenuItem>Export</ContextMenuItem>\n    </ContextMenuGroup>\n  </ContextMenuPopup>\n</ContextMenu>\n"
+		}
+	],
+	"registryDependencies": [
+		"context-menu"
+	],
+	"dependencies": []
+}

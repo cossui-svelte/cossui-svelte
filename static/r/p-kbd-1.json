@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-kbd-1",
+	"title": "Kbd 1",
+	"description": "Keyboard shortcuts display",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-kbd-1.svelte",
+			"target": "$lib/components/particles/kbd/p-kbd-1.svelte",
+			"content": "<script lang=\"ts\">\n  import { Kbd, KbdGroup } from '$lib/components/ui/kbd';\n</script>\n\n<div class=\"flex flex-col gap-4\">\n  <div>\n    <p class=\"mb-2 text-muted-foreground text-sm\">Single keys:</p>\n    <div class=\"flex gap-2\">\n      <Kbd>K</Kbd>\n      <Kbd>⌘</Kbd>\n      <Kbd>⌃</Kbd>\n      <Kbd>⇧</Kbd>\n    </div>\n  </div>\n  <div>\n    <p class=\"mb-2 text-muted-foreground text-sm\">Key combinations:</p>\n    <div class=\"flex gap-2\">\n      <KbdGroup>\n        <Kbd>⌘</Kbd>\n        <Kbd>K</Kbd>\n      </KbdGroup>\n      <KbdGroup>\n        <Kbd>⌘</Kbd>\n        <Kbd>Shift</Kbd>\n        <Kbd>P</Kbd>\n      </KbdGroup>\n      <KbdGroup>\n        <Kbd>Ctrl</Kbd>\n        <Kbd>Alt</Kbd>\n        <Kbd>Delete</Kbd>\n      </KbdGroup>\n    </div>\n  </div>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"kbd"
+	],
+	"dependencies": []
+}

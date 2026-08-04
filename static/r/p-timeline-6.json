@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-timeline-6",
+	"title": "Timeline 6",
+	"description": "A timeline with icons",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-timeline-6.svelte",
+			"target": "$lib/components/particles/timeline/p-timeline-6.svelte",
+			"content": "<script lang=\"ts\">\n  import GitCompare from '@lucide/svelte/icons/git-compare';\n  import GitFork from '@lucide/svelte/icons/git-fork';\n  import GitMerge from '@lucide/svelte/icons/git-merge';\n  import GitPullRequest from '@lucide/svelte/icons/git-pull-request';\n  import {\n    Timeline,\n    TimelineContent,\n    TimelineDate,\n    TimelineHeader,\n    TimelineIndicator,\n    TimelineItem,\n    TimelineSeparator,\n    TimelineTitle\n  } from '$lib/components/ui/timeline';\n\n  const items = [\n    {\n      date: '15 minutes ago',\n      description: 'Forked the repository to create a new branch for development.',\n      icon: GitFork,\n      id: 1,\n      title: 'Forked Repository'\n    },\n    {\n      date: '10 minutes ago',\n      description:\n        'Submitted PR #342 with new feature implementation. Waiting for code review from team leads.',\n      icon: GitPullRequest,\n      id: 2,\n      title: 'Pull Request Submitted'\n    },\n    {\n      date: '5 minutes ago',\n      description:\n        'Received comments on PR. Minor adjustments needed in error handling and documentation.',\n      icon: GitCompare,\n      id: 3,\n      title: 'Comparing Branches'\n    },\n    {\n      description: 'Merged the feature branch into the main branch. Ready for deployment.',\n      icon: GitMerge,\n      id: 4,\n      title: 'Merged Branch'\n    }\n  ];\n</script>\n\n<Timeline defaultValue={3}>\n  {#each items as item (item.id)}\n    <TimelineItem step={item.id} class=\"group-data-[orientation=vertical]/timeline:ms-10\">\n      <TimelineHeader>\n        <TimelineSeparator\n          class=\"group-data-[orientation=vertical]/timeline:-left-7 group-data-[orientation=vertical]/timeline:h-[calc(100%-1.5rem-0.25rem)] group-data-[orientation=vertical]/timeline:translate-y-[1.625rem]\"\n        />\n        <TimelineTitle class=\"mt-0.5\">{item.title}</TimelineTitle>\n        <TimelineIndicator\n          class=\"flex size-6 items-center justify-center border-none bg-primary/10 group-data-[orientation=vertical]/timeline:-left-7 group-data-[completed]/timeline-item:bg-primary group-data-[completed]/timeline-item:text-primary-foreground\"\n        >\n          <item.icon size={14} />\n        </TimelineIndicator>\n      </TimelineHeader>\n      <TimelineContent>\n        {item.description}\n        <TimelineDate class=\"mb-0 mt-2\">{item.date}</TimelineDate>\n      </TimelineContent>\n    </TimelineItem>\n  {/each}\n</Timeline>\n"
+		}
+	],
+	"registryDependencies": [
+		"timeline"
+	],
+	"dependencies": []
+}

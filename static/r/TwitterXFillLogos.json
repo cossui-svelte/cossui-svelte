@@ -1,0 +1,18 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "TwitterXFillLogos",
+	"title": "TwitterXFillLogos",
+	"type": "registry:component",
+	"files": [
+		{
+			"type": "registry:component",
+			"path": "TwitterXFillLogos.svelte",
+			"target": "$lib/icons/TwitterXFillLogos.svelte",
+			"content": "<script lang=\"ts\">\n  import { getContext } from 'svelte';\n  import type { BaseProps, Props } from './types';\n\n  const ctx: BaseProps = getContext('iconCtx') ?? {};\n\n  let {\n    size = ctx.size || '24',\n    role = ctx.role || 'img',\n    color = ctx.color || 'currentColor',\n    title,\n    desc,\n    focusable = ctx.focusable || 'false',\n    ariaLabel,\n    ...restProps\n  }: Props = $props();\n\n  const ariaDescribedby = $derived([title?.id, desc?.id].filter(Boolean).join(' ') || undefined);\n</script>\n\n<svg\n  xmlns=\"http://www.w3.org/2000/svg\"\n  {...restProps}\n  {role}\n  width={size}\n  height={size}\n  fill={color}\n  {focusable}\n  aria-label={ariaLabel || undefined}\n  aria-labelledby={title?.id || undefined}\n  aria-describedby={ariaDescribedby}\n  viewBox=\"0 0 24 24\"\n>\n  {#if title?.id && title.title}\n    <title id={title.id}>{title.title}</title>\n  {/if}\n  {#if desc?.id && desc.desc}\n    <desc id={desc.id}>{desc.desc}</desc>\n  {/if}\n  <path\n    d=\"M17.6874 3.0625L12.6907 8.77425L8.37045 3.0625H2.11328L9.58961 12.8387L2.50378 20.9375H5.53795L11.0068 14.6886L15.7863 20.9375H21.8885L14.095 10.6342L20.7198 3.0625H17.6874ZM16.6232 19.1225L5.65436 4.78217H7.45745L18.3034 19.1225H16.6232Z\"\n  />\n</svg>\n\n<!--\n@component\n[Go to docs](https://svelte-remix.codewithshin.com/)\n## Props\n@prop size = ctx.size || '24'\n@prop role = ctx.role || 'img'\n@prop color = ctx.color || 'currentColor'\n@prop title\n@prop desc\n@prop focusable = ctx.focusable || 'false'\n@prop ariaLabel\n@prop ...restProps\n-->\n"
+		}
+	],
+	"registryDependencies": [
+		"icon-types"
+	],
+	"dependencies": []
+}

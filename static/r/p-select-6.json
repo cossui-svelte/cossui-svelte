@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-select-6",
+	"title": "Select 6",
+	"description": "Select with groups",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-select-6.svelte",
+			"target": "$lib/components/particles/select/p-select-6.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    Select,\n    SelectGroup,\n    SelectGroupLabel,\n    SelectItem,\n    SelectPopup,\n    SelectSeparator,\n    SelectTrigger,\n    SelectValue\n  } from '$lib/components/ui/select';\n\n  const frontend = [\n    { label: 'Next.js', value: 'next' },\n    { label: 'Vite', value: 'vite' },\n    { label: 'Astro', value: 'astro' }\n  ];\n\n  const backend = [\n    { label: 'Express', value: 'express' },\n    { label: 'NestJS', value: 'nestjs' },\n    { label: 'Fastify', value: 'fastify' },\n    { label: 'Django', value: 'django' },\n    { label: 'Flask', value: 'flask' },\n    { label: 'Rails', value: 'rails' }\n  ];\n</script>\n\n<Select>\n  <SelectTrigger aria-label=\"Select framework\">\n    <SelectValue placeholder=\"Select framework\" />\n  </SelectTrigger>\n  <SelectPopup>\n    <SelectGroup>\n      <SelectGroupLabel>Frontend</SelectGroupLabel>\n      {#each frontend as { label, value } (value)}\n        <SelectItem {value}>{label}</SelectItem>\n      {/each}\n    </SelectGroup>\n    <SelectSeparator />\n    <SelectGroup>\n      <SelectGroupLabel>Backend</SelectGroupLabel>\n      {#each backend as { label, value } (value)}\n        <SelectItem {value}>{label}</SelectItem>\n      {/each}\n    </SelectGroup>\n  </SelectPopup>\n</Select>\n"
+		}
+	],
+	"registryDependencies": [
+		"select"
+	],
+	"dependencies": []
+}

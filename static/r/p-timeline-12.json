@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-timeline-12",
+	"title": "Timeline 12",
+	"description": "Horizontal timeline with dates above",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-timeline-12.svelte",
+			"target": "$lib/components/particles/timeline/p-timeline-12.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    Timeline,\n    TimelineContent,\n    TimelineDate,\n    TimelineHeader,\n    TimelineIndicator,\n    TimelineItem,\n    TimelineSeparator,\n    TimelineTitle\n  } from '$lib/components/ui/timeline';\n\n  const items = [\n    {\n      date: 'Mar 15, 2024',\n      description: 'Initial team meeting.',\n      id: 1,\n      title: 'Project Kickoff'\n    },\n    {\n      date: 'Mar 22, 2024',\n      description: 'Completed wireframes.',\n      id: 2,\n      title: 'Design Phase'\n    },\n    {\n      date: 'Apr 5, 2024',\n      description: 'Backend development.',\n      id: 3,\n      title: 'Development Sprint'\n    },\n    {\n      date: 'Apr 19, 2024',\n      description: 'Performance optimization.',\n      id: 4,\n      title: 'Testing & Deployment'\n    }\n  ];\n</script>\n\n<Timeline defaultValue={3} orientation=\"horizontal\">\n  {#each items as item (item.id)}\n    <TimelineItem step={item.id} class=\"group-data-[orientation=horizontal]/timeline:mt-0\">\n      <TimelineHeader>\n        <TimelineSeparator class=\"group-data-[orientation=horizontal]/timeline:top-8\" />\n        <TimelineDate class=\"mb-10\">{item.date}</TimelineDate>\n        <TimelineTitle>{item.title}</TimelineTitle>\n        <TimelineIndicator class=\"group-data-[orientation=horizontal]/timeline:top-8\" />\n      </TimelineHeader>\n      <TimelineContent>{item.description}</TimelineContent>\n    </TimelineItem>\n  {/each}\n</Timeline>\n"
+		}
+	],
+	"registryDependencies": [
+		"timeline"
+	],
+	"dependencies": []
+}

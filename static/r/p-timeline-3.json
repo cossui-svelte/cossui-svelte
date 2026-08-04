@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-timeline-3",
+	"title": "Timeline 3",
+	"description": "A more complex timeline with embeded dates",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-timeline-3.svelte",
+			"target": "$lib/components/particles/timeline/p-timeline-3.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    Timeline,\n    TimelineContent,\n    TimelineDate,\n    TimelineHeader,\n    TimelineIndicator,\n    TimelineItem,\n    TimelineSeparator,\n    TimelineTitle\n  } from '$lib/components/ui/timeline';\n\n  const items = [\n    {\n      date: 'Mar 15, 2024',\n      description:\n        'Initial team meeting and project scope definition. Established key milestones and resource allocation.',\n      id: 1,\n      title: 'Project Kickoff'\n    },\n    {\n      date: 'Mar 22, 2024',\n      description:\n        'Completed wireframes and user interface mockups. Stakeholder review and feedback incorporated.',\n      id: 2,\n      title: 'Design Phase'\n    },\n    {\n      date: 'Apr 5, 2024',\n      description: 'Backend API implementation and frontend component development in progress.',\n      id: 3,\n      title: 'Development Sprint'\n    },\n    {\n      date: 'Apr 19, 2024',\n      description:\n        'Quality assurance testing, performance optimization, and production deployment preparation.',\n      id: 4,\n      title: 'Testing & Deployment'\n    }\n  ];\n</script>\n\n<Timeline defaultValue={3}>\n  {#each items as item (item.id)}\n    <TimelineItem step={item.id}>\n      <TimelineHeader>\n        <TimelineSeparator />\n        <TimelineDate>{item.date}</TimelineDate>\n        <TimelineTitle>{item.title}</TimelineTitle>\n        <TimelineIndicator />\n      </TimelineHeader>\n      <TimelineContent>{item.description}</TimelineContent>\n    </TimelineItem>\n  {/each}\n</Timeline>\n"
+		}
+	],
+	"registryDependencies": [
+		"timeline"
+	],
+	"dependencies": []
+}

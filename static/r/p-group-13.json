@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-group-13",
+	"title": "Group 13",
+	"description": "Group with menu",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-group-13.svelte",
+			"target": "$lib/components/particles/group/p-group-13.svelte",
+			"content": "<script lang=\"ts\">\n  import ChevronDown from '@lucide/svelte/icons/chevron-down';\n  import Download from '@lucide/svelte/icons/download';\n  import Pencil from '@lucide/svelte/icons/pencil';\n  import Share from '@lucide/svelte/icons/share';\n  import { Button, buttonVariants } from '$lib/components/ui/button';\n  import { Group, GroupSeparator } from '$lib/components/ui/group';\n  import { Menu, MenuItem, MenuPopup, MenuTrigger } from '$lib/components/ui/menu';\n</script>\n\n<Group aria-label=\"Subscription actions\">\n  <Button>Subscribe</Button>\n  <GroupSeparator class=\"bg-primary/72\" />\n  <Menu>\n    <MenuTrigger aria-label=\"Copy options\" class={buttonVariants({ size: 'icon' })}>\n      <ChevronDown class=\"size-4\" aria-hidden />\n    </MenuTrigger>\n    <MenuPopup align=\"end\">\n      <MenuItem>\n        <Share aria-hidden />\n        Share link\n      </MenuItem>\n      <MenuItem>\n        <Download aria-hidden />\n        Download\n      </MenuItem>\n      <MenuItem>\n        <Pencil aria-hidden />\n        Duplicate\n      </MenuItem>\n    </MenuPopup>\n  </Menu>\n</Group>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"group",
+		"menu"
+	],
+	"dependencies": []
+}

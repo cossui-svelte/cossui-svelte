@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-map-2",
+	"title": "Map 2",
+	"description": "Global shipping routes visualized as animated arcs from a hub on a rotating globe",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-map-2.svelte",
+			"target": "$lib/components/particles/map/p-map-2.svelte",
+			"content": "<script lang=\"ts\">\n  import { Map, MapArc, MapMarker, MarkerContent, MarkerLabel } from '$lib/components/ui/map';\n\n  const hub = { name: 'London', lng: -0.1276, lat: 51.5074 };\n\n  const destinations = [\n    { name: 'New York', lng: -74.006, lat: 40.7128 },\n    { name: 'São Paulo', lng: -46.6333, lat: -23.5505 },\n    { name: 'Cape Town', lng: 18.4241, lat: -33.9249 },\n    { name: 'Mumbai', lng: 72.8777, lat: 19.076 },\n    { name: 'Tokyo', lng: 139.6917, lat: 35.6895 }\n  ];\n\n  const arcs = destinations.map((dest) => ({\n    id: dest.name,\n    from: [hub.lng, hub.lat] as [number, number],\n    to: [dest.lng, dest.lat] as [number, number]\n  }));\n</script>\n\n<Map\n  class=\"h-80\"\n  center={[-0.1276, 41.5074]}\n  zoom={1}\n  projection={{ type: 'globe' }}\n  options={{ scrollZoom: false }}\n>\n  <MapArc\n    data={arcs}\n    paint={{\n      'line-color': '#3b82f6',\n      'line-opacity': 0.9,\n      'line-dasharray': [2, 2]\n    }}\n    interactive={false}\n  />\n\n  <MapMarker longitude={hub.lng} latitude={hub.lat}>\n    <MarkerContent>\n      <div class=\"size-3 rounded-full border-2 border-white bg-blue-500\"></div>\n      <MarkerLabel position=\"top\">{hub.name}</MarkerLabel>\n    </MarkerContent>\n  </MapMarker>\n\n  {#each destinations as dest (dest.name)}\n    <MapMarker longitude={dest.lng} latitude={dest.lat}>\n      <MarkerContent>\n        <div class=\"size-2 rounded-full border-2 border-white bg-blue-500\"></div>\n        <MarkerLabel position=\"top\">{dest.name}</MarkerLabel>\n      </MarkerContent>\n    </MapMarker>\n  {/each}\n</Map>\n"
+		}
+	],
+	"registryDependencies": [
+		"map"
+	],
+	"dependencies": []
+}

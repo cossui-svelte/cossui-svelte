@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-menu-6",
+	"title": "Menu 6",
+	"description": "Menu with group labels",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-menu-6.svelte",
+			"target": "$lib/components/particles/menu/p-menu-6.svelte",
+			"content": "<script lang=\"ts\">\n  import { buttonVariants } from '$lib/components/ui/button';\n  import {\n    Menu,\n    MenuGroup,\n    MenuGroupLabel,\n    MenuItem,\n    MenuPopup,\n    MenuSeparator,\n    MenuTrigger\n  } from '$lib/components/ui/menu';\n</script>\n\n<Menu>\n  <MenuTrigger class={buttonVariants({ variant: 'outline' })}>Open menu</MenuTrigger>\n  <MenuPopup>\n    <MenuGroup>\n      <MenuGroupLabel>Account</MenuGroupLabel>\n      <MenuItem>Profile</MenuItem>\n      <MenuItem>Billing</MenuItem>\n    </MenuGroup>\n    <MenuSeparator />\n    <MenuGroup>\n      <MenuGroupLabel>Support</MenuGroupLabel>\n      <MenuItem>Docs</MenuItem>\n      <MenuItem>Contact</MenuItem>\n    </MenuGroup>\n  </MenuPopup>\n</Menu>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"menu"
+	],
+	"dependencies": []
+}

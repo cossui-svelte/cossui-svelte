@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-badge-9",
+	"title": "Badge 9",
+	"description": "Small badge",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-badge-9.svelte",
+			"target": "$lib/components/particles/badge/p-badge-9.svelte",
+			"content": "<script lang=\"ts\">\n  import { Badge } from '$lib/components/ui/badge';\n</script>\n\n<Badge size=\"sm\">Badge</Badge>\n"
+		}
+	],
+	"registryDependencies": [
+		"badge"
+	],
+	"dependencies": []
+}

@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-badge-20",
+	"title": "Badge 20",
+	"description": "Removable badge",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-badge-20.svelte",
+			"target": "$lib/components/particles/badge/p-badge-20.svelte",
+			"content": "<script lang=\"ts\">\n  import X from '@lucide/svelte/icons/x';\n  import { Badge } from '$lib/components/ui/badge';\n\n  let isActive = $state(true);\n</script>\n\n{#if isActive}\n  <Badge class=\"gap-0\">\n    Removable\n    <button\n      class=\"-my-px -ms-px -me-1.5 inline-flex size-5 shrink-0 cursor-pointer items-center justify-center rounded-[inherit] p-0 text-primary-foreground/60 outline-none transition-[color,box-shadow] hover:text-primary-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50\"\n      onclick={() => (isActive = false)}\n      type=\"button\"\n    >\n      <X aria-hidden=\"true\" />\n    </button>\n  </Badge>\n{/if}\n"
+		}
+	],
+	"registryDependencies": [
+		"badge"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

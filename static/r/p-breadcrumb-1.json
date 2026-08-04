@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-breadcrumb-1",
+	"title": "Breadcrumb 1",
+	"description": "Breadcrumb with menu example",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-breadcrumb-1.svelte",
+			"target": "$lib/components/particles/breadcrumb/p-breadcrumb-1.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    Breadcrumb,\n    BreadcrumbEllipsis,\n    BreadcrumbItem,\n    BreadcrumbLink,\n    BreadcrumbList,\n    BreadcrumbPage,\n    BreadcrumbSeparator\n  } from '$lib/components/ui/breadcrumb';\n  import { buttonVariants } from '$lib/components/ui/button';\n  import { Menu, MenuLinkItem, MenuPopup, MenuTrigger } from '$lib/components/ui/menu';\n</script>\n\n<Breadcrumb>\n  <BreadcrumbList>\n    <BreadcrumbItem>\n      <BreadcrumbLink href=\"/\">Home</BreadcrumbLink>\n    </BreadcrumbItem>\n    <BreadcrumbSeparator />\n    <BreadcrumbItem>\n      <Menu>\n        <MenuTrigger\n          class={`${buttonVariants({ size: 'icon-sm', variant: 'ghost' })}·-m-1.5·text-muted-foreground`}\n        >\n          <BreadcrumbEllipsis />\n        </MenuTrigger>\n        <MenuPopup align=\"start\">\n          <MenuLinkItem href=\"/docs\">Docs</MenuLinkItem>\n          <MenuLinkItem href=\"/particles\">Particles</MenuLinkItem>\n        </MenuPopup>\n      </Menu>\n    </BreadcrumbItem>\n    <BreadcrumbSeparator />\n    <BreadcrumbItem>\n      <BreadcrumbLink href=\"/docs/\">Components</BreadcrumbLink>\n    </BreadcrumbItem>\n    <BreadcrumbSeparator />\n    <BreadcrumbItem>\n      <BreadcrumbPage>Breadcrumb</BreadcrumbPage>\n    </BreadcrumbItem>\n  </BreadcrumbList>\n</Breadcrumb>\n"
+		}
+	],
+	"registryDependencies": [
+		"breadcrumb",
+		"button",
+		"menu"
+	],
+	"dependencies": []
+}

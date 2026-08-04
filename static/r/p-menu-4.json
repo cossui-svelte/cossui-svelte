@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-menu-4",
+	"title": "Menu 4",
+	"description": "Menu with radio group",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-menu-4.svelte",
+			"target": "$lib/components/particles/menu/p-menu-4.svelte",
+			"content": "<script lang=\"ts\">\n  import { buttonVariants } from '$lib/components/ui/button';\n  import {\n    Menu,\n    MenuPopup,\n    MenuRadioGroup,\n    MenuRadioItem,\n    MenuTrigger\n  } from '$lib/components/ui/menu';\n\n  let theme = $state('system');\n</script>\n\n<Menu>\n  <MenuTrigger class={buttonVariants({ variant: 'outline' })}>Open menu</MenuTrigger>\n  <MenuPopup>\n    <MenuRadioGroup\n      value={theme}\n      onValueChange={(v) => {\n        theme = v;\n      }}\n    >\n      <MenuRadioItem value=\"light\">Light</MenuRadioItem>\n      <MenuRadioItem value=\"dark\">Dark</MenuRadioItem>\n      <MenuRadioItem value=\"system\">System</MenuRadioItem>\n    </MenuRadioGroup>\n  </MenuPopup>\n</Menu>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"menu"
+	],
+	"dependencies": []
+}

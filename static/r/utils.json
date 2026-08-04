@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "utils",
+	"title": "Utils",
+	"description": "Shared `cn` className helper and generic prop utility types used by every UI component.",
+	"type": "registry:lib",
+	"files": [
+		{
+			"type": "registry:lib",
+			"path": "utils.ts",
+			"target": "$lib/utils.ts",
+			"content": "import { type ClassValue, clsx } from 'clsx';\nimport { twMerge } from 'tailwind-merge';\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n\n// biome-ignore lint:@typescript-eslint/no-explicit-any\nexport type WithoutChild<T> = T extends { child?: any } ? Omit<T, 'child'> : T;\nexport type WithoutChildrenOrChild<T> = WithoutChildren<WithoutChild<T>>;\n// biome-ignore lint:@typescript-eslint/no-explicit-any\nexport type WithoutChildren<T> = T extends { children?: any } ? Omit<T, 'children'> : T;\nexport type WithElementRef<T, U extends HTMLElement = HTMLElement> = T & { ref?: U | null };\nexport type RenameTypeToMode<T> = T extends { type: infer M } ? Omit<T, 'type'> & { mode: M } : T;\n"
+		}
+	],
+	"registryDependencies": [],
+	"dependencies": [
+		"clsx@^2.1.1",
+		"tailwind-merge@^3.6.0"
+	]
+}

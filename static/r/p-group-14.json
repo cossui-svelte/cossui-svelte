@@ -1,0 +1,22 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-group-14",
+	"title": "Group 14",
+	"description": "Group with select",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-group-14.svelte",
+			"target": "$lib/components/particles/group/p-group-14.svelte",
+			"content": "<script lang=\"ts\">\n  import ArrowRight from '@lucide/svelte/icons/arrow-right';\n  import { Button } from '$lib/components/ui/button';\n  import { Group, GroupSeparator } from '$lib/components/ui/group';\n  import { NumberField, NumberFieldGroup, NumberFieldInput } from '$lib/components/ui/number-field';\n  import {\n    Select,\n    SelectItem,\n    SelectPopup,\n    SelectTrigger,\n    SelectValue\n  } from '$lib/components/ui/select';\n\n  const currencies = [\n    { label: 'US Dollar', value: '$' },\n    { label: 'Euro', value: '€' },\n    { label: 'British Pound', value: '£' }\n  ];\n\n  let currency = $state('$');\n  let amount = $state(10);\n</script>\n\n<Group aria-label=\"Payment amount\">\n  <Group aria-label=\"Amount input\">\n    <Select bind:value={currency}>\n      <SelectTrigger class=\"w-fit min-w-none min-h-8.5 sm:min-h-7.5\">\n        <SelectValue />\n      </SelectTrigger>\n      <SelectPopup class=\"min-w-48\">\n        {#each currencies as curr (curr.value)}\n          <SelectItem value={curr.value}>\n            {curr.value} <span class=\"ms-1\">{curr.label}</span>\n          </SelectItem>\n        {/each}\n      </SelectPopup>\n    </Select>\n    <GroupSeparator />\n    <NumberField aria-label=\"Enter the amount\" bind:value={amount}>\n      <NumberFieldGroup>\n        <NumberFieldInput class=\"text-left\" />\n      </NumberFieldGroup>\n    </NumberField>\n  </Group>\n  <Group aria-label=\"Submit\">\n    <Button aria-label=\"Send\" size=\"icon\" variant=\"outline\">\n      <ArrowRight aria-hidden />\n    </Button>\n  </Group>\n</Group>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"group",
+		"number-field",
+		"select"
+	],
+	"dependencies": []
+}

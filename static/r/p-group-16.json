@@ -1,0 +1,23 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-group-16",
+	"title": "Group 16",
+	"description": "Group with add button and input",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-group-16.svelte",
+			"target": "$lib/components/particles/group/p-group-16.svelte",
+			"content": "<script lang=\"ts\">\n  import Plus from '@lucide/svelte/icons/plus';\n  import { Button } from '$lib/components/ui/button';\n  import { Group, GroupSeparator } from '$lib/components/ui/group';\n  import { Input } from '$lib/components/ui/input';\n</script>\n\n<Group aria-label=\"Add item\">\n  <Button aria-label=\"Add\" size=\"icon\" variant=\"outline\">\n    <Plus aria-hidden />\n  </Button>\n  <GroupSeparator />\n  <Input aria-label=\"Item name\" placeholder=\"Enter item name\" type=\"text\" />\n</Group>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"group",
+		"input"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

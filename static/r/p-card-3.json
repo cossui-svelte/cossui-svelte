@@ -1,0 +1,27 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-card-3",
+	"title": "Card 3",
+	"description": "Authentication card with separators",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-card-3.svelte",
+			"target": "$lib/components/particles/card/p-card-3.svelte",
+			"content": "<script lang=\"ts\">\n  import ShieldAlert from '@lucide/svelte/icons/shield-alert';\n  import { z } from 'zod';\n  import { Button } from '$lib/components/ui/button';\n  import {\n    Card,\n    CardDescription,\n    CardFooter,\n    CardHeader,\n    CardPanel,\n    CardTitle\n  } from '$lib/components/ui/card';\n  import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';\n  import { Form } from '$lib/components/ui/form';\n  import { Input } from '$lib/components/ui/input';\n  import { createForm } from '$lib/hooks/use-superform';\n\n  const schema = z.object({\n    email: z.email('Please enter a valid email.'),\n    password: z.string().min(8, 'Password must be at least 8 characters.')\n  });\n\n  const superform = createForm({\n    onUpdated: (data) => {\n      alert(`Logging in as ${data.email}`);\n    },\n    schema\n  });\n\n  const { form, submitting } = superform;\n</script>\n\n<Card class=\"w-full max-w-xs\">\n  <CardHeader class=\"border-b\">\n    <CardTitle>Login to your account</CardTitle>\n    <CardDescription>Enter email and password to login</CardDescription>\n  </CardHeader>\n  <CardPanel>\n    <Form class=\"flex w-full flex-col gap-4\" {superform}>\n      <Field name=\"email\">\n        <FieldLabel>Email</FieldLabel>\n        <Input bind:value={$form.email} placeholder=\"Enter your email\" type=\"email\" />\n        <FieldError />\n      </Field>\n      <Field name=\"password\">\n        <FieldLabel>Password</FieldLabel>\n        <Input bind:value={$form.password} placeholder=\"Enter your password\" type=\"password\" />\n        <FieldError />\n      </Field>\n      <Button class=\"w-full\" loading={$submitting} type=\"submit\">Login</Button>\n    </Form>\n  </CardPanel>\n  <CardFooter class=\"border-t\">\n    <div class=\"flex gap-1 text-muted-foreground text-xs\">\n      <ShieldAlert class=\"size-3 h-lh shrink-0\" />\n      <p>The information you enter is encrypted and stored securely.</p>\n    </div>\n  </CardFooter>\n</Card>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"card",
+		"field",
+		"form",
+		"input",
+		"use-superform"
+	],
+	"dependencies": [
+		"@lucide/svelte",
+		"zod@^4.4.3"
+	]
+}

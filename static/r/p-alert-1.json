@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-alert-1",
+	"title": "Alert 1",
+	"description": "Basic alert",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-alert-1.svelte",
+			"target": "$lib/components/particles/alert/p-alert-1.svelte",
+			"content": "<script lang=\"ts\">\n  import { Alert, AlertDescription, AlertTitle } from '$lib/components/ui/alert';\n</script>\n\n<Alert>\n  <AlertTitle>Heads up!</AlertTitle>\n  <AlertDescription>\n    <p>Describe what can be done about it here.</p>\n  </AlertDescription>\n</Alert>\n"
+		}
+	],
+	"registryDependencies": [
+		"alert"
+	],
+	"dependencies": []
+}

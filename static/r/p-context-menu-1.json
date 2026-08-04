@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-context-menu-1",
+	"title": "Context menu 1",
+	"description": "Basic context menu",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-context-menu-1.svelte",
+			"target": "$lib/components/particles/context-menu/p-context-menu-1.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    ContextMenu,\n    ContextMenuItem,\n    ContextMenuPopup,\n    ContextMenuSeparator,\n    ContextMenuTrigger\n  } from '$lib/components/ui/context-menu';\n</script>\n\n<ContextMenu>\n  <ContextMenuTrigger\n    class=\"flex h-32 w-full max-w-sm items-center justify-center rounded-lg border border-dashed text-muted-foreground text-sm\"\n  >\n    Right click here\n  </ContextMenuTrigger>\n  <ContextMenuPopup>\n    <ContextMenuItem>Back</ContextMenuItem>\n    <ContextMenuItem>Forward</ContextMenuItem>\n    <ContextMenuSeparator />\n    <ContextMenuItem>Reload</ContextMenuItem>\n  </ContextMenuPopup>\n</ContextMenu>\n"
+		}
+	],
+	"registryDependencies": [
+		"context-menu"
+	],
+	"dependencies": []
+}

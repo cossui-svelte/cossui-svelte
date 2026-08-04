@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-slider-1",
+	"title": "Slider 1",
+	"description": "Basic slider",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-slider-1.svelte",
+			"target": "$lib/components/particles/slider/p-slider-1.svelte",
+			"content": "<script lang=\"ts\">\n  import { Slider } from '$lib/components/ui/slider';\n</script>\n\n<Slider value={50} />\n"
+		}
+	],
+	"registryDependencies": [
+		"slider"
+	],
+	"dependencies": []
+}

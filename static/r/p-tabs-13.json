@@ -1,0 +1,22 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-tabs-13",
+	"title": "Tabs 13",
+	"description": "Tabs with icon only and grouped tooltips",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-tabs-13.svelte",
+			"target": "$lib/components/particles/tabs/p-tabs-13.svelte",
+			"content": "<script lang=\"ts\">\n  import HouseIcon from '@lucide/svelte/icons/house';\n  import PanelsTopLeftIcon from '@lucide/svelte/icons/panels-top-left';\n  import SettingsIcon from '@lucide/svelte/icons/settings';\n  import { Tabs, TabsList, TabsPanel, TabsTab } from '$lib/components/ui/tabs';\n  import {\n    Tooltip,\n    TooltipPopup,\n    TooltipProvider,\n    TooltipTrigger\n  } from '$lib/components/ui/tooltip';\n</script>\n\n<TooltipProvider>\n  <Tabs class=\"items-center\" value=\"tab-1\">\n    <TabsList>\n      <Tooltip>\n        <TooltipTrigger>\n          {#snippet child({ props })}\n            <TabsTab aria-label=\"Overview\" value=\"tab-1\" {...props}>\n              <HouseIcon aria-hidden=\"true\" />\n            </TabsTab>\n          {/snippet}\n        </TooltipTrigger>\n        <TooltipPopup>Overview</TooltipPopup>\n      </Tooltip>\n      <Tooltip>\n        <TooltipTrigger>\n          {#snippet child({ props })}\n            <TabsTab aria-label=\"Projects\" value=\"tab-2\" {...props}>\n              <PanelsTopLeftIcon aria-hidden=\"true\" />\n            </TabsTab>\n          {/snippet}\n        </TooltipTrigger>\n        <TooltipPopup>Projects</TooltipPopup>\n      </Tooltip>\n      <Tooltip>\n        <TooltipTrigger>\n          {#snippet child({ props })}\n            <TabsTab aria-label=\"Settings\" value=\"tab-3\" {...props}>\n              <SettingsIcon aria-hidden=\"true\" />\n            </TabsTab>\n          {/snippet}\n        </TooltipTrigger>\n        <TooltipPopup>Settings</TooltipPopup>\n      </Tooltip>\n    </TabsList>\n    <TabsPanel value=\"tab-1\">\n      <p class=\"p-4 text-center text-muted-foreground text-xs\">Overview content</p>\n    </TabsPanel>\n    <TabsPanel value=\"tab-2\">\n      <p class=\"p-4 text-center text-muted-foreground text-xs\">Projects content</p>\n    </TabsPanel>\n    <TabsPanel value=\"tab-3\">\n      <p class=\"p-4 text-center text-muted-foreground text-xs\">Settings content</p>\n    </TabsPanel>\n  </Tabs>\n</TooltipProvider>\n"
+		}
+	],
+	"registryDependencies": [
+		"tabs",
+		"tooltip"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

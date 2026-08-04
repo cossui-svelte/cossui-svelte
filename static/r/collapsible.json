@@ -1,0 +1,39 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "collapsible",
+	"title": "Collapsible",
+	"description": "A collapsible panel controlled by a button trigger.",
+	"type": "registry:ui",
+	"files": [
+		{
+			"type": "registry:ui",
+			"path": "collapsible/collapsible-panel.svelte",
+			"target": "$lib/components/ui/collapsible/collapsible-panel.svelte",
+			"content": "<script lang=\"ts\">\n  import { Collapsible } from 'bits-ui';\n  import type { Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  type Props = Collapsible.ContentProps & { children?: Snippet };\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<Collapsible.Content\n  class={cn(\n    'overflow-hidden data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down',\n    className\n  )}\n  data-slot=\"collapsible-panel\"\n  {...restProps}\n>\n  {@render children?.()}\n</Collapsible.Content>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "collapsible/collapsible-trigger.svelte",
+			"target": "$lib/components/ui/collapsible/collapsible-trigger.svelte",
+			"content": "<script lang=\"ts\">\n  import { Collapsible } from 'bits-ui';\n  import type { Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  type Props = Collapsible.TriggerProps & { children?: Snippet };\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<Collapsible.Trigger\n  class={cn('cursor-pointer [&_svg]:transition-transform [&_svg]:duration-200', className)}\n  data-slot=\"collapsible-trigger\"\n  {...restProps}\n>\n  {@render children?.()}\n</Collapsible.Trigger>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "collapsible/collapsible.svelte",
+			"target": "$lib/components/ui/collapsible/collapsible.svelte",
+			"content": "<script lang=\"ts\">\n  import { Collapsible } from 'bits-ui';\n  import type { Snippet } from 'svelte';\n\n  type Props = Collapsible.RootProps & { children?: Snippet };\n\n  let { ref = $bindable(null), open = $bindable(false), children, ...restProps }: Props = $props();\n</script>\n\n<Collapsible.Root bind:ref bind:open data-slot=\"collapsible\" {...restProps}>\n  {@render children?.()}\n</Collapsible.Root>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "collapsible/index.ts",
+			"target": "$lib/components/ui/collapsible/index.ts",
+			"content": "export { default as Collapsible } from './collapsible.svelte';\nexport {\n  default as CollapsiblePanel,\n  default as CollapsibleContent\n} from './collapsible-panel.svelte';\nexport { default as CollapsibleTrigger } from './collapsible-trigger.svelte';\n"
+		}
+	],
+	"registryDependencies": [
+		"utils"
+	],
+	"dependencies": [
+		"bits-ui@^2.18.1"
+	]
+}

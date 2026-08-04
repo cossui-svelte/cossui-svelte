@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-timeline-4",
+	"title": "Timeline 4",
+	"description": "A Basic vertical timeline",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-timeline-4.svelte",
+			"target": "$lib/components/particles/timeline/p-timeline-4.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    Timeline,\n    TimelineContent,\n    TimelineDate,\n    TimelineHeader,\n    TimelineIndicator,\n    TimelineItem,\n    TimelineSeparator,\n    TimelineTitle\n  } from '$lib/components/ui/timeline';\n\n  const items = [\n    {\n      date: '15 minutes ago',\n      description:\n        'Submitted PR #342 with new feature implementation. Waiting for code review from team leads.',\n      id: 1,\n      title: 'Pull Request Submitted'\n    },\n    {\n      date: '10 minutes ago',\n      description:\n        'Automated tests and build process initiated. Running unit tests and code quality checks.',\n      id: 2,\n      title: 'CI Pipeline Started'\n    },\n    {\n      date: '5 minutes ago',\n      description:\n        'Received comments on PR. Minor adjustments needed in error handling and documentation.',\n      id: 3,\n      title: 'Code Review Feedback'\n    },\n    {\n      description:\n        'Implemented requested changes and pushed updates to feature branch. Awaiting final approval.',\n      id: 4,\n      title: 'Changes Pushed'\n    }\n  ];\n</script>\n\n<Timeline defaultValue={3}>\n  {#each items as item (item.id)}\n    <TimelineItem step={item.id}>\n      <TimelineHeader>\n        <TimelineSeparator />\n        <TimelineTitle class=\"-mt-0.5\">{item.title}</TimelineTitle>\n        <TimelineIndicator />\n      </TimelineHeader>\n      <TimelineContent>\n        {item.description}\n        <TimelineDate class=\"mb-0 mt-2\">{item.date}</TimelineDate>\n      </TimelineContent>\n    </TimelineItem>\n  {/each}\n</Timeline>\n"
+		}
+	],
+	"registryDependencies": [
+		"timeline"
+	],
+	"dependencies": []
+}

@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-drawer-3",
+	"title": "Drawer 3",
+	"description": "Drawer with close button",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-drawer-3.svelte",
+			"target": "$lib/components/particles/drawer/p-drawer-3.svelte",
+			"content": "<script lang=\"ts\">\n  import { buttonVariants } from '$lib/components/ui/button';\n  import {\n    Drawer,\n    DrawerDescription,\n    DrawerHeader,\n    DrawerPanel,\n    DrawerPopup,\n    DrawerTitle,\n    DrawerTrigger\n  } from '$lib/components/ui/drawer';\n</script>\n\n<Drawer position=\"right\">\n  <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Open drawer</DrawerTrigger>\n  <DrawerPopup showCloseButton variant=\"straight\">\n    <DrawerHeader>\n      <DrawerTitle>Notifications</DrawerTitle>\n      <DrawerDescription>This is the description of the drawer.</DrawerDescription>\n    </DrawerHeader>\n    <DrawerPanel>\n      <p class=\"text-muted-foreground text-sm\">\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut\n        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco\n        laboris.\n      </p>\n    </DrawerPanel>\n  </DrawerPopup>\n</Drawer>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"drawer"
+	],
+	"dependencies": []
+}

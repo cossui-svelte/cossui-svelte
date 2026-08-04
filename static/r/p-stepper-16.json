@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-stepper-16",
+	"title": "Stepper 16",
+	"description": "Controlled vertical stepper with checkmarks",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-stepper-16.svelte",
+			"target": "$lib/components/particles/stepper/p-stepper-16.svelte",
+			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n  import {\n    Stepper,\n    StepperIndicator,\n    StepperItem,\n    StepperSeparator,\n    StepperTrigger\n  } from '$lib/components/ui/stepper';\n\n  const steps = [1, 2, 3, 4];\n\n  let currentStep = $state(1);\n</script>\n\n<div class=\"space-y-8 text-center\">\n  <Stepper bind:step={currentStep} orientation=\"vertical\">\n    {#each steps as step (step)}\n      <StepperItem class=\"not-last:flex-1\" {step}>\n        <StepperTrigger>\n          <StepperIndicator />\n        </StepperTrigger>\n        {#if step < steps.length}\n          <StepperSeparator />\n        {/if}\n      </StepperItem>\n    {/each}\n  </Stepper>\n  <div class=\"flex justify-center space-x-4\">\n    <Button\n      class=\"w-32\"\n      disabled={currentStep === 1}\n      onclick={() => (currentStep = currentStep - 1)}\n      variant=\"outline\"\n    >\n      Prev step\n    </Button>\n    <Button\n      class=\"w-32\"\n      disabled={currentStep > steps.length}\n      onclick={() => (currentStep = currentStep + 1)}\n      variant=\"outline\"\n    >\n      Next step\n    </Button>\n  </div>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"stepper",
+		"button"
+	],
+	"dependencies": []
+}

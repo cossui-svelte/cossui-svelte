@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-toggle-6",
+	"title": "Toggle 6",
+	"description": "Disabled toggle",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-toggle-6.svelte",
+			"target": "$lib/components/particles/toggle/p-toggle-6.svelte",
+			"content": "<script lang=\"ts\">\n  import { Toggle } from '$lib/components/ui/toggle';\n</script>\n\n<Toggle disabled variant=\"outline\">Disabled</Toggle>\n"
+		}
+	],
+	"registryDependencies": [
+		"toggle"
+	],
+	"dependencies": []
+}

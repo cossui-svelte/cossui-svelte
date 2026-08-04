@@ -1,0 +1,23 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-toast-12",
+	"title": "Toast 12",
+	"description": "Anchored deduplicated success toast",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-toast-12.svelte",
+			"target": "$lib/components/particles/toast/p-toast-12.svelte",
+			"content": "<script lang=\"ts\">\n  import SaveIcon from '@lucide/svelte/icons/save';\n  import { Button } from '$lib/components/ui/button';\n  import { anchoredToastManager } from '$lib/components/ui/toast';\n  import { Tooltip, TooltipPopup, TooltipTrigger } from '$lib/components/ui/tooltip';\n  import TooltipProvider from '$lib/components/ui/tooltip/tooltip-provider.svelte';\n\n  const ANCHORED_SAVE_TOAST_ID = 'coss-demo-anchored-save-toast';\n  const toastTimeout = 2000;\n\n  function handleSave(e: MouseEvent) {\n    const anchor = e.currentTarget as HTMLElement;\n    anchoredToastManager.add({\n      duration: toastTimeout,\n      id: ANCHORED_SAVE_TOAST_ID,\n      positionerProps: { anchor, sideOffset: 6 },\n      title: 'Draft saved',\n      tooltipStyle: true\n    });\n  }\n</script>\n\n<TooltipProvider>\n  <Tooltip delay={0}>\n    <TooltipTrigger>\n      {#snippet child({ props })}\n        <Button aria-label=\"Save\" size=\"icon\" variant=\"outline\" {...props} onclick={handleSave}>\n          <SaveIcon aria-hidden=\"true\" />\n        </Button>\n      {/snippet}\n    </TooltipTrigger>\n    <TooltipPopup>\n      <p>Save</p>\n    </TooltipPopup>\n  </Tooltip>\n</TooltipProvider>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"toast",
+		"tooltip"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

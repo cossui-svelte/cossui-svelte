@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-aspect-ratio-4",
+	"title": "Aspect ratio 4",
+	"description": "Ratio 21:9",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-aspect-ratio-4.svelte",
+			"target": "$lib/components/particles/aspect-ratio/p-aspect-ratio-4.svelte",
+			"content": "<script lang=\"ts\">\n  import { AspectRatio } from '$lib/components/ui/aspect-ratio';\n</script>\n\n<AspectRatio ratio={21 / 9} class=\"rounded-15px scale-[0.3] bg-transparent\">\n  <img src=\"/img/abstract.png\" alt=\"abstract\" class=\"h-full w-full rounded-lg object-cover\" />\n</AspectRatio>\n"
+		}
+	],
+	"registryDependencies": [
+		"aspect-ratio"
+	],
+	"dependencies": []
+}

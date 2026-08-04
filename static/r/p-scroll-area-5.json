@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-scroll-area-5",
+	"title": "Scroll area 5",
+	"description": "Horizontal scroll area with scrollbar gutter",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-scroll-area-5.svelte",
+			"target": "$lib/components/particles/scroll-area/p-scroll-area-5.svelte",
+			"content": "<script lang=\"ts\">\n  import { ScrollArea } from '$lib/components/ui/scroll-area';\n\n  const items = Array.from({ length: 20 }, (_, i) => i);\n</script>\n\n<ScrollArea class=\"max-w-96 rounded-lg border\" scrollbarGutter>\n  <div class=\"flex w-max gap-4 p-4\">\n    {#each items as i (i)}\n      <div class=\"flex h-20 w-32 shrink-0 items-center justify-center rounded-md bg-muted\">\n        <span class=\"font-medium text-sm\">Item {i + 1}</span>\n      </div>\n    {/each}\n  </div>\n</ScrollArea>\n"
+		}
+	],
+	"registryDependencies": [
+		"scroll-area"
+	],
+	"dependencies": []
+}

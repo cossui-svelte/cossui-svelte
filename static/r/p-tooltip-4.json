@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-tooltip-4",
+	"title": "Tooltip 4",
+	"description": "Vertical group with animated tooltip",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-tooltip-4.svelte",
+			"target": "$lib/components/particles/tooltip/p-tooltip-4.svelte",
+			"content": "<script lang=\"ts\">\n  import LinkIcon from '@lucide/svelte/icons/link';\n  import MailIcon from '@lucide/svelte/icons/mail';\n  import Share2Icon from '@lucide/svelte/icons/share-2';\n  import { Button } from '$lib/components/ui/button';\n  import { Group, GroupSeparator } from '$lib/components/ui/group';\n  import {\n    Tooltip,\n    TooltipPopup,\n    TooltipProvider,\n    TooltipTrigger\n  } from '$lib/components/ui/tooltip';\n</script>\n\n<TooltipProvider>\n  <Group aria-label=\"Share options\" orientation=\"vertical\">\n    <Tooltip>\n      <TooltipTrigger>\n        {#snippet child({ props })}\n          <Button aria-label=\"Copy link\" size=\"icon\" variant=\"outline\" {...props}>\n            <LinkIcon aria-hidden=\"true\" />\n          </Button>\n        {/snippet}\n      </TooltipTrigger>\n      <TooltipPopup class=\"max-w-40\" side=\"right\">\n        <span>Copy shareable link</span>\n      </TooltipPopup>\n    </Tooltip>\n    <GroupSeparator orientation=\"horizontal\" />\n    <Tooltip>\n      <TooltipTrigger>\n        {#snippet child({ props })}\n          <Button aria-label=\"Share via email\" size=\"icon\" variant=\"outline\" {...props}>\n            <MailIcon aria-hidden=\"true\" />\n          </Button>\n        {/snippet}\n      </TooltipTrigger>\n      <TooltipPopup class=\"max-w-40\" side=\"right\">\n        <span>Share via email</span>\n      </TooltipPopup>\n    </Tooltip>\n    <GroupSeparator orientation=\"horizontal\" />\n    <Tooltip>\n      <TooltipTrigger>\n        {#snippet child({ props })}\n          <Button aria-label=\"Share to social\" size=\"icon\" variant=\"outline\" {...props}>\n            <Share2Icon aria-hidden=\"true\" />\n          </Button>\n        {/snippet}\n      </TooltipTrigger>\n      <TooltipPopup class=\"max-w-40\" side=\"right\">\n        <span>Share to social media</span>\n      </TooltipPopup>\n    </Tooltip>\n  </Group>\n</TooltipProvider>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"group",
+		"tooltip"
+	],
+	"dependencies": []
+}

@@ -1,4 +1,5 @@
 import type { Component } from 'svelte';
+import { idToName } from '../utils/particle-id';
 import { metadata } from './generated-particle-metadata';
 
 // this one is typically done by hand
@@ -26,20 +27,6 @@ export interface RegistryParticuleEntry {
 }
 
 export type RegistryParticuleData = Record<string, RegistryParticuleEntry>;
-
-function idToName(id: string): string {
-  const match = id.match(/^p-(.*)-(\d+)$/);
-  if (!match) return id;
-  const [, category, num] = match;
-  return (
-    category
-      .split('-')
-      .map((w, i) => (i === 0 ? w[0].toUpperCase() + w.slice(1) : w))
-      .join(' ') +
-    ' ' +
-    num
-  );
-}
 
 const modules = import.meta.glob<{ default: Component }>('../components/particles/**/p-*.svelte');
 

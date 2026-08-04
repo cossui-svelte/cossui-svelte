@@ -1,0 +1,17 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "split-pane",
+	"title": "Split Pane",
+	"description": "A component to layout resizable panels with a draggable divider.",
+	"type": "registry:ui",
+	"files": [
+		{
+			"type": "registry:ui",
+			"path": "split-pane/index.ts",
+			"target": "$lib/components/ui/split-pane/index.ts",
+			"content": ""
+		}
+	],
+	"registryDependencies": [],
+	"dependencies": []
+}

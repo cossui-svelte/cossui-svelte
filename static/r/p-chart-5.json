@@ -1,0 +1,23 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-chart-5",
+	"title": "Chart 5",
+	"description": "Area Chart - Axes",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-chart-5.svelte",
+			"target": "$lib/components/particles/charts/p-chart-5.svelte",
+			"content": "<script lang=\"ts\">\n  import { scaleUtc } from 'd3-scale';\n  import { curveNatural } from 'd3-shape';\n  import { AreaChart } from 'layerchart';\n  import { Chart, type ChartConfig, ChartTooltip } from '$lib/components/ui/chart';\n\n  const chartData = [\n    { date: new Date('2024-01-01'), desktop: 186, mobile: 80 },\n    { date: new Date('2024-02-01'), desktop: 305, mobile: 200 },\n    { date: new Date('2024-03-01'), desktop: 237, mobile: 120 },\n    { date: new Date('2024-04-01'), desktop: 73, mobile: 190 },\n    { date: new Date('2024-05-01'), desktop: 209, mobile: 130 },\n    { date: new Date('2024-06-01'), desktop: 214, mobile: 140 }\n  ];\n\n  const chartConfig = {\n    desktop: { color: 'var(--chart-1)', label: 'Desktop' },\n    mobile: { color: 'var(--chart-2)', label: 'Mobile' }\n  } satisfies ChartConfig;\n</script>\n\n<Chart config={chartConfig} class=\"grow p-6 h-87.5\">\n  <AreaChart\n    data={chartData}\n    x=\"date\"\n    xScale={scaleUtc()}\n    yDomain={[0, 600]}\n    series={[\n      {\n        key: 'mobile',\n        label: 'Mobile',\n        color: chartConfig.mobile.color\n      },\n      {\n        key: 'desktop',\n        label: 'Desktop',\n        color: chartConfig.desktop.color\n      }\n    ]}\n    seriesLayout=\"stack\"\n    props={{\n      area: {\n        curve: curveNatural,\n        fillOpacity: 0.4,\n        line: { class: 'stroke-1' },\n        motion: 'tween'\n      },\n      xAxis: {\n        format: (v: Date) => v.toLocaleDateString('en-US', { month: 'short' })\n      },\n      yAxis: { ticks: [0, 300, 600] }\n    }}\n  >\n    {#snippet tooltip()}\n      <ChartTooltip\n        labelFormatter={(v) => {\n          return (v as Date).toLocaleDateString('en-US', {\n            month: 'long'\n          });\n        }}\n        indicator=\"dot\"\n      />\n    {/snippet}\n  </AreaChart>\n</Chart>\n"
+		}
+	],
+	"registryDependencies": [
+		"chart"
+	],
+	"dependencies": [
+		"d3-scale@^4.0.2",
+		"d3-shape@^3.2.0",
+		"layerchart@^2.0.4"
+	]
+}

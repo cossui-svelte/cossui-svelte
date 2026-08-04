@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-badge-14",
+	"title": "Badge 14",
+	"description": "Full rounded badge (pill)",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-badge-14.svelte",
+			"target": "$lib/components/particles/badge/p-badge-14.svelte",
+			"content": "<script lang=\"ts\">\n  import { Badge } from '$lib/components/ui/badge';\n</script>\n\n<Badge class=\"rounded-full\">Badge</Badge>\n"
+		}
+	],
+	"registryDependencies": [
+		"badge"
+	],
+	"dependencies": []
+}

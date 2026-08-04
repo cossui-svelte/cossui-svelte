@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-timeline-10",
+	"title": "Timeline 10",
+	"description": "A timeline showing an activity tracker",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-timeline-10.svelte",
+			"target": "$lib/components/particles/timeline/p-timeline-10.svelte",
+			"content": "<script lang=\"ts\">\n  import { Timeline, TimelineContent, TimelineItem } from '$lib/components/ui/timeline';\n\n  type ActionType = 'create' | 'edit' | 'post' | 'reply';\n\n  import type { Icon as IconType } from '@lucide/svelte';\n  import BookOpenIcon from '@lucide/svelte/icons/book-open';\n  import MessageCircleIcon from '@lucide/svelte/icons/message-circle';\n  import PencilIcon from '@lucide/svelte/icons/pencil';\n  import PlusIcon from '@lucide/svelte/icons/plus';\n  import Avatar02 from '$assets/avatar-40-02.jpg';\n\n  const items: {\n    action: ActionType;\n    date: Date;\n    id: number;\n    image: string;\n    user: string;\n  }[] = [\n    {\n      action: 'post',\n      date: new Date(Date.now() - 59000), // 59 seconds ago\n      id: 1,\n      image: Avatar02,\n      user: 'Matt'\n    },\n    {\n      action: 'reply',\n      date: new Date(Date.now() - 180000), // 3 minutes ago\n      id: 2,\n      image: Avatar02,\n      user: 'Matt'\n    },\n    {\n      action: 'edit',\n      date: new Date(Date.now() - 300000), // 5 minutes ago\n      id: 3,\n      image: Avatar02,\n      user: 'Matt'\n    },\n    {\n      action: 'create',\n      date: new Date(Date.now() - 600000), // 10 minutes ago\n      id: 4,\n      image: Avatar02,\n      user: 'Matt'\n    }\n  ];\n\n  function getActionIcon(action: ActionType): typeof IconType {\n    const icons: Record<ActionType, typeof IconType> = {\n      create: PlusIcon,\n      edit: PencilIcon,\n      post: BookOpenIcon,\n      reply: MessageCircleIcon\n    };\n    return icons[action];\n  }\n\n  function getActionText(action: ActionType): string {\n    const texts: Record<ActionType, string> = {\n      create: 'created a new project',\n      edit: 'edited a post',\n      post: 'wrote a new post',\n      reply: 'replied to a comment'\n    };\n    return texts[action];\n  }\n\n  function getRelativeTimeString(date: Date): string {\n    const now = new Date();\n    const diffInSeconds = Math.floor((now.getTime() - date.getTime()) / 1000);\n\n    if (diffInSeconds < 60) {\n      return `${diffInSeconds} seconds ago`;\n    } else if (diffInSeconds < 3600) {\n      const minutes = Math.floor(diffInSeconds / 60);\n      return `${minutes} ${minutes === 1 ? 'minute' : 'minutes'} ago`;\n    } else if (diffInSeconds < 86400) {\n      const hours = Math.floor(diffInSeconds / 3600);\n      return `${hours} ${hours === 1 ? 'hour' : 'hours'} ago`;\n    } else {\n      const days = Math.floor(diffInSeconds / 86400);\n      return `${days} ${days === 1 ? 'day' : 'days'} ago`;\n    }\n  }\n</script>\n\n<div class=\"space-y-3\">\n  <div class=\"text-xs font-medium text-muted-foreground\">Activity</div>\n  <Timeline>\n    {#each items as item (item.id)}\n      {@const ActionIcon = getActionIcon(item.action)}\n      <TimelineItem step={item.id} class=\"!m-0 flex-row items-center gap-3 !py-2.5\">\n        <ActionIcon class=\"text-muted-foreground/80\" size={16} />\n        <enhanced:img src={item.image} alt={item.user} class=\"size-6 rounded-full\" />\n        <TimelineContent class=\"text-foreground\">\n          <a class=\"font-medium hover:underline\" href=\"#\">\n            {item.user}\n          </a>\n          <span class=\"font-normal\">\n            {getActionText(item.action)}\n            <a class=\"hover:underline\" href=\"#\">\n              {getRelativeTimeString(item.date)}\n            </a>\n          </span>\n        </TimelineContent>\n      </TimelineItem>\n    {/each}\n  </Timeline>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"timeline",
+		"assets"
+	],
+	"dependencies": []
+}

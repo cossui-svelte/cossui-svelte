@@ -1,0 +1,25 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-calendar-19",
+	"title": "Calendar 19",
+	"description": "Calendar with time slots (appointment picker)",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-calendar-19.svelte",
+			"target": "$lib/components/particles/calendar/p-calendar-19.svelte",
+			"content": "<script lang=\"ts\">\n  import { DateFormatter, type DateValue, getLocalTimeZone, today } from '@internationalized/date';\n  import { Calendar } from '$lib/components/ui/calendar';\n  import { ScrollArea } from '$lib/components/ui/scroll-area';\n  import { ToggleGroup, ToggleGroupItem } from '$lib/components/ui/toggle-group';\n\n  const todayValue = today(getLocalTimeZone());\n  let date = $state<DateValue>(todayValue);\n  let time = $state<string | undefined>(undefined);\n\n  const timeSlots = [\n    { available: false, time: '09:00' },\n    { available: false, time: '09:30' },\n    { available: true, time: '10:00' },\n    { available: true, time: '10:30' },\n    { available: true, time: '11:00' },\n    { available: true, time: '11:30' },\n    { available: false, time: '12:00' },\n    { available: true, time: '12:30' },\n    { available: true, time: '13:00' },\n    { available: true, time: '13:30' },\n    { available: true, time: '14:00' },\n    { available: false, time: '14:30' },\n    { available: false, time: '15:00' },\n    { available: true, time: '15:30' },\n    { available: true, time: '16:00' },\n    { available: true, time: '16:30' },\n    { available: true, time: '17:00' },\n    { available: true, time: '17:30' }\n  ];\n\n  const dayFormatter = new DateFormatter('en-US', { day: 'numeric', weekday: 'long' });\n\n  function isDateDisabled(d: DateValue): boolean {\n    return d.compare(todayValue) < 0;\n  }\n</script>\n\n<div class=\"flex max-sm:flex-col\">\n  <Calendar\n    bind:value={date}\n    class=\"max-sm:pb-3 sm:pe-5\"\n    {isDateDisabled}\n    onValueChange={(newDate) => {\n      if (newDate) {\n        time = undefined;\n      }\n    }}\n    mode=\"single\"\n  />\n  <div class=\"relative w-full max-sm:h-48 sm:w-40\">\n    <div class=\"absolute inset-0 max-sm:border-t\">\n      <ScrollArea class=\"h-full sm:border-s\" scrollbarGutter scrollFade>\n        <div class=\"flex flex-col gap-3 py-3 sm:pt-0 sm:pb-2\">\n          <div class=\"flex shrink-0 items-center font-medium text-sm sm:h-8 sm:px-5\">\n            {dayFormatter.format(date.toDate(getLocalTimeZone()))}\n          </div>\n          <ToggleGroup bind:value={time} class=\"grid w-full gap-1.5 max-sm:grid-cols-2 sm:px-5\">\n            {#each timeSlots as { time: timeSlot, available } (timeSlot)}\n              <ToggleGroupItem disabled={!available} size=\"sm\" value={timeSlot} variant=\"outline\">\n                {timeSlot}\n              </ToggleGroupItem>\n            {/each}\n          </ToggleGroup>\n        </div>\n      </ScrollArea>\n    </div>\n  </div>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"calendar",
+		"scroll-area",
+		"toggle",
+		"toggle-group"
+	],
+	"dependencies": [
+		"date-fns",
+		"@internationalized/date@^3.12.3"
+	]
+}

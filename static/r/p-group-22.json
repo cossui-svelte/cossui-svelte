@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-group-22",
+	"title": "Group 22",
+	"description": "Group with two number inputs for range",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-group-22.svelte",
+			"target": "$lib/components/particles/group/p-group-22.svelte",
+			"content": "<script lang=\"ts\">\n  import { Group, GroupSeparator } from '$lib/components/ui/group';\n  import { Label } from '$lib/components/ui/label';\n  import { NumberField, NumberFieldGroup, NumberFieldInput } from '$lib/components/ui/number-field';\n</script>\n\n<div class=\"flex flex-col gap-2\">\n  <Label>Range</Label>\n  <Group aria-label=\"Range input\">\n    <NumberField aria-label=\"Min value\">\n      <NumberFieldGroup>\n        <NumberFieldInput class=\"text-left\" placeholder=\"From\" />\n      </NumberFieldGroup>\n    </NumberField>\n    <GroupSeparator />\n    <NumberField aria-label=\"Max value\">\n      <NumberFieldGroup>\n        <NumberFieldInput class=\"text-left\" placeholder=\"To\" />\n      </NumberFieldGroup>\n    </NumberField>\n  </Group>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"group",
+		"label",
+		"number-field"
+	],
+	"dependencies": []
+}

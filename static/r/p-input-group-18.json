@@ -1,0 +1,24 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-input-group-18",
+	"title": "Input group 18",
+	"description": "Input group with badge and menu",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-input-group-18.svelte",
+			"target": "$lib/components/particles/input-group/p-input-group-18.svelte",
+			"content": "<script lang=\"ts\">\n  import Ellipsis from '@lucide/svelte/icons/ellipsis';\n  import { Badge } from '$lib/components/ui/badge';\n  import { buttonVariants } from '$lib/components/ui/button';\n  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';\n  import { Menu, MenuItem, MenuPopup, MenuTrigger } from '$lib/components/ui/menu';\n</script>\n\n<InputGroup>\n  <InputGroupInput value=\"hello@coss.com\" placeholder=\"Enter email\" type=\"email\" />\n  <InputGroupAddon align=\"inline-end\">\n    <Badge variant=\"info\">Primary</Badge>\n    <Menu>\n      <MenuTrigger\n        aria-label=\"Open menu\"\n        class={buttonVariants({ size: 'icon-xs', variant: 'ghost' })}\n      >\n        <Ellipsis />\n      </MenuTrigger>\n      <MenuPopup align=\"end\" alignOffset={-4} sideOffset={8}>\n        <MenuItem disabled>Make Primary</MenuItem>\n        <MenuItem variant=\"destructive\">Delete</MenuItem>\n      </MenuPopup>\n    </Menu>\n  </InputGroupAddon>\n</InputGroup>\n"
+		}
+	],
+	"registryDependencies": [
+		"badge",
+		"button",
+		"input-group",
+		"menu"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

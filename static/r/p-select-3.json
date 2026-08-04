@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-select-3",
+	"title": "Select 3",
+	"description": "Large select",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-select-3.svelte",
+			"target": "$lib/components/particles/select/p-select-3.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    Select,\n    SelectItem,\n    SelectPopup,\n    SelectTrigger,\n    SelectValue\n  } from '$lib/components/ui/select';\n\n  const items = [\n    { label: 'Next.js', value: 'next' },\n    { label: 'Vite', value: 'vite' },\n    { label: 'Astro', value: 'astro' }\n  ];\n</script>\n\n<Select>\n  <SelectTrigger aria-label=\"Select framework\" size=\"lg\">\n    <SelectValue placeholder=\"Select framework\" />\n  </SelectTrigger>\n  <SelectPopup>\n    {#each items as { label, value } (value)}\n      <SelectItem {value}>{label}</SelectItem>\n    {/each}\n  </SelectPopup>\n</Select>\n"
+		}
+	],
+	"registryDependencies": [
+		"select"
+	],
+	"dependencies": []
+}

@@ -1,0 +1,23 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-breadcrumb-4",
+	"title": "Breadcrumb 4",
+	"description": "Breadcrumb with folders icon menu",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-breadcrumb-4.svelte",
+			"target": "$lib/components/particles/breadcrumb/p-breadcrumb-4.svelte",
+			"content": "<script lang=\"ts\">\n  import Folders from '@lucide/svelte/icons/folders';\n  import {\n    Breadcrumb,\n    BreadcrumbItem,\n    BreadcrumbLink,\n    BreadcrumbList,\n    BreadcrumbPage,\n    BreadcrumbSeparator\n  } from '$lib/components/ui/breadcrumb';\n  import { buttonVariants } from '$lib/components/ui/button';\n  import { Menu, MenuLinkItem, MenuPopup, MenuTrigger } from '$lib/components/ui/menu';\n</script>\n\n<Breadcrumb>\n  <BreadcrumbList>\n    <BreadcrumbItem>\n      <BreadcrumbLink href=\"/\">Home</BreadcrumbLink>\n    </BreadcrumbItem>\n    <BreadcrumbSeparator />\n    <BreadcrumbItem>\n      <Menu>\n        <MenuTrigger\n          aria-label=\"More pages\"\n          class={`${buttonVariants({ size: 'icon-sm', variant: 'ghost' })}·-m-1.5·text-muted-foreground`}\n        >\n          <Folders aria-hidden=\"true\" />\n        </MenuTrigger>\n        <MenuPopup align=\"start\">\n          <MenuLinkItem href=\"/docs\">Docs</MenuLinkItem>\n          <MenuLinkItem href=\"/particles\">Particles</MenuLinkItem>\n        </MenuPopup>\n      </Menu>\n    </BreadcrumbItem>\n    <BreadcrumbSeparator />\n    <BreadcrumbItem>\n      <BreadcrumbLink href=\"/docs/\">Components</BreadcrumbLink>\n    </BreadcrumbItem>\n    <BreadcrumbSeparator />\n    <BreadcrumbItem>\n      <BreadcrumbPage>Breadcrumb</BreadcrumbPage>\n    </BreadcrumbItem>\n  </BreadcrumbList>\n</Breadcrumb>\n"
+		}
+	],
+	"registryDependencies": [
+		"breadcrumb",
+		"button",
+		"menu"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

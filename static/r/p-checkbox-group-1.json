@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-checkbox-group-1",
+	"title": "Checkbox group 1",
+	"description": "Basic checkbox group",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-checkbox-group-1.svelte",
+			"target": "$lib/components/particles/checkbox-group/p-checkbox-group-1.svelte",
+			"content": "<script lang=\"ts\">\n  import { Checkbox } from '$lib/components/ui/checkbox';\n  import { CheckboxGroup } from '$lib/components/ui/checkbox-group';\n  import { Label } from '$lib/components/ui/label';\n</script>\n\n<CheckboxGroup aria-label=\"Select frameworks\" value={['next']}>\n  <Label>\n    <Checkbox value=\"next\" />\n    Next.js\n  </Label>\n  <Label>\n    <Checkbox value=\"vite\" />\n    Vite\n  </Label>\n  <Label>\n    <Checkbox value=\"astro\" />\n    Astro\n  </Label>\n</CheckboxGroup>\n"
+		}
+	],
+	"registryDependencies": [
+		"checkbox",
+		"checkbox-group",
+		"label"
+	],
+	"dependencies": []
+}

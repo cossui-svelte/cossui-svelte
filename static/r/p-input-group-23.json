@@ -1,0 +1,23 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-input-group-23",
+	"title": "Input group 23",
+	"description": "Search input group with loader and voice button",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-input-group-23.svelte",
+			"target": "$lib/components/particles/input-group/p-input-group-23.svelte",
+			"content": "<script lang=\"ts\">\n  import LoaderCircle from '@lucide/svelte/icons/loader-circle';\n  import Mic from '@lucide/svelte/icons/mic';\n  import Search from '@lucide/svelte/icons/search';\n  import { buttonVariants } from '$lib/components/ui/button';\n  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';\n  import {\n    Tooltip,\n    TooltipPopup,\n    TooltipProvider,\n    TooltipTrigger\n  } from '$lib/components/ui/tooltip';\n\n  let inputValue = $state('');\n  let isLoading = $state(false);\n  let timer: ReturnType<typeof setTimeout> | undefined;\n\n  $effect(() => {\n    clearTimeout(timer);\n    if (inputValue) {\n      isLoading = true;\n      timer = setTimeout(() => {\n        isLoading = false;\n      }, 500);\n    } else {\n      isLoading = false;\n    }\n    return () => clearTimeout(timer);\n  });\n</script>\n\n<TooltipProvider>\n  <InputGroup>\n    <InputGroupAddon>\n      {#if isLoading}\n        <LoaderCircle aria-label=\"Loading...\" class=\"animate-spin\" role=\"status\" />\n      {:else}\n        <Search aria-hidden=\"true\" />\n      {/if}\n    </InputGroupAddon>\n    <InputGroupInput\n      aria-label=\"Search\"\n      bind:value={inputValue}\n      placeholder=\"Search...\"\n      type=\"search\"\n    />\n    <InputGroupAddon align=\"inline-end\">\n      <Tooltip>\n        <TooltipTrigger\n          aria-label=\"Voice search\"\n          class={buttonVariants({ size: 'icon-xs', variant: 'ghost' })}\n        >\n          <Mic aria-hidden=\"true\" />\n        </TooltipTrigger>\n        <TooltipPopup>Voice search</TooltipPopup>\n      </Tooltip>\n    </InputGroupAddon>\n  </InputGroup>\n</TooltipProvider>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"input-group",
+		"tooltip"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

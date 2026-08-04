@@ -1,0 +1,22 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-alert-3",
+	"title": "Alert 3",
+	"description": "Alert with icon and action buttons",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-alert-3.svelte",
+			"target": "$lib/components/particles/alert/p-alert-3.svelte",
+			"content": "<script lang=\"ts\">\n  import Info from '@lucide/svelte/icons/info';\n  import { Alert, AlertAction, AlertDescription, AlertTitle } from '$lib/components/ui/alert';\n  import { Button } from '$lib/components/ui/button';\n</script>\n\n<Alert>\n  <Info />\n  <AlertTitle>Heads up!</AlertTitle>\n  <AlertDescription>Describe what can be done about it here.</AlertDescription>\n  <AlertAction>\n    <Button size=\"xs\" variant=\"ghost\">Dismiss</Button>\n    <Button size=\"xs\">Ok</Button>\n  </AlertAction>\n</Alert>\n"
+		}
+	],
+	"registryDependencies": [
+		"alert",
+		"button"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

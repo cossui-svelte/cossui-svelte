@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-file-upload-8",
+	"title": "File upload 8",
+	"description": "Single file uploader with max size",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-file-upload-8.svelte",
+			"target": "$lib/components/particles/file-upload/p-file-upload-8.svelte",
+			"content": "<script lang=\"ts\">\n  import AlertCircle from '@lucide/svelte/icons/alert-circle';\n  import Paperclip from '@lucide/svelte/icons/paperclip';\n  import Upload from '@lucide/svelte/icons/upload';\n  import X from '@lucide/svelte/icons/x';\n  import { Button } from '$lib/components/ui/button';\n  import { type FileMetadata, formatBytes, useFileUpload } from '$lib/hooks/use-file-upload.svelte';\n\n  // Create some dummy initial files\n  const initialFiles: FileMetadata[] = [\n    {\n      id: 'document.pdf-1744638436563-8u5xuls',\n      name: 'document.pdf',\n      size: 1528737,\n      type: 'application/pdf',\n      url: 'https://picsum.photos/1000/800?grayscale&random=1'\n    }\n  ];\n\n  const maxSize = 10 * 1024 * 1024; // 10MB default\n\n  const fileUpload = useFileUpload({ initialFiles, maxSize });\n\n  const file = $derived(fileUpload.files[0]);\n</script>\n\n<div class=\"flex flex-col gap-2\">\n  <!-- Drop area -->\n  <div\n    class=\"flex min-h-40 flex-col items-center justify-center rounded-xl border border-input border-dashed p-4 transition-colors hover:bg-accent/50 has-disabled:pointer-events-none has-[input:focus]:border-ring has-disabled:opacity-50 has-[input:focus]:ring-[3px] has-[input:focus]:ring-ring/50 data-[dragging=true]:bg-accent/50\"\n    data-dragging={fileUpload.isDragging || undefined}\n    onclick={fileUpload.openFileDialog}\n    ondragenter={fileUpload.handleDragEnter}\n    ondragleave={fileUpload.handleDragLeave}\n    ondragover={fileUpload.handleDragOver}\n    ondrop={fileUpload.handleDrop}\n    role=\"button\"\n    tabindex={-1}\n  >\n    <input\n      bind:this={fileUpload.fileInput}\n      {...fileUpload.inputProps}\n      aria-label=\"Upload file\"\n      class=\"sr-only\"\n      disabled={Boolean(file)}\n    />\n\n    <div class=\"flex flex-col items-center justify-center text-center\">\n      <div\n        aria-hidden=\"true\"\n        class=\"mb-2 flex size-11 shrink-0 items-center justify-center rounded-full border bg-background\"\n      >\n        <Upload class=\"size-4 opacity-60\" />\n      </div>\n      <p class=\"mb-1.5 font-medium text-sm\">Upload file</p>\n      <p class=\"text-muted-foreground text-xs\">\n        Drag & drop or click to browse (max. {formatBytes(maxSize)})\n      </p>\n    </div>\n  </div>\n\n  {#if fileUpload.errors.length > 0}\n    <div class=\"flex items-center gap-1 text-destructive text-xs\" role=\"alert\">\n      <AlertCircle class=\"size-3 shrink-0\" />\n      <span>{fileUpload.errors[0]}</span>\n    </div>\n  {/if}\n\n  <!-- File list -->\n  {#if file}\n    <div class=\"space-y-2\">\n      <div class=\"flex items-center justify-between gap-2 rounded-xl border px-4 py-2\">\n        <div class=\"flex items-center gap-3 overflow-hidden\">\n          <Paperclip aria-hidden=\"true\" class=\"size-4 shrink-0 opacity-60\" />\n          <div class=\"min-w-0\">\n            <p class=\"truncate font-medium text-[13px]\">{file.file.name}</p>\n          </div>\n        </div>\n\n        <Button\n          aria-label=\"Remove file\"\n          class=\"-me-2 size-8 text-muted-foreground/80 hover:bg-transparent hover:text-foreground\"\n          onclick={() => fileUpload.removeFile(fileUpload.files[0]?.id)}\n          size=\"icon\"\n          variant=\"ghost\"\n        >\n          <X aria-hidden=\"true\" class=\"size-4\" />\n        </Button>\n      </div>\n    </div>\n  {/if}\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"file-upload",
+		"button",
+		"use-file-upload"
+	],
+	"dependencies": []
+}

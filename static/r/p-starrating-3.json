@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-starrating-3",
+	"title": "Starrating 3",
+	"description": "Readonly rating with review count",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-starrating-3.svelte",
+			"target": "$lib/components/particles/starrating/p-starrating-3.svelte",
+			"content": "<script lang=\"ts\">\n  import { StarRating } from '$lib/components/ui/starrating';\n</script>\n\n<div class=\"flex items-center gap-2\">\n  <StarRating allowHalf readonly value={4.5} />\n  <span class=\"text-sm text-muted-foreground\">4.5 (128 reviews)</span>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"starrating"
+	],
+	"dependencies": []
+}

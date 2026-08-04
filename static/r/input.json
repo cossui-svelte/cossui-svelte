@@ -1,0 +1,27 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "input",
+	"title": "Input",
+	"description": "A native input element.",
+	"type": "registry:ui",
+	"files": [
+		{
+			"type": "registry:ui",
+			"path": "input/index.ts",
+			"target": "$lib/components/ui/input/index.ts",
+			"content": "export { default as Input } from './input.svelte';\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "input/input.svelte",
+			"target": "$lib/components/ui/input/input.svelte",
+			"content": "<script lang=\"ts\">\n  import type { HTMLInputAttributes } from 'svelte/elements';\n  import { cn } from '$lib/utils';\n  import { FieldControl as Control } from '../field';\n  import { getField } from '../form/form-field-state.svelte.js';\n\n  interface Props extends Omit<HTMLInputAttributes, 'size'> {\n    ref?: HTMLInputElement | null;\n    size?: 'sm' | 'default' | 'lg' | number;\n    unstyled?: boolean;\n  }\n\n  let {\n    class: className,\n    ref = $bindable(null),\n    size = 'default',\n    unstyled = false,\n    value = $bindable(),\n    type,\n    autocomplete = 'off',\n    ...restProps\n  }: Props = $props();\n\n  const inputClassName = $derived(\n    cn(\n      'h-8.5 w-full min-w-0 rounded-[inherit] px-[calc(--spacing(3)-1px)] leading-8.5 outline-none placeholder:text-muted-foreground/72 sm:h-7.5 sm:leading-7.5 [transition:background-color_5000000s_ease-in-out_0s]',\n      size === 'sm' && 'h-7.5 px-[calc(--spacing(2.5)-1px)] leading-7.5 sm:h-6.5 sm:leading-6.5',\n      size === 'lg' && 'h-9.5 leading-9.5 sm:h-8.5 sm:leading-8.5',\n      type === 'search' &&\n        '[&::-webkit-search-cancel-button]:appearance-none [&::-webkit-search-decoration]:appearance-none [&::-webkit-search-results-button]:appearance-none [&::-webkit-search-results-decoration]:appearance-none',\n      type === 'file' &&\n        'text-muted-foreground file:me-3 file:bg-transparent file:font-medium file:text-foreground file:text-sm'\n    )\n  );\n</script>\n\n<span\n  class={cn(\n    !unstyled &&\n      'relative inline-flex w-full rounded-lg border border-input bg-background not-dark:bg-clip-padding text-base text-foreground shadow-xs/5 ring-ring/24 transition-shadow before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-lg)-1px)] not-has-disabled:not-has-focus-visible:not-has-aria-invalid:before:shadow-[0_1px_--theme(--color-black/4%)] has-focus-visible:has-aria-invalid:border-destructive/64 has-focus-visible:has-aria-invalid:ring-destructive/16 has-aria-invalid:border-destructive/36 has-focus-visible:border-ring has-autofill:bg-foreground/4 has-disabled:opacity-64 has-[:disabled,:focus-visible,[aria-invalid]]:shadow-none has-focus-visible:ring-[3px] sm:text-sm dark:bg-input/32 dark:has-autofill:bg-foreground/8 dark:has-aria-invalid:ring-destructive/24 dark:not-has-disabled:not-has-focus-visible:not-has-aria-invalid:before:shadow-[0_-1px_--theme(--color-white/6%)]',\n    className\n  ) || undefined}\n  data-size={size}\n  data-slot=\"input-control\"\n>\n  {#if getField()}\n    <Control>\n      {#snippet children({ props })}\n        <input\n          class={inputClassName}\n          data-slot=\"input\"\n          bind:this={ref}\n          bind:value\n          {type}\n          {autocomplete}\n          size={typeof size === 'number' ? size : undefined}\n          {...restProps}\n          {...props}\n        />\n      {/snippet}\n    </Control>\n  {:else}\n    <input\n      class={inputClassName}\n      bind:this={ref}\n      data-slot=\"input\"\n      bind:value\n      {type}\n      {autocomplete}\n      size={typeof size === 'number' ? size : undefined}\n      {...restProps}\n    />\n  {/if}\n</span>\n"
+		}
+	],
+	"registryDependencies": [
+		"utils",
+		"field",
+		"form"
+	],
+	"dependencies": []
+}

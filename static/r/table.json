@@ -1,0 +1,67 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "table",
+	"title": "Table",
+	"description": "A simple table component for displaying tabular data.",
+	"type": "registry:ui",
+	"files": [
+		{
+			"type": "registry:ui",
+			"path": "table/index.ts",
+			"target": "$lib/components/ui/table/index.ts",
+			"content": "/* eslint-disable perfectionist/sort-named-exports */\n\nimport Table from './table.svelte';\nimport Body from './table-body.svelte';\nimport Caption from './table-caption.svelte';\nimport Cell from './table-cell.svelte';\nimport Footer from './table-footer.svelte';\nimport Head from './table-head.svelte';\nimport Header from './table-header.svelte';\nimport Row from './table-row.svelte';\n\nexport type { TableVariant } from './table.svelte';\nexport {\n  Body as TableBody,\n  Caption as TableCaption,\n  Cell as TableCell,\n  Footer as TableFooter,\n  Head as TableHead,\n  Header as TableHeader,\n  Row as TableRow,\n  Table\n};\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "table/table-body.svelte",
+			"target": "$lib/components/ui/table/table-body.svelte",
+			"content": "<script lang=\"ts\">\n  import type { Snippet } from 'svelte';\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn } from '$lib/utils';\n\n  interface Props extends HTMLAttributes<HTMLTableSectionElement> {\n    children?: Snippet;\n  }\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<tbody\n  class={cn(\n    'relative in-data-[variant=card]:rounded-xl in-data-[variant=card]:shadow-xs/5 before:pointer-events-none before:absolute before:inset-px not-in-data-[variant=card]:before:hidden before:rounded-[calc(var(--radius-xl)-1px)] before:shadow-[0_1px_--theme(--color-black/4%)] dark:before:shadow-[0_-1px_--theme(--color-white/8%)] [&_tr:last-child]:border-0 in-data-[variant=card]:*:[tr]:border-0 in-data-[variant=card]:*:[tr]:*:[td]:border-b in-data-[variant=card]:*:[tr]:*:[td]:bg-card in-data-[variant=card]:*:[tr]:first:*:[td]:first:rounded-ss-xl in-data-[variant=card]:*:[tr]:*:[td]:first:border-s in-data-[variant=card]:*:[tr]:first:*:[td]:border-t in-data-[variant=card]:*:[tr]:last:*:[td]:last:rounded-ee-xl in-data-[variant=card]:*:[tr]:*:[td]:last:border-e in-data-[variant=card]:*:[tr]:first:*:[td]:last:rounded-se-xl in-data-[variant=card]:*:[tr]:last:*:[td]:first:rounded-es-xl in-data-[variant=card]:*:[tr]:hover:*:[td]:bg-[color-mix(in_srgb,var(--card),var(--color-black)_2%)] in-data-[variant=card]:*:[tr]:data-[state=selected]:*:[td]:bg-[color-mix(in_srgb,var(--card),var(--color-black)_4%)] dark:in-data-[variant=card]:*:[tr]:data-[state=selected]:*:[td]:bg-[color-mix(in_srgb,var(--card),var(--color-white)_4%)] dark:in-data-[variant=card]:*:[tr]:hover:*:[td]:bg-[color-mix(in_srgb,var(--card),var(--color-white)_2%)]',\n    className\n  )}\n  data-slot=\"table-body\"\n  {...restProps}\n>\n  {@render children?.()}\n</tbody>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "table/table-caption.svelte",
+			"target": "$lib/components/ui/table/table-caption.svelte",
+			"content": "<script lang=\"ts\">\n  import type { Snippet } from 'svelte';\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn } from '$lib/utils';\n\n  interface Props extends HTMLAttributes<HTMLElement> {\n    children?: Snippet;\n  }\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<caption\n  class={cn('in-data-[variant=card]:my-4 mt-4 text-muted-foreground text-sm', className)}\n  data-slot=\"table-caption\"\n  {...restProps}\n>\n  {@render children?.()}\n</caption>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "table/table-cell.svelte",
+			"target": "$lib/components/ui/table/table-cell.svelte",
+			"content": "<script lang=\"ts\">\n  import type { Snippet } from 'svelte';\n  import type { HTMLTdAttributes } from 'svelte/elements';\n  import { cn } from '$lib/utils';\n\n  interface Props extends HTMLTdAttributes {\n    children?: Snippet;\n  }\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<td\n  class={cn(\n    'whitespace-nowrap bg-clip-padding p-2.5 in-data-[slot=table-footer]:py-3.5 align-middle leading-none in-data-[variant=card]:first:ps-[calc(--spacing(2.5)-1px)] in-data-[variant=card]:last:pe-[calc(--spacing(2.5)-1px)] has-[[role=checkbox]]:w-px last:has-[[role=checkbox]]:ps-0 first:has-[[role=checkbox]]:pe-0',\n    className\n  )}\n  data-slot=\"table-cell\"\n  {...restProps}\n>\n  {@render children?.()}\n</td>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "table/table-footer.svelte",
+			"target": "$lib/components/ui/table/table-footer.svelte",
+			"content": "<script lang=\"ts\">\n  import type { Snippet } from 'svelte';\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn } from '$lib/utils';\n\n  interface Props extends HTMLAttributes<HTMLTableSectionElement> {\n    children?: Snippet;\n  }\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<tfoot\n  class={cn(\n    'border-t in-data-[variant=card]:border-none bg-transparent not-in-data-[variant=card]:bg-[color-mix(in_srgb,var(--card),var(--color-black)_2%)] font-medium dark:not-in-data-[variant=card]:bg-[color-mix(in_srgb,var(--card),var(--color-white)_2%)] [&>tr]:last:border-b-0',\n    className\n  )}\n  data-slot=\"table-footer\"\n  {...restProps}\n>\n  {@render children?.()}\n</tfoot>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "table/table-head.svelte",
+			"target": "$lib/components/ui/table/table-head.svelte",
+			"content": "<script lang=\"ts\">\n  import type { Snippet } from 'svelte';\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn } from '$lib/utils';\n\n  interface Props extends HTMLAttributes<HTMLTableCellElement> {\n    children?: Snippet;\n  }\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<th\n  class={cn(\n    'h-10 whitespace-nowrap px-2.5 text-left align-middle font-medium text-muted-foreground leading-none has-[[role=checkbox]]:w-px last:has-[[role=checkbox]]:ps-0 first:has-[[role=checkbox]]:pe-0',\n    className\n  )}\n  data-slot=\"table-head\"\n  {...restProps}\n>\n  {@render children?.()}\n</th>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "table/table-header.svelte",
+			"target": "$lib/components/ui/table/table-header.svelte",
+			"content": "<script lang=\"ts\">\n  import type { Snippet } from 'svelte';\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn } from '$lib/utils';\n\n  interface Props extends HTMLAttributes<HTMLTableSectionElement> {\n    children?: Snippet;\n  }\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<thead class={cn('[&_tr]:border-b', className)} data-slot=\"table-header\" {...restProps}>\n  {@render children?.()}\n</thead>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "table/table-row.svelte",
+			"target": "$lib/components/ui/table/table-row.svelte",
+			"content": "<script lang=\"ts\">\n  import type { Snippet } from 'svelte';\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn } from '$lib/utils';\n\n  interface Props extends HTMLAttributes<HTMLTableRowElement> {\n    children?: Snippet;\n  }\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<tr\n  class={cn(\n    'relative border-b not-in-data-[variant=card]:hover:bg-[color-mix(in_srgb,var(--background),var(--color-black)_2%)] not-in-data-[variant=card]:data-[state=selected]:bg-[color-mix(in_srgb,var(--background),var(--color-black)_4%)] dark:not-in-data-[variant=card]:data-[state=selected]:bg-[color-mix(in_srgb,var(--background),var(--color-white)_4%)] dark:not-in-data-[variant=card]:hover:bg-[color-mix(in_srgb,var(--background),var(--color-white)_2%)]',\n    className\n  )}\n  data-slot=\"table-row\"\n  {...restProps}\n>\n  {@render children?.()}\n</tr>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "table/table.svelte",
+			"target": "$lib/components/ui/table/table.svelte",
+			"content": "<script lang=\"ts\">\n  import type { Snippet } from 'svelte';\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn } from '$lib/utils';\n\n  export type TableVariant = 'default' | 'card';\n\n  interface Props extends HTMLAttributes<HTMLTableElement> {\n    children?: Snippet;\n    variant?: TableVariant;\n  }\n\n  let { class: className, variant = 'default', children, ...restProps }: Props = $props();\n</script>\n\n<div class=\"relative w-full overflow-x-auto\" data-slot=\"table-container\" data-variant={variant}>\n  <table\n    class={cn(\n      'w-full caption-bottom in-data-[variant=card]:border-separate in-data-[variant=card]:border-spacing-0 text-sm',\n      className\n    )}\n    data-slot=\"table\"\n    {...restProps}\n  >\n    {@render children?.()}\n  </table>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"utils"
+	],
+	"dependencies": []
+}

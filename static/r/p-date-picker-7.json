@@ -1,0 +1,27 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-date-picker-7",
+	"title": "Date picker 7",
+	"description": "Multiple dates picker",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-date-picker-7.svelte",
+			"target": "$lib/components/particles/date-picker/p-date-picker-7.svelte",
+			"content": "<script lang=\"ts\">\n  import { DateFormatter, type DateValue, getLocalTimeZone } from '@internationalized/date';\n  import CalendarIcon from '@lucide/svelte/icons/calendar';\n  import { Badge } from '$lib/components/ui/badge';\n  import { buttonVariants } from '$lib/components/ui/button';\n  import { Calendar } from '$lib/components/ui/calendar';\n  import { Popover, PopoverPopup, PopoverTrigger } from '$lib/components/ui/popover';\n  import { cn } from '$lib/utils';\n\n  const df = new DateFormatter('en-US', { day: 'numeric', month: 'short' });\n\n  let value = $state<DateValue[]>([]);\n</script>\n\n<Popover>\n  <PopoverTrigger class={cn(buttonVariants({ variant: 'outline' }), 'w-full justify-start')}>\n    <CalendarIcon aria-hidden=\"true\" class=\"shrink-0\" />\n    <span class=\"flex flex-wrap gap-1\">\n      {#if value.length > 0}\n        {#each value.slice(0, 3) as date (date.toString())}\n          <Badge variant=\"secondary\">{df.format(date.toDate(getLocalTimeZone()))}</Badge>\n        {/each}\n        {#if value.length > 3}\n          <Badge variant=\"secondary\">+{value.length - 3}</Badge>\n        {/if}\n      {:else}\n        <span>Pick dates</span>\n      {/if}\n    </span>\n  </PopoverTrigger>\n  <PopoverPopup>\n    <Calendar bind:value mode=\"multiple\" />\n  </PopoverPopup>\n</Popover>\n"
+		}
+	],
+	"registryDependencies": [
+		"badge",
+		"button",
+		"calendar",
+		"popover",
+		"utils"
+	],
+	"dependencies": [
+		"date-fns",
+		"@lucide/svelte",
+		"@internationalized/date@^3.12.3"
+	]
+}

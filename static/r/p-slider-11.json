@@ -1,0 +1,22 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-slider-11",
+	"title": "Slider 11",
+	"description": "Slider with icons",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-slider-11.svelte",
+			"target": "$lib/components/particles/slider/p-slider-11.svelte",
+			"content": "<script lang=\"ts\">\n  import Volume2Icon from '@lucide/svelte/icons/volume-2';\n  import VolumeXIcon from '@lucide/svelte/icons/volume-x';\n  import { Slider } from '$lib/components/ui/slider';\n\n  let value = $state(25);\n</script>\n\n<div class=\"grid grid-cols-[auto_1fr_auto] items-center gap-x-2\">\n  <div class=\"col-span-3 mb-2 flex items-center justify-between gap-1\">\n    <span class=\"font-medium text-sm\">Volume</span>\n    <span class=\"tabular-nums text-sm\">{value}</span>\n  </div>\n  <VolumeXIcon aria-hidden=\"true\" class=\"size-4 shrink-0 opacity-80\" />\n  <Slider aria-label=\"Volume slider\" bind:value />\n  <Volume2Icon aria-hidden=\"true\" class=\"size-4 shrink-0 opacity-80\" />\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"field",
+		"slider"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-menu-7",
+	"title": "Menu 7",
+	"description": "Nested menu",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-menu-7.svelte",
+			"target": "$lib/components/particles/menu/p-menu-7.svelte",
+			"content": "<script lang=\"ts\">\n  import { buttonVariants } from '$lib/components/ui/button';\n  import {\n    Menu,\n    MenuItem,\n    MenuPopup,\n    MenuSub,\n    MenuSubPopup,\n    MenuSubTrigger,\n    MenuTrigger\n  } from '$lib/components/ui/menu';\n</script>\n\n<Menu>\n  <MenuTrigger class={buttonVariants({ variant: 'outline' })}>Open menu</MenuTrigger>\n  <MenuPopup>\n    <MenuItem>Item one</MenuItem>\n    <MenuSub>\n      <MenuSubTrigger>More</MenuSubTrigger>\n      <MenuSubPopup>\n        <MenuItem>Sub item A</MenuItem>\n        <MenuItem>Sub item B</MenuItem>\n      </MenuSubPopup>\n    </MenuSub>\n    <MenuItem>Item two</MenuItem>\n  </MenuPopup>\n</Menu>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"menu"
+	],
+	"dependencies": []
+}

@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-collapsible-1",
+	"title": "Collapsible 1",
+	"description": "Basic collapsible",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-collapsible-1.svelte",
+			"target": "$lib/components/particles/collapsible/p-collapsible-1.svelte",
+			"content": "<script lang=\"ts\">\n  import ChevronDown from '@lucide/svelte/icons/chevron-down';\n  import {\n    Collapsible,\n    CollapsiblePanel,\n    CollapsibleTrigger\n  } from '$lib/components/ui/collapsible';\n</script>\n\n<Collapsible>\n  <CollapsibleTrigger\n    class=\"inline-flex items-center gap-2 font-medium text-sm data-[state=open]:[&_svg]:rotate-180\"\n  >\n    Show recovery keys\n    <ChevronDown class=\"size-4 transition-transform\" />\n  </CollapsibleTrigger>\n  <CollapsiblePanel>\n    <ul class=\"flex flex-col gap-1 py-2 text-muted-foreground text-sm\">\n      <li class=\"rounded-sm bg-muted px-2 py-1 font-mono\">4829-1735-6621</li>\n      <li class=\"rounded-sm bg-muted px-2 py-1 font-mono\">9182-6407-5532</li>\n      <li class=\"rounded-sm bg-muted px-2 py-1 font-mono\">3051-7924-9018</li>\n    </ul>\n  </CollapsiblePanel>\n</Collapsible>\n"
+		}
+	],
+	"registryDependencies": [
+		"collapsible"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

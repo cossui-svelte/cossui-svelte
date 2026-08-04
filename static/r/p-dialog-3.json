@@ -1,0 +1,26 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-dialog-3",
+	"title": "Dialog 3",
+	"description": "Nested dialogs",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-dialog-3.svelte",
+			"target": "$lib/components/particles/dialog/p-dialog-3.svelte",
+			"content": "<script lang=\"ts\">\n  import { z } from 'zod';\n  import { Button, buttonVariants } from '$lib/components/ui/button';\n  import {\n    Dialog,\n    DialogClose,\n    DialogDescription,\n    DialogFooter,\n    DialogHeader,\n    DialogPanel,\n    DialogPopup,\n    DialogTitle,\n    DialogTrigger\n  } from '$lib/components/ui/dialog';\n  import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';\n  import { Form } from '$lib/components/ui/form';\n  import { Input } from '$lib/components/ui/input';\n  import { createForm } from '$lib/hooks/use-superform';\n\n  const schema = z.object({\n    email: z.email('Please enter a valid email.'),\n    name: z.string().min(1, { message: 'Please enter a name.' })\n  });\n\n  const superform = createForm({\n    initialData: { email: 'bora@example.com', name: 'Bora Baloglu' },\n    schema\n  });\n</script>\n\n<Dialog>\n  <DialogTrigger class={buttonVariants({ variant: 'outline' })}>Open parent</DialogTrigger>\n  <DialogPopup showCloseButton={false}>\n    <DialogHeader>\n      <DialogTitle>Manage team member</DialogTitle>\n      <DialogDescription>View and manage a user in your team.</DialogDescription>\n    </DialogHeader>\n    <DialogPanel class=\"grid gap-4\">\n      <div class=\"grid gap-1\">\n        <p class=\"text-muted-foreground text-sm\">Name</p>\n        <p class=\"font-medium text-sm\">Bora Baloglu</p>\n      </div>\n      <div class=\"grid gap-1\">\n        <p class=\"text-muted-foreground text-sm\">Email</p>\n        <p class=\"font-medium text-sm\">bora@example.com</p>\n      </div>\n    </DialogPanel>\n    <DialogFooter>\n      <Dialog>\n        <DialogTrigger class={buttonVariants({ variant: 'outline' })}>Edit details</DialogTrigger>\n        <DialogPopup showCloseButton={false}>\n          <DialogHeader>\n            <DialogTitle>Edit details</DialogTitle>\n            <DialogDescription>Make changes to the member's information.</DialogDescription>\n          </DialogHeader>\n          <Form {superform} class=\"contents\">\n            <DialogPanel class=\"grid gap-4\">\n              <Field name=\"name\">\n                <FieldLabel>Name</FieldLabel>\n                <Input type=\"text\" />\n                <FieldError />\n              </Field>\n              <Field name=\"email\">\n                <FieldLabel>Email</FieldLabel>\n                <Input type=\"email\" />\n                <FieldError />\n              </Field>\n            </DialogPanel>\n            <DialogFooter>\n              <DialogClose class={buttonVariants({ variant: 'ghost' })}>Cancel</DialogClose>\n              <Button type=\"submit\">Save changes</Button>\n            </DialogFooter>\n          </Form>\n        </DialogPopup>\n      </Dialog>\n    </DialogFooter>\n  </DialogPopup>\n</Dialog>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"dialog",
+		"field",
+		"input",
+		"form",
+		"use-superform"
+	],
+	"dependencies": [
+		"zod@^4.4.3"
+	]
+}

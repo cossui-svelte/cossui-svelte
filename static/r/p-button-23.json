@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-button-23",
+	"title": "Button 23",
+	"description": "Outline like button with count",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-button-23.svelte",
+			"target": "$lib/components/particles/button/p-button-23.svelte",
+			"content": "<script lang=\"ts\">\n  import ThumbsUp from '@lucide/svelte/icons/thumbs-up';\n  import { Button } from '$lib/components/ui/button';\n</script>\n\n<Button class=\"pe-0\" variant=\"outline\">\n  <ThumbsUp aria-hidden=\"true\" />\n  Like\n  <span\n    class=\"relative ms-1 px-3 font-medium text-muted-foreground text-xs before:absolute before:inset-0 before:left-0 before:w-px before:bg-input\"\n  >\n    86\n  </span>\n</Button>\n"
+		}
+	],
+	"registryDependencies": [
+		"button"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

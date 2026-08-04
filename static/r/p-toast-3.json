@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-toast-3",
+	"title": "Toast 3",
+	"description": "Loading-state stacked toast",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-toast-3.svelte",
+			"target": "$lib/components/particles/toast/p-toast-3.svelte",
+			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n  import { toastManager } from '$lib/components/ui/toast';\n</script>\n\n<Button\n  onclick={() => {\n    toastManager.add({\n      description: 'Please wait while we process your request.',\n      title: 'Loading…',\n      type: 'loading'\n    });\n  }}\n  variant=\"outline\"\n>\n  Loading Toast\n</Button>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"toast"
+	],
+	"dependencies": []
+}

@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-tooltip-3",
+	"title": "Tooltip 3",
+	"description": "Toggle group animated tooltip",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-tooltip-3.svelte",
+			"target": "$lib/components/particles/tooltip/p-tooltip-3.svelte",
+			"content": "<script lang=\"ts\">\n  import BoldIcon from '@lucide/svelte/icons/bold';\n  import ItalicIcon from '@lucide/svelte/icons/italic';\n  import UnderlineIcon from '@lucide/svelte/icons/underline';\n  import { ToggleGroup, ToggleGroupItem } from '$lib/components/ui/toggle-group';\n  import {\n    Tooltip,\n    TooltipPopup,\n    TooltipProvider,\n    TooltipTrigger\n  } from '$lib/components/ui/tooltip';\n</script>\n\n<TooltipProvider>\n  <ToggleGroup value={['bold']} multiple>\n    <Tooltip>\n      <TooltipTrigger>\n        {#snippet child({ props })}\n          <ToggleGroupItem\n            aria-label=\"Toggle bold\"\n            class=\"after:absolute after:left-full after:h-full after:w-1\"\n            value=\"bold\"\n            {...props}\n          >\n            <BoldIcon aria-hidden=\"true\" />\n          </ToggleGroupItem>\n        {/snippet}\n      </TooltipTrigger>\n      <TooltipPopup><span>Make text bold</span></TooltipPopup>\n    </Tooltip>\n    <Tooltip>\n      <TooltipTrigger>\n        {#snippet child({ props })}\n          <ToggleGroupItem\n            aria-label=\"Toggle italic\"\n            class=\"after:absolute after:left-full after:h-full after:w-1\"\n            value=\"italic\"\n            {...props}\n          >\n            <ItalicIcon aria-hidden=\"true\" />\n          </ToggleGroupItem>\n        {/snippet}\n      </TooltipTrigger>\n      <TooltipPopup><span>Apply italic formatting to text</span></TooltipPopup>\n    </Tooltip>\n    <Tooltip>\n      <TooltipTrigger>\n        {#snippet child({ props })}\n          <ToggleGroupItem\n            aria-label=\"Toggle underline\"\n            class=\"after:absolute after:left-full after:h-full after:w-1\"\n            value=\"underline\"\n            {...props}\n          >\n            <UnderlineIcon aria-hidden=\"true\" />\n          </ToggleGroupItem>\n        {/snippet}\n      </TooltipTrigger>\n      <TooltipPopup><span>Underline text</span></TooltipPopup>\n    </Tooltip>\n  </ToggleGroup>\n</TooltipProvider>\n"
+		}
+	],
+	"registryDependencies": [
+		"toggle-group",
+		"tooltip"
+	],
+	"dependencies": []
+}

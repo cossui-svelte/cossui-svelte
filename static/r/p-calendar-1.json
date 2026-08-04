@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-calendar-1",
+	"title": "Calendar 1",
+	"description": "Basic calendar",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-calendar-1.svelte",
+			"target": "$lib/components/particles/calendar/p-calendar-1.svelte",
+			"content": "<script lang=\"ts\">\n  import { getLocalTimeZone, today } from '@internationalized/date';\n  import { Calendar } from '$lib/components/ui/calendar';\n\n  let value = $state(today(getLocalTimeZone()));\n</script>\n\n<Calendar mode=\"single\" bind:value />\n"
+		}
+	],
+	"registryDependencies": [
+		"calendar"
+	],
+	"dependencies": [
+		"@internationalized/date@^3.12.3"
+	]
+}

@@ -1,0 +1,23 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-input-group-8",
+	"title": "Input group 8",
+	"description": "Input group with icon button",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-input-group-8.svelte",
+			"target": "$lib/components/particles/input-group/p-input-group-8.svelte",
+			"content": "<script lang=\"ts\">\n  import Check from '@lucide/svelte/icons/check';\n  import Copy from '@lucide/svelte/icons/copy';\n  import { buttonVariants } from '$lib/components/ui/button';\n  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';\n  import {\n    Tooltip,\n    TooltipPopup,\n    TooltipProvider,\n    TooltipTrigger\n  } from '$lib/components/ui/tooltip';\n\n  let inputValue = $state('https://coss.com');\n  let isCopied = $state(false);\n\n  async function copyToClipboard() {\n    await navigator.clipboard.writeText(inputValue);\n    isCopied = true;\n    setTimeout(() => {\n      isCopied = false;\n    }, 2000);\n  }\n</script>\n\n<TooltipProvider>\n  <InputGroup>\n    <InputGroupInput aria-label=\"Url\" bind:value={inputValue} type=\"text\" />\n    <InputGroupAddon align=\"inline-end\">\n      <Tooltip>\n        <TooltipTrigger\n          aria-label=\"Copy\"\n          class={buttonVariants({ size: 'icon-xs', variant: 'ghost' })}\n          onclick={copyToClipboard}\n        >\n          {#if isCopied}<Check />{:else}<Copy />{/if}\n        </TooltipTrigger>\n        <TooltipPopup>\n          <p>Copy to clipboard</p>\n        </TooltipPopup>\n      </Tooltip>\n    </InputGroupAddon>\n  </InputGroup>\n</TooltipProvider>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"input-group",
+		"tooltip"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

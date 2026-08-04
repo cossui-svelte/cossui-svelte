@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-button-28",
+	"title": "Button 28",
+	"description": "Button with avatar",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-button-28.svelte",
+			"target": "$lib/components/particles/button/p-button-28.svelte",
+			"content": "<script lang=\"ts\">\n  import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';\n  import { Button } from '$lib/components/ui/button';\n</script>\n\n<Button class=\"rounded-full ps-1\">\n  <Avatar class=\"size-6\">\n    <AvatarImage\n      alt=\"Luke Tracy\"\n      src=\"https://images.unsplash.com/photo-1628157588553-5eeea00af15c?w=128&h=128&dpr=2&q=80\"\n    />\n    <AvatarFallback>LT</AvatarFallback>\n  </Avatar>\n  @georgelucas\n</Button>\n"
+		}
+	],
+	"registryDependencies": [
+		"avatar",
+		"button"
+	],
+	"dependencies": []
+}

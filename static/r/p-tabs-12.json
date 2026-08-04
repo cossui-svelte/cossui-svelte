@@ -1,0 +1,22 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-tabs-12",
+	"title": "Tabs 12",
+	"description": "Tabs with icon only and count badge",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-tabs-12.svelte",
+			"target": "$lib/components/particles/tabs/p-tabs-12.svelte",
+			"content": "<script lang=\"ts\">\n  import HouseIcon from '@lucide/svelte/icons/house';\n  import InboxIcon from '@lucide/svelte/icons/inbox';\n  import SettingsIcon from '@lucide/svelte/icons/settings';\n  import { Badge } from '$lib/components/ui/badge';\n  import { Tabs, TabsList, TabsPanel, TabsTab } from '$lib/components/ui/tabs';\n</script>\n\n<Tabs class=\"items-center\" value=\"tab-1\">\n  <TabsList>\n    <TabsTab aria-label=\"Overview\" class=\"size-10!\" value=\"tab-1\">\n      <HouseIcon aria-hidden=\"true\" />\n    </TabsTab>\n    <TabsTab aria-label=\"Inbox\" class=\"size-10!\" value=\"tab-2\">\n      <InboxIcon aria-hidden=\"true\" />\n      <Badge class=\"absolute end-0 top-0 rounded-full not-in-data-active:opacity-64\" size=\"sm\">\n        5\n      </Badge>\n    </TabsTab>\n    <TabsTab aria-label=\"Settings\" class=\"size-10!\" value=\"tab-3\">\n      <SettingsIcon aria-hidden=\"true\" />\n    </TabsTab>\n  </TabsList>\n  <TabsPanel value=\"tab-1\">\n    <p class=\"p-4 text-center text-muted-foreground text-xs\">Overview content</p>\n  </TabsPanel>\n  <TabsPanel value=\"tab-2\">\n    <p class=\"p-4 text-center text-muted-foreground text-xs\">Inbox content</p>\n  </TabsPanel>\n  <TabsPanel value=\"tab-3\">\n    <p class=\"p-4 text-center text-muted-foreground text-xs\">Settings content</p>\n  </TabsPanel>\n</Tabs>\n"
+		}
+	],
+	"registryDependencies": [
+		"badge",
+		"tabs"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

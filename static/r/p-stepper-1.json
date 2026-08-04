@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-stepper-1",
+	"title": "Stepper 1",
+	"description": "Basic stepper examples",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-stepper-1.svelte",
+			"target": "$lib/components/particles/stepper/p-stepper-1.svelte",
+			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n  import {\n    Stepper,\n    StepperDescription,\n    StepperIndicator,\n    StepperItem,\n    StepperSeparator,\n    StepperTitle,\n    StepperTrigger\n  } from '$lib/components/ui/stepper';\n\n  const steps = [\n    { description: 'Create your account', title: 'Account' },\n    { description: 'Add your address', title: 'Address' },\n    { description: 'Review and submit', title: 'Review' }\n  ];\n\n  let step = $state(1);\n</script>\n\n<div class=\"space-y-8 w-full\">\n  <Stepper bind:step>\n    {#each steps as { title, description }, i (title)}\n      <StepperItem step={i + 1} class=\"flex-1\">\n        <StepperTrigger>\n          <StepperIndicator />\n          <div class=\"flex flex-col items-start\">\n            <StepperTitle>{title}</StepperTitle>\n            <StepperDescription>{description}</StepperDescription>\n          </div>\n        </StepperTrigger>\n        {#if i < steps.length - 1}\n          <StepperSeparator />\n        {/if}\n      </StepperItem>\n    {/each}\n  </Stepper>\n\n  <div class=\"flex justify-between\">\n    <Button variant=\"outline\" disabled={step === 1} onclick={() => (step = Math.max(1, step - 1))}>\n      Previous\n    </Button>\n    <Button\n      disabled={step === steps.length}\n      onclick={() => (step = Math.min(steps.length, step + 1))}\n    >\n      Next\n    </Button>\n  </div>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"stepper",
+		"button"
+	],
+	"dependencies": []
+}

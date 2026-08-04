@@ -1,0 +1,26 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-colorpicker-5",
+	"title": "Colorpicker 5",
+	"description": "Color picker with custom swatches and text input",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-colorpicker-5.svelte",
+			"target": "$lib/components/particles/colorpicker/p-colorpicker-5.svelte",
+			"content": "<script lang=\"ts\">\n  import { ColorPicker } from '$lib/components/ui/colorpicker';\n  import { hueyColor } from '@hueycolor/core';\n\n  // generate a random color\n  let color = $state(hueyColor('#999').randomize());\n</script>\n\n<ColorPicker\n  bind:color\n  swatches={['#ef4444', '#f97316', '#eab308', '#22c55e', '#4f46e5', '#a855f7']}\n/>\n"
+		}
+	],
+	"registryDependencies": [
+		"slider",
+		"checkbox",
+		"input",
+		"button",
+		"label",
+		"colorpicker"
+	],
+	"dependencies": [
+		"@hueycolor/core@^1.0.1"
+	]
+}

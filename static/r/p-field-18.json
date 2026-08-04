@@ -1,0 +1,27 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-field-18",
+	"title": "Field 18",
+	"description": "Complete form built with field",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-field-18.svelte",
+			"target": "$lib/components/particles/field/p-field-18.svelte",
+			"content": "<script lang=\"ts\">\n  import { z } from 'zod';\n  import { Button } from '$lib/components/ui/button';\n  import { Checkbox } from '$lib/components/ui/checkbox';\n  import { Field, FieldDescription, FieldError, FieldLabel } from '$lib/components/ui/field';\n  import { Form } from '$lib/components/ui/form';\n  import { Input } from '$lib/components/ui/input';\n  import {\n    Select,\n    SelectContent,\n    SelectItem,\n    SelectTrigger,\n    SelectValue\n  } from '$lib/components/ui/select';\n  import { createForm } from '$lib/hooks/use-superform';\n\n  const schema = z.object({\n    email: z.string().email({ message: 'Please enter a valid email.' }),\n    fullName: z.string().min(1, { message: 'Please enter a valid name.' }),\n    newsletter: z.boolean().optional(),\n    role: z.string().optional()\n  });\n\n  const superform = createForm({\n    initialData: { newsletter: false },\n    onUpdated: (data) => {\n      alert(\n        `Full name: ${data.fullName}\\nEmail: ${data.email}\\nRole: ${data.role ?? ''}\\nNewsletter: ${data.newsletter ?? false}`\n      );\n    },\n    schema\n  });\n\n  const { form, submitting } = superform;\n</script>\n\n<Form class=\"flex w-full flex-col gap-4\" {superform}>\n  <Field name=\"fullName\">\n    <FieldLabel>Full Name <span class=\"text-destructive\">*</span></FieldLabel>\n    <Input bind:value={$form.fullName} placeholder=\"John Doe\" type=\"text\" />\n    <FieldError />\n  </Field>\n\n  <Field name=\"email\">\n    <FieldLabel>Email <span class=\"text-destructive\">*</span></FieldLabel>\n    <Input bind:value={$form.email} placeholder=\"john@example.com\" type=\"email\" />\n    <FieldError />\n  </Field>\n\n  <Field name=\"role\">\n    <FieldLabel>Role</FieldLabel>\n    <Select bind:value={$form.role}>\n      <SelectTrigger>\n        <SelectValue placeholder=\"Select your role\" />\n      </SelectTrigger>\n      <SelectContent>\n        <SelectItem value=\"developer\">Developer</SelectItem>\n        <SelectItem value=\"designer\">Designer</SelectItem>\n        <SelectItem value=\"manager\">Product Manager</SelectItem>\n        <SelectItem value=\"other\">Other</SelectItem>\n      </SelectContent>\n    </Select>\n    <FieldDescription>This is an optional field</FieldDescription>\n  </Field>\n\n  <Field name=\"newsletter\">\n    <div class=\"flex items-center gap-2\">\n      <Checkbox bind:checked={$form.newsletter as boolean | undefined} />\n      <FieldLabel class=\"cursor-pointer\">Subscribe to newsletter</FieldLabel>\n    </div>\n  </Field>\n\n  <Button loading={$submitting} type=\"submit\">Submit</Button>\n</Form>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"checkbox",
+		"field",
+		"form",
+		"input",
+		"select",
+		"use-superform"
+	],
+	"dependencies": [
+		"zod@^4.4.3"
+	]
+}

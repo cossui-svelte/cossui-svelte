@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-select-13",
+	"title": "Select 13",
+	"description": "Timezone select",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-select-13.svelte",
+			"target": "$lib/components/particles/select/p-select-13.svelte",
+			"content": "<script lang=\"ts\">\n  import { Select, SelectItem, SelectPopup, SelectTrigger } from '$lib/components/ui/select';\n\n  interface TZItem {\n    label: string;\n    numericOffset: number;\n    value: string;\n  }\n\n  const formattedTimezones: TZItem[] = Intl.supportedValuesOf('timeZone')\n    .map((timezone) => {\n      const formatter = new Intl.DateTimeFormat('en', {\n        timeZone: timezone,\n        timeZoneName: 'shortOffset'\n      });\n      const parts = formatter.formatToParts(new Date());\n      const offset = parts.find((part) => part.type === 'timeZoneName')?.value || '';\n      const modifiedOffset = offset === 'GMT' ? 'GMT+0' : offset;\n      const offsetMatch = offset.match(/GMT([+-]?)(\\d+)(?::(\\d+))?/);\n      const sign = offsetMatch?.[1] === '-' ? -1 : 1;\n      const hours = Number.parseInt(offsetMatch?.[2] || '0', 10);\n      const minutes = Number.parseInt(offsetMatch?.[3] || '0', 10);\n      const totalMinutes = sign * (hours * 60 + minutes);\n      return {\n        label: `(${modifiedOffset}) ${timezone.replace(/_/g, ' ')}`,\n        numericOffset: totalMinutes,\n        value: timezone\n      };\n    })\n    .sort((a, b) => a.numericOffset - b.numericOffset);\n\n  let selected = $state('Europe/London');\n  const selectedItem = $derived(formattedTimezones.find((tz) => tz.value === selected));\n</script>\n\n<Select\n  value={selected}\n  onValueChange={(v) => {\n    selected = v;\n  }}\n>\n  <SelectTrigger aria-label=\"Select timezone\">\n    <span class=\"flex-1 truncate\">{selectedItem?.label ?? selected}</span>\n  </SelectTrigger>\n  <SelectPopup>\n    {#each formattedTimezones as item (item.value)}\n      <SelectItem value={item.value}>{item.label}</SelectItem>\n    {/each}\n  </SelectPopup>\n</Select>\n"
+		}
+	],
+	"registryDependencies": [
+		"select"
+	],
+	"dependencies": []
+}

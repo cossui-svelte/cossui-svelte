@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-input-2",
+	"title": "Input 2",
+	"description": "Small input",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-input-2.svelte",
+			"target": "$lib/components/particles/input/p-input-2.svelte",
+			"content": "<script lang=\"ts\">\n  import { Input } from '$lib/components/ui/input';\n</script>\n\n<Input aria-label=\"Enter text\" placeholder=\"Enter text\" size=\"sm\" type=\"text\" />\n"
+		}
+	],
+	"registryDependencies": [
+		"input"
+	],
+	"dependencies": []
+}

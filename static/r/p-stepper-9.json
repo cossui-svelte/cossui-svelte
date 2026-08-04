@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-stepper-9",
+	"title": "Stepper 9",
+	"description": "Paginated stepper",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-stepper-9.svelte",
+			"target": "$lib/components/particles/stepper/p-stepper-9.svelte",
+			"content": "<script lang=\"ts\">\n  import ChevronLeftIcon from '@lucide/svelte/icons/chevron-left';\n  import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';\n  import { Button } from '$lib/components/ui/button';\n  import {\n    Stepper,\n    StepperIndicator,\n    StepperItem,\n    StepperTrigger\n  } from '$lib/components/ui/stepper';\n\n  const steps = [1, 2, 3, 4];\n\n  let currentStep = $state(2);\n</script>\n\n<div class=\"mx-auto max-w-xl space-y-8 text-center w-full\">\n  <div class=\"flex items-center gap-2\">\n    <Button\n      aria-label=\"Prev step\"\n      class=\"shrink-0\"\n      disabled={currentStep === 1}\n      onclick={() => (currentStep = currentStep - 1)}\n      size=\"icon\"\n      variant=\"ghost\"\n    >\n      <ChevronLeftIcon aria-hidden=\"true\" size={16} />\n    </Button>\n    <Stepper class=\"gap-1\" bind:step={currentStep}>\n      {#each steps as step (step)}\n        <StepperItem class=\"flex-1\" {step}>\n          <StepperTrigger class=\"w-full flex-col items-start gap-1\">\n            <StepperIndicator\n              class=\"h-1 w-full bg-border data-[state=active]:bg-primary data-[state=completed]:bg-primary\"\n            >\n              <span class=\"sr-only\">{step}</span>\n            </StepperIndicator>\n          </StepperTrigger>\n        </StepperItem>\n      {/each}\n    </Stepper>\n    <Button\n      aria-label=\"Next step\"\n      class=\"shrink-0\"\n      disabled={currentStep === steps.length}\n      onclick={() => (currentStep = currentStep + 1)}\n      size=\"icon\"\n      variant=\"ghost\"\n    >\n      <ChevronRightIcon aria-hidden=\"true\" size={16} />\n    </Button>\n  </div>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"stepper",
+		"button"
+	],
+	"dependencies": []
+}

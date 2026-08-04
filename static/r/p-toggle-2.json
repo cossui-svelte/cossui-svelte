@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-toggle-2",
+	"title": "Toggle 2",
+	"description": "Toggle with outline",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-toggle-2.svelte",
+			"target": "$lib/components/particles/toggle/p-toggle-2.svelte",
+			"content": "<script lang=\"ts\">\n  import { Toggle } from '$lib/components/ui/toggle';\n</script>\n\n<Toggle variant=\"outline\">Outline Toggle</Toggle>\n"
+		}
+	],
+	"registryDependencies": [
+		"toggle"
+	],
+	"dependencies": []
+}

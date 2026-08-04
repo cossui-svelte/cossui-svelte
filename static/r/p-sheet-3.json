@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-sheet-3",
+	"title": "Sheet 3",
+	"description": "Sheet position",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-sheet-3.svelte",
+			"target": "$lib/components/particles/sheet/p-sheet-3.svelte",
+			"content": "<script lang=\"ts\">\n  import { buttonVariants } from '$lib/components/ui/button';\n  import {\n    Sheet,\n    SheetDescription,\n    SheetHeader,\n    SheetPanel,\n    SheetPopup,\n    SheetTitle,\n    SheetTrigger\n  } from '$lib/components/ui/sheet';\n\n  const lorem =\n    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';\n</script>\n\n<div class=\"flex flex-wrap gap-2\">\n  <Sheet>\n    <SheetTrigger class={buttonVariants({ variant: 'outline' })}>Open Right</SheetTrigger>\n    <SheetPopup showCloseButton={false}>\n      <SheetHeader>\n        <SheetTitle>Right</SheetTitle>\n        <SheetDescription>Right side of the screen.</SheetDescription>\n      </SheetHeader>\n      <SheetPanel><p>{lorem}</p></SheetPanel>\n    </SheetPopup>\n  </Sheet>\n\n  <Sheet>\n    <SheetTrigger class={buttonVariants({ variant: 'outline' })}>Open Left</SheetTrigger>\n    <SheetPopup showCloseButton={false} side=\"left\">\n      <SheetHeader>\n        <SheetTitle>Left</SheetTitle>\n        <SheetDescription>Left side of the screen.</SheetDescription>\n      </SheetHeader>\n      <SheetPanel><p>{lorem}</p></SheetPanel>\n    </SheetPopup>\n  </Sheet>\n\n  <Sheet>\n    <SheetTrigger class={buttonVariants({ variant: 'outline' })}>Open Top</SheetTrigger>\n    <SheetPopup showCloseButton={false} side=\"top\">\n      <SheetHeader>\n        <SheetTitle>Top</SheetTitle>\n        <SheetDescription>Top of the screen.</SheetDescription>\n      </SheetHeader>\n      <SheetPanel><p>{lorem}</p></SheetPanel>\n    </SheetPopup>\n  </Sheet>\n\n  <Sheet>\n    <SheetTrigger class={buttonVariants({ variant: 'outline' })}>Open Bottom</SheetTrigger>\n    <SheetPopup showCloseButton={false} side=\"bottom\">\n      <SheetHeader>\n        <SheetTitle>Bottom</SheetTitle>\n        <SheetDescription>Bottom of the screen.</SheetDescription>\n      </SheetHeader>\n      <SheetPanel><p>{lorem}</p></SheetPanel>\n    </SheetPopup>\n  </Sheet>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"sheet"
+	],
+	"dependencies": []
+}

@@ -1,0 +1,27 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "link-preview",
+	"title": "Link Preview",
+	"description": "A popup that appears when an element is hovered, showing preview information.",
+	"type": "registry:ui",
+	"files": [
+		{
+			"type": "registry:ui",
+			"path": "link-preview/index.ts",
+			"target": "$lib/components/ui/link-preview/index.ts",
+			"content": "/* eslint-disable perfectionist/sort-named-exports */\nimport { LinkPreview } from 'bits-ui';\n\nconst { Root: LinkPreviewCard, Trigger: LinkPreviewTrigger } = LinkPreview;\n\nexport { default as LinkPreviewContent } from './link-preview-content.svelte';\nexport { LinkPreview, LinkPreviewCard, LinkPreviewTrigger };\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "link-preview/link-preview-content.svelte",
+			"target": "$lib/components/ui/link-preview/link-preview-content.svelte",
+			"content": "<script lang=\"ts\">\n  import { LinkPreview as LinkPreviewPrimitive, type WithoutChildren } from 'bits-ui';\n  import type { Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let {\n    align = 'center',\n    children,\n    class: className,\n    portalProps,\n    ref = $bindable(null),\n    showArrow = false,\n    sideOffset = 4,\n    ...restProps\n  }: WithoutChildren<LinkPreviewPrimitive.ContentProps> & {\n    children: Snippet;\n    portalProps?: LinkPreviewPrimitive.PortalProps;\n    showArrow?: boolean;\n  } = $props();\n</script>\n\n<LinkPreviewPrimitive.Portal {...portalProps}>\n  <LinkPreviewPrimitive.Content\n    bind:ref\n    {sideOffset}\n    {align}\n    class={cn(\n      'border-border bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out data-[state=open]:fade-in data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 w-64 rounded-lg border p-4 shadow-lg shadow-black/5 outline-hidden',\n      className\n    )}\n    {...restProps}\n  >\n    {@render children()}\n    {#if showArrow}\n      <LinkPreviewPrimitive.Arrow\n        class=\"text-popover -my-px drop-shadow-[0_1px_0_hsl(var(--border))]\"\n      />\n    {/if}\n  </LinkPreviewPrimitive.Content>\n</LinkPreviewPrimitive.Portal>\n"
+		}
+	],
+	"registryDependencies": [
+		"utils"
+	],
+	"dependencies": [
+		"bits-ui@^2.18.1"
+	]
+}

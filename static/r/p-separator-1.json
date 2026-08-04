@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-separator-1",
+	"title": "Separator 1",
+	"description": "Separator with horizontal and vertical orientations",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-separator-1.svelte",
+			"target": "$lib/components/particles/separator/p-separator-1.svelte",
+			"content": "<script lang=\"ts\">\n  import { Separator } from '$lib/components/ui/separator';\n</script>\n\n<div class=\"max-w-72\">\n  <div class=\"flex flex-col gap-1\">\n    <h4 class=\"font-medium text-sm\">coss ui</h4>\n    <p class=\"text-muted-foreground text-sm\">\n      Unstyled, accessible primitives for fast product UI and design systems.\n    </p>\n  </div>\n  <Separator class=\"my-4\" />\n  <div class=\"flex items-center gap-4 text-sm\">\n    <div>Blog</div>\n    <Separator orientation=\"vertical\" />\n    <div>Docs</div>\n    <Separator orientation=\"vertical\" />\n    <div>Source</div>\n    <Separator orientation=\"vertical\" />\n    <div>Releases</div>\n  </div>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"separator"
+	],
+	"dependencies": []
+}

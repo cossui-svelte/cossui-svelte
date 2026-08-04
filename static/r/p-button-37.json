@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-button-37",
+	"title": "Button 37",
+	"description": "Rotating icon button (FAB-style toggle)",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-button-37.svelte",
+			"target": "$lib/components/particles/button/p-button-37.svelte",
+			"content": "<script lang=\"ts\">\n  import Plus from '@lucide/svelte/icons/plus';\n  import { Button } from '$lib/components/ui/button';\n\n  let open = $state(false);\n</script>\n\n<Button\n  aria-expanded={open}\n  aria-label={open ? 'Close menu' : 'Open menu'}\n  class=\"rounded-full before:rounded-full\"\n  onclick={() => (open = !open)}\n  size=\"icon\"\n  variant=\"outline\"\n>\n  <Plus\n    aria-hidden=\"true\"\n    class=\"in-[[aria-expanded=true]]:rotate-[135deg] transition-transform duration-500 ease-[cubic-bezier(0.68,-0.6,0.32,1.6)]\"\n  />\n</Button>\n"
+		}
+	],
+	"registryDependencies": [
+		"button"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

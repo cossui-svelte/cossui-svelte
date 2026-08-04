@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-radio-group-3",
+	"title": "Radio group 3",
+	"description": "Radio group with description",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-radio-group-3.svelte",
+			"target": "$lib/components/particles/radio-group/p-radio-group-3.svelte",
+			"content": "<script lang=\"ts\">\n  import { Label } from '$lib/components/ui/label';\n  import { Radio, RadioGroup } from '$lib/components/ui/radio-group';\n</script>\n\n<RadioGroup value=\"r-1\">\n  <div class=\"flex items-start gap-2\">\n    <Radio id=\"r-1\" value=\"r-1\" />\n    <div class=\"flex flex-col gap-1\">\n      <Label for=\"r-1\">Free</Label>\n      <p class=\"text-muted-foreground text-xs\">Basic features for personal use.</p>\n    </div>\n  </div>\n  <div class=\"flex items-start gap-2\">\n    <Radio id=\"r-2\" value=\"r-2\" />\n    <div class=\"flex flex-col gap-1\">\n      <Label for=\"r-2\">Pro</Label>\n      <p class=\"text-muted-foreground text-xs\">Advanced tools for professionals.</p>\n    </div>\n  </div>\n</RadioGroup>\n"
+		}
+	],
+	"registryDependencies": [
+		"label",
+		"radio-group"
+	],
+	"dependencies": []
+}

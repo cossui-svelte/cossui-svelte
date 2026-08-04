@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-toggle-7",
+	"title": "Toggle 7",
+	"description": "Toggle icon group",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-toggle-7.svelte",
+			"target": "$lib/components/particles/toggle/p-toggle-7.svelte",
+			"content": "<script lang=\"ts\">\n  import BoldIcon from '@lucide/svelte/icons/bold';\n  import ItalicIcon from '@lucide/svelte/icons/italic';\n  import UnderlineIcon from '@lucide/svelte/icons/underline';\n  import { Toggle } from '$lib/components/ui/toggle';\n</script>\n\n<div class=\"flex items-center gap-1\">\n  <Toggle aria-label=\"Toggle bold\" variant=\"outline\">\n    <BoldIcon />\n  </Toggle>\n  <Toggle aria-label=\"Toggle italic\" variant=\"outline\">\n    <ItalicIcon />\n  </Toggle>\n  <Toggle aria-label=\"Toggle underline\" variant=\"outline\">\n    <UnderlineIcon />\n  </Toggle>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"toggle"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

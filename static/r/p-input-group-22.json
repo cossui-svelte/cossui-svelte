@@ -1,0 +1,22 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-input-group-22",
+	"title": "Input group 22",
+	"description": "Input group with clear button",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-input-group-22.svelte",
+			"target": "$lib/components/particles/input-group/p-input-group-22.svelte",
+			"content": "<script lang=\"ts\">\n  import X from '@lucide/svelte/icons/x';\n  import { Button } from '$lib/components/ui/button';\n  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';\n\n  let value = $state('Clear me');\n</script>\n\n<InputGroup>\n  <InputGroupInput\n    aria-label=\"Text input with clear button\"\n    oninput={(e) => {\n      value = (e.currentTarget as HTMLInputElement).value;\n    }}\n    placeholder=\"Enter text\"\n    type=\"text\"\n    {value}\n  />\n  {#if value}\n    <InputGroupAddon align=\"inline-end\">\n      <Button\n        aria-label=\"Clear input\"\n        onclick={() => {\n          value = '';\n        }}\n        size=\"icon-xs\"\n        variant=\"ghost\"\n      >\n        <X aria-hidden=\"true\" />\n      </Button>\n    </InputGroupAddon>\n  {/if}\n</InputGroup>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"input-group"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

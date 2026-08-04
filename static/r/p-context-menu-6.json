@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-context-menu-6",
+	"title": "Context menu 6",
+	"description": "Context menu with icons",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-context-menu-6.svelte",
+			"target": "$lib/components/particles/context-menu/p-context-menu-6.svelte",
+			"content": "<script lang=\"ts\">\n  import Copy from '@lucide/svelte/icons/copy';\n  import Pencil from '@lucide/svelte/icons/pencil';\n  import Share from '@lucide/svelte/icons/share';\n  import Trash from '@lucide/svelte/icons/trash';\n  import {\n    ContextMenu,\n    ContextMenuItem,\n    ContextMenuPopup,\n    ContextMenuSeparator,\n    ContextMenuShortcut,\n    ContextMenuTrigger\n  } from '$lib/components/ui/context-menu';\n</script>\n\n<ContextMenu>\n  <ContextMenuTrigger\n    class=\"flex h-32 w-full max-w-sm items-center justify-center rounded-lg border border-dashed text-muted-foreground text-sm\"\n  >\n    Right click here\n  </ContextMenuTrigger>\n  <ContextMenuPopup>\n    <ContextMenuItem>\n      <Pencil aria-hidden=\"true\" />\n      Edit\n      <ContextMenuShortcut>⌘E</ContextMenuShortcut>\n    </ContextMenuItem>\n    <ContextMenuItem>\n      <Copy aria-hidden=\"true\" />\n      Copy\n      <ContextMenuShortcut>⌘C</ContextMenuShortcut>\n    </ContextMenuItem>\n    <ContextMenuItem>\n      <Share aria-hidden=\"true\" />\n      Share\n    </ContextMenuItem>\n    <ContextMenuSeparator />\n    <ContextMenuItem variant=\"destructive\">\n      <Trash aria-hidden=\"true\" />\n      Delete\n      <ContextMenuShortcut>⌘⌫</ContextMenuShortcut>\n    </ContextMenuItem>\n  </ContextMenuPopup>\n</ContextMenu>\n"
+		}
+	],
+	"registryDependencies": [
+		"context-menu"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-slider-6",
+	"title": "Slider 6",
+	"description": "Slider with labels above",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-slider-6.svelte",
+			"target": "$lib/components/particles/slider/p-slider-6.svelte",
+			"content": "<script lang=\"ts\">\n  import { Slider } from '$lib/components/ui/slider';\n</script>\n\n<div>\n  <div\n    aria-hidden=\"true\"\n    class=\"mb-3 flex w-full items-center justify-between gap-2 font-medium text-muted-foreground text-xs\"\n  >\n    <span>Low</span>\n    <span>High</span>\n  </div>\n  <Slider aria-label=\"Intensity level from low to high\" value={50} step={10} />\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"slider"
+	],
+	"dependencies": []
+}

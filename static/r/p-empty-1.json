@@ -1,0 +1,22 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-empty-1",
+	"title": "Empty 1",
+	"description": "Empty state with icon and actions",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-empty-1.svelte",
+			"target": "$lib/components/particles/empty/p-empty-1.svelte",
+			"content": "<script lang=\"ts\">\n  import Book from '@lucide/svelte/icons/book';\n  import Route from '@lucide/svelte/icons/route';\n  import { Button } from '$lib/components/ui/button';\n  import {\n    Empty,\n    EmptyContent,\n    EmptyDescription,\n    EmptyHeader,\n    EmptyMedia,\n    EmptyTitle\n  } from '$lib/components/ui/empty';\n</script>\n\n<Empty>\n  <EmptyHeader>\n    <EmptyMedia variant=\"icon\">\n      <Route aria-hidden />\n    </EmptyMedia>\n    <EmptyTitle>No upcoming meetings</EmptyTitle>\n    <EmptyDescription>Create a meeting to get started.</EmptyDescription>\n  </EmptyHeader>\n  <EmptyContent>\n    <div class=\"flex gap-2\">\n      <Button size=\"sm\">Create meeting</Button>\n      <Button size=\"sm\" variant=\"outline\">\n        <Book aria-hidden />\n        View docs\n      </Button>\n    </div>\n  </EmptyContent>\n</Empty>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"empty"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

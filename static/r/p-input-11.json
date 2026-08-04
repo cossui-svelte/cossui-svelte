@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-input-11",
+	"title": "Input 11",
+	"description": "Input group with keyboard shortcut",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-input-11.svelte",
+			"target": "$lib/components/particles/input/p-input-11.svelte",
+			"content": "<script lang=\"ts\">\n  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';\n  import { Kbd } from '$lib/components/ui/kbd';\n</script>\n\n<InputGroup>\n  <InputGroupInput aria-label=\"Search\" placeholder=\"Search…\" type=\"search\" />\n  <InputGroupAddon align=\"inline-end\">\n    <Kbd>/</Kbd>\n  </InputGroupAddon>\n</InputGroup>\n"
+		}
+	],
+	"registryDependencies": [
+		"input-group",
+		"kbd"
+	],
+	"dependencies": []
+}

@@ -1,0 +1,22 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-input-group-12",
+	"title": "Input group 12",
+	"description": "Input group with inner label",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-input-group-12.svelte",
+			"target": "$lib/components/particles/input-group/p-input-group-12.svelte",
+			"content": "<script lang=\"ts\">\n  import Info from '@lucide/svelte/icons/info';\n  import { buttonVariants } from '$lib/components/ui/button';\n  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';\n  import { Label } from '$lib/components/ui/label';\n  import { Popover, PopoverPopup, PopoverTrigger } from '$lib/components/ui/popover';\n</script>\n\n<InputGroup>\n  <InputGroupInput id=\"email-12\" placeholder=\"team@coss.com\" type=\"email\" />\n  <InputGroupAddon align=\"block-start\">\n    <Label class=\"text-foreground\" for=\"email-12\">Email</Label>\n    <Popover>\n      <PopoverTrigger\n        class={`ml-auto ${buttonVariants({ size: 'icon-xs', variant: 'ghost' })} -m-1`}\n      >\n        <Info />\n      </PopoverTrigger>\n      <PopoverPopup side=\"top\" tooltipStyle>\n        <p>We'll use this to send you notifications</p>\n      </PopoverPopup>\n    </Popover>\n  </InputGroupAddon>\n</InputGroup>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"input-group",
+		"label",
+		"popover"
+	],
+	"dependencies": []
+}

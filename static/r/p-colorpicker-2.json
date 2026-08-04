@@ -1,0 +1,24 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-colorpicker-2",
+	"title": "Colorpicker 2",
+	"description": "Minimal color picker with sliders",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-colorpicker-2.svelte",
+			"target": "$lib/components/particles/colorpicker/p-colorpicker-2.svelte",
+			"content": "<script lang=\"ts\">\n  import { ColorPicker } from '$lib/components/ui/colorpicker';\n\n  let color = $state('#4f46e5');\n</script>\n\n<ColorPicker bind:color showInputs={false} showColorDropper={false} />\n"
+		}
+	],
+	"registryDependencies": [
+		"slider",
+		"checkbox",
+		"input",
+		"button",
+		"label",
+		"colorpicker"
+	],
+	"dependencies": []
+}

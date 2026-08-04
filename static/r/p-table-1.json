@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-table-1",
+	"title": "Table 1",
+	"description": "Basic table",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-table-1.svelte",
+			"target": "$lib/components/particles/table/p-table-1.svelte",
+			"content": "<script lang=\"ts\">\n  import { Badge } from '$lib/components/ui/badge';\n  import {\n    Table,\n    TableBody,\n    TableCaption,\n    TableCell,\n    TableFooter,\n    TableHead,\n    TableHeader,\n    TableRow\n  } from '$lib/components/ui/table';\n</script>\n\n<Table>\n  <TableCaption>A list of current projects.</TableCaption>\n  <TableHeader>\n    <TableRow>\n      <TableHead>Project</TableHead>\n      <TableHead>Status</TableHead>\n      <TableHead>Team</TableHead>\n      <TableHead class=\"text-right\">Budget</TableHead>\n    </TableRow>\n  </TableHeader>\n  <TableBody>\n    <TableRow>\n      <TableCell class=\"font-medium\">Website Redesign</TableCell>\n      <TableCell>\n        <Badge variant=\"outline\">\n          <span aria-hidden=\"true\" class=\"size-1.5 rounded-full bg-emerald-500\"></span>\n          Paid\n        </Badge>\n      </TableCell>\n      <TableCell>Frontend Team</TableCell>\n      <TableCell class=\"text-right\">$12,500</TableCell>\n    </TableRow>\n    <TableRow>\n      <TableCell class=\"font-medium\">Mobile App</TableCell>\n      <TableCell>\n        <Badge variant=\"outline\">\n          <span aria-hidden=\"true\" class=\"size-1.5 rounded-full bg-muted-foreground/64\"></span>\n          Unpaid\n        </Badge>\n      </TableCell>\n      <TableCell>Mobile Team</TableCell>\n      <TableCell class=\"text-right\">$8,750</TableCell>\n    </TableRow>\n    <TableRow>\n      <TableCell class=\"font-medium\">API Integration</TableCell>\n      <TableCell>\n        <Badge variant=\"outline\">\n          <span aria-hidden=\"true\" class=\"size-1.5 rounded-full bg-amber-500\"></span>\n          Pending\n        </Badge>\n      </TableCell>\n      <TableCell>Backend Team</TableCell>\n      <TableCell class=\"text-right\">$5,200</TableCell>\n    </TableRow>\n    <TableRow>\n      <TableCell class=\"font-medium\">Database Migration</TableCell>\n      <TableCell>\n        <Badge variant=\"outline\">\n          <span aria-hidden=\"true\" class=\"size-1.5 rounded-full bg-emerald-500\"></span>\n          Paid\n        </Badge>\n      </TableCell>\n      <TableCell>DevOps Team</TableCell>\n      <TableCell class=\"text-right\">$3,800</TableCell>\n    </TableRow>\n    <TableRow>\n      <TableCell class=\"font-medium\">User Dashboard</TableCell>\n      <TableCell>\n        <Badge variant=\"outline\">\n          <span aria-hidden=\"true\" class=\"size-1.5 rounded-full bg-emerald-500\"></span>\n          Paid\n        </Badge>\n      </TableCell>\n      <TableCell>UX Team</TableCell>\n      <TableCell class=\"text-right\">$7,200</TableCell>\n    </TableRow>\n    <TableRow>\n      <TableCell class=\"font-medium\">Security Audit</TableCell>\n      <TableCell>\n        <Badge variant=\"outline\">\n          <span aria-hidden=\"true\" class=\"size-1.5 rounded-full bg-red-500\"></span>\n          Failed\n        </Badge>\n      </TableCell>\n      <TableCell>Security Team</TableCell>\n      <TableCell class=\"text-right\">$2,100</TableCell>\n    </TableRow>\n  </TableBody>\n  <TableFooter>\n    <TableRow>\n      <TableCell colspan={3}>Total Budget</TableCell>\n      <TableCell class=\"text-right\">$39,550</TableCell>\n    </TableRow>\n  </TableFooter>\n</Table>\n"
+		}
+	],
+	"registryDependencies": [
+		"badge",
+		"table"
+	],
+	"dependencies": []
+}

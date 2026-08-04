@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-drawer-6",
+	"title": "Drawer 6",
+	"description": "Scrollable content with terms and conditions",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-drawer-6.svelte",
+			"target": "$lib/components/particles/drawer/p-drawer-6.svelte",
+			"content": "<script lang=\"ts\">\n  import { buttonVariants } from '$lib/components/ui/button';\n  import {\n    Drawer,\n    DrawerClose,\n    DrawerFooter,\n    DrawerHeader,\n    DrawerPanel,\n    DrawerPopup,\n    DrawerTitle,\n    DrawerTrigger\n  } from '$lib/components/ui/drawer';\n\n  const boxes = Array.from({ length: 48 }, (_, i) => i);\n</script>\n\n<Drawer>\n  <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Scrollable content</DrawerTrigger>\n  <DrawerPopup showBar>\n    <DrawerHeader>\n      <DrawerTitle>Scrollable content</DrawerTitle>\n    </DrawerHeader>\n    <DrawerPanel>\n      <div class=\"flex flex-col gap-2\">\n        {#each boxes as i (i)}\n          <div class=\"h-12 shrink-0 rounded-xl border bg-muted\"></div>\n        {/each}\n      </div>\n    </DrawerPanel>\n    <DrawerFooter>\n      <DrawerClose class={buttonVariants({ variant: 'outline' })}>Close</DrawerClose>\n    </DrawerFooter>\n  </DrawerPopup>\n</Drawer>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"drawer"
+	],
+	"dependencies": []
+}

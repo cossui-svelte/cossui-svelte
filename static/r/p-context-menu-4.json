@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-context-menu-4",
+	"title": "Context menu 4",
+	"description": "Context menu with checkbox items",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-context-menu-4.svelte",
+			"target": "$lib/components/particles/context-menu/p-context-menu-4.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    ContextMenu,\n    ContextMenuCheckboxItem,\n    ContextMenuPopup,\n    ContextMenuTrigger\n  } from '$lib/components/ui/context-menu';\n\n  let showHidden = $state(true);\n  let compactView = $state(false);\n</script>\n\n<ContextMenu>\n  <ContextMenuTrigger\n    class=\"flex h-32 w-full max-w-sm items-center justify-center rounded-lg border border-dashed text-muted-foreground text-sm\"\n  >\n    Right click here\n  </ContextMenuTrigger>\n  <ContextMenuPopup>\n    <ContextMenuCheckboxItem bind:checked={showHidden}>Show hidden files</ContextMenuCheckboxItem>\n    <ContextMenuCheckboxItem bind:checked={compactView}>Compact view</ContextMenuCheckboxItem>\n  </ContextMenuPopup>\n</ContextMenu>\n"
+		}
+	],
+	"registryDependencies": [
+		"context-menu"
+	],
+	"dependencies": []
+}

@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-autocomplete-2",
+	"title": "Autocomplete 2",
+	"description": "Disabled autocomplete",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-autocomplete-2.svelte",
+			"target": "$lib/components/particles/autocomplete/p-autocomplete-2.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    Autocomplete,\n    AutocompleteEmpty,\n    AutocompleteInput,\n    AutocompleteItem,\n    AutocompleteList,\n    AutocompletePopup\n  } from '$lib/components/ui/autocomplete';\n\n  const items = [\n    { label: 'Apple', value: 'apple' },\n    { label: 'Banana', value: 'banana' },\n    { label: 'Grape', value: 'grape' },\n    { label: 'Kiwi', value: 'kiwi' },\n    { label: 'Mango', value: 'mango' },\n    { label: 'Orange', value: 'orange' },\n    { label: 'Peach', value: 'peach' },\n    { label: 'Pear', value: 'pear' },\n    { label: 'Pineapple', value: 'pineapple' },\n    { label: 'Strawberry', value: 'strawberry' }\n  ];\n</script>\n\n<Autocomplete disabled {items}>\n  <AutocompleteInput aria-label=\"Search items\" placeholder=\"Search items…\" />\n  <AutocompletePopup>\n    <AutocompleteEmpty>No items found.</AutocompleteEmpty>\n    <AutocompleteList>\n      {#each items as item (item.value)}\n        <AutocompleteItem label={item.label} value={item.value}>{item.label}</AutocompleteItem>\n      {/each}\n    </AutocompleteList>\n  </AutocompletePopup>\n</Autocomplete>\n"
+		}
+	],
+	"registryDependencies": [
+		"autocomplete"
+	],
+	"dependencies": []
+}

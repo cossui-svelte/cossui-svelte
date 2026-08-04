@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-checkbox-4",
+	"title": "Checkbox 4",
+	"description": "Card-style checkbox",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-checkbox-4.svelte",
+			"target": "$lib/components/particles/checkbox/p-checkbox-4.svelte",
+			"content": "<script lang=\"ts\">\n  import { Checkbox } from '$lib/components/ui/checkbox';\n  import { Label } from '$lib/components/ui/label';\n</script>\n\n<Label\n  class=\"flex items-start gap-2 rounded-lg border p-3 hover:bg-accent/50 has-data-checked:border-primary/48 has-data-checked:bg-accent/50\"\n>\n  <Checkbox checked />\n  <div class=\"flex flex-col gap-1\">\n    <p>Enable notifications</p>\n    <p class=\"text-muted-foreground text-xs\">\n      You can enable or disable notifications at any time.\n    </p>\n  </div>\n</Label>\n"
+		}
+	],
+	"registryDependencies": [
+		"checkbox",
+		"label"
+	],
+	"dependencies": []
+}

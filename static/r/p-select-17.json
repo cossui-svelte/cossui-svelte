@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-select-17",
+	"title": "Select 17",
+	"description": "Select with country flags",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-select-17.svelte",
+			"target": "$lib/components/particles/select/p-select-17.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    Select,\n    SelectGroup,\n    SelectGroupLabel,\n    SelectItem,\n    SelectPopup,\n    SelectSeparator,\n    SelectTrigger\n  } from '$lib/components/ui/select';\n\n  const countries = [\n    {\n      continent: 'America',\n      items: [\n        { flag: '🇺🇸', label: 'United States', value: 'us' },\n        { flag: '🇨🇦', label: 'Canada', value: 'ca' },\n        { flag: '🇲🇽', label: 'Mexico', value: 'mx' }\n      ]\n    },\n    {\n      continent: 'Europe',\n      items: [\n        { flag: '🇬🇧', label: 'United Kingdom', value: 'gb' },\n        { flag: '🇫🇷', label: 'France', value: 'fr' },\n        { flag: '🇩🇪', label: 'Germany', value: 'de' }\n      ]\n    },\n    {\n      continent: 'Asia',\n      items: [\n        { flag: '🇨🇳', label: 'China', value: 'cn' },\n        { flag: '🇯🇵', label: 'Japan', value: 'jp' },\n        { flag: '🇮🇳', label: 'India', value: 'in' }\n      ]\n    }\n  ];\n\n  const allItems = countries.flatMap((c) => c.items);\n\n  let selected = $state('ca');\n  const selectedItem = $derived(allItems.find((i) => i.value === selected) ?? allItems[0]);\n</script>\n\n<Select\n  value={selected}\n  onValueChange={(v) => {\n    selected = v;\n  }}\n>\n  <SelectTrigger aria-label=\"Select country\">\n    <span class=\"flex items-center gap-2\">\n      <span class=\"text-base leading-none\">{selectedItem.flag}</span>\n      <span class=\"truncate\">{selectedItem.label}</span>\n    </span>\n  </SelectTrigger>\n  <SelectPopup>\n    {#each countries as group, index (group.continent)}\n      <SelectGroup>\n        {#if index > 0}\n          <SelectSeparator />\n        {/if}\n        <SelectGroupLabel>{group.continent}</SelectGroupLabel>\n        {#each group.items as item (item.value)}\n          <SelectItem value={item.value}>\n            <span class=\"flex items-center gap-2\">\n              <span class=\"text-base leading-none\">{item.flag}</span>\n              <span class=\"truncate\">{item.label}</span>\n            </span>\n          </SelectItem>\n        {/each}\n      </SelectGroup>\n    {/each}\n  </SelectPopup>\n</Select>\n"
+		}
+	],
+	"registryDependencies": [
+		"select"
+	],
+	"dependencies": []
+}

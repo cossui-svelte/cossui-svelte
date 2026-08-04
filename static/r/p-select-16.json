@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-select-16",
+	"title": "Select 16",
+	"description": "Select with left text label",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-select-16.svelte",
+			"target": "$lib/components/particles/select/p-select-16.svelte",
+			"content": "<script lang=\"ts\">\n  import { Select, SelectItem, SelectPopup, SelectTrigger } from '$lib/components/ui/select';\n\n  const items = [\n    { label: 'JavaScript', value: 'javascript' },\n    { label: 'TypeScript', value: 'typescript' },\n    { label: 'Python', value: 'python' },\n    { label: 'Go', value: 'go' }\n  ];\n\n  let selected = $state('javascript');\n  const selectedLabel = $derived(items.find((i) => i.value === selected)?.label ?? '');\n</script>\n\n<Select\n  value={selected}\n  onValueChange={(v) => {\n    selected = v;\n  }}\n>\n  <SelectTrigger aria-label=\"Select language\">\n    <span>\n      <span class=\"text-muted-foreground\">Language:</span>\n      {selectedLabel}\n    </span>\n  </SelectTrigger>\n  <SelectPopup>\n    {#each items as item (item.value)}\n      <SelectItem value={item.value}>{item.label}</SelectItem>\n    {/each}\n  </SelectPopup>\n</Select>\n"
+		}
+	],
+	"registryDependencies": [
+		"select"
+	],
+	"dependencies": []
+}

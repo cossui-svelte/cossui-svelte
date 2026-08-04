@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-pagination-3",
+	"title": "Pagination 3",
+	"description": "Pagination with select, and previous and next buttons",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-pagination-3.svelte",
+			"target": "$lib/components/particles/pagination/p-pagination-3.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    Pagination,\n    PaginationContent,\n    PaginationItem,\n    PaginationNext,\n    PaginationPrevious\n  } from '$lib/components/ui/pagination';\n  import {\n    Select,\n    SelectItem,\n    SelectPopup,\n    SelectTrigger,\n    SelectValue\n  } from '$lib/components/ui/select';\n\n  interface Props {\n    currentPage?: number;\n    resultsPerPage?: number;\n    totalPages?: number;\n    totalResults?: number;\n  }\n\n  let {\n    currentPage: initialPage = 1,\n    totalPages = 10,\n    totalResults = 100,\n    resultsPerPage = 10\n  }: Props = $props();\n\n  const resultRanges = $derived(\n    Array.from({ length: totalPages }, (_, i) => {\n      const start = i * resultsPerPage + 1;\n      const end = Math.min((i + 1) * resultsPerPage, totalResults);\n      return { label: `${start}-${end}`, value: String(i + 1) };\n    })\n  );\n\n  let selectedRange = $state(String(initialPage));\n\n  let currentPage = $derived(Number(selectedRange));\n</script>\n\n<div class=\"flex items-center justify-between gap-2\">\n  <div class=\"flex items-center gap-2 whitespace-nowrap\">\n    <p class=\"text-muted-foreground text-sm\">Viewing</p>\n    <Select bind:value={selectedRange} items={resultRanges}>\n      <SelectTrigger aria-label=\"Select result range\" class=\"w-fit min-w-none\" size=\"sm\">\n        <SelectValue />\n      </SelectTrigger>\n      <SelectPopup>\n        {#each resultRanges as { label, value } (value)}\n          <SelectItem {value}>{label}</SelectItem>\n        {/each}\n      </SelectPopup>\n    </Select>\n    <p class=\"text-muted-foreground text-sm\">\n      of <strong class=\"font-medium text-foreground\">{totalResults}</strong> results\n    </p>\n  </div>\n\n  <Pagination>\n    <PaginationContent class=\"w-full justify-between gap-2\">\n      <PaginationItem>\n        <PaginationPrevious\n          class=\"sm:*:[svg]:hidden\"\n          href=\"#\"\n          isDisabled={currentPage === 1}\n          onclick={(e: MouseEvent) => {\n            e.preventDefault();\n            if (currentPage > 1) selectedRange = String(currentPage - 1);\n          }}\n        />\n      </PaginationItem>\n      <PaginationItem>\n        <PaginationNext\n          class=\"sm:*:[svg]:hidden\"\n          href=\"#\"\n          isDisabled={currentPage === totalPages}\n          onclick={(e: MouseEvent) => {\n            e.preventDefault();\n            if (currentPage < totalPages) selectedRange = String(currentPage + 1);\n          }}\n        />\n      </PaginationItem>\n    </PaginationContent>\n  </Pagination>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"pagination",
+		"select"
+	],
+	"dependencies": []
+}

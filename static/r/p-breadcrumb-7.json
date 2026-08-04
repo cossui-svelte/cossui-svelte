@@ -1,0 +1,22 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-breadcrumb-7",
+	"title": "Breadcrumb 7",
+	"description": "Breadcrumb with select dropdown",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-breadcrumb-7.svelte",
+			"target": "$lib/components/particles/breadcrumb/p-breadcrumb-7.svelte",
+			"content": "<script lang=\"ts\">\n  import Database from '@lucide/svelte/icons/database';\n  import {\n    Breadcrumb,\n    BreadcrumbItem,\n    BreadcrumbLink,\n    BreadcrumbList,\n    BreadcrumbSeparator\n  } from '$lib/components/ui/breadcrumb';\n  import {\n    Select,\n    SelectItem,\n    SelectPopup,\n    SelectTrigger,\n    SelectValue\n  } from '$lib/components/ui/select';\n\n  const items = [\n    { label: 'Orion', value: 'Orion' },\n    { label: 'Sigma', value: 'Sigma' },\n    { label: 'Dorado', value: 'Dorado' }\n  ];\n</script>\n\n<Breadcrumb>\n  <BreadcrumbList>\n    <BreadcrumbItem>\n      <BreadcrumbLink href=\"/\">Databases</BreadcrumbLink>\n    </BreadcrumbItem>\n    <BreadcrumbSeparator />\n    <BreadcrumbItem>\n      <Select value=\"Orion\">\n        <SelectTrigger aria-label=\"Select database\" size=\"sm\">\n          <Database />\n          <SelectValue />\n        </SelectTrigger>\n        <SelectPopup>\n          {#each items as { label, value } (value)}\n            <SelectItem {value} {label} />\n          {/each}\n        </SelectPopup>\n      </Select>\n    </BreadcrumbItem>\n  </BreadcrumbList>\n</Breadcrumb>\n"
+		}
+	],
+	"registryDependencies": [
+		"breadcrumb",
+		"select"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

@@ -1,0 +1,33 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "scroll-area",
+	"title": "Scroll Area",
+	"description": "A native scroll container with custom scrollbars.",
+	"type": "registry:ui",
+	"files": [
+		{
+			"type": "registry:ui",
+			"path": "scroll-area/index.ts",
+			"target": "$lib/components/ui/scroll-area/index.ts",
+			"content": "export { default as ScrollArea } from './scroll-area.svelte';\nexport { default as Scrollbar } from './scroll-area-scrollbar.svelte';\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "scroll-area/scroll-area-scrollbar.svelte",
+			"target": "$lib/components/ui/scroll-area/scroll-area-scrollbar.svelte",
+			"content": "<script lang=\"ts\">\n  import { ScrollArea as ScrollAreaPrimitive } from 'bits-ui';\n  import { cn, type WithoutChild } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    orientation = 'vertical',\n    ...restProps\n  }: WithoutChild<ScrollAreaPrimitive.ScrollbarProps> = $props();\n</script>\n\n<ScrollAreaPrimitive.Scrollbar\n  bind:ref\n  data-slot=\"scroll-area-scrollbar\"\n  {orientation}\n  class={cn(\n    'm-1 flex opacity-0 transition-opacity delay-300 data-[orientation=horizontal]:h-1.5 data-[orientation=vertical]:w-1.5 data-[orientation=horizontal]:flex-col data-[state=visible]:opacity-100 data-[state=visible]:delay-0 data-[state=visible]:duration-100',\n    className\n  )}\n  {...restProps}\n>\n  <ScrollAreaPrimitive.Thumb\n    data-slot=\"scroll-area-thumb\"\n    class=\"relative flex-1 rounded-full bg-foreground/20\"\n  />\n</ScrollAreaPrimitive.Scrollbar>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "scroll-area/scroll-area.svelte",
+			"target": "$lib/components/ui/scroll-area/scroll-area.svelte",
+			"content": "<script lang=\"ts\">\n  import { ScrollArea as ScrollAreaPrimitive } from 'bits-ui';\n  import { cn, type WithoutChild } from '$lib/utils';\n  import Scrollbar from './scroll-area-scrollbar.svelte';\n\n  let {\n    ref = $bindable(null),\n    viewportRef = $bindable(null),\n    class: className,\n    orientation = 'both',\n    scrollbarXClasses = '',\n    scrollbarYClasses = '',\n    children,\n    scrollFade = false,\n    scrollbarGutter = false,\n    fill = false,\n    clampContentMinWidth = true,\n    ...restProps\n  }: WithoutChild<ScrollAreaPrimitive.RootProps> & {\n    orientation?: 'vertical' | 'horizontal' | 'both' | undefined;\n    scrollbarXClasses?: string | undefined;\n    scrollbarYClasses?: string | undefined;\n    viewportRef?: HTMLElement | null;\n    scrollFade?: boolean;\n    scrollbarGutter?: boolean;\n    fill?: boolean;\n    clampContentMinWidth?: boolean;\n  } = $props();\n</script>\n\n<ScrollAreaPrimitive.Root\n  bind:ref\n  data-slot=\"scroll-area\"\n  class={cn('flex size-full min-h-0 flex-col', className)}\n  {...restProps}\n>\n  <ScrollAreaPrimitive.Viewport\n    bind:ref={viewportRef}\n    class={cn(\n      'min-h-0 flex-1 rounded-[inherit] outline-none transition-shadows focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background data-has-overflow-y:overscroll-y-contain data-has-overflow-x:overscroll-x-contain',\n      scrollFade &&\n        'mask-t-from-[calc(100%-min(var(--fade-size),var(--scroll-area-overflow-y-start)))] mask-b-from-[calc(100%-min(var(--fade-size),var(--scroll-area-overflow-y-end)))] mask-l-from-[calc(100%-min(var(--fade-size),var(--scroll-area-overflow-x-start)))] mask-r-from-[calc(100%-min(var(--fade-size),var(--scroll-area-overflow-x-end)))] [--fade-size:1.5rem]',\n      scrollbarGutter && 'data-has-overflow-y:pe-2.5 data-has-overflow-x:pb-2.5'\n    )}\n    data-slot=\"scroll-area-viewport\"\n  >\n    <div\n      class={cn(fill && 'size-full')}\n      style={clampContentMinWidth ? 'min-width: 0' : ''}\n      data-slot=\"scroll-area-content\"\n    >\n      {@render children?.()}\n    </div>\n  </ScrollAreaPrimitive.Viewport>\n  {#if orientation === 'vertical' || orientation === 'both'}\n    <Scrollbar orientation=\"vertical\" class={scrollbarYClasses} />\n  {/if}\n  {#if orientation === 'horizontal' || orientation === 'both'}\n    <Scrollbar orientation=\"horizontal\" class={scrollbarXClasses} />\n  {/if}\n  <ScrollAreaPrimitive.Corner data-slot=\"scroll-area-corner\" />\n</ScrollAreaPrimitive.Root>\n"
+		}
+	],
+	"registryDependencies": [
+		"utils"
+	],
+	"dependencies": [
+		"bits-ui@^2.18.1"
+	]
+}

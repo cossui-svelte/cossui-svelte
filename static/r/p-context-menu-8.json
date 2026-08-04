@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-context-menu-8",
+	"title": "Context menu 8",
+	"description": "Context menu with switch checkbox items",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-context-menu-8.svelte",
+			"target": "$lib/components/particles/context-menu/p-context-menu-8.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    ContextMenu,\n    ContextMenuCheckboxItem,\n    ContextMenuPopup,\n    ContextMenuTrigger\n  } from '$lib/components/ui/context-menu';\n\n  let autoSave = $state(true);\n  let showPreview = $state(false);\n</script>\n\n<ContextMenu>\n  <ContextMenuTrigger\n    class=\"flex h-32 w-full max-w-sm items-center justify-center rounded-lg border border-dashed text-muted-foreground text-sm\"\n  >\n    Right click here\n  </ContextMenuTrigger>\n  <ContextMenuPopup>\n    <ContextMenuCheckboxItem bind:checked={autoSave} variant=\"switch\"\n      >Auto save</ContextMenuCheckboxItem\n    >\n    <ContextMenuCheckboxItem bind:checked={showPreview} variant=\"switch\"\n      >Show preview</ContextMenuCheckboxItem\n    >\n  </ContextMenuPopup>\n</ContextMenu>\n"
+		}
+	],
+	"registryDependencies": [
+		"context-menu"
+	],
+	"dependencies": []
+}

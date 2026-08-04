@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-otp-field-9",
+	"title": "Otp field 9",
+	"description": "OTP field with placeholder hints",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-otp-field-9.svelte",
+			"target": "$lib/components/particles/otp-field/p-otp-field-9.svelte",
+			"content": "<script lang=\"ts\">\n  import { Label } from '$lib/components/ui/label';\n  import { OTPField, OTPFieldInput } from '$lib/components/ui/otp-field';\n\n  const OTP_LENGTH = 6;\n</script>\n\n<div class=\"flex flex-col items-center gap-2\">\n  <Label>Verification code</Label>\n  <OTPField maxlength={OTP_LENGTH}>\n    {#snippet children({ cells })}\n      {#each cells as cell, i (i)}\n        <OTPFieldInput aria-label={`Character ${i + 1} of ${OTP_LENGTH}`} placeholder=\"•\" {cell} />\n      {/each}\n    {/snippet}\n  </OTPField>\n  <p class=\"text-muted-foreground text-xs\">\n    Placeholder hints stay visible until the focused slot is active.\n  </p>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"otp-field",
+		"field",
+		"label"
+	],
+	"dependencies": []
+}

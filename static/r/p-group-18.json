@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-group-18",
+	"title": "Group 18",
+	"description": "Group with select and input",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-group-18.svelte",
+			"target": "$lib/components/particles/group/p-group-18.svelte",
+			"content": "<script lang=\"ts\">\n  import { Group, GroupSeparator } from '$lib/components/ui/group';\n  import { Input } from '$lib/components/ui/input';\n  import {\n    Select,\n    SelectItem,\n    SelectPopup,\n    SelectTrigger,\n    SelectValue\n  } from '$lib/components/ui/select';\n\n  const protocols = [\n    { label: 'https://', value: 'https' },\n    { label: 'http://', value: 'http' },\n    { label: 'ftp://', value: 'ftp' },\n    { label: 'sftp://', value: 'sftp' }\n  ];\n\n  let protocol = $state('https');\n</script>\n\n<Group aria-label=\"URL input\">\n  <Select bind:value={protocol}>\n    <SelectTrigger class=\"w-fit min-w-none\">\n      <SelectValue />\n    </SelectTrigger>\n    <SelectPopup>\n      {#each protocols as p (p.value)}\n        <SelectItem value={p.value}>{p.label}</SelectItem>\n      {/each}\n    </SelectPopup>\n  </Select>\n  <GroupSeparator />\n  <Input aria-label=\"IP address\" placeholder=\"192.168.1.1\" type=\"text\" />\n</Group>\n"
+		}
+	],
+	"registryDependencies": [
+		"group",
+		"input",
+		"select"
+	],
+	"dependencies": []
+}

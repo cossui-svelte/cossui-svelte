@@ -1,0 +1,23 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-input-group-28",
+	"title": "Input group 28",
+	"description": "Message composer with attachment buttons",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-input-group-28.svelte",
+			"target": "$lib/components/particles/input-group/p-input-group-28.svelte",
+			"content": "<script lang=\"ts\">\n  import Image from '@lucide/svelte/icons/image';\n  import Paperclip from '@lucide/svelte/icons/paperclip';\n  import { Button, buttonVariants } from '$lib/components/ui/button';\n  import { InputGroup, InputGroupAddon, InputGroupTextarea } from '$lib/components/ui/input-group';\n  import {\n    Tooltip,\n    TooltipPopup,\n    TooltipProvider,\n    TooltipTrigger\n  } from '$lib/components/ui/tooltip';\n</script>\n\n<InputGroup>\n  <InputGroupTextarea placeholder=\"Compose your message…\" rows={4} />\n  <InputGroupAddon align=\"block-end\" class=\"justify-between\">\n    <TooltipProvider>\n      <div class=\"flex gap-1\">\n        <Tooltip>\n          <TooltipTrigger\n            aria-label=\"Attach file\"\n            class={buttonVariants({ size: 'icon-sm', variant: 'ghost' })}\n          >\n            <Paperclip />\n          </TooltipTrigger>\n          <TooltipPopup>Attach file</TooltipPopup>\n        </Tooltip>\n        <Tooltip>\n          <TooltipTrigger\n            aria-label=\"Insert image\"\n            class={buttonVariants({ size: 'icon-sm', variant: 'ghost' })}\n          >\n            <Image />\n          </TooltipTrigger>\n          <TooltipPopup>Insert image</TooltipPopup>\n        </Tooltip>\n      </div>\n    </TooltipProvider>\n    <Button size=\"sm\">Send</Button>\n  </InputGroupAddon>\n</InputGroup>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"input-group",
+		"tooltip"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

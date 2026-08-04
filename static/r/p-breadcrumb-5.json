@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-breadcrumb-5",
+	"title": "Breadcrumb 5",
+	"description": "Breadcrumb with icons before text",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-breadcrumb-5.svelte",
+			"target": "$lib/components/particles/breadcrumb/p-breadcrumb-5.svelte",
+			"content": "<script lang=\"ts\">\n  import Component from '@lucide/svelte/icons/component';\n  import Home from '@lucide/svelte/icons/house';\n  import {\n    Breadcrumb,\n    BreadcrumbItem,\n    BreadcrumbLink,\n    BreadcrumbList,\n    BreadcrumbPage,\n    BreadcrumbSeparator\n  } from '$lib/components/ui/breadcrumb';\n</script>\n\n<Breadcrumb>\n  <BreadcrumbList>\n    <BreadcrumbItem>\n      <BreadcrumbLink class=\"inline-flex items-center gap-1.5\" href=\"/\">\n        <Home aria-hidden=\"true\" class=\"size-4\" />\n        Home\n      </BreadcrumbLink>\n    </BreadcrumbItem>\n    <BreadcrumbSeparator />\n    <BreadcrumbItem>\n      <BreadcrumbLink class=\"inline-flex items-center gap-1.5\" href=\"/docs/\">\n        <Component aria-hidden=\"true\" class=\"size-4\" />\n        Components\n      </BreadcrumbLink>\n    </BreadcrumbItem>\n    <BreadcrumbSeparator />\n    <BreadcrumbItem>\n      <BreadcrumbPage>Breadcrumb</BreadcrumbPage>\n    </BreadcrumbItem>\n  </BreadcrumbList>\n</Breadcrumb>\n"
+		}
+	],
+	"registryDependencies": [
+		"breadcrumb"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

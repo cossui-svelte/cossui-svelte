@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-button-16",
+	"title": "Button 16",
+	"description": "Button with icon",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-button-16.svelte",
+			"target": "$lib/components/particles/button/p-button-16.svelte",
+			"content": "<script lang=\"ts\">\n  import Download from '@lucide/svelte/icons/download';\n  import { Button } from '$lib/components/ui/button';\n</script>\n\n<Button>\n  <Download aria-hidden=\"true\" />\n  Download\n</Button>\n"
+		}
+	],
+	"registryDependencies": [
+		"button"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-avatar-2",
+	"title": "Avatar 2",
+	"description": "Fallback-only avatar",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-avatar-2.svelte",
+			"target": "$lib/components/particles/avatar/p-avatar-2.svelte",
+			"content": "<script lang=\"ts\">\n  import { Avatar, AvatarFallback } from '$lib/components/ui/avatar';\n</script>\n\n<Avatar>\n  <AvatarFallback>LT</AvatarFallback>\n</Avatar>\n"
+		}
+	],
+	"registryDependencies": [
+		"avatar"
+	],
+	"dependencies": []
+}

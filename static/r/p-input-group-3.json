@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-input-group-3",
+	"title": "Input group 3",
+	"description": "Input group with start text",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-input-group-3.svelte",
+			"target": "$lib/components/particles/input-group/p-input-group-3.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    InputGroup,\n    InputGroupAddon,\n    InputGroupInput,\n    InputGroupText\n  } from '$lib/components/ui/input-group';\n</script>\n\n<InputGroup>\n  <InputGroupInput\n    aria-label=\"Set your URL\"\n    class=\"*:[input]:ps-0!\"\n    placeholder=\"coss\"\n    type=\"search\"\n  />\n  <InputGroupAddon>\n    <InputGroupText>i.cal.com/</InputGroupText>\n  </InputGroupAddon>\n</InputGroup>\n"
+		}
+	],
+	"registryDependencies": [
+		"input-group"
+	],
+	"dependencies": []
+}

@@ -35,42 +35,42 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-alert-2': {
     description: 'Alert with icon',
     tags: ['alert'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['alert'],
     meta: { class: '**:data-[slot=preview]:w-full' }
   },
   'p-alert-3': {
     description: 'Alert with icon and action buttons',
     tags: ['alert'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['alert', 'button'],
     meta: { class: '**:data-[slot=preview]:w-full' }
   },
   'p-alert-4': {
     description: 'Info alert',
     tags: ['alert', 'info'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['alert'],
     meta: { class: '**:data-[slot=preview]:w-full' }
   },
   'p-alert-5': {
     description: 'Success alert',
     tags: ['alert', 'success'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['alert'],
     meta: { class: '**:data-[slot=preview]:w-full' }
   },
   'p-alert-6': {
     description: 'Warning alert',
     tags: ['alert', 'warning'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['alert'],
     meta: { class: '**:data-[slot=preview]:w-full' }
   },
   'p-alert-7': {
     description: 'Error alert',
     tags: ['alert', 'error'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['alert'],
     meta: { class: '**:data-[slot=preview]:w-full' }
   },
@@ -202,7 +202,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-avatar-6': {
     description: 'Avatar with user icon fallback',
     tags: ['avatar'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['avatar']
   },
   'p-avatar-7': {
@@ -298,7 +298,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-badge-11': {
     description: 'Badge with icon',
     tags: ['badge'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['badge']
   },
   'p-badge-12': {
@@ -339,14 +339,14 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-badge-19': {
     description: 'Selectable badge with checkbox',
     tags: ['badge', 'checkbox'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['badge', 'checkbox'],
     meta: { class: '**:data-[slot=preview]:flex' }
   },
   'p-badge-20': {
     description: 'Removable badge',
     tags: ['badge'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['badge']
   },
   'p-breadcrumb-1': {
@@ -362,31 +362,31 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-breadcrumb-3': {
     description: 'Breadcrumb with home icon for home link only',
     tags: ['breadcrumb'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['breadcrumb']
   },
   'p-breadcrumb-4': {
     description: 'Breadcrumb with folders icon menu',
     tags: ['breadcrumb', 'dropdown', 'menu'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['breadcrumb', 'button', 'menu']
   },
   'p-breadcrumb-5': {
     description: 'Breadcrumb with icons before text',
     tags: ['breadcrumb'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['breadcrumb']
   },
   'p-breadcrumb-6': {
     description: 'Breadcrumb with dot separators',
     tags: ['breadcrumb'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['breadcrumb']
   },
   'p-breadcrumb-7': {
     description: 'Breadcrumb with select dropdown',
     tags: ['breadcrumb', 'select'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['breadcrumb', 'select']
   },
   'p-button-1': {
@@ -452,25 +452,25 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-button-13': {
     description: 'Icon button',
     tags: ['button'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button']
   },
   'p-button-14': {
     description: 'Small icon button',
     tags: ['button'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button']
   },
   'p-button-15': {
     description: 'Large icon button',
     tags: ['button'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button']
   },
   'p-button-16': {
     description: 'Button with icon',
     tags: ['button'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button']
   },
   'p-button-17': {
@@ -491,31 +491,31 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-button-19': {
     description: 'Expandable show more/less toggle button',
     tags: ['button'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button']
   },
   'p-button-20': {
     description: 'Back link button with chevron',
     tags: ['button'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button']
   },
   'p-button-21': {
     description: 'Card-style button with heading and description',
     tags: ['button'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button']
   },
   'p-button-22': {
     description: 'Directional pad control buttons',
     tags: ['button'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button']
   },
   'p-button-23': {
     description: 'Outline like button with count',
     tags: ['button'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button']
   },
   'p-button-24': {
@@ -527,13 +527,13 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-button-26': {
     description: 'Star button with count badge',
     tags: ['button'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button']
   },
   'p-button-27': {
     description: 'Button group with QR code icon and sign in',
     tags: ['button', 'group'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'group']
   },
   'p-button-28': {
@@ -549,13 +549,13 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-button-30': {
     description: 'Button with animated arrow on hover',
     tags: ['button'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button']
   },
   'p-button-31': {
     description: 'Button with keyboard shortcut indicator',
     tags: ['button', 'kbd'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'kbd']
   },
   'p-button-32': {
@@ -576,19 +576,19 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-button-35': {
     description: 'Icon-only copy button with feedback',
     tags: ['button'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button']
   },
   'p-button-36': {
     description: 'Copy button with feedback',
     tags: ['button'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button']
   },
   'p-button-37': {
     description: 'Rotating icon button (FAB-style toggle)',
     tags: ['button'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button']
   },
   'p-button-39': {
@@ -599,7 +599,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-button-40': {
     description: 'Download button with progress and cancel action',
     tags: ['button', 'group', 'tooltip', 'toast'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'group', 'spinner', 'toast', 'tooltip']
   },
   'p-button-38': {
@@ -632,7 +632,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-calendar-6': {
     description: 'Calendar with Combobox dropdown for month/year',
     tags: ['calendar', 'combobox'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['calendar', 'combobox']
   },
   'p-calendar-7': {
@@ -698,13 +698,13 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-calendar-17': {
     description: 'Calendar with date input',
     tags: ['calendar', 'input', 'field'],
-    npmDependencies: ['date-fns', 'lucide-react'],
+    npmDependencies: ['date-fns', '@lucide/svelte'],
     registryDependencies: ['calendar', 'field', 'input-group']
   },
   'p-calendar-18': {
     description: 'Calendar with time input',
     tags: ['calendar', 'input', 'field'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['calendar', 'field', 'input-group']
   },
   'p-calendar-19': {
@@ -749,70 +749,70 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-date-picker-1': {
     description: 'Basic date picker',
     tags: ['date-picker', 'calendar', 'popover', 'button'],
-    npmDependencies: ['date-fns', 'lucide-react'],
+    npmDependencies: ['date-fns', '@lucide/svelte'],
     registryDependencies: ['calendar', 'popover', 'button'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-date-picker-2': {
     description: 'Date range picker',
     tags: ['date-picker', 'calendar', 'popover', 'button'],
-    npmDependencies: ['date-fns', 'lucide-react'],
+    npmDependencies: ['date-fns', '@lucide/svelte'],
     registryDependencies: ['calendar', 'popover', 'button'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-date-picker-9': {
     description: 'Two months calendar with range date',
     tags: ['date-picker', 'calendar', 'popover', 'button'],
-    npmDependencies: ['date-fns', 'lucide-react'],
+    npmDependencies: ['date-fns', '@lucide/svelte'],
     registryDependencies: ['calendar', 'popover', 'button'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-date-picker-3': {
     description: 'Date picker with field and dropdown navigation',
     tags: ['date-picker', 'calendar', 'popover', 'button', 'field', 'combobox'],
-    npmDependencies: ['date-fns', 'lucide-react'],
+    npmDependencies: ['date-fns', '@lucide/svelte'],
     registryDependencies: ['button', 'calendar', 'combobox', 'field', 'popover'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-date-picker-4': {
     description: 'Date picker with presets',
     tags: ['date-picker', 'calendar', 'popover', 'button'],
-    npmDependencies: ['date-fns', 'lucide-react'],
+    npmDependencies: ['date-fns', '@lucide/svelte'],
     registryDependencies: ['button', 'calendar', 'popover'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-date-picker-5': {
     description: 'Date picker with input',
     tags: ['date-picker', 'calendar', 'popover', 'button', 'input'],
-    npmDependencies: ['date-fns', 'lucide-react'],
+    npmDependencies: ['date-fns', '@lucide/svelte'],
     registryDependencies: ['button', 'calendar', 'input-group', 'popover'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-date-picker-6': {
     description: 'Date picker that closes on select',
     tags: ['date-picker', 'calendar', 'popover', 'button'],
-    npmDependencies: ['date-fns', 'lucide-react'],
+    npmDependencies: ['date-fns', '@lucide/svelte'],
     registryDependencies: ['calendar', 'popover', 'button'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-date-picker-7': {
     description: 'Multiple dates picker',
     tags: ['date-picker', 'calendar', 'popover', 'button', 'badge'],
-    npmDependencies: ['date-fns', 'lucide-react'],
+    npmDependencies: ['date-fns', '@lucide/svelte'],
     registryDependencies: ['badge', 'button', 'calendar', 'popover'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-date-picker-8': {
     description: 'Date picker with select-like trigger',
     tags: ['date-picker', 'calendar', 'popover', 'button'],
-    npmDependencies: ['date-fns', 'lucide-react'],
+    npmDependencies: ['date-fns', '@lucide/svelte'],
     registryDependencies: ['calendar', 'popover', 'select'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-card-1': {
     description: 'A basic card with header and footer',
     tags: ['card', 'form'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'card', 'field', 'form', 'input', 'select'],
     meta: {
       class:
@@ -831,7 +831,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-card-3': {
     description: 'Authentication card with separators',
     tags: ['card', 'form'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'card', 'field', 'form', 'input'],
     meta: {
       class:
@@ -841,7 +841,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-card-4': {
     description: 'Framed card with footer',
     tags: ['card', 'form'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'card', 'field', 'form', 'input', 'select'],
     meta: {
       class:
@@ -860,7 +860,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-card-6': {
     description: 'Framed card with header and footer',
     tags: ['card', 'form'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'card', 'field', 'form', 'input', 'select'],
     meta: {
       class:
@@ -870,7 +870,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-card-7': {
     description: 'Framed card with no rounded bottom',
     tags: ['card', 'form'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'card', 'field', 'form', 'input', 'select'],
     meta: {
       class:
@@ -889,7 +889,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-card-9': {
     description: 'Card within a frame and footer',
     tags: ['card', 'form', 'frame'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'card', 'field', 'form', 'frame', 'input', 'select'],
     meta: {
       class:
@@ -899,7 +899,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-card-10': {
     description: 'Card within a frame with header and footer',
     tags: ['card', 'form', 'frame'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'card', 'field', 'form', 'frame', 'input', 'select'],
     meta: {
       class:
@@ -909,7 +909,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-card-11': {
     description: 'CardFrame with header action',
     tags: ['card', 'frame'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'card', 'empty'],
     meta: {
       class:
@@ -969,7 +969,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-collapsible-1': {
     description: 'Basic collapsible',
     tags: ['collapsible'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['collapsible']
   },
   'p-combobox-1': {
@@ -1029,7 +1029,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-combobox-10': {
     description: 'Combobox with input inside popup',
     tags: ['combobox', 'input'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'combobox'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
@@ -1048,14 +1048,14 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-combobox-13': {
     description: 'Combobox with start addon',
     tags: ['combobox', 'input'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['combobox'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-combobox-14': {
     description: 'Combobox multiple with start addon',
     tags: ['combobox', 'input'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['combobox'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
@@ -1074,7 +1074,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-combobox-17': {
     description: 'Timezone combobox with search input',
     tags: ['combobox', 'input', 'timezone'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['combobox', 'select'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
@@ -1087,13 +1087,13 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-command-1': {
     description: 'Command palette with dialog',
     tags: ['command', 'dialog'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'command', 'kbd']
   },
   'p-command-2': {
     description: 'Command palette with AI assistant',
     tags: ['command', 'dialog'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: [
       'autocomplete',
       'button',
@@ -1194,21 +1194,13 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-drawer-12': {
     description: 'Responsive edit profile: dialog on desktop, drawer on mobile',
     tags: ['drawer', 'dialog'],
-    registryDependencies: [
-      'button',
-      'dialog',
-      'drawer',
-      'field',
-      'form',
-      'input',
-      'use-media-query'
-    ]
+    registryDependencies: ['button', 'dialog', 'drawer', 'field', 'form', 'input']
   },
   'p-drawer-13': {
     description: 'Responsive actions menu: menu on desktop, drawer on mobile',
     tags: ['drawer', 'menu'],
-    npmDependencies: ['lucide-react'],
-    registryDependencies: ['button', 'drawer', 'menu', 'use-media-query']
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['button', 'drawer', 'menu']
   },
   'p-drawer-14': {
     description: 'Left drawer with swipe area',
@@ -1219,7 +1211,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-empty-1': {
     description: 'Empty state with icon and actions',
     tags: ['empty'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'empty']
   },
   'p-field-1': {
@@ -1368,7 +1360,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-frame-2': {
     description: 'Frame with collapsible content and delete button',
     tags: ['collapsible', 'frame'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'collapsible', 'frame'],
     meta: { class: '**:data-[slot=preview]:w-full' }
   },
@@ -1385,7 +1377,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-group-2': {
     description: 'Group with input',
     tags: ['group', 'input'],
-    registryDependencies: ['button', 'group', 'input', 'tooltip', 'use-copy-to-clipboard']
+    registryDependencies: ['button', 'group', 'input', 'tooltip']
   },
   'p-group-3': {
     description: 'Small group',
@@ -1455,7 +1447,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-group-16': {
     description: 'Group with add button and input',
     tags: ['button', 'group', 'input'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'group', 'input']
   },
   'p-group-17': {
@@ -1644,7 +1636,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-input-group-2': {
     description: 'Input group with end icon',
     tags: ['input-group'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['input-group'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
@@ -1675,15 +1667,15 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-input-group-7': {
     description: 'Input group with end tooltip',
     tags: ['input-group', 'tooltip'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'input-group', 'popover'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-input-group-8': {
     description: 'Input group with icon button',
     tags: ['button', 'input-group'],
-    npmDependencies: ['lucide-react'],
-    registryDependencies: ['button', 'input-group', 'tooltip', 'use-copy-to-clipboard'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['button', 'input-group', 'tooltip'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-input-group-9': {
@@ -1743,42 +1735,42 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-input-group-18': {
     description: 'Input group with badge and menu',
     tags: ['badge', 'dropdown', 'input-group', 'menu'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['badge', 'button', 'input-group', 'menu'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-input-group-19': {
     description: 'Mini editor built with input group and toggle',
     tags: ['button', 'input-group', 'textarea', 'toggle'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'input-group', 'toggle'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-80' }
   },
   'p-input-group-20': {
     description: 'Input group with search icon',
     tags: ['input', 'input-group', 'search'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['input-group'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-input-group-21': {
     description: 'Input group with start tooltip',
     tags: ['button', 'input', 'input-group', 'tooltip'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'input-group', 'tooltip'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-input-group-22': {
     description: 'Input group with clear button',
     tags: ['button', 'input', 'input-group'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'input-group'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-input-group-23': {
     description: 'Search input group with loader and voice button',
     tags: ['button', 'input', 'input-group', 'search', 'tooltip'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'input-group', 'tooltip'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
@@ -1803,28 +1795,28 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-input-group-26': {
     description: 'Password input with strength indicator',
     tags: ['button', 'input', 'input-group', 'label'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'input-group', 'label'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-input-group-27': {
     description: 'Code snippet input with language selector',
     tags: ['button', 'input-group', 'select', 'textarea', 'tooltip'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'input-group', 'select', 'tooltip'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-80' }
   },
   'p-input-group-28': {
     description: 'Message composer with attachment buttons',
     tags: ['button', 'input-group', 'textarea', 'tooltip'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'input-group', 'tooltip'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-80' }
   },
   'p-input-group-29': {
     description: 'Chat input with voice and send buttons',
     tags: ['button', 'input-group', 'textarea', 'tooltip'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'input-group', 'tooltip'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-80' }
   },
@@ -1930,7 +1922,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-context-menu-6': {
     description: 'Context menu with icons',
     tags: ['context-menu', 'menu'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['context-menu'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-sm' }
   },
@@ -2038,19 +2030,19 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-popover-2': {
     description: 'Popover with close button',
     tags: ['button', 'popover'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'popover']
   },
   'p-popover-3': {
     description: 'Animated popovers',
     tags: ['avatar', 'button', 'popover'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['avatar', 'button', 'popover']
   },
   'p-preview-card-1': {
     description: 'Preview card with popup',
     tags: ['preview-card'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'preview-card']
   },
   'p-progress-1': {
@@ -2099,7 +2091,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-radio-group-6': {
     description: 'Theme selector with image cards',
     tags: ['radio-group', 'form'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['field', 'fieldset', 'radio-group'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-[320px]' }
   },
@@ -2175,14 +2167,14 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-select-8': {
     description: 'Select with icon',
     tags: ['select'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['select'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-select-9': {
     description: 'Select options with icon',
     tags: ['select'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['select'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
@@ -2370,7 +2362,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-slider-11': {
     description: 'Slider with icons',
     tags: ['slider'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['field', 'slider'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
@@ -2389,7 +2381,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-slider-14': {
     description: 'Slider with increment and decrement buttons',
     tags: ['slider', 'button'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'field', 'slider'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
@@ -2428,7 +2420,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-slider-21': {
     description: 'Object position sliders with reset',
     tags: ['slider', 'number-field', 'button'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'fieldset', 'label', 'number-field', 'slider'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
@@ -2482,7 +2474,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-switch-7': {
     description: 'Weekly availability editor with time range combobox pickers',
     tags: ['switch', 'combobox', 'popover', 'time'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: [
       'button',
       'checkbox',
@@ -2499,7 +2491,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-switch-8': {
     description: 'Weekly availability editor with grouped time range controls',
     tags: ['switch', 'combobox', 'group', 'popover', 'time'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: [
       'button',
       'checkbox',
@@ -2516,7 +2508,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-switch-9': {
     description: 'Weekly availability editor with From/To labeled time groups',
     tags: ['switch', 'combobox', 'group', 'popover', 'time'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: [
       'button',
       'checkbox',
@@ -2552,7 +2544,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-table-4': {
     description: 'Table with TanStack Table, sorting, and pagination',
     tags: ['checkbox', 'pagination', 'select', 'table', 'tanstack'],
-    npmDependencies: ['@tanstack/react-table', 'lucide-react'],
+    npmDependencies: ['@tanstack/react-table', '@lucide/svelte'],
     registryDependencies: ['badge', 'button', 'checkbox', 'frame', 'pagination', 'select', 'table'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
@@ -2578,7 +2570,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-table-8': {
     description: 'CardFrame with TanStack Table, sorting, and pagination',
     tags: ['card', 'checkbox', 'pagination', 'select', 'table', 'tanstack'],
-    npmDependencies: ['@tanstack/react-table', 'lucide-react'],
+    npmDependencies: ['@tanstack/react-table', '@lucide/svelte'],
     registryDependencies: ['badge', 'button', 'card', 'checkbox', 'pagination', 'select', 'table'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
@@ -2612,25 +2604,25 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-tabs-6': {
     description: 'Tabs with icon before name',
     tags: ['tabs'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['tabs']
   },
   'p-tabs-7': {
     description: 'Tabs with icon before name and underline',
     tags: ['tabs'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['tabs']
   },
   'p-tabs-8': {
     description: 'Tabs with icon only',
     tags: ['tabs'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['tabs']
   },
   'p-tabs-9': {
     description: 'Tabs with underline and icon on top',
     tags: ['tabs'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['tabs']
   },
   'p-tabs-10': {
@@ -2641,20 +2633,20 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-tabs-11': {
     description: 'Vertical tabs with underline and icon before name',
     tags: ['tabs'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['tabs'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-80' }
   },
   'p-tabs-12': {
     description: 'Tabs with icon only and count badge',
     tags: ['tabs', 'badge'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['badge', 'tabs']
   },
   'p-tabs-13': {
     description: 'Tabs with icon only and grouped tooltips',
     tags: ['tabs', 'tooltip'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['tabs', 'tooltip']
   },
   'p-textarea-1': {
@@ -2780,7 +2772,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-toast-7': {
     description: 'Anchored tooltip-style toast after copy',
     tags: ['toast'],
-    registryDependencies: ['button', 'toast', 'tooltip', 'use-copy-to-clipboard']
+    registryDependencies: ['button', 'toast', 'tooltip']
   },
   'p-toast-8': {
     description: 'Anchored error toast after async failure',
@@ -2790,7 +2782,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-toast-9': {
     description: 'Long-running promise toast with cancel',
     tags: ['toast', 'button'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'toast']
   },
   'p-toast-10': {
@@ -2806,13 +2798,13 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-toast-12': {
     description: 'Anchored deduplicated success toast',
     tags: ['toast', 'button'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'toast', 'tooltip']
   },
   'p-toast-13': {
     description: 'Anchored deduplicated error toast',
     tags: ['toast', 'button', 'error'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'toast', 'tooltip']
   },
   'p-toggle-group-1': {
@@ -2873,7 +2865,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-toggle-3': {
     description: 'Toggle with icon',
     tags: ['toggle'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['toggle']
   },
   'p-toggle-4': {
@@ -2894,19 +2886,19 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-toggle-7': {
     description: 'Toggle icon group',
     tags: ['toggle'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['toggle']
   },
   'p-toggle-8': {
     description: 'Bookmark toggle with tooltip and success toast',
     tags: ['toggle', 'tooltip', 'toast'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['toggle', 'tooltip', 'toast']
   },
   'p-toolbar-1': {
     description: 'Toolbar with toggles, buttons, and select',
     tags: ['toolbar'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'select', 'toggle-group', 'toolbar', 'tooltip']
   },
   'p-tooltip-1': {

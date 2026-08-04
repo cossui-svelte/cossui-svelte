@@ -1,0 +1,25 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-slider-21",
+	"title": "Slider 21",
+	"description": "Object position sliders with reset",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-slider-21.svelte",
+			"target": "$lib/components/particles/slider/p-slider-21.svelte",
+			"content": "<script lang=\"ts\">\n  import RotateCcwIcon from '@lucide/svelte/icons/rotate-ccw';\n  import { Button } from '$lib/components/ui/button';\n  import { Label } from '$lib/components/ui/label';\n  import { NumberField, NumberFieldGroup, NumberFieldInput } from '$lib/components/ui/number-field';\n  import { Slider } from '$lib/components/ui/slider';\n\n  const min = -10;\n  const max = 10;\n  const defaultValues = { x: 0, y: 0, z: 0 };\n  const initialValues = { x: -2, y: 4, z: 2 };\n\n  let values = $state({ ...initialValues });\n</script>\n\n<fieldset class=\"flex w-full flex-col gap-4 border-0 p-0 m-0\">\n  <legend class=\"text-sm font-medium\">Object position</legend>\n  <div class=\"flex flex-col gap-2\">\n    {#each ['x', 'y', 'z'] as const as axis (axis)}\n      <div class=\"flex items-center gap-2\">\n        <Label class=\"w-3 text-muted-foreground text-xs\">{axis.toUpperCase()}</Label>\n        <Slider\n          aria-label={`${axis.toUpperCase()} position`}\n          class=\"flex-1\"\n          {max}\n          {min}\n          bind:value={values[axis]}\n        />\n        <NumberField\n          aria-label={`Enter ${axis.toUpperCase()} value`}\n          class=\"w-16\"\n          {max}\n          {min}\n          bind:value={values[axis]}\n          size=\"sm\"\n        >\n          <NumberFieldGroup>\n            <NumberFieldInput />\n          </NumberFieldGroup>\n        </NumberField>\n      </div>\n    {/each}\n  </div>\n  <Button\n    class=\"w-full\"\n    onclick={() => {\n      values = { ...defaultValues };\n    }}\n    variant=\"outline\"\n  >\n    <RotateCcwIcon aria-hidden=\"true\" class=\"-ms-1 opacity-60\" />\n    Reset\n  </Button>\n</fieldset>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"fieldset",
+		"label",
+		"number-field",
+		"slider"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

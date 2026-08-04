@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-combobox-16",
+	"title": "Combobox 16",
+	"description": "Timezone combobox",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-combobox-16.svelte",
+			"target": "$lib/components/particles/combobox/p-combobox-16.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    Combobox,\n    ComboboxEmpty,\n    ComboboxInput,\n    ComboboxItem,\n    ComboboxList,\n    ComboboxPopup\n  } from '$lib/components/ui/combobox';\n\n  const timezones = Intl.supportedValuesOf('timeZone');\n\n  const formattedTimezones = timezones\n    .map((timezone) => {\n      const formatter = new Intl.DateTimeFormat('en', {\n        timeZone: timezone,\n        timeZoneName: 'shortOffset'\n      });\n      const parts = formatter.formatToParts(new Date());\n      const offset = parts.find((part) => part.type === 'timeZoneName')?.value || '';\n      const modifiedOffset = offset === 'GMT' ? 'GMT+0' : offset;\n\n      const offsetMatch = offset.match(/GMT([+-]?)(\\d+)(?::(\\d+))?/);\n      const sign = offsetMatch?.[1] === '-' ? -1 : 1;\n      const hours = Number.parseInt(offsetMatch?.[2] || '0', 10);\n      const minutes = Number.parseInt(offsetMatch?.[3] || '0', 10);\n      const totalMinutes = sign * (hours * 60 + minutes);\n\n      return {\n        label: `(${modifiedOffset}) ${timezone.replace(/_/g, ' ')}`,\n        numericOffset: totalMinutes,\n        value: timezone\n      };\n    })\n    .sort((a, b) => a.numericOffset - b.numericOffset);\n\n  const defaultTimezone = formattedTimezones.find((tz) => tz.value === 'Europe/London');\n\n  const flatItems = formattedTimezones.map((tz) => ({ label: tz.label, value: tz.value }));\n</script>\n\n<Combobox autoHighlight defaultValue={defaultTimezone} items={flatItems}>\n  <ComboboxInput aria-label=\"Select timezone\" placeholder=\"Select timezone...\" />\n  <ComboboxPopup>\n    <ComboboxEmpty>No timezones found.</ComboboxEmpty>\n    <ComboboxList>\n      {#each formattedTimezones as tz (tz.value)}\n        <ComboboxItem value={tz.value} label={tz.label}>{tz.label}</ComboboxItem>\n      {/each}\n    </ComboboxList>\n  </ComboboxPopup>\n</Combobox>\n"
+		}
+	],
+	"registryDependencies": [
+		"combobox"
+	],
+	"dependencies": []
+}

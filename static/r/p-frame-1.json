@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-frame-1",
+	"title": "Frame 1",
+	"description": "Basic frame",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-frame-1.svelte",
+			"target": "$lib/components/particles/frame/p-frame-1.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    Frame,\n    FrameDescription,\n    FrameFooter,\n    FrameHeader,\n    FramePanel,\n    FrameTitle\n  } from '$lib/components/ui/frame';\n</script>\n\n<Frame class=\"w-full\">\n  <FrameHeader>\n    <FrameTitle>Section header</FrameTitle>\n    <FrameDescription>Brief description about the section</FrameDescription>\n  </FrameHeader>\n  <FramePanel>\n    <h2 class=\"font-semibold text-sm\">Section title</h2>\n    <p class=\"text-muted-foreground text-sm\">Section description</p>\n  </FramePanel>\n  <FrameFooter>\n    <p class=\"text-muted-foreground text-sm\">Footer</p>\n  </FrameFooter>\n</Frame>\n"
+		}
+	],
+	"registryDependencies": [
+		"frame"
+	],
+	"dependencies": []
+}

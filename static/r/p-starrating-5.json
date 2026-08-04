@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-starrating-5",
+	"title": "Starrating 5",
+	"description": "Star rating with a different color per star",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-starrating-5.svelte",
+			"target": "$lib/components/particles/starrating/p-starrating-5.svelte",
+			"content": "<script lang=\"ts\">\n  import Star from '@lucide/svelte/icons/star';\n  import { StarRating, type StarRatingState } from '$lib/components/ui/starrating';\n\n  let value = $state(4);\n\n  const colors = [\n    'text-red-500',\n    'text-orange-500',\n    'text-yellow-500',\n    'text-lime-500',\n    'text-green-500'\n  ];\n</script>\n\n{#snippet icon({ index, state }: { index: number; state: StarRatingState })}\n  <Star class=\"text-muted-foreground\" />\n  <span\n    class=\"absolute inset-0 overflow-hidden\"\n    style=\"width: {state === 'full' ? 100 : state === 'half' ? 50 : 0}%\"\n  >\n    <Star class={`fill-current ${colors[index - 1]}`} />\n  </span>\n{/snippet}\n\n<StarRating bind:value {icon} aria-label=\"Rate this product\" />\n"
+		}
+	],
+	"registryDependencies": [
+		"starrating"
+	],
+	"dependencies": []
+}

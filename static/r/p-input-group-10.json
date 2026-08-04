@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-input-group-10",
+	"title": "Input group 10",
+	"description": "Input group with badge",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-input-group-10.svelte",
+			"target": "$lib/components/particles/input-group/p-input-group-10.svelte",
+			"content": "<script lang=\"ts\">\n  import { Badge } from '$lib/components/ui/badge';\n  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';\n</script>\n\n<InputGroup>\n  <InputGroupInput placeholder=\"Type to search…\" type=\"search\" />\n  <InputGroupAddon align=\"inline-end\">\n    <Badge variant=\"info\">Badge</Badge>\n  </InputGroupAddon>\n</InputGroup>\n"
+		}
+	],
+	"registryDependencies": [
+		"badge",
+		"input-group"
+	],
+	"dependencies": []
+}

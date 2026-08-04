@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-skeleton-2",
+	"title": "Skeleton 2",
+	"description": "Skeleton only",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-skeleton-2.svelte",
+			"target": "$lib/components/particles/skeleton/p-skeleton-2.svelte",
+			"content": "<script lang=\"ts\">\n  import { Skeleton } from '$lib/components/ui/skeleton';\n</script>\n\n<Skeleton loading={true} class=\"flex w-full max-w-92 items-center gap-4\">\n  <div class=\"size-10 rounded-full\"></div>\n  <div class=\"flex flex-1 flex-col\">\n    <div class=\"my-0.5 h-4 max-w-54\"></div>\n    <div class=\"flex max-w-54 items-center gap-1\">\n      <div class=\"my-0.5 h-4 w-1/2\"></div>\n      <div class=\"my-0.5 h-4 w-1/2\"></div>\n    </div>\n  </div>\n  <div class=\"h-6 w-17\"></div>\n</Skeleton>\n"
+		}
+	],
+	"registryDependencies": [
+		"skeleton"
+	],
+	"dependencies": []
+}

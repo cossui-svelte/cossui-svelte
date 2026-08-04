@@ -1,0 +1,28 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-calendar-18",
+	"title": "Calendar 18",
+	"description": "Calendar with time input",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-calendar-18.svelte",
+			"target": "$lib/components/particles/calendar/p-calendar-18.svelte",
+			"content": "<script lang=\"ts\">\n  import { type DateValue, getLocalTimeZone, today } from '@internationalized/date';\n  import ClockIcon from '@lucide/svelte/icons/clock';\n  import { z } from 'zod';\n  import { Button } from '$lib/components/ui/button';\n  import { Calendar } from '$lib/components/ui/calendar';\n  import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';\n  import { Form } from '$lib/components/ui/form';\n  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';\n  import { createForm } from '$lib/hooks/use-superform';\n\n  const todayValue = today(getLocalTimeZone());\n\n  const schema = z.object({\n    time: z.string().min(1, { message: 'Please enter a time.' })\n  });\n\n  const superform = createForm({\n    initialData: { time: '12:00:00' },\n    onUpdated: (data) => {\n      alert(`Selected time: ${data.time}`);\n    },\n    schema\n  });\n\n  const { form: formData, submitting } = superform;\n\n  let value = $state<DateValue | undefined>(todayValue);\n  let placeholder = $state<DateValue>(todayValue);\n\n  function handleCalendarSelect(selectedDate: DateValue | undefined) {\n    value = selectedDate;\n    if (selectedDate) {\n      placeholder = selectedDate;\n    }\n  }\n\n  function handleTimeChange(e: Event & { currentTarget: HTMLInputElement }) {\n    $formData.time = e.currentTarget.value;\n  }\n</script>\n\n<div class=\"flex flex-col gap-2\">\n  <Calendar bind:placeholder bind:value onValueChange={handleCalendarSelect} mode=\"single\" />\n  <Form class=\"flex flex-col gap-2\" {superform}>\n    <Field class=\"flex-row items-center gap-3\" name=\"time\">\n      <FieldLabel class=\"whitespace-nowrap text-xs\">Enter time</FieldLabel>\n      <InputGroup class=\"grow\">\n        <InputGroupInput\n          aria-label=\"Select time\"\n          class=\"*:[input]:[&::-webkit-calendar-picker-indicator]:hidden *:[input]:[&::-webkit-calendar-picker-indicator]:appearance-none\"\n          onchange={handleTimeChange}\n          step=\"1\"\n          type=\"time\"\n          value={$formData.time}\n        />\n        <InputGroupAddon>\n          <ClockIcon aria-hidden=\"true\" />\n        </InputGroupAddon>\n      </InputGroup>\n      <FieldError />\n    </Field>\n    <Button loading={$submitting} type=\"submit\">Submit</Button>\n  </Form>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"calendar",
+		"field",
+		"input-group",
+		"button",
+		"form",
+		"use-superform"
+	],
+	"dependencies": [
+		"@lucide/svelte",
+		"@internationalized/date@^3.12.3",
+		"zod@^4.4.3"
+	]
+}

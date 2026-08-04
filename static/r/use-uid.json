@@ -1,0 +1,16 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "use-uid",
+	"title": "Use Uid",
+	"type": "registry:hook",
+	"files": [
+		{
+			"type": "registry:hook",
+			"path": "use-uid.ts",
+			"target": "$lib/hooks/use-uid.ts",
+			"content": "export function uid() {\n  return Math.random().toString(36).slice(2, 9);\n}\n"
+		}
+	],
+	"registryDependencies": [],
+	"dependencies": []
+}

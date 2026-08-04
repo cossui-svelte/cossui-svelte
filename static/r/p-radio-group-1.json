@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-radio-group-1",
+	"title": "Radio group 1",
+	"description": "Basic radio group",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-radio-group-1.svelte",
+			"target": "$lib/components/particles/radio-group/p-radio-group-1.svelte",
+			"content": "<script lang=\"ts\">\n  import { Label } from '$lib/components/ui/label';\n  import { Radio, RadioGroup } from '$lib/components/ui/radio-group';\n</script>\n\n<RadioGroup value=\"next\">\n  <Label><Radio value=\"next\" /> Next.js</Label>\n  <Label><Radio value=\"vite\" /> Vite</Label>\n  <Label><Radio value=\"astro\" /> Astro</Label>\n</RadioGroup>\n"
+		}
+	],
+	"registryDependencies": [
+		"label",
+		"radio-group"
+	],
+	"dependencies": []
+}

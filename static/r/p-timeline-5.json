@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-timeline-5",
+	"title": "Timeline 5",
+	"description": "A vertical timeline with progress indicator",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-timeline-5.svelte",
+			"target": "$lib/components/particles/timeline/p-timeline-5.svelte",
+			"content": "<script lang=\"ts\">\n  import CheckIcon from '@lucide/svelte/icons/check';\n  import {\n    Timeline,\n    TimelineContent,\n    TimelineDate,\n    TimelineHeader,\n    TimelineIndicator,\n    TimelineItem,\n    TimelineSeparator,\n    TimelineTitle\n  } from '$lib/components/ui/timeline';\n\n  const items = [\n    {\n      date: 'Mar 15, 2024',\n      description:\n        'Initial team meeting and project scope definition. Established key milestones and resource allocation.',\n      id: 1,\n      title: 'Project Kickoff'\n    },\n    {\n      date: 'Mar 22, 2024',\n      description:\n        'Completed wireframes and user interface mockups. Stakeholder review and feedback incorporated.',\n      id: 2,\n      title: 'Design Phase'\n    },\n    {\n      date: 'Apr 5, 2024',\n      description: 'Backend API implementation and frontend component development in progress.',\n      id: 3,\n      title: 'Development Sprint'\n    },\n    {\n      date: 'Apr 19, 2024',\n      description:\n        'Quality assurance testing, performance optimization, and production deployment preparation.',\n      id: 4,\n      title: 'Testing & Deployment'\n    }\n  ];\n</script>\n\n<Timeline defaultValue={3}>\n  {#each items as item (item.id)}\n    <TimelineItem step={item.id} class=\"group-data-[orientation=vertical]/timeline:ms-10\">\n      <TimelineHeader>\n        <TimelineSeparator\n          class=\"group-data-[orientation=vertical]/timeline:-left-7 group-data-[orientation=vertical]/timeline:h-[calc(100%-1.5rem-0.25rem)] group-data-[orientation=vertical]/timeline:translate-y-[1.625rem]\"\n        />\n        <TimelineDate>{item.date}</TimelineDate>\n        <TimelineTitle>{item.title}</TimelineTitle>\n        <TimelineIndicator\n          class=\"flex size-6 items-center justify-center group-data-[orientation=vertical]/timeline:-left-7 group-data-[completed]/timeline-item:border-none group-data-[completed]/timeline-item:bg-primary group-data-[completed]/timeline-item:text-primary-foreground\"\n        >\n          <CheckIcon class=\"group-[:not([data-completed])]/timeline-item:hidden\" size={16} />\n        </TimelineIndicator>\n      </TimelineHeader>\n      <TimelineContent>{item.description}</TimelineContent>\n    </TimelineItem>\n  {/each}\n</Timeline>\n"
+		}
+	],
+	"registryDependencies": [
+		"timeline"
+	],
+	"dependencies": []
+}

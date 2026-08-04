@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-slider-15",
+	"title": "Slider 15",
+	"description": "Price range slider",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-slider-15.svelte",
+			"target": "$lib/components/particles/slider/p-slider-15.svelte",
+			"content": "<script lang=\"ts\">\n  import { Slider } from '$lib/components/ui/slider';\n\n  const min = 5;\n  const max = 1240;\n\n  let values = $state([min, max]);\n\n  function formatPrice(price: number) {\n    return price === max ? `$${price.toLocaleString()}+` : `$${price.toLocaleString()}`;\n  }\n</script>\n\n<fieldset class=\"flex w-full flex-col gap-3 border-0 p-0 m-0\">\n  <legend class=\"tabular-nums text-sm font-medium\">\n    From {formatPrice(values[0] ?? min)} to {formatPrice(values[1] ?? max)}\n  </legend>\n  <Slider\n    aria-label=\"Price range\"\n    class=\"flex-1\"\n    {max}\n    {min}\n    name=\"price-range\"\n    bind:value={values}\n  />\n</fieldset>\n"
+		}
+	],
+	"registryDependencies": [
+		"fieldset",
+		"slider"
+	],
+	"dependencies": []
+}

@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-places-autocomplete-1",
+	"title": "Places autocomplete 1",
+	"description": "Address validation powered by the Google Places API",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-places-autocomplete-1.svelte",
+			"target": "$lib/components/particles/places-autocomplete/p-places-autocomplete-1.svelte",
+			"content": "<script lang=\"ts\">\n  import { PlacesAutocomplete, type SelectedPlace } from '$lib/components/ui/places-autocomplete';\n  import { toastManager } from '$lib/components/ui/toast';\n\n  import { GOOGLE_MAPS_API_KEY } from '$app/env/public';\n\n  const countryCode = 'us';\n  let selected = $state<SelectedPlace | null>(null);\n</script>\n\n<div class=\"flex w-full flex-col items-center gap-4 md:gap-6\">\n  <div class=\"w-full max-w-xl\">\n    <PlacesAutocomplete\n      // use your own Google Maps API key here, or set it in your environment variables as VITE_GOOGLE_MAPS_API_KEY\n      apiKey={GOOGLE_MAPS_API_KEY}\n      {countryCode}\n      placeholder={countryCode\n        ? `Search addresses in ${countryCode.toUpperCase()}`\n        : 'Start typing an address'}\n      onPlaceSelect={(place) => {\n        selected = place;\n        toastManager.success('Place selected', {\n          description:\n            place.lat != null && place.lng != null\n              ? `${place.address} (${place.lat.toFixed(5)}, ${place.lng.toFixed(5)})`\n              : place.address\n        });\n      }}\n    />\n  </div>\n  {#if selected}\n    <p class=\"max-w-xl text-center text-xs text-muted-foreground\">\n      Selected: {selected.address}\n      {selected.placeId ? ` · ${selected.placeId}` : ''}\n    </p>\n  {/if}\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"places-autocomplete",
+		"toast"
+	],
+	"dependencies": []
+}

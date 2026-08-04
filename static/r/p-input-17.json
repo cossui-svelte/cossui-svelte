@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-input-17",
+	"title": "Input 17",
+	"description": "Read-only input",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-input-17.svelte",
+			"target": "$lib/components/particles/input/p-input-17.svelte",
+			"content": "<script lang=\"ts\">\n  import { Input } from '$lib/components/ui/input';\n</script>\n\n<Input class=\"read-only:bg-muted\" value=\"This is a read-only input\" readonly type=\"text\" />\n"
+		}
+	],
+	"registryDependencies": [
+		"input"
+	],
+	"dependencies": []
+}

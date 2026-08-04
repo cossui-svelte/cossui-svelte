@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-toast-10",
+	"title": "Toast 10",
+	"description": "Deduplicated success toast",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-toast-10.svelte",
+			"target": "$lib/components/particles/toast/p-toast-10.svelte",
+			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n  import { toastManager } from '$lib/components/ui/toast';\n\n  const DEDUP_ID = 'coss-demo-dedup-toast';\n</script>\n\n<Button\n  onclick={() => {\n    toastManager.add({\n      description: 'Repeated clicks update this toast instead of stacking another.',\n      id: DEDUP_ID,\n      title: 'Saved',\n      type: 'success'\n    });\n  }}\n  variant=\"outline\"\n>\n  One Success Toast\n</Button>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"toast"
+	],
+	"dependencies": []
+}

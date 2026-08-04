@@ -1,0 +1,26 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-date-picker-5",
+	"title": "Date picker 5",
+	"description": "Date picker with input",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-date-picker-5.svelte",
+			"target": "$lib/components/particles/date-picker/p-date-picker-5.svelte",
+			"content": "<script lang=\"ts\">\n  import { type DateValue, getLocalTimeZone, parseDate, today } from '@internationalized/date';\n  import CalendarIcon from '@lucide/svelte/icons/calendar';\n  import { buttonVariants } from '$lib/components/ui/button';\n  import { Calendar } from '$lib/components/ui/calendar';\n  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';\n  import { Popover, PopoverPopup, PopoverTrigger } from '$lib/components/ui/popover';\n\n  let value = $state<DateValue | undefined>(undefined);\n  let placeholder = $state<DateValue>(today(getLocalTimeZone()));\n  let inputValue = $state('');\n\n  function handleInputChange(e: Event & { currentTarget: HTMLInputElement }) {\n    const raw = e.currentTarget.value;\n    inputValue = raw;\n\n    if (!raw) {\n      value = undefined;\n      return;\n    }\n\n    try {\n      const parsed = parseDate(raw);\n      value = parsed;\n      placeholder = parsed;\n    } catch {\n      // ignore invalid dates while typing\n    }\n  }\n\n  function handleSelect(selected: DateValue | undefined) {\n    inputValue = selected ? selected.toString() : '';\n    if (selected) placeholder = selected;\n  }\n</script>\n\n<Popover>\n  <InputGroup>\n    <InputGroupInput\n      aria-label=\"Select date\"\n      class=\"*:[input]:[&::-webkit-calendar-picker-indicator]:hidden *:[input]:[&::-webkit-calendar-picker-indicator]:appearance-none\"\n      onchange={handleInputChange}\n      onclick={(e) => e.stopPropagation()}\n      type=\"date\"\n      value={inputValue}\n    />\n    <InputGroupAddon>\n      <PopoverTrigger\n        aria-label=\"Select date\"\n        class={buttonVariants({ size: 'icon-xs', variant: 'ghost' })}\n      >\n        <CalendarIcon aria-hidden=\"true\" />\n      </PopoverTrigger>\n    </InputGroupAddon>\n  </InputGroup>\n  <PopoverPopup align=\"start\" alignOffset={-4} sideOffset={8}>\n    <Calendar bind:placeholder bind:value onValueChange={handleSelect} mode=\"single\" />\n  </PopoverPopup>\n</Popover>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"calendar",
+		"input-group",
+		"popover"
+	],
+	"dependencies": [
+		"date-fns",
+		"@lucide/svelte",
+		"@internationalized/date@^3.12.3"
+	]
+}

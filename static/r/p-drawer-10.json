@@ -1,0 +1,26 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-drawer-10",
+	"title": "Drawer 10",
+	"description": "Edit profile form with default and bare footer variants",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-drawer-10.svelte",
+			"target": "$lib/components/particles/drawer/p-drawer-10.svelte",
+			"content": "<script lang=\"ts\">\n  import { z } from 'zod';\n  import { Button, buttonVariants } from '$lib/components/ui/button';\n  import {\n    Drawer,\n    DrawerClose,\n    DrawerDescription,\n    DrawerFooter,\n    DrawerHeader,\n    DrawerPanel,\n    DrawerPopup,\n    DrawerTitle,\n    DrawerTrigger\n  } from '$lib/components/ui/drawer';\n  import { Field, FieldLabel } from '$lib/components/ui/field';\n  import { Form } from '$lib/components/ui/form';\n  import { Input } from '$lib/components/ui/input';\n  import { createForm } from '$lib/hooks/use-superform';\n\n  const schema = z.object({\n    name: z.string().min(1),\n    username: z.string().min(1)\n  });\n\n  const defaultFooterForm = createForm({\n    initialData: { name: 'Margaret Welsh', username: '@maggie.welsh' },\n    schema\n  });\n\n  const bareFooterForm = createForm({\n    initialData: { name: 'Margaret Welsh', username: '@maggie.welsh' },\n    schema\n  });\n</script>\n\n<div class=\"flex flex-wrap gap-2\">\n  <Drawer position=\"right\">\n    <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Default footer</DrawerTrigger>\n    <DrawerPopup variant=\"inset\">\n      <DrawerHeader>\n        <DrawerTitle>Edit profile</DrawerTitle>\n        <DrawerDescription>\n          Make changes to your profile here. Click save when you're done.\n        </DrawerDescription>\n      </DrawerHeader>\n      <Form superform={defaultFooterForm} class=\"contents\">\n        <DrawerPanel class=\"grid gap-4\">\n          <Field name=\"name\">\n            <FieldLabel>Name</FieldLabel>\n            <Input type=\"text\" />\n          </Field>\n          <Field name=\"username\">\n            <FieldLabel>Username</FieldLabel>\n            <Input type=\"text\" />\n          </Field>\n        </DrawerPanel>\n        <DrawerFooter>\n          <DrawerClose class={buttonVariants({ variant: 'ghost' })}>Cancel</DrawerClose>\n          <Button type=\"submit\">Save</Button>\n        </DrawerFooter>\n      </Form>\n    </DrawerPopup>\n  </Drawer>\n\n  <Drawer position=\"right\">\n    <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Bare footer</DrawerTrigger>\n    <DrawerPopup variant=\"inset\">\n      <DrawerHeader>\n        <DrawerTitle>Edit profile</DrawerTitle>\n        <DrawerDescription>\n          Make changes to your profile here. Click save when you're done.\n        </DrawerDescription>\n      </DrawerHeader>\n      <Form superform={bareFooterForm} class=\"contents\">\n        <DrawerPanel class=\"grid gap-4\">\n          <Field name=\"name\">\n            <FieldLabel>Name</FieldLabel>\n            <Input type=\"text\" />\n          </Field>\n          <Field name=\"username\">\n            <FieldLabel>Username</FieldLabel>\n            <Input type=\"text\" />\n          </Field>\n        </DrawerPanel>\n        <DrawerFooter variant=\"bare\">\n          <DrawerClose class={buttonVariants({ variant: 'ghost' })}>Cancel</DrawerClose>\n          <Button type=\"submit\">Save</Button>\n        </DrawerFooter>\n      </Form>\n    </DrawerPopup>\n  </Drawer>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"drawer",
+		"field",
+		"form",
+		"input",
+		"use-superform"
+	],
+	"dependencies": [
+		"zod@^4.4.3"
+	]
+}

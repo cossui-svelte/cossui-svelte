@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-group-10",
+	"title": "Group 10",
+	"description": "Nested groups",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-group-10.svelte",
+			"target": "$lib/components/particles/group/p-group-10.svelte",
+			"content": "<script lang=\"ts\">\n  import ArrowLeft from '@lucide/svelte/icons/arrow-left';\n  import ArrowRight from '@lucide/svelte/icons/arrow-right';\n  import { Button } from '$lib/components/ui/button';\n  import { Group, GroupSeparator } from '$lib/components/ui/group';\n</script>\n\n<Group aria-label=\"Pagination\">\n  <Group aria-label=\"Page numbers\">\n    <Button class=\"min-w-8\" variant=\"outline\">1</Button>\n    <GroupSeparator />\n    <Button class=\"min-w-8\" variant=\"outline\">2</Button>\n    <GroupSeparator />\n    <Button class=\"min-w-8\" variant=\"outline\">3</Button>\n    <GroupSeparator />\n    <Button class=\"min-w-8\" variant=\"outline\">4</Button>\n    <GroupSeparator />\n    <Button class=\"min-w-8\" variant=\"outline\">5</Button>\n  </Group>\n  <Group aria-label=\"Navigation\">\n    <Button aria-label=\"Previous\" size=\"icon\" variant=\"outline\">\n      <ArrowLeft aria-hidden />\n    </Button>\n    <GroupSeparator />\n    <Button aria-label=\"Next\" size=\"icon\" variant=\"outline\">\n      <ArrowRight aria-hidden />\n    </Button>\n  </Group>\n</Group>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"group"
+	],
+	"dependencies": []
+}

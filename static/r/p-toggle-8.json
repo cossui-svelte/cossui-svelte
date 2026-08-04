@@ -1,0 +1,23 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-toggle-8",
+	"title": "Toggle 8",
+	"description": "Bookmark toggle with tooltip and success toast",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-toggle-8.svelte",
+			"target": "$lib/components/particles/toggle/p-toggle-8.svelte",
+			"content": "<script lang=\"ts\">\n  import BookmarkIcon from '@lucide/svelte/icons/bookmark';\n  import { anchoredToastManager } from '$lib/components/ui/toast';\n  import { Toggle } from '$lib/components/ui/toggle';\n  import {\n    Tooltip,\n    TooltipPopup,\n    TooltipProvider,\n    TooltipTrigger\n  } from '$lib/components/ui/tooltip';\n\n  let bookmarked = $state(false);\n  let toggleEl: HTMLElement | null = null;\n  let toastId: string | null = null;\n  const toastTimeout = 2000;\n\n  function handlePressedChange(pressed: boolean) {\n    bookmarked = pressed;\n    if (toastId) {\n      anchoredToastManager.dismiss(toastId);\n      toastId = null;\n    }\n    if (pressed && toggleEl) {\n      toastId = anchoredToastManager.add({\n        duration: toastTimeout,\n        positionerProps: { anchor: toggleEl },\n        title: 'Bookmarked!',\n        tooltipStyle: true,\n        type: 'success'\n      });\n    }\n  }\n</script>\n\n<TooltipProvider>\n  <Tooltip>\n    <TooltipTrigger>\n      {#snippet child({ props })}\n        <Toggle\n          aria-label={bookmarked ? 'Remove bookmark' : 'Bookmark this'}\n          bind:ref={toggleEl}\n          bind:pressed={bookmarked}\n          onPressedChange={handlePressedChange}\n          {...props}\n        >\n          <BookmarkIcon aria-hidden=\"true\" />\n        </Toggle>\n      {/snippet}\n    </TooltipTrigger>\n    <TooltipPopup>\n      <p>{bookmarked ? 'Remove bookmark' : 'Bookmark this'}</p>\n    </TooltipPopup>\n  </Tooltip>\n</TooltipProvider>\n"
+		}
+	],
+	"registryDependencies": [
+		"toggle",
+		"tooltip",
+		"toast"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

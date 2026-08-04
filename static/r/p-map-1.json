@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-map-1",
+	"title": "Map 1",
+	"description": "Global analytics map with markers sized by active users per city",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-map-1.svelte",
+			"target": "$lib/components/particles/map/p-map-1.svelte",
+			"content": "<script lang=\"ts\">\n  import { Map, MapMarker, MarkerContent, MarkerTooltip } from '$lib/components/ui/map';\n  import TrendingUp from '@lucide/svelte/icons/trending-up';\n\n  const analyticsData = [\n    { lng: -74.006, lat: 40.7128, city: 'New York', users: 847, size: 14 },\n    { lng: -0.1276, lat: 51.5074, city: 'London', users: 623, size: 12 },\n    { lng: 139.6917, lat: 35.6895, city: 'Tokyo', users: 412, size: 10 },\n    { lng: 114.1694, lat: 22.3193, city: 'Hong Kong', users: 364, size: 10 },\n    { lng: -122.4194, lat: 37.7749, city: 'San Francisco', users: 298, size: 9 },\n    { lng: 72.8777, lat: 19.076, city: 'Mumbai', users: 271, size: 9 },\n    { lng: 13.405, lat: 52.52, city: 'Berlin', users: 187, size: 8 },\n    { lng: 77.209, lat: 28.6139, city: 'Delhi', users: 156, size: 7 },\n    { lng: 151.2093, lat: -33.8688, city: 'Sydney', users: 134, size: 7 },\n    { lng: 18.4241, lat: -33.9249, city: 'Cape Town', users: 118, size: 6 },\n    { lng: -43.1729, lat: -22.9068, city: 'Rio', users: 89, size: 6 },\n    { lng: 126.978, lat: 37.5665, city: 'Seoul', users: 45, size: 5 }\n  ];\n</script>\n\n<!-- Stats Panel -->\n<div\n  class=\"border-border/50 bg-background/95 absolute top-3 left-3 z-10 rounded-lg border p-3 shadow-lg backdrop-blur-md\"\n>\n  <div class=\"text-muted-foreground mb-1 text-[10px] tracking-wider uppercase\">Active Users</div>\n  <div class=\"text-2xl leading-tight font-semibold\">3,544</div>\n  <div class=\"mt-1 flex items-center gap-1\">\n    <TrendingUp class=\"size-3\" />\n    <span class=\"text-foreground text-xs\">+12.5%</span>\n    <span class=\"text-muted-foreground text-xs\">vs last hour</span>\n  </div>\n</div>\n\n<Map\n  class=\"h-80\"\n  center={[0, 30]}\n  options={{ scrollZoom: false, dragRotate: false, pitchWithRotate: false }}\n>\n  {#each analyticsData as loc (loc.city)}\n    <MapMarker longitude={loc.lng} latitude={loc.lat}>\n      <MarkerContent>\n        <div\n          class=\"rounded-full bg-blue-500/80 shadow-sm\"\n          style=\"width: {loc.size * 1.8}px; height: {loc.size * 1.8}px;\"\n        ></div>\n      </MarkerContent>\n      <MarkerTooltip>\n        <div class=\"text-center\">\n          <div class=\"font-medium\">{loc.city}</div>\n          <div class=\"text-background/80\">{loc.users} users</div>\n        </div>\n      </MarkerTooltip>\n    </MapMarker>\n  {/each}\n</Map>\n"
+		}
+	],
+	"registryDependencies": [
+		"map"
+	],
+	"dependencies": []
+}

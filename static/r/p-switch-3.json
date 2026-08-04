@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-switch-3",
+	"title": "Switch 3",
+	"description": "Switch with description",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-switch-3.svelte",
+			"target": "$lib/components/particles/switch/p-switch-3.svelte",
+			"content": "<script lang=\"ts\">\n  import { Label } from '$lib/components/ui/label';\n  import { Switch } from '$lib/components/ui/switch';\n\n  let checked = $state(true);\n</script>\n\n<div class=\"flex items-start gap-2\">\n  <Switch id=\"marketing\" bind:checked />\n  <div class=\"flex flex-col gap-1\">\n    <Label for=\"marketing\">Marketing emails</Label>\n    <p class=\"text-muted-foreground text-xs\">\n      By enabling marketing emails, you agree to receive emails.\n    </p>\n  </div>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"label",
+		"switch"
+	],
+	"dependencies": []
+}

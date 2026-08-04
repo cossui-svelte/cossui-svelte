@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-switch-2",
+	"title": "Switch 2",
+	"description": "Disabled switch",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-switch-2.svelte",
+			"target": "$lib/components/particles/switch/p-switch-2.svelte",
+			"content": "<script lang=\"ts\">\n  import { Label } from '$lib/components/ui/label';\n  import { Switch } from '$lib/components/ui/switch';\n</script>\n\n<Label>\n  <Switch disabled />\n  Marketing emails\n</Label>\n"
+		}
+	],
+	"registryDependencies": [
+		"label",
+		"switch"
+	],
+	"dependencies": []
+}

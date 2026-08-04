@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-input-14",
+	"title": "Input 14",
+	"description": "Input with optional label",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-input-14.svelte",
+			"target": "$lib/components/particles/input/p-input-14.svelte",
+			"content": "<script lang=\"ts\">\n  import { Input } from '$lib/components/ui/input';\n  import { Label } from '$lib/components/ui/label';\n</script>\n\n<div class=\"flex flex-col gap-2\">\n  <div class=\"inline-flex w-full items-center justify-between gap-2\">\n    <Label for=\"email-14\">Email</Label>\n    <span class=\"text-base/4.5 sm:text-sm/4 font-normal text-muted-foreground\">Optional</span>\n  </div>\n  <Input id=\"email-14\" placeholder=\"Email\" type=\"email\" />\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"input",
+		"label"
+	],
+	"dependencies": []
+}

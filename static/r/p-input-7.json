@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-input-7",
+	"title": "Input 7",
+	"description": "Input with button using Group",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-input-7.svelte",
+			"target": "$lib/components/particles/input/p-input-7.svelte",
+			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n  import { Group } from '$lib/components/ui/group';\n  import { Input } from '$lib/components/ui/input';\n</script>\n\n<Group aria-label=\"Email subscription\" class=\"gap-2\">\n  <Input aria-label=\"Email\" class=\"flex-1\" placeholder=\"you@example.com\" type=\"email\" />\n  <div>\n    <Button variant=\"outline\">Send</Button>\n  </div>\n</Group>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"group",
+		"input"
+	],
+	"dependencies": []
+}

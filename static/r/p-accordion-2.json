@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-accordion-2",
+	"title": "Accordion 2",
+	"description": "Accordion with one panel open",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-accordion-2.svelte",
+			"target": "$lib/components/particles/accordion/p-accordion-2.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    Accordion,\n    AccordionItem,\n    AccordionPanel,\n    AccordionTrigger\n  } from '$lib/components/ui/accordion';\n</script>\n\n<Accordion class=\"w-full\">\n  <AccordionItem value=\"item-1\">\n    <AccordionTrigger>What is Base UI?</AccordionTrigger>\n    <AccordionPanel>\n      Base UI is a library of high-quality unstyled React components for design systems and web\n      apps.\n    </AccordionPanel>\n  </AccordionItem>\n  <AccordionItem value=\"item-2\">\n    <AccordionTrigger>How do I get started?</AccordionTrigger>\n    <AccordionPanel>\n      Head to the \"Quick start\" guide in the docs. If you've used unstyled libraries before, you'll\n      feel at home.\n    </AccordionPanel>\n  </AccordionItem>\n  <AccordionItem value=\"item-3\">\n    <AccordionTrigger>Can I use it for my project?</AccordionTrigger>\n    <AccordionPanel>Of course! Base UI is free and open source.</AccordionPanel>\n  </AccordionItem>\n</Accordion>\n"
+		}
+	],
+	"registryDependencies": [
+		"accordion"
+	],
+	"dependencies": []
+}

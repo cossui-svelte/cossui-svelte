@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-slider-3",
+	"title": "Slider 3",
+	"description": "Disabled slider",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-slider-3.svelte",
+			"target": "$lib/components/particles/slider/p-slider-3.svelte",
+			"content": "<script lang=\"ts\">\n  import { Slider } from '$lib/components/ui/slider';\n</script>\n\n<Slider value={50} disabled />\n"
+		}
+	],
+	"registryDependencies": [
+		"slider"
+	],
+	"dependencies": []
+}

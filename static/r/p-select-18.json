@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-select-18",
+	"title": "Select 18",
+	"description": "Select with description in options only",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-select-18.svelte",
+			"target": "$lib/components/particles/select/p-select-18.svelte",
+			"content": "<script lang=\"ts\">\n  import { Select, SelectItem, SelectPopup, SelectTrigger } from '$lib/components/ui/select';\n\n  const items = [\n    { description: 'Ideal for individuals', label: 'Standard Plan', value: 'standard' },\n    { description: 'For professional users', label: 'Pro Plan', value: 'pro' },\n    { description: 'Built for large teams', label: 'Enterprise Plan', value: 'enterprise' }\n  ];\n\n  let selected = $state('pro');\n  const selectedItem = $derived(items.find((i) => i.value === selected) ?? items[1]);\n</script>\n\n<Select\n  value={selected}\n  onValueChange={(v) => {\n    selected = v;\n  }}\n>\n  <SelectTrigger aria-label=\"Select plan\">\n    <span class=\"flex-1 truncate\">{selectedItem.label}</span>\n  </SelectTrigger>\n  <SelectPopup>\n    {#each items as item (item.value)}\n      <SelectItem value={item.value}>\n        <span class=\"flex flex-col\">\n          <span class=\"truncate\">{item.label}</span>\n          <span class=\"truncate text-muted-foreground text-xs\">{item.description}</span>\n        </span>\n      </SelectItem>\n    {/each}\n  </SelectPopup>\n</Select>\n"
+		}
+	],
+	"registryDependencies": [
+		"select"
+	],
+	"dependencies": []
+}

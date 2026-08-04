@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-pagination-1",
+	"title": "Pagination 1",
+	"description": "Pagination example",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-pagination-1.svelte",
+			"target": "$lib/components/particles/pagination/p-pagination-1.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    Pagination,\n    PaginationContent,\n    PaginationEllipsis,\n    PaginationItem,\n    PaginationLink,\n    PaginationNext,\n    PaginationPrevious\n  } from '$lib/components/ui/pagination';\n</script>\n\n<Pagination>\n  <PaginationContent>\n    <PaginationItem>\n      <PaginationPrevious href=\"#\" />\n    </PaginationItem>\n    <PaginationItem>\n      <PaginationLink href=\"#\">1</PaginationLink>\n    </PaginationItem>\n    <PaginationItem>\n      <PaginationLink href=\"#\" isActive>2</PaginationLink>\n    </PaginationItem>\n    <PaginationItem>\n      <PaginationLink href=\"#\">3</PaginationLink>\n    </PaginationItem>\n    <PaginationItem>\n      <PaginationEllipsis />\n    </PaginationItem>\n    <PaginationItem>\n      <PaginationNext href=\"#\" />\n    </PaginationItem>\n  </PaginationContent>\n</Pagination>\n"
+		}
+	],
+	"registryDependencies": [
+		"pagination"
+	],
+	"dependencies": []
+}

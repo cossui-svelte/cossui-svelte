@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-textarea-4",
+	"title": "Textarea 4",
+	"description": "Disabled textarea",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-textarea-4.svelte",
+			"target": "$lib/components/particles/textarea/p-textarea-4.svelte",
+			"content": "<script lang=\"ts\">\n  import { Textarea } from '$lib/components/ui/textarea';\n</script>\n\n<Textarea disabled placeholder=\"Can't type here\" />\n"
+		}
+	],
+	"registryDependencies": [
+		"textarea"
+	],
+	"dependencies": []
+}

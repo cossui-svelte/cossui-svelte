@@ -1,0 +1,89 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "dialog",
+	"title": "Dialog",
+	"description": "A popup that opens on top of the entire page.",
+	"type": "registry:ui",
+	"files": [
+		{
+			"type": "registry:ui",
+			"path": "dialog/dialog-backdrop.svelte",
+			"target": "$lib/components/ui/dialog/dialog-backdrop.svelte",
+			"content": "<script lang=\"ts\">\n  import { Dialog as DialogPrimitive } from 'bits-ui';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: DialogPrimitive.OverlayProps = $props();\n</script>\n\n<DialogPrimitive.Overlay\n  bind:ref\n  data-slot=\"dialog-overlay\"\n  class={cn(\n    'fixed inset-0 z-50 bg-black/32 backdrop-blur-sm duration-200 fill-mode-both data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in data-[state=closed]:fade-out',\n    className\n  )}\n  {...restProps}\n/>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "dialog/dialog-close.svelte",
+			"target": "$lib/components/ui/dialog/dialog-close.svelte",
+			"content": "<script lang=\"ts\">\n  import { Dialog as DialogPrimitive } from 'bits-ui';\n\n  let {\n    ref = $bindable(null),\n    type = 'button',\n    ...restProps\n  }: DialogPrimitive.CloseProps = $props();\n</script>\n\n<DialogPrimitive.Close bind:ref data-slot=\"dialog-close\" {type} {...restProps} />\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "dialog/dialog-content.svelte",
+			"target": "$lib/components/ui/dialog/dialog-content.svelte",
+			"content": "<script lang=\"ts\">\n  import XIcon from '@lucide/svelte/icons/x';\n  import { Dialog as DialogPrimitive, type WithoutChildrenOrChild } from 'bits-ui';\n  import type { ComponentProps, Snippet } from 'svelte';\n  import { Button } from '$lib/components/ui/button';\n  import { cn } from '$lib/utils';\n  import DialogOverlay from './dialog-backdrop.svelte';\n  import DialogPortal from './dialog-portal.svelte';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    bottomStickOnMobile = true,\n    size = 'default',\n    portalProps,\n    children,\n    showCloseButton = true,\n    ...restProps\n  }: WithoutChildrenOrChild<DialogPrimitive.ContentProps> & {\n    size?: 'default' | 'sm';\n    bottomStickOnMobile?: boolean;\n    portalProps?: WithoutChildrenOrChild<ComponentProps<typeof DialogPortal>>;\n    children: Snippet;\n    showCloseButton?: boolean;\n  } = $props();\n</script>\n\n<DialogPortal {...portalProps}>\n  <DialogOverlay />\n  <DialogPrimitive.Content\n    bind:ref\n    data-slot=\"dialog-popup\"\n    data-size={size}\n    class={cn(\n      // Fixed full-screen layer\n      'fixed z-50 w-full flex flex-col gap-0 p-0 outline-none group/dialog-content',\n      // Appearance\n      'bg-popover text-popover-foreground ring-1 ring-foreground/10',\n      // Animation: tw-animate-css enter/exit\n      'duration-200 fill-mode-both will-change-transform',\n      'data-[state=open]:animate-in data-[state=closed]:animate-out',\n      'data-[state=open]:fade-in data-[state=closed]:fade-out',\n      // Desktop (sm+): centered dialog with zoom\n      'sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2',\n      'sm:rounded-xl',\n      'data-[size=default]:sm:max-w-lg data-[size=sm]:sm:max-w-xs',\n      'sm:data-[state=open]:zoom-in-95 sm:data-[state=closed]:zoom-out-95',\n      // Mobile: bottom sheet (when bottomStickOnMobile)\n      bottomStickOnMobile && [\n        'max-sm:bottom-0 max-sm:inset-x-0 max-sm:max-w-none',\n        'max-sm:border-t',\n        'max-sm:data-[state=open]:slide-in-from-bottom max-sm:data-[state=closed]:slide-out-to-bottom'\n      ],\n      // Mobile: centered (when not bottom-sticky)\n      !bottomStickOnMobile && [\n        'max-sm:top-1/2 max-sm:left-1/2 max-sm:-translate-x-1/2 max-sm:-translate-y-1/2',\n        'max-sm:rounded-xl',\n        'data-[size=default]:max-sm:max-w-xs',\n        'max-sm:data-[state=open]:zoom-in-95 max-sm:data-[state=closed]:zoom-out-95'\n      ],\n      className\n    )}\n    {...restProps}\n  >\n    {@render children?.()}\n    {#if showCloseButton}\n      <DialogPrimitive.Close data-slot=\"dialog-close\">\n        {#snippet child({ props })}\n          <Button\n            variant=\"ghost\"\n            aria-label=\"Close\"\n            class=\"absolute end-2 top-2\"\n            size=\"icon-sm\"\n            {...props}\n          >\n            <XIcon />\n            <span class=\"sr-only\">Close</span>\n          </Button>\n        {/snippet}\n      </DialogPrimitive.Close>\n    {/if}\n  </DialogPrimitive.Content>\n</DialogPortal>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "dialog/dialog-description.svelte",
+			"target": "$lib/components/ui/dialog/dialog-description.svelte",
+			"content": "<script lang=\"ts\">\n  import { Dialog as DialogPrimitive } from 'bits-ui';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: DialogPrimitive.DescriptionProps = $props();\n</script>\n\n<DialogPrimitive.Description\n  bind:ref\n  data-slot=\"dialog-description\"\n  class={cn('text-muted-foreground text-sm', className)}\n  {...restProps}\n/>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "dialog/dialog-footer.svelte",
+			"target": "$lib/components/ui/dialog/dialog-footer.svelte",
+			"content": "<script lang=\"ts\">\n  import { Dialog as DialogPrimitive } from 'bits-ui';\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { Button } from '$lib/components/ui/button';\n  import { cn, type WithElementRef } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    variant = 'default',\n    showCloseButton = false,\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLDivElement>> & {\n    variant?: 'default' | 'bare';\n    showCloseButton?: boolean;\n  } = $props();\n</script>\n\n<div\n  bind:this={ref}\n  data-slot=\"dialog-footer\"\n  class={cn(\n    'flex flex-col-reverse gap-2 px-6 sm:flex-row sm:justify-end sm:rounded-b-[calc(var(--radius-2xl)-1px)] max-sm:[&_button]:w-full',\n    variant === 'default' && 'border-t bg-muted/72 py-4',\n    variant === 'bare' &&\n      'in-[[data-slot=dialog-popup]:has([data-slot=dialog-panel])]:pt-3 pt-4 pb-6',\n    className\n  )}\n  {...restProps}\n>\n  {@render children?.()}\n  {#if showCloseButton}\n    <DialogPrimitive.Close>\n      {#snippet child({ props })}\n        <Button variant=\"outline\" {...props}>Close</Button>\n      {/snippet}\n    </DialogPrimitive.Close>\n  {/if}\n</div>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "dialog/dialog-header.svelte",
+			"target": "$lib/components/ui/dialog/dialog-header.svelte",
+			"content": "<script lang=\"ts\">\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn, type WithElementRef } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n</script>\n\n<div\n  bind:this={ref}\n  data-slot=\"dialog-header\"\n  class={cn(\n    'flex flex-col gap-2 p-6 text-center in-[[data-slot=dialog-popup]:has([data-slot=dialog-panel])]:pb-3 max-sm:pb-4 sm:text-left',\n    className\n  )}\n  {...restProps}\n>\n  {@render children?.()}\n</div>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "dialog/dialog-panel.svelte",
+			"target": "$lib/components/ui/dialog/dialog-panel.svelte",
+			"content": "<script lang=\"ts\">\n  import type { Snippet } from 'svelte';\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { ScrollArea } from '$lib/components/ui/scroll-area';\n  import { cn } from '$lib/utils';\n\n  interface Props extends HTMLAttributes<HTMLDivElement> {\n    children?: Snippet;\n    scrollFade?: boolean;\n  }\n\n  let { class: className, children, scrollFade = true, ...restProps }: Props = $props();\n</script>\n\n<ScrollArea {scrollFade}>\n  <div\n    class={cn(\n      'p-6 in-[[data-slot=dialog-popup]:has([data-slot=dialog-header])]:pt-1 in-[[data-slot=dialog-popup]:has([data-slot=dialog-footer]:not(.border-t))]:pb-1',\n      className\n    )}\n    data-slot=\"dialog-panel\"\n    {...restProps}\n  >\n    {@render children?.()}\n  </div>\n</ScrollArea>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "dialog/dialog-portal.svelte",
+			"target": "$lib/components/ui/dialog/dialog-portal.svelte",
+			"content": "<script lang=\"ts\">\n  import { Dialog as DialogPrimitive } from 'bits-ui';\n\n  let { ...restProps }: DialogPrimitive.PortalProps = $props();\n</script>\n\n<DialogPrimitive.Portal {...restProps} />\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "dialog/dialog-title.svelte",
+			"target": "$lib/components/ui/dialog/dialog-title.svelte",
+			"content": "<script lang=\"ts\">\n  import { Dialog as DialogPrimitive } from 'bits-ui';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: DialogPrimitive.TitleProps = $props();\n</script>\n\n<DialogPrimitive.Title\n  bind:ref\n  data-slot=\"dialog-title\"\n  class={cn('font-heading font-semibold text-xl leading-none', className)}\n  {...restProps}\n/>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "dialog/dialog-trigger.svelte",
+			"target": "$lib/components/ui/dialog/dialog-trigger.svelte",
+			"content": "<script lang=\"ts\">\n  import { Dialog as DialogPrimitive } from 'bits-ui';\n\n  let {\n    ref = $bindable(null),\n    type = 'button',\n    ...restProps\n  }: DialogPrimitive.TriggerProps = $props();\n</script>\n\n<DialogPrimitive.Trigger bind:ref data-slot=\"dialog-trigger\" {type} {...restProps} />\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "dialog/dialog.svelte",
+			"target": "$lib/components/ui/dialog/dialog.svelte",
+			"content": "<script lang=\"ts\">\n  import { Dialog as DialogPrimitive } from 'bits-ui';\n\n  let { open = $bindable(false), ...restProps }: DialogPrimitive.RootProps = $props();\n</script>\n\n<DialogPrimitive.Root bind:open {...restProps} />\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "dialog/index.ts",
+			"target": "$lib/components/ui/dialog/index.ts",
+			"content": "export { default as Dialog } from './dialog.svelte';\nexport { default as DialogBackdrop, default as DialogOverlay } from './dialog-backdrop.svelte';\nexport { default as DialogClose } from './dialog-close.svelte';\nexport { default as DialogContent, default as DialogPopup } from './dialog-content.svelte';\nexport { default as DialogDescription } from './dialog-description.svelte';\nexport { default as DialogFooter } from './dialog-footer.svelte';\nexport { default as DialogHeader } from './dialog-header.svelte';\nexport { default as DialogPanel } from './dialog-panel.svelte';\nexport { default as DialogPortal } from './dialog-portal.svelte';\nexport { default as DialogTitle } from './dialog-title.svelte';\nexport { default as DialogTrigger } from './dialog-trigger.svelte';\n"
+		}
+	],
+	"registryDependencies": [
+		"utils",
+		"button",
+		"scroll-area"
+	],
+	"dependencies": [
+		"bits-ui@^2.18.1"
+	]
+}

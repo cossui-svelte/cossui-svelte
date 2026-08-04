@@ -1,0 +1,24 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-button-38",
+	"title": "Button 38",
+	"description": "Social login buttons (Google, X, GitHub)",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-button-38.svelte",
+			"target": "$lib/components/particles/button/p-button-38.svelte",
+			"content": "<script lang=\"ts\">\n  import RiGithubFill from '$lib/icons/GithubFillLogos.svelte';\n  import RiGoogleFill from '$lib/icons/GoogleFillLogos.svelte';\n  import RiTwitterXFill from '$lib/icons/TwitterXFillLogos.svelte';\n  import { Button } from '$lib/components/ui/button';\n</script>\n\n<div class=\"flex flex-col gap-2\">\n  <Button variant=\"outline\">\n    <RiGoogleFill aria-hidden=\"true\" />\n    <span class=\"flex-1\">Login with Google</span>\n  </Button>\n  <Button variant=\"outline\">\n    <RiTwitterXFill aria-hidden=\"true\" />\n    <span class=\"flex-1\">Login with X</span>\n  </Button>\n  <Button variant=\"outline\">\n    <RiGithubFill aria-hidden=\"true\" />\n    <span class=\"flex-1\">Login with GitHub</span>\n  </Button>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"GithubFillLogos",
+		"GoogleFillLogos",
+		"TwitterXFillLogos"
+	],
+	"dependencies": [
+		"@remixicon/react"
+	]
+}

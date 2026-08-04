@@ -1,0 +1,16 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "use-is-mac",
+	"title": "Use Is Mac",
+	"type": "registry:hook",
+	"files": [
+		{
+			"type": "registry:hook",
+			"path": "use-is-mac.svelte.ts",
+			"target": "$lib/hooks/use-is-mac.svelte.ts",
+			"content": "import { browser } from '$app/env';\n\nexport function useIsMac(): {\n  readonly current: boolean;\n  readonly cmdOrCtrl: string;\n  readonly optionOrAlt: string;\n} {\n  const isMac = $derived(browser ? navigator.userAgent.includes('Mac') : false);\n\n  return {\n    get cmdOrCtrl(): string {\n      return isMac ? '⌘' : 'Ctrl';\n    },\n    get current(): boolean {\n      return isMac;\n    },\n    get optionOrAlt(): string {\n      return isMac ? '⌥' : 'Alt';\n    }\n  };\n}\n"
+		}
+	],
+	"registryDependencies": [],
+	"dependencies": []
+}

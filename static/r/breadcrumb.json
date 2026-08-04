@@ -1,0 +1,61 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "breadcrumb",
+	"title": "Breadcrumb",
+	"description": "Displays the path to the current resource using a hierarchy of links.",
+	"type": "registry:ui",
+	"files": [
+		{
+			"type": "registry:ui",
+			"path": "breadcrumb/breadcrumb-ellipsis.svelte",
+			"target": "$lib/components/ui/breadcrumb/breadcrumb-ellipsis.svelte",
+			"content": "<script lang=\"ts\">\n  import Ellipsis from '@lucide/svelte/icons/ellipsis';\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { type WithElementRef } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLSpanElement>> = $props();\n</script>\n\n<span\n  bind:this={ref}\n  aria-hidden=\"true\"\n  class={className}\n  data-slot=\"breadcrumb-ellipsis\"\n  role=\"presentation\"\n  {...restProps}\n>\n  <Ellipsis class=\"size-4\" />\n  <span class=\"sr-only\">More</span>\n</span>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "breadcrumb/breadcrumb-item.svelte",
+			"target": "$lib/components/ui/breadcrumb/breadcrumb-item.svelte",
+			"content": "<script lang=\"ts\">\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn, type WithElementRef } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLLIElement>> = $props();\n</script>\n\n<li\n  bind:this={ref}\n  class={cn('inline-flex items-center gap-1.5', className)}\n  data-slot=\"breadcrumb-item\"\n  {...restProps}\n>\n  {@render children?.()}\n</li>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "breadcrumb/breadcrumb-link.svelte",
+			"target": "$lib/components/ui/breadcrumb/breadcrumb-link.svelte",
+			"content": "<script lang=\"ts\">\n  import type { HTMLAnchorAttributes } from 'svelte/elements';\n  import { cn, type WithElementRef } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    href,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAnchorAttributes> = $props();\n</script>\n\n<!-- eslint-disable svelte/no-navigation-without-resolve -- href is caller-supplied; the caller resolves the route, not this generic link primitive -->\n<a\n  {href}\n  bind:this={ref}\n  class={cn('transition-colors hover:text-foreground', className)}\n  data-slot=\"breadcrumb-link\"\n  {...restProps}\n>\n  {@render children?.()}\n</a>\n<!-- eslint-enable svelte/no-navigation-without-resolve -->\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "breadcrumb/breadcrumb-list.svelte",
+			"target": "$lib/components/ui/breadcrumb/breadcrumb-list.svelte",
+			"content": "<script lang=\"ts\">\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn, type WithElementRef } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLOListElement>> = $props();\n</script>\n\n<ol\n  bind:this={ref}\n  class={cn(\n    'wrap-break-word flex flex-wrap items-center gap-1.5 text-muted-foreground text-sm sm:gap-2.5',\n    className\n  )}\n  data-slot=\"breadcrumb-list\"\n  {...restProps}\n>\n  {@render children?.()}\n</ol>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "breadcrumb/breadcrumb-page.svelte",
+			"target": "$lib/components/ui/breadcrumb/breadcrumb-page.svelte",
+			"content": "<script lang=\"ts\">\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn, type WithElementRef } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLSpanElement>> = $props();\n</script>\n\n<span\n  bind:this={ref}\n  aria-current=\"page\"\n  class={cn('font-normal text-foreground', className)}\n  data-slot=\"breadcrumb-page\"\n  {...restProps}\n>\n  {@render children?.()}\n</span>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "breadcrumb/breadcrumb-separator.svelte",
+			"target": "$lib/components/ui/breadcrumb/breadcrumb-separator.svelte",
+			"content": "<script lang=\"ts\">\n  import ChevronRight from '@lucide/svelte/icons/chevron-right';\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn, type WithElementRef } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLLIElement>> = $props();\n</script>\n\n<li\n  bind:this={ref}\n  aria-hidden=\"true\"\n  class={cn('opacity-80 [&>svg]:size-4', className)}\n  data-slot=\"breadcrumb-separator\"\n  role=\"presentation\"\n  {...restProps}\n>\n  {#if children}\n    {@render children()}\n  {:else}\n    <ChevronRight />\n  {/if}\n</li>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "breadcrumb/breadcrumb.svelte",
+			"target": "$lib/components/ui/breadcrumb/breadcrumb.svelte",
+			"content": "<script lang=\"ts\">\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { type WithElementRef } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLElement>> = $props();\n</script>\n\n<nav\n  bind:this={ref}\n  aria-label=\"breadcrumb\"\n  class={className}\n  data-slot=\"breadcrumb\"\n  {...restProps}\n>\n  {@render children?.()}\n</nav>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "breadcrumb/index.ts",
+			"target": "$lib/components/ui/breadcrumb/index.ts",
+			"content": "export { default as Breadcrumb } from './breadcrumb.svelte';\nexport { default as BreadcrumbEllipsis } from './breadcrumb-ellipsis.svelte';\nexport { default as BreadcrumbItem } from './breadcrumb-item.svelte';\nexport { default as BreadcrumbLink } from './breadcrumb-link.svelte';\nexport { default as BreadcrumbList } from './breadcrumb-list.svelte';\nexport { default as BreadcrumbPage } from './breadcrumb-page.svelte';\nexport { default as BreadcrumbSeparator } from './breadcrumb-separator.svelte';\n"
+		}
+	],
+	"registryDependencies": [
+		"utils"
+	],
+	"dependencies": []
+}

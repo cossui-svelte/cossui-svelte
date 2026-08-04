@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-stepper-11",
+	"title": "Stepper 11",
+	"description": "Stepper with titles and descriptions",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-stepper-11.svelte",
+			"target": "$lib/components/particles/stepper/p-stepper-11.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    Stepper,\n    StepperDescription,\n    StepperIndicator,\n    StepperItem,\n    StepperSeparator,\n    StepperTitle,\n    StepperTrigger\n  } from '$lib/components/ui/stepper';\n\n  const steps = [\n    {\n      description: 'Desc for step one',\n      step: 1,\n      title: 'Step One'\n    },\n    {\n      description: 'Desc for step two',\n      step: 2,\n      title: 'Step Two'\n    },\n    {\n      description: 'Desc for step three',\n      step: 3,\n      title: 'Step Three'\n    }\n  ];\n</script>\n\n<div class=\"space-y-8 w-full\">\n  <Stepper step={2}>\n    {#each steps as { step, title, description } (step)}\n      <StepperItem class=\"not-last:flex-1\" {step}>\n        <StepperTrigger class=\"gap-3 rounded-md\">\n          <StepperIndicator />\n          <div class=\"-order-1 space-y-0.5 text-left\">\n            <StepperTitle>{title}</StepperTitle>\n            <StepperDescription class=\"max-sm:hidden\">{description}</StepperDescription>\n          </div>\n        </StepperTrigger>\n        {#if step < steps.length}\n          <StepperSeparator class=\"mx-4\" />\n        {/if}\n      </StepperItem>\n    {/each}\n  </Stepper>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"stepper"
+	],
+	"dependencies": []
+}

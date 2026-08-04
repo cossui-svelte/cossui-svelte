@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-slider-2",
+	"title": "Slider 2",
+	"description": "Slider with label and value",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-slider-2.svelte",
+			"target": "$lib/components/particles/slider/p-slider-2.svelte",
+			"content": "<script lang=\"ts\">\n  import { Slider } from '$lib/components/ui/slider';\n\n  let value = $state(50);\n</script>\n\n<div>\n  <div class=\"mb-2 flex items-center justify-between gap-1\">\n    <span class=\"font-medium text-sm\">Opacity</span>\n    <span class=\"tabular-nums text-sm\">{value}</span>\n  </div>\n  <Slider bind:value aria-label=\"Opacity\" />\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"field",
+		"slider"
+	],
+	"dependencies": []
+}

@@ -1,0 +1,23 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-input-group-19",
+	"title": "Input group 19",
+	"description": "Mini editor built with input group and toggle",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-input-group-19.svelte",
+			"target": "$lib/components/particles/input-group/p-input-group-19.svelte",
+			"content": "<script lang=\"ts\">\n  import Bold from '@lucide/svelte/icons/bold';\n  import Italic from '@lucide/svelte/icons/italic';\n  import Link from '@lucide/svelte/icons/link';\n  import { Button } from '$lib/components/ui/button';\n  import { InputGroup, InputGroupAddon, InputGroupTextarea } from '$lib/components/ui/input-group';\n  import { Toggle } from '$lib/components/ui/toggle';\n</script>\n\n<InputGroup>\n  <InputGroupTextarea placeholder=\"Tell us about yourself…\" />\n  <InputGroupAddon align=\"block-start\" class=\"gap-1 rounded-t-lg border-b bg-muted/72 p-2!\">\n    <Toggle aria-label=\"Toggle bold\" size=\"sm\">\n      <Bold aria-hidden=\"true\" />\n    </Toggle>\n    <Toggle aria-label=\"Toggle italic\" size=\"sm\">\n      <Italic aria-hidden=\"true\" />\n    </Toggle>\n    <Button aria-label=\"Link\" size=\"icon-sm\" variant=\"ghost\">\n      <Link aria-hidden=\"true\" />\n    </Button>\n  </InputGroupAddon>\n</InputGroup>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"input-group",
+		"toggle"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

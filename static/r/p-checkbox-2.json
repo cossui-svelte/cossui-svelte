@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-checkbox-2",
+	"title": "Checkbox 2",
+	"description": "Disabled checkbox",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-checkbox-2.svelte",
+			"target": "$lib/components/particles/checkbox/p-checkbox-2.svelte",
+			"content": "<script lang=\"ts\">\n  import { Checkbox } from '$lib/components/ui/checkbox';\n  import { Label } from '$lib/components/ui/label';\n</script>\n\n<Label>\n  <Checkbox checked disabled />\n  Accept terms and conditions\n</Label>\n"
+		}
+	],
+	"registryDependencies": [
+		"checkbox",
+		"label"
+	],
+	"dependencies": []
+}

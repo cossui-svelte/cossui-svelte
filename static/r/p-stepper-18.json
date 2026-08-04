@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-stepper-18",
+	"title": "Stepper 18",
+	"description": "Vertical stepper with inline titles and descriptions",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-stepper-18.svelte",
+			"target": "$lib/components/particles/stepper/p-stepper-18.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    Stepper,\n    StepperDescription,\n    StepperIndicator,\n    StepperItem,\n    StepperSeparator,\n    StepperTitle,\n    StepperTrigger\n  } from '$lib/components/ui/stepper';\n\n  const steps = [\n    {\n      description: 'Desc for step one',\n      step: 1,\n      title: 'Step One'\n    },\n    {\n      description: 'Desc for step two',\n      step: 2,\n      title: 'Step Two'\n    },\n    {\n      description: 'Desc for step three',\n      step: 3,\n      title: 'Step Three'\n    }\n  ];\n</script>\n\n<div class=\"space-y-8 text-center\">\n  <Stepper orientation=\"vertical\" step={2}>\n    {#each steps as { step, title, description } (step)}\n      <StepperItem class=\"relative not-last:flex-1 items-start self-stretch\" {step}>\n        <StepperTrigger class=\"flex-row items-start gap-x-3 rounded-md pb-8 last:pb-0\">\n          <StepperIndicator />\n          <div class=\"space-y-0.5 text-left\">\n            <StepperTitle>{title}</StepperTitle>\n            <StepperDescription>{description}</StepperDescription>\n          </div>\n        </StepperTrigger>\n        {#if step < steps.length}\n          <StepperSeparator\n            class=\"absolute top-6 -bottom-1.5 left-5 -order-1 m-0 -translate-x-1/2\"\n          />\n        {/if}\n      </StepperItem>\n    {/each}\n  </Stepper>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"stepper"
+	],
+	"dependencies": []
+}

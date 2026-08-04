@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-button-26",
+	"title": "Button 26",
+	"description": "Star button with count badge",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-button-26.svelte",
+			"target": "$lib/components/particles/button/p-button-26.svelte",
+			"content": "<script lang=\"ts\">\n  import Star from '@lucide/svelte/icons/star';\n  import { Button } from '$lib/components/ui/button';\n\n  let isStarred = $state(false);\n  let count = $derived(isStarred ? 730 : 729);\n</script>\n\n<Button onclick={() => (isStarred = !isStarred)}>\n  <Star aria-hidden=\"true\" class={isStarred ? 'fill-yellow-500 text-yellow-500' : ''} />\n  <span class=\"flex items-baseline gap-2\">\n    {isStarred ? 'Starred' : 'Star'}\n    <span class=\"text-primary-foreground/60 text-xs\">{count}</span>\n  </span>\n</Button>\n"
+		}
+	],
+	"registryDependencies": [
+		"button"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

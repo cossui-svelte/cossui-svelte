@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-toggle-3",
+	"title": "Toggle 3",
+	"description": "Toggle with icon",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-toggle-3.svelte",
+			"target": "$lib/components/particles/toggle/p-toggle-3.svelte",
+			"content": "<script lang=\"ts\">\n  import BoldIcon from '@lucide/svelte/icons/bold';\n  import { Toggle } from '$lib/components/ui/toggle';\n</script>\n\n<Toggle aria-label=\"Toggle bold\" variant=\"outline\">\n  <BoldIcon />\n</Toggle>\n"
+		}
+	],
+	"registryDependencies": [
+		"toggle"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

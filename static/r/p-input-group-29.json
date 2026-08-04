@@ -1,0 +1,23 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-input-group-29",
+	"title": "Input group 29",
+	"description": "Chat input with voice and send buttons",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-input-group-29.svelte",
+			"target": "$lib/components/particles/input-group/p-input-group-29.svelte",
+			"content": "<script lang=\"ts\">\n  import ArrowRight from '@lucide/svelte/icons/arrow-right';\n  import Mic from '@lucide/svelte/icons/mic';\n  import { buttonVariants } from '$lib/components/ui/button';\n  import {\n    InputGroup,\n    InputGroupAddon,\n    InputGroupText,\n    InputGroupTextarea\n  } from '$lib/components/ui/input-group';\n  import {\n    Tooltip,\n    TooltipPopup,\n    TooltipProvider,\n    TooltipTrigger\n  } from '$lib/components/ui/tooltip';\n</script>\n\n<TooltipProvider>\n  <InputGroup>\n    <InputGroupTextarea placeholder=\"Type a message…\" />\n    <InputGroupAddon align=\"block-end\">\n      <Tooltip>\n        <TooltipTrigger\n          aria-label=\"Voice message\"\n          class={`rounded-full ${buttonVariants({ size: 'icon-sm', variant: 'ghost' })}`}\n        >\n          <Mic />\n        </TooltipTrigger>\n        <TooltipPopup>Record voice message</TooltipPopup>\n      </Tooltip>\n      <InputGroupText class=\"ml-auto text-muted-foreground text-xs\">\n        Press Enter to send\n      </InputGroupText>\n      <Tooltip>\n        <TooltipTrigger\n          aria-label=\"Send message\"\n          class={`rounded-full ${buttonVariants({ size: 'icon-sm' })}`}\n        >\n          <ArrowRight />\n        </TooltipTrigger>\n        <TooltipPopup>Send</TooltipPopup>\n      </Tooltip>\n    </InputGroupAddon>\n  </InputGroup>\n</TooltipProvider>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"input-group",
+		"tooltip"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

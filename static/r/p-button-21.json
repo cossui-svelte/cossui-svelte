@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-button-21",
+	"title": "Button 21",
+	"description": "Card-style button with heading and description",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-button-21.svelte",
+			"target": "$lib/components/particles/button/p-button-21.svelte",
+			"content": "<script lang=\"ts\">\n  import ChevronRight from '@lucide/svelte/icons/chevron-right';\n  import { Button } from '$lib/components/ui/button';\n</script>\n\n<Button class=\"h-auto! gap-4 px-4 py-3 text-left\" variant=\"outline\">\n  <div class=\"flex flex-col gap-0.5\">\n    <h3>Talent Agency</h3>\n    <p class=\"whitespace-break-spaces font-normal text-muted-foreground\">Matches for your roster</p>\n  </div>\n  <ChevronRight\n    aria-hidden=\"true\"\n    class=\"in-[[data-slot=button]:hover]:translate-x-0.5 transition-transform\"\n  />\n</Button>\n"
+		}
+	],
+	"registryDependencies": [
+		"button"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-slider-9",
+	"title": "Slider 9",
+	"description": "Range slider with collision behavior none",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-slider-9.svelte",
+			"target": "$lib/components/particles/slider/p-slider-9.svelte",
+			"content": "<script lang=\"ts\">\n  import { Slider } from '$lib/components/ui/slider';\n\n  let value = $state([25, 75]);\n</script>\n\n<Slider\n  aria-label=\"Dual thumb slider with collision behavior none\"\n  thumbCollisionBehavior=\"none\"\n  bind:value\n/>\n"
+		}
+	],
+	"registryDependencies": [
+		"slider"
+	],
+	"dependencies": []
+}

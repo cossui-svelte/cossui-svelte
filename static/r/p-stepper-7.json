@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-stepper-7",
+	"title": "Stepper 7",
+	"description": "Stepper with mixed elements",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-stepper-7.svelte",
+			"target": "$lib/components/particles/stepper/p-stepper-7.svelte",
+			"content": "<script lang=\"ts\">\n  import Shuffle from '@lucide/svelte/icons/shuffle';\n  import {\n    Stepper,\n    StepperIndicator,\n    StepperItem,\n    StepperSeparator,\n    StepperTrigger\n  } from '$lib/components/ui/stepper';\n  import avatar from '$assets/avatar-40-05.jpg';\n</script>\n\n<div class=\"mx-auto max-w-xl space-y-8 text-center w-full\">\n  <Stepper step={2}>\n    <StepperItem class=\"not-last:flex-1\" step={1}>\n      <StepperTrigger>\n        <StepperIndicator>\n          <enhanced:img alt=\"Mike Palmer\" class=\"rounded-full\" src={avatar} />\n        </StepperIndicator>\n      </StepperTrigger>\n      <StepperSeparator />\n    </StepperItem>\n    <StepperItem class=\"not-last:flex-1\" loading step={2}>\n      <StepperTrigger>\n        <StepperIndicator />\n      </StepperTrigger>\n      <StepperSeparator />\n    </StepperItem>\n    <StepperItem class=\"not-last:flex-1\" step={3}>\n      <StepperTrigger>\n        <StepperIndicator>\n          <Shuffle aria-hidden=\"true\" size={14} />\n          <span class=\"sr-only\">Shuffle</span>\n        </StepperIndicator>\n      </StepperTrigger>\n    </StepperItem>\n  </Stepper>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"stepper",
+		"assets"
+	],
+	"dependencies": []
+}

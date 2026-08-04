@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-toggle-group-6",
+	"title": "Toggle group 6",
+	"description": "Disabled toggle group",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-toggle-group-6.svelte",
+			"target": "$lib/components/particles/toggle-group/p-toggle-group-6.svelte",
+			"content": "<script lang=\"ts\">\n  import BoldIcon from '@lucide/svelte/icons/bold';\n  import ItalicIcon from '@lucide/svelte/icons/italic';\n  import UnderlineIcon from '@lucide/svelte/icons/underline';\n  import { ToggleGroup, ToggleGroupItem } from '$lib/components/ui/toggle-group';\n</script>\n\n<ToggleGroup value={['bold']} multiple disabled>\n  <ToggleGroupItem aria-label=\"Toggle bold\" value=\"bold\">\n    <BoldIcon />\n  </ToggleGroupItem>\n  <ToggleGroupItem aria-label=\"Toggle italic\" value=\"italic\">\n    <ItalicIcon />\n  </ToggleGroupItem>\n  <ToggleGroupItem aria-label=\"Toggle underline\" value=\"underline\">\n    <UnderlineIcon />\n  </ToggleGroupItem>\n</ToggleGroup>\n"
+		}
+	],
+	"registryDependencies": [
+		"toggle-group"
+	],
+	"dependencies": []
+}

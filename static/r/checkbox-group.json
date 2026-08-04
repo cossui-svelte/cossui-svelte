@@ -1,0 +1,33 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "checkbox-group",
+	"title": "Checkbox Group",
+	"description": "Provides shared state to a series of checkboxes.",
+	"type": "registry:ui",
+	"files": [
+		{
+			"type": "registry:ui",
+			"path": "checkbox-group/checkbox-group.svelte",
+			"target": "$lib/components/ui/checkbox-group/checkbox-group.svelte",
+			"content": "<script lang=\"ts\">\n  import { Checkbox } from 'bits-ui';\n  import type { Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  interface Props extends Checkbox.GroupProps {\n    children?: Snippet;\n  }\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<Checkbox.Group class={cn('flex flex-col items-start gap-3', className)} {...restProps}>\n  {@render children?.()}\n</Checkbox.Group>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "checkbox-group/checkbox-tree.svelte",
+			"target": "$lib/components/ui/checkbox-group/checkbox-tree.svelte",
+			"content": "<script lang=\"ts\" module>\n  /**\n   * IMPORTANT: This component was built for demo purposes only and has not been tested in production.\n   * It serves as a proof of concept for a checkbox tree implementation.\n   * If you're interested in collaborating to create a more robust, production-ready\n   * headless component, your contributions are welcome!\n   */\n</script>\n\n<script lang=\"ts\">\n  import type { Snippet } from 'svelte';\n  import { SvelteSet } from 'svelte/reactivity';\n\n  interface CheckBoxTreeNode {\n    children?: CheckBoxTreeNode[];\n    defaultChecked?: boolean;\n    id: string;\n    indeterminate?: boolean;\n    label: string;\n  }\n\n  interface RenderNodeProps {\n    checked: boolean;\n    children: RenderNodeProps[];\n    id: string;\n    indeterminate?: boolean;\n    label: string;\n    onCheckedChange: () => void;\n  }\n\n  let {\n    renderNode,\n    tree\n  }: {\n    renderNode: Snippet<[RenderNodeProps]>;\n    tree: CheckBoxTreeNode;\n  } = $props();\n\n  const checkedNodes = new SvelteSet<string>();\n\n  // Initialize checked nodes (Self-invoking function)\n  (function initializeCheckedNodes(node: CheckBoxTreeNode) {\n    if (node.defaultChecked) {\n      checkedNodes.add(node.id);\n    }\n    node.children?.forEach(initializeCheckedNodes);\n  })(tree);\n\n  function isChecked(node: CheckBoxTreeNode): boolean {\n    if (!node.children) {\n      return checkedNodes.has(node.id);\n    }\n\n    const childrenChecked = node.children.map(isChecked);\n    if (childrenChecked.every((status) => status === true)) {\n      return true;\n    }\n\n    return false;\n  }\n\n  function isIndeterminate(node: CheckBoxTreeNode): boolean {\n    if (!node.children?.length) return false;\n\n    const childrenChecked = node.children.map(isChecked);\n    return childrenChecked.some(Boolean) && !childrenChecked.every(Boolean);\n  }\n\n  function handleCheck(node: CheckBoxTreeNode) {\n    function toggleNode(n: CheckBoxTreeNode, check: boolean) {\n      if (check) {\n        checkedNodes.add(n.id);\n      } else {\n        checkedNodes.delete(n.id);\n      }\n      n.children?.forEach((child) => {\n        toggleNode(child, check);\n      });\n    }\n\n    const currentStatus = isChecked(node);\n    const newCheck = currentStatus !== true;\n\n    toggleNode(node, newCheck);\n  }\n\n  function renderTreeNode(node: CheckBoxTreeNode): RenderNodeProps {\n    return {\n      checked: isChecked(node),\n      children: node.children?.map(renderTreeNode) ?? [],\n      id: node.id,\n      indeterminate: isIndeterminate(node),\n      label: node.label,\n      onCheckedChange: () => handleCheck(node)\n    };\n  }\n</script>\n\n{@render renderNode(renderTreeNode(tree))}\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "checkbox-group/index.ts",
+			"target": "$lib/components/ui/checkbox-group/index.ts",
+			"content": "export { default as CheckboxGroup } from '../checkbox-group/checkbox-group.svelte';\nexport { default as CheckboxTree } from '../checkbox-group/checkbox-tree.svelte';\n"
+		}
+	],
+	"registryDependencies": [
+		"utils"
+	],
+	"dependencies": [
+		"bits-ui@^2.18.1"
+	]
+}

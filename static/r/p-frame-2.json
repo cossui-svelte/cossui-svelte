@@ -1,0 +1,24 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-frame-2",
+	"title": "Frame 2",
+	"description": "Frame with collapsible content and delete button",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-frame-2.svelte",
+			"target": "$lib/components/particles/frame/p-frame-2.svelte",
+			"content": "<script lang=\"ts\">\n  import ChevronDown from '@lucide/svelte/icons/chevron-down';\n  import Trash from '@lucide/svelte/icons/trash';\n  import { Button, buttonVariants } from '$lib/components/ui/button';\n  import {\n    Collapsible,\n    CollapsiblePanel,\n    CollapsibleTrigger\n  } from '$lib/components/ui/collapsible';\n  import { Frame, FrameHeader, FramePanel } from '$lib/components/ui/frame';\n  import { cn } from '$lib/utils';\n</script>\n\n<Frame class=\"w-full\">\n  <Collapsible>\n    <FrameHeader class=\"flex-row items-center justify-between px-2 py-2\">\n      <CollapsibleTrigger\n        class={cn(buttonVariants({ variant: 'ghost' }), 'data-[state=open]:[&_svg]:rotate-180')}\n      >\n        <ChevronDown class=\"size-4\" aria-hidden />\n        Section header\n      </CollapsibleTrigger>\n      <Button aria-label=\"Delete\" size=\"icon\" variant=\"ghost\">\n        <Trash aria-hidden />\n      </Button>\n    </FrameHeader>\n    <CollapsiblePanel>\n      <FramePanel>\n        <h2 class=\"font-semibold text-sm\">Section title</h2>\n        <p class=\"text-muted-foreground text-sm\">Section description</p>\n      </FramePanel>\n    </CollapsiblePanel>\n  </Collapsible>\n</Frame>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"collapsible",
+		"frame",
+		"utils"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

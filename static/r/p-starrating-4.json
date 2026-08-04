@@ -1,0 +1,25 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-starrating-4",
+	"title": "Starrating 4",
+	"description": "Star rating inside a form field",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-starrating-4.svelte",
+			"target": "$lib/components/particles/starrating/p-starrating-4.svelte",
+			"content": "<script lang=\"ts\">\n  import { z } from 'zod';\n  import { Button } from '$lib/components/ui/button';\n  import { Field, FieldDescription, FieldError, FieldLabel } from '$lib/components/ui/field';\n  import { Form } from '$lib/components/ui/form';\n  import { StarRating } from '$lib/components/ui/starrating';\n  import { createForm } from '$lib/hooks/use-superform';\n\n  const schema = z.object({\n    rating: z.number().min(1, 'Please select a rating')\n  });\n\n  const superform = createForm({\n    initialData: { rating: 0 },\n    onUpdated: (data) => {\n      alert(`Rating: ${data.rating}`);\n    },\n    schema\n  });\n\n  const { form, submitting } = superform;\n</script>\n\n<Form class=\"flex w-full flex-col gap-4\" {superform}>\n  <Field class=\"items-stretch gap-3\" name=\"rating\">\n    <FieldLabel>How would you rate your experience?</FieldLabel>\n    <StarRating bind:value={$form.rating} />\n    <FieldDescription>Select a rating from 1 to 5 stars</FieldDescription>\n    <FieldError />\n  </Field>\n  <Button loading={$submitting} type=\"submit\">Submit</Button>\n</Form>\n"
+		}
+	],
+	"registryDependencies": [
+		"starrating",
+		"field",
+		"form",
+		"button",
+		"use-superform"
+	],
+	"dependencies": [
+		"zod@^4.4.3"
+	]
+}

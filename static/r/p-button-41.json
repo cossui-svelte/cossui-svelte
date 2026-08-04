@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-button-41",
+	"title": "Button 41",
+	"description": "Button using the built-in loading prop",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-button-41.svelte",
+			"target": "$lib/components/particles/button/p-button-41.svelte",
+			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n\n  let isLoading = $state(false);\n\n  function handleClick() {\n    isLoading = true;\n    setTimeout(() => (isLoading = false), 1000);\n  }\n</script>\n\n<Button loading={isLoading} onclick={handleClick}>Submit</Button>\n"
+		}
+	],
+	"registryDependencies": [
+		"button"
+	],
+	"dependencies": []
+}

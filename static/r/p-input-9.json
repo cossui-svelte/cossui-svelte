@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-input-9",
+	"title": "Input 9",
+	"description": "Password input with toggle visibility",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-input-9.svelte",
+			"target": "$lib/components/particles/input/p-input-9.svelte",
+			"content": "<script lang=\"ts\">\n  import Eye from '@lucide/svelte/icons/eye';\n  import EyeOff from '@lucide/svelte/icons/eye-off';\n  import { buttonVariants } from '$lib/components/ui/button';\n  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';\n  import {\n    Tooltip,\n    TooltipPopup,\n    TooltipProvider,\n    TooltipTrigger\n  } from '$lib/components/ui/tooltip';\n\n  let showPassword = $state(false);\n</script>\n\n<TooltipProvider>\n  <InputGroup>\n    <InputGroupInput\n      aria-label=\"Password with toggle visibility\"\n      placeholder=\"Enter your password\"\n      type={showPassword ? 'text' : 'password'}\n    />\n    <InputGroupAddon align=\"inline-end\">\n      <Tooltip>\n        <TooltipTrigger\n          aria-label={showPassword ? 'Hide password' : 'Show password'}\n          class={buttonVariants({ size: 'icon-xs', variant: 'ghost' })}\n          onclick={() => {\n            showPassword = !showPassword;\n          }}\n        >\n          {#if showPassword}<EyeOff />{:else}<Eye />{/if}\n        </TooltipTrigger>\n        <TooltipPopup>\n          {showPassword ? 'Hide password' : 'Show password'}\n        </TooltipPopup>\n      </Tooltip>\n    </InputGroupAddon>\n  </InputGroup>\n</TooltipProvider>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"input-group",
+		"tooltip"
+	],
+	"dependencies": []
+}

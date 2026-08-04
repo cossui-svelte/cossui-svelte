@@ -1,0 +1,22 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-popover-2",
+	"title": "Popover 2",
+	"description": "Popover with close button",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-popover-2.svelte",
+			"target": "$lib/components/particles/popover/p-popover-2.svelte",
+			"content": "<script lang=\"ts\">\n  import X from '@lucide/svelte/icons/x';\n  import { buttonVariants } from '$lib/components/ui/button';\n  import {\n    Popover,\n    PopoverClose,\n    PopoverDescription,\n    PopoverPopup,\n    PopoverTitle,\n    PopoverTrigger\n  } from '$lib/components/ui/popover';\n</script>\n\n<Popover>\n  <PopoverTrigger class={buttonVariants({ variant: 'outline' })}>Open Popover</PopoverTrigger>\n  <PopoverPopup class=\"w-80\">\n    <PopoverClose\n      aria-label=\"Close\"\n      class={`absolute end-2 top-2 ${buttonVariants({ size: 'icon', variant: 'ghost' })}`}\n    >\n      <X />\n    </PopoverClose>\n    <div class=\"mb-2\">\n      <PopoverTitle class=\"text-base\">Notifications</PopoverTitle>\n      <PopoverDescription>You are all caught up. Good job!</PopoverDescription>\n    </div>\n    <PopoverClose class={buttonVariants({ variant: 'outline' })}>Close</PopoverClose>\n  </PopoverPopup>\n</Popover>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"popover"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

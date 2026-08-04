@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-context-menu-7",
+	"title": "Context menu 7",
+	"description": "Context menu with radio group",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-context-menu-7.svelte",
+			"target": "$lib/components/particles/context-menu/p-context-menu-7.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    ContextMenu,\n    ContextMenuPopup,\n    ContextMenuRadioGroup,\n    ContextMenuRadioItem,\n    ContextMenuTrigger\n  } from '$lib/components/ui/context-menu';\n\n  let theme = $state('system');\n</script>\n\n<ContextMenu>\n  <ContextMenuTrigger\n    class=\"flex h-32 w-full max-w-sm items-center justify-center rounded-lg border border-dashed text-muted-foreground text-sm\"\n  >\n    Right click here\n  </ContextMenuTrigger>\n  <ContextMenuPopup>\n    <ContextMenuRadioGroup bind:value={theme}>\n      <ContextMenuRadioItem value=\"light\">Light</ContextMenuRadioItem>\n      <ContextMenuRadioItem value=\"dark\">Dark</ContextMenuRadioItem>\n      <ContextMenuRadioItem value=\"system\">System</ContextMenuRadioItem>\n    </ContextMenuRadioGroup>\n  </ContextMenuPopup>\n</ContextMenu>\n"
+		}
+	],
+	"registryDependencies": [
+		"context-menu"
+	],
+	"dependencies": []
+}

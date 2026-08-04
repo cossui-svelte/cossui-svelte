@@ -1,0 +1,23 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-input-group-21",
+	"title": "Input group 21",
+	"description": "Input group with start tooltip",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-input-group-21.svelte",
+			"target": "$lib/components/particles/input-group/p-input-group-21.svelte",
+			"content": "<script lang=\"ts\">\n  import Info from '@lucide/svelte/icons/info';\n  import { buttonVariants } from '$lib/components/ui/button';\n  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';\n  import {\n    Tooltip,\n    TooltipPopup,\n    TooltipProvider,\n    TooltipTrigger\n  } from '$lib/components/ui/tooltip';\n</script>\n\n<TooltipProvider>\n  <InputGroup>\n    <InputGroupAddon>\n      <Tooltip>\n        <TooltipTrigger\n          aria-label=\"More information\"\n          class={buttonVariants({ size: 'icon-xs', variant: 'ghost' })}\n        >\n          <Info />\n        </TooltipTrigger>\n        <TooltipPopup>Enter your username</TooltipPopup>\n      </Tooltip>\n    </InputGroupAddon>\n    <InputGroupInput aria-label=\"Username\" placeholder=\"Username\" type=\"text\" />\n  </InputGroup>\n</TooltipProvider>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"input-group",
+		"tooltip"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

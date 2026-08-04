@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-slider-13",
+	"title": "Slider 13",
+	"description": "Range slider with inputs",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-slider-13.svelte",
+			"target": "$lib/components/particles/slider/p-slider-13.svelte",
+			"content": "<script lang=\"ts\">\n  import { NumberField, NumberFieldGroup, NumberFieldInput } from '$lib/components/ui/number-field';\n  import { Slider } from '$lib/components/ui/slider';\n\n  const min = 0;\n  const max = 50;\n\n  let values = $state([0, 20]);\n\n  function updateValue(index: number, newValue: number | null) {\n    const v = newValue ?? min;\n    if (index === 0) {\n      values[0] = Math.min(v, values[1] ?? max);\n    } else {\n      values[1] = Math.max(v, values[0] ?? min);\n    }\n  }\n</script>\n\n<div class=\"flex items-center gap-2\">\n  <NumberField\n    aria-label=\"Minimum value\"\n    class=\"w-10\"\n    max={values[1]}\n    {min}\n    bind:value={() => values[0], (v) => updateValue(0, v)}\n    size=\"sm\"\n  >\n    <NumberFieldGroup>\n      <NumberFieldInput />\n    </NumberFieldGroup>\n  </NumberField>\n  <Slider\n    aria-label=\"Dual range slider\"\n    class=\"flex-1 *:min-w-0!\"\n    {max}\n    {min}\n    bind:value={values}\n  />\n  <NumberField\n    aria-label=\"Maximum value\"\n    class=\"w-10\"\n    {max}\n    min={values[0]}\n    bind:value={() => values[1], (v) => updateValue(1, v)}\n    size=\"sm\"\n  >\n    <NumberFieldGroup>\n      <NumberFieldInput />\n    </NumberFieldGroup>\n  </NumberField>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"number-field",
+		"slider"
+	],
+	"dependencies": []
+}

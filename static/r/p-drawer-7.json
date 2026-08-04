@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-drawer-7",
+	"title": "Drawer 7",
+	"description": "Nested bottom drawers with centered content",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-drawer-7.svelte",
+			"target": "$lib/components/particles/drawer/p-drawer-7.svelte",
+			"content": "<script lang=\"ts\">\n  import { buttonVariants } from '$lib/components/ui/button';\n  import {\n    Drawer,\n    DrawerClose,\n    DrawerDescription,\n    DrawerFooter,\n    DrawerHeader,\n    DrawerNestedRoot,\n    DrawerPanel,\n    DrawerPopup,\n    DrawerTitle,\n    DrawerTrigger\n  } from '$lib/components/ui/drawer';\n</script>\n\n<Drawer>\n  <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Nested drawers</DrawerTrigger>\n  <DrawerPopup showBar>\n    <DrawerHeader class=\"text-center\">\n      <DrawerTitle>First step</DrawerTitle>\n      <DrawerDescription>\n        This is the first step. Tap the button below to continue to the next screen.\n      </DrawerDescription>\n    </DrawerHeader>\n    <DrawerFooter variant=\"bare\" class=\"justify-center sm:justify-center\">\n      <DrawerClose class={buttonVariants({ variant: 'ghost' })}>Cancel</DrawerClose>\n      <DrawerNestedRoot>\n        <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Continue</DrawerTrigger>\n        <DrawerPopup showBar>\n          <DrawerHeader class=\"text-center\">\n            <DrawerTitle>Second step</DrawerTitle>\n            <DrawerDescription>\n              You've reached the second step. Tap the button below to continue to the next screen.\n            </DrawerDescription>\n          </DrawerHeader>\n          <DrawerPanel>\n            <div class=\"flex justify-center\">\n              <div class=\"size-48 shrink-0 rounded-xl border bg-muted\"></div>\n            </div>\n          </DrawerPanel>\n          <DrawerFooter variant=\"bare\" class=\"justify-center sm:justify-center\">\n            <DrawerClose class={buttonVariants({ variant: 'ghost' })}>Back</DrawerClose>\n            <DrawerNestedRoot>\n              <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Continue</DrawerTrigger>\n              <DrawerPopup showBar>\n                <DrawerHeader class=\"text-center\">\n                  <DrawerTitle>Third step</DrawerTitle>\n                  <DrawerDescription>\n                    You've reached the final step. You can close this drawer or go back.\n                  </DrawerDescription>\n                </DrawerHeader>\n                <DrawerPanel>\n                  <div class=\"flex justify-center\">\n                    <div class=\"size-32 shrink-0 rounded-full border bg-muted\"></div>\n                  </div>\n                </DrawerPanel>\n              </DrawerPopup>\n            </DrawerNestedRoot>\n          </DrawerFooter>\n        </DrawerPopup>\n      </DrawerNestedRoot>\n    </DrawerFooter>\n  </DrawerPopup>\n</Drawer>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"drawer"
+	],
+	"dependencies": []
+}

@@ -1,0 +1,23 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-switch-5",
+	"title": "Switch 5",
+	"description": "Switch in form",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-switch-5.svelte",
+			"target": "$lib/components/particles/switch/p-switch-5.svelte",
+			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n  import { Label } from '$lib/components/ui/label';\n  import { Switch } from '$lib/components/ui/switch';\n\n  let loading = $state(false);\n\n  async function handleSubmit(e: SubmitEvent) {\n    e.preventDefault();\n    const formData = new FormData(e.currentTarget as HTMLFormElement);\n    loading = true;\n    await new Promise((r) => setTimeout(r, 800));\n    loading = false;\n    const enabled = formData.get('marketing');\n    alert(`Marketing emails: ${enabled}`);\n  }\n</script>\n\n<form class=\"flex flex-col gap-4\" onsubmit={handleSubmit}>\n  <Label>\n    <Switch name=\"marketing\" checked={true} />\n    Enable marketing emails\n  </Label>\n  <Button {loading} type=\"submit\">Submit</Button>\n</form>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"field",
+		"form",
+		"switch",
+		"label"
+	],
+	"dependencies": []
+}

@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-cropper-5",
+	"title": "Cropper 5",
+	"description": "Cropper with custom mask overlay",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-cropper-5.svelte",
+			"target": "$lib/components/particles/cropper/p-cropper-5.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    Cropper,\n    CropperCropArea,\n    CropperDescription,\n    CropperImage\n  } from '$lib/components/ui/cropper';\n</script>\n\n<div class=\"flex w-full flex-col items-center gap-2\">\n  <Cropper class=\"h-80 bg-black\" image=\"/img/cropper/cropper-04_jflxhw.jpg\">\n    <CropperDescription />\n    <CropperImage />\n    <CropperCropArea class=\"shadow-[0_0_0_9999px_rgba(255,255,255,0.5)]\" />\n  </Cropper>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"cropper"
+	],
+	"dependencies": []
+}

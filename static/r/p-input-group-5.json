@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-input-group-5",
+	"title": "Input group 5",
+	"description": "Input group with start and end text",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-input-group-5.svelte",
+			"target": "$lib/components/particles/input-group/p-input-group-5.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    InputGroup,\n    InputGroupAddon,\n    InputGroupInput,\n    InputGroupText\n  } from '$lib/components/ui/input-group';\n</script>\n\n<InputGroup>\n  <InputGroupInput\n    aria-label=\"Enter your domain\"\n    class=\"*:[input]:px-0!\"\n    placeholder=\"coss\"\n    type=\"text\"\n  />\n  <InputGroupAddon>\n    <InputGroupText>https://</InputGroupText>\n  </InputGroupAddon>\n  <InputGroupAddon align=\"inline-end\">\n    <InputGroupText>.com</InputGroupText>\n  </InputGroupAddon>\n</InputGroup>\n"
+		}
+	],
+	"registryDependencies": [
+		"input-group"
+	],
+	"dependencies": []
+}

@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-context-menu-3",
+	"title": "Context menu 3",
+	"description": "Nested context menu",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-context-menu-3.svelte",
+			"target": "$lib/components/particles/context-menu/p-context-menu-3.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    ContextMenu,\n    ContextMenuItem,\n    ContextMenuPopup,\n    ContextMenuSub,\n    ContextMenuSubPopup,\n    ContextMenuSubTrigger,\n    ContextMenuTrigger\n  } from '$lib/components/ui/context-menu';\n</script>\n\n<ContextMenu>\n  <ContextMenuTrigger\n    class=\"flex h-32 w-full max-w-sm items-center justify-center rounded-lg border border-dashed text-muted-foreground text-sm\"\n  >\n    Right click here\n  </ContextMenuTrigger>\n  <ContextMenuPopup>\n    <ContextMenuItem>Cut</ContextMenuItem>\n    <ContextMenuItem>Copy</ContextMenuItem>\n    <ContextMenuItem>Paste</ContextMenuItem>\n    <ContextMenuSub>\n      <ContextMenuSubTrigger>Share</ContextMenuSubTrigger>\n      <ContextMenuSubPopup>\n        <ContextMenuItem>Email link</ContextMenuItem>\n        <ContextMenuItem>Messages</ContextMenuItem>\n        <ContextMenuItem>Notes</ContextMenuItem>\n      </ContextMenuSubPopup>\n    </ContextMenuSub>\n  </ContextMenuPopup>\n</ContextMenu>\n"
+		}
+	],
+	"registryDependencies": [
+		"context-menu"
+	],
+	"dependencies": []
+}

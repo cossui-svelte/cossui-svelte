@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-cropper-10",
+	"title": "Cropper 10",
+	"description": "Cropper with crop data output",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-cropper-10.svelte",
+			"target": "$lib/components/particles/cropper/p-cropper-10.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    Cropper,\n    CropperCropArea,\n    CropperDescription,\n    CropperImage\n  } from '$lib/components/ui/cropper';\n\n  type Area = { x: number; y: number; width: number; height: number };\n\n  let cropData = $state<Area | null>(null);\n</script>\n\n<div class=\"flex w-full flex-col items-center gap-2\">\n  <div class=\"flex w-full flex-col gap-4\">\n    <Cropper\n      class=\"h-80\"\n      cropPadding={20}\n      image=\"/img/cropper/cropper-09_qskkln.jpg\"\n      onCropChange={(area) => (cropData = area)}\n    >\n      <CropperDescription />\n      <CropperImage />\n      <CropperCropArea />\n    </Cropper>\n\n    {#if cropData}\n      <pre\n        class=\"overflow-auto rounded-md border bg-muted px-4 py-3 font-mono text-foreground/80 text-xs\"><code\n          >{JSON.stringify(cropData, null, 2)}</code\n        ></pre>\n    {/if}\n  </div>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"cropper"
+	],
+	"dependencies": []
+}

@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-scroll-area-4",
+	"title": "Scroll area 4",
+	"description": "Scroll area with fading edges",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-scroll-area-4.svelte",
+			"target": "$lib/components/particles/scroll-area/p-scroll-area-4.svelte",
+			"content": "<script lang=\"ts\">\n  import { ScrollArea } from '$lib/components/ui/scroll-area';\n\n  const tags = Array.from({ length: 50 }, (_, i) => `v1.0.0-alpha.${i}`);\n</script>\n\n<ScrollArea class=\"h-64 rounded-lg border\" scrollFade>\n  <div class=\"px-4 py-2\">\n    <h4 class=\"mb-2 font-medium text-sm\">Tags</h4>\n    <div class=\"flex flex-col gap-1\">\n      {#each tags as tag (tag)}\n        <div class=\"text-sm\">{tag}</div>\n      {/each}\n    </div>\n  </div>\n</ScrollArea>\n"
+		}
+	],
+	"registryDependencies": [
+		"scroll-area"
+	],
+	"dependencies": []
+}

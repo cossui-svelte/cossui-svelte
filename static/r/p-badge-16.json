@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-badge-16",
+	"title": "Badge 16",
+	"description": "Status badge - Paid",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-badge-16.svelte",
+			"target": "$lib/components/particles/badge/p-badge-16.svelte",
+			"content": "<script lang=\"ts\">\n  import { Badge } from '$lib/components/ui/badge';\n</script>\n\n<Badge variant=\"outline\">\n  <span aria-hidden=\"true\" class=\"size-1.5 rounded-full bg-emerald-500\" />\n  Paid\n</Badge>\n"
+		}
+	],
+	"registryDependencies": [
+		"badge"
+	],
+	"dependencies": []
+}

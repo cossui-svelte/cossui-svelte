@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-select-9",
+	"title": "Select 9",
+	"description": "Select options with icon",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-select-9.svelte",
+			"target": "$lib/components/particles/select/p-select-9.svelte",
+			"content": "<script lang=\"ts\">\n  import Code2Icon from '@lucide/svelte/icons/code-2';\n  import GlobeIcon from '@lucide/svelte/icons/globe';\n  import LayersIcon from '@lucide/svelte/icons/layers';\n  import ZapIcon from '@lucide/svelte/icons/zap';\n  import { Select, SelectItem, SelectPopup, SelectTrigger } from '$lib/components/ui/select';\n\n  const items = [\n    { icon: LayersIcon, label: 'Components', value: 'components' },\n    { icon: ZapIcon, label: 'Performance', value: 'performance' },\n    { icon: GlobeIcon, label: 'Network', value: 'network' },\n    { icon: Code2Icon, label: 'Development', value: 'development' }\n  ];\n\n  let selected = $state('components');\n  const selectedItem = $derived(items.find((i) => i.value === selected) ?? items[0]);\n</script>\n\n<Select\n  value={selected}\n  onValueChange={(v) => {\n    selected = v;\n  }}\n>\n  <SelectTrigger aria-label=\"Select category\">\n    <span class=\"flex items-center gap-2\">\n      <svelte:component this={selectedItem.icon} />\n      <span class=\"truncate\">{selectedItem.label}</span>\n    </span>\n  </SelectTrigger>\n  <SelectPopup>\n    {#each items as item (item.value)}\n      <SelectItem value={item.value}>\n        <span class=\"flex items-center gap-2\">\n          <svelte:component this={item.icon} />\n          <span class=\"truncate\">{item.label}</span>\n        </span>\n      </SelectItem>\n    {/each}\n  </SelectPopup>\n</Select>\n"
+		}
+	],
+	"registryDependencies": [
+		"select"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

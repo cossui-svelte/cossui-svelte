@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-starrating-6",
+	"title": "Starrating 6",
+	"description": "Heart rating using a custom icon",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-starrating-6.svelte",
+			"target": "$lib/components/particles/starrating/p-starrating-6.svelte",
+			"content": "<script lang=\"ts\">\n  import Heart from '@lucide/svelte/icons/heart';\n  import { StarRating, type StarRatingState } from '$lib/components/ui/starrating';\n\n  let value = $state(3);\n</script>\n\n{#snippet icon({ state }: { index: number; state: StarRatingState })}\n  <Heart class=\"text-muted-foreground\" />\n  <span\n    class=\"absolute inset-0 overflow-hidden\"\n    style=\"width: {state === 'full' ? 100 : state === 'half' ? 50 : 0}%\"\n  >\n    <Heart class=\"fill-rose-500 text-rose-500\" />\n  </span>\n{/snippet}\n\n<StarRating bind:value allowHalf {icon} aria-label=\"Rate this product\" />\n"
+		}
+	],
+	"registryDependencies": [
+		"starrating"
+	],
+	"dependencies": []
+}

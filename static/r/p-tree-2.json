@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-tree-2",
+	"title": "Tree 2",
+	"description": "Basic tree with vertical lines",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-tree-2.svelte",
+			"target": "$lib/components/particles/tree/p-tree-2.svelte",
+			"content": "<script lang=\"ts\">\n  import { hotkeysCoreFeature, syncDataLoaderFeature } from '@headless-tree/core';\n  import { Tree, TreeItem, TreeLabel, useTree } from '$lib/components/ui/tree';\n\n  interface Item {\n    children?: string[];\n    name: string;\n  }\n  const items: Record<string, Item> = {\n    apis: { name: 'APIs' },\n    backend: { children: ['apis', 'infrastructure'], name: 'Backend' },\n    company: {\n      children: ['engineering', 'marketing', 'operations'],\n      name: 'Company'\n    },\n    components: { name: 'Components' },\n    content: { name: 'Content' },\n    'design-system': {\n      children: ['components', 'tokens', 'guidelines'],\n      name: 'Design System'\n    },\n    engineering: {\n      children: ['frontend', 'backend', 'platform-team'],\n      name: 'Engineering'\n    },\n    finance: { name: 'Finance' },\n    frontend: { children: ['design-system', 'web-platform'], name: 'Frontend' },\n    guidelines: { name: 'Guidelines' },\n    hr: { name: 'HR' },\n    infrastructure: { name: 'Infrastructure' },\n    marketing: { children: ['content', 'seo'], name: 'Marketing' },\n    operations: { children: ['hr', 'finance'], name: 'Operations' },\n    'platform-team': { name: 'Platform Team' },\n    seo: { name: 'SEO' },\n    tokens: { name: 'Tokens' },\n    'web-platform': { name: 'Web Platform' }\n  };\n\n  const indent = 20;\n\n  const tree = useTree<Item>({\n    dataLoader: {\n      getChildren: (itemId) => items[itemId].children ?? [],\n      getItem: (itemId) => items[itemId]\n    },\n    features: [syncDataLoaderFeature, hotkeysCoreFeature],\n    getItemName: (item) => item.getItemData().name,\n    indent,\n    initialState: {\n      expandedItems: ['engineering', 'frontend', 'design-system']\n    },\n    isItemFolder: (item) => (item.getItemData()?.children?.length ?? 0) > 0,\n    rootItemId: 'company'\n  });\n</script>\n\n<div class=\"flex h-full flex-col gap-2 *:first:grow\">\n  <div>\n    <Tree\n      class=\"relative before:absolute before:inset-0 before:-ms-1 before:bg-[repeating-linear-gradient(to_right,transparent_0,transparent_calc(var(--tree-indent)-1px),var(--border)_calc(var(--tree-indent)-1px),var(--border)_calc(var(--tree-indent)))]\"\n      {indent}\n      {tree}\n    >\n      {#each tree.current.getItems() as item (item.getId())}\n        <TreeItem {item}>\n          <TreeLabel\n            class=\"before:bg-background relative before:absolute before:inset-x-0 before:-inset-y-0.5 before:-z-10\"\n          />\n        </TreeItem>\n      {/each}\n    </Tree>\n  </div>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"tree"
+	],
+	"dependencies": [
+		"@headless-tree/core@^1.7.0"
+	]
+}

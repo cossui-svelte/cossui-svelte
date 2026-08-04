@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-otp-field-7",
+	"title": "Otp field 7",
+	"description": "OTP field with auto validation",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-otp-field-7.svelte",
+			"target": "$lib/components/particles/otp-field/p-otp-field-7.svelte",
+			"content": "<script lang=\"ts\">\n  import { Label } from '$lib/components/ui/label';\n  import { OTPField, OTPFieldInput } from '$lib/components/ui/otp-field';\n\n  const OTP_LENGTH = 6;\n\n  let value = $state('');\n  let invalid = $state(false);\n  const valid = $derived(value.length === OTP_LENGTH && value === '123456');\n</script>\n\n<div class=\"flex flex-col items-center gap-2\">\n  <Label>Verification code</Label>\n  <OTPField\n    maxlength={OTP_LENGTH}\n    bind:value\n    onValueChange={(v) => {\n      invalid = v.length === OTP_LENGTH ? v !== '123456' : false;\n    }}\n  >\n    {#snippet children({ cells })}\n      {#each cells as cell, i (i)}\n        <OTPFieldInput\n          aria-invalid={invalid || undefined}\n          aria-label={`Character ${i + 1} of ${OTP_LENGTH}`}\n          {cell}\n        />\n      {/each}\n    {/snippet}\n  </OTPField>\n  {#if !valid && !invalid}\n    <p class=\"text-muted-foreground text-xs\">Enter `123456` to pass validation.</p>\n  {/if}\n  {#if invalid}\n    <p class=\"text-destructive text-xs\">Code must be 123456.</p>\n  {/if}\n  {#if valid}\n    <p class=\"text-muted-foreground text-xs\">Code verified.</p>\n  {/if}\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"otp-field",
+		"field",
+		"label"
+	],
+	"dependencies": []
+}

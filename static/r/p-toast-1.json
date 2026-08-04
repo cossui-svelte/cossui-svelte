@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-toast-1",
+	"title": "Toast 1",
+	"description": "Default stacked toast with title and description",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-toast-1.svelte",
+			"target": "$lib/components/particles/toast/p-toast-1.svelte",
+			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n  import { toastManager } from '$lib/components/ui/toast';\n</script>\n\n<Button\n  onclick={() => {\n    toastManager.add({\n      description: 'Monday, January 3rd at 6:00pm',\n      title: 'Event has been created'\n    });\n  }}\n  variant=\"outline\"\n>\n  Default Toast\n</Button>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"toast"
+	],
+	"dependencies": []
+}

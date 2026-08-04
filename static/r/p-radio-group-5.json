@@ -1,0 +1,24 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-radio-group-5",
+	"title": "Radio group 5",
+	"description": "Radio group in form",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-radio-group-5.svelte",
+			"target": "$lib/components/particles/radio-group/p-radio-group-5.svelte",
+			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n  import { Label } from '$lib/components/ui/label';\n  import { Radio, RadioGroup } from '$lib/components/ui/radio-group';\n\n  let loading = $state(false);\n\n  async function handleSubmit(e: SubmitEvent) {\n    e.preventDefault();\n    const formData = new FormData(e.currentTarget as HTMLFormElement);\n    loading = true;\n    await new Promise((r) => setTimeout(r, 800));\n    loading = false;\n    alert(`Selected: ${formData.get('frameworks')}`);\n  }\n</script>\n\n<form class=\"flex w-full max-w-[160px] flex-col gap-4\" onsubmit={handleSubmit}>\n  <fieldset class=\"flex w-full flex-col gap-2\">\n    <legend class=\"font-medium text-sm\">Frameworks</legend>\n    <RadioGroup name=\"frameworks\" value=\"next\">\n      <Label><Radio value=\"next\" /> Next.js</Label>\n      <Label><Radio value=\"vite\" /> Vite</Label>\n      <Label><Radio value=\"astro\" /> Astro</Label>\n    </RadioGroup>\n  </fieldset>\n  <Button {loading} type=\"submit\">Submit</Button>\n</form>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"field",
+		"fieldset",
+		"form",
+		"radio-group",
+		"label"
+	],
+	"dependencies": []
+}

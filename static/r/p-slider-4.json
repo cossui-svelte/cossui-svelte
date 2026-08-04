@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-slider-4",
+	"title": "Slider 4",
+	"description": "Slider with reference labels",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-slider-4.svelte",
+			"target": "$lib/components/particles/slider/p-slider-4.svelte",
+			"content": "<script lang=\"ts\">\n  import { Slider } from '$lib/components/ui/slider';\n</script>\n\n<div>\n  <Slider aria-label=\"Storage size in GB\" value={15} max={35} min={5} />\n  <div\n    aria-label=\"Storage size reference values\"\n    class=\"mt-4 flex w-full items-center justify-between gap-1 font-medium text-muted-foreground text-xs\"\n    role=\"group\"\n  >\n    <span>5 GB</span>\n    <span>20 GB</span>\n    <span>35 GB</span>\n  </div>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"slider"
+	],
+	"dependencies": []
+}

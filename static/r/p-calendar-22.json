@@ -1,0 +1,23 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-calendar-22",
+	"title": "Calendar 22",
+	"description": "Two months calendar",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-calendar-22.svelte",
+			"target": "$lib/components/particles/calendar/p-calendar-22.svelte",
+			"content": "<script lang=\"ts\">\n  import { getLocalTimeZone, today } from '@internationalized/date';\n  import { RangeCalendar } from '$lib/components/ui/range-calendar';\n\n  const todayValue = today(getLocalTimeZone());\n  let value = $state({ end: todayValue.add({ days: 25 }), start: todayValue });\n</script>\n\n<RangeCalendar\n  bind:value\n  class=\"**:data-outside-month:invisible [&>div]:gap-8\"\n  numberOfMonths={2}\n  pagedNavigation\n/>\n"
+		}
+	],
+	"registryDependencies": [
+		"calendar",
+		"range-calendar"
+	],
+	"dependencies": [
+		"date-fns",
+		"@internationalized/date@^3.12.3"
+	]
+}

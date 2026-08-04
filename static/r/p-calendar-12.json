@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-calendar-12",
+	"title": "Calendar 12",
+	"description": "Calendar with week numbers",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-calendar-12.svelte",
+			"target": "$lib/components/particles/calendar/p-calendar-12.svelte",
+			"content": "<script lang=\"ts\">\n  import { type DateValue, getDayOfWeek, getLocalTimeZone, today } from '@internationalized/date';\n  import { SvelteDate } from 'svelte/reactivity';\n  import { Calendar, Day } from '$lib/components/ui/calendar';\n\n  let value = $state(today(getLocalTimeZone()));\n\n  function getWeekNumber(date: DateValue): number {\n    const d = date.toDate(getLocalTimeZone());\n    const target = new SvelteDate(d.getFullYear(), d.getMonth(), d.getDate());\n    const dayNr = (target.getDay() + 6) % 7;\n    target.setDate(target.getDate() - dayNr + 3);\n    const firstThursday = target.getTime();\n    target.setMonth(0, 1);\n    if (target.getDay() !== 4) {\n      target.setMonth(0, 1 + ((4 - target.getDay() + 7) % 7));\n    }\n    return 1 + Math.round((firstThursday - target.getTime()) / (7 * 24 * 60 * 60 * 1000));\n  }\n</script>\n\n<Calendar bind:value fixedWeeks mode=\"single\">\n  {#snippet day({ day: date })}\n    {@const isWeekStart = getDayOfWeek(date, 'en-US') === 0}\n    <Day class=\"relative\">\n      {#snippet children({ day: dayLabel })}\n        {dayLabel}\n        {#if isWeekStart}\n          <span\n            class=\"-top-1 pointer-events-none absolute left-0.5 text-[0.6rem] text-muted-foreground\"\n          >\n            {getWeekNumber(date)}\n          </span>\n        {/if}\n      {/snippet}\n    </Day>\n  {/snippet}\n</Calendar>\n"
+		}
+	],
+	"registryDependencies": [
+		"calendar"
+	],
+	"dependencies": [
+		"@internationalized/date@^3.12.3"
+	]
+}

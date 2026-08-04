@@ -1,0 +1,22 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-group-12",
+	"title": "Group 12",
+	"description": "Group with input group",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-group-12.svelte",
+			"target": "$lib/components/particles/group/p-group-12.svelte",
+			"content": "<script lang=\"ts\">\n  import Mic from '@lucide/svelte/icons/mic';\n  import Paperclip from '@lucide/svelte/icons/paperclip';\n  import { Button, buttonVariants } from '$lib/components/ui/button';\n  import { Group } from '$lib/components/ui/group';\n  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';\n  import {\n    Tooltip,\n    TooltipContent,\n    TooltipProvider,\n    TooltipTrigger\n  } from '$lib/components/ui/tooltip';\n</script>\n\n<TooltipProvider>\n  <Group aria-label=\"Message composer\" class=\"[--radius-lg:9999px] [--radius:9999rem]\">\n    <Group aria-label=\"Attachments\">\n      <Button aria-label=\"Attach file\" size=\"icon\" variant=\"outline\">\n        <Paperclip aria-hidden />\n      </Button>\n    </Group>\n    <Group aria-label=\"Message input\">\n      <InputGroup>\n        <InputGroupInput placeholder=\"Send a message\" />\n        <InputGroupAddon align=\"inline-end\">\n          <Tooltip>\n            <TooltipTrigger\n              aria-label=\"Voice Mode\"\n              class={buttonVariants({ size: 'icon-xs', variant: 'ghost' })}\n            >\n              <Mic aria-hidden />\n            </TooltipTrigger>\n            <TooltipContent>Voice Mode</TooltipContent>\n          </Tooltip>\n        </InputGroupAddon>\n      </InputGroup>\n    </Group>\n  </Group>\n</TooltipProvider>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"group",
+		"input-group",
+		"tooltip"
+	],
+	"dependencies": []
+}

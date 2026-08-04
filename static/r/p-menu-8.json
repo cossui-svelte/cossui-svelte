@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-menu-8",
+	"title": "Menu 8",
+	"description": "Menu close on click",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-menu-8.svelte",
+			"target": "$lib/components/particles/menu/p-menu-8.svelte",
+			"content": "<script lang=\"ts\">\n  import { buttonVariants } from '$lib/components/ui/button';\n  import { Menu, MenuItem, MenuPopup, MenuTrigger } from '$lib/components/ui/menu';\n</script>\n\n<Menu>\n  <MenuTrigger class={buttonVariants({ variant: 'outline' })}>Open menu</MenuTrigger>\n  <MenuPopup>\n    <MenuItem>Profile</MenuItem>\n    <MenuItem>Settings</MenuItem>\n    <MenuItem>Log out</MenuItem>\n  </MenuPopup>\n</Menu>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"menu"
+	],
+	"dependencies": []
+}

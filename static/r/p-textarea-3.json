@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-textarea-3",
+	"title": "Textarea 3",
+	"description": "Large textarea",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-textarea-3.svelte",
+			"target": "$lib/components/particles/textarea/p-textarea-3.svelte",
+			"content": "<script lang=\"ts\">\n  import { Textarea } from '$lib/components/ui/textarea';\n</script>\n\n<Textarea placeholder=\"Type your message here\" size=\"lg\" />\n"
+		}
+	],
+	"registryDependencies": [
+		"textarea"
+	],
+	"dependencies": []
+}

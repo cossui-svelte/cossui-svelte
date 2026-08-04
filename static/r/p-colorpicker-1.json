@@ -1,0 +1,24 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-colorpicker-1",
+	"title": "Colorpicker 1",
+	"description": "Full featured Color picker",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-colorpicker-1.svelte",
+			"target": "$lib/components/particles/colorpicker/p-colorpicker-1.svelte",
+			"content": "<script lang=\"ts\">\n  import { ColorPicker } from '$lib/components/ui/colorpicker';\n\n  let color = $state('#4f46e5');\n\n  let swatches = $state<string[]>([\n    '#FF3B30',\n    '#FF6B2D',\n    '#FF9500',\n    '#FFC42D',\n    '#FFEA00',\n    '#A8E62E',\n    '#34C759',\n    '#2DD4A8',\n    '#00C7E6',\n    '#0A84FF',\n    '#3634DB',\n    '#5E5CE6',\n    '#AF52DE',\n    '#E040A0',\n    '#FF2D55',\n    '#FF6482',\n    '#FF8FAB',\n    '#FFB3C6'\n  ]);\n</script>\n\n<ColorPicker bind:color {swatches} />\n"
+		}
+	],
+	"registryDependencies": [
+		"slider",
+		"checkbox",
+		"input",
+		"button",
+		"label",
+		"colorpicker"
+	],
+	"dependencies": []
+}

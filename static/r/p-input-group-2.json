@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-input-group-2",
+	"title": "Input group 2",
+	"description": "Input group with end icon",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-input-group-2.svelte",
+			"target": "$lib/components/particles/input-group/p-input-group-2.svelte",
+			"content": "<script lang=\"ts\">\n  import Mail from '@lucide/svelte/icons/mail';\n  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';\n</script>\n\n<InputGroup>\n  <InputGroupInput aria-label=\"Email\" placeholder=\"Email\" type=\"email\" />\n  <InputGroupAddon align=\"inline-end\">\n    <Mail aria-hidden=\"true\" />\n  </InputGroupAddon>\n</InputGroup>\n"
+		}
+	],
+	"registryDependencies": [
+		"input-group"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

@@ -1,0 +1,25 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-combobox-11",
+	"title": "Combobox 11",
+	"description": "Combobox form",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-combobox-11.svelte",
+			"target": "$lib/components/particles/combobox/p-combobox-11.svelte",
+			"content": "<script lang=\"ts\">\n  import { z } from 'zod';\n  import { Button } from '$lib/components/ui/button';\n  import {\n    Combobox,\n    ComboboxEmpty,\n    ComboboxInput,\n    ComboboxItem,\n    ComboboxList,\n    ComboboxPopup\n  } from '$lib/components/ui/combobox';\n  import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';\n  import { Form } from '$lib/components/ui/form';\n  import { createForm } from '$lib/hooks/use-superform';\n\n  const items = [\n    { label: 'Apple', value: 'apple' },\n    { label: 'Banana', value: 'banana' },\n    { label: 'Orange', value: 'orange' },\n    { label: 'Grape', value: 'grape' },\n    { label: 'Strawberry', value: 'strawberry' },\n    { label: 'Mango', value: 'mango' },\n    { label: 'Pineapple', value: 'pineapple' },\n    { label: 'Kiwi', value: 'kiwi' },\n    { label: 'Peach', value: 'peach' },\n    { label: 'Pear', value: 'pear' }\n  ];\n\n  const schema = z.object({\n    item: z.string().min(1, { message: 'Please select a item.' })\n  });\n\n  const superform = createForm({\n    onUpdated: ({ item }) => alert(`Favorite item: ${item}`),\n    schema\n  });\n\n  const { form, submitting } = superform;\n</script>\n\n<Form class=\"flex w-full max-w-64 flex-col gap-4\" {superform}>\n  <Field name=\"item\">\n    <FieldLabel>Favorite item</FieldLabel>\n    <Combobox bind:value={$form.item} {items}>\n      <ComboboxInput placeholder=\"Select an item...\" />\n      <ComboboxPopup>\n        <ComboboxEmpty>No results found.</ComboboxEmpty>\n        <ComboboxList>\n          {#each items as item (item.value)}\n            <ComboboxItem value={item.value} label={item.label}>{item.label}</ComboboxItem>\n          {/each}\n        </ComboboxList>\n      </ComboboxPopup>\n    </Combobox>\n    <FieldError />\n  </Field>\n  <Button loading={$submitting} type=\"submit\">Submit</Button>\n</Form>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"combobox",
+		"field",
+		"form",
+		"use-superform"
+	],
+	"dependencies": [
+		"zod@^4.4.3"
+	]
+}

@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-chart-1",
+	"title": "Chart 1",
+	"description": "Radial Chart with Labels",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-chart-1.svelte",
+			"target": "$lib/components/particles/charts/p-chart-1.svelte",
+			"content": "<script lang=\"ts\">\n  import { Arc, ArcChart, Text } from 'layerchart';\n  import { Chart, type ChartConfig, ChartTooltip } from '$lib/components/ui/chart';\n\n  const chartData = [\n    { browser: 'other', color: 'var(--color-other)', visitors: 90 },\n    { browser: 'edge', color: 'var(--color-edge)', visitors: 173 },\n    { browser: 'firefox', color: 'var(--color-firefox)', visitors: 187 },\n    { browser: 'safari', color: 'var(--color-safari)', visitors: 200 },\n    { browser: 'chrome', color: 'var(--color-chrome)', visitors: 275 }\n  ];\n\n  const chartConfig = {\n    chrome: { color: 'var(--chart-1)', label: 'Chrome' },\n    edge: { color: 'var(--chart-4)', label: 'Edge' },\n    firefox: { color: 'var(--chart-3)', label: 'Firefox' },\n    other: { color: 'var(--chart-5)', label: 'Other' },\n    safari: { color: 'var(--chart-2)', label: 'Safari' },\n    visitors: { label: 'Visitors' }\n  } satisfies ChartConfig;\n</script>\n\n<Chart config={chartConfig} class=\"grow p-2 h-87.5\">\n  <ArcChart\n    label=\"browser\"\n    value=\"visitors\"\n    outerRadius={-17}\n    innerRadius={-12.5}\n    padding={20}\n    range={[180, -180]}\n    maxValue={Math.max(...chartData.map((d) => d.visitors)) + 0}\n    series={chartData.map((d) => ({\n      color: d.color,\n      data: [d],\n      key: d.browser,\n      label: d.browser\n    }))}\n    props={{\n      arc: { motion: 'tween', track: { fill: 'var(--muted)' } },\n      tooltip: { context: { hideDelay: 350 } }\n    }}\n  >\n    {#snippet tooltip()}\n      <ChartTooltip hideLabel nameKey=\"browser\" />\n    {/snippet}\n    {#snippet arc({ props, seriesIndex, context })}\n      <Arc {...props}>\n        {#snippet children({ getTrackTextProps })}\n          <Text\n            {...getTrackTextProps('middle', {\n              startOffset: '1%'\n            })}\n            class=\"pointer-events-none capitalize select-none\"\n            value={context.series.visibleSeries[seriesIndex].label}\n            fill=\"white\"\n          />\n        {/snippet}\n      </Arc>\n    {/snippet}\n  </ArcChart>\n</Chart>\n"
+		}
+	],
+	"registryDependencies": [
+		"chart"
+	],
+	"dependencies": [
+		"layerchart@^2.0.4"
+	]
+}

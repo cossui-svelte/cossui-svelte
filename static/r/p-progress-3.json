@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-progress-3",
+	"title": "Progress 3",
+	"description": "Progress with formatted value",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-progress-3.svelte",
+			"target": "$lib/components/particles/progress/p-progress-3.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    Progress,\n    ProgressIndicator,\n    ProgressLabel,\n    ProgressTrack\n  } from '$lib/components/ui/progress';\n\n  const value = 502;\n  const max = 512;\n</script>\n\n<Progress {max} {value}>\n  <div class=\"flex items-center justify-between gap-2\">\n    <ProgressLabel>Upload</ProgressLabel>\n    <span class=\"text-foreground text-sm tabular-nums\">{value} / {max}</span>\n  </div>\n  <ProgressTrack>\n    <ProgressIndicator />\n  </ProgressTrack>\n</Progress>\n"
+		}
+	],
+	"registryDependencies": [
+		"progress"
+	],
+	"dependencies": []
+}

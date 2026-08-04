@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-input-group-9",
+	"title": "Input group 9",
+	"description": "Input group with button",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-input-group-9.svelte",
+			"target": "$lib/components/particles/input-group/p-input-group-9.svelte",
+			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';\n</script>\n\n<InputGroup>\n  <InputGroupInput placeholder=\"Type to search…\" type=\"search\" />\n  <InputGroupAddon align=\"inline-end\">\n    <Button size=\"xs\" variant=\"secondary\">Search</Button>\n  </InputGroupAddon>\n</InputGroup>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"input-group"
+	],
+	"dependencies": []
+}

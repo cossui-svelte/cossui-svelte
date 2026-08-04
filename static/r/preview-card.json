@@ -1,0 +1,39 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "preview-card",
+	"title": "Preview Card",
+	"description": "A popup that appears when a link is hovered, showing a preview for sighted users.",
+	"type": "registry:ui",
+	"files": [
+		{
+			"type": "registry:ui",
+			"path": "preview-card/index.ts",
+			"target": "$lib/components/ui/preview-card/index.ts",
+			"content": "export { default as PreviewCard, default as HoverCard } from './preview-card.svelte';\nexport type {\n  default as PreviewCardPopup,\n  default as LinkPreviewContent\n} from './preview-card-popup.svelte';\nexport {\n  default as PreviewCardTrigger,\n  default as LinkPreviewTrigger\n} from './preview-card-trigger.svelte';\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "preview-card/preview-card-popup.svelte",
+			"target": "$lib/components/ui/preview-card/preview-card-popup.svelte",
+			"content": "<script lang=\"ts\">\n  import { LinkPreview } from 'bits-ui';\n  import type { Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  interface Props extends LinkPreview.ContentProps {\n    align?: LinkPreview.ContentProps['align'];\n    children?: Snippet;\n    sideOffset?: LinkPreview.ContentProps['sideOffset'];\n  }\n\n  let {\n    class: className,\n    children,\n    align = 'center',\n    sideOffset = 4,\n    ...restProps\n  }: Props = $props();\n</script>\n\n<LinkPreview.Portal>\n  <LinkPreview.Content\n    {align}\n    {sideOffset}\n    class={cn(\n      'relative flex w-64 origin-[--bits-link-preview-content-transform-origin] text-balance rounded-lg border bg-popover not-dark:bg-clip-padding p-4 text-popover-foreground text-sm shadow-lg/5 transition-[scale,opacity] before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-lg)-1px)] before:shadow-[0_1px_--theme(--color-black/4%)] data-[state=closed]:scale-98 data-[state=closed]:opacity-0 data-[state=open]:scale-100 data-[state=open]:opacity-100 dark:before:shadow-[0_-1px_--theme(--color-white/6%)]',\n      className\n    )}\n    data-slot=\"preview-card-content\"\n    {...restProps}\n  >\n    {@render children?.()}\n  </LinkPreview.Content>\n</LinkPreview.Portal>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "preview-card/preview-card-trigger.svelte",
+			"target": "$lib/components/ui/preview-card/preview-card-trigger.svelte",
+			"content": "<script lang=\"ts\">\n  import { LinkPreview } from 'bits-ui';\n  import type { Snippet } from 'svelte';\n\n  type Props = LinkPreview.TriggerProps & { children?: Snippet };\n\n  let { children, ...restProps }: Props = $props();\n</script>\n\n<LinkPreview.Trigger data-slot=\"preview-card-trigger\" {...restProps}>\n  {@render children?.()}\n</LinkPreview.Trigger>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "preview-card/preview-card.svelte",
+			"target": "$lib/components/ui/preview-card/preview-card.svelte",
+			"content": "<script lang=\"ts\">\n  import { LinkPreview } from 'bits-ui';\n  import type { Snippet } from 'svelte';\n\n  type Props = LinkPreview.RootProps & { children?: Snippet };\n\n  let { children, ...restProps }: Props = $props();\n</script>\n\n<LinkPreview.Root {...restProps}>\n  {@render children?.()}\n</LinkPreview.Root>\n"
+		}
+	],
+	"registryDependencies": [
+		"utils"
+	],
+	"dependencies": [
+		"bits-ui@^2.18.1"
+	]
+}

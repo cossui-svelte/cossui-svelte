@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-input-15",
+	"title": "Input 15",
+	"description": "Input with custom border and background",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-input-15.svelte",
+			"target": "$lib/components/particles/input/p-input-15.svelte",
+			"content": "<script lang=\"ts\">\n  import { Input } from '$lib/components/ui/input';\n</script>\n\n<Input\n  aria-label=\"Email\"\n  class=\"border-transparent bg-muted shadow-none before:hidden\"\n  placeholder=\"Email\"\n  type=\"email\"\n/>\n"
+		}
+	],
+	"registryDependencies": [
+		"input"
+	],
+	"dependencies": []
+}

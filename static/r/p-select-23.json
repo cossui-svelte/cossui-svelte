@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-select-23",
+	"title": "Select 23",
+	"description": "Select with label",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-select-23.svelte",
+			"target": "$lib/components/particles/select/p-select-23.svelte",
+			"content": "<script lang=\"ts\">\n  import { Select, SelectItem, SelectPopup, SelectTrigger } from '$lib/components/ui/select';\n\n  const items = [\n    { label: 'Apple', value: 'apple' },\n    { label: 'Banana', value: 'banana' },\n    { label: 'Orange', value: 'orange' }\n  ];\n\n  let selected = $state('apple');\n  const selectedLabel = $derived(items.find((i) => i.value === selected)?.label ?? '');\n</script>\n\n<div class=\"flex flex-col gap-1.5\">\n  <span class=\"text-sm font-medium\">Fruits</span>\n  <Select\n    value={selected}\n    onValueChange={(v) => {\n      selected = v;\n    }}\n  >\n    <SelectTrigger aria-label=\"Select fruit\">\n      <span class=\"flex-1 truncate\">{selectedLabel}</span>\n    </SelectTrigger>\n    <SelectPopup>\n      {#each items as item (item.value)}\n        <SelectItem value={item.value}>{item.label}</SelectItem>\n      {/each}\n    </SelectPopup>\n  </Select>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"select"
+	],
+	"dependencies": []
+}

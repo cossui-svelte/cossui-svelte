@@ -1,0 +1,26 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-card-2",
+	"title": "Card 2",
+	"description": "Authentication card with actions",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-card-2.svelte",
+			"target": "$lib/components/particles/card/p-card-2.svelte",
+			"content": "<script lang=\"ts\">\n  import { z } from 'zod';\n  import { Button } from '$lib/components/ui/button';\n  import { Card, CardAction, CardHeader, CardPanel, CardTitle } from '$lib/components/ui/card';\n  import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';\n  import { Form } from '$lib/components/ui/form';\n  import { Input } from '$lib/components/ui/input';\n  import { createForm } from '$lib/hooks/use-superform';\n\n  const schema = z.object({\n    email: z.email('Please enter a valid email.'),\n    password: z.string().min(8, 'Password must be at least 8 characters.')\n  });\n\n  const superform = createForm({\n    onUpdated: (data) => {\n      alert(`Logging in as ${data.email}`);\n    },\n    schema\n  });\n\n  const { form, submitting } = superform;\n</script>\n\n<Card class=\"w-full max-w-xs\">\n  <CardHeader>\n    <CardTitle>Login to your account</CardTitle>\n    <CardAction>\n      <a class=\"text-muted-foreground text-sm leading-4.5 hover:underline\" href=\"#\"> Sign up </a>\n    </CardAction>\n  </CardHeader>\n  <CardPanel>\n    <Form class=\"flex w-full flex-col gap-4\" {superform}>\n      <Field name=\"email\">\n        <FieldLabel>Email</FieldLabel>\n        <Input bind:value={$form.email} placeholder=\"Enter your email\" type=\"email\" />\n        <FieldError />\n      </Field>\n      <Field name=\"password\">\n        <FieldLabel>Password</FieldLabel>\n        <Input bind:value={$form.password} placeholder=\"Enter your password\" type=\"password\" />\n        <FieldError />\n      </Field>\n      <Button class=\"w-full\" loading={$submitting} type=\"submit\">Login</Button>\n    </Form>\n  </CardPanel>\n</Card>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"card",
+		"field",
+		"form",
+		"input",
+		"use-superform"
+	],
+	"dependencies": [
+		"zod@^4.4.3"
+	]
+}

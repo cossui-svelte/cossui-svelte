@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-stepper-6",
+	"title": "Stepper 6",
+	"description": "Controlled stepper with checkmarks and loading state",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-stepper-6.svelte",
+			"target": "$lib/components/particles/stepper/p-stepper-6.svelte",
+			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n  import {\n    Stepper,\n    StepperIndicator,\n    StepperItem,\n    StepperSeparator,\n    StepperTrigger\n  } from '$lib/components/ui/stepper';\n\n  const steps = [1, 2, 3, 4];\n\n  let currentStep = $state(2);\n  let isLoading = $state(false);\n\n  function handleNextStep() {\n    isLoading = true;\n    setTimeout(() => {\n      currentStep = currentStep + 1;\n      isLoading = false;\n    }, 1000);\n  }\n</script>\n\n<div class=\"mx-auto max-w-xl space-y-8 text-center w-full\">\n  <Stepper bind:step={currentStep}>\n    {#each steps as step (step)}\n      <StepperItem class=\"not-last:flex-1\" loading={isLoading} {step}>\n        <StepperTrigger>\n          <StepperIndicator />\n        </StepperTrigger>\n        {#if step < steps.length}\n          <StepperSeparator />\n        {/if}\n      </StepperItem>\n    {/each}\n  </Stepper>\n  <div class=\"flex justify-center space-x-4\">\n    <Button\n      class=\"w-32\"\n      disabled={currentStep === 1}\n      onclick={() => (currentStep = currentStep - 1)}\n      variant=\"outline\"\n    >\n      Prev step\n    </Button>\n    <Button\n      class=\"w-32\"\n      disabled={currentStep > steps.length}\n      onclick={handleNextStep}\n      variant=\"outline\"\n    >\n      Next step\n    </Button>\n  </div>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"stepper",
+		"button"
+	],
+	"dependencies": []
+}

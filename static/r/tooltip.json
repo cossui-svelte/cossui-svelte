@@ -1,0 +1,39 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "tooltip",
+	"title": "Tooltip",
+	"description": "A popup that appears when an element is hovered or focused, showing a hint for sighted users.",
+	"type": "registry:ui",
+	"files": [
+		{
+			"type": "registry:ui",
+			"path": "tooltip/index.ts",
+			"target": "$lib/components/ui/tooltip/index.ts",
+			"content": "import { Tooltip as TooltipPrimitive } from 'bits-ui';\n\nconst TooltipTrigger = TooltipPrimitive.Trigger;\n\nexport { default as Tooltip } from './tooltip.svelte';\nexport { default as TooltipPopup, default as TooltipContent } from './tooltip-popup.svelte';\nexport { default as TooltipProvider } from './tooltip-provider.svelte';\nexport { TooltipTrigger };\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "tooltip/tooltip-popup.svelte",
+			"target": "$lib/components/ui/tooltip/tooltip-popup.svelte",
+			"content": "<script lang=\"ts\">\n  import { Tooltip } from 'bits-ui';\n  import type { Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  interface Props extends Tooltip.ContentProps {\n    children?: Snippet;\n    showArrow?: boolean;\n    sideOffset?: number;\n  }\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    showArrow = false,\n    children,\n    sideOffset = 4,\n    side = 'top',\n    ...restProps\n  }: Props = $props();\n</script>\n\n<Tooltip.Portal>\n  <Tooltip.Content\n    {ref}\n    {side}\n    {sideOffset}\n    class={cn(\n      'bg-popover text-popover-foreground animate-in fade-in zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 relative z-50 max-w-70 rounded-md border px-2 py-1 text-xs',\n      className\n    )}\n    {...restProps}\n  >\n    {@render children?.()}\n    {#if showArrow}\n      <Tooltip.Arrow class=\"text-popover -my-px drop-shadow-[0_1px_0_hsl(var(--border))]\" />\n    {/if}\n  </Tooltip.Content>\n</Tooltip.Portal>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "tooltip/tooltip-provider.svelte",
+			"target": "$lib/components/ui/tooltip/tooltip-provider.svelte",
+			"content": "<script lang=\"ts\">\n  import { Tooltip } from 'bits-ui';\n  import type { Snippet } from 'svelte';\n\n  interface Props extends Omit<Tooltip.ProviderProps, 'delayDuration'> {\n    children?: Snippet;\n    delay?: number;\n  }\n\n  let { delay, ...restProps }: Props = $props();\n</script>\n\n<Tooltip.Provider delayDuration={delay} {...restProps} />\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "tooltip/tooltip.svelte",
+			"target": "$lib/components/ui/tooltip/tooltip.svelte",
+			"content": "<script lang=\"ts\">\n  import { Tooltip } from 'bits-ui';\n\n  interface Props extends Omit<Tooltip.RootProps, 'delayDuration'> {\n    delay?: number;\n  }\n\n  let {\n    delay,\n    open = $bindable(false),\n    triggerId = $bindable(null),\n    ...restProps\n  }: Props = $props();\n</script>\n\n<Tooltip.Root bind:open bind:triggerId delayDuration={delay} {...restProps} />\n"
+		}
+	],
+	"registryDependencies": [
+		"utils"
+	],
+	"dependencies": [
+		"bits-ui@^2.18.1"
+	]
+}

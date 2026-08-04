@@ -1,0 +1,22 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-input-155",
+	"title": "Input 155",
+	"description": "Input with input mask",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-input-155.svelte",
+			"target": "$lib/components/particles/input/p-input-155.svelte",
+			"content": "<script lang=\"ts\">\n  import { Input } from '$lib/components/ui/input';\n  import { Label } from '$lib/components/ui/label';\n\n  import { formatGeneral, registerCursorTracker } from 'cleave-zen';\n  import type { Attachment } from 'svelte/attachments';\n\n  const maskAttachment: Attachment<HTMLInputElement> = (input) => {\n    const unregisterCursorTracker = registerCursorTracker({\n      delimiter: ' ',\n      input\n    });\n\n    const handleInput = (event: Event) => {\n      const target = event.target as HTMLInputElement;\n      target.value = formatGeneral(target.value, {\n        blocks: [4, 3],\n        delimiter: ' ',\n        uppercase: true\n      });\n    };\n\n    input.addEventListener('input', handleInput);\n\n    return () => {\n      input.removeEventListener('input', handleInput);\n      unregisterCursorTracker();\n    };\n  };\n\n  const uid = $props.id();\n</script>\n\n<div class=\"*:not-first:mt-2\">\n  <Label for={uid}>Input with mask</Label>\n  <Input id={uid} placeholder=\"AB12 CDE\" type=\"text\" {@attach maskAttachment} />\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"input",
+		"label"
+	],
+	"dependencies": [
+		"cleave-zen@^0.0.17"
+	]
+}

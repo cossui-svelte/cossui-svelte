@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-badge-18",
+	"title": "Badge 18",
+	"description": "Status badge - Failed",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-badge-18.svelte",
+			"target": "$lib/components/particles/badge/p-badge-18.svelte",
+			"content": "<script lang=\"ts\">\n  import { Badge } from '$lib/components/ui/badge';\n</script>\n\n<Badge variant=\"outline\">\n  <span aria-hidden=\"true\" class=\"size-1.5 rounded-full bg-red-500\" />\n  Failed\n</Badge>\n"
+		}
+	],
+	"registryDependencies": [
+		"badge"
+	],
+	"dependencies": []
+}

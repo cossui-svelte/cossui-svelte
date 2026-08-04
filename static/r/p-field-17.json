@@ -1,0 +1,25 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-field-17",
+	"title": "Field 17",
+	"description": "Field with number field",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-field-17.svelte",
+			"target": "$lib/components/particles/field/p-field-17.svelte",
+			"content": "<script lang=\"ts\">\n  import { z } from 'zod';\n  import { Button } from '$lib/components/ui/button';\n  import { Field, FieldDescription, FieldError } from '$lib/components/ui/field';\n  import { Form } from '$lib/components/ui/form';\n  import {\n    NumberField,\n    NumberFieldDecrement,\n    NumberFieldGroup,\n    NumberFieldIncrement,\n    NumberFieldInput,\n    NumberFieldScrubArea\n  } from '$lib/components/ui/number-field';\n  import { createForm } from '$lib/hooks/use-superform';\n\n  const schema = z.object({\n    quantity: z.number().min(1).max(100)\n  });\n\n  const superform = createForm({\n    initialData: { quantity: 1 },\n    onUpdated: (data) => {\n      alert(`Quantity: ${data.quantity}`);\n    },\n    schema\n  });\n\n  const { form, submitting } = superform;\n</script>\n\n<Form class=\"flex w-full flex-col gap-4\" {superform}>\n  <Field name=\"quantity\">\n    <NumberField bind:value={$form.quantity} max={100} min={1}>\n      <NumberFieldScrubArea label=\"Quantity\" />\n      <NumberFieldGroup>\n        <NumberFieldDecrement />\n        <NumberFieldInput />\n        <NumberFieldIncrement />\n      </NumberFieldGroup>\n    </NumberField>\n    <FieldDescription>Choose a value between 1 and 100.</FieldDescription>\n    <FieldError />\n  </Field>\n  <Button loading={$submitting} type=\"submit\">Submit</Button>\n</Form>\n"
+		}
+	],
+	"registryDependencies": [
+		"field",
+		"number-field",
+		"button",
+		"form",
+		"use-superform"
+	],
+	"dependencies": [
+		"zod@^4.4.3"
+	]
+}

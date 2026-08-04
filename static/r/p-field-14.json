@@ -1,0 +1,26 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-field-14",
+	"title": "Field 14",
+	"description": "Field with radio group",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-field-14.svelte",
+			"target": "$lib/components/particles/field/p-field-14.svelte",
+			"content": "<script lang=\"ts\">\n  import { z } from 'zod';\n  import { Button } from '$lib/components/ui/button';\n  import { FieldDescription, FieldItem, FieldLabel } from '$lib/components/ui/field';\n  import { Fieldset, FieldsetLegend } from '$lib/components/ui/fieldset';\n  import { Form } from '$lib/components/ui/form';\n  import { Radio, RadioGroup } from '$lib/components/ui/radio-group';\n  import { createForm } from '$lib/hooks/use-superform';\n\n  const schema = z.object({\n    plan: z.string()\n  });\n\n  const superform = createForm({\n    initialData: { plan: 'free' },\n    onUpdated: ({ plan }) => alert(`Selected plan: ${plan}`),\n    schema\n  });\n\n  const { form, submitting } = superform;\n</script>\n\n<Form class=\"flex w-full flex-col gap-4\" {superform}>\n  <Fieldset class=\"gap-2\" name=\"plan\">\n    <FieldsetLegend class=\"font-medium text-sm\">Choose Plan</FieldsetLegend>\n    <RadioGroup bind:value={$form.plan as string}>\n      <FieldItem>\n        <FieldLabel><Radio value=\"free\" /> Free</FieldLabel>\n      </FieldItem>\n      <FieldItem>\n        <FieldLabel><Radio value=\"pro\" /> Pro</FieldLabel>\n      </FieldItem>\n      <FieldItem>\n        <FieldLabel><Radio value=\"enterprise\" /> Enterprise</FieldLabel>\n      </FieldItem>\n    </RadioGroup>\n    <FieldDescription>Select the plan that fits your needs.</FieldDescription>\n  </Fieldset>\n  <Button loading={$submitting} type=\"submit\">Submit</Button>\n</Form>\n"
+		}
+	],
+	"registryDependencies": [
+		"field",
+		"fieldset",
+		"radio-group",
+		"button",
+		"form",
+		"use-superform"
+	],
+	"dependencies": [
+		"zod@^4.4.3"
+	]
+}

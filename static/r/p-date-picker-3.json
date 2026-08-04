@@ -1,0 +1,28 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-date-picker-3",
+	"title": "Date picker 3",
+	"description": "Date picker with field and dropdown navigation",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-date-picker-3.svelte",
+			"target": "$lib/components/particles/date-picker/p-date-picker-3.svelte",
+			"content": "<script lang=\"ts\">\n  import { DateFormatter, type DateValue, getLocalTimeZone } from '@internationalized/date';\n  import CalendarIcon from '@lucide/svelte/icons/calendar';\n  import { buttonVariants } from '$lib/components/ui/button';\n  import { Calendar } from '$lib/components/ui/calendar';\n  import { Popover, PopoverPopup, PopoverTrigger } from '$lib/components/ui/popover';\n  import { cn } from '$lib/utils';\n\n  const df = new DateFormatter('en-US', { dateStyle: 'long' });\n  const id = 'date-picker-3-start-date';\n\n  let value = $state<DateValue | undefined>(undefined);\n</script>\n\n<div class=\"flex flex-col items-start gap-2\">\n  <label class=\"font-medium text-base/4.5 text-foreground sm:text-sm/4\" for={id}>\n    Start date\n  </label>\n  <Popover>\n    <PopoverTrigger {id} class={cn(buttonVariants({ variant: 'outline' }), 'w-full justify-start')}>\n      <CalendarIcon aria-hidden=\"true\" />\n      {value ? df.format(value.toDate(getLocalTimeZone())) : 'Pick a date'}\n    </PopoverTrigger>\n    <PopoverPopup>\n      <Calendar bind:value captionLayout=\"dropdown\" mode=\"single\" />\n    </PopoverPopup>\n  </Popover>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"calendar",
+		"combobox",
+		"field",
+		"popover",
+		"utils"
+	],
+	"dependencies": [
+		"date-fns",
+		"@lucide/svelte",
+		"@internationalized/date@^3.12.3"
+	]
+}

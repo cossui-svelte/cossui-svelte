@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-input-group-20",
+	"title": "Input group 20",
+	"description": "Input group with search icon",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-input-group-20.svelte",
+			"target": "$lib/components/particles/input-group/p-input-group-20.svelte",
+			"content": "<script lang=\"ts\">\n  import Search from '@lucide/svelte/icons/search';\n  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';\n</script>\n\n<InputGroup>\n  <InputGroupAddon>\n    <Search aria-hidden=\"true\" />\n  </InputGroupAddon>\n  <InputGroupInput aria-label=\"Search\" placeholder=\"Search\" type=\"search\" />\n</InputGroup>\n"
+		}
+	],
+	"registryDependencies": [
+		"input-group"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

@@ -1,0 +1,25 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-field-12",
+	"title": "Field 12",
+	"description": "Field with checkbox",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-field-12.svelte",
+			"target": "$lib/components/particles/field/p-field-12.svelte",
+			"content": "<script lang=\"ts\">\n  import { z } from 'zod';\n  import { Button } from '$lib/components/ui/button';\n  import { Checkbox } from '$lib/components/ui/checkbox';\n  import { Field, FieldLabel } from '$lib/components/ui/field';\n  import { Form } from '$lib/components/ui/form';\n  import { createForm } from '$lib/hooks/use-superform';\n\n  const schema = z.object({\n    terms: z.boolean()\n  });\n\n  const superform = createForm({\n    onUpdated: (data) => {\n      alert(`Terms accepted: ${data.terms}`);\n    },\n    schema\n  });\n\n  const { form: formData, submitting } = superform;\n</script>\n\n<Form class=\"flex w-auto flex-col gap-4\" {superform}>\n  <Field name=\"terms\">\n    <FieldLabel>\n      <Checkbox bind:checked={$formData.terms as boolean | undefined} />\n      Accept terms and conditions\n    </FieldLabel>\n  </Field>\n  <Button loading={$submitting} type=\"submit\">Submit</Button>\n</Form>\n"
+		}
+	],
+	"registryDependencies": [
+		"checkbox",
+		"field",
+		"button",
+		"form",
+		"use-superform"
+	],
+	"dependencies": [
+		"zod@^4.4.3"
+	]
+}

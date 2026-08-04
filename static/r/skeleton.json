@@ -1,0 +1,25 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "skeleton",
+	"title": "Skeleton",
+	"description": "A loading state skeleton for your components.",
+	"type": "registry:ui",
+	"files": [
+		{
+			"type": "registry:ui",
+			"path": "skeleton/index.ts",
+			"target": "$lib/components/ui/skeleton/index.ts",
+			"content": "export { default as Skeleton } from './skeleton.svelte';\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "skeleton/skeleton.svelte",
+			"target": "$lib/components/ui/skeleton/skeleton.svelte",
+			"content": "<script lang=\"ts\">\n  import '@aejkatappaja/phantom-ui';\n  import { type PhantomUiAttributes } from '@aejkatappaja/phantom-ui';\n  import type { Snippet } from 'svelte';\n\n  let {\n    children,\n    ...restProps\n  }: PhantomUiAttributes & {\n    children: Snippet;\n  } = $props();\n</script>\n\n<phantom-ui data-slot=\"skeleton\" {...restProps}>\n  {@render children?.()}\n</phantom-ui>\n"
+		}
+	],
+	"registryDependencies": [],
+	"dependencies": [
+		"@aejkatappaja/phantom-ui@^1.6.1"
+	]
+}

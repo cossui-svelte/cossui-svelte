@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-select-7",
+	"title": "Select 7",
+	"description": "Multiple select",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-select-7.svelte",
+			"target": "$lib/components/particles/select/p-select-7.svelte",
+			"content": "<script lang=\"ts\">\n  import { Select, SelectItem, SelectPopup, SelectTrigger } from '$lib/components/ui/select';\n\n  const languages: Record<string, string> = {\n    cpp: 'C++',\n    csharp: 'C#',\n    go: 'Go',\n    java: 'Java',\n    javascript: 'JavaScript',\n    php: 'PHP',\n    python: 'Python',\n    rust: 'Rust',\n    swift: 'Swift',\n    typescript: 'TypeScript'\n  };\n\n  const values = Object.keys(languages);\n\n  let selected = $state('javascript');\n</script>\n\n<Select\n  value={selected}\n  onValueChange={(v) => {\n    selected = v;\n  }}\n>\n  <SelectTrigger aria-label=\"Select languages\">\n    <span class=\"flex-1 truncate\">{languages[selected] ?? 'Select languages…'}</span>\n  </SelectTrigger>\n  <SelectPopup>\n    {#each values as value (value)}\n      <SelectItem {value}>{languages[value]}</SelectItem>\n    {/each}\n  </SelectPopup>\n</Select>\n"
+		}
+	],
+	"registryDependencies": [
+		"select"
+	],
+	"dependencies": []
+}

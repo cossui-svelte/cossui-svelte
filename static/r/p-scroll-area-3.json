@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-scroll-area-3",
+	"title": "Scroll area 3",
+	"description": "Scroll area with both directions",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-scroll-area-3.svelte",
+			"target": "$lib/components/particles/scroll-area/p-scroll-area-3.svelte",
+			"content": "<script lang=\"ts\">\n  import { ScrollArea } from '$lib/components/ui/scroll-area';\n</script>\n\n<ScrollArea class=\"h-80 max-w-80 rounded-lg border\">\n  <p class=\"min-w-100 p-4\">\n    Just as suddenly as it had begun, the sensation stopped, leaving Alice feeling slightly\n    disoriented. She looked around and realized that the room hadn't changed at all - it was she who\n    had grown smaller, shrinking down to a fraction of her previous size. Alice felt herself growing\n    larger and larger, filling up the entire room until she feared she might burst. The sensation\n    was both thrilling and terrifying, as if she were expanding beyond the confines of her own body.\n    She wondered if this was what it felt like to be a balloon, swelling with air until it could\n    hold no more. Alice peered into the mirror, her reflection staring back at her with an air of\n    mischief. She wondered what it would be like to step through the glass and into the world\n    beyond, where everything seemed to be topsy-turvy and nothing was quite as it seemed. It's no\n    use going back to yesterday, because I was a different person then, reflected Alice.\n  </p>\n</ScrollArea>\n"
+		}
+	],
+	"registryDependencies": [
+		"scroll-area"
+	],
+	"dependencies": []
+}

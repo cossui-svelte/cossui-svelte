@@ -1,0 +1,18 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "FacebookFillLogos",
+	"title": "FacebookFillLogos",
+	"type": "registry:component",
+	"files": [
+		{
+			"type": "registry:component",
+			"path": "FacebookFillLogos.svelte",
+			"target": "$lib/icons/FacebookFillLogos.svelte",
+			"content": "<script lang=\"ts\">\n  import { getContext } from 'svelte';\n  import type { BaseProps, Props } from './types';\n\n  const ctx: BaseProps = getContext('iconCtx') ?? {};\n\n  let {\n    size = ctx.size || '24',\n    role = ctx.role || 'img',\n    color = ctx.color || 'currentColor',\n    title,\n    desc,\n    focusable = ctx.focusable || 'false',\n    ariaLabel,\n    ...restProps\n  }: Props = $props();\n\n  const ariaDescribedby = $derived([title?.id, desc?.id].filter(Boolean).join(' ') || undefined);\n</script>\n\n<svg\n  xmlns=\"http://www.w3.org/2000/svg\"\n  {...restProps}\n  {role}\n  width={size}\n  height={size}\n  fill={color}\n  {focusable}\n  aria-label={ariaLabel || undefined}\n  aria-labelledby={title?.id || undefined}\n  aria-describedby={ariaDescribedby}\n  viewBox=\"0 0 24 24\"\n>\n  {#if title?.id && title.title}\n    <title id={title.id}>{title.title}</title>\n  {/if}\n  {#if desc?.id && desc.desc}\n    <desc id={desc.id}>{desc.desc}</desc>\n  {/if}\n  <path\n    d=\"M14 13.5H16.5L17.5 9.5H14V7.5C14 6.47062 14 5.5 16 5.5H17.5V2.1401C17.1743 2.09685 15.943 2 14.6429 2C11.9284 2 10 3.65686 10 6.69971V9.5H7V13.5H10V22H14V13.5Z\"\n  />\n</svg>\n\n<!--\n@component\n[Go to docs](https://svelte-remix.codewithshin.com/)\n## Props\n@prop size = ctx.size || '24'\n@prop role = ctx.role || 'img'\n@prop color = ctx.color || 'currentColor'\n@prop title\n@prop desc\n@prop focusable = ctx.focusable || 'false'\n@prop ariaLabel\n@prop ...restProps\n-->\n"
+		}
+	],
+	"registryDependencies": [
+		"icon-types"
+	],
+	"dependencies": []
+}

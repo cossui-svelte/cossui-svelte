@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-drawer-11",
+	"title": "Drawer 11",
+	"description": "Mobile menu drawer from the left",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-drawer-11.svelte",
+			"target": "$lib/components/particles/drawer/p-drawer-11.svelte",
+			"content": "<script lang=\"ts\">\n  import { Button, buttonVariants } from '$lib/components/ui/button';\n  import {\n    Drawer,\n    DrawerHeader,\n    DrawerPanel,\n    DrawerPopup,\n    DrawerTitle,\n    DrawerTrigger\n  } from '$lib/components/ui/drawer';\n\n  let open = $state(false);\n</script>\n\n<Drawer position=\"left\" bind:open>\n  <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Open menu</DrawerTrigger>\n  <DrawerPopup showCloseButton variant=\"straight\">\n    <DrawerHeader>\n      <DrawerTitle>Menu</DrawerTitle>\n    </DrawerHeader>\n    <DrawerPanel>\n      <nav class=\"-mx-[calc(--spacing(3)-1px)] flex flex-col gap-0.5\">\n        <Button\n          class=\"justify-start\"\n          href=\"#\"\n          variant=\"ghost\"\n          onclick={() => {\n            open = false;\n          }}\n        >\n          Home\n        </Button>\n        <Button\n          class=\"justify-start\"\n          href=\"#\"\n          variant=\"ghost\"\n          onclick={() => {\n            open = false;\n          }}\n        >\n          Profile\n        </Button>\n        <Button\n          class=\"justify-start\"\n          href=\"#\"\n          variant=\"ghost\"\n          onclick={() => {\n            open = false;\n          }}\n        >\n          Settings\n        </Button>\n        <Button\n          class=\"justify-start\"\n          href=\"#\"\n          variant=\"ghost\"\n          onclick={() => {\n            open = false;\n          }}\n        >\n          Sign out\n        </Button>\n      </nav>\n    </DrawerPanel>\n  </DrawerPopup>\n</Drawer>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"drawer"
+	],
+	"dependencies": []
+}

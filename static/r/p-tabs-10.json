@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-tabs-10",
+	"title": "Tabs 10",
+	"description": "Tabs with count badge",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-tabs-10.svelte",
+			"target": "$lib/components/particles/tabs/p-tabs-10.svelte",
+			"content": "<script lang=\"ts\">\n  import { Badge } from '$lib/components/ui/badge';\n  import { Tabs, TabsList, TabsPanel, TabsTab } from '$lib/components/ui/tabs';\n</script>\n\n<Tabs value=\"tab-1\">\n  <TabsList>\n    <TabsTab value=\"tab-1\">\n      All\n      <Badge class=\"not-in-data-active:text-muted-foreground\" variant=\"outline\">128</Badge>\n    </TabsTab>\n    <TabsTab value=\"tab-2\">\n      Pending\n      <Badge class=\"not-in-data-active:text-muted-foreground\" variant=\"outline\">8</Badge>\n    </TabsTab>\n    <TabsTab value=\"tab-3\">\n      Completed\n      <Badge class=\"not-in-data-active:text-muted-foreground\" variant=\"outline\">120</Badge>\n    </TabsTab>\n  </TabsList>\n  <TabsPanel value=\"tab-1\">\n    <p class=\"p-4 text-center text-muted-foreground text-xs\">All items content</p>\n  </TabsPanel>\n  <TabsPanel value=\"tab-2\">\n    <p class=\"p-4 text-center text-muted-foreground text-xs\">Pending items content</p>\n  </TabsPanel>\n  <TabsPanel value=\"tab-3\">\n    <p class=\"p-4 text-center text-muted-foreground text-xs\">Completed items content</p>\n  </TabsPanel>\n</Tabs>\n"
+		}
+	],
+	"registryDependencies": [
+		"badge",
+		"tabs"
+	],
+	"dependencies": []
+}

@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-input-10",
+	"title": "Input 10",
+	"description": "Input group mimicking a URL bar",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-input-10.svelte",
+			"target": "$lib/components/particles/input/p-input-10.svelte",
+			"content": "<script lang=\"ts\">\n  import Info from '@lucide/svelte/icons/info';\n  import Star from '@lucide/svelte/icons/star';\n  import { Button, buttonVariants } from '$lib/components/ui/button';\n  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';\n  import {\n    Popover,\n    PopoverDescription,\n    PopoverPopup,\n    PopoverTitle,\n    PopoverTrigger\n  } from '$lib/components/ui/popover';\n\n  let isFavorite = $state(false);\n</script>\n\n<InputGroup class=\"[--radius-lg:9999px] [--radius:9999rem]\">\n  <Popover>\n    <InputGroupAddon>\n      <PopoverTrigger class={buttonVariants({ size: 'icon-xs', variant: 'secondary' })}>\n        <Info />\n      </PopoverTrigger>\n    </InputGroupAddon>\n    <PopoverPopup align=\"start\" alignOffset={-5} class=\"w-64\" sideOffset={6}>\n      <PopoverTitle class=\"text-sm\">Your connection is not secure.</PopoverTitle>\n      <PopoverDescription>\n        You should not enter any sensitive information on this site.\n      </PopoverDescription>\n    </PopoverPopup>\n  </Popover>\n  <InputGroupAddon class=\"pl-1.5 text-muted-foreground\">https://</InputGroupAddon>\n  <InputGroupInput aria-label=\"Url\" class=\"*:[input]:ps-1!\" type=\"text\" />\n  <InputGroupAddon align=\"inline-end\">\n    <Button\n      onclick={() => {\n        isFavorite = !isFavorite;\n      }}\n      size=\"icon-xs\"\n      variant=\"ghost\"\n    >\n      <Star\n        class=\"data-[favorite=true]:fill-primary data-[favorite=true]:stroke-primary\"\n        data-favorite={isFavorite}\n      />\n    </Button>\n  </InputGroupAddon>\n</InputGroup>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"input-group",
+		"popover"
+	],
+	"dependencies": []
+}

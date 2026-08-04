@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-button-22",
+	"title": "Button 22",
+	"description": "Directional pad control buttons",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-button-22.svelte",
+			"target": "$lib/components/particles/button/p-button-22.svelte",
+			"content": "<script lang=\"ts\">\n  import ChevronDown from '@lucide/svelte/icons/chevron-down';\n  import ChevronLeft from '@lucide/svelte/icons/chevron-left';\n  import ChevronRight from '@lucide/svelte/icons/chevron-right';\n  import ChevronUp from '@lucide/svelte/icons/chevron-up';\n  import Circle from '@lucide/svelte/icons/circle';\n  import { Button } from '$lib/components/ui/button';\n</script>\n\n<div class=\"inline-grid w-fit grid-cols-3 gap-1\">\n  <Button aria-label=\"Pan camera up\" class=\"col-start-2\" size=\"icon\" variant=\"outline\">\n    <ChevronUp aria-hidden=\"true\" />\n  </Button>\n  <Button aria-label=\"Pan camera left\" class=\"col-start-1\" size=\"icon\" variant=\"outline\">\n    <ChevronLeft aria-hidden=\"true\" />\n  </Button>\n  <div aria-hidden=\"true\" class=\"flex items-center justify-center\">\n    <Circle class=\"size-4 opacity-80\" />\n  </div>\n  <Button aria-label=\"Pan camera right\" size=\"icon\" variant=\"outline\">\n    <ChevronRight aria-hidden=\"true\" />\n  </Button>\n  <Button aria-label=\"Pan camera down\" class=\"col-start-2\" size=\"icon\" variant=\"outline\">\n    <ChevronDown aria-hidden=\"true\" />\n  </Button>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"button"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

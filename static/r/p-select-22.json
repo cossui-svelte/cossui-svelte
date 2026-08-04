@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-select-22",
+	"title": "Select 22",
+	"description": "Select with custom border and background",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-select-22.svelte",
+			"target": "$lib/components/particles/select/p-select-22.svelte",
+			"content": "<script lang=\"ts\">\n  import { Select, SelectItem, SelectPopup, SelectTrigger } from '$lib/components/ui/select';\n\n  const items = [\n    { label: 'Next.js', value: 'next' },\n    { label: 'Vite', value: 'vite' },\n    { label: 'Astro', value: 'astro' }\n  ];\n\n  let selected = $state('next');\n  const selectedLabel = $derived(items.find((i) => i.value === selected)?.label ?? '');\n</script>\n\n<Select\n  value={selected}\n  onValueChange={(v) => {\n    selected = v;\n  }}\n>\n  <SelectTrigger\n    aria-label=\"Select framework\"\n    class=\"border-transparent bg-muted shadow-none before:hidden\"\n  >\n    <span class=\"flex-1 truncate\">{selectedLabel}</span>\n  </SelectTrigger>\n  <SelectPopup>\n    {#each items as { label, value } (value)}\n      <SelectItem {value}>{label}</SelectItem>\n    {/each}\n  </SelectPopup>\n</Select>\n"
+		}
+	],
+	"registryDependencies": [
+		"select"
+	],
+	"dependencies": []
+}

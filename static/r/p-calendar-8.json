@@ -1,0 +1,22 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-calendar-8",
+	"title": "Calendar 8",
+	"description": "Calendar with multiple date selection",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-calendar-8.svelte",
+			"target": "$lib/components/particles/calendar/p-calendar-8.svelte",
+			"content": "<script lang=\"ts\">\n  import { getLocalTimeZone, today } from '@internationalized/date';\n  import { Calendar } from '$lib/components/ui/calendar';\n\n  const todayValue = today(getLocalTimeZone());\n  let value = $state([\n    todayValue.subtract({ days: 17 }),\n    todayValue.add({ days: 2 }),\n    todayValue.add({ days: 6 }),\n    todayValue.add({ days: 8 })\n  ]);\n</script>\n\n<Calendar bind:value mode=\"multiple\" />\n"
+		}
+	],
+	"registryDependencies": [
+		"calendar"
+	],
+	"dependencies": [
+		"date-fns",
+		"@internationalized/date@^3.12.3"
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-input-group-27",
+	"title": "Input group 27",
+	"description": "Code snippet input with language selector",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-input-group-27.svelte",
+			"target": "$lib/components/particles/input-group/p-input-group-27.svelte",
+			"content": "<script lang=\"ts\">\n  import Check from '@lucide/svelte/icons/check';\n  import Copy from '@lucide/svelte/icons/copy';\n  import { buttonVariants } from '$lib/components/ui/button';\n  import { InputGroup, InputGroupAddon, InputGroupTextarea } from '$lib/components/ui/input-group';\n  import {\n    Select,\n    SelectItem,\n    SelectPopup,\n    SelectTrigger,\n    SelectValue\n  } from '$lib/components/ui/select';\n  import {\n    Tooltip,\n    TooltipPopup,\n    TooltipProvider,\n    TooltipTrigger\n  } from '$lib/components/ui/tooltip';\n\n  const languages = [\n    { label: 'JavaScript', value: 'javascript' },\n    { label: 'TypeScript', value: 'typescript' },\n    { label: 'Python', value: 'python' },\n    { label: 'Go', value: 'go' },\n    { label: 'Rust', value: 'rust' }\n  ];\n\n  let lang = $state('javascript');\n  let code = $state('');\n  let copied = $state(false);\n\n  function handleCopy() {\n    navigator.clipboard.writeText(code);\n    copied = true;\n    setTimeout(() => {\n      copied = false;\n    }, 2000);\n  }\n</script>\n\n<TooltipProvider>\n  <InputGroup>\n    <InputGroupTextarea\n      class=\"font-mono\"\n      placeholder=\"Paste your code here…\"\n      rows={6}\n      bind:value={code}\n    />\n    <InputGroupAddon\n      align=\"block-start\"\n      class=\"justify-between rounded-t-lg border-b bg-muted/72 p-2!\"\n    >\n      <Select bind:value={lang} items={languages}>\n        <SelectTrigger class=\"w-fit\" size=\"sm\">\n          <SelectValue />\n        </SelectTrigger>\n        <SelectPopup>\n          {#each languages as { label, value } (value)}\n            <SelectItem {value}>{label}</SelectItem>\n          {/each}\n        </SelectPopup>\n      </Select>\n      <Tooltip>\n        <TooltipTrigger\n          aria-label={copied ? 'Copied' : 'Copy code'}\n          class={buttonVariants({ size: 'icon-sm', variant: 'ghost' })}\n          onclick={handleCopy}\n        >\n          {#if copied}<Check />{:else}<Copy />{/if}\n        </TooltipTrigger>\n        <TooltipPopup>\n          {copied ? 'Copied!' : 'Copy to clipboard'}\n        </TooltipPopup>\n      </Tooltip>\n    </InputGroupAddon>\n  </InputGroup>\n</TooltipProvider>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"input-group",
+		"select",
+		"tooltip"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

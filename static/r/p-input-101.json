@@ -1,0 +1,22 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-input-101",
+	"title": "Input 101",
+	"description": "Credit card expiry date input with auto-formatting",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-input-101.svelte",
+			"target": "$lib/components/particles/input/p-input-101.svelte",
+			"content": "<script lang=\"ts\">\n  import { DefaultDateDelimiter, formatDate, registerCursorTracker } from 'cleave-zen';\n  import type { Attachment } from 'svelte/attachments';\n  import { Input } from '$lib/components/ui/input';\n  import { Label } from '$lib/components/ui/label';\n\n  const expiryAttachment: Attachment<HTMLInputElement> = (input) => {\n    const unregisterCursorTracker = registerCursorTracker({\n      delimiter: DefaultDateDelimiter,\n      input\n    });\n\n    const handleInput = (event: Event) => {\n      const target = event.target as HTMLInputElement;\n      target.value = formatDate(target.value, {\n        datePattern: ['m', 'y']\n      });\n    };\n\n    input.addEventListener('input', handleInput);\n\n    return () => {\n      input.removeEventListener('input', handleInput);\n      unregisterCursorTracker();\n    };\n  };\n</script>\n\n<div class=\"*:not-first:mt-2\">\n  <Label for=\"input-49\">Expiry date</Label>\n  <Input\n    id=\"input-49\"\n    type=\"text\"\n    placeholder=\"MM/YY\"\n    autocomplete=\"cc-exp\"\n    class=\"peer pe-11\"\n    {@attach expiryAttachment}\n  />\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"input",
+		"label"
+	],
+	"dependencies": [
+		"cleave-zen@^0.0.17"
+	]
+}

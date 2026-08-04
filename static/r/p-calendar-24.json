@@ -1,0 +1,23 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-calendar-24",
+	"title": "Calendar 24",
+	"description": "Pricing calendar with custom day buttons",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-calendar-24.svelte",
+			"target": "$lib/components/particles/calendar/p-calendar-24.svelte",
+			"content": "<script lang=\"ts\">\n  import { type DateValue, getLocalTimeZone, today } from '@internationalized/date';\n  import { Calendar, Day } from '$lib/components/ui/calendar';\n  import { cn } from '$lib/utils';\n\n  const GOOD_PRICE_THRESHOLD = 100;\n\n  const todayValue = today(getLocalTimeZone());\n  let value = $state<DateValue | undefined>(todayValue);\n\n  const mockPriceData: Record<string, number> = {};\n  for (let i = 0; i < 180; i++) {\n    const date = todayValue.add({ days: i });\n    mockPriceData[date.toString()] = Math.floor(Math.random() * (200 - 80 + 1)) + 80;\n  }\n\n  function isDateDisabled(d: DateValue): boolean {\n    return mockPriceData[d.toString()] === undefined;\n  }\n</script>\n\n<Calendar\n  bind:value\n  class=\"**:data-outside-month:invisible [&>div]:gap-8 [&_th]:w-12 md:[&>div]:flex-row sm:[&>div]:flex-col\"\n  {isDateDisabled}\n  numberOfMonths={2}\n  pagedNavigation\n  mode=\"single\"\n>\n  {#snippet day({ day: date })}\n    {@const price = mockPriceData[date.toString()]}\n    {@const isGoodPrice = price !== undefined && price < GOOD_PRICE_THRESHOLD}\n    <Day class=\"size-12\">\n      {#snippet children({ day: dayLabel })}\n        <span class=\"flex flex-col\">\n          {dayLabel}\n          {#if price}\n            <span\n              class={cn(\n                'font-normal text-xs',\n                isGoodPrice\n                  ? 'text-emerald-500'\n                  : 'in-data-selected:text-primary-foreground/70 text-muted-foreground'\n              )}\n            >\n              ${price}\n            </span>\n          {/if}\n        </span>\n      {/snippet}\n    </Day>\n  {/snippet}\n</Calendar>\n"
+		}
+	],
+	"registryDependencies": [
+		"calendar",
+		"utils"
+	],
+	"dependencies": [
+		"date-fns",
+		"@internationalized/date@^3.12.3"
+	]
+}

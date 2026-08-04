@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-cropper-3",
+	"title": "Cropper 3",
+	"description": "Cropper with aspect ratio 16:9",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-cropper-3.svelte",
+			"target": "$lib/components/particles/cropper/p-cropper-3.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    Cropper,\n    CropperCropArea,\n    CropperDescription,\n    CropperImage\n  } from '$lib/components/ui/cropper';\n</script>\n\n<div class=\"flex w-full flex-col items-center gap-2\">\n  <Cropper aspectRatio={16 / 9} class=\"h-80\" image=\"/img/cropper/cropper-02_a2xwtd.jpg\">\n    <CropperDescription />\n    <CropperImage />\n    <CropperCropArea />\n  </Cropper>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"cropper"
+	],
+	"dependencies": []
+}

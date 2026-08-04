@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-badge-15",
+	"title": "Badge 15",
+	"description": "Badge with number after text",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-badge-15.svelte",
+			"target": "$lib/components/particles/badge/p-badge-15.svelte",
+			"content": "<script lang=\"ts\">\n  import { Badge } from '$lib/components/ui/badge';\n</script>\n\n<Badge variant=\"outline\">\n  Notifications\n  <span class=\"ms-1 font-semibold text-primary\">5</span>\n</Badge>\n"
+		}
+	],
+	"registryDependencies": [
+		"badge"
+	],
+	"dependencies": []
+}

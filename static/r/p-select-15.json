@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-select-15",
+	"title": "Select 15",
+	"description": "Pill-shaped select trigger",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-select-15.svelte",
+			"target": "$lib/components/particles/select/p-select-15.svelte",
+			"content": "<script lang=\"ts\">\n  import { Select, SelectItem, SelectPopup, SelectTrigger } from '$lib/components/ui/select';\n\n  const items = [\n    { label: 'Active', value: 'active' },\n    { label: 'Inactive', value: 'inactive' },\n    { label: 'Archived', value: 'archived' }\n  ];\n\n  let selected = $state('active');\n  const selectedLabel = $derived(items.find((i) => i.value === selected)?.label ?? '');\n</script>\n\n<Select\n  value={selected}\n  onValueChange={(v) => {\n    selected = v;\n  }}\n>\n  <SelectTrigger aria-label=\"Select filter\" class=\"[--radius-lg:9999px] [--radius:9999px]\">\n    <span class=\"flex-1 truncate\">{selectedLabel}</span>\n  </SelectTrigger>\n  <SelectPopup>\n    {#each items as { label, value } (value)}\n      <SelectItem {value}>{label}</SelectItem>\n    {/each}\n  </SelectPopup>\n</Select>\n"
+		}
+	],
+	"registryDependencies": [
+		"select"
+	],
+	"dependencies": []
+}

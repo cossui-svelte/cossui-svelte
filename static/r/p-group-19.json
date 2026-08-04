@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-group-19",
+	"title": "Group 19",
+	"description": "Group with input and select",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-group-19.svelte",
+			"target": "$lib/components/particles/group/p-group-19.svelte",
+			"content": "<script lang=\"ts\">\n  import { Group, GroupSeparator } from '$lib/components/ui/group';\n  import { Input } from '$lib/components/ui/input';\n  import {\n    Select,\n    SelectItem,\n    SelectPopup,\n    SelectTrigger,\n    SelectValue\n  } from '$lib/components/ui/select';\n\n  const domains = [\n    { label: '.com', value: 'com' },\n    { label: '.org', value: 'org' },\n    { label: '.net', value: 'net' }\n  ];\n\n  let domain = $state('com');\n</script>\n\n<Group aria-label=\"Domain input\">\n  <Input aria-label=\"Domain name\" placeholder=\"example\" type=\"text\" />\n  <GroupSeparator />\n  <Select bind:value={domain}>\n    <SelectTrigger class=\"w-fit min-w-none\">\n      <SelectValue />\n    </SelectTrigger>\n    <SelectPopup>\n      {#each domains as d (d.value)}\n        <SelectItem value={d.value}>{d.label}</SelectItem>\n      {/each}\n    </SelectPopup>\n  </Select>\n</Group>\n"
+		}
+	],
+	"registryDependencies": [
+		"group",
+		"input",
+		"select"
+	],
+	"dependencies": []
+}

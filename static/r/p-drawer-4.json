@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-drawer-4",
+	"title": "Drawer 4",
+	"description": "Inset variant drawers for all four positions",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-drawer-4.svelte",
+			"target": "$lib/components/particles/drawer/p-drawer-4.svelte",
+			"content": "<script lang=\"ts\">\n  import { buttonVariants } from '$lib/components/ui/button';\n  import {\n    Drawer,\n    DrawerHeader,\n    DrawerPanel,\n    DrawerPopup,\n    DrawerTitle,\n    DrawerTrigger\n  } from '$lib/components/ui/drawer';\n</script>\n\n<div class=\"flex flex-wrap gap-2\">\n  <Drawer position=\"right\">\n    <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Right</DrawerTrigger>\n    <DrawerPopup variant=\"inset\">\n      <DrawerHeader>\n        <DrawerTitle>Right</DrawerTitle>\n      </DrawerHeader>\n      <DrawerPanel>\n        <p class=\"text-muted-foreground text-sm\">Content from the right.</p>\n      </DrawerPanel>\n    </DrawerPopup>\n  </Drawer>\n\n  <Drawer position=\"left\">\n    <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Left</DrawerTrigger>\n    <DrawerPopup variant=\"inset\">\n      <DrawerHeader>\n        <DrawerTitle>Left</DrawerTitle>\n      </DrawerHeader>\n      <DrawerPanel>\n        <p class=\"text-muted-foreground text-sm\">Content from the left.</p>\n      </DrawerPanel>\n    </DrawerPopup>\n  </Drawer>\n\n  <Drawer position=\"top\">\n    <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Top</DrawerTrigger>\n    <DrawerPopup variant=\"inset\">\n      <DrawerHeader>\n        <DrawerTitle>Top</DrawerTitle>\n      </DrawerHeader>\n      <DrawerPanel>\n        <p class=\"text-muted-foreground text-sm\">Content from the top.</p>\n      </DrawerPanel>\n    </DrawerPopup>\n  </Drawer>\n\n  <Drawer>\n    <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Bottom</DrawerTrigger>\n    <DrawerPopup variant=\"inset\">\n      <DrawerHeader>\n        <DrawerTitle>Bottom</DrawerTitle>\n      </DrawerHeader>\n      <DrawerPanel>\n        <p class=\"text-muted-foreground text-sm\">Content from the bottom.</p>\n      </DrawerPanel>\n    </DrawerPopup>\n  </Drawer>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"drawer"
+	],
+	"dependencies": []
+}

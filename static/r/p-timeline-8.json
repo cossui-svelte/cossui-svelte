@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-timeline-8",
+	"title": "Timeline 8",
+	"description": "A timeline with titles and dates",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-timeline-8.svelte",
+			"target": "$lib/components/particles/timeline/p-timeline-8.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    Timeline,\n    TimelineDate,\n    TimelineHeader,\n    TimelineIndicator,\n    TimelineItem,\n    TimelineSeparator,\n    TimelineTitle\n  } from '$lib/components/ui/timeline';\n\n  const items = [\n    {\n      date: 'Mar 15, 2024',\n      id: 1,\n      title: 'Project Kickoff'\n    },\n    {\n      date: 'Mar 22, 2024',\n      id: 2,\n      title: 'Design Phase'\n    },\n    {\n      date: 'Apr 5, 2024',\n      id: 3,\n      title: 'Development Sprint'\n    },\n    {\n      date: 'Apr 19, 2024',\n      id: 4,\n      title: 'Testing & Deployment'\n    },\n    {\n      date: 'May 3, 2024',\n      id: 5,\n      title: 'User Training'\n    },\n    {\n      date: 'May 17, 2024',\n      id: 6,\n      title: 'Project Handover'\n    }\n  ];\n</script>\n\n<Timeline defaultValue={3}>\n  {#each items as item (item.id)}\n    <TimelineItem\n      step={item.id}\n      class={[\n        'w-[calc(50%-1.5rem)]',\n        'group-data-[orientation=vertical]/timeline:odd:ms-auto',\n        'group-data-[orientation=vertical]/timeline:even:text-right',\n        'group-data-[orientation=vertical]/timeline:even:ml-0',\n        'group-data-[orientation=vertical]/timeline:even:mr-8',\n        'group-data-[orientation=vertical]/timeline:even:**:data-[slot=timeline-indicator]:-right-6',\n        'group-data-[orientation=vertical]/timeline:even:**:data-[slot=timeline-indicator]:left-auto',\n        'group-data-[orientation=vertical]/timeline:even:**:data-[slot=timeline-indicator]:translate-x-1/2',\n        'group-data-[orientation=vertical]/timeline:even:**:data-[slot=timeline-separator]:-right-6',\n        'group-data-[orientation=vertical]/timeline:even:**:data-[slot=timeline-separator]:left-auto',\n        'group-data-[orientation=vertical]/timeline:even:**:data-[slot=timeline-separator]:translate-x-1/2'\n      ]}\n    >\n      <TimelineHeader>\n        <TimelineSeparator />\n        <TimelineDate>{item.date}</TimelineDate>\n        <TimelineTitle>{item.title}</TimelineTitle>\n        <TimelineIndicator />\n      </TimelineHeader>\n    </TimelineItem>\n  {/each}\n</Timeline>\n"
+		}
+	],
+	"registryDependencies": [
+		"timeline"
+	],
+	"dependencies": []
+}

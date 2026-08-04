@@ -1,0 +1,61 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "stepper",
+	"title": "Stepper",
+	"description": "A component for displaying a series of steps in a process.",
+	"type": "registry:ui",
+	"files": [
+		{
+			"type": "registry:ui",
+			"path": "stepper/index.ts",
+			"target": "$lib/components/ui/stepper/index.ts",
+			"content": "// this is coming from https://github.com/max-got/originui-svelte/pull/72/changes/6245a3faf7ff518c8eaa186f24e2a539b3e7348b#diff-fe8582fb662ae00c31b63539c7d9292dec5ed6bcb8301e85c3da58eb37a754d6\n\nimport Root from './stepper.svelte';\nimport Description from './stepper-description.svelte';\nimport Indicator from './stepper-indicator.svelte';\nimport Item from './stepper-item.svelte';\nimport Separator from './stepper-separator.svelte';\nimport Title from './stepper-title.svelte';\nimport Trigger from './stepper-trigger.svelte';\n\nexport {\n  Description,\n  Description as StepperDescription,\n  Indicator,\n  Indicator as StepperIndicator,\n  Item,\n  Item as StepperItem,\n  Root,\n  Root as Stepper,\n  Separator,\n  Separator as StepperSeparator,\n  Title,\n  Title as StepperTitle,\n  Trigger,\n  Trigger as StepperTrigger\n};\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "stepper/stepper-description.svelte",
+			"target": "$lib/components/ui/stepper/stepper-description.svelte",
+			"content": "<script lang=\"ts\">\n  import type { Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let {\n    class: className = '',\n    children,\n    ...restProps\n  }: {\n    class?: string;\n    children?: Snippet;\n  } = $props();\n</script>\n\n<p\n  data-slot=\"stepper-description\"\n  class={cn('text-muted-foreground text-xs', className)}\n  {...restProps}\n>\n  {@render children?.()}\n</p>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "stepper/stepper-indicator.svelte",
+			"target": "$lib/components/ui/stepper/stepper-indicator.svelte",
+			"content": "<script lang=\"ts\">\n  import CheckIcon from '@lucide/svelte/icons/check';\n  import LoaderCircleIcon from '@lucide/svelte/icons/loader-circle';\n  import { getContext, type Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  type StepState = 'active' | 'completed' | 'inactive' | 'loading';\n\n  interface StepItemContextValue {\n    isLoading: boolean;\n    state: StepState;\n    step: number;\n  }\n\n  let {\n    class: className = '',\n    children,\n    ...restProps\n  }: {\n    class?: string;\n    children?: Snippet;\n  } = $props();\n\n  const stepItemCtx = getContext<StepItemContextValue>('StepItemContext');\n  if (!stepItemCtx) {\n    throw new Error('StepperIndicator must be used within a StepperItem');\n  }\n</script>\n\n<span\n  data-slot=\"stepper-indicator\"\n  class={cn(\n    'flex size-6 items-center justify-center rounded-full border text-xs font-medium',\n    stepItemCtx.state === 'active' && 'border-primary bg-primary text-primary-foreground',\n    stepItemCtx.state === 'completed' && 'border-primary bg-primary text-primary-foreground',\n    stepItemCtx.state === 'inactive' && 'border-border bg-muted text-muted-foreground',\n    className\n  )}\n  data-state={stepItemCtx.state}\n  {...restProps}\n>\n  {#if children}\n    {@render children()}\n  {:else if stepItemCtx.isLoading}\n    <LoaderCircleIcon class=\"size-4 animate-spin\" />\n  {:else if stepItemCtx.state === 'completed'}\n    <CheckIcon class=\"size-4\" />\n  {:else}\n    {stepItemCtx.step}\n  {/if}\n</span>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "stepper/stepper-item.svelte",
+			"target": "$lib/components/ui/stepper/stepper-item.svelte",
+			"content": "<script lang=\"ts\">\n  import { getContext, onMount, type Snippet, setContext } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  type StepState = 'active' | 'completed' | 'inactive' | 'loading';\n\n  interface StepperContextValue {\n    activeStep: number;\n    incrementTotalSteps: () => number;\n    orientation: 'horizontal' | 'vertical';\n  }\n\n  interface StepItemContextValue {\n    isDisabled: boolean;\n    isLoading: boolean;\n    orientation: 'horizontal' | 'vertical';\n    state: StepState;\n    step: number;\n  }\n\n  let {\n    step: explicitStep,\n    completed = false,\n    disabled = false,\n    loading = false,\n    class: className = '',\n    children,\n    ...restProps\n  }: {\n    step?: number;\n    completed?: boolean;\n    disabled?: boolean;\n    loading?: boolean;\n    class?: string;\n    children?: Snippet;\n  } = $props();\n\n  const stepperCtx = getContext<StepperContextValue>('StepperContext');\n  if (!stepperCtx) {\n    throw new Error('StepperItem must be used within a Stepper');\n  }\n\n  let itemStep = $state(explicitStep ?? 0);\n  let itemState = $state<StepState>('inactive');\n  let itemIsLoading = $state(false);\n\n  onMount(() => {\n    if (explicitStep === undefined) {\n      itemStep = stepperCtx.incrementTotalSteps();\n    }\n  });\n\n  $effect(() => {\n    const isActive = stepperCtx.activeStep === itemStep;\n    itemIsLoading = loading && isActive;\n    if (completed || itemStep < stepperCtx.activeStep) {\n      itemState = 'completed';\n    } else if (isActive) {\n      itemState = 'active';\n    } else {\n      itemState = 'inactive';\n    }\n  });\n\n  const stepItemCtx: StepItemContextValue = {\n    get isDisabled() {\n      return disabled;\n    },\n    get isLoading() {\n      return itemIsLoading;\n    },\n    get orientation() {\n      return stepperCtx.orientation;\n    },\n    get state() {\n      return itemState;\n    },\n    get step() {\n      return itemStep;\n    }\n  };\n\n  setContext('StepItemContext', stepItemCtx);\n</script>\n\n<div\n  data-slot=\"stepper-item\"\n  class={cn(\n    'group/step flex items-center',\n    stepperCtx.orientation === 'horizontal' ? 'flex-row' : 'flex-col',\n    className\n  )}\n  data-state={itemState}\n  data-orientation={stepperCtx.orientation}\n  data-loading={itemIsLoading ? '' : undefined}\n  {...restProps}\n>\n  {@render children?.()}\n</div>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "stepper/stepper-separator.svelte",
+			"target": "$lib/components/ui/stepper/stepper-separator.svelte",
+			"content": "<script lang=\"ts\">\n  import { getContext } from 'svelte';\n  import { cn } from '$lib/utils.js';\n\n  type StepState = 'active' | 'completed' | 'inactive' | 'loading';\n\n  interface StepperContextValue {\n    orientation: 'horizontal' | 'vertical';\n  }\n\n  interface StepItemContextValue {\n    state: StepState;\n  }\n\n  let {\n    class: className = '',\n    ...restProps\n  }: {\n    class?: string;\n  } = $props();\n\n  const stepperCtx = getContext<StepperContextValue>('StepperContext');\n  const stepItemCtx = getContext<StepItemContextValue>('StepItemContext'); // Assumes separator is child of StepperItem\n\n  if (!stepperCtx || !stepItemCtx) {\n    throw new Error(\n      'StepperSeparator must be used within a StepperItem, which is within a Stepper'\n    );\n  }\n</script>\n\n<div\n  data-slot=\"stepper-separator\"\n  class={cn(\n    'group-data-[state=completed]/step:bg-primary',\n    'group-data-[state=active]/step:bg-border',\n    'group-data-[state=inactive]/step:bg-border',\n    stepperCtx.orientation === 'horizontal'\n      ? 'h-px flex-1 -ml-2 -mr-4'\n      : 'min-h-4 w-px flex-auto -mb-1.5 -mt-1.5',\n    className\n  )}\n  data-orientation={stepperCtx.orientation}\n  data-state={stepItemCtx.state}\n  {...restProps}\n></div>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "stepper/stepper-title.svelte",
+			"target": "$lib/components/ui/stepper/stepper-title.svelte",
+			"content": "<script lang=\"ts\">\n  import type { Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let {\n    class: className = '',\n    children,\n    ...restProps\n  }: {\n    class?: string;\n    children?: Snippet;\n  } = $props();\n</script>\n\n<h3 data-slot=\"stepper-title\" class={cn('text-sm font-medium', className)} {...restProps}>\n  {@render children?.()}\n</h3>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "stepper/stepper-trigger.svelte",
+			"target": "$lib/components/ui/stepper/stepper-trigger.svelte",
+			"content": "<script lang=\"ts\">\n  import type { Snippet } from 'svelte';\n  import { getContext } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  interface StepperContextValue {\n    activeStep: number;\n    setActiveStep: (step: number) => void;\n  }\n\n  interface StepItemContextValue {\n    isDisabled: boolean;\n    orientation: 'horizontal' | 'vertical';\n    step: number;\n  }\n\n  let {\n    class: className = '',\n    children,\n    ...restProps\n  }: {\n    class?: string;\n    children?: Snippet;\n  } = $props();\n\n  const stepperCtx = getContext<StepperContextValue>('StepperContext');\n  const stepItemCtx = getContext<StepItemContextValue>('StepItemContext');\n\n  if (!stepperCtx || !stepItemCtx) {\n    throw new Error('StepperTrigger must be used within a StepperItem, which is within a Stepper');\n  }\n\n  function handleClick() {\n    if (!stepItemCtx.isDisabled) {\n      stepperCtx.setActiveStep(stepItemCtx.step);\n    }\n  }\n</script>\n\n<button\n  type=\"button\"\n  data-slot=\"stepper-trigger\"\n  class={cn(\n    'group/trigger ring-offset-background focus-visible:ring-ring inline-flex items-center gap-x-2 rounded-md px-2 py-1.5 text-sm font-medium focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50',\n    stepItemCtx.orientation === 'vertical' ? 'w-full flex-col items-start gap-y-1.5' : '',\n    className\n  )}\n  disabled={stepItemCtx.isDisabled}\n  onclick={handleClick}\n  {...restProps}\n>\n  {@render children?.()}\n</button>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "stepper/stepper.svelte",
+			"target": "$lib/components/ui/stepper/stepper.svelte",
+			"content": "<script lang=\"ts\">\n  import type { Snippet } from 'svelte';\n  import { setContext } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let {\n    step = $bindable(1),\n    orientation = 'horizontal',\n    class: className = '',\n    children,\n    ...restProps\n  }: {\n    step: number;\n    orientation?: 'horizontal' | 'vertical';\n    class?: string;\n    children?: Snippet;\n  } = $props();\n\n  // State\n  let totalSteps = $state(0); // Will be updated by StepperItems\n\n  // Context API\n  const stepperContext = {\n    get activeStep() {\n      return step;\n    },\n    incrementTotalSteps: () => {\n      totalSteps++;\n      return totalSteps; // Return the new total for StepperItem to use as its step number\n    },\n    get orientation() {\n      return orientation;\n    },\n    setActiveStep: (newStep: number) => {\n      step = newStep;\n    },\n    get totalSteps() {\n      return totalSteps;\n    }\n  };\n  setContext('StepperContext', stepperContext);\n</script>\n\n<div\n  role=\"group\"\n  aria-label=\"Stepper\"\n  class={cn(\n    'flex w-full flex-wrap items-center justify-between',\n    orientation === 'horizontal' ? 'flex-row gap-2' : 'flex-col',\n    className\n  )}\n  {...restProps}\n>\n  {@render children?.()}\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"utils"
+	],
+	"dependencies": []
+}

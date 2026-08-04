@@ -1,0 +1,27 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-dialog-4",
+	"title": "Dialog 4",
+	"description": "Dialog with close confirmation",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-dialog-4.svelte",
+			"target": "$lib/components/particles/dialog/p-dialog-4.svelte",
+			"content": "<script lang=\"ts\">\n  import { z } from 'zod';\n  import {\n    AlertDialog,\n    AlertDialogClose,\n    AlertDialogDescription,\n    AlertDialogFooter,\n    AlertDialogHeader,\n    AlertDialogPopup,\n    AlertDialogTitle\n  } from '$lib/components/ui/alert-dialog';\n  import { Button, buttonVariants } from '$lib/components/ui/button';\n  import {\n    Dialog,\n    DialogClose,\n    DialogDescription,\n    DialogFooter,\n    DialogHeader,\n    DialogPanel,\n    DialogPopup,\n    DialogTitle,\n    DialogTrigger\n  } from '$lib/components/ui/dialog';\n  import { Field } from '$lib/components/ui/field';\n  import { Form } from '$lib/components/ui/form';\n  import { Textarea } from '$lib/components/ui/textarea';\n  import { createForm } from '$lib/hooks/use-superform';\n\n  let dialogOpen = $state(false);\n  let confirmOpen = $state(false);\n  let value = $state('');\n\n  const schema = z.object({\n    v: z.string().min(1)\n  });\n\n  const superform = createForm({\n    initialData: { v: 'some text' },\n    onUpdated: () => {\n      dialogOpen = false;\n    },\n    schema\n  });\n</script>\n\n<Dialog\n  open={dialogOpen}\n  onOpenChange={(o) => {\n    if (!o && value) {\n      confirmOpen = true;\n    } else {\n      dialogOpen = o;\n    }\n  }}\n>\n  <DialogTrigger\n    class={buttonVariants({ variant: 'outline' })}\n    onclick={() => {\n      dialogOpen = true;\n    }}\n  >\n    Compose\n  </DialogTrigger>\n  <DialogPopup showCloseButton={false}>\n    <DialogHeader>\n      <DialogTitle>New message</DialogTitle>\n      <DialogDescription>Type something and try closing.</DialogDescription>\n    </DialogHeader>\n    <Form {superform} class=\"contents\">\n      <DialogPanel>\n        <Field name=\"v\">\n          <Textarea bind:value />\n        </Field>\n      </DialogPanel>\n      <DialogFooter>\n        <DialogClose class={buttonVariants({ variant: 'ghost' })}>Cancel</DialogClose>\n        <Button\n          onclick={() => {\n            value = '';\n            dialogOpen = false;\n          }}\n        >\n          Send\n        </Button>\n      </DialogFooter>\n    </Form>\n  </DialogPopup>\n</Dialog>\n\n<AlertDialog bind:open={confirmOpen}>\n  <AlertDialogPopup>\n    <AlertDialogHeader>\n      <AlertDialogTitle>Discard message?</AlertDialogTitle>\n      <AlertDialogDescription>\n        You have unsaved content. Are you sure you want to discard it?\n      </AlertDialogDescription>\n    </AlertDialogHeader>\n    <AlertDialogFooter>\n      <AlertDialogClose class={buttonVariants({ variant: 'ghost' })}>Keep editing</AlertDialogClose>\n      <Button\n        variant=\"destructive\"\n        onclick={() => {\n          value = '';\n          confirmOpen = false;\n          dialogOpen = false;\n        }}\n      >\n        Discard\n      </Button>\n    </AlertDialogFooter>\n  </AlertDialogPopup>\n</AlertDialog>\n"
+		}
+	],
+	"registryDependencies": [
+		"alert-dialog",
+		"button",
+		"dialog",
+		"field",
+		"form",
+		"textarea",
+		"use-superform"
+	],
+	"dependencies": [
+		"zod@^4.4.3"
+	]
+}

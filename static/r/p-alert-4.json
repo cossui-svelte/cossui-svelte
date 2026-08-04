@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-alert-4",
+	"title": "Alert 4",
+	"description": "Info alert",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-alert-4.svelte",
+			"target": "$lib/components/particles/alert/p-alert-4.svelte",
+			"content": "<script lang=\"ts\">\n  import Info from '@lucide/svelte/icons/info';\n  import { Alert, AlertDescription, AlertTitle } from '$lib/components/ui/alert';\n</script>\n\n<Alert variant=\"info\">\n  <Info />\n  <AlertTitle>Heads up!</AlertTitle>\n  <AlertDescription>Describe what can be done about it here.</AlertDescription>\n</Alert>\n"
+		}
+	],
+	"registryDependencies": [
+		"alert"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

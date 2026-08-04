@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-toast-8",
+	"title": "Toast 8",
+	"description": "Anchored error toast after async failure",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-toast-8.svelte",
+			"target": "$lib/components/particles/toast/p-toast-8.svelte",
+			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n  import { Spinner } from '$lib/components/ui/spinner';\n  import { anchoredToastManager } from '$lib/components/ui/toast';\n\n  let isSubmitting = $state(false);\n  let toastId: string | null = null;\n  let submitEl: HTMLElement | null = null;\n\n  function handleClick(e: MouseEvent) {\n    submitEl = e.currentTarget as HTMLElement;\n    handleSubmit();\n  }\n\n  function handleSubmit() {\n    if (!submitEl || isSubmitting) return;\n\n    if (toastId) {\n      anchoredToastManager.dismiss(toastId);\n      toastId = null;\n    }\n\n    isSubmitting = true;\n\n    new Promise<void>((_, reject) => {\n      setTimeout(() => {\n        isSubmitting = false;\n        reject(new Error('The server is not responding. Please try again later.'));\n      }, 2000);\n    }).catch((error: Error) => {\n      if (submitEl) {\n        toastId = anchoredToastManager.add({\n          description: error.message,\n          positionerProps: { anchor: submitEl, sideOffset: 4 },\n          title: 'Error submitting form',\n          type: 'error'\n        });\n      }\n    });\n  }\n</script>\n\n<Button disabled={isSubmitting} onclick={handleClick} variant=\"outline\">\n  {#if isSubmitting}\n    <Spinner />\n    Submitting…\n  {:else}\n    Submit\n  {/if}\n</Button>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"spinner",
+		"toast"
+	],
+	"dependencies": []
+}

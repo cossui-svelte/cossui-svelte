@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-chart-2",
+	"title": "Chart 2",
+	"description": "Radial Chart with Text",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-chart-2.svelte",
+			"target": "$lib/components/particles/charts/p-chart-2.svelte",
+			"content": "<script lang=\"ts\">\n  import { ArcChart, Text } from 'layerchart';\n  import { Chart, type ChartConfig } from '$lib/components/ui/chart';\n\n  const chartData = [{ browser: 'safari', color: 'var(--color-safari)', visitors: 200 }];\n\n  const chartConfig = {\n    safari: { color: 'var(--chart-2)', label: 'Safari' },\n    visitors: { label: 'Visitors' }\n  } satisfies ChartConfig;\n</script>\n\n<Chart config={chartConfig} class=\"grow p-2 h-87.5\">\n  <ArcChart\n    label=\"browser\"\n    value=\"visitors\"\n    outerRadius={-20}\n    innerRadius={-12}\n    padding={40}\n    range={[90, -270]}\n    maxValue={300}\n    cornerRadius={20}\n    series={chartData.map((d) => ({\n      color: d.color,\n      data: [d],\n      key: d.browser\n    }))}\n    props={{\n      arc: { motion: 'tween', track: { fill: 'var(--muted)' } },\n      tooltip: { context: { hideDelay: 350 } }\n    }}\n    tooltipContext={false}\n  >\n    {#snippet belowMarks()}\n      <circle cx=\"0\" cy=\"0\" r=\"60\" class=\"fill-background\"></circle>\n    {/snippet}\n\n    {#snippet aboveMarks()}\n      <Text\n        value={String(chartData[0].visitors)}\n        textAnchor=\"middle\"\n        verticalAnchor=\"middle\"\n        class=\"fill-foreground text-4xl! font-bold\"\n        dy={3}\n      />\n      <Text\n        value=\"Visitors\"\n        textAnchor=\"middle\"\n        verticalAnchor=\"middle\"\n        class=\"fill-muted-foreground!\"\n        dy={22}\n      />\n    {/snippet}\n  </ArcChart>\n</Chart>\n"
+		}
+	],
+	"registryDependencies": [
+		"chart"
+	],
+	"dependencies": [
+		"layerchart@^2.0.4"
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-colorpicker-4",
+	"title": "Colorpicker 4",
+	"description": "Sliders only",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-colorpicker-4.svelte",
+			"target": "$lib/components/particles/colorpicker/p-colorpicker-4.svelte",
+			"content": "<script>\n  import { ColorPicker } from '$lib/components/ui/colorpicker';\n\n  let color = $state('#1d916bb8');\n</script>\n\n<ColorPicker bind:color showInputs={false} showColorDropper={false} showSaturationArea={false} />\n"
+		}
+	],
+	"registryDependencies": [
+		"slider",
+		"checkbox",
+		"input",
+		"button",
+		"label",
+		"colorpicker"
+	],
+	"dependencies": []
+}

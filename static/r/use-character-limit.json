@@ -1,0 +1,16 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "use-character-limit",
+	"title": "Use Character Limit",
+	"type": "registry:hook",
+	"files": [
+		{
+			"type": "registry:hook",
+			"path": "use-character-limit.svelte.ts",
+			"target": "$lib/hooks/use-character-limit.svelte.ts",
+			"content": "export class CharacterLimit {\n  #value = $state('');\n  characterCount = $derived(this.#value.length);\n  maxLength: number;\n\n  constructor(maxLength: number, initialValue = '') {\n    this.maxLength = maxLength;\n    this.#value = initialValue;\n  }\n\n  set value(value: string) {\n    if (value.length <= this.maxLength) {\n      this.#value = value;\n    }\n  }\n\n  get value() {\n    return this.#value;\n  }\n}\n\nexport function useCharacterLimit(maxLength: number, initialValue = '') {\n  return new CharacterLimit(maxLength, initialValue);\n}\n"
+		}
+	],
+	"registryDependencies": [],
+	"dependencies": []
+}

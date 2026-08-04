@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-avatar-1",
+	"title": "Avatar 1",
+	"description": "Avatar with image and fallback",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-avatar-1.svelte",
+			"target": "$lib/components/particles/avatar/p-avatar-1.svelte",
+			"content": "<script lang=\"ts\">\n  import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';\n</script>\n\n<Avatar>\n  <AvatarImage\n    alt=\"Luke Tracy\"\n    src=\"https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?w=128&h=128&dpr=2&q=80\"\n  />\n  <AvatarFallback>LT</AvatarFallback>\n</Avatar>\n"
+		}
+	],
+	"registryDependencies": [
+		"avatar"
+	],
+	"dependencies": []
+}

@@ -1,0 +1,18 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "ArrowLeftLineArrows",
+	"title": "ArrowLeftLineArrows",
+	"type": "registry:component",
+	"files": [
+		{
+			"type": "registry:component",
+			"path": "ArrowLeftLineArrows.svelte",
+			"target": "$lib/icons/ArrowLeftLineArrows.svelte",
+			"content": "<script lang=\"ts\">\n  import { getContext } from 'svelte';\n  import type { BaseProps, Props } from './types';\n\n  const ctx: BaseProps = getContext('iconCtx') ?? {};\n\n  let {\n    size = ctx.size || '24',\n    role = ctx.role || 'img',\n    color = ctx.color || 'currentColor',\n    title,\n    desc,\n    focusable = ctx.focusable || 'false',\n    ariaLabel,\n    ...restProps\n  }: Props = $props();\n\n  const ariaDescribedby = $derived([title?.id, desc?.id].filter(Boolean).join(' ') || undefined);\n</script>\n\n<svg\n  xmlns=\"http://www.w3.org/2000/svg\"\n  {...restProps}\n  {role}\n  width={size}\n  height={size}\n  fill={color}\n  {focusable}\n  aria-label={ariaLabel || undefined}\n  aria-labelledby={title?.id || undefined}\n  aria-describedby={ariaDescribedby}\n  viewBox=\"0 0 24 24\"\n>\n  {#if title?.id && title.title}\n    <title id={title.id}>{title.title}</title>\n  {/if}\n  {#if desc?.id && desc.desc}\n    <desc id={desc.id}>{desc.desc}</desc>\n  {/if}\n  <path\n    d=\"M7.82843 10.9999H20V12.9999H7.82843L13.1924 18.3638L11.7782 19.778L4 11.9999L11.7782 4.22168L13.1924 5.63589L7.82843 10.9999Z\"\n  />\n</svg>\n\n<!--\n@component\n[Go to docs](https://svelte-remix.codewithshin.com/)\n## Props\n@prop size = ctx.size || '24'\n@prop role = ctx.role || 'img'\n@prop color = ctx.color || 'currentColor'\n@prop title\n@prop desc\n@prop focusable = ctx.focusable || 'false'\n@prop ariaLabel\n@prop ...restProps\n-->\n"
+		}
+	],
+	"registryDependencies": [
+		"icon-types"
+	],
+	"dependencies": []
+}

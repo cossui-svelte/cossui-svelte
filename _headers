@@ -6,3 +6,8 @@
   Cache-Control: public, max-age=86400, immutable
 /icons/*
   Cache-Control: public, max-age=86400, immutable
+/r/*
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, OPTIONS
+  Cache-Control: public, max-age=300
+

@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-button-36",
+	"title": "Button 36",
+	"description": "Copy button with feedback",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-button-36.svelte",
+			"target": "$lib/components/particles/button/p-button-36.svelte",
+			"content": "<script lang=\"ts\">\n  import Check from '@lucide/svelte/icons/check';\n  import Copy from '@lucide/svelte/icons/copy';\n  import { Button } from '$lib/components/ui/button';\n\n  let copied = $state(false);\n\n  function handleCopy() {\n    navigator.clipboard.writeText('Text copied!');\n    copied = true;\n    setTimeout(() => (copied = false), 2000);\n  }\n</script>\n\n<Button onclick={handleCopy} variant=\"outline\">\n  {#if copied}\n    <Check aria-hidden=\"true\" />\n    Copied\n  {:else}\n    <Copy aria-hidden=\"true\" />\n    Copy\n  {/if}\n</Button>\n"
+		}
+	],
+	"registryDependencies": [
+		"button"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

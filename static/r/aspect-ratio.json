@@ -1,0 +1,25 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "aspect-ratio",
+	"title": "Aspect Ratio",
+	"description": "Displays content within a desired ratio.",
+	"type": "registry:ui",
+	"files": [
+		{
+			"type": "registry:ui",
+			"path": "aspect-ratio/aspect-ratio.svelte",
+			"target": "$lib/components/ui/aspect-ratio/aspect-ratio.svelte",
+			"content": "<script lang=\"ts\">\n  import { AspectRatio as AspectRatioPrimitive } from 'bits-ui';\n\n  let { ref = $bindable(null), ...restProps }: AspectRatioPrimitive.RootProps = $props();\n</script>\n\n<AspectRatioPrimitive.Root bind:ref data-slot=\"aspect-ratio\" {...restProps} />\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "aspect-ratio/index.ts",
+			"target": "$lib/components/ui/aspect-ratio/index.ts",
+			"content": "import Root from './aspect-ratio.svelte';\n\nexport { Root, Root as AspectRatio };\n"
+		}
+	],
+	"registryDependencies": [],
+	"dependencies": [
+		"bits-ui@^2.18.1"
+	]
+}

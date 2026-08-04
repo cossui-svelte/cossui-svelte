@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-progress-1",
+	"title": "Progress 1",
+	"description": "Basic progress bar",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-progress-1.svelte",
+			"target": "$lib/components/particles/progress/p-progress-1.svelte",
+			"content": "<script lang=\"ts\">\n  import { Progress } from '$lib/components/ui/progress';\n\n  let value = $state(20);\n\n  $effect(() => {\n    const interval = setInterval(() => {\n      value = Math.min(100, Math.round(value + Math.random() * 25));\n    }, 1000);\n    return () => clearInterval(interval);\n  });\n</script>\n\n<Progress {value} />\n"
+		}
+	],
+	"registryDependencies": [
+		"progress"
+	],
+	"dependencies": []
+}

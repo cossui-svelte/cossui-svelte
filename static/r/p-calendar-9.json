@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-calendar-9",
+	"title": "Calendar 9",
+	"description": "Calendar with rounded day buttons",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-calendar-9.svelte",
+			"target": "$lib/components/particles/calendar/p-calendar-9.svelte",
+			"content": "<script lang=\"ts\">\n  import { getLocalTimeZone, today } from '@internationalized/date';\n  import { Calendar, Day } from '$lib/components/ui/calendar';\n\n  let value = $state(today(getLocalTimeZone()));\n</script>\n\n<Calendar bind:value mode=\"single\">\n  {#snippet day()}\n    <Day class=\"rounded-full\" />\n  {/snippet}\n</Calendar>\n"
+		}
+	],
+	"registryDependencies": [
+		"calendar"
+	],
+	"dependencies": [
+		"@internationalized/date@^3.12.3"
+	]
+}

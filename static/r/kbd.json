@@ -1,0 +1,31 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "kbd",
+	"title": "Kbd",
+	"description": "A component for displaying keyboard keys and shortcuts.",
+	"type": "registry:ui",
+	"files": [
+		{
+			"type": "registry:ui",
+			"path": "kbd/index.ts",
+			"target": "$lib/components/ui/kbd/index.ts",
+			"content": "export { default as Kbd } from './kbd.svelte';\nexport { default as KbdGroup } from './kbd-group.svelte';\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "kbd/kbd-group.svelte",
+			"target": "$lib/components/ui/kbd/kbd-group.svelte",
+			"content": "<script lang=\"ts\">\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn, type WithElementRef } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLElement>> = $props();\n</script>\n\n<kbd\n  bind:this={ref}\n  data-slot=\"kbd-group\"\n  class={cn('inline-flex items-center gap-1', className)}\n  {...restProps}\n>\n  {@render children?.()}\n</kbd>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "kbd/kbd.svelte",
+			"target": "$lib/components/ui/kbd/kbd.svelte",
+			"content": "<script lang=\"ts\">\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn, type WithElementRef } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLElement>> = $props();\n</script>\n\n<kbd\n  bind:this={ref}\n  data-slot=\"kbd\"\n  class={cn(\n    \"pointer-events-none inline-flex h-5 min-w-5 select-none items-center justify-center gap-1 rounded-[.25rem] bg-muted px-1 font-medium font-sans text-muted-foreground text-xs [&_svg:not([class*='size-'])]:size-3\",\n    className\n  )}\n  {...restProps}\n>\n  {@render children?.()}\n</kbd>\n"
+		}
+	],
+	"registryDependencies": [
+		"utils"
+	],
+	"dependencies": []
+}

@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-tabs-11",
+	"title": "Tabs 11",
+	"description": "Vertical tabs with underline and icon before name",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-tabs-11.svelte",
+			"target": "$lib/components/particles/tabs/p-tabs-11.svelte",
+			"content": "<script lang=\"ts\">\n  import HouseIcon from '@lucide/svelte/icons/house';\n  import PanelsTopLeftIcon from '@lucide/svelte/icons/panels-top-left';\n  import SettingsIcon from '@lucide/svelte/icons/settings';\n  import { Tabs, TabsList, TabsPanel, TabsTab } from '$lib/components/ui/tabs';\n</script>\n\n<Tabs class=\"w-full flex-row\" value=\"tab-1\" orientation=\"vertical\">\n  <div class=\"border-s\">\n    <TabsList variant=\"underline\">\n      <TabsTab value=\"tab-1\">\n        <HouseIcon aria-hidden=\"true\" />\n        Overview\n      </TabsTab>\n      <TabsTab value=\"tab-2\">\n        <PanelsTopLeftIcon aria-hidden=\"true\" />\n        Projects\n      </TabsTab>\n      <TabsTab value=\"tab-3\">\n        <SettingsIcon aria-hidden=\"true\" />\n        Settings\n      </TabsTab>\n    </TabsList>\n  </div>\n  <TabsPanel value=\"tab-1\">\n    <p class=\"p-4 text-center text-muted-foreground text-xs\">Overview content</p>\n  </TabsPanel>\n  <TabsPanel value=\"tab-2\">\n    <p class=\"p-4 text-center text-muted-foreground text-xs\">Projects content</p>\n  </TabsPanel>\n  <TabsPanel value=\"tab-3\">\n    <p class=\"p-4 text-center text-muted-foreground text-xs\">Settings content</p>\n  </TabsPanel>\n</Tabs>\n"
+		}
+	],
+	"registryDependencies": [
+		"tabs"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-skeleton-1",
+	"title": "Skeleton 1",
+	"description": "Basic skeleton",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-skeleton-1.svelte",
+			"target": "$lib/components/particles/skeleton/p-skeleton-1.svelte",
+			"content": "<script lang=\"ts\">\n  import UserRoundPlusIcon from '@lucide/svelte/icons/user-round-plus';\n  import UsersRoundIcon from '@lucide/svelte/icons/users-round';\n  import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';\n  import { Button } from '$lib/components/ui/button';\n  import { Skeleton } from '$lib/components/ui/skeleton';\n\n  const users = [\n    {\n      delay: 3000,\n      fallback: 'SJ',\n      followers: '15k',\n      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&dpr=2&q=80',\n      name: 'Sarah Johnson',\n      role: 'Design Engineer'\n    },\n    {\n      delay: 4000,\n      fallback: 'MA',\n      followers: '8k',\n      image: 'https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?w=80&h=80&dpr=2&q=80',\n      name: 'Mark Bennett Andersson',\n      role: 'Product Designer'\n    },\n    {\n      delay: 3400,\n      fallback: 'AR',\n      followers: '12k',\n      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&dpr=2&q=80',\n      name: 'Alex Rivera',\n      role: 'UI/UX Designer'\n    }\n  ];\n\n  type User = (typeof users)[0];\n\n  interface UserCardState {\n    isLoaded: boolean;\n    user: User;\n  }\n\n  let cards = $state<UserCardState[]>(users.map((user) => ({ isLoaded: false, user })));\n\n  $effect(() => {\n    const timers = users.map((user, i) =>\n      setTimeout(() => {\n        cards[i].isLoaded = true;\n      }, user.delay)\n    );\n    return () => timers.forEach(clearTimeout);\n  });\n</script>\n\n<div class=\"flex w-full max-w-92 flex-col gap-6\">\n  {#each cards as card (card.user.fallback)}\n    <Skeleton loading={!card.isLoaded} class=\"flex w-full items-center gap-4\">\n      <Avatar class=\"size-10\">\n        <AvatarImage alt={card.user.name} src={card.user.image} />\n        <AvatarFallback>{card.user.fallback}</AvatarFallback>\n      </Avatar>\n      <div class=\"flex min-w-0 flex-1 flex-col gap-1\">\n        <h4 class=\"line-clamp-1 font-medium text-sm\">{card.user.name}</h4>\n        <div class=\"flex items-center gap-3 text-muted-foreground text-xs\">\n          <span class=\"truncate\">{card.user.role}</span>\n          <div class=\"flex min-w-0 items-center gap-1\">\n            <UsersRoundIcon class=\"size-3 shrink-0\" />\n            <span class=\"truncate\">\n              {card.user.followers}\n              <span class=\"max-sm:hidden\"> followers</span>\n            </span>\n          </div>\n        </div>\n      </div>\n      <Button size=\"xs\">\n        <UserRoundPlusIcon />\n        Follow\n      </Button>\n    </Skeleton>\n  {/each}\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"avatar",
+		"button",
+		"skeleton"
+	],
+	"dependencies": []
+}

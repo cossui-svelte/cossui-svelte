@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-number-field-9",
+	"title": "Number field 9",
+	"description": "Number field with step",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-number-field-9.svelte",
+			"target": "$lib/components/particles/number-field/p-number-field-9.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    NumberField,\n    NumberFieldDecrement,\n    NumberFieldGroup,\n    NumberFieldIncrement,\n    NumberFieldInput,\n    NumberFieldScrubArea\n  } from '$lib/components/ui/number-field';\n</script>\n\n<div class=\"flex flex-col gap-6\">\n  <NumberField value={0} step={10}>\n    <NumberFieldScrubArea label=\"Step 10\" />\n    <NumberFieldGroup>\n      <NumberFieldDecrement />\n      <NumberFieldInput />\n      <NumberFieldIncrement />\n    </NumberFieldGroup>\n  </NumberField>\n  <NumberField value={0} step={0.1}>\n    <NumberFieldScrubArea label=\"Step 0.1\" />\n    <NumberFieldGroup>\n      <NumberFieldDecrement />\n      <NumberFieldInput />\n      <NumberFieldIncrement />\n    </NumberFieldGroup>\n  </NumberField>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"number-field"
+	],
+	"dependencies": []
+}
