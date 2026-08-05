@@ -2,6 +2,36 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.9.17](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.16...v0.9.17) (2026-08-05)
+
+### ✨ Features
+
+* sidebar take 1 ([29bef98](https://github.com/cossui-svelte/cossui-svelte/commit/29bef98e5038cd7fe241cda09fbf86b729edb4bd))
+
+### 🐛 Bug Fixes
+
+* firefox rounded maps ([23cdcaa](https://github.com/cossui-svelte/cossui-svelte/commit/23cdcaa6f44e8dbb2711d4996cb1124987956708))
+* firefox rounded maps ([4f9c64c](https://github.com/cossui-svelte/cossui-svelte/commit/4f9c64c0b282e1bd12324c946e1546d707110fcc))
+* alert-dialog cn- classes ([1fbb82f](https://github.com/cossui-svelte/cossui-svelte/commit/1fbb82f04a20cc49f2989088135db02cf9544f19))
+* calendars cn- classes ([b8bcc72](https://github.com/cossui-svelte/cossui-svelte/commit/b8bcc720a3cb9c3f01da41ce27e38cbbe84e5ce5))
+* empty variants were off from upstream ([f54e923](https://github.com/cossui-svelte/cossui-svelte/commit/f54e923cd07335bd341bf749de1dd1a6ba368e89))
+* input-group has no variants nor size ([e31a9a8](https://github.com/cossui-svelte/cossui-svelte/commit/e31a9a870f558722b4739d2b1b64af68670afdcb))
+* partial firefox fix for maps ([2e4f949](https://github.com/cossui-svelte/cossui-svelte/commit/2e4f949d561e88cf5d6a945c42a659353eaa1243))
+* partial firefox fix for maps ([d9d7573](https://github.com/cossui-svelte/cossui-svelte/commit/d9d7573a595331eed70e03febf93db9fe41ce3c6))
+* sheet description css + bind:ref ([08efa2b](https://github.com/cossui-svelte/cossui-svelte/commit/08efa2b196e806f577a0f2fb40bd2e194480b6a3))
+* sidebar is maturing ([af5a12d](https://github.com/cossui-svelte/cossui-svelte/commit/af5a12d844975606159c4045574489fc1630b127))
+
+### ♻️ Code Refactoring
+
+* fix dead css patterns ([0fe8adb](https://github.com/cossui-svelte/cossui-svelte/commit/0fe8adb6f3d392e2ca5e9780b9cb3f6769e385b3))
+* normalize map to the rest of the library ([942e3aa](https://github.com/cossui-svelte/cossui-svelte/commit/942e3aa2ee07de5dbc878f1ee0bf3e7d8466a7dd))
+* normalize map to the rest of the library ([ea394b0](https://github.com/cossui-svelte/cossui-svelte/commit/ea394b073daca23fa41563a7bd5efb06c1592ed4))
+
+### 🚚 Chores
+
+* deps ([b4c65a7](https://github.com/cossui-svelte/cossui-svelte/commit/b4c65a7ac14a3e9b34c3af3007bf601ab69f6088))
+* formatting and code cleanup ([f9f3f4d](https://github.com/cossui-svelte/cossui-svelte/commit/f9f3f4d8ffe9c54a26a7beb46225ef19192eee0e))
+* **release:** 0.9.16 ([31abdce](https://github.com/cossui-svelte/cossui-svelte/commit/31abdce796faca4cac5e049138ad3f8ed5d8d805))
 ## [0.9.16](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.15...v0.9.16) (2026-08-02)
 
 ### ✨ Features
