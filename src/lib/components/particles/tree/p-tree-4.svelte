@@ -67,7 +67,7 @@
       {#each tree.current.getItems() as item (item.getId())}
         <TreeItem {item}>
           <TreeLabel
-            class="before:bg-background relative before:absolute before:inset-x-0 before:-inset-y-0.5 before:-z-10"
+            class="before:bg-background relative ps-2 before:absolute before:inset-x-0 before:-inset-y-0.5 before:-z-10 [&>svg]:ms-0"
           >
             <span class="-order-1 flex flex-1 items-center gap-2">
               {#if item.isFolder()}
