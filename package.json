@@ -71,7 +71,6 @@
     "url": "git+https://github.com/cossui-svelte/cossui-svelte.git"
   },
   "scripts": {
-    "biome:migrate": "biome migrate --write",
     "build": "vite build",
     "cf:deploy": "pnpm run build && wrangler deploy",
     "cf:typegen": "wrangler types src/worker-configuration.d.ts",
@@ -83,7 +82,7 @@
     "lint:audit": "pnpx knip --max-show-issues 20",
     "lint:typecheck": "tsc --noEmit",
     "mrproper": "rm -rf node_modules dist build .svelte-kit",
-    "optimize:icons": "tsx ./scripts/transformLucideImports.ts",
+    "migrate": "biome migrate --write && wrangler types src/worker-configuration.d.ts && tsx ./scripts/transformLucideImports.ts",
     "prepare": "husky && svelte-kit sync || echo ''",
     "release": "commit-and-tag-version",
     "release:dry": "commit-and-tag-version --dry-run"
