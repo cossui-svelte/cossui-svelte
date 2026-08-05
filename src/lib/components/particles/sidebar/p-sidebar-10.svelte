@@ -1,50 +1,30 @@
 <script lang="ts">
-  import CalendarIcon from '@lucide/svelte/icons/calendar';
-  import HouseIcon from '@lucide/svelte/icons/house';
-  import InboxIcon from '@lucide/svelte/icons/inbox';
-  import SearchIcon from '@lucide/svelte/icons/search';
-  import SettingsIcon from '@lucide/svelte/icons/settings';
+  import ChartPieIcon from '@lucide/svelte/icons/chart-pie';
+  import FrameIcon from '@lucide/svelte/icons/frame';
+  import LifeBuoyIcon from '@lucide/svelte/icons/life-buoy';
+  import MapIcon from '@lucide/svelte/icons/map';
+  import SendIcon from '@lucide/svelte/icons/send';
   import {
     Sidebar,
     SidebarContent,
     SidebarGroup,
     SidebarGroupContent,
     SidebarGroupLabel,
-    SidebarMenu,
-    SidebarMenuButton,
     SidebarInset,
+    SidebarMenu,
+    SidebarMenuBadge,
+    SidebarMenuButton,
     SidebarMenuItem,
     SidebarProvider,
     SidebarTrigger
   } from '$lib/components/ui/sidebar';
 
-  // Menu items.
-  const items = [
-    {
-      title: 'Home',
-      url: '#',
-      icon: HouseIcon
-    },
-    {
-      title: 'Inbox',
-      url: '#',
-      icon: InboxIcon
-    },
-    {
-      title: 'Calendar',
-      url: '#',
-      icon: CalendarIcon
-    },
-    {
-      title: 'Search',
-      url: '#',
-      icon: SearchIcon
-    },
-    {
-      title: 'Settings',
-      url: '#',
-      icon: SettingsIcon
-    }
+  const projects = [
+    { name: 'Design Engineering', url: '#', icon: FrameIcon, badge: '24' },
+    { name: 'Sales & Marketing', url: '#', icon: ChartPieIcon, badge: '12' },
+    { name: 'Travel', url: '#', icon: MapIcon, badge: '3' },
+    { name: 'Support', url: '#', icon: LifeBuoyIcon, badge: '21' },
+    { name: 'Feedback', url: '#', icon: SendIcon, badge: '8' }
   ];
 </script>
 
@@ -55,19 +35,20 @@
     <Sidebar class="h-full">
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Application</SidebarGroupLabel>
+          <SidebarGroupLabel>Projects</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {#each items as item (item.title)}
+              {#each projects as project (project.name)}
                 <SidebarMenuItem>
                   <SidebarMenuButton>
                     {#snippet child({ props })}
-                      <a href={item.url} {...props}>
-                        <item.icon />
-                        <span>{item.title}</span>
+                      <a href={project.url} {...props}>
+                        <project.icon />
+                        <span>{project.name}</span>
                       </a>
                     {/snippet}
                   </SidebarMenuButton>
+                  <SidebarMenuBadge>{project.badge}</SidebarMenuBadge>
                 </SidebarMenuItem>
               {/each}
             </SidebarMenu>
@@ -78,7 +59,7 @@
     <SidebarInset class="h-full">
       <header class="flex h-12 shrink-0 items-center gap-2 border-b px-3">
         <SidebarTrigger />
-        <span class="font-medium text-sm">Application</span>
+        <span class="font-medium text-sm">Projects</span>
       </header>
       <div class="p-4 text-muted-foreground text-sm">Content area</div>
     </SidebarInset>
