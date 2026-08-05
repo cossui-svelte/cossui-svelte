@@ -12,6 +12,7 @@
   }
 
   let {
+    ref = $bindable(null),
     class: className,
     children,
     side = 'right',
@@ -38,6 +39,7 @@
     data-slot="sheet-viewport"
   >
     <Dialog.Content
+      bind:ref
       class={cn(
         'pointer-events-auto relative flex max-h-full min-h-0 w-full min-w-0 flex-col bg-popover not-dark:bg-clip-padding text-popover-foreground shadow-lg/5 duration-200 ease-in-out will-change-transform before:pointer-events-none before:absolute before:inset-0 before:shadow-[0_1px_--theme(--color-black/4%)] max-sm:before:hidden dark:before:shadow-[0_-1px_--theme(--color-white/6%)]',
         'data-[state=open]:animate-in data-[state=closed]:animate-out',

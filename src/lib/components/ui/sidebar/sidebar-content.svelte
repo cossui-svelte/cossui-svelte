@@ -1,26 +1,24 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
+  import { cn, type WithElementRef } from '$lib/utils.js';
   import type { HTMLAttributes } from 'svelte/elements';
-  import { ScrollArea } from '$lib/components/ui/scroll-area';
-  import { cn } from '$lib/utils';
 
-  interface Props extends HTMLAttributes<HTMLDivElement> {
-    children?: Snippet;
-  }
-
-  let { class: className, children, ...restProps }: Props = $props();
+  let {
+    ref = $bindable(null),
+    class: className,
+    children,
+    ...restProps
+  }: WithElementRef<HTMLAttributes<HTMLElement>> = $props();
 </script>
 
-<ScrollArea class="**:data-[slot=scroll-area-scrollbar]:hidden" scrollFade>
-  <div
-    class={cn(
-      'flex min-h-0 flex-1 flex-col gap-2 overflow-auto group-data-[collapsible=icon]:overflow-hidden',
-      className
-    )}
-    data-sidebar="content"
-    data-slot="sidebar-content"
-    {...restProps}
-  >
-    {@render children?.()}
-  </div>
-</ScrollArea>
+<div
+  bind:this={ref}
+  data-slot="sidebar-content"
+  data-sidebar="content"
+  class={cn(
+    'no-scrollbar flex min-h-0 flex-1 flex-col gap-2 overflow-auto group-data-[collapsible=icon]:overflow-hidden',
+    className
+  )}
+  {...restProps}
+>
+  {@render children?.()}
+</div>

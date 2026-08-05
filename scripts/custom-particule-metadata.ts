@@ -663,4 +663,82 @@ export const custom_particle_metadata = {
     registryDependencies: ['map'],
     tags: ['map']
   },
+  'p-sidebar-1': {
+    description: 'Basic application sidebar with a navigation menu',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 },
+    registryDependencies: ['sidebar'],
+    tags: ['sidebar']
+  },
+  'p-sidebar-2': {
+    description: 'Documentation sidebar with a version switcher, search and grouped navigation',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 },
+    registryDependencies: ['sidebar', 'menu', 'label'],
+    tags: ['sidebar']
+  },
+  'p-sidebar-3': {
+    description: 'Sidebar header holding a workspace switcher menu',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 },
+    registryDependencies: ['sidebar', 'menu'],
+    tags: ['sidebar']
+  },
+  'p-sidebar-4': {
+    description: 'Sidebar footer with a user menu opening upwards',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 },
+    registryDependencies: ['sidebar', 'menu'],
+    tags: ['sidebar']
+  },
+  'p-sidebar-5': {
+    description: 'Labelled sidebar group wrapping a short menu',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 },
+    registryDependencies: ['sidebar'],
+    tags: ['sidebar']
+  },
+  'p-sidebar-6': {
+    description: 'Sidebar group with an action button next to its label',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 },
+    registryDependencies: ['sidebar', 'toast'],
+    tags: ['sidebar']
+  },
+  'p-sidebar-7': {
+    description: 'Collapsible sidebar group toggled from its label',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 },
+    registryDependencies: ['sidebar', 'collapsible'],
+    tags: ['sidebar']
+  },
+  'p-sidebar-8': {
+    description: 'Sidebar menu of project links with leading icons',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 },
+    registryDependencies: ['sidebar'],
+    tags: ['sidebar']
+  },
+  'p-sidebar-9': {
+    description: 'Sidebar menu items with a per-row action menu',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 },
+    registryDependencies: ['sidebar', 'menu'],
+    tags: ['sidebar']
+  },
+  'p-sidebar-10': {
+    description: 'Sidebar menu items with trailing count badges',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 },
+    registryDependencies: ['sidebar'],
+    tags: ['sidebar']
+  },
+  'p-sidebar-11': {
+    description: 'Sidebar menu with always-visible nested sub-menus',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 },
+    registryDependencies: ['sidebar'],
+    tags: ['sidebar']
+  },
+  'p-sidebar-12': {
+    description: 'Sidebar menu whose sub-menus expand and collapse',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 },
+    registryDependencies: ['sidebar', 'collapsible'],
+    tags: ['sidebar']
+  },
+  'p-sidebar-13': {
+    description: 'Sidebar open state controlled from outside the component',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 },
+    registryDependencies: ['sidebar', 'button'],
+    tags: ['sidebar']
+  },
 }

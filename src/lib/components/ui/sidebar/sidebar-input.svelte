@@ -1,19 +1,21 @@
 <script lang="ts">
-  import type { HTMLInputAttributes } from 'svelte/elements';
-  import { cn } from '$lib/utils';
-  import Input from '../input/input.svelte';
+  import { Input } from '$lib/components/ui/input';
+  import { cn } from '$lib/utils.js';
+  import type { ComponentProps } from 'svelte';
 
-  interface Props extends Omit<HTMLInputAttributes, 'size'> {
-    size?: 'sm' | 'default' | 'lg' | number;
-    unstyled?: boolean;
-  }
-
-  let { class: className, ...restProps }: Props = $props();
+  let {
+    ref = $bindable(null),
+    value = $bindable(''),
+    class: className,
+    ...restProps
+  }: ComponentProps<typeof Input> = $props();
 </script>
 
 <Input
-  class={cn('h-8 w-full bg-background shadow-none', className)}
-  data-sidebar="input"
+  bind:ref
+  bind:value
   data-slot="sidebar-input"
+  data-sidebar="input"
+  class={cn('h-8 w-full bg-input/50 shadow-none', className)}
   {...restProps}
 />

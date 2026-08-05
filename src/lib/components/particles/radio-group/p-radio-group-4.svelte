@@ -5,7 +5,7 @@
 
 <RadioGroup value="r-1">
   <Label
-    class="flex items-start gap-2 rounded-lg border p-3 hover:bg-accent/50 has-data-checked:border-primary/48 has-data-checked:bg-accent/50"
+    class="flex items-start gap-2 rounded-lg border p-3 hover:bg-accent/50 has-data-[state=checked]:border-primary/48 has-data-[state=checked]:bg-accent/50"
   >
     <Radio value="r-1" />
     <div class="flex flex-col gap-1">
@@ -14,7 +14,7 @@
     </div>
   </Label>
   <Label
-    class="flex items-start gap-2 rounded-lg border p-3 hover:bg-accent/50 has-data-checked:border-primary/48 has-data-checked:bg-accent/50"
+    class="flex items-start gap-2 rounded-lg border p-3 hover:bg-accent/50 has-data-[state=checked]:border-primary/48 has-data-[state=checked]:bg-accent/50"
   >
     <Radio value="r-2" />
     <div class="flex flex-col gap-1">

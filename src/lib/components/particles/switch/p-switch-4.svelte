@@ -6,7 +6,7 @@
 </script>
 
 <Label
-  class="flex items-center gap-6 rounded-lg border p-3 hover:bg-accent/50 has-data-checked:border-primary/48 has-data-checked:bg-accent/50"
+  class="flex items-center gap-6 rounded-lg border p-3 hover:bg-accent/50 has-data-[state=checked]:border-primary/48 has-data-[state=checked]:bg-accent/50"
   for="notifications"
 >
   <div class="flex flex-col gap-1">

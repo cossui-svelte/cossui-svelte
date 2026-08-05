@@ -10,11 +10,6 @@
   }: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();
 </script>
 
-<div
-  bind:this={ref}
-  data-slot="alert-dialog-media"
-  class={cn('cn-alert-dialog-media', className)}
-  {...restProps}
->
+<div bind:this={ref} data-slot="alert-dialog-media" class={cn(className)} {...restProps}>
   {@render children?.()}
 </div>
