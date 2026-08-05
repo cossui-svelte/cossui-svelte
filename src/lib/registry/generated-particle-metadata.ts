@@ -1218,7 +1218,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   },
   'p-empty-1': {
     description: 'Empty state with icon and actions',
-    tags: ['empty-state'],
+    tags: ['empty'],
     npmDependencies: ['lucide-react'],
     registryDependencies: ['button', 'empty']
   },

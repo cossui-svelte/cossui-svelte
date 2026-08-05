@@ -24,7 +24,9 @@ function renderEntry(item: RegistryItem): string {
   const lines: string[] = [];
   if (item.description) lines.push(`    description: ${JSON.stringify(item.description)}`);
   if (item.categories?.length)
-    lines.push(`    tags: ${JSON.stringify(item.categories.map((t) => t.replace(/ /g, '-')))}`);
+    lines.push(
+      `    tags: ${JSON.stringify(item.categories.map((t) => (t === 'empty state' ? 'empty' : t.replace(/ /g, '-'))))}`
+    );
   if (item.dependencies?.length) lines.push(`    npmDependencies: ${JSON.stringify(item.dependencies)}`);
   if (item.registryDependencies?.length)
     lines.push(`    registryDependencies: ${JSON.stringify(item.registryDependencies.map((d) => d.replace(/^@coss\//, '')))}`);
