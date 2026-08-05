@@ -1,6 +1,18 @@
+<script lang="ts" module>
+  import { setWorkerUrl } from 'maplibre-gl';
+  // MapLibre v6 is ESM-only and can't resolve its own worker through a bundler's
+  // module graph, so the URL has to be handed to it once per app. `?worker&url`
+  // (not plain `?url`) routes the file through Vite's worker pipeline, which
+  // emits a self-contained chunk — a verbatim copy would fail on its first
+  // import of the sibling `maplibre-gl-shared.mjs` and no tiles would load.
+  import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
+
+  setWorkerUrl(workerUrl);
+</script>
+
 <script lang="ts">
   import { onMount, onDestroy, setContext, untrack } from 'svelte';
-  import MapLibreGL from 'maplibre-gl';
+  import * as MapLibreGL from 'maplibre-gl';
   import 'maplibre-gl/dist/maplibre-gl.css';
   import type { HTMLAttributes } from 'svelte/elements';
   import { browser } from '$app/environment';
