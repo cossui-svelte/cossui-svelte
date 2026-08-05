@@ -549,8 +549,8 @@ const allComponents: RegistryUiData = {
     description:
       'A sidebar that can be toggled open and closed, providing navigation or additional content.',
     folder: 'sidebar',
-    isnew: false,
-    istodo: true,
+    isnew: true,
+    istodo: false,
     npmDependencies: [],
     registryDependencies: []
   },

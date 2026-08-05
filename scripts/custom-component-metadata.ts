@@ -232,12 +232,11 @@ export const custom_components_metadata: RegistryUiData = {
 	sidebar: {
 		description: "A sidebar that can be toggled open and closed, providing navigation or additional content.",
 		category: "shadcn-ui",
-		istodo: true
+		isnew: true
 	},
 	sheet: {
 		description: "A flyout that opens from the side of the screen, based on the dialog component.",
 		category: "ui",
-
 	},
 	skeleton: {
 		description: "A loading state skeleton for your components.",

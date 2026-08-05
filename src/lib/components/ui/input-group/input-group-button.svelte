@@ -1,9 +1,7 @@
-
-
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import type { HTMLButtonAttributes } from 'svelte/elements';
-  import { Button, type ButtonVariant } from '$lib/components/ui/button';
+  import { Button } from '$lib/components/ui/button';
   import { cn } from '$lib/utils';
 
   let {
@@ -20,11 +18,6 @@
   } = $props();
 </script>
 
-<Button
-  bind:ref
-  {type}
-  class={cn(className)}
-  {...restProps}
->
+<Button bind:ref {type} class={cn(className)} {...restProps}>
   {@render children?.()}
 </Button>
