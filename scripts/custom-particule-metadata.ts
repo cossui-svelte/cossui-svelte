@@ -663,6 +663,30 @@ export const custom_particle_metadata = {
     registryDependencies: ['map'],
     tags: ['map']
   },
+  'p-map-8': {
+    description: 'Map with zoom, compass, locate, and fullscreen controls',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['map'],
+    tags: ['map']
+  },
+  'p-map-9': {
+    description: 'Map with a GeoJSON polygon overlay',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['map'],
+    tags: ['map']
+  },
+  'p-map-10': {
+    description: 'Clustered markers with a popup showing details on click',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['map'],
+    tags: ['map']
+  },
+  'p-map-11': {
+    description: 'Map with a dismissible popup and a button to show it again',
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    registryDependencies: ['map', 'button'],
+    tags: ['map']
+  },
   'p-sidebar-1': {
     description: 'Basic application sidebar with a navigation menu',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 },

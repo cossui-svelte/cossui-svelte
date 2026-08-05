@@ -3590,6 +3590,30 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     registryDependencies: ['map'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
+  'p-map-8': {
+    description: 'Map with zoom, compass, locate, and fullscreen controls',
+    tags: ['map'],
+    registryDependencies: ['map'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-map-9': {
+    description: 'Map with a GeoJSON polygon overlay',
+    tags: ['map'],
+    registryDependencies: ['map'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-map-10': {
+    description: 'Clustered markers with a popup showing details on click',
+    tags: ['map'],
+    registryDependencies: ['map'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-map-11': {
+    description: 'Map with a dismissible popup and a button to show it again',
+    tags: ['map'],
+    registryDependencies: ['map', 'button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
   'p-sidebar-1': {
     description: 'Basic application sidebar with a navigation menu',
     tags: ['sidebar'],
