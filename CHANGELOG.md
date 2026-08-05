@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.9.18](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.17...v0.9.18) (2026-08-05)
+
+### ✨ Features
+
+* migrate map component to maplibre 6 ([67b3798](https://github.com/cossui-svelte/cossui-svelte/commit/67b37986d578e11a62e134cd48c845718238c174))
+
+### 🐛 Bug Fixes
+
+* add more map particules from mapcn-svelte ([e8e0247](https://github.com/cossui-svelte/cossui-svelte/commit/e8e0247d879497489c491a5a222a9c39d043b374))
+* p-group-14 rendering ([187a3ed](https://github.com/cossui-svelte/cossui-svelte/commit/187a3edcec1d74791703c9f0bff425f7d9ed55fa))
+* p-tee-4 carret overlap ([b404f2d](https://github.com/cossui-svelte/cossui-svelte/commit/b404f2d45ca811ea4c0144aee15a86c81208a5f0))
 ## [0.9.17](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.16...v0.9.17) (2026-08-05)
 
 ### ✨ Features
