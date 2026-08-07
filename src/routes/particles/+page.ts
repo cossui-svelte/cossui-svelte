@@ -6,7 +6,7 @@ export const load: PageLoad = () => {
 
   return {
     SEO: {
-      description: `Discover ${particleCount} ready-to-use particles, the building blocks of your design system. Filter by category to find the perfect component for your project.`,
+      description: `Discover ${particleCount} ready-to-use particles, the building blocks of any application. Filter by category to find the perfect component for your project.`,
       title: 'Browse Particles - coss ui'
     }
   };
