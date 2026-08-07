@@ -3220,12 +3220,12 @@
 			"description": "A temporary notification that appears on screen to inform users.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"bits-ui@^2.18.1",
+				"tailwind-variants@^3.3.1"
 			],
 			"registryDependencies": [
 				"button",
-				"utils",
-				"varsel"
+				"utils"
 			],
 			"files": [
 				{
@@ -3237,6 +3237,96 @@
 					"type": "registry:ui",
 					"path": "toast/index.ts",
 					"target": "$lib/components/ui/toast/index.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "toast/internal/README.md",
+					"target": "$lib/components/ui/toast/internal/README.md"
+				},
+				{
+					"type": "registry:ui",
+					"path": "toast/internal/VarselItem.svelte",
+					"target": "$lib/components/ui/toast/internal/VarselItem.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "toast/internal/VarselManager.svelte",
+					"target": "$lib/components/ui/toast/internal/VarselManager.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "toast/internal/VarselToaster.svelte",
+					"target": "$lib/components/ui/toast/internal/VarselToaster.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "toast/internal/core/accessibility.ts",
+					"target": "$lib/components/ui/toast/internal/core/accessibility.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "toast/internal/core/animations.ts",
+					"target": "$lib/components/ui/toast/internal/core/animations.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "toast/internal/core/positions.ts",
+					"target": "$lib/components/ui/toast/internal/core/positions.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "toast/internal/core/swipe.ts",
+					"target": "$lib/components/ui/toast/internal/core/swipe.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "toast/internal/core/toast-factory.ts",
+					"target": "$lib/components/ui/toast/internal/core/toast-factory.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "toast/internal/core/toast-state.ts",
+					"target": "$lib/components/ui/toast/internal/core/toast-state.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "toast/internal/core/toaster-instances.ts",
+					"target": "$lib/components/ui/toast/internal/core/toaster-instances.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "toast/internal/core/types.ts",
+					"target": "$lib/components/ui/toast/internal/core/types.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "toast/internal/core/utils.ts",
+					"target": "$lib/components/ui/toast/internal/core/utils.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "toast/internal/core/variants.ts",
+					"target": "$lib/components/ui/toast/internal/core/variants.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "toast/internal/index.ts",
+					"target": "$lib/components/ui/toast/internal/index.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "toast/internal/internals.ts",
+					"target": "$lib/components/ui/toast/internal/internals.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "toast/internal/styles.css",
+					"target": "$lib/components/ui/toast/internal/styles.css"
+				},
+				{
+					"type": "registry:ui",
+					"path": "toast/internal/variant-icons.ts",
+					"target": "$lib/components/ui/toast/internal/variant-icons.ts"
 				},
 				{
 					"type": "registry:ui",
@@ -3481,110 +3571,6 @@
 					"type": "registry:lib",
 					"path": "utils.ts",
 					"target": "$lib/utils.ts"
-				}
-			]
-		},
-		{
-			"name": "varsel",
-			"title": "Varsel",
-			"description": "Internal toast engine (state, animations, positioning) backing the toast component.",
-			"type": "registry:lib",
-			"dependencies": [
-				"tailwind-variants@^3.3.1"
-			],
-			"registryDependencies": [
-				"button"
-			],
-			"files": [
-				{
-					"type": "registry:lib",
-					"path": "varsel/README.md",
-					"target": "$lib/varsel/README.md"
-				},
-				{
-					"type": "registry:lib",
-					"path": "varsel/VarselItem.svelte",
-					"target": "$lib/varsel/VarselItem.svelte"
-				},
-				{
-					"type": "registry:lib",
-					"path": "varsel/VarselManager.svelte",
-					"target": "$lib/varsel/VarselManager.svelte"
-				},
-				{
-					"type": "registry:lib",
-					"path": "varsel/VarselToaster.svelte",
-					"target": "$lib/varsel/VarselToaster.svelte"
-				},
-				{
-					"type": "registry:lib",
-					"path": "varsel/core/accessibility.ts",
-					"target": "$lib/varsel/core/accessibility.ts"
-				},
-				{
-					"type": "registry:lib",
-					"path": "varsel/core/animations.ts",
-					"target": "$lib/varsel/core/animations.ts"
-				},
-				{
-					"type": "registry:lib",
-					"path": "varsel/core/positions.ts",
-					"target": "$lib/varsel/core/positions.ts"
-				},
-				{
-					"type": "registry:lib",
-					"path": "varsel/core/swipe.ts",
-					"target": "$lib/varsel/core/swipe.ts"
-				},
-				{
-					"type": "registry:lib",
-					"path": "varsel/core/toast-factory.ts",
-					"target": "$lib/varsel/core/toast-factory.ts"
-				},
-				{
-					"type": "registry:lib",
-					"path": "varsel/core/toast-state.ts",
-					"target": "$lib/varsel/core/toast-state.ts"
-				},
-				{
-					"type": "registry:lib",
-					"path": "varsel/core/toaster-instances.ts",
-					"target": "$lib/varsel/core/toaster-instances.ts"
-				},
-				{
-					"type": "registry:lib",
-					"path": "varsel/core/types.ts",
-					"target": "$lib/varsel/core/types.ts"
-				},
-				{
-					"type": "registry:lib",
-					"path": "varsel/core/utils.ts",
-					"target": "$lib/varsel/core/utils.ts"
-				},
-				{
-					"type": "registry:lib",
-					"path": "varsel/core/variants.ts",
-					"target": "$lib/varsel/core/variants.ts"
-				},
-				{
-					"type": "registry:lib",
-					"path": "varsel/index.ts",
-					"target": "$lib/varsel/index.ts"
-				},
-				{
-					"type": "registry:lib",
-					"path": "varsel/internals.ts",
-					"target": "$lib/varsel/internals.ts"
-				},
-				{
-					"type": "registry:lib",
-					"path": "varsel/styles.css",
-					"target": "$lib/varsel/styles.css"
-				},
-				{
-					"type": "registry:lib",
-					"path": "varsel/variant-icons.ts",
-					"target": "$lib/varsel/variant-icons.ts"
 				}
 			]
 		},
@@ -8377,9 +8363,7 @@
 			"title": "Drawer 13",
 			"description": "Responsive actions menu: menu on desktop, drawer on mobile",
 			"type": "registry:block",
-			"dependencies": [
-				"@lucide/svelte"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"drawer",
@@ -10865,9 +10849,7 @@
 			"title": "Input group 8",
 			"description": "Input group with icon button",
 			"type": "registry:block",
-			"dependencies": [
-				"@lucide/svelte"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"input-group",

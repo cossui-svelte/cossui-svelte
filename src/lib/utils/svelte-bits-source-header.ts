@@ -12,41 +12,41 @@
  * back to other metadata sources.
  */
 export type SvelteBitsSourceHeader = {
-	title?: string;
-	description?: string;
-	dependencies?: string[];
-	devDependencies?: string[];
-	registryDependencies?: string[];
+  title?: string;
+  description?: string;
+  dependencies?: string[];
+  devDependencies?: string[];
+  registryDependencies?: string[];
 };
 
 const HEADER_PATTERN = /^\s*<!--([\s\S]*?)-->/;
 const FIELD_PATTERN = /^@(\w+)\s+(.+)$/;
 const LIST_FIELDS = new Set<keyof SvelteBitsSourceHeader>([
-	'dependencies',
-	'devDependencies',
-	'registryDependencies'
+  'dependencies',
+  'devDependencies',
+  'registryDependencies'
 ]);
 
 export function parseSvelteBitsHeader(content: string): { header: SvelteBitsSourceHeader } {
-	const match = content.match(HEADER_PATTERN);
-	if (!match) return { header: {} };
+  const match = content.match(HEADER_PATTERN);
+  if (!match) return { header: {} };
 
-	const header: SvelteBitsSourceHeader = {};
+  const header: SvelteBitsSourceHeader = {};
 
-	for (const line of match[1].split('\n')) {
-		const fieldMatch = line.trim().match(FIELD_PATTERN);
-		if (!fieldMatch) continue;
+  for (const line of match[1].split('\n')) {
+    const fieldMatch = line.trim().match(FIELD_PATTERN);
+    if (!fieldMatch) continue;
 
-		const [, key, value] = fieldMatch;
-		if (LIST_FIELDS.has(key as keyof SvelteBitsSourceHeader)) {
-			header[key as 'dependencies' | 'devDependencies' | 'registryDependencies'] = value
-				.split(',')
-				.map((v) => v.trim())
-				.filter(Boolean);
-		} else if (key === 'title' || key === 'description') {
-			header[key] = value.trim();
-		}
-	}
+    const [, key, value] = fieldMatch;
+    if (LIST_FIELDS.has(key as keyof SvelteBitsSourceHeader)) {
+      header[key as 'dependencies' | 'devDependencies' | 'registryDependencies'] = value
+        .split(',')
+        .map((v) => v.trim())
+        .filter(Boolean);
+    } else if (key === 'title' || key === 'description') {
+      header[key] = value.trim();
+    }
+  }
 
-	return { header };
+  return { header };
 }

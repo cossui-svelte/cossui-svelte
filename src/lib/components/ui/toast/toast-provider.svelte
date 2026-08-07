@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
-  import type { ToastPosition } from '$lib/varsel';
-  import { VarselToaster } from '$lib/varsel';
+  import type { ToastPosition } from './internal';
+  import { VarselToaster } from './internal';
 
   let {
     position = 'bottom-right',

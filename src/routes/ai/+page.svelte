@@ -8,7 +8,8 @@
   <PageHeader>
     <PageHeaderHeading>AI & REGISTRY</PageHeaderHeading>
     <PageHeaderDescription>
-Published as a shadcn registry, CossUI-Svelte allows an agent to find and create components with ease, while giving you full flexibility over the source code.
+      Published as a shadcn registry, CossUI-Svelte allows an agent to find and create components
+      with ease, while giving you full flexibility over the source code.
     </PageHeaderDescription>
   </PageHeader>
 </div>

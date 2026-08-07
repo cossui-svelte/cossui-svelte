@@ -82,7 +82,7 @@
       id: 11,
       title: '0.9.4 — Cropper component released'
     },
-        {
+    {
       date: '9 Mar 2026',
       description: 'Prototyping of the core components & layout.',
       id: 12,

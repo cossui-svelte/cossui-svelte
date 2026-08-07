@@ -1,6 +1,5 @@
 @import "tailwindcss";
-@import "@aejkatappaja/phantom-ui/ssr.css";
-@import "$lib/varsel/styles.css";
+@import "$lib/components/ui/toast/internal/styles.css";
 
 /* Inlined from tw-animate-css — only the enter/exit animation system used by this project */
 @property --tw-animation-delay { syntax: "*"; inherits: false; initial-value: 0s; }

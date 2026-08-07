@@ -1,6 +1,6 @@
-import { toast as vToast } from '$lib/varsel';
+import { toast as vToast } from './internal';
 
-export type { ToastPosition } from '$lib/varsel';
+export type { ToastPosition } from './internal';
 
 export type ToastType = 'error' | 'info' | 'loading' | 'success' | 'warning';
 export type ToastSide = 'top' | 'right' | 'bottom' | 'left';

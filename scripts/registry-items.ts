@@ -201,15 +201,6 @@ export async function getRegistryItems(cwd: string): Promise<RegistryItem[]> {
   });
 
   items.push({
-    name: 'varsel',
-    type: 'lib',
-    title: 'Varsel',
-    description:
-      'Internal toast engine (state, animations, positioning) backing the toast component.',
-    files: [{ path: 'src/lib/varsel', target: '$lib/varsel' }]
-  });
-
-  items.push({
     name: 'assets',
     type: 'lib',
     title: 'Assets',

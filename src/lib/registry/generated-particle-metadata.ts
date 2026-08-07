@@ -1191,17 +1191,6 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     tags: ['drawer'],
     registryDependencies: ['button', 'drawer']
   },
-  'p-drawer-12': {
-    description: 'Responsive edit profile: dialog on desktop, drawer on mobile',
-    tags: ['drawer', 'dialog'],
-    registryDependencies: ['button', 'dialog', 'drawer', 'field', 'form', 'input']
-  },
-  'p-drawer-13': {
-    description: 'Responsive actions menu: menu on desktop, drawer on mobile',
-    tags: ['drawer', 'menu'],
-    npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'drawer', 'menu']
-  },
   'p-drawer-14': {
     description: 'Left drawer with swipe area',
     tags: ['drawer'],
@@ -1373,11 +1362,6 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     description: 'Basic group',
     tags: ['group'],
     registryDependencies: ['button', 'group', 'menu']
-  },
-  'p-group-2': {
-    description: 'Group with input',
-    tags: ['group', 'input'],
-    registryDependencies: ['button', 'group', 'input', 'tooltip']
   },
   'p-group-3': {
     description: 'Small group',
@@ -1669,13 +1653,6 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     tags: ['input-group', 'tooltip'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'input-group', 'popover'],
-    meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
-  },
-  'p-input-group-8': {
-    description: 'Input group with icon button',
-    tags: ['button', 'input-group'],
-    npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'input-group', 'tooltip'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-input-group-9': {
@@ -2769,11 +2746,6 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     tags: ['toast'],
     registryDependencies: ['button', 'toast']
   },
-  'p-toast-7': {
-    description: 'Anchored tooltip-style toast after copy',
-    tags: ['toast'],
-    registryDependencies: ['button', 'toast', 'tooltip']
-  },
   'p-toast-8': {
     description: 'Anchored error toast after async failure',
     tags: ['toast'],
@@ -3575,6 +3547,32 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     tags: ['map'],
     registryDependencies: ['map'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-group-2': {
+    description: 'Group with input',
+    tags: ['group', 'input'],
+    registryDependencies: ['button', 'group', 'input', 'tooltip']
+  },
+  'p-input-group-8': {
+    description: 'Input group with icon button',
+    tags: ['button', 'input-group'],
+    registryDependencies: ['button', 'input-group', 'tooltip'],
+    meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
+  },
+  'p-toast-7': {
+    description: 'Anchored tooltip-style toast after copy',
+    tags: ['toast'],
+    registryDependencies: ['button', 'toast', 'tooltip']
+  },
+  'p-drawer-12': {
+    description: 'Responsive edit profile: dialog on desktop, drawer on mobile',
+    tags: ['drawer', 'dialog'],
+    registryDependencies: ['button', 'dialog', 'drawer', 'field', 'form', 'input']
+  },
+  'p-drawer-13': {
+    description: 'Responsive actions menu: menu on desktop, drawer on mobile',
+    tags: ['drawer', 'menu'],
+    registryDependencies: ['button', 'drawer', 'menu']
   },
   'p-map-7': {
     description: 'Heatmap-style markers showing visitor traffic hotspots',

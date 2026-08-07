@@ -3,8 +3,7 @@ const config = {
     svelte: (text: string) => [...text.matchAll(/import[^;]+/gu)].join('\n')
   },
   ignoreIssues: {
-    'src/lib/components/ui/**': ['exports', 'types', 'files'],
-    'src/lib/varsel/**': ['exports', 'types', 'files']
+    'src/lib/components/ui/**': ['exports', 'types', 'files']
   },
   // entry: [
   //   'src/routes/+layout.ts',

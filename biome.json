@@ -123,7 +123,11 @@
       }
     },
     {
-      "includes": ["src/lib/formsnap/**", "src/lib/vaul/**", "src/lib/varsel/**"],
+      "includes": [
+        "src/lib/formsnap/**",
+        "src/lib/vaul/**",
+        "src/lib/components/ui/toast/internal/**"
+      ],
       "linter": {
         "enabled": false
       }

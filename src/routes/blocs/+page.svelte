@@ -9,14 +9,13 @@
   <PageHeader>
     <PageHeaderHeading>BLOCS</PageHeaderHeading>
     <PageHeaderDescription>
-   Reusable, ready-made parts of your application, available in just a few clicks.
+      Reusable, ready-made parts of your application, available in just a few clicks.
     </PageHeaderDescription>
   </PageHeader>
 
-
-<Button class="rounded-full">Authentication</Button>
-<Button class="rounded-full">Dashboards</Button>
-<Button class="rounded-full">Landing</Button>
-<Button class="rounded-full">Sidebar</Button>
-<Button class="rounded-full">SignUp</Button>
+  <Button class="rounded-full">Authentication</Button>
+  <Button class="rounded-full">Dashboards</Button>
+  <Button class="rounded-full">Landing</Button>
+  <Button class="rounded-full">Sidebar</Button>
+  <Button class="rounded-full">SignUp</Button>
 </div>
