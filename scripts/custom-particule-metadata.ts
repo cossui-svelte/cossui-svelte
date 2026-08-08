@@ -699,36 +699,16 @@ export const custom_particle_metadata = {
     registryDependencies: ['map'],
     tags: ['map']
   },
-  'p-group-2': {
-    description: 'Group with input',
-    registryDependencies: ['button', 'group', 'input', 'tooltip'],
-    tags: ['group', 'input']
-  },
-  'p-input-group-8': {
-    description: 'Input group with icon button',
-    meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' },
-    registryDependencies: ['button', 'input-group', 'tooltip'],
-    tags: ['button', 'input-group']
-  },
-  'p-toast-7': {
-    description: 'Anchored tooltip-style toast after copy',
-    registryDependencies: ['button', 'toast', 'tooltip'],
-    tags: ['toast']
-  },
   'p-drawer-12': {
-    description: 'Responsive edit profile: dialog on desktop, drawer on mobile',
-    registryDependencies: ['button', 'dialog', 'drawer', 'field', 'form', 'input'],
-    tags: ['drawer', 'dialog']
+    registryDependencies: ['-use-media-query'],
   },
   'p-drawer-13': {
-    description: 'Responsive actions menu: menu on desktop, drawer on mobile',
-    registryDependencies: ['button', 'drawer', 'menu'],
-    tags: ['drawer', 'menu']
+    registryDependencies: ['-use-media-query'],
   },
   'p-map-7': {
     description: 'Heatmap-style markers showing visitor traffic hotspots',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
-    registryDependencies: ['map'],
+    registryDependencies: [, 'map'],
     tags: ['map']
   'p-map-8': {
     description: 'Map with zoom, compass, locate, and fullscreen controls',
