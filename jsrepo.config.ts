@@ -22,22 +22,22 @@ export default defineConfig({
 		excludeDeps: ['svelte', '@sveltejs/kit'],
 		outputs: [
 			shadcnOutput({ dir: './static/r', format: true }),
-			componentDependenciesOutput({ path: './src/lib/constants/componentDependencies.ts' })
+			componentDependenciesOutput({ path: './src/lib/registry/generated-componentDependencies.ts' })
 		],
 		items: await getRegistryItems(cwd),
 		defaultPaths: {
 			component: '$lib/components/ui'
 		},
-		providers: [shadcn()], 
 	}),
+	providers: [shadcn()],
 	paths: {
-		ui: 'src/lib/components/ui',
+		ui: './src/lib/components/ui',
 		// component: '$lib/components',
-		block: 'src/lib/components/particles',
-		hook: 'src/lib/hooks',
+		block: './src/lib/components/particles',
+		hook: './src/lib/hooks',
 		// action: '$lib/actions',
-		util: 'src/lib/utils',
-		lib: 'src/lib'
+		util: './src/lib/utils',
+		lib: './src/lib'
 	},
 	registries: []
 });
