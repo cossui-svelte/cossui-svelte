@@ -1,6 +1,7 @@
 <script lang="ts">
   import X from '@lucide/svelte/icons/x';
   import { buttonVariants } from '$lib/components/ui/button';
+  import { cn } from '$lib/utils';
   import {
     Popover,
     PopoverClose,
@@ -16,7 +17,7 @@
   <PopoverPopup class="w-80">
     <PopoverClose
       aria-label="Close"
-      class={`absolute end-2 top-2 ${buttonVariants({ size: 'icon', variant: 'ghost' })}`}
+      class={cn(buttonVariants({ size: 'icon', variant: 'ghost' }), 'absolute inset-e-2 top-2')}
     >
       <X />
     </PopoverClose>

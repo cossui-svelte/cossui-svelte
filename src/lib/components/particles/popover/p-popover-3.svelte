@@ -7,41 +7,41 @@
     Popover,
     PopoverDescription,
     PopoverPopup,
-    PopoverTitle,
-    PopoverTrigger
+    PopoverTitle
   } from '$lib/components/ui/popover';
 
   type ActivePanel = 'notifications' | 'profile' | null;
 
   let open = $state(false);
   let activePanel = $state<ActivePanel>(null);
+  let anchor = $state<HTMLElement | null>(null);
 
-  function openWith(panel: ActivePanel) {
+  function openWith(panel: ActivePanel, event: MouseEvent) {
     activePanel = panel;
+    anchor = event.currentTarget as HTMLElement;
     open = true;
   }
 </script>
 
 <div class="flex gap-2">
-  <button
+  <Button
     aria-label="Notifications"
     class={buttonVariants({ size: 'icon', variant: 'outline' })}
-    onclick={() => openWith('notifications')}
+    onclick={(event) => openWith('notifications', event)}
     type="button"
   >
     <Bell aria-hidden="true" />
-  </button>
-  <button
+  </Button>
+  <Button
     aria-label="Profile"
     class={buttonVariants({ size: 'icon', variant: 'outline' })}
-    onclick={() => openWith('profile')}
+    onclick={(event) => openWith('profile', event)}
     type="button"
   >
     <User aria-hidden="true" />
-  </button>
+  </Button>
   <Popover bind:open>
-    <PopoverTrigger class="hidden" aria-hidden tabindex={-1} />
-    <PopoverPopup class="min-w-none">
+    <PopoverPopup class="min-w-none" customAnchor={anchor}>
       {#if activePanel === 'notifications'}
         <PopoverTitle class="text-base">Notifications</PopoverTitle>
         <PopoverDescription>You have no new notifications at this time.</PopoverDescription>
