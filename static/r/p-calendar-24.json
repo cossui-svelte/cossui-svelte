@@ -17,7 +17,7 @@
 		"utils"
 	],
 	"dependencies": [
-		"date-fns",
+		"@internationalized/date",
 		"@internationalized/date@^3.12.3"
 	]
 }

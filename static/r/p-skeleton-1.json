@@ -17,5 +17,7 @@
 		"button",
 		"skeleton"
 	],
-	"dependencies": []
+	"dependencies": [
+		"@lucide/svelte"
+	]
 }

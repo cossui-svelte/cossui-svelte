@@ -13,12 +13,14 @@
 		}
 	],
 	"registryDependencies": [
-		"input",
-		"label",
 		"group",
-		"select"
+		"label",
+		"select",
+		"input"
 	],
 	"dependencies": [
+		"@lucide/svelte",
+		"svelte-tel-input",
 		"svelte-tel-input@^4.3.2"
 	]
 }

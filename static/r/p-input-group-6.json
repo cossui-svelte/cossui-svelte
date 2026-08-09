@@ -13,10 +13,10 @@
 		}
 	],
 	"registryDependencies": [
-		"input-group",
-		"number-field"
+		"input-group"
 	],
 	"dependencies": [
+		"cleave-zen",
 		"cleave-zen@^0.0.17"
 	]
 }

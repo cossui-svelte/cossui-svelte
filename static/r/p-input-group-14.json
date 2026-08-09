@@ -15,5 +15,7 @@
 	"registryDependencies": [
 		"input-group"
 	],
-	"dependencies": []
+	"dependencies": [
+		"@lucide/svelte"
+	]
 }

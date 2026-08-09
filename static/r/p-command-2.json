@@ -13,14 +13,12 @@
 		}
 	],
 	"registryDependencies": [
-		"autocomplete",
 		"button",
 		"command",
 		"empty",
 		"input",
 		"kbd",
 		"scroll-area",
-		"skeleton",
 		"spinner"
 	],
 	"dependencies": [

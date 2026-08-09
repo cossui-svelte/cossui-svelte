@@ -16,5 +16,7 @@
 		"stepper",
 		"assets"
 	],
-	"dependencies": []
+	"dependencies": [
+		"@lucide/svelte"
+	]
 }

@@ -13,8 +13,10 @@
 		}
 	],
 	"registryDependencies": [
-		"stepper",
-		"button"
+		"button",
+		"stepper"
 	],
-	"dependencies": []
+	"dependencies": [
+		"@lucide/svelte"
+	]
 }

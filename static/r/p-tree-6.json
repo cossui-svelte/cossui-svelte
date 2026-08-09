@@ -16,6 +16,8 @@
 		"tree"
 	],
 	"dependencies": [
+		"@headless-tree/core",
+		"@lucide/svelte",
 		"@headless-tree/core@^1.7.0"
 	]
 }

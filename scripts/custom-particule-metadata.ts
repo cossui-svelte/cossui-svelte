@@ -708,7 +708,7 @@ export const custom_particle_metadata = {
   'p-map-7': {
     description: 'Heatmap-style markers showing visitor traffic hotspots',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
-    registryDependencies: [, 'map'],
+    registryDependencies: ['map'],
     tags: ['map']
   'p-map-8': {
     description: 'Map with zoom, compass, locate, and fullscreen controls',

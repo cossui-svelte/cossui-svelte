@@ -13,9 +13,8 @@
 		}
 	],
 	"registryDependencies": [
-		"otp-field",
-		"field",
-		"label"
+		"label",
+		"otp-field"
 	],
 	"dependencies": []
 }

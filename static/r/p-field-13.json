@@ -13,15 +13,16 @@
 		}
 	],
 	"registryDependencies": [
+		"button",
 		"checkbox",
 		"checkbox-group",
 		"field",
 		"fieldset",
-		"button",
 		"form",
 		"use-superform"
 	],
 	"dependencies": [
+		"zod",
 		"zod@^4.4.3"
 	]
 }

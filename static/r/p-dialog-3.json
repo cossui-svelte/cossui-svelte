@@ -16,11 +16,12 @@
 		"button",
 		"dialog",
 		"field",
-		"input",
 		"form",
+		"input",
 		"use-superform"
 	],
 	"dependencies": [
+		"zod",
 		"zod@^4.4.3"
 	]
 }

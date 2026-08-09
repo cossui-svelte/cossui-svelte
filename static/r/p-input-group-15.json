@@ -16,5 +16,7 @@
 		"button",
 		"input-group"
 	],
-	"dependencies": []
+	"dependencies": [
+		"@lucide/svelte"
+	]
 }

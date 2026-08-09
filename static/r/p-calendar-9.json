@@ -16,6 +16,7 @@
 		"calendar"
 	],
 	"dependencies": [
+		"@internationalized/date",
 		"@internationalized/date@^3.12.3"
 	]
 }

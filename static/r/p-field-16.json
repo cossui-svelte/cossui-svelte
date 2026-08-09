@@ -13,13 +13,14 @@
 		}
 	],
 	"registryDependencies": [
-		"field",
-		"slider",
 		"button",
+		"field",
 		"form",
+		"slider",
 		"use-superform"
 	],
 	"dependencies": [
+		"zod",
 		"zod@^4.4.3"
 	]
 }

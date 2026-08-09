@@ -17,5 +17,7 @@
 		"drawer",
 		"menu"
 	],
-	"dependencies": []
+	"dependencies": [
+		"@lucide/svelte"
+	]
 }

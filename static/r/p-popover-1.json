@@ -14,8 +14,6 @@
 	],
 	"registryDependencies": [
 		"button",
-		"field",
-		"form",
 		"popover",
 		"textarea"
 	],

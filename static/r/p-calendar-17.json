@@ -13,16 +13,17 @@
 		}
 	],
 	"registryDependencies": [
+		"button",
 		"calendar",
 		"field",
-		"input-group",
-		"button",
 		"form",
+		"input-group",
 		"use-superform"
 	],
 	"dependencies": [
-		"date-fns",
+		"@internationalized/date",
 		"@lucide/svelte",
+		"zod",
 		"@internationalized/date@^3.12.3",
 		"zod@^4.4.3"
 	]

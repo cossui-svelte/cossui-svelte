@@ -19,7 +19,5 @@
 		"GoogleFillLogos",
 		"TwitterXFillLogos"
 	],
-	"dependencies": [
-		"@remixicon/react"
-	]
+	"dependencies": []
 }

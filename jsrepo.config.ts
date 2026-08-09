@@ -26,19 +26,19 @@ export default defineConfig({
 		],
 		items: await getRegistryItems(cwd),
 		defaultPaths: {
-			component: '$lib/components'
+			component: '$lib/components/ui'
 		},
 		providers: [shadcn()], 
 	}),
 	paths: {
-		ui: '$lib/components/ui',
+		ui: 'src/lib/components/ui',
 		// component: '$lib/components',
-		block: '$lib/components/particles',
-		hook: '$lib/hooks',
+		block: 'src/lib/components/particles',
+		hook: 'src/lib/hooks',
 		// action: '$lib/actions',
-		util: '$lib/utils',
-		lib: '$lib'
+		util: 'src/lib/utils',
+		lib: 'src/lib'
 	},
-	registries: ['@cossui-svelte']
+	registries: []
 });
 

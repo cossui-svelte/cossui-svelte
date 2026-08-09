@@ -13,9 +13,11 @@
 		}
 	],
 	"registryDependencies": [
-		"file-upload",
 		"button",
-		"use-file-upload"
+		"use-file-upload",
+		"file-upload"
 	],
-	"dependencies": []
+	"dependencies": [
+		"@lucide/svelte"
+	]
 }

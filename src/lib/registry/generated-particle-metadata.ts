@@ -159,12 +159,14 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-autocomplete-13': {
     description: 'Autocomplete form',
     tags: ['autocomplete', 'form', 'input'],
-    registryDependencies: ['autocomplete', 'button', 'field', 'form'],
+    npmDependencies: ['zod'],
+    registryDependencies: ['autocomplete', 'button', 'field', 'form', 'use-superform'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-autocomplete-14': {
     description: 'Autocomplete form',
     tags: ['autocomplete', 'input'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['autocomplete'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
@@ -521,7 +523,6 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-button-24': {
     description: 'Social login icon buttons',
     tags: ['button'],
-    npmDependencies: ['@remixicon/react'],
     registryDependencies: ['button']
   },
   'p-button-26': {
@@ -605,215 +606,224 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-button-38': {
     description: 'Social login buttons (Google, X, GitHub)',
     tags: ['button'],
-    npmDependencies: ['@remixicon/react'],
     registryDependencies: ['button'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-calendar-1': {
     description: 'Basic calendar',
     tags: ['calendar'],
+    npmDependencies: ['@internationalized/date'],
     registryDependencies: ['calendar']
   },
   'p-calendar-3': {
     description: 'Calendar with date range selection',
     tags: ['calendar'],
-    registryDependencies: ['calendar']
+    npmDependencies: ['@internationalized/date'],
+    registryDependencies: ['range-calendar']
   },
   'p-calendar-4': {
     description: 'Calendar with month/year dropdown navigation',
     tags: ['calendar'],
+    npmDependencies: ['@internationalized/date'],
     registryDependencies: ['calendar']
   },
   'p-calendar-5': {
     description: 'Calendar with custom Select dropdown for month/year',
     tags: ['calendar', 'select'],
-    registryDependencies: ['calendar', 'select']
+    npmDependencies: ['@internationalized/date'],
+    registryDependencies: ['calendar']
   },
   'p-calendar-6': {
     description: 'Calendar with Combobox dropdown for month/year',
     tags: ['calendar', 'combobox'],
-    npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['calendar', 'combobox']
+    npmDependencies: ['@internationalized/date'],
+    registryDependencies: ['calendar']
   },
   'p-calendar-7': {
     description: 'Calendar with disabled dates',
     tags: ['calendar'],
-    npmDependencies: ['date-fns'],
-    registryDependencies: ['calendar']
+    npmDependencies: ['@internationalized/date'],
+    registryDependencies: ['range-calendar']
   },
   'p-calendar-8': {
     description: 'Calendar with multiple date selection',
     tags: ['calendar'],
-    npmDependencies: ['date-fns'],
+    npmDependencies: ['@internationalized/date'],
     registryDependencies: ['calendar']
   },
   'p-calendar-2': {
     description: 'Calendar with custom cell size',
     tags: ['calendar'],
+    npmDependencies: ['@internationalized/date'],
     registryDependencies: ['calendar']
   },
   'p-calendar-9': {
     description: 'Calendar with rounded day buttons',
     tags: ['calendar'],
+    npmDependencies: ['@internationalized/date'],
     registryDependencies: ['calendar']
   },
   'p-calendar-10': {
     description: 'Calendar with rounded range selection style',
     tags: ['calendar'],
-    npmDependencies: ['date-fns'],
-    registryDependencies: ['calendar']
+    npmDependencies: ['@internationalized/date'],
+    registryDependencies: ['range-calendar']
   },
   'p-calendar-11': {
     description: 'Calendar with right-aligned navigation',
     tags: ['calendar'],
+    npmDependencies: ['@internationalized/date'],
     registryDependencies: ['calendar']
   },
   'p-calendar-12': {
     description: 'Calendar with week numbers',
     tags: ['calendar'],
+    npmDependencies: ['@internationalized/date'],
     registryDependencies: ['calendar']
   },
   'p-calendar-13': {
     description: 'Calendar with year-only combobox dropdown',
     tags: ['calendar', 'combobox'],
-    registryDependencies: ['calendar', 'combobox']
+    npmDependencies: ['@internationalized/date'],
+    registryDependencies: ['calendar']
   },
   'p-calendar-14': {
     description: 'Calendar without arrow navigation (dropdown only)',
     tags: ['calendar', 'select'],
-    registryDependencies: ['calendar', 'select']
+    npmDependencies: ['@internationalized/date'],
+    registryDependencies: ['calendar']
   },
   'p-calendar-15': {
     description: 'Calendar with current month button',
     tags: ['calendar', 'button'],
-    npmDependencies: ['date-fns'],
-    registryDependencies: ['calendar', 'button']
+    npmDependencies: ['@internationalized/date'],
+    registryDependencies: ['button', 'calendar']
   },
   'p-calendar-16': {
     description: 'Calendar with today button',
     tags: ['calendar', 'button'],
-    npmDependencies: ['date-fns'],
-    registryDependencies: ['calendar', 'button']
+    npmDependencies: ['@internationalized/date'],
+    registryDependencies: ['button', 'calendar']
   },
   'p-calendar-17': {
     description: 'Calendar with date input',
     tags: ['calendar', 'input', 'field'],
-    npmDependencies: ['date-fns', '@lucide/svelte'],
-    registryDependencies: ['calendar', 'field', 'input-group']
+    npmDependencies: ['@internationalized/date', '@lucide/svelte', 'zod'],
+    registryDependencies: ['button', 'calendar', 'field', 'form', 'input-group', 'use-superform']
   },
   'p-calendar-18': {
     description: 'Calendar with time input',
     tags: ['calendar', 'input', 'field'],
-    npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['calendar', 'field', 'input-group']
+    npmDependencies: ['@internationalized/date', '@lucide/svelte', 'zod'],
+    registryDependencies: ['button', 'calendar', 'field', 'form', 'input-group', 'use-superform']
   },
   'p-calendar-19': {
     description: 'Calendar with time slots (appointment picker)',
     tags: ['calendar', 'toggle', 'toggle-group', 'scroll-area'],
-    npmDependencies: ['date-fns'],
-    registryDependencies: ['calendar', 'scroll-area', 'toggle', 'toggle-group']
+    npmDependencies: ['@internationalized/date'],
+    registryDependencies: ['calendar', 'scroll-area', 'toggle-group']
   },
   'p-calendar-20': {
     description: 'Calendar with date presets',
     tags: ['calendar', 'button'],
-    npmDependencies: ['date-fns'],
-    registryDependencies: ['calendar', 'button']
+    npmDependencies: ['@internationalized/date'],
+    registryDependencies: ['button', 'calendar']
   },
   'p-calendar-21': {
     description: 'Range calendar with date presets',
     tags: ['calendar', 'button'],
-    npmDependencies: ['date-fns'],
-    registryDependencies: ['calendar', 'button']
+    npmDependencies: ['@internationalized/date'],
+    registryDependencies: ['button', 'range-calendar']
   },
   'p-calendar-22': {
     description: 'Two months calendar',
     tags: ['calendar'],
-    npmDependencies: ['date-fns'],
-    registryDependencies: ['calendar'],
+    npmDependencies: ['@internationalized/date'],
+    registryDependencies: ['range-calendar'],
     meta: { colSpan: 2 }
   },
   'p-calendar-23': {
     description: 'Three months calendar',
     tags: ['calendar'],
-    npmDependencies: ['date-fns'],
-    registryDependencies: ['calendar'],
+    npmDependencies: ['@internationalized/date'],
+    registryDependencies: ['range-calendar'],
     meta: { colSpan: 2 }
   },
   'p-calendar-24': {
     description: 'Pricing calendar with custom day buttons',
     tags: ['calendar'],
-    npmDependencies: ['date-fns'],
+    npmDependencies: ['@internationalized/date'],
     registryDependencies: ['calendar'],
     meta: { colSpan: 2 }
   },
   'p-date-picker-1': {
     description: 'Basic date picker',
     tags: ['date-picker', 'calendar', 'popover', 'button'],
-    npmDependencies: ['date-fns', '@lucide/svelte'],
-    registryDependencies: ['calendar', 'popover', 'button'],
+    npmDependencies: ['@internationalized/date', '@lucide/svelte'],
+    registryDependencies: ['button', 'calendar', 'popover'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-date-picker-2': {
     description: 'Date range picker',
     tags: ['date-picker', 'calendar', 'popover', 'button'],
-    npmDependencies: ['date-fns', '@lucide/svelte'],
-    registryDependencies: ['calendar', 'popover', 'button'],
+    npmDependencies: ['@internationalized/date', '@lucide/svelte'],
+    registryDependencies: ['button', 'popover', 'range-calendar'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-date-picker-9': {
     description: 'Two months calendar with range date',
     tags: ['date-picker', 'calendar', 'popover', 'button'],
-    npmDependencies: ['date-fns', '@lucide/svelte'],
-    registryDependencies: ['calendar', 'popover', 'button'],
+    npmDependencies: ['@internationalized/date', '@lucide/svelte'],
+    registryDependencies: ['button', 'popover', 'range-calendar'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-date-picker-3': {
     description: 'Date picker with field and dropdown navigation',
     tags: ['date-picker', 'calendar', 'popover', 'button', 'field', 'combobox'],
-    npmDependencies: ['date-fns', '@lucide/svelte'],
-    registryDependencies: ['button', 'calendar', 'combobox', 'field', 'popover'],
+    npmDependencies: ['@internationalized/date', '@lucide/svelte'],
+    registryDependencies: ['button', 'calendar', 'popover'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-date-picker-4': {
     description: 'Date picker with presets',
     tags: ['date-picker', 'calendar', 'popover', 'button'],
-    npmDependencies: ['date-fns', '@lucide/svelte'],
+    npmDependencies: ['@internationalized/date', '@lucide/svelte'],
     registryDependencies: ['button', 'calendar', 'popover'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-date-picker-5': {
     description: 'Date picker with input',
     tags: ['date-picker', 'calendar', 'popover', 'button', 'input'],
-    npmDependencies: ['date-fns', '@lucide/svelte'],
+    npmDependencies: ['@internationalized/date', '@lucide/svelte'],
     registryDependencies: ['button', 'calendar', 'input-group', 'popover'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-date-picker-6': {
     description: 'Date picker that closes on select',
     tags: ['date-picker', 'calendar', 'popover', 'button'],
-    npmDependencies: ['date-fns', '@lucide/svelte'],
-    registryDependencies: ['calendar', 'popover', 'button'],
+    npmDependencies: ['@internationalized/date', '@lucide/svelte'],
+    registryDependencies: ['button', 'calendar', 'popover'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-date-picker-7': {
     description: 'Multiple dates picker',
     tags: ['date-picker', 'calendar', 'popover', 'button', 'badge'],
-    npmDependencies: ['date-fns', '@lucide/svelte'],
+    npmDependencies: ['@internationalized/date', '@lucide/svelte'],
     registryDependencies: ['badge', 'button', 'calendar', 'popover'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-date-picker-8': {
     description: 'Date picker with select-like trigger',
     tags: ['date-picker', 'calendar', 'popover', 'button'],
-    npmDependencies: ['date-fns', '@lucide/svelte'],
+    npmDependencies: ['@internationalized/date', '@lucide/svelte'],
     registryDependencies: ['calendar', 'popover', 'select'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-card-1': {
     description: 'A basic card with header and footer',
     tags: ['card', 'form'],
-    npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'card', 'field', 'form', 'input', 'select'],
+    npmDependencies: ['@lucide/svelte', 'zod'],
+    registryDependencies: ['button', 'card', 'field', 'form', 'input', 'select', 'use-superform'],
     meta: {
       class:
         '**:data-[slot=preview]:w-full **:data-[slot=preview]:flex **:data-[slot=preview]:justify-center'
@@ -822,7 +832,8 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-card-2': {
     description: 'Authentication card with actions',
     tags: ['card', 'form'],
-    registryDependencies: ['button', 'card', 'field', 'form', 'input'],
+    npmDependencies: ['zod'],
+    registryDependencies: ['button', 'card', 'field', 'form', 'input', 'use-superform'],
     meta: {
       class:
         '**:data-[slot=preview]:w-full **:data-[slot=preview]:flex **:data-[slot=preview]:justify-center'
@@ -831,8 +842,8 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-card-3': {
     description: 'Authentication card with separators',
     tags: ['card', 'form'],
-    npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'card', 'field', 'form', 'input'],
+    npmDependencies: ['@lucide/svelte', 'zod'],
+    registryDependencies: ['button', 'card', 'field', 'form', 'input', 'use-superform'],
     meta: {
       class:
         '**:data-[slot=preview]:w-full **:data-[slot=preview]:flex **:data-[slot=preview]:justify-center'
@@ -841,8 +852,8 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-card-4': {
     description: 'Framed card with footer',
     tags: ['card', 'form'],
-    npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'card', 'field', 'form', 'input', 'select'],
+    npmDependencies: ['@lucide/svelte', 'zod'],
+    registryDependencies: ['button', 'card', 'field', 'form', 'input', 'select', 'use-superform'],
     meta: {
       class:
         '**:data-[slot=preview]:w-full **:data-[slot=preview]:flex **:data-[slot=preview]:justify-center'
@@ -851,7 +862,8 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-card-5': {
     description: 'Framed card with header',
     tags: ['card', 'form'],
-    registryDependencies: ['button', 'card', 'field', 'form', 'input', 'select'],
+    npmDependencies: ['zod'],
+    registryDependencies: ['button', 'card', 'field', 'form', 'input', 'select', 'use-superform'],
     meta: {
       class:
         '**:data-[slot=preview]:w-full **:data-[slot=preview]:flex **:data-[slot=preview]:justify-center'
@@ -860,8 +872,8 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-card-6': {
     description: 'Framed card with header and footer',
     tags: ['card', 'form'],
-    npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'card', 'field', 'form', 'input', 'select'],
+    npmDependencies: ['@lucide/svelte', 'zod'],
+    registryDependencies: ['button', 'card', 'field', 'form', 'input', 'select', 'use-superform'],
     meta: {
       class:
         '**:data-[slot=preview]:w-full **:data-[slot=preview]:flex **:data-[slot=preview]:justify-center'
@@ -870,8 +882,8 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-card-7': {
     description: 'Framed card with no rounded bottom',
     tags: ['card', 'form'],
-    npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'card', 'field', 'form', 'input', 'select'],
+    npmDependencies: ['@lucide/svelte', 'zod'],
+    registryDependencies: ['button', 'card', 'field', 'form', 'input', 'select', 'use-superform'],
     meta: {
       class:
         '**:data-[slot=preview]:w-full **:data-[slot=preview]:flex **:data-[slot=preview]:justify-center'
@@ -880,7 +892,17 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-card-8': {
     description: 'Card within a frame and footer',
     tags: ['card', 'form', 'frame'],
-    registryDependencies: ['button', 'card', 'field', 'form', 'frame', 'input', 'select'],
+    npmDependencies: ['@lucide/svelte', 'zod'],
+    registryDependencies: [
+      'button',
+      'card',
+      'field',
+      'form',
+      'frame',
+      'input',
+      'select',
+      'use-superform'
+    ],
     meta: {
       class:
         '**:data-[slot=preview]:w-full **:data-[slot=preview]:flex **:data-[slot=preview]:justify-center'
@@ -889,8 +911,17 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-card-9': {
     description: 'Card within a frame and footer',
     tags: ['card', 'form', 'frame'],
-    npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'card', 'field', 'form', 'frame', 'input', 'select'],
+    npmDependencies: ['zod'],
+    registryDependencies: [
+      'button',
+      'card',
+      'field',
+      'form',
+      'frame',
+      'input',
+      'select',
+      'use-superform'
+    ],
     meta: {
       class:
         '**:data-[slot=preview]:w-full **:data-[slot=preview]:flex **:data-[slot=preview]:justify-center'
@@ -899,8 +930,17 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-card-10': {
     description: 'Card within a frame with header and footer',
     tags: ['card', 'form', 'frame'],
-    npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'card', 'field', 'form', 'frame', 'input', 'select'],
+    npmDependencies: ['@lucide/svelte', 'zod'],
+    registryDependencies: [
+      'button',
+      'card',
+      'field',
+      'form',
+      'frame',
+      'input',
+      'select',
+      'use-superform'
+    ],
     meta: {
       class:
         '**:data-[slot=preview]:w-full **:data-[slot=preview]:flex **:data-[slot=preview]:justify-center'
@@ -939,7 +979,8 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-checkbox-5': {
     description: 'Checkbox form',
     tags: ['checkbox', 'form'],
-    registryDependencies: ['button', 'checkbox', 'field', 'form']
+    npmDependencies: ['zod'],
+    registryDependencies: ['button', 'checkbox', 'field', 'form', 'use-superform']
   },
   'p-checkbox-group-1': {
     description: 'Basic checkbox group',
@@ -1036,13 +1077,15 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-combobox-11': {
     description: 'Combobox form',
     tags: ['combobox', 'form', 'input'],
-    registryDependencies: ['button', 'combobox', 'field', 'form'],
+    npmDependencies: ['zod'],
+    registryDependencies: ['button', 'combobox', 'field', 'form', 'use-superform'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-combobox-12': {
     description: 'Combobox multiple form',
     tags: ['combobox', 'form', 'input'],
-    registryDependencies: ['button', 'combobox', 'field', 'form'],
+    npmDependencies: ['zod'],
+    registryDependencies: ['button', 'combobox', 'field', 'form', 'use-superform'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-combobox-13': {
@@ -1081,6 +1124,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-combobox-18': {
     description: 'Combobox with select trigger',
     tags: ['combobox', 'select'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['combobox', 'select'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
@@ -1094,27 +1138,19 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     description: 'Command palette with AI assistant',
     tags: ['command', 'dialog'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: [
-      'autocomplete',
-      'button',
-      'command',
-      'empty',
-      'input',
-      'kbd',
-      'scroll-area',
-      'skeleton',
-      'spinner'
-    ]
+    registryDependencies: ['button', 'command', 'empty', 'input', 'kbd', 'scroll-area', 'spinner']
   },
   'p-dialog-1': {
     description: 'Dialog with form',
     tags: ['dialog'],
-    registryDependencies: ['button', 'dialog', 'field', 'form', 'input']
+    npmDependencies: ['zod'],
+    registryDependencies: ['button', 'dialog', 'field', 'form', 'input', 'use-superform']
   },
   'p-dialog-6': {
     description: 'Dialog with bare footer',
     tags: ['dialog'],
-    registryDependencies: ['button', 'dialog', 'field', 'form', 'input']
+    npmDependencies: ['zod'],
+    registryDependencies: ['button', 'dialog', 'field', 'form', 'input', 'use-superform']
   },
   'p-dialog-2': {
     description: 'Dialog opened from menu',
@@ -1124,12 +1160,22 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-dialog-3': {
     description: 'Nested dialogs',
     tags: ['dialog'],
-    registryDependencies: ['button', 'dialog', 'field', 'input']
+    npmDependencies: ['zod'],
+    registryDependencies: ['button', 'dialog', 'field', 'form', 'input', 'use-superform']
   },
   'p-dialog-4': {
     description: 'Dialog with close confirmation',
     tags: ['alert-dialog', 'dialog'],
-    registryDependencies: ['alert-dialog', 'button', 'dialog', 'field', 'form', 'textarea']
+    npmDependencies: ['zod'],
+    registryDependencies: [
+      'alert-dialog',
+      'button',
+      'dialog',
+      'field',
+      'form',
+      'textarea',
+      'use-superform'
+    ]
   },
   'p-dialog-5': {
     description: 'Dialog with long content',
@@ -1174,7 +1220,8 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-drawer-8': {
     description: 'Nested right drawers with inset variant',
     tags: ['drawer'],
-    registryDependencies: ['button', 'drawer', 'field', 'input']
+    npmDependencies: ['zod'],
+    registryDependencies: ['button', 'drawer', 'field', 'form', 'input', 'use-superform']
   },
   'p-drawer-9': {
     description: 'Bottom drawer with snap points',
@@ -1184,7 +1231,8 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-drawer-10': {
     description: 'Edit profile form with default and bare footer variants',
     tags: ['drawer'],
-    registryDependencies: ['button', 'drawer', 'field', 'form', 'input']
+    npmDependencies: ['zod'],
+    registryDependencies: ['button', 'drawer', 'field', 'form', 'input', 'use-superform']
   },
   'p-drawer-11': {
     description: 'Mobile menu drawer from the left',
@@ -1194,7 +1242,8 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-drawer-12': {
     description: 'Responsive edit profile: dialog on desktop, drawer on mobile',
     tags: ['drawer', 'dialog'],
-    registryDependencies: ['button', 'dialog', 'drawer', 'field', 'form', 'input']
+    npmDependencies: ['zod'],
+    registryDependencies: ['button', 'dialog', 'drawer', 'field', 'form', 'input', 'use-superform']
   },
   'p-drawer-13': {
     description: 'Responsive actions menu: menu on desktop, drawer on mobile',
@@ -1217,126 +1266,162 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-field-1': {
     description: 'Field with description',
     tags: ['field', 'input', 'label'],
-    registryDependencies: ['field', 'input'],
+    npmDependencies: ['zod'],
+    registryDependencies: ['button', 'field', 'form', 'input', 'use-superform'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-field-2': {
     description: 'Field with required indicator',
     tags: ['field', 'input', 'label'],
-    registryDependencies: ['field', 'input'],
+    npmDependencies: ['zod'],
+    registryDependencies: ['button', 'field', 'form', 'input', 'use-superform'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-field-3': {
     description: 'Field in disabled state',
     tags: ['disabled', 'field', 'input', 'label'],
-    registryDependencies: ['field', 'input'],
+    npmDependencies: ['zod'],
+    registryDependencies: ['button', 'field', 'form', 'input', 'use-superform'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-field-4': {
     description: 'Field showing validation error',
     tags: ['error', 'field', 'input', 'label'],
-    registryDependencies: ['field', 'input'],
+    npmDependencies: ['zod'],
+    registryDependencies: ['button', 'field', 'form', 'input', 'use-superform'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-field-5': {
     description: 'Show field validity state',
     tags: ['field', 'input'],
-    registryDependencies: ['field', 'input'],
+    npmDependencies: ['zod'],
+    registryDependencies: ['button', 'field', 'form', 'input', 'use-superform'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-field-6': {
     description: 'Input group with field',
     tags: ['button', 'field', 'input', 'input-group'],
-    registryDependencies: ['button', 'field', 'input-group'],
+    npmDependencies: ['@lucide/svelte', 'zod'],
+    registryDependencies: ['button', 'field', 'form', 'input-group', 'use-superform'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-field-7': {
     description: 'Field with autocomplete',
     tags: ['autocomplete', 'field', 'input', 'label'],
-    registryDependencies: ['autocomplete', 'field'],
+    npmDependencies: ['zod'],
+    registryDependencies: ['autocomplete', 'button', 'field', 'form', 'use-superform'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-field-8': {
     description: 'Field with combobox',
     tags: ['combobox', 'field', 'input', 'label'],
-    registryDependencies: ['combobox', 'field'],
+    npmDependencies: ['zod'],
+    registryDependencies: ['button', 'combobox', 'field', 'form', 'use-superform'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-field-9': {
     description: 'Field with multiple selection combobox',
     tags: ['combobox', 'field', 'input', 'label'],
-    registryDependencies: ['combobox', 'field'],
+    npmDependencies: ['zod'],
+    registryDependencies: ['button', 'combobox', 'field', 'form', 'use-superform'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-field-10': {
     description: 'Field with textarea',
     tags: ['field', 'label', 'textarea'],
-    registryDependencies: ['field', 'textarea'],
+    npmDependencies: ['zod'],
+    registryDependencies: ['button', 'field', 'form', 'textarea', 'use-superform'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-field-11': {
     description: 'Field with select',
     tags: ['field', 'label', 'select'],
-    registryDependencies: ['field', 'select'],
+    npmDependencies: ['zod'],
+    registryDependencies: ['button', 'field', 'form', 'select', 'use-superform'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-field-12': {
     description: 'Field with checkbox',
     tags: ['checkbox', 'field', 'label'],
-    registryDependencies: ['checkbox', 'field'],
+    npmDependencies: ['zod'],
+    registryDependencies: ['button', 'checkbox', 'field', 'form', 'use-superform'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-field-13': {
     description: 'Field with checkbox group',
     tags: ['checkbox', 'checkbox-group', 'field', 'fieldset', 'label'],
-    registryDependencies: ['checkbox', 'checkbox-group', 'field', 'fieldset']
+    npmDependencies: ['zod'],
+    registryDependencies: [
+      'button',
+      'checkbox',
+      'checkbox-group',
+      'field',
+      'fieldset',
+      'form',
+      'use-superform'
+    ]
   },
   'p-field-14': {
     description: 'Field with radio group',
     tags: ['field', 'fieldset', 'label', 'radio-group'],
-    registryDependencies: ['field', 'fieldset', 'radio-group'],
+    npmDependencies: ['zod'],
+    registryDependencies: ['button', 'field', 'fieldset', 'form', 'radio-group', 'use-superform'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-field-15': {
     description: 'Field with toggle switch',
     tags: ['field', 'label', 'switch'],
-    registryDependencies: ['field', 'switch']
+    npmDependencies: ['zod'],
+    registryDependencies: ['button', 'field', 'form', 'switch', 'use-superform']
   },
   'p-field-16': {
     description: 'Field with slider',
     tags: ['field', 'label', 'slider'],
-    registryDependencies: ['field', 'slider'],
+    npmDependencies: ['zod'],
+    registryDependencies: ['button', 'field', 'form', 'slider', 'use-superform'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-field-17': {
     description: 'Field with number field',
     tags: ['field', 'input', 'label', 'number-field'],
-    registryDependencies: ['field', 'number-field'],
+    npmDependencies: ['zod'],
+    registryDependencies: ['button', 'field', 'form', 'number-field', 'use-superform'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-field-18': {
     description: 'Complete form built with field',
     tags: ['button', 'checkbox', 'field', 'form', 'input', 'label', 'select'],
-    registryDependencies: ['button', 'checkbox', 'field', 'form', 'input', 'select'],
+    npmDependencies: ['zod'],
+    registryDependencies: [
+      'button',
+      'checkbox',
+      'field',
+      'form',
+      'input',
+      'select',
+      'use-superform'
+    ],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-fieldset-1': {
     description: 'Fieldset with multiple fields',
     tags: ['fieldset', 'input'],
-    registryDependencies: ['field', 'fieldset', 'input'],
+    npmDependencies: ['zod'],
+    registryDependencies: ['field', 'fieldset', 'form', 'input', 'use-superform'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-form-1': {
     description: 'Input in a form',
     tags: ['button', 'field', 'form', 'input'],
-    registryDependencies: ['button', 'field', 'form', 'input'],
+    npmDependencies: ['zod'],
+    registryDependencies: ['button', 'field', 'form', 'input', 'use-superform'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-form-2': {
     description: 'Form with zod validation',
     tags: ['button', 'field', 'form', 'label', 'validation', 'zod'],
     npmDependencies: ['zod'],
-    registryDependencies: ['button', 'field', 'form', 'input'],
+    registryDependencies: ['button', 'field', 'form', 'input', 'use-superform'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-frame-1': {
@@ -1372,76 +1457,89 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-group-1': {
     description: 'Basic group',
     tags: ['group'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'group', 'menu']
   },
   'p-group-2': {
     description: 'Group with input',
     tags: ['group', 'input'],
-    registryDependencies: ['button', 'group', 'input', 'tooltip', 'use-copy-to-clipboard']
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['button', 'group', 'input', 'tooltip']
   },
   'p-group-3': {
     description: 'Small group',
     tags: ['group'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'group', 'menu']
   },
   'p-group-4': {
     description: 'Large group',
     tags: ['group'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'group', 'menu']
   },
   'p-group-5': {
     description: 'Group with disabled button',
     tags: ['button', 'group'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'group', 'menu']
   },
   'p-group-6': {
     description: 'Group with default button',
     tags: ['button', 'group'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'group', 'menu']
   },
   'p-group-7': {
     description: 'Group with start text',
     tags: ['group'],
-    registryDependencies: ['group', 'input', 'label']
+    registryDependencies: ['group', 'input']
   },
   'p-group-8': {
     description: 'Group with end text',
     tags: ['group'],
-    registryDependencies: ['group', 'input', 'label']
+    registryDependencies: ['group', 'input']
   },
   'p-group-9': {
     description: 'Vertical group',
     tags: ['group'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'group']
   },
   'p-group-10': {
     description: 'Nested groups',
     tags: ['group'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'group']
   },
   'p-group-11': {
     description: 'Group with popup',
     tags: ['group'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['badge', 'button', 'group', 'popover']
   },
   'p-group-12': {
     description: 'Group with input group',
     tags: ['group', 'input-group'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'group', 'input-group', 'tooltip']
   },
   'p-group-13': {
     description: 'Group with menu',
     tags: ['dropdown', 'group', 'menu'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'group', 'menu']
   },
   'p-group-14': {
     description: 'Group with select',
     tags: ['group', 'select', 'number-field'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'group', 'number-field', 'select']
   },
   'p-group-15': {
     description: 'Group with search',
     tags: ['group', 'search'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'group', 'input', 'select']
   },
   'p-group-16': {
@@ -1453,7 +1551,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-group-17': {
     description: 'Group with input and currency text',
     tags: ['group', 'input'],
-    registryDependencies: ['group', 'input', 'label']
+    registryDependencies: ['group', 'input']
   },
   'p-group-18': {
     description: 'Group with select and input',
@@ -1478,6 +1576,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-group-23': {
     description: 'Group with filter label, combobox multi-select, and remove button',
     tags: ['avatar', 'badge', 'button', 'combobox', 'group'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['avatar', 'badge', 'button', 'combobox', 'group']
   },
   'p-input-1': {
@@ -1525,18 +1624,21 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-input-8': {
     description: 'Input with start text and end tooltip',
     tags: ['button', 'input', 'input-group', 'popover'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'input-group', 'popover'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-input-9': {
     description: 'Password input with toggle visibility',
     tags: ['button', 'input', 'input-group', 'tooltip'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'input-group', 'tooltip'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-input-10': {
     description: 'Input group mimicking a URL bar',
     tags: ['button', 'input', 'input-group', 'popover'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'input-group', 'popover'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
@@ -1600,36 +1702,37 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-otp-field-4': {
     description: 'OTP field with label',
     tags: ['otp-field', 'input', 'field'],
-    registryDependencies: ['otp-field', 'field']
+    registryDependencies: ['label', 'otp-field']
   },
   'p-otp-field-6': {
     description: 'OTP field with custom sanitization',
     tags: ['otp-field', 'input', 'field', 'validation'],
-    registryDependencies: ['otp-field', 'field']
+    registryDependencies: ['label', 'otp-field']
   },
   'p-otp-field-7': {
     description: 'OTP field with auto validation',
     tags: ['otp-field', 'input', 'validation'],
-    registryDependencies: ['otp-field', 'field']
+    registryDependencies: ['label', 'otp-field']
   },
   'p-otp-field-8': {
     description: 'Alphanumeric OTP field',
     tags: ['otp-field', 'input', 'field'],
-    registryDependencies: ['otp-field', 'field']
+    registryDependencies: ['label', 'otp-field']
   },
   'p-otp-field-9': {
     description: 'OTP field with placeholder hints',
     tags: ['otp-field', 'input', 'field'],
-    registryDependencies: ['otp-field', 'field']
+    registryDependencies: ['label', 'otp-field']
   },
   'p-otp-field-10': {
     description: 'Masked OTP field',
     tags: ['otp-field', 'input', 'field'],
-    registryDependencies: ['otp-field', 'field']
+    registryDependencies: ['label', 'otp-field']
   },
   'p-input-group-1': {
     description: 'Basic input group',
     tags: ['input-group'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['input-group'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
@@ -1661,7 +1764,8 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-input-group-6': {
     description: 'Input group with number field',
     tags: ['input-group', 'number-field'],
-    registryDependencies: ['input-group', 'number-field'],
+    npmDependencies: ['cleave-zen'],
+    registryDependencies: ['input-group'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-input-group-7': {
@@ -1675,7 +1779,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     description: 'Input group with icon button',
     tags: ['button', 'input-group'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'input-group', 'tooltip', 'use-copy-to-clipboard'],
+    registryDependencies: ['button', 'input-group', 'tooltip'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-input-group-9': {
@@ -1699,24 +1803,28 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-input-group-12': {
     description: 'Input group with inner label',
     tags: ['input-group', 'label'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'input-group', 'label', 'popover'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-input-group-13': {
     description: 'Small input group',
     tags: ['input-group'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['input-group'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-input-group-14': {
     description: 'Large input group',
     tags: ['input-group'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['input-group'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-input-group-15': {
     description: 'Disabled input group',
     tags: ['input-group'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'input-group'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
@@ -1729,6 +1837,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-input-group-17': {
     description: 'Input group with textarea',
     tags: ['input-group', 'textarea'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'input-group', 'menu', 'tooltip'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-80' }
   },
@@ -1777,13 +1886,13 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-input-group-24': {
     description: 'Input group with character counter',
     tags: ['input', 'input-group'],
-    registryDependencies: ['input-group'],
+    registryDependencies: ['input-group', 'use-character-limit'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-input-18': {
     description: 'Input with characters remaining counter',
     tags: ['field', 'input'],
-    registryDependencies: ['field', 'input'],
+    registryDependencies: ['input', 'use-character-limit'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-input-19': {
@@ -1847,6 +1956,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-menu-1': {
     description: 'Basic menu',
     tags: ['dropdown', 'menu'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'menu']
   },
   'p-menu-2': {
@@ -1995,8 +2105,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-number-field-10': {
     description: 'Number field in form',
     tags: ['number-field', 'input', 'form', 'field', 'zod'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['button', 'field', 'form', 'number-field'],
+    registryDependencies: ['button', 'number-field'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-number-field-11': {
@@ -2019,13 +2128,13 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-pagination-3': {
     description: 'Pagination with select, and previous and next buttons',
     tags: ['pagination', 'select'],
-    registryDependencies: ['button', 'pagination', 'select'],
+    registryDependencies: ['pagination', 'select'],
     meta: { class: '**:data-[slot=preview]:w-full' }
   },
   'p-popover-1': {
     description: 'Popover with a form',
     tags: ['button', 'field', 'form', 'popover', 'textarea'],
-    registryDependencies: ['button', 'field', 'form', 'popover', 'textarea']
+    registryDependencies: ['button', 'popover', 'textarea']
   },
   'p-popover-2': {
     description: 'Popover with close button',
@@ -2086,13 +2195,13 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-radio-group-5': {
     description: 'Radio group in form',
     tags: ['radio-group', 'form'],
-    registryDependencies: ['button', 'field', 'fieldset', 'form', 'radio-group']
+    registryDependencies: ['button', 'label', 'radio-group']
   },
   'p-radio-group-6': {
     description: 'Theme selector with image cards',
     tags: ['radio-group', 'form'],
-    npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['field', 'fieldset', 'radio-group'],
+    npmDependencies: ['zod'],
+    registryDependencies: ['field', 'fieldset', 'form', 'radio-group', 'use-superform'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-[320px]' }
   },
   'p-scroll-area-1': {
@@ -2258,7 +2367,8 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-select-11': {
     description: 'Select in form',
     tags: ['select'],
-    registryDependencies: ['button', 'field', 'form', 'select'],
+    npmDependencies: ['zod'],
+    registryDependencies: ['button', 'field', 'form', 'select', 'use-superform'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-separator-1': {
@@ -2269,12 +2379,14 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-sheet-1': {
     description: 'Basic sheet',
     tags: ['sheet'],
-    registryDependencies: ['button', 'field', 'form', 'input', 'sheet']
+    npmDependencies: ['zod'],
+    registryDependencies: ['button', 'field', 'form', 'input', 'sheet', 'use-superform']
   },
   'p-sheet-2': {
     description: 'Sheet inset',
     tags: ['sheet'],
-    registryDependencies: ['button', 'field', 'form', 'input', 'sheet']
+    npmDependencies: ['zod'],
+    registryDependencies: ['button', 'field', 'form', 'input', 'label', 'sheet', 'use-superform']
   },
   'p-sheet-3': {
     description: 'Sheet position',
@@ -2284,6 +2396,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-skeleton-1': {
     description: 'Basic skeleton',
     tags: ['skeleton'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['avatar', 'button', 'skeleton'],
     meta: {
       class:
@@ -2308,7 +2421,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-slider-2': {
     description: 'Slider with label and value',
     tags: ['slider'],
-    registryDependencies: ['field', 'slider'],
+    registryDependencies: ['slider'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-slider-3': {
@@ -2363,7 +2476,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     description: 'Slider with icons',
     tags: ['slider'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['field', 'slider'],
+    registryDependencies: ['slider'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-slider-12': {
@@ -2382,19 +2495,19 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     description: 'Slider with increment and decrement buttons',
     tags: ['slider', 'button'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'field', 'slider'],
+    registryDependencies: ['button', 'slider'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-slider-15': {
     description: 'Price range slider',
     tags: ['slider'],
-    registryDependencies: ['fieldset', 'slider'],
+    registryDependencies: ['slider'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-slider-16': {
     description: 'Emoji rating slider',
     tags: ['slider'],
-    registryDependencies: ['field', 'slider'],
+    registryDependencies: ['slider'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-slider-17': {
@@ -2421,7 +2534,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     description: 'Object position sliders with reset',
     tags: ['slider', 'number-field', 'button'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'fieldset', 'label', 'number-field', 'slider'],
+    registryDependencies: ['button', 'label', 'number-field', 'slider'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-slider-22': {
@@ -2433,7 +2546,8 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-slider-23': {
     description: 'Slider in form',
     tags: ['slider', 'form'],
-    registryDependencies: ['button', 'field', 'fieldset', 'form', 'slider'],
+    npmDependencies: ['zod'],
+    registryDependencies: ['button', 'field', 'fieldset', 'form', 'slider', 'use-superform'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-spinner-1': {
@@ -2464,7 +2578,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-switch-5': {
     description: 'Switch in form',
     tags: ['switch'],
-    registryDependencies: ['button', 'field', 'form', 'switch']
+    registryDependencies: ['button', 'label', 'switch']
   },
   'p-switch-6': {
     description: 'Custom size switch',
@@ -2537,15 +2651,14 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-table-3': {
     description: 'Table with TanStack Table and checkboxes',
     tags: ['checkbox', 'table', 'tanstack'],
-    npmDependencies: ['@tanstack/react-table'],
     registryDependencies: ['badge', 'checkbox', 'frame', 'table'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-table-4': {
     description: 'Table with TanStack Table, sorting, and pagination',
     tags: ['checkbox', 'pagination', 'select', 'table', 'tanstack'],
-    npmDependencies: ['@tanstack/react-table', '@lucide/svelte'],
-    registryDependencies: ['badge', 'button', 'checkbox', 'frame', 'pagination', 'select', 'table'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['badge', 'checkbox', 'frame', 'pagination', 'select', 'table'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-table-5': {
@@ -2563,15 +2676,14 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-table-6': {
     description: 'CardFrame with TanStack Table and checkboxes',
     tags: ['card', 'checkbox', 'table', 'tanstack'],
-    npmDependencies: ['@tanstack/react-table'],
     registryDependencies: ['badge', 'card', 'checkbox', 'table'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-table-8': {
     description: 'CardFrame with TanStack Table, sorting, and pagination',
     tags: ['card', 'checkbox', 'pagination', 'select', 'table', 'tanstack'],
-    npmDependencies: ['@tanstack/react-table', '@lucide/svelte'],
-    registryDependencies: ['badge', 'button', 'card', 'checkbox', 'pagination', 'select', 'table'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['badge', 'card', 'checkbox', 'pagination', 'select', 'table'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-tabs-1': {
@@ -2682,7 +2794,8 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-textarea-6': {
     description: 'Textarea in form',
     tags: ['textarea'],
-    registryDependencies: ['button', 'field', 'form', 'textarea'],
+    npmDependencies: ['zod'],
+    registryDependencies: ['button', 'field', 'form', 'textarea', 'use-superform'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-textarea-7': {
@@ -2712,13 +2825,15 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-textarea-11': {
     description: 'Textarea with characters remaining counter',
     tags: ['field', 'textarea'],
-    registryDependencies: ['field', 'textarea'],
+    npmDependencies: ['zod'],
+    registryDependencies: ['field', 'form', 'textarea', 'use-superform'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-textarea-12': {
     description: 'Textarea field with required indicator',
     tags: ['field', 'label', 'textarea'],
-    registryDependencies: ['field', 'textarea'],
+    npmDependencies: ['zod'],
+    registryDependencies: ['button', 'field', 'form', 'textarea', 'use-superform'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-textarea-13': {
@@ -2772,7 +2887,8 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-toast-7': {
     description: 'Anchored tooltip-style toast after copy',
     tags: ['toast'],
-    registryDependencies: ['button', 'toast', 'tooltip', 'use-copy-to-clipboard']
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['button', 'toast', 'tooltip']
   },
   'p-toast-8': {
     description: 'Anchored error toast after async failure',
@@ -2810,46 +2926,55 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-toggle-group-1': {
     description: 'Basic toggle group',
     tags: ['toggle', 'toggle-group'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['toggle-group']
   },
   'p-toggle-group-2': {
     description: 'Small toggle group',
     tags: ['toggle', 'toggle-group'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['toggle-group']
   },
   'p-toggle-group-3': {
     description: 'Large toggle group',
     tags: ['toggle', 'toggle-group'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['toggle-group']
   },
   'p-toggle-group-4': {
     description: 'Toggle group with outline',
     tags: ['toggle', 'toggle-group'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['toggle-group']
   },
   'p-toggle-group-5': {
     description: 'Vertical toggle group with outline',
     tags: ['toggle', 'toggle-group'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['toggle-group']
   },
   'p-toggle-group-6': {
     description: 'Disabled toggle group',
     tags: ['toggle', 'toggle-group'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['toggle-group']
   },
   'p-toggle-group-7': {
     description: 'Toggle group with disabled item',
     tags: ['toggle', 'toggle-group'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['toggle-group']
   },
   'p-toggle-group-8': {
     description: 'Multiple selection toggle group',
     tags: ['toggle', 'toggle-group'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['toggle-group']
   },
   'p-toggle-group-9': {
     description: 'Toggle group with tooltips',
     tags: ['toggle', 'toggle-group'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['toggle-group', 'tooltip']
   },
   'p-toggle-1': {
@@ -2893,7 +3018,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     description: 'Bookmark toggle with tooltip and success toast',
     tags: ['toggle', 'tooltip', 'toast'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['toggle', 'tooltip', 'toast']
+    registryDependencies: ['toast', 'toggle', 'tooltip']
   },
   'p-toolbar-1': {
     description: 'Toolbar with toggles, buttons, and select',
@@ -2909,16 +3034,19 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-tooltip-2': {
     description: 'Grouped tooltips',
     tags: ['tooltip'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['toggle-group', 'tooltip']
   },
   'p-tooltip-3': {
     description: 'Toggle group animated tooltip',
     tags: ['tooltip'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['toggle-group', 'tooltip']
   },
   'p-tooltip-4': {
     description: 'Vertical group with animated tooltip',
     tags: ['tooltip'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'group', 'tooltip']
   },
   'p-aspect-ratio-1': {
@@ -2945,238 +3073,138 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     registryDependencies: ['aspect-ratio'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-timeline-1': {
-    description: 'The most basic vertical timeline',
-    tags: ['timeline'],
-    registryDependencies: ['timeline'],
+  'p-chart-1': {
+    description: 'Radial Chart with Labels',
+    tags: ['chart'],
+    npmDependencies: ['layerchart'],
+    registryDependencies: ['chart'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-timeline-2': {
-    description: 'A more complex timeline',
-    tags: ['timeline'],
-    registryDependencies: ['timeline'],
+  'p-chart-10': {
+    description: 'Bar Chart - Horizontal Mixed',
+    tags: ['chart'],
+    npmDependencies: ['d3-scale', 'layerchart'],
+    registryDependencies: ['chart'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-timeline-3': {
-    description: 'A more complex timeline with embeded dates',
-    tags: ['timeline'],
-    registryDependencies: ['timeline'],
+  'p-chart-2': {
+    description: 'Radial Chart with Text',
+    tags: ['chart'],
+    npmDependencies: ['layerchart'],
+    registryDependencies: ['chart'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-timeline-4': {
-    description: 'A Basic vertical timeline',
-    tags: ['timeline'],
-    registryDependencies: ['timeline'],
+  'p-chart-3': {
+    description: 'Radial Chart - Stacked',
+    tags: ['chart'],
+    npmDependencies: ['d3-scale', 'layerchart'],
+    registryDependencies: ['chart'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-timeline-5': {
-    description: 'A vertical timeline with progress indicator',
-    tags: ['timeline'],
-    registryDependencies: ['timeline'],
+  'p-chart-4': {
+    description: 'Radar Chart - Custom Labelp',
+    tags: ['chart'],
+    npmDependencies: ['d3-scale', 'd3-shape', 'layerchart'],
+    registryDependencies: ['chart'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-timeline-6': {
-    description: 'A timeline with icons',
-    tags: ['timeline'],
-    registryDependencies: ['timeline'],
+  'p-chart-5': {
+    description: 'Area Chart - Axes',
+    tags: ['chart'],
+    npmDependencies: ['d3-scale', 'd3-shape', 'layerchart'],
+    registryDependencies: ['chart'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-timeline-7': {
-    description: 'A timeline with images',
-    tags: ['timeline'],
-    registryDependencies: ['timeline'],
+  'p-chart-6': {
+    description: 'Line Chart with Labels',
+    tags: ['chart'],
+    npmDependencies: ['d3-scale', 'd3-shape', 'layerchart'],
+    registryDependencies: ['chart'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-timeline-8': {
-    description: 'A timeline with titles and dates',
-    tags: ['timeline'],
-    registryDependencies: ['timeline'],
+  'p-chart-7': {
+    description: 'Pie Chart - Interactive',
+    tags: ['chart'],
+    npmDependencies: ['layerchart'],
+    registryDependencies: ['chart'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-timeline-9': {
-    description: 'A timeline as an array',
-    tags: ['timeline'],
-    registryDependencies: ['timeline'],
+  'p-chart-8': {
+    description: 'Pie Chart - Custom Label',
+    tags: ['chart'],
+    npmDependencies: ['layerchart'],
+    registryDependencies: ['chart'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-timeline-10': {
-    description: 'A timeline showing an activity tracker',
-    tags: ['timeline'],
-    registryDependencies: ['timeline'],
+  'p-chart-9': {
+    description: 'Bar Chart - Multiple',
+    tags: ['chart'],
+    npmDependencies: ['d3-scale', 'layerchart'],
+    registryDependencies: ['chart'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-timeline-11': {
-    description: 'Horizontal timeline with dates below',
-    tags: ['timeline'],
-    registryDependencies: ['timeline'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  'p-colorpicker-1': {
+    description: 'Full featured Color picker',
+    tags: ['colorpicker', 'color', 'input'],
+    registryDependencies: ['colorpicker', 'slider', 'checkbox', 'input', 'button', 'label'],
+    meta: { class: '**:data-[slot=card]:overflow-visible **:data-[slot=card]:[clip-path:none]!' }
   },
-  'p-timeline-12': {
-    description: 'Horizontal timeline with dates above',
-    tags: ['timeline'],
-    registryDependencies: ['timeline'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  'p-colorpicker-2': {
+    description: 'Minimal color picker with sliders',
+    tags: ['colorpicker', 'color', 'input'],
+    registryDependencies: ['colorpicker', 'slider', 'checkbox', 'input', 'button', 'label'],
+    meta: { class: '**:data-[slot=card]:overflow-visible **:data-[slot=card]:[clip-path:none]!' }
   },
-  'p-rich-editor-1': {
-    description: 'Basic rich editor examples',
-    tags: ['rich-editor'],
-    registryDependencies: ['rich-editor'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  'p-colorpicker-3': {
+    description: 'Non editable swatches Color picker',
+    tags: ['colorpicker', 'color', 'input'],
+    npmDependencies: ['@hueycolor/core'],
+    registryDependencies: ['colorpicker', 'slider', 'checkbox', 'input', 'button', 'label'],
+    meta: { class: '**:data-[slot=card]:overflow-visible **:data-[slot=card]:[clip-path:none]!' }
   },
-  'p-stepper-1': {
-    description: 'Basic stepper examples',
-    tags: ['stepper'],
-    registryDependencies: ['stepper'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
+  'p-colorpicker-4': {
+    description: 'Sliders only',
+    tags: ['colorpicker', 'color', 'input'],
+    registryDependencies: ['colorpicker', 'slider', 'checkbox', 'input', 'button', 'label'],
+    meta: { class: '**:data-[slot=card]:overflow-visible **:data-[slot=card]:[clip-path:none]!' }
   },
-  'p-stepper-2': {
-    description: 'Stepper with numbers only',
-    tags: ['stepper'],
-    registryDependencies: ['stepper'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
+  'p-colorpicker-5': {
+    description: 'Color picker with custom swatches and text input',
+    tags: ['colorpicker', 'color', 'input'],
+    npmDependencies: ['@hueycolor/core'],
+    registryDependencies: ['colorpicker', 'slider', 'checkbox', 'input', 'button', 'label'],
+    meta: { class: '**:data-[slot=card]:overflow-visible **:data-[slot=card]:[clip-path:none]!' }
   },
-  'p-stepper-3': {
-    description: 'Stepper with numbers and checkmarks',
-    tags: ['stepper'],
-    registryDependencies: ['stepper'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
-  },
-  'p-stepper-4': {
-    description: 'Stepper with tiny buttons and checkmarks',
-    tags: ['stepper'],
-    registryDependencies: ['stepper'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
-  },
-  'p-stepper-5': {
-    description: 'Controlled stepper with checkmarks',
-    tags: ['stepper'],
-    registryDependencies: ['stepper'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
-  },
-  'p-stepper-6': {
-    description: 'Controlled stepper with checkmarks and loading state',
-    tags: ['stepper'],
-    registryDependencies: ['stepper'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
-  },
-  'p-stepper-7': {
-    description: 'Stepper with mixed elements',
-    tags: ['stepper'],
-    registryDependencies: ['stepper'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
-  },
-  'p-stepper-8': {
-    description: 'Stepper with labels',
-    tags: ['stepper'],
-    registryDependencies: ['stepper'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
-  },
-  'p-stepper-9': {
-    description: 'Paginated stepper',
-    tags: ['stepper'],
-    registryDependencies: ['stepper'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
-  },
-  'p-stepper-10': {
-    description: 'Progress stepper',
-    tags: ['stepper'],
-    registryDependencies: ['stepper'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
-  },
-  'p-stepper-11': {
-    description: 'Stepper with titles and descriptions',
-    tags: ['stepper'],
-    registryDependencies: ['stepper'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
-  },
-  'p-stepper-12': {
-    description: 'Stepper with inline titles',
-    tags: ['stepper'],
-    registryDependencies: ['stepper'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
-  },
-  'p-stepper-15': {
-    description: 'Vertical stepper with numbers and checkmarks',
-    tags: ['stepper'],
-    registryDependencies: ['stepper'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
-  },
-  'p-stepper-16': {
-    description: 'Controlled vertical stepper with checkmarks',
-    tags: ['stepper'],
-    registryDependencies: ['stepper'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
-  },
-  'p-stepper-17': {
-    description: 'Vertical stepper with inline titles',
-    tags: ['stepper'],
-    registryDependencies: ['stepper'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
-  },
-  'p-stepper-18': {
-    description: 'Vertical stepper with inline titles and descriptions',
-    tags: ['stepper'],
-    registryDependencies: ['stepper'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
-  },
-  'p-split-pane-1': {
-    description: 'Split pane with resizable panels',
-    tags: ['split-pane'],
-    registryDependencies: ['split-pane'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
-  },
-  'p-tree-1': {
-    description: 'Show a tree structure with nodes and children',
-    tags: ['tree'],
-    registryDependencies: ['tree'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
-  },
-  'p-tree-2': {
-    description: 'Basic tree with vertical lines',
-    tags: ['tree'],
-    registryDependencies: ['tree'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
-  },
-  'p-tree-3': {
-    description: 'Basic tree with icons',
-    tags: ['tree'],
-    registryDependencies: ['tree'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
-  },
-  'p-tree-4': {
-    description: 'Basic tree with caret icon on the right',
-    tags: ['tree'],
-    registryDependencies: ['tree'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
-  },
-  'p-tree-5': {
-    description: 'Tree with multi-select and drag and drop',
-    tags: ['tree'],
-    registryDependencies: ['tree'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
-  },
-  'p-tree-6': {
-    description: 'Tree with renaming (press F2 to rename)',
-    tags: ['tree'],
-    registryDependencies: ['tree'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
-  },
-  'p-tree-7': {
-    description: 'Tree with search highlight',
-    tags: ['tree'],
-    registryDependencies: ['tree', 'input'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
-  },
-  'p-tree-8': {
-    description: 'Tree with filtering',
-    tags: ['tree'],
-    registryDependencies: ['tree', 'input'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  'p-colorpicker-6': {
+    description: 'Color picker with custom swatches and no text input',
+    tags: ['colorpicker', 'color', 'input'],
+    npmDependencies: ['@hueycolor/core'],
+    registryDependencies: ['colorpicker', 'slider', 'checkbox', 'input', 'button', 'label'],
+    meta: { class: '**:data-[slot=card]:overflow-visible **:data-[slot=card]:[clip-path:none]!' }
   },
   'p-cropper-1': {
     description: 'Crops images to a specific aspect ratio and size',
     tags: ['cropper'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['button', 'cropper', 'dialog', 'slider', 'use-file-upload'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-cropper-10': {
+    description: 'Cropper with crop data output',
+    tags: ['cropper'],
     registryDependencies: ['cropper'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-cropper-11': {
+    description: 'Cropper with image preview',
+    tags: ['cropper'],
+    registryDependencies: ['button', 'cropper'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-cropper-12': {
+    description: 'Cropper with aspect ratio switcher and grid overlay',
+    tags: ['cropper'],
+    registryDependencies: ['button', 'cropper'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-cropper-2': {
@@ -3227,143 +3255,157 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     registryDependencies: ['cropper'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-cropper-10': {
-    description: 'Cropper with crop data output',
-    tags: ['cropper'],
-    registryDependencies: ['cropper'],
+  'p-file-upload-1': {
+    description: 'Basic image uploader',
+    tags: ['file-upload'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['button', 'use-file-upload', 'file-upload'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-cropper-11': {
-    description: 'Cropper with image preview',
-    tags: ['cropper'],
-    registryDependencies: ['cropper', 'button'],
+  'p-file-upload-10': {
+    description: 'Multiple files uploader with list inside the drop area',
+    tags: ['file-upload'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['button', 'use-file-upload', 'file-upload'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-cropper-12': {
-    description: 'Cropper with aspect ratio switcher and grid overlay',
-    tags: ['cropper'],
-    registryDependencies: ['cropper', 'button'],
+  'p-file-upload-11': {
+    description: 'Multiple files uploader with table',
+    tags: ['file-upload'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['button', 'table', 'use-file-upload', 'file-upload'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-chart-1': {
-    description: 'Radial Chart with Labels',
-    tags: ['chart'],
-    registryDependencies: ['chart'],
+  'p-file-upload-12': {
+    description: 'Mixed content uploader with card grid',
+    tags: ['file-upload'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['button', 'use-file-upload', 'file-upload'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-chart-2': {
-    description: 'Radial Chart with Text',
-    tags: ['chart'],
-    registryDependencies: ['chart'],
+  'p-file-upload-13': {
+    description: 'File uploader with simulated progress tracking',
+    tags: ['file-upload'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['button', 'use-file-upload', 'file-upload'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-chart-3': {
-    description: 'Radial Chart - Stacked',
-    tags: ['chart'],
-    registryDependencies: ['chart'],
+  'p-file-upload-14': {
+    description: 'Avatar uploader with crop dialog',
+    tags: ['file-upload', 'cropper'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: [
+      'button',
+      'cropper',
+      'dialog',
+      'slider',
+      'use-file-upload',
+      'file-upload'
+    ],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-chart-4': {
-    description: 'Radar Chart - Custom Labelp',
-    tags: ['chart'],
-    registryDependencies: ['chart'],
+  'p-file-upload-2': {
+    description: 'Avatar upload button',
+    tags: ['file-upload'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['button', 'use-file-upload', 'file-upload'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-chart-5': {
-    description: 'Area Chart - Axes',
-    tags: ['chart'],
-    registryDependencies: ['chart'],
+  'p-file-upload-3': {
+    description: 'Avatar uploader with droppable area',
+    tags: ['file-upload'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['button', 'use-file-upload', 'file-upload'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-chart-6': {
-    description: 'Line Chart with Labels',
-    tags: ['chart'],
-    registryDependencies: ['chart'],
+  'p-file-upload-4': {
+    description: 'Single image uploader with max size',
+    tags: ['file-upload'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['button', 'use-file-upload', 'file-upload'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-chart-7': {
-    description: 'Pie Chart - Interactive',
-    tags: ['chart'],
-    registryDependencies: ['chart'],
+  'p-file-upload-5': {
+    description: 'Single image uploader with max size, drop area and button',
+    tags: ['file-upload'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['button', 'use-file-upload', 'file-upload'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-chart-8': {
-    description: 'Pie Chart - Custom Label',
-    tags: ['chart'],
-    registryDependencies: ['chart'],
+  'p-file-upload-6': {
+    description: 'Multiple image uploader with image grid',
+    tags: ['file-upload'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['button', 'use-file-upload', 'file-upload'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-chart-9': {
-    description: 'Bar Chart - Multiple',
-    tags: ['chart'],
-    registryDependencies: ['chart'],
+  'p-file-upload-7': {
+    description: 'Multiple image uploader with image list',
+    tags: ['file-upload'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['button', 'use-file-upload', 'file-upload'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-chart-10': {
-    description: 'Bar Chart - Horizontal Mixed',
-    tags: ['chart'],
-    registryDependencies: ['chart'],
+  'p-file-upload-8': {
+    description: 'Single file uploader with max size',
+    tags: ['file-upload'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['button', 'use-file-upload', 'file-upload'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-table-9': {
-    description: 'Vertical table',
-    tags: ['table'],
-    registryDependencies: ['table'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
-  },
-  'p-table-10': {
-    description: 'Table with sticky header',
-    tags: ['table'],
-    registryDependencies: ['table'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
-  },
-  'p-link-preview-1': {
-    description: 'A component that displays a preview of a link on mouse hover',
-    tags: ['link-preview'],
-    registryDependencies: ['link-preview'],
+  'p-file-upload-9': {
+    description: 'Multiple files uploader with list',
+    tags: ['file-upload'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['button', 'use-file-upload', 'file-upload'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-input-100': {
     description: 'Credit card number input with auto-formatting',
     tags: ['input', 'credit-card'],
+    npmDependencies: ['@lucide/svelte', 'cleave-zen'],
     registryDependencies: ['input', 'label'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-input-101': {
     description: 'Credit card expiry date input with auto-formatting',
     tags: ['input', 'credit-card'],
+    npmDependencies: ['cleave-zen'],
     registryDependencies: ['input', 'label'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-input-102': {
     description: 'Credit card CVC/code input with auto-formatting',
     tags: ['input', 'credit-card'],
+    npmDependencies: ['cleave-zen'],
     registryDependencies: ['input', 'label'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-input-103': {
     description: 'Combined credit card number, expiry, and CVC inputs with auto-formatting',
     tags: ['input', 'credit-card'],
+    npmDependencies: ['@lucide/svelte', 'cleave-zen'],
     registryDependencies: ['input', 'label'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-input-147': {
     description: 'Phone number input with country code selection and auto-formatting',
     tags: ['input', 'phone', 'tel'],
-    registryDependencies: ['input', 'label'],
+    npmDependencies: ['@lucide/svelte', 'svelte-tel-input'],
+    registryDependencies: ['group', 'label', 'select', 'input'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-input-155': {
     description: 'Input with input mask',
     tags: ['input', 'label', 'mask'],
-    npmDependencies: ['inputmask'],
+    npmDependencies: ['cleave-zen', 'inputmask'],
     registryDependencies: ['input', 'label'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-input-156': {
     description: 'Timestamp input with input mask',
     tags: ['input', 'label', 'mask', 'timestamp'],
-    npmDependencies: ['inputmask'],
+    npmDependencies: ['cleave-zen', 'inputmask'],
     registryDependencies: ['input', 'label'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
@@ -3376,91 +3418,63 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-input-200': {
     description: 'IP address, subnet mask, and gateway inputs with auto-formatting',
     tags: ['input', 'label', 'mask', 'ip', 'network'],
+    npmDependencies: ['cleave-zen'],
     registryDependencies: ['input', 'label'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-file-upload-1': {
-    description: 'Basic image uploader',
-    tags: ['file-upload'],
-    registryDependencies: ['file-upload'],
+  'p-link-preview-1': {
+    description: 'A component that displays a preview of a link on mouse hover',
+    tags: ['link-preview'],
+    registryDependencies: ['button', 'link-preview'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-file-upload-2': {
-    description: 'Avatar upload button',
-    tags: ['file-upload'],
-    registryDependencies: ['file-upload'],
+  'p-map-1': {
+    description: 'Global analytics map with markers sized by active users per city',
+    tags: ['map'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['map'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-file-upload-3': {
-    description: 'Avatar uploader with droppable area',
-    tags: ['file-upload'],
-    registryDependencies: ['file-upload'],
+  'p-map-2': {
+    description:
+      'Global shipping routes visualized as animated arcs from a hub on a rotating globe',
+    tags: ['map'],
+    registryDependencies: ['map'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-file-upload-4': {
-    description: 'Single image uploader with max size',
-    tags: ['file-upload'],
-    registryDependencies: ['file-upload'],
+  'p-map-3': {
+    description: 'Delivery tracking map with animated route and courier marker',
+    tags: ['map'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['map'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-file-upload-5': {
-    description: 'Single image uploader with max size, drop area and button',
-    tags: ['file-upload'],
-    registryDependencies: ['file-upload'],
+  'p-map-4': {
+    description: 'EV charging stations with live availability status markers',
+    tags: ['map'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['map'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-file-upload-6': {
-    description: 'Multiple image uploader with image grid',
-    tags: ['file-upload'],
-    registryDependencies: ['file-upload'],
+  'p-map-5': {
+    description: 'Destination picker with animated fly-to transitions',
+    tags: ['map'],
+    npmDependencies: ['maplibre-gl'],
+    registryDependencies: ['button', 'map'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-file-upload-7': {
-    description: 'Multiple image uploader with image list',
-    tags: ['file-upload'],
-    registryDependencies: ['file-upload'],
+  'p-map-6': {
+    description: 'Cycling trail map with route line and activity stats overlay',
+    tags: ['map'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['map'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-file-upload-8': {
-    description: 'Single file uploader with max size',
-    tags: ['file-upload'],
-    registryDependencies: ['file-upload'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
-  },
-  'p-file-upload-9': {
-    description: 'Multiple files uploader with list',
-    tags: ['file-upload'],
-    registryDependencies: ['file-upload'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
-  },
-  'p-file-upload-10': {
-    description: 'Multiple files uploader with list inside the drop area',
-    tags: ['file-upload'],
-    registryDependencies: ['file-upload'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
-  },
-  'p-file-upload-11': {
-    description: 'Multiple files uploader with table',
-    tags: ['file-upload'],
-    registryDependencies: ['file-upload', 'button'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
-  },
-  'p-file-upload-12': {
-    description: 'Mixed content uploader with card grid',
-    tags: ['file-upload'],
-    registryDependencies: ['file-upload'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
-  },
-  'p-file-upload-13': {
-    description: 'File uploader with simulated progress tracking',
-    tags: ['file-upload'],
-    registryDependencies: ['file-upload'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
-  },
-  'p-file-upload-14': {
-    description: 'Avatar uploader with crop dialog',
-    tags: ['file-upload', 'cropper'],
-    registryDependencies: ['file-upload', 'cropper', 'dialog'],
+  'p-map-7': {
+    description: 'Heatmap-style markers showing visitor traffic hotspots',
+    tags: ['map'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['map'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-places-autocomplete-1': {
@@ -3469,41 +3483,18 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     registryDependencies: ['places-autocomplete', 'toast'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-colorpicker-1': {
-    description: 'Full featured Color picker',
-    tags: ['colorpicker', 'color', 'input'],
-    registryDependencies: ['slider', 'checkbox', 'input', 'button', 'label'],
-    meta: { class: '**:data-[slot=card]:overflow-visible **:data-[slot=card]:[clip-path:none]!' }
+  'p-rich-editor-1': {
+    description: 'Basic rich editor examples',
+    tags: ['rich-editor'],
+    registryDependencies: ['rich-editor'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-colorpicker-2': {
-    description: 'Minimal color picker with sliders',
-    tags: ['colorpicker', 'color', 'input'],
-    registryDependencies: ['slider', 'checkbox', 'input', 'button', 'label'],
-    meta: { class: '**:data-[slot=card]:overflow-visible **:data-[slot=card]:[clip-path:none]!' }
-  },
-  'p-colorpicker-3': {
-    description: 'Non editable swatches Color picker',
-    tags: ['colorpicker', 'color', 'input'],
-    registryDependencies: ['slider', 'checkbox', 'input', 'button', 'label'],
-    meta: { class: '**:data-[slot=card]:overflow-visible **:data-[slot=card]:[clip-path:none]!' }
-  },
-  'p-colorpicker-4': {
-    description: 'Sliders only',
-    tags: ['colorpicker', 'color', 'input'],
-    registryDependencies: ['slider', 'checkbox', 'input', 'button', 'label'],
-    meta: { class: '**:data-[slot=card]:overflow-visible **:data-[slot=card]:[clip-path:none]!' }
-  },
-  'p-colorpicker-5': {
-    description: 'Color picker with custom swatches and text input',
-    tags: ['colorpicker', 'color', 'input'],
-    registryDependencies: ['slider', 'checkbox', 'input', 'button', 'label'],
-    meta: { class: '**:data-[slot=card]:overflow-visible **:data-[slot=card]:[clip-path:none]!' }
-  },
-  'p-colorpicker-6': {
-    description: 'Color picker with custom swatches and no text input',
-    tags: ['colorpicker', 'color', 'input'],
-    registryDependencies: ['slider', 'checkbox', 'input', 'button', 'label'],
-    meta: { class: '**:data-[slot=card]:overflow-visible **:data-[slot=card]:[clip-path:none]!' }
+  'p-sidebar-1': {},
+  'p-split-pane-1': {
+    description: 'Split pane with resizable panels',
+    tags: ['split-pane'],
+    registryDependencies: ['split-pane'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-starrating-1': {
     description: 'Basic interactive star rating',
@@ -3526,62 +3517,263 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-starrating-4': {
     description: 'Star rating inside a form field',
     tags: ['starrating', 'form'],
-    registryDependencies: ['starrating', 'field', 'form', 'button'],
+    npmDependencies: ['zod'],
+    registryDependencies: ['button', 'field', 'form', 'starrating', 'use-superform'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-starrating-5': {
     description: 'Star rating with a different color per star',
     tags: ['starrating'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['starrating'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-starrating-6': {
     description: 'Heart rating using a custom icon',
     tags: ['starrating'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['starrating'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-map-1': {
-    description: 'Global analytics map with markers sized by active users per city',
-    tags: ['map'],
-    registryDependencies: ['map'],
+  'p-stepper-1': {
+    description: 'Basic stepper examples',
+    tags: ['stepper'],
+    registryDependencies: ['button', 'stepper'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
+  },
+  'p-stepper-10': {
+    description: 'Progress stepper',
+    tags: ['stepper'],
+    registryDependencies: ['button', 'stepper'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
+  },
+  'p-stepper-11': {
+    description: 'Stepper with titles and descriptions',
+    tags: ['stepper'],
+    registryDependencies: ['stepper'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
+  },
+  'p-stepper-12': {
+    description: 'Stepper with inline titles',
+    tags: ['stepper'],
+    registryDependencies: ['stepper'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
+  },
+  'p-stepper-15': {
+    description: 'Vertical stepper with numbers and checkmarks',
+    tags: ['stepper'],
+    registryDependencies: ['stepper'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-map-2': {
-    description:
-      'Global shipping routes visualized as animated arcs from a hub on a rotating globe',
-    tags: ['map'],
-    registryDependencies: ['map'],
+  'p-stepper-16': {
+    description: 'Controlled vertical stepper with checkmarks',
+    tags: ['stepper'],
+    registryDependencies: ['button', 'stepper'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-map-3': {
-    description: 'Delivery tracking map with animated route and courier marker',
-    tags: ['map'],
-    registryDependencies: ['map'],
+  'p-stepper-17': {
+    description: 'Vertical stepper with inline titles',
+    tags: ['stepper'],
+    registryDependencies: ['stepper'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-map-4': {
-    description: 'EV charging stations with live availability status markers',
-    tags: ['map'],
-    registryDependencies: ['map'],
+  'p-stepper-18': {
+    description: 'Vertical stepper with inline titles and descriptions',
+    tags: ['stepper'],
+    registryDependencies: ['stepper'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-map-5': {
-    description: 'Destination picker with animated fly-to transitions',
-    tags: ['map'],
-    registryDependencies: ['map', 'button'],
+  'p-stepper-2': {
+    description: 'Stepper with numbers only',
+    tags: ['stepper'],
+    registryDependencies: ['stepper'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
+  },
+  'p-stepper-3': {
+    description: 'Stepper with numbers and checkmarks',
+    tags: ['stepper'],
+    registryDependencies: ['stepper'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
+  },
+  'p-stepper-4': {
+    description: 'Stepper with tiny buttons and checkmarks',
+    tags: ['stepper'],
+    registryDependencies: ['stepper'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
+  },
+  'p-stepper-5': {
+    description: 'Controlled stepper with checkmarks',
+    tags: ['stepper'],
+    registryDependencies: ['button', 'stepper'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
+  },
+  'p-stepper-6': {
+    description: 'Controlled stepper with checkmarks and loading state',
+    tags: ['stepper'],
+    registryDependencies: ['button', 'stepper'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
+  },
+  'p-stepper-7': {
+    description: 'Stepper with mixed elements',
+    tags: ['stepper'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['stepper'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
+  },
+  'p-stepper-8': {
+    description: 'Stepper with labels',
+    tags: ['stepper'],
+    registryDependencies: ['stepper'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
+  },
+  'p-stepper-9': {
+    description: 'Paginated stepper',
+    tags: ['stepper'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['button', 'stepper'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
+  },
+  'p-table-10': {
+    description: 'Table with sticky header',
+    tags: ['table'],
+    registryDependencies: ['table'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
+  },
+  'p-table-9': {
+    description: 'Vertical table',
+    tags: ['table'],
+    registryDependencies: ['table'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
+  },
+  'p-timeline-1': {
+    description: 'The most basic vertical timeline',
+    tags: ['timeline'],
+    registryDependencies: ['timeline'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-map-6': {
-    description: 'Cycling trail map with route line and activity stats overlay',
-    tags: ['map'],
-    registryDependencies: ['map'],
+  'p-timeline-10': {
+    description: 'A timeline showing an activity tracker',
+    tags: ['timeline'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['timeline'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
-  'p-map-7': {
-    description: 'Heatmap-style markers showing visitor traffic hotspots',
-    tags: ['map'],
-    registryDependencies: [null, 'map'],
+  'p-timeline-11': {
+    description: 'Horizontal timeline with dates below',
+    tags: ['timeline'],
+    registryDependencies: ['timeline'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-timeline-12': {
+    description: 'Horizontal timeline with dates above',
+    tags: ['timeline'],
+    registryDependencies: ['timeline'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-timeline-2': {
+    description: 'A more complex timeline',
+    tags: ['timeline'],
+    registryDependencies: ['timeline'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-timeline-3': {
+    description: 'A more complex timeline with embeded dates',
+    tags: ['timeline'],
+    registryDependencies: ['timeline'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-timeline-4': {
+    description: 'A Basic vertical timeline',
+    tags: ['timeline'],
+    registryDependencies: ['timeline'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-timeline-5': {
+    description: 'A vertical timeline with progress indicator',
+    tags: ['timeline'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['timeline'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-timeline-6': {
+    description: 'A timeline with icons',
+    tags: ['timeline'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['timeline'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-timeline-7': {
+    description: 'A timeline with images',
+    tags: ['timeline'],
+    registryDependencies: ['timeline'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-timeline-8': {
+    description: 'A timeline with titles and dates',
+    tags: ['timeline'],
+    registryDependencies: ['timeline'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-timeline-9': {
+    description: 'A timeline as an array',
+    tags: ['timeline'],
+    registryDependencies: ['timeline'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-tree-1': {
+    description: 'Show a tree structure with nodes and children',
+    tags: ['tree'],
+    npmDependencies: ['@headless-tree/core'],
+    registryDependencies: ['tree'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-tree-2': {
+    description: 'Basic tree with vertical lines',
+    tags: ['tree'],
+    npmDependencies: ['@headless-tree/core'],
+    registryDependencies: ['tree'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-tree-3': {
+    description: 'Basic tree with icons',
+    tags: ['tree'],
+    npmDependencies: ['@headless-tree/core', '@lucide/svelte'],
+    registryDependencies: ['tree'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-tree-4': {
+    description: 'Basic tree with caret icon on the right',
+    tags: ['tree'],
+    npmDependencies: ['@headless-tree/core', '@lucide/svelte'],
+    registryDependencies: ['tree'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-tree-5': {
+    description: 'Tree with multi-select and drag and drop',
+    tags: ['tree'],
+    npmDependencies: ['@headless-tree/core', '@lucide/svelte'],
+    registryDependencies: ['tree'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-tree-6': {
+    description: 'Tree with renaming (press F2 to rename)',
+    tags: ['tree'],
+    npmDependencies: ['@headless-tree/core', '@lucide/svelte'],
+    registryDependencies: ['tree'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-tree-7': {
+    description: 'Tree with search highlight',
+    tags: ['tree'],
+    npmDependencies: ['@headless-tree/core', '@lucide/svelte'],
+    registryDependencies: ['input', 'tree'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-tree-8': {
+    description: 'Tree with filtering',
+    tags: ['tree'],
+    npmDependencies: ['@headless-tree/core', '@lucide/svelte'],
+    registryDependencies: ['input', 'tree'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-map-8': {

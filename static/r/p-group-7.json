@@ -14,8 +14,7 @@
 	],
 	"registryDependencies": [
 		"group",
-		"input",
-		"label"
+		"input"
 	],
 	"dependencies": []
 }

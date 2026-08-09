@@ -18,5 +18,7 @@
 		"input",
 		"select"
 	],
-	"dependencies": []
+	"dependencies": [
+		"@lucide/svelte"
+	]
 }

@@ -15,11 +15,10 @@
 	"registryDependencies": [
 		"calendar",
 		"scroll-area",
-		"toggle",
 		"toggle-group"
 	],
 	"dependencies": [
-		"date-fns",
+		"@internationalized/date",
 		"@internationalized/date@^3.12.3"
 	]
 }

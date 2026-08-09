@@ -15,11 +15,13 @@
 	"registryDependencies": [
 		"button",
 		"field",
-		"input-group",
 		"form",
+		"input-group",
 		"use-superform"
 	],
 	"dependencies": [
+		"@lucide/svelte",
+		"zod",
 		"zod@^4.4.3"
 	]
 }

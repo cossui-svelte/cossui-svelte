@@ -15,5 +15,7 @@
 	"registryDependencies": [
 		"toggle-group"
 	],
-	"dependencies": []
+	"dependencies": [
+		"@lucide/svelte"
+	]
 }

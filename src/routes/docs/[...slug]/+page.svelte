@@ -98,7 +98,7 @@
       I’ve been wondering: in the age of AI, is a documentation still necessary?<br /> You can point
       your assistant to the product and ask questions to get instant answers.<br />It appears that
       the days where developers read full documentation are gone.<br /><br />Let’s prioritize on the
-      AI experience over traditional documentation. If you have questions or need help, feel free to
+      AI experience over traditional documentation.<br />If you have questions or need help, feel free to
       reach out to me directly. I’m here to help.
     </PageHeaderDescription>
   </PageHeader>

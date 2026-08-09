@@ -13,10 +13,11 @@
 		}
 	],
 	"registryDependencies": [
-		"map",
-		"button"
+		"button",
+		"map"
 	],
 	"dependencies": [
+		"maplibre-gl",
 		"maplibre-gl@^5.24.0"
 	]
 }

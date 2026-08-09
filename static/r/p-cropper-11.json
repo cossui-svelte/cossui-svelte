@@ -13,8 +13,8 @@
 		}
 	],
 	"registryDependencies": [
-		"cropper",
-		"button"
+		"button",
+		"cropper"
 	],
 	"dependencies": []
 }

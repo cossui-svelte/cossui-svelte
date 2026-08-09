@@ -14,7 +14,6 @@
 	],
 	"registryDependencies": [
 		"button",
-		"fieldset",
 		"label",
 		"number-field",
 		"slider"

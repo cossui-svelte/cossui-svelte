@@ -15,5 +15,7 @@
 	"registryDependencies": [
 		"autocomplete"
 	],
-	"dependencies": []
+	"dependencies": [
+		"@lucide/svelte"
+	]
 }

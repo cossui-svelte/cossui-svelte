@@ -13,7 +13,6 @@
 		}
 	],
 	"registryDependencies": [
-		"field",
 		"slider"
 	],
 	"dependencies": [

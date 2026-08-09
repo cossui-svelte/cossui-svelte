@@ -16,5 +16,7 @@
 		"timeline",
 		"assets"
 	],
-	"dependencies": []
+	"dependencies": [
+		"@lucide/svelte"
+	]
 }

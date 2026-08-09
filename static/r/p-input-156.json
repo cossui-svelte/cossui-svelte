@@ -17,6 +17,8 @@
 		"label"
 	],
 	"dependencies": [
+		"cleave-zen",
+		"inputmask",
 		"cleave-zen@^0.0.17"
 	]
 }

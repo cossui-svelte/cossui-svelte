@@ -14,7 +14,6 @@
 	],
 	"registryDependencies": [
 		"badge",
-		"button",
 		"card",
 		"checkbox",
 		"pagination",
@@ -23,7 +22,6 @@
 		"utils"
 	],
 	"dependencies": [
-		"@tanstack/react-table",
 		"@lucide/svelte"
 	]
 }

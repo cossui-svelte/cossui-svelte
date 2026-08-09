@@ -15,5 +15,7 @@
 	"registryDependencies": [
 		"timeline"
 	],
-	"dependencies": []
+	"dependencies": [
+		"@lucide/svelte"
+	]
 }

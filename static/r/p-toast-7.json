@@ -17,5 +17,7 @@
 		"toast",
 		"tooltip"
 	],
-	"dependencies": []
+	"dependencies": [
+		"@lucide/svelte"
+	]
 }

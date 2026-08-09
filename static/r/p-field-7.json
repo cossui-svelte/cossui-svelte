@@ -14,12 +14,13 @@
 	],
 	"registryDependencies": [
 		"autocomplete",
-		"field",
 		"button",
+		"field",
 		"form",
 		"use-superform"
 	],
 	"dependencies": [
+		"zod",
 		"zod@^4.4.3"
 	]
 }

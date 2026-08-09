@@ -13,8 +13,8 @@
 		}
 	],
 	"registryDependencies": [
-		"stepper",
-		"button"
+		"button",
+		"stepper"
 	],
 	"dependencies": []
 }

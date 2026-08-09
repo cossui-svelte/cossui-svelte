@@ -18,5 +18,7 @@
 		"input",
 		"tooltip"
 	],
-	"dependencies": []
+	"dependencies": [
+		"@lucide/svelte"
+	]
 }

@@ -16,6 +16,8 @@
 		"chart"
 	],
 	"dependencies": [
+		"d3-scale",
+		"layerchart",
 		"d3-scale@^4.0.2",
 		"layerchart@^2.0.4"
 	]

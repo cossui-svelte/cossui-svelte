@@ -13,9 +13,9 @@
 		}
 	],
 	"registryDependencies": [
+		"toast",
 		"toggle",
-		"tooltip",
-		"toast"
+		"tooltip"
 	],
 	"dependencies": [
 		"@lucide/svelte"

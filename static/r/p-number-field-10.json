@@ -14,11 +14,7 @@
 	],
 	"registryDependencies": [
 		"button",
-		"field",
-		"form",
 		"number-field"
 	],
-	"dependencies": [
-		"zod"
-	]
+	"dependencies": []
 }

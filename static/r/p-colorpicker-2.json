@@ -13,12 +13,12 @@
 		}
 	],
 	"registryDependencies": [
+		"colorpicker",
 		"slider",
 		"checkbox",
 		"input",
 		"button",
-		"label",
-		"colorpicker"
+		"label"
 	],
 	"dependencies": []
 }

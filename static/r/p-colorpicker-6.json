@@ -13,14 +13,15 @@
 		}
 	],
 	"registryDependencies": [
+		"colorpicker",
 		"slider",
 		"checkbox",
 		"input",
 		"button",
-		"label",
-		"colorpicker"
+		"label"
 	],
 	"dependencies": [
+		"@hueycolor/core",
 		"@hueycolor/core@^1.0.1"
 	]
 }

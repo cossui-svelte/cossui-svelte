@@ -20,5 +20,7 @@
 		"group",
 		"utils"
 	],
-	"dependencies": []
+	"dependencies": [
+		"@lucide/svelte"
+	]
 }

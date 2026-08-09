@@ -13,8 +13,8 @@
 		}
 	],
 	"registryDependencies": [
-		"link-preview",
-		"button"
+		"button",
+		"link-preview"
 	],
 	"dependencies": []
 }

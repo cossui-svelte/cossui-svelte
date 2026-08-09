@@ -13,14 +13,15 @@
 		}
 	],
 	"registryDependencies": [
+		"button",
 		"field",
 		"fieldset",
-		"radio-group",
-		"button",
 		"form",
+		"radio-group",
 		"use-superform"
 	],
 	"dependencies": [
+		"zod",
 		"zod@^4.4.3"
 	]
 }

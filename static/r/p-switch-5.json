@@ -14,10 +14,8 @@
 	],
 	"registryDependencies": [
 		"button",
-		"field",
-		"form",
-		"switch",
-		"label"
+		"label",
+		"switch"
 	],
 	"dependencies": []
 }

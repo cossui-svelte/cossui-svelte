@@ -13,11 +13,13 @@
 		}
 	],
 	"registryDependencies": [
-		"cropper",
 		"button",
+		"cropper",
 		"dialog",
 		"slider",
 		"use-file-upload"
 	],
-	"dependencies": []
+	"dependencies": [
+		"@lucide/svelte"
+	]
 }

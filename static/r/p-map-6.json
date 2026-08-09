@@ -15,5 +15,7 @@
 	"registryDependencies": [
 		"map"
 	],
-	"dependencies": []
+	"dependencies": [
+		"@lucide/svelte"
+	]
 }

@@ -13,13 +13,14 @@
 		}
 	],
 	"registryDependencies": [
-		"field",
-		"select",
 		"button",
+		"field",
 		"form",
+		"select",
 		"use-superform"
 	],
 	"dependencies": [
+		"zod",
 		"zod@^4.4.3"
 	]
 }

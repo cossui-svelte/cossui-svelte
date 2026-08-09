@@ -13,13 +13,14 @@
 		}
 	],
 	"registryDependencies": [
-		"field",
-		"textarea",
 		"button",
+		"field",
 		"form",
+		"textarea",
 		"use-superform"
 	],
 	"dependencies": [
+		"zod",
 		"zod@^4.4.3"
 	]
 }

@@ -18,5 +18,7 @@
 		"number-field",
 		"select"
 	],
-	"dependencies": []
+	"dependencies": [
+		"@lucide/svelte"
+	]
 }

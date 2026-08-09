@@ -18,5 +18,7 @@
 		"menu",
 		"tooltip"
 	],
-	"dependencies": []
+	"dependencies": [
+		"@lucide/svelte"
+	]
 }

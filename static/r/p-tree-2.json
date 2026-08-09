@@ -16,6 +16,7 @@
 		"tree"
 	],
 	"dependencies": [
+		"@headless-tree/core",
 		"@headless-tree/core@^1.7.0"
 	]
 }

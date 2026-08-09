@@ -17,6 +17,7 @@
 		"label"
 	],
 	"dependencies": [
+		"cleave-zen",
 		"cleave-zen@^0.0.17"
 	]
 }

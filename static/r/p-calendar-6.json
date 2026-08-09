@@ -13,11 +13,10 @@
 		}
 	],
 	"registryDependencies": [
-		"calendar",
-		"combobox"
+		"calendar"
 	],
 	"dependencies": [
-		"@lucide/svelte",
+		"@internationalized/date",
 		"@internationalized/date@^3.12.3"
 	]
 }

@@ -13,14 +13,13 @@
 		}
 	],
 	"registryDependencies": [
-		"calendar",
-		"popover",
 		"button",
+		"popover",
 		"range-calendar",
 		"utils"
 	],
 	"dependencies": [
-		"date-fns",
+		"@internationalized/date",
 		"@lucide/svelte",
 		"@internationalized/date@^3.12.3"
 	]

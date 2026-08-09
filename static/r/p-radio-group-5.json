@@ -14,11 +14,8 @@
 	],
 	"registryDependencies": [
 		"button",
-		"field",
-		"fieldset",
-		"form",
-		"radio-group",
-		"label"
+		"label",
+		"radio-group"
 	],
 	"dependencies": []
 }

@@ -17,5 +17,7 @@
 		"input-group",
 		"popover"
 	],
-	"dependencies": []
+	"dependencies": [
+		"@lucide/svelte"
+	]
 }

@@ -16,5 +16,7 @@
 		"button",
 		"menu"
 	],
-	"dependencies": []
+	"dependencies": [
+		"@lucide/svelte"
+	]
 }

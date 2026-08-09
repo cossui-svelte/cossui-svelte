@@ -17,11 +17,12 @@
 		"field",
 		"form",
 		"input",
-		"sheet",
 		"label",
+		"sheet",
 		"use-superform"
 	],
 	"dependencies": [
+		"zod",
 		"zod@^4.4.3"
 	]
 }

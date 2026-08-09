@@ -19,7 +19,7 @@
 		"utils"
 	],
 	"dependencies": [
-		"date-fns",
+		"@internationalized/date",
 		"@lucide/svelte",
 		"@internationalized/date@^3.12.3"
 	]

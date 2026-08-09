@@ -74,6 +74,7 @@
   },
   "scripts": {
     "build": "vite build",
+    "build:registry": "rm static/r/*.json && jsrepo build",
     "cf:deploy": "pnpm run build && wrangler deploy",
     "cf:typegen": "wrangler types src/worker-configuration.d.ts",
     "check": "svelte-kit sync && svelte-check --workspace .",
@@ -81,13 +82,12 @@
     "dev": "vite dev --open --host",
     "dev:registry": "jsrepo build --watch",
     "format": "biome check . --fix && eslint --fix && prettier --write --log-level silent '**/*.svelte'",
-    "generate:registry": "tsx scripts/generateComponentRegistry.ts -w src/lib/registry/generated-registry-components.ts && tsx scripts/generateParticleRegistry.ts && pnpm format",
+    "generate:metadata": "tsx scripts/generateComponentRegistry.ts -w src/lib/registry/generated-registry-components.ts && tsx scripts/generateParticleRegistry.ts && pnpm format",
     "lint:audit": "pnpx knip --max-show-issues 20",
     "lint:typecheck": "tsc --noEmit",
     "mrproper": "rm -rf node_modules dist build .svelte-kit",
     "migrate": "biome migrate --write && wrangler types src/worker-configuration.d.ts && tsx ./scripts/transformLucideImports.ts",
     "prepare": "husky && svelte-kit sync || echo ''",
-    "build:registry": "jsrepo build",
     "release": "commit-and-tag-version",
     "release:dry": "commit-and-tag-version --dry-run"
   },

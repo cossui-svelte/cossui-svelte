@@ -4277,6 +4277,7 @@
 			"description": "Autocomplete form",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
@@ -4299,7 +4300,9 @@
 			"title": "Autocomplete 14",
 			"description": "Autocomplete form",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"autocomplete"
 			],
@@ -5484,9 +5487,7 @@
 			"title": "Button 24",
 			"description": "Social login icon buttons",
 			"type": "registry:block",
-			"dependencies": [
-				"@remixicon/react"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"FacebookFillLogos",
@@ -5746,9 +5747,7 @@
 			"title": "Button 38",
 			"description": "Social login buttons (Google, X, GitHub)",
 			"type": "registry:block",
-			"dependencies": [
-				"@remixicon/react"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"GithubFillLogos",
@@ -5928,6 +5927,7 @@
 			"description": "Basic calendar",
 			"type": "registry:block",
 			"dependencies": [
+				"@internationalized/date",
 				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
@@ -5947,11 +5947,10 @@
 			"description": "Calendar with rounded range selection style",
 			"type": "registry:block",
 			"dependencies": [
-				"date-fns",
+				"@internationalized/date",
 				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
-				"calendar",
 				"range-calendar"
 			],
 			"files": [
@@ -5968,6 +5967,7 @@
 			"description": "Calendar with right-aligned navigation",
 			"type": "registry:block",
 			"dependencies": [
+				"@internationalized/date",
 				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
@@ -5987,6 +5987,7 @@
 			"description": "Calendar with week numbers",
 			"type": "registry:block",
 			"dependencies": [
+				"@internationalized/date",
 				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
@@ -6006,11 +6007,11 @@
 			"description": "Calendar with year-only combobox dropdown",
 			"type": "registry:block",
 			"dependencies": [
+				"@internationalized/date",
 				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
-				"calendar",
-				"combobox"
+				"calendar"
 			],
 			"files": [
 				{
@@ -6026,11 +6027,11 @@
 			"description": "Calendar without arrow navigation (dropdown only)",
 			"type": "registry:block",
 			"dependencies": [
+				"@internationalized/date",
 				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
-				"calendar",
-				"select"
+				"calendar"
 			],
 			"files": [
 				{
@@ -6046,12 +6047,12 @@
 			"description": "Calendar with current month button",
 			"type": "registry:block",
 			"dependencies": [
-				"date-fns",
+				"@internationalized/date",
 				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
-				"calendar",
-				"button"
+				"button",
+				"calendar"
 			],
 			"files": [
 				{
@@ -6067,12 +6068,12 @@
 			"description": "Calendar with today button",
 			"type": "registry:block",
 			"dependencies": [
-				"date-fns",
+				"@internationalized/date",
 				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
-				"calendar",
-				"button"
+				"button",
+				"calendar"
 			],
 			"files": [
 				{
@@ -6088,17 +6089,18 @@
 			"description": "Calendar with date input",
 			"type": "registry:block",
 			"dependencies": [
-				"date-fns",
+				"@internationalized/date",
 				"@lucide/svelte",
+				"zod",
 				"@internationalized/date@^3.12.3",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
+				"button",
 				"calendar",
 				"field",
-				"input-group",
-				"button",
 				"form",
+				"input-group",
 				"use-superform"
 			],
 			"files": [
@@ -6115,16 +6117,18 @@
 			"description": "Calendar with time input",
 			"type": "registry:block",
 			"dependencies": [
+				"@internationalized/date",
 				"@lucide/svelte",
+				"zod",
 				"@internationalized/date@^3.12.3",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
+				"button",
 				"calendar",
 				"field",
-				"input-group",
-				"button",
 				"form",
+				"input-group",
 				"use-superform"
 			],
 			"files": [
@@ -6141,13 +6145,12 @@
 			"description": "Calendar with time slots (appointment picker)",
 			"type": "registry:block",
 			"dependencies": [
-				"date-fns",
+				"@internationalized/date",
 				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
 				"calendar",
 				"scroll-area",
-				"toggle",
 				"toggle-group"
 			],
 			"files": [
@@ -6164,6 +6167,7 @@
 			"description": "Calendar with custom cell size",
 			"type": "registry:block",
 			"dependencies": [
+				"@internationalized/date",
 				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
@@ -6183,12 +6187,12 @@
 			"description": "Calendar with date presets",
 			"type": "registry:block",
 			"dependencies": [
-				"date-fns",
+				"@internationalized/date",
 				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
-				"calendar",
-				"button"
+				"button",
+				"calendar"
 			],
 			"files": [
 				{
@@ -6204,11 +6208,10 @@
 			"description": "Range calendar with date presets",
 			"type": "registry:block",
 			"dependencies": [
-				"date-fns",
+				"@internationalized/date",
 				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
-				"calendar",
 				"button",
 				"range-calendar"
 			],
@@ -6226,11 +6229,10 @@
 			"description": "Two months calendar",
 			"type": "registry:block",
 			"dependencies": [
-				"date-fns",
+				"@internationalized/date",
 				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
-				"calendar",
 				"range-calendar"
 			],
 			"files": [
@@ -6247,11 +6249,10 @@
 			"description": "Three months calendar",
 			"type": "registry:block",
 			"dependencies": [
-				"date-fns",
+				"@internationalized/date",
 				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
-				"calendar",
 				"range-calendar"
 			],
 			"files": [
@@ -6268,7 +6269,7 @@
 			"description": "Pricing calendar with custom day buttons",
 			"type": "registry:block",
 			"dependencies": [
-				"date-fns",
+				"@internationalized/date",
 				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
@@ -6289,10 +6290,10 @@
 			"description": "Calendar with date range selection",
 			"type": "registry:block",
 			"dependencies": [
+				"@internationalized/date",
 				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
-				"calendar",
 				"range-calendar"
 			],
 			"files": [
@@ -6309,6 +6310,7 @@
 			"description": "Calendar with month/year dropdown navigation",
 			"type": "registry:block",
 			"dependencies": [
+				"@internationalized/date",
 				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
@@ -6328,11 +6330,11 @@
 			"description": "Calendar with custom Select dropdown for month/year",
 			"type": "registry:block",
 			"dependencies": [
+				"@internationalized/date",
 				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
-				"calendar",
-				"select"
+				"calendar"
 			],
 			"files": [
 				{
@@ -6348,12 +6350,11 @@
 			"description": "Calendar with Combobox dropdown for month/year",
 			"type": "registry:block",
 			"dependencies": [
-				"@lucide/svelte",
+				"@internationalized/date",
 				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
-				"calendar",
-				"combobox"
+				"calendar"
 			],
 			"files": [
 				{
@@ -6369,11 +6370,10 @@
 			"description": "Calendar with disabled dates",
 			"type": "registry:block",
 			"dependencies": [
-				"date-fns",
+				"@internationalized/date",
 				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
-				"calendar",
 				"range-calendar"
 			],
 			"files": [
@@ -6390,7 +6390,7 @@
 			"description": "Calendar with multiple date selection",
 			"type": "registry:block",
 			"dependencies": [
-				"date-fns",
+				"@internationalized/date",
 				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
@@ -6410,6 +6410,7 @@
 			"description": "Calendar with rounded day buttons",
 			"type": "registry:block",
 			"dependencies": [
+				"@internationalized/date",
 				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
@@ -6430,6 +6431,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"@lucide/svelte",
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
@@ -6456,6 +6458,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"@lucide/svelte",
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
@@ -6503,6 +6506,7 @@
 			"description": "Authentication card with actions",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
@@ -6528,6 +6532,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"@lucide/svelte",
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
@@ -6553,6 +6558,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"@lucide/svelte",
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
@@ -6578,6 +6584,7 @@
 			"description": "Framed card with header",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
@@ -6604,6 +6611,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"@lucide/svelte",
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
@@ -6630,6 +6638,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"@lucide/svelte",
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
@@ -6655,6 +6664,8 @@
 			"description": "Card within a frame and footer",
 			"type": "registry:block",
 			"dependencies": [
+				"@lucide/svelte",
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
@@ -6681,7 +6692,7 @@
 			"description": "Card within a frame and footer",
 			"type": "registry:block",
 			"dependencies": [
-				"@lucide/svelte",
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
@@ -6708,6 +6719,7 @@
 			"description": "Radial Chart with Labels",
 			"type": "registry:block",
 			"dependencies": [
+				"layerchart",
 				"layerchart@^2.0.4"
 			],
 			"registryDependencies": [
@@ -6727,6 +6739,8 @@
 			"description": "Bar Chart - Horizontal Mixed",
 			"type": "registry:block",
 			"dependencies": [
+				"d3-scale",
+				"layerchart",
 				"d3-scale@^4.0.2",
 				"layerchart@^2.0.4"
 			],
@@ -6747,6 +6761,7 @@
 			"description": "Radial Chart with Text",
 			"type": "registry:block",
 			"dependencies": [
+				"layerchart",
 				"layerchart@^2.0.4"
 			],
 			"registryDependencies": [
@@ -6766,6 +6781,8 @@
 			"description": "Radial Chart - Stacked",
 			"type": "registry:block",
 			"dependencies": [
+				"d3-scale",
+				"layerchart",
 				"d3-scale@^4.0.2",
 				"layerchart@^2.0.4"
 			],
@@ -6786,6 +6803,9 @@
 			"description": "Radar Chart - Custom Labelp",
 			"type": "registry:block",
 			"dependencies": [
+				"d3-scale",
+				"d3-shape",
+				"layerchart",
 				"d3-scale@^4.0.2",
 				"d3-shape@^3.2.0",
 				"layerchart@^2.0.4"
@@ -6807,6 +6827,9 @@
 			"description": "Area Chart - Axes",
 			"type": "registry:block",
 			"dependencies": [
+				"d3-scale",
+				"d3-shape",
+				"layerchart",
 				"d3-scale@^4.0.2",
 				"d3-shape@^3.2.0",
 				"layerchart@^2.0.4"
@@ -6828,6 +6851,9 @@
 			"description": "Line Chart with Labels",
 			"type": "registry:block",
 			"dependencies": [
+				"d3-scale",
+				"d3-shape",
+				"layerchart",
 				"d3-scale@^4.0.2",
 				"d3-shape@^3.2.0",
 				"layerchart@^2.0.4"
@@ -6849,6 +6875,7 @@
 			"description": "Pie Chart - Interactive",
 			"type": "registry:block",
 			"dependencies": [
+				"layerchart",
 				"layerchart@^2.0.4"
 			],
 			"registryDependencies": [
@@ -6868,6 +6895,7 @@
 			"description": "Pie Chart - Custom Label",
 			"type": "registry:block",
 			"dependencies": [
+				"layerchart",
 				"layerchart@^2.0.4"
 			],
 			"registryDependencies": [
@@ -6887,6 +6915,8 @@
 			"description": "Bar Chart - Multiple",
 			"type": "registry:block",
 			"dependencies": [
+				"d3-scale",
+				"layerchart",
 				"d3-scale@^4.0.2",
 				"layerchart@^2.0.4"
 			],
@@ -6979,6 +7009,7 @@
 			"description": "Checkbox form",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
@@ -7060,12 +7091,12 @@
 			"type": "registry:block",
 			"dependencies": [],
 			"registryDependencies": [
+				"colorpicker",
 				"slider",
 				"checkbox",
 				"input",
 				"button",
-				"label",
-				"colorpicker"
+				"label"
 			],
 			"files": [
 				{
@@ -7082,12 +7113,12 @@
 			"type": "registry:block",
 			"dependencies": [],
 			"registryDependencies": [
+				"colorpicker",
 				"slider",
 				"checkbox",
 				"input",
 				"button",
-				"label",
-				"colorpicker"
+				"label"
 			],
 			"files": [
 				{
@@ -7103,15 +7134,16 @@
 			"description": "Non editable swatches Color picker",
 			"type": "registry:block",
 			"dependencies": [
+				"@hueycolor/core",
 				"@hueycolor/core@^1.0.1"
 			],
 			"registryDependencies": [
+				"colorpicker",
 				"slider",
 				"checkbox",
 				"input",
 				"button",
-				"label",
-				"colorpicker"
+				"label"
 			],
 			"files": [
 				{
@@ -7128,12 +7160,12 @@
 			"type": "registry:block",
 			"dependencies": [],
 			"registryDependencies": [
+				"colorpicker",
 				"slider",
 				"checkbox",
 				"input",
 				"button",
-				"label",
-				"colorpicker"
+				"label"
 			],
 			"files": [
 				{
@@ -7149,15 +7181,16 @@
 			"description": "Color picker with custom swatches and text input",
 			"type": "registry:block",
 			"dependencies": [
+				"@hueycolor/core",
 				"@hueycolor/core@^1.0.1"
 			],
 			"registryDependencies": [
+				"colorpicker",
 				"slider",
 				"checkbox",
 				"input",
 				"button",
-				"label",
-				"colorpicker"
+				"label"
 			],
 			"files": [
 				{
@@ -7173,15 +7206,16 @@
 			"description": "Color picker with custom swatches and no text input",
 			"type": "registry:block",
 			"dependencies": [
+				"@hueycolor/core",
 				"@hueycolor/core@^1.0.1"
 			],
 			"registryDependencies": [
+				"colorpicker",
 				"slider",
 				"checkbox",
 				"input",
 				"button",
-				"label",
-				"colorpicker"
+				"label"
 			],
 			"files": [
 				{
@@ -7234,6 +7268,7 @@
 			"description": "Combobox form",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
@@ -7257,6 +7292,7 @@
 			"description": "Combobox multiple form",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
@@ -7371,7 +7407,9 @@
 			"title": "Combobox 18",
 			"description": "Combobox with select trigger",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"combobox",
 				"select"
@@ -7551,14 +7589,12 @@
 				"@lucide/svelte"
 			],
 			"registryDependencies": [
-				"autocomplete",
 				"button",
 				"command",
 				"empty",
 				"input",
 				"kbd",
 				"scroll-area",
-				"skeleton",
 				"spinner"
 			],
 			"files": [
@@ -7712,10 +7748,12 @@
 			"title": "Cropper 1",
 			"description": "Crops images to a specific aspect ratio and size",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
-				"cropper",
 				"button",
+				"cropper",
 				"dialog",
 				"slider",
 				"use-file-upload"
@@ -7752,8 +7790,8 @@
 			"type": "registry:block",
 			"dependencies": [],
 			"registryDependencies": [
-				"cropper",
-				"button"
+				"button",
+				"cropper"
 			],
 			"files": [
 				{
@@ -7770,8 +7808,8 @@
 			"type": "registry:block",
 			"dependencies": [],
 			"registryDependencies": [
-				"cropper",
-				"button"
+				"button",
+				"cropper"
 			],
 			"files": [
 				{
@@ -7924,14 +7962,14 @@
 			"description": "Basic date picker",
 			"type": "registry:block",
 			"dependencies": [
-				"date-fns",
+				"@internationalized/date",
 				"@lucide/svelte",
 				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
+				"button",
 				"calendar",
 				"popover",
-				"button",
 				"utils"
 			],
 			"files": [
@@ -7948,14 +7986,13 @@
 			"description": "Date range picker",
 			"type": "registry:block",
 			"dependencies": [
-				"date-fns",
+				"@internationalized/date",
 				"@lucide/svelte",
 				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
-				"calendar",
-				"popover",
 				"button",
+				"popover",
 				"range-calendar",
 				"utils"
 			],
@@ -7973,15 +8010,13 @@
 			"description": "Date picker with field and dropdown navigation",
 			"type": "registry:block",
 			"dependencies": [
-				"date-fns",
+				"@internationalized/date",
 				"@lucide/svelte",
 				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
 				"button",
 				"calendar",
-				"combobox",
-				"field",
 				"popover",
 				"utils"
 			],
@@ -7999,7 +8034,7 @@
 			"description": "Date picker with presets",
 			"type": "registry:block",
 			"dependencies": [
-				"date-fns",
+				"@internationalized/date",
 				"@lucide/svelte",
 				"@internationalized/date@^3.12.3"
 			],
@@ -8023,7 +8058,7 @@
 			"description": "Date picker with input",
 			"type": "registry:block",
 			"dependencies": [
-				"date-fns",
+				"@internationalized/date",
 				"@lucide/svelte",
 				"@internationalized/date@^3.12.3"
 			],
@@ -8047,14 +8082,14 @@
 			"description": "Date picker that closes on select",
 			"type": "registry:block",
 			"dependencies": [
-				"date-fns",
+				"@internationalized/date",
 				"@lucide/svelte",
 				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
+				"button",
 				"calendar",
 				"popover",
-				"button",
 				"utils"
 			],
 			"files": [
@@ -8071,7 +8106,7 @@
 			"description": "Multiple dates picker",
 			"type": "registry:block",
 			"dependencies": [
-				"date-fns",
+				"@internationalized/date",
 				"@lucide/svelte",
 				"@internationalized/date@^3.12.3"
 			],
@@ -8096,7 +8131,7 @@
 			"description": "Date picker with select-like trigger",
 			"type": "registry:block",
 			"dependencies": [
-				"date-fns",
+				"@internationalized/date",
 				"@lucide/svelte",
 				"@internationalized/date@^3.12.3"
 			],
@@ -8120,14 +8155,13 @@
 			"description": "Two months calendar with range date",
 			"type": "registry:block",
 			"dependencies": [
-				"date-fns",
+				"@internationalized/date",
 				"@lucide/svelte",
 				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
-				"calendar",
-				"popover",
 				"button",
+				"popover",
 				"range-calendar",
 				"utils"
 			],
@@ -8145,6 +8179,7 @@
 			"description": "Dialog with form",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
@@ -8188,14 +8223,15 @@
 			"description": "Nested dialogs",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
 				"button",
 				"dialog",
 				"field",
-				"input",
 				"form",
+				"input",
 				"use-superform"
 			],
 			"files": [
@@ -8212,6 +8248,7 @@
 			"description": "Dialog with close confirmation",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
@@ -8255,6 +8292,7 @@
 			"description": "Dialog with bare footer",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
@@ -8297,6 +8335,7 @@
 			"description": "Edit profile form with default and bare footer variants",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
@@ -8339,6 +8378,7 @@
 			"description": "Responsive edit profile: dialog on desktop, drawer on mobile",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
@@ -8363,7 +8403,9 @@
 			"title": "Drawer 13",
 			"description": "Responsive actions menu: menu on desktop, drawer on mobile",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"button",
 				"drawer",
@@ -8509,14 +8551,15 @@
 			"description": "Nested right drawers with inset variant",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
 				"button",
 				"drawer",
 				"field",
-				"input",
 				"form",
+				"input",
 				"use-superform"
 			],
 			"files": [
@@ -8571,13 +8614,14 @@
 			"description": "Field with description",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
-				"field",
-				"input",
 				"button",
+				"field",
 				"form",
+				"input",
 				"use-superform"
 			],
 			"files": [
@@ -8594,13 +8638,14 @@
 			"description": "Field with textarea",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
-				"field",
-				"textarea",
 				"button",
+				"field",
 				"form",
+				"textarea",
 				"use-superform"
 			],
 			"files": [
@@ -8617,13 +8662,14 @@
 			"description": "Field with select",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
-				"field",
-				"select",
 				"button",
+				"field",
 				"form",
+				"select",
 				"use-superform"
 			],
 			"files": [
@@ -8640,12 +8686,13 @@
 			"description": "Field with checkbox",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
+				"button",
 				"checkbox",
 				"field",
-				"button",
 				"form",
 				"use-superform"
 			],
@@ -8663,14 +8710,15 @@
 			"description": "Field with checkbox group",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
+				"button",
 				"checkbox",
 				"checkbox-group",
 				"field",
 				"fieldset",
-				"button",
 				"form",
 				"use-superform"
 			],
@@ -8688,14 +8736,15 @@
 			"description": "Field with radio group",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
+				"button",
 				"field",
 				"fieldset",
-				"radio-group",
-				"button",
 				"form",
+				"radio-group",
 				"use-superform"
 			],
 			"files": [
@@ -8712,13 +8761,14 @@
 			"description": "Field with toggle switch",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
-				"field",
-				"switch",
 				"button",
+				"field",
 				"form",
+				"switch",
 				"use-superform"
 			],
 			"files": [
@@ -8735,13 +8785,14 @@
 			"description": "Field with slider",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
-				"field",
-				"slider",
 				"button",
+				"field",
 				"form",
+				"slider",
 				"use-superform"
 			],
 			"files": [
@@ -8758,13 +8809,14 @@
 			"description": "Field with number field",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
-				"field",
-				"number-field",
 				"button",
+				"field",
 				"form",
+				"number-field",
 				"use-superform"
 			],
 			"files": [
@@ -8781,6 +8833,7 @@
 			"description": "Complete form built with field",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
@@ -8806,13 +8859,14 @@
 			"description": "Field with required indicator",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
-				"field",
-				"input",
 				"button",
+				"field",
 				"form",
+				"input",
 				"use-superform"
 			],
 			"files": [
@@ -8829,13 +8883,14 @@
 			"description": "Field in disabled state",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
-				"field",
-				"input",
 				"button",
+				"field",
 				"form",
+				"input",
 				"use-superform"
 			],
 			"files": [
@@ -8852,13 +8907,14 @@
 			"description": "Field showing validation error",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
-				"field",
-				"input",
 				"button",
+				"field",
 				"form",
+				"input",
 				"use-superform"
 			],
 			"files": [
@@ -8875,13 +8931,14 @@
 			"description": "Show field validity state",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
-				"field",
-				"input",
 				"button",
+				"field",
 				"form",
+				"input",
 				"use-superform"
 			],
 			"files": [
@@ -8898,13 +8955,15 @@
 			"description": "Input group with field",
 			"type": "registry:block",
 			"dependencies": [
+				"@lucide/svelte",
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
 				"button",
 				"field",
-				"input-group",
 				"form",
+				"input-group",
 				"use-superform"
 			],
 			"files": [
@@ -8921,12 +8980,13 @@
 			"description": "Field with autocomplete",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
 				"autocomplete",
-				"field",
 				"button",
+				"field",
 				"form",
 				"use-superform"
 			],
@@ -8944,12 +9004,13 @@
 			"description": "Field with combobox",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
+				"button",
 				"combobox",
 				"field",
-				"button",
 				"form",
 				"use-superform"
 			],
@@ -8967,12 +9028,13 @@
 			"description": "Field with multiple selection combobox",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
+				"button",
 				"combobox",
 				"field",
-				"button",
 				"form",
 				"use-superform"
 			],
@@ -8990,13 +9052,14 @@
 			"description": "Fieldset with multiple fields",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
 				"field",
 				"fieldset",
-				"input",
 				"form",
+				"input",
 				"use-superform"
 			],
 			"files": [
@@ -9012,11 +9075,13 @@
 			"title": "File upload 1",
 			"description": "Basic image uploader",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
-				"file-upload",
 				"button",
-				"use-file-upload"
+				"use-file-upload",
+				"file-upload"
 			],
 			"files": [
 				{
@@ -9031,11 +9096,13 @@
 			"title": "File upload 10",
 			"description": "Multiple files uploader with list inside the drop area",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
-				"file-upload",
 				"button",
-				"use-file-upload"
+				"use-file-upload",
+				"file-upload"
 			],
 			"files": [
 				{
@@ -9050,12 +9117,14 @@
 			"title": "File upload 11",
 			"description": "Multiple files uploader with table",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
-				"file-upload",
 				"button",
 				"table",
-				"use-file-upload"
+				"use-file-upload",
+				"file-upload"
 			],
 			"files": [
 				{
@@ -9070,11 +9139,13 @@
 			"title": "File upload 12",
 			"description": "Mixed content uploader with card grid",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
-				"file-upload",
 				"button",
-				"use-file-upload"
+				"use-file-upload",
+				"file-upload"
 			],
 			"files": [
 				{
@@ -9089,11 +9160,13 @@
 			"title": "File upload 13",
 			"description": "File uploader with simulated progress tracking",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
-				"file-upload",
 				"button",
-				"use-file-upload"
+				"use-file-upload",
+				"file-upload"
 			],
 			"files": [
 				{
@@ -9108,14 +9181,16 @@
 			"title": "File upload 14",
 			"description": "Avatar uploader with crop dialog",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
-				"file-upload",
+				"button",
 				"cropper",
 				"dialog",
-				"button",
 				"slider",
-				"use-file-upload"
+				"use-file-upload",
+				"file-upload"
 			],
 			"files": [
 				{
@@ -9130,11 +9205,13 @@
 			"title": "File upload 2",
 			"description": "Avatar upload button",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
-				"file-upload",
 				"button",
-				"use-file-upload"
+				"use-file-upload",
+				"file-upload"
 			],
 			"files": [
 				{
@@ -9149,11 +9226,13 @@
 			"title": "File upload 3",
 			"description": "Avatar uploader with droppable area",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
-				"file-upload",
 				"button",
-				"use-file-upload"
+				"use-file-upload",
+				"file-upload"
 			],
 			"files": [
 				{
@@ -9168,11 +9247,13 @@
 			"title": "File upload 4",
 			"description": "Single image uploader with max size",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
-				"file-upload",
 				"button",
-				"use-file-upload"
+				"use-file-upload",
+				"file-upload"
 			],
 			"files": [
 				{
@@ -9187,11 +9268,13 @@
 			"title": "File upload 5",
 			"description": "Single image uploader with max size, drop area and button",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
-				"file-upload",
 				"button",
-				"use-file-upload"
+				"use-file-upload",
+				"file-upload"
 			],
 			"files": [
 				{
@@ -9206,11 +9289,13 @@
 			"title": "File upload 6",
 			"description": "Multiple image uploader with image grid",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
-				"file-upload",
 				"button",
-				"use-file-upload"
+				"use-file-upload",
+				"file-upload"
 			],
 			"files": [
 				{
@@ -9225,11 +9310,13 @@
 			"title": "File upload 7",
 			"description": "Multiple image uploader with image list",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
-				"file-upload",
 				"button",
-				"use-file-upload"
+				"use-file-upload",
+				"file-upload"
 			],
 			"files": [
 				{
@@ -9244,11 +9331,13 @@
 			"title": "File upload 8",
 			"description": "Single file uploader with max size",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
-				"file-upload",
 				"button",
-				"use-file-upload"
+				"use-file-upload",
+				"file-upload"
 			],
 			"files": [
 				{
@@ -9263,11 +9352,13 @@
 			"title": "File upload 9",
 			"description": "Multiple files uploader with list",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
-				"file-upload",
 				"button",
-				"use-file-upload"
+				"use-file-upload",
+				"file-upload"
 			],
 			"files": [
 				{
@@ -9283,6 +9374,7 @@
 			"description": "Input in a form",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
@@ -9403,7 +9495,9 @@
 			"title": "Group 1",
 			"description": "Basic group",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"button",
 				"group",
@@ -9422,7 +9516,9 @@
 			"title": "Group 10",
 			"description": "Nested groups",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"button",
 				"group"
@@ -9440,7 +9536,9 @@
 			"title": "Group 11",
 			"description": "Group with popup",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"badge",
 				"button",
@@ -9460,7 +9558,9 @@
 			"title": "Group 12",
 			"description": "Group with input group",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"button",
 				"group",
@@ -9480,7 +9580,9 @@
 			"title": "Group 13",
 			"description": "Group with menu",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"button",
 				"group",
@@ -9499,7 +9601,9 @@
 			"title": "Group 14",
 			"description": "Group with select",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"button",
 				"group",
@@ -9519,7 +9623,9 @@
 			"title": "Group 15",
 			"description": "Group with search",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"button",
 				"group",
@@ -9563,8 +9669,7 @@
 			"dependencies": [],
 			"registryDependencies": [
 				"group",
-				"input",
-				"label"
+				"input"
 			],
 			"files": [
 				{
@@ -9617,7 +9722,9 @@
 			"title": "Group 2",
 			"description": "Group with input",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"button",
 				"group",
@@ -9675,7 +9782,9 @@
 			"title": "Group 23",
 			"description": "Group with filter label, combobox multi-select, and remove button",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"avatar",
 				"badge",
@@ -9697,7 +9806,9 @@
 			"title": "Group 3",
 			"description": "Small group",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"button",
 				"group",
@@ -9716,7 +9827,9 @@
 			"title": "Group 4",
 			"description": "Large group",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"button",
 				"group",
@@ -9735,7 +9848,9 @@
 			"title": "Group 5",
 			"description": "Group with disabled button",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"button",
 				"group",
@@ -9754,7 +9869,9 @@
 			"title": "Group 6",
 			"description": "Group with default button",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"button",
 				"group",
@@ -9776,8 +9893,7 @@
 			"dependencies": [],
 			"registryDependencies": [
 				"group",
-				"input",
-				"label"
+				"input"
 			],
 			"files": [
 				{
@@ -9795,8 +9911,7 @@
 			"dependencies": [],
 			"registryDependencies": [
 				"group",
-				"input",
-				"label"
+				"input"
 			],
 			"files": [
 				{
@@ -9811,7 +9926,9 @@
 			"title": "Group 9",
 			"description": "Vertical group",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"button",
 				"group"
@@ -9846,7 +9963,9 @@
 			"title": "Input 10",
 			"description": "Input group mimicking a URL bar",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"button",
 				"input-group",
@@ -9866,6 +9985,8 @@
 			"description": "Credit card number input with auto-formatting",
 			"type": "registry:block",
 			"dependencies": [
+				"@lucide/svelte",
+				"cleave-zen",
 				"cleave-zen@^0.0.17"
 			],
 			"registryDependencies": [
@@ -9886,6 +10007,7 @@
 			"description": "Credit card expiry date input with auto-formatting",
 			"type": "registry:block",
 			"dependencies": [
+				"cleave-zen",
 				"cleave-zen@^0.0.17"
 			],
 			"registryDependencies": [
@@ -9906,6 +10028,7 @@
 			"description": "Credit card CVC/code input with auto-formatting",
 			"type": "registry:block",
 			"dependencies": [
+				"cleave-zen",
 				"cleave-zen@^0.0.17"
 			],
 			"registryDependencies": [
@@ -9926,6 +10049,8 @@
 			"description": "Combined credit card number, expiry, and CVC inputs with auto-formatting",
 			"type": "registry:block",
 			"dependencies": [
+				"@lucide/svelte",
+				"cleave-zen",
 				"cleave-zen@^0.0.17"
 			],
 			"registryDependencies": [
@@ -10018,13 +10143,15 @@
 			"description": "Phone number input with country code selection and auto-formatting",
 			"type": "registry:block",
 			"dependencies": [
+				"@lucide/svelte",
+				"svelte-tel-input",
 				"svelte-tel-input@^4.3.2"
 			],
 			"registryDependencies": [
-				"input",
-				"label",
 				"group",
-				"select"
+				"label",
+				"select",
+				"input"
 			],
 			"files": [
 				{
@@ -10057,6 +10184,8 @@
 			"description": "Input with input mask",
 			"type": "registry:block",
 			"dependencies": [
+				"cleave-zen",
+				"inputmask",
 				"cleave-zen@^0.0.17"
 			],
 			"registryDependencies": [
@@ -10077,6 +10206,8 @@
 			"description": "Timestamp input with input mask",
 			"type": "registry:block",
 			"dependencies": [
+				"cleave-zen",
+				"inputmask",
 				"cleave-zen@^0.0.17"
 			],
 			"registryDependencies": [
@@ -10151,7 +10282,6 @@
 			"type": "registry:block",
 			"dependencies": [],
 			"registryDependencies": [
-				"field",
 				"input",
 				"use-character-limit"
 			],
@@ -10203,6 +10333,7 @@
 			"description": "IP address, subnet mask, and gateway inputs with auto-formatting",
 			"type": "registry:block",
 			"dependencies": [
+				"cleave-zen",
 				"cleave-zen@^0.0.17"
 			],
 			"registryDependencies": [
@@ -10310,7 +10441,9 @@
 			"title": "Input 8",
 			"description": "Input with start text and end tooltip",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"button",
 				"input-group",
@@ -10329,7 +10462,9 @@
 			"title": "Input 9",
 			"description": "Password input with toggle visibility",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"button",
 				"input-group",
@@ -10348,7 +10483,9 @@
 			"title": "Input group 1",
 			"description": "Basic input group",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"input-group"
 			],
@@ -10401,7 +10538,9 @@
 			"title": "Input group 12",
 			"description": "Input group with inner label",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"button",
 				"input-group",
@@ -10421,7 +10560,9 @@
 			"title": "Input group 13",
 			"description": "Small input group",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"input-group"
 			],
@@ -10438,7 +10579,9 @@
 			"title": "Input group 14",
 			"description": "Large input group",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"input-group"
 			],
@@ -10455,7 +10598,9 @@
 			"title": "Input group 15",
 			"description": "Disabled input group",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"button",
 				"input-group"
@@ -10491,7 +10636,9 @@
 			"title": "Input group 17",
 			"description": "Input group with textarea",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"button",
 				"input-group",
@@ -10809,11 +10956,11 @@
 			"description": "Input group with number field",
 			"type": "registry:block",
 			"dependencies": [
+				"cleave-zen",
 				"cleave-zen@^0.0.17"
 			],
 			"registryDependencies": [
-				"input-group",
-				"number-field"
+				"input-group"
 			],
 			"files": [
 				{
@@ -10849,7 +10996,9 @@
 			"title": "Input group 8",
 			"description": "Input group with icon button",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"button",
 				"input-group",
@@ -10905,8 +11054,8 @@
 			"type": "registry:block",
 			"dependencies": [],
 			"registryDependencies": [
-				"link-preview",
-				"button"
+				"button",
+				"link-preview"
 			],
 			"files": [
 				{
@@ -10921,7 +11070,9 @@
 			"title": "Map 1",
 			"description": "Global analytics map with markers sized by active users per city",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"map"
 			],
@@ -10955,7 +11106,9 @@
 			"title": "Map 3",
 			"description": "Delivery tracking map with animated route and courier marker",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"map"
 			],
@@ -10972,7 +11125,9 @@
 			"title": "Map 4",
 			"description": "EV charging stations with live availability status markers",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"map"
 			],
@@ -10990,11 +11145,12 @@
 			"description": "Destination picker with animated fly-to transitions",
 			"type": "registry:block",
 			"dependencies": [
+				"maplibre-gl",
 				"maplibre-gl@^5.24.0"
 			],
 			"registryDependencies": [
-				"map",
-				"button"
+				"button",
+				"map"
 			],
 			"files": [
 				{
@@ -11009,7 +11165,9 @@
 			"title": "Map 6",
 			"description": "Cycling trail map with route line and activity stats overlay",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"map"
 			],
@@ -11026,7 +11184,9 @@
 			"title": "Map 7",
 			"description": "Heatmap-style markers showing visitor traffic hotspots",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"map"
 			],
@@ -11043,7 +11203,9 @@
 			"title": "Menu 1",
 			"description": "Basic menu",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"button",
 				"menu"
@@ -11290,13 +11452,9 @@
 			"title": "Number field 10",
 			"description": "Number field in form",
 			"type": "registry:block",
-			"dependencies": [
-				"zod"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
-				"field",
-				"form",
 				"number-field"
 			],
 			"files": [
@@ -11485,9 +11643,8 @@
 			"type": "registry:block",
 			"dependencies": [],
 			"registryDependencies": [
-				"otp-field",
-				"field",
-				"label"
+				"label",
+				"otp-field"
 			],
 			"files": [
 				{
@@ -11538,9 +11695,8 @@
 			"type": "registry:block",
 			"dependencies": [],
 			"registryDependencies": [
-				"otp-field",
-				"field",
-				"label"
+				"label",
+				"otp-field"
 			],
 			"files": [
 				{
@@ -11557,9 +11713,8 @@
 			"type": "registry:block",
 			"dependencies": [],
 			"registryDependencies": [
-				"otp-field",
-				"field",
-				"label"
+				"label",
+				"otp-field"
 			],
 			"files": [
 				{
@@ -11576,9 +11731,8 @@
 			"type": "registry:block",
 			"dependencies": [],
 			"registryDependencies": [
-				"otp-field",
-				"field",
-				"label"
+				"label",
+				"otp-field"
 			],
 			"files": [
 				{
@@ -11595,9 +11749,8 @@
 			"type": "registry:block",
 			"dependencies": [],
 			"registryDependencies": [
-				"otp-field",
-				"field",
-				"label"
+				"label",
+				"otp-field"
 			],
 			"files": [
 				{
@@ -11614,9 +11767,8 @@
 			"type": "registry:block",
 			"dependencies": [],
 			"registryDependencies": [
-				"otp-field",
-				"field",
-				"label"
+				"label",
+				"otp-field"
 			],
 			"files": [
 				{
@@ -11668,7 +11820,6 @@
 			"type": "registry:block",
 			"dependencies": [],
 			"registryDependencies": [
-				"button",
 				"pagination",
 				"select"
 			],
@@ -11706,8 +11857,6 @@
 			"dependencies": [],
 			"registryDependencies": [
 				"button",
-				"field",
-				"form",
 				"popover",
 				"textarea"
 			],
@@ -11911,11 +12060,8 @@
 			"dependencies": [],
 			"registryDependencies": [
 				"button",
-				"field",
-				"fieldset",
-				"form",
-				"radio-group",
-				"label"
+				"label",
+				"radio-group"
 			],
 			"files": [
 				{
@@ -11931,14 +12077,14 @@
 			"description": "Theme selector with image cards",
 			"type": "registry:block",
 			"dependencies": [
-				"@lucide/svelte",
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
 				"field",
 				"fieldset",
-				"radio-group",
 				"form",
+				"radio-group",
 				"use-superform"
 			],
 			"files": [
@@ -12091,6 +12237,7 @@
 			"description": "Select in form",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
@@ -12477,6 +12624,7 @@
 			"description": "Basic sheet",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
@@ -12501,6 +12649,7 @@
 			"description": "Sheet inset",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
@@ -12508,8 +12657,8 @@
 				"field",
 				"form",
 				"input",
-				"sheet",
 				"label",
+				"sheet",
 				"use-superform"
 			],
 			"files": [
@@ -12558,7 +12707,9 @@
 			"title": "Skeleton 1",
 			"description": "Basic skeleton",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"avatar",
 				"button",
@@ -12632,7 +12783,6 @@
 				"@lucide/svelte"
 			],
 			"registryDependencies": [
-				"field",
 				"slider"
 			],
 			"files": [
@@ -12689,7 +12839,6 @@
 			],
 			"registryDependencies": [
 				"button",
-				"field",
 				"slider"
 			],
 			"files": [
@@ -12707,7 +12856,6 @@
 			"type": "registry:block",
 			"dependencies": [],
 			"registryDependencies": [
-				"fieldset",
 				"slider"
 			],
 			"files": [
@@ -12725,7 +12873,6 @@
 			"type": "registry:block",
 			"dependencies": [],
 			"registryDependencies": [
-				"field",
 				"slider"
 			],
 			"files": [
@@ -12795,7 +12942,6 @@
 			"type": "registry:block",
 			"dependencies": [],
 			"registryDependencies": [
-				"field",
 				"slider"
 			],
 			"files": [
@@ -12833,7 +12979,6 @@
 			],
 			"registryDependencies": [
 				"button",
-				"fieldset",
 				"label",
 				"number-field",
 				"slider"
@@ -12872,6 +13017,7 @@
 			"description": "Slider in form",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
@@ -13101,13 +13247,14 @@
 			"description": "Star rating inside a form field",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
-				"starrating",
+				"button",
 				"field",
 				"form",
-				"button",
+				"starrating",
 				"use-superform"
 			],
 			"files": [
@@ -13123,7 +13270,9 @@
 			"title": "Starrating 5",
 			"description": "Star rating with a different color per star",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"starrating"
 			],
@@ -13140,7 +13289,9 @@
 			"title": "Starrating 6",
 			"description": "Heart rating using a custom icon",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"starrating"
 			],
@@ -13159,8 +13310,8 @@
 			"type": "registry:block",
 			"dependencies": [],
 			"registryDependencies": [
-				"stepper",
-				"button"
+				"button",
+				"stepper"
 			],
 			"files": [
 				{
@@ -13177,8 +13328,8 @@
 			"type": "registry:block",
 			"dependencies": [],
 			"registryDependencies": [
-				"stepper",
-				"button"
+				"button",
+				"stepper"
 			],
 			"files": [
 				{
@@ -13246,8 +13397,8 @@
 			"type": "registry:block",
 			"dependencies": [],
 			"registryDependencies": [
-				"stepper",
-				"button"
+				"button",
+				"stepper"
 			],
 			"files": [
 				{
@@ -13349,8 +13500,8 @@
 			"type": "registry:block",
 			"dependencies": [],
 			"registryDependencies": [
-				"stepper",
-				"button"
+				"button",
+				"stepper"
 			],
 			"files": [
 				{
@@ -13367,8 +13518,8 @@
 			"type": "registry:block",
 			"dependencies": [],
 			"registryDependencies": [
-				"stepper",
-				"button"
+				"button",
+				"stepper"
 			],
 			"files": [
 				{
@@ -13383,7 +13534,9 @@
 			"title": "Stepper 7",
 			"description": "Stepper with mixed elements",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"stepper",
 				"assets"
@@ -13418,10 +13571,12 @@
 			"title": "Stepper 9",
 			"description": "Paginated stepper",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
-				"stepper",
-				"button"
+				"button",
+				"stepper"
 			],
 			"files": [
 				{
@@ -13511,10 +13666,8 @@
 			"dependencies": [],
 			"registryDependencies": [
 				"button",
-				"field",
-				"form",
-				"switch",
-				"label"
+				"label",
+				"switch"
 			],
 			"files": [
 				{
@@ -13684,9 +13837,7 @@
 			"title": "Table 3",
 			"description": "Table with TanStack Table and checkboxes",
 			"type": "registry:block",
-			"dependencies": [
-				"@tanstack/react-table"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"badge",
 				"checkbox",
@@ -13707,12 +13858,10 @@
 			"description": "Table with TanStack Table, sorting, and pagination",
 			"type": "registry:block",
 			"dependencies": [
-				"@tanstack/react-table",
 				"@lucide/svelte"
 			],
 			"registryDependencies": [
 				"badge",
-				"button",
 				"checkbox",
 				"frame",
 				"pagination",
@@ -13751,9 +13900,7 @@
 			"title": "Table 6",
 			"description": "CardFrame with TanStack Table and checkboxes",
 			"type": "registry:block",
-			"dependencies": [
-				"@tanstack/react-table"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"badge",
 				"card",
@@ -13793,12 +13940,10 @@
 			"description": "CardFrame with TanStack Table, sorting, and pagination",
 			"type": "registry:block",
 			"dependencies": [
-				"@tanstack/react-table",
 				"@lucide/svelte"
 			],
 			"registryDependencies": [
 				"badge",
-				"button",
 				"card",
 				"checkbox",
 				"pagination",
@@ -14109,12 +14254,13 @@
 			"description": "Textarea with characters remaining counter",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
 				"field",
-				"textarea",
 				"form",
+				"textarea",
 				"use-superform"
 			],
 			"files": [
@@ -14131,13 +14277,14 @@
 			"description": "Textarea field with required indicator",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
-				"field",
-				"textarea",
 				"button",
+				"field",
 				"form",
+				"textarea",
 				"use-superform"
 			],
 			"files": [
@@ -14276,6 +14423,7 @@
 			"description": "Textarea in form",
 			"type": "registry:block",
 			"dependencies": [
+				"zod",
 				"zod@^4.4.3"
 			],
 			"registryDependencies": [
@@ -14368,7 +14516,9 @@
 			"title": "Timeline 10",
 			"description": "A timeline showing an activity tracker",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"timeline",
 				"assets"
@@ -14471,7 +14621,9 @@
 			"title": "Timeline 5",
 			"description": "A vertical timeline with progress indicator",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"timeline"
 			],
@@ -14488,7 +14640,9 @@
 			"title": "Timeline 6",
 			"description": "A timeline with icons",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"timeline"
 			],
@@ -14743,7 +14897,9 @@
 			"title": "Toast 7",
 			"description": "Anchored tooltip-style toast after copy",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"button",
 				"toast",
@@ -14928,9 +15084,9 @@
 				"@lucide/svelte"
 			],
 			"registryDependencies": [
+				"toast",
 				"toggle",
-				"tooltip",
-				"toast"
+				"tooltip"
 			],
 			"files": [
 				{
@@ -14945,7 +15101,9 @@
 			"title": "Toggle group 1",
 			"description": "Basic toggle group",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"toggle-group"
 			],
@@ -14962,7 +15120,9 @@
 			"title": "Toggle group 2",
 			"description": "Small toggle group",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"toggle-group"
 			],
@@ -14979,7 +15139,9 @@
 			"title": "Toggle group 3",
 			"description": "Large toggle group",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"toggle-group"
 			],
@@ -14996,7 +15158,9 @@
 			"title": "Toggle group 4",
 			"description": "Toggle group with outline",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"toggle-group"
 			],
@@ -15013,7 +15177,9 @@
 			"title": "Toggle group 5",
 			"description": "Vertical toggle group with outline",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"toggle-group"
 			],
@@ -15030,7 +15196,9 @@
 			"title": "Toggle group 6",
 			"description": "Disabled toggle group",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"toggle-group"
 			],
@@ -15047,7 +15215,9 @@
 			"title": "Toggle group 7",
 			"description": "Toggle group with disabled item",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"toggle-group"
 			],
@@ -15064,7 +15234,9 @@
 			"title": "Toggle group 8",
 			"description": "Multiple selection toggle group",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"toggle-group"
 			],
@@ -15081,7 +15253,9 @@
 			"title": "Toggle group 9",
 			"description": "Toggle group with tooltips",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"toggle-group",
 				"tooltip"
@@ -15140,7 +15314,9 @@
 			"title": "Tooltip 2",
 			"description": "Grouped tooltips",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"toggle-group",
 				"tooltip"
@@ -15158,7 +15334,9 @@
 			"title": "Tooltip 3",
 			"description": "Toggle group animated tooltip",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"toggle-group",
 				"tooltip"
@@ -15176,7 +15354,9 @@
 			"title": "Tooltip 4",
 			"description": "Vertical group with animated tooltip",
 			"type": "registry:block",
-			"dependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
 			"registryDependencies": [
 				"button",
 				"group",
@@ -15196,6 +15376,7 @@
 			"description": "Show a tree structure with nodes and children",
 			"type": "registry:block",
 			"dependencies": [
+				"@headless-tree/core",
 				"@headless-tree/core@^1.7.0"
 			],
 			"registryDependencies": [
@@ -15215,6 +15396,7 @@
 			"description": "Basic tree with vertical lines",
 			"type": "registry:block",
 			"dependencies": [
+				"@headless-tree/core",
 				"@headless-tree/core@^1.7.0"
 			],
 			"registryDependencies": [
@@ -15234,6 +15416,8 @@
 			"description": "Basic tree with icons",
 			"type": "registry:block",
 			"dependencies": [
+				"@headless-tree/core",
+				"@lucide/svelte",
 				"@headless-tree/core@^1.7.0"
 			],
 			"registryDependencies": [
@@ -15253,6 +15437,8 @@
 			"description": "Basic tree with caret icon on the right",
 			"type": "registry:block",
 			"dependencies": [
+				"@headless-tree/core",
+				"@lucide/svelte",
 				"@headless-tree/core@^1.7.0"
 			],
 			"registryDependencies": [
@@ -15272,6 +15458,8 @@
 			"description": "Tree with multi-select and drag and drop",
 			"type": "registry:block",
 			"dependencies": [
+				"@headless-tree/core",
+				"@lucide/svelte",
 				"@headless-tree/core@^1.7.0"
 			],
 			"registryDependencies": [
@@ -15291,6 +15479,8 @@
 			"description": "Tree with renaming (press F2 to rename)",
 			"type": "registry:block",
 			"dependencies": [
+				"@headless-tree/core",
+				"@lucide/svelte",
 				"@headless-tree/core@^1.7.0"
 			],
 			"registryDependencies": [
@@ -15310,11 +15500,13 @@
 			"description": "Tree with search highlight",
 			"type": "registry:block",
 			"dependencies": [
+				"@headless-tree/core",
+				"@lucide/svelte",
 				"@headless-tree/core@^1.7.0"
 			],
 			"registryDependencies": [
-				"tree",
-				"input"
+				"input",
+				"tree"
 			],
 			"files": [
 				{
@@ -15330,11 +15522,13 @@
 			"description": "Tree with filtering",
 			"type": "registry:block",
 			"dependencies": [
+				"@headless-tree/core",
+				"@lucide/svelte",
 				"@headless-tree/core@^1.7.0"
 			],
 			"registryDependencies": [
-				"tree",
-				"input"
+				"input",
+				"tree"
 			],
 			"files": [
 				{

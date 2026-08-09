@@ -18,5 +18,7 @@
 		"input-group",
 		"tooltip"
 	],
-	"dependencies": []
+	"dependencies": [
+		"@lucide/svelte"
+	]
 }

@@ -15,12 +15,12 @@
 	"registryDependencies": [
 		"field",
 		"fieldset",
-		"radio-group",
 		"form",
+		"radio-group",
 		"use-superform"
 	],
 	"dependencies": [
-		"@lucide/svelte",
+		"zod",
 		"zod@^4.4.3"
 	]
 }

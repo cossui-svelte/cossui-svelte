@@ -18,7 +18,5 @@
 		"frame",
 		"table"
 	],
-	"dependencies": [
-		"@tanstack/react-table"
-	]
+	"dependencies": []
 }
