@@ -1,0 +1,16 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "use-is-mobile",
+	"title": "Use Is Mobile",
+	"type": "registry:hook",
+	"files": [
+		{
+			"type": "registry:hook",
+			"path": "use-is-mobile.svelte.ts",
+			"target": "$lib/hooks/use-is-mobile.svelte.ts",
+			"content": "import { MediaQuery } from 'svelte/reactivity';\n\nconst MOBILE_BREAKPOINT = 768;\n\nexport class IsMobile extends MediaQuery {\n  constructor() {\n    super(`max-width: ${MOBILE_BREAKPOINT - 1}px`);\n  }\n}\n"
+		}
+	],
+	"registryDependencies": [],
+	"dependencies": []
+}

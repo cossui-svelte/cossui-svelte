@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-map-10",
+	"title": "Map 10",
+	"description": "Clustered markers with a popup showing details on click",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-map-10.svelte",
+			"target": "$lib/components/particles/map/p-map-10.svelte",
+			"content": "<script lang=\"ts\">\n  import { Map, MapClusterLayer, MapControls, MapPopup } from '$lib/components/ui/map';\n\n  interface EarthquakeProperties {\n    mag: number;\n    place: string;\n    tsunami: number;\n  }\n\n  let selectedPoint: {\n    coordinates: [number, number];\n    properties: EarthquakeProperties;\n  } | null = $state(null);\n</script>\n\n<div class=\"h-[420px] w-full\">\n  <Map center={[-103.59, 40.66]} zoom={3.4}>\n    <MapClusterLayer\n      data=\"https://maplibre.org/maplibre-gl-js/docs/assets/earthquakes.geojson\"\n      clusterRadius={50}\n      clusterMaxZoom={14}\n      onpointclick={(feature, coordinates) => {\n        if (feature.properties) {\n          selectedPoint = {\n            coordinates,\n            properties: feature.properties as EarthquakeProperties\n          };\n        }\n      }}\n    />\n\n    {#if selectedPoint}\n      <MapPopup\n        longitude={selectedPoint.coordinates[0]}\n        latitude={selectedPoint.coordinates[1]}\n        onclose={() => (selectedPoint = null)}\n        closeOnClick={false}\n        focusAfterOpen={false}\n        closeButton\n        class=\"w-34\"\n      >\n        <div class=\"text-[13px]\">\n          <p class=\"text-muted-foreground\">\n            Magnitude:\n            <span class=\"text-foreground font-medium\">\n              {selectedPoint.properties.mag}\n            </span>\n          </p>\n          <p class=\"text-muted-foreground\">\n            Tsunami:\n            <span class=\"text-foreground font-medium\">\n              {selectedPoint.properties.tsunami === 1 ? 'Yes' : 'No'}\n            </span>\n          </p>\n        </div>\n      </MapPopup>\n    {/if}\n\n    <MapControls position=\"bottom-right\" showZoom />\n  </Map>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"map"
+	],
+	"dependencies": []
+}

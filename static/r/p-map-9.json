@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-map-9",
+	"title": "Map 9",
+	"description": "Map with a GeoJSON polygon overlay",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-map-9.svelte",
+			"target": "$lib/components/particles/map/p-map-9.svelte",
+			"content": "<script lang=\"ts\">\n  import { Map, MapGeoJSON } from '$lib/components/ui/map';\n\n  const area: GeoJSON.FeatureCollection = {\n    type: 'FeatureCollection',\n    features: [\n      {\n        type: 'Feature',\n        properties: {},\n        geometry: {\n          type: 'Polygon',\n          coordinates: [\n            [\n              [-122.42, 37.78],\n              [-122.398, 37.785],\n              [-122.392, 37.768],\n              [-122.412, 37.758],\n              [-122.43, 37.77],\n              [-122.42, 37.78]\n            ]\n          ]\n        }\n      }\n    ]\n  };\n</script>\n\n<div class=\"h-[420px] w-full\">\n  <Map center={[-122.41, 37.772]} zoom={12}>\n    <MapGeoJSON\n      data={area}\n      fillPaint={{ 'fill-color': '#3b82f6', 'fill-opacity': 0.25 }}\n      linePaint={{ 'line-color': '#2563eb', 'line-width': 2 }}\n    />\n  </Map>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"map"
+	],
+	"dependencies": []
+}

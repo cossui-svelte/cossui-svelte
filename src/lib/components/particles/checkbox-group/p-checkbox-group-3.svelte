@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { Checkbox } from "$lib/components/ui/checkbox";
-  import { CheckboxGroup } from "$lib/components/ui/checkbox-group";
-  import { Label } from "$lib/components/ui/label";
+  import { Checkbox } from '$lib/components/ui/checkbox';
+  import { CheckboxGroup } from '$lib/components/ui/checkbox-group';
+  import { Label } from '$lib/components/ui/label';
 
   const frameworks = [
-    { id: "next", name: "Next.js" },
-    { id: "vite", name: "Vite" },
-    { id: "astro", name: "Astro" },
+    { id: 'next', name: 'Next.js' },
+    { id: 'vite', name: 'Vite' },
+    { id: 'astro', name: 'Astro' }
   ];
 
   const allIds = frameworks.map((f) => f.id);

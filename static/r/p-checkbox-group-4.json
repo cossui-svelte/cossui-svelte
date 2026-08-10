@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-checkbox-group-4",
+	"title": "Checkbox group 4",
+	"description": "Nested checkbox group with parent",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-checkbox-group-4.svelte",
+			"target": "$lib/components/particles/checkbox-group/p-checkbox-group-4.svelte",
+			"content": "<script lang=\"ts\">\n  import { Checkbox } from '$lib/components/ui/checkbox';\n  import { CheckboxGroup } from '$lib/components/ui/checkbox-group';\n  import { Label } from '$lib/components/ui/label';\n\n  const mainPermissions = [\n    { id: 'view-dashboard', name: 'View Dashboard' },\n    { id: 'manage-users', name: 'Manage Users' },\n    { id: 'access-reports', name: 'Access Reports' }\n  ];\n\n  const userManagementPermissions = [\n    { id: 'create-user', name: 'Create User' },\n    { id: 'edit-user', name: 'Edit User' },\n    { id: 'delete-user', name: 'Delete User' },\n    { id: 'assign-roles', name: 'Assign Roles' }\n  ];\n\n  const allMainIds = mainPermissions.map((p) => p.id);\n  const allMgmtIds = userManagementPermissions.map((p) => p.id);\n\n  let mainValue = $state<string[]>([]);\n  let managementValue = $state<string[]>([]);\n\n  let mgmtIsPartial = $derived(\n    managementValue.length > 0 && managementValue.length < allMgmtIds.length\n  );\n  let rootChecked = $derived(mainValue.length === allMainIds.length);\n  let rootIndeterminate = $derived(mainValue.length > 0 && mainValue.length < allMainIds.length);\n  let mgmtParentChecked = $derived(managementValue.length === allMgmtIds.length);\n  let mgmtParentIndeterminate = $derived(mgmtIsPartial);\n\n  function toggleRoot() {\n    if (rootChecked) {\n      mainValue = [];\n      managementValue = [];\n    } else {\n      mainValue = [...allMainIds];\n      managementValue = [...allMgmtIds];\n    }\n  }\n\n  function onMainValueChange(v: string[]) {\n    if (v.includes('manage-users')) {\n      managementValue = [...allMgmtIds];\n    } else if (managementValue.length === allMgmtIds.length) {\n      managementValue = [];\n    }\n    mainValue = v;\n  }\n\n  function toggleMgmtParent() {\n    if (mgmtParentChecked) {\n      managementValue = [];\n      mainValue = mainValue.filter((v) => v !== 'manage-users');\n    } else {\n      managementValue = [...allMgmtIds];\n      mainValue = Array.from(new Set([...mainValue, 'manage-users']));\n    }\n  }\n\n  function onMgmtValueChange(v: string[]) {\n    if (v.length === allMgmtIds.length) {\n      mainValue = Array.from(new Set([...mainValue, 'manage-users']));\n    } else {\n      mainValue = mainValue.filter((mv) => mv !== 'manage-users');\n    }\n    managementValue = v;\n  }\n</script>\n\n<CheckboxGroup\n  aria-labelledby=\"user-permissions-caption\"\n  value={mainValue}\n  onValueChange={onMainValueChange}\n>\n  <Label id=\"user-permissions-caption\">\n    <Checkbox\n      checked={rootChecked}\n      indeterminate={rootIndeterminate}\n      onCheckedChange={toggleRoot}\n    />\n    User Permissions\n  </Label>\n\n  {#each mainPermissions.filter((p) => p.id !== 'manage-users') as p (p.id)}\n    <Label class=\"ms-4\">\n      <Checkbox value={p.id} />\n      {p.name}\n    </Label>\n  {/each}\n\n  <CheckboxGroup\n    aria-labelledby=\"manage-users-caption\"\n    class=\"ms-4\"\n    value={managementValue}\n    onValueChange={onMgmtValueChange}\n  >\n    <Label id=\"manage-users-caption\">\n      <Checkbox\n        checked={mgmtParentChecked}\n        indeterminate={mgmtParentIndeterminate}\n        onCheckedChange={toggleMgmtParent}\n      />\n      Manage Users\n    </Label>\n    {#each userManagementPermissions as p (p.id)}\n      <Label class=\"ms-4\">\n        <Checkbox value={p.id} />\n        {p.name}\n      </Label>\n    {/each}\n  </CheckboxGroup>\n</CheckboxGroup>\n"
+		}
+	],
+	"registryDependencies": [
+		"checkbox",
+		"checkbox-group",
+		"label"
+	],
+	"dependencies": []
+}

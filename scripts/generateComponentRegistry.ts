@@ -1,7 +1,7 @@
 /// <reference types="node" />
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import {custom_components_metadata} from './custom-component-metadata.js';
+import {custom_components_metadata} from '$lib/components/ui/custom-component-metadata';
 
 export interface RegistryUIEntry {
     name?: string;

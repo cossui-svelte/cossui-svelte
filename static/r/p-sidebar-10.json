@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-sidebar-10",
+	"title": "Sidebar 10",
+	"description": "Sidebar menu items with trailing count badges",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-sidebar-10.svelte",
+			"target": "$lib/components/particles/sidebar/p-sidebar-10.svelte",
+			"content": "<script lang=\"ts\">\n  import ChartPieIcon from '@lucide/svelte/icons/chart-pie';\n  import FrameIcon from '@lucide/svelte/icons/frame';\n  import LifeBuoyIcon from '@lucide/svelte/icons/life-buoy';\n  import MapIcon from '@lucide/svelte/icons/map';\n  import SendIcon from '@lucide/svelte/icons/send';\n  import {\n    Sidebar,\n    SidebarContent,\n    SidebarGroup,\n    SidebarGroupContent,\n    SidebarGroupLabel,\n    SidebarInset,\n    SidebarMenu,\n    SidebarMenuBadge,\n    SidebarMenuButton,\n    SidebarMenuItem,\n    SidebarProvider,\n    SidebarTrigger\n  } from '$lib/components/ui/sidebar';\n\n  const projects = [\n    { name: 'Design Engineering', url: '#', icon: FrameIcon, badge: '24' },\n    { name: 'Sales & Marketing', url: '#', icon: ChartPieIcon, badge: '12' },\n    { name: 'Travel', url: '#', icon: MapIcon, badge: '3' },\n    { name: 'Support', url: '#', icon: LifeBuoyIcon, badge: '21' },\n    { name: 'Feedback', url: '#', icon: SendIcon, badge: '8' }\n  ];\n</script>\n\n<!-- transform-gpu makes this box the containing block for the sidebar's `fixed`\n     panel, so the demo stays inside the preview card instead of the viewport. -->\n<div class=\"relative h-100 w-full transform-gpu overflow-hidden rounded-xl border\">\n  <SidebarProvider class=\"h-full min-h-full\">\n    <Sidebar class=\"h-full\">\n      <SidebarContent>\n        <SidebarGroup>\n          <SidebarGroupLabel>Projects</SidebarGroupLabel>\n          <SidebarGroupContent>\n            <SidebarMenu>\n              {#each projects as project (project.name)}\n                <SidebarMenuItem>\n                  <SidebarMenuButton>\n                    {#snippet child({ props })}\n                      <a href={project.url} {...props}>\n                        <project.icon />\n                        <span>{project.name}</span>\n                      </a>\n                    {/snippet}\n                  </SidebarMenuButton>\n                  <SidebarMenuBadge>{project.badge}</SidebarMenuBadge>\n                </SidebarMenuItem>\n              {/each}\n            </SidebarMenu>\n          </SidebarGroupContent>\n        </SidebarGroup>\n      </SidebarContent>\n    </Sidebar>\n    <SidebarInset class=\"h-full\">\n      <header class=\"flex h-12 shrink-0 items-center gap-2 border-b px-3\">\n        <SidebarTrigger />\n        <span class=\"font-medium text-sm\">Projects</span>\n      </header>\n      <div class=\"p-4 text-muted-foreground text-sm\">Content area</div>\n    </SidebarInset>\n  </SidebarProvider>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"sidebar"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

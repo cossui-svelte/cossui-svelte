@@ -25,7 +25,7 @@
 </script>
 
 <div class="flex gap-2">
-  <Button class={buttonVariants({ size: 'xs', variant: 'outline' })} type="button"> Reject </Button>
+  <Button class={buttonVariants({ size: 'xs', variant: 'outline' })} type="button">Reject</Button>
   <Group aria-label="Confirm booking">
     <Button class={buttonVariants({ size: 'xs' })} type="button">Confirm all</Button>
     <GroupSeparator class="bg-primary/72" />

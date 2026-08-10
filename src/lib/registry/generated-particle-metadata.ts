@@ -176,6 +176,13 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     registryDependencies: ['autocomplete'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
+  'p-autocomplete-16': {
+    description: 'Address autocomplete with Google Maps Places API',
+    tags: ['autocomplete', 'input', 'async', 'search'],
+    npmDependencies: ['lucide-react'],
+    registryDependencies: ['autocomplete', 'spinner'],
+    meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
+  },
   'p-avatar-1': {
     description: 'Avatar with image and fallback',
     tags: ['avatar'],
@@ -756,6 +763,12 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     registryDependencies: ['calendar'],
     meta: { colSpan: 2 }
   },
+  'p-calendar-25': {
+    description: 'Calendar with 24-hour autocomplete time input',
+    tags: ['calendar', 'autocomplete', 'field', 'time'],
+    npmDependencies: ['date-fns', 'lucide-react'],
+    registryDependencies: ['calendar', 'autocomplete', 'field']
+  },
   'p-date-picker-1': {
     description: 'Basic date picker',
     tags: ['date-picker', 'calendar', 'popover', 'button'],
@@ -1136,6 +1149,20 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['combobox', 'select'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
+  },
+  'p-combobox-19': {
+    description: 'Combobox multiple with stacked chips',
+    tags: ['combobox', 'input'],
+    npmDependencies: ['lucide-react'],
+    registryDependencies: ['avatar', 'badge', 'button', 'combobox'],
+    meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-80' }
+  },
+  'p-combobox-20': {
+    description: 'Combobox multiple with stacked divided chips',
+    tags: ['combobox', 'input'],
+    npmDependencies: ['lucide-react'],
+    registryDependencies: ['avatar', 'badge', 'button', 'combobox'],
+    meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-80' }
   },
   'p-command-1': {
     description: 'Command palette with dialog',
@@ -2156,6 +2183,20 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     tags: ['avatar', 'button', 'popover'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['avatar', 'button', 'popover']
+  },
+  'p-popover-4': {
+    description: 'Split button with popover to confirm multiple occurrences',
+    tags: ['button', 'checkbox', 'checkbox-group', 'group', 'popover'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: [
+      'badge',
+      'button',
+      'checkbox',
+      'checkbox-group',
+      'group',
+      'label',
+      'popover'
+    ]
   },
   'p-preview-card-1': {
     description: 'Preview card with popup',
@@ -3440,18 +3481,6 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     description: 'Address validation powered by the Google Places API',
     registryDependencies: ['places-autocomplete', 'toast'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
-  },
-  'p-popover-4': {
-    npmDependencies: ['@lucide/svelte'],
-    registryDependencies: [
-      'badge',
-      'button',
-      'checkbox',
-      'checkbox-group',
-      'group',
-      'label',
-      'popover'
-    ]
   },
   'p-rich-editor-1': {
     description: 'Basic rich editor examples',

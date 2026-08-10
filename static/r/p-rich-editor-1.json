@@ -12,8 +12,6 @@
 			"content": "TODO\n"
 		}
 	],
-	"registryDependencies": [
-		"rich-editor"
-	],
+	"registryDependencies": [],
 	"dependencies": []
 }

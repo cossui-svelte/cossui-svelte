@@ -219,8 +219,8 @@
     },
     {
       "dependencies": [
-        "react-day-picker",
-        "@lucide/svelte"
+        "@daypicker/react",
+        "lucide-react"
       ],
       "files": [
         {
@@ -787,6 +787,9 @@
       "type": "registry:ui"
     },
     {
+      "dependencies": [
+        "@base-ui/react"
+      ],
       "files": [
         {
           "path": "registry/default/ui/table.tsx",
@@ -1072,7 +1075,7 @@
         "alert"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Alert with icon",
       "files": [
@@ -1095,7 +1098,7 @@
         "alert"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Alert with icon and action buttons",
       "files": [
@@ -1120,7 +1123,7 @@
         "info"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Info alert",
       "files": [
@@ -1144,7 +1147,7 @@
         "success"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Success alert",
       "files": [
@@ -1168,7 +1171,7 @@
         "warning"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Warning alert",
       "files": [
@@ -1192,7 +1195,7 @@
         "error"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Error alert",
       "files": [
@@ -1573,6 +1576,33 @@
     },
     {
       "categories": [
+        "autocomplete",
+        "input",
+        "async",
+        "search"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "description": "Address autocomplete with Google Maps Places API",
+      "files": [
+        {
+          "path": "registry/default/particles/p-autocomplete-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64"
+      },
+      "name": "p-autocomplete-16",
+      "registryDependencies": [
+        "@coss/autocomplete",
+        "@coss/spinner"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "avatar"
       ],
       "description": "Avatar with image and fallback",
@@ -1661,7 +1691,7 @@
         "avatar"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Avatar with user icon fallback",
       "files": [
@@ -1994,7 +2024,7 @@
         "badge"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Badge with icon",
       "files": [
@@ -2134,7 +2164,7 @@
         "checkbox"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Selectable badge with checkbox",
       "files": [
@@ -2158,7 +2188,7 @@
         "badge"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Removable badge",
       "files": [
@@ -2216,7 +2246,7 @@
         "breadcrumb"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Breadcrumb with home icon for home link only",
       "files": [
@@ -2238,7 +2268,7 @@
         "menu"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Breadcrumb with folders icon menu",
       "files": [
@@ -2260,7 +2290,7 @@
         "breadcrumb"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Breadcrumb with icons before text",
       "files": [
@@ -2280,7 +2310,7 @@
         "breadcrumb"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Breadcrumb with dot separators",
       "files": [
@@ -2301,7 +2331,7 @@
         "select"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Breadcrumb with select dropdown",
       "files": [
@@ -2527,7 +2557,7 @@
         "button"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Icon button",
       "files": [
@@ -2547,7 +2577,7 @@
         "button"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Small icon button",
       "files": [
@@ -2567,7 +2597,7 @@
         "button"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Large icon button",
       "files": [
@@ -2587,7 +2617,7 @@
         "button"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Button with icon",
       "files": [
@@ -2661,7 +2691,7 @@
         "button"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Expandable show more/less toggle button",
       "files": [
@@ -2681,7 +2711,7 @@
         "button"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Back link button with chevron",
       "files": [
@@ -2701,7 +2731,7 @@
         "button"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Card-style button with heading and description",
       "files": [
@@ -2721,7 +2751,7 @@
         "button"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Directional pad control buttons",
       "files": [
@@ -2741,7 +2771,7 @@
         "button"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Outline like button with count",
       "files": [
@@ -2781,7 +2811,7 @@
         "button"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Star button with count badge",
       "files": [
@@ -2802,7 +2832,7 @@
         "group"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Button group with QR code icon and sign in",
       "files": [
@@ -2859,7 +2889,7 @@
         "button"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Button with animated arrow on hover",
       "files": [
@@ -2880,7 +2910,7 @@
         "kbd"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Button with keyboard shortcut indicator",
       "files": [
@@ -2954,7 +2984,7 @@
         "button"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Icon-only copy button with feedback",
       "files": [
@@ -2974,7 +3004,7 @@
         "button"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Copy button with feedback",
       "files": [
@@ -2994,7 +3024,7 @@
         "button"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Rotating icon button (FAB-style toggle)",
       "files": [
@@ -3034,7 +3064,7 @@
         "toast"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Download button with progress and cancel action",
       "files": [
@@ -3152,7 +3182,7 @@
         "combobox"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Calendar with Combobox dropdown for month/year",
       "files": [
@@ -3386,7 +3416,7 @@
       ],
       "dependencies": [
         "date-fns",
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Calendar with date input",
       "files": [
@@ -3410,7 +3440,7 @@
         "field"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Calendar with time input",
       "files": [
@@ -3568,6 +3598,32 @@
     },
     {
       "categories": [
+        "calendar",
+        "autocomplete",
+        "field",
+        "time"
+      ],
+      "dependencies": [
+        "date-fns",
+        "lucide-react"
+      ],
+      "description": "Calendar with 24-hour autocomplete time input",
+      "files": [
+        {
+          "path": "registry/default/particles/p-calendar-25.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "name": "p-calendar-25",
+      "registryDependencies": [
+        "@coss/calendar",
+        "@coss/autocomplete",
+        "@coss/field"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "date picker",
         "calendar",
         "popover",
@@ -3575,7 +3631,7 @@
       ],
       "dependencies": [
         "date-fns",
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Basic date picker",
       "files": [
@@ -3604,7 +3660,7 @@
       ],
       "dependencies": [
         "date-fns",
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Date range picker",
       "files": [
@@ -3633,7 +3689,7 @@
       ],
       "dependencies": [
         "date-fns",
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Two months calendar with range date",
       "files": [
@@ -3664,7 +3720,7 @@
       ],
       "dependencies": [
         "date-fns",
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Date picker with field and dropdown navigation",
       "files": [
@@ -3695,7 +3751,7 @@
       ],
       "dependencies": [
         "date-fns",
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Date picker with presets",
       "files": [
@@ -3725,7 +3781,7 @@
       ],
       "dependencies": [
         "date-fns",
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Date picker with input",
       "files": [
@@ -3755,7 +3811,7 @@
       ],
       "dependencies": [
         "date-fns",
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Date picker that closes on select",
       "files": [
@@ -3785,7 +3841,7 @@
       ],
       "dependencies": [
         "date-fns",
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Multiple dates picker",
       "files": [
@@ -3815,7 +3871,7 @@
       ],
       "dependencies": [
         "date-fns",
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Date picker with select-like trigger",
       "files": [
@@ -3841,7 +3897,7 @@
         "form"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "A basic card with header and footer",
       "files": [
@@ -3895,7 +3951,7 @@
         "form"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Authentication card with separators",
       "files": [
@@ -3923,7 +3979,7 @@
         "form"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Framed card with footer",
       "files": [
@@ -3978,7 +4034,7 @@
         "form"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Framed card with header and footer",
       "files": [
@@ -4007,7 +4063,7 @@
         "form"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Framed card with no rounded bottom",
       "files": [
@@ -4065,7 +4121,7 @@
         "frame"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Card within a frame and footer",
       "files": [
@@ -4096,7 +4152,7 @@
         "frame"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Card within a frame with header and footer",
       "files": [
@@ -4126,7 +4182,7 @@
         "frame"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "CardFrame with header action",
       "files": [
@@ -4350,7 +4406,7 @@
         "collapsible"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Basic collapsible",
       "files": [
@@ -4562,7 +4618,7 @@
         "input"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Combobox with input inside popup",
       "files": [
@@ -4637,7 +4693,7 @@
         "input"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Combobox with start addon",
       "files": [
@@ -4661,7 +4717,7 @@
         "input"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Combobox multiple with start addon",
       "files": [
@@ -4729,7 +4785,7 @@
         "timezone"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Timezone combobox with search input",
       "files": [
@@ -4772,11 +4828,65 @@
     },
     {
       "categories": [
+        "combobox",
+        "input"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "description": "Combobox multiple with stacked chips",
+      "files": [
+        {
+          "path": "registry/default/particles/p-combobox-19.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-80"
+      },
+      "name": "p-combobox-19",
+      "registryDependencies": [
+        "@coss/avatar",
+        "@coss/badge",
+        "@coss/button",
+        "@coss/combobox"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "combobox",
+        "input"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "description": "Combobox multiple with stacked divided chips",
+      "files": [
+        {
+          "path": "registry/default/particles/p-combobox-20.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-80"
+      },
+      "name": "p-combobox-20",
+      "registryDependencies": [
+        "@coss/avatar",
+        "@coss/badge",
+        "@coss/button",
+        "@coss/combobox"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "command",
         "dialog"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Command palette with dialog",
       "files": [
@@ -4799,7 +4909,7 @@
         "dialog"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Command palette with AI assistant",
       "files": [
@@ -5179,7 +5289,7 @@
         "menu"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Responsive actions menu: menu on desktop, drawer on mobile",
       "files": [
@@ -5223,7 +5333,7 @@
         "empty state"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Empty state with icon and actions",
       "files": [
@@ -5815,7 +5925,7 @@
         "frame"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Frame with collapsible content and delete button",
       "files": [
@@ -6157,7 +6267,7 @@
         "input"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Group with add button and input",
       "files": [
@@ -6880,7 +6990,7 @@
         "input group"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Input group with end icon",
       "files": [
@@ -6986,7 +7096,7 @@
         "tooltip"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Input group with end tooltip",
       "files": [
@@ -7012,7 +7122,7 @@
         "input group"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Input group with icon button",
       "files": [
@@ -7238,7 +7348,7 @@
         "menu"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Input group with badge and menu",
       "files": [
@@ -7267,7 +7377,7 @@
         "toggle"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Mini editor built with input group and toggle",
       "files": [
@@ -7294,7 +7404,7 @@
         "search"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Input group with search icon",
       "files": [
@@ -7320,7 +7430,7 @@
         "tooltip"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Input group with start tooltip",
       "files": [
@@ -7347,7 +7457,7 @@
         "input group"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Input group with clear button",
       "files": [
@@ -7375,7 +7485,7 @@
         "tooltip"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Search input group with loader and voice button",
       "files": [
@@ -7466,7 +7576,7 @@
         "label"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Password input with strength indicator",
       "files": [
@@ -7495,7 +7605,7 @@
         "tooltip"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Code snippet input with language selector",
       "files": [
@@ -7524,7 +7634,7 @@
         "tooltip"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Message composer with attachment buttons",
       "files": [
@@ -7552,7 +7662,7 @@
         "tooltip"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Chat input with voice and send buttons",
       "files": [
@@ -7935,7 +8045,7 @@
         "menu"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Context menu with icons",
       "files": [
@@ -8329,7 +8439,7 @@
         "popover"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Popover with close button",
       "files": [
@@ -8352,7 +8462,7 @@
         "popover"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Animated popovers",
       "files": [
@@ -8371,10 +8481,40 @@
     },
     {
       "categories": [
+        "button",
+        "checkbox",
+        "checkbox group",
+        "group",
+        "popover"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "description": "Split button with popover to confirm multiple occurrences",
+      "files": [
+        {
+          "path": "registry/default/particles/p-popover-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "name": "p-popover-4",
+      "registryDependencies": [
+        "@coss/badge",
+        "@coss/button",
+        "@coss/checkbox",
+        "@coss/checkbox-group",
+        "@coss/group",
+        "@coss/label",
+        "@coss/popover"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "preview card"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Preview card with popup",
       "files": [
@@ -8550,7 +8690,7 @@
         "form"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Theme selector with image cards",
       "files": [
@@ -8806,7 +8946,7 @@
         "select"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Select with icon",
       "files": [
@@ -8829,7 +8969,7 @@
         "select"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Select options with icon",
       "files": [
@@ -9460,7 +9600,7 @@
         "slider"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Slider with icons",
       "files": [
@@ -9529,7 +9669,7 @@
         "button"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Slider with increment and decrement buttons",
       "files": [
@@ -9668,7 +9808,7 @@
         "button"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Object position sliders with reset",
       "files": [
@@ -9876,7 +10016,7 @@
         "time"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Weekly availability editor with time range combobox pickers",
       "files": [
@@ -9912,7 +10052,7 @@
         "time"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Weekly availability editor with grouped time range controls",
       "files": [
@@ -9948,7 +10088,7 @@
         "time"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Weekly availability editor with From/To labeled time groups",
       "files": [
@@ -10060,7 +10200,7 @@
       ],
       "dependencies": [
         "@tanstack/react-table",
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Table with TanStack Table, sorting, and pagination",
       "files": [
@@ -10172,7 +10312,7 @@
       ],
       "dependencies": [
         "@tanstack/react-table",
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "CardFrame with TanStack Table, sorting, and pagination",
       "files": [
@@ -10293,7 +10433,7 @@
         "tabs"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Tabs with icon before name",
       "files": [
@@ -10313,7 +10453,7 @@
         "tabs"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Tabs with icon before name and underline",
       "files": [
@@ -10333,7 +10473,7 @@
         "tabs"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Tabs with icon only",
       "files": [
@@ -10353,7 +10493,7 @@
         "tabs"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Tabs with underline and icon on top",
       "files": [
@@ -10392,7 +10532,7 @@
         "tabs"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Vertical tabs with underline and icon before name",
       "files": [
@@ -10416,7 +10556,7 @@
         "badge"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Tabs with icon only and count badge",
       "files": [
@@ -10438,7 +10578,7 @@
         "tooltip"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Tabs with icon only and grouped tooltips",
       "files": [
@@ -10924,7 +11064,7 @@
         "button"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Long-running promise toast with cancel",
       "files": [
@@ -10985,7 +11125,7 @@
         "button"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Anchored deduplicated success toast",
       "files": [
@@ -11009,7 +11149,7 @@
         "error"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Anchored deduplicated error toast",
       "files": [
@@ -11228,7 +11368,7 @@
         "toggle"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Toggle with icon",
       "files": [
@@ -11299,7 +11439,7 @@
         "toggle"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Toggle icon group",
       "files": [
@@ -11321,7 +11461,7 @@
         "toast"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Bookmark toggle with tooltip and success toast",
       "files": [
@@ -11343,7 +11483,7 @@
         "toolbar"
       ],
       "dependencies": [
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Toolbar with toggles, buttons, and select",
       "files": [
@@ -11538,7 +11678,7 @@
           "sidebar-ring": "var(--color-neutral-400)"
         },
         "theme": {
-          "font-heading": "var(--font-heading, ui-sans-serif, system-ui, sans-serif)",
+          "font-heading": "var(--font-sans, ui-sans-serif, system-ui, sans-serif)",
           "font-mono": "var(--font-mono, ui-monospace, monospace)",
           "font-sans": "var(--font-sans, ui-sans-serif, system-ui, sans-serif)"
         }
@@ -11546,7 +11686,7 @@
       "dependencies": [
         "@base-ui/react",
         "class-variance-authority",
-        "@lucide/svelte"
+        "lucide-react"
       ],
       "description": "Complete coss theme: colors, sidebar, fonts, and base styles. Use with `npx shadcn init @coss/style` for full project setup.",
       "devDependencies": [

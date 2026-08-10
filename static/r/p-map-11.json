@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-map-11",
+	"title": "Map 11",
+	"description": "Map with a dismissible popup and a button to show it again",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-map-11.svelte",
+			"target": "$lib/components/particles/map/p-map-11.svelte",
+			"content": "<script lang=\"ts\">\n  import { Map, MapPopup } from '$lib/components/ui/map';\n  import { Button } from '$lib/components/ui/button';\n\n  let showPopup = $state(true);\n</script>\n\n<div class=\"relative h-[420px] w-full\">\n  <Map center={[-74.006, 40.7128]} zoom={13}>\n    {#if showPopup}\n      <MapPopup\n        longitude={-74.006}\n        latitude={40.7128}\n        closeButton\n        focusAfterOpen={false}\n        closeOnClick={false}\n        onclose={() => (showPopup = false)}\n      >\n        <div class=\"space-y-2\">\n          <h3 class=\"text-foreground font-semibold\">New York City</h3>\n          <p class=\"text-muted-foreground text-sm\">\n            The city that never sleeps. Population: 8.3 million\n          </p>\n          <Button size=\"sm\" variant=\"outline\" class=\"w-full\" onclick={() => (showPopup = false)}>\n            Close\n          </Button>\n        </div>\n      </MapPopup>\n    {/if}\n  </Map>\n\n  {#if !showPopup}\n    <Button size=\"sm\" class=\"absolute bottom-4 left-4 z-10\" onclick={() => (showPopup = true)}>\n      Show Popup\n    </Button>\n  {/if}\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"map"
+	],
+	"dependencies": []
+}

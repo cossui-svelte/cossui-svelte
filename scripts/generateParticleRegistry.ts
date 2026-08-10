@@ -2,7 +2,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import cossuiRegistry from './registry.json' with { type: 'json' };
-import { custom_particle_metadata } from './custom-particule-metadata'
+import { custom_particle_metadata } from '$lib/components/particles/custom-particle-metadata'
 
 const OUTPUT = path.resolve('src/lib/registry/generated-particle-metadata.ts');
 const PARTICLES_DIR = path.resolve('src/lib/components/particles');

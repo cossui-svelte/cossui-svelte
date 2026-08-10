@@ -9,13 +9,13 @@
   import { createForm } from '$lib/hooks/use-superform';
 
   const schema = z.object({
-    frameworks: z.array(z.string()).min(1, { message: 'Please select at least one framework.' }),
+    frameworks: z.array(z.string()).min(1, { message: 'Please select at least one framework.' })
   });
 
   const superform = createForm({
     initialData: { frameworks: ['next'] },
     onUpdated: ({ frameworks }) => alert(`Selected: ${frameworks.join(', ')}`),
-    schema,
+    schema
   });
 
   const { form, submitting } = superform;
@@ -25,7 +25,10 @@
   <Field name="frameworks">
     <Fieldset>
       <FieldsetLegend class="font-medium text-sm">Frameworks</FieldsetLegend>
-      <CheckboxGroup value={$form.frameworks as string[]} onValueChange={(v) => ($form.frameworks = v)}>
+      <CheckboxGroup
+        value={$form.frameworks as string[]}
+        onValueChange={(v) => ($form.frameworks = v)}
+      >
         <FieldItem>
           <FieldLabel>
             <Checkbox value="next" />

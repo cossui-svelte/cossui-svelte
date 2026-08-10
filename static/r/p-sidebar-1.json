@@ -2,16 +2,20 @@
 	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
 	"name": "p-sidebar-1",
 	"title": "Sidebar 1",
-	"description": "",
+	"description": "Basic application sidebar with a navigation menu",
 	"type": "registry:block",
 	"files": [
 		{
 			"type": "registry:block",
 			"path": "p-sidebar-1.svelte",
 			"target": "$lib/components/particles/sidebar/p-sidebar-1.svelte",
-			"content": "TO DO\n"
+			"content": "<script lang=\"ts\">\n  import CalendarIcon from '@lucide/svelte/icons/calendar';\n  import HouseIcon from '@lucide/svelte/icons/house';\n  import InboxIcon from '@lucide/svelte/icons/inbox';\n  import SearchIcon from '@lucide/svelte/icons/search';\n  import SettingsIcon from '@lucide/svelte/icons/settings';\n  import {\n    Sidebar,\n    SidebarContent,\n    SidebarGroup,\n    SidebarGroupContent,\n    SidebarGroupLabel,\n    SidebarMenu,\n    SidebarMenuButton,\n    SidebarInset,\n    SidebarMenuItem,\n    SidebarProvider,\n    SidebarTrigger\n  } from '$lib/components/ui/sidebar';\n\n  // Menu items.\n  const items = [\n    {\n      title: 'Home',\n      url: '#',\n      icon: HouseIcon\n    },\n    {\n      title: 'Inbox',\n      url: '#',\n      icon: InboxIcon\n    },\n    {\n      title: 'Calendar',\n      url: '#',\n      icon: CalendarIcon\n    },\n    {\n      title: 'Search',\n      url: '#',\n      icon: SearchIcon\n    },\n    {\n      title: 'Settings',\n      url: '#',\n      icon: SettingsIcon\n    }\n  ];\n</script>\n\n<!-- transform-gpu makes this box the containing block for the sidebar's `fixed`\n     panel, so the demo stays inside the preview card instead of the viewport. -->\n<div class=\"relative h-100 w-full transform-gpu overflow-hidden rounded-xl border\">\n  <SidebarProvider class=\"h-full min-h-full\">\n    <Sidebar class=\"h-full\">\n      <SidebarContent>\n        <SidebarGroup>\n          <SidebarGroupLabel>Application</SidebarGroupLabel>\n          <SidebarGroupContent>\n            <SidebarMenu>\n              {#each items as item (item.title)}\n                <SidebarMenuItem>\n                  <SidebarMenuButton>\n                    {#snippet child({ props })}\n                      <a href={item.url} {...props}>\n                        <item.icon />\n                        <span>{item.title}</span>\n                      </a>\n                    {/snippet}\n                  </SidebarMenuButton>\n                </SidebarMenuItem>\n              {/each}\n            </SidebarMenu>\n          </SidebarGroupContent>\n        </SidebarGroup>\n      </SidebarContent>\n    </Sidebar>\n    <SidebarInset class=\"h-full\">\n      <header class=\"flex h-12 shrink-0 items-center gap-2 border-b px-3\">\n        <SidebarTrigger />\n        <span class=\"font-medium text-sm\">Application</span>\n      </header>\n      <div class=\"p-4 text-muted-foreground text-sm\">Content area</div>\n    </SidebarInset>\n  </SidebarProvider>\n</div>\n"
 		}
 	],
-	"registryDependencies": [],
-	"dependencies": []
+	"registryDependencies": [
+		"sidebar"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
 }

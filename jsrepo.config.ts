@@ -1,8 +1,8 @@
 import { defineConfig, Config } from 'jsrepo';
 import shadcn from "@jsrepo/shadcn"; 
 
-import { componentDependenciesOutput } from './scripts/component-dependencies-output.ts';
-import { getRegistryItems } from './scripts/registry-items.ts';
+import { componentDependenciesOutput } from './scripts/jsrepo-component-dependencies-output.ts';
+import { getRegistryItems } from './scripts/jsrepo-registry-items.ts';
 
 // soon
 // import { output as shadcnSvelteOutput } from '@jsrepo/shadcn-svelte';

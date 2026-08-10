@@ -15,8 +15,7 @@
 	"registryDependencies": [
 		"group",
 		"label",
-		"select",
-		"input"
+		"select"
 	],
 	"dependencies": [
 		"@lucide/svelte",

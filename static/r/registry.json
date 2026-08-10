@@ -623,7 +623,7 @@
 			"description": "A chart component for visualizing data in various formats.",
 			"type": "registry:ui",
 			"dependencies": [
-				"layerchart@^2.0.4"
+				"layerchart@^2.1.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -1887,7 +1887,7 @@
 			"description": "An interactive map with markers, popups, tooltips, and routes, powered by MapLibre GL.",
 			"type": "registry:ui",
 			"dependencies": [
-				"maplibre-gl@^5.24.0",
+				"maplibre-gl@^6.2.0",
 				"geojson"
 			],
 			"registryDependencies": [
@@ -1896,68 +1896,68 @@
 			"files": [
 				{
 					"type": "registry:ui",
-					"path": "map/Map.svelte",
-					"target": "$lib/components/ui/map/Map.svelte"
-				},
-				{
-					"type": "registry:ui",
-					"path": "map/MapArc.svelte",
-					"target": "$lib/components/ui/map/MapArc.svelte"
-				},
-				{
-					"type": "registry:ui",
-					"path": "map/MapClusterLayer.svelte",
-					"target": "$lib/components/ui/map/MapClusterLayer.svelte"
-				},
-				{
-					"type": "registry:ui",
-					"path": "map/MapControls.svelte",
-					"target": "$lib/components/ui/map/MapControls.svelte"
-				},
-				{
-					"type": "registry:ui",
-					"path": "map/MapGeoJSON.svelte",
-					"target": "$lib/components/ui/map/MapGeoJSON.svelte"
-				},
-				{
-					"type": "registry:ui",
-					"path": "map/MapMarker.svelte",
-					"target": "$lib/components/ui/map/MapMarker.svelte"
-				},
-				{
-					"type": "registry:ui",
-					"path": "map/MapPopup.svelte",
-					"target": "$lib/components/ui/map/MapPopup.svelte"
-				},
-				{
-					"type": "registry:ui",
-					"path": "map/MapRoute.svelte",
-					"target": "$lib/components/ui/map/MapRoute.svelte"
-				},
-				{
-					"type": "registry:ui",
-					"path": "map/MarkerContent.svelte",
-					"target": "$lib/components/ui/map/MarkerContent.svelte"
-				},
-				{
-					"type": "registry:ui",
-					"path": "map/MarkerLabel.svelte",
-					"target": "$lib/components/ui/map/MarkerLabel.svelte"
-				},
-				{
-					"type": "registry:ui",
-					"path": "map/MarkerPopup.svelte",
-					"target": "$lib/components/ui/map/MarkerPopup.svelte"
-				},
-				{
-					"type": "registry:ui",
-					"path": "map/MarkerTooltip.svelte",
-					"target": "$lib/components/ui/map/MarkerTooltip.svelte"
-				},
-				{
-					"type": "registry:ui",
 					"path": "map/index.ts",
 					"target": "$lib/components/ui/map/index.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "map/map-arc.svelte",
+					"target": "$lib/components/ui/map/map-arc.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "map/map-cluster-layer.svelte",
+					"target": "$lib/components/ui/map/map-cluster-layer.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "map/map-controls.svelte",
+					"target": "$lib/components/ui/map/map-controls.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "map/map-geojson.svelte",
+					"target": "$lib/components/ui/map/map-geojson.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "map/map-marker.svelte",
+					"target": "$lib/components/ui/map/map-marker.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "map/map-popup.svelte",
+					"target": "$lib/components/ui/map/map-popup.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "map/map-route.svelte",
+					"target": "$lib/components/ui/map/map-route.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "map/map.svelte",
+					"target": "$lib/components/ui/map/map.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "map/marker-content.svelte",
+					"target": "$lib/components/ui/map/marker-content.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "map/marker-label.svelte",
+					"target": "$lib/components/ui/map/marker-label.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "map/marker-popup.svelte",
+					"target": "$lib/components/ui/map/marker-popup.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "map/marker-tooltip.svelte",
+					"target": "$lib/components/ui/map/marker-tooltip.svelte"
 				},
 				{
 					"type": "registry:ui",
@@ -2686,19 +2686,30 @@
 			"description": "A sidebar that can be toggled open and closed, providing navigation or additional content.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1",
-				"tailwind-variants@^3.3.1"
+				"tailwind-variants@^3.3.1",
+				"bits-ui@^2.18.1"
 			],
 			"registryDependencies": [
-				"scroll-area",
+				"use-is-mobile",
 				"utils",
 				"input",
+				"tooltip",
+				"skeleton",
 				"separator",
 				"button",
-				"dialog",
 				"sheet"
 			],
 			"files": [
+				{
+					"type": "registry:ui",
+					"path": "sidebar/constants.ts",
+					"target": "$lib/components/ui/sidebar/constants.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "sidebar/context.svelte.ts",
+					"target": "$lib/components/ui/sidebar/context.svelte.ts"
+				},
 				{
 					"type": "registry:ui",
 					"path": "sidebar/index.ts",
@@ -2708,11 +2719,6 @@
 					"type": "registry:ui",
 					"path": "sidebar/sidebar-content.svelte",
 					"target": "$lib/components/ui/sidebar/sidebar-content.svelte"
-				},
-				{
-					"type": "registry:ui",
-					"path": "sidebar/sidebar-context.ts",
-					"target": "$lib/components/ui/sidebar/sidebar-context.ts"
 				},
 				{
 					"type": "registry:ui",
@@ -3753,6 +3759,20 @@
 					"type": "registry:hook",
 					"path": "use-is-mac.svelte.ts",
 					"target": "$lib/hooks/use-is-mac.svelte.ts"
+				}
+			]
+		},
+		{
+			"name": "use-is-mobile",
+			"title": "Use Is Mobile",
+			"type": "registry:hook",
+			"dependencies": [],
+			"registryDependencies": [],
+			"files": [
+				{
+					"type": "registry:hook",
+					"path": "use-is-mobile.svelte.ts",
+					"target": "$lib/hooks/use-is-mobile.svelte.ts"
 				}
 			]
 		},
@@ -6720,7 +6740,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"layerchart",
-				"layerchart@^2.0.4"
+				"layerchart@^2.1.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -6742,7 +6762,7 @@
 				"d3-scale",
 				"layerchart",
 				"d3-scale@^4.0.2",
-				"layerchart@^2.0.4"
+				"layerchart@^2.1.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -6762,7 +6782,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"layerchart",
-				"layerchart@^2.0.4"
+				"layerchart@^2.1.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -6784,7 +6804,7 @@
 				"d3-scale",
 				"layerchart",
 				"d3-scale@^4.0.2",
-				"layerchart@^2.0.4"
+				"layerchart@^2.1.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -6808,7 +6828,7 @@
 				"layerchart",
 				"d3-scale@^4.0.2",
 				"d3-shape@^3.2.0",
-				"layerchart@^2.0.4"
+				"layerchart@^2.1.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -6832,7 +6852,7 @@
 				"layerchart",
 				"d3-scale@^4.0.2",
 				"d3-shape@^3.2.0",
-				"layerchart@^2.0.4"
+				"layerchart@^2.1.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -6856,7 +6876,7 @@
 				"layerchart",
 				"d3-scale@^4.0.2",
 				"d3-shape@^3.2.0",
-				"layerchart@^2.0.4"
+				"layerchart@^2.1.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -6876,7 +6896,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"layerchart",
-				"layerchart@^2.0.4"
+				"layerchart@^2.1.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -6896,7 +6916,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"layerchart",
-				"layerchart@^2.0.4"
+				"layerchart@^2.1.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -6918,7 +6938,7 @@
 				"d3-scale",
 				"layerchart",
 				"d3-scale@^4.0.2",
-				"layerchart@^2.0.4"
+				"layerchart@^2.1.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -7066,6 +7086,70 @@
 			]
 		},
 		{
+			"name": "p-checkbox-group-3",
+			"title": "Checkbox group 3",
+			"description": "Checkbox group with parent checkbox",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": [
+				"checkbox",
+				"checkbox-group",
+				"label"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-checkbox-group-3.svelte",
+					"target": "$lib/components/particles/checkbox-group/p-checkbox-group-3.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-checkbox-group-4",
+			"title": "Checkbox group 4",
+			"description": "Nested checkbox group with parent",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": [
+				"checkbox",
+				"checkbox-group",
+				"label"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-checkbox-group-4.svelte",
+					"target": "$lib/components/particles/checkbox-group/p-checkbox-group-4.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-checkbox-group-5",
+			"title": "Checkbox group 5",
+			"description": "Checkbox group form",
+			"type": "registry:block",
+			"dependencies": [
+				"zod",
+				"zod@^4.4.3"
+			],
+			"registryDependencies": [
+				"button",
+				"checkbox",
+				"checkbox-group",
+				"field",
+				"fieldset",
+				"form",
+				"use-superform"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-checkbox-group-5.svelte",
+					"target": "$lib/components/particles/checkbox-group/p-checkbox-group-5.svelte"
+				}
+			]
+		},
+		{
 			"name": "p-collapsible-1",
 			"title": "Collapsible 1",
 			"description": "Basic collapsible",
@@ -7091,12 +7175,7 @@
 			"type": "registry:block",
 			"dependencies": [],
 			"registryDependencies": [
-				"colorpicker",
-				"slider",
-				"checkbox",
-				"input",
-				"button",
-				"label"
+				"colorpicker"
 			],
 			"files": [
 				{
@@ -7113,12 +7192,7 @@
 			"type": "registry:block",
 			"dependencies": [],
 			"registryDependencies": [
-				"colorpicker",
-				"slider",
-				"checkbox",
-				"input",
-				"button",
-				"label"
+				"colorpicker"
 			],
 			"files": [
 				{
@@ -7138,12 +7212,7 @@
 				"@hueycolor/core@^1.0.1"
 			],
 			"registryDependencies": [
-				"colorpicker",
-				"slider",
-				"checkbox",
-				"input",
-				"button",
-				"label"
+				"colorpicker"
 			],
 			"files": [
 				{
@@ -7160,12 +7229,7 @@
 			"type": "registry:block",
 			"dependencies": [],
 			"registryDependencies": [
-				"colorpicker",
-				"slider",
-				"checkbox",
-				"input",
-				"button",
-				"label"
+				"colorpicker"
 			],
 			"files": [
 				{
@@ -7185,12 +7249,7 @@
 				"@hueycolor/core@^1.0.1"
 			],
 			"registryDependencies": [
-				"colorpicker",
-				"slider",
-				"checkbox",
-				"input",
-				"button",
-				"label"
+				"colorpicker"
 			],
 			"files": [
 				{
@@ -7210,12 +7269,7 @@
 				"@hueycolor/core@^1.0.1"
 			],
 			"registryDependencies": [
-				"colorpicker",
-				"slider",
-				"checkbox",
-				"input",
-				"button",
-				"label"
+				"colorpicker"
 			],
 			"files": [
 				{
@@ -9080,8 +9134,7 @@
 			],
 			"registryDependencies": [
 				"button",
-				"use-file-upload",
-				"file-upload"
+				"use-file-upload"
 			],
 			"files": [
 				{
@@ -9101,8 +9154,7 @@
 			],
 			"registryDependencies": [
 				"button",
-				"use-file-upload",
-				"file-upload"
+				"use-file-upload"
 			],
 			"files": [
 				{
@@ -9123,8 +9175,7 @@
 			"registryDependencies": [
 				"button",
 				"table",
-				"use-file-upload",
-				"file-upload"
+				"use-file-upload"
 			],
 			"files": [
 				{
@@ -9144,8 +9195,7 @@
 			],
 			"registryDependencies": [
 				"button",
-				"use-file-upload",
-				"file-upload"
+				"use-file-upload"
 			],
 			"files": [
 				{
@@ -9165,8 +9215,7 @@
 			],
 			"registryDependencies": [
 				"button",
-				"use-file-upload",
-				"file-upload"
+				"use-file-upload"
 			],
 			"files": [
 				{
@@ -9189,8 +9238,7 @@
 				"cropper",
 				"dialog",
 				"slider",
-				"use-file-upload",
-				"file-upload"
+				"use-file-upload"
 			],
 			"files": [
 				{
@@ -9210,8 +9258,7 @@
 			],
 			"registryDependencies": [
 				"button",
-				"use-file-upload",
-				"file-upload"
+				"use-file-upload"
 			],
 			"files": [
 				{
@@ -9231,8 +9278,7 @@
 			],
 			"registryDependencies": [
 				"button",
-				"use-file-upload",
-				"file-upload"
+				"use-file-upload"
 			],
 			"files": [
 				{
@@ -9252,8 +9298,7 @@
 			],
 			"registryDependencies": [
 				"button",
-				"use-file-upload",
-				"file-upload"
+				"use-file-upload"
 			],
 			"files": [
 				{
@@ -9273,8 +9318,7 @@
 			],
 			"registryDependencies": [
 				"button",
-				"use-file-upload",
-				"file-upload"
+				"use-file-upload"
 			],
 			"files": [
 				{
@@ -9294,8 +9338,7 @@
 			],
 			"registryDependencies": [
 				"button",
-				"use-file-upload",
-				"file-upload"
+				"use-file-upload"
 			],
 			"files": [
 				{
@@ -9315,8 +9358,7 @@
 			],
 			"registryDependencies": [
 				"button",
-				"use-file-upload",
-				"file-upload"
+				"use-file-upload"
 			],
 			"files": [
 				{
@@ -9336,8 +9378,7 @@
 			],
 			"registryDependencies": [
 				"button",
-				"use-file-upload",
-				"file-upload"
+				"use-file-upload"
 			],
 			"files": [
 				{
@@ -9357,8 +9398,7 @@
 			],
 			"registryDependencies": [
 				"button",
-				"use-file-upload",
-				"file-upload"
+				"use-file-upload"
 			],
 			"files": [
 				{
@@ -10150,8 +10190,7 @@
 			"registryDependencies": [
 				"group",
 				"label",
-				"select",
-				"input"
+				"select"
 			],
 			"files": [
 				{
@@ -11085,6 +11124,41 @@
 			]
 		},
 		{
+			"name": "p-map-10",
+			"title": "Map 10",
+			"description": "Clustered markers with a popup showing details on click",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": [
+				"map"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-map-10.svelte",
+					"target": "$lib/components/particles/map/p-map-10.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-map-11",
+			"title": "Map 11",
+			"description": "Map with a dismissible popup and a button to show it again",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": [
+				"button",
+				"map"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-map-11.svelte",
+					"target": "$lib/components/particles/map/p-map-11.svelte"
+				}
+			]
+		},
+		{
 			"name": "p-map-2",
 			"title": "Map 2",
 			"description": "Global shipping routes visualized as animated arcs from a hub on a rotating globe",
@@ -11146,7 +11220,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"maplibre-gl",
-				"maplibre-gl@^5.24.0"
+				"maplibre-gl@^6.2.0"
 			],
 			"registryDependencies": [
 				"button",
@@ -11195,6 +11269,40 @@
 					"type": "registry:block",
 					"path": "p-map-7.svelte",
 					"target": "$lib/components/particles/map/p-map-7.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-map-8",
+			"title": "Map 8",
+			"description": "Map with zoom, compass, locate, and fullscreen controls",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": [
+				"map"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-map-8.svelte",
+					"target": "$lib/components/particles/map/p-map-8.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-map-9",
+			"title": "Map 9",
+			"description": "Map with a GeoJSON polygon overlay",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": [
+				"map"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-map-9.svelte",
+					"target": "$lib/components/particles/map/p-map-9.svelte"
 				}
 			]
 		},
@@ -11878,7 +11986,8 @@
 			],
 			"registryDependencies": [
 				"button",
-				"popover"
+				"popover",
+				"utils"
 			],
 			"files": [
 				{
@@ -11906,6 +12015,31 @@
 					"type": "registry:block",
 					"path": "p-popover-3.svelte",
 					"target": "$lib/components/particles/popover/p-popover-3.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-popover-4",
+			"title": "Popover 4",
+			"description": "Split button with popover to confirm multiple occurrences",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [
+				"badge",
+				"button",
+				"checkbox",
+				"checkbox-group",
+				"group",
+				"label",
+				"popover"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-popover-4.svelte",
+					"target": "$lib/components/particles/popover/p-popover-4.svelte"
 				}
 			]
 		},
@@ -12101,9 +12235,7 @@
 			"description": "Basic rich editor examples",
 			"type": "registry:block",
 			"dependencies": [],
-			"registryDependencies": [
-				"rich-editor"
-			],
+			"registryDependencies": [],
 			"files": [
 				{
 					"type": "registry:block",
@@ -12690,15 +12822,254 @@
 		{
 			"name": "p-sidebar-1",
 			"title": "Sidebar 1",
-			"description": "",
+			"description": "Basic application sidebar with a navigation menu",
 			"type": "registry:block",
-			"dependencies": [],
-			"registryDependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [
+				"sidebar"
+			],
 			"files": [
 				{
 					"type": "registry:block",
 					"path": "p-sidebar-1.svelte",
 					"target": "$lib/components/particles/sidebar/p-sidebar-1.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-sidebar-10",
+			"title": "Sidebar 10",
+			"description": "Sidebar menu items with trailing count badges",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [
+				"sidebar"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-sidebar-10.svelte",
+					"target": "$lib/components/particles/sidebar/p-sidebar-10.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-sidebar-11",
+			"title": "Sidebar 11",
+			"description": "Sidebar menu with always-visible nested sub-menus",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": [
+				"sidebar"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-sidebar-11.svelte",
+					"target": "$lib/components/particles/sidebar/p-sidebar-11.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-sidebar-12",
+			"title": "Sidebar 12",
+			"description": "Sidebar menu whose sub-menus expand and collapse",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [
+				"collapsible",
+				"sidebar"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-sidebar-12.svelte",
+					"target": "$lib/components/particles/sidebar/p-sidebar-12.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-sidebar-13",
+			"title": "Sidebar 13",
+			"description": "Sidebar open state controlled from outside the component",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [
+				"button",
+				"sidebar"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-sidebar-13.svelte",
+					"target": "$lib/components/particles/sidebar/p-sidebar-13.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-sidebar-2",
+			"title": "Sidebar 2",
+			"description": "Documentation sidebar with a version switcher, search and grouped navigation",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [
+				"label",
+				"menu",
+				"sidebar"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-sidebar-2.svelte",
+					"target": "$lib/components/particles/sidebar/p-sidebar-2.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-sidebar-3",
+			"title": "Sidebar 3",
+			"description": "Sidebar header holding a workspace switcher menu",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [
+				"menu",
+				"sidebar"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-sidebar-3.svelte",
+					"target": "$lib/components/particles/sidebar/p-sidebar-3.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-sidebar-4",
+			"title": "Sidebar 4",
+			"description": "Sidebar footer with a user menu opening upwards",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [
+				"menu",
+				"sidebar"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-sidebar-4.svelte",
+					"target": "$lib/components/particles/sidebar/p-sidebar-4.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-sidebar-5",
+			"title": "Sidebar 5",
+			"description": "Labelled sidebar group wrapping a short menu",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [
+				"sidebar"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-sidebar-5.svelte",
+					"target": "$lib/components/particles/sidebar/p-sidebar-5.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-sidebar-6",
+			"title": "Sidebar 6",
+			"description": "Sidebar group with an action button next to its label",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [
+				"sidebar",
+				"toast"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-sidebar-6.svelte",
+					"target": "$lib/components/particles/sidebar/p-sidebar-6.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-sidebar-7",
+			"title": "Sidebar 7",
+			"description": "Collapsible sidebar group toggled from its label",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [
+				"collapsible",
+				"sidebar"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-sidebar-7.svelte",
+					"target": "$lib/components/particles/sidebar/p-sidebar-7.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-sidebar-8",
+			"title": "Sidebar 8",
+			"description": "Sidebar menu of project links with leading icons",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [
+				"sidebar"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-sidebar-8.svelte",
+					"target": "$lib/components/particles/sidebar/p-sidebar-8.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-sidebar-9",
+			"title": "Sidebar 9",
+			"description": "Sidebar menu items with a per-row action menu",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [
+				"menu",
+				"sidebar"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-sidebar-9.svelte",
+					"target": "$lib/components/particles/sidebar/p-sidebar-9.svelte"
 				}
 			]
 		},
@@ -13179,9 +13550,7 @@
 			"description": "Split pane with resizable panels",
 			"type": "registry:block",
 			"dependencies": [],
-			"registryDependencies": [
-				"split-pane"
-			],
+			"registryDependencies": [],
 			"files": [
 				{
 					"type": "registry:block",

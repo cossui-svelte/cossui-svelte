@@ -9,7 +9,7 @@
 			"type": "registry:ui",
 			"path": "alert-dialog/alert-dialog-action.svelte",
 			"target": "$lib/components/ui/alert-dialog/alert-dialog-action.svelte",
-			"content": "<script lang=\"ts\">\n  import { AlertDialog as AlertDialogPrimitive } from 'bits-ui';\n  import { type ButtonSize, type ButtonVariant, buttonVariants } from '$lib/components/ui/button';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    variant = 'default',\n    size = 'default',\n    ...restProps\n  }: AlertDialogPrimitive.ActionProps & {\n    variant?: ButtonVariant;\n    size?: ButtonSize;\n  } = $props();\n</script>\n\n<AlertDialogPrimitive.Action\n  bind:ref\n  data-slot=\"alert-dialog-action\"\n  class={cn(buttonVariants({ size, variant }), 'cn-alert-dialog-action', className)}\n  {...restProps}\n/>\n"
+			"content": "<script lang=\"ts\">\n  import { AlertDialog as AlertDialogPrimitive } from 'bits-ui';\n  import { type ButtonSize, type ButtonVariant, buttonVariants } from '$lib/components/ui/button';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    variant = 'default',\n    size = 'default',\n    ...restProps\n  }: AlertDialogPrimitive.ActionProps & {\n    variant?: ButtonVariant;\n    size?: ButtonSize;\n  } = $props();\n</script>\n\n<AlertDialogPrimitive.Action\n  bind:ref\n  data-slot=\"alert-dialog-action\"\n  class={cn(buttonVariants({ size, variant }), className)}\n  {...restProps}\n/>\n"
 		},
 		{
 			"type": "registry:ui",
@@ -45,7 +45,7 @@
 			"type": "registry:ui",
 			"path": "alert-dialog/alert-dialog-media.svelte",
 			"target": "$lib/components/ui/alert-dialog/alert-dialog-media.svelte",
-			"content": "<script lang=\"ts\">\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn, type WithElementRef } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n</script>\n\n<div\n  bind:this={ref}\n  data-slot=\"alert-dialog-media\"\n  class={cn('cn-alert-dialog-media', className)}\n  {...restProps}\n>\n  {@render children?.()}\n</div>\n"
+			"content": "<script lang=\"ts\">\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn, type WithElementRef } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n</script>\n\n<div bind:this={ref} data-slot=\"alert-dialog-media\" class={cn(className)} {...restProps}>\n  {@render children?.()}\n</div>\n"
 		},
 		{
 			"type": "registry:ui",

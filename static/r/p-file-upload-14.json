@@ -17,8 +17,7 @@
 		"cropper",
 		"dialog",
 		"slider",
-		"use-file-upload",
-		"file-upload"
+		"use-file-upload"
 	],
 	"dependencies": [
 		"@lucide/svelte"

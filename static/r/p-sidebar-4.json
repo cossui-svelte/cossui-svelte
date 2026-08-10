@@ -1,0 +1,22 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-sidebar-4",
+	"title": "Sidebar 4",
+	"description": "Sidebar footer with a user menu opening upwards",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-sidebar-4.svelte",
+			"target": "$lib/components/particles/sidebar/p-sidebar-4.svelte",
+			"content": "<script lang=\"ts\">\n  import ChevronUpIcon from '@lucide/svelte/icons/chevron-up';\n  import { Menu, MenuItem, MenuPopup, MenuTrigger } from '$lib/components/ui/menu';\n  import {\n    Sidebar,\n    SidebarContent,\n    SidebarFooter,\n    SidebarHeader,\n    SidebarInset,\n    SidebarMenu,\n    SidebarMenuButton,\n    SidebarMenuItem,\n    SidebarProvider,\n    SidebarTrigger\n  } from '$lib/components/ui/sidebar';\n</script>\n\n<!-- transform-gpu makes this box the containing block for the sidebar's `fixed`\n     panel, so the demo stays inside the preview card instead of the viewport. -->\n<div class=\"relative h-100 w-full transform-gpu overflow-hidden rounded-xl border\">\n  <SidebarProvider class=\"h-full min-h-full\">\n    <Sidebar class=\"h-full\">\n      <SidebarHeader />\n      <SidebarContent />\n      <SidebarFooter>\n        <SidebarMenu>\n          <SidebarMenuItem>\n            <Menu>\n              <MenuTrigger>\n                {#snippet child({ props })}\n                  <SidebarMenuButton\n                    {...props}\n                    class=\"data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground\"\n                  >\n                    Username\n                    <ChevronUpIcon class=\"ms-auto\" />\n                  </SidebarMenuButton>\n                {/snippet}\n              </MenuTrigger>\n              <MenuPopup align=\"start\" side=\"top\" class=\"w-(--bits-dropdown-menu-anchor-width)\">\n                <MenuItem>\n                  <span>Account</span>\n                </MenuItem>\n                <MenuItem>\n                  <span>Billing</span>\n                </MenuItem>\n                <MenuItem>\n                  <span>Sign out</span>\n                </MenuItem>\n              </MenuPopup>\n            </Menu>\n          </SidebarMenuItem>\n        </SidebarMenu>\n      </SidebarFooter>\n    </Sidebar>\n    <SidebarInset class=\"h-full\">\n      <header class=\"flex h-12 shrink-0 items-center gap-2 border-b px-3\">\n        <SidebarTrigger />\n        <span class=\"font-medium text-sm\">Account</span>\n      </header>\n      <div class=\"p-4 text-muted-foreground text-sm\">Content area</div>\n    </SidebarInset>\n  </SidebarProvider>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"menu",
+		"sidebar"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

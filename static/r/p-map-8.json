@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-map-8",
+	"title": "Map 8",
+	"description": "Map with zoom, compass, locate, and fullscreen controls",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-map-8.svelte",
+			"target": "$lib/components/particles/map/p-map-8.svelte",
+			"content": "<script lang=\"ts\">\n  import { Map, MapControls } from '$lib/components/ui/map';\n</script>\n\n<div class=\"h-[420px] w-full\">\n  <Map center={[2.3522, 48.8566]} zoom={8.5}>\n    <MapControls position=\"top-right\" showZoom showCompass showLocate showFullscreen />\n  </Map>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"map"
+	],
+	"dependencies": []
+}

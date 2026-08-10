@@ -12,8 +12,6 @@
 			"content": "TO DO\n"
 		}
 	],
-	"registryDependencies": [
-		"split-pane"
-	],
+	"registryDependencies": [],
 	"dependencies": []
 }
