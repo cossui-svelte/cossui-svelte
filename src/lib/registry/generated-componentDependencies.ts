@@ -82,6 +82,7 @@ export const COMPONENT_DEPENDENCIES: Record<string, string[]> = {
 	'p-calendar-22': ['@internationalized/date'],
 	'p-calendar-23': ['@internationalized/date'],
 	'p-calendar-24': ['@internationalized/date'],
+	'p-calendar-25': ['@internationalized/date', '@lucide/svelte', 'zod'],
 	'p-calendar-3': ['@internationalized/date'],
 	'p-calendar-4': ['@internationalized/date'],
 	'p-calendar-5': ['@internationalized/date'],

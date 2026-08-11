@@ -6305,6 +6305,34 @@
 			]
 		},
 		{
+			"name": "p-calendar-25",
+			"title": "Calendar 25",
+			"description": "Calendar with 24-hour autocomplete time input",
+			"type": "registry:block",
+			"dependencies": [
+				"@internationalized/date",
+				"@lucide/svelte",
+				"zod",
+				"@internationalized/date@^3.12.3",
+				"zod@^4.4.3"
+			],
+			"registryDependencies": [
+				"autocomplete",
+				"button",
+				"calendar",
+				"field",
+				"form",
+				"use-superform"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-calendar-25.svelte",
+					"target": "$lib/components/particles/calendar/p-calendar-25.svelte"
+				}
+			]
+		},
+		{
 			"name": "p-calendar-3",
 			"title": "Calendar 3",
 			"description": "Calendar with date range selection",

@@ -766,8 +766,8 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-calendar-25': {
     description: 'Calendar with 24-hour autocomplete time input',
     tags: ['calendar', 'autocomplete', 'field', 'time'],
-    npmDependencies: ['date-fns', 'lucide-react'],
-    registryDependencies: ['calendar', 'autocomplete', 'field']
+    npmDependencies: ['@internationalized/date', '@lucide/svelte', 'zod'],
+    registryDependencies: ['autocomplete', 'button', 'calendar', 'field', 'form', 'use-superform']
   },
   'p-date-picker-1': {
     description: 'Basic date picker',
