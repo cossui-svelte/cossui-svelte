@@ -100,7 +100,7 @@
 		"utils"
 	],
 	"dependencies": [
-		"maplibre-gl@^6.2.0",
+		"maplibre-gl@^6.3.0",
 		"geojson"
 	]
 }

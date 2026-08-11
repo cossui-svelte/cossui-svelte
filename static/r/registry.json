@@ -623,7 +623,7 @@
 			"description": "A chart component for visualizing data in various formats.",
 			"type": "registry:ui",
 			"dependencies": [
-				"layerchart@^2.1.0"
+				"layerchart@^2.1.1"
 			],
 			"registryDependencies": [
 				"utils"
@@ -1887,7 +1887,7 @@
 			"description": "An interactive map with markers, popups, tooltips, and routes, powered by MapLibre GL.",
 			"type": "registry:ui",
 			"dependencies": [
-				"maplibre-gl@^6.2.0",
+				"maplibre-gl@^6.3.0",
 				"geojson"
 			],
 			"registryDependencies": [
@@ -6768,7 +6768,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"layerchart",
-				"layerchart@^2.1.0"
+				"layerchart@^2.1.1"
 			],
 			"registryDependencies": [
 				"chart"
@@ -6790,7 +6790,7 @@
 				"d3-scale",
 				"layerchart",
 				"d3-scale@^4.0.2",
-				"layerchart@^2.1.0"
+				"layerchart@^2.1.1"
 			],
 			"registryDependencies": [
 				"chart"
@@ -6810,7 +6810,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"layerchart",
-				"layerchart@^2.1.0"
+				"layerchart@^2.1.1"
 			],
 			"registryDependencies": [
 				"chart"
@@ -6832,7 +6832,7 @@
 				"d3-scale",
 				"layerchart",
 				"d3-scale@^4.0.2",
-				"layerchart@^2.1.0"
+				"layerchart@^2.1.1"
 			],
 			"registryDependencies": [
 				"chart"
@@ -6856,7 +6856,7 @@
 				"layerchart",
 				"d3-scale@^4.0.2",
 				"d3-shape@^3.2.0",
-				"layerchart@^2.1.0"
+				"layerchart@^2.1.1"
 			],
 			"registryDependencies": [
 				"chart"
@@ -6880,7 +6880,7 @@
 				"layerchart",
 				"d3-scale@^4.0.2",
 				"d3-shape@^3.2.0",
-				"layerchart@^2.1.0"
+				"layerchart@^2.1.1"
 			],
 			"registryDependencies": [
 				"chart"
@@ -6904,7 +6904,7 @@
 				"layerchart",
 				"d3-scale@^4.0.2",
 				"d3-shape@^3.2.0",
-				"layerchart@^2.1.0"
+				"layerchart@^2.1.1"
 			],
 			"registryDependencies": [
 				"chart"
@@ -6924,7 +6924,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"layerchart",
-				"layerchart@^2.1.0"
+				"layerchart@^2.1.1"
 			],
 			"registryDependencies": [
 				"chart"
@@ -6944,7 +6944,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"layerchart",
-				"layerchart@^2.1.0"
+				"layerchart@^2.1.1"
 			],
 			"registryDependencies": [
 				"chart"
@@ -6966,7 +6966,7 @@
 				"d3-scale",
 				"layerchart",
 				"d3-scale@^4.0.2",
-				"layerchart@^2.1.0"
+				"layerchart@^2.1.1"
 			],
 			"registryDependencies": [
 				"chart"
@@ -11292,7 +11292,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"maplibre-gl",
-				"maplibre-gl@^6.2.0"
+				"maplibre-gl@^6.3.0"
 			],
 			"registryDependencies": [
 				"button",

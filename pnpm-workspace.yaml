@@ -25,20 +25,20 @@ minimumReleaseAgeExclude:
   - vitest@4.1.7
   - '@lucide/svelte@1.25.0 || 1.27.0 || 1.28.0 || 1.29.0 || 1.31.0'
   - '@sveltejs/kit@2.70.0 || 2.70.2'
-  - miniflare@4.20260714.0 || 4.20260722.1 || 4.20260730.0
-  - wrangler@4.112.0 || 4.115.0 || 4.116.0
+  - miniflare@4.20260714.0 || 4.20260722.1 || 4.20260730.0 || 5.20260804.0-alpha
+  - wrangler@4.112.0 || 4.115.0 || 4.116.0 || 4.120.1
   - commit-and-tag-version@13.0.0 || 13.1.0 || 13.1.2
   - eslint-plugin-svelte@3.22.0
-  - '@biomejs/biome@2.5.6 || 2.5.7'
-  - '@biomejs/cli-darwin-arm64@2.5.6 || 2.5.7'
-  - '@biomejs/cli-darwin-x64@2.5.6 || 2.5.7'
-  - '@biomejs/cli-linux-arm64-musl@2.5.6 || 2.5.7'
-  - '@biomejs/cli-linux-arm64@2.5.6 || 2.5.7'
-  - '@biomejs/cli-linux-x64-musl@2.5.6 || 2.5.7'
-  - '@biomejs/cli-linux-x64@2.5.6 || 2.5.7'
-  - '@biomejs/cli-win32-arm64@2.5.6 || 2.5.7'
-  - '@biomejs/cli-win32-x64@2.5.6 || 2.5.7'
-  - layerchart@2.0.3 || 2.0.4 || 2.1.0
+  - '@biomejs/biome@2.5.6 || 2.5.7 || 2.5.8'
+  - '@biomejs/cli-darwin-arm64@2.5.6 || 2.5.7 || 2.5.8'
+  - '@biomejs/cli-darwin-x64@2.5.6 || 2.5.7 || 2.5.8'
+  - '@biomejs/cli-linux-arm64-musl@2.5.6 || 2.5.7 || 2.5.8'
+  - '@biomejs/cli-linux-arm64@2.5.6 || 2.5.7 || 2.5.8'
+  - '@biomejs/cli-linux-x64-musl@2.5.6 || 2.5.7 || 2.5.8'
+  - '@biomejs/cli-linux-x64@2.5.6 || 2.5.7 || 2.5.8'
+  - '@biomejs/cli-win32-arm64@2.5.6 || 2.5.7 || 2.5.8'
+  - '@biomejs/cli-win32-x64@2.5.6 || 2.5.7 || 2.5.8'
+  - layerchart@2.0.3 || 2.0.4 || 2.1.0 || 2.1.1
   - '@cloudflare/workerd-darwin-64@1.20260730.1'
   - '@cloudflare/workerd-darwin-arm64@1.20260730.1'
   - '@cloudflare/workerd-linux-64@1.20260730.1'
@@ -47,12 +47,15 @@ minimumReleaseAgeExclude:
   - vite@8.2.0 || 8.2.1
   - workerd@1.20260730.1
   - '@aejkatappaja/phantom-ui@1.5.0'
-  - '@typescript-eslint/eslint-plugin@8.66.0'
-  - '@typescript-eslint/parser@8.66.0'
-  - '@typescript-eslint/project-service@8.66.0'
-  - '@typescript-eslint/scope-manager@8.66.0'
-  - '@typescript-eslint/types@8.66.0'
-  - '@typescript-eslint/typescript-estree@8.66.0'
-  - '@typescript-eslint/utils@8.66.0'
-  - '@typescript-eslint/visitor-keys@8.66.0'
-  - typescript-eslint@8.66.0
+  - '@typescript-eslint/eslint-plugin@8.66.0 || 8.67.0'
+  - '@typescript-eslint/parser@8.66.0 || 8.67.0'
+  - '@typescript-eslint/project-service@8.66.0 || 8.67.0'
+  - '@typescript-eslint/scope-manager@8.66.0 || 8.67.0'
+  - '@typescript-eslint/types@8.66.0 || 8.67.0'
+  - '@typescript-eslint/typescript-estree@8.66.0 || 8.67.0'
+  - '@typescript-eslint/utils@8.66.0 || 8.67.0'
+  - '@typescript-eslint/visitor-keys@8.66.0 || 8.67.0'
+  - typescript-eslint@8.66.0 || 8.67.0
+  - '@typescript-eslint/tsconfig-utils@8.67.0'
+  - '@typescript-eslint/type-utils@8.67.0'
+  - maplibre-gl@6.3.0

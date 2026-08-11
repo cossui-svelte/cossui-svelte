@@ -17,6 +17,6 @@
 	],
 	"dependencies": [
 		"layerchart",
-		"layerchart@^2.1.0"
+		"layerchart@^2.1.1"
 	]
 }
