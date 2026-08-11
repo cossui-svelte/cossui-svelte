@@ -1,3 +1,4 @@
+/// <reference types="node" />
 /**
  * Custom jsrepo output that generates `src/lib/constants/componentDependencies.ts`
  * from the registry build result. Keeps the in-app dependency map in sync with

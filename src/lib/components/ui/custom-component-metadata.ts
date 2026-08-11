@@ -1,7 +1,7 @@
 // This file contains extra meta-data, to add into the registry
 // it is edited manually
 
-import { type RegistryUiData } from '../../../../scripts/generateComponentRegistry';
+import type { RegistryUiData } from '$lib/registry/generated-registry-components';
 
 export const custom_components_metadata: RegistryUiData = {
   accordion: {

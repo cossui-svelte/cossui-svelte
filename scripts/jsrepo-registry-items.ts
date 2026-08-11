@@ -1,3 +1,4 @@
+/// <reference types="node" />
 /**
  * Builds jsrepo {@link RegistryItem} entries from the components tracked in
  * `src/lib/registry/generated-registry-components.ts` (kept in sync via
@@ -11,10 +12,6 @@ import type { RegistryItem } from 'jsrepo/config';
 import { allComponents } from '../src/lib/registry/generated-registry-components';
 import { metadata as particleMetadata } from '../src/lib/registry/generated-particle-metadata';
 import { idToName } from '../src/lib/utils/particle-id';
-import {
-  parseSvelteBitsHeader,
-  type SvelteBitsSourceHeader
-} from '../src/lib/utils/svelte-bits-source-header';
 
 async function isDirectory(path: string): Promise<boolean> {
   try {
@@ -158,19 +155,11 @@ export async function getRegistryItems(cwd: string): Promise<RegistryItem[]> {
       continue;
     }
 
-    let header: SvelteBitsSourceHeader = {};
-    try {
-      const mainSource = await readFile(resolve(componentDir, `${meta.folder}.svelte`), 'utf8');
-      header = parseSvelteBitsHeader(mainSource).header;
-    } catch {
-      // components without a single main file (e.g. chart, toast) rely on generated metadata only
-    }
-
     const registryItem: RegistryItem = {
       name: slug,
       type: 'ui',
-      title: header.title ?? meta.name,
-      description: header.description ?? meta.description,
+      title: meta.name,
+      description: meta.description,
       categories: [meta.category],
       files: [
         {
@@ -180,13 +169,9 @@ export async function getRegistryItems(cwd: string): Promise<RegistryItem[]> {
       ]
     };
 
-    const dependencies = header.dependencies?.length ? header.dependencies : meta.npmDependencies;
-    const registryDependencies = header.registryDependencies?.length
-      ? header.registryDependencies
-      : meta.registryDependencies;
-
-    if (dependencies?.length) registryItem.dependencies = dependencies;
-    if (registryDependencies?.length) registryItem.registryDependencies = registryDependencies;
+    if (meta.npmDependencies?.length) registryItem.dependencies = meta.npmDependencies;
+    if (meta.registryDependencies?.length)
+      registryItem.registryDependencies = meta.registryDependencies;
 
     items.push(registryItem);
   }

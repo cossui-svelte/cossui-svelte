@@ -2,7 +2,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import cossuiRegistry from './registry.json' with { type: 'json' };
-import { custom_particle_metadata } from '$lib/components/particles/custom-particle-metadata'
+import { custom_particle_metadata } from '../src/lib/components/particles/custom-particle-metadata'
 
 const OUTPUT = path.resolve('src/lib/registry/generated-particle-metadata.ts');
 const PARTICLES_DIR = path.resolve('src/lib/components/particles');
@@ -191,6 +191,16 @@ for (const [name, item] of Object.entries(custom_particle_metadata as Record<str
     orderedNames.push(name);
     entriesByName.set(name, item);
   }
+}
+
+// Every particle gets a baseline tag derived from its own id (e.g. 'p-aspect-ratio-2' ->
+// 'aspect-ratio'), merged in alongside any registry.json/custom tags. This guarantees every
+// particle is filterable by its own component name even when it has no upstream categories
+// (e.g. coss-only particles that aren't in registry.json).
+for (const name of orderedNames) {
+  const slugTag = name.replace(/^p-/, '').replace(/-\d+$/, '');
+  const entry = entriesByName.get(name)!;
+  entry.tags = mergeList(entry.tags, [slugTag]);
 }
 
 const body = orderedNames.map((name) => renderEntry(name, entriesByName.get(name)!)).join(',\n');

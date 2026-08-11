@@ -1295,7 +1295,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   },
   'p-empty-1': {
     description: 'Empty state with icon and actions',
-    tags: ['empty-state'],
+    tags: ['empty'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'empty']
   },
@@ -3101,704 +3101,831 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   },
   'p-aspect-ratio-1': {
     description: 'Ratio 1:1',
+    tags: ['aspect-ratio'],
     registryDependencies: ['aspect-ratio'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-aspect-ratio-2': {
     description: 'Ratio 9:16',
+    tags: ['aspect-ratio'],
     registryDependencies: ['aspect-ratio'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-aspect-ratio-3': {
     description: 'Ratio 16:9',
+    tags: ['aspect-ratio'],
     registryDependencies: ['aspect-ratio'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-aspect-ratio-4': {
     description: 'Ratio 21:9',
+    tags: ['aspect-ratio'],
     registryDependencies: ['aspect-ratio'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-chart-1': {
     description: 'Radial Chart with Labels',
+    tags: ['chart'],
     npmDependencies: ['layerchart'],
     registryDependencies: ['chart'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-chart-10': {
     description: 'Bar Chart - Horizontal Mixed',
+    tags: ['chart'],
     npmDependencies: ['d3-scale', 'layerchart'],
     registryDependencies: ['chart'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-chart-2': {
     description: 'Radial Chart with Text',
+    tags: ['chart'],
     npmDependencies: ['layerchart'],
     registryDependencies: ['chart'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-chart-3': {
     description: 'Radial Chart - Stacked',
+    tags: ['chart'],
     npmDependencies: ['d3-scale', 'layerchart'],
     registryDependencies: ['chart'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-chart-4': {
     description: 'Radar Chart - Custom Labelp',
+    tags: ['chart'],
     npmDependencies: ['d3-scale', 'd3-shape', 'layerchart'],
     registryDependencies: ['chart'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-chart-5': {
     description: 'Area Chart - Axes',
+    tags: ['chart'],
     npmDependencies: ['d3-scale', 'd3-shape', 'layerchart'],
     registryDependencies: ['chart'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-chart-6': {
     description: 'Line Chart with Labels',
+    tags: ['chart'],
     npmDependencies: ['d3-scale', 'd3-shape', 'layerchart'],
     registryDependencies: ['chart'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-chart-7': {
     description: 'Pie Chart - Interactive',
+    tags: ['chart'],
     npmDependencies: ['layerchart'],
     registryDependencies: ['chart'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-chart-8': {
     description: 'Pie Chart - Custom Label',
+    tags: ['chart'],
     npmDependencies: ['layerchart'],
     registryDependencies: ['chart'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-chart-9': {
     description: 'Bar Chart - Multiple',
+    tags: ['chart'],
     npmDependencies: ['d3-scale', 'layerchart'],
     registryDependencies: ['chart'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-colorpicker-1': {
     description: 'Full featured Color picker',
+    tags: ['colorpicker'],
     registryDependencies: ['colorpicker'],
     meta: { class: '**:data-[slot=card]:overflow-visible **:data-[slot=card]:[clip-path:none]!' }
   },
   'p-colorpicker-2': {
     description: 'Minimal color picker with sliders',
+    tags: ['colorpicker'],
     registryDependencies: ['colorpicker'],
     meta: { class: '**:data-[slot=card]:overflow-visible **:data-[slot=card]:[clip-path:none]!' }
   },
   'p-colorpicker-3': {
     description: 'Non editable swatches Color picker',
+    tags: ['colorpicker'],
     npmDependencies: ['@hueycolor/core'],
     registryDependencies: ['colorpicker'],
     meta: { class: '**:data-[slot=card]:overflow-visible **:data-[slot=card]:[clip-path:none]!' }
   },
   'p-colorpicker-4': {
     description: 'Sliders only',
+    tags: ['colorpicker'],
     registryDependencies: ['colorpicker'],
     meta: { class: '**:data-[slot=card]:overflow-visible **:data-[slot=card]:[clip-path:none]!' }
   },
   'p-colorpicker-5': {
     description: 'Color picker with custom swatches and text input',
+    tags: ['colorpicker'],
     npmDependencies: ['@hueycolor/core'],
     registryDependencies: ['colorpicker'],
     meta: { class: '**:data-[slot=card]:overflow-visible **:data-[slot=card]:[clip-path:none]!' }
   },
   'p-colorpicker-6': {
     description: 'Color picker with custom swatches and no text input',
+    tags: ['colorpicker'],
     npmDependencies: ['@hueycolor/core'],
     registryDependencies: ['colorpicker'],
     meta: { class: '**:data-[slot=card]:overflow-visible **:data-[slot=card]:[clip-path:none]!' }
   },
   'p-cropper-1': {
     description: 'Crops images to a specific aspect ratio and size',
+    tags: ['cropper'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'cropper', 'dialog', 'slider', 'use-file-upload'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-cropper-10': {
     description: 'Cropper with crop data output',
+    tags: ['cropper'],
     registryDependencies: ['cropper'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-cropper-11': {
     description: 'Cropper with image preview',
+    tags: ['cropper'],
     registryDependencies: ['button', 'cropper'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-cropper-12': {
     description: 'Cropper with aspect ratio switcher and grid overlay',
+    tags: ['cropper'],
     registryDependencies: ['button', 'cropper'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-cropper-2': {
     description: 'Basic cropper',
+    tags: ['cropper'],
     registryDependencies: ['cropper'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-cropper-3': {
     description: 'Cropper with aspect ratio 16:9',
+    tags: ['cropper'],
     registryDependencies: ['cropper'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-cropper-4': {
     description: 'Cropper with custom crop area color',
+    tags: ['cropper'],
     registryDependencies: ['cropper'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-cropper-5': {
     description: 'Cropper with custom mask overlay',
+    tags: ['cropper'],
     registryDependencies: ['cropper'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-cropper-6': {
     description: 'Cropper with full size crop area',
+    tags: ['cropper'],
     registryDependencies: ['cropper'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-cropper-7': {
     description: 'Cropper with full-rounded mask',
+    tags: ['cropper'],
     registryDependencies: ['cropper'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-cropper-8': {
     description: 'Cropper with zoom slider',
+    tags: ['cropper'],
     registryDependencies: ['cropper', 'slider'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-cropper-9': {
     description: 'Cropper with custom zoom limits',
+    tags: ['cropper'],
     registryDependencies: ['cropper'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-file-upload-1': {
     description: 'Basic image uploader',
+    tags: ['file-upload'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'use-file-upload'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-file-upload-10': {
     description: 'Multiple files uploader with list inside the drop area',
+    tags: ['file-upload'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'use-file-upload'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-file-upload-11': {
     description: 'Multiple files uploader with table',
+    tags: ['file-upload'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'table', 'use-file-upload'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-file-upload-12': {
     description: 'Mixed content uploader with card grid',
+    tags: ['file-upload'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'use-file-upload'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-file-upload-13': {
     description: 'File uploader with simulated progress tracking',
+    tags: ['file-upload'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'use-file-upload'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-file-upload-14': {
     description: 'Avatar uploader with crop dialog',
+    tags: ['file-upload'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'cropper', 'dialog', 'slider', 'use-file-upload'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-file-upload-2': {
     description: 'Avatar upload button',
+    tags: ['file-upload'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'use-file-upload'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-file-upload-3': {
     description: 'Avatar uploader with droppable area',
+    tags: ['file-upload'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'use-file-upload'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-file-upload-4': {
     description: 'Single image uploader with max size',
+    tags: ['file-upload'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'use-file-upload'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-file-upload-5': {
     description: 'Single image uploader with max size, drop area and button',
+    tags: ['file-upload'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'use-file-upload'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-file-upload-6': {
     description: 'Multiple image uploader with image grid',
+    tags: ['file-upload'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'use-file-upload'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-file-upload-7': {
     description: 'Multiple image uploader with image list',
+    tags: ['file-upload'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'use-file-upload'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-file-upload-8': {
     description: 'Single file uploader with max size',
+    tags: ['file-upload'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'use-file-upload'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-file-upload-9': {
     description: 'Multiple files uploader with list',
+    tags: ['file-upload'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'use-file-upload'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-input-100': {
     description: 'Credit card number input with auto-formatting',
+    tags: ['input'],
     npmDependencies: ['@lucide/svelte', 'cleave-zen'],
     registryDependencies: ['input', 'label'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-input-101': {
     description: 'Credit card expiry date input with auto-formatting',
+    tags: ['input'],
     npmDependencies: ['cleave-zen'],
     registryDependencies: ['input', 'label'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-input-102': {
     description: 'Credit card CVC/code input with auto-formatting',
+    tags: ['input'],
     npmDependencies: ['cleave-zen'],
     registryDependencies: ['input', 'label'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-input-103': {
     description: 'Combined credit card number, expiry, and CVC inputs with auto-formatting',
+    tags: ['input'],
     npmDependencies: ['@lucide/svelte', 'cleave-zen'],
     registryDependencies: ['input', 'label'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-input-147': {
     description: 'Phone number input with country code selection and auto-formatting',
+    tags: ['input'],
     npmDependencies: ['@lucide/svelte', 'svelte-tel-input'],
     registryDependencies: ['group', 'label', 'select'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-input-155': {
     description: 'Input with input mask',
+    tags: ['input'],
     npmDependencies: ['cleave-zen', 'inputmask'],
     registryDependencies: ['input', 'label'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-input-156': {
     description: 'Timestamp input with input mask',
+    tags: ['input'],
     npmDependencies: ['cleave-zen', 'inputmask'],
     registryDependencies: ['input', 'label'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-input-157': {
     description: 'Numeric range input with min and max fields',
+    tags: ['input'],
     registryDependencies: ['input', 'label'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-input-200': {
     description: 'IP address, subnet mask, and gateway inputs with auto-formatting',
+    tags: ['input'],
     npmDependencies: ['cleave-zen'],
     registryDependencies: ['input', 'label'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-link-preview-1': {
     description: 'A component that displays a preview of a link on mouse hover',
+    tags: ['link-preview'],
     registryDependencies: ['button', 'link-preview'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-map-1': {
     description: 'Global analytics map with markers sized by active users per city',
+    tags: ['map'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['map'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-map-10': {
     description: 'Clustered markers with a popup showing details on click',
+    tags: ['map'],
     registryDependencies: ['map'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-map-11': {
     description: 'Map with a dismissible popup and a button to show it again',
+    tags: ['map'],
     registryDependencies: ['button', 'map'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-map-2': {
     description:
       'Global shipping routes visualized as animated arcs from a hub on a rotating globe',
+    tags: ['map'],
     registryDependencies: ['map'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-map-3': {
     description: 'Delivery tracking map with animated route and courier marker',
+    tags: ['map'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['map'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-map-4': {
     description: 'EV charging stations with live availability status markers',
+    tags: ['map'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['map'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-map-5': {
     description: 'Destination picker with animated fly-to transitions',
+    tags: ['map'],
     npmDependencies: ['maplibre-gl'],
     registryDependencies: ['button', 'map'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-map-6': {
     description: 'Cycling trail map with route line and activity stats overlay',
+    tags: ['map'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['map'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-map-7': {
     description: 'Heatmap-style markers showing visitor traffic hotspots',
+    tags: ['map'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['map'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-map-8': {
     description: 'Map with zoom, compass, locate, and fullscreen controls',
+    tags: ['map'],
     registryDependencies: ['map'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-map-9': {
     description: 'Map with a GeoJSON polygon overlay',
+    tags: ['map'],
     registryDependencies: ['map'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-places-autocomplete-1': {
     description: 'Address validation powered by the Google Places API',
+    tags: ['places-autocomplete'],
     registryDependencies: ['places-autocomplete', 'toast'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-rich-editor-1': {
     description: 'Basic rich editor examples',
+    tags: ['rich-editor'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-sidebar-1': {
     description: 'Basic application sidebar with a navigation menu',
+    tags: ['sidebar'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['sidebar'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-sidebar-10': {
     description: 'Sidebar menu items with trailing count badges',
+    tags: ['sidebar'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['sidebar'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-sidebar-11': {
     description: 'Sidebar menu with always-visible nested sub-menus',
+    tags: ['sidebar'],
     registryDependencies: ['sidebar'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-sidebar-12': {
     description: 'Sidebar menu whose sub-menus expand and collapse',
+    tags: ['sidebar'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['collapsible', 'sidebar'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-sidebar-13': {
     description: 'Sidebar open state controlled from outside the component',
+    tags: ['sidebar'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'sidebar'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-sidebar-2': {
     description: 'Documentation sidebar with a version switcher, search and grouped navigation',
+    tags: ['sidebar'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['label', 'menu', 'sidebar'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-sidebar-3': {
     description: 'Sidebar header holding a workspace switcher menu',
+    tags: ['sidebar'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['menu', 'sidebar'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-sidebar-4': {
     description: 'Sidebar footer with a user menu opening upwards',
+    tags: ['sidebar'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['menu', 'sidebar'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-sidebar-5': {
     description: 'Labelled sidebar group wrapping a short menu',
+    tags: ['sidebar'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['sidebar'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-sidebar-6': {
     description: 'Sidebar group with an action button next to its label',
+    tags: ['sidebar'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['sidebar', 'toast'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-sidebar-7': {
     description: 'Collapsible sidebar group toggled from its label',
+    tags: ['sidebar'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['collapsible', 'sidebar'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-sidebar-8': {
     description: 'Sidebar menu of project links with leading icons',
+    tags: ['sidebar'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['sidebar'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-sidebar-9': {
     description: 'Sidebar menu items with a per-row action menu',
+    tags: ['sidebar'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['menu', 'sidebar'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-split-pane-1': {
     description: 'Split pane with resizable panels',
+    tags: ['split-pane'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-starrating-1': {
     description: 'Basic interactive star rating',
+    tags: ['starrating'],
     registryDependencies: ['starrating'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-starrating-2': {
     description: 'Half-star precision rating with live value display',
+    tags: ['starrating'],
     registryDependencies: ['starrating'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-starrating-3': {
     description: 'Readonly rating with review count',
+    tags: ['starrating'],
     registryDependencies: ['starrating'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-starrating-4': {
     description: 'Star rating inside a form field',
+    tags: ['starrating'],
     npmDependencies: ['zod'],
     registryDependencies: ['button', 'field', 'form', 'starrating', 'use-superform'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-starrating-5': {
     description: 'Star rating with a different color per star',
+    tags: ['starrating'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['starrating'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-starrating-6': {
     description: 'Heart rating using a custom icon',
+    tags: ['starrating'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['starrating'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-stepper-1': {
     description: 'Basic stepper examples',
+    tags: ['stepper'],
     registryDependencies: ['button', 'stepper'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-stepper-10': {
     description: 'Progress stepper',
+    tags: ['stepper'],
     registryDependencies: ['button', 'stepper'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-stepper-11': {
     description: 'Stepper with titles and descriptions',
+    tags: ['stepper'],
     registryDependencies: ['stepper'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-stepper-12': {
     description: 'Stepper with inline titles',
+    tags: ['stepper'],
     registryDependencies: ['stepper'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-stepper-15': {
     description: 'Vertical stepper with numbers and checkmarks',
+    tags: ['stepper'],
     registryDependencies: ['stepper'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-stepper-16': {
     description: 'Controlled vertical stepper with checkmarks',
+    tags: ['stepper'],
     registryDependencies: ['button', 'stepper'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-stepper-17': {
     description: 'Vertical stepper with inline titles',
+    tags: ['stepper'],
     registryDependencies: ['stepper'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-stepper-18': {
     description: 'Vertical stepper with inline titles and descriptions',
+    tags: ['stepper'],
     registryDependencies: ['stepper'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-stepper-2': {
     description: 'Stepper with numbers only',
+    tags: ['stepper'],
     registryDependencies: ['stepper'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-stepper-3': {
     description: 'Stepper with numbers and checkmarks',
+    tags: ['stepper'],
     registryDependencies: ['stepper'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-stepper-4': {
     description: 'Stepper with tiny buttons and checkmarks',
+    tags: ['stepper'],
     registryDependencies: ['stepper'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-stepper-5': {
     description: 'Controlled stepper with checkmarks',
+    tags: ['stepper'],
     registryDependencies: ['button', 'stepper'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-stepper-6': {
     description: 'Controlled stepper with checkmarks and loading state',
+    tags: ['stepper'],
     registryDependencies: ['button', 'stepper'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-stepper-7': {
     description: 'Stepper with mixed elements',
+    tags: ['stepper'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['stepper'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-stepper-8': {
     description: 'Stepper with labels',
+    tags: ['stepper'],
     registryDependencies: ['stepper'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-stepper-9': {
     description: 'Paginated stepper',
+    tags: ['stepper'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'stepper'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-table-10': {
     description: 'Table with sticky header',
+    tags: ['table'],
     registryDependencies: ['table'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-table-9': {
     description: 'Vertical table',
+    tags: ['table'],
     registryDependencies: ['table'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-timeline-1': {
     description: 'The most basic vertical timeline',
+    tags: ['timeline'],
     registryDependencies: ['timeline'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-timeline-10': {
     description: 'A timeline showing an activity tracker',
+    tags: ['timeline'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['timeline'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-timeline-11': {
     description: 'Horizontal timeline with dates below',
+    tags: ['timeline'],
     registryDependencies: ['timeline'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-timeline-12': {
     description: 'Horizontal timeline with dates above',
+    tags: ['timeline'],
     registryDependencies: ['timeline'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-timeline-2': {
     description: 'A more complex timeline',
+    tags: ['timeline'],
     registryDependencies: ['timeline'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-timeline-3': {
     description: 'A more complex timeline with embeded dates',
+    tags: ['timeline'],
     registryDependencies: ['timeline'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-timeline-4': {
     description: 'A Basic vertical timeline',
+    tags: ['timeline'],
     registryDependencies: ['timeline'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-timeline-5': {
     description: 'A vertical timeline with progress indicator',
+    tags: ['timeline'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['timeline'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-timeline-6': {
     description: 'A timeline with icons',
+    tags: ['timeline'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['timeline'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-timeline-7': {
     description: 'A timeline with images',
+    tags: ['timeline'],
     registryDependencies: ['timeline'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-timeline-8': {
     description: 'A timeline with titles and dates',
+    tags: ['timeline'],
     registryDependencies: ['timeline'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-timeline-9': {
     description: 'A timeline as an array',
+    tags: ['timeline'],
     registryDependencies: ['timeline'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-tree-1': {
     description: 'Show a tree structure with nodes and children',
+    tags: ['tree'],
     npmDependencies: ['@headless-tree/core'],
     registryDependencies: ['tree'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-tree-2': {
     description: 'Basic tree with vertical lines',
+    tags: ['tree'],
     npmDependencies: ['@headless-tree/core'],
     registryDependencies: ['tree'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-tree-3': {
     description: 'Basic tree with icons',
+    tags: ['tree'],
     npmDependencies: ['@headless-tree/core', '@lucide/svelte'],
     registryDependencies: ['tree'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-tree-4': {
     description: 'Basic tree with caret icon on the right',
+    tags: ['tree'],
     npmDependencies: ['@headless-tree/core', '@lucide/svelte'],
     registryDependencies: ['tree'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-tree-5': {
     description: 'Tree with multi-select and drag and drop',
+    tags: ['tree'],
     npmDependencies: ['@headless-tree/core', '@lucide/svelte'],
     registryDependencies: ['tree'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-tree-6': {
     description: 'Tree with renaming (press F2 to rename)',
+    tags: ['tree'],
     npmDependencies: ['@headless-tree/core', '@lucide/svelte'],
     registryDependencies: ['tree'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-tree-7': {
     description: 'Tree with search highlight',
+    tags: ['tree'],
     npmDependencies: ['@headless-tree/core', '@lucide/svelte'],
     registryDependencies: ['input', 'tree'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-tree-8': {
     description: 'Tree with filtering',
+    tags: ['tree'],
     npmDependencies: ['@headless-tree/core', '@lucide/svelte'],
     registryDependencies: ['input', 'tree'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }

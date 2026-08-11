@@ -127,6 +127,10 @@ export const custom_particle_metadata = {
     description: 'Cropper with aspect ratio switcher and grid overlay',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
+  'p-empty-1': {
+    // registry.json's 'empty state' category is redundant with the auto-derived 'empty' tag
+    tags: ['-empty-state']
+  },
   'p-file-upload-1': {
     description: 'Basic image uploader',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
