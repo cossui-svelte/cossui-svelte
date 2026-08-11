@@ -123,6 +123,8 @@ export const COMPONENT_DEPENDENCIES: Record<string, string[]> = {
 	'p-combobox-14': ['@lucide/svelte'],
 	'p-combobox-17': ['@lucide/svelte'],
 	'p-combobox-18': ['@lucide/svelte'],
+	'p-combobox-19': ['@lucide/svelte'],
+	'p-combobox-20': ['@lucide/svelte'],
 	'p-command-1': ['@lucide/svelte'],
 	'p-command-2': ['@lucide/svelte'],
 	'p-context-menu-6': ['@lucide/svelte'],

@@ -1153,14 +1153,14 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-combobox-19': {
     description: 'Combobox multiple with stacked chips',
     tags: ['combobox', 'input'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['avatar', 'badge', 'button', 'combobox'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-80' }
   },
   'p-combobox-20': {
     description: 'Combobox multiple with stacked divided chips',
     tags: ['combobox', 'input'],
-    npmDependencies: ['lucide-react'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['avatar', 'badge', 'button', 'combobox'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-80' }
   },

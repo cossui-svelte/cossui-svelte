@@ -1,0 +1,24 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-combobox-20",
+	"title": "Combobox 20",
+	"description": "Combobox multiple with stacked divided chips",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-combobox-20.svelte",
+			"target": "$lib/components/particles/combobox/p-combobox-20.svelte",
+			"content": "<script lang=\"ts\">\n  import Search from '@lucide/svelte/icons/search';\n  import X from '@lucide/svelte/icons/x';\n  import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';\n  import { Badge } from '$lib/components/ui/badge';\n  import { Button } from '$lib/components/ui/button';\n  import {\n    Combobox,\n    ComboboxEmpty,\n    ComboboxInput,\n    ComboboxItem,\n    ComboboxList,\n    ComboboxPopup\n  } from '$lib/components/ui/combobox';\n\n  type TeamMember = {\n    avatar: string;\n    initials: string;\n    label: string;\n    priority: 'Lowest' | 'Low' | 'Medium' | 'High' | 'Highest';\n    value: string;\n    weight: number;\n  };\n\n  const teamMembers: TeamMember[] = [\n    {\n      avatar: 'https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?w=72&h=72&dpr=2&q=80',\n      initials: 'JH',\n      label: 'Jenny Hamilton',\n      priority: 'Highest',\n      value: 'jenny',\n      weight: 200\n    },\n    {\n      avatar: 'https://images.unsplash.com/photo-1628157588553-5eeea00af15c?w=72&h=72&dpr=2&q=80',\n      initials: 'PS',\n      label: 'Paul Smith',\n      priority: 'Medium',\n      value: 'paul',\n      weight: 100\n    },\n    {\n      avatar: 'https://images.unsplash.com/photo-1655874819398-c6dfbec68ac7?w=72&h=72&dpr=2&q=80',\n      initials: 'LW',\n      label: 'Luna Wyen',\n      priority: 'High',\n      value: 'luna',\n      weight: 150\n    },\n    {\n      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=72&h=72&dpr=2&q=80',\n      initials: 'AC',\n      label: 'Alex Chen',\n      priority: 'Low',\n      value: 'alex',\n      weight: 100\n    },\n    {\n      avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=72&h=72&dpr=2&q=80',\n      initials: 'SJ',\n      label: 'Sarah Johnson',\n      priority: 'Medium',\n      value: 'sarah',\n      weight: 50\n    },\n    {\n      avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=72&h=72&dpr=2&q=80',\n      initials: 'ED',\n      label: 'Emma Davis',\n      priority: 'Lowest',\n      value: 'emma',\n      weight: 100\n    }\n  ];\n\n  let open = $state(false);\n  let selectedValues = $state<string[]>(teamMembers.slice(0, 2).map((m) => m.value));\n  const selected = $derived(selectedValues.map((v) => teamMembers.find((m) => m.value === v)!));\n\n  function removeMember(value: string) {\n    selectedValues = selectedValues.filter((v) => v !== value);\n  }\n</script>\n\n<div class=\"flex w-full flex-col gap-2\">\n  <Combobox\n    autoHighlight\n    multiple\n    bind:open\n    bind:value={selectedValues}\n    items={teamMembers}\n    onValueChange={() => (open = false)}\n  >\n    <ComboboxInput aria-label=\"Add team members\" placeholder=\"Add team members…\">\n      {#snippet startAddon()}<Search />{/snippet}\n    </ComboboxInput>\n    <ComboboxPopup>\n      <ComboboxEmpty>No team members found.</ComboboxEmpty>\n      <ComboboxList>\n        {#each teamMembers as item (item.value)}\n          <ComboboxItem value={item.value} label={item.label}>{item.label}</ComboboxItem>\n        {/each}\n      </ComboboxList>\n    </ComboboxPopup>\n  </Combobox>\n  {#if selected.length > 0}\n    <ul class=\"divide-y rounded-lg border\">\n      {#each selected as member (member.value)}\n        <li class=\"flex items-center gap-2 p-1 ps-2 text-base sm:text-sm\">\n          <Avatar class=\"size-5\">\n            <AvatarImage alt={member.label} src={member.avatar} />\n            <AvatarFallback class=\"text-[.625rem]\">{member.initials}</AvatarFallback>\n          </Avatar>\n          <span class=\"truncate font-medium\">{member.label}</span>\n          <Badge class=\"ms-auto\" size=\"sm\" variant=\"outline\">{member.priority}</Badge>\n          <span class=\"text-muted-foreground text-xs tabular-nums\">{member.weight}%</span>\n          <Button\n            aria-label={`Remove ${member.label}`}\n            onclick={() => removeMember(member.value)}\n            size=\"icon-xs\"\n            variant=\"ghost\"\n          >\n            <X />\n          </Button>\n        </li>\n      {/each}\n    </ul>\n  {/if}\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"avatar",
+		"badge",
+		"button",
+		"combobox"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

@@ -7477,6 +7477,28 @@
 			]
 		},
 		{
+			"name": "p-combobox-19",
+			"title": "Combobox 19",
+			"description": "Combobox multiple with stacked chips",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [
+				"avatar",
+				"badge",
+				"button",
+				"combobox"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-combobox-19.svelte",
+					"target": "$lib/components/particles/combobox/p-combobox-19.svelte"
+				}
+			]
+		},
+		{
 			"name": "p-combobox-2",
 			"title": "Combobox 2",
 			"description": "Disabled combobox",
@@ -7490,6 +7512,28 @@
 					"type": "registry:block",
 					"path": "p-combobox-2.svelte",
 					"target": "$lib/components/particles/combobox/p-combobox-2.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-combobox-20",
+			"title": "Combobox 20",
+			"description": "Combobox multiple with stacked divided chips",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [
+				"avatar",
+				"badge",
+				"button",
+				"combobox"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-combobox-20.svelte",
+					"target": "$lib/components/particles/combobox/p-combobox-20.svelte"
 				}
 			]
 		},
