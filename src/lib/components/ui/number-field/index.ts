@@ -4,3 +4,4 @@ export { default as NumberFieldGroup } from './number-field-group.svelte';
 export { default as NumberFieldIncrement } from './number-field-increment.svelte';
 export { default as NumberFieldInput } from './number-field-input.svelte';
 export { default as NumberFieldScrubArea } from './number-field-scrub-area.svelte';
+export { default as NumberFieldValue } from './number-field-value.svelte';

@@ -1,13 +1,17 @@
 <script lang="ts">
   import PlusIcon from '@lucide/svelte/icons/plus';
+  import type { Snippet } from 'svelte';
   import { getContext } from 'svelte';
   import type { HTMLButtonAttributes } from 'svelte/elements';
   import { cn } from '$lib/utils';
   import { NUMBER_FIELD_CONTEXT_KEY, type NumberFieldContext } from './number-field.svelte';
 
-  type Props = Omit<HTMLButtonAttributes, 'type' | 'disabled' | 'onclick'>;
+  type Props = Omit<HTMLButtonAttributes, 'type' | 'disabled' | 'onclick'> & {
+    /** Custom rendering for the icon, defaults to a plus icon. */
+    children?: Snippet;
+  };
 
-  let { class: className, ...restProps }: Props = $props();
+  let { class: className, children, ...restProps }: Props = $props();
 
   const ctx = getContext<NumberFieldContext>(NUMBER_FIELD_CONTEXT_KEY);
 
@@ -28,5 +32,9 @@
   onclick={() => ctx?.increment()}
   {...restProps}
 >
-  <PlusIcon />
+  {#if children}
+    {@render children()}
+  {:else}
+    <PlusIcon />
+  {/if}
 </button>
