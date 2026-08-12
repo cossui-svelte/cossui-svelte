@@ -128,7 +128,7 @@ export const custom_particle_metadata = {
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-empty-1': {
-    // registry.json's 'empty state' category is redundant with the auto-derived 'empty' tag
+    // remove empty-state, it is redundant with empty
     tags: ['-empty-state']
   },
   'p-file-upload-1': {
@@ -209,13 +209,11 @@ export const custom_particle_metadata = {
   },
   'p-input-155': {
     description: 'Input with input mask',
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
-    npmDependencies: ['inputmask']
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-input-156': {
     description: 'Timestamp input with input mask',
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
-    npmDependencies: ['inputmask']
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-input-157': {
     description: 'Numeric range input with min and max fields',
@@ -276,11 +274,13 @@ export const custom_particle_metadata = {
   },
   'p-places-autocomplete-1': {
     description: 'Address validation powered by the Google Places API',
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    tags: ['async', 'map']
   },
   'p-rich-editor-1': {
     description: 'Basic rich editor examples',
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' },
+    tags: ['input', 'editor']
   },
   'p-sidebar-1': {
     description: 'Basic application sidebar with a navigation menu',

@@ -623,7 +623,7 @@
 			"description": "A chart component for visualizing data in various formats.",
 			"type": "registry:ui",
 			"dependencies": [
-				"layerchart@^2.1.1"
+				"layerchart@^2.2.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -6768,7 +6768,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"layerchart",
-				"layerchart@^2.1.1"
+				"layerchart@^2.2.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -6790,7 +6790,7 @@
 				"d3-scale",
 				"layerchart",
 				"d3-scale@^4.0.2",
-				"layerchart@^2.1.1"
+				"layerchart@^2.2.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -6810,7 +6810,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"layerchart",
-				"layerchart@^2.1.1"
+				"layerchart@^2.2.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -6832,7 +6832,7 @@
 				"d3-scale",
 				"layerchart",
 				"d3-scale@^4.0.2",
-				"layerchart@^2.1.1"
+				"layerchart@^2.2.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -6856,7 +6856,7 @@
 				"layerchart",
 				"d3-scale@^4.0.2",
 				"d3-shape@^3.2.0",
-				"layerchart@^2.1.1"
+				"layerchart@^2.2.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -6880,7 +6880,7 @@
 				"layerchart",
 				"d3-scale@^4.0.2",
 				"d3-shape@^3.2.0",
-				"layerchart@^2.1.1"
+				"layerchart@^2.2.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -6904,7 +6904,7 @@
 				"layerchart",
 				"d3-scale@^4.0.2",
 				"d3-shape@^3.2.0",
-				"layerchart@^2.1.1"
+				"layerchart@^2.2.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -6924,7 +6924,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"layerchart",
-				"layerchart@^2.1.1"
+				"layerchart@^2.2.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -6944,7 +6944,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"layerchart",
-				"layerchart@^2.1.1"
+				"layerchart@^2.2.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -6966,7 +6966,7 @@
 				"d3-scale",
 				"layerchart",
 				"d3-scale@^4.0.2",
-				"layerchart@^2.1.1"
+				"layerchart@^2.2.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -10296,7 +10296,6 @@
 			"type": "registry:block",
 			"dependencies": [
 				"cleave-zen",
-				"inputmask",
 				"cleave-zen@^0.0.17"
 			],
 			"registryDependencies": [
@@ -10318,7 +10317,6 @@
 			"type": "registry:block",
 			"dependencies": [
 				"cleave-zen",
-				"inputmask",
 				"cleave-zen@^0.0.17"
 			],
 			"registryDependencies": [

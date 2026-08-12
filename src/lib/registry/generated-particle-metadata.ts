@@ -3441,14 +3441,14 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-input-155': {
     description: 'Input with input mask',
     tags: ['input'],
-    npmDependencies: ['cleave-zen', 'inputmask'],
+    npmDependencies: ['cleave-zen'],
     registryDependencies: ['input', 'label'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-input-156': {
     description: 'Timestamp input with input mask',
     tags: ['input'],
-    npmDependencies: ['cleave-zen', 'inputmask'],
+    npmDependencies: ['cleave-zen'],
     registryDependencies: ['input', 'label'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
@@ -3546,13 +3546,13 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   },
   'p-places-autocomplete-1': {
     description: 'Address validation powered by the Google Places API',
-    tags: ['places-autocomplete'],
+    tags: ['async', 'map', 'places-autocomplete'],
     registryDependencies: ['places-autocomplete', 'toast'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-rich-editor-1': {
     description: 'Basic rich editor examples',
-    tags: ['rich-editor'],
+    tags: ['input', 'editor', 'rich-editor'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-sidebar-1': {
