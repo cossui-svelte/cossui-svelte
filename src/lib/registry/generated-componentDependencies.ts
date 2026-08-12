@@ -43,6 +43,7 @@ export const COMPONENT_DEPENDENCIES: Record<string, string[]> = {
   'p-badge-11': ['@lucide/svelte'],
   'p-badge-19': ['@lucide/svelte'],
   'p-badge-20': ['@lucide/svelte'],
+  'p-breadcrumb-100': ['@lucide/svelte'],
   'p-breadcrumb-3': ['@lucide/svelte'],
   'p-breadcrumb-4': ['@lucide/svelte'],
   'p-breadcrumb-5': ['@lucide/svelte'],

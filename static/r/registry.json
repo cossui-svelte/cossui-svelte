@@ -5097,6 +5097,25 @@
 			]
 		},
 		{
+			"name": "p-breadcrumb-100",
+			"title": "Breadcrumb 100",
+			"description": "Breadcrumb in a bordered card container",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [
+				"breadcrumb"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-breadcrumb-100.svelte",
+					"target": "$lib/components/particles/breadcrumb/p-breadcrumb-100.svelte"
+				}
+			]
+		},
+		{
 			"name": "p-breadcrumb-2",
 			"title": "Breadcrumb 2",
 			"description": "Breadcrumb with custom separator",

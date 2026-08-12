@@ -3123,6 +3123,12 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     registryDependencies: ['aspect-ratio'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
+  'p-breadcrumb-100': {
+    description: 'Breadcrumb in a bordered card container',
+    tags: ['breadcrumb'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['breadcrumb']
+  },
   'p-chart-1': {
     description: 'Radial Chart with Labels',
     tags: ['chart'],

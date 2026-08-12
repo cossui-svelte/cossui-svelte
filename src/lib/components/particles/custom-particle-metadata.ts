@@ -15,6 +15,9 @@ export const custom_particle_metadata = {
     description: 'Ratio 21:9',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
+  'p-breadcrumb-100': {
+    description: 'Breadcrumb in a bordered card container'
+  },
   'p-chart-1': {
     description: 'Radial Chart with Labels',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
