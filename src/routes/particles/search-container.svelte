@@ -1,6 +1,5 @@
 <script lang="ts">
   import { allParticles } from '$lib/registry/registry-particles';
-  import { getCategorySortOrder } from '$lib/registry/registry-tags';
   import SearchField, { type SearchItem } from './search-field.svelte';
   import { browser } from '$app/env';
   import { goto } from '$app/navigation';
@@ -9,7 +8,7 @@
   const uniqueCategories = Array.from(
     // new Set(particles.flatMap((p) => p.categories ?? [])),
     new Set(Object.values(allParticles).flatMap((p) => p.tags))
-  ).sort((a, b) => getCategorySortOrder(a) - getCategorySortOrder(b));
+  ).sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
 
   const searchItems: SearchItem[] = uniqueCategories.map((category) => ({
     label: category

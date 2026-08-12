@@ -14,7 +14,6 @@
     ComboboxSeparator
   } from '$lib/components/ui/combobox';
   import { allParticles } from '$lib/registry/registry-particles';
-  import { getCategorySortOrder } from '$lib/registry/registry-tags.js';
 
   export interface SearchItem {
     label: string;
@@ -66,11 +65,11 @@
       const bSelected = selectedValues.includes(b.value);
       if (aSelected && !bSelected) return -1;
       if (!aSelected && bSelected) return 1;
-      return getCategorySortOrder(a.value) - getCategorySortOrder(b.value);
+      return a.label.localeCompare(b.label, undefined, { numeric: true });
     });
 
-    const sortedDisabled = [...disabled].sort(
-      (a, b) => getCategorySortOrder(a.value) - getCategorySortOrder(b.value)
+    const sortedDisabled = [...disabled].sort((a, b) =>
+      a.label.localeCompare(b.label, undefined, { numeric: true })
     );
 
     return { disabled: sortedDisabled, enabled: sortedEnabled };

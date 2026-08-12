@@ -34,7 +34,8 @@
       .sort((a, b) => {
         const wA = calculateRelevanceWeight(a, selectedCategories);
         const wB = calculateRelevanceWeight(b, selectedCategories);
-        return wB - wA;
+        if (wA !== wB) return wB - wA;
+        return a.name.localeCompare(b.name, undefined, { numeric: true });
       })
   );
 </script>
