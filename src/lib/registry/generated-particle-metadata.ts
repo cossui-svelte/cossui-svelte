@@ -3386,6 +3386,13 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     registryDependencies: ['aspect-ratio'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
+  'p-avatar-95': {
+    description: 'Avatar button with a dropdown chevron indicator',
+    tags: ['avatar'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['avatar', 'button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
   'p-breadcrumb-100': {
     description: 'Breadcrumb in a bordered card container',
     tags: ['breadcrumb'],

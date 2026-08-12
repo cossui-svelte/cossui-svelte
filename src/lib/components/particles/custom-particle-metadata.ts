@@ -11,6 +11,9 @@ export const custom_particle_metadata = {
   'p-aspect-ratio-4': {
     description: 'Ratio 21:9'
   },
+  'p-avatar-95': {
+    description: 'Avatar button with a dropdown chevron indicator'
+  },
   'p-breadcrumb-100': {
     description: 'Breadcrumb in a bordered card container'
   },

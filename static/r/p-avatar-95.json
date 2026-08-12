@@ -1,0 +1,22 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-avatar-95",
+	"title": "Avatar 95",
+	"description": "Avatar button with a dropdown chevron indicator",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-avatar-95.svelte",
+			"target": "$lib/components/particles/avatar/p-avatar-95.svelte",
+			"content": "<script lang=\"ts\">\n  import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';\n  import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';\n  import { Button } from '$lib/components/ui/button';\n</script>\n\n<Button class=\"h-auto p-0 hover:bg-transparent\" variant=\"ghost\">\n  <Avatar>\n    <AvatarImage alt=\"Profile image\" src=\"/img/avatars/avatar1.jpg\" />\n    <AvatarFallback>KK</AvatarFallback>\n  </Avatar>\n  <ChevronDownIcon aria-hidden=\"true\" class=\"opacity-60\" size={16} />\n</Button>\n"
+		}
+	],
+	"registryDependencies": [
+		"avatar",
+		"button"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

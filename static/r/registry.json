@@ -4731,6 +4731,26 @@
 			]
 		},
 		{
+			"name": "p-avatar-95",
+			"title": "Avatar 95",
+			"description": "Avatar button with a dropdown chevron indicator",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [
+				"avatar",
+				"button"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-avatar-95.svelte",
+					"target": "$lib/components/particles/avatar/p-avatar-95.svelte"
+				}
+			]
+		},
+		{
 			"name": "p-badge-1",
 			"title": "Badge 1",
 			"description": "Basic badge",

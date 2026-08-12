@@ -40,6 +40,7 @@ export const COMPONENT_DEPENDENCIES: Record<string, string[]> = {
   'p-autocomplete-13': ['zod'],
   'p-autocomplete-14': ['@lucide/svelte'],
   'p-avatar-6': ['@lucide/svelte'],
+  'p-avatar-95': ['@lucide/svelte'],
   'p-badge-11': ['@lucide/svelte'],
   'p-badge-19': ['@lucide/svelte'],
   'p-badge-20': ['@lucide/svelte'],
