@@ -7,6 +7,12 @@ import { custom_particle_metadata } from '../src/lib/components/particles/custom
 const OUTPUT = path.resolve('src/lib/registry/generated-particle-metadata.ts');
 const PARTICLES_DIR = path.resolve('src/lib/components/particles');
 
+// Applied to every particle that doesn't already have a meta.class from
+// registry.json or custom_particle_metadata — covers the common preview sizing case.
+const DEFAULT_META = {
+  class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]'
+};
+
 interface RegistryItem {
   name: string;
   description?: string;
@@ -201,6 +207,7 @@ for (const name of orderedNames) {
   const slugTag = name.replace(/^p-/, '').replace(/-\d+$/, '');
   const entry = entriesByName.get(name)!;
   entry.tags = mergeList(entry.tags, [slugTag]);
+  if (!entry.meta?.class) entry.meta = { ...DEFAULT_META, ...entry.meta };
 }
 
 const body = orderedNames.map((name) => renderEntry(name, entriesByName.get(name)!)).join(',\n');

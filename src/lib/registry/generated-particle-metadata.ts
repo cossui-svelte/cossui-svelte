@@ -77,12 +77,14 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-alert-dialog-1': {
     description: 'Alert dialog',
     tags: ['alert-dialog', 'dialog'],
-    registryDependencies: ['alert-dialog', 'button']
+    registryDependencies: ['alert-dialog', 'button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-alert-dialog-2': {
     description: 'Alert dialog with bare footer',
     tags: ['alert-dialog', 'dialog'],
-    registryDependencies: ['alert-dialog', 'button']
+    registryDependencies: ['alert-dialog', 'button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-autocomplete-1': {
     description: 'Basic autocomplete',
@@ -186,164 +188,196 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-avatar-1': {
     description: 'Avatar with image and fallback',
     tags: ['avatar'],
-    registryDependencies: ['avatar']
+    registryDependencies: ['avatar'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-avatar-2': {
     description: 'Fallback-only avatar',
     tags: ['avatar'],
-    registryDependencies: ['avatar']
+    registryDependencies: ['avatar'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-avatar-3': {
     description: 'Avatars with different sizes',
     tags: ['avatar'],
-    registryDependencies: ['avatar']
+    registryDependencies: ['avatar'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-avatar-4': {
     description: 'Avatars with different radii',
     tags: ['avatar'],
-    registryDependencies: ['avatar']
+    registryDependencies: ['avatar'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-avatar-5': {
     description: 'Overlapping avatar group',
     tags: ['avatar'],
-    registryDependencies: ['avatar']
+    registryDependencies: ['avatar'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-avatar-6': {
     description: 'Avatar with user icon fallback',
     tags: ['avatar'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['avatar']
+    registryDependencies: ['avatar'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-avatar-7': {
     description: 'Avatar with emerald status dot',
     tags: ['avatar'],
-    registryDependencies: ['avatar']
+    registryDependencies: ['avatar'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-avatar-8': {
     description: 'Avatar with muted status dot',
     tags: ['avatar'],
-    registryDependencies: ['avatar']
+    registryDependencies: ['avatar'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-avatar-9': {
     description: 'Rounded avatar with top-right emerald status',
     tags: ['avatar'],
-    registryDependencies: ['avatar']
+    registryDependencies: ['avatar'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-avatar-10': {
     description: 'Avatar with notification badge',
     tags: ['avatar'],
-    registryDependencies: ['avatar', 'badge']
+    registryDependencies: ['avatar', 'badge'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-avatar-11': {
     description: 'Rounded avatar with notification badge',
     tags: ['avatar'],
-    registryDependencies: ['avatar', 'badge']
+    registryDependencies: ['avatar', 'badge'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-avatar-12': {
     description: 'Avatar with verified badge',
     tags: ['avatar'],
-    registryDependencies: ['avatar']
+    registryDependencies: ['avatar'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-avatar-13': {
     description: 'Small overlapping avatar group',
     tags: ['avatar'],
-    registryDependencies: ['avatar']
+    registryDependencies: ['avatar'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-avatar-14': {
     description: 'Large overlapping avatar group',
     tags: ['avatar'],
-    registryDependencies: ['avatar']
+    registryDependencies: ['avatar'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-badge-1': {
     description: 'Basic badge',
     tags: ['badge'],
-    registryDependencies: ['badge']
+    registryDependencies: ['badge'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-badge-2': {
     description: 'Outline badge',
     tags: ['badge'],
-    registryDependencies: ['badge']
+    registryDependencies: ['badge'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-badge-3': {
     description: 'Secondary badge',
     tags: ['badge'],
-    registryDependencies: ['badge']
+    registryDependencies: ['badge'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-badge-4': {
     description: 'Destructive badge',
     tags: ['badge', 'error'],
-    registryDependencies: ['badge']
+    registryDependencies: ['badge'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-badge-5': {
     description: 'Info badge',
     tags: ['badge', 'info'],
-    registryDependencies: ['badge']
+    registryDependencies: ['badge'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-badge-6': {
     description: 'Success badge',
     tags: ['badge', 'success'],
-    registryDependencies: ['badge']
+    registryDependencies: ['badge'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-badge-7': {
     description: 'Warning badge',
     tags: ['badge', 'warning'],
-    registryDependencies: ['badge']
+    registryDependencies: ['badge'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-badge-8': {
     description: 'Error badge',
     tags: ['badge', 'error'],
-    registryDependencies: ['badge']
+    registryDependencies: ['badge'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-badge-9': {
     description: 'Small badge',
     tags: ['badge'],
-    registryDependencies: ['badge']
+    registryDependencies: ['badge'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-badge-10': {
     description: 'Large badge',
     tags: ['badge'],
-    registryDependencies: ['badge']
+    registryDependencies: ['badge'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-badge-11': {
     description: 'Badge with icon',
     tags: ['badge'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['badge']
+    registryDependencies: ['badge'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-badge-12': {
     description: 'Badge with link',
     tags: ['badge'],
-    registryDependencies: ['badge']
+    registryDependencies: ['badge'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-badge-13': {
     description: 'Badge with count',
     tags: ['badge'],
-    registryDependencies: ['badge']
+    registryDependencies: ['badge'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-badge-14': {
     description: 'Full rounded badge (pill)',
     tags: ['badge'],
-    registryDependencies: ['badge']
+    registryDependencies: ['badge'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-badge-15': {
     description: 'Badge with number after text',
     tags: ['badge'],
-    registryDependencies: ['badge']
+    registryDependencies: ['badge'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-badge-16': {
     description: 'Status badge - Paid',
     tags: ['badge'],
-    registryDependencies: ['badge']
+    registryDependencies: ['badge'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-badge-17': {
     description: 'Status badge - Pending',
     tags: ['badge'],
-    registryDependencies: ['badge']
+    registryDependencies: ['badge'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-badge-18': {
     description: 'Status badge - Failed',
     tags: ['badge'],
-    registryDependencies: ['badge']
+    registryDependencies: ['badge'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-badge-19': {
     description: 'Selectable badge with checkbox',
@@ -356,259 +390,306 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     description: 'Removable badge',
     tags: ['badge'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['badge']
+    registryDependencies: ['badge'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-breadcrumb-1': {
     description: 'Breadcrumb with menu example',
     tags: ['breadcrumb', 'dropdown', 'menu'],
-    registryDependencies: ['breadcrumb', 'button', 'menu']
+    registryDependencies: ['breadcrumb', 'button', 'menu'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-breadcrumb-2': {
     description: 'Breadcrumb with custom separator',
     tags: ['breadcrumb'],
-    registryDependencies: ['breadcrumb']
+    registryDependencies: ['breadcrumb'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-breadcrumb-3': {
     description: 'Breadcrumb with home icon for home link only',
     tags: ['breadcrumb'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['breadcrumb']
+    registryDependencies: ['breadcrumb'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-breadcrumb-4': {
     description: 'Breadcrumb with folders icon menu',
     tags: ['breadcrumb', 'dropdown', 'menu'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['breadcrumb', 'button', 'menu']
+    registryDependencies: ['breadcrumb', 'button', 'menu'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-breadcrumb-5': {
     description: 'Breadcrumb with icons before text',
     tags: ['breadcrumb'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['breadcrumb']
+    registryDependencies: ['breadcrumb'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-breadcrumb-6': {
     description: 'Breadcrumb with dot separators',
     tags: ['breadcrumb'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['breadcrumb']
+    registryDependencies: ['breadcrumb'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-breadcrumb-7': {
     description: 'Breadcrumb with select dropdown',
     tags: ['breadcrumb', 'select'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['breadcrumb', 'select']
+    registryDependencies: ['breadcrumb', 'select'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-1': {
     description: 'Default button',
     tags: ['button'],
-    registryDependencies: ['button']
+    registryDependencies: ['button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-2': {
     description: 'Outline button',
     tags: ['button'],
-    registryDependencies: ['button']
+    registryDependencies: ['button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-3': {
     description: 'Secondary button',
     tags: ['button'],
-    registryDependencies: ['button']
+    registryDependencies: ['button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-4': {
     description: 'Destructive button',
     tags: ['button'],
-    registryDependencies: ['button']
+    registryDependencies: ['button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-5': {
     description: 'Destructive outline button',
     tags: ['button'],
-    registryDependencies: ['button']
+    registryDependencies: ['button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-6': {
     description: 'Ghost button',
     tags: ['button'],
-    registryDependencies: ['button']
+    registryDependencies: ['button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-7': {
     description: 'Link button',
     tags: ['button'],
-    registryDependencies: ['button']
+    registryDependencies: ['button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-8': {
     description: 'Extra-small button',
     tags: ['button'],
-    registryDependencies: ['button']
+    registryDependencies: ['button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-9': {
     description: 'Small button',
     tags: ['button'],
-    registryDependencies: ['button']
+    registryDependencies: ['button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-10': {
     description: 'Large button',
     tags: ['button'],
-    registryDependencies: ['button']
+    registryDependencies: ['button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-11': {
     description: 'Extra-large button',
     tags: ['button'],
-    registryDependencies: ['button']
+    registryDependencies: ['button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-12': {
     description: 'Disabled button',
     tags: ['button', 'disabled'],
-    registryDependencies: ['button']
+    registryDependencies: ['button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-13': {
     description: 'Icon button',
     tags: ['button'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button']
+    registryDependencies: ['button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-14': {
     description: 'Small icon button',
     tags: ['button'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button']
+    registryDependencies: ['button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-15': {
     description: 'Large icon button',
     tags: ['button'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button']
+    registryDependencies: ['button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-16': {
     description: 'Button with icon',
     tags: ['button'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button']
+    registryDependencies: ['button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-17': {
     description: 'Link rendered as button',
     tags: ['button'],
-    registryDependencies: ['button']
+    registryDependencies: ['button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-41': {
     description: 'Button using the built-in loading prop',
     tags: ['button', 'loading'],
-    registryDependencies: ['button']
+    registryDependencies: ['button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-18': {
     description: 'Custom loading button with manual Spinner',
     tags: ['button', 'loading'],
-    registryDependencies: ['button', 'spinner']
+    registryDependencies: ['button', 'spinner'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-19': {
     description: 'Expandable show more/less toggle button',
     tags: ['button'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button']
+    registryDependencies: ['button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-20': {
     description: 'Back link button with chevron',
     tags: ['button'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button']
+    registryDependencies: ['button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-21': {
     description: 'Card-style button with heading and description',
     tags: ['button'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button']
+    registryDependencies: ['button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-22': {
     description: 'Directional pad control buttons',
     tags: ['button'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button']
+    registryDependencies: ['button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-23': {
     description: 'Outline like button with count',
     tags: ['button'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button']
+    registryDependencies: ['button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-24': {
     description: 'Social login icon buttons',
     tags: ['button'],
-    registryDependencies: ['button']
+    registryDependencies: ['button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-26': {
     description: 'Star button with count badge',
     tags: ['button'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button']
+    registryDependencies: ['button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-27': {
     description: 'Button group with QR code icon and sign in',
     tags: ['button', 'group'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'group']
+    registryDependencies: ['button', 'group'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-28': {
     description: 'Button with avatar',
     tags: ['button', 'avatar'],
-    registryDependencies: ['avatar', 'button']
+    registryDependencies: ['avatar', 'button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-29': {
     description: 'Pill-shaped button with rounded-full styling',
     tags: ['button'],
-    registryDependencies: ['button']
+    registryDependencies: ['button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-30': {
     description: 'Button with animated arrow on hover',
     tags: ['button'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button']
+    registryDependencies: ['button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-31': {
     description: 'Button with keyboard shortcut indicator',
     tags: ['button', 'kbd'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'kbd']
+    registryDependencies: ['button', 'kbd'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-32': {
     description: 'Button with notification badge',
     tags: ['button', 'badge'],
-    registryDependencies: ['badge', 'button']
+    registryDependencies: ['badge', 'button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-33': {
     description: 'Paired buttons (Cancel/Save)',
     tags: ['button'],
-    registryDependencies: ['button']
+    registryDependencies: ['button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-34': {
     description: 'Button with animated status dot',
     tags: ['button'],
-    registryDependencies: ['button']
+    registryDependencies: ['button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-35': {
     description: 'Icon-only copy button with feedback',
     tags: ['button'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button']
+    registryDependencies: ['button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-36': {
     description: 'Copy button with feedback',
     tags: ['button'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button']
+    registryDependencies: ['button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-37': {
     description: 'Rotating icon button (FAB-style toggle)',
     tags: ['button'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button']
+    registryDependencies: ['button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-39': {
     description: 'Hamburger menu button with animated icon',
     tags: ['button'],
-    registryDependencies: ['button']
+    registryDependencies: ['button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-40': {
     description: 'Download button with progress and cancel action',
     tags: ['button', 'group', 'tooltip', 'toast'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'group', 'spinner', 'toast', 'tooltip']
+    registryDependencies: ['button', 'group', 'spinner', 'toast', 'tooltip'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-button-38': {
     description: 'Social login buttons (Google, X, GitHub)',
@@ -620,154 +701,185 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     description: 'Basic calendar',
     tags: ['calendar'],
     npmDependencies: ['@internationalized/date'],
-    registryDependencies: ['calendar']
+    registryDependencies: ['calendar'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-calendar-3': {
     description: 'Calendar with date range selection',
     tags: ['calendar'],
     npmDependencies: ['@internationalized/date'],
-    registryDependencies: ['range-calendar']
+    registryDependencies: ['range-calendar'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-calendar-4': {
     description: 'Calendar with month/year dropdown navigation',
     tags: ['calendar'],
     npmDependencies: ['@internationalized/date'],
-    registryDependencies: ['calendar']
+    registryDependencies: ['calendar'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-calendar-5': {
     description: 'Calendar with custom Select dropdown for month/year',
     tags: ['calendar', 'select'],
     npmDependencies: ['@internationalized/date'],
-    registryDependencies: ['calendar']
+    registryDependencies: ['calendar'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-calendar-6': {
     description: 'Calendar with Combobox dropdown for month/year',
     tags: ['calendar', 'combobox'],
     npmDependencies: ['@internationalized/date'],
-    registryDependencies: ['calendar']
+    registryDependencies: ['calendar'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-calendar-7': {
     description: 'Calendar with disabled dates',
     tags: ['calendar'],
     npmDependencies: ['@internationalized/date'],
-    registryDependencies: ['range-calendar']
+    registryDependencies: ['range-calendar'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-calendar-8': {
     description: 'Calendar with multiple date selection',
     tags: ['calendar'],
     npmDependencies: ['@internationalized/date'],
-    registryDependencies: ['calendar']
+    registryDependencies: ['calendar'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-calendar-2': {
     description: 'Calendar with custom cell size',
     tags: ['calendar'],
     npmDependencies: ['@internationalized/date'],
-    registryDependencies: ['calendar']
+    registryDependencies: ['calendar'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-calendar-9': {
     description: 'Calendar with rounded day buttons',
     tags: ['calendar'],
     npmDependencies: ['@internationalized/date'],
-    registryDependencies: ['calendar']
+    registryDependencies: ['calendar'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-calendar-10': {
     description: 'Calendar with rounded range selection style',
     tags: ['calendar'],
     npmDependencies: ['@internationalized/date'],
-    registryDependencies: ['range-calendar']
+    registryDependencies: ['range-calendar'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-calendar-11': {
     description: 'Calendar with right-aligned navigation',
     tags: ['calendar'],
     npmDependencies: ['@internationalized/date'],
-    registryDependencies: ['calendar']
+    registryDependencies: ['calendar'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-calendar-12': {
     description: 'Calendar with week numbers',
     tags: ['calendar'],
     npmDependencies: ['@internationalized/date'],
-    registryDependencies: ['calendar']
+    registryDependencies: ['calendar'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-calendar-13': {
     description: 'Calendar with year-only combobox dropdown',
     tags: ['calendar', 'combobox'],
     npmDependencies: ['@internationalized/date'],
-    registryDependencies: ['calendar']
+    registryDependencies: ['calendar'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-calendar-14': {
     description: 'Calendar without arrow navigation (dropdown only)',
     tags: ['calendar', 'select'],
     npmDependencies: ['@internationalized/date'],
-    registryDependencies: ['calendar']
+    registryDependencies: ['calendar'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-calendar-15': {
     description: 'Calendar with current month button',
     tags: ['calendar', 'button'],
     npmDependencies: ['@internationalized/date'],
-    registryDependencies: ['button', 'calendar']
+    registryDependencies: ['button', 'calendar'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-calendar-16': {
     description: 'Calendar with today button',
     tags: ['calendar', 'button'],
     npmDependencies: ['@internationalized/date'],
-    registryDependencies: ['button', 'calendar']
+    registryDependencies: ['button', 'calendar'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-calendar-17': {
     description: 'Calendar with date input',
     tags: ['calendar', 'input', 'field'],
     npmDependencies: ['@internationalized/date', '@lucide/svelte', 'zod'],
-    registryDependencies: ['button', 'calendar', 'field', 'form', 'input-group', 'use-superform']
+    registryDependencies: ['button', 'calendar', 'field', 'form', 'input-group', 'use-superform'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-calendar-18': {
     description: 'Calendar with time input',
     tags: ['calendar', 'input', 'field'],
     npmDependencies: ['@internationalized/date', '@lucide/svelte', 'zod'],
-    registryDependencies: ['button', 'calendar', 'field', 'form', 'input-group', 'use-superform']
+    registryDependencies: ['button', 'calendar', 'field', 'form', 'input-group', 'use-superform'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-calendar-19': {
     description: 'Calendar with time slots (appointment picker)',
     tags: ['calendar', 'toggle', 'toggle-group', 'scroll-area'],
     npmDependencies: ['@internationalized/date'],
-    registryDependencies: ['calendar', 'scroll-area', 'toggle-group']
+    registryDependencies: ['calendar', 'scroll-area', 'toggle-group'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-calendar-20': {
     description: 'Calendar with date presets',
     tags: ['calendar', 'button'],
     npmDependencies: ['@internationalized/date'],
-    registryDependencies: ['button', 'calendar']
+    registryDependencies: ['button', 'calendar'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-calendar-21': {
     description: 'Range calendar with date presets',
     tags: ['calendar', 'button'],
     npmDependencies: ['@internationalized/date'],
-    registryDependencies: ['button', 'range-calendar']
+    registryDependencies: ['button', 'range-calendar'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-calendar-22': {
     description: 'Two months calendar',
     tags: ['calendar'],
     npmDependencies: ['@internationalized/date'],
     registryDependencies: ['range-calendar'],
-    meta: { colSpan: 2 }
+    meta: {
+      class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]',
+      colSpan: 2
+    }
   },
   'p-calendar-23': {
     description: 'Three months calendar',
     tags: ['calendar'],
     npmDependencies: ['@internationalized/date'],
     registryDependencies: ['range-calendar'],
-    meta: { colSpan: 2 }
+    meta: {
+      class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]',
+      colSpan: 2
+    }
   },
   'p-calendar-24': {
     description: 'Pricing calendar with custom day buttons',
     tags: ['calendar'],
     npmDependencies: ['@internationalized/date'],
     registryDependencies: ['calendar'],
-    meta: { colSpan: 2 }
+    meta: {
+      class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]',
+      colSpan: 2
+    }
   },
   'p-calendar-25': {
     description: 'Calendar with 24-hour autocomplete time input',
     tags: ['calendar', 'autocomplete', 'field', 'time'],
     npmDependencies: ['@internationalized/date', '@lucide/svelte', 'zod'],
-    registryDependencies: ['autocomplete', 'button', 'calendar', 'field', 'form', 'use-superform']
+    registryDependencies: ['autocomplete', 'button', 'calendar', 'field', 'form', 'use-superform'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-date-picker-1': {
     description: 'Basic date picker',
@@ -972,48 +1084,57 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-checkbox-1': {
     description: 'Basic checkbox',
     tags: ['checkbox'],
-    registryDependencies: ['checkbox', 'label']
+    registryDependencies: ['checkbox', 'label'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-checkbox-2': {
     description: 'Disabled checkbox',
     tags: ['checkbox', 'disabled'],
-    registryDependencies: ['checkbox', 'label']
+    registryDependencies: ['checkbox', 'label'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-checkbox-3': {
     description: 'Checkbox with description',
     tags: ['checkbox'],
-    registryDependencies: ['checkbox', 'label']
+    registryDependencies: ['checkbox', 'label'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-checkbox-4': {
     description: 'Card-style checkbox',
     tags: ['checkbox'],
-    registryDependencies: ['checkbox', 'label']
+    registryDependencies: ['checkbox', 'label'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-checkbox-5': {
     description: 'Checkbox form',
     tags: ['checkbox', 'form'],
     npmDependencies: ['zod'],
-    registryDependencies: ['button', 'checkbox', 'field', 'form', 'use-superform']
+    registryDependencies: ['button', 'checkbox', 'field', 'form', 'use-superform'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-checkbox-group-1': {
     description: 'Basic checkbox group',
     tags: ['checkbox', 'checkbox-group'],
-    registryDependencies: ['checkbox', 'checkbox-group', 'label']
+    registryDependencies: ['checkbox', 'checkbox-group', 'label'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-checkbox-group-2': {
     description: 'Checkbox group with disabled items',
     tags: ['checkbox', 'checkbox-group', 'disabled'],
-    registryDependencies: ['checkbox', 'checkbox-group', 'label']
+    registryDependencies: ['checkbox', 'checkbox-group', 'label'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-checkbox-group-3': {
     description: 'Checkbox group with parent checkbox',
     tags: ['checkbox', 'checkbox-group'],
-    registryDependencies: ['checkbox', 'checkbox-group', 'label']
+    registryDependencies: ['checkbox', 'checkbox-group', 'label'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-checkbox-group-4': {
     description: 'Nested checkbox group with parent',
     tags: ['checkbox', 'checkbox-group'],
-    registryDependencies: ['checkbox', 'checkbox-group', 'label']
+    registryDependencies: ['checkbox', 'checkbox-group', 'label'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-checkbox-group-5': {
     description: 'Checkbox group form',
@@ -1027,13 +1148,15 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
       'fieldset',
       'form',
       'use-superform'
-    ]
+    ],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-collapsible-1': {
     description: 'Basic collapsible',
     tags: ['collapsible'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['collapsible']
+    registryDependencies: ['collapsible'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-combobox-1': {
     description: 'Basic combobox',
@@ -1168,36 +1291,42 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     description: 'Command palette with dialog',
     tags: ['command', 'dialog'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'command', 'kbd']
+    registryDependencies: ['button', 'command', 'kbd'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-command-2': {
     description: 'Command palette with AI assistant',
     tags: ['command', 'dialog'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'command', 'empty', 'input', 'kbd', 'scroll-area', 'spinner']
+    registryDependencies: ['button', 'command', 'empty', 'input', 'kbd', 'scroll-area', 'spinner'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-dialog-1': {
     description: 'Dialog with form',
     tags: ['dialog'],
     npmDependencies: ['zod'],
-    registryDependencies: ['button', 'dialog', 'field', 'form', 'input', 'use-superform']
+    registryDependencies: ['button', 'dialog', 'field', 'form', 'input', 'use-superform'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-dialog-6': {
     description: 'Dialog with bare footer',
     tags: ['dialog'],
     npmDependencies: ['zod'],
-    registryDependencies: ['button', 'dialog', 'field', 'form', 'input', 'use-superform']
+    registryDependencies: ['button', 'dialog', 'field', 'form', 'input', 'use-superform'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-dialog-2': {
     description: 'Dialog opened from menu',
     tags: ['dialog', 'dropdown', 'menu'],
-    registryDependencies: ['button', 'dialog', 'menu']
+    registryDependencies: ['button', 'dialog', 'menu'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-dialog-3': {
     description: 'Nested dialogs',
     tags: ['dialog'],
     npmDependencies: ['zod'],
-    registryDependencies: ['button', 'dialog', 'field', 'form', 'input', 'use-superform']
+    registryDependencies: ['button', 'dialog', 'field', 'form', 'input', 'use-superform'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-dialog-4': {
     description: 'Dialog with close confirmation',
@@ -1211,81 +1340,96 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
       'form',
       'textarea',
       'use-superform'
-    ]
+    ],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-dialog-5': {
     description: 'Dialog with long content',
     tags: ['dialog'],
-    registryDependencies: ['button', 'dialog']
+    registryDependencies: ['button', 'dialog'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-drawer-1': {
     description: 'Simple bottom drawer with close button',
     tags: ['drawer'],
-    registryDependencies: ['button', 'drawer']
+    registryDependencies: ['button', 'drawer'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-drawer-2': {
     description: 'Bottom drawer without drag bar',
     tags: ['drawer'],
-    registryDependencies: ['button', 'drawer']
+    registryDependencies: ['button', 'drawer'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-drawer-3': {
     description: 'Drawer with close button',
     tags: ['drawer'],
-    registryDependencies: ['button', 'drawer']
+    registryDependencies: ['button', 'drawer'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-drawer-4': {
     description: 'Inset variant drawers for all four positions',
     tags: ['drawer'],
-    registryDependencies: ['button', 'drawer']
+    registryDependencies: ['button', 'drawer'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-drawer-5': {
     description: 'Straight variant drawers for all four positions',
     tags: ['drawer'],
-    registryDependencies: ['button', 'drawer']
+    registryDependencies: ['button', 'drawer'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-drawer-6': {
     description: 'Scrollable content with terms and conditions',
     tags: ['drawer'],
-    registryDependencies: ['button', 'drawer']
+    registryDependencies: ['button', 'drawer'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-drawer-7': {
     description: 'Nested bottom drawers with centered content',
     tags: ['drawer'],
-    registryDependencies: ['button', 'drawer']
+    registryDependencies: ['button', 'drawer'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-drawer-8': {
     description: 'Nested right drawers with inset variant',
     tags: ['drawer'],
     npmDependencies: ['zod'],
-    registryDependencies: ['button', 'drawer', 'field', 'form', 'input', 'use-superform']
+    registryDependencies: ['button', 'drawer', 'field', 'form', 'input', 'use-superform'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-drawer-9': {
     description: 'Bottom drawer with snap points',
     tags: ['drawer'],
-    registryDependencies: ['button', 'drawer']
+    registryDependencies: ['button', 'drawer'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-drawer-10': {
     description: 'Edit profile form with default and bare footer variants',
     tags: ['drawer'],
     npmDependencies: ['zod'],
-    registryDependencies: ['button', 'drawer', 'field', 'form', 'input', 'use-superform']
+    registryDependencies: ['button', 'drawer', 'field', 'form', 'input', 'use-superform'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-drawer-11': {
     description: 'Mobile menu drawer from the left',
     tags: ['drawer'],
-    registryDependencies: ['button', 'drawer']
+    registryDependencies: ['button', 'drawer'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-drawer-12': {
     description: 'Responsive edit profile: dialog on desktop, drawer on mobile',
     tags: ['drawer', 'dialog'],
     npmDependencies: ['zod'],
-    registryDependencies: ['button', 'dialog', 'drawer', 'field', 'form', 'input', 'use-superform']
+    registryDependencies: ['button', 'dialog', 'drawer', 'field', 'form', 'input', 'use-superform'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-drawer-13': {
     description: 'Responsive actions menu: menu on desktop, drawer on mobile',
     tags: ['drawer', 'menu'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'drawer', 'menu']
+    registryDependencies: ['button', 'drawer', 'menu'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-drawer-14': {
     description: 'Left drawer with swipe area',
@@ -1297,7 +1441,8 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     description: 'Empty state with icon and actions',
     tags: ['empty'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'empty']
+    registryDependencies: ['button', 'empty'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-field-1': {
     description: 'Field with description',
@@ -1395,7 +1540,8 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
       'fieldset',
       'form',
       'use-superform'
-    ]
+    ],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-field-14': {
     description: 'Field with radio group',
@@ -1408,7 +1554,8 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     description: 'Field with toggle switch',
     tags: ['field', 'label', 'switch'],
     npmDependencies: ['zod'],
-    registryDependencies: ['button', 'field', 'form', 'switch', 'use-superform']
+    registryDependencies: ['button', 'field', 'form', 'switch', 'use-superform'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-field-16': {
     description: 'Field with slider',
@@ -1488,132 +1635,155 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-kbd-1': {
     description: 'Keyboard shortcuts display',
     tags: ['kbd'],
-    registryDependencies: ['kbd']
+    registryDependencies: ['kbd'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-group-1': {
     description: 'Basic group',
     tags: ['group'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'group', 'menu']
+    registryDependencies: ['button', 'group', 'menu'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-group-2': {
     description: 'Group with input',
     tags: ['group', 'input'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'group', 'input', 'tooltip']
+    registryDependencies: ['button', 'group', 'input', 'tooltip'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-group-3': {
     description: 'Small group',
     tags: ['group'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'group', 'menu']
+    registryDependencies: ['button', 'group', 'menu'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-group-4': {
     description: 'Large group',
     tags: ['group'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'group', 'menu']
+    registryDependencies: ['button', 'group', 'menu'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-group-5': {
     description: 'Group with disabled button',
     tags: ['button', 'group'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'group', 'menu']
+    registryDependencies: ['button', 'group', 'menu'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-group-6': {
     description: 'Group with default button',
     tags: ['button', 'group'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'group', 'menu']
+    registryDependencies: ['button', 'group', 'menu'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-group-7': {
     description: 'Group with start text',
     tags: ['group'],
-    registryDependencies: ['group', 'input']
+    registryDependencies: ['group', 'input'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-group-8': {
     description: 'Group with end text',
     tags: ['group'],
-    registryDependencies: ['group', 'input']
+    registryDependencies: ['group', 'input'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-group-9': {
     description: 'Vertical group',
     tags: ['group'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'group']
+    registryDependencies: ['button', 'group'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-group-10': {
     description: 'Nested groups',
     tags: ['group'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'group']
+    registryDependencies: ['button', 'group'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-group-11': {
     description: 'Group with popup',
     tags: ['group'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['badge', 'button', 'group', 'popover']
+    registryDependencies: ['badge', 'button', 'group', 'popover'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-group-12': {
     description: 'Group with input group',
     tags: ['group', 'input-group'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'group', 'input-group', 'tooltip']
+    registryDependencies: ['button', 'group', 'input-group', 'tooltip'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-group-13': {
     description: 'Group with menu',
     tags: ['dropdown', 'group', 'menu'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'group', 'menu']
+    registryDependencies: ['button', 'group', 'menu'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-group-14': {
     description: 'Group with select',
     tags: ['group', 'select', 'number-field'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'group', 'number-field', 'select']
+    registryDependencies: ['button', 'group', 'number-field', 'select'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-group-15': {
     description: 'Group with search',
     tags: ['group', 'search'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'group', 'input', 'select']
+    registryDependencies: ['button', 'group', 'input', 'select'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-group-16': {
     description: 'Group with add button and input',
     tags: ['button', 'group', 'input'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'group', 'input']
+    registryDependencies: ['button', 'group', 'input'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-group-17': {
     description: 'Group with input and currency text',
     tags: ['group', 'input'],
-    registryDependencies: ['group', 'input']
+    registryDependencies: ['group', 'input'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-group-18': {
     description: 'Group with select and input',
     tags: ['group', 'input', 'select'],
-    registryDependencies: ['group', 'input', 'select']
+    registryDependencies: ['group', 'input', 'select'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-group-19': {
     description: 'Group with input and select',
     tags: ['group', 'input', 'select'],
-    registryDependencies: ['group', 'input', 'select']
+    registryDependencies: ['group', 'input', 'select'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-group-20': {
     description: 'Group with input and text button',
     tags: ['button', 'group', 'input'],
-    registryDependencies: ['button', 'group', 'input']
+    registryDependencies: ['button', 'group', 'input'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-group-22': {
     description: 'Group with two number inputs for range',
     tags: ['group', 'label', 'number-field'],
-    registryDependencies: ['group', 'label', 'number-field']
+    registryDependencies: ['group', 'label', 'number-field'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-group-23': {
     description: 'Group with filter label, combobox multi-select, and remove button',
     tags: ['avatar', 'badge', 'button', 'combobox', 'group'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['avatar', 'badge', 'button', 'combobox', 'group']
+    registryDependencies: ['avatar', 'badge', 'button', 'combobox', 'group'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-input-1': {
     description: 'Basic input',
@@ -1723,47 +1893,56 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-otp-field-1': {
     description: 'Basic OTP field',
     tags: ['otp-field', 'input'],
-    registryDependencies: ['otp-field']
+    registryDependencies: ['otp-field'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-otp-field-2': {
     description: 'Large OTP field',
     tags: ['otp-field', 'input'],
-    registryDependencies: ['otp-field']
+    registryDependencies: ['otp-field'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-otp-field-3': {
     description: 'OTP field with separator',
     tags: ['otp-field', 'input'],
-    registryDependencies: ['otp-field']
+    registryDependencies: ['otp-field'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-otp-field-4': {
     description: 'OTP field with label',
     tags: ['otp-field', 'input', 'field'],
-    registryDependencies: ['label', 'otp-field']
+    registryDependencies: ['label', 'otp-field'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-otp-field-6': {
     description: 'OTP field with custom sanitization',
     tags: ['otp-field', 'input', 'field', 'validation'],
-    registryDependencies: ['label', 'otp-field']
+    registryDependencies: ['label', 'otp-field'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-otp-field-7': {
     description: 'OTP field with auto validation',
     tags: ['otp-field', 'input', 'validation'],
-    registryDependencies: ['label', 'otp-field']
+    registryDependencies: ['label', 'otp-field'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-otp-field-8': {
     description: 'Alphanumeric OTP field',
     tags: ['otp-field', 'input', 'field'],
-    registryDependencies: ['label', 'otp-field']
+    registryDependencies: ['label', 'otp-field'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-otp-field-9': {
     description: 'OTP field with placeholder hints',
     tags: ['otp-field', 'input', 'field'],
-    registryDependencies: ['label', 'otp-field']
+    registryDependencies: ['label', 'otp-field'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-otp-field-10': {
     description: 'Masked OTP field',
     tags: ['otp-field', 'input', 'field'],
-    registryDependencies: ['label', 'otp-field']
+    registryDependencies: ['label', 'otp-field'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-input-group-1': {
     description: 'Basic input group',
@@ -1993,47 +2172,56 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     description: 'Basic menu',
     tags: ['dropdown', 'menu'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'menu']
+    registryDependencies: ['button', 'menu'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-menu-2': {
     description: 'Menu with hover',
     tags: ['dropdown', 'menu'],
-    registryDependencies: ['button', 'menu']
+    registryDependencies: ['button', 'menu'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-menu-3': {
     description: 'Menu with checkbox',
     tags: ['dropdown', 'menu'],
-    registryDependencies: ['button', 'menu']
+    registryDependencies: ['button', 'menu'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-menu-9': {
     description: 'Menu with checkbox items as switches',
     tags: ['dropdown', 'menu', 'switch'],
-    registryDependencies: ['button', 'menu']
+    registryDependencies: ['button', 'menu'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-menu-4': {
     description: 'Menu with radio group',
     tags: ['dropdown', 'menu'],
-    registryDependencies: ['button', 'menu']
+    registryDependencies: ['button', 'menu'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-menu-5': {
     description: 'Menu with link',
     tags: ['dropdown', 'menu'],
-    registryDependencies: ['button', 'menu']
+    registryDependencies: ['button', 'menu'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-menu-6': {
     description: 'Menu with group labels',
     tags: ['dropdown', 'menu'],
-    registryDependencies: ['button', 'menu']
+    registryDependencies: ['button', 'menu'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-menu-7': {
     description: 'Nested menu',
     tags: ['dropdown', 'menu'],
-    registryDependencies: ['button', 'menu']
+    registryDependencies: ['button', 'menu'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-menu-8': {
     description: 'Menu close on click',
     tags: ['dropdown', 'menu'],
-    registryDependencies: ['button', 'menu']
+    registryDependencies: ['button', 'menu'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-context-menu-1': {
     description: 'Basic context menu',
@@ -2153,7 +2341,8 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-pagination-1': {
     description: 'Pagination example',
     tags: ['pagination'],
-    registryDependencies: ['pagination']
+    registryDependencies: ['pagination'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-pagination-2': {
     description: 'Pagination with previous and next buttons only',
@@ -2170,19 +2359,22 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-popover-1': {
     description: 'Popover with a form',
     tags: ['button', 'field', 'form', 'popover', 'textarea'],
-    registryDependencies: ['button', 'popover', 'textarea']
+    registryDependencies: ['button', 'popover', 'textarea'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-popover-2': {
     description: 'Popover with close button',
     tags: ['button', 'popover'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'popover']
+    registryDependencies: ['button', 'popover'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-popover-3': {
     description: 'Animated popovers',
     tags: ['avatar', 'button', 'popover'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['avatar', 'button', 'popover']
+    registryDependencies: ['avatar', 'button', 'popover'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-popover-4': {
     description: 'Split button with popover to confirm multiple occurrences',
@@ -2196,13 +2388,15 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
       'group',
       'label',
       'popover'
-    ]
+    ],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-preview-card-1': {
     description: 'Preview card with popup',
     tags: ['preview-card'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'preview-card']
+    registryDependencies: ['button', 'preview-card'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-progress-1': {
     description: 'Basic progress bar',
@@ -2225,27 +2419,32 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-radio-group-1': {
     description: 'Basic radio group',
     tags: ['radio-group'],
-    registryDependencies: ['label', 'radio-group']
+    registryDependencies: ['label', 'radio-group'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-radio-group-2': {
     description: 'Disabled radio group',
     tags: ['radio-group'],
-    registryDependencies: ['label', 'radio-group']
+    registryDependencies: ['label', 'radio-group'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-radio-group-3': {
     description: 'Radio group with description',
     tags: ['radio-group'],
-    registryDependencies: ['label', 'radio-group']
+    registryDependencies: ['label', 'radio-group'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-radio-group-4': {
     description: 'Radio group card',
     tags: ['radio-group'],
-    registryDependencies: ['label', 'radio-group']
+    registryDependencies: ['label', 'radio-group'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-radio-group-5': {
     description: 'Radio group in form',
     tags: ['radio-group', 'form'],
-    registryDependencies: ['button', 'label', 'radio-group']
+    registryDependencies: ['button', 'label', 'radio-group'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-radio-group-6': {
     description: 'Theme selector with image cards',
@@ -2263,12 +2462,14 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-scroll-area-2': {
     description: 'Horizontal scroll area',
     tags: ['scroll-area'],
-    registryDependencies: ['scroll-area']
+    registryDependencies: ['scroll-area'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-scroll-area-3': {
     description: 'Scroll area with both directions',
     tags: ['scroll-area'],
-    registryDependencies: ['scroll-area']
+    registryDependencies: ['scroll-area'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-scroll-area-4': {
     description: 'Scroll area with fading edges',
@@ -2279,7 +2480,8 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-scroll-area-5': {
     description: 'Horizontal scroll area with scrollbar gutter',
     tags: ['scroll-area'],
-    registryDependencies: ['scroll-area']
+    registryDependencies: ['scroll-area'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-select-1': {
     description: 'Basic select',
@@ -2400,7 +2602,8 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-select-21': {
     description: 'Auto width select',
     tags: ['select'],
-    registryDependencies: ['select']
+    registryDependencies: ['select'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-select-22': {
     description: 'Select with custom border and background',
@@ -2424,24 +2627,28 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-separator-1': {
     description: 'Separator with horizontal and vertical orientations',
     tags: ['separator'],
-    registryDependencies: ['separator']
+    registryDependencies: ['separator'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-sheet-1': {
     description: 'Basic sheet',
     tags: ['sheet'],
     npmDependencies: ['zod'],
-    registryDependencies: ['button', 'field', 'form', 'input', 'sheet', 'use-superform']
+    registryDependencies: ['button', 'field', 'form', 'input', 'sheet', 'use-superform'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-sheet-2': {
     description: 'Sheet inset',
     tags: ['sheet'],
     npmDependencies: ['zod'],
-    registryDependencies: ['button', 'field', 'form', 'input', 'label', 'sheet', 'use-superform']
+    registryDependencies: ['button', 'field', 'form', 'input', 'label', 'sheet', 'use-superform'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-sheet-3': {
     description: 'Sheet position',
     tags: ['sheet'],
-    registryDependencies: ['button', 'sheet']
+    registryDependencies: ['button', 'sheet'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-skeleton-1': {
     description: 'Basic skeleton',
@@ -2563,22 +2770,26 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-slider-17': {
     description: 'Vertical slider',
     tags: ['slider'],
-    registryDependencies: ['slider']
+    registryDependencies: ['slider'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-slider-18': {
     description: 'Vertical range slider',
     tags: ['slider'],
-    registryDependencies: ['slider']
+    registryDependencies: ['slider'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-slider-19': {
     description: 'Vertical slider with input',
     tags: ['slider', 'number-field'],
-    registryDependencies: ['number-field', 'slider']
+    registryDependencies: ['number-field', 'slider'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-slider-20': {
     description: 'Equalizer with vertical sliders',
     tags: ['slider'],
-    registryDependencies: ['slider']
+    registryDependencies: ['slider'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-slider-21': {
     description: 'Object position sliders with reset',
@@ -2603,37 +2814,44 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-spinner-1': {
     description: 'Basic spinner',
     tags: ['spinner'],
-    registryDependencies: ['spinner']
+    registryDependencies: ['spinner'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-switch-1': {
     description: 'Basic switch',
     tags: ['switch'],
-    registryDependencies: ['label', 'switch']
+    registryDependencies: ['label', 'switch'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-switch-2': {
     description: 'Disabled switch',
     tags: ['switch'],
-    registryDependencies: ['label', 'switch']
+    registryDependencies: ['label', 'switch'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-switch-3': {
     description: 'Switch with description',
     tags: ['switch'],
-    registryDependencies: ['label', 'switch']
+    registryDependencies: ['label', 'switch'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-switch-4': {
     description: 'Switch card',
     tags: ['switch'],
-    registryDependencies: ['label', 'switch']
+    registryDependencies: ['label', 'switch'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-switch-5': {
     description: 'Switch in form',
     tags: ['switch'],
-    registryDependencies: ['button', 'label', 'switch']
+    registryDependencies: ['button', 'label', 'switch'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-switch-6': {
     description: 'Custom size switch',
     tags: ['switch'],
-    registryDependencies: ['switch']
+    registryDependencies: ['switch'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-switch-7': {
     description: 'Weekly availability editor with time range combobox pickers',
@@ -2739,12 +2957,14 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-tabs-1': {
     description: 'Basic tabs',
     tags: ['tabs'],
-    registryDependencies: ['tabs']
+    registryDependencies: ['tabs'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-tabs-2': {
     description: 'Tabs with underline',
     tags: ['tabs'],
-    registryDependencies: ['tabs']
+    registryDependencies: ['tabs'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-tabs-3': {
     description: 'Vertical tabs',
@@ -2761,36 +2981,42 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-tabs-5': {
     description: 'Tabs with full rounded triggers',
     tags: ['tabs'],
-    registryDependencies: ['tabs']
+    registryDependencies: ['tabs'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-tabs-6': {
     description: 'Tabs with icon before name',
     tags: ['tabs'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['tabs']
+    registryDependencies: ['tabs'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-tabs-7': {
     description: 'Tabs with icon before name and underline',
     tags: ['tabs'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['tabs']
+    registryDependencies: ['tabs'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-tabs-8': {
     description: 'Tabs with icon only',
     tags: ['tabs'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['tabs']
+    registryDependencies: ['tabs'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-tabs-9': {
     description: 'Tabs with underline and icon on top',
     tags: ['tabs'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['tabs']
+    registryDependencies: ['tabs'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-tabs-10': {
     description: 'Tabs with count badge',
     tags: ['tabs', 'badge'],
-    registryDependencies: ['badge', 'tabs']
+    registryDependencies: ['badge', 'tabs'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-tabs-11': {
     description: 'Vertical tabs with underline and icon before name',
@@ -2803,13 +3029,15 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     description: 'Tabs with icon only and count badge',
     tags: ['tabs', 'badge'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['badge', 'tabs']
+    registryDependencies: ['badge', 'tabs'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-tabs-13': {
     description: 'Tabs with icon only and grouped tooltips',
     tags: ['tabs', 'tooltip'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['tabs', 'tooltip']
+    registryDependencies: ['tabs', 'tooltip'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-textarea-1': {
     description: 'Basic textarea',
@@ -2907,197 +3135,232 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-toast-1': {
     description: 'Default stacked toast with title and description',
     tags: ['toast'],
-    registryDependencies: ['button', 'toast']
+    registryDependencies: ['button', 'toast'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-toast-2': {
     description: 'Stacked toasts by semantic type (success, error, info, warning)',
     tags: ['toast'],
-    registryDependencies: ['button', 'toast']
+    registryDependencies: ['button', 'toast'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-toast-3': {
     description: 'Loading-state stacked toast',
     tags: ['toast'],
-    registryDependencies: ['button', 'toast']
+    registryDependencies: ['button', 'toast'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-toast-4': {
     description: 'Stacked toast with primary action (undo)',
     tags: ['toast'],
-    registryDependencies: ['button', 'toast']
+    registryDependencies: ['button', 'toast'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-toast-5': {
     description: 'Promise-based stacked toast',
     tags: ['toast'],
-    registryDependencies: ['button', 'toast']
+    registryDependencies: ['button', 'toast'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-toast-6': {
     description: 'Stacked toasts with varying content height',
     tags: ['toast'],
-    registryDependencies: ['button', 'toast']
+    registryDependencies: ['button', 'toast'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-toast-7': {
     description: 'Anchored tooltip-style toast after copy',
     tags: ['toast'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'toast', 'tooltip']
+    registryDependencies: ['button', 'toast', 'tooltip'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-toast-8': {
     description: 'Anchored error toast after async failure',
     tags: ['toast'],
-    registryDependencies: ['button', 'spinner', 'toast']
+    registryDependencies: ['button', 'spinner', 'toast'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-toast-9': {
     description: 'Long-running promise toast with cancel',
     tags: ['toast', 'button'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'toast']
+    registryDependencies: ['button', 'toast'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-toast-10': {
     description: 'Deduplicated success toast',
     tags: ['toast', 'button'],
-    registryDependencies: ['button', 'toast']
+    registryDependencies: ['button', 'toast'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-toast-11': {
     description: 'Deduplicated error toast',
     tags: ['toast', 'button', 'error'],
-    registryDependencies: ['button', 'toast']
+    registryDependencies: ['button', 'toast'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-toast-12': {
     description: 'Anchored deduplicated success toast',
     tags: ['toast', 'button'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'toast', 'tooltip']
+    registryDependencies: ['button', 'toast', 'tooltip'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-toast-13': {
     description: 'Anchored deduplicated error toast',
     tags: ['toast', 'button', 'error'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'toast', 'tooltip']
+    registryDependencies: ['button', 'toast', 'tooltip'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-toggle-group-1': {
     description: 'Basic toggle group',
     tags: ['toggle', 'toggle-group'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['toggle-group']
+    registryDependencies: ['toggle-group'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-toggle-group-2': {
     description: 'Small toggle group',
     tags: ['toggle', 'toggle-group'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['toggle-group']
+    registryDependencies: ['toggle-group'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-toggle-group-3': {
     description: 'Large toggle group',
     tags: ['toggle', 'toggle-group'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['toggle-group']
+    registryDependencies: ['toggle-group'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-toggle-group-4': {
     description: 'Toggle group with outline',
     tags: ['toggle', 'toggle-group'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['toggle-group']
+    registryDependencies: ['toggle-group'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-toggle-group-5': {
     description: 'Vertical toggle group with outline',
     tags: ['toggle', 'toggle-group'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['toggle-group']
+    registryDependencies: ['toggle-group'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-toggle-group-6': {
     description: 'Disabled toggle group',
     tags: ['toggle', 'toggle-group'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['toggle-group']
+    registryDependencies: ['toggle-group'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-toggle-group-7': {
     description: 'Toggle group with disabled item',
     tags: ['toggle', 'toggle-group'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['toggle-group']
+    registryDependencies: ['toggle-group'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-toggle-group-8': {
     description: 'Multiple selection toggle group',
     tags: ['toggle', 'toggle-group'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['toggle-group']
+    registryDependencies: ['toggle-group'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-toggle-group-9': {
     description: 'Toggle group with tooltips',
     tags: ['toggle', 'toggle-group'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['toggle-group', 'tooltip']
+    registryDependencies: ['toggle-group', 'tooltip'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-toggle-1': {
     description: 'Basic toggle',
     tags: ['toggle'],
-    registryDependencies: ['toggle']
+    registryDependencies: ['toggle'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-toggle-2': {
     description: 'Toggle with outline',
     tags: ['toggle'],
-    registryDependencies: ['toggle']
+    registryDependencies: ['toggle'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-toggle-3': {
     description: 'Toggle with icon',
     tags: ['toggle'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['toggle']
+    registryDependencies: ['toggle'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-toggle-4': {
     description: 'Small toggle',
     tags: ['toggle'],
-    registryDependencies: ['toggle']
+    registryDependencies: ['toggle'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-toggle-5': {
     description: 'Large toggle',
     tags: ['toggle'],
-    registryDependencies: ['toggle']
+    registryDependencies: ['toggle'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-toggle-6': {
     description: 'Disabled toggle',
     tags: ['toggle'],
-    registryDependencies: ['toggle']
+    registryDependencies: ['toggle'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-toggle-7': {
     description: 'Toggle icon group',
     tags: ['toggle'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['toggle']
+    registryDependencies: ['toggle'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-toggle-8': {
     description: 'Bookmark toggle with tooltip and success toast',
     tags: ['toggle', 'tooltip', 'toast'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['toast', 'toggle', 'tooltip']
+    registryDependencies: ['toast', 'toggle', 'tooltip'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-toolbar-1': {
     description: 'Toolbar with toggles, buttons, and select',
     tags: ['toolbar'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'select', 'toggle-group', 'toolbar', 'tooltip']
+    registryDependencies: ['button', 'select', 'toggle-group', 'toolbar', 'tooltip'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-tooltip-1': {
     description: 'Basic tooltip',
     tags: ['tooltip'],
-    registryDependencies: ['button', 'tooltip']
+    registryDependencies: ['button', 'tooltip'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-tooltip-2': {
     description: 'Grouped tooltips',
     tags: ['tooltip'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['toggle-group', 'tooltip']
+    registryDependencies: ['toggle-group', 'tooltip'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-tooltip-3': {
     description: 'Toggle group animated tooltip',
     tags: ['tooltip'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['toggle-group', 'tooltip']
+    registryDependencies: ['toggle-group', 'tooltip'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-tooltip-4': {
     description: 'Vertical group with animated tooltip',
     tags: ['tooltip'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['button', 'group', 'tooltip']
+    registryDependencies: ['button', 'group', 'tooltip'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-aspect-ratio-1': {
     description: 'Ratio 1:1',
@@ -3127,7 +3390,8 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     description: 'Breadcrumb in a bordered card container',
     tags: ['breadcrumb'],
     npmDependencies: ['@lucide/svelte'],
-    registryDependencies: ['breadcrumb']
+    registryDependencies: ['breadcrumb'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-chart-1': {
     description: 'Radial Chart with Labels',
