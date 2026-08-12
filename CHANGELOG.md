@@ -2,6 +2,41 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.9.19](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.18...v0.9.19) (2026-08-12)
+
+### ✨ Features
+
+* (upstream) add 2 new particles - team member selector ([#820](https://github.com/cossui-svelte/cossui-svelte/issues/820)) ([0b11218](https://github.com/cossui-svelte/cossui-svelte/commit/0b11218dcedfb1d5ccf86cc01a36d3e336b6388a))
+* (upstream) add calendar particle with 24-hour autocomplete time input ([#822](https://github.com/cossui-svelte/cossui-svelte/issues/822)) ([23cac37](https://github.com/cossui-svelte/cossui-svelte/commit/23cac3739dcf66e7e9c80d2cb802e773addf0318))
+* add a changlog page ([a52d5df](https://github.com/cossui-svelte/cossui-svelte/commit/a52d5df743398d78dec2fd10bc9ce5f77fa557ca))
+* first attempt at a registry ([e52510b](https://github.com/cossui-svelte/cossui-svelte/commit/e52510bd76633457f8c55c144fbc0430d8af6423))
+
+### 🐛 Bug Fixes
+
+* add svg icon to sitmanifest ([aa9c9d1](https://github.com/cossui-svelte/cossui-svelte/commit/aa9c9d12357d7cb25a2e77067eff149efdf3363e))
+* cloudflare caching issue ([2404e75](https://github.com/cossui-svelte/cossui-svelte/commit/2404e75761c1f3700678bc453a9041ca00c7d37d))
+* empty-state generation ([e998acc](https://github.com/cossui-svelte/cossui-svelte/commit/e998acc753e246e781fd4132856925a95f95c6d8))
+* icon path ([eab0e4f](https://github.com/cossui-svelte/cossui-svelte/commit/eab0e4f7bf046283e9d80c63a4c218be7d9caa99))
+* inline varsel in the toast component ([6ca38a6](https://github.com/cossui-svelte/cossui-svelte/commit/6ca38a6ac1e30f1d7bdae4bdc29eaf70e42a909f))
+* **input-group:** upstream [#827](https://github.com/cossui-svelte/cossui-svelte/issues/827) ([ac15fef](https://github.com/cossui-svelte/cossui-svelte/commit/ac15fef15e1aa8a6773a776a3059b73ac526bed2))
+* moved data-rehype-pretty-code-figure out of global.css ([c07a536](https://github.com/cossui-svelte/cossui-svelte/commit/c07a5362ffe6867b8d4fc71d5a7e88c12297c988))
+* popup particule ([a285e7b](https://github.com/cossui-svelte/cossui-svelte/commit/a285e7b5d4ddea9dc59b4461b96e3632e8197b8d))
+* registry generation ([231deb7](https://github.com/cossui-svelte/cossui-svelte/commit/231deb7a9b3ce1cd11f492768ae94516ef79e977))
+* registry generator, add the ability to remove entries ([7314eca](https://github.com/cossui-svelte/cossui-svelte/commit/7314eca96e249e16f0c892bad445b76700f465b4))
+* registry take 2 ([a167b68](https://github.com/cossui-svelte/cossui-svelte/commit/a167b68a078c484c6e5ec7ca2435ffcfe108cab4))
+* registry take 3 - broke stomething ([ce19517](https://github.com/cossui-svelte/cossui-svelte/commit/ce1951743cfd3ffe3a09d6831ec8cfcff0164c12))
+* repo generation ([95e5e3e](https://github.com/cossui-svelte/cossui-svelte/commit/95e5e3e905c0f6c04c9fc7cd37cd798049316895))
+* repo generation issues ([0b56b93](https://github.com/cossui-svelte/cossui-svelte/commit/0b56b937dbff7b1fdb6e6ad8aacb15931c80cd29))
+* repo paths ([20a1b61](https://github.com/cossui-svelte/cossui-svelte/commit/20a1b61d3ffd6768ce67b23305d60c621819a28f))
+* search particule sort order ([5228a43](https://github.com/cossui-svelte/cossui-svelte/commit/5228a43fd53c7b11d969f9fef07154f72206b7bf))
+* **ui:** (upstream) give drawer --inset a unit so popup slides ([#807](https://github.com/cossui-svelte/cossui-svelte/issues/807)) ([766db00](https://github.com/cossui-svelte/cossui-svelte/commit/766db00282049b867d976467f348e440b29fff49))
+* **ui:** (upstream) improve form control autofill text colors in iframes ([#830](https://github.com/cossui-svelte/cossui-svelte/issues/830)) ([e1387bd](https://github.com/cossui-svelte/cossui-svelte/commit/e1387bd75a04bc32d236d4804b19a70f2c40ef1b))
+
+### 🚚 Chores
+
+* deps ([f489087](https://github.com/cossui-svelte/cossui-svelte/commit/f489087b762267f1e5f4a0916d1d6b1a837bb9d5))
+* deps ([fe0c30d](https://github.com/cossui-svelte/cossui-svelte/commit/fe0c30d5dcd6bd4e54dce17e47b796140f1489df))
+* deps ([a984352](https://github.com/cossui-svelte/cossui-svelte/commit/a984352ac7d2948bfb21445fdbaaf8d71ea99b6b))
 ## [0.9.18](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.17...v0.9.18) (2026-08-05)
 
 ### ✨ Features
