@@ -11,6 +11,7 @@
   import type { RegistryParticuleEntry } from '$lib/registry/registry-particles';
   import ParticleCardContainer from './particle-card-container.svelte';
   import ComponentSource from '$lib/components/app/particle-source.svelte';
+  import CodeBlockCommand from '$lib/components/app/code-block-command.svelte';
 
   let {
     particle,
@@ -65,20 +66,26 @@
         }}
       >
         <DrawerPopup class="max-w-4xl" showBar showCloseButton={false} variant="straight">
-          <div class="flex flex-1 flex-col overflow-hidden p-6">
-            <div class="flex h-full flex-1 flex-col overflow-hidden">
-              <div class="flex items-center justify-between gap-2">
-                <h2 class="mt-6 mb-4 font-semibold text-xl">
-                  {drawerName}
-                </h2>
-              </div>
-
-              <ComponentSource
-                class="flex min-h-0 flex-1 flex-col *:data-rehype-pretty-code-figure:mt-0"
-                collapsible={false}
-                src={particle.file}
+          <div>
+            <h2 class="mb-4 font-heading font-semibold text-xl">Installation</h2>
+            <figure data-rehype-pretty-code-figure>
+              <CodeBlockCommand
+                __bun__={`bunx --bun shadcn@latest add @cossui-svelte/${drawerName}`}
+                __npm__={`npx shadcn@latest add @cossui-svelte/${drawerName}`}
+                __pnpm__={`pnpm dlx shadcn@latest add @cossui-svelte/${drawerName}`}
+                __yarn__={`yarn dlx shadcn@latest add @cossui-svelte/${drawerName}`}
               />
+            </figure>
+          </div>
+          <div class="flex h-full flex-1 flex-col overflow-hidden">
+            <div class="flex items-center justify-between gap-2">
+              <h2 class="mt-6 mb-4 font-heading font-semibold text-xl">Code</h2>
             </div>
+            <ComponentSource
+              class="flex min-h-0 flex-1 flex-col *:data-rehype-pretty-code-figure:mt-0"
+              collapsible={false}
+              src={particle.file}
+            />
           </div>
         </DrawerPopup>
       </Drawer>
@@ -93,3 +100,6 @@
     {/await}
   </div>
 </ParticleCardContainer>
+
+<style>
+</style>

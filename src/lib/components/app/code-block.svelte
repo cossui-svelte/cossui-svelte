@@ -106,3 +106,43 @@
     {/await}
   </ScrollArea>
 </figure>
+
+<style>
+  @layer components {
+    :global([data-rehype-pretty-code-figure]) {
+      background-color: var(--color-code);
+      color: var(--color-code-foreground);
+      border-radius: var(--radius-xl);
+      border-width: 1px;
+      border-style: solid;
+      border-color: var(--border);
+      margin-top: calc(var(--spacing) * 6);
+      overflow: hidden;
+      outline: none;
+      position: relative;
+      font-size: 0.875rem;
+    }
+
+    :global(
+      [data-rehype-pretty-code-figure]:has([data-rehype-pretty-code-title])
+        [data-slot='copy-button']
+    ) {
+      top: calc(var(--spacing) * 1.5);
+    }
+
+    :global(*[data-tab='code'] [data-rehype-pretty-code-figure]) {
+      border-width: 0;
+    }
+
+    :global([data-rehype-pretty-code-title]) {
+      min-height: calc(var(--spacing) * 11);
+      border-bottom: color-mix(in oklab, var(--border) 64%, transparent);
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+      padding-block: calc(var(--spacing) * 2.5);
+      padding-inline: calc(var(--spacing) * 4);
+      font-family: var(--font-mono);
+      color: var(--color-code-foreground);
+    }
+  }
+</style>
