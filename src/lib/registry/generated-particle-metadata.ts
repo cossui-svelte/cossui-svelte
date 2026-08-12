@@ -3393,6 +3393,13 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     registryDependencies: ['avatar', 'button'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
+  'p-badge-100': {
+    description: 'Notification button with a dismissible unread count badge',
+    tags: ['badge'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['badge', 'button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
   'p-breadcrumb-100': {
     description: 'Breadcrumb in a bordered card container',
     tags: ['breadcrumb'],

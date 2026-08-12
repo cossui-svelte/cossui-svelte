@@ -14,6 +14,9 @@ export const custom_particle_metadata = {
   'p-avatar-95': {
     description: 'Avatar button with a dropdown chevron indicator'
   },
+  'p-badge-100': {
+    description: 'Notification button with a dismissible unread count badge'
+  },
   'p-breadcrumb-100': {
     description: 'Breadcrumb in a bordered card container'
   },
