@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-number-field-102",
+	"title": "Number field 102",
+	"description": "Volume control with an icon that reflects the current level",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-number-field-102.svelte",
+			"target": "$lib/components/particles/number-field/p-number-field-102.svelte",
+			"content": "<script lang=\"ts\">\n  import Volume1Icon from '@lucide/svelte/icons/volume-1';\n  import Volume2Icon from '@lucide/svelte/icons/volume-2';\n  import VolumeIcon from '@lucide/svelte/icons/volume';\n  import VolumeXIcon from '@lucide/svelte/icons/volume-x';\n  import {\n    NumberField,\n    NumberFieldDecrement,\n    NumberFieldIncrement,\n    NumberFieldValue\n  } from '$lib/components/ui/number-field';\n</script>\n\n<NumberField class=\"w-auto\" max={6} min={0} value={3}>\n  <div aria-labelledby=\"volume-control\" class=\"inline-flex items-center\" role=\"group\">\n    <span class=\"sr-only\" id=\"volume-control\">Volume Control</span>\n    <NumberFieldDecrement\n      aria-label=\"Decrease volume\"\n      class=\"size-9 rounded-full border border-input bg-popover px-0 shadow-xs/5 hover:bg-accent/50 sm:size-8\"\n    />\n    <NumberFieldValue aria-live=\"polite\" class=\"px-3\">\n      {#snippet children({ value })}\n        {@const volume = value ?? 0}\n        {@const Icon =\n          volume === 0\n            ? VolumeXIcon\n            : volume < 3\n              ? VolumeIcon\n              : volume < 5\n                ? Volume1Icon\n                : Volume2Icon}\n        <Icon aria-hidden=\"true\" class=\"opacity-60\" size={16} />\n        <span aria-label={`Current volume is ${volume}`} class=\"ms-2\">{volume}</span>\n      {/snippet}\n    </NumberFieldValue>\n    <NumberFieldIncrement\n      aria-label=\"Increase volume\"\n      class=\"size-9 rounded-full border border-input bg-popover px-0 shadow-xs/5 hover:bg-accent/50 sm:size-8\"\n    />\n  </div>\n</NumberField>\n"
+		}
+	],
+	"registryDependencies": [
+		"number-field"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

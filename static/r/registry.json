@@ -2152,6 +2152,11 @@
 				},
 				{
 					"type": "registry:ui",
+					"path": "number-field/number-field-value.svelte",
+					"target": "$lib/components/ui/number-field/number-field-value.svelte"
+				},
+				{
+					"type": "registry:ui",
 					"path": "number-field/number-field.svelte",
 					"target": "$lib/components/ui/number-field/number-field.svelte"
 				}
@@ -11679,6 +11684,63 @@
 					"type": "registry:block",
 					"path": "p-number-field-10.svelte",
 					"target": "$lib/components/particles/number-field/p-number-field-10.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-number-field-100",
+			"title": "Number field 100",
+			"description": "Vote counter with up and down buttons",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [
+				"number-field"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-number-field-100.svelte",
+					"target": "$lib/components/particles/number-field/p-number-field-100.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-number-field-101",
+			"title": "Number field 101",
+			"description": "Rounded vote counter with up and down buttons",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [
+				"number-field"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-number-field-101.svelte",
+					"target": "$lib/components/particles/number-field/p-number-field-101.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-number-field-102",
+			"title": "Number field 102",
+			"description": "Volume control with an icon that reflects the current level",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [
+				"number-field"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-number-field-102.svelte",
+					"target": "$lib/components/particles/number-field/p-number-field-102.svelte"
 				}
 			]
 		},

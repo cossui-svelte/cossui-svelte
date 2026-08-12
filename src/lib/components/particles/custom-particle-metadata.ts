@@ -216,6 +216,15 @@ export const custom_particle_metadata = {
   'p-map-11': {
     description: 'Map with a dismissible popup and a button to show it again'
   },
+  'p-number-field-100': {
+    description: 'Vote counter with up and down buttons'
+  },
+  'p-number-field-101': {
+    description: 'Rounded vote counter with up and down buttons'
+  },
+  'p-number-field-102': {
+    description: 'Volume control with an icon that reflects the current level'
+  },
   'p-places-autocomplete-1': {
     description: 'Address validation powered by the Google Places API',
     tags: ['async', 'map']

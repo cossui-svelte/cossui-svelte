@@ -3821,6 +3821,27 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     registryDependencies: ['map'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
+  'p-number-field-100': {
+    description: 'Vote counter with up and down buttons',
+    tags: ['number-field'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['number-field'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-number-field-101': {
+    description: 'Rounded vote counter with up and down buttons',
+    tags: ['number-field'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['number-field'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-number-field-102': {
+    description: 'Volume control with an icon that reflects the current level',
+    tags: ['number-field'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['number-field'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
   'p-places-autocomplete-1': {
     description: 'Address validation powered by the Google Places API',
     tags: ['async', 'map', 'places-autocomplete'],

@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-number-field-100",
+	"title": "Number field 100",
+	"description": "Vote counter with up and down buttons",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-number-field-100.svelte",
+			"target": "$lib/components/particles/number-field/p-number-field-100.svelte",
+			"content": "<script lang=\"ts\">\n  import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';\n  import ChevronUpIcon from '@lucide/svelte/icons/chevron-up';\n  import {\n    NumberField,\n    NumberFieldDecrement,\n    NumberFieldIncrement,\n    NumberFieldValue\n  } from '$lib/components/ui/number-field';\n</script>\n\n<NumberField class=\"w-auto\" value={235}>\n  <div class=\"-space-x-px inline-flex rounded-md shadow-xs rtl:space-x-reverse\">\n    <NumberFieldIncrement\n      aria-label=\"Upvote\"\n      class=\"size-9 rounded-none border border-input px-0 shadow-none first:rounded-s-md last:rounded-e-md focus-visible:z-10 sm:size-8\"\n    >\n      <ChevronUpIcon aria-hidden=\"true\" size={16} />\n    </NumberFieldIncrement>\n    <NumberFieldValue class=\"border border-input px-3\" />\n    <NumberFieldDecrement\n      aria-label=\"Downvote\"\n      class=\"size-9 rounded-none border border-input px-0 shadow-none first:rounded-s-md last:rounded-e-md focus-visible:z-10 sm:size-8\"\n    >\n      <ChevronDownIcon aria-hidden=\"true\" size={16} />\n    </NumberFieldDecrement>\n  </div>\n</NumberField>\n"
+		}
+	],
+	"registryDependencies": [
+		"number-field"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}
