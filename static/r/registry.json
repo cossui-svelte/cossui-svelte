@@ -192,8 +192,8 @@
 				"bits-ui@^2.18.1"
 			],
 			"registryDependencies": [
-				"utils",
-				"scroll-area"
+				"scroll-area",
+				"utils"
 			],
 			"files": [
 				{
@@ -434,8 +434,8 @@
 				"bits-ui@^2.18.1"
 			],
 			"registryDependencies": [
-				"utils",
-				"button"
+				"button",
+				"utils"
 			],
 			"files": [
 				{
@@ -897,8 +897,8 @@
 			],
 			"registryDependencies": [
 				"dialog",
-				"utils",
-				"scroll-area"
+				"scroll-area",
+				"utils"
 			],
 			"files": [
 				{
@@ -992,8 +992,8 @@
 				"bits-ui@^2.18.1"
 			],
 			"registryDependencies": [
-				"utils",
-				"kbd"
+				"kbd",
+				"utils"
 			],
 			"files": [
 				{
@@ -1144,9 +1144,9 @@
 				"bits-ui@^2.18.1"
 			],
 			"registryDependencies": [
-				"utils",
 				"button",
-				"scroll-area"
+				"scroll-area",
+				"utils"
 			],
 			"files": [
 				{
@@ -1220,8 +1220,8 @@
 				"bits-ui@^2.18.1"
 			],
 			"registryDependencies": [
-				"utils",
 				"button",
+				"utils",
 				"scroll-area"
 			],
 			"files": [
@@ -1523,8 +1523,8 @@
 				"sveltekit-superforms@^2.30.2"
 			],
 			"registryDependencies": [
-				"utils",
-				"form"
+				"form",
+				"utils"
 			],
 			"files": [
 				{
@@ -1763,10 +1763,10 @@
 				"tailwind-variants@^3.3.1"
 			],
 			"registryDependencies": [
-				"utils",
 				"button",
 				"input",
-				"textarea"
+				"textarea",
+				"utils"
 			],
 			"files": [
 				{
@@ -2116,8 +2116,8 @@
 			"type": "registry:ui",
 			"dependencies": [],
 			"registryDependencies": [
-				"utils",
-				"label"
+				"label",
+				"utils"
 			],
 			"files": [
 				{
@@ -2200,8 +2200,8 @@
 				"bits-ui@^2.18.1"
 			],
 			"registryDependencies": [
-				"utils",
-				"button"
+				"button",
+				"utils"
 			],
 			"files": [
 				{
@@ -2450,9 +2450,9 @@
 				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
+				"button",
 				"calendar",
-				"utils",
-				"button"
+				"utils"
 			],
 			"files": [
 				{
@@ -2690,14 +2690,14 @@
 				"bits-ui@^2.18.1"
 			],
 			"registryDependencies": [
-				"use-is-mobile",
-				"utils",
-				"input",
-				"tooltip",
-				"skeleton",
-				"separator",
 				"button",
-				"sheet"
+				"input",
+				"separator",
+				"sheet",
+				"skeleton",
+				"tooltip",
+				"use-is-mobile",
+				"utils"
 			],
 			"files": [
 				{
@@ -2863,8 +2863,8 @@
 				"bits-ui@^2.18.1"
 			],
 			"registryDependencies": [
-				"utils",
-				"tooltip"
+				"tooltip",
+				"utils"
 			],
 			"files": [
 				{
@@ -3385,9 +3385,9 @@
 				"bits-ui@^2.18.1"
 			],
 			"registryDependencies": [
-				"utils",
+				"separator",
 				"toggle",
-				"separator"
+				"utils"
 			],
 			"files": [
 				{

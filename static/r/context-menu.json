@@ -97,8 +97,8 @@
 		}
 	],
 	"registryDependencies": [
-		"utils",
-		"kbd"
+		"kbd",
+		"utils"
 	],
 	"dependencies": [
 		"bits-ui@^2.18.1"

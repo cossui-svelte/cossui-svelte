@@ -1,9 +1,9 @@
 // This file contains extra meta-data, to add into the registry
 // it is edited manually
 
-import type { RegistryUiData } from '$lib/registry/generated-registry-components';
+import type { RegistryUIEntry } from '$lib/registry/generated-registry-components';
 
-export const custom_components_metadata: RegistryUiData = {
+export const custom_components_metadata: Record<string, Partial<RegistryUIEntry>> = {
   accordion: {
     description: 'A set of collapsible panels with headings and content.',
     category: 'ui'

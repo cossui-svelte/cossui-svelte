@@ -31,8 +31,8 @@
 		}
 	],
 	"registryDependencies": [
-		"utils",
-		"form"
+		"form",
+		"utils"
 	],
 	"dependencies": [
 		"svelte-toolbelt@^0.10.6",

@@ -121,8 +121,8 @@
 		}
 	],
 	"registryDependencies": [
-		"utils",
-		"button"
+		"button",
+		"utils"
 	],
 	"dependencies": [
 		"@internationalized/date@^3.12.3",

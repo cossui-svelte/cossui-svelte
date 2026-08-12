@@ -31,9 +31,9 @@
 		}
 	],
 	"registryDependencies": [
+		"button",
 		"calendar",
-		"utils",
-		"button"
+		"utils"
 	],
 	"dependencies": [
 		"bits-ui@^2.18.1",

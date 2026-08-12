@@ -169,7 +169,10 @@ export async function getRegistryItems(cwd: string): Promise<RegistryItem[]> {
       ]
     };
 
-    if (meta.npmDependencies?.length) registryItem.dependencies = meta.npmDependencies;
+    // npm deps are deliberately not passed through here: jsrepo's own shadcn output
+    // already auto-detects and version-pins them from source for 'ui' type items, so
+    // forwarding meta.npmDependencies would duplicate each package as an extra,
+    // unversioned entry alongside jsrepo's versioned one.
     if (meta.registryDependencies?.length)
       registryItem.registryDependencies = meta.registryDependencies;
 

@@ -49,10 +49,10 @@
 		}
 	],
 	"registryDependencies": [
-		"utils",
 		"button",
 		"input",
-		"textarea"
+		"textarea",
+		"utils"
 	],
 	"dependencies": [
 		"tailwind-variants@^3.3.1"

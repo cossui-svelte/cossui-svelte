@@ -55,8 +55,8 @@
 		}
 	],
 	"registryDependencies": [
-		"utils",
-		"button"
+		"button",
+		"utils"
 	],
 	"dependencies": [
 		"bits-ui@^2.18.1"

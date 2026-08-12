@@ -163,14 +163,14 @@
 		}
 	],
 	"registryDependencies": [
-		"use-is-mobile",
-		"utils",
-		"input",
-		"tooltip",
-		"skeleton",
-		"separator",
 		"button",
-		"sheet"
+		"input",
+		"separator",
+		"sheet",
+		"skeleton",
+		"tooltip",
+		"use-is-mobile",
+		"utils"
 	],
 	"dependencies": [
 		"tailwind-variants@^3.3.1",
