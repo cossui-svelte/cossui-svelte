@@ -1,0 +1,22 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-alert-dialog-333",
+	"title": "Alert dialog 333",
+	"description": "Command palette triggered from a search input",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-alert-dialog-333.svelte",
+			"target": "$lib/components/particles/alert-dialog/p-alert-dialog-333.svelte",
+			"content": "<script lang=\"ts\">\n  import ArrowUpRightIcon from '@lucide/svelte/icons/arrow-up-right';\n  import CircleFadingPlusIcon from '@lucide/svelte/icons/circle-fading-plus';\n  import FileInputIcon from '@lucide/svelte/icons/file-input';\n  import FolderPlusIcon from '@lucide/svelte/icons/folder-plus';\n  import SearchIcon from '@lucide/svelte/icons/search';\n  import {\n    Command,\n    CommandCollection,\n    CommandDialog,\n    CommandDialogPopup,\n    CommandDialogTrigger,\n    CommandEmpty,\n    CommandGroup,\n    CommandGroupLabel,\n    CommandInput,\n    CommandItem,\n    CommandList,\n    CommandPanel,\n    CommandSeparator,\n    CommandShortcut\n  } from '$lib/components/ui/command';\n  import { Kbd } from '$lib/components/ui/kbd';\n\n  let open = $state(false);\n\n  $effect(() => {\n    function down(e: KeyboardEvent) {\n      if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {\n        e.preventDefault();\n        open = !open;\n      }\n    }\n    document.addEventListener('keydown', down);\n    return () => document.removeEventListener('keydown', down);\n  });\n</script>\n\n<CommandDialogTrigger\n  class=\"inline-flex h-9 w-fit rounded-md border border-input bg-background px-3 py-2 text-foreground text-sm shadow-xs outline-none transition-[color,box-shadow] placeholder:text-muted-foreground/70 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50\"\n  onclick={() => {\n    open = true;\n  }}\n>\n  <span class=\"flex grow items-center\">\n    <SearchIcon aria-hidden=\"true\" class=\"-ms-1 me-3 text-muted-foreground/80\" size={16} />\n    <span class=\"font-normal text-muted-foreground/70\">Search</span>\n  </span>\n  <Kbd class=\"ms-12\">⌘K</Kbd>\n</CommandDialogTrigger>\n\n<CommandDialog bind:open>\n  <CommandDialogPopup>\n    <Command>\n      <CommandInput placeholder=\"Type a command or search...\" />\n      <CommandPanel>\n        <CommandEmpty>No results found.</CommandEmpty>\n        <CommandList>\n          <CommandGroup>\n            <CommandGroupLabel>Quick start</CommandGroupLabel>\n            <CommandCollection>\n              <CommandItem>\n                <FolderPlusIcon aria-hidden=\"true\" class=\"opacity-60\" size={16} />\n                <span>New folder</span>\n                <CommandShortcut class=\"justify-center\">⌘N</CommandShortcut>\n              </CommandItem>\n              <CommandItem>\n                <FileInputIcon aria-hidden=\"true\" class=\"opacity-60\" size={16} />\n                <span>Import document</span>\n                <CommandShortcut class=\"justify-center\">⌘I</CommandShortcut>\n              </CommandItem>\n              <CommandItem>\n                <CircleFadingPlusIcon aria-hidden=\"true\" class=\"opacity-60\" size={16} />\n                <span>Add block</span>\n                <CommandShortcut class=\"justify-center\">⌘B</CommandShortcut>\n              </CommandItem>\n            </CommandCollection>\n          </CommandGroup>\n          <CommandSeparator />\n          <CommandGroup>\n            <CommandGroupLabel>Navigation</CommandGroupLabel>\n            <CommandCollection>\n              <CommandItem>\n                <ArrowUpRightIcon aria-hidden=\"true\" class=\"opacity-60\" size={16} />\n                <span>Go to dashboard</span>\n              </CommandItem>\n              <CommandItem>\n                <ArrowUpRightIcon aria-hidden=\"true\" class=\"opacity-60\" size={16} />\n                <span>Go to apps</span>\n              </CommandItem>\n              <CommandItem>\n                <ArrowUpRightIcon aria-hidden=\"true\" class=\"opacity-60\" size={16} />\n                <span>Go to connections</span>\n              </CommandItem>\n            </CommandCollection>\n          </CommandGroup>\n        </CommandList>\n      </CommandPanel>\n    </Command>\n  </CommandDialogPopup>\n</CommandDialog>\n"
+		}
+	],
+	"registryDependencies": [
+		"command",
+		"kbd"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

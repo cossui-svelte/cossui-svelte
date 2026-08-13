@@ -1,0 +1,25 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-alert-dialog-320",
+	"title": "Alert dialog 320",
+	"description": "Delete confirmation dialog gated by typing the project name",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-alert-dialog-320.svelte",
+			"target": "$lib/components/particles/alert-dialog/p-alert-dialog-320.svelte",
+			"content": "<script lang=\"ts\">\n  import CircleAlertIcon from '@lucide/svelte/icons/circle-alert';\n  import { Button, buttonVariants } from '$lib/components/ui/button';\n  import {\n    Dialog,\n    DialogClose,\n    DialogDescription,\n    DialogFooter,\n    DialogHeader,\n    DialogPanel,\n    DialogPopup,\n    DialogTitle,\n    DialogTrigger\n  } from '$lib/components/ui/dialog';\n  import { Input } from '$lib/components/ui/input';\n  import { Label } from '$lib/components/ui/label';\n  import { cn } from '$lib/utils';\n\n  const PROJECT_NAME = 'coss-ui';\n  const id = $props.id();\n\n  let inputValue = $state('');\n</script>\n\n<Dialog>\n  <DialogTrigger class={buttonVariants({ variant: 'outline' })}>Delete project</DialogTrigger>\n  <DialogPopup>\n    <div class=\"flex flex-col items-center gap-2 px-6 pt-6\">\n      <div class=\"flex size-9 shrink-0 items-center justify-center rounded-full border\">\n        <CircleAlertIcon class=\"opacity-80\" size={16} />\n      </div>\n      <DialogHeader class=\"p-0\">\n        <DialogTitle class=\"sm:text-center\">Final confirmation</DialogTitle>\n        <DialogDescription class=\"sm:text-center\">\n          This action cannot be undone. To confirm, please enter the project name\n          <span class=\"text-foreground\">coss-ui</span>.\n        </DialogDescription>\n      </DialogHeader>\n    </div>\n\n    <DialogPanel class=\"flex flex-col gap-5\">\n      <div class=\"flex flex-col gap-2\">\n        <Label for=\"{id}-name\">Project name</Label>\n        <Input id=\"{id}-name\" placeholder=\"Type coss-ui to confirm\" bind:value={inputValue} />\n      </div>\n    </DialogPanel>\n    <DialogFooter>\n      <DialogClose class={cn(buttonVariants({ variant: 'outline' }), 'flex-1')}>Cancel</DialogClose>\n      <Button class=\"flex-1\" disabled={inputValue !== PROJECT_NAME}>Delete</Button>\n    </DialogFooter>\n  </DialogPopup>\n</Dialog>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"dialog",
+		"input",
+		"label",
+		"utils"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

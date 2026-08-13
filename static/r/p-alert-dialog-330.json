@@ -1,0 +1,24 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-alert-dialog-330",
+	"title": "Alert dialog 330",
+	"description": "Change plan dialog with a feature checklist",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-alert-dialog-330.svelte",
+			"target": "$lib/components/particles/alert-dialog/p-alert-dialog-330.svelte",
+			"content": "<script lang=\"ts\">\n  import CheckIcon from '@lucide/svelte/icons/check';\n  import RefreshCcwIcon from '@lucide/svelte/icons/refresh-ccw';\n  import { Button, buttonVariants } from '$lib/components/ui/button';\n  import {\n    Dialog,\n    DialogClose,\n    DialogDescription,\n    DialogHeader,\n    DialogPanel,\n    DialogPopup,\n    DialogTitle,\n    DialogTrigger\n  } from '$lib/components/ui/dialog';\n  import { Label } from '$lib/components/ui/label';\n  import { Radio, RadioGroup } from '$lib/components/ui/radio-group';\n\n  const id = $props.id();\n\n  const plans = [\n    { description: '$4 per member/month', name: 'Essential', value: '1' },\n    { description: '$19 per member/month', name: 'Standard', value: '2' },\n    { description: '$32 per member/month', name: 'Enterprise', value: '3' }\n  ];\n\n  const features = [\n    'Create unlimited projects.',\n    'Remove watermarks.',\n    'Add unlimited users and free viewers.',\n    'Upload unlimited files.',\n    '7-day money back guarantee.',\n    'Advanced permissions.'\n  ];\n</script>\n\n<Dialog>\n  <DialogTrigger class={buttonVariants({ variant: 'outline' })}>Change plan</DialogTrigger>\n  <DialogPopup>\n    <div class=\"flex flex-col gap-2 px-6 pt-6\">\n      <div class=\"flex size-11 shrink-0 items-center justify-center rounded-full border\">\n        <RefreshCcwIcon class=\"opacity-80\" size={16} />\n      </div>\n      <DialogHeader class=\"p-0\">\n        <DialogTitle class=\"text-left\">Change your plan</DialogTitle>\n        <DialogDescription class=\"text-left\">Pick one of the following plans.</DialogDescription>\n      </DialogHeader>\n    </div>\n\n    <DialogPanel class=\"flex flex-col gap-5\">\n      <RadioGroup class=\"gap-2\" value=\"2\">\n        {#each plans as plan (plan.value)}\n          <div\n            class=\"relative flex w-full items-center gap-2 rounded-md border border-input px-4 py-3 shadow-xs outline-none has-data-[state=checked]:border-primary/50 has-data-[state=checked]:bg-accent\"\n          >\n            <Radio\n              aria-describedby=\"{id}-{plan.value}-description\"\n              class=\"order-1 after:absolute after:inset-0\"\n              id=\"{id}-{plan.value}\"\n              value={plan.value}\n            />\n            <div class=\"grid grow gap-1\">\n              <Label for=\"{id}-{plan.value}\">{plan.name}</Label>\n              <p class=\"text-muted-foreground text-xs\" id=\"{id}-{plan.value}-description\">\n                {plan.description}\n              </p>\n            </div>\n          </div>\n        {/each}\n      </RadioGroup>\n\n      <div class=\"flex flex-col gap-3\">\n        <p><strong class=\"font-medium text-sm\">Features include:</strong></p>\n        <ul class=\"flex flex-col gap-2 text-muted-foreground text-sm\">\n          {#each features as feature (feature)}\n            <li class=\"flex gap-2\">\n              <CheckIcon aria-hidden=\"true\" class=\"mt-0.5 shrink-0 text-primary\" size={16} />\n              {feature}\n            </li>\n          {/each}\n        </ul>\n      </div>\n\n      <div class=\"grid gap-2\">\n        <Button class=\"w-full\">Change plan</Button>\n        <DialogClose class={buttonVariants({ variant: 'ghost' })}>Cancel</DialogClose>\n      </div>\n    </DialogPanel>\n  </DialogPopup>\n</Dialog>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"dialog",
+		"label",
+		"radio-group"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

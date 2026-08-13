@@ -1,0 +1,27 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-alert-dialog-328",
+	"title": "Alert dialog 328",
+	"description": "Update card details dialog with auto-formatted inputs",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-alert-dialog-328.svelte",
+			"target": "$lib/components/particles/alert-dialog/p-alert-dialog-328.svelte",
+			"content": "<script lang=\"ts\">\n  import CreditCardIcon from '@lucide/svelte/icons/credit-card';\n  import WalletIcon from '@lucide/svelte/icons/wallet';\n  import {\n    DefaultCreditCardDelimiter,\n    DefaultDateDelimiter,\n    formatCreditCard,\n    formatDate,\n    formatGeneral,\n    registerCursorTracker\n  } from 'cleave-zen';\n  import type { Attachment } from 'svelte/attachments';\n  import { Button, buttonVariants } from '$lib/components/ui/button';\n  import { Checkbox } from '$lib/components/ui/checkbox';\n  import {\n    Dialog,\n    DialogDescription,\n    DialogHeader,\n    DialogPanel,\n    DialogPopup,\n    DialogTitle,\n    DialogTrigger\n  } from '$lib/components/ui/dialog';\n  import { Input } from '$lib/components/ui/input';\n  import { Label } from '$lib/components/ui/label';\n\n  const id = $props.id();\n\n  let name = $state('');\n  let setAsDefault = $state(false);\n\n  const cardNumberAttachment: Attachment<HTMLInputElement> = (input) => {\n    const unregisterCursorTracker = registerCursorTracker({\n      delimiter: DefaultCreditCardDelimiter,\n      input\n    });\n\n    const handleInput = (event: Event) => {\n      const target = event.target as HTMLInputElement;\n      target.value = formatCreditCard(target.value);\n    };\n\n    input.addEventListener('input', handleInput);\n\n    return () => {\n      input.removeEventListener('input', handleInput);\n      unregisterCursorTracker();\n    };\n  };\n\n  const expiryAttachment: Attachment<HTMLInputElement> = (input) => {\n    const unregisterCursorTracker = registerCursorTracker({\n      delimiter: DefaultDateDelimiter,\n      input\n    });\n\n    const handleInput = (event: Event) => {\n      const target = event.target as HTMLInputElement;\n      target.value = formatDate(target.value, { datePattern: ['m', 'y'] });\n    };\n\n    input.addEventListener('input', handleInput);\n\n    return () => {\n      input.removeEventListener('input', handleInput);\n      unregisterCursorTracker();\n    };\n  };\n\n  const cvcAttachment: Attachment<HTMLInputElement> = (input) => {\n    const handleInput = (event: Event) => {\n      const target = event.target as HTMLInputElement;\n      target.value = formatGeneral(target.value, { blocks: [4], numericOnly: true });\n    };\n\n    input.addEventListener('input', handleInput);\n\n    return () => input.removeEventListener('input', handleInput);\n  };\n</script>\n\n<Dialog>\n  <DialogTrigger class={buttonVariants({ variant: 'outline' })}>Card details</DialogTrigger>\n  <DialogPopup>\n    <div class=\"flex flex-col gap-2 px-6 pt-6\">\n      <div class=\"flex size-11 shrink-0 items-center justify-center rounded-full border\">\n        <WalletIcon class=\"opacity-80\" size={16} />\n      </div>\n      <DialogHeader class=\"p-0\">\n        <DialogTitle class=\"text-left\">Update your card</DialogTitle>\n        <DialogDescription class=\"text-left\">\n          Your new card will replace your current card.\n        </DialogDescription>\n      </DialogHeader>\n    </div>\n\n    <DialogPanel class=\"flex flex-col gap-5\">\n      <div class=\"flex flex-col gap-4\">\n        <div class=\"flex flex-col gap-2\">\n          <Label for=\"{id}-name\">Name on card</Label>\n          <Input id=\"{id}-name\" required type=\"text\" bind:value={name} />\n        </div>\n        <div class=\"flex flex-col gap-2\">\n          <Label for=\"{id}-number\">Card Number</Label>\n          <div class=\"relative\">\n            <Input\n              id=\"{id}-number\"\n              class=\"peer pe-9\"\n              autocomplete=\"cc-number\"\n              {@attach cardNumberAttachment}\n            />\n            <div\n              class=\"pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 text-muted-foreground/80 peer-disabled:opacity-50\"\n            >\n              <CreditCardIcon aria-hidden=\"true\" size={16} />\n            </div>\n          </div>\n        </div>\n        <div class=\"flex gap-4\">\n          <div class=\"flex flex-1 flex-col gap-2\">\n            <Label for=\"{id}-expiry\">Expiry date</Label>\n            <Input id=\"{id}-expiry\" autocomplete=\"cc-exp\" {@attach expiryAttachment} />\n          </div>\n          <div class=\"flex flex-1 flex-col gap-2\">\n            <Label for=\"{id}-cvc\">CVC</Label>\n            <Input id=\"{id}-cvc\" autocomplete=\"cc-csc\" {@attach cvcAttachment} />\n          </div>\n        </div>\n      </div>\n      <Label class=\"font-normal text-muted-foreground\">\n        <Checkbox bind:checked={setAsDefault} />\n        Set as default payment method\n      </Label>\n      <Button class=\"w-full\">Update card</Button>\n    </DialogPanel>\n  </DialogPopup>\n</Dialog>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"checkbox",
+		"dialog",
+		"input",
+		"label"
+	],
+	"dependencies": [
+		"@lucide/svelte",
+		"cleave-zen",
+		"cleave-zen@^0.0.17"
+	]
+}

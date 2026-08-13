@@ -4160,6 +4160,444 @@
 			]
 		},
 		{
+			"name": "p-alert-dialog-313",
+			"title": "Alert dialog 313",
+			"description": "Basic confirmation alert dialog",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": [
+				"alert-dialog",
+				"button"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-alert-dialog-313.svelte",
+					"target": "$lib/components/particles/alert-dialog/p-alert-dialog-313.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-alert-dialog-314",
+			"title": "Alert dialog 314",
+			"description": "Alert dialog with a warning icon",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [
+				"alert-dialog",
+				"button"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-alert-dialog-314.svelte",
+					"target": "$lib/components/particles/alert-dialog/p-alert-dialog-314.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-alert-dialog-315",
+			"title": "Alert dialog 315",
+			"description": "Scrollable dialog with a native scrollbar",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": [
+				"button",
+				"dialog"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-alert-dialog-315.svelte",
+					"target": "$lib/components/particles/alert-dialog/p-alert-dialog-315.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-alert-dialog-316",
+			"title": "Alert dialog 316",
+			"description": "Scrollable dialog with a custom scrollbar",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": [
+				"button",
+				"dialog"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-alert-dialog-316.svelte",
+					"target": "$lib/components/particles/alert-dialog/p-alert-dialog-316.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-alert-dialog-317",
+			"title": "Alert dialog 317",
+			"description": "Scrollable dialog with a sticky header",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": [
+				"button",
+				"dialog",
+				"scroll-area"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-alert-dialog-317.svelte",
+					"target": "$lib/components/particles/alert-dialog/p-alert-dialog-317.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-alert-dialog-318",
+			"title": "Alert dialog 318",
+			"description": "Scrollable dialog with a sticky footer",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": [
+				"button",
+				"dialog"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-alert-dialog-318.svelte",
+					"target": "$lib/components/particles/alert-dialog/p-alert-dialog-318.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-alert-dialog-319",
+			"title": "Alert dialog 319",
+			"description": "Terms & conditions dialog that unlocks the agree button once you've scrolled to the bottom",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": [
+				"button",
+				"dialog",
+				"scroll-area"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-alert-dialog-319.svelte",
+					"target": "$lib/components/particles/alert-dialog/p-alert-dialog-319.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-alert-dialog-320",
+			"title": "Alert dialog 320",
+			"description": "Delete confirmation dialog gated by typing the project name",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [
+				"button",
+				"dialog",
+				"input",
+				"label",
+				"utils"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-alert-dialog-320.svelte",
+					"target": "$lib/components/particles/alert-dialog/p-alert-dialog-320.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-alert-dialog-321",
+			"title": "Alert dialog 321",
+			"description": "Newsletter subscription dialog",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [
+				"button",
+				"dialog",
+				"input"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-alert-dialog-321.svelte",
+					"target": "$lib/components/particles/alert-dialog/p-alert-dialog-321.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-alert-dialog-322",
+			"title": "Alert dialog 322",
+			"description": "Feedback dialog with a textarea and helpful links",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": [
+				"button",
+				"dialog",
+				"textarea"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-alert-dialog-322.svelte",
+					"target": "$lib/components/particles/alert-dialog/p-alert-dialog-322.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-alert-dialog-323",
+			"title": "Alert dialog 323",
+			"description": "Rating dialog with a numeric scale and comment field",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": [
+				"button",
+				"dialog",
+				"label",
+				"radio-group",
+				"textarea"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-alert-dialog-323.svelte",
+					"target": "$lib/components/particles/alert-dialog/p-alert-dialog-323.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-alert-dialog-324",
+			"title": "Alert dialog 324",
+			"description": "OTP verification dialog with automatic code checking",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": [
+				"button",
+				"dialog",
+				"otp-field"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-alert-dialog-324.svelte",
+					"target": "$lib/components/particles/alert-dialog/p-alert-dialog-324.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-alert-dialog-325",
+			"title": "Alert dialog 325",
+			"description": "Sign up dialog with name, email and password fields",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": [
+				"button",
+				"dialog",
+				"input",
+				"label"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-alert-dialog-325.svelte",
+					"target": "$lib/components/particles/alert-dialog/p-alert-dialog-325.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-alert-dialog-326",
+			"title": "Alert dialog 326",
+			"description": "Sign in dialog with a remember me checkbox",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": [
+				"button",
+				"checkbox",
+				"dialog",
+				"input",
+				"label"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-alert-dialog-326.svelte",
+					"target": "$lib/components/particles/alert-dialog/p-alert-dialog-326.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-alert-dialog-327",
+			"title": "Alert dialog 327",
+			"description": "Invite team members dialog with a copyable magic link",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [
+				"button",
+				"dialog",
+				"input",
+				"label",
+				"tooltip",
+				"utils"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-alert-dialog-327.svelte",
+					"target": "$lib/components/particles/alert-dialog/p-alert-dialog-327.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-alert-dialog-328",
+			"title": "Alert dialog 328",
+			"description": "Update card details dialog with auto-formatted inputs",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte",
+				"cleave-zen",
+				"cleave-zen@^0.0.17"
+			],
+			"registryDependencies": [
+				"button",
+				"checkbox",
+				"dialog",
+				"input",
+				"label"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-alert-dialog-328.svelte",
+					"target": "$lib/components/particles/alert-dialog/p-alert-dialog-328.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-alert-dialog-329",
+			"title": "Alert dialog 329",
+			"description": "Checkout dialog with plan selection and card details",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte",
+				"cleave-zen",
+				"cleave-zen@^0.0.17"
+			],
+			"registryDependencies": [
+				"badge",
+				"button",
+				"dialog",
+				"input",
+				"label",
+				"radio-group"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-alert-dialog-329.svelte",
+					"target": "$lib/components/particles/alert-dialog/p-alert-dialog-329.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-alert-dialog-330",
+			"title": "Alert dialog 330",
+			"description": "Change plan dialog with a feature checklist",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [
+				"button",
+				"dialog",
+				"label",
+				"radio-group"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-alert-dialog-330.svelte",
+					"target": "$lib/components/particles/alert-dialog/p-alert-dialog-330.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-alert-dialog-331",
+			"title": "Alert dialog 331",
+			"description": "Edit profile dialog with avatar and background image uploads",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [
+				"button",
+				"dialog",
+				"input",
+				"label",
+				"textarea",
+				"use-character-limit",
+				"use-file-upload"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-alert-dialog-331.svelte",
+					"target": "$lib/components/particles/alert-dialog/p-alert-dialog-331.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-alert-dialog-332",
+			"title": "Alert dialog 332",
+			"description": "Multi-step onboarding dialog with progress dots",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [
+				"button",
+				"dialog",
+				"assets",
+				"utils"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-alert-dialog-332.svelte",
+					"target": "$lib/components/particles/alert-dialog/p-alert-dialog-332.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-alert-dialog-333",
+			"title": "Alert dialog 333",
+			"description": "Command palette triggered from a search input",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [
+				"command",
+				"kbd"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-alert-dialog-333.svelte",
+					"target": "$lib/components/particles/alert-dialog/p-alert-dialog-333.svelte"
+				}
+			]
+		},
+		{
 			"name": "p-aspect-ratio-1",
 			"title": "Aspect ratio 1",
 			"description": "Ratio 1:1",

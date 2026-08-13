@@ -1,0 +1,23 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-alert-dialog-323",
+	"title": "Alert dialog 323",
+	"description": "Rating dialog with a numeric scale and comment field",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-alert-dialog-323.svelte",
+			"target": "$lib/components/particles/alert-dialog/p-alert-dialog-323.svelte",
+			"content": "<script lang=\"ts\">\n  import { Button, buttonVariants } from '$lib/components/ui/button';\n  import {\n    Dialog,\n    DialogHeader,\n    DialogPanel,\n    DialogPopup,\n    DialogTitle,\n    DialogTrigger\n  } from '$lib/components/ui/dialog';\n  import { Label } from '$lib/components/ui/label';\n  import { Radio, RadioGroup } from '$lib/components/ui/radio-group';\n  import { Textarea } from '$lib/components/ui/textarea';\n\n  const ratings = [0, 1, 2, 3, 4, 5, 6, 7, 8];\n\n  let comment = $state('');\n</script>\n\n<Dialog>\n  <DialogTrigger class={buttonVariants({ variant: 'outline' })}>Rating</DialogTrigger>\n  <DialogPopup class=\"gap-0 p-0\" showCloseButton={false}>\n    <DialogHeader class=\"border-b pb-4 text-left\">\n      <DialogTitle class=\"text-base\">Help us improve</DialogTitle>\n    </DialogHeader>\n    <DialogPanel class=\"flex flex-col gap-5\">\n      <div>\n        <fieldset class=\"flex flex-col gap-4\">\n          <legend class=\"font-semibold text-foreground text-lg leading-none\">\n            How hard was it to set up your account?\n          </legend>\n          <RadioGroup class=\"flex-row -space-x-px gap-0 rounded-md shadow-xs\" value=\"0\">\n            {#each ratings as rating (rating)}\n              <Label\n                class=\"relative flex size-9 flex-1 cursor-pointer flex-col items-center justify-center gap-3 border border-input text-center text-sm outline-none transition-[color,box-shadow] first:rounded-s-md last:rounded-e-md has-data-[state=checked]:z-10 has-data-[state=checked]:border-primary/50\"\n              >\n                <Radio class=\"sr-only after:absolute after:inset-0\" value={rating.toString()} />\n                {rating}\n              </Label>\n            {/each}\n          </RadioGroup>\n        </fieldset>\n        <div class=\"mt-2 flex justify-between text-muted-foreground text-xs\">\n          <p>Very easy</p>\n          <p>Very dificult</p>\n        </div>\n      </div>\n\n      <div class=\"flex flex-col gap-2\">\n        <Label>Why did you give this rating?</Label>\n        <Textarea\n          aria-label=\"Send feedback\"\n          placeholder=\"How can we improve coss.com?\"\n          bind:value={comment}\n        />\n      </div>\n\n      <Button class=\"w-full\">Send feedback</Button>\n    </DialogPanel>\n  </DialogPopup>\n</Dialog>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"dialog",
+		"label",
+		"radio-group",
+		"textarea"
+	],
+	"dependencies": []
+}

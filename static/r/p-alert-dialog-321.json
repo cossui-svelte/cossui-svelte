@@ -1,0 +1,23 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-alert-dialog-321",
+	"title": "Alert dialog 321",
+	"description": "Newsletter subscription dialog",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-alert-dialog-321.svelte",
+			"target": "$lib/components/particles/alert-dialog/p-alert-dialog-321.svelte",
+			"content": "<script lang=\"ts\">\n  import MailIcon from '@lucide/svelte/icons/mail';\n  import { Button, buttonVariants } from '$lib/components/ui/button';\n  import {\n    Dialog,\n    DialogDescription,\n    DialogHeader,\n    DialogPanel,\n    DialogPopup,\n    DialogTitle,\n    DialogTrigger\n  } from '$lib/components/ui/dialog';\n  import { Input } from '$lib/components/ui/input';\n\n  let email = $state('');\n</script>\n\n<Dialog>\n  <DialogTrigger class={buttonVariants({ variant: 'outline' })}>Newsletter</DialogTrigger>\n  <DialogPopup>\n    <div class=\"flex flex-col items-center gap-2 px-6 pt-6\">\n      <div class=\"flex size-11 shrink-0 items-center justify-center rounded-full border\">\n        <svg\n          aria-hidden=\"true\"\n          class=\"stroke-zinc-800 dark:stroke-zinc-100\"\n          height=\"20\"\n          viewBox=\"0 0 32 32\"\n          width=\"20\"\n          xmlns=\"http://www.w3.org/2000/svg\"\n        >\n          <circle cx=\"16\" cy=\"16\" fill=\"none\" r=\"12\" stroke-width=\"8\" />\n        </svg>\n      </div>\n      <DialogHeader class=\"p-0\">\n        <DialogTitle class=\"sm:text-center\">Never miss an update</DialogTitle>\n        <DialogDescription class=\"sm:text-center\">\n          Subscribe to receive news and special offers.\n        </DialogDescription>\n      </DialogHeader>\n    </div>\n\n    <DialogPanel class=\"flex flex-col gap-5\">\n      <div class=\"relative\">\n        <Input\n          aria-label=\"Email\"\n          class=\"peer ps-9\"\n          placeholder=\"hi@yourcompany.com\"\n          type=\"email\"\n          bind:value={email}\n        />\n        <div\n          class=\"pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-muted-foreground/80 peer-disabled:opacity-50\"\n        >\n          <MailIcon aria-hidden=\"true\" size={16} />\n        </div>\n      </div>\n      <Button class=\"w-full\">Subscribe</Button>\n      <p class=\"text-center text-muted-foreground text-xs\">\n        By subscribing you agree to our\n        <a class=\"underline hover:no-underline\" href=\"#\">Privacy Policy</a>.\n      </p>\n    </DialogPanel>\n  </DialogPopup>\n</Dialog>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"dialog",
+		"input"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

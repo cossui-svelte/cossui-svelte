@@ -1,0 +1,22 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-alert-dialog-314",
+	"title": "Alert dialog 314",
+	"description": "Alert dialog with a warning icon",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-alert-dialog-314.svelte",
+			"target": "$lib/components/particles/alert-dialog/p-alert-dialog-314.svelte",
+			"content": "<script lang=\"ts\">\n  import CircleAlertIcon from '@lucide/svelte/icons/circle-alert';\n  import {\n    AlertDialog,\n    AlertDialogAction,\n    AlertDialogClose,\n    AlertDialogDescription,\n    AlertDialogFooter,\n    AlertDialogHeader,\n    AlertDialogMedia,\n    AlertDialogPopup,\n    AlertDialogTitle,\n    AlertDialogTrigger\n  } from '$lib/components/ui/alert-dialog';\n  import { buttonVariants } from '$lib/components/ui/button';\n</script>\n\n<AlertDialog>\n  <AlertDialogTrigger class={buttonVariants({ variant: 'outline' })}>\n    Alert dialog with icon\n  </AlertDialogTrigger>\n  <AlertDialogPopup>\n    <div class=\"flex flex-col gap-2 px-6 pt-6 max-sm:items-center sm:flex-row sm:gap-4\">\n      <AlertDialogMedia\n        class=\"flex size-9 shrink-0 items-center justify-center rounded-full border\"\n      >\n        <CircleAlertIcon class=\"opacity-80\" size={16} />\n      </AlertDialogMedia>\n      <AlertDialogHeader class=\"p-0\">\n        <AlertDialogTitle>Are you sure?</AlertDialogTitle>\n        <AlertDialogDescription>\n          Are you sure you want to delete your account? All your data will be removed.\n        </AlertDialogDescription>\n      </AlertDialogHeader>\n    </div>\n    <AlertDialogFooter>\n      <AlertDialogClose class={buttonVariants({ variant: 'ghost' })}>Cancel</AlertDialogClose>\n      <AlertDialogAction>Confirm</AlertDialogAction>\n    </AlertDialogFooter>\n  </AlertDialogPopup>\n</AlertDialog>\n"
+		}
+	],
+	"registryDependencies": [
+		"alert-dialog",
+		"button"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

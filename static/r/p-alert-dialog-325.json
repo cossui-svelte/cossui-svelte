@@ -1,0 +1,22 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-alert-dialog-325",
+	"title": "Alert dialog 325",
+	"description": "Sign up dialog with name, email and password fields",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-alert-dialog-325.svelte",
+			"target": "$lib/components/particles/alert-dialog/p-alert-dialog-325.svelte",
+			"content": "<script lang=\"ts\">\n  import { Button, buttonVariants } from '$lib/components/ui/button';\n  import {\n    Dialog,\n    DialogDescription,\n    DialogHeader,\n    DialogPanel,\n    DialogPopup,\n    DialogTitle,\n    DialogTrigger\n  } from '$lib/components/ui/dialog';\n  import { Input } from '$lib/components/ui/input';\n  import { Label } from '$lib/components/ui/label';\n\n  const id = $props.id();\n\n  let name = $state('');\n  let email = $state('');\n  let password = $state('');\n</script>\n\n<Dialog>\n  <DialogTrigger class={buttonVariants({ variant: 'outline' })}>Sign up</DialogTrigger>\n  <DialogPopup>\n    <div class=\"flex flex-col items-center gap-2 px-6 pt-6\">\n      <div class=\"flex size-11 shrink-0 items-center justify-center rounded-full border\">\n        <svg\n          aria-hidden=\"true\"\n          class=\"stroke-zinc-800 dark:stroke-zinc-100\"\n          height=\"20\"\n          viewBox=\"0 0 32 32\"\n          width=\"20\"\n          xmlns=\"http://www.w3.org/2000/svg\"\n        >\n          <circle cx=\"16\" cy=\"16\" fill=\"none\" r=\"12\" stroke-width=\"8\" />\n        </svg>\n      </div>\n      <DialogHeader class=\"p-0\">\n        <DialogTitle class=\"sm:text-center\">Sign up coss.com</DialogTitle>\n        <DialogDescription class=\"sm:text-center\">\n          We just need a few details to get you started.\n        </DialogDescription>\n      </DialogHeader>\n    </div>\n\n    <DialogPanel class=\"flex flex-col gap-5\">\n      <div class=\"flex flex-col gap-4\">\n        <div class=\"flex flex-col gap-2\">\n          <Label for=\"{id}-name\">Full name</Label>\n          <Input id=\"{id}-name\" placeholder=\"Matt Welsh\" required type=\"text\" bind:value={name} />\n        </div>\n        <div class=\"flex flex-col gap-2\">\n          <Label for=\"{id}-email\">Email</Label>\n          <Input\n            id=\"{id}-email\"\n            placeholder=\"hi@yourcompany.com\"\n            required\n            type=\"email\"\n            bind:value={email}\n          />\n        </div>\n        <div class=\"flex flex-col gap-2\">\n          <Label for=\"{id}-password\">Password</Label>\n          <Input\n            id=\"{id}-password\"\n            placeholder=\"Enter your password\"\n            required\n            type=\"password\"\n            bind:value={password}\n          />\n        </div>\n      </div>\n      <Button class=\"w-full\">Sign up</Button>\n\n      <div\n        class=\"flex items-center gap-3 before:h-px before:flex-1 before:bg-border after:h-px after:flex-1 after:bg-border\"\n      >\n        <span class=\"text-muted-foreground text-xs\">Or</span>\n      </div>\n\n      <Button variant=\"outline\">Continue with Google</Button>\n\n      <p class=\"text-center text-muted-foreground text-xs\">\n        By signing up you agree to our <a class=\"underline hover:no-underline\" href=\"#\">Terms</a>.\n      </p>\n    </DialogPanel>\n  </DialogPopup>\n</Dialog>\n"
+		}
+	],
+	"registryDependencies": [
+		"button",
+		"dialog",
+		"input",
+		"label"
+	],
+	"dependencies": []
+}

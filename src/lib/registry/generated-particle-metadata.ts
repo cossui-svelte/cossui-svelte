@@ -3362,6 +3362,151 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     registryDependencies: ['button', 'group', 'tooltip'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
+  'p-alert-dialog-313': {
+    description: 'Basic confirmation alert dialog',
+    tags: ['alert-dialog'],
+    registryDependencies: ['alert-dialog', 'button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-alert-dialog-314': {
+    description: 'Alert dialog with a warning icon',
+    tags: ['alert-dialog'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['alert-dialog', 'button'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-alert-dialog-315': {
+    description: 'Scrollable dialog with a native scrollbar',
+    tags: ['alert-dialog'],
+    registryDependencies: ['button', 'dialog'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-alert-dialog-316': {
+    description: 'Scrollable dialog with a custom scrollbar',
+    tags: ['alert-dialog'],
+    registryDependencies: ['button', 'dialog'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-alert-dialog-317': {
+    description: 'Scrollable dialog with a sticky header',
+    tags: ['alert-dialog'],
+    registryDependencies: ['button', 'dialog', 'scroll-area'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-alert-dialog-318': {
+    description: 'Scrollable dialog with a sticky footer',
+    tags: ['alert-dialog'],
+    registryDependencies: ['button', 'dialog'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-alert-dialog-319': {
+    description:
+      "Terms & conditions dialog that unlocks the agree button once you've scrolled to the bottom",
+    tags: ['alert-dialog'],
+    registryDependencies: ['button', 'dialog', 'scroll-area'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-alert-dialog-320': {
+    description: 'Delete confirmation dialog gated by typing the project name',
+    tags: ['alert-dialog'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['button', 'dialog', 'input', 'label'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-alert-dialog-321': {
+    description: 'Newsletter subscription dialog',
+    tags: ['alert-dialog'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['button', 'dialog', 'input'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-alert-dialog-322': {
+    description: 'Feedback dialog with a textarea and helpful links',
+    tags: ['alert-dialog'],
+    registryDependencies: ['button', 'dialog', 'textarea'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-alert-dialog-323': {
+    description: 'Rating dialog with a numeric scale and comment field',
+    tags: ['alert-dialog'],
+    registryDependencies: ['button', 'dialog', 'label', 'radio-group', 'textarea'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-alert-dialog-324': {
+    description: 'OTP verification dialog with automatic code checking',
+    tags: ['alert-dialog'],
+    registryDependencies: ['button', 'dialog', 'otp-field'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-alert-dialog-325': {
+    description: 'Sign up dialog with name, email and password fields',
+    tags: ['alert-dialog'],
+    registryDependencies: ['button', 'dialog', 'input', 'label'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-alert-dialog-326': {
+    description: 'Sign in dialog with a remember me checkbox',
+    tags: ['alert-dialog'],
+    registryDependencies: ['button', 'checkbox', 'dialog', 'input', 'label'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-alert-dialog-327': {
+    description: 'Invite team members dialog with a copyable magic link',
+    tags: ['alert-dialog'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['button', 'dialog', 'input', 'label', 'tooltip'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-alert-dialog-328': {
+    description: 'Update card details dialog with auto-formatted inputs',
+    tags: ['alert-dialog'],
+    npmDependencies: ['@lucide/svelte', 'cleave-zen'],
+    registryDependencies: ['button', 'checkbox', 'dialog', 'input', 'label'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-alert-dialog-329': {
+    description: 'Checkout dialog with plan selection and card details',
+    tags: ['alert-dialog'],
+    npmDependencies: ['@lucide/svelte', 'cleave-zen'],
+    registryDependencies: ['badge', 'button', 'dialog', 'input', 'label', 'radio-group'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-alert-dialog-330': {
+    description: 'Change plan dialog with a feature checklist',
+    tags: ['alert-dialog'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['button', 'dialog', 'label', 'radio-group'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-alert-dialog-331': {
+    description: 'Edit profile dialog with avatar and background image uploads',
+    tags: ['alert-dialog'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: [
+      'button',
+      'dialog',
+      'input',
+      'label',
+      'textarea',
+      'use-character-limit',
+      'use-file-upload'
+    ],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-alert-dialog-332': {
+    description: 'Multi-step onboarding dialog with progress dots',
+    tags: ['alert-dialog'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['button', 'dialog'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-alert-dialog-333': {
+    description: 'Command palette triggered from a search input',
+    tags: ['alert-dialog'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['command', 'kbd'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
   'p-aspect-ratio-1': {
     description: 'Ratio 1:1',
     tags: ['aspect-ratio'],
