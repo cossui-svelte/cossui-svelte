@@ -18,7 +18,7 @@
     {
       date: '12 Aug 2026',
       description:
-        'ShadCN Registry released, allowing for easy sharing of particles and components across projects.',
+        'Shadcn-svelte compatible registry released, allowing for easy discovery and installation of particles and components.',
       title: '0.9.19 — Registry released'
     },
     {

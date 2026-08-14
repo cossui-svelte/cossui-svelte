@@ -8,6 +8,12 @@
   import { Button } from '$lib/components/ui/button';
   import { Drawer, DrawerPopup } from '$lib/components/ui/drawer';
   import { Spinner } from '$lib/components/ui/spinner';
+  import {
+    Tooltip,
+    TooltipPopup,
+    TooltipProvider,
+    TooltipTrigger
+  } from '$lib/components/ui/tooltip';
   import type { RegistryParticuleEntry } from '$lib/registry/registry-particles';
   import ParticleCardContainer from './particle-card-container.svelte';
   import ComponentSource from '$lib/components/app/particle-source.svelte';
@@ -47,11 +53,24 @@
       <span class="truncate">{particle.description ?? ''}</span>
     </p>
     <div class="flex items-center gap-1.5">
-      <Button
-        class="text-sm"
-        size="sm"
-        onclick={() => goto(resolve('/particle/[id]', { id: particle.file }))}><ScanEye /></Button
-      >
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger>
+            {#snippet child({ props })}
+              <Button
+                class="text-sm"
+                size="sm"
+                variant="outline"
+                onclick={() => goto(resolve('/particle/[id]', { id: particle.file }))}
+                {...props}><ScanEye /></Button
+              >
+            {/snippet}
+          </TooltipTrigger>
+          <TooltipPopup>
+            <p>Single particle view</p>
+          </TooltipPopup>
+        </Tooltip>
+      </TooltipProvider>
       <Button
         class="text-sm"
         size="sm"
@@ -70,10 +89,10 @@
             <h2 class="mb-4 font-heading font-semibold text-xl">Installation</h2>
             <figure data-rehype-pretty-code-figure>
               <CodeBlockCommand
-                __bun__={`bunx --bun shadcn@latest add @cossui-svelte/${drawerName}`}
-                __npm__={`npx shadcn@latest add @cossui-svelte/${drawerName}`}
-                __pnpm__={`pnpm dlx shadcn@latest add @cossui-svelte/${drawerName}`}
-                __yarn__={`yarn dlx shadcn@latest add @cossui-svelte/${drawerName}`}
+                __bun__={`bunx --bun shadcn-svelte@latest add https://cossui-svelte.com/r/${particle.file}.json`}
+                __npm__={`npx shadcn-svelte@latest add https://cossui-svelte.com/r/${particle.file}.json`}
+                __pnpm__={`pnpm dlx shadcn-svelte@latest add https://cossui-svelte.com/r/${particle.file}.json`}
+                __yarn__={`yarn dlx shadcn-svelte@latest add https://cossui-svelte.com/r/${particle.file}.json`}
               />
             </figure>
           </div>
