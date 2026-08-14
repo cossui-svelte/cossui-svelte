@@ -5,6 +5,7 @@
 
   import { goto } from '$app/navigation';
   import { resolve } from '$app/paths';
+  import { mergeProps } from 'svelte-toolbelt';
   import { Button } from '$lib/components/ui/button';
   import { Drawer, DrawerPopup } from '$lib/components/ui/drawer';
   import { Spinner } from '$lib/components/ui/spinner';
@@ -61,8 +62,9 @@
                 class="text-sm"
                 size="sm"
                 variant="outline"
-                onclick={() => goto(resolve('/particle/[id]', { id: particle.file }))}
-                {...props}><ScanEye /></Button
+                {...mergeProps(props, {
+                  onclick: () => goto(resolve('/particle/[id]', { id: particle.file }))
+                })}><ScanEye /></Button
               >
             {/snippet}
           </TooltipTrigger>
