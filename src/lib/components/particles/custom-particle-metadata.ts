@@ -60,9 +60,6 @@ export const custom_particle_metadata = {
   'p-alert-dialog-332': {
     description: 'Multi-step onboarding dialog with progress dots'
   },
-  'p-alert-dialog-333': {
-    description: 'Command palette triggered from a search input'
-  },
   'p-aspect-ratio-1': {
     description: 'Ratio 1:1'
   },

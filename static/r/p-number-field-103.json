@@ -1,0 +1,23 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-number-field-103",
+	"title": "Number field 103",
+	"description": "Currency input with locale-aware formatting and chevron steppers",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-number-field-103.svelte",
+			"target": "$lib/components/particles/number-field/p-number-field-103.svelte",
+			"content": "<script lang=\"ts\">\n\timport { Label } from '$lib/components/ui/label';\n\timport { createCurrencyFormat } from '$lib/hooks/use-currency-input';\n\timport {\n\t\tNumberField,\n\t\tNumberFieldDecrement,\n\t\tNumberFieldGroup,\n\t\tNumberFieldIncrement,\n\t\tNumberFieldInput\n\t} from '$lib/components/ui/number-field';\n\n\timport ChevronDown from '@lucide/svelte/icons/chevron-down';\n\timport ChevronUp from '@lucide/svelte/icons/chevron-up';\n\n\tconst uid = $props.id();\n\tconst { format, parse } = createCurrencyFormat();\n</script>\n\n<div class=\"*:not-first:mt-2\">\n\t<Label for={uid} class=\"text-foreground text-sm font-medium\">Number field with chevrons</Label>\n\t<NumberField id={uid} value={99} min={0} step={0.1}>\n\t\t<NumberFieldGroup class=\"h-9 items-center overflow-hidden\">\n\t\t\t<NumberFieldInput\n\t\t\t\t{format}\n\t\t\t\t{parse}\n\t\t\t\taria-label=\"Currency amount\"\n\t\t\t\taria-roledescription=\"Currency input\"\n\t\t\t\tautocomplete=\"off\"\n\t\t\t\tautocorrect=\"off\"\n\t\t\t\tspellcheck={false}\n\t\t\t\tclass=\"text-left\"\n\t\t\t/>\n\t\t\t<div class=\"flex h-[calc(100%+2px)] flex-col\">\n\t\t\t\t<NumberFieldIncrement\n\t\t\t\t\taria-controls={uid}\n\t\t\t\t\taria-label=\"Increase value\"\n\t\t\t\t\tclass=\"rounded-none border-input bg-background px-0 text-muted-foreground/80 ring-offset-background hover:bg-accent hover:text-foreground -me-px flex h-1/2 w-6 flex-1 items-center justify-center border text-sm transition-shadow disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50\"\n\t\t\t\t\ttabindex={-1}\n\t\t\t\t>\n\t\t\t\t\t{#snippet children()}\n\t\t\t\t\t\t<ChevronUp size={12} aria-hidden=\"true\" />\n\t\t\t\t\t{/snippet}\n\t\t\t\t</NumberFieldIncrement>\n\t\t\t\t<NumberFieldDecrement\n\t\t\t\t\taria-controls={uid}\n\t\t\t\t\taria-label=\"Decrease value\"\n\t\t\t\t\tclass=\"rounded-none border-input bg-background px-0 text-muted-foreground/80 ring-offset-background hover:bg-accent hover:text-foreground -me-px -mt-px flex h-1/2 w-6 flex-1 items-center justify-center border text-sm transition-shadow disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50\"\n\t\t\t\t\ttabindex={-1}\n\t\t\t\t>\n\t\t\t\t\t{#snippet children()}\n\t\t\t\t\t\t<ChevronDown size={12} aria-hidden=\"true\" />\n\t\t\t\t\t{/snippet}\n\t\t\t\t</NumberFieldDecrement>\n\t\t\t</div>\n\t\t</NumberFieldGroup>\n\t</NumberField>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"label",
+		"number-field",
+		"use-currency-input"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

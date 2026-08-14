@@ -1,0 +1,16 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "use-currency-input",
+	"title": "Use Currency Input",
+	"type": "registry:hook",
+	"files": [
+		{
+			"type": "registry:hook",
+			"path": "use-currency-input.ts",
+			"target": "$lib/hooks/use-currency-input.ts",
+			"content": "interface CurrencyFormatOptions {\n\tcurrency?: string;\n\tlocale?: string;\n}\n\nexport function createCurrencyFormat({ currency = 'EUR', locale = 'de-DE' }: CurrencyFormatOptions = {}) {\n\tconst formatter = new Intl.NumberFormat(locale, {\n\t\tcurrency,\n\t\tcurrencySign: 'accounting',\n\t\tmaximumFractionDigits: 2,\n\t\tminimumFractionDigits: 2,\n\t\tstyle: 'currency'\n\t});\n\n\tfunction format(value: number): string {\n\t\treturn formatter.format(value);\n\t}\n\n\tfunction parse(display: string): number | undefined {\n\t\tconst cleaned = display.replace(/[^0-9,.-]/g, '');\n\t\tif (!cleaned) return undefined;\n\n\t\tconst lastComma = cleaned.lastIndexOf(',');\n\t\tconst lastDot = cleaned.lastIndexOf('.');\n\t\tconst normalized =\n\t\t\tlastComma > lastDot\n\t\t\t\t? cleaned.replace(/\\./g, '').replace(',', '.')\n\t\t\t\t: cleaned.replace(/,/g, '');\n\n\t\tconst value = Number.parseFloat(normalized);\n\t\treturn Number.isNaN(value) ? undefined : value;\n\t}\n\n\treturn { format, parse };\n}\n"
+		}
+	],
+	"registryDependencies": [],
+	"dependencies": []
+}

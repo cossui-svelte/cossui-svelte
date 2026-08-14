@@ -3740,6 +3740,20 @@
 			]
 		},
 		{
+			"name": "use-currency-input",
+			"title": "Use Currency Input",
+			"type": "registry:hook",
+			"dependencies": [],
+			"registryDependencies": [],
+			"files": [
+				{
+					"type": "registry:hook",
+					"path": "use-currency-input.ts",
+					"target": "$lib/hooks/use-currency-input.ts"
+				}
+			]
+		},
+		{
 			"name": "use-file-upload",
 			"title": "Use File Upload",
 			"type": "registry:hook",
@@ -4574,26 +4588,6 @@
 					"type": "registry:block",
 					"path": "p-alert-dialog-332.svelte",
 					"target": "$lib/components/particles/alert-dialog/p-alert-dialog-332.svelte"
-				}
-			]
-		},
-		{
-			"name": "p-alert-dialog-333",
-			"title": "Alert dialog 333",
-			"description": "Command palette triggered from a search input",
-			"type": "registry:block",
-			"dependencies": [
-				"@lucide/svelte"
-			],
-			"registryDependencies": [
-				"command",
-				"kbd"
-			],
-			"files": [
-				{
-					"type": "registry:block",
-					"path": "p-alert-dialog-333.svelte",
-					"target": "$lib/components/particles/alert-dialog/p-alert-dialog-333.svelte"
 				}
 			]
 		},
@@ -12199,6 +12193,27 @@
 					"type": "registry:block",
 					"path": "p-number-field-102.svelte",
 					"target": "$lib/components/particles/number-field/p-number-field-102.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-number-field-103",
+			"title": "Number field 103",
+			"description": "Currency input with locale-aware formatting and chevron steppers",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [
+				"label",
+				"number-field",
+				"use-currency-input"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-number-field-103.svelte",
+					"target": "$lib/components/particles/number-field/p-number-field-103.svelte"
 				}
 			]
 		},
