@@ -8,7 +8,7 @@
 
 <div class="space-y-4">
   <legend class="font-medium text-foreground text-sm leading-none">
-    Dark mode toggle checkbox
+    Dark mode toggle (faked) checkbox
   </legend>
   <div class="flex flex-col justify-center">
     <input

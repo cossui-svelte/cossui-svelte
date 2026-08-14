@@ -126,6 +126,9 @@ export const custom_particle_metadata = {
   'p-checkbox-144': {
     description: 'Checkbox card with a label and sublabel'
   },
+  'p-checkbox-147': {
+    description: 'Grid of icon checkbox cards'
+  },
   'p-checkbox-149': {
     description: 'Days-of-the-week checkbox group'
   },

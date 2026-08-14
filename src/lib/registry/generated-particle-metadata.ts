@@ -3645,6 +3645,13 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     registryDependencies: ['checkbox', 'label'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
+  'p-checkbox-147': {
+    description: 'Grid of icon checkbox cards',
+    tags: ['checkbox'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['checkbox', 'label'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
   'p-checkbox-149': {
     description: 'Days-of-the-week checkbox group',
     tags: ['checkbox'],
