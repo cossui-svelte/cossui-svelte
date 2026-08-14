@@ -94,6 +94,7 @@
     </TooltipProvider>
   {/if}
   <ScrollArea
+    data-vaul-no-drag
     class="**:data-[slot=scroll-area-scrollbar]:data-[orientation=horizontal]:mx-2 **:data-[slot=scroll-area-scrollbar]:data-[orientation=vertical]:my-2"
   >
     {#await highlightedCode}

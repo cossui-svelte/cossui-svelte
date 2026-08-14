@@ -288,6 +288,13 @@ export function createVaul(props: CreateVaulProps) {
 
     if (!get(dismissible) && !get(snapPoints)) return;
     if ($drawerRef && !$drawerRef.contains(event.target as Node)) return;
+    const target = event.target as HTMLElement;
+    // Don't capture the pointer (and don't start tracking a drag) if the press
+    // originated inside a no-drag region — otherwise pointer capture breaks
+    // native text selection there, even though `shouldDrag` would later bail.
+    if (target.hasAttribute('data-vaul-no-drag') || target.closest('[data-vaul-no-drag]')) {
+      return;
+    }
     drawerHeightRef = $drawerRef?.getBoundingClientRect().height || 0;
 
     isDragging = true;
@@ -299,7 +306,7 @@ export function createVaul(props: CreateVaulProps) {
       window.addEventListener('touchend', () => (isAllowedToDrag = false), { once: true });
     }
     // Ensure we maintain correct pointer capture even when going outside of the drawer
-    (event.target as HTMLElement).setPointerCapture(event.pointerId);
+    target.setPointerCapture(event.pointerId);
 
     cachedDirection = get(direction);
     pointerStart = isVertical(cachedDirection) ? event.screenY : event.screenX;

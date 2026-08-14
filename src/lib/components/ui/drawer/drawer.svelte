@@ -280,5 +280,9 @@
     :global([data-vaul-drawer]) {
       user-select: none;
     }
+
+    :global([data-vaul-drawer] [data-vaul-no-drag]) {
+      user-select: text;
+    }
   }
 </style>
