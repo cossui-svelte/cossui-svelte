@@ -30,11 +30,7 @@
     />
     Frameworks
   </Label>
-  <CheckboxGroup
-    aria-labelledby="frameworks-caption"
-    {value}
-    onValueChange={(v) => (value = v)}
-  >
+  <CheckboxGroup aria-labelledby="frameworks-caption" {value} onValueChange={(v) => (value = v)}>
     {#each frameworks as framework (framework.id)}
       <Label class="ms-4">
         <Checkbox value={framework.id} />

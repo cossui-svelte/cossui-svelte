@@ -31,14 +31,12 @@
   } = $props();
 
   let drawerOpen = $state(false);
-  let drawerName = $state<string>('');
 
-  async function viewSource(_file: string, name: string) {
+  async function viewSource(_file: string) {
     if (drawerOpen) {
       closeDrawer();
       return;
     }
-    drawerName = name;
     drawerOpen = true;
   }
 
@@ -73,11 +71,8 @@
           </TooltipPopup>
         </Tooltip>
       </TooltipProvider>
-      <Button
-        class="text-sm"
-        size="sm"
-        variant="outline"
-        onclick={() => viewSource(particle.file, particle.name)}><FileBraces />View code</Button
+      <Button class="text-sm" size="sm" variant="outline" onclick={() => viewSource(particle.file)}
+        ><FileBraces />View code</Button
       >
       <Drawer
         position="right"

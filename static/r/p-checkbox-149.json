@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-checkbox-149",
+	"title": "Checkbox 149",
+	"description": "Days-of-the-week checkbox group",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-checkbox-149.svelte",
+			"target": "$lib/components/particles/checkbox/p-checkbox-149.svelte",
+			"content": "<script lang=\"ts\">\n  import { Checkbox } from '$lib/components/ui/checkbox';\n\n  const id = $props.id();\n\n  const items = [\n    { checked: true, label: 'Monday', value: '1' },\n    { checked: true, label: 'Tuesday', value: '2' },\n    { label: 'Wednesday', value: '3' },\n    { checked: true, label: 'Thursday', value: '4' },\n    { checked: true, label: 'Friday', value: '5' },\n    { label: 'Saturday', value: '6' },\n    { disabled: true, label: 'Sunday', value: '7' }\n  ];\n</script>\n\n<fieldset class=\"space-y-4\">\n  <legend class=\"font-medium text-foreground text-sm leading-none\">Days of the week</legend>\n  <div class=\"flex gap-1.5\">\n    {#each items as item (item.value)}\n      <label\n        class=\"relative flex size-9 cursor-pointer flex-col items-center justify-center gap-3 rounded-full border border-input text-center shadow-xs outline-none transition-[color,box-shadow] has-data-disabled:cursor-not-allowed has-data-[state=checked]:border-primary has-focus-visible:border-ring has-data-[state=checked]:bg-primary has-data-[state=checked]:text-primary-foreground has-data-disabled:opacity-50 has-focus-visible:ring-[3px] has-focus-visible:ring-ring/50\"\n      >\n        <Checkbox\n          checked={item.checked}\n          class=\"absolute sr-only after:absolute after:inset-0\"\n          disabled={item.disabled}\n          id=\"{id}-{item.value}\"\n          value={item.value}\n        />\n        <span aria-hidden=\"true\" class=\"font-medium text-sm\">{item.label[0]}</span>\n        <span class=\"sr-only\">{item.label}</span>\n      </label>\n    {/each}\n  </div>\n</fieldset>\n"
+		}
+	],
+	"registryDependencies": [
+		"checkbox"
+	],
+	"dependencies": []
+}

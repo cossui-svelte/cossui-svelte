@@ -111,6 +111,27 @@ export const custom_particle_metadata = {
   'p-chart-10': {
     description: 'Bar Chart - Horizontal Mixed'
   },
+  'p-checkbox-134': {
+    description: 'Checkbox with a custom accent color'
+  },
+  'p-checkbox-139': {
+    description: 'Checkboxes laid out horizontally'
+  },
+  'p-checkbox-140': {
+    description: 'Right aligned checkbox'
+  },
+  'p-checkbox-142': {
+    description: 'Checkbox that reveals an additional-info field when checked'
+  },
+  'p-checkbox-144': {
+    description: 'Checkbox card with a label and sublabel'
+  },
+  'p-checkbox-149': {
+    description: 'Days-of-the-week checkbox group'
+  },
+  'p-checkbox-150': {
+    description: 'Dark mode toggle styled as a checkbox'
+  },
   'p-colorpicker-1': {
     description: 'Full featured Color picker',
     meta: { class: '**:data-[slot=card]:overflow-visible **:data-[slot=card]:[clip-path:none]!' }

@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-checkbox-134",
+	"title": "Checkbox 134",
+	"description": "Checkbox with a custom accent color",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-checkbox-134.svelte",
+			"target": "$lib/components/particles/checkbox/p-checkbox-134.svelte",
+			"content": "<script lang=\"ts\">\n  import { Checkbox } from '$lib/components/ui/checkbox';\n  import { Label } from '$lib/components/ui/label';\n\n  const id = $props.id();\n</script>\n\n<div\n  class=\"flex items-center gap-2 [--primary:var(--color-indigo-500)] [--ring:var(--color-indigo-300)] in-[.dark]:[--primary:var(--color-indigo-500)] in-[.dark]:[--ring:var(--color-indigo-900)]\"\n>\n  <Checkbox checked {id} />\n  <Label for={id}>Colored checkbox</Label>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"checkbox",
+		"label"
+	],
+	"dependencies": []
+}

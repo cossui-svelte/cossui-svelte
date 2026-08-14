@@ -5,5 +5,5 @@
 
 <Label>
   <Checkbox checked disabled />
-  Accept terms and conditions
+  This checkbox is disabled and checked
 </Label>

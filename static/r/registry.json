@@ -7494,6 +7494,131 @@
 			]
 		},
 		{
+			"name": "p-checkbox-134",
+			"title": "Checkbox 134",
+			"description": "Checkbox with a custom accent color",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": [
+				"checkbox",
+				"label"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-checkbox-134.svelte",
+					"target": "$lib/components/particles/checkbox/p-checkbox-134.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-checkbox-139",
+			"title": "Checkbox 139",
+			"description": "Checkboxes laid out horizontally",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": [
+				"checkbox",
+				"label"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-checkbox-139.svelte",
+					"target": "$lib/components/particles/checkbox/p-checkbox-139.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-checkbox-140",
+			"title": "Checkbox 140",
+			"description": "Right aligned checkbox",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": [
+				"checkbox",
+				"label"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-checkbox-140.svelte",
+					"target": "$lib/components/particles/checkbox/p-checkbox-140.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-checkbox-142",
+			"title": "Checkbox 142",
+			"description": "Checkbox that reveals an additional-info field when checked",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": [
+				"checkbox",
+				"input",
+				"label"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-checkbox-142.svelte",
+					"target": "$lib/components/particles/checkbox/p-checkbox-142.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-checkbox-144",
+			"title": "Checkbox 144",
+			"description": "Checkbox card with a label and sublabel",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": [
+				"checkbox",
+				"label"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-checkbox-144.svelte",
+					"target": "$lib/components/particles/checkbox/p-checkbox-144.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-checkbox-149",
+			"title": "Checkbox 149",
+			"description": "Days-of-the-week checkbox group",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": [
+				"checkbox"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-checkbox-149.svelte",
+					"target": "$lib/components/particles/checkbox/p-checkbox-149.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-checkbox-150",
+			"title": "Checkbox 150",
+			"description": "Dark mode toggle styled as a checkbox",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-checkbox-150.svelte",
+					"target": "$lib/components/particles/checkbox/p-checkbox-150.svelte"
+				}
+			]
+		},
+		{
 			"name": "p-checkbox-2",
 			"title": "Checkbox 2",
 			"description": "Disabled checkbox",

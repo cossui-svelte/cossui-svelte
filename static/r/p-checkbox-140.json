@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-checkbox-140",
+	"title": "Checkbox 140",
+	"description": "Right aligned checkbox",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-checkbox-140.svelte",
+			"target": "$lib/components/particles/checkbox/p-checkbox-140.svelte",
+			"content": "<script lang=\"ts\">\n  import { Checkbox } from '$lib/components/ui/checkbox';\n  import { Label } from '$lib/components/ui/label';\n\n  const id = $props.id();\n</script>\n\n<div class=\"flex items-center justify-between gap-2\">\n  <Checkbox class=\"order-1\" {id} />\n  <Label for={id}>Right aligned checkbox</Label>\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"checkbox",
+		"label"
+	],
+	"dependencies": []
+}
