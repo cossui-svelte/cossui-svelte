@@ -21,7 +21,7 @@
   }
 </script>
 
-<CheckboxGroup aria-labelledby="frameworks-caption" {value}>
+<div class="flex flex-col items-start gap-3">
   <Label id="frameworks-caption">
     <Checkbox
       checked={parentChecked}
@@ -30,10 +30,16 @@
     />
     Frameworks
   </Label>
-  {#each frameworks as framework (framework.id)}
-    <Label class="ms-4">
-      <Checkbox value={framework.id} />
-      {framework.name}
-    </Label>
-  {/each}
-</CheckboxGroup>
+  <CheckboxGroup
+    aria-labelledby="frameworks-caption"
+    {value}
+    onValueChange={(v) => (value = v)}
+  >
+    {#each frameworks as framework (framework.id)}
+      <Label class="ms-4">
+        <Checkbox value={framework.id} />
+        {framework.name}
+      </Label>
+    {/each}
+  </CheckboxGroup>
+</div>

@@ -69,11 +69,7 @@
   }
 </script>
 
-<CheckboxGroup
-  aria-labelledby="user-permissions-caption"
-  value={mainValue}
-  onValueChange={onMainValueChange}
->
+<div class="flex flex-col items-start gap-3">
   <Label id="user-permissions-caption">
     <Checkbox
       checked={rootChecked}
@@ -83,12 +79,27 @@
     User Permissions
   </Label>
 
-  {#each mainPermissions.filter((p) => p.id !== 'manage-users') as p (p.id)}
-    <Label class="ms-4">
-      <Checkbox value={p.id} />
-      {p.name}
-    </Label>
-  {/each}
+  <CheckboxGroup
+    aria-labelledby="user-permissions-caption"
+    value={mainValue}
+    onValueChange={onMainValueChange}
+  >
+    {#each mainPermissions.filter((p) => p.id !== 'manage-users') as p (p.id)}
+      <Label class="ms-4">
+        <Checkbox value={p.id} />
+        {p.name}
+      </Label>
+    {/each}
+  </CheckboxGroup>
+
+  <Label id="manage-users-caption">
+    <Checkbox
+      checked={mgmtParentChecked}
+      indeterminate={mgmtParentIndeterminate}
+      onCheckedChange={toggleMgmtParent}
+    />
+    Manage Users
+  </Label>
 
   <CheckboxGroup
     aria-labelledby="manage-users-caption"
@@ -96,14 +107,6 @@
     value={managementValue}
     onValueChange={onMgmtValueChange}
   >
-    <Label id="manage-users-caption">
-      <Checkbox
-        checked={mgmtParentChecked}
-        indeterminate={mgmtParentIndeterminate}
-        onCheckedChange={toggleMgmtParent}
-      />
-      Manage Users
-    </Label>
     {#each userManagementPermissions as p (p.id)}
       <Label class="ms-4">
         <Checkbox value={p.id} />
@@ -111,4 +114,4 @@
       </Label>
     {/each}
   </CheckboxGroup>
-</CheckboxGroup>
+</div>
