@@ -22,13 +22,20 @@
   let mainValue = $state<string[]>([]);
   let managementValue = $state<string[]>([]);
 
+  const otherMainIds = allMainIds.filter((id) => id !== 'manage-users');
+
   let mgmtIsPartial = $derived(
     managementValue.length > 0 && managementValue.length < allMgmtIds.length
   );
-  let rootChecked = $derived(mainValue.length === allMainIds.length);
-  let rootIndeterminate = $derived(mainValue.length > 0 && mainValue.length < allMainIds.length);
   let mgmtParentChecked = $derived(managementValue.length === allMgmtIds.length);
   let mgmtParentIndeterminate = $derived(mgmtIsPartial);
+
+  let otherMainAllChecked = $derived(otherMainIds.every((id) => mainValue.includes(id)));
+  let otherMainAnyChecked = $derived(otherMainIds.some((id) => mainValue.includes(id)));
+  let rootChecked = $derived(otherMainAllChecked && mgmtParentChecked);
+  let rootIndeterminate = $derived(
+    !rootChecked && (otherMainAnyChecked || mgmtParentChecked || mgmtParentIndeterminate)
+  );
 
   function toggleRoot() {
     if (rootChecked) {
@@ -92,7 +99,7 @@
     {/each}
   </CheckboxGroup>
 
-  <Label id="manage-users-caption">
+  <Label id="manage-users-caption" class="ms-4">
     <Checkbox
       checked={mgmtParentChecked}
       indeterminate={mgmtParentIndeterminate}
