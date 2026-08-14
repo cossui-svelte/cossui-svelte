@@ -70,7 +70,7 @@
             ></div>
           {/each}
         </div>
-        <DialogFooter class="p-0">
+        <DialogFooter class="p-0" variant="bare">
           <DialogClose class={buttonVariants({ variant: 'ghost' })}>Skip</DialogClose>
           {#if step < totalSteps}
             <Button class="group" onclick={handleContinue}>
