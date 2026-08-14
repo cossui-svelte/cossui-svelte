@@ -15,10 +15,9 @@
   } from '$lib/components/ui/timeline';
 
   const changelog = [
-        {
+    {
       date: '14 Aug 2026',
-      description:
-        'Many issues around checkboxes are now resolved.',
+      description: 'Many issues around checkboxes are now resolved.',
       title: '0.9.20 — Checkbox and Checkbox-group components fixes'
     },
     {

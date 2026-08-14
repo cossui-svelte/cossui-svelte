@@ -1,0 +1,22 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-checkbox-147",
+	"title": "Checkbox 147",
+	"description": "Grid of icon checkbox cards",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-checkbox-147.svelte",
+			"target": "$lib/components/particles/checkbox/p-checkbox-147.svelte",
+			"content": "<script lang=\"ts\">\n  import BrushIcon from '@lucide/svelte/icons/brush';\n  import EraserIcon from '@lucide/svelte/icons/eraser';\n  import ScissorsIcon from '@lucide/svelte/icons/scissors';\n  import SwatchBookIcon from '@lucide/svelte/icons/swatch-book';\n  import { Checkbox } from '$lib/components/ui/checkbox';\n  import { Label } from '$lib/components/ui/label';\n\n  const id = $props.id();\n\n  const items = [\n    { checked: true, Icon: SwatchBookIcon, label: 'Palette', value: '1' },\n    { Icon: BrushIcon, label: 'Brush', value: '2' },\n    { Icon: EraserIcon, label: 'Eraser', value: '3' },\n    { Icon: ScissorsIcon, label: 'Cut', value: '4' }\n  ];\n</script>\n\n<div class=\"grid grid-cols-2 gap-3\">\n  {#each items as item (item.value)}\n    {@const Icon = item.Icon}\n    <div\n      class=\"relative flex cursor-pointer flex-col gap-4 rounded-md border border-input p-4 shadow-xs outline-none has-data-[state=checked]:border-primary/50\"\n    >\n      <div class=\"flex justify-between gap-2\">\n        <Checkbox\n          checked={item.checked}\n          class=\"order-1 after:absolute after:inset-0\"\n          id=\"{id}-{item.value}\"\n          value={item.value}\n        />\n        <Icon aria-hidden=\"true\" class=\"opacity-60\" size={16} />\n      </div>\n      <Label for=\"{id}-{item.value}\">{item.label}</Label>\n    </div>\n  {/each}\n</div>\n"
+		}
+	],
+	"registryDependencies": [
+		"checkbox",
+		"label"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}

@@ -123,6 +123,7 @@ export const COMPONENT_DEPENDENCIES: Record<string, string[]> = {
   'p-chart-7': ['layerchart'],
   'p-chart-8': ['layerchart'],
   'p-chart-9': ['d3-scale', 'layerchart'],
+  'p-checkbox-147': ['@lucide/svelte'],
   'p-checkbox-150': ['@lucide/svelte'],
   'p-checkbox-5': ['zod'],
   'p-checkbox-group-5': ['zod'],

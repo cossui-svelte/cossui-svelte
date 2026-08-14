@@ -7585,6 +7585,26 @@
 			]
 		},
 		{
+			"name": "p-checkbox-147",
+			"title": "Checkbox 147",
+			"description": "Grid of icon checkbox cards",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [
+				"checkbox",
+				"label"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-checkbox-147.svelte",
+					"target": "$lib/components/particles/checkbox/p-checkbox-147.svelte"
+				}
+			]
+		},
+		{
 			"name": "p-checkbox-149",
 			"title": "Checkbox 149",
 			"description": "Days-of-the-week checkbox group",
