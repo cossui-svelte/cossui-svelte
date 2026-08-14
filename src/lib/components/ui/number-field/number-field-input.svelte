@@ -7,16 +7,35 @@
   type Props = Omit<
     HTMLInputAttributes,
     'id' | 'type' | 'value' | 'min' | 'max' | 'step' | 'disabled'
-  >;
+  > & {
+    /** Formats the numeric value for display when the input isn't focused. Defaults to the raw number. */
+    format?: (value: number) => string;
+    /** Parses the edited text back into a number on change. Defaults to parseFloat. */
+    parse?: (display: string) => number | undefined;
+  };
 
-  let { class: className, ...restProps }: Props = $props();
+  let { class: className, format, parse, ...restProps }: Props = $props();
 
   const ctx = getContext<NumberFieldContext>(NUMBER_FIELD_CONTEXT_KEY);
 
+  let focused = $state(false);
+
+  let displayValue = $derived(
+    ctx?.value === undefined ? '' : focused || !format ? ctx.value : format(ctx.value)
+  );
+
+  function handleFocus() {
+    focused = true;
+  }
+
+  function handleBlur() {
+    focused = false;
+  }
+
   function handleChange(e: Event) {
     const input = e.currentTarget as HTMLInputElement;
-    const v = parseFloat(input.value);
-    if (!Number.isNaN(v)) {
+    const v = (parse ?? parseFloat)(input.value);
+    if (v !== undefined && !Number.isNaN(v)) {
       ctx?.setValue(v);
     }
   }
@@ -37,7 +56,7 @@
   inputmode="decimal"
   role="spinbutton"
   id={ctx?.fieldId}
-  value={ctx?.value ?? ''}
+  value={displayValue}
   min={ctx?.min}
   max={ctx?.max}
   step={ctx?.step}
@@ -52,5 +71,7 @@
   data-slot="number-field-input"
   onchange={handleChange}
   onkeydown={handleKeydown}
+  onfocus={handleFocus}
+  onblur={handleBlur}
   {...restProps}
 />

@@ -292,6 +292,9 @@ export const custom_particle_metadata = {
   'p-number-field-102': {
     description: 'Volume control with an icon that reflects the current level'
   },
+  'p-number-field-103': {
+    description: 'Currency input with locale-aware formatting and chevron steppers'
+  },
   'p-places-autocomplete-1': {
     description: 'Address validation powered by the Google Places API',
     tags: ['async', 'map']

@@ -3994,6 +3994,13 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     registryDependencies: ['number-field'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
+  'p-number-field-103': {
+    description: 'Currency input with locale-aware formatting and chevron steppers',
+    tags: ['number-field'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['label', 'number-field', 'use-currency-input'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
   'p-places-autocomplete-1': {
     description: 'Address validation powered by the Google Places API',
     tags: ['async', 'map', 'places-autocomplete'],
