@@ -140,7 +140,7 @@
     </div>
   {/if}
   {#if swatches}
-    <div class="border-t border-border p-4">
+    <div class={[ (showInputs||showColorDropper||showColorSliders||showSaturationArea) && "border-t border-border", "p-4"]}>
       <ColorPickerSwatches bind:swatches editable={swatchesEditable} />
     </div>
   {/if}
