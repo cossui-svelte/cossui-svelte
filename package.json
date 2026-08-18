@@ -63,10 +63,13 @@
     "wrangler": "^4.123.0"
   },
   "license": "MIT",
-  "name": "coss-ui-svelte",
+  "name": "cossui-svelte",
   "packageManager": "pnpm@11.21.0",
   "peerDependencies": {
     "svelte": "^5.56.9"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "repository": {
     "type": "git",
