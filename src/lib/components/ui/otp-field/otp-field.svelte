@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { PinInput as OTPFieldPrimitive } from 'bits-ui';
+  import PinInputRoot from './internal/primitives/pin-input-root.svelte';
+  import type { PinInputRootProps } from './internal/types';
   import { cn } from '$lib/utils';
 
   let {
@@ -8,13 +9,13 @@
     value = $bindable(''),
     size = 'default',
     ...restProps
-  }: Omit<OTPFieldPrimitive.RootProps, 'size'> & {
+  }: Omit<PinInputRootProps, 'size'> & {
     size?: 'default' | 'lg';
   } = $props();
 </script>
 
 <div data-slot="otp-field" data-size={size}>
-  <OTPFieldPrimitive.Root
+  <PinInputRoot
     bind:ref
     bind:value
     spellcheck={false}

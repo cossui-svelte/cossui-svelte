@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { PinInput as OTPFieldPrimitive } from 'bits-ui';
+  import PinInputCell from './internal/primitives/pin-input-cell.svelte';
+  import type { PinInputCellProps } from './internal/types';
   import { cn } from '$lib/utils';
 
   let {
@@ -9,13 +10,13 @@
     placeholder,
     mask = false,
     ...restProps
-  }: OTPFieldPrimitive.CellProps & {
+  }: PinInputCellProps & {
     placeholder?: string;
     mask?: boolean;
   } = $props();
 </script>
 
-<OTPFieldPrimitive.Cell
+<PinInputCell
   {cell}
   bind:ref
   data-slot="otp-field-input"
@@ -35,4 +36,4 @@
       <div class="h-4 w-px animate-caret-blink bg-foreground"></div>
     </div>
   {/if}
-</OTPFieldPrimitive.Cell>
+</PinInputCell>
