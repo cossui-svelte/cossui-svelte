@@ -167,7 +167,7 @@
 			"description": "Displays content within a desired ratio.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"svelte-toolbelt@^0.10.6"
 			],
 			"registryDependencies": [],
 			"files": [
@@ -426,7 +426,7 @@
 			"type": "registry:ui",
 			"dependencies": [
 				"@internationalized/date@^3.12.3",
-				"bits-ui@^2.18.1"
+				"bits-ui@^2.18.2"
 			],
 			"registryDependencies": [
 				"button",
@@ -1748,7 +1748,7 @@
 			"description": "An interactive map with markers, popups, tooltips, and routes, powered by MapLibre GL.",
 			"type": "registry:ui",
 			"dependencies": [
-				"maplibre-gl@^6.3.0",
+				"maplibre-gl@^6.4.1",
 				"geojson"
 			],
 			"registryDependencies": [
@@ -2029,7 +2029,7 @@
 			"description": "A segmented input for one-time passwords and verification codes.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"bits-ui@^2.18.2"
 			],
 			"registryDependencies": [
 				"utils"
@@ -2310,7 +2310,7 @@
 			"description": "A calendar component for selecting a date range.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1",
+				"bits-ui@^2.18.2",
 				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
@@ -2551,7 +2551,7 @@
 			"type": "registry:ui",
 			"dependencies": [
 				"tailwind-variants@^3.3.1",
-				"bits-ui@^2.18.1"
+				"bits-ui@^2.18.2"
 			],
 			"registryDependencies": [
 				"button",
@@ -3294,7 +3294,7 @@
 			"dependencies": [
 				"@headless-tree/core@^1.7.0",
 				"runed@0.37.1",
-				"bits-ui@^2.18.1",
+				"bits-ui@^2.18.2",
 				"svelte-toolbelt@^0.10.6"
 			],
 			"registryDependencies": [
@@ -11522,7 +11522,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"maplibre-gl",
-				"maplibre-gl@^6.3.0"
+				"maplibre-gl@^6.4.1"
 			],
 			"registryDependencies": [
 				"button",

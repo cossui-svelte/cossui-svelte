@@ -3,7 +3,7 @@ export const COMPONENT_DEPENDENCIES: Record<string, string[]> = {
   accordion: ['@shardsui/svelte'],
   alert: ['tailwind-variants'],
   'alert-dialog': ['@shardsui/svelte'],
-  'aspect-ratio': ['bits-ui'],
+  'aspect-ratio': ['svelte-toolbelt'],
   autocomplete: ['@shardsui/svelte'],
   avatar: ['@shardsui/svelte'],
   badge: ['tailwind-variants'],

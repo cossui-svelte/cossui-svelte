@@ -18,6 +18,6 @@
 	],
 	"dependencies": [
 		"maplibre-gl",
-		"maplibre-gl@^6.3.0"
+		"maplibre-gl@^6.4.1"
 	]
 }

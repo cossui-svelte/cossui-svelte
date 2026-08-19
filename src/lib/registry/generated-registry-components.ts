@@ -54,7 +54,7 @@ const allComponents: RegistryUiData = {
     folder: 'aspect-ratio',
     isnew: true,
     istodo: false,
-    npmDependencies: ['bits-ui'],
+    npmDependencies: ['svelte-toolbelt'],
     registryDependencies: []
   },
   autocomplete: {

@@ -126,6 +126,6 @@
 	],
 	"dependencies": [
 		"@internationalized/date@^3.12.3",
-		"bits-ui@^2.18.1"
+		"bits-ui@^2.18.2"
 	]
 }

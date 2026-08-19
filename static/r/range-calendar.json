@@ -36,7 +36,7 @@
 		"utils"
 	],
 	"dependencies": [
-		"bits-ui@^2.18.1",
+		"bits-ui@^2.18.2",
 		"@internationalized/date@^3.12.3"
 	]
 }
