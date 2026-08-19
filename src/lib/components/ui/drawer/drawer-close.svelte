@@ -1,36 +1,12 @@
 <script lang="ts">
-  import { Dialog } from 'bits-ui';
-  import { getCtx } from './ctx.js';
+  import { Drawer as DrawerPrimitive } from '@shardsui/svelte/drawer';
+  import type { ComponentProps } from 'svelte';
 
   let {
     ref = $bindable(null),
-    children,
-    class: className,
-    onclick: _onclick,
-    onkeydown: _onkeydown,
+    type = 'button',
     ...restProps
-  }: Dialog.CloseProps = $props();
-
-  const {
-    methods: { closeDrawer }
-  } = getCtx();
+  }: ComponentProps<typeof DrawerPrimitive.Close> = $props();
 </script>
 
-<Dialog.Close
-  bind:ref
-  data-slot="drawer-close"
-  onclick={(e) => {
-    e.preventDefault();
-    closeDrawer();
-  }}
-  onkeydown={(e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      closeDrawer(true);
-    }
-  }}
-  class={className}
-  {...restProps}
->
-  {@render children?.()}
-</Dialog.Close>
+<DrawerPrimitive.Close bind:ref data-slot="drawer-close" {type} {...restProps} />

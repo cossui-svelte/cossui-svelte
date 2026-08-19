@@ -1,20 +1,20 @@
 <script lang="ts">
-  import { Tabs } from 'bits-ui';
-  import type { Snippet } from 'svelte';
+  import { Tabs as TabsPrimitive } from '@shardsui/svelte/tabs';
+  import type { ComponentProps, Snippet } from 'svelte';
   import { cn } from '$lib/utils';
   import TabsIndicator from './tabs-indicator.svelte';
 
   type TabsVariant = 'default' | 'underline';
 
-  interface Props extends Tabs.ListProps {
+  type Props = Omit<ComponentProps<typeof TabsPrimitive.List>, 'children'> & {
     children?: Snippet;
     variant?: TabsVariant;
-  }
+  };
 
   let { class: className, variant = 'default', children, ...restProps }: Props = $props();
 </script>
 
-<Tabs.List
+<TabsPrimitive.List
   class={cn(
     'relative z-0 flex w-fit items-center justify-center gap-x-0.5 text-muted-foreground',
     'data-[orientation=vertical]:flex-col',
@@ -36,4 +36,4 @@
     )}
     data-slot="tab-indicator"
   />
-</Tabs.List>
+</TabsPrimitive.List>

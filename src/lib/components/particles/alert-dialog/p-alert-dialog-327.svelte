@@ -80,34 +80,28 @@
           <Input {id} class="pe-9" readonly type="text" value={magicLink} />
           <TooltipProvider delay={0}>
             <Tooltip>
-              <TooltipTrigger>
-                {#snippet child({ props })}
-                  <button
-                    aria-label={copied ? 'Copied' : 'Copy to clipboard'}
-                    class="absolute inset-y-0 end-0 flex h-full w-9 items-center justify-center rounded-e-md text-muted-foreground/80 outline-none transition-[color,box-shadow] hover:text-foreground focus:z-10 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed"
-                    disabled={copied}
-                    onclick={handleCopy}
-                    type="button"
-                    {...props}
-                  >
-                    <div
-                      class={cn(
-                        'transition-all',
-                        copied ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
-                      )}
-                    >
-                      <CheckIcon aria-hidden="true" class="stroke-emerald-500" size={16} />
-                    </div>
-                    <div
-                      class={cn(
-                        'absolute transition-all',
-                        copied ? 'scale-0 opacity-0' : 'scale-100 opacity-100'
-                      )}
-                    >
-                      <CopyIcon aria-hidden="true" size={16} />
-                    </div>
-                  </button>
-                {/snippet}
+              <TooltipTrigger
+                aria-label={copied ? 'Copied' : 'Copy to clipboard'}
+                class="absolute inset-y-0 end-0 flex h-full w-9 items-center justify-center rounded-e-md text-muted-foreground/80 outline-none transition-[color,box-shadow] hover:text-foreground focus:z-10 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed"
+                disabled={copied}
+                onclick={handleCopy}
+              >
+                <div
+                  class={cn(
+                    'transition-all',
+                    copied ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
+                  )}
+                >
+                  <CheckIcon aria-hidden="true" class="stroke-emerald-500" size={16} />
+                </div>
+                <div
+                  class={cn(
+                    'absolute transition-all',
+                    copied ? 'scale-0 opacity-0' : 'scale-100 opacity-100'
+                  )}
+                >
+                  <CopyIcon aria-hidden="true" size={16} />
+                </div>
               </TooltipTrigger>
               <TooltipPopup class="px-2 py-1 text-xs">Copy to clipboard</TooltipPopup>
             </Tooltip>

@@ -22,52 +22,54 @@
     progress = 0;
     abortController = new AbortController();
 
-    const id = toastManager.add({
-      description: 'Your download will begin once ready.',
-      duration: 0,
-      title: 'Generating report…',
-      type: 'loading'
-    });
-
-    const p = new Promise<string>((resolve, reject) => {
-      const shouldSucceed = Math.random() > 0.2;
-      const timeoutId = setTimeout(() => {
-        if (shouldSucceed) {
-          resolve('Report ready');
-        } else {
-          reject(new Error('Generation failed'));
-        }
-      }, 4000);
-      abortController?.signal.addEventListener('abort', () => {
-        clearTimeout(timeoutId);
-        reject(new DOMException('Cancelled', 'AbortError'));
-      });
-    });
-
     try {
-      await p;
-      toastManager.dismiss(id);
-      toastManager.add({
-        description: 'Your file is now downloading.',
-        title: 'Download started',
-        type: 'success'
-      });
-    } catch (err) {
-      toastManager.dismiss(id);
-      const error = err as Error;
-      if (error.name === 'AbortError') {
-        toastManager.add({
-          description: 'Report generation was cancelled.',
-          title: 'Cancelled',
-          type: 'info'
-        });
-      } else {
-        toastManager.add({
-          description: 'Please try again later.',
-          title: 'Failed to generate report',
-          type: 'error'
-        });
-      }
+      await toastManager.promise(
+        new Promise<string>((resolve, reject) => {
+          const shouldSucceed = Math.random() > 0.2;
+          const timeoutId = setTimeout(() => {
+            if (shouldSucceed) {
+              resolve('Report ready');
+            } else {
+              reject(new Error('Generation failed'));
+            }
+          }, 4000);
+
+          abortController?.signal.addEventListener('abort', () => {
+            clearTimeout(timeoutId);
+            reject(new DOMException('Cancelled', 'AbortError'));
+          });
+        }),
+        {
+          error: (err: unknown) => {
+            if (err instanceof DOMException && err.name === 'AbortError') {
+              return {
+                actionProps: undefined,
+                description: 'Report generation was cancelled.',
+                title: 'Cancelled',
+                type: 'info' as const
+              };
+            }
+            return {
+              actionProps: undefined,
+              description: 'Please try again later.',
+              title: 'Failed to generate report'
+            };
+          },
+          loading: {
+            actionProps: {
+              children: 'Cancel',
+              onclick: () => abortController?.abort()
+            },
+            description: 'Your download will begin once ready.',
+            title: 'Generating report…'
+          },
+          success: () => ({
+            actionProps: undefined,
+            description: 'Your file is now downloading.',
+            title: 'Download started'
+          })
+        }
+      );
     } finally {
       isGenerating = false;
       progress = 0;
@@ -80,7 +82,7 @@
   {#if isGenerating}
     Loading…
     <span class="tabular-nums">
-      {progress.toString().padStart(2, ' ')}%
+      {progress.toString().padStart(2, ' ')}%
     </span>
   {:else}
     <DownloadIcon />

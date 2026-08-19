@@ -1,62 +1,23 @@
 <script lang="ts">
-  import { Combobox } from 'bits-ui';
+  import { Combobox as ComboboxPrimitive } from '@shardsui/svelte/combobox';
+  import type { ComponentProps } from 'svelte';
   import { cn } from '$lib/utils';
-  import { getComboboxCtx } from './combobox.svelte';
 
-  interface Props extends Omit<Combobox.InputProps, 'size'> {
-    size?: 'sm' | 'default' | 'lg' | number;
+  interface Props extends Omit<ComponentProps<typeof ComboboxPrimitive.Input>, 'size'> {
+    size?: 'sm' | 'default' | 'lg';
   }
 
-  let {
-    class: className,
-    size = 'default',
-    onclick: userOnclick,
-    oninput: userOninput,
-    onkeydown: userOnkeydown,
-    ...restProps
-  }: Props = $props();
-
-  const ctx = getComboboxCtx();
-  const numericSize = $derived(typeof size === 'number' ? size : undefined);
-
-  let inputRef = $state<HTMLInputElement | null>(null);
-  $effect(() => {
-    ctx?.setInputEl(inputRef);
-    return () => ctx?.setInputEl(null);
-  });
-
-  function handleClick(e: MouseEvent & { currentTarget: EventTarget & HTMLInputElement }) {
-    ctx?.setOpen(true);
-    (userOnclick as ((e: MouseEvent) => void) | null | undefined)?.(e);
-  }
-
-  function handleInput(e: Event & { currentTarget: EventTarget & HTMLInputElement }) {
-    ctx?.setFilterText(e.currentTarget.value);
-    (userOninput as ((e: Event) => void) | null | undefined)?.(e);
-  }
-
-  function handleKeydown(e: KeyboardEvent & { currentTarget: EventTarget & HTMLInputElement }) {
-    if (e.key === 'Backspace' && e.currentTarget.value === '') {
-      ctx?.removeLastValue();
-    }
-    (userOnkeydown as ((e: KeyboardEvent) => void) | null | undefined)?.(e);
-  }
+  let { class: className, size = 'default', ...restProps }: Props = $props();
 </script>
 
-<Combobox.Input
-  bind:ref={inputRef}
-  onclick={handleClick}
-  oninput={handleInput}
-  onkeydown={handleKeydown}
+<ComboboxPrimitive.Input
   autocomplete="off"
   class={cn(
-    // 'min-w-12 flex-1 text-base outline-none sm:text-sm [[data-slot=combobox-chip]+&]:ps-0.5',
     'min-w-12 flex-1 text-base text-foreground outline-none sm:text-sm [[data-slot=combobox-chip]+&]:ps-0.5',
     size === 'sm' ? 'ps-1.5' : 'ps-2',
     className
   )}
-  data-size={typeof size === 'string' ? size : undefined}
+  data-size={size}
   data-slot="combobox-chips-input"
-  {...numericSize !== undefined ? ({ size: numericSize } as object) : {}}
   {...restProps}
 />

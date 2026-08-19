@@ -1,23 +1,25 @@
 <script lang="ts">
-  import { Accordion } from 'bits-ui';
-  import { cn, type WithoutChild } from '$lib/utils';
+  import { Accordion as AccordionPrimitive } from '@shardsui/svelte/accordion';
+  import type { ComponentProps } from 'svelte';
+  import { cn } from '$lib/utils';
 
   let {
     ref = $bindable(null),
     class: className,
-    children,
-
+    children: childrenProp,
     ...restProps
-  }: WithoutChild<Accordion.ContentProps> = $props();
+  }: ComponentProps<typeof AccordionPrimitive.Panel> = $props();
 </script>
 
-<Accordion.Content
+<AccordionPrimitive.Panel
   bind:ref
-  class="w-full overflow-hidden text-muted-foreground text-sm transition-[height] duration-200 ease-out data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+  class="h-(--accordion-panel-height) w-full overflow-hidden text-muted-foreground text-sm transition-[height] duration-200 ease-out data-ending-style:h-0 data-starting-style:h-0"
   data-slot="accordion-panel"
   {...restProps}
 >
-  <div class={cn('pt-0 pb-4', className)}>
-    {@render children?.()}
-  </div>
-</Accordion.Content>
+  {#snippet children(state)}
+    <div class={cn('pt-0 pb-4', className)}>
+      {@render childrenProp?.(state)}
+    </div>
+  {/snippet}
+</AccordionPrimitive.Panel>

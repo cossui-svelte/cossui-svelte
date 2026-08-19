@@ -80,6 +80,12 @@
   let copySelectedDays = $state<Record<Day, string[]>>(
     Object.fromEntries(days.map((day) => [day, []])) as unknown as Record<Day, string[]>
   );
+  let copyTipOpen = $state<Record<Day, boolean>>(
+    Object.fromEntries(days.map((day) => [day, false])) as unknown as Record<Day, boolean>
+  );
+  let copyTipRef = $state<Record<Day, HTMLElement | null>>(
+    Object.fromEntries(days.map((day) => [day, null])) as unknown as Record<Day, HTMLElement | null>
+  );
 
   function setDayRanges(day: Day, ranges: TimeRange[]) {
     availability[day] = ranges;
@@ -257,19 +263,13 @@
                       </ComboboxPopup>
                     </Combobox>
                   </Group>
-                  <Tooltip disableHoverableContent>
-                    <TooltipTrigger>
-                      {#snippet child({ props })}
-                        <Button
-                          aria-label={`Delete ${range.start} to ${range.end} on ${day}`}
-                          onclick={() => removeRange(day, range.id)}
-                          size="icon-sm"
-                          variant="ghost"
-                          {...props}
-                        >
-                          <XIcon aria-hidden="true" />
-                        </Button>
-                      {/snippet}
+                  <Tooltip disableHoverablePopup>
+                    <TooltipTrigger
+                      aria-label={`Delete ${range.start} to ${range.end} on ${day}`}
+                      class={buttonVariants({ size: 'icon-sm', variant: 'ghost' })}
+                      onclick={() => removeRange(day, range.id)}
+                    >
+                      <XIcon aria-hidden="true" />
                     </TooltipTrigger>
                     <TooltipPopup>Delete range</TooltipPopup>
                   </Tooltip>
@@ -278,65 +278,59 @@
             {/if}
           </div>
           <div class="ml-auto flex shrink-0 gap-1">
-            <Tooltip disableHoverableContent>
-              <TooltipTrigger>
-                {#snippet child({ props })}
-                  <Button
-                    aria-label={`Add time range to ${day}`}
-                    disabled={addDisabled}
-                    onclick={() => addRange(day)}
-                    size="icon-sm"
-                    variant="ghost"
-                    {...props}
-                  >
-                    <PlusIcon aria-hidden="true" />
-                  </Button>
-                {/snippet}
+            <Tooltip disableHoverablePopup>
+              <TooltipTrigger
+                aria-label={`Add time range to ${day}`}
+                class={buttonVariants({ size: 'icon-sm', variant: 'ghost' })}
+                disabled={addDisabled}
+                onclick={() => addRange(day)}
+              >
+                <PlusIcon aria-hidden="true" />
               </TooltipTrigger>
               <TooltipPopup>Add range</TooltipPopup>
             </Tooltip>
-            <Tooltip disableHoverableContent>
-              <TooltipTrigger>
-                {#snippet child({ props })}
-                  <Popover open={copyOpen[day]} onOpenChange={(next) => openCopyPopover(day, next)}>
-                    <PopoverTrigger
-                      aria-label={`Copy ${day} times to other days`}
-                      class={buttonVariants({ size: 'icon-sm', variant: 'ghost' })}
-                      disabled={ranges.length === 0}
-                      {...props}
+            <Tooltip bind:open={copyTipOpen[day]} disableHoverablePopup>
+              <Popover open={copyOpen[day]} onOpenChange={(next) => openCopyPopover(day, next)}>
+                <PopoverTrigger
+                  aria-label={`Copy ${day} times to other days`}
+                  bind:ref={copyTipRef[day]}
+                  class={buttonVariants({ size: 'icon-sm', variant: 'ghost' })}
+                  disabled={ranges.length === 0}
+                  onpointerenter={() => (copyTipOpen[day] = true)}
+                  onpointerleave={() => (copyTipOpen[day] = false)}
+                  onfocus={() => (copyTipOpen[day] = true)}
+                  onblur={() => (copyTipOpen[day] = false)}
+                >
+                  <CopyIcon aria-hidden="true" />
+                </PopoverTrigger>
+                <PopoverPopup align="end" class="w-44">
+                  <div class="flex flex-col gap-3">
+                    <div class="font-medium text-foreground text-sm">Copy times to</div>
+                    <CheckboxGroup
+                      aria-label={`Copy ${day} times to`}
+                      value={copySelectedDays[day]}
+                      onValueChange={(v) => {
+                        copySelectedDays[day] = v;
+                      }}
                     >
-                      <CopyIcon aria-hidden="true" />
-                    </PopoverTrigger>
-                    <PopoverPopup align="end" class="w-44">
-                      <div class="flex flex-col gap-3">
-                        <div class="font-medium text-foreground text-sm">Copy times to</div>
-                        <CheckboxGroup
-                          aria-label={`Copy ${day} times to`}
-                          value={copySelectedDays[day]}
-                          onValueChange={(v) => {
-                            copySelectedDays[day] = v;
-                          }}
-                        >
-                          {#each days.filter((target) => target !== day) as target (target)}
-                            <Label>
-                              <Checkbox value={target} />
-                              {target}
-                            </Label>
-                          {/each}
-                        </CheckboxGroup>
-                        <Button
-                          disabled={copySelectedDays[day].length === 0}
-                          onclick={() => applyCopy(day)}
-                          size="sm"
-                        >
-                          Apply
-                        </Button>
-                      </div>
-                    </PopoverPopup>
-                  </Popover>
-                {/snippet}
-              </TooltipTrigger>
-              <TooltipPopup>Copy to other days</TooltipPopup>
+                      {#each days.filter((target) => target !== day) as target (target)}
+                        <Label>
+                          <Checkbox value={target} />
+                          {target}
+                        </Label>
+                      {/each}
+                    </CheckboxGroup>
+                    <Button
+                      disabled={copySelectedDays[day].length === 0}
+                      onclick={() => applyCopy(day)}
+                      size="sm"
+                    >
+                      Apply
+                    </Button>
+                  </div>
+                </PopoverPopup>
+              </Popover>
+              <TooltipPopup customAnchor={copyTipRef[day]}>Copy to other days</TooltipPopup>
             </Tooltip>
           </div>
         </div>

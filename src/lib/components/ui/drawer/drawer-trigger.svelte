@@ -1,23 +1,12 @@
 <script lang="ts">
-  import { Dialog } from 'bits-ui';
-  import { getCtx } from './ctx.js';
+  import { Drawer as DrawerPrimitive } from '@shardsui/svelte/drawer';
+  import type { ComponentProps } from 'svelte';
 
   let {
     ref = $bindable(null),
-    children,
-    class: className,
+    type = 'button',
     ...restProps
-  }: Dialog.TriggerProps = $props();
-
-  const {
-    refs: { triggerRef }
-  } = getCtx();
-
-  $effect(() => {
-    if (ref) triggerRef.set(ref as HTMLButtonElement);
-  });
+  }: ComponentProps<typeof DrawerPrimitive.Trigger> = $props();
 </script>
 
-<Dialog.Trigger bind:ref data-slot="drawer-trigger" class={className} {...restProps}>
-  {@render children?.()}
-</Dialog.Trigger>
+<DrawerPrimitive.Trigger bind:ref data-slot="drawer-trigger" {type} {...restProps} />

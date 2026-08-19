@@ -88,24 +88,23 @@
         <SidebarMenu>
           <SidebarMenuItem>
             <Menu>
-              <MenuTrigger>
+              <SidebarMenuButton size="lg">
                 {#snippet child({ props })}
-                  <SidebarMenuButton
+                  <MenuTrigger
                     {...props}
-                    size="lg"
-                    class="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
+                    class="data-popup-open:bg-sidebar-accent data-popup-open:text-sidebar-accent-foreground"
                   >
                     <div class="flex flex-col gap-0.5 leading-none">
                       <span class="font-medium">Documentation</span>
                       <span class="text-muted-foreground text-xs">v{selectedVersion}</span>
                     </div>
                     <ChevronsUpDownIcon class="ms-auto" />
-                  </SidebarMenuButton>
+                  </MenuTrigger>
                 {/snippet}
-              </MenuTrigger>
-              <MenuPopup align="start" class="w-(--bits-dropdown-menu-anchor-width)">
+              </SidebarMenuButton>
+              <MenuPopup align="start" class="w-(--anchor-width)">
                 {#each data.versions as version (version)}
-                  <MenuItem onSelect={() => (selectedVersion = version)}>
+                  <MenuItem onclick={() => (selectedVersion = version)}>
                     v{version}
                     {#if version === selectedVersion}
                       <CheckIcon class="ms-auto" />

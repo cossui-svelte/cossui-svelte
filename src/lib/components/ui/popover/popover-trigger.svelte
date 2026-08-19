@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { Popover } from 'bits-ui';
-  import type { Snippet } from 'svelte';
+  import { Popover as PopoverPrimitive } from '@shardsui/svelte/popover';
+  import type { ComponentProps } from 'svelte';
 
-  type Props = Popover.TriggerProps & { children?: Snippet };
-
-  let { class: className, children, ...restProps }: Props = $props();
+  let {
+    ref = $bindable(null),
+    class: className,
+    ...restProps
+  }: ComponentProps<typeof PopoverPrimitive.Trigger> = $props();
 </script>
 
-<Popover.Trigger class={className} data-slot="popover-trigger" {...restProps}>
-  {@render children?.()}
-</Popover.Trigger>
+<PopoverPrimitive.Trigger bind:ref class={className} data-slot="popover-trigger" {...restProps} />

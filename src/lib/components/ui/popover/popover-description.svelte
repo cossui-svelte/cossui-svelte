@@ -1,19 +1,18 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
-  import type { HTMLAttributes } from 'svelte/elements';
+  import { Popover as PopoverPrimitive } from '@shardsui/svelte/popover';
+  import type { ComponentProps } from 'svelte';
   import { cn } from '$lib/utils';
 
-  interface Props extends HTMLAttributes<HTMLDivElement> {
-    children?: Snippet;
-  }
-
-  let { class: className, children, ...restProps }: Props = $props();
+  let {
+    ref = $bindable(null),
+    class: className,
+    ...restProps
+  }: ComponentProps<typeof PopoverPrimitive.Description> = $props();
 </script>
 
-<div
+<PopoverPrimitive.Description
+  bind:ref
   class={cn('text-muted-foreground text-sm', className)}
   data-slot="popover-description"
   {...restProps}
->
-  {@render children?.()}
-</div>
+/>

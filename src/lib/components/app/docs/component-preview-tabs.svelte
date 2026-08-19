@@ -17,11 +17,16 @@
     source?: Snippet;
   } = $props();
 
-  let tab = $state('preview');
+  let tab = $state<'preview' | 'code'>('preview');
 </script>
 
 <div class={cn('group relative mt-4 mb-12 flex flex-col gap-2', className)}>
-  <Tabs onValueChange={(v) => (tab = v)} value={tab}>
+  <Tabs
+    onValueChange={(v) => {
+      if (v === 'preview' || v === 'code') tab = v;
+    }}
+    value={tab}
+  >
     <div class="flex items-center justify-between">
       {#if !hideCode}
         <TabsList

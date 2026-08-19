@@ -1,11 +1,16 @@
 <script lang="ts">
-  import { Accordion } from 'bits-ui';
+  import { Accordion as AccordionPrimitive } from '@shardsui/svelte/accordion';
+  import type { ComponentProps } from 'svelte';
   import { cn } from '$lib/utils';
 
-  let { ref = $bindable(null), class: className, ...restProps }: Accordion.ItemProps = $props();
+  let {
+    ref = $bindable(null),
+    class: className,
+    ...restProps
+  }: ComponentProps<typeof AccordionPrimitive.Item> = $props();
 </script>
 
-<Accordion.Item
+<AccordionPrimitive.Item
   bind:ref
   class={cn('border-b last:border-b-0', className)}
   data-slot="accordion-item"

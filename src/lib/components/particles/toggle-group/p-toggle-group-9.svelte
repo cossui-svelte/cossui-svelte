@@ -3,45 +3,59 @@
   import ItalicIcon from '@lucide/svelte/icons/italic';
   import UnderlineIcon from '@lucide/svelte/icons/underline';
   import { ToggleGroup, ToggleGroupItem } from '$lib/components/ui/toggle-group';
-  import {
-    Tooltip,
-    TooltipPopup,
-    TooltipProvider,
-    TooltipTrigger
-  } from '$lib/components/ui/tooltip';
+  import { Tooltip, TooltipPopup, TooltipProvider } from '$lib/components/ui/tooltip';
+
+  let boldRef = $state<HTMLElement | null>(null);
+  let boldTipOpen = $state(false);
+  let italicRef = $state<HTMLElement | null>(null);
+  let italicTipOpen = $state(false);
+  let underlineRef = $state<HTMLElement | null>(null);
+  let underlineTipOpen = $state(false);
 </script>
 
 <TooltipProvider>
   <ToggleGroup value={['bold']} multiple>
-    <Tooltip>
-      <TooltipTrigger>
-        {#snippet child({ props })}
-          <ToggleGroupItem aria-label="Toggle bold" value="bold" {...props}>
-            <BoldIcon />
-          </ToggleGroupItem>
-        {/snippet}
-      </TooltipTrigger>
-      <TooltipPopup>Bold</TooltipPopup>
+    <Tooltip bind:open={boldTipOpen}>
+      <ToggleGroupItem
+        aria-label="Toggle bold"
+        bind:ref={boldRef}
+        value="bold"
+        onpointerenter={() => (boldTipOpen = true)}
+        onpointerleave={() => (boldTipOpen = false)}
+        onfocus={() => (boldTipOpen = true)}
+        onblur={() => (boldTipOpen = false)}
+      >
+        <BoldIcon />
+      </ToggleGroupItem>
+      <TooltipPopup customAnchor={boldRef}>Bold</TooltipPopup>
     </Tooltip>
-    <Tooltip>
-      <TooltipTrigger>
-        {#snippet child({ props })}
-          <ToggleGroupItem aria-label="Toggle italic" value="italic" {...props}>
-            <ItalicIcon />
-          </ToggleGroupItem>
-        {/snippet}
-      </TooltipTrigger>
-      <TooltipPopup>Italic</TooltipPopup>
+    <Tooltip bind:open={italicTipOpen}>
+      <ToggleGroupItem
+        aria-label="Toggle italic"
+        bind:ref={italicRef}
+        value="italic"
+        onpointerenter={() => (italicTipOpen = true)}
+        onpointerleave={() => (italicTipOpen = false)}
+        onfocus={() => (italicTipOpen = true)}
+        onblur={() => (italicTipOpen = false)}
+      >
+        <ItalicIcon />
+      </ToggleGroupItem>
+      <TooltipPopup customAnchor={italicRef}>Italic</TooltipPopup>
     </Tooltip>
-    <Tooltip>
-      <TooltipTrigger>
-        {#snippet child({ props })}
-          <ToggleGroupItem aria-label="Toggle underline" value="underline" {...props}>
-            <UnderlineIcon />
-          </ToggleGroupItem>
-        {/snippet}
-      </TooltipTrigger>
-      <TooltipPopup>Underline</TooltipPopup>
+    <Tooltip bind:open={underlineTipOpen}>
+      <ToggleGroupItem
+        aria-label="Toggle underline"
+        bind:ref={underlineRef}
+        value="underline"
+        onpointerenter={() => (underlineTipOpen = true)}
+        onpointerleave={() => (underlineTipOpen = false)}
+        onfocus={() => (underlineTipOpen = true)}
+        onblur={() => (underlineTipOpen = false)}
+      >
+        <UnderlineIcon />
+      </ToggleGroupItem>
+      <TooltipPopup customAnchor={underlineRef}>Underline</TooltipPopup>
     </Tooltip>
   </ToggleGroup>
 </TooltipProvider>

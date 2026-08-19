@@ -1,17 +1,17 @@
 <script lang="ts">
-  import { DropdownMenu } from 'bits-ui';
-  import type { Snippet } from 'svelte';
+  import { Menu as MenuPrimitive } from '@shardsui/svelte/menu';
+  import type { ComponentProps, Snippet } from 'svelte';
   import { cn } from '$lib/utils';
 
-  interface Props extends DropdownMenu.GroupHeadingProps {
+  type Props = Omit<ComponentProps<typeof MenuPrimitive.GroupLabel>, 'children'> & {
     children?: Snippet;
     inset?: boolean;
-  }
+  };
 
   let { children, class: className, inset, ...restProps }: Props = $props();
 </script>
 
-<DropdownMenu.GroupHeading
+<MenuPrimitive.GroupLabel
   class={cn(
     'px-2 py-1.5 font-medium text-muted-foreground text-xs data-inset:ps-9 sm:data-inset:ps-8',
     className
@@ -21,4 +21,4 @@
   {...restProps}
 >
   {@render children?.()}
-</DropdownMenu.GroupHeading>
+</MenuPrimitive.GroupLabel>

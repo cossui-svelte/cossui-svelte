@@ -1,12 +1,9 @@
 <script lang="ts">
-  import { Popover } from 'bits-ui';
-  import type { Snippet } from 'svelte';
+  import { Popover as PopoverPrimitive } from '@shardsui/svelte/popover';
+  import type { ComponentProps } from 'svelte';
 
-  type Props = Popover.RootProps & { children?: Snippet };
-
-  let { children, ...restProps }: Props = $props();
+  let { open = $bindable(false), ...restProps }: ComponentProps<typeof PopoverPrimitive.Root> =
+    $props();
 </script>
 
-<Popover.Root {...restProps}>
-  {@render children?.()}
-</Popover.Root>
+<PopoverPrimitive.Root bind:open {...restProps} />

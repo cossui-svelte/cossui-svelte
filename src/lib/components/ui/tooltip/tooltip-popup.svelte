@@ -1,39 +1,64 @@
 <script lang="ts">
-  import { Tooltip } from 'bits-ui';
-  import type { Snippet } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { Tooltip as TooltipPrimitive } from '@shardsui/svelte/tooltip';
+  import type { ComponentProps, Snippet } from 'svelte';
+  import { cn, type WithoutChildren } from '$lib/utils';
 
-  interface Props extends Tooltip.ContentProps {
+  type Props = Omit<ComponentProps<typeof TooltipPrimitive.Popup>, 'children'> & {
     children?: Snippet;
+    side?: ComponentProps<typeof TooltipPrimitive.Positioner>['side'];
+    align?: ComponentProps<typeof TooltipPrimitive.Positioner>['align'];
+    sideOffset?: ComponentProps<typeof TooltipPrimitive.Positioner>['sideOffset'];
+    alignOffset?: ComponentProps<typeof TooltipPrimitive.Positioner>['alignOffset'];
+    customAnchor?: ComponentProps<typeof TooltipPrimitive.Positioner>['anchor'];
     showArrow?: boolean;
-    sideOffset?: number;
-  }
+    portalProps?: WithoutChildren<ComponentProps<typeof TooltipPrimitive.Portal>>;
+  };
 
   let {
     ref = $bindable(null),
     class: className,
-    showArrow = false,
     children,
-    sideOffset = 4,
+    showArrow = false,
     side = 'top',
+    align = 'center',
+    sideOffset = 4,
+    alignOffset = 0,
+    customAnchor,
+    portalProps,
     ...restProps
   }: Props = $props();
 </script>
 
-<Tooltip.Portal>
-  <Tooltip.Content
-    {ref}
+<TooltipPrimitive.Portal {...portalProps}>
+  <TooltipPrimitive.Positioner
     {side}
+    {align}
     {sideOffset}
-    class={cn(
-      'bg-popover text-popover-foreground animate-in fade-in zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 relative z-50 max-w-70 rounded-md border px-2 py-1 text-xs',
-      className
-    )}
-    {...restProps}
+    {alignOffset}
+    anchor={customAnchor}
+    class="z-50"
   >
-    {@render children?.()}
-    {#if showArrow}
-      <Tooltip.Arrow class="text-popover -my-px drop-shadow-[0_1px_0_hsl(var(--border))]" />
-    {/if}
-  </Tooltip.Content>
-</Tooltip.Portal>
+    <TooltipPrimitive.Popup
+      bind:ref
+      class={cn(
+        'relative max-w-70 rounded-md border bg-popover px-2 py-1 text-popover-foreground text-xs',
+        'origin-(--transform-origin)',
+        'transition-[scale,opacity] duration-150 ease-out data-starting-style:scale-95 data-starting-style:opacity-0 data-ending-style:scale-95 data-ending-style:opacity-0',
+        className
+      )}
+      data-slot="tooltip-popup"
+      {...restProps}
+    >
+      {@render children?.()}
+      {#if showArrow}
+        <TooltipPrimitive.Arrow
+          class="text-popover -my-px drop-shadow-[0_1px_0_hsl(var(--border))] data-[side=bottom]:-top-1.75 data-[side=bottom]:rotate-180 data-[side=left]:-right-2.75 data-[side=left]:-rotate-90 data-[side=right]:-left-2.75 data-[side=right]:rotate-90 data-[side=top]:-bottom-1.75"
+        >
+          <svg viewBox="0 0 30 10" width="10" height="5" preserveAspectRatio="none">
+            <polygon points="0,0 30,0 15,10" fill="currentColor" />
+          </svg>
+        </TooltipPrimitive.Arrow>
+      {/if}
+    </TooltipPrimitive.Popup>
+  </TooltipPrimitive.Positioner>
+</TooltipPrimitive.Portal>

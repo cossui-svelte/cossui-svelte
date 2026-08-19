@@ -83,10 +83,6 @@
     inputValue = '';
     isOpen = false;
   }
-
-  function removeItem(value: string) {
-    handleValueChange(selectedValues.filter((v) => v !== value));
-  }
 </script>
 
 <div class="mx-auto max-w-2xl">
@@ -105,7 +101,7 @@
         <Search class="size-5.5 sm:size-5" strokeWidth={2} />
       {/snippet}
       {#each selectedItems as item (item.value)}
-        <ComboboxChip removeProps={{ onclick: () => removeItem(item.value) }}>
+        <ComboboxChip>
           <div class="flex items-center gap-1.5">
             <Tag class="size-3 opacity-80" strokeWidth={2} />
             <span>{item.label}</span>

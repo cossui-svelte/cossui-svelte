@@ -1,40 +1,49 @@
 <script lang="ts">
-  import { LinkPreview as LinkPreviewPrimitive, type WithoutChildren } from 'bits-ui';
-  import type { Snippet } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { PreviewCard as PreviewCardPrimitive } from '@shardsui/svelte/preview-card';
+  import type { ComponentProps, Snippet } from 'svelte';
+  import { cn, type WithoutChildren } from '$lib/utils';
+
+  type Props = Omit<ComponentProps<typeof PreviewCardPrimitive.Popup>, 'children'> & {
+    children?: Snippet;
+    side?: ComponentProps<typeof PreviewCardPrimitive.Positioner>['side'];
+    align?: ComponentProps<typeof PreviewCardPrimitive.Positioner>['align'];
+    sideOffset?: ComponentProps<typeof PreviewCardPrimitive.Positioner>['sideOffset'];
+    alignOffset?: ComponentProps<typeof PreviewCardPrimitive.Positioner>['alignOffset'];
+    showArrow?: boolean;
+    portalProps?: WithoutChildren<ComponentProps<typeof PreviewCardPrimitive.Portal>>;
+  };
 
   let {
-    align = 'center',
-    children,
-    class: className,
-    portalProps,
     ref = $bindable(null),
-    showArrow = false,
+    class: className,
+    children,
+    side = 'bottom',
+    align = 'center',
     sideOffset = 4,
+    alignOffset,
+    showArrow = false,
+    portalProps,
     ...restProps
-  }: WithoutChildren<LinkPreviewPrimitive.ContentProps> & {
-    children: Snippet;
-    portalProps?: LinkPreviewPrimitive.PortalProps;
-    showArrow?: boolean;
-  } = $props();
+  }: Props = $props();
 </script>
 
-<LinkPreviewPrimitive.Portal {...portalProps}>
-  <LinkPreviewPrimitive.Content
-    bind:ref
-    {sideOffset}
-    {align}
-    class={cn(
-      'border-border bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out data-[state=open]:fade-in data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 w-64 rounded-lg border p-4 shadow-lg shadow-black/5 outline-hidden',
-      className
-    )}
-    {...restProps}
-  >
-    {@render children()}
-    {#if showArrow}
-      <LinkPreviewPrimitive.Arrow
-        class="text-popover -my-px drop-shadow-[0_1px_0_hsl(var(--border))]"
-      />
-    {/if}
-  </LinkPreviewPrimitive.Content>
-</LinkPreviewPrimitive.Portal>
+<PreviewCardPrimitive.Portal {...portalProps}>
+  <PreviewCardPrimitive.Positioner {side} {align} {sideOffset} {alignOffset} class="z-50">
+    <PreviewCardPrimitive.Popup
+      bind:ref
+      class={cn(
+        'origin-(--transform-origin) z-50 w-64 rounded-lg border border-border bg-popover p-4 text-popover-foreground shadow-black/5 shadow-lg outline-hidden transition-[scale,opacity] duration-150 ease-out data-starting-style:scale-98 data-starting-style:opacity-0 data-ending-style:scale-98 data-ending-style:opacity-0',
+        className
+      )}
+      data-slot="link-preview-content"
+      {...restProps}
+    >
+      {@render children?.()}
+      {#if showArrow}
+        <PreviewCardPrimitive.Arrow
+          class="text-popover -my-px drop-shadow-[0_1px_0_hsl(var(--border))]"
+        />
+      {/if}
+    </PreviewCardPrimitive.Popup>
+  </PreviewCardPrimitive.Positioner>
+</PreviewCardPrimitive.Portal>

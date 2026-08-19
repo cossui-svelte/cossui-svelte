@@ -1,23 +1,24 @@
 <script lang="ts">
   import ChevronDown from '@lucide/svelte/icons/chevron-down';
-  import { Select as SelectPrimitive, type WithoutChildrenOrChild } from 'bits-ui';
+  import { Select as SelectPrimitive } from '@shardsui/svelte/select';
+  import type { ComponentProps } from 'svelte';
   import { cn } from '$lib/utils';
 
   let {
-    class: className,
     ref = $bindable(null),
+    class: className,
     ...restProps
-  }: WithoutChildrenOrChild<SelectPrimitive.ScrollDownButtonProps> = $props();
+  }: Omit<ComponentProps<typeof SelectPrimitive.ScrollDownArrow>, 'children'> = $props();
 </script>
 
-<SelectPrimitive.ScrollDownButton
+<SelectPrimitive.ScrollDownArrow
   bind:ref
   class={cn(
-    'absolute bottom-0 z-50 flex h-6 w-full cursor-default items-center justify-center before:pointer-events-none before:absolute before:inset-x-0 before:bottom-0 before:h-[200%] before:rounded-b-[calc(var(--radius-lg)-1px)] before:bg-linear-to-t before:from-50% before:from-popover',
+    'inset-x-0 bottom-0 z-50 flex h-6 w-full cursor-default items-center justify-center before:pointer-events-none before:absolute before:inset-x-0 before:bottom-0 before:h-[200%] before:rounded-b-[calc(var(--radius-lg)-1px)] before:bg-linear-to-t before:from-50% before:from-popover',
     className
   )}
   data-slot="select-scroll-down-button"
   {...restProps}
 >
   <ChevronDown class="relative size-4.5 sm:size-4" />
-</SelectPrimitive.ScrollDownButton>
+</SelectPrimitive.ScrollDownArrow>

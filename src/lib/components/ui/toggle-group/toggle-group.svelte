@@ -3,7 +3,7 @@
   import { type ToggleSize, type ToggleVariant } from '$lib/components/ui/toggle';
 
   interface ToggleGroupProps {
-    orientation?: Orientation;
+    orientation?: 'horizontal' | 'vertical';
     size?: ToggleSize;
     variant?: ToggleVariant;
   }
@@ -18,8 +18,8 @@
 </script>
 
 <script lang="ts">
-  import { type Orientation, ToggleGroup as ToggleGroupPrimitive } from 'bits-ui';
-  import type { HTMLAttributes } from 'svelte/elements';
+  import { ToggleGroup as ToggleGroupPrimitive } from '@shardsui/svelte/toggle-group';
+  import type { ComponentProps } from 'svelte';
   import { cn } from '$lib/utils';
 
   let {
@@ -29,17 +29,8 @@
     size = 'default',
     orientation = 'horizontal',
     variant = 'default',
-    multiple = false,
     ...restProps
-  }: HTMLAttributes<HTMLDivElement> & {
-    ref?: HTMLDivElement | null;
-    value?: string | string[];
-    multiple?: boolean;
-    disabled?: boolean;
-    loop?: boolean;
-    rovingFocus?: boolean;
-    onValueChange?: (value: string | string[]) => void;
-  } & ToggleGroupProps = $props();
+  }: ComponentProps<typeof ToggleGroupPrimitive> & ToggleGroupProps = $props();
 
   setToggleGroupCtx({
     get orientation() {
@@ -54,14 +45,9 @@
   });
 </script>
 
-<!--
-Discriminated Unions + Destructing (required for bindable) do not
-get along, so we shut typescript up by casting `value` to `never`.
--->
-<ToggleGroupPrimitive.Root
-  bind:value={value as never}
+<ToggleGroupPrimitive
   bind:ref
-  type={(multiple ? 'multiple' : 'single') as never}
+  bind:value
   {orientation}
   data-slot="toggle-group"
   data-variant={variant}

@@ -1,17 +1,17 @@
 <script lang="ts">
-  import { ContextMenu } from 'bits-ui';
-  import type { Snippet } from 'svelte';
+  import { ContextMenu as ContextMenuPrimitive } from '@shardsui/svelte/context-menu';
+  import type { ComponentProps, Snippet } from 'svelte';
   import { cn } from '$lib/utils';
 
-  interface Props extends ContextMenu.GroupHeadingProps {
+  type Props = Omit<ComponentProps<typeof ContextMenuPrimitive.GroupLabel>, 'children'> & {
     children?: Snippet;
     inset?: boolean;
-  }
+  };
 
   let { children, class: className, inset, ...restProps }: Props = $props();
 </script>
 
-<ContextMenu.GroupHeading
+<ContextMenuPrimitive.GroupLabel
   class={cn(
     'px-2 py-1.5 font-medium text-muted-foreground text-xs data-inset:ps-9 sm:data-inset:ps-8',
     className
@@ -21,4 +21,4 @@
   {...restProps}
 >
   {@render children?.()}
-</ContextMenu.GroupHeading>
+</ContextMenuPrimitive.GroupLabel>

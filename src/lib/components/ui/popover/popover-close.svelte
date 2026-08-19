@@ -1,12 +1,9 @@
 <script lang="ts">
-  import { Popover } from 'bits-ui';
-  import type { Snippet } from 'svelte';
+  import { Popover as PopoverPrimitive } from '@shardsui/svelte/popover';
+  import type { ComponentProps } from 'svelte';
 
-  type Props = Popover.CloseProps & { children?: Snippet };
-
-  let { children, ...restProps }: Props = $props();
+  let { ref = $bindable(null), ...restProps }: ComponentProps<typeof PopoverPrimitive.Close> =
+    $props();
 </script>
 
-<Popover.Close data-slot="popover-close" {...restProps}>
-  {@render children?.()}
-</Popover.Close>
+<PopoverPrimitive.Close bind:ref data-slot="popover-close" {...restProps} />

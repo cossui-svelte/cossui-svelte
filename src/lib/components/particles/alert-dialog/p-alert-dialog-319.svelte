@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, buttonVariants } from '$lib/components/ui/button';
+  import { buttonVariants } from '$lib/components/ui/button';
   import {
     Dialog,
     DialogClose,
@@ -107,11 +107,7 @@
         </span>
       {/if}
       <DialogClose class={buttonVariants({ variant: 'outline' })}>Cancel</DialogClose>
-      <DialogClose>
-        {#snippet child({ props })}
-          <Button disabled={!hasReadToBottom} {...props}>I agree</Button>
-        {/snippet}
-      </DialogClose>
+      <DialogClose class={buttonVariants()} disabled={!hasReadToBottom}>I agree</DialogClose>
     </div>
   </DialogPopup>
 </Dialog>

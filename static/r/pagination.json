@@ -15,25 +15,25 @@
 			"type": "registry:ui",
 			"path": "pagination/pagination-content.svelte",
 			"target": "$lib/components/ui/pagination/pagination-content.svelte",
-			"content": "<script lang=\"ts\">\n  import type { WithElementRef } from 'bits-ui';\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn } from '$lib/utils';\n\n  let {\n    children,\n    class: className,\n    ref = $bindable(null),\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLUListElement>> = $props();\n</script>\n\n<ul\n  bind:this={ref}\n  class={cn('flex flex-row items-center gap-1', className)}\n  data-slot=\"pagination-content\"\n  {...restProps}\n>\n  {@render children?.()}\n</ul>\n"
+			"content": "<script lang=\"ts\">\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn, type WithElementRef } from '$lib/utils';\n\n  let {\n    children,\n    class: className,\n    ref = $bindable(null),\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLUListElement>> = $props();\n</script>\n\n<ul\n  bind:this={ref}\n  class={cn('flex flex-row items-center gap-1', className)}\n  data-slot=\"pagination-content\"\n  {...restProps}\n>\n  {@render children?.()}\n</ul>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "pagination/pagination-ellipsis.svelte",
 			"target": "$lib/components/ui/pagination/pagination-ellipsis.svelte",
-			"content": "<script lang=\"ts\">\n  import Ellipsis from '@lucide/svelte/icons/ellipsis';\n  import type { WithElementRef, WithoutChildren } from 'bits-ui';\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn } from '$lib/utils';\n\n  let {\n    class: className,\n    ref = $bindable(null),\n    ...restProps\n  }: WithoutChildren<WithElementRef<HTMLAttributes<HTMLSpanElement>>> = $props();\n</script>\n\n<span\n  bind:this={ref}\n  aria-hidden=\"true\"\n  class={cn('flex min-w-7 justify-center', className)}\n  data-slot=\"pagination-ellipsis\"\n  {...restProps}\n>\n  <Ellipsis class=\"size-5 sm:size-4\" />\n  <span class=\"sr-only\">More pages</span>\n</span>\n"
+			"content": "<script lang=\"ts\">\n  import Ellipsis from '@lucide/svelte/icons/ellipsis';\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn, type WithElementRef, type WithoutChildren } from '$lib/utils';\n\n  let {\n    class: className,\n    ref = $bindable(null),\n    ...restProps\n  }: WithoutChildren<WithElementRef<HTMLAttributes<HTMLSpanElement>>> = $props();\n</script>\n\n<span\n  bind:this={ref}\n  aria-hidden=\"true\"\n  class={cn('flex min-w-7 justify-center', className)}\n  data-slot=\"pagination-ellipsis\"\n  {...restProps}\n>\n  <Ellipsis class=\"size-5 sm:size-4\" />\n  <span class=\"sr-only\">More pages</span>\n</span>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "pagination/pagination-item.svelte",
 			"target": "$lib/components/ui/pagination/pagination-item.svelte",
-			"content": "<script lang=\"ts\">\n  import type { WithElementRef } from 'bits-ui';\n  import type { HTMLLiAttributes } from 'svelte/elements';\n\n  let {\n    children,\n    ref = $bindable(null),\n    ...restProps\n  }: WithElementRef<HTMLLiAttributes> = $props();\n</script>\n\n<li bind:this={ref} data-slot=\"pagination-item\" {...restProps}>\n  {@render children?.()}\n</li>\n"
+			"content": "<script lang=\"ts\">\n  import type { HTMLLiAttributes } from 'svelte/elements';\n  import type { WithElementRef } from '$lib/utils';\n\n  let {\n    children,\n    ref = $bindable(null),\n    ...restProps\n  }: WithElementRef<HTMLLiAttributes> = $props();\n</script>\n\n<li bind:this={ref} data-slot=\"pagination-item\" {...restProps}>\n  {@render children?.()}\n</li>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "pagination/pagination-link.svelte",
 			"target": "$lib/components/ui/pagination/pagination-link.svelte",
-			"content": "<script module lang=\"ts\">\n  import type { WithElementRef } from 'bits-ui';\n  import type { Snippet } from 'svelte';\n  import type { HTMLAnchorAttributes } from 'svelte/elements';\n  import { type ButtonSize, buttonVariants } from '$lib/components/ui/button';\n\n  export type Props = WithElementRef<HTMLAnchorAttributes> & {\n    children: Snippet;\n    isActive?: boolean;\n    isDisabled?: boolean;\n    size?: ButtonSize;\n  };\n</script>\n\n<script lang=\"ts\">\n  import { cn } from '$lib/utils';\n\n  let {\n    children,\n    class: className,\n    isActive = false,\n    ref = $bindable(null),\n    size = 'icon',\n    ...restProps\n  }: Props = $props();\n</script>\n\n<a\n  aria-current={isActive ? 'page' : undefined}\n  class={cn(\n    buttonVariants({\n      size,\n      variant: isActive ? 'outline' : 'ghost'\n    }),\n    className\n  )}\n  data-active={isActive}\n  data-slot=\"pagination-link\"\n  {...restProps}\n>\n  {@render children()}\n</a>\n"
+			"content": "<script module lang=\"ts\">\n  import type { Snippet } from 'svelte';\n  import type { HTMLAnchorAttributes } from 'svelte/elements';\n  import { type ButtonSize, buttonVariants } from '$lib/components/ui/button';\n  import type { WithElementRef } from '$lib/utils';\n\n  export type Props = WithElementRef<HTMLAnchorAttributes> & {\n    children: Snippet;\n    isActive?: boolean;\n    isDisabled?: boolean;\n    size?: ButtonSize;\n  };\n</script>\n\n<script lang=\"ts\">\n  import { cn } from '$lib/utils';\n\n  let {\n    children,\n    class: className,\n    isActive = false,\n    ref = $bindable(null),\n    size = 'icon',\n    ...restProps\n  }: Props = $props();\n</script>\n\n<a\n  aria-current={isActive ? 'page' : undefined}\n  class={cn(\n    buttonVariants({\n      size,\n      variant: isActive ? 'outline' : 'ghost'\n    }),\n    className\n  )}\n  data-active={isActive}\n  data-slot=\"pagination-link\"\n  {...restProps}\n>\n  {@render children()}\n</a>\n"
 		},
 		{
 			"type": "registry:ui",
@@ -51,14 +51,12 @@
 			"type": "registry:ui",
 			"path": "pagination/pagination.svelte",
 			"target": "$lib/components/ui/pagination/pagination.svelte",
-			"content": "<script lang=\"ts\">\n  import type { WithElementRef } from 'bits-ui';\n  import type { Snippet } from 'svelte';\n  import type { SvelteHTMLElements } from 'svelte/elements';\n  import { cn } from '$lib/utils';\n\n  type Props = WithElementRef<SvelteHTMLElements['nav']> & {\n    children: Snippet;\n  };\n\n  let { children, class: className, ref = $bindable(null), ...restProps }: Props = $props();\n</script>\n\n<nav\n  aria-label=\"pagination\"\n  class={cn('mx-auto flex w-full justify-center', className)}\n  data-slot=\"pagination\"\n  {...restProps}\n>\n  {@render children()}\n</nav>\n"
+			"content": "<script lang=\"ts\">\n  import type { Snippet } from 'svelte';\n  import type { SvelteHTMLElements } from 'svelte/elements';\n  import { cn, type WithElementRef } from '$lib/utils';\n\n  type Props = WithElementRef<SvelteHTMLElements['nav']> & {\n    children: Snippet;\n  };\n\n  let { children, class: className, ref = $bindable(null), ...restProps }: Props = $props();\n</script>\n\n<nav\n  aria-label=\"pagination\"\n  class={cn('mx-auto flex w-full justify-center', className)}\n  data-slot=\"pagination\"\n  {...restProps}\n>\n  {@render children()}\n</nav>\n"
 		}
 	],
 	"registryDependencies": [
 		"button",
 		"utils"
 	],
-	"dependencies": [
-		"bits-ui@^2.18.1"
-	]
+	"dependencies": []
 }

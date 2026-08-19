@@ -1,12 +1,9 @@
 <script lang="ts">
-  import { ContextMenu } from 'bits-ui';
-  import type { Snippet } from 'svelte';
+  import { ContextMenu as ContextMenuPrimitive } from '@shardsui/svelte/context-menu';
+  import type { ComponentProps } from 'svelte';
 
-  type Props = ContextMenu.RootProps & { children?: Snippet };
-
-  let { children, ...restProps }: Props = $props();
+  let { open = $bindable(false), ...restProps }: ComponentProps<typeof ContextMenuPrimitive.Root> =
+    $props();
 </script>
 
-<ContextMenu.Root {...restProps}>
-  {@render children?.()}
-</ContextMenu.Root>
+<ContextMenuPrimitive.Root bind:open {...restProps} />

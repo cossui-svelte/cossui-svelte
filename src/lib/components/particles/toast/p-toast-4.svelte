@@ -6,10 +6,10 @@
 <Button
   onclick={() => {
     const id = toastManager.add({
-      action: {
-        label: 'Undo',
+      actionProps: {
+        children: 'Undo',
         onclick: () => {
-          toastManager.dismiss(id);
+          toastManager.close(id);
           toastManager.add({
             description: 'The action has been reverted.',
             title: 'Action undone',
@@ -18,7 +18,7 @@
         }
       },
       description: 'You can undo this action.',
-      duration: 1000000,
+      timeout: 1000000,
       title: 'Action performed',
       type: 'success'
     });

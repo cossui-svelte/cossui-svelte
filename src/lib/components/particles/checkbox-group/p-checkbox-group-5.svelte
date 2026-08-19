@@ -25,10 +25,7 @@
   <Field name="frameworks">
     <Fieldset>
       <FieldsetLegend class="font-medium text-sm">Frameworks</FieldsetLegend>
-      <CheckboxGroup
-        value={$form.frameworks as string[]}
-        onValueChange={(v) => ($form.frameworks = v)}
-      >
+      <CheckboxGroup bind:value={$form.frameworks as string[]}>
         <FieldItem>
           <FieldLabel>
             <Checkbox value="next" />

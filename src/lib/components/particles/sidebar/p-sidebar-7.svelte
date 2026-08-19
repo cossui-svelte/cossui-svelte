@@ -37,7 +37,7 @@
                 <CollapsibleTrigger {...props}>
                   Help
                   <ChevronDownIcon
-                    class="ms-auto transition-transform group-data-[state=open]/collapsible:rotate-180"
+                    class="ms-auto transition-transform group-data-open/collapsible:rotate-180"
                   />
                 </CollapsibleTrigger>
               {/snippet}

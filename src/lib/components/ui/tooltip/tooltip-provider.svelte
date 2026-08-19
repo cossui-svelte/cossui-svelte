@@ -1,13 +1,8 @@
 <script lang="ts">
-  import { Tooltip } from 'bits-ui';
-  import type { Snippet } from 'svelte';
+  import { Tooltip as TooltipPrimitive } from '@shardsui/svelte/tooltip';
+  import type { ComponentProps } from 'svelte';
 
-  interface Props extends Omit<Tooltip.ProviderProps, 'delayDuration'> {
-    children?: Snippet;
-    delay?: number;
-  }
-
-  let { delay, ...restProps }: Props = $props();
+  let { ...restProps }: ComponentProps<typeof TooltipPrimitive.Provider> = $props();
 </script>
 
-<Tooltip.Provider delayDuration={delay} {...restProps} />
+<TooltipPrimitive.Provider {...restProps} />

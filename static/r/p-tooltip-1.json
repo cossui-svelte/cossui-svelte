@@ -9,7 +9,7 @@
 			"type": "registry:block",
 			"path": "p-tooltip-1.svelte",
 			"target": "$lib/components/particles/tooltip/p-tooltip-1.svelte",
-			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n  import {\n    Tooltip,\n    TooltipPopup,\n    TooltipProvider,\n    TooltipTrigger\n  } from '$lib/components/ui/tooltip';\n</script>\n\n<TooltipProvider>\n  <Tooltip>\n    <TooltipTrigger>\n      {#snippet child({ props })}\n        <Button variant=\"outline\" {...props}>Hover me</Button>\n      {/snippet}\n    </TooltipTrigger>\n    <TooltipPopup>Helpful hint</TooltipPopup>\n  </Tooltip>\n</TooltipProvider>\n"
+			"content": "<script lang=\"ts\">\n  import { buttonVariants } from '$lib/components/ui/button';\n  import {\n    Tooltip,\n    TooltipPopup,\n    TooltipProvider,\n    TooltipTrigger\n  } from '$lib/components/ui/tooltip';\n</script>\n\n<TooltipProvider>\n  <Tooltip>\n    <TooltipTrigger class={buttonVariants({ variant: 'outline' })}>Hover me</TooltipTrigger>\n    <TooltipPopup>Helpful hint</TooltipPopup>\n  </Tooltip>\n</TooltipProvider>\n"
 		}
 	],
 	"registryDependencies": [

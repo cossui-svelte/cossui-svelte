@@ -9,25 +9,25 @@
 			"type": "registry:ui",
 			"path": "alert-dialog/alert-dialog-action.svelte",
 			"target": "$lib/components/ui/alert-dialog/alert-dialog-action.svelte",
-			"content": "<script lang=\"ts\">\n  import { AlertDialog as AlertDialogPrimitive } from 'bits-ui';\n  import { type ButtonSize, type ButtonVariant, buttonVariants } from '$lib/components/ui/button';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    variant = 'default',\n    size = 'default',\n    ...restProps\n  }: AlertDialogPrimitive.ActionProps & {\n    variant?: ButtonVariant;\n    size?: ButtonSize;\n  } = $props();\n</script>\n\n<AlertDialogPrimitive.Action\n  bind:ref\n  data-slot=\"alert-dialog-action\"\n  class={cn(buttonVariants({ size, variant }), className)}\n  {...restProps}\n/>\n"
+			"content": "<script lang=\"ts\">\n  import type { Snippet } from 'svelte';\n  import type { HTMLButtonAttributes } from 'svelte/elements';\n  import { type ButtonSize, type ButtonVariant, buttonVariants } from '$lib/components/ui/button';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    variant = 'default',\n    size = 'default',\n    type = 'button',\n    children,\n    ...restProps\n  }: HTMLButtonAttributes & {\n    ref?: HTMLButtonElement | null;\n    variant?: ButtonVariant;\n    size?: ButtonSize;\n    children?: Snippet;\n  } = $props();\n</script>\n\n<button\n  bind:this={ref}\n  data-slot=\"alert-dialog-action\"\n  class={cn(buttonVariants({ size, variant }), className)}\n  {type}\n  {...restProps}\n>\n  {@render children?.()}\n</button>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "alert-dialog/alert-dialog-close.svelte",
 			"target": "$lib/components/ui/alert-dialog/alert-dialog-close.svelte",
-			"content": "<script lang=\"ts\">\n  import { AlertDialog as DialogPrimitive } from 'bits-ui';\n\n  let {\n    ref = $bindable(null),\n    type = 'button',\n    ...restProps\n  }: DialogPrimitive.CancelProps = $props();\n</script>\n\n<DialogPrimitive.Cancel bind:ref data-slot=\"alert-dialog-close\" {type} {...restProps} />\n"
+			"content": "<script lang=\"ts\">\n  import { AlertDialog as AlertDialogPrimitive } from '@shardsui/svelte/alert-dialog';\n  import type { ComponentProps } from 'svelte';\n\n  let {\n    ref = $bindable(null),\n    type = 'button',\n    ...restProps\n  }: ComponentProps<typeof AlertDialogPrimitive.Close> = $props();\n</script>\n\n<AlertDialogPrimitive.Close bind:ref data-slot=\"alert-dialog-close\" {type} {...restProps} />\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "alert-dialog/alert-dialog-content.svelte",
 			"target": "$lib/components/ui/alert-dialog/alert-dialog-content.svelte",
-			"content": "<script lang=\"ts\">\n  import { AlertDialog as AlertDialogPrimitive } from 'bits-ui';\n  import type { ComponentProps } from 'svelte';\n  import { cn, type WithoutChild, type WithoutChildrenOrChild } from '$lib/utils';\n  import AlertDialogOverlay from './alert-dialog-overlay.svelte';\n  import AlertDialogPortal from './alert-dialog-portal.svelte';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    bottomStickOnMobile = true,\n    size = 'default',\n    portalProps,\n    ...restProps\n  }: WithoutChild<AlertDialogPrimitive.ContentProps> & {\n    size?: 'default' | 'sm';\n    bottomStickOnMobile?: boolean;\n    portalProps?: WithoutChildrenOrChild<ComponentProps<typeof AlertDialogPortal>>;\n  } = $props();\n</script>\n\n<AlertDialogPortal {...portalProps}>\n  <AlertDialogOverlay />\n\n  <AlertDialogPrimitive.Content\n    bind:ref\n    data-slot=\"alert-dialog-popup\"\n    data-size={size}\n    class={cn(\n      // Fixed full-screen layer\n      'fixed z-50 w-full flex flex-col gap-0 p-0 outline-none group/alert-dialog-content',\n      // Appearance\n      'bg-popover text-popover-foreground ring-1 ring-foreground/10',\n      // Animation base\n      'duration-200 fill-mode-both will-change-transform',\n      'data-[state=open]:animate-in data-[state=closed]:animate-out',\n      'data-[state=open]:fade-in data-[state=closed]:fade-out',\n      // Desktop (sm+): centered dialog with zoom\n      'sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2',\n      'sm:rounded-xl',\n      'data-[size=default]:sm:max-w-lg data-[size=sm]:sm:max-w-xs',\n      'sm:data-[state=open]:zoom-in-95 sm:data-[state=closed]:zoom-out-95',\n      // Mobile: bottom sheet (when bottomStickOnMobile)\n      bottomStickOnMobile && [\n        'max-sm:bottom-0 max-sm:inset-x-0 max-sm:max-w-none',\n        'max-sm:border-t',\n        'max-sm:data-[state=open]:slide-in-from-bottom max-sm:data-[state=closed]:slide-out-to-bottom'\n      ],\n      // Mobile: centered (when not bottom-sticky)\n      !bottomStickOnMobile && [\n        'max-sm:top-1/2 max-sm:left-1/2 max-sm:-translate-x-1/2 max-sm:-translate-y-1/2',\n        'max-sm:rounded-xl',\n        'data-[size=default]:max-sm:max-w-xs',\n        'max-sm:data-[state=open]:zoom-in-95 max-sm:data-[state=closed]:zoom-out-95'\n      ],\n      className\n    )}\n    {...restProps}\n  />\n</AlertDialogPortal>\n"
+			"content": "<script lang=\"ts\">\n  import { AlertDialog as AlertDialogPrimitive } from '@shardsui/svelte/alert-dialog';\n  import type { ComponentProps } from 'svelte';\n  import { cn, type WithoutChildrenOrChild } from '$lib/utils';\n  import AlertDialogOverlay from './alert-dialog-overlay.svelte';\n  import AlertDialogPortal from './alert-dialog-portal.svelte';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    bottomStickOnMobile = true,\n    size = 'default',\n    portalProps,\n    ...restProps\n  }: ComponentProps<typeof AlertDialogPrimitive.Popup> & {\n    size?: 'default' | 'sm';\n    bottomStickOnMobile?: boolean;\n    portalProps?: WithoutChildrenOrChild<ComponentProps<typeof AlertDialogPortal>>;\n  } = $props();\n</script>\n\n<AlertDialogPortal {...portalProps}>\n  <AlertDialogOverlay />\n\n  <AlertDialogPrimitive.Popup\n    bind:ref\n    data-slot=\"alert-dialog-popup\"\n    data-size={size}\n    class={cn(\n      // Fixed full-screen layer\n      'fixed z-50 flex w-full flex-col gap-0 p-0 outline-none group/alert-dialog-content',\n      // Appearance\n      'bg-popover text-popover-foreground ring-1 ring-foreground/10',\n      // Animation base\n      'transition-[scale,opacity,translate] duration-200 ease-in-out will-change-transform',\n      'data-starting-style:opacity-0 data-ending-style:opacity-0',\n      // Desktop (sm+): centered dialog with zoom\n      'sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2',\n      'sm:rounded-xl',\n      'data-[size=default]:sm:max-w-lg data-[size=sm]:sm:max-w-xs',\n      'sm:data-starting-style:scale-95 sm:data-ending-style:scale-95',\n      // Mobile: bottom sheet (when bottomStickOnMobile)\n      bottomStickOnMobile && [\n        'max-sm:bottom-0 max-sm:inset-x-0 max-sm:max-w-none max-sm:translate-y-0',\n        'max-sm:border-t',\n        'max-sm:data-starting-style:translate-y-full max-sm:data-ending-style:translate-y-full'\n      ],\n      // Mobile: centered (when not bottom-sticky)\n      !bottomStickOnMobile && [\n        'max-sm:top-1/2 max-sm:left-1/2 max-sm:-translate-x-1/2 max-sm:-translate-y-1/2',\n        'max-sm:rounded-xl',\n        'data-[size=default]:max-sm:max-w-xs',\n        'max-sm:data-starting-style:scale-95 max-sm:data-ending-style:scale-95'\n      ],\n      className\n    )}\n    {...restProps}\n  />\n</AlertDialogPortal>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "alert-dialog/alert-dialog-description.svelte",
 			"target": "$lib/components/ui/alert-dialog/alert-dialog-description.svelte",
-			"content": "<script lang=\"ts\">\n  import { AlertDialog as AlertDialogPrimitive } from 'bits-ui';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: AlertDialogPrimitive.DescriptionProps = $props();\n</script>\n\n<AlertDialogPrimitive.Description\n  bind:ref\n  data-slot=\"alert-dialog-description\"\n  class={cn('text-muted-foreground text-sm', className)}\n  {...restProps}\n/>\n"
+			"content": "<script lang=\"ts\">\n  import { AlertDialog as AlertDialogPrimitive } from '@shardsui/svelte/alert-dialog';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof AlertDialogPrimitive.Description> = $props();\n</script>\n\n<AlertDialogPrimitive.Description\n  bind:ref\n  data-slot=\"alert-dialog-description\"\n  class={cn('text-muted-foreground text-sm', className)}\n  {...restProps}\n/>\n"
 		},
 		{
 			"type": "registry:ui",
@@ -51,31 +51,31 @@
 			"type": "registry:ui",
 			"path": "alert-dialog/alert-dialog-overlay.svelte",
 			"target": "$lib/components/ui/alert-dialog/alert-dialog-overlay.svelte",
-			"content": "<script lang=\"ts\">\n  import { AlertDialog as AlertDialogPrimitive } from 'bits-ui';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: AlertDialogPrimitive.OverlayProps = $props();\n</script>\n\n<AlertDialogPrimitive.Overlay\n  bind:ref\n  data-slot=\"alert-dialog-overlay\"\n  class={cn(\n    'fixed inset-0 z-50 bg-black/32 backdrop-blur-sm duration-200 fill-mode-both data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in data-[state=closed]:fade-out',\n    className\n  )}\n  {...restProps}\n/>\n"
+			"content": "<script lang=\"ts\">\n  import { AlertDialog as AlertDialogPrimitive } from '@shardsui/svelte/alert-dialog';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof AlertDialogPrimitive.Backdrop> = $props();\n</script>\n\n<AlertDialogPrimitive.Backdrop\n  bind:ref\n  data-slot=\"alert-dialog-overlay\"\n  class={cn(\n    'fixed inset-0 z-50 bg-black/32 backdrop-blur-sm transition-opacity duration-200 data-ending-style:opacity-0 data-starting-style:opacity-0',\n    className\n  )}\n  {...restProps}\n/>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "alert-dialog/alert-dialog-portal.svelte",
 			"target": "$lib/components/ui/alert-dialog/alert-dialog-portal.svelte",
-			"content": "<script lang=\"ts\">\n  import { AlertDialog as AlertDialogPrimitive } from 'bits-ui';\n\n  let { ...restProps }: AlertDialogPrimitive.PortalProps = $props();\n</script>\n\n<AlertDialogPrimitive.Portal {...restProps} />\n"
+			"content": "<script lang=\"ts\">\n  import { AlertDialog as AlertDialogPrimitive } from '@shardsui/svelte/alert-dialog';\n  import type { ComponentProps } from 'svelte';\n\n  let { ...restProps }: ComponentProps<typeof AlertDialogPrimitive.Portal> = $props();\n</script>\n\n<AlertDialogPrimitive.Portal {...restProps} />\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "alert-dialog/alert-dialog-title.svelte",
 			"target": "$lib/components/ui/alert-dialog/alert-dialog-title.svelte",
-			"content": "<script lang=\"ts\">\n  import { AlertDialog as AlertDialogPrimitive } from 'bits-ui';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: AlertDialogPrimitive.TitleProps = $props();\n</script>\n\n<AlertDialogPrimitive.Title\n  bind:ref\n  data-slot=\"alert-dialog-title\"\n  class={cn('font-heading font-semibold text-xl leading-none', className)}\n  {...restProps}\n/>\n"
+			"content": "<script lang=\"ts\">\n  import { AlertDialog as AlertDialogPrimitive } from '@shardsui/svelte/alert-dialog';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof AlertDialogPrimitive.Title> = $props();\n</script>\n\n<AlertDialogPrimitive.Title\n  bind:ref\n  data-slot=\"alert-dialog-title\"\n  class={cn('font-heading font-semibold text-xl leading-none', className)}\n  {...restProps}\n/>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "alert-dialog/alert-dialog-trigger.svelte",
 			"target": "$lib/components/ui/alert-dialog/alert-dialog-trigger.svelte",
-			"content": "<script lang=\"ts\">\n  import { AlertDialog as AlertDialogPrimitive } from 'bits-ui';\n\n  let { ref = $bindable(null), ...restProps }: AlertDialogPrimitive.TriggerProps = $props();\n</script>\n\n<AlertDialogPrimitive.Trigger bind:ref data-slot=\"alert-dialog-trigger\" {...restProps} />\n"
+			"content": "<script lang=\"ts\">\n  import { AlertDialog as AlertDialogPrimitive } from '@shardsui/svelte/alert-dialog';\n  import type { ComponentProps } from 'svelte';\n\n  let { ref = $bindable(null), ...restProps }: ComponentProps<typeof AlertDialogPrimitive.Trigger> =\n    $props();\n</script>\n\n<AlertDialogPrimitive.Trigger bind:ref data-slot=\"alert-dialog-trigger\" {...restProps} />\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "alert-dialog/alert-dialog.svelte",
 			"target": "$lib/components/ui/alert-dialog/alert-dialog.svelte",
-			"content": "<script lang=\"ts\">\n  import { AlertDialog as AlertDialogPrimitive } from 'bits-ui';\n\n  let { open = $bindable(false), ...restProps }: AlertDialogPrimitive.RootProps = $props();\n</script>\n\n<AlertDialogPrimitive.Root bind:open {...restProps} />\n"
+			"content": "<script lang=\"ts\">\n  import { AlertDialog as AlertDialogPrimitive } from '@shardsui/svelte/alert-dialog';\n  import type { ComponentProps } from 'svelte';\n\n  let { open = $bindable(false), ...restProps }: ComponentProps<typeof AlertDialogPrimitive.Root> =\n    $props();\n</script>\n\n<AlertDialogPrimitive.Root bind:open {...restProps} />\n"
 		},
 		{
 			"type": "registry:ui",
@@ -89,6 +89,6 @@
 		"utils"
 	],
 	"dependencies": [
-		"bits-ui@^2.18.1"
+		"@shardsui/svelte@0.1.0-beta.0"
 	]
 }

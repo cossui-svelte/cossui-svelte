@@ -15,19 +15,19 @@
 			"type": "registry:ui",
 			"path": "radio-group/radio-group-item.svelte",
 			"target": "$lib/components/ui/radio-group/radio-group-item.svelte",
-			"content": "<script lang=\"ts\">\n  import { RadioGroup as RadioGroupPrimitive } from 'bits-ui';\n  import { cn } from '$lib/utils';\n\n  let {\n    class: className,\n    ref = $bindable(null),\n    value = $bindable(''),\n    ...restProps\n  }: RadioGroupPrimitive.ItemProps = $props();\n</script>\n\n<RadioGroupPrimitive.Item\n  {value}\n  bind:ref\n  class={cn(\n    'border-border-input bg-background hover:border-dark-40 data-[state=checked]:border-foreground data-[state=checked]:border-6 size-5 shrink-0 cursor-default rounded-full border transition-all duration-100 ease-in-out',\n    className\n  )}\n  data-slot=\"radio\"\n  {...restProps}\n></RadioGroupPrimitive.Item>\n"
+			"content": "<script lang=\"ts\">\n  import { Radio as RadioPrimitive } from '@shardsui/svelte/radio';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let {\n    class: className,\n    ref = $bindable(null),\n    value,\n    ...restProps\n  }: ComponentProps<typeof RadioPrimitive.Root> = $props();\n</script>\n\n<RadioPrimitive.Root\n  bind:ref\n  {value}\n  class={cn(\n    'border-border-input bg-background hover:border-dark-40 data-checked:border-foreground data-checked:border-6 size-5 shrink-0 cursor-default rounded-full border transition-all duration-100 ease-in-out',\n    className\n  )}\n  data-slot=\"radio\"\n  {...restProps}\n/>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "radio-group/radio-group.svelte",
 			"target": "$lib/components/ui/radio-group/radio-group.svelte",
-			"content": "<script lang=\"ts\" module>\n  import { RadioGroup } from 'bits-ui';\n\n  export const RadioGroupItem = RadioGroup.Item;\n</script>\n\n<script lang=\"ts\">\n  import { cn } from '$lib/utils';\n\n  let {\n    children,\n    class: className,\n    ref = $bindable(null),\n    value = $bindable(undefined),\n    ...restProps\n  }: RadioGroup.RootProps = $props();\n</script>\n\n<RadioGroup.Root\n  bind:ref\n  bind:value\n  class={cn('flex flex-col gap-3', className)}\n  data-slot=\"radio-group\"\n  {...restProps}\n>\n  {@render children?.()}\n</RadioGroup.Root>\n"
+			"content": "<script lang=\"ts\">\n  import { RadioGroup as RadioGroupPrimitive } from '@shardsui/svelte/radio-group';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    value = $bindable(),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof RadioGroupPrimitive> = $props();\n</script>\n\n<RadioGroupPrimitive\n  bind:ref\n  bind:value\n  class={cn('flex flex-col gap-3', className)}\n  data-slot=\"radio-group\"\n  {...restProps}\n/>\n"
 		}
 	],
 	"registryDependencies": [
 		"utils"
 	],
 	"dependencies": [
-		"bits-ui@^2.18.1"
+		"@shardsui/svelte@0.1.0-beta.0"
 	]
 }

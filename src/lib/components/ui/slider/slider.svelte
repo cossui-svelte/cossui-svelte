@@ -1,12 +1,7 @@
 <script lang="ts">
-  import { Slider as SliderPrimitive } from 'bits-ui';
+  import { Slider as SliderPrimitive } from '@shardsui/svelte/slider';
   import { on } from 'svelte/events';
-  import {
-    Tooltip,
-    TooltipContent,
-    TooltipProvider,
-    TooltipTrigger
-  } from '$lib/components/ui/tooltip';
+  import { Tooltip, TooltipContent } from '$lib/components/ui/tooltip';
   import { cn } from '$lib/utils';
 
   let {
@@ -30,39 +25,12 @@
     [key: string]: unknown;
   } = $props();
 
-  const type = Array.isArray(value) && value.length > 1 ? 'multiple' : 'single';
-
-  // bits-ui's own `autoSort` prevents crossing by swapping which thumb is
-  // "active" at the collision point, which reads as a jump/handoff rather
-  // than a push. We disable it below and instead push the neighboring
-  // thumb(s) in lockstep with whichever thumb is actually being dragged,
-  // so the same thumb stays under the pointer the whole time.
-  function handleBitsUiValueChange(newValue: number | number[]) {
-    if (thumbCollisionBehavior === 'none' || !Array.isArray(newValue) || newValue.length < 2) {
-      value = newValue;
-      return;
-    }
-    const prev = Array.isArray(value) ? value : newValue;
-    let changedIdx = 0;
-    let maxDelta = -1;
-    for (let i = 0; i < newValue.length; i++) {
-      const delta = Math.abs((newValue[i] ?? 0) - (prev[i] ?? newValue[i] ?? 0));
-      if (delta > maxDelta) {
-        maxDelta = delta;
-        changedIdx = i;
-      }
-    }
-    const result = [...newValue];
-    for (let i = changedIdx + 1; i < result.length; i++) {
-      if (result[i] < result[i - 1]) result[i] = result[i - 1];
-    }
-    for (let i = changedIdx - 1; i >= 0; i--) {
-      if (result[i] > result[i + 1]) result[i] = result[i + 1];
-    }
-    value = result;
-  }
-
   let tooltipOpen = $state(false);
+  let thumbRefs = $state<Record<number, HTMLElement | null>>(
+    Object.fromEntries(
+      Array.from({ length: Array.isArray(value) ? value.length : 1 }, (_, i) => [i, null])
+    )
+  );
 
   function handlePointerUp() {
     tooltipOpen = false;
@@ -77,67 +45,68 @@
       return on(document, 'pointerup', handlePointerUp);
     }
   });
+
+  // `bind:ref` requires an already-`null` (not `undefined`) slot, so every thumb index needs
+  // an entry before its first render.
+  $effect.pre(() => {
+    const count = Array.isArray(value) ? value.length : 1;
+    for (let i = 0; i < count; i++) {
+      if (!(i in thumbRefs)) thumbRefs[i] = null;
+    }
+  });
 </script>
 
-{#snippet thumb(props: SliderPrimitive.ThumbProps)}
+{#snippet thumb(index: number, extra?: Record<string, unknown>)}
   <SliderPrimitive.Thumb
-    class="block size-5 shrink-0 select-none rounded-full border border-input bg-white not-dark:bg-clip-padding shadow-xs/5 outline-none transition-[box-shadow,scale] before:absolute before:inset-0 before:rounded-full before:shadow-[0_1px_--theme(--color-black/4%)] has-focus-visible:ring-[3px] has-focus-visible:ring-ring/24 data-active:scale-120 sm:size-4 dark:border-background dark:has-focus-visible:ring-ring/48 [:has(*:focus-visible),[data-active]]:shadow-none"
+    {index}
+    bind:ref={thumbRefs[index]}
+    class="block size-5 shrink-0 select-none rounded-full border border-input bg-white not-dark:bg-clip-padding shadow-xs/5 outline-none transition-[box-shadow,scale] before:absolute before:inset-0 before:rounded-full before:shadow-[0_1px_--theme(--color-black/4%)] has-focus-visible:ring-[3px] has-focus-visible:ring-ring/24 data-dragging:scale-120 sm:size-4 dark:border-background dark:has-focus-visible:ring-ring/48 [:has(*:focus-visible),[data-dragging]]:shadow-none"
     data-slot="slider-thumb"
-    {...props}
+    {...extra}
   />
 {/snippet}
 
 <SliderPrimitive.Root
   bind:ref
-  bind:value={() => value as never, (v: never) => handleBitsUiValueChange(v as number | number[])}
-  autoSort={false}
+  bind:value
+  thumbCollisionBehavior={thumbCollisionBehavior === 'none' ? 'none' : 'push'}
   {orientation}
-  type={type as never}
-  class={cn(
-    'relative flex touch-none items-center select-none data-disabled:pointer-events-none data-[orientation=horizontal]:w-full data-[orientation=horizontal]:min-w-44 data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:flex-col data-disabled:opacity-64',
-    className
-  )}
+  class={cn('data-[orientation=horizontal]:w-full', className)}
   data-slot="slider"
-  {...restProps}
+  {...restProps as Record<string, unknown>}
 >
-  {#snippet children({ thumbItems })}
-    <span
-      data-orientation={orientation}
-      class="relative grow select-none before:absolute before:rounded-full before:bg-input data-[orientation=horizontal]:h-1 data-[orientation=horizontal]:w-full data-[orientation=horizontal]:before:inset-x-0.5 data-[orientation=horizontal]:before:inset-y-0 data-[orientation=vertical]:h-full data-[orientation=vertical]:w-1 data-[orientation=vertical]:before:inset-x-0 data-[orientation=vertical]:before:inset-y-0.5"
-      data-slot="slider-track"
+  {#snippet children(state)}
+    <SliderPrimitive.Control
+      class="flex touch-none select-none data-disabled:pointer-events-none data-[orientation=horizontal]:w-full data-[orientation=horizontal]:min-w-44 data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:flex-col data-disabled:opacity-64"
+      data-slot="slider-control"
     >
-      <SliderPrimitive.Range
-        data-orientation={orientation}
-        class="absolute select-none rounded-full bg-primary data-[orientation=horizontal]:ms-0.5 data-[orientation=horizontal]:h-full data-[orientation=vertical]:mb-0.5 data-[orientation=vertical]:w-full"
-        data-slot="slider-indicator"
-      />
-    </span>
-    {#each thumbItems as thumbItem (thumbItem.index)}
-      {#if !showTooltip}
-        {@render thumb({ index: thumbItem.index })}
-      {:else}
-        <TooltipProvider>
-          <Tooltip bind:open={tooltipOpen}>
-            <TooltipTrigger>
-              {#snippet child({ props })}
-                {@render thumb({
-                  index: thumbItem.index,
-                  ...props,
-                  onpointerdown: handlePointerDown
-                })}
-              {/snippet}
-            </TooltipTrigger>
-            <TooltipContent
-              side={orientation === 'vertical' ? 'right' : 'top'}
-              sideOffset={8}
-              class="border-input bg-popover text-muted-foreground animate-in fade-in zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 overflow-hidden rounded-md border px-2 py-1 text-xs outline-hidden"
-            >
-              {@const v = Array.isArray(value) ? (value[thumbItem.index] ?? 0) : (value ?? 0)}
-              {tooltipContent ? tooltipContent(v) : v}
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
-      {/if}
-    {/each}
+      <SliderPrimitive.Track
+        class="grow select-none before:absolute before:rounded-full before:bg-input data-[orientation=horizontal]:h-1 data-[orientation=horizontal]:w-full data-[orientation=horizontal]:before:inset-x-0.5 data-[orientation=horizontal]:before:inset-y-0 data-[orientation=vertical]:h-full data-[orientation=vertical]:w-1 data-[orientation=vertical]:before:inset-x-0 data-[orientation=vertical]:before:inset-y-0.5"
+        data-slot="slider-track"
+      >
+        <SliderPrimitive.Indicator
+          class="select-none rounded-full bg-primary data-[orientation=horizontal]:ms-0.5 data-[orientation=vertical]:mb-0.5"
+          data-slot="slider-indicator"
+        />
+        {#each state.values as _thumbValue, index (index)}
+          {#if !showTooltip}
+            {@render thumb(index)}
+          {:else}
+            <Tooltip bind:open={tooltipOpen}>
+              {@render thumb(index, { onpointerdown: handlePointerDown })}
+              <TooltipContent
+                customAnchor={thumbRefs[index]}
+                side={orientation === 'vertical' ? 'right' : 'top'}
+                sideOffset={8}
+                class="border-input bg-popover text-muted-foreground"
+              >
+                {@const v = Array.isArray(value) ? (value[index] ?? 0) : (value ?? 0)}
+                {tooltipContent ? tooltipContent(v) : v}
+              </TooltipContent>
+            </Tooltip>
+          {/if}
+        {/each}
+      </SliderPrimitive.Track>
+    </SliderPrimitive.Control>
   {/snippet}
 </SliderPrimitive.Root>

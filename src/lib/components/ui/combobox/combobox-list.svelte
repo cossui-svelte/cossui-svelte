@@ -1,32 +1,25 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
-  import type { HTMLAttributes } from 'svelte/elements';
+  import { Combobox as ComboboxPrimitive } from '@shardsui/svelte/combobox';
+  import type { ComponentProps, Snippet } from 'svelte';
   import { cn } from '$lib/utils';
-  import { getComboboxCtx } from './combobox.svelte';
 
-  interface Props extends HTMLAttributes<HTMLUListElement> {
+  type Props = Omit<ComponentProps<typeof ComboboxPrimitive.List>, 'children'> & {
     children?: Snippet;
-    empty?: Snippet;
-  }
+  };
 
-  let { class: className, children, empty, ...restProps }: Props = $props();
-
-  const ctx = getComboboxCtx();
-  const hasVisible = $derived(ctx?.hasVisibleItems ?? true);
+  let { ref = $bindable(null), class: className, children, ...restProps }: Props = $props();
 </script>
 
 <div
   class="overflow-y-auto overscroll-contain"
-  style="max-height: min(var(--bits-combobox-content-available-height, 100vh), 23rem)"
+  style="max-height: min(var(--available-height, 100vh), 23rem)"
 >
-  <ul
-    class={cn(hasVisible && 'scroll-py-1 px-1 py-1', className)}
+  <ComboboxPrimitive.List
+    bind:ref
+    class={cn('scroll-py-1 px-1 py-1', className)}
     data-slot="combobox-list"
     {...restProps}
   >
     {@render children?.()}
-  </ul>
-  {#if !hasVisible && empty}
-    {@render empty()}
-  {/if}
+  </ComboboxPrimitive.List>
 </div>

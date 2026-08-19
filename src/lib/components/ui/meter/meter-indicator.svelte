@@ -1,19 +1,19 @@
 <script lang="ts">
-  import { getContext } from 'svelte';
-  import type { HTMLAttributes } from 'svelte/elements';
+  import { Meter as MeterPrimitive } from '@shardsui/svelte/meter';
+  import type { ComponentProps, Snippet } from 'svelte';
   import { cn } from '$lib/utils';
-  import { METER_CONTEXT_KEY, type MeterContext } from './meter.svelte';
 
-  type Props = HTMLAttributes<HTMLDivElement>;
+  type Props = Omit<ComponentProps<typeof MeterPrimitive.Indicator>, 'children'> & {
+    children?: Snippet;
+  };
 
-  let { class: className, ...restProps }: Props = $props();
-
-  const ctx = getContext<MeterContext>(METER_CONTEXT_KEY);
+  let { class: className, children, ...restProps }: Props = $props();
 </script>
 
-<div
-  class={cn('h-full bg-primary transition-all duration-500', className)}
+<MeterPrimitive.Indicator
+  class={cn('bg-primary transition-all duration-500', className)}
   data-slot="meter-indicator"
-  style="width: {ctx.percentage}%"
   {...restProps}
-></div>
+>
+  {@render children?.()}
+</MeterPrimitive.Indicator>

@@ -1,51 +1,42 @@
 <script lang="ts">
-  import { Combobox } from 'bits-ui';
-  import type { Snippet } from 'svelte';
-  import { setContext } from 'svelte';
-  import { cn } from '$lib/utils';
-  import { getComboboxCtx, INSIDE_COMBOBOX_POPUP } from './combobox.svelte';
+  import { Combobox as ComboboxPrimitive } from '@shardsui/svelte/combobox';
+  import type { ComponentProps, Snippet } from 'svelte';
+  import { cn, type WithoutChildren } from '$lib/utils';
 
-  interface Props extends Combobox.ContentProps {
-    align?: 'start' | 'center' | 'end';
-    alignOffset?: number;
+  type Props = Omit<ComponentProps<typeof ComboboxPrimitive.Popup>, 'children'> & {
     children?: Snippet;
-    side?: 'top' | 'right' | 'bottom' | 'left';
-    sideOffset?: number;
-  }
+    side?: ComponentProps<typeof ComboboxPrimitive.Positioner>['side'];
+    align?: ComponentProps<typeof ComboboxPrimitive.Positioner>['align'];
+    sideOffset?: ComponentProps<typeof ComboboxPrimitive.Positioner>['sideOffset'];
+    alignOffset?: ComponentProps<typeof ComboboxPrimitive.Positioner>['alignOffset'];
+    portalProps?: WithoutChildren<ComponentProps<typeof ComboboxPrimitive.Portal>>;
+  };
 
   let {
+    ref = $bindable(null),
     class: className,
     children,
     side = 'bottom',
     sideOffset = 4,
-    alignOffset,
+    alignOffset = 0,
     align = 'start',
+    portalProps,
     ...restProps
   }: Props = $props();
-
-  setContext(INSIDE_COMBOBOX_POPUP, true);
-
-  const ctx = getComboboxCtx();
-  const customAnchor = $derived(ctx?.anchorEl ?? ctx?.triggerEl ?? null);
 </script>
 
-<Combobox.Portal>
-  <Combobox.Content
-    class={cn(
-      'relative flex max-h-full min-w-(--bits-combobox-anchor-width) max-w-(--bits-combobox-content-available-width) origin-[--bits-combobox-content-transform-origin] rounded-lg border bg-popover not-dark:bg-clip-padding shadow-lg/5 transition-[scale,opacity] before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-lg)-1px)] before:shadow-[0_1px_--theme(--color-black/4%)] data-[state=closed]:scale-98 data-[state=closed]:opacity-0 data-[state=open]:scale-100 data-[state=open]:opacity-100 dark:before:shadow-[0_-1px_--theme(--color-white/6%)]',
-      'z-50 select-none',
-      className
-    )}
-    data-slot="combobox-popup"
-    {side}
-    {sideOffset}
-    {alignOffset}
-    {align}
-    customAnchor={customAnchor || undefined}
-    {...restProps}
-  >
-    <div class="flex flex-col text-foreground">
+<ComboboxPrimitive.Portal {...portalProps}>
+  <ComboboxPrimitive.Positioner {side} {align} {sideOffset} {alignOffset} class="z-50 select-none">
+    <ComboboxPrimitive.Popup
+      bind:ref
+      class={cn(
+        'relative flex max-h-full min-w-(--anchor-width) max-w-(--available-width) origin-(--transform-origin) flex-col rounded-lg border bg-popover not-dark:bg-clip-padding text-foreground shadow-lg/5 outline-none transition-[scale,opacity] before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-lg)-1px)] before:shadow-[0_1px_--theme(--color-black/4%)] data-starting-style:scale-98 data-starting-style:opacity-0 data-ending-style:scale-98 data-ending-style:opacity-0 dark:before:shadow-[0_-1px_--theme(--color-white/6%)]',
+        className
+      )}
+      data-slot="combobox-popup"
+      {...restProps}
+    >
       {@render children?.()}
-    </div>
-  </Combobox.Content>
-</Combobox.Portal>
+    </ComboboxPrimitive.Popup>
+  </ComboboxPrimitive.Positioner>
+</ComboboxPrimitive.Portal>

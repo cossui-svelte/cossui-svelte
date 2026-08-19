@@ -1,12 +1,13 @@
 <script lang="ts">
-  import { Avatar as AvatarPrimitive } from 'bits-ui';
+  import { Avatar as AvatarPrimitive } from '@shardsui/svelte/avatar';
+  import type { ComponentProps } from 'svelte';
   import { cn } from '$lib/utils';
 
   let {
     ref = $bindable(null),
     class: className,
     ...restProps
-  }: AvatarPrimitive.ImageProps = $props();
+  }: ComponentProps<typeof AvatarPrimitive.Image> = $props();
 </script>
 
 <AvatarPrimitive.Image

@@ -1,7 +1,7 @@
 <script lang="ts">
   import CheckIcon from '@lucide/svelte/icons/check';
   import CopyIcon from '@lucide/svelte/icons/copy';
-  import { Button } from '$lib/components/ui/button';
+  import { buttonVariants } from '$lib/components/ui/button';
   import { anchoredToastManager } from '$lib/components/ui/toast';
   import {
     Tooltip,
@@ -20,10 +20,10 @@
     navigator.clipboard.writeText('https://cossui-svelte.com');
     isCopied = true;
     anchoredToastManager.add({
-      duration: toastTimeout,
+      data: { tooltipStyle: true },
       positionerProps: { anchor },
-      title: 'Copied!',
-      tooltipStyle: true
+      timeout: toastTimeout,
+      title: 'Copied!'
     });
     setTimeout(() => {
       isCopied = false;
@@ -33,23 +33,17 @@
 
 <TooltipProvider>
   <Tooltip>
-    <TooltipTrigger>
-      {#snippet child({ props })}
-        <Button
-          aria-label="Copy link"
-          disabled={isCopied}
-          size="icon"
-          variant="outline"
-          {...props}
-          onclick={handleCopy}
-        >
-          {#if isCopied}
-            <CheckIcon class="size-4" />
-          {:else}
-            <CopyIcon class="size-4" />
-          {/if}
-        </Button>
-      {/snippet}
+    <TooltipTrigger
+      aria-label="Copy link"
+      class={buttonVariants({ size: 'icon', variant: 'outline' })}
+      disabled={isCopied}
+      onclick={handleCopy}
+    >
+      {#if isCopied}
+        <CheckIcon class="size-4" />
+      {:else}
+        <CopyIcon class="size-4" />
+      {/if}
     </TooltipTrigger>
     <TooltipPopup>
       <p>Copy to clipboard</p>

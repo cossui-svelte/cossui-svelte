@@ -5,8 +5,7 @@
 
   import { goto } from '$app/navigation';
   import { resolve } from '$app/paths';
-  import { mergeProps } from 'svelte-toolbelt';
-  import { Button } from '$lib/components/ui/button';
+  import { Button, buttonVariants } from '$lib/components/ui/button';
   import { Drawer, DrawerPopup } from '$lib/components/ui/drawer';
   import { Spinner } from '$lib/components/ui/spinner';
   import {
@@ -16,6 +15,7 @@
     TooltipTrigger
   } from '$lib/components/ui/tooltip';
   import type { RegistryParticuleEntry } from '$lib/registry/registry-particles';
+  import { cn } from '$lib/utils';
   import ParticleCardContainer from './particle-card-container.svelte';
   import ComponentSource from '$lib/components/app/particle-source.svelte';
   import CodeBlockCommand from '$lib/components/app/code-block-command.svelte';
@@ -54,17 +54,11 @@
     <div class="flex items-center gap-1.5">
       <TooltipProvider>
         <Tooltip>
-          <TooltipTrigger>
-            {#snippet child({ props })}
-              <Button
-                class="text-sm"
-                size="sm"
-                variant="outline"
-                {...mergeProps(props, {
-                  onclick: () => goto(resolve('/particle/[id]', { id: particle.file }))
-                })}><ScanEye /></Button
-              >
-            {/snippet}
+          <TooltipTrigger
+            class={cn(buttonVariants({ size: 'sm', variant: 'outline' }), 'text-sm')}
+            onclick={() => goto(resolve('/particle/[id]', { id: particle.file }))}
+          >
+            <ScanEye />
           </TooltipTrigger>
           <TooltipPopup>
             <p>Single particle view</p>

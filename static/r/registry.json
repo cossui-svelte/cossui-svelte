@@ -9,7 +9,7 @@
 			"description": "A set of collapsible panels with headings and content.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -87,7 +87,7 @@
 			"description": "A dialog that requires user response to proceed.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"button",
@@ -284,7 +284,7 @@
 			"description": "An image element with a fallback for representing the user.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -400,7 +400,7 @@
 			"type": "registry:ui",
 			"dependencies": [
 				"tailwind-variants@^3.3.1",
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"spinner",
@@ -662,7 +662,7 @@
 			"description": "A control allowing the user to toggle between checked and not checked.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -686,7 +686,7 @@
 			"description": "Provides shared state to a series of checkboxes.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -715,7 +715,7 @@
 			"description": "A collapsible panel controlled by a button trigger.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -779,17 +779,12 @@
 			"description": "An input combined with a list of predefined items to select.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
 			],
 			"files": [
-				{
-					"type": "registry:ui",
-					"path": "combobox/combobox-chip-remove.svelte",
-					"target": "$lib/components/ui/combobox/combobox-chip-remove.svelte"
-				},
 				{
 					"type": "registry:ui",
 					"path": "combobox/combobox-chip.svelte",
@@ -809,11 +804,6 @@
 					"type": "registry:ui",
 					"path": "combobox/combobox-clear.svelte",
 					"target": "$lib/components/ui/combobox/combobox-clear.svelte"
-				},
-				{
-					"type": "registry:ui",
-					"path": "combobox/combobox-collection.svelte",
-					"target": "$lib/components/ui/combobox/combobox-collection.svelte"
 				},
 				{
 					"type": "registry:ui",
@@ -989,7 +979,7 @@
 			"description": "A menu that opens on right-click, providing contextual actions.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"kbd",
@@ -1015,6 +1005,11 @@
 					"type": "registry:ui",
 					"path": "context-menu/context-menu-item.svelte",
 					"target": "$lib/components/ui/context-menu/context-menu-item.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "context-menu/context-menu-link-item.svelte",
+					"target": "$lib/components/ui/context-menu/context-menu-link-item.svelte"
 				},
 				{
 					"type": "registry:ui",
@@ -1141,7 +1136,7 @@
 			"description": "A popup that opens on top of the entire page.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"button",
@@ -1217,7 +1212,7 @@
 			"description": "A panel that slides in from the edge of the screen with swipe gestures, snap points, and nested drawer support.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"button",
@@ -1227,8 +1222,8 @@
 			"files": [
 				{
 					"type": "registry:ui",
-					"path": "drawer/ctx.ts",
-					"target": "$lib/components/ui/drawer/ctx.ts"
+					"path": "drawer/drawer-backdrop.svelte",
+					"target": "$lib/components/ui/drawer/drawer-backdrop.svelte"
 				},
 				{
 					"type": "registry:ui",
@@ -1262,13 +1257,48 @@
 				},
 				{
 					"type": "registry:ui",
-					"path": "drawer/drawer-nested.svelte",
-					"target": "$lib/components/ui/drawer/drawer-nested.svelte"
+					"path": "drawer/drawer-menu-checkbox-item.svelte",
+					"target": "$lib/components/ui/drawer/drawer-menu-checkbox-item.svelte"
 				},
 				{
 					"type": "registry:ui",
-					"path": "drawer/drawer-overlay.svelte",
-					"target": "$lib/components/ui/drawer/drawer-overlay.svelte"
+					"path": "drawer/drawer-menu-group-label.svelte",
+					"target": "$lib/components/ui/drawer/drawer-menu-group-label.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "drawer/drawer-menu-group.svelte",
+					"target": "$lib/components/ui/drawer/drawer-menu-group.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "drawer/drawer-menu-item.svelte",
+					"target": "$lib/components/ui/drawer/drawer-menu-item.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "drawer/drawer-menu-radio-group.svelte",
+					"target": "$lib/components/ui/drawer/drawer-menu-radio-group.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "drawer/drawer-menu-radio-item.svelte",
+					"target": "$lib/components/ui/drawer/drawer-menu-radio-item.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "drawer/drawer-menu-separator.svelte",
+					"target": "$lib/components/ui/drawer/drawer-menu-separator.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "drawer/drawer-menu-trigger.svelte",
+					"target": "$lib/components/ui/drawer/drawer-menu-trigger.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "drawer/drawer-menu.svelte",
+					"target": "$lib/components/ui/drawer/drawer-menu.svelte"
 				},
 				{
 					"type": "registry:ui",
@@ -1277,8 +1307,18 @@
 				},
 				{
 					"type": "registry:ui",
+					"path": "drawer/drawer-popup.svelte",
+					"target": "$lib/components/ui/drawer/drawer-popup.svelte"
+				},
+				{
+					"type": "registry:ui",
 					"path": "drawer/drawer-portal.svelte",
 					"target": "$lib/components/ui/drawer/drawer-portal.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "drawer/drawer-swipe-area.svelte",
+					"target": "$lib/components/ui/drawer/drawer-swipe-area.svelte"
 				},
 				{
 					"type": "registry:ui",
@@ -1297,11 +1337,6 @@
 				},
 				{
 					"type": "registry:ui",
-					"path": "drawer/drawer-visible.svelte",
-					"target": "$lib/components/ui/drawer/drawer-visible.svelte"
-				},
-				{
-					"type": "registry:ui",
 					"path": "drawer/drawer.svelte",
 					"target": "$lib/components/ui/drawer/drawer.svelte"
 				},
@@ -1309,96 +1344,6 @@
 					"type": "registry:ui",
 					"path": "drawer/index.ts",
 					"target": "$lib/components/ui/drawer/index.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/internal/constants.ts",
-					"target": "$lib/components/ui/drawer/internal/constants.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/internal/escape-keydown.ts",
-					"target": "$lib/components/ui/drawer/internal/escape-keydown.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/internal/helpers/chain.ts",
-					"target": "$lib/components/ui/drawer/internal/helpers/chain.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/internal/helpers/event-listener.ts",
-					"target": "$lib/components/ui/drawer/internal/helpers/event-listener.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/internal/helpers/index.ts",
-					"target": "$lib/components/ui/drawer/internal/helpers/index.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/internal/helpers/is.ts",
-					"target": "$lib/components/ui/drawer/internal/helpers/is.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/internal/helpers/noop.ts",
-					"target": "$lib/components/ui/drawer/internal/helpers/noop.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/internal/helpers/object.ts",
-					"target": "$lib/components/ui/drawer/internal/helpers/object.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/internal/helpers/options.ts",
-					"target": "$lib/components/ui/drawer/internal/helpers/options.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/internal/helpers/store.ts",
-					"target": "$lib/components/ui/drawer/internal/helpers/store.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/internal/helpers/style.ts",
-					"target": "$lib/components/ui/drawer/internal/helpers/style.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/internal/index.ts",
-					"target": "$lib/components/ui/drawer/internal/index.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/internal/position-fixed.ts",
-					"target": "$lib/components/ui/drawer/internal/position-fixed.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/internal/prevent-scroll.ts",
-					"target": "$lib/components/ui/drawer/internal/prevent-scroll.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/internal/snap-points.ts",
-					"target": "$lib/components/ui/drawer/internal/snap-points.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/internal/types.ts",
-					"target": "$lib/components/ui/drawer/internal/types.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/internal/vaul.ts",
-					"target": "$lib/components/ui/drawer/internal/vaul.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/types.ts",
-					"target": "$lib/components/ui/drawer/types.ts"
 				}
 			]
 		},
@@ -1863,7 +1808,7 @@
 			"description": "A popup that appears when an element is hovered, showing preview information.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -1876,8 +1821,18 @@
 				},
 				{
 					"type": "registry:ui",
+					"path": "link-preview/link-preview-card.svelte",
+					"target": "$lib/components/ui/link-preview/link-preview-card.svelte"
+				},
+				{
+					"type": "registry:ui",
 					"path": "link-preview/link-preview-content.svelte",
 					"target": "$lib/components/ui/link-preview/link-preview-content.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "link-preview/link-preview-trigger.svelte",
+					"target": "$lib/components/ui/link-preview/link-preview-trigger.svelte"
 				}
 			]
 		},
@@ -1977,7 +1932,7 @@
 			"description": "A list of actions in a dropdown, enhanced with keyboard navigation.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -2071,7 +2026,7 @@
 			"description": "A graphical display of a numeric value within a range.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -2201,9 +2156,7 @@
 			"title": "Pagination",
 			"description": "A pagination with page navigation, next and previous links.",
 			"type": "registry:ui",
-			"dependencies": [
-				"bits-ui@^2.18.1"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"utils"
@@ -2295,7 +2248,7 @@
 			"description": "An accessible popup anchored to a button.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -2422,7 +2375,7 @@
 			"description": "A set of checkable buttons where no more than one of the buttons can be checked at a time.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -2503,7 +2456,7 @@
 			"description": "A native scroll container with custom scrollbars.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -2532,7 +2485,7 @@
 			"description": "A common form component for choosing a predefined value in a dropdown menu.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1",
+				"@shardsui/svelte@0.1.0-beta.0",
 				"tailwind-variants@^3.3.1"
 			],
 			"registryDependencies": [
@@ -2602,7 +2555,7 @@
 			"description": "A separator element accessible to screen readers.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -2626,7 +2579,7 @@
 			"description": "A flyout that opens from the side of the screen, based on the dialog component.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils",
@@ -2865,7 +2818,7 @@
 			"description": "An input where the user selects a value from within a given range.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"tooltip",
@@ -3018,7 +2971,7 @@
 			"description": "A control that indicates whether a setting is on or off.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -3099,7 +3052,7 @@
 			"description": "A component for toggling between related panels on the same page.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -3231,8 +3184,7 @@
 			"description": "A temporary notification that appears on screen to inform users.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1",
-				"tailwind-variants@^3.3.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"button",
@@ -3246,108 +3198,33 @@
 				},
 				{
 					"type": "registry:ui",
+					"path": "toast/anchored-toasts.svelte",
+					"target": "$lib/components/ui/toast/anchored-toasts.svelte"
+				},
+				{
+					"type": "registry:ui",
 					"path": "toast/index.ts",
 					"target": "$lib/components/ui/toast/index.ts"
 				},
 				{
 					"type": "registry:ui",
-					"path": "toast/internal/README.md",
-					"target": "$lib/components/ui/toast/internal/README.md"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/internal/VarselItem.svelte",
-					"target": "$lib/components/ui/toast/internal/VarselItem.svelte"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/internal/VarselManager.svelte",
-					"target": "$lib/components/ui/toast/internal/VarselManager.svelte"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/internal/VarselToaster.svelte",
-					"target": "$lib/components/ui/toast/internal/VarselToaster.svelte"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/internal/core/accessibility.ts",
-					"target": "$lib/components/ui/toast/internal/core/accessibility.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/internal/core/animations.ts",
-					"target": "$lib/components/ui/toast/internal/core/animations.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/internal/core/positions.ts",
-					"target": "$lib/components/ui/toast/internal/core/positions.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/internal/core/swipe.ts",
-					"target": "$lib/components/ui/toast/internal/core/swipe.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/internal/core/toast-factory.ts",
-					"target": "$lib/components/ui/toast/internal/core/toast-factory.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/internal/core/toast-state.ts",
-					"target": "$lib/components/ui/toast/internal/core/toast-state.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/internal/core/toaster-instances.ts",
-					"target": "$lib/components/ui/toast/internal/core/toaster-instances.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/internal/core/types.ts",
-					"target": "$lib/components/ui/toast/internal/core/types.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/internal/core/utils.ts",
-					"target": "$lib/components/ui/toast/internal/core/utils.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/internal/core/variants.ts",
-					"target": "$lib/components/ui/toast/internal/core/variants.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/internal/index.ts",
-					"target": "$lib/components/ui/toast/internal/index.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/internal/internals.ts",
-					"target": "$lib/components/ui/toast/internal/internals.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/internal/styles.css",
-					"target": "$lib/components/ui/toast/internal/styles.css"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/internal/variant-icons.ts",
-					"target": "$lib/components/ui/toast/internal/variant-icons.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/toast-manager.svelte.ts",
-					"target": "$lib/components/ui/toast/toast-manager.svelte.ts"
+					"path": "toast/toast-manager.ts",
+					"target": "$lib/components/ui/toast/toast-manager.ts"
 				},
 				{
 					"type": "registry:ui",
 					"path": "toast/toast-provider.svelte",
 					"target": "$lib/components/ui/toast/toast-provider.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "toast/toast-utils.ts",
+					"target": "$lib/components/ui/toast/toast-utils.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "toast/toasts.svelte",
+					"target": "$lib/components/ui/toast/toasts.svelte"
 				}
 			]
 		},
@@ -3357,8 +3234,8 @@
 			"description": "A two-state button that can be toggled on or off.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1",
-				"tailwind-variants@^3.3.1"
+				"tailwind-variants@^3.3.1",
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -3387,7 +3264,7 @@
 			"description": "Provides a shared state to a series of toggle buttons.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"separator",
@@ -3477,7 +3354,7 @@
 			"description": "A popup that appears when an element is hovered or focused, showing a hint for sighted users.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -3497,6 +3374,11 @@
 					"type": "registry:ui",
 					"path": "tooltip/tooltip-provider.svelte",
 					"target": "$lib/components/ui/tooltip/tooltip-provider.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "tooltip/tooltip-trigger.svelte",
+					"target": "$lib/components/ui/tooltip/tooltip-trigger.svelte"
 				},
 				{
 					"type": "registry:ui",

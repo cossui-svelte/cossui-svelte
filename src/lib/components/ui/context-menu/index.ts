@@ -3,6 +3,7 @@ export { default as ContextMenuCheckboxItem } from './context-menu-checkbox-item
 export { default as ContextMenuGroup } from './context-menu-group.svelte';
 export { default as ContextMenuGroupLabel } from './context-menu-group-label.svelte';
 export { default as ContextMenuItem } from './context-menu-item.svelte';
+export { default as ContextMenuLinkItem } from './context-menu-link-item.svelte';
 export { default as ContextMenuPopup } from './context-menu-popup.svelte';
 export { default as ContextMenuRadioGroup } from './context-menu-radio-group.svelte';
 export { default as ContextMenuRadioItem } from './context-menu-radio-item.svelte';

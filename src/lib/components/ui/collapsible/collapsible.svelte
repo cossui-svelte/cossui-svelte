@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { Collapsible } from 'bits-ui';
-  import type { Snippet } from 'svelte';
+  import { Collapsible as CollapsiblePrimitive } from '@shardsui/svelte/collapsible';
+  import type { ComponentProps } from 'svelte';
 
-  type Props = Collapsible.RootProps & { children?: Snippet };
-
-  let { ref = $bindable(null), open = $bindable(false), children, ...restProps }: Props = $props();
+  let {
+    ref = $bindable(null),
+    open = $bindable(false),
+    ...restProps
+  }: ComponentProps<typeof CollapsiblePrimitive.Root> = $props();
 </script>
 
-<Collapsible.Root bind:ref bind:open data-slot="collapsible" {...restProps}>
-  {@render children?.()}
-</Collapsible.Root>
+<CollapsiblePrimitive.Root bind:ref bind:open data-slot="collapsible" {...restProps} />

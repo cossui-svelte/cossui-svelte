@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button } from '$lib/components/ui/button';
+  import { buttonVariants } from '$lib/components/ui/button';
   import {
     Tooltip,
     TooltipPopup,
@@ -10,11 +10,7 @@
 
 <TooltipProvider>
   <Tooltip>
-    <TooltipTrigger>
-      {#snippet child({ props })}
-        <Button variant="outline" {...props}>Hover me</Button>
-      {/snippet}
-    </TooltipTrigger>
+    <TooltipTrigger class={buttonVariants({ variant: 'outline' })}>Hover me</TooltipTrigger>
     <TooltipPopup>Helpful hint</TooltipPopup>
   </Tooltip>
 </TooltipProvider>

@@ -1,8 +1,8 @@
 <script module lang="ts">
-  import type { WithElementRef } from 'bits-ui';
   import type { Snippet } from 'svelte';
   import type { HTMLAnchorAttributes } from 'svelte/elements';
   import { type ButtonSize, buttonVariants } from '$lib/components/ui/button';
+  import type { WithElementRef } from '$lib/utils';
 
   export type Props = WithElementRef<HTMLAnchorAttributes> & {
     children: Snippet;

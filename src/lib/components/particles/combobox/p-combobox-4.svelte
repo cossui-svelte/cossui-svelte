@@ -1,6 +1,7 @@
 <script lang="ts">
   import {
     Combobox,
+    ComboboxCollection,
     ComboboxEmpty,
     ComboboxInput,
     ComboboxItem,
@@ -27,9 +28,11 @@
   <ComboboxPopup>
     <ComboboxEmpty>No results found.</ComboboxEmpty>
     <ComboboxList>
-      {#each items as item (item.value)}
-        <ComboboxItem value={item.value} label={item.label}>{item.label}</ComboboxItem>
-      {/each}
+      <ComboboxCollection>
+        {#snippet children(item: { label: string; value: string })}
+          <ComboboxItem value={item.value} label={item.label}>{item.label}</ComboboxItem>
+        {/snippet}
+      </ComboboxCollection>
     </ComboboxList>
   </ComboboxPopup>
 </Combobox>

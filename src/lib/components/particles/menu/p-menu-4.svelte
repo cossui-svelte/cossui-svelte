@@ -14,12 +14,7 @@
 <Menu>
   <MenuTrigger class={buttonVariants({ variant: 'outline' })}>Open menu</MenuTrigger>
   <MenuPopup>
-    <MenuRadioGroup
-      value={theme}
-      onValueChange={(v) => {
-        theme = v;
-      }}
-    >
+    <MenuRadioGroup bind:value={theme}>
       <MenuRadioItem value="light">Light</MenuRadioItem>
       <MenuRadioItem value="dark">Dark</MenuRadioItem>
       <MenuRadioItem value="system">System</MenuRadioItem>

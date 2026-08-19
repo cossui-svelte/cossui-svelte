@@ -15,37 +15,37 @@
 			"type": "registry:ui",
 			"path": "meter/meter-indicator.svelte",
 			"target": "$lib/components/ui/meter/meter-indicator.svelte",
-			"content": "<script lang=\"ts\">\n  import { getContext } from 'svelte';\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn } from '$lib/utils';\n  import { METER_CONTEXT_KEY, type MeterContext } from './meter.svelte';\n\n  type Props = HTMLAttributes<HTMLDivElement>;\n\n  let { class: className, ...restProps }: Props = $props();\n\n  const ctx = getContext<MeterContext>(METER_CONTEXT_KEY);\n</script>\n\n<div\n  class={cn('h-full bg-primary transition-all duration-500', className)}\n  data-slot=\"meter-indicator\"\n  style=\"width: {ctx.percentage}%\"\n  {...restProps}\n></div>\n"
+			"content": "<script lang=\"ts\">\n  import { Meter as MeterPrimitive } from '@shardsui/svelte/meter';\n  import type { ComponentProps, Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  type Props = Omit<ComponentProps<typeof MeterPrimitive.Indicator>, 'children'> & {\n    children?: Snippet;\n  };\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<MeterPrimitive.Indicator\n  class={cn('bg-primary transition-all duration-500', className)}\n  data-slot=\"meter-indicator\"\n  {...restProps}\n>\n  {@render children?.()}\n</MeterPrimitive.Indicator>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "meter/meter-label.svelte",
 			"target": "$lib/components/ui/meter/meter-label.svelte",
-			"content": "<script lang=\"ts\">\n  import type { Snippet } from 'svelte';\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn } from '$lib/utils';\n\n  interface Props extends HTMLAttributes<HTMLSpanElement> {\n    children?: Snippet;\n  }\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<span\n  class={cn('font-medium text-foreground text-sm', className)}\n  data-slot=\"meter-label\"\n  {...restProps}\n>\n  {@render children?.()}\n</span>\n"
+			"content": "<script lang=\"ts\">\n  import { Meter as MeterPrimitive } from '@shardsui/svelte/meter';\n  import type { ComponentProps, Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  type Props = Omit<ComponentProps<typeof MeterPrimitive.Label>, 'children'> & {\n    children?: Snippet;\n  };\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<MeterPrimitive.Label\n  class={cn('font-medium text-foreground text-sm', className)}\n  data-slot=\"meter-label\"\n  {...restProps}\n>\n  {@render children?.()}\n</MeterPrimitive.Label>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "meter/meter-track.svelte",
 			"target": "$lib/components/ui/meter/meter-track.svelte",
-			"content": "<script lang=\"ts\">\n  import type { Snippet } from 'svelte';\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn } from '$lib/utils';\n\n  interface Props extends HTMLAttributes<HTMLDivElement> {\n    children?: Snippet;\n  }\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<div\n  class={cn('block rounded-full h-2 w-full overflow-hidden bg-input', className)}\n  data-slot=\"meter-track\"\n  {...restProps}\n>\n  {@render children?.()}\n</div>\n"
+			"content": "<script lang=\"ts\">\n  import { Meter as MeterPrimitive } from '@shardsui/svelte/meter';\n  import type { ComponentProps, Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  type Props = Omit<ComponentProps<typeof MeterPrimitive.Track>, 'children'> & {\n    children?: Snippet;\n  };\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<MeterPrimitive.Track\n  class={cn('block h-2 w-full overflow-hidden rounded-full bg-input', className)}\n  data-slot=\"meter-track\"\n  {...restProps}\n>\n  {@render children?.()}\n</MeterPrimitive.Track>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "meter/meter-value.svelte",
 			"target": "$lib/components/ui/meter/meter-value.svelte",
-			"content": "<script lang=\"ts\">\n  import { getContext } from 'svelte';\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn } from '$lib/utils';\n  import { METER_CONTEXT_KEY, type MeterContext } from './meter.svelte';\n\n  type Props = HTMLAttributes<HTMLSpanElement>;\n\n  let { class: className, ...restProps }: Props = $props();\n\n  const ctx = getContext<MeterContext>(METER_CONTEXT_KEY);\n</script>\n\n<span\n  class={cn('text-foreground text-sm tabular-nums', className)}\n  data-slot=\"meter-value\"\n  {...restProps}>{Math.round(ctx.percentage)}%</span\n>\n"
+			"content": "<script lang=\"ts\">\n  import { Meter as MeterPrimitive } from '@shardsui/svelte/meter';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let { class: className, ...restProps }: ComponentProps<typeof MeterPrimitive.Value> = $props();\n</script>\n\n<MeterPrimitive.Value\n  class={cn('text-foreground text-sm tabular-nums', className)}\n  data-slot=\"meter-value\"\n  {...restProps}\n/>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "meter/meter.svelte",
 			"target": "$lib/components/ui/meter/meter.svelte",
-			"content": "<script lang=\"ts\" module>\n  export interface MeterContext {\n    readonly max: number;\n    readonly min: number;\n    readonly percentage: number;\n    readonly value: number;\n  }\n\n  export const METER_CONTEXT_KEY = Symbol.for('cossui:meter');\n</script>\n\n<script lang=\"ts\">\n  import { Meter as MeterPrimitive } from 'bits-ui';\n  import type { Snippet } from 'svelte';\n  import { setContext } from 'svelte';\n  import { cn } from '$lib/utils';\n  import MeterIndicator from './meter-indicator.svelte';\n  import MeterTrack from './meter-track.svelte';\n\n  type Props = MeterPrimitive.RootProps & { children?: Snippet };\n\n  let { class: className, value = 0, min = 0, max = 100, children, ...restProps }: Props = $props();\n\n  let percentage = $derived(((value - min) / (max - min)) * 100);\n\n  setContext<MeterContext>(METER_CONTEXT_KEY, {\n    get max() {\n      return max;\n    },\n    get min() {\n      return min;\n    },\n    get percentage() {\n      return percentage;\n    },\n    get value() {\n      return value;\n    }\n  });\n</script>\n\n<MeterPrimitive.Root\n  class={cn('flex w-full flex-col gap-2', className)}\n  data-slot=\"meter\"\n  {value}\n  {min}\n  {max}\n  {...restProps}\n>\n  {#if children}\n    {@render children()}\n  {:else}\n    <MeterTrack>\n      <MeterIndicator />\n    </MeterTrack>\n  {/if}\n</MeterPrimitive.Root>\n"
+			"content": "<script lang=\"ts\">\n  import { Meter as MeterPrimitive } from '@shardsui/svelte/meter';\n  import type { ComponentProps, Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n  import MeterIndicator from './meter-indicator.svelte';\n  import MeterTrack from './meter-track.svelte';\n\n  type Props = Omit<ComponentProps<typeof MeterPrimitive.Root>, 'children'> & {\n    children?: Snippet;\n  };\n\n  let { class: className, value = 0, min = 0, max = 100, children, ...restProps }: Props = $props();\n</script>\n\n<MeterPrimitive.Root\n  class={cn('flex w-full flex-col gap-2', className)}\n  data-slot=\"meter\"\n  {value}\n  {min}\n  {max}\n  {...restProps}\n>\n  {#if children}\n    {@render children()}\n  {:else}\n    <MeterTrack>\n      <MeterIndicator />\n    </MeterTrack>\n  {/if}\n</MeterPrimitive.Root>\n"
 		}
 	],
 	"registryDependencies": [
 		"utils"
 	],
 	"dependencies": [
-		"bits-ui@^2.18.1"
+		"@shardsui/svelte@0.1.0-beta.0"
 	]
 }

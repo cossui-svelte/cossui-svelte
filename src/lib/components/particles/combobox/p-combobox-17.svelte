@@ -2,6 +2,7 @@
   import Search from '@lucide/svelte/icons/search';
   import {
     Combobox,
+    ComboboxCollection,
     ComboboxEmpty,
     ComboboxInput,
     ComboboxItem,
@@ -60,9 +61,11 @@
     </div>
     <ComboboxEmpty>No timezones found.</ComboboxEmpty>
     <ComboboxList>
-      {#each formattedTimezones as tz (tz.value)}
-        <ComboboxItem value={tz.value} label={tz.label}>{tz.label}</ComboboxItem>
-      {/each}
+      <ComboboxCollection>
+        {#snippet children(tz: { label: string; value: string })}
+          <ComboboxItem value={tz.value} label={tz.label}>{tz.label}</ComboboxItem>
+        {/snippet}
+      </ComboboxCollection>
     </ComboboxList>
   </ComboboxPopup>
 </Combobox>

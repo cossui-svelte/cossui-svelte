@@ -6,7 +6,6 @@
     DrawerDescription,
     DrawerFooter,
     DrawerHeader,
-    DrawerNestedRoot,
     DrawerPanel,
     DrawerPopup,
     DrawerTitle,
@@ -25,7 +24,7 @@
     </DrawerHeader>
     <DrawerFooter variant="bare" class="justify-center sm:justify-center">
       <DrawerClose class={buttonVariants({ variant: 'ghost' })}>Cancel</DrawerClose>
-      <DrawerNestedRoot>
+      <Drawer>
         <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Continue</DrawerTrigger>
         <DrawerPopup showBar>
           <DrawerHeader class="text-center">
@@ -41,7 +40,7 @@
           </DrawerPanel>
           <DrawerFooter variant="bare" class="justify-center sm:justify-center">
             <DrawerClose class={buttonVariants({ variant: 'ghost' })}>Back</DrawerClose>
-            <DrawerNestedRoot>
+            <Drawer>
               <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Continue</DrawerTrigger>
               <DrawerPopup showBar>
                 <DrawerHeader class="text-center">
@@ -56,10 +55,10 @@
                   </div>
                 </DrawerPanel>
               </DrawerPopup>
-            </DrawerNestedRoot>
+            </Drawer>
           </DrawerFooter>
         </DrawerPopup>
-      </DrawerNestedRoot>
+      </Drawer>
     </DrawerFooter>
   </DrawerPopup>
 </Drawer>

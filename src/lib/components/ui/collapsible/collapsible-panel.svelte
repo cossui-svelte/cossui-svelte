@@ -1,20 +1,21 @@
 <script lang="ts">
-  import { Collapsible } from 'bits-ui';
-  import type { Snippet } from 'svelte';
+  import { Collapsible as CollapsiblePrimitive } from '@shardsui/svelte/collapsible';
+  import type { ComponentProps } from 'svelte';
   import { cn } from '$lib/utils';
 
-  type Props = Collapsible.ContentProps & { children?: Snippet };
-
-  let { class: className, children, ...restProps }: Props = $props();
+  let {
+    ref = $bindable(null),
+    class: className,
+    ...restProps
+  }: ComponentProps<typeof CollapsiblePrimitive.Panel> = $props();
 </script>
 
-<Collapsible.Content
+<CollapsiblePrimitive.Panel
+  bind:ref
   class={cn(
-    'overflow-hidden data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down',
+    'h-(--collapsible-panel-height) overflow-hidden transition-[height] duration-200 ease-out data-ending-style:h-0 data-starting-style:h-0',
     className
   )}
   data-slot="collapsible-panel"
   {...restProps}
->
-  {@render children?.()}
-</Collapsible.Content>
+/>

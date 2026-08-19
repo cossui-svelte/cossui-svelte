@@ -6,6 +6,7 @@
     ComboboxChip,
     ComboboxChips,
     ComboboxChipsInput,
+    ComboboxCollection,
     ComboboxEmpty,
     ComboboxItem,
     ComboboxList,
@@ -63,9 +64,11 @@
       <ComboboxPopup>
         <ComboboxEmpty>No items found.</ComboboxEmpty>
         <ComboboxList>
-          {#each items as item (item.value)}
-            <ComboboxItem label={item.label} value={item.value}>{item.label}</ComboboxItem>
-          {/each}
+          <ComboboxCollection>
+            {#snippet children(item: { label: string; value: string })}
+              <ComboboxItem label={item.label} value={item.value}>{item.label}</ComboboxItem>
+            {/snippet}
+          </ComboboxCollection>
         </ComboboxList>
       </ComboboxPopup>
     </Combobox>

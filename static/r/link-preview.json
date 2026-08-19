@@ -9,19 +9,31 @@
 			"type": "registry:ui",
 			"path": "link-preview/index.ts",
 			"target": "$lib/components/ui/link-preview/index.ts",
-			"content": "/* eslint-disable perfectionist/sort-named-exports */\nimport { LinkPreview } from 'bits-ui';\n\nconst { Root: LinkPreviewCard, Trigger: LinkPreviewTrigger } = LinkPreview;\n\nexport { default as LinkPreviewContent } from './link-preview-content.svelte';\nexport { LinkPreview, LinkPreviewCard, LinkPreviewTrigger };\n"
+			"content": "export { default as LinkPreviewCard } from './link-preview-card.svelte';\nexport { default as LinkPreviewContent } from './link-preview-content.svelte';\nexport { default as LinkPreviewTrigger } from './link-preview-trigger.svelte';\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "link-preview/link-preview-card.svelte",
+			"target": "$lib/components/ui/link-preview/link-preview-card.svelte",
+			"content": "<script lang=\"ts\">\n  import { PreviewCard as PreviewCardPrimitive } from '@shardsui/svelte/preview-card';\n  import type { ComponentProps } from 'svelte';\n\n  let { open = $bindable(false), ...restProps }: ComponentProps<typeof PreviewCardPrimitive.Root> =\n    $props();\n</script>\n\n<PreviewCardPrimitive.Root bind:open {...restProps} />\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "link-preview/link-preview-content.svelte",
 			"target": "$lib/components/ui/link-preview/link-preview-content.svelte",
-			"content": "<script lang=\"ts\">\n  import { LinkPreview as LinkPreviewPrimitive, type WithoutChildren } from 'bits-ui';\n  import type { Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let {\n    align = 'center',\n    children,\n    class: className,\n    portalProps,\n    ref = $bindable(null),\n    showArrow = false,\n    sideOffset = 4,\n    ...restProps\n  }: WithoutChildren<LinkPreviewPrimitive.ContentProps> & {\n    children: Snippet;\n    portalProps?: LinkPreviewPrimitive.PortalProps;\n    showArrow?: boolean;\n  } = $props();\n</script>\n\n<LinkPreviewPrimitive.Portal {...portalProps}>\n  <LinkPreviewPrimitive.Content\n    bind:ref\n    {sideOffset}\n    {align}\n    class={cn(\n      'border-border bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out data-[state=open]:fade-in data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 w-64 rounded-lg border p-4 shadow-lg shadow-black/5 outline-hidden',\n      className\n    )}\n    {...restProps}\n  >\n    {@render children()}\n    {#if showArrow}\n      <LinkPreviewPrimitive.Arrow\n        class=\"text-popover -my-px drop-shadow-[0_1px_0_hsl(var(--border))]\"\n      />\n    {/if}\n  </LinkPreviewPrimitive.Content>\n</LinkPreviewPrimitive.Portal>\n"
+			"content": "<script lang=\"ts\">\n  import { PreviewCard as PreviewCardPrimitive } from '@shardsui/svelte/preview-card';\n  import type { ComponentProps, Snippet } from 'svelte';\n  import { cn, type WithoutChildren } from '$lib/utils';\n\n  type Props = Omit<ComponentProps<typeof PreviewCardPrimitive.Popup>, 'children'> & {\n    children?: Snippet;\n    side?: ComponentProps<typeof PreviewCardPrimitive.Positioner>['side'];\n    align?: ComponentProps<typeof PreviewCardPrimitive.Positioner>['align'];\n    sideOffset?: ComponentProps<typeof PreviewCardPrimitive.Positioner>['sideOffset'];\n    alignOffset?: ComponentProps<typeof PreviewCardPrimitive.Positioner>['alignOffset'];\n    showArrow?: boolean;\n    portalProps?: WithoutChildren<ComponentProps<typeof PreviewCardPrimitive.Portal>>;\n  };\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    side = 'bottom',\n    align = 'center',\n    sideOffset = 4,\n    alignOffset,\n    showArrow = false,\n    portalProps,\n    ...restProps\n  }: Props = $props();\n</script>\n\n<PreviewCardPrimitive.Portal {...portalProps}>\n  <PreviewCardPrimitive.Positioner {side} {align} {sideOffset} {alignOffset} class=\"z-50\">\n    <PreviewCardPrimitive.Popup\n      bind:ref\n      class={cn(\n        'origin-(--transform-origin) z-50 w-64 rounded-lg border border-border bg-popover p-4 text-popover-foreground shadow-black/5 shadow-lg outline-hidden transition-[scale,opacity] duration-150 ease-out data-starting-style:scale-98 data-starting-style:opacity-0 data-ending-style:scale-98 data-ending-style:opacity-0',\n        className\n      )}\n      data-slot=\"link-preview-content\"\n      {...restProps}\n    >\n      {@render children?.()}\n      {#if showArrow}\n        <PreviewCardPrimitive.Arrow\n          class=\"text-popover -my-px drop-shadow-[0_1px_0_hsl(var(--border))]\"\n        />\n      {/if}\n    </PreviewCardPrimitive.Popup>\n  </PreviewCardPrimitive.Positioner>\n</PreviewCardPrimitive.Portal>\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "link-preview/link-preview-trigger.svelte",
+			"target": "$lib/components/ui/link-preview/link-preview-trigger.svelte",
+			"content": "<script lang=\"ts\">\n  import { PreviewCard as PreviewCardPrimitive } from '@shardsui/svelte/preview-card';\n  import type { ComponentProps } from 'svelte';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof PreviewCardPrimitive.Trigger> = $props();\n</script>\n\n<PreviewCardPrimitive.Trigger\n  bind:ref\n  class={className}\n  data-slot=\"link-preview-trigger\"\n  {...restProps}\n/>\n"
 		}
 	],
 	"registryDependencies": [
 		"utils"
 	],
 	"dependencies": [
-		"bits-ui@^2.18.1"
+		"@shardsui/svelte@0.1.0-beta.0"
 	]
 }

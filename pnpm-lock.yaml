@@ -23,6 +23,9 @@ importers:
       '@internationalized/date':
         specifier: ^3.12.3
         version: 3.12.3
+      '@shardsui/svelte':
+        specifier: 0.1.0-beta.0
+        version: 0.1.0-beta.0(svelte@5.56.9(@typescript-eslint/types@8.67.0))
       '@shikijs/langs':
         specifier: ^4.4.3
         version: 4.4.3
@@ -1314,6 +1317,11 @@ packages:
     peerDependenciesMeta:
       rollup:
         optional: true
+
+  '@shardsui/svelte@0.1.0-beta.0':
+    resolution: {integrity: sha512-0e76iQvdsduGYAyNCIcM30whShvoFB4LXuk6b19pUL16lKJOoVvuIcXE6dHqehkCcMvjOIFW2VqWud828QwwFw==}
+    peerDependencies:
+      svelte: ^5.40.0
 
   '@shikijs/core@4.4.3':
     resolution: {integrity: sha512-QCR4q2ZO/ILJEuwiBMel4wdcTDb1JGwfjKTxPDF6x8ixOaluPrVqIn06C99AcRPhmYlBR56d/Fb+GN58GzExpg==}
@@ -4605,6 +4613,13 @@ snapshots:
       '@types/estree': 1.0.9
       estree-walker: 2.0.2
       picomatch: 4.0.5
+
+  '@shardsui/svelte@0.1.0-beta.0(svelte@5.56.9(@typescript-eslint/types@8.67.0))':
+    dependencies:
+      '@floating-ui/dom': 1.8.0
+      '@floating-ui/utils': 0.2.12
+      esm-env: 1.2.2
+      svelte: 5.56.9(@typescript-eslint/types@8.67.0)
 
   '@shikijs/core@4.4.3':
     dependencies:

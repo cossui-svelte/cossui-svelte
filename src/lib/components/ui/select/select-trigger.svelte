@@ -1,21 +1,16 @@
 <script lang="ts">
   import ChevronsUpDown from '@lucide/svelte/icons/chevrons-up-down';
-  import { Select as SelectPrimitive, type WithoutChild } from 'bits-ui';
+  import { Select as SelectPrimitive } from '@shardsui/svelte/select';
+  import type { ComponentProps, Snippet } from 'svelte';
   import { cn } from '$lib/utils';
   import { type SelectTriggerVariants, selectTriggerVariants } from './select-trigget-variants';
 
-  interface Props extends SelectPrimitive.TriggerProps {
+  type Props = Omit<ComponentProps<typeof SelectPrimitive.Trigger>, 'children'> & {
     size?: SelectTriggerVariants['size'];
-    // children?: Snippet;
-  }
+    children?: Snippet;
+  };
 
-  let {
-    children,
-    class: className,
-    size,
-    ref = $bindable(null),
-    ...restProps
-  }: WithoutChild<Props> = $props();
+  let { ref = $bindable(null), class: className, size, children, ...restProps }: Props = $props();
 </script>
 
 <SelectPrimitive.Trigger
@@ -27,5 +22,7 @@
   <span class="pointer-events-none flex items-center gap-2">
     {@render children?.()}
   </span>
-  <ChevronsUpDown class="-me-1 size-4.5 opacity-80 sm:size-4" />
+  <SelectPrimitive.Icon class="pointer-events-none" data-slot="select-icon">
+    <ChevronsUpDown class="-me-1 size-4.5 opacity-80 sm:size-4" />
+  </SelectPrimitive.Icon>
 </SelectPrimitive.Trigger>

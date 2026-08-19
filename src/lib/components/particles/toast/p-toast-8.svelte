@@ -16,7 +16,7 @@
     if (!submitEl || isSubmitting) return;
 
     if (toastId) {
-      anchoredToastManager.dismiss(toastId);
+      anchoredToastManager.close(toastId);
       toastId = null;
     }
 

@@ -1,14 +1,12 @@
 <script lang="ts">
-  import { DropdownMenu } from 'bits-ui';
-  import type { Snippet } from 'svelte';
+  import { Menu as MenuPrimitive } from '@shardsui/svelte/menu';
+  import type { ComponentProps } from 'svelte';
 
-  interface Props extends DropdownMenu.TriggerProps {
-    children?: Snippet;
-  }
-
-  let { children, class: className, ...restProps }: Props = $props();
+  let {
+    ref = $bindable(null),
+    class: className,
+    ...restProps
+  }: ComponentProps<typeof MenuPrimitive.Trigger> = $props();
 </script>
 
-<DropdownMenu.Trigger class={className} data-slot="menu-trigger" {...restProps}>
-  {@render children?.()}
-</DropdownMenu.Trigger>
+<MenuPrimitive.Trigger bind:ref class={className} data-slot="menu-trigger" {...restProps} />

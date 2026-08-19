@@ -1,17 +1,17 @@
 <script lang="ts">
-  import { ToggleGroup as ToggleGroupPrimitive } from 'bits-ui';
+  import { Toggle as TogglePrimitive } from '@shardsui/svelte/toggle';
+  import type { ComponentProps } from 'svelte';
   import { cn } from '$lib/utils';
   import { type ToggleSize, type ToggleVariant, toggleVariants } from '../toggle/toggle-variants';
   import { getToggleGroupCtx } from './toggle-group.svelte';
 
   let {
     ref = $bindable(null),
-    value = $bindable(),
     class: className,
     size,
     variant,
     ...restProps
-  }: ToggleGroupPrimitive.ItemProps & {
+  }: ComponentProps<typeof TogglePrimitive> & {
     size?: ToggleSize;
     variant?: ToggleVariant;
   } = $props();
@@ -19,7 +19,8 @@
   const ctx = getToggleGroupCtx();
 </script>
 
-<ToggleGroupPrimitive.Item
+<TogglePrimitive
+  bind:ref
   data-slot="toggle-group-item"
   class={cn(
     toggleVariants({
@@ -28,6 +29,5 @@
     }),
     className
   )}
-  {value}
   {...restProps}
 />

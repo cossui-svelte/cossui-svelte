@@ -1,7 +1,7 @@
 <script lang="ts">
   import Download from '@lucide/svelte/icons/download';
   import X from '@lucide/svelte/icons/x';
-  import { Button } from '$lib/components/ui/button';
+  import { Button, buttonVariants } from '$lib/components/ui/button';
   import { Group, GroupSeparator, GroupText } from '$lib/components/ui/group';
   import { Spinner } from '$lib/components/ui/spinner';
   import { toastManager } from '$lib/components/ui/toast';
@@ -58,7 +58,7 @@
       });
     } catch (err) {
       if (infoToastId) {
-        toastManager.dismiss(infoToastId);
+        toastManager.close(infoToastId);
         infoToastId = null;
       }
 
@@ -100,18 +100,12 @@
       </GroupText>
       <GroupSeparator />
       <Tooltip>
-        <TooltipTrigger>
-          {#snippet child({ props })}
-            <Button
-              aria-label="Cancel download"
-              size="icon"
-              variant="outline"
-              {...props}
-              onclick={handleCancel}
-            >
-              <X aria-hidden="true" />
-            </Button>
-          {/snippet}
+        <TooltipTrigger
+          aria-label="Cancel download"
+          class={buttonVariants({ size: 'icon', variant: 'outline' })}
+          onclick={handleCancel}
+        >
+          <X aria-hidden="true" />
         </TooltipTrigger>
         <TooltipPopup>Cancel</TooltipPopup>
       </Tooltip>

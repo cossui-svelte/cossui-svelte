@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Accordion as AccordionPrimitive, type Orientation } from 'bits-ui';
+  import { Accordion as AccordionPrimitive } from '@shardsui/svelte/accordion';
   import type { HTMLAttributes } from 'svelte/elements';
 
   let {
@@ -7,22 +7,31 @@
     value = $bindable(),
     class: className,
     multiple = false,
+    disabled = false,
     ...restProps
   }: HTMLAttributes<HTMLDivElement> & {
-    ref?: HTMLDivElement | null;
+    ref?: HTMLElement | null;
     value?: string | string[];
     multiple?: boolean;
     disabled?: boolean;
-    loop?: boolean;
-    orientation?: Orientation;
   } = $props();
+
+  const internalValue = $derived.by((): string[] => {
+    if (multiple) return Array.isArray(value) ? value : value != null ? [value] : [];
+    const single = Array.isArray(value) ? value[0] : value;
+    return single != null ? [single] : [];
+  });
 </script>
 
 <AccordionPrimitive.Root
   bind:ref
-  bind:value={value as never}
-  type={(multiple ? 'multiple' : 'single') as never}
+  {disabled}
+  {multiple}
+  value={internalValue}
   class={className}
   data-slot="accordion"
+  onValueChange={(next: string[]) => {
+    value = multiple ? next : next[0];
+  }}
   {...restProps as Record<string, unknown>}
 />

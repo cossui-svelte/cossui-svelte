@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { Separator } from 'bits-ui';
+  import { Separator as SeparatorPrimitive } from '@shardsui/svelte/separator';
+  import type { ComponentProps } from 'svelte';
   import { cn } from '$lib/utils';
 
   let {
@@ -7,12 +8,11 @@
     class: className,
     orientation = 'horizontal',
     ...restProps
-  }: Separator.RootProps & {
-    orientation?: 'horizontal' | 'vertical';
-  } = $props();
+  }: ComponentProps<typeof SeparatorPrimitive> = $props();
 </script>
 
-<Separator.Root
+<SeparatorPrimitive
+  bind:ref
   class={cn(
     "shrink-0 bg-border data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px data-[orientation=vertical]:not-[[class^='h-']]:not-[[class*='_h-']]:self-stretch",
     className

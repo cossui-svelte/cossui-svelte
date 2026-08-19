@@ -15,7 +15,7 @@
 			"type": "registry:ui",
 			"path": "button/button.svelte",
 			"target": "$lib/components/ui/button/button.svelte",
-			"content": "<script lang=\"ts\">\n  import { Button } from 'bits-ui';\n  import type { Snippet } from 'svelte';\n  import { Spinner } from '$lib/components/ui/spinner';\n  import { cn } from '$lib/utils';\n  import { type ButtonSize, type ButtonVariant, buttonVariants } from './button-variants';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    variant,\n    size,\n    children,\n    loading,\n    ...restProps\n  }: Button.RootProps & {\n    variant?: ButtonVariant;\n    size?: ButtonSize;\n    class?: string;\n    children?: Snippet;\n    loading?: boolean;\n  } = $props();\n</script>\n\n<Button.Root\n  bind:ref\n  class={cn(buttonVariants({ size, variant }), className)}\n  data-slot=\"button\"\n  {...restProps}\n>\n  {#if loading === true}\n    <Spinner /> {@render children?.()}\n  {:else}\n    {@render children?.()}\n  {/if}\n</Button.Root>\n"
+			"content": "<script lang=\"ts\">\n  import { Button as ButtonPrimitive } from '@shardsui/svelte/button';\n  import type { ComponentProps, Snippet } from 'svelte';\n  import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';\n  import { Spinner } from '$lib/components/ui/spinner';\n  import { cn } from '$lib/utils';\n  import { type ButtonSize, type ButtonVariant, buttonVariants } from './button-variants';\n\n  type ButtonElementProps = HTMLButtonAttributes & { href?: never };\n  type AnchorElementProps = Omit<HTMLAnchorAttributes, 'type'> & {\n    type?: never;\n    disabled?: HTMLButtonAttributes['disabled'];\n  };\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    variant,\n    size,\n    children,\n    loading,\n    href,\n    disabled,\n    ...restProps\n  }: (ButtonElementProps | AnchorElementProps) & {\n    ref?: HTMLElement | null;\n    variant?: ButtonVariant;\n    size?: ButtonSize;\n    class?: string;\n    children?: Snippet;\n    loading?: boolean;\n  } = $props();\n</script>\n\n{#if href}\n  <!-- eslint-disable svelte/no-navigation-without-resolve -- href is caller-supplied; the caller resolves the route, not this generic button primitive -->\n  <a\n    bind:this={ref}\n    class={cn(buttonVariants({ size, variant }), className)}\n    data-slot=\"button\"\n    href={disabled ? undefined : href}\n    aria-disabled={disabled ? true : undefined}\n    role={disabled ? 'link' : undefined}\n    tabindex={disabled ? -1 : undefined}\n    {...restProps as HTMLAnchorAttributes}\n  >\n    {#if loading === true}\n      <Spinner /> {@render children?.()}\n    {:else}\n      {@render children?.()}\n    {/if}\n  </a>\n  <!-- eslint-enable svelte/no-navigation-without-resolve -->\n{:else}\n  <ButtonPrimitive\n    bind:ref\n    disabled={disabled ?? undefined}\n    class={cn(buttonVariants({ size, variant }), className)}\n    data-slot=\"button\"\n    {...restProps as unknown as ComponentProps<typeof ButtonPrimitive>}\n  >\n    {#if loading === true}\n      <Spinner /> {@render children?.()}\n    {:else}\n      {@render children?.()}\n    {/if}\n  </ButtonPrimitive>\n{/if}\n"
 		},
 		{
 			"type": "registry:ui",
@@ -30,6 +30,6 @@
 	],
 	"dependencies": [
 		"tailwind-variants@^3.3.1",
-		"bits-ui@^2.18.1"
+		"@shardsui/svelte@0.1.0-beta.0"
 	]
 }

@@ -1,4 +1,4 @@
-import { Accordion as AccordionPrimitive } from 'bits-ui';
+import { Accordion as AccordionPrimitive } from '@shardsui/svelte/accordion';
 
 export { default as Accordion } from './accordion.svelte';
 export { default as AccordionItem } from './accordion-item.svelte';

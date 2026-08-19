@@ -15,7 +15,7 @@
   <Collapsible>
     <FrameHeader class="flex-row items-center justify-between px-2 py-2">
       <CollapsibleTrigger
-        class={cn(buttonVariants({ variant: 'ghost' }), 'data-[state=open]:[&_svg]:rotate-180')}
+        class={cn(buttonVariants({ variant: 'ghost' }), 'data-panel-open:[&_svg]:rotate-180')}
       >
         <ChevronDown class="size-4" aria-hidden />
         Section header

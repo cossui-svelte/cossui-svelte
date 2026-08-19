@@ -16,7 +16,7 @@
   const boxes = Array.from({ length: 48 }, (_, i) => i);
 </script>
 
-<Drawer position="bottom" bind:activeSnapPoint={snapPoint} snapPoints={[...snapPoints]}>
+<Drawer position="bottom" bind:snapPoint snapPoints={[...snapPoints]}>
   <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>With snap points</DrawerTrigger>
   <DrawerPopup showBar>
     <DrawerHeader>

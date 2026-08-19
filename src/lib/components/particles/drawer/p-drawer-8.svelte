@@ -7,7 +7,6 @@
     DrawerDescription,
     DrawerFooter,
     DrawerHeader,
-    DrawerNestedRoot,
     DrawerPanel,
     DrawerPopup,
     DrawerTitle,
@@ -47,7 +46,7 @@
       </div>
     </DrawerPanel>
     <DrawerFooter>
-      <DrawerNestedRoot position="right">
+      <Drawer position="right">
         <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Edit details</DrawerTrigger>
         <DrawerPopup variant="inset">
           <DrawerHeader>
@@ -73,7 +72,7 @@
             </DrawerFooter>
           </Form>
         </DrawerPopup>
-      </DrawerNestedRoot>
+      </Drawer>
     </DrawerFooter>
   </DrawerPopup>
 </Drawer>

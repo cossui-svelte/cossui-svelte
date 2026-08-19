@@ -1,19 +1,20 @@
 <script lang="ts">
-  import { AlertDialog as AlertDialogPrimitive } from 'bits-ui';
+  import { AlertDialog as AlertDialogPrimitive } from '@shardsui/svelte/alert-dialog';
+  import type { ComponentProps } from 'svelte';
   import { cn } from '$lib/utils';
 
   let {
     ref = $bindable(null),
     class: className,
     ...restProps
-  }: AlertDialogPrimitive.OverlayProps = $props();
+  }: ComponentProps<typeof AlertDialogPrimitive.Backdrop> = $props();
 </script>
 
-<AlertDialogPrimitive.Overlay
+<AlertDialogPrimitive.Backdrop
   bind:ref
   data-slot="alert-dialog-overlay"
   class={cn(
-    'fixed inset-0 z-50 bg-black/32 backdrop-blur-sm duration-200 fill-mode-both data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in data-[state=closed]:fade-out',
+    'fixed inset-0 z-50 bg-black/32 backdrop-blur-sm transition-opacity duration-200 data-ending-style:opacity-0 data-starting-style:opacity-0',
     className
   )}
   {...restProps}

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button } from '$lib/components/ui/button';
+  import { buttonVariants } from '$lib/components/ui/button';
   import {
     LinkPreviewCard,
     LinkPreviewContent,
@@ -7,11 +7,9 @@
   } from '$lib/components/ui/link-preview';
 </script>
 
-<LinkPreviewCard closeDelay={100} openDelay={10}>
-  <LinkPreviewTrigger>
-    {#snippet child({ props })}
-      <Button variant="link" {...props}>Link (Please mouse hover)</Button>
-    {/snippet}
+<LinkPreviewCard>
+  <LinkPreviewTrigger delay={10} closeDelay={100} class={buttonVariants({ variant: 'link' })}>
+    Link (Please mouse hover)
   </LinkPreviewTrigger>
   <LinkPreviewContent class="flex w-64 flex-col gap-0.5">
     <div class="font-semibold">@svelte</div>

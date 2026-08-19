@@ -1,6 +1,6 @@
 /* eslint-disable perfectionist/sort-named-exports */
 
-import { Select as SelectPrimitive } from 'bits-ui';
+import { Select as SelectPrimitive } from '@shardsui/svelte/select';
 
 export { default as Select } from './select.svelte';
 export { default as SelectContent, default as SelectPopup } from './select-content.svelte';

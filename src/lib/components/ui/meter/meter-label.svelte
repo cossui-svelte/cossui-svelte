@@ -1,19 +1,19 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
-  import type { HTMLAttributes } from 'svelte/elements';
+  import { Meter as MeterPrimitive } from '@shardsui/svelte/meter';
+  import type { ComponentProps, Snippet } from 'svelte';
   import { cn } from '$lib/utils';
 
-  interface Props extends HTMLAttributes<HTMLSpanElement> {
+  type Props = Omit<ComponentProps<typeof MeterPrimitive.Label>, 'children'> & {
     children?: Snippet;
-  }
+  };
 
   let { class: className, children, ...restProps }: Props = $props();
 </script>
 
-<span
+<MeterPrimitive.Label
   class={cn('font-medium text-foreground text-sm', className)}
   data-slot="meter-label"
   {...restProps}
 >
   {@render children?.()}
-</span>
+</MeterPrimitive.Label>
