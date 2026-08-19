@@ -1,6 +1,6 @@
 <script lang="ts">
   import ChevronDown from '@lucide/svelte/icons/chevron-down';
-  import { Calendar as CalendarPrimitive } from 'bits-ui';
+  import * as CalendarPrimitive from './internal';
   import { cn, type WithoutChildrenOrChild } from '$lib/utils';
 
   let {

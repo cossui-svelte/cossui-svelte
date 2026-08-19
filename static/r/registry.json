@@ -426,7 +426,8 @@
 			"type": "registry:ui",
 			"dependencies": [
 				"@internationalized/date@^3.12.3",
-				"bits-ui@^2.18.2"
+				"svelte-toolbelt@^0.10.6",
+				"runed@0.37.1"
 			],
 			"registryDependencies": [
 				"button",
@@ -527,6 +528,146 @@
 					"type": "registry:ui",
 					"path": "calendar/index.ts",
 					"target": "$lib/components/ui/calendar/index.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/announcer.ts",
+					"target": "$lib/components/ui/calendar/internal/announcer.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/arrays.ts",
+					"target": "$lib/components/ui/calendar/internal/arrays.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/attrs.ts",
+					"target": "$lib/components/ui/calendar/internal/attrs.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/bits-config.ts",
+					"target": "$lib/components/ui/calendar/internal/bits-config.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/calendar-helpers.svelte.ts",
+					"target": "$lib/components/ui/calendar/internal/calendar-helpers.svelte.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/calendar-state.svelte.ts",
+					"target": "$lib/components/ui/calendar/internal/calendar-state.svelte.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/date-utils.ts",
+					"target": "$lib/components/ui/calendar/internal/date-utils.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/formatter.ts",
+					"target": "$lib/components/ui/calendar/internal/formatter.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/ids.ts",
+					"target": "$lib/components/ui/calendar/internal/ids.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/index.ts",
+					"target": "$lib/components/ui/calendar/internal/index.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/is.ts",
+					"target": "$lib/components/ui/calendar/internal/is.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/kbd.ts",
+					"target": "$lib/components/ui/calendar/internal/kbd.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/primitives/cell.svelte",
+					"target": "$lib/components/ui/calendar/internal/primitives/cell.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/primitives/day.svelte",
+					"target": "$lib/components/ui/calendar/internal/primitives/day.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/primitives/grid-body.svelte",
+					"target": "$lib/components/ui/calendar/internal/primitives/grid-body.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/primitives/grid-head.svelte",
+					"target": "$lib/components/ui/calendar/internal/primitives/grid-head.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/primitives/grid-row.svelte",
+					"target": "$lib/components/ui/calendar/internal/primitives/grid-row.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/primitives/grid.svelte",
+					"target": "$lib/components/ui/calendar/internal/primitives/grid.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/primitives/head-cell.svelte",
+					"target": "$lib/components/ui/calendar/internal/primitives/head-cell.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/primitives/header.svelte",
+					"target": "$lib/components/ui/calendar/internal/primitives/header.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/primitives/heading.svelte",
+					"target": "$lib/components/ui/calendar/internal/primitives/heading.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/primitives/month-select.svelte",
+					"target": "$lib/components/ui/calendar/internal/primitives/month-select.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/primitives/next-button.svelte",
+					"target": "$lib/components/ui/calendar/internal/primitives/next-button.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/primitives/prev-button.svelte",
+					"target": "$lib/components/ui/calendar/internal/primitives/prev-button.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/primitives/root.svelte",
+					"target": "$lib/components/ui/calendar/internal/primitives/root.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/primitives/year-select.svelte",
+					"target": "$lib/components/ui/calendar/internal/primitives/year-select.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/prop-resolvers.ts",
+					"target": "$lib/components/ui/calendar/internal/prop-resolvers.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/types.ts",
+					"target": "$lib/components/ui/calendar/internal/types.ts"
 				}
 			]
 		},
@@ -2310,7 +2451,8 @@
 			"description": "A calendar component for selecting a date range.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.2",
+				"svelte-toolbelt@^0.10.6",
+				"runed@0.37.1",
 				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
@@ -2323,6 +2465,36 @@
 					"type": "registry:ui",
 					"path": "range-calendar/index.ts",
 					"target": "$lib/components/ui/range-calendar/index.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "range-calendar/internal/index.ts",
+					"target": "$lib/components/ui/range-calendar/internal/index.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "range-calendar/internal/primitives/cell.svelte",
+					"target": "$lib/components/ui/range-calendar/internal/primitives/cell.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "range-calendar/internal/primitives/day.svelte",
+					"target": "$lib/components/ui/range-calendar/internal/primitives/day.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "range-calendar/internal/primitives/root.svelte",
+					"target": "$lib/components/ui/range-calendar/internal/primitives/root.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "range-calendar/internal/range-calendar-state.svelte.ts",
+					"target": "$lib/components/ui/range-calendar/internal/range-calendar-state.svelte.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "range-calendar/internal/types.ts",
+					"target": "$lib/components/ui/range-calendar/internal/types.ts"
 				},
 				{
 					"type": "registry:ui",

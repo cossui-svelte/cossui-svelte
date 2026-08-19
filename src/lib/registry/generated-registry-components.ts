@@ -114,7 +114,7 @@ const allComponents: RegistryUiData = {
     folder: 'calendar',
     isnew: false,
     istodo: false,
-    npmDependencies: ['@internationalized/date', '@lucide/svelte', 'bits-ui'],
+    npmDependencies: ['@internationalized/date', '@lucide/svelte', 'runed', 'svelte-toolbelt'],
     registryDependencies: ['button']
   },
   card: {
@@ -490,7 +490,7 @@ const allComponents: RegistryUiData = {
     folder: 'range-calendar',
     isnew: false,
     istodo: false,
-    npmDependencies: ['@internationalized/date', 'bits-ui'],
+    npmDependencies: ['@internationalized/date', 'runed', 'svelte-toolbelt'],
     registryDependencies: ['button', 'calendar']
   },
   'rich-editor': {

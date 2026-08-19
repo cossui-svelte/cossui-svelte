@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { DateValue } from '@internationalized/date';
   import { isEqualMonth } from '@internationalized/date';
-  import { RangeCalendar as RangeCalendarPrimitive } from 'bits-ui';
+  import * as RangeCalendarPrimitive from './internal';
   import type { Snippet } from 'svelte';
   import type { ButtonVariant } from '$lib/components/ui/button';
   import * as Calendar from '$lib/components/ui/calendar';
