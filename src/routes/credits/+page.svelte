@@ -59,15 +59,6 @@
           rel="noopener noreferrer">Shards UI</a
         > - A Svelte port of Base UI
       </li>
-
-      <li>
-        <a
-          href="https://svelte.dev"
-          class="text-foreground underline underline-offset-4 hover:text-foreground/70 transition-colors"
-          target="_blank"
-          rel="noopener noreferrer">Svelte/SvelteKit</a
-        > - The building the easiest to use and most intuitive frontend framework
-      </li>
       <li>
         <a
           href="https://tailwindcss.com"
@@ -111,6 +102,14 @@
         >
           MapCN-Svelte</a
         > - A full featured map component
+      </li>
+      <li>
+        <a
+          href="https://svelte.dev"
+          class="text-foreground underline underline-offset-4 hover:text-foreground/70 transition-colors"
+          target="_blank"
+          rel="noopener noreferrer">Svelte/SvelteKit</a
+        > - A quite intuitive web framework
       </li>
     </ul>
 

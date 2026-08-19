@@ -40,7 +40,7 @@ Along the way, I noticed that even Coss UI lacks some of the components found in
 - [Places Autocomplete](https://github.com/gurbaaz27/shadcn-google-maps) - Address validation based on gmap
 - [Huey ColorPicker](https://hueycolor.pages.dev/) - A modular color picker
 - [MapCN-Svelte](https://mapcn-svelte.vercel.app/) - A modular map component
-- [Svelte/SvelteKit](https://svelte.dev) - A quite intuitive frontend framework
+- [Svelte/SvelteKit](https://svelte.dev) - A quite intuitive web framework
 
 Other good source of inspiration, sometimes with full component logic just copy/pasted (full credits to their authors):
 
