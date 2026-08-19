@@ -3109,9 +3109,7 @@
 			"title": "Timeline",
 			"description": "A component for displaying a series of events in chronological order.",
 			"type": "registry:ui",
-			"dependencies": [
-				"bits-ui@^2.18.1"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"utils"
 			],

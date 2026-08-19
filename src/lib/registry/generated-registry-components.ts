@@ -669,7 +669,7 @@ const allComponents: RegistryUiData = {
     folder: 'timeline',
     isnew: true,
     istodo: false,
-    npmDependencies: ['bits-ui'],
+    npmDependencies: [],
     registryDependencies: []
   },
   toast: {

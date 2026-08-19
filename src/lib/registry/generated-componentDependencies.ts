@@ -348,7 +348,6 @@ export const COMPONENT_DEPENDENCIES: Record<string, string[]> = {
   starrating: ['tailwind-variants'],
   switch: ['@shardsui/svelte'],
   tabs: ['@shardsui/svelte'],
-  timeline: ['bits-ui'],
   toast: ['@shardsui/svelte'],
   toggle: ['tailwind-variants', '@shardsui/svelte'],
   'toggle-group': ['@shardsui/svelte'],
