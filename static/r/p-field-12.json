@@ -9,18 +9,14 @@
 			"type": "registry:block",
 			"path": "p-field-12.svelte",
 			"target": "$lib/components/particles/field/p-field-12.svelte",
-			"content": "<script lang=\"ts\">\n  import { z } from 'zod';\n  import { Button } from '$lib/components/ui/button';\n  import { Checkbox } from '$lib/components/ui/checkbox';\n  import { Field, FieldLabel } from '$lib/components/ui/field';\n  import { Form } from '$lib/components/ui/form';\n  import { createForm } from '$lib/hooks/use-superform';\n\n  const schema = z.object({\n    terms: z.boolean()\n  });\n\n  const superform = createForm({\n    onUpdated: (data) => {\n      alert(`Terms accepted: ${data.terms}`);\n    },\n    schema\n  });\n\n  const { form: formData, submitting } = superform;\n</script>\n\n<Form class=\"flex w-auto flex-col gap-4\" {superform}>\n  <Field name=\"terms\">\n    <FieldLabel>\n      <Checkbox bind:checked={$formData.terms as boolean | undefined} />\n      Accept terms and conditions\n    </FieldLabel>\n  </Field>\n  <Button loading={$submitting} type=\"submit\">Submit</Button>\n</Form>\n"
+			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n  import { Checkbox } from '$lib/components/ui/checkbox';\n  import { Field, FieldLabel } from '$lib/components/ui/field';\n  import { Form } from '$lib/components/ui/form';\n\n  let loading = $state(false);\n\n  async function handleSubmit(event: SubmitEvent) {\n    event.preventDefault();\n    const formData = new FormData(event.currentTarget as HTMLFormElement);\n    loading = true;\n    await new Promise((r) => setTimeout(r, 800));\n    loading = false;\n    alert(`Terms accepted: ${formData.get('terms') === 'on'}`);\n  }\n</script>\n\n<Form class=\"flex w-auto flex-col gap-4\" onsubmit={handleSubmit}>\n  <Field name=\"terms\">\n    <FieldLabel>\n      <Checkbox />\n      Accept terms and conditions\n    </FieldLabel>\n  </Field>\n  <Button loading={loading} type=\"submit\">Submit</Button>\n</Form>\n"
 		}
 	],
 	"registryDependencies": [
 		"button",
 		"checkbox",
 		"field",
-		"form",
-		"use-superform"
+		"form"
 	],
-	"dependencies": [
-		"zod",
-		"zod@^4.4.3"
-	]
+	"dependencies": []
 }

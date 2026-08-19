@@ -9,18 +9,14 @@
 			"type": "registry:block",
 			"path": "p-field-2.svelte",
 			"target": "$lib/components/particles/field/p-field-2.svelte",
-			"content": "<script lang=\"ts\">\n  import { z } from 'zod';\n  import { Button } from '$lib/components/ui/button';\n  import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';\n  import { Form } from '$lib/components/ui/form';\n  import { Input } from '$lib/components/ui/input';\n  import { createForm } from '$lib/hooks/use-superform';\n\n  const schema = z.object({\n    password: z.string().min(1, { message: 'Please fill out this field.' })\n  });\n\n  const superform = createForm({\n    onUpdated: (_data) => {\n      alert(`Password submitted`);\n    },\n    schema\n  });\n\n  const { form, submitting } = superform;\n</script>\n\n<Form class=\"flex w-full flex-col gap-4\" {superform}>\n  <Field name=\"password\">\n    <FieldLabel>Password <span class=\"text-destructive-foreground\">*</span></FieldLabel>\n    <Input bind:value={$form.password} placeholder=\"Enter password\" type=\"password\" />\n    <FieldError />\n  </Field>\n  <Button loading={$submitting} type=\"submit\">Submit</Button>\n</Form>\n"
+			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n  import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';\n  import { Form } from '$lib/components/ui/form';\n  import { Input } from '$lib/components/ui/input';\n\n  let loading = $state(false);\n\n  async function handleSubmit(event: SubmitEvent) {\n    event.preventDefault();\n    loading = true;\n    await new Promise((r) => setTimeout(r, 800));\n    loading = false;\n    alert('Password submitted');\n  }\n</script>\n\n<Form class=\"flex w-full flex-col gap-4\" onsubmit={handleSubmit}>\n  <Field name=\"password\">\n    <FieldLabel>Password <span class=\"text-destructive-foreground\">*</span></FieldLabel>\n    <Input placeholder=\"Enter password\" required type=\"password\" />\n    <FieldError>Please fill out this field.</FieldError>\n  </Field>\n  <Button loading={loading} type=\"submit\">Submit</Button>\n</Form>\n"
 		}
 	],
 	"registryDependencies": [
 		"button",
 		"field",
 		"form",
-		"input",
-		"use-superform"
+		"input"
 	],
-	"dependencies": [
-		"zod",
-		"zod@^4.4.3"
-	]
+	"dependencies": []
 }

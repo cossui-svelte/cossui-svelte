@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { z } from 'zod';
   import { Button } from '$lib/components/ui/button';
   import {
     Combobox,
@@ -12,7 +11,6 @@
   } from '$lib/components/ui/combobox';
   import { Field, FieldDescription, FieldError, FieldLabel } from '$lib/components/ui/field';
   import { Form } from '$lib/components/ui/form';
-  import { createForm } from '$lib/hooks/use-superform';
 
   const items = [
     { label: 'Apple', value: 'apple' },
@@ -27,24 +25,22 @@
     { label: 'Strawberry', value: 'strawberry' }
   ];
 
-  const schema = z.object({
-    fruit: z.string().min(1, { message: 'Please select a fruit.' })
-  });
+  let loading = $state(false);
 
-  const superform = createForm({
-    onUpdated: (data) => {
-      alert(`Fruit: ${data.fruit}`);
-    },
-    schema
-  });
-
-  const { form, submitting } = superform;
+  async function handleSubmit(event: SubmitEvent) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget as HTMLFormElement);
+    loading = true;
+    await new Promise((r) => setTimeout(r, 800));
+    loading = false;
+    alert(`Fruit: ${formData.get('fruit') ?? ''}`);
+  }
 </script>
 
-<Form class="flex w-full flex-col gap-4" {superform}>
+<Form class="flex w-full flex-col gap-4" onsubmit={handleSubmit}>
   <Field name="fruit">
     <FieldLabel>Fruits</FieldLabel>
-    <Combobox bind:value={$form.fruit} {items}>
+    <Combobox {items}>
       <ComboboxInput aria-label="Select an item" placeholder="Select an item..." />
       <ComboboxPopup>
         <ComboboxEmpty>No results found.</ComboboxEmpty>
@@ -58,7 +54,7 @@
       </ComboboxPopup>
     </Combobox>
     <FieldDescription>Select a item.</FieldDescription>
-    <FieldError />
+    <FieldError>Please select a fruit.</FieldError>
   </Field>
-  <Button loading={$submitting} type="submit">Submit</Button>
+  <Button {loading} type="submit">Submit</Button>
 </Form>

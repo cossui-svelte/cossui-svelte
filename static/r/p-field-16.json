@@ -9,18 +9,14 @@
 			"type": "registry:block",
 			"path": "p-field-16.svelte",
 			"target": "$lib/components/particles/field/p-field-16.svelte",
-			"content": "<script lang=\"ts\">\n  import { z } from 'zod';\n  import { Button } from '$lib/components/ui/button';\n  import { Field, FieldDescription, FieldError, FieldLabel } from '$lib/components/ui/field';\n  import { Form } from '$lib/components/ui/form';\n  import { Slider } from '$lib/components/ui/slider';\n  import { createForm } from '$lib/hooks/use-superform';\n\n  const schema = z.object({\n    volume: z.number().optional()\n  });\n\n  const superform = createForm({\n    initialData: { volume: 50 },\n    onUpdated: (data) => {\n      alert(`Volume: ${data.volume ?? 50}`);\n    },\n    schema\n  });\n\n  const { form, submitting } = superform;\n</script>\n\n<Form class=\"flex w-full flex-col gap-4\" {superform}>\n  <Field class=\"items-stretch gap-3\" name=\"volume\">\n    <FieldLabel>Volume</FieldLabel>\n    <Slider bind:value={$form.volume} />\n    <FieldDescription>This is an optional field</FieldDescription>\n    <FieldError />\n  </Field>\n  <Button loading={$submitting} type=\"submit\">Submit</Button>\n</Form>\n"
+			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n  import { Field, FieldDescription, FieldError, FieldLabel } from '$lib/components/ui/field';\n  import { Form } from '$lib/components/ui/form';\n  import { Slider } from '$lib/components/ui/slider';\n\n  let loading = $state(false);\n\n  async function handleSubmit(event: SubmitEvent) {\n    event.preventDefault();\n    const formData = new FormData(event.currentTarget as HTMLFormElement);\n    loading = true;\n    await new Promise((r) => setTimeout(r, 800));\n    loading = false;\n    alert(`Volume: ${formData.get('volume') ?? 50}`);\n  }\n</script>\n\n<Form class=\"flex w-full flex-col gap-4\" onsubmit={handleSubmit}>\n  <Field class=\"items-stretch gap-3\" name=\"volume\">\n    <FieldLabel>Volume</FieldLabel>\n    <Slider value={50} />\n    <FieldDescription>This is an optional field</FieldDescription>\n    <FieldError />\n  </Field>\n  <Button loading={loading} type=\"submit\">Submit</Button>\n</Form>\n"
 		}
 	],
 	"registryDependencies": [
 		"button",
 		"field",
 		"form",
-		"slider",
-		"use-superform"
+		"slider"
 	],
-	"dependencies": [
-		"zod",
-		"zod@^4.4.3"
-	]
+	"dependencies": []
 }

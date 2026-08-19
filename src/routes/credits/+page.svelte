@@ -86,14 +86,6 @@
       </li>
       <li>
         <a
-          href="https://superforms.rocks/"
-          class="text-foreground underline underline-offset-4 hover:text-foreground/70 transition-colors"
-          target="_blank"
-          rel="noopener noreferrer">FormSnap & Superforms</a
-        > - A full featured headless validation framework
-      </li>
-      <li>
-        <a
           href="https://github.com/gurbaaz27/shadcn-google-maps"
           class="text-foreground underline underline-offset-4 hover:text-foreground/70 transition-colors"
           target="_blank"

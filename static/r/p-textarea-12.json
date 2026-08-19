@@ -9,18 +9,14 @@
 			"type": "registry:block",
 			"path": "p-textarea-12.svelte",
 			"target": "$lib/components/particles/textarea/p-textarea-12.svelte",
-			"content": "<script lang=\"ts\">\n  import { z } from 'zod';\n  import { Button } from '$lib/components/ui/button';\n  import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';\n  import { Form } from '$lib/components/ui/form';\n  import { Textarea } from '$lib/components/ui/textarea';\n  import { createForm } from '$lib/hooks/use-superform';\n\n  const schema = z.object({\n    message: z.string().min(1, { message: 'Please fill out this field.' })\n  });\n\n  const superform = createForm({\n    onUpdated: (data) => {\n      alert(`Message: ${data.message}`);\n    },\n    schema\n  });\n\n  const { form, submitting } = superform;\n</script>\n\n<Form class=\"flex w-full flex-col gap-4\" {superform}>\n  <Field name=\"message\">\n    <FieldLabel class=\"text-sm font-medium\">\n      Message <span class=\"text-destructive-foreground\">*</span>\n    </FieldLabel>\n    <Textarea bind:value={$form.message} placeholder=\"Type your message here\" />\n    <FieldError />\n  </Field>\n  <Button loading={$submitting} type=\"submit\">Submit</Button>\n</Form>\n"
+			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n  import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';\n  import { Form } from '$lib/components/ui/form';\n  import { Textarea } from '$lib/components/ui/textarea';\n\n  let loading = $state(false);\n\n  async function handleSubmit(event: SubmitEvent) {\n    event.preventDefault();\n    const formData = new FormData(event.currentTarget as HTMLFormElement);\n    loading = true;\n    await new Promise((r) => setTimeout(r, 800));\n    loading = false;\n    alert(`Message: ${formData.get('message') ?? ''}`);\n  }\n</script>\n\n<Form class=\"flex w-full flex-col gap-4\" onsubmit={handleSubmit}>\n  <Field name=\"message\">\n    <FieldLabel class=\"text-sm font-medium\">\n      Message <span class=\"text-destructive-foreground\">*</span>\n    </FieldLabel>\n    <Textarea placeholder=\"Type your message here\" required />\n    <FieldError>Please fill out this field.</FieldError>\n  </Field>\n  <Button loading={loading} type=\"submit\">Submit</Button>\n</Form>\n"
 		}
 	],
 	"registryDependencies": [
 		"button",
 		"field",
 		"form",
-		"textarea",
-		"use-superform"
+		"textarea"
 	],
-	"dependencies": [
-		"zod",
-		"zod@^4.4.3"
-	]
+	"dependencies": []
 }

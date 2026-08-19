@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { z } from 'zod';
   import { Button, buttonVariants } from '$lib/components/ui/button';
   import {
     Drawer,
@@ -15,22 +14,6 @@
   import { Field, FieldLabel } from '$lib/components/ui/field';
   import { Form } from '$lib/components/ui/form';
   import { Input } from '$lib/components/ui/input';
-  import { createForm } from '$lib/hooks/use-superform';
-
-  const schema = z.object({
-    name: z.string().min(1),
-    username: z.string().min(1)
-  });
-
-  const defaultFooterForm = createForm({
-    initialData: { name: 'Margaret Welsh', username: '@maggie.welsh' },
-    schema
-  });
-
-  const bareFooterForm = createForm({
-    initialData: { name: 'Margaret Welsh', username: '@maggie.welsh' },
-    schema
-  });
 </script>
 
 <div class="flex flex-wrap gap-2">
@@ -43,15 +26,15 @@
           Make changes to your profile here. Click save when you're done.
         </DrawerDescription>
       </DrawerHeader>
-      <Form superform={defaultFooterForm} class="contents">
+      <Form class="contents">
         <DrawerPanel class="grid gap-4">
-          <Field name="name">
+          <Field>
             <FieldLabel>Name</FieldLabel>
-            <Input type="text" />
+            <Input type="text" value="Margaret Welsh" />
           </Field>
-          <Field name="username">
+          <Field>
             <FieldLabel>Username</FieldLabel>
-            <Input type="text" />
+            <Input type="text" value="@maggie.welsh" />
           </Field>
         </DrawerPanel>
         <DrawerFooter>
@@ -71,15 +54,15 @@
           Make changes to your profile here. Click save when you're done.
         </DrawerDescription>
       </DrawerHeader>
-      <Form superform={bareFooterForm} class="contents">
+      <Form class="contents">
         <DrawerPanel class="grid gap-4">
-          <Field name="name">
+          <Field>
             <FieldLabel>Name</FieldLabel>
-            <Input type="text" />
+            <Input type="text" value="Margaret Welsh" />
           </Field>
-          <Field name="username">
+          <Field>
             <FieldLabel>Username</FieldLabel>
-            <Input type="text" />
+            <Input type="text" value="@maggie.welsh" />
           </Field>
         </DrawerPanel>
         <DrawerFooter variant="bare">

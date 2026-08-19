@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { z } from 'zod';
   import {
     AlertDialog,
     AlertDialogClose,
@@ -24,23 +23,10 @@
   import { Field } from '$lib/components/ui/field';
   import { Form } from '$lib/components/ui/form';
   import { Textarea } from '$lib/components/ui/textarea';
-  import { createForm } from '$lib/hooks/use-superform';
 
   let dialogOpen = $state(false);
   let confirmOpen = $state(false);
   let value = $state('');
-
-  const schema = z.object({
-    v: z.string().min(1)
-  });
-
-  const superform = createForm({
-    initialData: { v: 'some text' },
-    onUpdated: () => {
-      dialogOpen = false;
-    },
-    schema
-  });
 </script>
 
 <Dialog
@@ -66,9 +52,9 @@
       <DialogTitle>New message</DialogTitle>
       <DialogDescription>Type something and try closing.</DialogDescription>
     </DialogHeader>
-    <Form {superform} class="contents">
+    <Form class="contents">
       <DialogPanel>
-        <Field name="v">
+        <Field>
           <Textarea bind:value />
         </Field>
       </DialogPanel>

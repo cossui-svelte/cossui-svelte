@@ -1,47 +1,33 @@
 <script lang="ts">
   import { type DateValue, getLocalTimeZone, parseDate, today } from '@internationalized/date';
   import CalendarIcon from '@lucide/svelte/icons/calendar';
-  import { z } from 'zod';
   import { Button } from '$lib/components/ui/button';
   import { Calendar } from '$lib/components/ui/calendar';
   import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';
   import { Form } from '$lib/components/ui/form';
   import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';
-  import { createForm } from '$lib/hooks/use-superform';
 
   const todayValue = today(getLocalTimeZone());
 
-  const schema = z.object({
-    date: z.string().min(1, { message: 'Please select a date.' })
-  });
-
-  const superform = createForm({
-    initialData: { date: todayValue.toString() },
-    onUpdated: (data) => {
-      alert(`Selected date: ${data.date}`);
-    },
-    schema
-  });
-
-  const { form: formData, submitting } = superform;
-
+  let loading = $state(false);
   let value = $state<DateValue | undefined>(todayValue);
   let placeholder = $state<DateValue>(todayValue);
+  let dateText = $state(todayValue.toString());
 
   function handleCalendarSelect(selectedDate: DateValue | undefined) {
     if (!selectedDate) {
-      $formData.date = '';
+      dateText = '';
       value = undefined;
       return;
     }
     value = selectedDate;
     placeholder = selectedDate;
-    $formData.date = selectedDate.toString();
+    dateText = selectedDate.toString();
   }
 
   function handleInputChange(e: Event & { currentTarget: HTMLInputElement }) {
     const rawValue = e.currentTarget.value;
-    $formData.date = rawValue;
+    dateText = rawValue;
 
     if (!rawValue) {
       value = undefined;
@@ -56,9 +42,17 @@
       // ignore invalid dates while typing
     }
   }
+
+  async function handleSubmit(event: SubmitEvent) {
+    event.preventDefault();
+    loading = true;
+    await new Promise((r) => setTimeout(r, 800));
+    loading = false;
+    alert(`Selected date: ${dateText}`);
+  }
 </script>
 
-<Form class="flex flex-col gap-2" {superform}>
+<Form class="flex flex-col gap-2" onsubmit={handleSubmit}>
   <Calendar bind:placeholder bind:value onValueChange={handleCalendarSelect} mode="single" />
   <Field class="flex-row items-center gap-4" name="date">
     <FieldLabel class="whitespace-nowrap">Enter date</FieldLabel>
@@ -68,7 +62,7 @@
         class="*:[input]:[&::-webkit-calendar-picker-indicator]:hidden *:[input]:[&::-webkit-calendar-picker-indicator]:appearance-none"
         onchange={handleInputChange}
         type="date"
-        value={$formData.date}
+        value={dateText}
       />
       <InputGroupAddon>
         <CalendarIcon aria-hidden="true" />
@@ -76,5 +70,5 @@
     </InputGroup>
     <FieldError />
   </Field>
-  <Button loading={$submitting} type="submit">Submit</Button>
+  <Button {loading} type="submit">Submit</Button>
 </Form>

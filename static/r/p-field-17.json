@@ -9,18 +9,14 @@
 			"type": "registry:block",
 			"path": "p-field-17.svelte",
 			"target": "$lib/components/particles/field/p-field-17.svelte",
-			"content": "<script lang=\"ts\">\n  import { z } from 'zod';\n  import { Button } from '$lib/components/ui/button';\n  import { Field, FieldDescription, FieldError } from '$lib/components/ui/field';\n  import { Form } from '$lib/components/ui/form';\n  import {\n    NumberField,\n    NumberFieldDecrement,\n    NumberFieldGroup,\n    NumberFieldIncrement,\n    NumberFieldInput,\n    NumberFieldScrubArea\n  } from '$lib/components/ui/number-field';\n  import { createForm } from '$lib/hooks/use-superform';\n\n  const schema = z.object({\n    quantity: z.number().min(1).max(100)\n  });\n\n  const superform = createForm({\n    initialData: { quantity: 1 },\n    onUpdated: (data) => {\n      alert(`Quantity: ${data.quantity}`);\n    },\n    schema\n  });\n\n  const { form, submitting } = superform;\n</script>\n\n<Form class=\"flex w-full flex-col gap-4\" {superform}>\n  <Field name=\"quantity\">\n    <NumberField bind:value={$form.quantity} max={100} min={1}>\n      <NumberFieldScrubArea label=\"Quantity\" />\n      <NumberFieldGroup>\n        <NumberFieldDecrement />\n        <NumberFieldInput />\n        <NumberFieldIncrement />\n      </NumberFieldGroup>\n    </NumberField>\n    <FieldDescription>Choose a value between 1 and 100.</FieldDescription>\n    <FieldError />\n  </Field>\n  <Button loading={$submitting} type=\"submit\">Submit</Button>\n</Form>\n"
+			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n  import { Field, FieldDescription, FieldError } from '$lib/components/ui/field';\n  import { Form } from '$lib/components/ui/form';\n  import {\n    NumberField,\n    NumberFieldDecrement,\n    NumberFieldGroup,\n    NumberFieldIncrement,\n    NumberFieldInput,\n    NumberFieldScrubArea\n  } from '$lib/components/ui/number-field';\n\n  let quantity = $state(1);\n  let loading = $state(false);\n\n  async function handleSubmit(event: SubmitEvent) {\n    event.preventDefault();\n    loading = true;\n    await new Promise((r) => setTimeout(r, 800));\n    loading = false;\n    alert(`Quantity: ${quantity}`);\n  }\n</script>\n\n<Form class=\"flex w-full flex-col gap-4\" onsubmit={handleSubmit}>\n  <Field name=\"quantity\">\n    <NumberField bind:value={quantity} max={100} min={1}>\n      <NumberFieldScrubArea label=\"Quantity\" />\n      <NumberFieldGroup>\n        <NumberFieldDecrement />\n        <NumberFieldInput />\n        <NumberFieldIncrement />\n      </NumberFieldGroup>\n    </NumberField>\n    <FieldDescription>Choose a value between 1 and 100.</FieldDescription>\n    <FieldError />\n  </Field>\n  <Button loading={loading} type=\"submit\">Submit</Button>\n</Form>\n"
 		}
 	],
 	"registryDependencies": [
 		"button",
 		"field",
 		"form",
-		"number-field",
-		"use-superform"
+		"number-field"
 	],
-	"dependencies": [
-		"zod",
-		"zod@^4.4.3"
-	]
+	"dependencies": []
 }

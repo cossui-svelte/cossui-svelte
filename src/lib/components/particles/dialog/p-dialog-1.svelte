@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { z } from 'zod';
   import { Button, buttonVariants } from '$lib/components/ui/button';
   import {
     Dialog,
@@ -15,17 +14,6 @@
   import { Field, FieldLabel } from '$lib/components/ui/field';
   import { Form } from '$lib/components/ui/form';
   import { Input } from '$lib/components/ui/input';
-  import { createForm } from '$lib/hooks/use-superform';
-
-  const schema = z.object({
-    name: z.string().min(1),
-    username: z.string().min(1)
-  });
-
-  const superform = createForm({
-    initialData: { name: 'Pedro Duarte', username: '@peduarte' },
-    schema
-  });
 </script>
 
 <Dialog>
@@ -37,15 +25,15 @@
         Make changes to your profile here. Click save when you're done.
       </DialogDescription>
     </DialogHeader>
-    <Form {superform} class="contents">
+    <Form class="contents">
       <DialogPanel>
-        <Field name="name">
+        <Field>
           <FieldLabel>Name</FieldLabel>
-          <Input />
+          <Input value="Pedro Duarte" />
         </Field>
-        <Field name="username">
+        <Field>
           <FieldLabel>Username</FieldLabel>
-          <Input />
+          <Input value="@peduarte" />
         </Field>
       </DialogPanel>
       <DialogFooter>

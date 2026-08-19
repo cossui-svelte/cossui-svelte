@@ -15,7 +15,7 @@
 			"type": "registry:ui",
 			"path": "fieldset/fieldset.svelte",
 			"target": "$lib/components/ui/fieldset/fieldset.svelte",
-			"content": "<script lang=\"ts\">\n  import { Fieldset as FieldsetPrimitive } from '@shardsui/svelte/fieldset';\n  import type { ComponentProps } from 'svelte';\n\n  let {\n    ref = $bindable(null),\n    ...restProps\n  }: ComponentProps<typeof FieldsetPrimitive.Root> = $props();\n</script>\n\n<FieldsetPrimitive.Root bind:ref data-slot=\"fieldset\" {...restProps} />\n"
+			"content": "<script lang=\"ts\">\n  import { Fieldset as FieldsetPrimitive } from '@shardsui/svelte/fieldset';\n  import type { ComponentProps } from 'svelte';\n\n  let { ref = $bindable(null), ...restProps }: ComponentProps<typeof FieldsetPrimitive.Root> =\n    $props();\n</script>\n\n<FieldsetPrimitive.Root bind:ref data-slot=\"fieldset\" {...restProps} />\n"
 		},
 		{
 			"type": "registry:ui",

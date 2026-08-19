@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { z } from 'zod';
   import { Button } from '$lib/components/ui/button';
   import {
     Combobox,
@@ -12,7 +11,6 @@
   } from '$lib/components/ui/combobox';
   import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';
   import { Form } from '$lib/components/ui/form';
-  import { createForm } from '$lib/hooks/use-superform';
 
   const items = [
     { label: 'Apple', value: 'apple' },
@@ -27,22 +25,22 @@
     { label: 'Pear', value: 'pear' }
   ];
 
-  const schema = z.object({
-    item: z.string().min(1, { message: 'Please select a item.' })
-  });
+  let loading = $state(false);
 
-  const superform = createForm({
-    onUpdated: ({ item }) => alert(`Favorite item: ${item}`),
-    schema
-  });
-
-  const { form, submitting } = superform;
+  async function handleSubmit(event: SubmitEvent) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget as HTMLFormElement);
+    loading = true;
+    await new Promise((r) => setTimeout(r, 800));
+    loading = false;
+    alert(`Favorite item: ${formData.get('item') ?? ''}`);
+  }
 </script>
 
-<Form class="flex w-full max-w-64 flex-col gap-4" {superform}>
+<Form class="flex w-full max-w-64 flex-col gap-4" onsubmit={handleSubmit}>
   <Field name="item">
     <FieldLabel>Favorite item</FieldLabel>
-    <Combobox bind:value={$form.item} {items}>
+    <Combobox {items}>
       <ComboboxInput placeholder="Select an item..." />
       <ComboboxPopup>
         <ComboboxEmpty>No results found.</ComboboxEmpty>
@@ -57,5 +55,5 @@
     </Combobox>
     <FieldError />
   </Field>
-  <Button loading={$submitting} type="submit">Submit</Button>
+  <Button {loading} type="submit">Submit</Button>
 </Form>

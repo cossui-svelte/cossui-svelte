@@ -60,3 +60,4 @@ minimumReleaseAgeExclude:
   - '@typescript-eslint/type-utils@8.67.0'
   - maplibre-gl@6.3.0
   - '@layerstack/utils@2.0.0-next.19'
+  - bits-ui@2.18.2

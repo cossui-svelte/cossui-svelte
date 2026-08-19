@@ -3591,25 +3591,6 @@
 			]
 		},
 		{
-			"name": "use-superform",
-			"title": "Use Superform",
-			"type": "registry:hook",
-			"dependencies": [
-				"sveltekit-superforms@^2.30.2",
-				"zod@^4.4.3"
-			],
-			"registryDependencies": [
-				"use-uid"
-			],
-			"files": [
-				{
-					"type": "registry:hook",
-					"path": "use-superform.ts",
-					"target": "$lib/hooks/use-superform.ts"
-				}
-			]
-		},
-		{
 			"name": "use-uid",
 			"title": "Use Uid",
 			"type": "registry:hook",
@@ -4514,16 +4495,12 @@
 			"title": "Autocomplete 13",
 			"description": "Autocomplete form",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"autocomplete",
 				"button",
 				"field",
-				"form",
-				"use-superform"
+				"form"
 			],
 			"files": [
 				{
@@ -6388,17 +6365,14 @@
 			"dependencies": [
 				"@internationalized/date",
 				"@lucide/svelte",
-				"zod",
-				"@internationalized/date@^3.12.3",
-				"zod@^4.4.3"
+				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
 				"button",
 				"calendar",
 				"field",
 				"form",
-				"input-group",
-				"use-superform"
+				"input-group"
 			],
 			"files": [
 				{
@@ -6416,17 +6390,14 @@
 			"dependencies": [
 				"@internationalized/date",
 				"@lucide/svelte",
-				"zod",
-				"@internationalized/date@^3.12.3",
-				"zod@^4.4.3"
+				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
 				"button",
 				"calendar",
 				"field",
 				"form",
-				"input-group",
-				"use-superform"
+				"input-group"
 			],
 			"files": [
 				{
@@ -6589,17 +6560,14 @@
 			"dependencies": [
 				"@internationalized/date",
 				"@lucide/svelte",
-				"zod",
-				"@internationalized/date@^3.12.3",
-				"zod@^4.4.3"
+				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
 				"autocomplete",
 				"button",
 				"calendar",
 				"field",
-				"form",
-				"use-superform"
+				"form"
 			],
 			"files": [
 				{
@@ -6755,9 +6723,7 @@
 			"description": "A basic card with header and footer",
 			"type": "registry:block",
 			"dependencies": [
-				"@lucide/svelte",
-				"zod",
-				"zod@^4.4.3"
+				"@lucide/svelte"
 			],
 			"registryDependencies": [
 				"button",
@@ -6765,8 +6731,7 @@
 				"field",
 				"form",
 				"input",
-				"select",
-				"use-superform"
+				"select"
 			],
 			"files": [
 				{
@@ -6782,9 +6747,7 @@
 			"description": "Card within a frame with header and footer",
 			"type": "registry:block",
 			"dependencies": [
-				"@lucide/svelte",
-				"zod",
-				"zod@^4.4.3"
+				"@lucide/svelte"
 			],
 			"registryDependencies": [
 				"button",
@@ -6793,8 +6756,7 @@
 				"form",
 				"frame",
 				"input",
-				"select",
-				"use-superform"
+				"select"
 			],
 			"files": [
 				{
@@ -6830,17 +6792,13 @@
 			"title": "Card 2",
 			"description": "Authentication card with actions",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"card",
 				"field",
 				"form",
-				"input",
-				"use-superform"
+				"input"
 			],
 			"files": [
 				{
@@ -6856,17 +6814,14 @@
 			"description": "Authentication card with separators",
 			"type": "registry:block",
 			"dependencies": [
-				"@lucide/svelte",
-				"zod",
-				"zod@^4.4.3"
+				"@lucide/svelte"
 			],
 			"registryDependencies": [
 				"button",
 				"card",
 				"field",
 				"form",
-				"input",
-				"use-superform"
+				"input"
 			],
 			"files": [
 				{
@@ -6882,9 +6837,7 @@
 			"description": "Framed card with footer",
 			"type": "registry:block",
 			"dependencies": [
-				"@lucide/svelte",
-				"zod",
-				"zod@^4.4.3"
+				"@lucide/svelte"
 			],
 			"registryDependencies": [
 				"button",
@@ -6892,8 +6845,7 @@
 				"field",
 				"form",
 				"input",
-				"select",
-				"use-superform"
+				"select"
 			],
 			"files": [
 				{
@@ -6908,18 +6860,14 @@
 			"title": "Card 5",
 			"description": "Framed card with header",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"card",
 				"field",
 				"form",
 				"input",
-				"select",
-				"use-superform"
+				"select"
 			],
 			"files": [
 				{
@@ -6935,9 +6883,7 @@
 			"description": "Framed card with header and footer",
 			"type": "registry:block",
 			"dependencies": [
-				"@lucide/svelte",
-				"zod",
-				"zod@^4.4.3"
+				"@lucide/svelte"
 			],
 			"registryDependencies": [
 				"button",
@@ -6945,8 +6891,7 @@
 				"field",
 				"form",
 				"input",
-				"select",
-				"use-superform"
+				"select"
 			],
 			"files": [
 				{
@@ -6962,9 +6907,7 @@
 			"description": "Framed card with no rounded bottom",
 			"type": "registry:block",
 			"dependencies": [
-				"@lucide/svelte",
-				"zod",
-				"zod@^4.4.3"
+				"@lucide/svelte"
 			],
 			"registryDependencies": [
 				"button",
@@ -6972,8 +6915,7 @@
 				"field",
 				"form",
 				"input",
-				"select",
-				"use-superform"
+				"select"
 			],
 			"files": [
 				{
@@ -6989,9 +6931,7 @@
 			"description": "Card within a frame and footer",
 			"type": "registry:block",
 			"dependencies": [
-				"@lucide/svelte",
-				"zod",
-				"zod@^4.4.3"
+				"@lucide/svelte"
 			],
 			"registryDependencies": [
 				"button",
@@ -7000,8 +6940,7 @@
 				"form",
 				"frame",
 				"input",
-				"select",
-				"use-superform"
+				"select"
 			],
 			"files": [
 				{
@@ -7016,10 +6955,7 @@
 			"title": "Card 9",
 			"description": "Card within a frame and footer",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"card",
@@ -7027,8 +6963,7 @@
 				"form",
 				"frame",
 				"input",
-				"select",
-				"use-superform"
+				"select"
 			],
 			"files": [
 				{
@@ -7478,16 +7413,12 @@
 			"title": "Checkbox 5",
 			"description": "Checkbox form",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"checkbox",
 				"field",
-				"form",
-				"use-superform"
+				"form"
 			],
 			"files": [
 				{
@@ -7578,18 +7509,14 @@
 			"title": "Checkbox group 5",
 			"description": "Checkbox group form",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"checkbox",
 				"checkbox-group",
 				"field",
 				"fieldset",
-				"form",
-				"use-superform"
+				"form"
 			],
 			"files": [
 				{
@@ -7771,16 +7698,12 @@
 			"title": "Combobox 11",
 			"description": "Combobox form",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"combobox",
 				"field",
-				"form",
-				"use-superform"
+				"form"
 			],
 			"files": [
 				{
@@ -7795,16 +7718,12 @@
 			"title": "Combobox 12",
 			"description": "Combobox multiple form",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"combobox",
 				"field",
-				"form",
-				"use-superform"
+				"form"
 			],
 			"files": [
 				{
@@ -8726,17 +8645,13 @@
 			"title": "Dialog 1",
 			"description": "Dialog with form",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"dialog",
 				"field",
 				"form",
-				"input",
-				"use-superform"
+				"input"
 			],
 			"files": [
 				{
@@ -8770,17 +8685,13 @@
 			"title": "Dialog 3",
 			"description": "Nested dialogs",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"dialog",
 				"field",
 				"form",
-				"input",
-				"use-superform"
+				"input"
 			],
 			"files": [
 				{
@@ -8795,18 +8706,14 @@
 			"title": "Dialog 4",
 			"description": "Dialog with close confirmation",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"alert-dialog",
 				"button",
 				"dialog",
 				"field",
 				"form",
-				"textarea",
-				"use-superform"
+				"textarea"
 			],
 			"files": [
 				{
@@ -8839,17 +8746,13 @@
 			"title": "Dialog 6",
 			"description": "Dialog with bare footer",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"dialog",
 				"field",
 				"form",
-				"input",
-				"use-superform"
+				"input"
 			],
 			"files": [
 				{
@@ -8882,17 +8785,13 @@
 			"title": "Drawer 10",
 			"description": "Edit profile form with default and bare footer variants",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"drawer",
 				"field",
 				"form",
-				"input",
-				"use-superform"
+				"input"
 			],
 			"files": [
 				{
@@ -8925,18 +8824,14 @@
 			"title": "Drawer 12",
 			"description": "Responsive edit profile: dialog on desktop, drawer on mobile",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"dialog",
 				"drawer",
 				"field",
 				"form",
-				"input",
-				"use-superform"
+				"input"
 			],
 			"files": [
 				{
@@ -9098,17 +8993,13 @@
 			"title": "Drawer 8",
 			"description": "Nested right drawers with inset variant",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"drawer",
 				"field",
 				"form",
-				"input",
-				"use-superform"
+				"input"
 			],
 			"files": [
 				{
@@ -9161,16 +9052,12 @@
 			"title": "Field 1",
 			"description": "Field with description",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
-				"input",
-				"use-superform"
+				"input"
 			],
 			"files": [
 				{
@@ -9185,16 +9072,12 @@
 			"title": "Field 10",
 			"description": "Field with textarea",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
-				"textarea",
-				"use-superform"
+				"textarea"
 			],
 			"files": [
 				{
@@ -9209,16 +9092,12 @@
 			"title": "Field 11",
 			"description": "Field with select",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
-				"select",
-				"use-superform"
+				"select"
 			],
 			"files": [
 				{
@@ -9233,16 +9112,12 @@
 			"title": "Field 12",
 			"description": "Field with checkbox",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"checkbox",
 				"field",
-				"form",
-				"use-superform"
+				"form"
 			],
 			"files": [
 				{
@@ -9257,18 +9132,14 @@
 			"title": "Field 13",
 			"description": "Field with checkbox group",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"checkbox",
 				"checkbox-group",
 				"field",
 				"fieldset",
-				"form",
-				"use-superform"
+				"form"
 			],
 			"files": [
 				{
@@ -9283,17 +9154,13 @@
 			"title": "Field 14",
 			"description": "Field with radio group",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"fieldset",
 				"form",
-				"radio-group",
-				"use-superform"
+				"radio-group"
 			],
 			"files": [
 				{
@@ -9308,16 +9175,12 @@
 			"title": "Field 15",
 			"description": "Field with toggle switch",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
-				"switch",
-				"use-superform"
+				"switch"
 			],
 			"files": [
 				{
@@ -9332,16 +9195,12 @@
 			"title": "Field 16",
 			"description": "Field with slider",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
-				"slider",
-				"use-superform"
+				"slider"
 			],
 			"files": [
 				{
@@ -9356,16 +9215,12 @@
 			"title": "Field 17",
 			"description": "Field with number field",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
-				"number-field",
-				"use-superform"
+				"number-field"
 			],
 			"files": [
 				{
@@ -9380,18 +9235,14 @@
 			"title": "Field 18",
 			"description": "Complete form built with field",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"checkbox",
 				"field",
 				"form",
 				"input",
-				"select",
-				"use-superform"
+				"select"
 			],
 			"files": [
 				{
@@ -9406,16 +9257,12 @@
 			"title": "Field 2",
 			"description": "Field with required indicator",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
-				"input",
-				"use-superform"
+				"input"
 			],
 			"files": [
 				{
@@ -9430,16 +9277,12 @@
 			"title": "Field 3",
 			"description": "Field in disabled state",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
-				"input",
-				"use-superform"
+				"input"
 			],
 			"files": [
 				{
@@ -9454,16 +9297,12 @@
 			"title": "Field 4",
 			"description": "Field showing validation error",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
-				"input",
-				"use-superform"
+				"input"
 			],
 			"files": [
 				{
@@ -9478,16 +9317,12 @@
 			"title": "Field 5",
 			"description": "Show field validity state",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
-				"input",
-				"use-superform"
+				"input"
 			],
 			"files": [
 				{
@@ -9503,16 +9338,13 @@
 			"description": "Input group with field",
 			"type": "registry:block",
 			"dependencies": [
-				"@lucide/svelte",
-				"zod",
-				"zod@^4.4.3"
+				"@lucide/svelte"
 			],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
-				"input-group",
-				"use-superform"
+				"input-group"
 			],
 			"files": [
 				{
@@ -9527,16 +9359,12 @@
 			"title": "Field 7",
 			"description": "Field with autocomplete",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"autocomplete",
 				"button",
 				"field",
-				"form",
-				"use-superform"
+				"form"
 			],
 			"files": [
 				{
@@ -9551,16 +9379,12 @@
 			"title": "Field 8",
 			"description": "Field with combobox",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"combobox",
 				"field",
-				"form",
-				"use-superform"
+				"form"
 			],
 			"files": [
 				{
@@ -9575,16 +9399,12 @@
 			"title": "Field 9",
 			"description": "Field with multiple selection combobox",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"combobox",
 				"field",
-				"form",
-				"use-superform"
+				"form"
 			],
 			"files": [
 				{
@@ -9599,16 +9419,11 @@
 			"title": "Fieldset 1",
 			"description": "Fieldset with multiple fields",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"field",
 				"fieldset",
-				"form",
-				"input",
-				"use-superform"
+				"input"
 			],
 			"files": [
 				{
@@ -9907,16 +9722,12 @@
 			"title": "Form 1",
 			"description": "Input in a form",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
-				"input",
-				"use-superform"
+				"input"
 			],
 			"files": [
 				{
@@ -9939,8 +9750,7 @@
 				"button",
 				"field",
 				"form",
-				"input",
-				"use-superform"
+				"input"
 			],
 			"files": [
 				{
@@ -12780,16 +12590,12 @@
 			"title": "Radio group 6",
 			"description": "Theme selector with image cards",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"field",
 				"fieldset",
 				"form",
-				"radio-group",
-				"use-superform"
+				"radio-group"
 			],
 			"files": [
 				{
@@ -12938,16 +12744,12 @@
 			"title": "Select 11",
 			"description": "Select in form",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
-				"select",
-				"use-superform"
+				"select"
 			],
 			"files": [
 				{
@@ -13325,17 +13127,13 @@
 			"title": "Sheet 1",
 			"description": "Basic sheet",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
 				"input",
-				"sheet",
-				"use-superform"
+				"sheet"
 			],
 			"files": [
 				{
@@ -13350,18 +13148,14 @@
 			"title": "Sheet 2",
 			"description": "Sheet inset",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
 				"input",
 				"label",
-				"sheet",
-				"use-superform"
+				"sheet"
 			],
 			"files": [
 				{
@@ -13957,17 +13751,13 @@
 			"title": "Slider 23",
 			"description": "Slider in form",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"fieldset",
 				"form",
-				"slider",
-				"use-superform"
+				"slider"
 			],
 			"files": [
 				{
@@ -14185,16 +13975,12 @@
 			"title": "Starrating 4",
 			"description": "Star rating inside a form field",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
-				"starrating",
-				"use-superform"
+				"starrating"
 			],
 			"files": [
 				{
@@ -15192,15 +14978,10 @@
 			"title": "Textarea 11",
 			"description": "Textarea with characters remaining counter",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"field",
-				"form",
-				"textarea",
-				"use-superform"
+				"textarea"
 			],
 			"files": [
 				{
@@ -15215,16 +14996,12 @@
 			"title": "Textarea 12",
 			"description": "Textarea field with required indicator",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
-				"textarea",
-				"use-superform"
+				"textarea"
 			],
 			"files": [
 				{
@@ -15361,16 +15138,12 @@
 			"title": "Textarea 6",
 			"description": "Textarea in form",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
-				"textarea",
-				"use-superform"
+				"textarea"
 			],
 			"files": [
 				{

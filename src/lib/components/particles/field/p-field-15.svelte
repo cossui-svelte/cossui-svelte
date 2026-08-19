@@ -1,32 +1,27 @@
 <script lang="ts">
-  import { z } from 'zod';
   import { Button } from '$lib/components/ui/button';
   import { Field, FieldLabel } from '$lib/components/ui/field';
   import { Form } from '$lib/components/ui/form';
   import { Switch } from '$lib/components/ui/switch';
-  import { createForm } from '$lib/hooks/use-superform';
 
-  const schema = z.object({
-    notifications: z.boolean().optional()
-  });
+  let loading = $state(false);
 
-  const superform = createForm({
-    initialData: { notifications: false },
-    onUpdated: (data) => {
-      alert(`Email notifications: ${data.notifications ?? false}`);
-    },
-    schema
-  });
-
-  const { form, submitting } = superform;
+  async function handleSubmit(event: SubmitEvent) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget as HTMLFormElement);
+    loading = true;
+    await new Promise((r) => setTimeout(r, 800));
+    loading = false;
+    alert(`Email notifications: ${formData.get('notifications') === 'on'}`);
+  }
 </script>
 
-<Form class="flex w-full flex-col gap-4" {superform}>
+<Form class="flex w-full flex-col gap-4" onsubmit={handleSubmit}>
   <Field name="notifications">
     <FieldLabel>
-      <Switch bind:checked={$form.notifications} />
+      <Switch />
       Email notifications
     </FieldLabel>
   </Field>
-  <Button loading={$submitting} type="submit">Submit</Button>
+  <Button {loading} type="submit">Submit</Button>
 </Form>

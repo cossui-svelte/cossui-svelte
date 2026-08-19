@@ -9,18 +9,14 @@
 			"type": "registry:block",
 			"path": "p-field-15.svelte",
 			"target": "$lib/components/particles/field/p-field-15.svelte",
-			"content": "<script lang=\"ts\">\n  import { z } from 'zod';\n  import { Button } from '$lib/components/ui/button';\n  import { Field, FieldLabel } from '$lib/components/ui/field';\n  import { Form } from '$lib/components/ui/form';\n  import { Switch } from '$lib/components/ui/switch';\n  import { createForm } from '$lib/hooks/use-superform';\n\n  const schema = z.object({\n    notifications: z.boolean().optional()\n  });\n\n  const superform = createForm({\n    initialData: { notifications: false },\n    onUpdated: (data) => {\n      alert(`Email notifications: ${data.notifications ?? false}`);\n    },\n    schema\n  });\n\n  const { form, submitting } = superform;\n</script>\n\n<Form class=\"flex w-full flex-col gap-4\" {superform}>\n  <Field name=\"notifications\">\n    <FieldLabel>\n      <Switch bind:checked={$form.notifications} />\n      Email notifications\n    </FieldLabel>\n  </Field>\n  <Button loading={$submitting} type=\"submit\">Submit</Button>\n</Form>\n"
+			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n  import { Field, FieldLabel } from '$lib/components/ui/field';\n  import { Form } from '$lib/components/ui/form';\n  import { Switch } from '$lib/components/ui/switch';\n\n  let loading = $state(false);\n\n  async function handleSubmit(event: SubmitEvent) {\n    event.preventDefault();\n    const formData = new FormData(event.currentTarget as HTMLFormElement);\n    loading = true;\n    await new Promise((r) => setTimeout(r, 800));\n    loading = false;\n    alert(`Email notifications: ${formData.get('notifications') === 'on'}`);\n  }\n</script>\n\n<Form class=\"flex w-full flex-col gap-4\" onsubmit={handleSubmit}>\n  <Field name=\"notifications\">\n    <FieldLabel>\n      <Switch />\n      Email notifications\n    </FieldLabel>\n  </Field>\n  <Button loading={loading} type=\"submit\">Submit</Button>\n</Form>\n"
 		}
 	],
 	"registryDependencies": [
 		"button",
 		"field",
 		"form",
-		"switch",
-		"use-superform"
+		"switch"
 	],
-	"dependencies": [
-		"zod",
-		"zod@^4.4.3"
-	]
+	"dependencies": []
 }

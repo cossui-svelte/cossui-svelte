@@ -161,8 +161,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-autocomplete-13': {
     description: 'Autocomplete form',
     tags: ['autocomplete', 'form', 'input'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['autocomplete', 'button', 'field', 'form', 'use-superform'],
+    registryDependencies: ['autocomplete', 'button', 'field', 'form'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-autocomplete-14': {
@@ -812,15 +811,15 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-calendar-17': {
     description: 'Calendar with date input',
     tags: ['calendar', 'input', 'field'],
-    npmDependencies: ['@internationalized/date', '@lucide/svelte', 'zod'],
-    registryDependencies: ['button', 'calendar', 'field', 'form', 'input-group', 'use-superform'],
+    npmDependencies: ['@internationalized/date', '@lucide/svelte'],
+    registryDependencies: ['button', 'calendar', 'field', 'form', 'input-group'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-calendar-18': {
     description: 'Calendar with time input',
     tags: ['calendar', 'input', 'field'],
-    npmDependencies: ['@internationalized/date', '@lucide/svelte', 'zod'],
-    registryDependencies: ['button', 'calendar', 'field', 'form', 'input-group', 'use-superform'],
+    npmDependencies: ['@internationalized/date', '@lucide/svelte'],
+    registryDependencies: ['button', 'calendar', 'field', 'form', 'input-group'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-calendar-19': {
@@ -877,8 +876,8 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-calendar-25': {
     description: 'Calendar with 24-hour autocomplete time input',
     tags: ['calendar', 'autocomplete', 'field', 'time'],
-    npmDependencies: ['@internationalized/date', '@lucide/svelte', 'zod'],
-    registryDependencies: ['autocomplete', 'button', 'calendar', 'field', 'form', 'use-superform'],
+    npmDependencies: ['@internationalized/date', '@lucide/svelte'],
+    registryDependencies: ['autocomplete', 'button', 'calendar', 'field', 'form'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-date-picker-1': {
@@ -947,8 +946,8 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-card-1': {
     description: 'A basic card with header and footer',
     tags: ['card', 'form'],
-    npmDependencies: ['@lucide/svelte', 'zod'],
-    registryDependencies: ['button', 'card', 'field', 'form', 'input', 'select', 'use-superform'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['button', 'card', 'field', 'form', 'input', 'select'],
     meta: {
       class:
         '**:data-[slot=preview]:w-full **:data-[slot=preview]:flex **:data-[slot=preview]:justify-center'
@@ -957,8 +956,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-card-2': {
     description: 'Authentication card with actions',
     tags: ['card', 'form'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['button', 'card', 'field', 'form', 'input', 'use-superform'],
+    registryDependencies: ['button', 'card', 'field', 'form', 'input'],
     meta: {
       class:
         '**:data-[slot=preview]:w-full **:data-[slot=preview]:flex **:data-[slot=preview]:justify-center'
@@ -967,8 +965,8 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-card-3': {
     description: 'Authentication card with separators',
     tags: ['card', 'form'],
-    npmDependencies: ['@lucide/svelte', 'zod'],
-    registryDependencies: ['button', 'card', 'field', 'form', 'input', 'use-superform'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['button', 'card', 'field', 'form', 'input'],
     meta: {
       class:
         '**:data-[slot=preview]:w-full **:data-[slot=preview]:flex **:data-[slot=preview]:justify-center'
@@ -977,8 +975,8 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-card-4': {
     description: 'Framed card with footer',
     tags: ['card', 'form'],
-    npmDependencies: ['@lucide/svelte', 'zod'],
-    registryDependencies: ['button', 'card', 'field', 'form', 'input', 'select', 'use-superform'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['button', 'card', 'field', 'form', 'input', 'select'],
     meta: {
       class:
         '**:data-[slot=preview]:w-full **:data-[slot=preview]:flex **:data-[slot=preview]:justify-center'
@@ -987,8 +985,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-card-5': {
     description: 'Framed card with header',
     tags: ['card', 'form'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['button', 'card', 'field', 'form', 'input', 'select', 'use-superform'],
+    registryDependencies: ['button', 'card', 'field', 'form', 'input', 'select'],
     meta: {
       class:
         '**:data-[slot=preview]:w-full **:data-[slot=preview]:flex **:data-[slot=preview]:justify-center'
@@ -997,8 +994,8 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-card-6': {
     description: 'Framed card with header and footer',
     tags: ['card', 'form'],
-    npmDependencies: ['@lucide/svelte', 'zod'],
-    registryDependencies: ['button', 'card', 'field', 'form', 'input', 'select', 'use-superform'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['button', 'card', 'field', 'form', 'input', 'select'],
     meta: {
       class:
         '**:data-[slot=preview]:w-full **:data-[slot=preview]:flex **:data-[slot=preview]:justify-center'
@@ -1007,8 +1004,8 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-card-7': {
     description: 'Framed card with no rounded bottom',
     tags: ['card', 'form'],
-    npmDependencies: ['@lucide/svelte', 'zod'],
-    registryDependencies: ['button', 'card', 'field', 'form', 'input', 'select', 'use-superform'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['button', 'card', 'field', 'form', 'input', 'select'],
     meta: {
       class:
         '**:data-[slot=preview]:w-full **:data-[slot=preview]:flex **:data-[slot=preview]:justify-center'
@@ -1017,17 +1014,8 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-card-8': {
     description: 'Card within a frame and footer',
     tags: ['card', 'form', 'frame'],
-    npmDependencies: ['@lucide/svelte', 'zod'],
-    registryDependencies: [
-      'button',
-      'card',
-      'field',
-      'form',
-      'frame',
-      'input',
-      'select',
-      'use-superform'
-    ],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['button', 'card', 'field', 'form', 'frame', 'input', 'select'],
     meta: {
       class:
         '**:data-[slot=preview]:w-full **:data-[slot=preview]:flex **:data-[slot=preview]:justify-center'
@@ -1036,17 +1024,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-card-9': {
     description: 'Card within a frame and footer',
     tags: ['card', 'form', 'frame'],
-    npmDependencies: ['zod'],
-    registryDependencies: [
-      'button',
-      'card',
-      'field',
-      'form',
-      'frame',
-      'input',
-      'select',
-      'use-superform'
-    ],
+    registryDependencies: ['button', 'card', 'field', 'form', 'frame', 'input', 'select'],
     meta: {
       class:
         '**:data-[slot=preview]:w-full **:data-[slot=preview]:flex **:data-[slot=preview]:justify-center'
@@ -1055,17 +1033,8 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-card-10': {
     description: 'Card within a frame with header and footer',
     tags: ['card', 'form', 'frame'],
-    npmDependencies: ['@lucide/svelte', 'zod'],
-    registryDependencies: [
-      'button',
-      'card',
-      'field',
-      'form',
-      'frame',
-      'input',
-      'select',
-      'use-superform'
-    ],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['button', 'card', 'field', 'form', 'frame', 'input', 'select'],
     meta: {
       class:
         '**:data-[slot=preview]:w-full **:data-[slot=preview]:flex **:data-[slot=preview]:justify-center'
@@ -1108,8 +1077,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-checkbox-5': {
     description: 'Checkbox form',
     tags: ['checkbox', 'form'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['button', 'checkbox', 'field', 'form', 'use-superform'],
+    registryDependencies: ['button', 'checkbox', 'field', 'form'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-checkbox-group-1': {
@@ -1139,16 +1107,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-checkbox-group-5': {
     description: 'Checkbox group form',
     tags: ['checkbox', 'checkbox-group', 'form'],
-    npmDependencies: ['zod'],
-    registryDependencies: [
-      'button',
-      'checkbox',
-      'checkbox-group',
-      'field',
-      'fieldset',
-      'form',
-      'use-superform'
-    ],
+    registryDependencies: ['button', 'checkbox', 'checkbox-group', 'field', 'fieldset', 'form'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-collapsible-1': {
@@ -1222,15 +1181,13 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-combobox-11': {
     description: 'Combobox form',
     tags: ['combobox', 'form', 'input'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['button', 'combobox', 'field', 'form', 'use-superform'],
+    registryDependencies: ['button', 'combobox', 'field', 'form'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-combobox-12': {
     description: 'Combobox multiple form',
     tags: ['combobox', 'form', 'input'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['button', 'combobox', 'field', 'form', 'use-superform'],
+    registryDependencies: ['button', 'combobox', 'field', 'form'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-combobox-13': {
@@ -1304,15 +1261,13 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-dialog-1': {
     description: 'Dialog with form',
     tags: ['dialog'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['button', 'dialog', 'field', 'form', 'input', 'use-superform'],
+    registryDependencies: ['button', 'dialog', 'field', 'form', 'input'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-dialog-6': {
     description: 'Dialog with bare footer',
     tags: ['dialog'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['button', 'dialog', 'field', 'form', 'input', 'use-superform'],
+    registryDependencies: ['button', 'dialog', 'field', 'form', 'input'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-dialog-2': {
@@ -1324,23 +1279,13 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-dialog-3': {
     description: 'Nested dialogs',
     tags: ['dialog'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['button', 'dialog', 'field', 'form', 'input', 'use-superform'],
+    registryDependencies: ['button', 'dialog', 'field', 'form', 'input'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-dialog-4': {
     description: 'Dialog with close confirmation',
     tags: ['alert-dialog', 'dialog'],
-    npmDependencies: ['zod'],
-    registryDependencies: [
-      'alert-dialog',
-      'button',
-      'dialog',
-      'field',
-      'form',
-      'textarea',
-      'use-superform'
-    ],
+    registryDependencies: ['alert-dialog', 'button', 'dialog', 'field', 'form', 'textarea'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-dialog-5': {
@@ -1394,8 +1339,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-drawer-8': {
     description: 'Nested right drawers with inset variant',
     tags: ['drawer'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['button', 'drawer', 'field', 'form', 'input', 'use-superform'],
+    registryDependencies: ['button', 'drawer', 'field', 'form', 'input'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-drawer-9': {
@@ -1407,8 +1351,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-drawer-10': {
     description: 'Edit profile form with default and bare footer variants',
     tags: ['drawer'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['button', 'drawer', 'field', 'form', 'input', 'use-superform'],
+    registryDependencies: ['button', 'drawer', 'field', 'form', 'input'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-drawer-11': {
@@ -1420,8 +1363,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-drawer-12': {
     description: 'Responsive edit profile: dialog on desktop, drawer on mobile',
     tags: ['drawer', 'dialog'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['button', 'dialog', 'drawer', 'field', 'form', 'input', 'use-superform'],
+    registryDependencies: ['button', 'dialog', 'drawer', 'field', 'form', 'input'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-drawer-13': {
@@ -1447,164 +1389,129 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-field-1': {
     description: 'Field with description',
     tags: ['field', 'input', 'label'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['button', 'field', 'form', 'input', 'use-superform'],
+    registryDependencies: ['button', 'field', 'form', 'input'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-field-2': {
     description: 'Field with required indicator',
     tags: ['field', 'input', 'label'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['button', 'field', 'form', 'input', 'use-superform'],
+    registryDependencies: ['button', 'field', 'form', 'input'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-field-3': {
     description: 'Field in disabled state',
     tags: ['disabled', 'field', 'input', 'label'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['button', 'field', 'form', 'input', 'use-superform'],
+    registryDependencies: ['button', 'field', 'form', 'input'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-field-4': {
     description: 'Field showing validation error',
     tags: ['error', 'field', 'input', 'label'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['button', 'field', 'form', 'input', 'use-superform'],
+    registryDependencies: ['button', 'field', 'form', 'input'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-field-5': {
     description: 'Show field validity state',
     tags: ['field', 'input'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['button', 'field', 'form', 'input', 'use-superform'],
+    registryDependencies: ['button', 'field', 'form', 'input'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-field-6': {
     description: 'Input group with field',
     tags: ['button', 'field', 'input', 'input-group'],
-    npmDependencies: ['@lucide/svelte', 'zod'],
-    registryDependencies: ['button', 'field', 'form', 'input-group', 'use-superform'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['button', 'field', 'form', 'input-group'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-field-7': {
     description: 'Field with autocomplete',
     tags: ['autocomplete', 'field', 'input', 'label'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['autocomplete', 'button', 'field', 'form', 'use-superform'],
+    registryDependencies: ['autocomplete', 'button', 'field', 'form'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-field-8': {
     description: 'Field with combobox',
     tags: ['combobox', 'field', 'input', 'label'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['button', 'combobox', 'field', 'form', 'use-superform'],
+    registryDependencies: ['button', 'combobox', 'field', 'form'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-field-9': {
     description: 'Field with multiple selection combobox',
     tags: ['combobox', 'field', 'input', 'label'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['button', 'combobox', 'field', 'form', 'use-superform'],
+    registryDependencies: ['button', 'combobox', 'field', 'form'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-field-10': {
     description: 'Field with textarea',
     tags: ['field', 'label', 'textarea'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['button', 'field', 'form', 'textarea', 'use-superform'],
+    registryDependencies: ['button', 'field', 'form', 'textarea'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-field-11': {
     description: 'Field with select',
     tags: ['field', 'label', 'select'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['button', 'field', 'form', 'select', 'use-superform'],
+    registryDependencies: ['button', 'field', 'form', 'select'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-field-12': {
     description: 'Field with checkbox',
     tags: ['checkbox', 'field', 'label'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['button', 'checkbox', 'field', 'form', 'use-superform'],
+    registryDependencies: ['button', 'checkbox', 'field', 'form'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-field-13': {
     description: 'Field with checkbox group',
     tags: ['checkbox', 'checkbox-group', 'field', 'fieldset', 'label'],
-    npmDependencies: ['zod'],
-    registryDependencies: [
-      'button',
-      'checkbox',
-      'checkbox-group',
-      'field',
-      'fieldset',
-      'form',
-      'use-superform'
-    ],
+    registryDependencies: ['button', 'checkbox', 'checkbox-group', 'field', 'fieldset', 'form'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-field-14': {
     description: 'Field with radio group',
     tags: ['field', 'fieldset', 'label', 'radio-group'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['button', 'field', 'fieldset', 'form', 'radio-group', 'use-superform'],
+    registryDependencies: ['button', 'field', 'fieldset', 'form', 'radio-group'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-field-15': {
     description: 'Field with toggle switch',
     tags: ['field', 'label', 'switch'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['button', 'field', 'form', 'switch', 'use-superform'],
+    registryDependencies: ['button', 'field', 'form', 'switch'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-field-16': {
     description: 'Field with slider',
     tags: ['field', 'label', 'slider'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['button', 'field', 'form', 'slider', 'use-superform'],
+    registryDependencies: ['button', 'field', 'form', 'slider'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-field-17': {
     description: 'Field with number field',
     tags: ['field', 'input', 'label', 'number-field'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['button', 'field', 'form', 'number-field', 'use-superform'],
+    registryDependencies: ['button', 'field', 'form', 'number-field'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-field-18': {
     description: 'Complete form built with field',
     tags: ['button', 'checkbox', 'field', 'form', 'input', 'label', 'select'],
-    npmDependencies: ['zod'],
-    registryDependencies: [
-      'button',
-      'checkbox',
-      'field',
-      'form',
-      'input',
-      'select',
-      'use-superform'
-    ],
+    registryDependencies: ['button', 'checkbox', 'field', 'form', 'input', 'select'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-fieldset-1': {
     description: 'Fieldset with multiple fields',
     tags: ['fieldset', 'input'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['field', 'fieldset', 'form', 'input', 'use-superform'],
+    registryDependencies: ['field', 'fieldset', 'input'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-form-1': {
     description: 'Input in a form',
     tags: ['button', 'field', 'form', 'input'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['button', 'field', 'form', 'input', 'use-superform'],
+    registryDependencies: ['button', 'field', 'form', 'input'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-form-2': {
     description: 'Form with zod validation',
     tags: ['button', 'field', 'form', 'label', 'validation', 'zod'],
     npmDependencies: ['zod'],
-    registryDependencies: ['button', 'field', 'form', 'input', 'use-superform'],
+    registryDependencies: ['button', 'field', 'form', 'input'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-frame-1': {
@@ -2449,8 +2356,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-radio-group-6': {
     description: 'Theme selector with image cards',
     tags: ['radio-group', 'form'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['field', 'fieldset', 'form', 'radio-group', 'use-superform'],
+    registryDependencies: ['field', 'fieldset', 'form', 'radio-group'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-[320px]' }
   },
   'p-scroll-area-1': {
@@ -2620,8 +2526,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-select-11': {
     description: 'Select in form',
     tags: ['select'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['button', 'field', 'form', 'select', 'use-superform'],
+    registryDependencies: ['button', 'field', 'form', 'select'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-separator-1': {
@@ -2633,15 +2538,13 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-sheet-1': {
     description: 'Basic sheet',
     tags: ['sheet'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['button', 'field', 'form', 'input', 'sheet', 'use-superform'],
+    registryDependencies: ['button', 'field', 'form', 'input', 'sheet'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-sheet-2': {
     description: 'Sheet inset',
     tags: ['sheet'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['button', 'field', 'form', 'input', 'label', 'sheet', 'use-superform'],
+    registryDependencies: ['button', 'field', 'form', 'input', 'label', 'sheet'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-sheet-3': {
@@ -2807,8 +2710,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-slider-23': {
     description: 'Slider in form',
     tags: ['slider', 'form'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['button', 'field', 'fieldset', 'form', 'slider', 'use-superform'],
+    registryDependencies: ['button', 'field', 'fieldset', 'form', 'slider'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-spinner-1': {
@@ -3072,8 +2974,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-textarea-6': {
     description: 'Textarea in form',
     tags: ['textarea'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['button', 'field', 'form', 'textarea', 'use-superform'],
+    registryDependencies: ['button', 'field', 'form', 'textarea'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-textarea-7': {
@@ -3103,15 +3004,13 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-textarea-11': {
     description: 'Textarea with characters remaining counter',
     tags: ['field', 'textarea'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['field', 'form', 'textarea', 'use-superform'],
+    registryDependencies: ['field', 'textarea'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-textarea-12': {
     description: 'Textarea field with required indicator',
     tags: ['field', 'label', 'textarea'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['button', 'field', 'form', 'textarea', 'use-superform'],
+    registryDependencies: ['button', 'field', 'form', 'textarea'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-textarea-13': {
@@ -4170,8 +4069,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-starrating-4': {
     description: 'Star rating inside a form field',
     tags: ['starrating'],
-    npmDependencies: ['zod'],
-    registryDependencies: ['button', 'field', 'form', 'starrating', 'use-superform'],
+    registryDependencies: ['button', 'field', 'form', 'starrating'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-starrating-5': {

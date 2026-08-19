@@ -1,39 +1,34 @@
 <script lang="ts">
-  import { z } from 'zod';
   import { Button } from '$lib/components/ui/button';
   import { Field, FieldDescription } from '$lib/components/ui/field';
   import { Fieldset, FieldsetLegend } from '$lib/components/ui/fieldset';
   import { Form } from '$lib/components/ui/form';
   import { Slider } from '$lib/components/ui/slider';
-  import { createForm } from '$lib/hooks/use-superform';
 
-  const schema = z.object({
-    volume: z.array(z.number())
-  });
+  let value = $state([25, 75]);
+  let loading = $state(false);
 
-  const superform = createForm({
-    initialData: { volume: [25, 75] },
-    onUpdated: ({ volume }) => alert(`Volume: ${volume.join(', ')}`),
-    schema
-  });
+  const displayValue = $derived(Array.isArray(value) ? value.join(' – ') : value);
 
-  const { form, submitting } = superform;
-
-  const displayValue = $derived(
-    Array.isArray($form.volume) ? $form.volume.join(' – ') : $form.volume
-  );
+  async function handleSubmit(event: SubmitEvent) {
+    event.preventDefault();
+    loading = true;
+    await new Promise((r) => setTimeout(r, 800));
+    loading = false;
+    alert(`Volume: ${value.join(', ')}`);
+  }
 </script>
 
-<Form class="flex w-full flex-col gap-4" {superform}>
+<Form class="flex w-full flex-col gap-4" onsubmit={handleSubmit}>
   <Fieldset class="flex w-full flex-col items-stretch gap-3">
     <Field>
       <div class="mb-2 flex items-center justify-between gap-1">
         <FieldsetLegend>Volume</FieldsetLegend>
         <span class="tabular-nums text-sm">{displayValue}</span>
       </div>
-      <Slider name="volume" bind:value={$form.volume} />
+      <Slider name="volume" bind:value />
       <FieldDescription>Choose a value between 0 and 100</FieldDescription>
     </Field>
   </Fieldset>
-  <Button loading={$submitting} type="submit">Submit</Button>
+  <Button {loading} type="submit">Submit</Button>
 </Form>

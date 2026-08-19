@@ -1,31 +1,29 @@
 <script lang="ts">
-  import { z } from 'zod';
   import { Button } from '$lib/components/ui/button';
   import { Checkbox } from '$lib/components/ui/checkbox';
   import { CheckboxGroup } from '$lib/components/ui/checkbox-group';
   import { Field, FieldError, FieldItem, FieldLabel } from '$lib/components/ui/field';
   import { Fieldset, FieldsetLegend } from '$lib/components/ui/fieldset';
-  import { Form, FormDebug } from '$lib/components/ui/form';
-  import { createForm } from '$lib/hooks/use-superform';
+  import { Form } from '$lib/components/ui/form';
 
-  const schema = z.object({
-    frameworks: z.array(z.string()).min(1, { message: 'Please select at least one framework.' })
-  });
+  let loading = $state(false);
 
-  const superform = createForm({
-    initialData: { frameworks: ['next'] },
-    onUpdated: ({ frameworks }) => alert(`Selected: ${frameworks.join(', ')}`),
-    schema
-  });
-
-  const { form, submitting } = superform;
+  async function handleSubmit(event: SubmitEvent) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget as HTMLFormElement);
+    loading = true;
+    await new Promise((r) => setTimeout(r, 800));
+    loading = false;
+    const frameworks = formData.getAll('frameworks') as string[];
+    alert(`Selected: ${frameworks.join(', ') || 'none'}`);
+  }
 </script>
 
-<Form class="flex w-full max-w-[160px] flex-col gap-4" {superform}>
+<Form class="flex w-full max-w-[160px] flex-col gap-4" onsubmit={handleSubmit}>
   <Field name="frameworks">
     <Fieldset>
       <FieldsetLegend class="font-medium text-sm">Frameworks</FieldsetLegend>
-      <CheckboxGroup bind:value={$form.frameworks as string[]}>
+      <CheckboxGroup value={['next']}>
         <FieldItem>
           <FieldLabel>
             <Checkbox value="next" />
@@ -49,7 +47,5 @@
     <FieldError />
   </Field>
 
-  <Button loading={$submitting} type="submit">Submit</Button>
-
-  <FormDebug formData={form} />
+  <Button {loading} type="submit">Submit</Button>
 </Form>

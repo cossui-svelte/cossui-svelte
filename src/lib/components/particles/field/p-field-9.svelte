@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { z } from 'zod';
   import { Button } from '$lib/components/ui/button';
   import {
     Combobox,
@@ -14,7 +13,6 @@
   } from '$lib/components/ui/combobox';
   import { Field, FieldDescription, FieldError, FieldLabel } from '$lib/components/ui/field';
   import { Form } from '$lib/components/ui/form';
-  import { createForm } from '$lib/hooks/use-superform';
 
   const items = [
     { label: 'Apple', value: 'apple' },
@@ -29,26 +27,19 @@
     { label: 'Strawberry', value: 'strawberry' }
   ];
 
-  const schema = z.object({
-    fruits: z.array(z.string()).min(1, { message: 'Please select at least one fruit.' })
-  });
+  let value = $state<string[]>(['apple', 'mango']);
+  let loading = $state(false);
 
-  const superform = createForm({
-    initialData: { fruits: ['apple', 'mango'] },
-    onUpdated: ({ fruits }) => alert(`Selected: ${fruits.join(', ')}`),
-    schema
-  });
-
-  const { form, submitting } = superform;
-
-  let value = $state<string[]>($form.fruits as string[]);
-
-  $effect(() => {
-    $form.fruits = value;
-  });
+  async function handleSubmit(event: SubmitEvent) {
+    event.preventDefault();
+    loading = true;
+    await new Promise((r) => setTimeout(r, 800));
+    loading = false;
+    alert(`Selected: ${value.join(', ')}`);
+  }
 </script>
 
-<Form class="flex w-full flex-col gap-4" {superform}>
+<Form class="flex w-full flex-col gap-4" onsubmit={handleSubmit}>
   <Field name="fruits">
     <FieldLabel>Fruits</FieldLabel>
     <Combobox bind:value {items} multiple>
@@ -73,7 +64,7 @@
       </ComboboxPopup>
     </Combobox>
     <FieldDescription>Select multiple items.</FieldDescription>
-    <FieldError />
+    <FieldError>Please select at least one fruit.</FieldError>
   </Field>
-  <Button loading={$submitting} type="submit">Submit</Button>
+  <Button {loading} type="submit">Submit</Button>
 </Form>

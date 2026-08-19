@@ -9,18 +9,14 @@
 			"type": "registry:block",
 			"path": "p-select-11.svelte",
 			"target": "$lib/components/particles/select/p-select-11.svelte",
-			"content": "<script lang=\"ts\">\n  import { z } from 'zod';\n  import { Button } from '$lib/components/ui/button';\n  import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';\n  import { Form } from '$lib/components/ui/form';\n  import {\n    Select,\n    SelectItem,\n    SelectPopup,\n    SelectTrigger,\n    SelectValue\n  } from '$lib/components/ui/select';\n  import { createForm } from '$lib/hooks/use-superform';\n\n  const items = [\n    { label: 'Next.js', value: 'next' },\n    { label: 'Vite', value: 'vite' },\n    { label: 'Astro', value: 'astro' }\n  ];\n\n  const schema = z.object({\n    framework: z.string().min(1, 'Please select a framework.')\n  });\n\n  const superform = createForm({\n    onUpdated: (data) => {\n      alert(`Framework: ${data.framework}`);\n    },\n    schema\n  });\n\n  const { form, submitting } = superform;\n</script>\n\n<Form class=\"flex w-full max-w-64 flex-col gap-4\" {superform}>\n  <Field name=\"framework\">\n    <FieldLabel>Framework</FieldLabel>\n    <Select\n      name=\"framework\"\n      value={$form.framework}\n      onValueChange={(v) => {\n        $form.framework = v as string;\n      }}\n    >\n      <SelectTrigger aria-label=\"Select framework\">\n        <SelectValue placeholder=\"Select a framework\" />\n      </SelectTrigger>\n      <SelectPopup>\n        {#each items as { label, value } (value)}\n          <SelectItem {value}>{label}</SelectItem>\n        {/each}\n      </SelectPopup>\n    </Select>\n    <p class=\"text-muted-foreground text-sm\">Pick your favorite.</p>\n    <FieldError />\n  </Field>\n  <Button loading={$submitting} type=\"submit\">Submit</Button>\n</Form>\n"
+			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n  import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';\n  import { Form } from '$lib/components/ui/form';\n  import {\n    Select,\n    SelectItem,\n    SelectPopup,\n    SelectTrigger,\n    SelectValue\n  } from '$lib/components/ui/select';\n\n  const items = [\n    { label: 'Next.js', value: 'next' },\n    { label: 'Vite', value: 'vite' },\n    { label: 'Astro', value: 'astro' }\n  ];\n\n  let loading = $state(false);\n\n  async function handleSubmit(event: SubmitEvent) {\n    event.preventDefault();\n    const formData = new FormData(event.currentTarget as HTMLFormElement);\n    loading = true;\n    await new Promise((r) => setTimeout(r, 800));\n    loading = false;\n    alert(`Framework: ${formData.get('framework') ?? ''}`);\n  }\n</script>\n\n<Form class=\"flex w-full max-w-64 flex-col gap-4\" onsubmit={handleSubmit}>\n  <Field name=\"framework\">\n    <FieldLabel>Framework</FieldLabel>\n    <Select>\n      <SelectTrigger aria-label=\"Select framework\">\n        <SelectValue placeholder=\"Select a framework\" />\n      </SelectTrigger>\n      <SelectPopup>\n        {#each items as { label, value } (value)}\n          <SelectItem {value}>{label}</SelectItem>\n        {/each}\n      </SelectPopup>\n    </Select>\n    <p class=\"text-muted-foreground text-sm\">Pick your favorite.</p>\n    <FieldError />\n  </Field>\n  <Button loading={loading} type=\"submit\">Submit</Button>\n</Form>\n"
 		}
 	],
 	"registryDependencies": [
 		"button",
 		"field",
 		"form",
-		"select",
-		"use-superform"
+		"select"
 	],
-	"dependencies": [
-		"zod",
-		"zod@^4.4.3"
-	]
+	"dependencies": []
 }
