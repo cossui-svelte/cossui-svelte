@@ -9,33 +9,25 @@
 			"type": "registry:ui",
 			"path": "fieldset/fieldset-legend.svelte",
 			"target": "$lib/components/ui/fieldset/fieldset-legend.svelte",
-			"content": "<script lang=\"ts\">\n  import { box, mergeProps } from 'svelte-toolbelt';\n  import { cn } from '$lib/utils';\n  import { useLegend } from '$lib/components/ui/form/form-field-state.svelte.js';\n  import { useId } from '$lib/components/ui/form/internal/id';\n  import type { LegendProps } from './types.js';\n\n  let {\n    id = useId(),\n    ref = $bindable(null),\n    class: className,\n    children,\n    child,\n    ...restProps\n  }: LegendProps = $props();\n\n  const legendState = useLegend({\n    id: box.with(() => id),\n    ref: box.with(\n      () => ref,\n      (v) => (ref = v)\n    )\n  });\n\n  const mergedProps = $derived(\n    mergeProps(\n      {\n        'data-slot': 'fieldset-legend',\n        class: cn('font-semibold text-foreground', className),\n        ...restProps\n      },\n      legendState.props\n    )\n  );\n</script>\n\n{#if child}\n  {@render child({ props: mergedProps })}\n{:else}\n  <legend {...mergedProps}>\n    {@render children?.()}\n  </legend>\n{/if}\n"
+			"content": "<script lang=\"ts\">\n  import { Fieldset as FieldsetPrimitive } from '@shardsui/svelte/fieldset';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof FieldsetPrimitive.Legend> = $props();\n</script>\n\n<FieldsetPrimitive.Legend\n  bind:ref\n  class={cn('font-semibold text-foreground', className)}\n  data-slot=\"fieldset-legend\"\n  {...restProps}\n/>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "fieldset/fieldset.svelte",
 			"target": "$lib/components/ui/fieldset/fieldset.svelte",
-			"content": "<script lang=\"ts\">\n  import type { Snippet } from 'svelte';\n  import { box, mergeProps, useRefById } from 'svelte-toolbelt';\n  import { cn } from '$lib/utils';\n  import { getFormContext } from '$lib/components/ui/form/form-context.svelte';\n  import { useField } from '$lib/components/ui/form/form-field-state.svelte.js';\n  import { getDataFsError } from '$lib/components/ui/form/internal/attributes';\n  import { useId } from '$lib/components/ui/form/internal/id';\n  import type { FieldsetProps } from './types.js';\n\n  const uid = $props.id();\n\n  let {\n    ref = $bindable(null),\n    id = useId(),\n    class: className,\n    name = uid,\n    children,\n    ...restProps\n  }: Omit<FieldsetProps<Record<string, unknown>, string>, 'form' | 'name'> & {\n    children: Snippet;\n    name?: string;\n  } = $props();\n\n  const form = getFormContext();\n\n  const fieldState = useField({\n    form: box.with(() => form),\n    name: box.with(() => name)\n  });\n\n  useRefById({\n    id: box.with(() => id),\n    ref: box.with(\n      () => ref,\n      (v) => (ref = v)\n    )\n  });\n\n  const mergedProps = $derived(\n    mergeProps(\n      {\n        'data-slot': 'fieldset',\n        class: cn('flex w-full max-w-64 flex-col gap-6', className),\n        ...restProps\n      },\n      { 'data-fs-fieldset': '', id }\n    )\n  );\n</script>\n\n<fieldset {...mergedProps} data-fs-error={getDataFsError(fieldState.errors)}>\n  {@render children?.()}\n</fieldset>\n"
+			"content": "<script lang=\"ts\">\n  import { Fieldset as FieldsetPrimitive } from '@shardsui/svelte/fieldset';\n  import type { ComponentProps } from 'svelte';\n\n  let {\n    ref = $bindable(null),\n    ...restProps\n  }: ComponentProps<typeof FieldsetPrimitive.Root> = $props();\n</script>\n\n<FieldsetPrimitive.Root bind:ref data-slot=\"fieldset\" {...restProps} />\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "fieldset/index.ts",
 			"target": "$lib/components/ui/fieldset/index.ts",
-			"content": "export { default as Fieldset } from './fieldset.svelte';\nexport { default as FieldsetLegend } from './fieldset-legend.svelte';\nexport type * from './types.js';\n"
-		},
-		{
-			"type": "registry:ui",
-			"path": "fieldset/types.ts",
-			"target": "$lib/components/ui/fieldset/types.ts",
-			"content": "import type { HTMLAttributes, HTMLFieldsetAttributes } from 'svelte/elements';\nimport type { WithChild, Without } from 'svelte-toolbelt';\nimport type { FormPath } from 'sveltekit-superforms';\nimport type { FsSuperForm } from '$lib/components/ui/form/form-field-state.svelte.js';\nimport type { Primitive } from '$lib/components/ui/form/internal/types.js';\n\ntype PrimitiveFieldSetAttributes = Primitive<HTMLFieldsetAttributes>;\ntype PrimitiveLegendAttributes = Primitive<HTMLAttributes<HTMLLegendElement>>;\n\n/**\n * Props for the [Fieldset](https://formsnap.dev/docs/components/fieldset) component.\n * This component is used to group form controls together and if used, should always\n * have a child [Legend](https://formsnap.dev/docs/components/legend) component to provide\n * an accessible title for the group.\n *\n * @see {@link https://www.w3.org/WAI/tutorials/forms/grouping/ W3C Grouping}\n */\nexport type FieldsetPropsWithoutHTML<\n  T extends Record<string, unknown>,\n  U extends FormPath<T>,\n  M = unknown\n> = WithChild<\n  {\n    /**\n     * The form object returned from calling `superForm` in your component.\n     */\n    form: FsSuperForm<T, M>;\n\n    /**\n     * The path to the field in the form object.\n     */\n    name: U;\n  },\n  {\n    value: T[U];\n    errors: string[];\n    tainted: boolean;\n    constraints: Record<string, unknown>;\n  }\n>;\n\nexport type FieldsetProps<\n  T extends Record<string, unknown>,\n  U extends FormPath<T>,\n  M = unknown\n> = FieldsetPropsWithoutHTML<T, U, M> &\n  Without<PrimitiveFieldSetAttributes, FieldsetPropsWithoutHTML<T, U, M>>;\n\nexport type LegendPropsWithoutHTML = WithChild;\n\n/**\n * Props for the [Legend](https://formsnap.dev/docs/components/legend) component.\n * This component is used to provide an accessible title for a group of form controls.\n *\n * @see {@link https://www.w3.org/WAI/tutorials/forms/grouping/ W3C Grouping}\n */\nexport type LegendProps = LegendPropsWithoutHTML &\n  Without<PrimitiveLegendAttributes, LegendPropsWithoutHTML>;\n"
+			"content": "export { default as Fieldset } from './fieldset.svelte';\nexport { default as FieldsetLegend } from './fieldset-legend.svelte';\n"
 		}
 	],
 	"registryDependencies": [
-		"form",
 		"utils"
 	],
 	"dependencies": [
-		"svelte-toolbelt@^0.10.6",
-		"sveltekit-superforms@^2.30.2"
+		"@shardsui/svelte@0.1.0-beta.0"
 	]
 }

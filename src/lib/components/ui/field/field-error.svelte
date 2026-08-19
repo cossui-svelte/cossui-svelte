@@ -1,43 +1,18 @@
 <script lang="ts">
-  import { box, mergeProps } from 'svelte-toolbelt';
-  import { cn, type WithElementRef } from '$lib/utils';
-  import { useFieldErrors } from '$lib/components/ui/form/form-field-state.svelte.js';
-  import { useId } from '$lib/components/ui/form/internal/id';
-  import type { FieldErrorsProps } from './types.js';
+  import { Field as FieldPrimitive } from '@shardsui/svelte/field';
+  import type { ComponentProps } from 'svelte';
+  import { cn } from '$lib/utils';
 
   let {
-    id = useId(),
     ref = $bindable(null),
     class: className,
-    children: childrenProp,
     ...restProps
-  }: WithElementRef<FieldErrorsProps> = $props();
-
-  const fieldErrorsState = useFieldErrors({
-    id: box.with(() => id),
-    ref: box.with(
-      () => ref,
-      (v) => (ref = v)
-    )
-  });
-
-  const mergedProps = $derived(mergeProps(restProps, fieldErrorsState.fieldErrorsProps));
+  }: ComponentProps<typeof FieldPrimitive.Error> = $props();
 </script>
 
-<div
-  bind:this={ref}
-  {...mergedProps}
-  data-slot="field-error"
+<FieldPrimitive.Error
+  bind:ref
   class={cn('text-destructive-foreground text-xs', className)}
->
-  {#if childrenProp}
-    {@render childrenProp({
-      errorProps: fieldErrorsState.errorProps,
-      errors: fieldErrorsState.field.errors
-    })}
-  {:else}
-    {#each fieldErrorsState.field.errors as error, i (i + error)}
-      <div {...fieldErrorsState.errorProps}>{error}</div>
-    {/each}
-  {/if}
-</div>
+  data-slot="field-error"
+  {...restProps}
+/>

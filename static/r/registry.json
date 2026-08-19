@@ -1392,29 +1392,16 @@
 			"description": "A component that provides labelling and validation for form controls.",
 			"type": "registry:ui",
 			"dependencies": [
-				"svelte-toolbelt@^0.10.6",
-				"sveltekit-superforms@^2.30.2",
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
-				"form",
 				"utils"
 			],
 			"files": [
 				{
 					"type": "registry:ui",
-					"path": "field/field-control.svelte",
-					"target": "$lib/components/ui/field/field-control.svelte"
-				},
-				{
-					"type": "registry:ui",
 					"path": "field/field-description.svelte",
 					"target": "$lib/components/ui/field/field-description.svelte"
-				},
-				{
-					"type": "registry:ui",
-					"path": "field/field-element.svelte",
-					"target": "$lib/components/ui/field/field-element.svelte"
 				},
 				{
 					"type": "registry:ui",
@@ -1440,11 +1427,6 @@
 					"type": "registry:ui",
 					"path": "field/index.ts",
 					"target": "$lib/components/ui/field/index.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "field/types.ts",
-					"target": "$lib/components/ui/field/types.ts"
 				}
 			]
 		},
@@ -1454,11 +1436,9 @@
 			"description": "A native fieldset element with a legend.",
 			"type": "registry:ui",
 			"dependencies": [
-				"svelte-toolbelt@^0.10.6",
-				"sveltekit-superforms@^2.30.2"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
-				"form",
 				"utils"
 			],
 			"files": [
@@ -1476,11 +1456,6 @@
 					"type": "registry:ui",
 					"path": "fieldset/index.ts",
 					"target": "$lib/components/ui/fieldset/index.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "fieldset/types.ts",
-					"target": "$lib/components/ui/fieldset/types.ts"
 				}
 			]
 		},
@@ -1505,32 +1480,10 @@
 			"description": "A form wrapper component that simplifies validation and submission.",
 			"type": "registry:ui",
 			"dependencies": [
-				"sveltekit-superforms@^2.30.2",
-				"svelte-toolbelt@^0.10.6",
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [],
 			"files": [
-				{
-					"type": "registry:ui",
-					"path": "form/form-context.svelte.ts",
-					"target": "$lib/components/ui/form/form-context.svelte.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "form/form-debug.svelte",
-					"target": "$lib/components/ui/form/form-debug.svelte"
-				},
-				{
-					"type": "registry:ui",
-					"path": "form/form-field-attrs.ts",
-					"target": "$lib/components/ui/form/form-field-attrs.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "form/form-field-state.svelte.ts",
-					"target": "$lib/components/ui/form/form-field-state.svelte.ts"
-				},
 				{
 					"type": "registry:ui",
 					"path": "form/form.svelte",
@@ -1540,41 +1493,6 @@
 					"type": "registry:ui",
 					"path": "form/index.ts",
 					"target": "$lib/components/ui/form/index.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "form/internal/attributes.ts",
-					"target": "$lib/components/ui/form/internal/attributes.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "form/internal/errors.ts",
-					"target": "$lib/components/ui/form/internal/errors.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "form/internal/id.ts",
-					"target": "$lib/components/ui/form/internal/id.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "form/internal/index.ts",
-					"target": "$lib/components/ui/form/internal/index.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "form/internal/path.test.ts",
-					"target": "$lib/components/ui/form/internal/path.test.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "form/internal/path.ts",
-					"target": "$lib/components/ui/form/internal/path.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "form/internal/types.ts",
-					"target": "$lib/components/ui/form/internal/types.ts"
 				}
 			]
 		},
@@ -1670,11 +1588,11 @@
 			"title": "Input",
 			"description": "A native input element.",
 			"type": "registry:ui",
-			"dependencies": [],
+			"dependencies": [
+				"@shardsui/svelte@0.1.0-beta.0"
+			],
 			"registryDependencies": [
-				"utils",
-				"field",
-				"form"
+				"utils"
 			],
 			"files": [
 				{
@@ -1773,9 +1691,7 @@
 			"title": "Label",
 			"description": "Renders an accessible label associated with controls.",
 			"type": "registry:ui",
-			"dependencies": [
-				"bits-ui@^2.18.1"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"utils"
 			],
@@ -3085,11 +3001,11 @@
 			"title": "Textarea",
 			"description": "A native textarea element for multi-line text input.",
 			"type": "registry:ui",
-			"dependencies": [],
+			"dependencies": [
+				"@shardsui/svelte@0.1.0-beta.0"
+			],
 			"registryDependencies": [
-				"utils",
-				"field",
-				"form"
+				"utils"
 			],
 			"files": [
 				{

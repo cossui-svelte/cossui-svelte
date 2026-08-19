@@ -1,14 +1,14 @@
 <script lang="ts">
+  import { Input as InputPrimitive } from '@shardsui/svelte/input';
+  import type { ComponentProps } from 'svelte';
   import type { HTMLInputAttributes } from 'svelte/elements';
   import { cn } from '$lib/utils';
-  import { FieldControl as Control } from '../field';
-  import { getField } from '../form/form-field-state.svelte.js';
 
-  interface Props extends Omit<HTMLInputAttributes, 'size'> {
+  type Props = Omit<HTMLInputAttributes, 'size'> & {
     ref?: HTMLInputElement | null;
     size?: 'sm' | 'default' | 'lg' | number;
     unstyled?: boolean;
-  }
+  };
 
   let {
     class: className,
@@ -23,7 +23,6 @@
 
   const inputClassName = $derived(
     cn(
-      // 'h-8.5 w-full min-w-0 rounded-[inherit] px-[calc(--spacing(3)-1px)] leading-8.5 outline-none placeholder:text-muted-foreground/72 sm:h-7.5 sm:leading-7.5 [transition:background-color_5000000s_ease-in-out_0s]',
       'h-8.5 w-full min-w-0 rounded-[inherit] px-[calc(--spacing(3)-1px)] text-foreground leading-8.5 outline-none [transition:background-color_5000000s_ease-in-out_0s] placeholder:text-muted-foreground/72 sm:h-7.5 sm:leading-7.5 autofill:[-webkit-text-fill-color:var(--foreground)]',
       size === 'sm' && 'h-7.5 px-[calc(--spacing(2.5)-1px)] leading-7.5 sm:h-6.5 sm:leading-6.5',
       size === 'lg' && 'h-9.5 leading-9.5 sm:h-8.5 sm:leading-8.5',
@@ -39,38 +38,19 @@
   class={cn(
     !unstyled &&
       'relative inline-flex w-full rounded-lg border border-input bg-background not-dark:bg-clip-padding text-base shadow-xs/5 ring-ring/24 transition-shadow before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-lg)-1px)] not-has-disabled:not-has-focus-visible:not-has-aria-invalid:before:shadow-[0_1px_--theme(--color-black/4%)] has-focus-visible:has-aria-invalid:border-destructive/64 has-focus-visible:has-aria-invalid:ring-destructive/16 has-aria-invalid:border-destructive/36 has-focus-visible:border-ring has-autofill:bg-foreground/4 has-disabled:opacity-64 has-[:disabled,:focus-visible,[aria-invalid]]:shadow-none has-focus-visible:ring-[3px] sm:text-sm dark:bg-input/32 dark:has-autofill:bg-foreground/8 dark:has-aria-invalid:ring-destructive/24 dark:not-has-disabled:not-has-focus-visible:not-has-aria-invalid:before:shadow-[0_-1px_--theme(--color-white/6%)]',
-    // 'relative inline-flex w-full rounded-lg border border-input bg-background not-dark:bg-clip-padding text-base text-foreground shadow-xs/5 ring-ring/24 transition-shadow before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-lg)-1px)] not-has-disabled:not-has-focus-visible:not-has-aria-invalid:before:shadow-[0_1px_--theme(--color-black/4%)] has-focus-visible:has-aria-invalid:border-destructive/64 has-focus-visible:has-aria-invalid:ring-destructive/16 has-aria-invalid:border-destructive/36 has-focus-visible:border-ring has-autofill:bg-foreground/4 has-disabled:opacity-64 has-[:disabled,:focus-visible,[aria-invalid]]:shadow-none has-focus-visible:ring-[3px] sm:text-sm dark:bg-input/32 dark:has-autofill:bg-foreground/8 dark:has-aria-invalid:ring-destructive/24 dark:not-has-disabled:not-has-focus-visible:not-has-aria-invalid:before:shadow-[0_-1px_--theme(--color-white/6%)]',
     className
   ) || undefined}
   data-size={size}
   data-slot="input-control"
 >
-  {#if getField()}
-    <Control>
-      {#snippet children({ props })}
-        <input
-          class={inputClassName}
-          data-slot="input"
-          bind:this={ref}
-          bind:value
-          {type}
-          {autocomplete}
-          size={typeof size === 'number' ? size : undefined}
-          {...restProps}
-          {...props}
-        />
-      {/snippet}
-    </Control>
-  {:else}
-    <input
-      class={inputClassName}
-      bind:this={ref}
-      data-slot="input"
-      bind:value
-      {type}
-      {autocomplete}
-      size={typeof size === 'number' ? size : undefined}
-      {...restProps}
-    />
-  {/if}
+  <InputPrimitive
+    bind:ref
+    bind:value
+    class={inputClassName}
+    data-slot="input"
+    {type}
+    {autocomplete}
+    size={typeof size === 'number' ? size : undefined}
+    {...restProps as ComponentProps<typeof InputPrimitive>}
+  />
 </span>

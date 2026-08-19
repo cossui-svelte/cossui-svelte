@@ -266,8 +266,8 @@ const allComponents: RegistryUiData = {
     folder: 'field',
     isnew: false,
     istodo: false,
-    npmDependencies: ['bits-ui', 'svelte-toolbelt', 'sveltekit-superforms'],
-    registryDependencies: ['form']
+    npmDependencies: ['@shardsui/svelte'],
+    registryDependencies: []
   },
   fieldset: {
     name: 'Fieldset',
@@ -276,8 +276,8 @@ const allComponents: RegistryUiData = {
     folder: 'fieldset',
     isnew: false,
     istodo: false,
-    npmDependencies: ['svelte-toolbelt', 'sveltekit-superforms'],
-    registryDependencies: ['form']
+    npmDependencies: ['@shardsui/svelte'],
+    registryDependencies: []
   },
   'file-upload': {
     name: 'File Upload',
@@ -296,7 +296,7 @@ const allComponents: RegistryUiData = {
     folder: 'form',
     isnew: false,
     istodo: false,
-    npmDependencies: ['bits-ui', 'svelte-toolbelt', 'sveltekit-superforms'],
+    npmDependencies: ['@shardsui/svelte'],
     registryDependencies: []
   },
   frame: {
@@ -326,7 +326,7 @@ const allComponents: RegistryUiData = {
     folder: 'input',
     isnew: false,
     istodo: false,
-    npmDependencies: [],
+    npmDependencies: ['@shardsui/svelte'],
     registryDependencies: []
   },
   'input-group': {
@@ -357,7 +357,7 @@ const allComponents: RegistryUiData = {
     folder: 'label',
     isnew: false,
     istodo: false,
-    npmDependencies: ['bits-ui'],
+    npmDependencies: [],
     registryDependencies: []
   },
   'link-preview': {
@@ -659,7 +659,7 @@ const allComponents: RegistryUiData = {
     folder: 'textarea',
     isnew: false,
     istodo: false,
-    npmDependencies: [],
+    npmDependencies: ['@shardsui/svelte'],
     registryDependencies: []
   },
   timeline: {
