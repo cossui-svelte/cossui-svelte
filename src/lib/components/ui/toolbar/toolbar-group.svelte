@@ -1,18 +1,19 @@
 <script lang="ts">
-  import { Toolbar } from 'bits-ui';
-  import type { Snippet } from 'svelte';
+  import { Toolbar as ToolbarPrimitive } from '@shardsui/svelte/toolbar';
+  import type { ComponentProps, Snippet } from 'svelte';
   import { cn } from '$lib/utils';
 
-  type Props = Toolbar.GroupProps & { children?: Snippet };
+  type Props = Omit<ComponentProps<typeof ToolbarPrimitive.Group>, 'children'> & {
+    children?: Snippet;
+  };
 
-  let { class: className, children, type = 'single', ...restProps }: Props = $props();
+  let { class: className, children, ...restProps }: Props = $props();
 </script>
 
-<Toolbar.Group
+<ToolbarPrimitive.Group
   class={cn('flex items-center gap-1', className)}
   data-slot="toolbar-group"
-  {type}
   {...restProps}
 >
   {@render children?.()}
-</Toolbar.Group>
+</ToolbarPrimitive.Group>

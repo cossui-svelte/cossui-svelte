@@ -2,6 +2,7 @@
   import { z } from 'zod';
   import {
     Autocomplete,
+    AutocompleteCollection,
     AutocompleteEmpty,
     AutocompleteInput,
     AutocompleteItem,
@@ -48,9 +49,11 @@
       <AutocompletePopup>
         <AutocompleteEmpty>No items found.</AutocompleteEmpty>
         <AutocompleteList>
-          {#each items as item (item.value)}
-            <AutocompleteItem label={item.label} value={item.value}>{item.label}</AutocompleteItem>
-          {/each}
+          <AutocompleteCollection>
+            {#snippet children(item: { label: string; value: string })}
+              <AutocompleteItem value={item}>{item.label}</AutocompleteItem>
+            {/snippet}
+          </AutocompleteCollection>
         </AutocompleteList>
       </AutocompletePopup>
     </Autocomplete>

@@ -1,12 +1,17 @@
 <script lang="ts">
-  import { LinkPreview } from 'bits-ui';
-  import type { Snippet } from 'svelte';
+  import { PreviewCard as PreviewCardPrimitive } from '@shardsui/svelte/preview-card';
+  import type { ComponentProps } from 'svelte';
 
-  type Props = LinkPreview.TriggerProps & { children?: Snippet };
-
-  let { children, ...restProps }: Props = $props();
+  let {
+    ref = $bindable(null),
+    class: className,
+    ...restProps
+  }: ComponentProps<typeof PreviewCardPrimitive.Trigger> = $props();
 </script>
 
-<LinkPreview.Trigger data-slot="preview-card-trigger" {...restProps}>
-  {@render children?.()}
-</LinkPreview.Trigger>
+<PreviewCardPrimitive.Trigger
+  bind:ref
+  class={className}
+  data-slot="preview-card-trigger"
+  {...restProps}
+/>

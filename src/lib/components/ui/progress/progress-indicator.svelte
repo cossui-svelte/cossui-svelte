@@ -1,23 +1,22 @@
 <script lang="ts">
-  import { getContext } from 'svelte';
-  import type { HTMLAttributes } from 'svelte/elements';
+  import { Progress as ProgressPrimitive } from '@shardsui/svelte/progress';
+  import type { ComponentProps, Snippet } from 'svelte';
   import { cn } from '$lib/utils';
-  import { PROGRESS_CONTEXT_KEY, type ProgressContext } from './progress.svelte';
 
-  type Props = HTMLAttributes<HTMLDivElement>;
+  type Props = Omit<ComponentProps<typeof ProgressPrimitive.Indicator>, 'children'> & {
+    children?: Snippet;
+  };
 
-  let { class: className, ...restProps }: Props = $props();
-
-  const ctx = getContext<ProgressContext>(PROGRESS_CONTEXT_KEY);
+  let { class: className, children, ...restProps }: Props = $props();
 </script>
 
-<div
+<ProgressPrimitive.Indicator
   class={cn(
-    'h-full bg-primary transition-all duration-500',
-    ctx.indeterminate && 'animate-indeterminate-progress w-full',
+    'h-full bg-primary transition-all duration-500 data-indeterminate:w-full data-indeterminate:animate-indeterminate-progress',
     className
   )}
   data-slot="progress-indicator"
-  style={ctx.indeterminate ? undefined : `width: ${ctx.percentage}%`}
   {...restProps}
-></div>
+>
+  {@render children?.()}
+</ProgressPrimitive.Indicator>

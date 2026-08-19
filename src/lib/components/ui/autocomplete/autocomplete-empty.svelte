@@ -1,19 +1,19 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
-  import type { HTMLAttributes } from 'svelte/elements';
+  import { Autocomplete as AutocompletePrimitive } from '@shardsui/svelte/autocomplete';
+  import type { ComponentProps, Snippet } from 'svelte';
   import { cn } from '$lib/utils';
 
-  interface Props extends HTMLAttributes<HTMLDivElement> {
+  type Props = Omit<ComponentProps<typeof AutocompletePrimitive.Empty>, 'children'> & {
     children?: Snippet;
-  }
+  };
 
   let { class: className, children, ...restProps }: Props = $props();
 </script>
 
-<div
+<AutocompletePrimitive.Empty
   class={cn('not-empty:p-2 text-center text-base text-muted-foreground sm:text-sm', className)}
   data-slot="autocomplete-empty"
   {...restProps}
 >
   {@render children?.()}
-</div>
+</AutocompletePrimitive.Empty>

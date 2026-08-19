@@ -1,14 +1,16 @@
 <script lang="ts">
-  import { Toolbar } from 'bits-ui';
-  import type { Snippet } from 'svelte';
+  import { Toolbar as ToolbarPrimitive } from '@shardsui/svelte/toolbar';
+  import type { ComponentProps, Snippet } from 'svelte';
   import { cn } from '$lib/utils';
 
-  type Props = Toolbar.RootProps & { children?: Snippet };
+  type Props = Omit<ComponentProps<typeof ToolbarPrimitive.Root>, 'children'> & {
+    children?: Snippet;
+  };
 
   let { class: className, children, ...restProps }: Props = $props();
 </script>
 
-<Toolbar.Root
+<ToolbarPrimitive.Root
   class={cn(
     'relative flex gap-2 rounded-xl border bg-card not-dark:bg-clip-padding p-1 text-card-foreground',
     className
@@ -17,4 +19,4 @@
   {...restProps}
 >
   {@render children?.()}
-</Toolbar.Root>
+</ToolbarPrimitive.Root>

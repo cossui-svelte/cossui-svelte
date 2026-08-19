@@ -4,6 +4,7 @@
   import { z } from 'zod';
   import {
     Autocomplete,
+    AutocompleteCollection,
     AutocompleteInput,
     AutocompleteItem,
     AutocompleteList,
@@ -173,10 +174,9 @@
   <Field class="w-0 min-w-full gap-2" name="time">
     <div class="flex flex-row items-center gap-3">
       <FieldLabel class="whitespace-nowrap text-xs">Enter time</FieldLabel>
-      <Autocomplete autoHighlight items={matchingTimes} onValueChange={handleValueChange}>
+      <Autocomplete autoHighlight filter={null} items={matchingTimes} value={time}>
         <AutocompleteInput
           aria-label="Enter time"
-          defaultValue={time}
           inputmode="numeric"
           maxlength={5}
           onblur={handleBlur}
@@ -188,10 +188,13 @@
         </AutocompleteInput>
         <AutocompletePopup class={matchingTimes.length === 0 ? 'hidden' : undefined}>
           <AutocompleteList>
-            {#each matchingTimes as item (item.value)}
-              <AutocompleteItem label={item.label} value={item.value}>{item.label}</AutocompleteItem
-              >
-            {/each}
+            <AutocompleteCollection>
+              {#snippet children(item: { label: string; value: string })}
+                <AutocompleteItem value={item} onclick={() => handleValueChange(item.value)}>
+                  {item.label}
+                </AutocompleteItem>
+              {/snippet}
+            </AutocompleteCollection>
           </AutocompleteList>
         </AutocompletePopup>
       </Autocomplete>

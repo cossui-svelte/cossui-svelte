@@ -65,28 +65,28 @@
     items: tagsData.filter((t) => t.group === groupName),
     value: groupName
   }));
-
-  const flatItems = tagsData.map((t) => ({ label: t.label, value: t.id }));
 </script>
 
-<Autocomplete items={flatItems}>
+<Autocomplete items={groupedTags}>
   <AutocompleteInput aria-label="Search tags" placeholder="e.g. feature" />
   <AutocompletePopup>
     <AutocompleteEmpty>No tags found.</AutocompleteEmpty>
     <AutocompleteList>
-      {#each groupedTags as group (group.value)}
-        <AutocompleteGroup>
-          <AutocompleteGroupLabel>{group.value}</AutocompleteGroupLabel>
-          <AutocompleteCollection>
-            {#each group.items as tag (tag.id)}
-              <AutocompleteItem label={tag.label} value={tag.id}>{tag.label}</AutocompleteItem>
-            {/each}
-          </AutocompleteCollection>
-        </AutocompleteGroup>
-        {#if group.value !== 'Team'}
-          <AutocompleteSeparator />
-        {/if}
-      {/each}
+      <AutocompleteCollection>
+        {#snippet children(group: (typeof groupedTags)[number])}
+          <AutocompleteGroup>
+            <AutocompleteGroupLabel>{group.value}</AutocompleteGroupLabel>
+            <AutocompleteCollection>
+              {#snippet children(tag: Tag)}
+                <AutocompleteItem value={tag}>{tag.label}</AutocompleteItem>
+              {/snippet}
+            </AutocompleteCollection>
+          </AutocompleteGroup>
+          {#if group.value !== 'Team'}
+            <AutocompleteSeparator />
+          {/if}
+        {/snippet}
+      </AutocompleteCollection>
     </AutocompleteList>
   </AutocompletePopup>
 </Autocomplete>

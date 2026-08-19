@@ -1,17 +1,19 @@
 <script lang="ts">
-  import { Combobox } from 'bits-ui';
-  import type { Snippet } from 'svelte';
+  import { Autocomplete as AutocompletePrimitive } from '@shardsui/svelte/autocomplete';
+  import type { ComponentProps, Snippet } from 'svelte';
   import { cn } from '$lib/utils';
 
-  type Props = Combobox.GroupProps & { children?: Snippet };
+  type Props = Omit<ComponentProps<typeof AutocompletePrimitive.Group>, 'children'> & {
+    children?: Snippet;
+  };
 
   let { class: className, children, ...restProps }: Props = $props();
 </script>
 
-<Combobox.Group
+<AutocompletePrimitive.Group
   class={cn('[[role=group]+&]:mt-1.5', className)}
   data-slot="autocomplete-group"
   {...restProps}
 >
   {@render children?.()}
-</Combobox.Group>
+</AutocompletePrimitive.Group>

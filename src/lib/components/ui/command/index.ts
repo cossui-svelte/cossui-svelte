@@ -1,5 +1,8 @@
+/* eslint-disable perfectionist/sort-named-exports */
+
+import { Autocomplete as AutocompletePrimitive } from '@shardsui/svelte/autocomplete';
+
 export { default as Command } from './command.svelte';
-export { default as CommandCollection } from './command-collection.svelte';
 export { default as CommandDialog } from './command-dialog.svelte';
 export { default as CommandDialogPopup } from './command-dialog-popup.svelte';
 export { default as CommandDialogTrigger } from './command-dialog-trigger.svelte';
@@ -13,3 +16,7 @@ export { default as CommandList } from './command-list.svelte';
 export { default as CommandPanel } from './command-panel.svelte';
 export { default as CommandSeparator } from './command-separator.svelte';
 export { default as CommandShortcut } from './command-shortcut.svelte';
+
+const { Collection: CommandCollection } = AutocompletePrimitive;
+
+export { CommandCollection };

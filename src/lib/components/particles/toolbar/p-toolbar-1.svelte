@@ -81,7 +81,7 @@
       </Tooltip>
     </ToggleGroup>
     <ToolbarSeparator />
-    <ToolbarGroup type="single">
+    <ToolbarGroup>
       <Tooltip>
         <TooltipTrigger
           aria-label="Format as currency"
@@ -102,7 +102,7 @@
       </Tooltip>
     </ToolbarGroup>
     <ToolbarSeparator />
-    <ToolbarGroup type="single">
+    <ToolbarGroup>
       <Select
         value={selected}
         onValueChange={(v) => {
@@ -131,7 +131,7 @@
       </Select>
     </ToolbarGroup>
     <ToolbarSeparator />
-    <ToolbarGroup type="single">
+    <ToolbarGroup>
       <Button>Save</Button>
     </ToolbarGroup>
   </Toolbar>

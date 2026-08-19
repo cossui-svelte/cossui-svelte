@@ -1,19 +1,19 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
-  import type { HTMLAttributes } from 'svelte/elements';
+  import { Progress as ProgressPrimitive } from '@shardsui/svelte/progress';
+  import type { ComponentProps, Snippet } from 'svelte';
   import { cn } from '$lib/utils';
 
-  interface Props extends HTMLAttributes<HTMLSpanElement> {
+  type Props = Omit<ComponentProps<typeof ProgressPrimitive.Label>, 'children'> & {
     children?: Snippet;
-  }
+  };
 
   let { class: className, children, ...restProps }: Props = $props();
 </script>
 
-<span
+<ProgressPrimitive.Label
   class={cn('font-medium text-foreground text-sm', className)}
   data-slot="progress-label"
   {...restProps}
 >
   {@render children?.()}
-</span>
+</ProgressPrimitive.Label>

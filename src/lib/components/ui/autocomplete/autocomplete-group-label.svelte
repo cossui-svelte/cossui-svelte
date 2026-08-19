@@ -1,17 +1,19 @@
 <script lang="ts">
-  import { Combobox } from 'bits-ui';
-  import type { Snippet } from 'svelte';
+  import { Autocomplete as AutocompletePrimitive } from '@shardsui/svelte/autocomplete';
+  import type { ComponentProps, Snippet } from 'svelte';
   import { cn } from '$lib/utils';
 
-  type Props = Combobox.GroupHeadingProps & { children?: Snippet };
+  type Props = Omit<ComponentProps<typeof AutocompletePrimitive.GroupLabel>, 'children'> & {
+    children?: Snippet;
+  };
 
   let { class: className, children, ...restProps }: Props = $props();
 </script>
 
-<Combobox.GroupHeading
+<AutocompletePrimitive.GroupLabel
   class={cn('px-2 py-1.5 font-medium text-muted-foreground text-xs', className)}
   data-slot="autocomplete-group-label"
   {...restProps}
 >
   {@render children?.()}
-</Combobox.GroupHeading>
+</AutocompletePrimitive.GroupLabel>

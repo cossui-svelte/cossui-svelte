@@ -64,7 +64,7 @@ const allComponents: RegistryUiData = {
     folder: 'autocomplete',
     isnew: false,
     istodo: false,
-    npmDependencies: ['@lucide/svelte', 'bits-ui'],
+    npmDependencies: ['@lucide/svelte', '@shardsui/svelte'],
     registryDependencies: ['scroll-area']
   },
   avatar: {
@@ -195,7 +195,7 @@ const allComponents: RegistryUiData = {
     folder: 'command',
     isnew: false,
     istodo: false,
-    npmDependencies: ['@lucide/svelte', 'bits-ui'],
+    npmDependencies: ['@lucide/svelte', '@shardsui/svelte'],
     registryDependencies: ['dialog', 'scroll-area']
   },
   'context-menu': {
@@ -459,7 +459,7 @@ const allComponents: RegistryUiData = {
     folder: 'preview-card',
     isnew: false,
     istodo: false,
-    npmDependencies: ['bits-ui'],
+    npmDependencies: ['@shardsui/svelte'],
     registryDependencies: []
   },
   progress: {
@@ -469,7 +469,7 @@ const allComponents: RegistryUiData = {
     folder: 'progress',
     isnew: false,
     istodo: false,
-    npmDependencies: ['bits-ui'],
+    npmDependencies: ['@shardsui/svelte'],
     registryDependencies: []
   },
   'radio-group': {
@@ -709,7 +709,7 @@ const allComponents: RegistryUiData = {
     folder: 'toolbar',
     isnew: false,
     istodo: false,
-    npmDependencies: ['bits-ui'],
+    npmDependencies: ['@shardsui/svelte'],
     registryDependencies: []
   },
   tooltip: {

@@ -77,32 +77,34 @@
     </KbdGroup>
   </CommandDialogTrigger>
   <CommandDialogPopup>
-    <Command>
+    <Command items={groupedItems}>
       <CommandInput placeholder="Search for apps and commands..." />
       <CommandPanel>
         <CommandEmpty>No results found.</CommandEmpty>
         <CommandList>
-          {#each groupedItems as group (group.value)}
-            <CommandGroup>
-              <CommandGroupLabel>{group.value}</CommandGroupLabel>
-              <CommandCollection>
-                {#each group.items as item (item.value)}
-                  <CommandItem
-                    value={item.value}
-                    onSelect={() => {
-                      open = false;
-                    }}
-                  >
-                    <span class="flex-1">{item.label}</span>
-                    {#if item.shortcut}
-                      <CommandShortcut>{item.shortcut}</CommandShortcut>
-                    {/if}
-                  </CommandItem>
-                {/each}
-              </CommandCollection>
-            </CommandGroup>
-            <CommandSeparator />
-          {/each}
+          <CommandCollection>
+            {#snippet children(group: Group)}
+              <CommandGroup>
+                <CommandGroupLabel>{group.value}</CommandGroupLabel>
+                <CommandCollection>
+                  {#snippet children(item: Item)}
+                    <CommandItem
+                      value={item}
+                      onclick={() => {
+                        open = false;
+                      }}
+                    >
+                      <span class="flex-1">{item.label}</span>
+                      {#if item.shortcut}
+                        <CommandShortcut>{item.shortcut}</CommandShortcut>
+                      {/if}
+                    </CommandItem>
+                  {/snippet}
+                </CommandCollection>
+              </CommandGroup>
+              <CommandSeparator />
+            {/snippet}
+          </CommandCollection>
         </CommandList>
       </CommandPanel>
       <CommandFooter>

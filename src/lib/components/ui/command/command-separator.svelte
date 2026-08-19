@@ -1,13 +1,13 @@
 <script lang="ts">
-  import { Command } from 'bits-ui';
+  import { Autocomplete as AutocompletePrimitive } from '@shardsui/svelte/autocomplete';
+  import type { ComponentProps } from 'svelte';
   import { cn } from '$lib/utils';
 
-  type Props = Command.SeparatorProps;
-
-  let { class: className, ...restProps }: Props = $props();
+  let { class: className, ...restProps }: ComponentProps<typeof AutocompletePrimitive.Separator> =
+    $props();
 </script>
 
-<Command.Separator
+<AutocompletePrimitive.Separator
   class={cn('my-2 h-px bg-border', className)}
   data-slot="command-separator"
   {...restProps}

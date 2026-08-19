@@ -1,10 +1,9 @@
 <script lang="ts">
-  import type { HTMLInputAttributes } from 'svelte/elements';
+  import { Toolbar as ToolbarPrimitive } from '@shardsui/svelte/toolbar';
+  import type { ComponentProps } from 'svelte';
   import { cn } from '$lib/utils';
 
-  type Props = HTMLInputAttributes;
-
-  let { class: className, ...restProps }: Props = $props();
+  let { class: className, ...restProps }: ComponentProps<typeof ToolbarPrimitive.Input> = $props();
 </script>
 
-<input class={cn(className)} data-slot="toolbar-input" {...restProps} />
+<ToolbarPrimitive.Input class={cn(className)} data-slot="toolbar-input" {...restProps} />

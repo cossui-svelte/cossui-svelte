@@ -1,15 +1,20 @@
 <script lang="ts">
-  import { Combobox } from 'bits-ui';
+  import { Autocomplete as AutocompletePrimitive } from '@shardsui/svelte/autocomplete';
   import type { Snippet } from 'svelte';
+  import type { HTMLButtonAttributes } from 'svelte/elements';
   import { cn } from '$lib/utils';
 
-  interface Props extends Combobox.TriggerProps {
+  interface Props extends HTMLButtonAttributes {
     children?: Snippet;
   }
 
   let { class: className, children, ...restProps }: Props = $props();
 </script>
 
-<Combobox.Trigger class={cn(className)} data-slot="autocomplete-trigger" {...restProps}>
+<AutocompletePrimitive.Trigger
+  class={cn(className)}
+  data-slot="autocomplete-trigger"
+  {...restProps as Record<string, unknown>}
+>
   {@render children?.()}
-</Combobox.Trigger>
+</AutocompletePrimitive.Trigger>
