@@ -121,7 +121,8 @@
       </li>
       <li>
         <strong class="font-semibold text-foreground">Batteries included</strong> — 70 components and
-        700+ blocks and patterns, so you can spend your time on your app instead of your UI.
+        700+ blocks and particules, including forms, fieldset and skeletons. Now you can focus on your
+        application logic instead of reinventing the wheel.
       </li>
       <li>
         <strong class="font-semibold text-foreground">Built on Base UI</strong> — Powered by Shards UI,
