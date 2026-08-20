@@ -60,11 +60,22 @@
       else disabled.push(item);
     }
 
+    const matchRank = (label: string) => {
+      if (!q) return 0;
+      const lower = label.toLowerCase();
+      if (lower === q) return 0;
+      if (lower.startsWith(q)) return 1;
+      if (lower.includes(` ${q}`)) return 2;
+      return 3;
+    };
+
     const sortedEnabled = [...enabled].sort((a, b) => {
       const aSelected = selectedValues.includes(a.value);
       const bSelected = selectedValues.includes(b.value);
       if (aSelected && !bSelected) return -1;
       if (!aSelected && bSelected) return 1;
+      const rankDiff = matchRank(a.label) - matchRank(b.label);
+      if (rankDiff !== 0) return rankDiff;
       return a.label.localeCompare(b.label, undefined, { numeric: true });
     });
 
@@ -74,6 +85,20 @@
 
     return { disabled: sortedDisabled, enabled: sortedEnabled };
   });
+
+  function matchParts(label: string) {
+    const q = inputValue.trim();
+    if (!q) return [{ text: label, match: false }];
+
+    const index = label.toLowerCase().indexOf(q.toLowerCase());
+    if (index === -1) return [{ text: label, match: false }];
+
+    return [
+      { text: label.slice(0, index), match: false },
+      { text: label.slice(index, index + q.length), match: true },
+      { text: label.slice(index + q.length), match: false }
+    ].filter((part) => part.text.length > 0);
+  }
 
   function handleValueChange(newValues: string[]) {
     const newItems = newValues
@@ -88,6 +113,7 @@
 <div class="mx-auto max-w-2xl">
   <Combobox
     multiple
+    autoHighlight
     value={selectedValues}
     onValueChange={handleValueChange}
     open={isOpen}
@@ -128,7 +154,15 @@
             {#each groupedItems.enabled as item (item.value)}
               <ComboboxItem value={item.value} label={item.label}>
                 <Tag class="size-3.5 opacity-80" strokeWidth={2} />
-                {item.label}
+                <span>
+                  {#each matchParts(item.label) as part, i (i)}
+                    {#if part.match}
+                      <mark class="rounded-xs bg-primary/20 text-inherit">{part.text}</mark>
+                    {:else}
+                      {part.text}
+                    {/if}
+                  {/each}
+                </span>
               </ComboboxItem>
             {/each}
           </ComboboxGroup>
@@ -141,7 +175,15 @@
             {#each groupedItems.disabled as item (item.value)}
               <ComboboxItem value={item.value} label={item.label} disabled>
                 <Tag class="size-3.5 opacity-80" strokeWidth={2} />
-                {item.label}
+                <span>
+                  {#each matchParts(item.label) as part, i (i)}
+                    {#if part.match}
+                      <mark class="rounded-xs bg-primary/20 text-inherit">{part.text}</mark>
+                    {:else}
+                      {part.text}
+                    {/if}
+                  {/each}
+                </span>
               </ComboboxItem>
             {/each}
           </ComboboxGroup>
