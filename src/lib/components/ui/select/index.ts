@@ -10,7 +10,7 @@ export { default as SelectScrollDownButton } from './select-scroll-down-button.s
 export { default as SelectScrollUpButton } from './select-scroll-up-button.svelte';
 export { default as SelectSeparator } from './select-separator.svelte';
 export { default as SelectTrigger } from './select-trigger.svelte';
-export { type SelectTriggerVariants, selectTriggerVariants } from './select-trigget-variants';
+export { type SelectTriggerVariants, selectTriggerVariants } from './select-trigger-variants';
 export { default as SelectValue } from './select-value.svelte';
 
 const { Group: SelectGroup } = SelectPrimitive;

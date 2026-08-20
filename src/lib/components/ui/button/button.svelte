@@ -30,6 +30,8 @@
     children?: Snippet;
     loading?: boolean;
   } = $props();
+
+  const isDisabled = $derived(Boolean(loading || disabled));
 </script>
 
 {#if href}
@@ -38,31 +40,32 @@
     bind:this={ref}
     class={cn(buttonVariants({ size, variant }), className)}
     data-slot="button"
-    href={disabled ? undefined : href}
-    aria-disabled={disabled ? true : undefined}
-    role={disabled ? 'link' : undefined}
-    tabindex={disabled ? -1 : undefined}
+    data-loading={loading ? '' : undefined}
+    href={isDisabled ? undefined : href}
+    aria-disabled={isDisabled ? true : undefined}
+    role={isDisabled ? 'link' : undefined}
+    tabindex={isDisabled ? -1 : undefined}
     {...restProps as HTMLAnchorAttributes}
   >
+    {@render children?.()}
     {#if loading === true}
-      <Spinner /> {@render children?.()}
-    {:else}
-      {@render children?.()}
+      <Spinner class="pointer-events-none absolute" data-slot="button-loading-indicator" />
     {/if}
   </a>
   <!-- eslint-enable svelte/no-navigation-without-resolve -->
 {:else}
   <ButtonPrimitive
     bind:ref
-    disabled={disabled ?? undefined}
+    disabled={isDisabled}
     class={cn(buttonVariants({ size, variant }), className)}
     data-slot="button"
+    data-loading={loading ? '' : undefined}
+    aria-disabled={loading || undefined}
     {...restProps as unknown as ComponentProps<typeof ButtonPrimitive>}
   >
+    {@render children?.()}
     {#if loading === true}
-      <Spinner /> {@render children?.()}
-    {:else}
-      {@render children?.()}
+      <Spinner class="pointer-events-none absolute" data-slot="button-loading-indicator" />
     {/if}
   </ButtonPrimitive>
 {/if}

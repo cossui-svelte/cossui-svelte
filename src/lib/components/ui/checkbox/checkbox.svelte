@@ -31,23 +31,7 @@
       data-unchecked={!checked && !indeterminate ? '' : undefined}
       data-indeterminate={indeterminate ? '' : undefined}
     >
-      {#if checked}
-        <svg
-          aria-hidden="true"
-          class="size-3.5 sm:size-3"
-          fill="none"
-          height="24"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="3"
-          viewBox="0 0 24 24"
-          width="24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M5.252 12.7 10.2 18.63 18.748 5.37"></path>
-        </svg>
-      {:else if indeterminate}
+      {#if indeterminate}
         <svg
           aria-hidden="true"
           class="size-3.5 sm:size-3"
@@ -62,6 +46,22 @@
           xmlns="http://www.w3.org/2000/svg"
         >
           <path d="M5.252 12h13.496"></path>
+        </svg>
+      {:else if checked}
+        <svg
+          aria-hidden="true"
+          class="size-3.5 sm:size-3"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="3"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M5.252 12.7 10.2 18.63 18.748 5.37"></path>
         </svg>
       {/if}
     </span>

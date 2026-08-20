@@ -3,7 +3,7 @@
   import { Select as SelectPrimitive } from '@shardsui/svelte/select';
   import type { ComponentProps, Snippet } from 'svelte';
   import { cn } from '$lib/utils';
-  import { type SelectTriggerVariants, selectTriggerVariants } from './select-trigget-variants';
+  import { type SelectTriggerVariants, selectTriggerVariants } from './select-trigger-variants';
 
   type Props = Omit<ComponentProps<typeof SelectPrimitive.Trigger>, 'children'> & {
     size?: SelectTriggerVariants['size'];

@@ -1,3 +1,17 @@
+<script lang="ts" module>
+  import { getContext, setContext } from 'svelte';
+  import type { SegmentedControlSize } from '$lib/segmented-control';
+
+  export function setTabsListSize(getSize: () => SegmentedControlSize) {
+    setContext('tabsListSize', getSize);
+  }
+
+  export function getTabsListSize(): SegmentedControlSize {
+    const getSize = getContext<(() => SegmentedControlSize) | undefined>('tabsListSize');
+    return getSize?.() ?? 'default';
+  }
+</script>
+
 <script lang="ts">
   import { Tabs as TabsPrimitive } from '@shardsui/svelte/tabs';
   import type { ComponentProps, Snippet } from 'svelte';
@@ -9,9 +23,18 @@
   type Props = Omit<ComponentProps<typeof TabsPrimitive.List>, 'children'> & {
     children?: Snippet;
     variant?: TabsVariant;
+    size?: SegmentedControlSize;
   };
 
-  let { class: className, variant = 'default', children, ...restProps }: Props = $props();
+  let {
+    class: className,
+    variant = 'default',
+    size = 'default',
+    children,
+    ...restProps
+  }: Props = $props();
+
+  setTabsListSize(() => size);
 </script>
 
 <TabsPrimitive.List
@@ -23,6 +46,7 @@
       : 'data-[orientation=vertical]:px-1 data-[orientation=horizontal]:py-1 *:data-[slot=tabs-tab]:hover:bg-accent',
     className
   )}
+  data-size={size}
   data-slot="tabs-list"
   {...restProps}
 >
