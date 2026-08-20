@@ -12,7 +12,7 @@
   let { class: className, children, scrollFade = true, ...restProps }: Props = $props();
 </script>
 
-<ScrollArea {scrollFade}>
+<ScrollArea class="flex-1" {scrollFade}>
   <div
     class={cn(
       'p-6 in-[[data-slot=dialog-popup]:has([data-slot=dialog-header])]:pt-1 in-[[data-slot=dialog-popup]:has([data-slot=dialog-footer]:not(.border-t))]:pb-1',

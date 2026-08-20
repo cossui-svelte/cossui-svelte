@@ -99,7 +99,7 @@
   <PageHeader>
     <PageHeaderHeading>DOCS: COMING SOON</PageHeaderHeading>
     <PageHeaderDescription>
-      I’ve been wondering: in the age of AI, is a documentation still necessary?<br /> You can point
+      I’ve been wondering: in the age of AI, is documentation still necessary?<br /> You can point
       your assistant to the product and ask questions to get instant answers.<br />It appears that
       the days where developers read full documentation are gone.<br /><br />Let’s prioritize on the
       AI experience over traditional documentation.<br />If you have questions or need help, feel
@@ -112,7 +112,7 @@
   <main class="m-8">
     <ul class="space-y-3 text-muted-foreground">
       <li>
-        <strong class="font-semibold text-foreground">Modern by default</strong> — Clean, contemporary
+        <strong class="font-semibold text-foreground">Modern look</strong> — Clean, contemporary
         styling with layered shadows and softly rounded surfaces.
       </li>
       <li>
@@ -128,7 +128,7 @@
         a Svelte port of Base UI.
       </li>
       <li>
-        <strong class="font-semibold text-foreground">Svelte 5 native</strong> — Intuitive by default.
+        <strong class="font-semibold text-foreground">Svelte 5 native</strong> — Intuitiveness by default.
       </li>
     </ul>
   </main>

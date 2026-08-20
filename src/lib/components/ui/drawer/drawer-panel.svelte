@@ -49,7 +49,7 @@
 {/snippet}
 
 {#if scrollable}
-  <ScrollArea class="touch-auto" {scrollFade}>
+  <ScrollArea class="touch-auto flex-1" {scrollFade}>
     {@render panel()}
   </ScrollArea>
 {:else}

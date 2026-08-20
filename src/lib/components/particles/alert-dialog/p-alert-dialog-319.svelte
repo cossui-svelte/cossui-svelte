@@ -31,7 +31,7 @@
   <DialogTrigger class={buttonVariants({ variant: 'outline' })}>Terms & Conditions</DialogTrigger>
   <DialogPopup class="max-h-[min(640px,80vh)] gap-0 p-0" showCloseButton={false}>
     <DialogTitle class="border-b px-6 py-4 text-base">Terms & Conditions</DialogTitle>
-    <ScrollArea bind:viewportRef={viewportEl}>
+    <ScrollArea class="flex-1" bind:viewportRef={viewportEl}>
       <div class="px-6 py-4 text-muted-foreground text-sm">
         <div class="flex flex-col gap-4 [&_strong]:font-semibold [&_strong]:text-foreground">
           <div class="flex flex-col gap-1">

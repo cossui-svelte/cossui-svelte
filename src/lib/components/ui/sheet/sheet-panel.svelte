@@ -14,7 +14,7 @@
   } = $props();
 </script>
 
-<ScrollArea {scrollFade}>
+<ScrollArea class="flex-1" {scrollFade}>
   <div
     bind:this={ref}
     data-slot="sheet-panel"
