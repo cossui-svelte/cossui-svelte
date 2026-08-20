@@ -2,6 +2,58 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.9.21](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.19...v0.9.21) (2026-08-20)
+
+### ✨ Features
+
+* 20 alert-dialog particle from origin ([67d5907](https://github.com/cossui-svelte/cossui-svelte/commit/67d590710e0a3c8f20f31ae96e048caa38cbff64))
+* 3 more number-field particules ([6411746](https://github.com/cossui-svelte/cossui-svelte/commit/64117466763e265511d72f1ebdb6c51cca2f7c3a))
+* about 10 new checkbox particles from origin ([de01b36](https://github.com/cossui-svelte/cossui-svelte/commit/de01b36be0f09191378bcbcec20909579098da3d))
+* add one new breadcrumb particule from originui ([145b302](https://github.com/cossui-svelte/cossui-svelte/commit/145b3025805bf002d4ce385404b2d0995943f95a))
+* convert timeline ([1af31da](https://github.com/cossui-svelte/cossui-svelte/commit/1af31da6e87b8896c3e1638acae3ab3f72e9edf4))
+* inline calendar and range-calendar ([10ebd8b](https://github.com/cossui-svelte/cossui-svelte/commit/10ebd8bbf59a61b41c717befba8ec38bfa4b219c))
+* inline otp-field ([0087526](https://github.com/cossui-svelte/cossui-svelte/commit/00875260a2e02c8345bee3a8a7a5eb075efda095))
+* make number-field more customizable ([3db381d](https://github.com/cossui-svelte/cossui-svelte/commit/3db381d5f782accecdc32e5d15d85228c8d42f12))
+* migrate to shardUI - thank you AI! ([69ae3b0](https://github.com/cossui-svelte/cossui-svelte/commit/69ae3b0bf84e01dc7faf4201d012df3deca5145b))
+* number-field now has layout but also formatting capabilities ([e00422f](https://github.com/cossui-svelte/cossui-svelte/commit/e00422f4af02af65295a7062d225d3808382d275))
+* one more avatar particule ([1470b72](https://github.com/cossui-svelte/cossui-svelte/commit/1470b72443742404e6516a1de54770f400edf6d1))
+* one more badge particule ([6ce6e3c](https://github.com/cossui-svelte/cossui-svelte/commit/6ce6e3c2cfa226862958a5a678b18a75636d04e7))
+* properly name the package and book on npm.org ([e74730b](https://github.com/cossui-svelte/cossui-svelte/commit/e74730bc889cc79de31935ebfdcb89cd4850f29c))
+* remove bitsui dependency ([e143db8](https://github.com/cossui-svelte/cossui-svelte/commit/e143db8ca032faf1ae51c79aad2ba03fa149ef92))
+* shardsUI take 2, thank you AI ([b845263](https://github.com/cossui-svelte/cossui-svelte/commit/b845263b55d66514358782a7308abb307a4ddb44))
+* shardUI take3, rework form, field, fieldset, input, textarea and particules ([f8bc3b0](https://github.com/cossui-svelte/cossui-svelte/commit/f8bc3b0a0853a86fcdbbd99445a229a2064835bb))
+* shardUI take3, rework form, field, fieldset, input, textarea and particules ([43d9198](https://github.com/cossui-svelte/cossui-svelte/commit/43d919890a85baaed0c79152eae04d428399d808))
+
+### 🐛 Bug Fixes
+
+* /particule search highlight ([4f0cc7a](https://github.com/cossui-svelte/cossui-svelte/commit/4f0cc7a52b8a319dcca18fa95b598fe108b9d418))
+* a few more checkbox particules ([122b636](https://github.com/cossui-svelte/cossui-svelte/commit/122b6361f0fd00a86a3d52429831983f48934572))
+* add layout default for custom particles ([a37387a](https://github.com/cossui-svelte/cossui-svelte/commit/a37387aac2859f486aae0ef49b594609d71ea6e5))
+* align gaps with upstream ([2b13df3](https://github.com/cossui-svelte/cossui-svelte/commit/2b13df36acf2cfda92c8cebedd26d04e8b1894ec))
+* checkboxes are rounded-boxes not circles ([4bdb030](https://github.com/cossui-svelte/cossui-svelte/commit/4bdb03014a56861e0922615c931c73ac279078b6))
+* collapsible bug ([78b90e9](https://github.com/cossui-svelte/cossui-svelte/commit/78b90e92657b9183fb631842d7b29639741b1be7))
+* command particules ([d3957c9](https://github.com/cossui-svelte/cossui-svelte/commit/d3957c93c336e86eb97d800f83d87a5477cc728c))
+* copy/paste issue in viewcode drawer ([f0b7238](https://github.com/cossui-svelte/cossui-svelte/commit/f0b72382bd4e163383bb61483c5f5009dc64896f))
+* credits ([8c8f42a](https://github.com/cossui-svelte/cossui-svelte/commit/8c8f42a10e39154e3106d372252e3984098d8f21))
+* effect update depth bug ([151170e](https://github.com/cossui-svelte/cossui-svelte/commit/151170e18a405d4bad2310da400b92f46f02854a))
+* forgot to run metadata gen ([e1f1eed](https://github.com/cossui-svelte/cossui-svelte/commit/e1f1eed9b36c1338a9302815fa2b1ac787d43932))
+* inline aspect-ratio ([17e413a](https://github.com/cossui-svelte/cossui-svelte/commit/17e413a4c6496049f4d90eeaf1c6ed2add4661a9))
+* p-alert-dialog-332 small border glitch ([0a780d9](https://github.com/cossui-svelte/cossui-svelte/commit/0a780d9c12386ae220fa5e0157d4b978c9aa6ad9))
+* p-checkbox-group-4 state and visual fixes ([145deae](https://github.com/cossui-svelte/cossui-svelte/commit/145deae410652d6c421c0157db341c378258278e))
+* p-slider-13 rendering issue ([c707c52](https://github.com/cossui-svelte/cossui-svelte/commit/c707c5285624813e66b934bf56e86b26244fa40f))
+* registry updates ([e8c7f49](https://github.com/cossui-svelte/cossui-svelte/commit/e8c7f49dd44244aa82f46f5cf8bb5b9967ebd7ef))
+* registry url issues ([fb7a02b](https://github.com/cossui-svelte/cossui-svelte/commit/fb7a02bdfc5c262a83e32c299541a19a64eed2b8))
+* remove p-alert-dialog-333 duplicate ([59df26a](https://github.com/cossui-svelte/cossui-svelte/commit/59df26a859c4d23ed5be535e2a7faab8650403ce))
+* several scroll-area issues ([47e9ef8](https://github.com/cossui-svelte/cossui-svelte/commit/47e9ef801c7827b73858cfb5e96d139196b6f13c))
+* single view onclick issue ([4c05b74](https://github.com/cossui-svelte/cossui-svelte/commit/4c05b74e34e968bc785a9a05d480672b4798289c))
+* small glitch on p-number-field-100 ([0dea4e8](https://github.com/cossui-svelte/cossui-svelte/commit/0dea4e804f0a2fade46a39b83314c7bd07378d70))
+* update changelog ([f669bae](https://github.com/cossui-svelte/cossui-svelte/commit/f669baed5f7f9a03b558a932d09b55221e13a300))
+* update changelog ([bc5fcff](https://github.com/cossui-svelte/cossui-svelte/commit/bc5fcffeb904e444d4652502701a79b1d80c550a))
+
+### 🚚 Chores
+
+* deps ([0b40d9e](https://github.com/cossui-svelte/cossui-svelte/commit/0b40d9e0702ac11873aa61154e9110b12df12bbf))
+* **release:** 0.9.20 ([d54ebfa](https://github.com/cossui-svelte/cossui-svelte/commit/d54ebfab394dd6d71ea0d743c0e6e01f115eab0c))
 ## [0.9.20](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.19...v0.9.20) (2026-08-14)
 
 ### ✨ Features
