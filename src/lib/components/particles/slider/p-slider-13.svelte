@@ -32,7 +32,7 @@
   </NumberField>
   <Slider
     aria-label="Dual range slider"
-    class="flex-1 *:min-w-0!"
+    class="flex-1"
     {max}
     {min}
     bind:value={values}

@@ -2666,7 +2666,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   },
   'p-slider-16': {
     description: 'Emoji rating slider',
-    tags: ['slider'],
+    tags: ['slider', 'starrating'],
     registryDependencies: ['slider'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
