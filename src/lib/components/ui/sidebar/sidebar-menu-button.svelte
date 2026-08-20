@@ -26,7 +26,7 @@
 </script>
 
 <script lang="ts">
-  import { mergeProps } from 'bits-ui';
+  import { mergeProps } from 'svelte-toolbelt';
   import { Tooltip, TooltipContent } from '$lib/components/ui/tooltip/';
   import { cn, type WithElementRef, type WithoutChildrenOrChild } from '$lib/utils.js';
   import { useSidebar } from './context.svelte.js';

@@ -2170,7 +2170,9 @@
 			"description": "A segmented input for one-time passwords and verification codes.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.2"
+				"runed@0.37.1",
+				"svelte-toolbelt@^0.10.6",
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -2180,6 +2182,36 @@
 					"type": "registry:ui",
 					"path": "otp-field/index.ts",
 					"target": "$lib/components/ui/otp-field/index.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "otp-field/internal/ids.ts",
+					"target": "$lib/components/ui/otp-field/internal/ids.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "otp-field/internal/pin-input-state.svelte.ts",
+					"target": "$lib/components/ui/otp-field/internal/pin-input-state.svelte.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "otp-field/internal/primitives/pin-input-cell.svelte",
+					"target": "$lib/components/ui/otp-field/internal/primitives/pin-input-cell.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "otp-field/internal/primitives/pin-input-root.svelte",
+					"target": "$lib/components/ui/otp-field/internal/primitives/pin-input-root.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "otp-field/internal/types.ts",
+					"target": "$lib/components/ui/otp-field/internal/types.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "otp-field/internal/use-password-manager.svelte.ts",
+					"target": "$lib/components/ui/otp-field/internal/use-password-manager.svelte.ts"
 				},
 				{
 					"type": "registry:ui",
@@ -2723,7 +2755,7 @@
 			"type": "registry:ui",
 			"dependencies": [
 				"tailwind-variants@^3.3.1",
-				"bits-ui@^2.18.2"
+				"svelte-toolbelt@^0.10.6"
 			],
 			"registryDependencies": [
 				"button",
@@ -3466,7 +3498,6 @@
 			"dependencies": [
 				"@headless-tree/core@^1.7.0",
 				"runed@0.37.1",
-				"bits-ui@^2.18.2",
 				"svelte-toolbelt@^0.10.6"
 			],
 			"registryDependencies": [

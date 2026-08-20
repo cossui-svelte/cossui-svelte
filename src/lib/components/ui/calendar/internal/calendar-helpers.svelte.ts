@@ -603,6 +603,7 @@ export function getDefaultYears(opts: {
   maxValue: DateValue | undefined;
   placeholderYear: number;
 }) {
+  // eslint-disable-next-line svelte/prefer-svelte-reactivity -- one-shot read, not stored as reactive state
   const currentYear = new Date().getFullYear();
   const latestYear = Math.max(opts.placeholderYear, currentYear);
   let minYear: number;

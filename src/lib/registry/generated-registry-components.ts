@@ -418,7 +418,7 @@ const allComponents: RegistryUiData = {
     folder: 'otp-field',
     isnew: true,
     istodo: false,
-    npmDependencies: ['bits-ui'],
+    npmDependencies: ['@shardsui/svelte', 'runed', 'svelte-toolbelt'],
     registryDependencies: []
   },
   pagination: {
@@ -551,7 +551,7 @@ const allComponents: RegistryUiData = {
     folder: 'sidebar',
     isnew: true,
     istodo: false,
-    npmDependencies: ['@lucide/svelte', 'bits-ui', 'tailwind-variants'],
+    npmDependencies: ['@lucide/svelte', 'svelte-toolbelt', 'tailwind-variants'],
     registryDependencies: [
       'button',
       'input',
@@ -730,13 +730,7 @@ const allComponents: RegistryUiData = {
     folder: 'tree',
     isnew: true,
     istodo: false,
-    npmDependencies: [
-      '@headless-tree/core',
-      '@lucide/svelte',
-      'bits-ui',
-      'runed',
-      'svelte-toolbelt'
-    ],
+    npmDependencies: ['@headless-tree/core', '@lucide/svelte', 'runed', 'svelte-toolbelt'],
     registryDependencies: []
   }
 };

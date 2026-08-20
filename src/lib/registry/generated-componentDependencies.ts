@@ -30,7 +30,7 @@ export const COMPONENT_DEPENDENCIES: Record<string, string[]> = {
   map: ['maplibre-gl', 'geojson'],
   menu: ['@shardsui/svelte'],
   meter: ['@shardsui/svelte'],
-  'otp-field': ['bits-ui'],
+  'otp-field': ['runed', 'svelte-toolbelt', '@shardsui/svelte'],
   'p-alert-2': ['@lucide/svelte'],
   'p-alert-3': ['@lucide/svelte'],
   'p-alert-4': ['@lucide/svelte'],
@@ -299,7 +299,7 @@ export const COMPONENT_DEPENDENCIES: Record<string, string[]> = {
   select: ['@shardsui/svelte', 'tailwind-variants'],
   separator: ['@shardsui/svelte'],
   sheet: ['@shardsui/svelte'],
-  sidebar: ['tailwind-variants', 'bits-ui'],
+  sidebar: ['tailwind-variants', 'svelte-toolbelt'],
   skeleton: ['@aejkatappaja/phantom-ui'],
   slider: ['@shardsui/svelte'],
   starrating: ['tailwind-variants'],
@@ -311,7 +311,7 @@ export const COMPONENT_DEPENDENCIES: Record<string, string[]> = {
   'toggle-group': ['@shardsui/svelte'],
   toolbar: ['@shardsui/svelte'],
   tooltip: ['@shardsui/svelte'],
-  tree: ['@headless-tree/core', 'runed', 'bits-ui', 'svelte-toolbelt'],
+  tree: ['@headless-tree/core', 'runed', 'svelte-toolbelt'],
   utils: ['clsx', 'tailwind-merge']
 };
 

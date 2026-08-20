@@ -33,7 +33,7 @@
 			"type": "registry:ui",
 			"path": "tree/tree-drag-line.svelte",
 			"target": "$lib/components/ui/tree/tree-drag-line.svelte",
-			"content": "<script lang=\"ts\">\n  import type { WithElementRef } from 'bits-ui';\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn } from '$lib/utils';\n  import { useTreeContext } from './tree-context.svelte';\n\n  type TreeDragLineProps = WithElementRef<HTMLAttributes<HTMLDivElement>>;\n\n  let {\n    children,\n    class: className,\n    ref = $bindable(null),\n    ...restProps\n  }: TreeDragLineProps = $props();\n\n  const ctx = useTreeContext();\n\n  if (!ctx.tree || typeof ctx.tree.current.getDragLineStyle !== 'function') {\n    console.warn(\n      'TreeDragLine: No tree provided via context or tree does not have getDragLineStyle method'\n    );\n  }\n\n  const dragLine = $derived.by(() =>\n    Object.entries(ctx.tree?.reactive(() => ctx.tree?.current.getDragLineStyle()) ?? {})\n      .map(([key, value]) => `${key}: ${value}`)\n      .join('; ')\n  );\n</script>\n\n<div\n  style={dragLine}\n  class={cn(\n    'bg-primary before:border-primary before:bg-background absolute z-30 -mt-px h-0.5 w-[unset] before:absolute before:-top-[3px] before:left-0 before:size-2 before:rounded-full before:border-2',\n    className\n  )}\n  {...restProps}\n>\n  {@render children?.()}\n</div>\n"
+			"content": "<script lang=\"ts\">\n  import type { WithElementRef } from '$lib/utils';\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn } from '$lib/utils';\n  import { useTreeContext } from './tree-context.svelte';\n\n  type TreeDragLineProps = WithElementRef<HTMLAttributes<HTMLDivElement>>;\n\n  let {\n    children,\n    class: className,\n    ref = $bindable(null),\n    ...restProps\n  }: TreeDragLineProps = $props();\n\n  const ctx = useTreeContext();\n\n  if (!ctx.tree || typeof ctx.tree.current.getDragLineStyle !== 'function') {\n    console.warn(\n      'TreeDragLine: No tree provided via context or tree does not have getDragLineStyle method'\n    );\n  }\n\n  const dragLine = $derived.by(() =>\n    Object.entries(ctx.tree?.reactive(() => ctx.tree?.current.getDragLineStyle()) ?? {})\n      .map(([key, value]) => `${key}: ${value}`)\n      .join('; ')\n  );\n</script>\n\n<div\n  style={dragLine}\n  class={cn(\n    'bg-primary before:border-primary before:bg-background absolute z-30 -mt-px h-0.5 w-[unset] before:absolute before:-top-[3px] before:left-0 before:size-2 before:rounded-full before:border-2',\n    className\n  )}\n  {...restProps}\n>\n  {@render children?.()}\n</div>\n"
 		},
 		{
 			"type": "registry:ui",
@@ -66,7 +66,6 @@
 	"dependencies": [
 		"@headless-tree/core@^1.7.0",
 		"runed@0.37.1",
-		"bits-ui@^2.18.2",
 		"svelte-toolbelt@^0.10.6"
 	]
 }
