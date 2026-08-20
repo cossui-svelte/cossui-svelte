@@ -1,16 +1,22 @@
 <script lang="ts">
   import Check from '@lucide/svelte/icons/check';
-  import { Select as SelectPrimitive, type WithoutChild } from 'bits-ui';
+  import { Select as SelectPrimitive } from '@shardsui/svelte/select';
+  import type { ComponentProps, Snippet } from 'svelte';
   import { cn } from '$lib/utils';
 
+  type Props = Omit<ComponentProps<typeof SelectPrimitive.Item>, 'children'> & {
+    label?: string;
+    children?: Snippet<[{ highlighted: boolean; selected: boolean }]>;
+  };
+
   let {
-    children: childrenProp,
+    ref = $bindable(null),
     class: className,
     label,
-    ref = $bindable(null),
     value,
+    children: childrenProp,
     ...restProps
-  }: WithoutChild<SelectPrimitive.ItemProps> = $props();
+  }: Props = $props();
 </script>
 
 <SelectPrimitive.Item
@@ -23,17 +29,17 @@
   data-slot="select-item"
   {...restProps}
 >
-  {#snippet children({ highlighted, selected })}
+  {#snippet children(state)}
     <span class="col-start-1 flex items-center justify-center">
-      {#if selected}
+      <SelectPrimitive.ItemIndicator>
         <Check size={24} />
-      {/if}
+      </SelectPrimitive.ItemIndicator>
     </span>
     <span class="col-start-2 flex min-w-0 items-center gap-2">
       {#if childrenProp}
-        {@render childrenProp({ highlighted, selected })}
+        {@render childrenProp(state)}
       {:else}
-        {label || value}
+        {label || String(value)}
       {/if}
     </span>
   {/snippet}

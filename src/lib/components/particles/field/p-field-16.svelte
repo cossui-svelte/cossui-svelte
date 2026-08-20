@@ -1,32 +1,27 @@
 <script lang="ts">
-  import { z } from 'zod';
   import { Button } from '$lib/components/ui/button';
   import { Field, FieldDescription, FieldError, FieldLabel } from '$lib/components/ui/field';
   import { Form } from '$lib/components/ui/form';
   import { Slider } from '$lib/components/ui/slider';
-  import { createForm } from '$lib/hooks/use-superform';
 
-  const schema = z.object({
-    volume: z.number().optional()
-  });
+  let loading = $state(false);
 
-  const superform = createForm({
-    initialData: { volume: 50 },
-    onUpdated: (data) => {
-      alert(`Volume: ${data.volume ?? 50}`);
-    },
-    schema
-  });
-
-  const { form, submitting } = superform;
+  async function handleSubmit(event: SubmitEvent) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget as HTMLFormElement);
+    loading = true;
+    await new Promise((r) => setTimeout(r, 800));
+    loading = false;
+    alert(`Volume: ${formData.get('volume') ?? 50}`);
+  }
 </script>
 
-<Form class="flex w-full flex-col gap-4" {superform}>
+<Form class="flex w-full flex-col gap-4" onsubmit={handleSubmit}>
   <Field class="items-stretch gap-3" name="volume">
     <FieldLabel>Volume</FieldLabel>
-    <Slider bind:value={$form.volume} />
+    <Slider value={50} />
     <FieldDescription>This is an optional field</FieldDescription>
     <FieldError />
   </Field>
-  <Button loading={$submitting} type="submit">Submit</Button>
+  <Button {loading} type="submit">Submit</Button>
 </Form>

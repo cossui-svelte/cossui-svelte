@@ -1,6 +1,6 @@
 <script lang="ts">
   import SaveIcon from '@lucide/svelte/icons/save';
-  import { Button } from '$lib/components/ui/button';
+  import { buttonVariants } from '$lib/components/ui/button';
   import { anchoredToastManager } from '$lib/components/ui/toast';
   import {
     Tooltip,
@@ -15,11 +15,11 @@
   function handleSave(e: MouseEvent) {
     const anchor = e.currentTarget as HTMLElement;
     anchoredToastManager.add({
-      duration: toastTimeout,
+      data: { tooltipStyle: true },
       id: ANCHORED_SAVE_ERROR_TOAST_ID,
       positionerProps: { anchor, sideOffset: 6 },
+      timeout: toastTimeout,
       title: "Couldn't save draft",
-      tooltipStyle: true,
       type: 'error'
     });
   }
@@ -27,12 +27,12 @@
 
 <TooltipProvider>
   <Tooltip delay={0}>
-    <TooltipTrigger>
-      {#snippet child({ props })}
-        <Button aria-label="Save" size="icon" variant="outline" {...props} onclick={handleSave}>
-          <SaveIcon aria-hidden="true" />
-        </Button>
-      {/snippet}
+    <TooltipTrigger
+      aria-label="Save"
+      class={buttonVariants({ size: 'icon', variant: 'outline' })}
+      onclick={handleSave}
+    >
+      <SaveIcon aria-hidden="true" />
     </TooltipTrigger>
     <TooltipPopup>
       <p>Save</p>

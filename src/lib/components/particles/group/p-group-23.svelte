@@ -8,6 +8,7 @@
   import { Button, buttonVariants } from '$lib/components/ui/button';
   import {
     Combobox,
+    ComboboxCollection,
     ComboboxEmpty,
     ComboboxInput,
     ComboboxItem,
@@ -71,7 +72,7 @@
     Member
   </GroupText>
   <GroupSeparator />
-  <Combobox multiple bind:value={selectedIds}>
+  <Combobox multiple bind:value={selectedIds} items={members as never}>
     <ComboboxTrigger
       class={cn(
         buttonVariants({ size: 'sm', variant: 'outline' }),
@@ -104,19 +105,21 @@
       </div>
       <ComboboxEmpty>No members found.</ComboboxEmpty>
       <ComboboxList>
-        {#each members as member (member.id)}
-          <ComboboxItem value={member.id}>
-            <Avatar class="size-5">
-              {#if member.avatar}
-                <AvatarImage src={member.avatar} alt={member.label} />
-              {/if}
-              <AvatarFallback class="text-[0.5rem]">
-                {getInitials(member.label)}
-              </AvatarFallback>
-            </Avatar>
-            <span>{member.label}</span>
-          </ComboboxItem>
-        {/each}
+        <ComboboxCollection>
+          {#snippet children(member: Member)}
+            <ComboboxItem value={member.id}>
+              <Avatar class="size-5">
+                {#if member.avatar}
+                  <AvatarImage src={member.avatar} alt={member.label} />
+                {/if}
+                <AvatarFallback class="text-[0.5rem]">
+                  {getInitials(member.label)}
+                </AvatarFallback>
+              </Avatar>
+              <span>{member.label}</span>
+            </ComboboxItem>
+          {/snippet}
+        </ComboboxCollection>
       </ComboboxList>
     </ComboboxPopup>
   </Combobox>

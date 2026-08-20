@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { z } from 'zod';
   import { Button } from '$lib/components/ui/button';
   import {
     Combobox,
     ComboboxChip,
     ComboboxChips,
     ComboboxChipsInput,
+    ComboboxCollection,
     ComboboxEmpty,
     ComboboxItem,
     ComboboxList,
@@ -13,7 +13,6 @@
   } from '$lib/components/ui/combobox';
   import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';
   import { Form } from '$lib/components/ui/form';
-  import { createForm } from '$lib/hooks/use-superform';
 
   const items = [
     { label: 'Apple', value: 'apple' },
@@ -28,55 +27,43 @@
     { label: 'Pear', value: 'pear' }
   ];
 
-  const schema = z.object({
-    items: z.array(z.string()).min(1, { message: 'Please select at least one item.' })
-  });
+  let value = $state<string[]>([]);
+  let loading = $state(false);
 
-  const superform = createForm({
-    initialData: { items: [] as string[] },
-    onUpdated: ({ items: selected }) => alert(`Favorite items: ${selected.join(', ')}`),
-    schema
-  });
-
-  const { form, submitting } = superform;
-
-  let value = $state<string[]>($form.items as string[]);
-
-  $effect(() => {
-    $form.items = value;
-  });
-
-  function removeItem(v: string) {
-    value = value.filter((x) => x !== v);
-  }
-
-  function getLabel(v: string) {
-    return items.find((i) => i.value === v)?.label ?? v;
+  async function handleSubmit(event: SubmitEvent) {
+    event.preventDefault();
+    loading = true;
+    await new Promise((r) => setTimeout(r, 800));
+    loading = false;
+    alert(`Favorite items: ${value.join(', ')}`);
   }
 </script>
 
-<Form class="flex w-full max-w-64 flex-col gap-4" {superform}>
+<Form class="flex w-full max-w-64 flex-col gap-4" onsubmit={handleSubmit}>
   <Field name="items">
     <FieldLabel>Favorite items</FieldLabel>
-    <Combobox multiple bind:value {items}>
+    <Combobox bind:value {items} multiple>
       <ComboboxChips>
         {#each value as v (v)}
-          <ComboboxChip aria-label={getLabel(v)} removeProps={{ onclick: () => removeItem(v) }}>
-            {getLabel(v)}
-          </ComboboxChip>
+          <ComboboxChip aria-label={v}>{items.find((i) => i.value === v)?.label ?? v}</ComboboxChip>
         {/each}
-        <ComboboxChipsInput placeholder={value.length > 0 ? undefined : 'Select items…'} />
+        <ComboboxChipsInput
+          aria-label="Select items"
+          placeholder={value.length > 0 ? undefined : 'Select items…'}
+        />
       </ComboboxChips>
       <ComboboxPopup>
         <ComboboxEmpty>No items found.</ComboboxEmpty>
         <ComboboxList>
-          {#each items as item (item.value)}
-            <ComboboxItem value={item.value} label={item.label}>{item.label}</ComboboxItem>
-          {/each}
+          <ComboboxCollection>
+            {#snippet children(item: { label: string; value: string })}
+              <ComboboxItem label={item.label} value={item.value}>{item.label}</ComboboxItem>
+            {/snippet}
+          </ComboboxCollection>
         </ComboboxList>
       </ComboboxPopup>
     </Combobox>
     <FieldError />
   </Field>
-  <Button loading={$submitting} type="submit">Submit</Button>
+  <Button {loading} type="submit">Submit</Button>
 </Form>

@@ -16,7 +16,7 @@
   </DialogTrigger>
   <DialogPopup class="max-h-[min(640px,80vh)] gap-0 p-0" showCloseButton={false}>
     <DialogTitle class="border-b px-6 py-4 text-base">Frequently Asked Questions (FAQ)</DialogTitle>
-    <ScrollArea>
+    <ScrollArea class="flex-1">
       <div class="px-6 py-4 text-muted-foreground text-sm">
         <div class="flex flex-col gap-4 [&_strong]:font-semibold [&_strong]:text-foreground">
           <div class="flex flex-col gap-1">

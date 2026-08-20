@@ -1,11 +1,13 @@
 <script lang="ts">
-  import { ContextMenu } from 'bits-ui';
+  import { ContextMenu as ContextMenuPrimitive } from '@shardsui/svelte/context-menu';
+  import type { ComponentProps } from 'svelte';
   import { cn } from '$lib/utils';
 
-  let { class: className, ...restProps }: ContextMenu.SeparatorProps = $props();
+  let { class: className, ...restProps }: ComponentProps<typeof ContextMenuPrimitive.Separator> =
+    $props();
 </script>
 
-<ContextMenu.Separator
+<ContextMenuPrimitive.Separator
   class={cn('mx-2 my-1 h-px bg-border', className)}
   data-slot="context-menu-separator"
   {...restProps}

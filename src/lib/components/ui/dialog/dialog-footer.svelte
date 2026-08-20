@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Dialog as DialogPrimitive } from 'bits-ui';
+  import { Dialog as DialogPrimitive } from '@shardsui/svelte/dialog';
   import type { HTMLAttributes } from 'svelte/elements';
-  import { Button } from '$lib/components/ui/button';
+  import { buttonVariants } from '$lib/components/ui/button';
   import { cn, type WithElementRef } from '$lib/utils';
 
   let {
@@ -31,10 +31,8 @@
 >
   {@render children?.()}
   {#if showCloseButton}
-    <DialogPrimitive.Close>
-      {#snippet child({ props })}
-        <Button variant="outline" {...props}>Close</Button>
-      {/snippet}
-    </DialogPrimitive.Close>
+    <DialogPrimitive.Close class={buttonVariants({ variant: 'outline' })}
+      >Close</DialogPrimitive.Close
+    >
   {/if}
 </div>

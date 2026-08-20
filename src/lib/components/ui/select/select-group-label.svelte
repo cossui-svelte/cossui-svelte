@@ -1,15 +1,16 @@
 <script lang="ts">
-  import { Select as SelectPrimitive } from 'bits-ui';
+  import { Select as SelectPrimitive } from '@shardsui/svelte/select';
+  import type { ComponentProps } from 'svelte';
   import { cn } from '$lib/utils';
 
   let {
-    class: className,
     ref = $bindable(null),
+    class: className,
     ...restProps
-  }: SelectPrimitive.GroupHeadingProps = $props();
+  }: ComponentProps<typeof SelectPrimitive.GroupLabel> = $props();
 </script>
 
-<SelectPrimitive.GroupHeading
+<SelectPrimitive.GroupLabel
   bind:ref
   class={cn('px-2 py-1.5 font-medium text-muted-foreground text-xs', className)}
   data-slot="select-group-label"

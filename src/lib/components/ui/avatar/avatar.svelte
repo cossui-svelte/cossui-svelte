@@ -1,23 +1,18 @@
 <script lang="ts">
-  import { Avatar as AvatarPrimitive } from 'bits-ui';
+  import { Avatar as AvatarPrimitive } from '@shardsui/svelte/avatar';
+  import type { ComponentProps } from 'svelte';
   import { cn } from '$lib/utils';
 
   let {
     ref = $bindable(null),
-    loadingStatus = $bindable('loading'),
-    size = 'default',
     class: className,
     ...restProps
-  }: AvatarPrimitive.RootProps & {
-    size?: 'default' | 'sm' | 'lg';
-  } = $props();
+  }: ComponentProps<typeof AvatarPrimitive.Root> = $props();
 </script>
 
 <AvatarPrimitive.Root
   bind:ref
-  bind:loadingStatus
   data-slot="avatar"
-  data-size={size}
   class={cn('relative flex size-8 shrink-0 overflow-hidden rounded-full', className)}
   {...restProps}
 />

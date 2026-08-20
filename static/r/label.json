@@ -9,19 +9,17 @@
 			"type": "registry:ui",
 			"path": "label/index.ts",
 			"target": "$lib/components/ui/label/index.ts",
-			"content": "import { Label as LabelPrimitive } from 'bits-ui';\n\nexport { default as Label } from './label.svelte';\nexport { LabelPrimitive };\n"
+			"content": "export { default as Label } from './label.svelte';\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "label/label.svelte",
 			"target": "$lib/components/ui/label/label.svelte",
-			"content": "<script lang=\"ts\">\n  import { Label as LabelPrimitive } from 'bits-ui';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: LabelPrimitive.RootProps = $props();\n</script>\n\n<LabelPrimitive.Root\n  bind:ref\n  data-slot=\"label\"\n  class={cn(\n    'inline-flex items-center gap-2 text-base/4.5 sm:text-sm/4 font-medium text-foreground',\n    className\n  )}\n  {...restProps}\n/>\n"
+			"content": "<script lang=\"ts\">\n  import type { HTMLLabelAttributes } from 'svelte/elements';\n  import { cn, type WithElementRef } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLLabelAttributes, HTMLLabelElement> = $props();\n</script>\n\n<label\n  bind:this={ref}\n  class={cn(\n    'inline-flex items-center gap-2 font-medium text-base/4.5 text-foreground sm:text-sm/4',\n    className\n  )}\n  data-slot=\"label\"\n  {...restProps}\n>\n  {@render children?.()}\n</label>\n"
 		}
 	],
 	"registryDependencies": [
 		"utils"
 	],
-	"dependencies": [
-		"bits-ui@^2.18.1"
-	]
+	"dependencies": []
 }

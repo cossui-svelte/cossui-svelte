@@ -1,6 +1,7 @@
 <script lang="ts">
   import {
     Autocomplete,
+    AutocompleteCollection,
     AutocompleteEmpty,
     AutocompleteInput,
     AutocompleteItem,
@@ -46,11 +47,10 @@
       : allItems
   );
 
-  const visibleItems = $derived(matched.slice(0, limit));
   const moreCount = $derived(Math.max(0, matched.length - limit));
 </script>
 
-<Autocomplete items={visibleItems}>
+<Autocomplete items={allItems} {limit}>
   <AutocompleteInput
     oninput={(e) => (filterText = e.currentTarget.value)}
     placeholder="e.g. feature"
@@ -58,9 +58,11 @@
   <AutocompletePopup>
     <AutocompleteEmpty>No tags found.</AutocompleteEmpty>
     <AutocompleteList>
-      {#each visibleItems as item (item.value)}
-        <AutocompleteItem label={item.label} value={item.value}>{item.label}</AutocompleteItem>
-      {/each}
+      <AutocompleteCollection>
+        {#snippet children(item: { label: string; value: string })}
+          <AutocompleteItem value={item}>{item.label}</AutocompleteItem>
+        {/snippet}
+      </AutocompleteCollection>
     </AutocompleteList>
     {#if moreCount > 0}
       <AutocompleteStatus>+{moreCount} more (keep typing to narrow down)</AutocompleteStatus>

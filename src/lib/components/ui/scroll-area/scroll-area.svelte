@@ -1,6 +1,7 @@
 <script lang="ts">
-  import { ScrollArea as ScrollAreaPrimitive } from 'bits-ui';
-  import { cn, type WithoutChild } from '$lib/utils';
+  import { ScrollArea as ScrollAreaPrimitive } from '@shardsui/svelte/scroll-area';
+  import type { ComponentProps, Snippet } from 'svelte';
+  import { cn } from '$lib/utils';
   import Scrollbar from './scroll-area-scrollbar.svelte';
 
   let {
@@ -16,7 +17,7 @@
     fill = false,
     clampContentMinWidth = true,
     ...restProps
-  }: WithoutChild<ScrollAreaPrimitive.RootProps> & {
+  }: Omit<ComponentProps<typeof ScrollAreaPrimitive.Root>, 'children'> & {
     orientation?: 'vertical' | 'horizontal' | 'both' | undefined;
     scrollbarXClasses?: string | undefined;
     scrollbarYClasses?: string | undefined;
@@ -25,6 +26,7 @@
     scrollbarGutter?: boolean;
     fill?: boolean;
     clampContentMinWidth?: boolean;
+    children?: Snippet;
   } = $props();
 </script>
 
@@ -44,13 +46,13 @@
     )}
     data-slot="scroll-area-viewport"
   >
-    <div
+    <ScrollAreaPrimitive.Content
       class={cn(fill && 'size-full')}
-      style={clampContentMinWidth ? 'min-width: 0' : ''}
       data-slot="scroll-area-content"
+      style={clampContentMinWidth ? 'min-width: 0' : ''}
     >
       {@render children?.()}
-    </div>
+    </ScrollAreaPrimitive.Content>
   </ScrollAreaPrimitive.Viewport>
   {#if orientation === 'vertical' || orientation === 'both'}
     <Scrollbar orientation="vertical" class={scrollbarYClasses} />

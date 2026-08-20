@@ -55,41 +55,20 @@
       </MenuItem>
     </MenuGroup>
     <MenuSeparator />
-    <MenuCheckboxItem
-      checked={shuffle}
-      onCheckedChange={(v) => {
-        shuffle = v;
-      }}>Shuffle</MenuCheckboxItem
-    >
-    <MenuCheckboxItem
-      checked={repeat}
-      onCheckedChange={(v) => {
-        repeat = v;
-      }}>Repeat</MenuCheckboxItem
-    >
+    <MenuCheckboxItem bind:checked={shuffle}>Shuffle</MenuCheckboxItem>
+    <MenuCheckboxItem bind:checked={repeat}>Repeat</MenuCheckboxItem>
     <MenuCheckboxItem disabled>Enhanced Audio</MenuCheckboxItem>
     <MenuSeparator />
     <MenuGroup>
       <MenuGroupLabel>Sort by</MenuGroupLabel>
-      <MenuRadioGroup
-        value={sortBy}
-        onValueChange={(v) => {
-          sortBy = v;
-        }}
-      >
+      <MenuRadioGroup bind:value={sortBy}>
         <MenuRadioItem value="artist">Artist</MenuRadioItem>
         <MenuRadioItem value="album">Album</MenuRadioItem>
         <MenuRadioItem value="title">Title</MenuRadioItem>
       </MenuRadioGroup>
     </MenuGroup>
     <MenuSeparator />
-    <MenuCheckboxItem
-      variant="switch"
-      checked={autoSave}
-      onCheckedChange={(v) => {
-        autoSave = v;
-      }}>Auto save</MenuCheckboxItem
-    >
+    <MenuCheckboxItem variant="switch" bind:checked={autoSave}>Auto save</MenuCheckboxItem>
     <MenuSeparator />
     <MenuSub>
       <MenuSubTrigger>Add to Playlist</MenuSubTrigger>

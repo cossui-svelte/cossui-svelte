@@ -1,18 +1,13 @@
 <script lang="ts">
-  import { getContext } from 'svelte';
-  import type { HTMLAttributes } from 'svelte/elements';
+  import { Meter as MeterPrimitive } from '@shardsui/svelte/meter';
+  import type { ComponentProps } from 'svelte';
   import { cn } from '$lib/utils';
-  import { METER_CONTEXT_KEY, type MeterContext } from './meter.svelte';
 
-  type Props = HTMLAttributes<HTMLSpanElement>;
-
-  let { class: className, ...restProps }: Props = $props();
-
-  const ctx = getContext<MeterContext>(METER_CONTEXT_KEY);
+  let { class: className, ...restProps }: ComponentProps<typeof MeterPrimitive.Value> = $props();
 </script>
 
-<span
+<MeterPrimitive.Value
   class={cn('text-foreground text-sm tabular-nums', className)}
   data-slot="meter-value"
-  {...restProps}>{Math.round(ctx.percentage)}%</span
->
+  {...restProps}
+/>

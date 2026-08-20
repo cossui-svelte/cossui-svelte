@@ -26,18 +26,18 @@
         <SidebarMenu>
           <SidebarMenuItem>
             <Menu>
-              <MenuTrigger>
+              <SidebarMenuButton>
                 {#snippet child({ props })}
-                  <SidebarMenuButton
+                  <MenuTrigger
                     {...props}
-                    class="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
+                    class="data-popup-open:bg-sidebar-accent data-popup-open:text-sidebar-accent-foreground"
                   >
                     Username
                     <ChevronUpIcon class="ms-auto" />
-                  </SidebarMenuButton>
+                  </MenuTrigger>
                 {/snippet}
-              </MenuTrigger>
-              <MenuPopup align="start" side="top" class="w-(--bits-dropdown-menu-anchor-width)">
+              </SidebarMenuButton>
+              <MenuPopup align="start" side="top" class="w-(--anchor-width)">
                 <MenuItem>
                   <span>Account</span>
                 </MenuItem>

@@ -9,7 +9,7 @@
 			"type": "registry:block",
 			"path": "p-toast-4.svelte",
 			"target": "$lib/components/particles/toast/p-toast-4.svelte",
-			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n  import { toastManager } from '$lib/components/ui/toast';\n</script>\n\n<Button\n  onclick={() => {\n    const id = toastManager.add({\n      action: {\n        label: 'Undo',\n        onclick: () => {\n          toastManager.dismiss(id);\n          toastManager.add({\n            description: 'The action has been reverted.',\n            title: 'Action undone',\n            type: 'info'\n          });\n        }\n      },\n      description: 'You can undo this action.',\n      duration: 1000000,\n      title: 'Action performed',\n      type: 'success'\n    });\n  }}\n  variant=\"outline\"\n>\n  Perform Action\n</Button>\n"
+			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n  import { toastManager } from '$lib/components/ui/toast';\n</script>\n\n<Button\n  onclick={() => {\n    const id = toastManager.add({\n      actionProps: {\n        children: 'Undo',\n        onclick: () => {\n          toastManager.close(id);\n          toastManager.add({\n            description: 'The action has been reverted.',\n            title: 'Action undone',\n            type: 'info'\n          });\n        }\n      },\n      description: 'You can undo this action.',\n      timeout: 1000000,\n      title: 'Action performed',\n      type: 'success'\n    });\n  }}\n  variant=\"outline\"\n>\n  Perform Action\n</Button>\n"
 		}
 	],
 	"registryDependencies": [

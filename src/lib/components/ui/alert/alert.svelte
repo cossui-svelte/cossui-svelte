@@ -34,6 +34,7 @@
 </script>
 
 <div
+  bind:this={ref}
   class={cn(alertVariants({ variant }), className)}
   data-slot="alert"
   role="alert"

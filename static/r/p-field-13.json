@@ -9,7 +9,7 @@
 			"type": "registry:block",
 			"path": "p-field-13.svelte",
 			"target": "$lib/components/particles/field/p-field-13.svelte",
-			"content": "<script lang=\"ts\">\n  import { z } from 'zod';\n  import { Button } from '$lib/components/ui/button';\n  import { Checkbox } from '$lib/components/ui/checkbox';\n  import { CheckboxGroup } from '$lib/components/ui/checkbox-group';\n  import { FieldItem, FieldLabel } from '$lib/components/ui/field';\n  import { Fieldset, FieldsetLegend } from '$lib/components/ui/fieldset';\n  import { Form } from '$lib/components/ui/form';\n  import { createForm } from '$lib/hooks/use-superform';\n\n  const schema = z.object({\n    frameworks: z.array(z.string()).min(1, { message: 'Please select at least one framework.' })\n  });\n\n  const superform = createForm({\n    initialData: { frameworks: ['svelte'] },\n    onUpdated: ({ frameworks }) => alert(`Selected: ${frameworks.join(', ')}`),\n    schema\n  });\n\n  const { form, submitting } = superform;\n</script>\n\n<Form class=\"flex w-full flex-col gap-4\" {superform}>\n  <Fieldset class=\"gap-2\">\n    <FieldsetLegend class=\"font-medium text-sm\">Frameworks</FieldsetLegend>\n    <CheckboxGroup\n      value={$form.frameworks as string[]}\n      onValueChange={(v) => ($form.frameworks = v)}\n    >\n      <FieldItem>\n        <FieldLabel><Checkbox value=\"react\" /> React</FieldLabel>\n      </FieldItem>\n      <FieldItem>\n        <FieldLabel><Checkbox value=\"vue\" /> Vue</FieldLabel>\n      </FieldItem>\n      <FieldItem>\n        <FieldLabel><Checkbox value=\"svelte\" /> Svelte</FieldLabel>\n      </FieldItem>\n    </CheckboxGroup>\n  </Fieldset>\n  <Button loading={$submitting} type=\"submit\">Submit</Button>\n</Form>\n"
+			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n  import { Checkbox } from '$lib/components/ui/checkbox';\n  import { CheckboxGroup } from '$lib/components/ui/checkbox-group';\n  import { Field, FieldItem, FieldLabel } from '$lib/components/ui/field';\n  import { Fieldset, FieldsetLegend } from '$lib/components/ui/fieldset';\n  import { Form } from '$lib/components/ui/form';\n\n  let loading = $state(false);\n\n  async function handleSubmit(event: SubmitEvent) {\n    event.preventDefault();\n    const formData = new FormData(event.currentTarget as HTMLFormElement);\n    loading = true;\n    await new Promise((r) => setTimeout(r, 800));\n    loading = false;\n    alert(`Selected: ${formData.getAll('frameworks').join(', ')}`);\n  }\n</script>\n\n<Form class=\"flex w-full flex-col gap-4\" onsubmit={handleSubmit}>\n  <Field name=\"frameworks\">\n    <Fieldset class=\"gap-2\">\n      <FieldsetLegend class=\"font-medium text-sm\">Frameworks</FieldsetLegend>\n      <CheckboxGroup value={['svelte']}>\n        <FieldItem>\n          <FieldLabel><Checkbox value=\"react\" /> React</FieldLabel>\n        </FieldItem>\n        <FieldItem>\n          <FieldLabel><Checkbox value=\"vue\" /> Vue</FieldLabel>\n        </FieldItem>\n        <FieldItem>\n          <FieldLabel><Checkbox value=\"svelte\" /> Svelte</FieldLabel>\n        </FieldItem>\n      </CheckboxGroup>\n    </Fieldset>\n  </Field>\n  <Button {loading} type=\"submit\">Submit</Button>\n</Form>\n"
 		}
 	],
 	"registryDependencies": [
@@ -18,11 +18,7 @@
 		"checkbox-group",
 		"field",
 		"fieldset",
-		"form",
-		"use-superform"
+		"form"
 	],
-	"dependencies": [
-		"zod",
-		"zod@^4.4.3"
-	]
+	"dependencies": []
 }

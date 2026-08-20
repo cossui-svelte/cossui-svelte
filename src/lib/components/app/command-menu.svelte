@@ -188,21 +188,13 @@
 
 <!-- Trigger button -->
 <Dialog bind:open>
-  <DialogTrigger>
-    {#snippet child({ props })}
-      <button
-        {...props}
-        class={cn(buttonVariants({ variant: 'outline' }), 'gap-2 text-muted-foreground')}
-        type="button"
-      >
-        <Search class="size-4" strokeWidth={2} />
-        <span class="hidden sm:inline">Search documentation…</span>
-        <KbdGroup class="gap-1">
-          <Kbd>{isMac.cmdOrCtrl}</Kbd>
-          <Kbd class="aspect-square">K</Kbd>
-        </KbdGroup>
-      </button>
-    {/snippet}
+  <DialogTrigger class={cn(buttonVariants({ variant: 'outline' }), 'gap-2 text-muted-foreground')}>
+    <Search class="size-4" strokeWidth={2} />
+    <span class="hidden sm:inline">Search documentation…</span>
+    <KbdGroup class="gap-1">
+      <Kbd>{isMac.cmdOrCtrl}</Kbd>
+      <Kbd class="aspect-square">K</Kbd>
+    </KbdGroup>
   </DialogTrigger>
 
   <DialogPortal>

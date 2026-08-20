@@ -1,32 +1,28 @@
 <script lang="ts">
-  import { z } from 'zod';
   import { Button } from '$lib/components/ui/button';
   import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';
   import { Form } from '$lib/components/ui/form';
   import { Textarea } from '$lib/components/ui/textarea';
-  import { createForm } from '$lib/hooks/use-superform';
 
-  const schema = z.object({
-    message: z.string().min(1, { message: 'Please fill out this field.' })
-  });
+  let loading = $state(false);
 
-  const superform = createForm({
-    onUpdated: (data) => {
-      alert(`Message: ${data.message}`);
-    },
-    schema
-  });
-
-  const { form, submitting } = superform;
+  async function handleSubmit(event: SubmitEvent) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget as HTMLFormElement);
+    loading = true;
+    await new Promise((r) => setTimeout(r, 800));
+    loading = false;
+    alert(`Message: ${formData.get('message') ?? ''}`);
+  }
 </script>
 
-<Form class="flex w-full flex-col gap-4" {superform}>
+<Form class="flex w-full flex-col gap-4" onsubmit={handleSubmit}>
   <Field name="message">
     <FieldLabel class="text-sm font-medium">
       Message <span class="text-destructive-foreground">*</span>
     </FieldLabel>
-    <Textarea bind:value={$form.message} placeholder="Type your message here" />
-    <FieldError />
+    <Textarea placeholder="Type your message here" required />
+    <FieldError>Please fill out this field.</FieldError>
   </Field>
-  <Button loading={$submitting} type="submit">Submit</Button>
+  <Button {loading} type="submit">Submit</Button>
 </Form>

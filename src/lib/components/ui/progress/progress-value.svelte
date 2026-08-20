@@ -1,24 +1,17 @@
 <script lang="ts">
-  import { getContext } from 'svelte';
-  import type { HTMLAttributes } from 'svelte/elements';
+  import { Progress as ProgressPrimitive } from '@shardsui/svelte/progress';
+  import type { ComponentProps } from 'svelte';
   import { cn } from '$lib/utils';
-  import { PROGRESS_CONTEXT_KEY, type ProgressContext } from './progress.svelte';
 
-  type Props = HTMLAttributes<HTMLSpanElement>;
-
-  let { class: className, ...restProps }: Props = $props();
-
-  const ctx = getContext<ProgressContext>(PROGRESS_CONTEXT_KEY);
+  let { class: className, ...restProps }: ComponentProps<typeof ProgressPrimitive.Value> = $props();
 </script>
 
-<span
+<ProgressPrimitive.Value
   class={cn('text-foreground text-sm tabular-nums', className)}
   data-slot="progress-value"
   {...restProps}
 >
-  {#if ctx.indeterminate}
-    &mdash;
-  {:else}
-    {Math.round(ctx.percentage)}%
-  {/if}
-</span>
+  {#snippet children(formatted)}
+    {formatted === 'indeterminate' ? '—' : formatted}
+  {/snippet}
+</ProgressPrimitive.Value>

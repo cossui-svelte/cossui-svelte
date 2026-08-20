@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { z } from 'zod';
   import { Button } from '$lib/components/ui/button';
   import { Checkbox } from '$lib/components/ui/checkbox';
   import { Field, FieldDescription, FieldError, FieldLabel } from '$lib/components/ui/field';
@@ -12,44 +11,39 @@
     SelectTrigger,
     SelectValue
   } from '$lib/components/ui/select';
-  import { createForm } from '$lib/hooks/use-superform';
 
-  const schema = z.object({
-    email: z.string().email({ message: 'Please enter a valid email.' }),
-    fullName: z.string().min(1, { message: 'Please enter a valid name.' }),
-    newsletter: z.boolean().optional(),
-    role: z.string().optional()
-  });
+  let loading = $state(false);
 
-  const superform = createForm({
-    initialData: { newsletter: false },
-    onUpdated: (data) => {
-      alert(
-        `Full name: ${data.fullName}\nEmail: ${data.email}\nRole: ${data.role ?? ''}\nNewsletter: ${data.newsletter ?? false}`
-      );
-    },
-    schema
-  });
-
-  const { form, submitting } = superform;
+  async function handleSubmit(event: SubmitEvent) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget as HTMLFormElement);
+    loading = true;
+    await new Promise((r) => setTimeout(r, 800));
+    loading = false;
+    alert(
+      `Full name: ${formData.get('fullName')}\nEmail: ${formData.get('email')}\nRole: ${
+        formData.get('role') ?? ''
+      }\nNewsletter: ${formData.get('newsletter') === 'on'}`
+    );
+  }
 </script>
 
-<Form class="flex w-full flex-col gap-4" {superform}>
+<Form class="flex w-full flex-col gap-4" onsubmit={handleSubmit}>
   <Field name="fullName">
     <FieldLabel>Full Name <span class="text-destructive">*</span></FieldLabel>
-    <Input bind:value={$form.fullName} placeholder="John Doe" type="text" />
-    <FieldError />
+    <Input placeholder="John Doe" required type="text" />
+    <FieldError>Please enter a valid name.</FieldError>
   </Field>
 
   <Field name="email">
     <FieldLabel>Email <span class="text-destructive">*</span></FieldLabel>
-    <Input bind:value={$form.email} placeholder="john@example.com" type="email" />
-    <FieldError />
+    <Input placeholder="john@example.com" required type="email" />
+    <FieldError>Please enter a valid email.</FieldError>
   </Field>
 
   <Field name="role">
     <FieldLabel>Role</FieldLabel>
-    <Select bind:value={$form.role}>
+    <Select>
       <SelectTrigger>
         <SelectValue placeholder="Select your role" />
       </SelectTrigger>
@@ -65,10 +59,10 @@
 
   <Field name="newsletter">
     <div class="flex items-center gap-2">
-      <Checkbox bind:checked={$form.newsletter as boolean | undefined} />
+      <Checkbox />
       <FieldLabel class="cursor-pointer">Subscribe to newsletter</FieldLabel>
     </div>
   </Field>
 
-  <Button loading={$submitting} type="submit">Submit</Button>
+  <Button {loading} type="submit">Submit</Button>
 </Form>

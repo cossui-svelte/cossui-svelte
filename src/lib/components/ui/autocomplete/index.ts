@@ -1,6 +1,9 @@
+/* eslint-disable perfectionist/sort-named-exports */
+
+import { Autocomplete as AutocompletePrimitive } from '@shardsui/svelte/autocomplete';
+
 export { default as Autocomplete } from './autocomplete.svelte';
 export { default as AutocompleteClear } from './autocomplete-clear.svelte';
-export { default as AutocompleteCollection } from './autocomplete-collection.svelte';
 export { default as AutocompleteEmpty } from './autocomplete-empty.svelte';
 export { default as AutocompleteGroup } from './autocomplete-group.svelte';
 export { default as AutocompleteGroupLabel } from './autocomplete-group-label.svelte';
@@ -13,3 +16,7 @@ export { default as AutocompleteSeparator } from './autocomplete-separator.svelt
 export { default as AutocompleteStatus } from './autocomplete-status.svelte';
 export { default as AutocompleteTrigger } from './autocomplete-trigger.svelte';
 export { default as AutocompleteValue } from './autocomplete-value.svelte';
+
+const { Collection: AutocompleteCollection } = AutocompletePrimitive;
+
+export { AutocompleteCollection };

@@ -1,6 +1,7 @@
 <script lang="ts">
   import {
     Autocomplete,
+    AutocompleteCollection,
     AutocompleteInput,
     AutocompleteItem,
     AutocompleteList,
@@ -66,15 +67,15 @@
       clearTimeout(id);
     };
   });
-
-  const movieItems = $derived(searchResults.map((m) => ({ label: m.title, value: m.id })));
 </script>
 
-<Autocomplete items={movieItems}>
-  <AutocompleteInput
-    oninput={(e) => (searchValue = e.currentTarget.value)}
-    placeholder="e.g. Pulp Fiction or 1994"
-  />
+<Autocomplete
+  bind:value={searchValue}
+  filter={null}
+  items={searchResults}
+  itemToStringValue={(movie: Movie) => movie.title}
+>
+  <AutocompleteInput placeholder="e.g. Pulp Fiction or 1994" />
   {#if searchValue}
     <AutocompletePopup aria-busy={isLoading || undefined}>
       <AutocompleteStatus class="text-muted-foreground">
@@ -93,17 +94,16 @@
         {/if}
       </AutocompleteStatus>
       <AutocompleteList>
-        {#each movieItems as item (item.value)}
-          {@const movie = searchResults.find((m) => m.id === item.value)}
-          {#if movie}
-            <AutocompleteItem label={item.label} value={item.value}>
+        <AutocompleteCollection>
+          {#snippet children(movie: Movie)}
+            <AutocompleteItem value={movie}>
               <div class="flex w-full flex-col gap-1">
                 <div class="font-medium">{movie.title}</div>
                 <div class="text-muted-foreground text-xs">{movie.year}</div>
               </div>
             </AutocompleteItem>
-          {/if}
-        {/each}
+          {/snippet}
+        </AutocompleteCollection>
       </AutocompleteList>
     </AutocompletePopup>
   {/if}

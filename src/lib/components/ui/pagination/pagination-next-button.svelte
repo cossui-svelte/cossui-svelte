@@ -18,5 +18,5 @@
   {...restProps}
 >
   <span class="max-sm:hidden">Next</span>
-  <ChevronRight className="sm:-me-1" />
+  <ChevronRight class="sm:-me-1" />
 </PaginationLink>

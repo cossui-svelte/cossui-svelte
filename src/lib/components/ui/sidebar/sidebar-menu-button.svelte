@@ -26,8 +26,8 @@
 </script>
 
 <script lang="ts">
-  import { mergeProps } from 'bits-ui';
-  import { Tooltip, TooltipContent, TooltipTrigger } from '$lib/components/ui/tooltip/';
+  import { mergeProps } from 'svelte-toolbelt';
+  import { Tooltip, TooltipContent } from '$lib/components/ui/tooltip/';
   import { cn, type WithElementRef, type WithoutChildrenOrChild } from '$lib/utils.js';
   import { useSidebar } from './context.svelte.js';
   import type { ComponentProps, Snippet } from 'svelte';
@@ -55,39 +55,47 @@
 
   const sidebar = useSidebar();
 
-  const buttonProps = $derived({
-    class: cn(sidebarMenuButtonVariants({ variant, size }), className),
-    'data-slot': 'sidebar-menu-button',
-    'data-sidebar': 'menu-button',
-    'data-size': size,
-    // Emitted only when active: the `data-active:` variant matches on attribute
-    // presence, so `data-active="false"` would still apply the active styles.
-    'data-active': isActive || undefined,
-    ...restProps
-  });
+  let tipOpen = $state(false);
+
+  const buttonProps = $derived(
+    mergeProps(
+      {
+        class: cn(sidebarMenuButtonVariants({ variant, size }), className),
+        'data-slot': 'sidebar-menu-button',
+        'data-sidebar': 'menu-button',
+        'data-size': size,
+        // Emitted only when active: the `data-active:` variant matches on attribute
+        // presence, so `data-active="false"` would still apply the active styles.
+        'data-active': isActive || undefined,
+        ...restProps
+      },
+      {
+        onpointerenter: tooltipContent ? () => (tipOpen = true) : undefined,
+        onpointerleave: tooltipContent ? () => (tipOpen = false) : undefined,
+        onfocus: tooltipContent ? () => (tipOpen = true) : undefined,
+        onblur: tooltipContent ? () => (tipOpen = false) : undefined
+      }
+    )
+  );
 </script>
 
-{#snippet Button({ props }: { props?: Record<string, unknown> })}
-  {@const mergedProps = mergeProps(buttonProps, props)}
+{#snippet Button()}
   {#if child}
-    {@render child({ props: mergedProps })}
+    {@render child({ props: buttonProps })}
   {:else}
-    <button bind:this={ref} {...mergedProps}>
+    <button bind:this={ref} {...buttonProps}>
       {@render children?.()}
     </button>
   {/if}
 {/snippet}
 
 {#if !tooltipContent}
-  {@render Button({})}
+  {@render Button()}
 {:else}
-  <Tooltip>
-    <TooltipTrigger>
-      {#snippet child({ props })}
-        {@render Button({ props })}
-      {/snippet}
-    </TooltipTrigger>
+  <Tooltip bind:open={tipOpen}>
+    {@render Button()}
     <TooltipContent
+      customAnchor={ref}
       side="right"
       align="center"
       hidden={sidebar.state !== 'collapsed' || sidebar.isMobile}

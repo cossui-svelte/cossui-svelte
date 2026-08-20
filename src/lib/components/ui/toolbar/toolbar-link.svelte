@@ -1,13 +1,15 @@
 <script lang="ts">
-  import { Toolbar } from 'bits-ui';
-  import type { Snippet } from 'svelte';
+  import { Toolbar as ToolbarPrimitive } from '@shardsui/svelte/toolbar';
+  import type { ComponentProps, Snippet } from 'svelte';
   import { cn } from '$lib/utils';
 
-  type Props = Toolbar.LinkProps & { children?: Snippet };
+  type Props = Omit<ComponentProps<typeof ToolbarPrimitive.Link>, 'children'> & {
+    children?: Snippet;
+  };
 
   let { class: className, children, ...restProps }: Props = $props();
 </script>
 
-<Toolbar.Link class={cn(className)} data-slot="toolbar-link" {...restProps}>
+<ToolbarPrimitive.Link class={cn(className)} data-slot="toolbar-link" {...restProps}>
   {@render children?.()}
-</Toolbar.Link>
+</ToolbarPrimitive.Link>

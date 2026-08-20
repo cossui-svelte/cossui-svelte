@@ -1,23 +1,24 @@
 <script lang="ts">
   import ChevronUp from '@lucide/svelte/icons/chevron-up';
-  import { Select as SelectPrimitive, type WithoutChildrenOrChild } from 'bits-ui';
+  import { Select as SelectPrimitive } from '@shardsui/svelte/select';
+  import type { ComponentProps } from 'svelte';
   import { cn } from '$lib/utils';
 
   let {
-    class: className,
     ref = $bindable(null),
+    class: className,
     ...restProps
-  }: WithoutChildrenOrChild<SelectPrimitive.ScrollUpButtonProps> = $props();
+  }: Omit<ComponentProps<typeof SelectPrimitive.ScrollUpArrow>, 'children'> = $props();
 </script>
 
-<SelectPrimitive.ScrollUpButton
+<SelectPrimitive.ScrollUpArrow
   bind:ref
   class={cn(
-    'absolute top-0 z-50 flex h-6 w-full cursor-default items-center justify-center before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-[200%] before:rounded-t-[calc(var(--radius-lg)-1px)] before:bg-linear-to-b before:from-50% before:from-popover',
+    'inset-x-0 top-0 z-50 flex h-6 w-full cursor-default items-center justify-center before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-[200%] before:rounded-t-[calc(var(--radius-lg)-1px)] before:bg-linear-to-b before:from-50% before:from-popover',
     className
   )}
   data-slot="select-scroll-up-button"
   {...restProps}
 >
   <ChevronUp class="relative size-4.5 sm:size-4" />
-</SelectPrimitive.ScrollUpButton>
+</SelectPrimitive.ScrollUpArrow>

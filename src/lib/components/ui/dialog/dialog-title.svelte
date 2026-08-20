@@ -1,12 +1,13 @@
 <script lang="ts">
-  import { Dialog as DialogPrimitive } from 'bits-ui';
+  import { Dialog as DialogPrimitive } from '@shardsui/svelte/dialog';
+  import type { ComponentProps } from 'svelte';
   import { cn } from '$lib/utils';
 
   let {
     ref = $bindable(null),
     class: className,
     ...restProps
-  }: DialogPrimitive.TitleProps = $props();
+  }: ComponentProps<typeof DialogPrimitive.Title> = $props();
 </script>
 
 <DialogPrimitive.Title

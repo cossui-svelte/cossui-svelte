@@ -9,17 +9,7 @@
 <Menu>
   <MenuTrigger class={buttonVariants({ variant: 'outline' })}>Open menu</MenuTrigger>
   <MenuPopup>
-    <MenuCheckboxItem
-      checked={autoSave}
-      onCheckedChange={(v) => {
-        autoSave = v;
-      }}>Auto save</MenuCheckboxItem
-    >
-    <MenuCheckboxItem
-      checked={notifications}
-      onCheckedChange={(v) => {
-        notifications = v;
-      }}>Notifications</MenuCheckboxItem
-    >
+    <MenuCheckboxItem bind:checked={autoSave}>Auto save</MenuCheckboxItem>
+    <MenuCheckboxItem bind:checked={notifications}>Notifications</MenuCheckboxItem>
   </MenuPopup>
 </Menu>

@@ -250,13 +250,10 @@ You can customize project settings at any time by clicking the settings icon in 
   <CommandDialogPopup>
     {#if !aiState.mode}
       {#key commandResetKey}
-        <Command>
+        <Command items={commandGroups} bind:value={searchQuery}>
           <div class="relative flex items-center *:first:flex-1">
             <CommandInput
               bind:ref={searchInputEl}
-              oninput={(e) => {
-                searchQuery = (e.currentTarget as HTMLInputElement).value;
-              }}
               onkeydown={(e) => {
                 if (e.key === 'Tab') {
                   e.preventDefault();
@@ -268,7 +265,6 @@ You can customize project settings at any time by clicking the settings icon in 
                 }
               }}
               placeholder="Type a command or search..."
-              value={searchQuery}
             />
             <Button
               class="me-2.5 rounded-md not-hover:text-muted-foreground text-sm sm:text-xs"
@@ -296,22 +292,24 @@ You can customize project settings at any time by clicking the settings icon in 
               {/if}
             </CommandEmpty>
             <CommandList>
-              {#each commandGroups as group (group.value)}
-                <CommandGroup>
-                  <CommandGroupLabel>{group.value}</CommandGroupLabel>
-                  <CommandCollection>
-                    {#each group.items as item (item.value)}
-                      <CommandItem value={item.value} onSelect={handleItemClick}>
-                        <span class="flex-1">{item.label}</span>
-                        {#if item.shortcut}
-                          <CommandShortcut>{item.shortcut}</CommandShortcut>
-                        {/if}
-                      </CommandItem>
-                    {/each}
-                  </CommandCollection>
-                </CommandGroup>
-                <CommandSeparator />
-              {/each}
+              <CommandCollection>
+                {#snippet children(group: Group)}
+                  <CommandGroup items={group.items}>
+                    <CommandGroupLabel>{group.value}</CommandGroupLabel>
+                    <CommandCollection>
+                      {#snippet children(item: Item)}
+                        <CommandItem value={item} onclick={handleItemClick}>
+                          <span class="flex-1">{item.label}</span>
+                          {#if item.shortcut}
+                            <CommandShortcut>{item.shortcut}</CommandShortcut>
+                          {/if}
+                        </CommandItem>
+                      {/snippet}
+                    </CommandCollection>
+                  </CommandGroup>
+                  <CommandSeparator />
+                {/snippet}
+              </CommandCollection>
             </CommandList>
           </CommandPanel>
           <CommandFooter>

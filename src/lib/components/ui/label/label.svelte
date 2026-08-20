@@ -1,20 +1,23 @@
 <script lang="ts">
-  import { Label as LabelPrimitive } from 'bits-ui';
-  import { cn } from '$lib/utils';
+  import type { HTMLLabelAttributes } from 'svelte/elements';
+  import { cn, type WithElementRef } from '$lib/utils';
 
   let {
     ref = $bindable(null),
     class: className,
+    children,
     ...restProps
-  }: LabelPrimitive.RootProps = $props();
+  }: WithElementRef<HTMLLabelAttributes, HTMLLabelElement> = $props();
 </script>
 
-<LabelPrimitive.Root
-  bind:ref
-  data-slot="label"
+<label
+  bind:this={ref}
   class={cn(
-    'inline-flex items-center gap-2 text-base/4.5 sm:text-sm/4 font-medium text-foreground',
+    'inline-flex items-center gap-2 font-medium text-base/4.5 text-foreground sm:text-sm/4',
     className
   )}
+  data-slot="label"
   {...restProps}
-/>
+>
+  {@render children?.()}
+</label>

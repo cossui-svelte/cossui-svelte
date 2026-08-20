@@ -1,11 +1,16 @@
 <script lang="ts">
-  import { Separator } from 'bits-ui';
+  import { Separator as SeparatorPrimitive } from '@shardsui/svelte/separator';
+  import type { ComponentProps } from 'svelte';
   import { cn } from '$lib/utils';
 
-  let { ref = $bindable(null), class: className, ...restProps }: Separator.RootProps = $props();
+  let {
+    ref = $bindable(null),
+    class: className,
+    ...restProps
+  }: ComponentProps<typeof SeparatorPrimitive> = $props();
 </script>
 
-<Separator.Root
+<SeparatorPrimitive
   bind:ref
   orientation="horizontal"
   data-slot="otp-field-separator"

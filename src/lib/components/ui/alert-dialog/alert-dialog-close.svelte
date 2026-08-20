@@ -1,11 +1,12 @@
 <script lang="ts">
-  import { AlertDialog as DialogPrimitive } from 'bits-ui';
+  import { AlertDialog as AlertDialogPrimitive } from '@shardsui/svelte/alert-dialog';
+  import type { ComponentProps } from 'svelte';
 
   let {
     ref = $bindable(null),
     type = 'button',
     ...restProps
-  }: DialogPrimitive.CancelProps = $props();
+  }: ComponentProps<typeof AlertDialogPrimitive.Close> = $props();
 </script>
 
-<DialogPrimitive.Cancel bind:ref data-slot="alert-dialog-close" {type} {...restProps} />
+<AlertDialogPrimitive.Close bind:ref data-slot="alert-dialog-close" {type} {...restProps} />

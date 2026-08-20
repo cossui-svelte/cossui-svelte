@@ -1,27 +1,26 @@
 <script lang="ts">
-  import { z } from 'zod';
   import { Button } from '$lib/components/ui/button';
   import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';
-  import { Form, FormDebug } from '$lib/components/ui/form';
+  import { Form } from '$lib/components/ui/form';
   import { Input } from '$lib/components/ui/input';
-  import { createForm } from '$lib/hooks/use-superform';
 
-  const schema = z.object({
-    email: z.email({ message: 'Please enter a valid email.' })
-  });
+  let loading = $state(false);
 
-  const superform = createForm({ schema });
-  const { form, submitting } = superform;
+  async function handleSubmit(event: SubmitEvent) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget as HTMLFormElement);
+    loading = true;
+    await new Promise((r) => setTimeout(r, 800));
+    loading = false;
+    alert(`Email: ${formData.get('email') ?? ''}`);
+  }
 </script>
 
-<Form class="flex w-full flex-col gap-4" {superform}>
+<Form class="flex w-full flex-col gap-4" onsubmit={handleSubmit}>
   <Field name="email">
     <FieldLabel>Email</FieldLabel>
-    <Input bind:value={$form.email} placeholder="Enter your email" type="email" />
-    <FieldError />
+    <Input placeholder="Enter your email" required type="email" />
+    <FieldError>Please enter a valid email.</FieldError>
   </Field>
-
-  <Button loading={$submitting} type="submit">Submit</Button>
-
-  <FormDebug formData={form} />
+  <Button {loading} type="submit">Submit</Button>
 </Form>

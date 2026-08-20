@@ -1,14 +1,14 @@
 <script lang="ts">
-  import { DropdownMenu } from 'bits-ui';
-  import type { Snippet } from 'svelte';
+  import { Menu as MenuPrimitive } from '@shardsui/svelte/menu';
+  import type { ComponentProps, Snippet } from 'svelte';
 
-  interface Props extends DropdownMenu.RadioGroupProps {
+  type Props = Omit<ComponentProps<typeof MenuPrimitive.RadioGroup>, 'children'> & {
     children?: Snippet;
-  }
+  };
 
-  let { children, value = $bindable(undefined), ...restProps }: Props = $props();
+  let { children, value = $bindable(), ...restProps }: Props = $props();
 </script>
 
-<DropdownMenu.RadioGroup bind:value data-slot="menu-radio-group" {...restProps}>
+<MenuPrimitive.RadioGroup bind:value data-slot="menu-radio-group" {...restProps}>
   {@render children?.()}
-</DropdownMenu.RadioGroup>
+</MenuPrimitive.RadioGroup>

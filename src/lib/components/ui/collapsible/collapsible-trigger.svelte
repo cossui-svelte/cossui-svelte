@@ -1,17 +1,18 @@
 <script lang="ts">
-  import { Collapsible } from 'bits-ui';
-  import type { Snippet } from 'svelte';
+  import { Collapsible as CollapsiblePrimitive } from '@shardsui/svelte/collapsible';
+  import type { ComponentProps } from 'svelte';
   import { cn } from '$lib/utils';
 
-  type Props = Collapsible.TriggerProps & { children?: Snippet };
-
-  let { class: className, children, ...restProps }: Props = $props();
+  let {
+    ref = $bindable(null),
+    class: className,
+    ...restProps
+  }: ComponentProps<typeof CollapsiblePrimitive.Trigger> = $props();
 </script>
 
-<Collapsible.Trigger
+<CollapsiblePrimitive.Trigger
+  bind:ref
   class={cn('cursor-pointer [&_svg]:transition-transform [&_svg]:duration-200', className)}
   data-slot="collapsible-trigger"
   {...restProps}
->
-  {@render children?.()}
-</Collapsible.Trigger>
+/>

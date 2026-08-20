@@ -1,15 +1,13 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
-  import type { HTMLAttributes } from 'svelte/elements';
+  import { Combobox as ComboboxPrimitive } from '@shardsui/svelte/combobox';
+  import type { ComponentProps } from 'svelte';
   import { cn } from '$lib/utils';
 
-  interface Props extends HTMLAttributes<HTMLDivElement> {
-    children?: Snippet;
-  }
-
-  let { class: className, children, ...restProps }: Props = $props();
+  let { class: className, ...restProps }: ComponentProps<typeof ComboboxPrimitive.Row> = $props();
 </script>
 
-<div class={cn('flex flex-row', className)} data-slot="combobox-row" {...restProps}>
-  {@render children?.()}
-</div>
+<ComboboxPrimitive.Row
+  class={cn('flex flex-row', className)}
+  data-slot="combobox-row"
+  {...restProps}
+/>

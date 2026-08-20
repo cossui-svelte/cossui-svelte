@@ -16,6 +16,11 @@
 
   const changelog = [
     {
+      date: '20 Aug 2026',
+      description: 'ShardsUI is a good port of BaseUI, it better aligns with upstream CossUI.',
+      title: '0.9.21 — Switched to ShardsUI'
+    },
+    {
       date: '14 Aug 2026',
       description: 'Many issues around checkboxes are now resolved.',
       title: '0.9.20 — Checkbox and Checkbox-group components fixes'
@@ -94,7 +99,7 @@
   <PageHeader>
     <PageHeaderHeading>DOCS: COMING SOON</PageHeaderHeading>
     <PageHeaderDescription>
-      I’ve been wondering: in the age of AI, is a documentation still necessary?<br /> You can point
+      I’ve been wondering: in the age of AI, is documentation still necessary?<br /> You can point
       your assistant to the product and ask questions to get instant answers.<br />It appears that
       the days where developers read full documentation are gone.<br /><br />Let’s prioritize on the
       AI experience over traditional documentation.<br />If you have questions or need help, feel
@@ -102,9 +107,36 @@
     </PageHeaderDescription>
   </PageHeader>
 
+  <h1 class="scroll-m-20 font-bold font-heading text-3xl xl:text-4xl">Why CossUI-Svelte?</h1>
+
+  <main class="m-8">
+    <ul class="space-y-3 text-muted-foreground">
+      <li>
+        <strong class="font-semibold text-foreground">Modern look</strong> — Clean, contemporary
+        styling with layered shadows and softly rounded surfaces.
+      </li>
+      <li>
+        <strong class="font-semibold text-foreground">Mobile ready</strong> — Responsive layouts that
+        adapt to any screen size, with swipe and touch gestures built in.
+      </li>
+      <li>
+        <strong class="font-semibold text-foreground">Batteries included</strong> — 70 components and
+        700+ blocks and particules, including forms, fieldset and skeletons. Now you can focus on your
+        application logic instead of reinventing the wheel.
+      </li>
+      <li>
+        <strong class="font-semibold text-foreground">Built on Base UI</strong> — Powered by Shards UI,
+        a Svelte port of Base UI.
+      </li>
+      <li>
+        <strong class="font-semibold text-foreground">Svelte 5 native</strong> — Intuitiveness by default.
+      </li>
+    </ul>
+  </main>
+
   <h1 class="scroll-m-20 font-bold font-heading text-3xl xl:text-4xl">Changelog Highlights</h1>
 
-  <main class="mt-16">
+  <main class="m-8">
     <Timeline defaultValue={changelog.length} orientation="vertical">
       {#each changelog as entry, i (i)}
         <TimelineItem step={i + 1} class="group-data-[orientation=vertical]/timeline:ms-10">

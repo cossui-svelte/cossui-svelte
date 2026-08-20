@@ -2,6 +2,7 @@
   import MapPin from '@lucide/svelte/icons/map-pin';
   import {
     Autocomplete,
+    AutocompleteCollection,
     AutocompleteInput,
     AutocompleteItem,
     AutocompleteList,
@@ -10,6 +11,7 @@
   } from '$lib/components/ui/autocomplete';
   import { cn } from '$lib/utils';
   import {
+    type AddressSuggestion,
     PlacesAutocompleteState,
     type SelectedPlace
   } from './places-autocomplete-state.svelte.js';
@@ -72,25 +74,19 @@
   });
 
   $effect(() => () => autocompleteState.destroy());
-
-  function handleValueChange(id: string) {
-    const suggestion = autocompleteState.findSuggestion(id);
-    if (suggestion) {
-      void autocompleteState.selectSuggestion(suggestion);
-    }
-  }
 </script>
 
 <div class={cn('relative w-full max-w-xl', className)}>
   <Autocomplete
     autoHighlight
-    {inputValue}
+    filter={null}
+    items={autocompleteState.suggestions}
+    itemToStringValue={(suggestion: AddressSuggestion) => suggestion.label}
     onOpenChange={(next) => {
       autocompleteState.open = next && autocompleteState.suggestions.length > 0;
     }}
-    onValueChange={handleValueChange}
     open={autocompleteState.open}
-    value=""
+    value={inputValue}
   >
     <div class="relative">
       <AutocompleteInput
@@ -118,26 +114,31 @@
 
     <AutocompletePopup>
       <AutocompleteList>
-        {#each autocompleteState.suggestions as suggestion (suggestion.id)}
-          {@const [primary, ...secondaryParts] = suggestion.label.split(',')}
-          {@const secondary = secondaryParts.join(',').trim()}
-          <AutocompleteItem label={suggestion.label} value={suggestion.id}>
-            <span class="flex w-full items-start gap-3">
-              <MapPin class="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-              <span class="min-w-0 flex-1">
-                <span class="block truncate font-medium">{primary}</span>
-                {#if secondary}
-                  <span class="mt-0.5 block truncate text-xs text-muted-foreground">
-                    {secondary}
-                  </span>
+        <AutocompleteCollection>
+          {#snippet children(suggestion: AddressSuggestion)}
+            {@const [primary, ...secondaryParts] = suggestion.label.split(',')}
+            {@const secondary = secondaryParts.join(',').trim()}
+            <AutocompleteItem
+              value={suggestion}
+              onclick={() => autocompleteState.selectSuggestion(suggestion)}
+            >
+              <span class="flex w-full items-start gap-3">
+                <MapPin class="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                <span class="min-w-0 flex-1">
+                  <span class="block truncate font-medium">{primary}</span>
+                  {#if secondary}
+                    <span class="mt-0.5 block truncate text-xs text-muted-foreground">
+                      {secondary}
+                    </span>
+                  {/if}
+                </span>
+                {#if autocompleteState.selectingId === suggestion.id}
+                  <span class="mt-0.5 text-xs text-muted-foreground">Selecting</span>
                 {/if}
               </span>
-              {#if autocompleteState.selectingId === suggestion.id}
-                <span class="mt-0.5 text-xs text-muted-foreground">Selecting</span>
-              {/if}
-            </span>
-          </AutocompleteItem>
-        {/each}
+            </AutocompleteItem>
+          {/snippet}
+        </AutocompleteCollection>
       </AutocompleteList>
       {#if autocompleteState.loadingSuggestions}
         <AutocompleteStatus>Loading suggestions...</AutocompleteStatus>

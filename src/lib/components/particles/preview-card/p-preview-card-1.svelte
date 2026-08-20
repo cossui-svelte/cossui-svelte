@@ -2,8 +2,11 @@
   import CornerUpLeft from '@lucide/svelte/icons/corner-up-left';
   import Star from '@lucide/svelte/icons/star';
   import { buttonVariants } from '$lib/components/ui/button';
-  import { PreviewCard, PreviewCardTrigger } from '$lib/components/ui/preview-card';
-  import PreviewCardPopup from '$lib/components/ui/preview-card/preview-card-popup.svelte';
+  import {
+    PreviewCard,
+    PreviewCardPopup,
+    PreviewCardTrigger
+  } from '$lib/components/ui/preview-card';
 </script>
 
 <PreviewCard>

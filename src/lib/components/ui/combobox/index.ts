@@ -1,17 +1,12 @@
-export { default as Combobox, getComboboxCtx } from './combobox.svelte';
+/* eslint-disable perfectionist/sort-named-exports */
 
-export function useComboboxFilter(
-  filterFn: (value: string, inputValue: string) => boolean = (v, q) =>
-    v.toLowerCase().includes(q.toLowerCase())
-): (value: string, inputValue: string) => boolean {
-  return filterFn;
-}
+import { Combobox as ComboboxPrimitive } from '@shardsui/svelte/combobox';
+
+export { default as Combobox } from './combobox.svelte';
 export { default as ComboboxChip } from './combobox-chip.svelte';
-export { default as ComboboxChipRemove } from './combobox-chip-remove.svelte';
 export { default as ComboboxChips } from './combobox-chips.svelte';
 export { default as ComboboxChipsInput } from './combobox-chips-input.svelte';
 export { default as ComboboxClear } from './combobox-clear.svelte';
-export { default as ComboboxCollection } from './combobox-collection.svelte';
 export { default as ComboboxEmpty } from './combobox-empty.svelte';
 export { default as ComboboxGroup } from './combobox-group.svelte';
 export { default as ComboboxGroupLabel } from './combobox-group-label.svelte';
@@ -24,3 +19,7 @@ export { default as ComboboxSeparator } from './combobox-separator.svelte';
 export { default as ComboboxStatus } from './combobox-status.svelte';
 export { default as ComboboxTrigger } from './combobox-trigger.svelte';
 export { default as ComboboxValue } from './combobox-value.svelte';
+
+const { Collection: ComboboxCollection } = ComboboxPrimitive;
+
+export { ComboboxCollection };

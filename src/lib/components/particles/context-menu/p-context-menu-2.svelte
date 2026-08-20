@@ -2,7 +2,7 @@
   import { resolve } from '$app/paths';
   import {
     ContextMenu,
-    ContextMenuItem,
+    ContextMenuLinkItem,
     ContextMenuPopup,
     ContextMenuTrigger
   } from '$lib/components/ui/context-menu';
@@ -15,15 +15,7 @@
     Right click here
   </ContextMenuTrigger>
   <ContextMenuPopup>
-    <ContextMenuItem>
-      {#snippet child({ props })}
-        <a href={resolve('/docs')} {...props}>Docs</a>
-      {/snippet}
-    </ContextMenuItem>
-    <ContextMenuItem>
-      {#snippet child({ props })}
-        <a href={resolve('/particles')} {...props}>Particles</a>
-      {/snippet}
-    </ContextMenuItem>
+    <ContextMenuLinkItem href={resolve('/docs')}>Docs</ContextMenuLinkItem>
+    <ContextMenuLinkItem href={resolve('/particles')}>Particles</ContextMenuLinkItem>
   </ContextMenuPopup>
 </ContextMenu>

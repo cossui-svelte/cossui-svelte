@@ -24,7 +24,7 @@ const allComponents: RegistryUiData = {
     folder: 'accordion',
     isnew: false,
     istodo: false,
-    npmDependencies: ['@lucide/svelte', 'bits-ui'],
+    npmDependencies: ['@lucide/svelte', '@shardsui/svelte'],
     registryDependencies: []
   },
   alert: {
@@ -44,7 +44,7 @@ const allComponents: RegistryUiData = {
     folder: 'alert-dialog',
     isnew: false,
     istodo: false,
-    npmDependencies: ['bits-ui'],
+    npmDependencies: ['@shardsui/svelte'],
     registryDependencies: ['button']
   },
   'aspect-ratio': {
@@ -54,7 +54,7 @@ const allComponents: RegistryUiData = {
     folder: 'aspect-ratio',
     isnew: true,
     istodo: false,
-    npmDependencies: ['bits-ui'],
+    npmDependencies: ['svelte-toolbelt'],
     registryDependencies: []
   },
   autocomplete: {
@@ -64,7 +64,7 @@ const allComponents: RegistryUiData = {
     folder: 'autocomplete',
     isnew: false,
     istodo: false,
-    npmDependencies: ['@lucide/svelte', 'bits-ui'],
+    npmDependencies: ['@lucide/svelte', '@shardsui/svelte'],
     registryDependencies: ['scroll-area']
   },
   avatar: {
@@ -74,7 +74,7 @@ const allComponents: RegistryUiData = {
     folder: 'avatar',
     isnew: false,
     istodo: false,
-    npmDependencies: ['bits-ui'],
+    npmDependencies: ['@shardsui/svelte'],
     registryDependencies: []
   },
   badge: {
@@ -104,7 +104,7 @@ const allComponents: RegistryUiData = {
     folder: 'button',
     isnew: false,
     istodo: false,
-    npmDependencies: ['bits-ui', 'tailwind-variants'],
+    npmDependencies: ['@shardsui/svelte', 'tailwind-variants'],
     registryDependencies: ['spinner']
   },
   calendar: {
@@ -114,7 +114,7 @@ const allComponents: RegistryUiData = {
     folder: 'calendar',
     isnew: false,
     istodo: false,
-    npmDependencies: ['@internationalized/date', '@lucide/svelte', 'bits-ui'],
+    npmDependencies: ['@internationalized/date', '@lucide/svelte', 'runed', 'svelte-toolbelt'],
     registryDependencies: ['button']
   },
   card: {
@@ -144,7 +144,7 @@ const allComponents: RegistryUiData = {
     folder: 'checkbox',
     isnew: false,
     istodo: false,
-    npmDependencies: ['bits-ui'],
+    npmDependencies: ['@shardsui/svelte'],
     registryDependencies: []
   },
   'checkbox-group': {
@@ -154,7 +154,7 @@ const allComponents: RegistryUiData = {
     folder: 'checkbox-group',
     isnew: false,
     istodo: false,
-    npmDependencies: ['bits-ui'],
+    npmDependencies: ['@shardsui/svelte'],
     registryDependencies: []
   },
   collapsible: {
@@ -164,7 +164,7 @@ const allComponents: RegistryUiData = {
     folder: 'collapsible',
     isnew: false,
     istodo: false,
-    npmDependencies: ['bits-ui'],
+    npmDependencies: ['@shardsui/svelte'],
     registryDependencies: []
   },
   colorpicker: {
@@ -184,7 +184,7 @@ const allComponents: RegistryUiData = {
     folder: 'combobox',
     isnew: false,
     istodo: false,
-    npmDependencies: ['@lucide/svelte', 'bits-ui'],
+    npmDependencies: ['@lucide/svelte', '@shardsui/svelte'],
     registryDependencies: []
   },
   command: {
@@ -195,7 +195,7 @@ const allComponents: RegistryUiData = {
     folder: 'command',
     isnew: false,
     istodo: false,
-    npmDependencies: ['@lucide/svelte', 'bits-ui'],
+    npmDependencies: ['@lucide/svelte', '@shardsui/svelte'],
     registryDependencies: ['dialog', 'scroll-area']
   },
   'context-menu': {
@@ -205,7 +205,7 @@ const allComponents: RegistryUiData = {
     folder: 'context-menu',
     isnew: true,
     istodo: false,
-    npmDependencies: ['@lucide/svelte', 'bits-ui'],
+    npmDependencies: ['@lucide/svelte', '@shardsui/svelte'],
     registryDependencies: ['kbd']
   },
   cropper: {
@@ -235,7 +235,7 @@ const allComponents: RegistryUiData = {
     folder: 'dialog',
     isnew: false,
     istodo: false,
-    npmDependencies: ['@lucide/svelte', 'bits-ui'],
+    npmDependencies: ['@lucide/svelte', '@shardsui/svelte'],
     registryDependencies: ['button', 'scroll-area']
   },
   drawer: {
@@ -246,7 +246,7 @@ const allComponents: RegistryUiData = {
     folder: 'drawer',
     isnew: true,
     istodo: false,
-    npmDependencies: ['@lucide/svelte', 'bits-ui'],
+    npmDependencies: ['@lucide/svelte', '@shardsui/svelte'],
     registryDependencies: ['button']
   },
   empty: {
@@ -266,8 +266,8 @@ const allComponents: RegistryUiData = {
     folder: 'field',
     isnew: false,
     istodo: false,
-    npmDependencies: ['bits-ui', 'svelte-toolbelt', 'sveltekit-superforms'],
-    registryDependencies: ['form']
+    npmDependencies: ['@shardsui/svelte'],
+    registryDependencies: []
   },
   fieldset: {
     name: 'Fieldset',
@@ -276,8 +276,8 @@ const allComponents: RegistryUiData = {
     folder: 'fieldset',
     isnew: false,
     istodo: false,
-    npmDependencies: ['svelte-toolbelt', 'sveltekit-superforms'],
-    registryDependencies: ['form']
+    npmDependencies: ['@shardsui/svelte'],
+    registryDependencies: []
   },
   'file-upload': {
     name: 'File Upload',
@@ -296,7 +296,7 @@ const allComponents: RegistryUiData = {
     folder: 'form',
     isnew: false,
     istodo: false,
-    npmDependencies: ['bits-ui', 'svelte-toolbelt', 'sveltekit-superforms'],
+    npmDependencies: ['@shardsui/svelte'],
     registryDependencies: []
   },
   frame: {
@@ -326,7 +326,7 @@ const allComponents: RegistryUiData = {
     folder: 'input',
     isnew: false,
     istodo: false,
-    npmDependencies: [],
+    npmDependencies: ['@shardsui/svelte'],
     registryDependencies: []
   },
   'input-group': {
@@ -357,7 +357,7 @@ const allComponents: RegistryUiData = {
     folder: 'label',
     isnew: false,
     istodo: false,
-    npmDependencies: ['bits-ui'],
+    npmDependencies: [],
     registryDependencies: []
   },
   'link-preview': {
@@ -367,7 +367,7 @@ const allComponents: RegistryUiData = {
     folder: 'link-preview',
     isnew: false,
     istodo: false,
-    npmDependencies: ['bits-ui'],
+    npmDependencies: ['@shardsui/svelte'],
     registryDependencies: []
   },
   map: {
@@ -388,7 +388,7 @@ const allComponents: RegistryUiData = {
     folder: 'menu',
     isnew: true,
     istodo: false,
-    npmDependencies: ['@lucide/svelte', 'bits-ui'],
+    npmDependencies: ['@lucide/svelte', '@shardsui/svelte'],
     registryDependencies: []
   },
   meter: {
@@ -398,7 +398,7 @@ const allComponents: RegistryUiData = {
     folder: 'meter',
     isnew: false,
     istodo: false,
-    npmDependencies: ['bits-ui'],
+    npmDependencies: ['@shardsui/svelte'],
     registryDependencies: []
   },
   'number-field': {
@@ -418,7 +418,7 @@ const allComponents: RegistryUiData = {
     folder: 'otp-field',
     isnew: true,
     istodo: false,
-    npmDependencies: ['bits-ui'],
+    npmDependencies: ['@shardsui/svelte', 'runed', 'svelte-toolbelt'],
     registryDependencies: []
   },
   pagination: {
@@ -428,7 +428,7 @@ const allComponents: RegistryUiData = {
     folder: 'pagination',
     isnew: false,
     istodo: false,
-    npmDependencies: ['@lucide/svelte', 'bits-ui'],
+    npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button']
   },
   'places-autocomplete': {
@@ -448,7 +448,7 @@ const allComponents: RegistryUiData = {
     folder: 'popover',
     isnew: false,
     istodo: false,
-    npmDependencies: ['bits-ui'],
+    npmDependencies: ['@shardsui/svelte'],
     registryDependencies: []
   },
   'preview-card': {
@@ -459,7 +459,7 @@ const allComponents: RegistryUiData = {
     folder: 'preview-card',
     isnew: false,
     istodo: false,
-    npmDependencies: ['bits-ui'],
+    npmDependencies: ['@shardsui/svelte'],
     registryDependencies: []
   },
   progress: {
@@ -469,7 +469,7 @@ const allComponents: RegistryUiData = {
     folder: 'progress',
     isnew: false,
     istodo: false,
-    npmDependencies: ['bits-ui'],
+    npmDependencies: ['@shardsui/svelte'],
     registryDependencies: []
   },
   'radio-group': {
@@ -480,7 +480,7 @@ const allComponents: RegistryUiData = {
     folder: 'radio-group',
     isnew: false,
     istodo: false,
-    npmDependencies: ['bits-ui'],
+    npmDependencies: ['@shardsui/svelte'],
     registryDependencies: []
   },
   'range-calendar': {
@@ -490,7 +490,7 @@ const allComponents: RegistryUiData = {
     folder: 'range-calendar',
     isnew: false,
     istodo: false,
-    npmDependencies: ['@internationalized/date', 'bits-ui'],
+    npmDependencies: ['@internationalized/date', 'runed', 'svelte-toolbelt'],
     registryDependencies: ['button', 'calendar']
   },
   'rich-editor': {
@@ -510,7 +510,7 @@ const allComponents: RegistryUiData = {
     folder: 'scroll-area',
     isnew: false,
     istodo: false,
-    npmDependencies: ['bits-ui'],
+    npmDependencies: ['@shardsui/svelte'],
     registryDependencies: []
   },
   select: {
@@ -520,7 +520,7 @@ const allComponents: RegistryUiData = {
     folder: 'select',
     isnew: false,
     istodo: false,
-    npmDependencies: ['@lucide/svelte', 'bits-ui', 'tailwind-variants'],
+    npmDependencies: ['@lucide/svelte', '@shardsui/svelte', 'tailwind-variants'],
     registryDependencies: []
   },
   separator: {
@@ -530,7 +530,7 @@ const allComponents: RegistryUiData = {
     folder: 'separator',
     isnew: false,
     istodo: false,
-    npmDependencies: ['bits-ui'],
+    npmDependencies: ['@shardsui/svelte'],
     registryDependencies: []
   },
   sheet: {
@@ -540,7 +540,7 @@ const allComponents: RegistryUiData = {
     folder: 'sheet',
     isnew: false,
     istodo: false,
-    npmDependencies: ['@lucide/svelte', 'bits-ui'],
+    npmDependencies: ['@lucide/svelte', '@shardsui/svelte'],
     registryDependencies: []
   },
   sidebar: {
@@ -551,7 +551,7 @@ const allComponents: RegistryUiData = {
     folder: 'sidebar',
     isnew: true,
     istodo: false,
-    npmDependencies: ['@lucide/svelte', 'bits-ui', 'tailwind-variants'],
+    npmDependencies: ['@lucide/svelte', 'svelte-toolbelt', 'tailwind-variants'],
     registryDependencies: [
       'button',
       'input',
@@ -579,7 +579,7 @@ const allComponents: RegistryUiData = {
     folder: 'slider',
     isnew: false,
     istodo: false,
-    npmDependencies: ['bits-ui'],
+    npmDependencies: ['@shardsui/svelte'],
     registryDependencies: ['tooltip']
   },
   spinner: {
@@ -629,7 +629,7 @@ const allComponents: RegistryUiData = {
     folder: 'switch',
     isnew: false,
     istodo: false,
-    npmDependencies: ['bits-ui'],
+    npmDependencies: ['@shardsui/svelte'],
     registryDependencies: []
   },
   table: {
@@ -649,7 +649,7 @@ const allComponents: RegistryUiData = {
     folder: 'tabs',
     isnew: false,
     istodo: false,
-    npmDependencies: ['bits-ui'],
+    npmDependencies: ['@shardsui/svelte'],
     registryDependencies: []
   },
   textarea: {
@@ -659,7 +659,7 @@ const allComponents: RegistryUiData = {
     folder: 'textarea',
     isnew: false,
     istodo: false,
-    npmDependencies: [],
+    npmDependencies: ['@shardsui/svelte'],
     registryDependencies: []
   },
   timeline: {
@@ -669,7 +669,7 @@ const allComponents: RegistryUiData = {
     folder: 'timeline',
     isnew: true,
     istodo: false,
-    npmDependencies: ['bits-ui'],
+    npmDependencies: [],
     registryDependencies: []
   },
   toast: {
@@ -679,7 +679,7 @@ const allComponents: RegistryUiData = {
     folder: 'toast',
     isnew: false,
     istodo: false,
-    npmDependencies: ['@lucide/svelte', 'bits-ui', 'tailwind-variants'],
+    npmDependencies: ['@lucide/svelte', '@shardsui/svelte'],
     registryDependencies: ['button']
   },
   toggle: {
@@ -689,7 +689,7 @@ const allComponents: RegistryUiData = {
     folder: 'toggle',
     isnew: false,
     istodo: false,
-    npmDependencies: ['bits-ui', 'tailwind-variants'],
+    npmDependencies: ['@shardsui/svelte', 'tailwind-variants'],
     registryDependencies: []
   },
   'toggle-group': {
@@ -699,7 +699,7 @@ const allComponents: RegistryUiData = {
     folder: 'toggle-group',
     isnew: false,
     istodo: false,
-    npmDependencies: ['bits-ui'],
+    npmDependencies: ['@shardsui/svelte'],
     registryDependencies: ['separator', 'toggle']
   },
   toolbar: {
@@ -709,7 +709,7 @@ const allComponents: RegistryUiData = {
     folder: 'toolbar',
     isnew: false,
     istodo: false,
-    npmDependencies: ['bits-ui'],
+    npmDependencies: ['@shardsui/svelte'],
     registryDependencies: []
   },
   tooltip: {
@@ -720,7 +720,7 @@ const allComponents: RegistryUiData = {
     folder: 'tooltip',
     isnew: false,
     istodo: false,
-    npmDependencies: ['bits-ui'],
+    npmDependencies: ['@shardsui/svelte'],
     registryDependencies: []
   },
   tree: {
@@ -730,13 +730,7 @@ const allComponents: RegistryUiData = {
     folder: 'tree',
     isnew: true,
     istodo: false,
-    npmDependencies: [
-      '@headless-tree/core',
-      '@lucide/svelte',
-      'bits-ui',
-      'runed',
-      'svelte-toolbelt'
-    ],
+    npmDependencies: ['@headless-tree/core', '@lucide/svelte', 'runed', 'svelte-toolbelt'],
     registryDependencies: []
   }
 };

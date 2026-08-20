@@ -33,20 +33,19 @@ Along the way, I noticed that even Coss UI lacks some of the components found in
 ## Acknowledgements
 
 - [Coss UI](https://cossui.com/) - The original project that this Svelte version is copied from
-- [Bits UI](https://bits-ui.com) - The foundational headless UI library 
-- [Svelte/SvelteKit](https://svelte.dev) - The building the easiest to use and most intuitive frontend framework
+- [ShardsUI](https://shardsui.com/) - A Svelte port of Base UI
 - [TailwindCSS v4](https://tailwindcss.com) - An easy to use CSS framework with beautiful UI
-- [Versel](https://github.com/66HEX/varsel) - A headless toast component
-- [Vaul](https://github.com/quanghle/autopilot-vaul-svelte) - An headless, gesture-driven drawer component
 - [Phantom-UI](https://github.com/Aejkatappaja/phantom-ui) - An elegant structure-aware skeleton loader
 - [FormSnap & Superforms](https://superforms.rocks/) - A full featured headless validation framework
 - [Places Autocomplete](https://github.com/gurbaaz27/shadcn-google-maps) - Address validation based on gmap
 - [Huey ColorPicker](https://hueycolor.pages.dev/) - A modular color picker
-- [MapCN-Svelte](https://mapcn-svelte.vercel.app/) - A full featured map component
+- [MapCN-Svelte](https://mapcn-svelte.vercel.app/) - A modular map component
+- [Svelte/SvelteKit](https://svelte.dev) - A quite intuitive web framework
 
 Other good source of inspiration, sometimes with full component logic just copy/pasted (full credits to their authors):
 
 - [ShadCN Svelte](https://www.shadcn-svelte.com/)
+- [Bits UI](https://www.bits-ui.com/)
 - [Unofficial port of Origin UI](https://github.com/max-got/originui-svelte)
 
 ### Differences from the original
@@ -55,10 +54,9 @@ The Original [Coss UI](https://cossui.com/) is built with Next.js and BaseUI. Th
 
 - [x] [SvelteKit](https://svelte.dev) instead of ~~Next.js~~
 - [x] [Lucide Svelte](https://lucide.dev/guide/packages/lucide-svelte) instead of ~~Lucide React~~
-- [x] [Bits UI](https://bits-ui.com/docs/introduction) instead of ~~Base UI~~
-- [x] Form/Field/Fieldset are leveraging the power of [FormSnap & Superforms](https://superforms.rocks/)
+- [x] [ShardsUI](https://shardsui.com/) instead of ~~Base UI~~
 - [x] Skeleton component is now trivial, thanks to [Phantom-UI](@aejkatappaja/phantom-ui)
-- [x] More components than the original ported from various sources
+- [x] More components, ported from various sources
 
 A few components are built differently, reflecting the intuitive conventions of the Svelte ecosystem and its frameworks.
 

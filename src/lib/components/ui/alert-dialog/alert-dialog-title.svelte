@@ -1,12 +1,13 @@
 <script lang="ts">
-  import { AlertDialog as AlertDialogPrimitive } from 'bits-ui';
+  import { AlertDialog as AlertDialogPrimitive } from '@shardsui/svelte/alert-dialog';
+  import type { ComponentProps } from 'svelte';
   import { cn } from '$lib/utils';
 
   let {
     ref = $bindable(null),
     class: className,
     ...restProps
-  }: AlertDialogPrimitive.TitleProps = $props();
+  }: ComponentProps<typeof AlertDialogPrimitive.Title> = $props();
 </script>
 
 <AlertDialogPrimitive.Title

@@ -1,39 +1,22 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
-  import type { ToastPosition } from './internal';
-  import { VarselToaster } from './internal';
+  import { Toast as ToastPrimitive } from '@shardsui/svelte/toast';
+  import type { ComponentProps, Snippet } from 'svelte';
+  import { toastManager, type ToastPosition } from './toast-manager';
+  import Toasts from './toasts.svelte';
 
   let {
+    children,
     position = 'bottom-right',
-    visibleToasts = 3,
-    expand = true,
-    duration = 5000,
-    closeButton = true,
-    pauseOnHover = true,
-    offset = undefined,
-    dir = 'auto',
-    children
-  }: {
+    portalProps,
+    ...restProps
+  }: Omit<ComponentProps<typeof ToastPrimitive.Provider>, 'toastManager' | 'children'> & {
     position?: ToastPosition;
-    visibleToasts?: number;
-    expand?: boolean;
-    duration?: number;
-    closeButton?: boolean;
-    pauseOnHover?: boolean;
-    offset?: number | string;
-    dir?: 'ltr' | 'rtl' | 'auto';
+    portalProps?: ComponentProps<typeof ToastPrimitive.Portal>;
     children?: Snippet;
   } = $props();
 </script>
 
-{@render children?.()}
-<VarselToaster
-  {position}
-  {visibleToasts}
-  {expand}
-  {duration}
-  {closeButton}
-  {pauseOnHover}
-  {offset}
-  {dir}
-/>
+<ToastPrimitive.Provider {toastManager} {...restProps}>
+  {@render children?.()}
+  <Toasts {position} {portalProps} />
+</ToastPrimitive.Provider>

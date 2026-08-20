@@ -1,9 +1,9 @@
 <script lang="ts">
   import { type DateValue, getLocalTimeZone, today } from '@internationalized/date';
   import ClockIcon from '@lucide/svelte/icons/clock';
-  import { z } from 'zod';
   import {
     Autocomplete,
+    AutocompleteCollection,
     AutocompleteInput,
     AutocompleteItem,
     AutocompleteList,
@@ -13,7 +13,6 @@
   import { Calendar } from '$lib/components/ui/calendar';
   import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';
   import { Form } from '$lib/components/ui/form';
-  import { createForm } from '$lib/hooks/use-superform';
 
   const times = Array.from({ length: 96 }, (_, i) => {
     const hours = String(Math.floor(i / 4)).padStart(2, '0');
@@ -114,29 +113,7 @@
   let placeholder = $state<DateValue>(todayValue);
   let time = $state('12:00');
   let filterQuery = $state('');
-
-  const schema = z.object({
-    date: z.string().min(1, 'Please select a date.'),
-    time: z.string().regex(/^\d{2}:\d{2}$/, 'Please enter a valid time.')
-  });
-
-  const superform = createForm({
-    initialData: { date: todayValue.toString(), time },
-    onUpdated: (data) => {
-      alert(`Date: ${data.date}\nTime: ${data.time}`);
-    },
-    schema
-  });
-
-  const { form, submitting } = superform;
-
-  $effect(() => {
-    $form.date = value ? value.toString() : '';
-  });
-
-  $effect(() => {
-    $form.time = time;
-  });
+  let loading = $state(false);
 
   const matchingTimes = $derived(
     times
@@ -163,9 +140,17 @@
     e.currentTarget.value = time;
     filterQuery = '';
   }
+
+  async function handleSubmit(event: SubmitEvent) {
+    event.preventDefault();
+    loading = true;
+    await new Promise((r) => setTimeout(r, 800));
+    loading = false;
+    alert(`Date: ${value ? value.toString() : ''}\nTime: ${time}`);
+  }
 </script>
 
-<Form class="flex w-fit flex-col gap-2" {superform}>
+<Form class="flex w-fit flex-col gap-2" onsubmit={handleSubmit}>
   <Field class="gap-2" name="date">
     <Calendar bind:value bind:placeholder mode="single" />
     <FieldError />
@@ -173,10 +158,9 @@
   <Field class="w-0 min-w-full gap-2" name="time">
     <div class="flex flex-row items-center gap-3">
       <FieldLabel class="whitespace-nowrap text-xs">Enter time</FieldLabel>
-      <Autocomplete autoHighlight items={matchingTimes} onValueChange={handleValueChange}>
+      <Autocomplete autoHighlight filter={null} items={matchingTimes} value={time}>
         <AutocompleteInput
           aria-label="Enter time"
-          defaultValue={time}
           inputmode="numeric"
           maxlength={5}
           onblur={handleBlur}
@@ -188,15 +172,18 @@
         </AutocompleteInput>
         <AutocompletePopup class={matchingTimes.length === 0 ? 'hidden' : undefined}>
           <AutocompleteList>
-            {#each matchingTimes as item (item.value)}
-              <AutocompleteItem label={item.label} value={item.value}>{item.label}</AutocompleteItem
-              >
-            {/each}
+            <AutocompleteCollection>
+              {#snippet children(item: { label: string; value: string })}
+                <AutocompleteItem value={item} onclick={() => handleValueChange(item.value)}>
+                  {item.label}
+                </AutocompleteItem>
+              {/snippet}
+            </AutocompleteCollection>
           </AutocompleteList>
         </AutocompletePopup>
       </Autocomplete>
     </div>
     <FieldError />
   </Field>
-  <Button loading={$submitting} type="submit">Submit</Button>
+  <Button {loading} type="submit">Submit</Button>
 </Form>

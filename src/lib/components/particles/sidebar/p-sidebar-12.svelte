@@ -82,16 +82,16 @@
               {#each items as item, index (item.title)}
                 <Collapsible class="group/collapsible" open={index === 0}>
                   <SidebarMenuItem>
-                    <CollapsibleTrigger>
+                    <SidebarMenuButton>
                       {#snippet child({ props })}
-                        <SidebarMenuButton {...props}>
+                        <CollapsibleTrigger {...props}>
                           <span>{item.title}</span>
                           <ChevronRightIcon
-                            class="ms-auto transition-transform group-data-[state=open]/collapsible:rotate-90"
+                            class="ms-auto transition-transform group-data-open/collapsible:rotate-90"
                           />
-                        </SidebarMenuButton>
+                        </CollapsibleTrigger>
                       {/snippet}
-                    </CollapsibleTrigger>
+                    </SidebarMenuButton>
                     <CollapsiblePanel>
                       <SidebarMenuSub>
                         {#each item.items as subItem (subItem.title)}

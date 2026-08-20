@@ -9,7 +9,7 @@
 			"type": "registry:block",
 			"path": "p-context-menu-2.svelte",
 			"target": "$lib/components/particles/context-menu/p-context-menu-2.svelte",
-			"content": "<script lang=\"ts\">\n  import { resolve } from '$app/paths';\n  import {\n    ContextMenu,\n    ContextMenuItem,\n    ContextMenuPopup,\n    ContextMenuTrigger\n  } from '$lib/components/ui/context-menu';\n</script>\n\n<ContextMenu>\n  <ContextMenuTrigger\n    class=\"flex h-32 w-full max-w-sm items-center justify-center rounded-lg border border-dashed text-muted-foreground text-sm\"\n  >\n    Right click here\n  </ContextMenuTrigger>\n  <ContextMenuPopup>\n    <ContextMenuItem>\n      {#snippet child({ props })}\n        <a href={resolve('/docs')} {...props}>Docs</a>\n      {/snippet}\n    </ContextMenuItem>\n    <ContextMenuItem>\n      {#snippet child({ props })}\n        <a href={resolve('/particles')} {...props}>Particles</a>\n      {/snippet}\n    </ContextMenuItem>\n  </ContextMenuPopup>\n</ContextMenu>\n"
+			"content": "<script lang=\"ts\">\n  import { resolve } from '$app/paths';\n  import {\n    ContextMenu,\n    ContextMenuLinkItem,\n    ContextMenuPopup,\n    ContextMenuTrigger\n  } from '$lib/components/ui/context-menu';\n</script>\n\n<ContextMenu>\n  <ContextMenuTrigger\n    class=\"flex h-32 w-full max-w-sm items-center justify-center rounded-lg border border-dashed text-muted-foreground text-sm\"\n  >\n    Right click here\n  </ContextMenuTrigger>\n  <ContextMenuPopup>\n    <ContextMenuLinkItem href={resolve('/docs')}>Docs</ContextMenuLinkItem>\n    <ContextMenuLinkItem href={resolve('/particles')}>Particles</ContextMenuLinkItem>\n  </ContextMenuPopup>\n</ContextMenu>\n"
 		}
 	],
 	"registryDependencies": [

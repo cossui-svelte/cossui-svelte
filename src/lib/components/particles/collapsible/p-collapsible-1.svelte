@@ -9,7 +9,7 @@
 
 <Collapsible>
   <CollapsibleTrigger
-    class="inline-flex items-center gap-2 font-medium text-sm data-[state=open]:[&_svg]:rotate-180"
+    class="inline-flex items-center gap-2 font-medium text-sm data-panel-open:[&_svg]:rotate-180"
   >
     Show recovery keys
     <ChevronDown class="size-4 transition-transform" />

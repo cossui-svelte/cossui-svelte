@@ -1,6 +1,6 @@
 <script lang="ts">
   import { type DateValue, isEqualMonth } from '@internationalized/date';
-  import { Calendar as CalendarPrimitive } from 'bits-ui';
+  import * as CalendarPrimitive from './internal';
   import type { Snippet } from 'svelte';
   import type { ButtonVariant } from '$lib/components/ui/button';
   import { cn, type RenameTypeToMode, type WithoutChildrenOrChild } from '$lib/utils';

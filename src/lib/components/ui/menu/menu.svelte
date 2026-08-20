@@ -1,12 +1,9 @@
 <script lang="ts">
-  import { DropdownMenu } from 'bits-ui';
-  import type { Snippet } from 'svelte';
+  import { Menu as MenuPrimitive } from '@shardsui/svelte/menu';
+  import type { ComponentProps } from 'svelte';
 
-  type Props = DropdownMenu.RootProps & { children?: Snippet };
-
-  let { children, ...restProps }: Props = $props();
+  let { open = $bindable(false), ...restProps }: ComponentProps<typeof MenuPrimitive.Root> =
+    $props();
 </script>
 
-<DropdownMenu.Root {...restProps}>
-  {@render children?.()}
-</DropdownMenu.Root>
+<MenuPrimitive.Root bind:open {...restProps} />

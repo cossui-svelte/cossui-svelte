@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { z } from 'zod';
   import { Button } from '$lib/components/ui/button';
   import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';
   import { Form } from '$lib/components/ui/form';
@@ -10,7 +9,6 @@
     SelectTrigger,
     SelectValue
   } from '$lib/components/ui/select';
-  import { createForm } from '$lib/hooks/use-superform';
 
   const items = [
     { label: 'Next.js', value: 'next' },
@@ -18,30 +16,22 @@
     { label: 'Astro', value: 'astro' }
   ];
 
-  const schema = z.object({
-    framework: z.string().min(1, 'Please select a framework.')
-  });
+  let loading = $state(false);
 
-  const superform = createForm({
-    onUpdated: (data) => {
-      alert(`Framework: ${data.framework}`);
-    },
-    schema
-  });
-
-  const { form, submitting } = superform;
+  async function handleSubmit(event: SubmitEvent) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget as HTMLFormElement);
+    loading = true;
+    await new Promise((r) => setTimeout(r, 800));
+    loading = false;
+    alert(`Framework: ${formData.get('framework') ?? ''}`);
+  }
 </script>
 
-<Form class="flex w-full max-w-64 flex-col gap-4" {superform}>
+<Form class="flex w-full max-w-64 flex-col gap-4" onsubmit={handleSubmit}>
   <Field name="framework">
     <FieldLabel>Framework</FieldLabel>
-    <Select
-      name="framework"
-      value={$form.framework}
-      onValueChange={(v) => {
-        $form.framework = v as string;
-      }}
-    >
+    <Select>
       <SelectTrigger aria-label="Select framework">
         <SelectValue placeholder="Select a framework" />
       </SelectTrigger>
@@ -54,5 +44,5 @@
     <p class="text-muted-foreground text-sm">Pick your favorite.</p>
     <FieldError />
   </Field>
-  <Button loading={$submitting} type="submit">Submit</Button>
+  <Button {loading} type="submit">Submit</Button>
 </Form>

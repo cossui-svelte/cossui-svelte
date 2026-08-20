@@ -10,32 +10,8 @@
 <Menu>
   <MenuTrigger class={buttonVariants({ variant: 'outline' })}>Open menu</MenuTrigger>
   <MenuPopup>
-    <MenuCheckboxItem
-      variant="switch"
-      checked={autoSave}
-      onCheckedChange={(v) => {
-        autoSave = v;
-      }}
-    >
-      Auto save
-    </MenuCheckboxItem>
-    <MenuCheckboxItem
-      variant="switch"
-      checked={notifications}
-      onCheckedChange={(v) => {
-        notifications = v;
-      }}
-    >
-      Notifications
-    </MenuCheckboxItem>
-    <MenuCheckboxItem
-      variant="switch"
-      checked={darkMode}
-      onCheckedChange={(v) => {
-        darkMode = v;
-      }}
-    >
-      Dark mode
-    </MenuCheckboxItem>
+    <MenuCheckboxItem variant="switch" bind:checked={autoSave}>Auto save</MenuCheckboxItem>
+    <MenuCheckboxItem variant="switch" bind:checked={notifications}>Notifications</MenuCheckboxItem>
+    <MenuCheckboxItem variant="switch" bind:checked={darkMode}>Dark mode</MenuCheckboxItem>
   </MenuPopup>
 </Menu>

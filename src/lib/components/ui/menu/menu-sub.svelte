@@ -1,14 +1,14 @@
 <script lang="ts">
-  import { DropdownMenu } from 'bits-ui';
-  import type { Snippet } from 'svelte';
+  import { Menu as MenuPrimitive } from '@shardsui/svelte/menu';
+  import type { ComponentProps, Snippet } from 'svelte';
 
-  interface Props extends DropdownMenu.SubProps {
+  type Props = Omit<ComponentProps<typeof MenuPrimitive.SubmenuRoot>, 'children'> & {
     children?: Snippet;
-  }
+  };
 
   let { children, ...restProps }: Props = $props();
 </script>
 
-<DropdownMenu.Sub {...restProps}>
+<MenuPrimitive.SubmenuRoot {...restProps}>
   {@render children?.()}
-</DropdownMenu.Sub>
+</MenuPrimitive.SubmenuRoot>

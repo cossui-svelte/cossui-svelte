@@ -2,6 +2,7 @@
   import Search from '@lucide/svelte/icons/search';
   import {
     Combobox,
+    ComboboxCollection,
     ComboboxEmpty,
     ComboboxInput,
     ComboboxItem,
@@ -45,9 +46,11 @@
     </div>
     <ComboboxEmpty>No items found.</ComboboxEmpty>
     <ComboboxList>
-      {#each items as item (item.value)}
-        <ComboboxItem value={item.value} label={item.label}>{item.label}</ComboboxItem>
-      {/each}
+      <ComboboxCollection>
+        {#snippet children(item: { label: string; value: string })}
+          <ComboboxItem value={item.value} label={item.label}>{item.label}</ComboboxItem>
+        {/snippet}
+      </ComboboxCollection>
     </ComboboxList>
   </ComboboxPopup>
 </Combobox>

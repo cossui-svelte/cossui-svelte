@@ -1,5 +1,5 @@
 export { default as PreviewCard, default as HoverCard } from './preview-card.svelte';
-export type {
+export {
   default as PreviewCardPopup,
   default as LinkPreviewContent
 } from './preview-card-popup.svelte';

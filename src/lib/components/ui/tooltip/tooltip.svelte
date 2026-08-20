@@ -1,16 +1,23 @@
 <script lang="ts">
-  import { Tooltip } from 'bits-ui';
-
-  interface Props extends Omit<Tooltip.RootProps, 'delayDuration'> {
-    delay?: number;
-  }
+  import { Tooltip as TooltipPrimitive } from '@shardsui/svelte/tooltip';
+  import type { ComponentProps } from 'svelte';
 
   let {
     delay,
+    closeDelay,
     open = $bindable(false),
     triggerId = $bindable(null),
     ...restProps
-  }: Props = $props();
+  }: ComponentProps<typeof TooltipPrimitive.Root> & {
+    delay?: number;
+    closeDelay?: number;
+  } = $props();
 </script>
 
-<Tooltip.Root bind:open bind:triggerId delayDuration={delay} {...restProps} />
+{#if delay !== undefined || closeDelay !== undefined}
+  <TooltipPrimitive.Provider {delay} {closeDelay}>
+    <TooltipPrimitive.Root bind:open bind:triggerId {...restProps} />
+  </TooltipPrimitive.Provider>
+{:else}
+  <TooltipPrimitive.Root bind:open bind:triggerId {...restProps} />
+{/if}

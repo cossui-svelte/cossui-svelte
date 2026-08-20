@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { z } from 'zod';
   import {
     Autocomplete,
+    AutocompleteCollection,
     AutocompleteEmpty,
     AutocompleteInput,
     AutocompleteItem,
@@ -11,7 +11,6 @@
   import { Button } from '$lib/components/ui/button';
   import { Field, FieldDescription, FieldError, FieldLabel } from '$lib/components/ui/field';
   import { Form } from '$lib/components/ui/form';
-  import { createForm } from '$lib/hooks/use-superform';
 
   const items = [
     { label: 'Apple', value: 'apple' },
@@ -26,36 +25,36 @@
     { label: 'Strawberry', value: 'strawberry' }
   ];
 
-  const schema = z.object({
-    fruit: z.string().min(1, { message: 'Please select a fruit.' })
-  });
+  let fruit = $state('');
+  let loading = $state(false);
 
-  const superform = createForm({
-    onUpdated: (data) => {
-      alert(`Fruit: ${data.fruit}`);
-    },
-    schema
-  });
-
-  const { form, submitting } = superform;
+  async function handleSubmit(event: SubmitEvent) {
+    event.preventDefault();
+    loading = true;
+    await new Promise((r) => setTimeout(r, 800));
+    loading = false;
+    alert(`Fruit: ${fruit}`);
+  }
 </script>
 
-<Form class="flex w-full flex-col gap-4" {superform}>
+<Form class="flex w-full flex-col gap-4" onsubmit={handleSubmit}>
   <Field name="fruit">
     <FieldLabel>Fruits</FieldLabel>
-    <Autocomplete {items} onValueChange={(v) => ($form.fruit = v as string)} value={$form.fruit}>
+    <Autocomplete {items} bind:value={fruit}>
       <AutocompleteInput aria-label="Search items" placeholder="Search items…" />
       <AutocompletePopup>
         <AutocompleteEmpty>No items found.</AutocompleteEmpty>
         <AutocompleteList>
-          {#each items as item (item.value)}
-            <AutocompleteItem label={item.label} value={item.value}>{item.label}</AutocompleteItem>
-          {/each}
+          <AutocompleteCollection>
+            {#snippet children(item: { label: string; value: string })}
+              <AutocompleteItem value={item}>{item.label}</AutocompleteItem>
+            {/snippet}
+          </AutocompleteCollection>
         </AutocompleteList>
       </AutocompletePopup>
     </Autocomplete>
     <FieldDescription>Select a item.</FieldDescription>
-    <FieldError />
+    <FieldError>Please select a fruit.</FieldError>
   </Field>
-  <Button loading={$submitting} type="submit">Submit</Button>
+  <Button {loading} type="submit">Submit</Button>
 </Form>

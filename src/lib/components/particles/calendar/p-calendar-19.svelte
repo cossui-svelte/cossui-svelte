@@ -6,7 +6,7 @@
 
   const todayValue = today(getLocalTimeZone());
   let date = $state<DateValue>(todayValue);
-  let time = $state<string | undefined>(undefined);
+  let time = $state<string[]>([]);
 
   const timeSlots = [
     { available: false, time: '09:00' },
@@ -43,7 +43,7 @@
     {isDateDisabled}
     onValueChange={(newDate) => {
       if (newDate) {
-        time = undefined;
+        time = [];
       }
     }}
     mode="single"

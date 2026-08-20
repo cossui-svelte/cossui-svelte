@@ -1,9 +1,10 @@
 <script lang="ts">
-  import { Toggle as TogglePrimitive } from 'bits-ui';
+  import { Toggle as TogglePrimitive } from '@shardsui/svelte/toggle';
+  import type { ComponentProps } from 'svelte';
   import { cn } from '$lib/utils';
   import { type ToggleSize, type ToggleVariant, toggleVariants } from './toggle-variants';
 
-  type ToggleProps = TogglePrimitive.RootProps & {
+  type ToggleProps = ComponentProps<typeof TogglePrimitive> & {
     variant?: ToggleVariant;
     size?: ToggleSize;
   };
@@ -18,7 +19,7 @@
   }: ToggleProps = $props();
 </script>
 
-<TogglePrimitive.Root
+<TogglePrimitive
   bind:ref
   bind:pressed
   data-slot="toggle"

@@ -9,37 +9,37 @@
 			"type": "registry:ui",
 			"path": "accordion/accordion-item.svelte",
 			"target": "$lib/components/ui/accordion/accordion-item.svelte",
-			"content": "<script lang=\"ts\">\n  import { Accordion } from 'bits-ui';\n  import { cn } from '$lib/utils';\n\n  let { ref = $bindable(null), class: className, ...restProps }: Accordion.ItemProps = $props();\n</script>\n\n<Accordion.Item\n  bind:ref\n  class={cn('border-b last:border-b-0', className)}\n  data-slot=\"accordion-item\"\n  {...restProps}\n/>\n"
+			"content": "<script lang=\"ts\">\n  import { Accordion as AccordionPrimitive } from '@shardsui/svelte/accordion';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof AccordionPrimitive.Item> = $props();\n</script>\n\n<AccordionPrimitive.Item\n  bind:ref\n  class={cn('border-b last:border-b-0', className)}\n  data-slot=\"accordion-item\"\n  {...restProps}\n/>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "accordion/accordion-panel.svelte",
 			"target": "$lib/components/ui/accordion/accordion-panel.svelte",
-			"content": "<script lang=\"ts\">\n  import { Accordion } from 'bits-ui';\n  import { cn, type WithoutChild } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n\n    ...restProps\n  }: WithoutChild<Accordion.ContentProps> = $props();\n</script>\n\n<Accordion.Content\n  bind:ref\n  class=\"w-full overflow-hidden text-muted-foreground text-sm transition-[height] duration-200 ease-out data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down\"\n  data-slot=\"accordion-panel\"\n  {...restProps}\n>\n  <div class={cn('pt-0 pb-4', className)}>\n    {@render children?.()}\n  </div>\n</Accordion.Content>\n"
+			"content": "<script lang=\"ts\">\n  import { Accordion as AccordionPrimitive } from '@shardsui/svelte/accordion';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children: childrenProp,\n    ...restProps\n  }: ComponentProps<typeof AccordionPrimitive.Panel> = $props();\n</script>\n\n<AccordionPrimitive.Panel\n  bind:ref\n  class=\"h-(--accordion-panel-height) w-full overflow-hidden text-muted-foreground text-sm transition-[height] duration-200 ease-out data-ending-style:h-0 data-starting-style:h-0\"\n  data-slot=\"accordion-panel\"\n  {...restProps}\n>\n  {#snippet children(state)}\n    <div class={cn('pt-0 pb-4', className)}>\n      {@render childrenProp?.(state)}\n    </div>\n  {/snippet}\n</AccordionPrimitive.Panel>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "accordion/accordion-trigger.svelte",
 			"target": "$lib/components/ui/accordion/accordion-trigger.svelte",
-			"content": "<script lang=\"ts\">\n  import ChevronDown from '@lucide/svelte/icons/chevron-down';\n  import { Accordion } from 'bits-ui';\n  import { cn, type WithoutChild } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithoutChild<Accordion.TriggerProps> = $props();\n</script>\n\n<Accordion.Header class=\"flex\">\n  <Accordion.Trigger\n    class={cn(\n      'flex flex-1 cursor-pointer items-start justify-between gap-4 rounded-md py-4 text-left font-medium text-sm outline-none transition-all focus-visible:ring-[3px] focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-64 data-[state=open]:*:data-[slot=accordion-indicator]:rotate-180',\n      className\n    )}\n    data-slot=\"accordion-trigger\"\n    {...restProps}\n  >\n    {@render children?.()}\n\n    <ChevronDown\n      class=\"pointer-events-none size-4 shrink-0 translate-y-0.5 opacity-80 transition-transform duration-200 ease-in-out\"\n      data-slot=\"accordion-indicator\"\n    />\n  </Accordion.Trigger>\n</Accordion.Header>\n"
+			"content": "<script lang=\"ts\">\n  import ChevronDown from '@lucide/svelte/icons/chevron-down';\n  import { Accordion as AccordionPrimitive } from '@shardsui/svelte/accordion';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children: childrenProp,\n    ...restProps\n  }: ComponentProps<typeof AccordionPrimitive.Trigger> = $props();\n</script>\n\n<AccordionPrimitive.Header class=\"flex\">\n  <AccordionPrimitive.Trigger\n    bind:ref\n    class={cn(\n      'flex flex-1 cursor-pointer items-start justify-between gap-4 rounded-md py-4 text-left font-medium text-sm outline-none transition-all focus-visible:ring-[3px] focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-64 data-panel-open:*:data-[slot=accordion-indicator]:rotate-180',\n      className\n    )}\n    data-slot=\"accordion-trigger\"\n    {...restProps}\n  >\n    {#snippet children(state)}\n      {@render childrenProp?.(state)}\n\n      <ChevronDown\n        class=\"pointer-events-none size-4 shrink-0 translate-y-0.5 opacity-80 transition-transform duration-200 ease-in-out\"\n        data-slot=\"accordion-indicator\"\n      />\n    {/snippet}\n  </AccordionPrimitive.Trigger>\n</AccordionPrimitive.Header>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "accordion/accordion.svelte",
 			"target": "$lib/components/ui/accordion/accordion.svelte",
-			"content": "<script lang=\"ts\">\n  import { Accordion as AccordionPrimitive, type Orientation } from 'bits-ui';\n  import type { HTMLAttributes } from 'svelte/elements';\n\n  let {\n    ref = $bindable(null),\n    value = $bindable(),\n    class: className,\n    multiple = false,\n    ...restProps\n  }: HTMLAttributes<HTMLDivElement> & {\n    ref?: HTMLDivElement | null;\n    value?: string | string[];\n    multiple?: boolean;\n    disabled?: boolean;\n    loop?: boolean;\n    orientation?: Orientation;\n  } = $props();\n</script>\n\n<AccordionPrimitive.Root\n  bind:ref\n  bind:value={value as never}\n  type={(multiple ? 'multiple' : 'single') as never}\n  class={className}\n  data-slot=\"accordion\"\n  {...restProps as Record<string, unknown>}\n/>\n"
+			"content": "<script lang=\"ts\">\n  import { Accordion as AccordionPrimitive } from '@shardsui/svelte/accordion';\n  import type { HTMLAttributes } from 'svelte/elements';\n\n  let {\n    ref = $bindable(null),\n    value = $bindable(),\n    class: className,\n    multiple = false,\n    disabled = false,\n    ...restProps\n  }: HTMLAttributes<HTMLDivElement> & {\n    ref?: HTMLElement | null;\n    value?: string | string[];\n    multiple?: boolean;\n    disabled?: boolean;\n  } = $props();\n\n  const internalValue = $derived.by((): string[] => {\n    if (multiple) return Array.isArray(value) ? value : value != null ? [value] : [];\n    const single = Array.isArray(value) ? value[0] : value;\n    return single != null ? [single] : [];\n  });\n</script>\n\n<AccordionPrimitive.Root\n  bind:ref\n  {disabled}\n  {multiple}\n  value={internalValue}\n  class={className}\n  data-slot=\"accordion\"\n  onValueChange={(next: string[]) => {\n    value = multiple ? next : next[0];\n  }}\n  {...restProps as Record<string, unknown>}\n/>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "accordion/index.ts",
 			"target": "$lib/components/ui/accordion/index.ts",
-			"content": "import { Accordion as AccordionPrimitive } from 'bits-ui';\n\nexport { default as Accordion } from './accordion.svelte';\nexport { default as AccordionItem } from './accordion-item.svelte';\nexport { default as AccordionPanel, default as AccordionContent } from './accordion-panel.svelte';\nexport { default as AccordionTrigger } from './accordion-trigger.svelte';\nexport { AccordionPrimitive };\nexport const AccordionHeader = AccordionPrimitive.Header;\n"
+			"content": "import { Accordion as AccordionPrimitive } from '@shardsui/svelte/accordion';\n\nexport { default as Accordion } from './accordion.svelte';\nexport { default as AccordionItem } from './accordion-item.svelte';\nexport { default as AccordionPanel, default as AccordionContent } from './accordion-panel.svelte';\nexport { default as AccordionTrigger } from './accordion-trigger.svelte';\nexport { AccordionPrimitive };\nexport const AccordionHeader = AccordionPrimitive.Header;\n"
 		}
 	],
 	"registryDependencies": [
 		"utils"
 	],
 	"dependencies": [
-		"bits-ui@^2.18.1"
+		"@shardsui/svelte@0.1.0-beta.0"
 	]
 }

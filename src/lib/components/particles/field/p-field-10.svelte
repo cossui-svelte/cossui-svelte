@@ -1,31 +1,27 @@
 <script lang="ts">
-  import { z } from 'zod';
   import { Button } from '$lib/components/ui/button';
   import { Field, FieldDescription, FieldError, FieldLabel } from '$lib/components/ui/field';
   import { Form } from '$lib/components/ui/form';
   import { Textarea } from '$lib/components/ui/textarea';
-  import { createForm } from '$lib/hooks/use-superform';
 
-  const schema = z.object({
-    bio: z.string().max(500, { message: 'Bio must be 500 characters or fewer.' })
-  });
+  let loading = $state(false);
 
-  const superform = createForm({
-    onUpdated: (data) => {
-      alert(`Bio: ${data.bio}`);
-    },
-    schema
-  });
-
-  const { form, submitting } = superform;
+  async function handleSubmit(event: SubmitEvent) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget as HTMLFormElement);
+    loading = true;
+    await new Promise((r) => setTimeout(r, 800));
+    loading = false;
+    alert(`Bio: ${formData.get('bio') ?? ''}`);
+  }
 </script>
 
-<Form class="flex w-full flex-col gap-4" {superform}>
+<Form class="flex w-full flex-col gap-4" onsubmit={handleSubmit}>
   <Field name="bio">
     <FieldLabel>Bio</FieldLabel>
-    <Textarea bind:value={$form.bio} placeholder="Tell us about yourself…" />
+    <Textarea maxlength={500} placeholder="Tell us about yourself…" />
     <FieldDescription>Write a short bio. Maximum 500 characters.</FieldDescription>
-    <FieldError />
+    <FieldError>Bio must be 500 characters or fewer.</FieldError>
   </Field>
-  <Button loading={$submitting} type="submit">Submit</Button>
+  <Button {loading} type="submit">Submit</Button>
 </Form>

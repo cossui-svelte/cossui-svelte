@@ -9,7 +9,7 @@
 			"type": "registry:ui",
 			"path": "checkbox-group/checkbox-group.svelte",
 			"target": "$lib/components/ui/checkbox-group/checkbox-group.svelte",
-			"content": "<script lang=\"ts\">\n  import { Checkbox } from 'bits-ui';\n  import type { Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  interface Props extends Checkbox.GroupProps {\n    children?: Snippet;\n  }\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<Checkbox.Group class={cn('flex flex-col items-start gap-3', className)} {...restProps}>\n  {@render children?.()}\n</Checkbox.Group>\n"
+			"content": "<script lang=\"ts\">\n  import { CheckboxGroup as CheckboxGroupPrimitive } from '@shardsui/svelte/checkbox-group';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    value = $bindable([]),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof CheckboxGroupPrimitive> = $props();\n</script>\n\n<CheckboxGroupPrimitive\n  bind:ref\n  bind:value\n  class={cn('flex flex-col items-start gap-3', className)}\n  {...restProps}\n/>\n"
 		},
 		{
 			"type": "registry:ui",
@@ -28,6 +28,6 @@
 		"utils"
 	],
 	"dependencies": [
-		"bits-ui@^2.18.1"
+		"@shardsui/svelte@0.1.0-beta.0"
 	]
 }

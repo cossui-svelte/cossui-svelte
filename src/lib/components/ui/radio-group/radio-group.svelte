@@ -1,27 +1,20 @@
-<script lang="ts" module>
-  import { RadioGroup } from 'bits-ui';
-
-  export const RadioGroupItem = RadioGroup.Item;
-</script>
-
 <script lang="ts">
+  import { RadioGroup as RadioGroupPrimitive } from '@shardsui/svelte/radio-group';
+  import type { ComponentProps } from 'svelte';
   import { cn } from '$lib/utils';
 
   let {
-    children,
-    class: className,
     ref = $bindable(null),
-    value = $bindable(undefined),
+    value = $bindable(),
+    class: className,
     ...restProps
-  }: RadioGroup.RootProps = $props();
+  }: ComponentProps<typeof RadioGroupPrimitive> = $props();
 </script>
 
-<RadioGroup.Root
+<RadioGroupPrimitive
   bind:ref
   bind:value
   class={cn('flex flex-col gap-3', className)}
   data-slot="radio-group"
   {...restProps}
->
-  {@render children?.()}
-</RadioGroup.Root>
+/>

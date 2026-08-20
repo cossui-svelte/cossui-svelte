@@ -1,14 +1,14 @@
 <script lang="ts">
-  import { ContextMenu } from 'bits-ui';
-  import type { Snippet } from 'svelte';
+  import { ContextMenu as ContextMenuPrimitive } from '@shardsui/svelte/context-menu';
+  import type { ComponentProps, Snippet } from 'svelte';
 
-  interface Props extends ContextMenu.RadioGroupProps {
+  type Props = Omit<ComponentProps<typeof ContextMenuPrimitive.RadioGroup>, 'children'> & {
     children?: Snippet;
-  }
+  };
 
-  let { children, value = $bindable(undefined), ...restProps }: Props = $props();
+  let { children, value = $bindable(), ...restProps }: Props = $props();
 </script>
 
-<ContextMenu.RadioGroup bind:value data-slot="context-menu-radio-group" {...restProps}>
+<ContextMenuPrimitive.RadioGroup bind:value data-slot="context-menu-radio-group" {...restProps}>
   {@render children?.()}
-</ContextMenu.RadioGroup>
+</ContextMenuPrimitive.RadioGroup>

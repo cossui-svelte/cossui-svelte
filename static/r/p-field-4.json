@@ -9,18 +9,14 @@
 			"type": "registry:block",
 			"path": "p-field-4.svelte",
 			"target": "$lib/components/particles/field/p-field-4.svelte",
-			"content": "<script lang=\"ts\">\n  import { z } from 'zod';\n  import { Button } from '$lib/components/ui/button';\n  import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';\n  import { Form } from '$lib/components/ui/form';\n  import { Input } from '$lib/components/ui/input';\n  import { createForm } from '$lib/hooks/use-superform';\n\n  const schema = z.object({\n    email: z.email({ message: 'Please enter a valid email address.' })\n  });\n\n  const superform = createForm({\n    onUpdated: (data) => {\n      alert(`Email: ${data.email}`);\n    },\n    schema\n  });\n\n  const { form, submitting } = superform;\n</script>\n\n<Form class=\"flex w-full flex-col gap-4\" {superform}>\n  <Field name=\"email\">\n    <FieldLabel>Email</FieldLabel>\n    <Input bind:value={$form.email} placeholder=\"Enter your email\" type=\"email\" />\n    <FieldError />\n  </Field>\n  <Button loading={$submitting} type=\"submit\">Submit</Button>\n</Form>\n"
+			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n  import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';\n  import { Form } from '$lib/components/ui/form';\n  import { Input } from '$lib/components/ui/input';\n\n  let loading = $state(false);\n\n  async function handleSubmit(event: SubmitEvent) {\n    event.preventDefault();\n    const formData = new FormData(event.currentTarget as HTMLFormElement);\n    loading = true;\n    await new Promise((r) => setTimeout(r, 800));\n    loading = false;\n    alert(`Email: ${formData.get('email') ?? ''}`);\n  }\n</script>\n\n<Form class=\"flex w-full flex-col gap-4\" onsubmit={handleSubmit}>\n  <Field name=\"email\">\n    <FieldLabel>Email</FieldLabel>\n    <Input placeholder=\"Enter your email\" required type=\"email\" />\n    <FieldError>Please enter a valid email address.</FieldError>\n  </Field>\n  <Button {loading} type=\"submit\">Submit</Button>\n</Form>\n"
 		}
 	],
 	"registryDependencies": [
 		"button",
 		"field",
 		"form",
-		"input",
-		"use-superform"
+		"input"
 	],
-	"dependencies": [
-		"zod",
-		"zod@^4.4.3"
-	]
+	"dependencies": []
 }

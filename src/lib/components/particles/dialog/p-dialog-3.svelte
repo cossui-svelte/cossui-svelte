@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { z } from 'zod';
   import { Button, buttonVariants } from '$lib/components/ui/button';
   import {
     Dialog,
@@ -12,20 +11,9 @@
     DialogTitle,
     DialogTrigger
   } from '$lib/components/ui/dialog';
-  import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';
+  import { Field, FieldLabel } from '$lib/components/ui/field';
   import { Form } from '$lib/components/ui/form';
   import { Input } from '$lib/components/ui/input';
-  import { createForm } from '$lib/hooks/use-superform';
-
-  const schema = z.object({
-    email: z.email('Please enter a valid email.'),
-    name: z.string().min(1, { message: 'Please enter a name.' })
-  });
-
-  const superform = createForm({
-    initialData: { email: 'bora@example.com', name: 'Bora Baloglu' },
-    schema
-  });
 </script>
 
 <Dialog>
@@ -53,17 +41,15 @@
             <DialogTitle>Edit details</DialogTitle>
             <DialogDescription>Make changes to the member's information.</DialogDescription>
           </DialogHeader>
-          <Form {superform} class="contents">
+          <Form class="contents">
             <DialogPanel class="grid gap-4">
-              <Field name="name">
+              <Field>
                 <FieldLabel>Name</FieldLabel>
-                <Input type="text" />
-                <FieldError />
+                <Input type="text" value="Bora Baloglu" />
               </Field>
-              <Field name="email">
+              <Field>
                 <FieldLabel>Email</FieldLabel>
-                <Input type="email" />
-                <FieldError />
+                <Input type="email" value="bora@example.com" />
               </Field>
             </DialogPanel>
             <DialogFooter>

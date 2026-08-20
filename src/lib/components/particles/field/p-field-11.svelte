@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { z } from 'zod';
   import { Button } from '$lib/components/ui/button';
   import { Field, FieldDescription, FieldError, FieldLabel } from '$lib/components/ui/field';
   import { Form } from '$lib/components/ui/form';
@@ -10,26 +9,23 @@
     SelectTrigger,
     SelectValue
   } from '$lib/components/ui/select';
-  import { createForm } from '$lib/hooks/use-superform';
 
-  const schema = z.object({
-    country: z.string().optional()
-  });
+  let loading = $state(false);
 
-  const superform = createForm({
-    onUpdated: (data) => {
-      alert(`Country: ${data.country ?? 'none'}`);
-    },
-    schema
-  });
-
-  const { form, submitting } = superform;
+  async function handleSubmit(event: SubmitEvent) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget as HTMLFormElement);
+    loading = true;
+    await new Promise((r) => setTimeout(r, 800));
+    loading = false;
+    alert(`Country: ${formData.get('country') ?? 'none'}`);
+  }
 </script>
 
-<Form class="flex w-full flex-col gap-4" {superform}>
+<Form class="flex w-full flex-col gap-4" onsubmit={handleSubmit}>
   <Field name="country">
     <FieldLabel>Country</FieldLabel>
-    <Select bind:value={$form.country}>
+    <Select>
       <SelectTrigger>
         <SelectValue placeholder="Select a country" />
       </SelectTrigger>
@@ -43,5 +39,5 @@
     <FieldDescription>This is an optional field</FieldDescription>
     <FieldError />
   </Field>
-  <Button loading={$submitting} type="submit">Submit</Button>
+  <Button {loading} type="submit">Submit</Button>
 </Form>

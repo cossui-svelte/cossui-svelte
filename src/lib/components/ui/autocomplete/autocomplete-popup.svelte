@@ -1,48 +1,55 @@
 <script lang="ts">
-  import { Combobox } from 'bits-ui';
-  import type { Snippet } from 'svelte';
+  import { Autocomplete as AutocompletePrimitive } from '@shardsui/svelte/autocomplete';
+  import type { ComponentProps, Snippet } from 'svelte';
   import { ScrollArea } from '$lib/components/ui/scroll-area';
-  import { cn } from '$lib/utils';
+  import { cn, type WithoutChildren } from '$lib/utils';
 
-  interface Props extends Combobox.ContentProps {
-    align?: 'start' | 'center' | 'end';
-    alignOffset?: number;
+  type Props = Omit<ComponentProps<typeof AutocompletePrimitive.Popup>, 'children'> & {
     children?: Snippet;
-    side?: 'top' | 'right' | 'bottom' | 'left';
-    sideOffset?: number;
-  }
+    side?: ComponentProps<typeof AutocompletePrimitive.Positioner>['side'];
+    align?: ComponentProps<typeof AutocompletePrimitive.Positioner>['align'];
+    sideOffset?: ComponentProps<typeof AutocompletePrimitive.Positioner>['sideOffset'];
+    alignOffset?: ComponentProps<typeof AutocompletePrimitive.Positioner>['alignOffset'];
+    portalProps?: WithoutChildren<ComponentProps<typeof AutocompletePrimitive.Portal>>;
+  };
 
   let {
+    ref = $bindable(null),
     class: className,
     children,
     side = 'bottom',
     sideOffset = 4,
-    alignOffset,
+    alignOffset = 0,
     align = 'start',
+    portalProps,
     ...restProps
   }: Props = $props();
 </script>
 
-<Combobox.Portal>
-  <Combobox.Content
-    class={cn(
-      'relative flex max-h-full min-w-(--bits-combobox-anchor-width) max-w-(--bits-combobox-content-available-width) origin-[--bits-combobox-content-transform-origin] overflow-hidden rounded-lg border bg-popover not-dark:bg-clip-padding shadow-lg/5 transition-[scale,opacity] before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-lg)-1px)] before:shadow-[0_1px_--theme(--color-black/4%)] data-[state=closed]:scale-98 data-[state=closed]:opacity-0 data-[state=open]:scale-100 data-[state=open]:opacity-100 dark:before:shadow-[0_-1px_--theme(--color-white/6%)]',
-      'z-50 select-none',
-      className
-    )}
-    data-slot="autocomplete-popup"
+<AutocompletePrimitive.Portal {...portalProps}>
+  <AutocompletePrimitive.Positioner
     {side}
+    {align}
     {sideOffset}
     {alignOffset}
-    {align}
-    {...restProps}
+    class="z-50 select-none"
   >
-    <ScrollArea
-      class="max-h-[min(var(--bits-combobox-content-available-height),23rem)] text-foreground"
-      scrollbarGutter
-      scrollFade
+    <AutocompletePrimitive.Popup
+      bind:ref
+      class={cn(
+        'relative flex max-h-full min-w-(--anchor-width) max-w-(--available-width) origin-(--transform-origin) overflow-hidden rounded-lg border bg-popover not-dark:bg-clip-padding shadow-lg/5 transition-[scale,opacity] before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-lg)-1px)] before:shadow-[0_1px_--theme(--color-black/4%)] data-starting-style:scale-98 data-starting-style:opacity-0 data-ending-style:scale-98 data-ending-style:opacity-0 dark:before:shadow-[0_-1px_--theme(--color-white/6%)]',
+        className
+      )}
+      data-slot="autocomplete-popup"
+      {...restProps}
     >
-      {@render children?.()}
-    </ScrollArea>
-  </Combobox.Content>
-</Combobox.Portal>
+      <ScrollArea
+        class="max-h-[min(var(--available-height),23rem)] text-foreground"
+        scrollbarGutter
+        scrollFade
+      >
+        {@render children?.()}
+      </ScrollArea>
+    </AutocompletePrimitive.Popup>
+  </AutocompletePrimitive.Positioner>
+</AutocompletePrimitive.Portal>

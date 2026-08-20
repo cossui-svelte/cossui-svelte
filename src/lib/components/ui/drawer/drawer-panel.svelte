@@ -3,6 +3,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn, type WithElementRef } from '$lib/utils';
   import { ScrollArea } from '../scroll-area';
+  import DrawerContent from './drawer-content.svelte';
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
     allowSelection?: boolean;
@@ -30,14 +31,27 @@
   );
 </script>
 
-{#if scrollable}
-  <ScrollArea class="touch-auto" {scrollFade}>
-    <div class={panelClass} data-slot="drawer-panel" {...restProps}>
+{#snippet panel()}
+  {#if allowSelection}
+    <DrawerContent
+      bind:ref
+      class={panelClass}
+      data-slot="drawer-panel"
+      {...restProps as Record<string, unknown>}
+    >
+      {@render children?.()}
+    </DrawerContent>
+  {:else}
+    <div bind:this={ref} class={panelClass} data-slot="drawer-panel" {...restProps}>
       {@render children?.()}
     </div>
+  {/if}
+{/snippet}
+
+{#if scrollable}
+  <ScrollArea class="touch-auto flex-1" {scrollFade}>
+    {@render panel()}
   </ScrollArea>
 {:else}
-  <div bind:this={ref} class={panelClass} data-slot="drawer-panel" {...restProps}>
-    {@render children?.()}
-  </div>
+  {@render panel()}
 {/if}

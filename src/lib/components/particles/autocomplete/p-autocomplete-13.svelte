@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { z } from 'zod';
   import {
     Autocomplete,
+    AutocompleteCollection,
     AutocompleteEmpty,
     AutocompleteInput,
     AutocompleteItem,
@@ -11,50 +11,49 @@
   import { Button } from '$lib/components/ui/button';
   import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';
   import { Form } from '$lib/components/ui/form';
-  import { createForm } from '$lib/hooks/use-superform';
 
   const items = [
     { label: 'Apple', value: 'apple' },
     { label: 'Banana', value: 'banana' },
-    { label: 'Grape', value: 'grape' },
-    { label: 'Kiwi', value: 'kiwi' },
-    { label: 'Mango', value: 'mango' },
     { label: 'Orange', value: 'orange' },
+    { label: 'Grape', value: 'grape' },
+    { label: 'Strawberry', value: 'strawberry' },
+    { label: 'Mango', value: 'mango' },
     { label: 'Peach', value: 'peach' },
     { label: 'Pear', value: 'pear' },
     { label: 'Pineapple', value: 'pineapple' },
-    { label: 'Strawberry', value: 'strawberry' }
+    { label: 'Kiwi', value: 'kiwi' }
   ];
 
-  const schema = z.object({
-    item: z.string().min(1, { message: 'Please select a item.' })
-  });
+  let item = $state('');
+  let loading = $state(false);
 
-  const superform = createForm({
-    onUpdated: (data) => {
-      alert(`Favorite item: ${data.item}`);
-    },
-    schema
-  });
-
-  const { form, submitting } = superform;
+  async function handleSubmit(event: SubmitEvent) {
+    event.preventDefault();
+    loading = true;
+    await new Promise((r) => setTimeout(r, 800));
+    loading = false;
+    alert(`Favorite item: ${item}`);
+  }
 </script>
 
-<Form class="flex w-full max-w-64 flex-col gap-4" {superform}>
+<Form class="flex w-full max-w-64 flex-col gap-4" onsubmit={handleSubmit}>
   <Field name="item">
     <FieldLabel>Favorite item</FieldLabel>
-    <Autocomplete {items} onValueChange={(v) => ($form.item = v as string)} value={$form.item}>
+    <Autocomplete {items} bind:value={item}>
       <AutocompleteInput placeholder="Search items…" />
       <AutocompletePopup>
         <AutocompleteEmpty>No items found.</AutocompleteEmpty>
         <AutocompleteList>
-          {#each items as item (item.value)}
-            <AutocompleteItem label={item.label} value={item.value}>{item.label}</AutocompleteItem>
-          {/each}
+          <AutocompleteCollection>
+            {#snippet children(item: { label: string; value: string })}
+              <AutocompleteItem value={item}>{item.label}</AutocompleteItem>
+            {/snippet}
+          </AutocompleteCollection>
         </AutocompleteList>
       </AutocompletePopup>
     </Autocomplete>
     <FieldError />
   </Field>
-  <Button loading={$submitting} type="submit">Submit</Button>
+  <Button {loading} type="submit">Submit</Button>
 </Form>

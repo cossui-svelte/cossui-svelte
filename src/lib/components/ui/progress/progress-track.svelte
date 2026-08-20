@@ -1,19 +1,19 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
-  import type { HTMLAttributes } from 'svelte/elements';
+  import { Progress as ProgressPrimitive } from '@shardsui/svelte/progress';
+  import type { ComponentProps, Snippet } from 'svelte';
   import { cn } from '$lib/utils';
 
-  interface Props extends HTMLAttributes<HTMLDivElement> {
+  type Props = Omit<ComponentProps<typeof ProgressPrimitive.Track>, 'children'> & {
     children?: Snippet;
-  }
+  };
 
   let { class: className, children, ...restProps }: Props = $props();
 </script>
 
-<div
+<ProgressPrimitive.Track
   class={cn('block h-1.5 w-full overflow-hidden rounded-full bg-input', className)}
   data-slot="progress-track"
   {...restProps}
 >
   {@render children?.()}
-</div>
+</ProgressPrimitive.Track>

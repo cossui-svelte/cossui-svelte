@@ -9,31 +9,37 @@
 			"type": "registry:ui",
 			"path": "tooltip/index.ts",
 			"target": "$lib/components/ui/tooltip/index.ts",
-			"content": "import { Tooltip as TooltipPrimitive } from 'bits-ui';\n\nconst TooltipTrigger = TooltipPrimitive.Trigger;\n\nexport { default as Tooltip } from './tooltip.svelte';\nexport { default as TooltipPopup, default as TooltipContent } from './tooltip-popup.svelte';\nexport { default as TooltipProvider } from './tooltip-provider.svelte';\nexport { TooltipTrigger };\n"
+			"content": "import { Tooltip as TooltipPrimitive } from '@shardsui/svelte/tooltip';\n\nexport { default as Tooltip } from './tooltip.svelte';\nexport { default as TooltipPopup, default as TooltipContent } from './tooltip-popup.svelte';\nexport { default as TooltipProvider } from './tooltip-provider.svelte';\nexport { default as TooltipTrigger } from './tooltip-trigger.svelte';\nexport { TooltipPrimitive };\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "tooltip/tooltip-popup.svelte",
 			"target": "$lib/components/ui/tooltip/tooltip-popup.svelte",
-			"content": "<script lang=\"ts\">\n  import { Tooltip } from 'bits-ui';\n  import type { Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  interface Props extends Tooltip.ContentProps {\n    children?: Snippet;\n    showArrow?: boolean;\n    sideOffset?: number;\n  }\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    showArrow = false,\n    children,\n    sideOffset = 4,\n    side = 'top',\n    ...restProps\n  }: Props = $props();\n</script>\n\n<Tooltip.Portal>\n  <Tooltip.Content\n    {ref}\n    {side}\n    {sideOffset}\n    class={cn(\n      'bg-popover text-popover-foreground animate-in fade-in zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 relative z-50 max-w-70 rounded-md border px-2 py-1 text-xs',\n      className\n    )}\n    {...restProps}\n  >\n    {@render children?.()}\n    {#if showArrow}\n      <Tooltip.Arrow class=\"text-popover -my-px drop-shadow-[0_1px_0_hsl(var(--border))]\" />\n    {/if}\n  </Tooltip.Content>\n</Tooltip.Portal>\n"
+			"content": "<script lang=\"ts\">\n  import { Tooltip as TooltipPrimitive } from '@shardsui/svelte/tooltip';\n  import type { ComponentProps, Snippet } from 'svelte';\n  import { cn, type WithoutChildren } from '$lib/utils';\n\n  type Props = Omit<ComponentProps<typeof TooltipPrimitive.Popup>, 'children'> & {\n    children?: Snippet;\n    side?: ComponentProps<typeof TooltipPrimitive.Positioner>['side'];\n    align?: ComponentProps<typeof TooltipPrimitive.Positioner>['align'];\n    sideOffset?: ComponentProps<typeof TooltipPrimitive.Positioner>['sideOffset'];\n    alignOffset?: ComponentProps<typeof TooltipPrimitive.Positioner>['alignOffset'];\n    customAnchor?: ComponentProps<typeof TooltipPrimitive.Positioner>['anchor'];\n    showArrow?: boolean;\n    portalProps?: WithoutChildren<ComponentProps<typeof TooltipPrimitive.Portal>>;\n  };\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    showArrow = false,\n    side = 'top',\n    align = 'center',\n    sideOffset = 4,\n    alignOffset = 0,\n    customAnchor,\n    portalProps,\n    ...restProps\n  }: Props = $props();\n</script>\n\n<TooltipPrimitive.Portal {...portalProps}>\n  <TooltipPrimitive.Positioner\n    {side}\n    {align}\n    {sideOffset}\n    {alignOffset}\n    anchor={customAnchor}\n    class=\"z-50\"\n  >\n    <TooltipPrimitive.Popup\n      bind:ref\n      class={cn(\n        'relative max-w-70 rounded-md border bg-popover px-2 py-1 text-popover-foreground text-xs',\n        'origin-(--transform-origin)',\n        'transition-[scale,opacity] duration-150 ease-out data-starting-style:scale-95 data-starting-style:opacity-0 data-ending-style:scale-95 data-ending-style:opacity-0',\n        className\n      )}\n      data-slot=\"tooltip-popup\"\n      {...restProps}\n    >\n      {@render children?.()}\n      {#if showArrow}\n        <TooltipPrimitive.Arrow\n          class=\"text-popover -my-px drop-shadow-[0_1px_0_hsl(var(--border))] data-[side=bottom]:-top-1.75 data-[side=bottom]:rotate-180 data-[side=left]:-right-2.75 data-[side=left]:-rotate-90 data-[side=right]:-left-2.75 data-[side=right]:rotate-90 data-[side=top]:-bottom-1.75\"\n        >\n          <svg viewBox=\"0 0 30 10\" width=\"10\" height=\"5\" preserveAspectRatio=\"none\">\n            <polygon points=\"0,0 30,0 15,10\" fill=\"currentColor\" />\n          </svg>\n        </TooltipPrimitive.Arrow>\n      {/if}\n    </TooltipPrimitive.Popup>\n  </TooltipPrimitive.Positioner>\n</TooltipPrimitive.Portal>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "tooltip/tooltip-provider.svelte",
 			"target": "$lib/components/ui/tooltip/tooltip-provider.svelte",
-			"content": "<script lang=\"ts\">\n  import { Tooltip } from 'bits-ui';\n  import type { Snippet } from 'svelte';\n\n  interface Props extends Omit<Tooltip.ProviderProps, 'delayDuration'> {\n    children?: Snippet;\n    delay?: number;\n  }\n\n  let { delay, ...restProps }: Props = $props();\n</script>\n\n<Tooltip.Provider delayDuration={delay} {...restProps} />\n"
+			"content": "<script lang=\"ts\">\n  import { Tooltip as TooltipPrimitive } from '@shardsui/svelte/tooltip';\n  import type { ComponentProps } from 'svelte';\n\n  let { ...restProps }: ComponentProps<typeof TooltipPrimitive.Provider> = $props();\n</script>\n\n<TooltipPrimitive.Provider {...restProps} />\n"
+		},
+		{
+			"type": "registry:ui",
+			"path": "tooltip/tooltip-trigger.svelte",
+			"target": "$lib/components/ui/tooltip/tooltip-trigger.svelte",
+			"content": "<script lang=\"ts\">\n  import { Tooltip as TooltipPrimitive } from '@shardsui/svelte/tooltip';\n  import type { ComponentProps } from 'svelte';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof TooltipPrimitive.Trigger> = $props();\n</script>\n\n<TooltipPrimitive.Trigger bind:ref class={className} data-slot=\"tooltip-trigger\" {...restProps} />\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "tooltip/tooltip.svelte",
 			"target": "$lib/components/ui/tooltip/tooltip.svelte",
-			"content": "<script lang=\"ts\">\n  import { Tooltip } from 'bits-ui';\n\n  interface Props extends Omit<Tooltip.RootProps, 'delayDuration'> {\n    delay?: number;\n  }\n\n  let {\n    delay,\n    open = $bindable(false),\n    triggerId = $bindable(null),\n    ...restProps\n  }: Props = $props();\n</script>\n\n<Tooltip.Root bind:open bind:triggerId delayDuration={delay} {...restProps} />\n"
+			"content": "<script lang=\"ts\">\n  import { Tooltip as TooltipPrimitive } from '@shardsui/svelte/tooltip';\n  import type { ComponentProps } from 'svelte';\n\n  let {\n    delay,\n    closeDelay,\n    open = $bindable(false),\n    triggerId = $bindable(null),\n    ...restProps\n  }: ComponentProps<typeof TooltipPrimitive.Root> & {\n    delay?: number;\n    closeDelay?: number;\n  } = $props();\n</script>\n\n{#if delay !== undefined || closeDelay !== undefined}\n  <TooltipPrimitive.Provider {delay} {closeDelay}>\n    <TooltipPrimitive.Root bind:open bind:triggerId {...restProps} />\n  </TooltipPrimitive.Provider>\n{:else}\n  <TooltipPrimitive.Root bind:open bind:triggerId {...restProps} />\n{/if}\n"
 		}
 	],
 	"registryDependencies": [
 		"utils"
 	],
 	"dependencies": [
-		"bits-ui@^2.18.1"
+		"@shardsui/svelte@0.1.0-beta.0"
 	]
 }

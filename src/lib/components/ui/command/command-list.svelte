@@ -1,22 +1,23 @@
 <script lang="ts">
-  import { Command } from 'bits-ui';
-  import type { Snippet } from 'svelte';
+  import { Autocomplete as AutocompletePrimitive } from '@shardsui/svelte/autocomplete';
+  import type { ComponentProps, Snippet } from 'svelte';
   import { ScrollArea } from '$lib/components/ui/scroll-area';
   import { cn } from '$lib/utils';
 
-  type Props = Command.ListProps & { children?: Snippet };
+  type Props = Omit<ComponentProps<typeof AutocompletePrimitive.List>, 'children'> & {
+    children?: Snippet;
+  };
 
-  let { class: className, children, ...restProps }: Props = $props();
+  let { ref = $bindable(null), class: className, children, ...restProps }: Props = $props();
 </script>
 
-<Command.List
-  class={cn('min-h-0 flex-1 **:data-[slot=scroll-area-viewport]:scroll-py-2', className)}
+<div
+  class="flex min-h-0 flex-1 flex-col **:data-[slot=scroll-area-viewport]:scroll-py-2"
   data-slot="command-list"
-  {...restProps}
 >
-  <ScrollArea scrollFade scrollbarGutter>
-    <Command.Viewport class="not-empty:p-2">
+  <ScrollArea class="flex-1" scrollFade scrollbarGutter>
+    <AutocompletePrimitive.List bind:ref class={cn('not-empty:p-2', className)} {...restProps}>
       {@render children?.()}
-    </Command.Viewport>
+    </AutocompletePrimitive.List>
   </ScrollArea>
-</Command.List>
+</div>

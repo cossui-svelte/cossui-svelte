@@ -9,7 +9,7 @@
 			"description": "A set of collapsible panels with headings and content.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -87,7 +87,7 @@
 			"description": "A dialog that requires user response to proceed.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"button",
@@ -167,7 +167,7 @@
 			"description": "Displays content within a desired ratio.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"svelte-toolbelt@^0.10.6"
 			],
 			"registryDependencies": [],
 			"files": [
@@ -189,7 +189,7 @@
 			"description": "An input that suggests options as you type.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"scroll-area",
@@ -200,11 +200,6 @@
 					"type": "registry:ui",
 					"path": "autocomplete/autocomplete-clear.svelte",
 					"target": "$lib/components/ui/autocomplete/autocomplete-clear.svelte"
-				},
-				{
-					"type": "registry:ui",
-					"path": "autocomplete/autocomplete-collection.svelte",
-					"target": "$lib/components/ui/autocomplete/autocomplete-collection.svelte"
 				},
 				{
 					"type": "registry:ui",
@@ -284,7 +279,7 @@
 			"description": "An image element with a fallback for representing the user.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -400,7 +395,7 @@
 			"type": "registry:ui",
 			"dependencies": [
 				"tailwind-variants@^3.3.1",
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"spinner",
@@ -431,7 +426,8 @@
 			"type": "registry:ui",
 			"dependencies": [
 				"@internationalized/date@^3.12.3",
-				"bits-ui@^2.18.1"
+				"svelte-toolbelt@^0.10.6",
+				"runed@0.37.1"
 			],
 			"registryDependencies": [
 				"button",
@@ -532,6 +528,146 @@
 					"type": "registry:ui",
 					"path": "calendar/index.ts",
 					"target": "$lib/components/ui/calendar/index.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/announcer.ts",
+					"target": "$lib/components/ui/calendar/internal/announcer.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/arrays.ts",
+					"target": "$lib/components/ui/calendar/internal/arrays.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/attrs.ts",
+					"target": "$lib/components/ui/calendar/internal/attrs.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/bits-config.ts",
+					"target": "$lib/components/ui/calendar/internal/bits-config.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/calendar-helpers.svelte.ts",
+					"target": "$lib/components/ui/calendar/internal/calendar-helpers.svelte.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/calendar-state.svelte.ts",
+					"target": "$lib/components/ui/calendar/internal/calendar-state.svelte.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/date-utils.ts",
+					"target": "$lib/components/ui/calendar/internal/date-utils.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/formatter.ts",
+					"target": "$lib/components/ui/calendar/internal/formatter.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/ids.ts",
+					"target": "$lib/components/ui/calendar/internal/ids.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/index.ts",
+					"target": "$lib/components/ui/calendar/internal/index.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/is.ts",
+					"target": "$lib/components/ui/calendar/internal/is.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/kbd.ts",
+					"target": "$lib/components/ui/calendar/internal/kbd.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/primitives/cell.svelte",
+					"target": "$lib/components/ui/calendar/internal/primitives/cell.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/primitives/day.svelte",
+					"target": "$lib/components/ui/calendar/internal/primitives/day.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/primitives/grid-body.svelte",
+					"target": "$lib/components/ui/calendar/internal/primitives/grid-body.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/primitives/grid-head.svelte",
+					"target": "$lib/components/ui/calendar/internal/primitives/grid-head.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/primitives/grid-row.svelte",
+					"target": "$lib/components/ui/calendar/internal/primitives/grid-row.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/primitives/grid.svelte",
+					"target": "$lib/components/ui/calendar/internal/primitives/grid.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/primitives/head-cell.svelte",
+					"target": "$lib/components/ui/calendar/internal/primitives/head-cell.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/primitives/header.svelte",
+					"target": "$lib/components/ui/calendar/internal/primitives/header.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/primitives/heading.svelte",
+					"target": "$lib/components/ui/calendar/internal/primitives/heading.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/primitives/month-select.svelte",
+					"target": "$lib/components/ui/calendar/internal/primitives/month-select.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/primitives/next-button.svelte",
+					"target": "$lib/components/ui/calendar/internal/primitives/next-button.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/primitives/prev-button.svelte",
+					"target": "$lib/components/ui/calendar/internal/primitives/prev-button.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/primitives/root.svelte",
+					"target": "$lib/components/ui/calendar/internal/primitives/root.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/primitives/year-select.svelte",
+					"target": "$lib/components/ui/calendar/internal/primitives/year-select.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/prop-resolvers.ts",
+					"target": "$lib/components/ui/calendar/internal/prop-resolvers.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/types.ts",
+					"target": "$lib/components/ui/calendar/internal/types.ts"
 				}
 			]
 		},
@@ -662,7 +798,7 @@
 			"description": "A control allowing the user to toggle between checked and not checked.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -686,7 +822,7 @@
 			"description": "Provides shared state to a series of checkboxes.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -715,7 +851,7 @@
 			"description": "A collapsible panel controlled by a button trigger.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -779,17 +915,12 @@
 			"description": "An input combined with a list of predefined items to select.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
 			],
 			"files": [
-				{
-					"type": "registry:ui",
-					"path": "combobox/combobox-chip-remove.svelte",
-					"target": "$lib/components/ui/combobox/combobox-chip-remove.svelte"
-				},
 				{
 					"type": "registry:ui",
 					"path": "combobox/combobox-chip.svelte",
@@ -809,11 +940,6 @@
 					"type": "registry:ui",
 					"path": "combobox/combobox-clear.svelte",
 					"target": "$lib/components/ui/combobox/combobox-clear.svelte"
-				},
-				{
-					"type": "registry:ui",
-					"path": "combobox/combobox-collection.svelte",
-					"target": "$lib/components/ui/combobox/combobox-collection.svelte"
 				},
 				{
 					"type": "registry:ui",
@@ -893,7 +1019,7 @@
 			"description": "A command palette component built with Dialog and Autocomplete for searching and executing commands.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"dialog",
@@ -901,11 +1027,6 @@
 				"utils"
 			],
 			"files": [
-				{
-					"type": "registry:ui",
-					"path": "command/command-collection.svelte",
-					"target": "$lib/components/ui/command/command-collection.svelte"
-				},
 				{
 					"type": "registry:ui",
 					"path": "command/command-dialog-popup.svelte",
@@ -989,7 +1110,7 @@
 			"description": "A menu that opens on right-click, providing contextual actions.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"kbd",
@@ -1015,6 +1136,11 @@
 					"type": "registry:ui",
 					"path": "context-menu/context-menu-item.svelte",
 					"target": "$lib/components/ui/context-menu/context-menu-item.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "context-menu/context-menu-link-item.svelte",
+					"target": "$lib/components/ui/context-menu/context-menu-link-item.svelte"
 				},
 				{
 					"type": "registry:ui",
@@ -1141,7 +1267,7 @@
 			"description": "A popup that opens on top of the entire page.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"button",
@@ -1217,7 +1343,7 @@
 			"description": "A panel that slides in from the edge of the screen with swipe gestures, snap points, and nested drawer support.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"button",
@@ -1227,8 +1353,8 @@
 			"files": [
 				{
 					"type": "registry:ui",
-					"path": "drawer/ctx.ts",
-					"target": "$lib/components/ui/drawer/ctx.ts"
+					"path": "drawer/drawer-backdrop.svelte",
+					"target": "$lib/components/ui/drawer/drawer-backdrop.svelte"
 				},
 				{
 					"type": "registry:ui",
@@ -1262,13 +1388,48 @@
 				},
 				{
 					"type": "registry:ui",
-					"path": "drawer/drawer-nested.svelte",
-					"target": "$lib/components/ui/drawer/drawer-nested.svelte"
+					"path": "drawer/drawer-menu-checkbox-item.svelte",
+					"target": "$lib/components/ui/drawer/drawer-menu-checkbox-item.svelte"
 				},
 				{
 					"type": "registry:ui",
-					"path": "drawer/drawer-overlay.svelte",
-					"target": "$lib/components/ui/drawer/drawer-overlay.svelte"
+					"path": "drawer/drawer-menu-group-label.svelte",
+					"target": "$lib/components/ui/drawer/drawer-menu-group-label.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "drawer/drawer-menu-group.svelte",
+					"target": "$lib/components/ui/drawer/drawer-menu-group.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "drawer/drawer-menu-item.svelte",
+					"target": "$lib/components/ui/drawer/drawer-menu-item.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "drawer/drawer-menu-radio-group.svelte",
+					"target": "$lib/components/ui/drawer/drawer-menu-radio-group.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "drawer/drawer-menu-radio-item.svelte",
+					"target": "$lib/components/ui/drawer/drawer-menu-radio-item.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "drawer/drawer-menu-separator.svelte",
+					"target": "$lib/components/ui/drawer/drawer-menu-separator.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "drawer/drawer-menu-trigger.svelte",
+					"target": "$lib/components/ui/drawer/drawer-menu-trigger.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "drawer/drawer-menu.svelte",
+					"target": "$lib/components/ui/drawer/drawer-menu.svelte"
 				},
 				{
 					"type": "registry:ui",
@@ -1277,8 +1438,18 @@
 				},
 				{
 					"type": "registry:ui",
+					"path": "drawer/drawer-popup.svelte",
+					"target": "$lib/components/ui/drawer/drawer-popup.svelte"
+				},
+				{
+					"type": "registry:ui",
 					"path": "drawer/drawer-portal.svelte",
 					"target": "$lib/components/ui/drawer/drawer-portal.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "drawer/drawer-swipe-area.svelte",
+					"target": "$lib/components/ui/drawer/drawer-swipe-area.svelte"
 				},
 				{
 					"type": "registry:ui",
@@ -1297,11 +1468,6 @@
 				},
 				{
 					"type": "registry:ui",
-					"path": "drawer/drawer-visible.svelte",
-					"target": "$lib/components/ui/drawer/drawer-visible.svelte"
-				},
-				{
-					"type": "registry:ui",
 					"path": "drawer/drawer.svelte",
 					"target": "$lib/components/ui/drawer/drawer.svelte"
 				},
@@ -1309,96 +1475,6 @@
 					"type": "registry:ui",
 					"path": "drawer/index.ts",
 					"target": "$lib/components/ui/drawer/index.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/internal/constants.ts",
-					"target": "$lib/components/ui/drawer/internal/constants.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/internal/escape-keydown.ts",
-					"target": "$lib/components/ui/drawer/internal/escape-keydown.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/internal/helpers/chain.ts",
-					"target": "$lib/components/ui/drawer/internal/helpers/chain.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/internal/helpers/event-listener.ts",
-					"target": "$lib/components/ui/drawer/internal/helpers/event-listener.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/internal/helpers/index.ts",
-					"target": "$lib/components/ui/drawer/internal/helpers/index.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/internal/helpers/is.ts",
-					"target": "$lib/components/ui/drawer/internal/helpers/is.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/internal/helpers/noop.ts",
-					"target": "$lib/components/ui/drawer/internal/helpers/noop.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/internal/helpers/object.ts",
-					"target": "$lib/components/ui/drawer/internal/helpers/object.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/internal/helpers/options.ts",
-					"target": "$lib/components/ui/drawer/internal/helpers/options.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/internal/helpers/store.ts",
-					"target": "$lib/components/ui/drawer/internal/helpers/store.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/internal/helpers/style.ts",
-					"target": "$lib/components/ui/drawer/internal/helpers/style.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/internal/index.ts",
-					"target": "$lib/components/ui/drawer/internal/index.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/internal/position-fixed.ts",
-					"target": "$lib/components/ui/drawer/internal/position-fixed.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/internal/prevent-scroll.ts",
-					"target": "$lib/components/ui/drawer/internal/prevent-scroll.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/internal/snap-points.ts",
-					"target": "$lib/components/ui/drawer/internal/snap-points.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/internal/types.ts",
-					"target": "$lib/components/ui/drawer/internal/types.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/internal/vaul.ts",
-					"target": "$lib/components/ui/drawer/internal/vaul.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "drawer/types.ts",
-					"target": "$lib/components/ui/drawer/types.ts"
 				}
 			]
 		},
@@ -1457,29 +1533,16 @@
 			"description": "A component that provides labelling and validation for form controls.",
 			"type": "registry:ui",
 			"dependencies": [
-				"svelte-toolbelt@^0.10.6",
-				"sveltekit-superforms@^2.30.2",
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
-				"form",
 				"utils"
 			],
 			"files": [
 				{
 					"type": "registry:ui",
-					"path": "field/field-control.svelte",
-					"target": "$lib/components/ui/field/field-control.svelte"
-				},
-				{
-					"type": "registry:ui",
 					"path": "field/field-description.svelte",
 					"target": "$lib/components/ui/field/field-description.svelte"
-				},
-				{
-					"type": "registry:ui",
-					"path": "field/field-element.svelte",
-					"target": "$lib/components/ui/field/field-element.svelte"
 				},
 				{
 					"type": "registry:ui",
@@ -1505,11 +1568,6 @@
 					"type": "registry:ui",
 					"path": "field/index.ts",
 					"target": "$lib/components/ui/field/index.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "field/types.ts",
-					"target": "$lib/components/ui/field/types.ts"
 				}
 			]
 		},
@@ -1519,11 +1577,9 @@
 			"description": "A native fieldset element with a legend.",
 			"type": "registry:ui",
 			"dependencies": [
-				"svelte-toolbelt@^0.10.6",
-				"sveltekit-superforms@^2.30.2"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
-				"form",
 				"utils"
 			],
 			"files": [
@@ -1541,11 +1597,6 @@
 					"type": "registry:ui",
 					"path": "fieldset/index.ts",
 					"target": "$lib/components/ui/fieldset/index.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "fieldset/types.ts",
-					"target": "$lib/components/ui/fieldset/types.ts"
 				}
 			]
 		},
@@ -1570,32 +1621,10 @@
 			"description": "A form wrapper component that simplifies validation and submission.",
 			"type": "registry:ui",
 			"dependencies": [
-				"sveltekit-superforms@^2.30.2",
-				"svelte-toolbelt@^0.10.6",
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [],
 			"files": [
-				{
-					"type": "registry:ui",
-					"path": "form/form-context.svelte.ts",
-					"target": "$lib/components/ui/form/form-context.svelte.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "form/form-debug.svelte",
-					"target": "$lib/components/ui/form/form-debug.svelte"
-				},
-				{
-					"type": "registry:ui",
-					"path": "form/form-field-attrs.ts",
-					"target": "$lib/components/ui/form/form-field-attrs.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "form/form-field-state.svelte.ts",
-					"target": "$lib/components/ui/form/form-field-state.svelte.ts"
-				},
 				{
 					"type": "registry:ui",
 					"path": "form/form.svelte",
@@ -1605,41 +1634,6 @@
 					"type": "registry:ui",
 					"path": "form/index.ts",
 					"target": "$lib/components/ui/form/index.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "form/internal/attributes.ts",
-					"target": "$lib/components/ui/form/internal/attributes.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "form/internal/errors.ts",
-					"target": "$lib/components/ui/form/internal/errors.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "form/internal/id.ts",
-					"target": "$lib/components/ui/form/internal/id.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "form/internal/index.ts",
-					"target": "$lib/components/ui/form/internal/index.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "form/internal/path.test.ts",
-					"target": "$lib/components/ui/form/internal/path.test.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "form/internal/path.ts",
-					"target": "$lib/components/ui/form/internal/path.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "form/internal/types.ts",
-					"target": "$lib/components/ui/form/internal/types.ts"
 				}
 			]
 		},
@@ -1735,11 +1729,11 @@
 			"title": "Input",
 			"description": "A native input element.",
 			"type": "registry:ui",
-			"dependencies": [],
+			"dependencies": [
+				"@shardsui/svelte@0.1.0-beta.0"
+			],
 			"registryDependencies": [
-				"utils",
-				"field",
-				"form"
+				"utils"
 			],
 			"files": [
 				{
@@ -1838,9 +1832,7 @@
 			"title": "Label",
 			"description": "Renders an accessible label associated with controls.",
 			"type": "registry:ui",
-			"dependencies": [
-				"bits-ui@^2.18.1"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"utils"
 			],
@@ -1863,7 +1855,7 @@
 			"description": "A popup that appears when an element is hovered, showing preview information.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -1876,8 +1868,18 @@
 				},
 				{
 					"type": "registry:ui",
+					"path": "link-preview/link-preview-card.svelte",
+					"target": "$lib/components/ui/link-preview/link-preview-card.svelte"
+				},
+				{
+					"type": "registry:ui",
 					"path": "link-preview/link-preview-content.svelte",
 					"target": "$lib/components/ui/link-preview/link-preview-content.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "link-preview/link-preview-trigger.svelte",
+					"target": "$lib/components/ui/link-preview/link-preview-trigger.svelte"
 				}
 			]
 		},
@@ -1887,7 +1889,7 @@
 			"description": "An interactive map with markers, popups, tooltips, and routes, powered by MapLibre GL.",
 			"type": "registry:ui",
 			"dependencies": [
-				"maplibre-gl@^6.3.0",
+				"maplibre-gl@^6.4.1",
 				"geojson"
 			],
 			"registryDependencies": [
@@ -1977,7 +1979,7 @@
 			"description": "A list of actions in a dropdown, enhanced with keyboard navigation.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -2071,7 +2073,7 @@
 			"description": "A graphical display of a numeric value within a range.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -2168,7 +2170,9 @@
 			"description": "A segmented input for one-time passwords and verification codes.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"runed@0.37.1",
+				"svelte-toolbelt@^0.10.6",
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -2178,6 +2182,36 @@
 					"type": "registry:ui",
 					"path": "otp-field/index.ts",
 					"target": "$lib/components/ui/otp-field/index.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "otp-field/internal/ids.ts",
+					"target": "$lib/components/ui/otp-field/internal/ids.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "otp-field/internal/pin-input-state.svelte.ts",
+					"target": "$lib/components/ui/otp-field/internal/pin-input-state.svelte.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "otp-field/internal/primitives/pin-input-cell.svelte",
+					"target": "$lib/components/ui/otp-field/internal/primitives/pin-input-cell.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "otp-field/internal/primitives/pin-input-root.svelte",
+					"target": "$lib/components/ui/otp-field/internal/primitives/pin-input-root.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "otp-field/internal/types.ts",
+					"target": "$lib/components/ui/otp-field/internal/types.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "otp-field/internal/use-password-manager.svelte.ts",
+					"target": "$lib/components/ui/otp-field/internal/use-password-manager.svelte.ts"
 				},
 				{
 					"type": "registry:ui",
@@ -2201,9 +2235,7 @@
 			"title": "Pagination",
 			"description": "A pagination with page navigation, next and previous links.",
 			"type": "registry:ui",
-			"dependencies": [
-				"bits-ui@^2.18.1"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"utils"
@@ -2295,7 +2327,7 @@
 			"description": "An accessible popup anchored to a button.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -2344,7 +2376,7 @@
 			"description": "A popup that appears when a link is hovered, showing a preview for sighted users.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -2378,7 +2410,7 @@
 			"description": "Displays the status of a task that takes a long time.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -2422,7 +2454,7 @@
 			"description": "A set of checkable buttons where no more than one of the buttons can be checked at a time.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -2451,7 +2483,8 @@
 			"description": "A calendar component for selecting a date range.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1",
+				"svelte-toolbelt@^0.10.6",
+				"runed@0.37.1",
 				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
@@ -2464,6 +2497,36 @@
 					"type": "registry:ui",
 					"path": "range-calendar/index.ts",
 					"target": "$lib/components/ui/range-calendar/index.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "range-calendar/internal/index.ts",
+					"target": "$lib/components/ui/range-calendar/internal/index.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "range-calendar/internal/primitives/cell.svelte",
+					"target": "$lib/components/ui/range-calendar/internal/primitives/cell.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "range-calendar/internal/primitives/day.svelte",
+					"target": "$lib/components/ui/range-calendar/internal/primitives/day.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "range-calendar/internal/primitives/root.svelte",
+					"target": "$lib/components/ui/range-calendar/internal/primitives/root.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "range-calendar/internal/range-calendar-state.svelte.ts",
+					"target": "$lib/components/ui/range-calendar/internal/range-calendar-state.svelte.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "range-calendar/internal/types.ts",
+					"target": "$lib/components/ui/range-calendar/internal/types.ts"
 				},
 				{
 					"type": "registry:ui",
@@ -2503,7 +2566,7 @@
 			"description": "A native scroll container with custom scrollbars.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -2532,7 +2595,7 @@
 			"description": "A common form component for choosing a predefined value in a dropdown menu.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1",
+				"@shardsui/svelte@0.1.0-beta.0",
 				"tailwind-variants@^3.3.1"
 			],
 			"registryDependencies": [
@@ -2602,7 +2665,7 @@
 			"description": "A separator element accessible to screen readers.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -2626,7 +2689,7 @@
 			"description": "A flyout that opens from the side of the screen, based on the dialog component.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils",
@@ -2692,7 +2755,7 @@
 			"type": "registry:ui",
 			"dependencies": [
 				"tailwind-variants@^3.3.1",
-				"bits-ui@^2.18.1"
+				"svelte-toolbelt@^0.10.6"
 			],
 			"registryDependencies": [
 				"button",
@@ -2865,7 +2928,7 @@
 			"description": "An input where the user selects a value from within a given range.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"tooltip",
@@ -3018,7 +3081,7 @@
 			"description": "A control that indicates whether a setting is on or off.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -3099,7 +3162,7 @@
 			"description": "A component for toggling between related panels on the same page.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -3142,11 +3205,11 @@
 			"title": "Textarea",
 			"description": "A native textarea element for multi-line text input.",
 			"type": "registry:ui",
-			"dependencies": [],
+			"dependencies": [
+				"@shardsui/svelte@0.1.0-beta.0"
+			],
 			"registryDependencies": [
-				"utils",
-				"field",
-				"form"
+				"utils"
 			],
 			"files": [
 				{
@@ -3166,9 +3229,7 @@
 			"title": "Timeline",
 			"description": "A component for displaying a series of events in chronological order.",
 			"type": "registry:ui",
-			"dependencies": [
-				"bits-ui@^2.18.1"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"utils"
 			],
@@ -3231,8 +3292,7 @@
 			"description": "A temporary notification that appears on screen to inform users.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1",
-				"tailwind-variants@^3.3.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"button",
@@ -3246,108 +3306,33 @@
 				},
 				{
 					"type": "registry:ui",
+					"path": "toast/anchored-toasts.svelte",
+					"target": "$lib/components/ui/toast/anchored-toasts.svelte"
+				},
+				{
+					"type": "registry:ui",
 					"path": "toast/index.ts",
 					"target": "$lib/components/ui/toast/index.ts"
 				},
 				{
 					"type": "registry:ui",
-					"path": "toast/internal/README.md",
-					"target": "$lib/components/ui/toast/internal/README.md"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/internal/VarselItem.svelte",
-					"target": "$lib/components/ui/toast/internal/VarselItem.svelte"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/internal/VarselManager.svelte",
-					"target": "$lib/components/ui/toast/internal/VarselManager.svelte"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/internal/VarselToaster.svelte",
-					"target": "$lib/components/ui/toast/internal/VarselToaster.svelte"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/internal/core/accessibility.ts",
-					"target": "$lib/components/ui/toast/internal/core/accessibility.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/internal/core/animations.ts",
-					"target": "$lib/components/ui/toast/internal/core/animations.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/internal/core/positions.ts",
-					"target": "$lib/components/ui/toast/internal/core/positions.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/internal/core/swipe.ts",
-					"target": "$lib/components/ui/toast/internal/core/swipe.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/internal/core/toast-factory.ts",
-					"target": "$lib/components/ui/toast/internal/core/toast-factory.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/internal/core/toast-state.ts",
-					"target": "$lib/components/ui/toast/internal/core/toast-state.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/internal/core/toaster-instances.ts",
-					"target": "$lib/components/ui/toast/internal/core/toaster-instances.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/internal/core/types.ts",
-					"target": "$lib/components/ui/toast/internal/core/types.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/internal/core/utils.ts",
-					"target": "$lib/components/ui/toast/internal/core/utils.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/internal/core/variants.ts",
-					"target": "$lib/components/ui/toast/internal/core/variants.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/internal/index.ts",
-					"target": "$lib/components/ui/toast/internal/index.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/internal/internals.ts",
-					"target": "$lib/components/ui/toast/internal/internals.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/internal/styles.css",
-					"target": "$lib/components/ui/toast/internal/styles.css"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/internal/variant-icons.ts",
-					"target": "$lib/components/ui/toast/internal/variant-icons.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toast/toast-manager.svelte.ts",
-					"target": "$lib/components/ui/toast/toast-manager.svelte.ts"
+					"path": "toast/toast-manager.ts",
+					"target": "$lib/components/ui/toast/toast-manager.ts"
 				},
 				{
 					"type": "registry:ui",
 					"path": "toast/toast-provider.svelte",
 					"target": "$lib/components/ui/toast/toast-provider.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "toast/toast-utils.ts",
+					"target": "$lib/components/ui/toast/toast-utils.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "toast/toasts.svelte",
+					"target": "$lib/components/ui/toast/toasts.svelte"
 				}
 			]
 		},
@@ -3357,8 +3342,8 @@
 			"description": "A two-state button that can be toggled on or off.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1",
-				"tailwind-variants@^3.3.1"
+				"tailwind-variants@^3.3.1",
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -3387,7 +3372,7 @@
 			"description": "Provides a shared state to a series of toggle buttons.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"separator",
@@ -3423,7 +3408,7 @@
 			"description": "A container for grouping a set of buttons and controls.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -3438,11 +3423,6 @@
 					"type": "registry:ui",
 					"path": "toolbar/toolbar-button.svelte",
 					"target": "$lib/components/ui/toolbar/toolbar-button.svelte"
-				},
-				{
-					"type": "registry:ui",
-					"path": "toolbar/toolbar-group-item.svelte",
-					"target": "$lib/components/ui/toolbar/toolbar-group-item.svelte"
 				},
 				{
 					"type": "registry:ui",
@@ -3477,7 +3457,7 @@
 			"description": "A popup that appears when an element is hovered or focused, showing a hint for sighted users.",
 			"type": "registry:ui",
 			"dependencies": [
-				"bits-ui@^2.18.1"
+				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -3500,6 +3480,11 @@
 				},
 				{
 					"type": "registry:ui",
+					"path": "tooltip/tooltip-trigger.svelte",
+					"target": "$lib/components/ui/tooltip/tooltip-trigger.svelte"
+				},
+				{
+					"type": "registry:ui",
 					"path": "tooltip/tooltip.svelte",
 					"target": "$lib/components/ui/tooltip/tooltip.svelte"
 				}
@@ -3513,7 +3498,6 @@
 			"dependencies": [
 				"@headless-tree/core@^1.7.0",
 				"runed@0.37.1",
-				"bits-ui@^2.18.1",
 				"svelte-toolbelt@^0.10.6"
 			],
 			"registryDependencies": [
@@ -3806,25 +3790,6 @@
 					"type": "registry:hook",
 					"path": "use-pkgmgr-config.svelte.ts",
 					"target": "$lib/hooks/use-pkgmgr-config.svelte.ts"
-				}
-			]
-		},
-		{
-			"name": "use-superform",
-			"title": "Use Superform",
-			"type": "registry:hook",
-			"dependencies": [
-				"sveltekit-superforms@^2.30.2",
-				"zod@^4.4.3"
-			],
-			"registryDependencies": [
-				"use-uid"
-			],
-			"files": [
-				{
-					"type": "registry:hook",
-					"path": "use-superform.ts",
-					"target": "$lib/hooks/use-superform.ts"
 				}
 			]
 		},
@@ -4733,16 +4698,12 @@
 			"title": "Autocomplete 13",
 			"description": "Autocomplete form",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"autocomplete",
 				"button",
 				"field",
-				"form",
-				"use-superform"
+				"form"
 			],
 			"files": [
 				{
@@ -6607,17 +6568,14 @@
 			"dependencies": [
 				"@internationalized/date",
 				"@lucide/svelte",
-				"zod",
-				"@internationalized/date@^3.12.3",
-				"zod@^4.4.3"
+				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
 				"button",
 				"calendar",
 				"field",
 				"form",
-				"input-group",
-				"use-superform"
+				"input-group"
 			],
 			"files": [
 				{
@@ -6635,17 +6593,14 @@
 			"dependencies": [
 				"@internationalized/date",
 				"@lucide/svelte",
-				"zod",
-				"@internationalized/date@^3.12.3",
-				"zod@^4.4.3"
+				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
 				"button",
 				"calendar",
 				"field",
 				"form",
-				"input-group",
-				"use-superform"
+				"input-group"
 			],
 			"files": [
 				{
@@ -6808,17 +6763,14 @@
 			"dependencies": [
 				"@internationalized/date",
 				"@lucide/svelte",
-				"zod",
-				"@internationalized/date@^3.12.3",
-				"zod@^4.4.3"
+				"@internationalized/date@^3.12.3"
 			],
 			"registryDependencies": [
 				"autocomplete",
 				"button",
 				"calendar",
 				"field",
-				"form",
-				"use-superform"
+				"form"
 			],
 			"files": [
 				{
@@ -6974,9 +6926,7 @@
 			"description": "A basic card with header and footer",
 			"type": "registry:block",
 			"dependencies": [
-				"@lucide/svelte",
-				"zod",
-				"zod@^4.4.3"
+				"@lucide/svelte"
 			],
 			"registryDependencies": [
 				"button",
@@ -6984,8 +6934,7 @@
 				"field",
 				"form",
 				"input",
-				"select",
-				"use-superform"
+				"select"
 			],
 			"files": [
 				{
@@ -7001,9 +6950,7 @@
 			"description": "Card within a frame with header and footer",
 			"type": "registry:block",
 			"dependencies": [
-				"@lucide/svelte",
-				"zod",
-				"zod@^4.4.3"
+				"@lucide/svelte"
 			],
 			"registryDependencies": [
 				"button",
@@ -7012,8 +6959,7 @@
 				"form",
 				"frame",
 				"input",
-				"select",
-				"use-superform"
+				"select"
 			],
 			"files": [
 				{
@@ -7049,17 +6995,13 @@
 			"title": "Card 2",
 			"description": "Authentication card with actions",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"card",
 				"field",
 				"form",
-				"input",
-				"use-superform"
+				"input"
 			],
 			"files": [
 				{
@@ -7075,17 +7017,14 @@
 			"description": "Authentication card with separators",
 			"type": "registry:block",
 			"dependencies": [
-				"@lucide/svelte",
-				"zod",
-				"zod@^4.4.3"
+				"@lucide/svelte"
 			],
 			"registryDependencies": [
 				"button",
 				"card",
 				"field",
 				"form",
-				"input",
-				"use-superform"
+				"input"
 			],
 			"files": [
 				{
@@ -7101,9 +7040,7 @@
 			"description": "Framed card with footer",
 			"type": "registry:block",
 			"dependencies": [
-				"@lucide/svelte",
-				"zod",
-				"zod@^4.4.3"
+				"@lucide/svelte"
 			],
 			"registryDependencies": [
 				"button",
@@ -7111,8 +7048,7 @@
 				"field",
 				"form",
 				"input",
-				"select",
-				"use-superform"
+				"select"
 			],
 			"files": [
 				{
@@ -7127,18 +7063,14 @@
 			"title": "Card 5",
 			"description": "Framed card with header",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"card",
 				"field",
 				"form",
 				"input",
-				"select",
-				"use-superform"
+				"select"
 			],
 			"files": [
 				{
@@ -7154,9 +7086,7 @@
 			"description": "Framed card with header and footer",
 			"type": "registry:block",
 			"dependencies": [
-				"@lucide/svelte",
-				"zod",
-				"zod@^4.4.3"
+				"@lucide/svelte"
 			],
 			"registryDependencies": [
 				"button",
@@ -7164,8 +7094,7 @@
 				"field",
 				"form",
 				"input",
-				"select",
-				"use-superform"
+				"select"
 			],
 			"files": [
 				{
@@ -7181,9 +7110,7 @@
 			"description": "Framed card with no rounded bottom",
 			"type": "registry:block",
 			"dependencies": [
-				"@lucide/svelte",
-				"zod",
-				"zod@^4.4.3"
+				"@lucide/svelte"
 			],
 			"registryDependencies": [
 				"button",
@@ -7191,8 +7118,7 @@
 				"field",
 				"form",
 				"input",
-				"select",
-				"use-superform"
+				"select"
 			],
 			"files": [
 				{
@@ -7208,9 +7134,7 @@
 			"description": "Card within a frame and footer",
 			"type": "registry:block",
 			"dependencies": [
-				"@lucide/svelte",
-				"zod",
-				"zod@^4.4.3"
+				"@lucide/svelte"
 			],
 			"registryDependencies": [
 				"button",
@@ -7219,8 +7143,7 @@
 				"form",
 				"frame",
 				"input",
-				"select",
-				"use-superform"
+				"select"
 			],
 			"files": [
 				{
@@ -7235,10 +7158,7 @@
 			"title": "Card 9",
 			"description": "Card within a frame and footer",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"card",
@@ -7246,8 +7166,7 @@
 				"form",
 				"frame",
 				"input",
-				"select",
-				"use-superform"
+				"select"
 			],
 			"files": [
 				{
@@ -7697,16 +7616,12 @@
 			"title": "Checkbox 5",
 			"description": "Checkbox form",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"checkbox",
 				"field",
-				"form",
-				"use-superform"
+				"form"
 			],
 			"files": [
 				{
@@ -7797,18 +7712,14 @@
 			"title": "Checkbox group 5",
 			"description": "Checkbox group form",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"checkbox",
 				"checkbox-group",
 				"field",
 				"fieldset",
-				"form",
-				"use-superform"
+				"form"
 			],
 			"files": [
 				{
@@ -7990,16 +7901,12 @@
 			"title": "Combobox 11",
 			"description": "Combobox form",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"combobox",
 				"field",
-				"form",
-				"use-superform"
+				"form"
 			],
 			"files": [
 				{
@@ -8014,16 +7921,12 @@
 			"title": "Combobox 12",
 			"description": "Combobox multiple form",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"combobox",
 				"field",
-				"form",
-				"use-superform"
+				"form"
 			],
 			"files": [
 				{
@@ -8945,17 +8848,13 @@
 			"title": "Dialog 1",
 			"description": "Dialog with form",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"dialog",
 				"field",
 				"form",
-				"input",
-				"use-superform"
+				"input"
 			],
 			"files": [
 				{
@@ -8989,17 +8888,13 @@
 			"title": "Dialog 3",
 			"description": "Nested dialogs",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"dialog",
 				"field",
 				"form",
-				"input",
-				"use-superform"
+				"input"
 			],
 			"files": [
 				{
@@ -9014,18 +8909,14 @@
 			"title": "Dialog 4",
 			"description": "Dialog with close confirmation",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"alert-dialog",
 				"button",
 				"dialog",
 				"field",
 				"form",
-				"textarea",
-				"use-superform"
+				"textarea"
 			],
 			"files": [
 				{
@@ -9058,17 +8949,13 @@
 			"title": "Dialog 6",
 			"description": "Dialog with bare footer",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"dialog",
 				"field",
 				"form",
-				"input",
-				"use-superform"
+				"input"
 			],
 			"files": [
 				{
@@ -9101,17 +8988,13 @@
 			"title": "Drawer 10",
 			"description": "Edit profile form with default and bare footer variants",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"drawer",
 				"field",
 				"form",
-				"input",
-				"use-superform"
+				"input"
 			],
 			"files": [
 				{
@@ -9144,18 +9027,14 @@
 			"title": "Drawer 12",
 			"description": "Responsive edit profile: dialog on desktop, drawer on mobile",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"dialog",
 				"drawer",
 				"field",
 				"form",
-				"input",
-				"use-superform"
+				"input"
 			],
 			"files": [
 				{
@@ -9317,17 +9196,13 @@
 			"title": "Drawer 8",
 			"description": "Nested right drawers with inset variant",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"drawer",
 				"field",
 				"form",
-				"input",
-				"use-superform"
+				"input"
 			],
 			"files": [
 				{
@@ -9380,16 +9255,12 @@
 			"title": "Field 1",
 			"description": "Field with description",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
-				"input",
-				"use-superform"
+				"input"
 			],
 			"files": [
 				{
@@ -9404,16 +9275,12 @@
 			"title": "Field 10",
 			"description": "Field with textarea",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
-				"textarea",
-				"use-superform"
+				"textarea"
 			],
 			"files": [
 				{
@@ -9428,16 +9295,12 @@
 			"title": "Field 11",
 			"description": "Field with select",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
-				"select",
-				"use-superform"
+				"select"
 			],
 			"files": [
 				{
@@ -9452,16 +9315,12 @@
 			"title": "Field 12",
 			"description": "Field with checkbox",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"checkbox",
 				"field",
-				"form",
-				"use-superform"
+				"form"
 			],
 			"files": [
 				{
@@ -9476,18 +9335,14 @@
 			"title": "Field 13",
 			"description": "Field with checkbox group",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"checkbox",
 				"checkbox-group",
 				"field",
 				"fieldset",
-				"form",
-				"use-superform"
+				"form"
 			],
 			"files": [
 				{
@@ -9502,17 +9357,13 @@
 			"title": "Field 14",
 			"description": "Field with radio group",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"fieldset",
 				"form",
-				"radio-group",
-				"use-superform"
+				"radio-group"
 			],
 			"files": [
 				{
@@ -9527,16 +9378,12 @@
 			"title": "Field 15",
 			"description": "Field with toggle switch",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
-				"switch",
-				"use-superform"
+				"switch"
 			],
 			"files": [
 				{
@@ -9551,16 +9398,12 @@
 			"title": "Field 16",
 			"description": "Field with slider",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
-				"slider",
-				"use-superform"
+				"slider"
 			],
 			"files": [
 				{
@@ -9575,16 +9418,12 @@
 			"title": "Field 17",
 			"description": "Field with number field",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
-				"number-field",
-				"use-superform"
+				"number-field"
 			],
 			"files": [
 				{
@@ -9599,18 +9438,14 @@
 			"title": "Field 18",
 			"description": "Complete form built with field",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"checkbox",
 				"field",
 				"form",
 				"input",
-				"select",
-				"use-superform"
+				"select"
 			],
 			"files": [
 				{
@@ -9625,16 +9460,12 @@
 			"title": "Field 2",
 			"description": "Field with required indicator",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
-				"input",
-				"use-superform"
+				"input"
 			],
 			"files": [
 				{
@@ -9649,16 +9480,12 @@
 			"title": "Field 3",
 			"description": "Field in disabled state",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
-				"input",
-				"use-superform"
+				"input"
 			],
 			"files": [
 				{
@@ -9673,16 +9500,12 @@
 			"title": "Field 4",
 			"description": "Field showing validation error",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
-				"input",
-				"use-superform"
+				"input"
 			],
 			"files": [
 				{
@@ -9697,16 +9520,12 @@
 			"title": "Field 5",
 			"description": "Show field validity state",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
-				"input",
-				"use-superform"
+				"input"
 			],
 			"files": [
 				{
@@ -9722,16 +9541,13 @@
 			"description": "Input group with field",
 			"type": "registry:block",
 			"dependencies": [
-				"@lucide/svelte",
-				"zod",
-				"zod@^4.4.3"
+				"@lucide/svelte"
 			],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
-				"input-group",
-				"use-superform"
+				"input-group"
 			],
 			"files": [
 				{
@@ -9746,16 +9562,12 @@
 			"title": "Field 7",
 			"description": "Field with autocomplete",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"autocomplete",
 				"button",
 				"field",
-				"form",
-				"use-superform"
+				"form"
 			],
 			"files": [
 				{
@@ -9770,16 +9582,12 @@
 			"title": "Field 8",
 			"description": "Field with combobox",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"combobox",
 				"field",
-				"form",
-				"use-superform"
+				"form"
 			],
 			"files": [
 				{
@@ -9794,16 +9602,12 @@
 			"title": "Field 9",
 			"description": "Field with multiple selection combobox",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"combobox",
 				"field",
-				"form",
-				"use-superform"
+				"form"
 			],
 			"files": [
 				{
@@ -9818,16 +9622,11 @@
 			"title": "Fieldset 1",
 			"description": "Fieldset with multiple fields",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"field",
 				"fieldset",
-				"form",
-				"input",
-				"use-superform"
+				"input"
 			],
 			"files": [
 				{
@@ -10126,16 +9925,12 @@
 			"title": "Form 1",
 			"description": "Input in a form",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
-				"input",
-				"use-superform"
+				"input"
 			],
 			"files": [
 				{
@@ -10158,8 +9953,7 @@
 				"button",
 				"field",
 				"form",
-				"input",
-				"use-superform"
+				"input"
 			],
 			"files": [
 				{
@@ -11931,7 +11725,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"maplibre-gl",
-				"maplibre-gl@^6.3.0"
+				"maplibre-gl@^6.4.1"
 			],
 			"registryDependencies": [
 				"button",
@@ -12999,16 +12793,12 @@
 			"title": "Radio group 6",
 			"description": "Theme selector with image cards",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"field",
 				"fieldset",
 				"form",
-				"radio-group",
-				"use-superform"
+				"radio-group"
 			],
 			"files": [
 				{
@@ -13157,16 +12947,12 @@
 			"title": "Select 11",
 			"description": "Select in form",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
-				"select",
-				"use-superform"
+				"select"
 			],
 			"files": [
 				{
@@ -13544,17 +13330,13 @@
 			"title": "Sheet 1",
 			"description": "Basic sheet",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
 				"input",
-				"sheet",
-				"use-superform"
+				"sheet"
 			],
 			"files": [
 				{
@@ -13569,18 +13351,14 @@
 			"title": "Sheet 2",
 			"description": "Sheet inset",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
 				"input",
 				"label",
-				"sheet",
-				"use-superform"
+				"sheet"
 			],
 			"files": [
 				{
@@ -14176,17 +13954,13 @@
 			"title": "Slider 23",
 			"description": "Slider in form",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"fieldset",
 				"form",
-				"slider",
-				"use-superform"
+				"slider"
 			],
 			"files": [
 				{
@@ -14404,16 +14178,12 @@
 			"title": "Starrating 4",
 			"description": "Star rating inside a form field",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
-				"starrating",
-				"use-superform"
+				"starrating"
 			],
 			"files": [
 				{
@@ -15411,15 +15181,10 @@
 			"title": "Textarea 11",
 			"description": "Textarea with characters remaining counter",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"field",
-				"form",
-				"textarea",
-				"use-superform"
+				"textarea"
 			],
 			"files": [
 				{
@@ -15434,16 +15199,12 @@
 			"title": "Textarea 12",
 			"description": "Textarea field with required indicator",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
-				"textarea",
-				"use-superform"
+				"textarea"
 			],
 			"files": [
 				{
@@ -15580,16 +15341,12 @@
 			"title": "Textarea 6",
 			"description": "Textarea in form",
 			"type": "registry:block",
-			"dependencies": [
-				"zod",
-				"zod@^4.4.3"
-			],
+			"dependencies": [],
 			"registryDependencies": [
 				"button",
 				"field",
 				"form",
-				"textarea",
-				"use-superform"
+				"textarea"
 			],
 			"files": [
 				{

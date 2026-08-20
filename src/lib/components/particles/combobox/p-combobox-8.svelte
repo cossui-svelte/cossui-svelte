@@ -82,12 +82,12 @@
     <ComboboxEmpty>No tags found.</ComboboxEmpty>
     <ComboboxList>
       {#each groupedTags as group (group.value)}
-        <ComboboxGroup>
+        <ComboboxGroup items={group.items}>
           <ComboboxGroupLabel>{group.value}</ComboboxGroupLabel>
           <ComboboxCollection>
-            {#each group.items as tag (tag.id)}
+            {#snippet children(tag: Tag)}
               <ComboboxItem value={tag.id} label={tag.label}>{tag.label}</ComboboxItem>
-            {/each}
+            {/snippet}
           </ComboboxCollection>
         </ComboboxGroup>
         {#if group.value !== 'Team'}

@@ -1,13 +1,14 @@
 <script lang="ts">
-  import { ScrollArea as ScrollAreaPrimitive } from 'bits-ui';
-  import { cn, type WithoutChild } from '$lib/utils';
+  import { ScrollArea as ScrollAreaPrimitive } from '@shardsui/svelte/scroll-area';
+  import type { ComponentProps } from 'svelte';
+  import { cn } from '$lib/utils';
 
   let {
     ref = $bindable(null),
     class: className,
     orientation = 'vertical',
     ...restProps
-  }: WithoutChild<ScrollAreaPrimitive.ScrollbarProps> = $props();
+  }: ComponentProps<typeof ScrollAreaPrimitive.Scrollbar> = $props();
 </script>
 
 <ScrollAreaPrimitive.Scrollbar
@@ -15,7 +16,7 @@
   data-slot="scroll-area-scrollbar"
   {orientation}
   class={cn(
-    'm-1 flex opacity-0 transition-opacity delay-300 data-[orientation=horizontal]:h-1.5 data-[orientation=vertical]:w-1.5 data-[orientation=horizontal]:flex-col data-[state=visible]:opacity-100 data-[state=visible]:delay-0 data-[state=visible]:duration-100',
+    'm-1 flex opacity-0 transition-opacity delay-300 data-[orientation=horizontal]:h-1.5 data-[orientation=vertical]:w-1.5 data-[orientation=horizontal]:flex-col data-hovering:opacity-100 data-scrolling:opacity-100 data-hovering:delay-0 data-scrolling:delay-0 data-hovering:duration-100 data-scrolling:duration-100',
     className
   )}
   {...restProps}

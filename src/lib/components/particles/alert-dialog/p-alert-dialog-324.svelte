@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, buttonVariants } from '$lib/components/ui/button';
+  import { buttonVariants } from '$lib/components/ui/button';
   import {
     Dialog,
     DialogClose,
@@ -69,11 +69,7 @@
     <DialogPanel>
       {#if hasGuessed}
         <div class="text-center">
-          <DialogClose>
-            {#snippet child({ props })}
-              <Button bind:ref={closeButtonEl} {...props}>Close</Button>
-            {/snippet}
-          </DialogClose>
+          <DialogClose bind:ref={closeButtonEl} class={buttonVariants()}>Close</DialogClose>
         </div>
       {:else}
         <div class="flex flex-col gap-4">

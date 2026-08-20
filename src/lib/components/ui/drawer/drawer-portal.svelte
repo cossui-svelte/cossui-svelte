@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { Dialog } from 'bits-ui';
+  import { Drawer as DrawerPrimitive } from '@shardsui/svelte/drawer';
+  import type { ComponentProps } from 'svelte';
 
-  let { ...restProps }: Dialog.PortalProps = $props();
+  let { ...restProps }: ComponentProps<typeof DrawerPrimitive.Portal> = $props();
 </script>
 
-<Dialog.Portal {...restProps} />
+<DrawerPrimitive.Portal {...restProps} />

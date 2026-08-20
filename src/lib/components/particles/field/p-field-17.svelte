@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { z } from 'zod';
   import { Button } from '$lib/components/ui/button';
   import { Field, FieldDescription, FieldError } from '$lib/components/ui/field';
   import { Form } from '$lib/components/ui/form';
@@ -11,26 +10,22 @@
     NumberFieldInput,
     NumberFieldScrubArea
   } from '$lib/components/ui/number-field';
-  import { createForm } from '$lib/hooks/use-superform';
 
-  const schema = z.object({
-    quantity: z.number().min(1).max(100)
-  });
+  let quantity = $state(1);
+  let loading = $state(false);
 
-  const superform = createForm({
-    initialData: { quantity: 1 },
-    onUpdated: (data) => {
-      alert(`Quantity: ${data.quantity}`);
-    },
-    schema
-  });
-
-  const { form, submitting } = superform;
+  async function handleSubmit(event: SubmitEvent) {
+    event.preventDefault();
+    loading = true;
+    await new Promise((r) => setTimeout(r, 800));
+    loading = false;
+    alert(`Quantity: ${quantity}`);
+  }
 </script>
 
-<Form class="flex w-full flex-col gap-4" {superform}>
+<Form class="flex w-full flex-col gap-4" onsubmit={handleSubmit}>
   <Field name="quantity">
-    <NumberField bind:value={$form.quantity} max={100} min={1}>
+    <NumberField bind:value={quantity} max={100} min={1}>
       <NumberFieldScrubArea label="Quantity" />
       <NumberFieldGroup>
         <NumberFieldDecrement />
@@ -41,5 +36,5 @@
     <FieldDescription>Choose a value between 1 and 100.</FieldDescription>
     <FieldError />
   </Field>
-  <Button loading={$submitting} type="submit">Submit</Button>
+  <Button {loading} type="submit">Submit</Button>
 </Form>

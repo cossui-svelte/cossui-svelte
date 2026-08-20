@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { WithElementRef } from 'bits-ui';
+  import type { WithElementRef } from '$lib/utils';
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '$lib/utils';
   import { useTreeContext } from './tree-context.svelte';

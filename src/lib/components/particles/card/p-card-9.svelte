@@ -1,8 +1,7 @@
 <script lang="ts">
-  import { z } from 'zod';
   import { Button } from '$lib/components/ui/button';
   import { Card, CardPanel } from '$lib/components/ui/card';
-  import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';
+  import { Field, FieldLabel } from '$lib/components/ui/field';
   import { Form } from '$lib/components/ui/form';
   import { Frame, FrameDescription, FrameHeader, FrameTitle } from '$lib/components/ui/frame';
   import { Input } from '$lib/components/ui/input';
@@ -13,7 +12,6 @@
     SelectTrigger,
     SelectValue
   } from '$lib/components/ui/select';
-  import { createForm } from '$lib/hooks/use-superform';
 
   const frameworkOptions = [
     { label: 'Next.js', value: 'next' },
@@ -21,23 +19,6 @@
     { label: 'Remix', value: 'remix' },
     { label: 'Astro', value: 'astro' }
   ] as const;
-
-  const schema = z.object({
-    framework: z.enum(['next', 'vite', 'remix', 'astro'], {
-      message: 'Please select a framework.'
-    }),
-    name: z.string().min(1, 'Project name is required.')
-  });
-
-  const superform = createForm({
-    initialData: { framework: 'next' as const },
-    onUpdated: (data) => {
-      alert(`Deploying "${data.name}" with ${data.framework}`);
-    },
-    schema
-  });
-
-  const { form, submitting } = superform;
 </script>
 
 <Frame class="w-full max-w-xs">
@@ -47,15 +28,14 @@
   </FrameHeader>
   <Card>
     <CardPanel>
-      <Form class="flex w-full flex-col gap-4" {superform}>
-        <Field name="name">
+      <Form class="flex w-full flex-col gap-4">
+        <Field>
           <FieldLabel>Name</FieldLabel>
-          <Input bind:value={$form.name} placeholder="Name of your project" type="text" />
-          <FieldError />
+          <Input placeholder="Name of your project" type="text" />
         </Field>
-        <Field name="framework">
+        <Field>
           <FieldLabel>Framework</FieldLabel>
-          <Select bind:value={$form.framework}>
+          <Select value="next">
             <SelectTrigger>
               <SelectValue />
             </SelectTrigger>
@@ -65,9 +45,8 @@
               {/each}
             </SelectPopup>
           </Select>
-          <FieldError />
         </Field>
-        <Button class="w-full" loading={$submitting} type="submit">Deploy</Button>
+        <Button class="w-full" type="submit">Deploy</Button>
       </Form>
     </CardPanel>
   </Card>

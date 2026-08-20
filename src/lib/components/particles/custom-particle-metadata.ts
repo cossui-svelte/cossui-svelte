@@ -567,5 +567,8 @@ export const custom_particle_metadata = {
   },
   'p-tree-8': {
     description: 'Tree with filtering'
+  },
+  'p-slider-16': {
+    tags: ['starrating']
   }
 };

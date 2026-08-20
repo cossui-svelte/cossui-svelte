@@ -1,14 +1,14 @@
 <script lang="ts">
-  import { ContextMenu } from 'bits-ui';
-  import type { Snippet } from 'svelte';
+  import { ContextMenu as ContextMenuPrimitive } from '@shardsui/svelte/context-menu';
+  import type { ComponentProps, Snippet } from 'svelte';
 
-  interface Props extends ContextMenu.SubProps {
+  type Props = Omit<ComponentProps<typeof ContextMenuPrimitive.SubmenuRoot>, 'children'> & {
     children?: Snippet;
-  }
+  };
 
   let { children, ...restProps }: Props = $props();
 </script>
 
-<ContextMenu.Sub {...restProps}>
+<ContextMenuPrimitive.SubmenuRoot {...restProps}>
   {@render children?.()}
-</ContextMenu.Sub>
+</ContextMenuPrimitive.SubmenuRoot>

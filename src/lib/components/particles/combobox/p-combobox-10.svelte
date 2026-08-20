@@ -1,9 +1,10 @@
 <script lang="ts">
   import ChevronsUpDown from '@lucide/svelte/icons/chevrons-up-down';
   import Search from '@lucide/svelte/icons/search';
-  import { Button } from '$lib/components/ui/button';
+  import { buttonVariants } from '$lib/components/ui/button';
   import {
     Combobox,
+    ComboboxCollection,
     ComboboxEmpty,
     ComboboxInput,
     ComboboxItem,
@@ -237,13 +238,11 @@
 </script>
 
 <Combobox bind:value items={flatItems}>
-  <ComboboxTrigger>
-    {#snippet child({ props })}
-      <Button class="w-full justify-between font-normal" variant="outline" {...props}>
-        <ComboboxValue value={selectedLabel} placeholder="Select country" />
-        <ChevronsUpDown class="-me-1!" />
-      </Button>
-    {/snippet}
+  <ComboboxTrigger
+    class={buttonVariants({ class: 'w-full justify-between font-normal', variant: 'outline' })}
+  >
+    <ComboboxValue value={selectedLabel} placeholder="Select country" />
+    <ChevronsUpDown class="-me-1!" />
   </ComboboxTrigger>
   <ComboboxPopup aria-label="Select country">
     <div class="border-b p-2">
@@ -257,9 +256,11 @@
     </div>
     <ComboboxEmpty>No countries found.</ComboboxEmpty>
     <ComboboxList>
-      {#each countries as country (country.code)}
-        <ComboboxItem value={country.value} label={country.label}>{country.label}</ComboboxItem>
-      {/each}
+      <ComboboxCollection>
+        {#snippet children(country: { label: string; value: string })}
+          <ComboboxItem value={country.value} label={country.label}>{country.label}</ComboboxItem>
+        {/snippet}
+      </ComboboxCollection>
     </ComboboxList>
   </ComboboxPopup>
 </Combobox>

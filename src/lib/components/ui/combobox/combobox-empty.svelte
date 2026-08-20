@@ -1,25 +1,13 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
-  import type { HTMLAttributes } from 'svelte/elements';
+  import { Combobox as ComboboxPrimitive } from '@shardsui/svelte/combobox';
+  import type { ComponentProps } from 'svelte';
   import { cn } from '$lib/utils';
-  import { getComboboxCtx } from './combobox.svelte';
 
-  interface Props extends HTMLAttributes<HTMLDivElement> {
-    children?: Snippet;
-  }
-
-  let { class: className, children, ...restProps }: Props = $props();
-
-  const ctx = getComboboxCtx();
-  const visible = $derived(ctx ? !ctx.hasVisibleItems : false);
+  let { class: className, ...restProps }: ComponentProps<typeof ComboboxPrimitive.Empty> = $props();
 </script>
 
-{#if visible}
-  <div
-    class={cn('p-2 text-center text-base text-muted-foreground sm:text-sm', className)}
-    data-slot="combobox-empty"
-    {...restProps}
-  >
-    {@render children?.()}
-  </div>
-{/if}
+<ComboboxPrimitive.Empty
+  class={cn('p-2 text-center text-base text-muted-foreground sm:text-sm', className)}
+  data-slot="combobox-empty"
+  {...restProps}
+/>

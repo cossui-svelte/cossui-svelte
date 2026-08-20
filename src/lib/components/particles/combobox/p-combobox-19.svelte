@@ -6,6 +6,7 @@
   import { Button } from '$lib/components/ui/button';
   import {
     Combobox,
+    ComboboxCollection,
     ComboboxEmpty,
     ComboboxInput,
     ComboboxItem,
@@ -97,9 +98,11 @@
     <ComboboxPopup>
       <ComboboxEmpty>No team members found.</ComboboxEmpty>
       <ComboboxList>
-        {#each teamMembers as item (item.value)}
-          <ComboboxItem value={item.value} label={item.label}>{item.label}</ComboboxItem>
-        {/each}
+        <ComboboxCollection>
+          {#snippet children(item: TeamMember)}
+            <ComboboxItem value={item.value} label={item.label}>{item.label}</ComboboxItem>
+          {/snippet}
+        </ComboboxCollection>
       </ComboboxList>
     </ComboboxPopup>
   </Combobox>

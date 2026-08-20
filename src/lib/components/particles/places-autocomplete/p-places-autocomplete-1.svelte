@@ -19,11 +19,13 @@
         : 'Start typing an address'}
       onPlaceSelect={(place) => {
         selected = place;
-        toastManager.success('Place selected', {
+        toastManager.add({
           description:
             place.lat != null && place.lng != null
               ? `${place.address} (${place.lat.toFixed(5)}, ${place.lng.toFixed(5)})`
-              : place.address
+              : place.address,
+          title: 'Place selected',
+          type: 'success'
         });
       }}
     />

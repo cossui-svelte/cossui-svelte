@@ -7,33 +7,27 @@
 	"files": [
 		{
 			"type": "registry:ui",
-			"path": "command/command-collection.svelte",
-			"target": "$lib/components/ui/command/command-collection.svelte",
-			"content": "<script lang=\"ts\">\n  import { Command } from 'bits-ui';\n  import type { Snippet } from 'svelte';\n\n  type Props = Command.GroupItemsProps & { children?: Snippet };\n\n  let { children, ...restProps }: Props = $props();\n</script>\n\n<Command.GroupItems data-slot=\"command-collection\" {...restProps}>\n  {@render children?.()}\n</Command.GroupItems>\n"
-		},
-		{
-			"type": "registry:ui",
 			"path": "command/command-dialog-popup.svelte",
 			"target": "$lib/components/ui/command/command-dialog-popup.svelte",
-			"content": "<script lang=\"ts\">\n  import { Dialog as DialogPrimitive } from 'bits-ui';\n  import type { Snippet } from 'svelte';\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { DialogBackdrop, DialogPortal } from '$lib/components/ui/dialog';\n  import { cn } from '$lib/utils';\n\n  interface Props extends HTMLAttributes<HTMLDivElement> {\n    children?: Snippet;\n  }\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<DialogPortal>\n  <DialogBackdrop />\n  <DialogPrimitive.Content\n    class=\"group fixed inset-0 z-50 flex flex-col items-center px-4 py-[max(--spacing(4),4vh)] outline-none sm:py-[10vh]\"\n    data-slot=\"command-dialog-content\"\n  >\n    <div\n      class={cn(\n        'relative flex max-h-105 min-h-0 w-full min-w-0 max-w-xl flex-col rounded-2xl border bg-popover not-dark:bg-clip-padding text-popover-foreground shadow-lg/5 outline-none duration-200 ease-in-out will-change-transform fill-mode-both group-data-[state=open]:animate-in group-data-[state=closed]:animate-out group-data-[state=open]:fade-in group-data-[state=closed]:fade-out group-data-[state=open]:zoom-in-95 group-data-[state=closed]:zoom-out-95 before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-2xl)-1px)] before:bg-muted/72 before:shadow-[0_1px_--theme(--color-black/4%)] dark:before:shadow-[0_-1px_--theme(--color-white/6%)]',\n        className\n      )}\n      data-slot=\"command-dialog-popup\"\n      {...restProps}\n    >\n      {@render children?.()}\n    </div>\n  </DialogPrimitive.Content>\n</DialogPortal>\n"
+			"content": "<script lang=\"ts\">\n  import { Dialog as DialogPrimitive } from '@shardsui/svelte/dialog';\n  import type { ComponentProps, Snippet } from 'svelte';\n  import { DialogBackdrop, DialogPortal } from '$lib/components/ui/dialog';\n  import { cn } from '$lib/utils';\n\n  type Props = Omit<ComponentProps<typeof DialogPrimitive.Popup>, 'children'> & {\n    children?: Snippet;\n  };\n\n  let { ref = $bindable(null), class: className, children, ...restProps }: Props = $props();\n</script>\n\n<DialogPortal>\n  <DialogBackdrop />\n  <DialogPrimitive.Popup\n    bind:ref\n    aria-label=\"Command palette\"\n    class={cn(\n      'fixed top-[max(--spacing(4),4vh)] left-1/2 z-50 flex max-h-105 w-[calc(100%-2rem)] min-w-0 max-w-xl min-h-0 -translate-x-1/2 flex-col rounded-2xl border bg-popover not-dark:bg-clip-padding text-popover-foreground shadow-lg/5 outline-none transition-[opacity,transform,scale] duration-200 ease-in-out will-change-transform data-ending-style:-translate-y-4 data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:-translate-y-4 data-starting-style:scale-95 data-starting-style:opacity-0 sm:top-[10vh] before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-2xl)-1px)] before:bg-muted/72 before:shadow-[0_1px_--theme(--color-black/4%)] dark:before:shadow-[0_-1px_--theme(--color-white/6%)]',\n      className\n    )}\n    data-slot=\"command-dialog-popup\"\n    {...restProps}\n  >\n    {@render children?.()}\n  </DialogPrimitive.Popup>\n</DialogPortal>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "command/command-dialog-trigger.svelte",
 			"target": "$lib/components/ui/command/command-dialog-trigger.svelte",
-			"content": "<script lang=\"ts\">\n  import { Dialog as DialogPrimitive } from 'bits-ui';\n\n  let {\n    ref = $bindable(null),\n    type = 'button',\n    ...restProps\n  }: DialogPrimitive.TriggerProps = $props();\n</script>\n\n<DialogPrimitive.Trigger bind:ref data-slot=\"command-dialog-trigger\" {type} {...restProps} />\n"
+			"content": "<script lang=\"ts\">\n  import { Dialog as DialogPrimitive } from '@shardsui/svelte/dialog';\n  import type { ComponentProps } from 'svelte';\n\n  let {\n    ref = $bindable(null),\n    type = 'button',\n    ...restProps\n  }: ComponentProps<typeof DialogPrimitive.Trigger> = $props();\n</script>\n\n<DialogPrimitive.Trigger bind:ref data-slot=\"command-dialog-trigger\" {type} {...restProps} />\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "command/command-dialog.svelte",
 			"target": "$lib/components/ui/command/command-dialog.svelte",
-			"content": "<script lang=\"ts\">\n  import { Dialog as DialogPrimitive } from 'bits-ui';\n\n  let { open = $bindable(false), ...restProps }: DialogPrimitive.RootProps = $props();\n</script>\n\n<DialogPrimitive.Root bind:open {...restProps} />\n"
+			"content": "<script lang=\"ts\">\n  import { Dialog as DialogPrimitive } from '@shardsui/svelte/dialog';\n  import type { ComponentProps } from 'svelte';\n\n  let { open = $bindable(false), ...restProps }: ComponentProps<typeof DialogPrimitive.Root> =\n    $props();\n</script>\n\n<DialogPrimitive.Root bind:open {...restProps} />\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "command/command-empty.svelte",
 			"target": "$lib/components/ui/command/command-empty.svelte",
-			"content": "<script lang=\"ts\">\n  import { Command } from 'bits-ui';\n  import type { Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  type Props = Command.EmptyProps & { children?: Snippet };\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<Command.Empty\n  class={cn('not-empty:py-6 text-center text-base text-muted-foreground sm:text-sm', className)}\n  data-slot=\"command-empty\"\n  {...restProps}\n>\n  {@render children?.()}\n</Command.Empty>\n"
+			"content": "<script lang=\"ts\">\n  import { Autocomplete as AutocompletePrimitive } from '@shardsui/svelte/autocomplete';\n  import type { ComponentProps, Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  type Props = Omit<ComponentProps<typeof AutocompletePrimitive.Empty>, 'children'> & {\n    children?: Snippet;\n  };\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<AutocompletePrimitive.Empty\n  class={cn('not-empty:py-6 text-center text-base text-muted-foreground sm:text-sm', className)}\n  data-slot=\"command-empty\"\n  {...restProps}\n>\n  {@render children?.()}\n</AutocompletePrimitive.Empty>\n"
 		},
 		{
 			"type": "registry:ui",
@@ -45,31 +39,31 @@
 			"type": "registry:ui",
 			"path": "command/command-group-label.svelte",
 			"target": "$lib/components/ui/command/command-group-label.svelte",
-			"content": "<script lang=\"ts\">\n  import { Command } from 'bits-ui';\n  import type { Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  type Props = Command.GroupHeadingProps & { children?: Snippet };\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<Command.GroupHeading\n  class={cn('px-2 py-1.5 font-medium text-muted-foreground text-xs', className)}\n  data-slot=\"command-group-label\"\n  {...restProps}\n>\n  {@render children?.()}\n</Command.GroupHeading>\n"
+			"content": "<script lang=\"ts\">\n  import { Autocomplete as AutocompletePrimitive } from '@shardsui/svelte/autocomplete';\n  import type { ComponentProps, Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  type Props = Omit<ComponentProps<typeof AutocompletePrimitive.GroupLabel>, 'children'> & {\n    children?: Snippet;\n  };\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<AutocompletePrimitive.GroupLabel\n  class={cn('px-2 py-1.5 font-medium text-muted-foreground text-xs', className)}\n  data-slot=\"command-group-label\"\n  {...restProps}\n>\n  {@render children?.()}\n</AutocompletePrimitive.GroupLabel>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "command/command-group.svelte",
 			"target": "$lib/components/ui/command/command-group.svelte",
-			"content": "<script lang=\"ts\">\n  import { Command } from 'bits-ui';\n  import type { Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  type Props = Command.GroupProps & { children?: Snippet };\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<Command.Group class={cn(className)} data-slot=\"command-group\" {...restProps}>\n  {@render children?.()}\n</Command.Group>\n"
+			"content": "<script lang=\"ts\">\n  import { Autocomplete as AutocompletePrimitive } from '@shardsui/svelte/autocomplete';\n  import type { ComponentProps, Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  type Props = Omit<ComponentProps<typeof AutocompletePrimitive.Group>, 'children'> & {\n    children?: Snippet;\n  };\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<AutocompletePrimitive.Group class={cn(className)} data-slot=\"command-group\" {...restProps}>\n  {@render children?.()}\n</AutocompletePrimitive.Group>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "command/command-input.svelte",
 			"target": "$lib/components/ui/command/command-input.svelte",
-			"content": "<script lang=\"ts\">\n  import Search from '@lucide/svelte/icons/search';\n  import { Command } from 'bits-ui';\n  import { cn } from '$lib/utils';\n\n  type Props = Command.InputProps;\n\n  let { ref = $bindable(null), class: className, ...restProps }: Props = $props();\n</script>\n\n<div class=\"shrink-0 px-2.5 py-1.5\">\n  <div class=\"relative flex items-center\">\n    <div\n      aria-hidden=\"true\"\n      class=\"pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3 opacity-80 [&_svg:not([class*='size-'])]:size-4.5 sm:[&_svg:not([class*='size-'])]:size-4\"\n    >\n      <Search />\n    </div>\n    <Command.Input\n      bind:ref\n      class={cn(\n        'h-9.5 w-full rounded-lg bg-transparent ps-9 pe-3 text-base outline-none placeholder:text-muted-foreground/72 sm:h-8.5 sm:text-sm',\n        className\n      )}\n      data-slot=\"command-input\"\n      {...restProps}\n    />\n  </div>\n</div>\n"
+			"content": "<script lang=\"ts\">\n  import Search from '@lucide/svelte/icons/search';\n  import { Autocomplete as AutocompletePrimitive } from '@shardsui/svelte/autocomplete';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof AutocompletePrimitive.Input> = $props();\n</script>\n\n<div class=\"shrink-0 px-2.5 py-1.5\">\n  <div class=\"relative flex items-center\">\n    <div\n      aria-hidden=\"true\"\n      class=\"pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3 opacity-80 [&_svg:not([class*='size-'])]:size-4.5 sm:[&_svg:not([class*='size-'])]:size-4\"\n    >\n      <Search />\n    </div>\n    <AutocompletePrimitive.Input\n      bind:ref\n      class={cn(\n        'h-9.5 w-full rounded-lg bg-transparent ps-9 pe-3 text-base outline-none placeholder:text-muted-foreground/72 sm:h-8.5 sm:text-sm',\n        className\n      )}\n      data-slot=\"command-input\"\n      {...restProps}\n    />\n  </div>\n</div>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "command/command-item.svelte",
 			"target": "$lib/components/ui/command/command-item.svelte",
-			"content": "<script lang=\"ts\">\n  import { Command } from 'bits-ui';\n  import type { Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  type Props = Command.ItemProps & { children?: Snippet };\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<Command.Item\n  class={cn(\n    'flex min-h-8 cursor-default select-none items-center rounded-sm px-2 py-1.5 text-base outline-none data-disabled:pointer-events-none data-selected:bg-accent data-selected:text-accent-foreground data-disabled:opacity-64 sm:min-h-7 sm:text-sm',\n    className\n  )}\n  data-slot=\"command-item\"\n  {...restProps}\n>\n  {@render children?.()}\n</Command.Item>\n"
+			"content": "<script lang=\"ts\">\n  import { Autocomplete as AutocompletePrimitive } from '@shardsui/svelte/autocomplete';\n  import type { ComponentProps, Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  type Props = Omit<ComponentProps<typeof AutocompletePrimitive.Item>, 'children'> & {\n    children?: Snippet<[{ highlighted: boolean; disabled: boolean }]>;\n  };\n\n  let { class: className, children: childrenProp, ...restProps }: Props = $props();\n</script>\n\n<AutocompletePrimitive.Item\n  class={cn(\n    'flex min-h-8 cursor-default select-none items-center rounded-sm px-2 py-1.5 text-base outline-none data-disabled:pointer-events-none data-highlighted:bg-accent data-highlighted:text-accent-foreground data-disabled:opacity-64 sm:min-h-7 sm:text-sm',\n    className\n  )}\n  data-slot=\"command-item\"\n  {...restProps}\n>\n  {#snippet children(state)}\n    {@render childrenProp?.(state)}\n  {/snippet}\n</AutocompletePrimitive.Item>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "command/command-list.svelte",
 			"target": "$lib/components/ui/command/command-list.svelte",
-			"content": "<script lang=\"ts\">\n  import { Command } from 'bits-ui';\n  import type { Snippet } from 'svelte';\n  import { ScrollArea } from '$lib/components/ui/scroll-area';\n  import { cn } from '$lib/utils';\n\n  type Props = Command.ListProps & { children?: Snippet };\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<Command.List\n  class={cn('min-h-0 flex-1 **:data-[slot=scroll-area-viewport]:scroll-py-2', className)}\n  data-slot=\"command-list\"\n  {...restProps}\n>\n  <ScrollArea scrollFade scrollbarGutter>\n    <Command.Viewport class=\"not-empty:p-2\">\n      {@render children?.()}\n    </Command.Viewport>\n  </ScrollArea>\n</Command.List>\n"
+			"content": "<script lang=\"ts\">\n  import { Autocomplete as AutocompletePrimitive } from '@shardsui/svelte/autocomplete';\n  import type { ComponentProps, Snippet } from 'svelte';\n  import { ScrollArea } from '$lib/components/ui/scroll-area';\n  import { cn } from '$lib/utils';\n\n  type Props = Omit<ComponentProps<typeof AutocompletePrimitive.List>, 'children'> & {\n    children?: Snippet;\n  };\n\n  let { ref = $bindable(null), class: className, children, ...restProps }: Props = $props();\n</script>\n\n<div\n  class=\"min-h-0 flex-1 **:data-[slot=scroll-area-viewport]:scroll-py-2\"\n  data-slot=\"command-list\"\n>\n  <ScrollArea scrollFade scrollbarGutter>\n    <AutocompletePrimitive.List bind:ref class={cn('not-empty:p-2', className)} {...restProps}>\n      {@render children?.()}\n    </AutocompletePrimitive.List>\n  </ScrollArea>\n</div>\n"
 		},
 		{
 			"type": "registry:ui",
@@ -81,7 +75,7 @@
 			"type": "registry:ui",
 			"path": "command/command-separator.svelte",
 			"target": "$lib/components/ui/command/command-separator.svelte",
-			"content": "<script lang=\"ts\">\n  import { Command } from 'bits-ui';\n  import { cn } from '$lib/utils';\n\n  type Props = Command.SeparatorProps;\n\n  let { class: className, ...restProps }: Props = $props();\n</script>\n\n<Command.Separator\n  class={cn('my-2 h-px bg-border', className)}\n  data-slot=\"command-separator\"\n  {...restProps}\n/>\n"
+			"content": "<script lang=\"ts\">\n  import { Autocomplete as AutocompletePrimitive } from '@shardsui/svelte/autocomplete';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let { class: className, ...restProps }: ComponentProps<typeof AutocompletePrimitive.Separator> =\n    $props();\n</script>\n\n<AutocompletePrimitive.Separator\n  class={cn('my-2 h-px bg-border', className)}\n  data-slot=\"command-separator\"\n  {...restProps}\n/>\n"
 		},
 		{
 			"type": "registry:ui",
@@ -93,13 +87,13 @@
 			"type": "registry:ui",
 			"path": "command/command.svelte",
 			"target": "$lib/components/ui/command/command.svelte",
-			"content": "<script lang=\"ts\">\n  import { Command } from 'bits-ui';\n  import type { Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  type Props = Command.RootProps & { children?: Snippet };\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<Command.Root class={cn('flex min-h-0 flex-col', className)} data-slot=\"command\" {...restProps}>\n  {@render children?.()}\n</Command.Root>\n"
+			"content": "<script lang=\"ts\" generics=\"Value = unknown\">\n  import { Autocomplete as AutocompletePrimitive } from '@shardsui/svelte/autocomplete';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  type Props = ComponentProps<typeof AutocompletePrimitive.Root<Value>> & { class?: string };\n\n  let { value = $bindable(''), items, class: className, ...restProps }: Props = $props();\n</script>\n\n<div class={cn('flex min-h-0 flex-col', className)} data-slot=\"command\">\n  <AutocompletePrimitive.Root\n    bind:value={value as never}\n    items={items as never}\n    autoHighlight=\"always\"\n    keepHighlight\n    {...restProps as Record<string, unknown>}\n    open\n    inline\n  />\n</div>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "command/index.ts",
 			"target": "$lib/components/ui/command/index.ts",
-			"content": "export { default as Command } from './command.svelte';\nexport { default as CommandCollection } from './command-collection.svelte';\nexport { default as CommandDialog } from './command-dialog.svelte';\nexport { default as CommandDialogPopup } from './command-dialog-popup.svelte';\nexport { default as CommandDialogTrigger } from './command-dialog-trigger.svelte';\nexport { default as CommandEmpty } from './command-empty.svelte';\nexport { default as CommandFooter } from './command-footer.svelte';\nexport { default as CommandGroup } from './command-group.svelte';\nexport { default as CommandGroupLabel } from './command-group-label.svelte';\nexport { default as CommandInput } from './command-input.svelte';\nexport { default as CommandItem } from './command-item.svelte';\nexport { default as CommandList } from './command-list.svelte';\nexport { default as CommandPanel } from './command-panel.svelte';\nexport { default as CommandSeparator } from './command-separator.svelte';\nexport { default as CommandShortcut } from './command-shortcut.svelte';\n"
+			"content": "/* eslint-disable perfectionist/sort-named-exports */\n\nimport { Autocomplete as AutocompletePrimitive } from '@shardsui/svelte/autocomplete';\n\nexport { default as Command } from './command.svelte';\nexport { default as CommandDialog } from './command-dialog.svelte';\nexport { default as CommandDialogPopup } from './command-dialog-popup.svelte';\nexport { default as CommandDialogTrigger } from './command-dialog-trigger.svelte';\nexport { default as CommandEmpty } from './command-empty.svelte';\nexport { default as CommandFooter } from './command-footer.svelte';\nexport { default as CommandGroup } from './command-group.svelte';\nexport { default as CommandGroupLabel } from './command-group-label.svelte';\nexport { default as CommandInput } from './command-input.svelte';\nexport { default as CommandItem } from './command-item.svelte';\nexport { default as CommandList } from './command-list.svelte';\nexport { default as CommandPanel } from './command-panel.svelte';\nexport { default as CommandSeparator } from './command-separator.svelte';\nexport { default as CommandShortcut } from './command-shortcut.svelte';\n\nconst { Collection: CommandCollection } = AutocompletePrimitive;\n\nexport { CommandCollection };\n"
 		}
 	],
 	"registryDependencies": [
@@ -108,6 +102,6 @@
 		"utils"
 	],
 	"dependencies": [
-		"bits-ui@^2.18.1"
+		"@shardsui/svelte@0.1.0-beta.0"
 	]
 }

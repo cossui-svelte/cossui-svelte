@@ -9,18 +9,13 @@
 			"type": "registry:block",
 			"path": "p-fieldset-1.svelte",
 			"target": "$lib/components/particles/fieldset/p-fieldset-1.svelte",
-			"content": "<script lang=\"ts\">\n  import { z } from 'zod';\n  import { Field, FieldDescription, FieldLabel } from '$lib/components/ui/field';\n  import { Fieldset, FieldsetLegend } from '$lib/components/ui/fieldset';\n  import { Form } from '$lib/components/ui/form';\n  import { Input } from '$lib/components/ui/input';\n  import { createForm } from '$lib/hooks/use-superform';\n\n  const schema = z.object({\n    company: z.string(),\n    taxId: z.string()\n  });\n\n  const superform = createForm({ schema });\n</script>\n\n<Form {superform} class=\"contents\">\n  <Fieldset class=\"flex w-full flex-col gap-6\" data-slot=\"fieldset\">\n    <FieldsetLegend class=\"font-semibold text-foreground\" data-slot=\"fieldset-legend\"\n      >Billing Details</FieldsetLegend\n    >\n\n    <Field name=\"company\">\n      <FieldLabel>Company</FieldLabel>\n      <Input placeholder=\"Enter company name\" type=\"text\" />\n      <FieldDescription>The name that will appear on invoices.</FieldDescription>\n    </Field>\n\n    <Field name=\"taxId\">\n      <FieldLabel>Tax ID</FieldLabel>\n      <Input placeholder=\"Enter tax identification number\" type=\"text\" />\n      <FieldDescription>Your business tax identification number.</FieldDescription>\n    </Field>\n  </Fieldset>\n</Form>\n"
+			"content": "<script lang=\"ts\">\n  import { Field, FieldDescription, FieldLabel } from '$lib/components/ui/field';\n  import { Fieldset, FieldsetLegend } from '$lib/components/ui/fieldset';\n  import { Input } from '$lib/components/ui/input';\n</script>\n\n<Fieldset class=\"flex w-full flex-col gap-6\">\n  <FieldsetLegend>Billing Details</FieldsetLegend>\n  <Field>\n    <FieldLabel>Company</FieldLabel>\n    <Input placeholder=\"Enter company name\" type=\"text\" />\n    <FieldDescription>The name that will appear on invoices.</FieldDescription>\n  </Field>\n\n  <Field>\n    <FieldLabel>Tax ID</FieldLabel>\n    <Input placeholder=\"Enter tax identification number\" type=\"text\" />\n    <FieldDescription>Your business tax identification number.</FieldDescription>\n  </Field>\n</Fieldset>\n"
 		}
 	],
 	"registryDependencies": [
 		"field",
 		"fieldset",
-		"form",
-		"input",
-		"use-superform"
+		"input"
 	],
-	"dependencies": [
-		"zod",
-		"zod@^4.4.3"
-	]
+	"dependencies": []
 }

@@ -1,10 +1,8 @@
 <script lang="ts">
-  import { z } from 'zod';
   import { Field, FieldItem, FieldLabel } from '$lib/components/ui/field';
   import { Fieldset, FieldsetLegend } from '$lib/components/ui/fieldset';
   import Form from '$lib/components/ui/form/form.svelte';
   import { Radio, RadioGroup } from '$lib/components/ui/radio-group';
-  import { createForm } from '$lib/hooks/use-superform';
 
   const items = [
     { label: 'System', value: 'system' },
@@ -12,17 +10,11 @@
     { label: 'Dark', value: 'dark' }
   ] as const;
 
-  const schema = z.object({
-    theme: z.string()
-  });
-
-  const superform = createForm({
-    initialData: { theme: 'system' },
-    onUpdated: ({ theme }) => alert(`Selected theme: ${theme}`),
-    schema
-  });
-
-  const { form } = superform;
+  async function handleSubmit(event: SubmitEvent) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget as HTMLFormElement);
+    alert(`Selected theme: ${formData.get('theme') ?? ''}`);
+  }
 </script>
 
 {#snippet themePreviews(v)}
@@ -82,11 +74,11 @@
   {/if}
 {/snippet}
 
-<Form {superform}>
+<Form onsubmit={handleSubmit}>
   <Field class="gap-4" name="theme">
     <Fieldset>
       <FieldsetLegend class="font-medium text-sm">Choose a theme</FieldsetLegend>
-      <RadioGroup bind:value={$form.theme} class="flex-row gap-4">
+      <RadioGroup value="system" class="flex-row gap-4">
         {#each items as item (item.value)}
           <FieldItem>
             <FieldLabel class="cursor-pointer flex-col">

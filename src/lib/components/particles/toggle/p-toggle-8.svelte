@@ -2,30 +2,26 @@
   import BookmarkIcon from '@lucide/svelte/icons/bookmark';
   import { anchoredToastManager } from '$lib/components/ui/toast';
   import { Toggle } from '$lib/components/ui/toggle';
-  import {
-    Tooltip,
-    TooltipPopup,
-    TooltipProvider,
-    TooltipTrigger
-  } from '$lib/components/ui/tooltip';
+  import { Tooltip, TooltipPopup, TooltipProvider } from '$lib/components/ui/tooltip';
 
   let bookmarked = $state(false);
   let toggleEl: HTMLElement | null = null;
   let toastId: string | null = null;
   const toastTimeout = 2000;
+  let tipOpen = $state(false);
 
   function handlePressedChange(pressed: boolean) {
     bookmarked = pressed;
     if (toastId) {
-      anchoredToastManager.dismiss(toastId);
+      anchoredToastManager.close(toastId);
       toastId = null;
     }
     if (pressed && toggleEl) {
       toastId = anchoredToastManager.add({
-        duration: toastTimeout,
+        data: { tooltipStyle: true },
         positionerProps: { anchor: toggleEl },
+        timeout: toastTimeout,
         title: 'Bookmarked!',
-        tooltipStyle: true,
         type: 'success'
       });
     }
@@ -33,21 +29,20 @@
 </script>
 
 <TooltipProvider>
-  <Tooltip>
-    <TooltipTrigger>
-      {#snippet child({ props })}
-        <Toggle
-          aria-label={bookmarked ? 'Remove bookmark' : 'Bookmark this'}
-          bind:ref={toggleEl}
-          bind:pressed={bookmarked}
-          onPressedChange={handlePressedChange}
-          {...props}
-        >
-          <BookmarkIcon aria-hidden="true" />
-        </Toggle>
-      {/snippet}
-    </TooltipTrigger>
-    <TooltipPopup>
+  <Tooltip bind:open={tipOpen}>
+    <Toggle
+      aria-label={bookmarked ? 'Remove bookmark' : 'Bookmark this'}
+      bind:ref={toggleEl}
+      bind:pressed={bookmarked}
+      onPressedChange={handlePressedChange}
+      onpointerenter={() => (tipOpen = true)}
+      onpointerleave={() => (tipOpen = false)}
+      onfocus={() => (tipOpen = true)}
+      onblur={() => (tipOpen = false)}
+    >
+      <BookmarkIcon aria-hidden="true" />
+    </Toggle>
+    <TooltipPopup customAnchor={toggleEl}>
       <p>{bookmarked ? 'Remove bookmark' : 'Bookmark this'}</p>
     </TooltipPopup>
   </Tooltip>

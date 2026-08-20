@@ -1,44 +1,18 @@
 <script lang="ts">
-  import { box, mergeProps } from 'svelte-toolbelt';
-  import { cn, type WithElementRef } from '$lib/utils';
-  import { useDescription } from '$lib/components/ui/form/form-field-state.svelte.js';
-  import type { DescriptionProps } from './types.js';
-
-  const uid = $props.id();
+  import { Field as FieldPrimitive } from '@shardsui/svelte/field';
+  import type { ComponentProps } from 'svelte';
+  import { cn } from '$lib/utils';
 
   let {
-    id = uid,
     ref = $bindable(null),
     class: className,
-    children,
-    child,
     ...restProps
-  }: WithElementRef<DescriptionProps> = $props();
-
-  const descriptionState = useDescription({
-    id: box.with(() => id),
-    ref: box.with(
-      () => ref,
-      (v) => (ref = v)
-    )
-  });
-
-  const mergedProps = $derived(
-    mergeProps(
-      {
-        'data-slot': 'field-description',
-        class: cn('text-muted-foreground text-xs', className),
-        ...restProps
-      },
-      descriptionState.props
-    )
-  );
+  }: ComponentProps<typeof FieldPrimitive.Description> = $props();
 </script>
 
-{#if child}
-  {@render child({ props: mergedProps })}
-{:else}
-  <div {...mergedProps}>
-    {@render children?.()}
-  </div>
-{/if}
+<FieldPrimitive.Description
+  bind:ref
+  class={cn('text-muted-foreground text-xs', className)}
+  data-slot="field-description"
+  {...restProps}
+/>

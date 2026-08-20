@@ -5,6 +5,7 @@
     ComboboxChip,
     ComboboxChips,
     ComboboxChipsInput,
+    ComboboxCollection,
     ComboboxEmpty,
     ComboboxItem,
     ComboboxList,
@@ -26,10 +27,6 @@
 
   let value = $state<string[]>([items[0].value, items[3].value]);
 
-  function removeItem(v: string) {
-    value = value.filter((x) => x !== v);
-  }
-
   function getLabel(v: string) {
     return items.find((i) => i.value === v)?.label ?? v;
   }
@@ -39,7 +36,7 @@
   <ComboboxChips>
     {#snippet startAddon()}<Search />{/snippet}
     {#each value as v (v)}
-      <ComboboxChip aria-label={getLabel(v)} removeProps={{ onclick: () => removeItem(v) }}>
+      <ComboboxChip aria-label={getLabel(v)}>
         {getLabel(v)}
       </ComboboxChip>
     {/each}
@@ -51,9 +48,11 @@
   <ComboboxPopup>
     <ComboboxEmpty>No items found.</ComboboxEmpty>
     <ComboboxList>
-      {#each items as item (item.value)}
-        <ComboboxItem value={item.value} label={item.label}>{item.label}</ComboboxItem>
-      {/each}
+      <ComboboxCollection>
+        {#snippet children(item: { label: string; value: string })}
+          <ComboboxItem value={item.value} label={item.label}>{item.label}</ComboboxItem>
+        {/snippet}
+      </ComboboxCollection>
     </ComboboxList>
   </ComboboxPopup>
 </Combobox>
