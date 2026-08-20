@@ -84,7 +84,7 @@
         <CommandList>
           <CommandCollection>
             {#snippet children(group: Group)}
-              <CommandGroup>
+              <CommandGroup items={group.items}>
                 <CommandGroupLabel>{group.value}</CommandGroupLabel>
                 <CommandCollection>
                   {#snippet children(item: Item)}
