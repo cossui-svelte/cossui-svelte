@@ -30,13 +30,7 @@
       <NumberFieldInput />
     </NumberFieldGroup>
   </NumberField>
-  <Slider
-    aria-label="Dual range slider"
-    class="flex-1"
-    {max}
-    {min}
-    bind:value={values}
-  />
+  <Slider aria-label="Dual range slider" class="flex-1" {max} {min} bind:value={values} />
   <NumberField
     aria-label="Maximum value"
     class="w-10"

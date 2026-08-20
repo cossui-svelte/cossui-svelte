@@ -13,7 +13,7 @@
 <div
   bind:this={ref}
   class={cn(
-    'col-start-2 row-span-2 row-start-1 self-center justify-self-end inline-flex',
+    'col-start-2 nth-3:row-span-2 nth-3:row-start-1 inline-flex self-center justify-self-end',
     className
   )}
   data-slot="card-frame-action"

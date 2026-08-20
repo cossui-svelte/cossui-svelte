@@ -14,7 +14,7 @@
   } = $props();
 </script>
 
-<ScrollArea class="flex-1" {scrollFade}>
+<ScrollArea class="flex-1" overscrollContain {scrollFade}>
   <div
     bind:this={ref}
     data-slot="sheet-panel"

@@ -36,20 +36,27 @@
     {sideOffset}
     {alignOffset}
     anchor={customAnchor}
-    class="z-50"
+    class="z-50 h-(--positioner-height) w-(--positioner-width) max-w-(--available-width) transition-[top,left,right,bottom,transform] data-instant:transition-none"
+    data-slot="tooltip-positioner"
   >
     <TooltipPrimitive.Popup
       bind:ref
       class={cn(
-        'relative max-w-70 rounded-md border bg-popover px-2 py-1 text-popover-foreground text-xs',
-        'origin-(--transform-origin)',
-        'transition-[scale,opacity] duration-150 ease-out data-starting-style:scale-95 data-starting-style:opacity-0 data-ending-style:scale-95 data-ending-style:opacity-0',
+        'relative flex h-(--popup-height,auto) w-(--popup-width,auto) max-w-70 rounded-md border bg-popover not-dark:bg-clip-padding text-popover-foreground text-xs',
+        'origin-(--transform-origin) text-balance shadow-md/5',
+        'transition-[width,height,scale,opacity] duration-150 ease-out data-starting-style:scale-95 data-starting-style:opacity-0 data-ending-style:scale-95 data-ending-style:opacity-0 data-instant:duration-0',
+        'before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-md)-1px)] before:shadow-[0_1px_--theme(--color-black/4%)] dark:before:shadow-[0_-1px_--theme(--color-white/6%)]',
         className
       )}
       data-slot="tooltip-popup"
       {...restProps}
     >
-      {@render children?.()}
+      <TooltipPrimitive.Viewport
+        class="relative size-full overflow-clip px-(--viewport-inline-padding) py-1 [--viewport-inline-padding:--spacing(2)] data-instant:transition-none **:data-current:data-ending-style:opacity-0 **:data-current:data-starting-style:opacity-0 **:data-previous:data-ending-style:opacity-0 **:data-previous:data-starting-style:opacity-0 **:data-current:w-[calc(var(--popup-width)-2*var(--viewport-inline-padding)-2px)] **:data-previous:w-[calc(var(--popup-width)-2*var(--viewport-inline-padding)-2px)] **:data-previous:truncate **:data-current:opacity-100 **:data-previous:opacity-100 **:data-current:transition-opacity **:data-previous:transition-opacity"
+        data-slot="tooltip-viewport"
+      >
+        {@render children?.()}
+      </TooltipPrimitive.Viewport>
       {#if showArrow}
         <TooltipPrimitive.Arrow
           class="text-popover -my-px drop-shadow-[0_1px_0_hsl(var(--border))] data-[side=bottom]:-top-1.75 data-[side=bottom]:rotate-180 data-[side=left]:-right-2.75 data-[side=left]:-rotate-90 data-[side=right]:-left-2.75 data-[side=right]:rotate-90 data-[side=top]:-bottom-1.75"

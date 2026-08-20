@@ -15,7 +15,7 @@
   class="flex min-h-0 flex-1 flex-col **:data-[slot=scroll-area-viewport]:scroll-py-2"
   data-slot="command-list"
 >
-  <ScrollArea class="flex-1" scrollFade scrollbarGutter>
+  <ScrollArea class="flex-1" overscrollContain scrollFade scrollbarGutter>
     <AutocompletePrimitive.List bind:ref class={cn('not-empty:p-2', className)} {...restProps}>
       {@render children?.()}
     </AutocompletePrimitive.List>

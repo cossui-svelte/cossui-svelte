@@ -26,7 +26,14 @@
 </script>
 
 <MenuPrimitive.Portal {...portalProps}>
-  <MenuPrimitive.Positioner {side} {align} {sideOffset} {alignOffset} class="z-50">
+  <MenuPrimitive.Positioner
+    {side}
+    {align}
+    {sideOffset}
+    {alignOffset}
+    class="z-50"
+    data-slot="menu-positioner"
+  >
     <MenuPrimitive.Popup
       bind:ref
       class={cn(

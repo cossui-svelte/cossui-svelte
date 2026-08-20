@@ -13,7 +13,7 @@
 
 <AccordionPrimitive.Panel
   bind:ref
-  class="h-(--accordion-panel-height) w-full overflow-hidden text-muted-foreground text-sm transition-[height] duration-200 ease-out data-ending-style:h-0 data-starting-style:h-0"
+  class="h-(--accordion-panel-height) overflow-hidden text-muted-foreground text-sm transition-[height] duration-200 ease-in-out data-ending-style:h-0 data-starting-style:h-0"
   data-slot="accordion-panel"
   {...restProps}
 >

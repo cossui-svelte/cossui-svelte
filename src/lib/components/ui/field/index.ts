@@ -10,3 +10,4 @@ export const FieldControl = FieldPrimitive.Control;
 export const FieldValidity = FieldPrimitive.Validity;
 
 export type { FieldValidityState } from '@shardsui/svelte/field';
+export { FieldPrimitive };

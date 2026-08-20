@@ -1,3 +1,5 @@
+import { Menu as MenuPrimitive } from '@shardsui/svelte/menu';
+
 export { default as Menu, default as DropdownMenu } from './menu.svelte';
 export {
   default as MenuCheckboxItem,
@@ -31,3 +33,8 @@ export {
   default as DropdownMenuSubTrigger
 } from './menu-sub-trigger.svelte';
 export { default as MenuTrigger, default as DropdownMenuTrigger } from './menu-trigger.svelte';
+
+export const MenuPortal = MenuPrimitive.Portal;
+export const DropdownMenuPortal = MenuPrimitive.Portal;
+export const MenuCreateHandle = MenuPrimitive.Handle;
+export const DropdownMenuCreateHandle = MenuPrimitive.Handle;

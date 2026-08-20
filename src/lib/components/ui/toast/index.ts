@@ -1,3 +1,4 @@
+export { Toast as ToastPrimitive } from '@shardsui/svelte/toast';
 export { default as AnchoredToastProvider } from './anchored-toast-provider.svelte';
 export type {
   ToastData,

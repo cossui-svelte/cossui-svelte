@@ -11,6 +11,7 @@
     align?: ComponentProps<typeof SelectPrimitive.Positioner>['align'];
     sideOffset?: ComponentProps<typeof SelectPrimitive.Positioner>['sideOffset'];
     alignOffset?: ComponentProps<typeof SelectPrimitive.Positioner>['alignOffset'];
+    anchor?: ComponentProps<typeof SelectPrimitive.Positioner>['anchor'];
     portalProps?: WithoutChildren<ComponentProps<typeof SelectPrimitive.Portal>>;
   };
 
@@ -22,13 +23,22 @@
     align = 'center',
     sideOffset = 4,
     alignOffset = 0,
+    anchor,
     portalProps,
     ...restProps
   }: Props = $props();
 </script>
 
 <SelectPrimitive.Portal {...portalProps}>
-  <SelectPrimitive.Positioner {side} {align} {sideOffset} {alignOffset} class="z-50 select-none">
+  <SelectPrimitive.Positioner
+    {side}
+    {align}
+    {sideOffset}
+    {alignOffset}
+    {anchor}
+    class="z-50 select-none"
+    data-slot="select-positioner"
+  >
     <SelectPrimitive.Popup
       bind:ref
       class="origin-(--transform-origin) text-popover-foreground outline-none transition-[scale,opacity] data-starting-style:scale-95 data-starting-style:opacity-0 data-ending-style:scale-95 data-ending-style:opacity-0"

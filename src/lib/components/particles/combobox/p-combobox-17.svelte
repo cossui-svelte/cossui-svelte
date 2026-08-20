@@ -42,12 +42,11 @@
   const flatItems = formattedTimezones.map((tz) => ({ label: tz.label, value: tz.value }));
 
   let value = $state<string | undefined>(undefined);
-  const selectedLabel = $derived(formattedTimezones.find((tz) => tz.value === value)?.label);
 </script>
 
 <Combobox autoHighlight bind:value items={flatItems}>
   <ComboboxTrigger class={selectTriggerVariants()}>
-    <ComboboxValue value={selectedLabel} placeholder="Select timezone" />
+    <ComboboxValue placeholder="Select timezone" />
   </ComboboxTrigger>
   <ComboboxPopup aria-label="Select timezone">
     <div class="border-b p-2">

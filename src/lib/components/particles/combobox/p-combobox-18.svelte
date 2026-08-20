@@ -27,12 +27,11 @@
   ];
 
   let value = $state<string | undefined>(undefined);
-  const selectedLabel = $derived(items.find((i) => i.value === value)?.label);
 </script>
 
 <Combobox bind:value {items}>
   <ComboboxTrigger class={selectTriggerVariants()}>
-    <ComboboxValue value={selectedLabel} placeholder="Select a fruit" />
+    <ComboboxValue placeholder="Select a fruit" />
   </ComboboxTrigger>
   <ComboboxPopup aria-label="Select a fruit">
     <div class="border-b p-2">

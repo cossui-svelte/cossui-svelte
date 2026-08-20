@@ -1,7 +1,10 @@
 <script lang="ts">
   import { Tabs as TabsPrimitive } from '@shardsui/svelte/tabs';
   import type { ComponentProps, Snippet } from 'svelte';
-  import { segmentedControlItemSizeClassNames, type SegmentedControlSize } from '$lib/segmented-control';
+  import {
+    segmentedControlItemSizeClassNames,
+    type SegmentedControlSize
+  } from '$lib/segmented-control';
   import { cn } from '$lib/utils';
   import { getTabsListSize } from './tabs-list.svelte';
 
@@ -10,13 +13,7 @@
     size?: SegmentedControlSize;
   };
 
-  let {
-    ref = $bindable(null),
-    class: className,
-    size,
-    children,
-    ...restProps
-  }: Props = $props();
+  let { ref = $bindable(null), class: className, size, children, ...restProps }: Props = $props();
 
   const resolvedSize = $derived(size ?? getTabsListSize());
 </script>

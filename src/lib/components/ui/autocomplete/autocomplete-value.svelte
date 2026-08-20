@@ -1,27 +1,20 @@
 <script lang="ts">
+  import { Autocomplete as AutocompletePrimitive } from '@shardsui/svelte/autocomplete';
   import type { Snippet } from 'svelte';
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '$lib/utils';
 
-  interface Props extends HTMLAttributes<HTMLSpanElement> {
-    children?: Snippet;
-    placeholder?: string;
-    value?: string;
+  interface Props extends Omit<HTMLAttributes<HTMLSpanElement>, 'children'> {
+    children?: Snippet<[string]>;
   }
 
-  let { class: className, children, placeholder, value, ...restProps }: Props = $props();
+  let { class: className, children, ...restProps }: Props = $props();
 </script>
 
 <span
-  class={cn(!value && 'text-muted-foreground', className)}
+  class={cn(className)}
   data-slot="autocomplete-value"
-  {...restProps}
+  {...restProps as Record<string, unknown>}
 >
-  {#if children}
-    {@render children()}
-  {:else if value}
-    {value}
-  {:else if placeholder}
-    {placeholder}
-  {/if}
+  <AutocompletePrimitive.Value {children} />
 </span>

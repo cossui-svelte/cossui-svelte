@@ -10,6 +10,10 @@
   let { class: className, children, ...restProps }: Props = $props();
 </script>
 
-<AutocompletePrimitive.Group class={cn(className)} data-slot="command-group" {...restProps}>
+<AutocompletePrimitive.Group
+  class={cn('[[role=group]+&]:mt-1.5', className)}
+  data-slot="command-group"
+  {...restProps}
+>
   {@render children?.()}
 </AutocompletePrimitive.Group>

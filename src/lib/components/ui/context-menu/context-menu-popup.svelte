@@ -9,6 +9,7 @@
     align?: ComponentProps<typeof ContextMenuPrimitive.Positioner>['align'];
     sideOffset?: ComponentProps<typeof ContextMenuPrimitive.Positioner>['sideOffset'];
     alignOffset?: ComponentProps<typeof ContextMenuPrimitive.Positioner>['alignOffset'];
+    anchor?: ComponentProps<typeof ContextMenuPrimitive.Positioner>['anchor'];
     portalProps?: WithoutChildren<ComponentProps<typeof ContextMenuPrimitive.Portal>>;
   };
 
@@ -16,17 +17,26 @@
     ref = $bindable(null),
     class: className,
     children,
-    side,
-    align,
-    sideOffset,
+    side = 'bottom',
+    align = 'center',
+    sideOffset = 4,
     alignOffset,
+    anchor,
     portalProps,
     ...restProps
   }: Props = $props();
 </script>
 
 <ContextMenuPrimitive.Portal {...portalProps}>
-  <ContextMenuPrimitive.Positioner {side} {align} {sideOffset} {alignOffset} class="z-50">
+  <ContextMenuPrimitive.Positioner
+    {side}
+    {align}
+    {sideOffset}
+    {alignOffset}
+    {anchor}
+    class="z-50"
+    data-slot="context-menu-positioner"
+  >
     <ContextMenuPrimitive.Popup
       bind:ref
       class={cn(

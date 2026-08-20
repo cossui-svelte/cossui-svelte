@@ -1,3 +1,5 @@
+import { Dialog as DialogPrimitive } from '@shardsui/svelte/dialog';
+
 export { default as Dialog } from './dialog.svelte';
 export { default as DialogBackdrop, default as DialogOverlay } from './dialog-backdrop.svelte';
 export { default as DialogClose } from './dialog-close.svelte';
@@ -9,3 +11,5 @@ export { default as DialogPanel } from './dialog-panel.svelte';
 export { default as DialogPortal } from './dialog-portal.svelte';
 export { default as DialogTitle } from './dialog-title.svelte';
 export { default as DialogTrigger } from './dialog-trigger.svelte';
+
+export const DialogCreateHandle = DialogPrimitive.Handle;

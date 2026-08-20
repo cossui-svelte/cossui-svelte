@@ -1,7 +1,6 @@
 <script lang="ts">
   import { Collapsible as CollapsiblePrimitive } from '@shardsui/svelte/collapsible';
   import type { ComponentProps } from 'svelte';
-  import { cn } from '$lib/utils';
 
   let {
     ref = $bindable(null),
@@ -12,7 +11,7 @@
 
 <CollapsiblePrimitive.Trigger
   bind:ref
-  class={cn('cursor-pointer [&_svg]:transition-transform [&_svg]:duration-200', className)}
+  class={className}
   data-slot="collapsible-trigger"
   {...restProps}
 />

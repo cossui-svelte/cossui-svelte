@@ -1,3 +1,5 @@
+import { Drawer as DrawerPrimitive } from '@shardsui/svelte/drawer';
+
 export { default as Drawer } from './drawer.svelte';
 export { default as DrawerBackdrop } from './drawer-backdrop.svelte';
 export { default as DrawerBar } from './drawer-bar.svelte';
@@ -22,3 +24,5 @@ export { default as DrawerSwipeArea } from './drawer-swipe-area.svelte';
 export { default as DrawerTitle } from './drawer-title.svelte';
 export { default as DrawerTrigger } from './drawer-trigger.svelte';
 export { default as DrawerViewport } from './drawer-viewport.svelte';
+
+export const DrawerCreateHandle = DrawerPrimitive.Handle;

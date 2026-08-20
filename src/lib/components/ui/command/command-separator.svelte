@@ -8,7 +8,7 @@
 </script>
 
 <AutocompletePrimitive.Separator
-  class={cn('my-2 h-px bg-border', className)}
+  class={cn('mx-2 h-px bg-border last:hidden my-2', className)}
   data-slot="command-separator"
   {...restProps}
 />

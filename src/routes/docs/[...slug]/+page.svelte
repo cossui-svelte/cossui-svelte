@@ -112,8 +112,8 @@
   <main class="m-8">
     <ul class="space-y-3 text-muted-foreground">
       <li>
-        <strong class="font-semibold text-foreground">Modern look</strong> — Clean, contemporary
-        styling with layered shadows and softly rounded surfaces.
+        <strong class="font-semibold text-foreground">Modern look</strong> — Clean, contemporary styling
+        with layered shadows and softly rounded surfaces.
       </li>
       <li>
         <strong class="font-semibold text-foreground">Mobile ready</strong> — Responsive layouts that

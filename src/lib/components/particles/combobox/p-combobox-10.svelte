@@ -234,14 +234,13 @@
   const flatItems = countries.map((c) => ({ label: c.label, value: c.value }));
 
   let value = $state<string | undefined>(undefined);
-  const selectedLabel = $derived(countries.find((c) => c.value === value)?.label);
 </script>
 
 <Combobox bind:value items={flatItems}>
   <ComboboxTrigger
     class={buttonVariants({ class: 'w-full justify-between font-normal', variant: 'outline' })}
   >
-    <ComboboxValue value={selectedLabel} placeholder="Select country" />
+    <ComboboxValue placeholder="Select country" />
     <ChevronsUpDown class="-me-1!" />
   </ComboboxTrigger>
   <ComboboxPopup aria-label="Select country">

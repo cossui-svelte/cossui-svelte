@@ -17,15 +17,19 @@
   } = $props();
 
   const ctx = getToggleGroupCtx();
+  const resolvedSize = $derived(ctx.size || size);
+  const resolvedVariant = $derived(ctx.variant || variant);
 </script>
 
 <TogglePrimitive
   bind:ref
-  data-slot="toggle-group-item"
+  data-slot="toggle"
+  data-size={resolvedSize}
+  data-variant={resolvedVariant}
   class={cn(
     toggleVariants({
-      size: ctx.size || size,
-      variant: ctx.variant || variant
+      size: resolvedSize,
+      variant: resolvedVariant
     }),
     className
   )}

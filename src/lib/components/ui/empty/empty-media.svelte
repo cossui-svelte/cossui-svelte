@@ -34,10 +34,29 @@
 
 <div
   bind:this={ref}
-  data-slot="empty-icon"
+  class={cn('relative mb-6', className)}
+  data-slot="empty-media"
   data-variant={variant}
-  class={cn(emptyMediaVariants({ variant }), className)}
-  {...restProps}
 >
-  {@render children?.()}
+  {#if variant === 'icon'}
+    <div
+      aria-hidden="true"
+      class={cn(
+        emptyMediaVariants({ variant }),
+        className,
+        'pointer-events-none absolute bottom-px origin-bottom-left -translate-x-0.5 -rotate-10 scale-84 shadow-none'
+      )}
+    ></div>
+    <div
+      aria-hidden="true"
+      class={cn(
+        emptyMediaVariants({ variant }),
+        className,
+        'pointer-events-none absolute bottom-px origin-bottom-right translate-x-0.5 rotate-10 scale-84 shadow-none'
+      )}
+    ></div>
+  {/if}
+  <div class={cn(emptyMediaVariants({ variant }), className)} {...restProps}>
+    {@render children?.()}
+  </div>
 </div>

@@ -192,7 +192,7 @@
                       aria-label={`${day} start time`}
                       class={cn(selectTriggerVariants({ size: 'sm' }), 'w-27 tabular-nums')}
                     >
-                      <ComboboxValue value={range.start} />
+                      <ComboboxValue />
                     </ComboboxTrigger>
                     <ComboboxPopup aria-label={`${day} start time`} class="min-w-44">
                       <div class="border-b p-2">
@@ -227,7 +227,7 @@
                       aria-label={`${day} end time`}
                       class={cn(selectTriggerVariants({ size: 'sm' }), 'w-27 tabular-nums')}
                     >
-                      <ComboboxValue value={range.end} />
+                      <ComboboxValue />
                     </ComboboxTrigger>
                     <ComboboxPopup aria-label={`${day} end time`} class="min-w-44">
                       <div class="border-b p-2">

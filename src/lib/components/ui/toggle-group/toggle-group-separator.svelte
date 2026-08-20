@@ -2,14 +2,12 @@
   import type { ComponentProps } from 'svelte';
   import { Separator } from '$lib/components/ui/separator';
   import { cn } from '$lib/utils';
-  import { getToggleGroupCtx } from './toggle-group.svelte';
 
-  let { class: className, ...restProps }: ComponentProps<typeof Separator> = $props();
-
-  let orientation = getToggleGroupCtx()?.orientation;
-
-  if (orientation === 'vertical') orientation = 'horizontal';
-  else orientation = 'vertical';
+  let {
+    class: className,
+    orientation = 'vertical',
+    ...restProps
+  }: ComponentProps<typeof Separator> = $props();
 </script>
 
 <Separator

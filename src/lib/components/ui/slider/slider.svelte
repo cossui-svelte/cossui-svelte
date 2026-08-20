@@ -69,6 +69,7 @@
 <SliderPrimitive.Root
   bind:ref
   bind:value
+  thumbAlignment="edge"
   thumbCollisionBehavior={thumbCollisionBehavior === 'none' ? 'none' : 'push'}
   {orientation}
   class={cn('data-[orientation=horizontal]:w-full', className)}
@@ -81,7 +82,7 @@
       data-slot="slider-control"
     >
       <SliderPrimitive.Track
-        class="grow select-none before:absolute before:rounded-full before:bg-input data-[orientation=horizontal]:h-1 data-[orientation=horizontal]:w-full data-[orientation=horizontal]:before:inset-x-0.5 data-[orientation=horizontal]:before:inset-y-0 data-[orientation=vertical]:h-full data-[orientation=vertical]:w-1 data-[orientation=vertical]:before:inset-x-0 data-[orientation=vertical]:before:inset-y-0.5"
+        class="relative grow select-none before:absolute before:rounded-full before:bg-input data-[orientation=horizontal]:h-1 data-[orientation=horizontal]:w-full data-[orientation=horizontal]:before:inset-x-0.5 data-[orientation=horizontal]:before:inset-y-0 data-[orientation=vertical]:h-full data-[orientation=vertical]:w-1 data-[orientation=vertical]:before:inset-x-0 data-[orientation=vertical]:before:inset-y-0.5"
         data-slot="slider-track"
       >
         <SliderPrimitive.Indicator

@@ -1,6 +1,7 @@
 /* eslint-disable perfectionist/sort-named-exports */
 
 import { Autocomplete as AutocompletePrimitive } from '@shardsui/svelte/autocomplete';
+import { Dialog as CommandDialogPrimitive } from '@shardsui/svelte/dialog';
 
 export { default as Command } from './command.svelte';
 export { default as CommandDialog } from './command-dialog.svelte';
@@ -20,3 +21,10 @@ export { default as CommandShortcut } from './command-shortcut.svelte';
 const { Collection: CommandCollection } = AutocompletePrimitive;
 
 export { CommandCollection };
+
+export const CommandDialogPortal = CommandDialogPrimitive.Portal;
+export const CommandDialogBackdrop = CommandDialogPrimitive.Backdrop;
+export const CommandDialogViewport = CommandDialogPrimitive.Viewport;
+export const CommandCreateHandle = CommandDialogPrimitive.Handle;
+
+export { CommandDialogPrimitive };

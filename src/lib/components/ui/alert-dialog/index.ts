@@ -1,3 +1,5 @@
+import { AlertDialog as AlertDialogPrimitive } from '@shardsui/svelte/alert-dialog';
+
 export { default as AlertDialog } from './alert-dialog.svelte';
 export { default as AlertDialogAction } from './alert-dialog-action.svelte';
 export { default as AlertDialogClose } from './alert-dialog-close.svelte';
@@ -13,3 +15,5 @@ export { default as AlertDialogOverlay } from './alert-dialog-overlay.svelte';
 export { default as AlertDialogPortal } from './alert-dialog-portal.svelte';
 export { default as AlertDialogTitle } from './alert-dialog-title.svelte';
 export { default as AlertDialogTrigger } from './alert-dialog-trigger.svelte';
+
+export const AlertDialogCreateHandle = AlertDialogPrimitive.Handle;

@@ -1,27 +1,17 @@
 <script lang="ts">
+  import { Combobox as ComboboxPrimitive } from '@shardsui/svelte/combobox';
   import type { Snippet } from 'svelte';
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '$lib/utils';
 
-  interface Props extends HTMLAttributes<HTMLSpanElement> {
-    children?: Snippet;
+  interface Props extends Omit<HTMLAttributes<HTMLSpanElement>, 'children'> {
+    children?: Snippet<[unknown]>;
     placeholder?: string;
-    value?: string;
   }
 
-  let { class: className, children, placeholder, value, ...restProps }: Props = $props();
+  let { class: className, children, placeholder, ...restProps }: Props = $props();
 </script>
 
-<span
-  class={cn(!value && 'text-muted-foreground', className)}
-  data-slot="combobox-value"
-  {...restProps}
->
-  {#if children}
-    {@render children()}
-  {:else if value}
-    {value}
-  {:else if placeholder}
-    {placeholder}
-  {/if}
+<span class={cn(className)} data-slot="combobox-value" {...restProps as Record<string, unknown>}>
+  <ComboboxPrimitive.Value {children} {placeholder} />
 </span>

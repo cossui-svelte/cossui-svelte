@@ -197,7 +197,7 @@
                           'w-24 font-normal tabular-nums'
                         )}
                       >
-                        <ComboboxValue value={range.start} />
+                        <ComboboxValue />
                       </ComboboxTrigger>
                       <ComboboxPopup aria-label={`${day} start time`} class="min-w-44">
                         <div class="border-b p-2">
@@ -239,7 +239,7 @@
                           'w-24 font-normal tabular-nums'
                         )}
                       >
-                        <ComboboxValue value={range.end} />
+                        <ComboboxValue />
                       </ComboboxTrigger>
                       <ComboboxPopup aria-label={`${day} end time`} class="min-w-44">
                         <div class="border-b p-2">
