@@ -1,3 +1,21 @@
+<script lang="ts" module>
+  import { getContext, setContext } from 'svelte';
+
+  export interface ComboboxChipsRefCtx {
+    current: HTMLElement | null;
+  }
+
+  const CHIPS_REF_KEY = Symbol('combobox-chips-ref');
+
+  export function setComboboxChipsRefCtx(ctx: ComboboxChipsRefCtx) {
+    setContext(CHIPS_REF_KEY, ctx);
+  }
+
+  export function getComboboxChipsRefCtx(): ComboboxChipsRefCtx | undefined {
+    return getContext<ComboboxChipsRefCtx | undefined>(CHIPS_REF_KEY);
+  }
+</script>
+
 <script lang="ts">
   import { Combobox as ComboboxPrimitive } from '@shardsui/svelte/combobox';
 
@@ -26,6 +44,16 @@
   if (value === undefined && defaultValue !== undefined) {
     value = typeof defaultValue === 'string' ? defaultValue : defaultValue.value;
   }
+
+  let chipsRef = $state<HTMLElement | null>(null);
+  setComboboxChipsRefCtx({
+    get current() {
+      return chipsRef;
+    },
+    set current(v) {
+      chipsRef = v;
+    }
+  });
 </script>
 
 <ComboboxPrimitive.Root

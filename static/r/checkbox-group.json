@@ -21,7 +21,7 @@
 			"type": "registry:ui",
 			"path": "checkbox-group/index.ts",
 			"target": "$lib/components/ui/checkbox-group/index.ts",
-			"content": "export { default as CheckboxGroup } from '../checkbox-group/checkbox-group.svelte';\nexport { default as CheckboxTree } from '../checkbox-group/checkbox-tree.svelte';\n"
+			"content": "export { CheckboxGroup as CheckboxGroupPrimitive } from '@shardsui/svelte/checkbox-group';\nexport { default as CheckboxGroup } from '../checkbox-group/checkbox-group.svelte';\nexport { default as CheckboxTree } from '../checkbox-group/checkbox-tree.svelte';\n"
 		}
 	],
 	"registryDependencies": [

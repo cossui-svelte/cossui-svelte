@@ -15,7 +15,7 @@
 			"type": "registry:ui",
 			"path": "spinner/spinner.svelte",
 			"target": "$lib/components/ui/spinner/spinner.svelte",
-			"content": "<script lang=\"ts\">\n  import LoaderCircle from '@lucide/svelte/icons/loader-circle';\n  import { cn } from '$lib/utils';\n\n  let { class: className, ...restProps }: { class?: string } = $props();\n</script>\n\n<LoaderCircle\n  aria-label=\"Loading\"\n  class={cn('animate-spin', className)}\n  role=\"status\"\n  {...restProps}\n/>\n"
+			"content": "<script lang=\"ts\">\n  import LoaderCircle from '@lucide/svelte/icons/loader-circle';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let { class: className, ...restProps }: ComponentProps<typeof LoaderCircle> = $props();\n</script>\n\n<LoaderCircle\n  aria-label=\"Loading\"\n  class={cn('animate-spin', className)}\n  role=\"status\"\n  {...restProps}\n/>\n"
 		}
 	],
 	"registryDependencies": [

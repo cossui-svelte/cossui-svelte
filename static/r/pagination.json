@@ -39,7 +39,7 @@
 			"type": "registry:ui",
 			"path": "pagination/pagination-next-button.svelte",
 			"target": "$lib/components/ui/pagination/pagination-next-button.svelte",
-			"content": "<script lang=\"ts\">\n  import ChevronRight from '@lucide/svelte/icons/chevron-right';\n  import { cn } from '$lib/utils';\n  import PaginationLink, { type Props as PaginationLinkProps } from './pagination-link.svelte';\n\n  let {\n    class: className,\n    ref = $bindable(null),\n    ...restProps\n  }: Omit<PaginationLinkProps, 'children'> = $props();\n</script>\n\n<PaginationLink\n  bind:ref\n  aria-label=\"Go to next page\"\n  size=\"default\"\n  class={cn('max-sm:aspect-square max-sm:p-0', className)}\n  {...restProps}\n>\n  <span class=\"max-sm:hidden\">Next</span>\n  <ChevronRight className=\"sm:-me-1\" />\n</PaginationLink>\n"
+			"content": "<script lang=\"ts\">\n  import ChevronRight from '@lucide/svelte/icons/chevron-right';\n  import { cn } from '$lib/utils';\n  import PaginationLink, { type Props as PaginationLinkProps } from './pagination-link.svelte';\n\n  let {\n    class: className,\n    ref = $bindable(null),\n    ...restProps\n  }: Omit<PaginationLinkProps, 'children'> = $props();\n</script>\n\n<PaginationLink\n  bind:ref\n  aria-label=\"Go to next page\"\n  size=\"default\"\n  class={cn('max-sm:aspect-square max-sm:p-0', className)}\n  {...restProps}\n>\n  <span class=\"max-sm:hidden\">Next</span>\n  <ChevronRight class=\"sm:-me-1\" />\n</PaginationLink>\n"
 		},
 		{
 			"type": "registry:ui",

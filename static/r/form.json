@@ -15,7 +15,7 @@
 			"type": "registry:ui",
 			"path": "form/index.ts",
 			"target": "$lib/components/ui/form/index.ts",
-			"content": "export type { FormErrors, FormValidationMode } from '@shardsui/svelte/form';\nexport { default as Form } from './form.svelte';\n"
+			"content": "export type { FormErrors, FormValidationMode } from '@shardsui/svelte/form';\nexport { Form as FormPrimitive } from '@shardsui/svelte/form';\nexport { default as Form } from './form.svelte';\n"
 		}
 	],
 	"registryDependencies": [],

@@ -39,7 +39,7 @@
 			"type": "registry:ui",
 			"path": "card/card-title.svelte",
 			"target": "$lib/components/ui/card/card-title.svelte",
-			"content": "<script lang=\"ts\">\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn, type WithElementRef } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n</script>\n\n<div\n  bind:this={ref}\n  class={cn('font-semibold text-lg leading-none', className)}\n  data-slot=\"card-title\"\n  {...restProps}\n>\n  {@render children?.()}\n</div>\n"
+			"content": "<script lang=\"ts\">\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn, type WithElementRef } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n</script>\n\n<div\n  bind:this={ref}\n  class={cn('font-heading font-semibold text-lg leading-none', className)}\n  data-slot=\"card-title\"\n  {...restProps}\n>\n  {@render children?.()}\n</div>\n"
 		},
 		{
 			"type": "registry:ui",
@@ -51,13 +51,13 @@
 			"type": "registry:ui",
 			"path": "card/cardframe-action.svelte",
 			"target": "$lib/components/ui/card/cardframe-action.svelte",
-			"content": "<script lang=\"ts\">\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn, type WithElementRef } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n</script>\n\n<div\n  bind:this={ref}\n  class={cn(\n    'col-start-2 row-span-2 row-start-1 self-center justify-self-end inline-flex',\n    className\n  )}\n  data-slot=\"card-frame-action\"\n  {...restProps}\n>\n  {@render children?.()}\n</div>\n"
+			"content": "<script lang=\"ts\">\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn, type WithElementRef } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n</script>\n\n<div\n  bind:this={ref}\n  class={cn(\n    'col-start-2 nth-3:row-span-2 nth-3:row-start-1 inline-flex self-center justify-self-end',\n    className\n  )}\n  data-slot=\"card-frame-action\"\n  {...restProps}\n>\n  {@render children?.()}\n</div>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "card/cardframe-description.svelte",
 			"target": "$lib/components/ui/card/cardframe-description.svelte",
-			"content": "<script lang=\"ts\">\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn, type WithElementRef } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n</script>\n\n<div\n  bind:this={ref}\n  class={cn('text-muted-foreground text-sm', className)}\n  data-slot=\"card-frame-description\"\n  {...restProps}\n>\n  {@render children?.()}\n</div>\n"
+			"content": "<script lang=\"ts\">\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn, type WithElementRef } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n</script>\n\n<div\n  bind:this={ref}\n  class={cn('self-center text-muted-foreground text-sm', className)}\n  data-slot=\"card-frame-description\"\n  {...restProps}\n>\n  {@render children?.()}\n</div>\n"
 		},
 		{
 			"type": "registry:ui",
@@ -69,13 +69,13 @@
 			"type": "registry:ui",
 			"path": "card/cardframe-header.svelte",
 			"target": "$lib/components/ui/card/cardframe-header.svelte",
-			"content": "<script lang=\"ts\">\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn, type WithElementRef } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n</script>\n\n<div\n  bind:this={ref}\n  class={cn(\n    'relative flex flex-col px-6 py-4 grid auto-rows-min grid-rows-[auto_auto] items-start gap-x-4 has-data-[slot=card-frame-action]:grid-cols-[1fr_auto]',\n    className\n  )}\n  data-slot=\"card-fram-header\"\n  {...restProps}\n>\n  {@render children?.()}\n</div>\n"
+			"content": "<script lang=\"ts\">\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn, type WithElementRef } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n</script>\n\n<div\n  bind:this={ref}\n  class={cn(\n    'relative flex flex-col px-6 py-4 grid auto-rows-min grid-rows-[auto_auto] items-start gap-x-4 has-data-[slot=card-frame-action]:grid-cols-[1fr_auto]',\n    className\n  )}\n  data-slot=\"card-frame-header\"\n  {...restProps}\n>\n  {@render children?.()}\n</div>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "card/cardframe-title.svelte",
 			"target": "$lib/components/ui/card/cardframe-title.svelte",
-			"content": "<script lang=\"ts\">\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn, type WithElementRef } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n</script>\n\n<div\n  bind:this={ref}\n  class={cn('font-semibold text-sm', className)}\n  data-slot=\"card-frame-title\"\n  {...restProps}\n>\n  {@render children?.()}\n</div>\n"
+			"content": "<script lang=\"ts\">\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn, type WithElementRef } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n</script>\n\n<div\n  bind:this={ref}\n  class={cn('self-center font-semibold text-sm', className)}\n  data-slot=\"card-frame-title\"\n  {...restProps}\n>\n  {@render children?.()}\n</div>\n"
 		},
 		{
 			"type": "registry:ui",

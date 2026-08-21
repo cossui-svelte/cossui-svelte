@@ -17,6 +17,8 @@ import NextButton from './calendar-next-button.svelte';
 import PrevButton from './calendar-prev-button.svelte';
 import YearSelect from './calendar-year-select.svelte';
 
+export type { DateRange } from '../range-calendar/internal/types';
+export type { CalendarMode, Props as CalendarProps } from './calendar.svelte';
 export {
   Caption,
   Cell,

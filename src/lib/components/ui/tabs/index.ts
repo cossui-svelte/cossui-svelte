@@ -1,4 +1,4 @@
-export type { SegmentedControlSize as TabsSize } from '$lib/segmented-control';
+export type { SegmentedControlSize as TabsSize } from './segmented-control';
 export { default as Tabs } from './tabs.svelte';
 export { default as TabsIndicator } from './tabs-indicator.svelte';
 export { default as TabsList } from './tabs-list.svelte';

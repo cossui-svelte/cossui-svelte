@@ -9,13 +9,13 @@
 			"type": "registry:ui",
 			"path": "collapsible/collapsible-panel.svelte",
 			"target": "$lib/components/ui/collapsible/collapsible-panel.svelte",
-			"content": "<script lang=\"ts\">\n  import { Collapsible as CollapsiblePrimitive } from '@shardsui/svelte/collapsible';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof CollapsiblePrimitive.Panel> = $props();\n</script>\n\n<CollapsiblePrimitive.Panel\n  bind:ref\n  class={cn(\n    'h-(--collapsible-panel-height) overflow-hidden transition-[height] duration-200 ease-out data-ending-style:h-0 data-starting-style:h-0',\n    className\n  )}\n  data-slot=\"collapsible-panel\"\n  {...restProps}\n/>\n"
+			"content": "<script lang=\"ts\">\n  import { Collapsible as CollapsiblePrimitive } from '@shardsui/svelte/collapsible';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof CollapsiblePrimitive.Panel> = $props();\n</script>\n\n<CollapsiblePrimitive.Panel\n  bind:ref\n  class={cn(\n    'h-(--collapsible-panel-height) overflow-hidden transition-[height] duration-200 data-ending-style:h-0 data-starting-style:h-0',\n    className\n  )}\n  data-slot=\"collapsible-panel\"\n  {...restProps}\n/>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "collapsible/collapsible-trigger.svelte",
 			"target": "$lib/components/ui/collapsible/collapsible-trigger.svelte",
-			"content": "<script lang=\"ts\">\n  import { Collapsible as CollapsiblePrimitive } from '@shardsui/svelte/collapsible';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof CollapsiblePrimitive.Trigger> = $props();\n</script>\n\n<CollapsiblePrimitive.Trigger\n  bind:ref\n  class={cn('cursor-pointer [&_svg]:transition-transform [&_svg]:duration-200', className)}\n  data-slot=\"collapsible-trigger\"\n  {...restProps}\n/>\n"
+			"content": "<script lang=\"ts\">\n  import { Collapsible as CollapsiblePrimitive } from '@shardsui/svelte/collapsible';\n  import type { ComponentProps } from 'svelte';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof CollapsiblePrimitive.Trigger> = $props();\n</script>\n\n<CollapsiblePrimitive.Trigger\n  bind:ref\n  class={className}\n  data-slot=\"collapsible-trigger\"\n  {...restProps}\n/>\n"
 		},
 		{
 			"type": "registry:ui",
@@ -27,7 +27,7 @@
 			"type": "registry:ui",
 			"path": "collapsible/index.ts",
 			"target": "$lib/components/ui/collapsible/index.ts",
-			"content": "export { default as Collapsible } from './collapsible.svelte';\nexport {\n  default as CollapsiblePanel,\n  default as CollapsibleContent\n} from './collapsible-panel.svelte';\nexport { default as CollapsibleTrigger } from './collapsible-trigger.svelte';\n"
+			"content": "import { Collapsible as CollapsiblePrimitive } from '@shardsui/svelte/collapsible';\n\nexport { default as Collapsible } from './collapsible.svelte';\nexport {\n  default as CollapsiblePanel,\n  default as CollapsibleContent\n} from './collapsible-panel.svelte';\nexport { default as CollapsibleTrigger } from './collapsible-trigger.svelte';\nexport { CollapsiblePrimitive };\n"
 		}
 	],
 	"registryDependencies": [

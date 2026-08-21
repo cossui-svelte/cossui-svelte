@@ -1,6 +1,6 @@
 <script lang="ts" module>
   import { getContext, setContext } from 'svelte';
-  import type { SegmentedControlSize } from '$lib/segmented-control';
+  import type { SegmentedControlSize } from '$lib/components/ui/tabs/segmented-control';
 
   export function setTabsListSize(getSize: () => SegmentedControlSize) {
     setContext('tabsListSize', getSize);

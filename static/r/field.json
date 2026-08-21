@@ -39,7 +39,7 @@
 			"type": "registry:ui",
 			"path": "field/index.ts",
 			"target": "$lib/components/ui/field/index.ts",
-			"content": "import { Field as FieldPrimitive } from '@shardsui/svelte/field';\n\nexport { default as Field } from './field.svelte';\nexport { default as FieldDescription } from './field-description.svelte';\nexport { default as FieldError } from './field-error.svelte';\nexport { default as FieldItem } from './field-item.svelte';\nexport { default as FieldLabel } from './field-label.svelte';\n\nexport const FieldControl = FieldPrimitive.Control;\nexport const FieldValidity = FieldPrimitive.Validity;\n\nexport type { FieldValidityState } from '@shardsui/svelte/field';\n"
+			"content": "import { Field as FieldPrimitive } from '@shardsui/svelte/field';\n\nexport { default as Field } from './field.svelte';\nexport { default as FieldDescription } from './field-description.svelte';\nexport { default as FieldError } from './field-error.svelte';\nexport { default as FieldItem } from './field-item.svelte';\nexport { default as FieldLabel } from './field-label.svelte';\n\nexport const FieldControl = FieldPrimitive.Control;\nexport const FieldValidity = FieldPrimitive.Validity;\n\nexport type { FieldValidityState } from '@shardsui/svelte/field';\nexport { FieldPrimitive };\n"
 		}
 	],
 	"registryDependencies": [

@@ -4,7 +4,7 @@
   import {
     segmentedControlItemSizeClassNames,
     type SegmentedControlSize
-  } from '$lib/segmented-control';
+  } from './segmented-control';
   import { cn } from '$lib/utils';
   import { getTabsListSize } from './tabs-list.svelte';
 

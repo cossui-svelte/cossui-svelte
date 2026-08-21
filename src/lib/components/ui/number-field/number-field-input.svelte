@@ -41,12 +41,26 @@
   }
 
   function handleKeydown(e: KeyboardEvent) {
+    if (!ctx) return;
+
     if (e.key === 'ArrowUp') {
       e.preventDefault();
-      ctx?.increment();
+      ctx.increment();
     } else if (e.key === 'ArrowDown') {
       e.preventDefault();
-      ctx?.decrement();
+      ctx.decrement();
+    } else if (e.key === 'Home' && ctx.min !== undefined) {
+      e.preventDefault();
+      ctx.setValue(ctx.min);
+    } else if (e.key === 'End' && ctx.max !== undefined) {
+      e.preventDefault();
+      ctx.setValue(ctx.max);
+    } else if (e.key === 'PageUp') {
+      e.preventDefault();
+      ctx.applyDelta(ctx.step * 10);
+    } else if (e.key === 'PageDown') {
+      e.preventDefault();
+      ctx.applyDelta(-ctx.step * 10);
     }
   }
 </script>

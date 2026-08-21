@@ -9,7 +9,7 @@
 			"type": "registry:ui",
 			"path": "input/index.ts",
 			"target": "$lib/components/ui/input/index.ts",
-			"content": "export { default as Input } from './input.svelte';\n"
+			"content": "export { Input as InputPrimitive } from '@shardsui/svelte/input';\nexport { default as Input } from './input.svelte';\n"
 		},
 		{
 			"type": "registry:ui",

@@ -9,7 +9,7 @@
 			"type": "registry:ui",
 			"path": "toolbar/index.ts",
 			"target": "$lib/components/ui/toolbar/index.ts",
-			"content": "export { default as Toolbar } from './toolbar.svelte';\nexport { default as ToolbarButton } from './toolbar-button.svelte';\nexport { default as ToolbarGroup } from './toolbar-group.svelte';\nexport { default as ToolbarInput } from './toolbar-input.svelte';\nexport { default as ToolbarLink } from './toolbar-link.svelte';\nexport { default as ToolbarSeparator } from './toolbar-separator.svelte';\n"
+			"content": "import { Toolbar as ToolbarPrimitive } from '@shardsui/svelte/toolbar';\n\nexport { default as Toolbar } from './toolbar.svelte';\nexport { default as ToolbarButton } from './toolbar-button.svelte';\nexport { default as ToolbarGroup } from './toolbar-group.svelte';\nexport { default as ToolbarInput } from './toolbar-input.svelte';\nexport { default as ToolbarLink } from './toolbar-link.svelte';\nexport { default as ToolbarSeparator } from './toolbar-separator.svelte';\nexport { ToolbarPrimitive };\n"
 		},
 		{
 			"type": "registry:ui",

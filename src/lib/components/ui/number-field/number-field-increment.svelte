@@ -5,6 +5,7 @@
   import type { HTMLButtonAttributes } from 'svelte/elements';
   import { cn } from '$lib/utils';
   import { NUMBER_FIELD_CONTEXT_KEY, type NumberFieldContext } from './number-field.svelte';
+  import { createPressRepeat } from './number-field-press-repeat.svelte';
 
   type Props = Omit<HTMLButtonAttributes, 'type' | 'disabled' | 'onclick'> & {
     /** Custom rendering for the icon, defaults to a plus icon. */
@@ -18,6 +19,11 @@
   let isAtMax = $derived(
     ctx?.value !== undefined && ctx?.max !== undefined ? ctx.value >= ctx.max : false
   );
+
+  const pressRepeat = createPressRepeat(
+    () => ctx?.increment(),
+    () => ctx?.disabled || isAtMax
+  );
 </script>
 
 <button
@@ -29,7 +35,7 @@
     className
   )}
   data-slot="number-field-increment"
-  onclick={() => ctx?.increment()}
+  {...pressRepeat}
   {...restProps}
 >
   {#if children}

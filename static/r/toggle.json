@@ -9,7 +9,7 @@
 			"type": "registry:ui",
 			"path": "toggle/index.ts",
 			"target": "$lib/components/ui/toggle/index.ts",
-			"content": "export { default as Toggle } from './toggle.svelte';\nexport {\n  type ToggleSize,\n  type ToggleVariant,\n  type ToggleVariants,\n  toggleVariants\n} from './toggle-variants';\n"
+			"content": "export { Toggle as TogglePrimitive } from '@shardsui/svelte/toggle';\nexport { default as Toggle } from './toggle.svelte';\nexport {\n  type ToggleSize,\n  type ToggleVariant,\n  type ToggleVariants,\n  toggleVariants\n} from './toggle-variants';\n"
 		},
 		{
 			"type": "registry:ui",
@@ -28,7 +28,7 @@
 		"utils"
 	],
 	"dependencies": [
-		"tailwind-variants@^3.3.1",
-		"@shardsui/svelte@0.1.0-beta.0"
+		"@shardsui/svelte@0.1.0-beta.0",
+		"tailwind-variants@^3.3.1"
 	]
 }

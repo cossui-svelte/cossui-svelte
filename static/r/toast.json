@@ -21,7 +21,7 @@
 			"type": "registry:ui",
 			"path": "toast/index.ts",
 			"target": "$lib/components/ui/toast/index.ts",
-			"content": "export { default as AnchoredToastProvider } from './anchored-toast-provider.svelte';\nexport type {\n  ToastData,\n  ToastManagerAddOptions,\n  ToastManagerPromiseOptions,\n  ToastManagerUpdateOptions,\n  ToastObject,\n  ToastPosition\n} from './toast-manager';\nexport { anchoredToastManager, toastManager } from './toast-manager';\nexport { default as ToastProvider } from './toast-provider.svelte';\n"
+			"content": "export { Toast as ToastPrimitive } from '@shardsui/svelte/toast';\nexport { default as AnchoredToastProvider } from './anchored-toast-provider.svelte';\nexport type {\n  ToastData,\n  ToastManagerAddOptions,\n  ToastManagerPromiseOptions,\n  ToastManagerUpdateOptions,\n  ToastObject,\n  ToastPosition\n} from './toast-manager';\nexport { anchoredToastManager, toastManager } from './toast-manager';\nexport { default as ToastProvider } from './toast-provider.svelte';\n"
 		},
 		{
 			"type": "registry:ui",

@@ -2,6 +2,7 @@
   import { Combobox as ComboboxPrimitive } from '@shardsui/svelte/combobox';
   import type { ComponentProps, Snippet } from 'svelte';
   import { cn, type WithoutChildren } from '$lib/utils';
+  import { getComboboxChipsRefCtx } from './combobox.svelte';
 
   type Props = Omit<ComponentProps<typeof ComboboxPrimitive.Popup>, 'children'> & {
     children?: Snippet;
@@ -9,6 +10,7 @@
     align?: ComponentProps<typeof ComboboxPrimitive.Positioner>['align'];
     sideOffset?: ComponentProps<typeof ComboboxPrimitive.Positioner>['sideOffset'];
     alignOffset?: ComponentProps<typeof ComboboxPrimitive.Positioner>['alignOffset'];
+    anchor?: ComponentProps<typeof ComboboxPrimitive.Positioner>['anchor'];
     portalProps?: WithoutChildren<ComponentProps<typeof ComboboxPrimitive.Portal>>;
   };
 
@@ -20,13 +22,25 @@
     sideOffset = 4,
     alignOffset = 0,
     align = 'start',
+    anchor,
     portalProps,
     ...restProps
   }: Props = $props();
+
+  const chipsRefCtx = getComboboxChipsRefCtx();
+  const resolvedAnchor = $derived(anchor ?? chipsRefCtx?.current ?? undefined);
 </script>
 
 <ComboboxPrimitive.Portal {...portalProps}>
-  <ComboboxPrimitive.Positioner {side} {align} {sideOffset} {alignOffset} class="z-50 select-none">
+  <ComboboxPrimitive.Positioner
+    {side}
+    {align}
+    {sideOffset}
+    {alignOffset}
+    anchor={resolvedAnchor}
+    class="z-50 select-none"
+    data-slot="combobox-positioner"
+  >
     <ComboboxPrimitive.Popup
       bind:ref
       class={cn(

@@ -21,7 +21,7 @@
 			"type": "registry:ui",
 			"path": "fieldset/index.ts",
 			"target": "$lib/components/ui/fieldset/index.ts",
-			"content": "export { default as Fieldset } from './fieldset.svelte';\nexport { default as FieldsetLegend } from './fieldset-legend.svelte';\n"
+			"content": "import { Fieldset as FieldsetPrimitive } from '@shardsui/svelte/fieldset';\n\nexport { default as Fieldset } from './fieldset.svelte';\nexport { default as FieldsetLegend } from './fieldset-legend.svelte';\nexport { FieldsetPrimitive };\n"
 		}
 	],
 	"registryDependencies": [

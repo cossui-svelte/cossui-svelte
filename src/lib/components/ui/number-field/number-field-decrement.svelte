@@ -5,6 +5,7 @@
   import type { HTMLButtonAttributes } from 'svelte/elements';
   import { cn } from '$lib/utils';
   import { NUMBER_FIELD_CONTEXT_KEY, type NumberFieldContext } from './number-field.svelte';
+  import { createPressRepeat } from './number-field-press-repeat.svelte';
 
   type Props = Omit<HTMLButtonAttributes, 'type' | 'disabled' | 'onclick'> & {
     /** Custom rendering for the icon, defaults to a minus icon. */
@@ -18,6 +19,11 @@
   let isAtMin = $derived(
     ctx?.value !== undefined && ctx?.min !== undefined ? ctx.value <= ctx.min : false
   );
+
+  const pressRepeat = createPressRepeat(
+    () => ctx?.decrement(),
+    () => ctx?.disabled || isAtMin
+  );
 </script>
 
 <button
@@ -29,7 +35,7 @@
     className
   )}
   data-slot="number-field-decrement"
-  onclick={() => ctx?.decrement()}
+  {...pressRepeat}
   {...restProps}
 >
   {#if children}

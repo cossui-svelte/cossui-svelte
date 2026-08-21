@@ -23,38 +23,79 @@
 
   let scrubEl = $state<HTMLSpanElement | null>(null);
   let isScrubbing = $state(false);
-  let lastX = $state(0);
+  let usingPointerLock = $state(false);
+  let lastX = 0;
   let showCursor = $state(false);
   let cursorX = $state(0);
   let cursorY = $state(0);
 
+  const supportsPointerLock =
+    typeof Element !== 'undefined' && 'requestPointerLock' in Element.prototype;
+
   function handlePointerDown(e: PointerEvent) {
     if (ctx.disabled) return;
     isScrubbing = true;
-    lastX = e.clientX;
     showCursor = true;
     cursorX = e.clientX;
     cursorY = e.clientY;
-    scrubEl?.setPointerCapture(e.pointerId);
+
+    if (supportsPointerLock) {
+      usingPointerLock = true;
+      scrubEl?.requestPointerLock();
+    } else {
+      lastX = e.clientX;
+      scrubEl?.setPointerCapture(e.pointerId);
+    }
   }
 
   function handlePointerMove(e: PointerEvent) {
     if (!isScrubbing) return;
+
+    if (usingPointerLock) {
+      // The OS cursor is locked in place, so wrap our decorative cursor within the
+      // viewport instead of letting it run off-screen — that's what makes the drag feel infinite.
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      cursorX = (((cursorX + e.movementX) % w) + w) % w;
+      cursorY = (((cursorY + e.movementY) % h) + h) % h;
+      if (e.movementX !== 0) ctx.applyDelta(e.movementX * ctx.step);
+      return;
+    }
+
     cursorX = e.clientX;
     cursorY = e.clientY;
     const delta = e.clientX - lastX;
     lastX = e.clientX;
-    if (delta !== 0) {
-      const change = delta * ctx.step;
-      ctx.applyDelta(change);
-    }
+    if (delta !== 0) ctx.applyDelta(delta * ctx.step);
   }
 
   function handlePointerUp(e: PointerEvent) {
     isScrubbing = false;
     showCursor = false;
-    scrubEl?.releasePointerCapture(e.pointerId);
+    if (usingPointerLock) {
+      usingPointerLock = false;
+      if (document.pointerLockElement === scrubEl) document.exitPointerLock();
+    } else {
+      scrubEl?.releasePointerCapture(e.pointerId);
+    }
   }
+
+  function handlePointerLockChange() {
+    // The browser can release the lock on its own (e.g. Escape) without a pointerup.
+    if (usingPointerLock && document.pointerLockElement !== scrubEl) {
+      isScrubbing = false;
+      showCursor = false;
+      usingPointerLock = false;
+    }
+  }
+
+  $effect(() => {
+    document.addEventListener('pointerlockchange', handlePointerLockChange);
+    return () => {
+      document.removeEventListener('pointerlockchange', handlePointerLockChange);
+      if (document.pointerLockElement === scrubEl) document.exitPointerLock();
+    };
+  });
 </script>
 
 <span

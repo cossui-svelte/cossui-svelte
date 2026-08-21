@@ -69,7 +69,7 @@
 			"type": "registry:ui",
 			"path": "sidebar/sidebar-input.svelte",
 			"target": "$lib/components/ui/sidebar/sidebar-input.svelte",
-			"content": "<script lang=\"ts\">\n  import { Input } from '$lib/components/ui/input';\n  import { cn } from '$lib/utils.js';\n  import type { ComponentProps } from 'svelte';\n\n  let {\n    ref = $bindable(null),\n    value = $bindable(''),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof Input> = $props();\n</script>\n\n<Input\n  bind:ref\n  bind:value\n  data-slot=\"sidebar-input\"\n  data-sidebar=\"input\"\n  class={cn('h-8 w-full bg-input/50 shadow-none', className)}\n  {...restProps}\n/>\n"
+			"content": "<script lang=\"ts\">\n  import { Input } from '$lib/components/ui/input';\n  import { cn } from '$lib/utils.js';\n  import type { ComponentProps } from 'svelte';\n\n  let {\n    ref = $bindable(null),\n    value = $bindable(''),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof Input> = $props();\n</script>\n\n<Input\n  bind:ref\n  bind:value\n  data-slot=\"sidebar-input\"\n  data-sidebar=\"input\"\n  class={cn('h-8 w-full bg-background shadow-none', className)}\n  {...restProps}\n/>\n"
 		},
 		{
 			"type": "registry:ui",

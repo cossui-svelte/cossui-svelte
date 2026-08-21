@@ -333,11 +333,29 @@ export class PinInputRootState {
     this.#prevInputMetadata.prev = [s, e, dir];
   };
 
+  /**
+   * Keeps only the characters that individually satisfy the configured pattern.
+   * Used as a defense-in-depth filter for both typed/autofilled input and paste,
+   * since `preventDefault()` on a native `input` event does not actually revert
+   * a value the browser (or a mobile IME/virtual keyboard) already committed.
+   */
+  #filterToPattern(text: string): string {
+    if (!this.#regexPattern) return text;
+    return Array.from(text)
+      .filter((char) => this.#regexPattern!.test(char))
+      .join('');
+  }
+
   oninput = (e: Event & { currentTarget: HTMLInputElement }) => {
-    const newValue = e.currentTarget.value.slice(0, this.opts.maxLength.current);
-    if (newValue.length > 0 && this.#regexPattern && !this.#regexPattern.test(newValue)) {
-      e.preventDefault();
-      return;
+    const rawValue = e.currentTarget.value.slice(0, this.opts.maxLength.current);
+    const newValue = this.#filterToPattern(rawValue);
+
+    if (newValue !== e.currentTarget.value) {
+      // some mobile virtual keyboards/IMEs don't fire a preventable `keydown`
+      // per character, so invalid characters can land directly in the DOM
+      // value; correct it here since `input` events aren't cancelable.
+      e.currentTarget.value = newValue;
+      e.currentTarget.setSelectionRange(newValue.length, newValue.length);
     }
 
     const maybeHasDeleted =
@@ -386,17 +404,36 @@ export class PinInputRootState {
       !this.opts.pasteTransformer?.current &&
       (!this.#initialLoad.isIOS || !e.clipboardData || !input)
     ) {
-      const newValue = getNewValue(e.clipboardData?.getData('text/plain'));
-      if (isValueInvalid(newValue)) {
-        e.preventDefault();
+      const rawContent = e.clipboardData?.getData('text/plain') ?? '';
+      const filteredContent = this.#filterToPattern(rawContent);
+      if (filteredContent === rawContent) {
+        // nothing to filter out; let the native paste behavior handle it
+        const newValue = getNewValue(rawContent);
+        if (isValueInvalid(newValue)) {
+          e.preventDefault();
+        }
+        return;
       }
+      // pasted text contains characters the pattern rejects (e.g. spaces or
+      // dashes in a copied code) - strip them instead of rejecting the whole
+      // paste, then insert the filtered content ourselves.
+      e.preventDefault();
+      const newValue = getNewValue(filteredContent);
+      if (isValueInvalid(newValue)) return;
+      input.value = newValue;
+      this.opts.value.current = newValue;
+      const selStart = Math.min(newValue.length, this.opts.maxLength.current - 1);
+      const selEnd = newValue.length;
+      input.setSelectionRange(selStart, selEnd);
+      this.#mirrorSelectionStart = selStart;
+      this.#mirrorSelectionEnd = selEnd;
       return;
     }
 
     const rawContent = e.clipboardData?.getData('text/plain') ?? '';
     const content = this.opts.pasteTransformer?.current
       ? this.opts.pasteTransformer.current(rawContent)
-      : rawContent;
+      : this.#filterToPattern(rawContent);
 
     e.preventDefault();
     const newValue = getNewValue(content);

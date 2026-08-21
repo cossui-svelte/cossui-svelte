@@ -307,7 +307,7 @@ export const COMPONENT_DEPENDENCIES: Record<string, string[]> = {
   tabs: ['@shardsui/svelte'],
   textarea: ['@shardsui/svelte'],
   toast: ['@shardsui/svelte'],
-  toggle: ['tailwind-variants', '@shardsui/svelte'],
+  toggle: ['@shardsui/svelte', 'tailwind-variants'],
   'toggle-group': ['@shardsui/svelte'],
   toolbar: ['@shardsui/svelte'],
   tooltip: ['@shardsui/svelte'],

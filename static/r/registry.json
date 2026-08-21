@@ -431,7 +431,8 @@
 			],
 			"registryDependencies": [
 				"button",
-				"utils"
+				"utils",
+				"range-calendar"
 			],
 			"files": [
 				{
@@ -759,7 +760,7 @@
 			"description": "A chart component for visualizing data in various formats.",
 			"type": "registry:ui",
 			"dependencies": [
-				"layerchart@^2.2.0"
+				"layerchart@^2.3.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -918,6 +919,7 @@
 				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
+				"scroll-area",
 				"utils"
 			],
 			"files": [
@@ -1022,6 +1024,7 @@
 				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
+				"autocomplete",
 				"dialog",
 				"scroll-area",
 				"utils"
@@ -2149,6 +2152,11 @@
 				},
 				{
 					"type": "registry:ui",
+					"path": "number-field/number-field-press-repeat.svelte.ts",
+					"target": "$lib/components/ui/number-field/number-field-press-repeat.svelte.ts"
+				},
+				{
+					"type": "registry:ui",
 					"path": "number-field/number-field-scrub-area.svelte",
 					"target": "$lib/components/ui/number-field/number-field-scrub-area.svelte"
 				},
@@ -2609,6 +2617,11 @@
 				},
 				{
 					"type": "registry:ui",
+					"path": "select/select-button.svelte",
+					"target": "$lib/components/ui/select/select-button.svelte"
+				},
+				{
+					"type": "registry:ui",
 					"path": "select/select-content.svelte",
 					"target": "$lib/components/ui/select/select-content.svelte"
 				},
@@ -2619,8 +2632,18 @@
 				},
 				{
 					"type": "registry:ui",
+					"path": "select/select-group.svelte",
+					"target": "$lib/components/ui/select/select-group.svelte"
+				},
+				{
+					"type": "registry:ui",
 					"path": "select/select-item.svelte",
 					"target": "$lib/components/ui/select/select-item.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "select/select-label.svelte",
+					"target": "$lib/components/ui/select/select-label.svelte"
 				},
 				{
 					"type": "registry:ui",
@@ -2639,13 +2662,13 @@
 				},
 				{
 					"type": "registry:ui",
-					"path": "select/select-trigger.svelte",
-					"target": "$lib/components/ui/select/select-trigger.svelte"
+					"path": "select/select-trigger-variants.ts",
+					"target": "$lib/components/ui/select/select-trigger-variants.ts"
 				},
 				{
 					"type": "registry:ui",
-					"path": "select/select-trigget-variants.ts",
-					"target": "$lib/components/ui/select/select-trigget-variants.ts"
+					"path": "select/select-trigger.svelte",
+					"target": "$lib/components/ui/select/select-trigger.svelte"
 				},
 				{
 					"type": "registry:ui",
@@ -2692,6 +2715,7 @@
 				"@shardsui/svelte@0.1.0-beta.0"
 			],
 			"registryDependencies": [
+				"button",
 				"utils",
 				"scroll-area"
 			],
@@ -3175,6 +3199,11 @@
 				},
 				{
 					"type": "registry:ui",
+					"path": "tabs/segmented-control.ts",
+					"target": "$lib/components/ui/tabs/segmented-control.ts"
+				},
+				{
+					"type": "registry:ui",
 					"path": "tabs/tabs-indicator.svelte",
 					"target": "$lib/components/ui/tabs/tabs-indicator.svelte"
 				},
@@ -3342,8 +3371,8 @@
 			"description": "A two-state button that can be toggled on or off.",
 			"type": "registry:ui",
 			"dependencies": [
-				"tailwind-variants@^3.3.1",
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.0",
+				"tailwind-variants@^3.3.1"
 			],
 			"registryDependencies": [
 				"utils"
@@ -7183,7 +7212,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"layerchart",
-				"layerchart@^2.2.0"
+				"layerchart@^2.3.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -7205,7 +7234,7 @@
 				"d3-scale",
 				"layerchart",
 				"d3-scale@^4.0.2",
-				"layerchart@^2.2.0"
+				"layerchart@^2.3.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -7225,7 +7254,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"layerchart",
-				"layerchart@^2.2.0"
+				"layerchart@^2.3.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -7247,7 +7276,7 @@
 				"d3-scale",
 				"layerchart",
 				"d3-scale@^4.0.2",
-				"layerchart@^2.2.0"
+				"layerchart@^2.3.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -7271,7 +7300,7 @@
 				"layerchart",
 				"d3-scale@^4.0.2",
 				"d3-shape@^3.2.0",
-				"layerchart@^2.2.0"
+				"layerchart@^2.3.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -7295,7 +7324,7 @@
 				"layerchart",
 				"d3-scale@^4.0.2",
 				"d3-shape@^3.2.0",
-				"layerchart@^2.2.0"
+				"layerchart@^2.3.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -7319,7 +7348,7 @@
 				"layerchart",
 				"d3-scale@^4.0.2",
 				"d3-shape@^3.2.0",
-				"layerchart@^2.2.0"
+				"layerchart@^2.3.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -7339,7 +7368,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"layerchart",
-				"layerchart@^2.2.0"
+				"layerchart@^2.3.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -7359,7 +7388,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"layerchart",
-				"layerchart@^2.2.0"
+				"layerchart@^2.3.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -7381,7 +7410,7 @@
 				"d3-scale",
 				"layerchart",
 				"d3-scale@^4.0.2",
-				"layerchart@^2.2.0"
+				"layerchart@^2.3.0"
 			],
 			"registryDependencies": [
 				"chart"

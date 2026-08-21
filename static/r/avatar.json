@@ -21,13 +21,13 @@
 			"type": "registry:ui",
 			"path": "avatar/avatar.svelte",
 			"target": "$lib/components/ui/avatar/avatar.svelte",
-			"content": "<script lang=\"ts\">\n  import { Avatar as AvatarPrimitive } from '@shardsui/svelte/avatar';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    size = 'default',\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof AvatarPrimitive.Root> & {\n    size?: 'default' | 'sm' | 'lg';\n  } = $props();\n</script>\n\n<AvatarPrimitive.Root\n  bind:ref\n  data-slot=\"avatar\"\n  data-size={size}\n  class={cn('relative flex size-8 shrink-0 overflow-hidden rounded-full', className)}\n  {...restProps}\n/>\n"
+			"content": "<script lang=\"ts\">\n  import { Avatar as AvatarPrimitive } from '@shardsui/svelte/avatar';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof AvatarPrimitive.Root> = $props();\n</script>\n\n<AvatarPrimitive.Root\n  bind:ref\n  data-slot=\"avatar\"\n  class={cn('relative flex size-8 shrink-0 overflow-hidden rounded-full', className)}\n  {...restProps}\n/>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "avatar/index.ts",
 			"target": "$lib/components/ui/avatar/index.ts",
-			"content": "export { default as Avatar } from './avatar.svelte';\nexport { default as AvatarFallback } from './avatar-fallback.svelte';\nexport { default as AvatarImage } from './avatar-image.svelte';\n"
+			"content": "import { Avatar as AvatarPrimitive } from '@shardsui/svelte/avatar';\n\nexport { default as Avatar } from './avatar.svelte';\nexport { default as AvatarFallback } from './avatar-fallback.svelte';\nexport { default as AvatarImage } from './avatar-image.svelte';\nexport { AvatarPrimitive };\n"
 		}
 	],
 	"registryDependencies": [

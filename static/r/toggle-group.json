@@ -9,19 +9,19 @@
 			"type": "registry:ui",
 			"path": "toggle-group/index.ts",
 			"target": "$lib/components/ui/toggle-group/index.ts",
-			"content": "export { default as ToggleGroup } from './toggle-group.svelte';\nexport { default as ToggleGroupItem } from './toggle-group-item.svelte';\nexport { default as ToggleGroupSeparator } from './toggle-group-separator.svelte';\n"
+			"content": "import { ToggleGroup as ToggleGroupPrimitive } from '@shardsui/svelte/toggle-group';\n\nexport { default as ToggleGroup } from './toggle-group.svelte';\nexport { default as ToggleGroupItem } from './toggle-group-item.svelte';\nexport { default as ToggleGroupSeparator } from './toggle-group-separator.svelte';\nexport { ToggleGroupPrimitive };\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "toggle-group/toggle-group-item.svelte",
 			"target": "$lib/components/ui/toggle-group/toggle-group-item.svelte",
-			"content": "<script lang=\"ts\">\n  import { Toggle as TogglePrimitive } from '@shardsui/svelte/toggle';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n  import { type ToggleSize, type ToggleVariant, toggleVariants } from '../toggle/toggle-variants';\n  import { getToggleGroupCtx } from './toggle-group.svelte';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    size,\n    variant,\n    ...restProps\n  }: ComponentProps<typeof TogglePrimitive> & {\n    size?: ToggleSize;\n    variant?: ToggleVariant;\n  } = $props();\n\n  const ctx = getToggleGroupCtx();\n</script>\n\n<TogglePrimitive\n  bind:ref\n  data-slot=\"toggle-group-item\"\n  class={cn(\n    toggleVariants({\n      size: ctx.size || size,\n      variant: ctx.variant || variant\n    }),\n    className\n  )}\n  {...restProps}\n/>\n"
+			"content": "<script lang=\"ts\">\n  import { Toggle as TogglePrimitive } from '@shardsui/svelte/toggle';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n  import { type ToggleSize, type ToggleVariant, toggleVariants } from '../toggle/toggle-variants';\n  import { getToggleGroupCtx } from './toggle-group.svelte';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    size,\n    variant,\n    ...restProps\n  }: ComponentProps<typeof TogglePrimitive> & {\n    size?: ToggleSize;\n    variant?: ToggleVariant;\n  } = $props();\n\n  const ctx = getToggleGroupCtx();\n  const resolvedSize = $derived(ctx.size || size);\n  const resolvedVariant = $derived(ctx.variant || variant);\n</script>\n\n<TogglePrimitive\n  bind:ref\n  data-slot=\"toggle\"\n  data-size={resolvedSize}\n  data-variant={resolvedVariant}\n  class={cn(\n    toggleVariants({\n      size: resolvedSize,\n      variant: resolvedVariant\n    }),\n    className\n  )}\n  {...restProps}\n/>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "toggle-group/toggle-group-separator.svelte",
 			"target": "$lib/components/ui/toggle-group/toggle-group-separator.svelte",
-			"content": "<script lang=\"ts\">\n  import type { ComponentProps } from 'svelte';\n  import { Separator } from '$lib/components/ui/separator';\n  import { cn } from '$lib/utils';\n  import { getToggleGroupCtx } from './toggle-group.svelte';\n\n  let { class: className, ...restProps }: ComponentProps<typeof Separator> = $props();\n\n  let orientation = getToggleGroupCtx()?.orientation;\n\n  if (orientation === 'vertical') orientation = 'horizontal';\n  else orientation = 'vertical';\n</script>\n\n<Separator\n  class={cn(\n    'pointer-events-none relative bg-input before:absolute before:inset-0 dark:before:bg-input/32',\n    className\n  )}\n  {orientation}\n  {...restProps}\n/>\n"
+			"content": "<script lang=\"ts\">\n  import type { ComponentProps } from 'svelte';\n  import { Separator } from '$lib/components/ui/separator';\n  import { cn } from '$lib/utils';\n\n  let {\n    class: className,\n    orientation = 'vertical',\n    ...restProps\n  }: ComponentProps<typeof Separator> = $props();\n</script>\n\n<Separator\n  class={cn(\n    'pointer-events-none relative bg-input before:absolute before:inset-0 dark:before:bg-input/32',\n    className\n  )}\n  {orientation}\n  {...restProps}\n/>\n"
 		},
 		{
 			"type": "registry:ui",

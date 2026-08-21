@@ -24,6 +24,7 @@
     size = 'default',
     clearProps,
     triggerProps,
+    type,
     ...restProps
   }: Props = $props();
 
@@ -42,14 +43,14 @@
   });
 </script>
 
-<div
+<AutocompletePrimitive.InputGroup
   class="relative not-has-[>*.w-full]:w-fit w-full text-foreground has-disabled:opacity-64"
   data-slot="autocomplete-input-group"
 >
   {#if startAddon}
     <div
       aria-hidden="true"
-      class="[&_svg]:-mx-0.5 pointer-events-none absolute inset-y-0 start-px z-10 flex items-center ps-[calc(--spacing(3)-1px)] opacity-80 [&_svg:not([class*='size-'])]:size-4.5 sm:[&_svg:not([class*='size-'])]:size-4"
+      class="[&_svg]:-mx-0.5 pointer-events-none absolute inset-y-0 start-px z-10 flex items-center ps-[calc(--spacing(3)-1px)] opacity-80 has-[+[data-size=sm]]:ps-[calc(--spacing(2.5)-1px)] [&_svg:not([class*='size-'])]:size-4.5 sm:[&_svg:not([class*='size-'])]:size-4"
       data-slot="autocomplete-start-addon"
     >
       {@render startAddon()}
@@ -62,7 +63,7 @@
   >
     <AutocompletePrimitive.Input
       class={cn(
-        'h-8.5 w-full min-w-0 rounded-[inherit] px-[calc(--spacing(3)-1px)] leading-8.5 outline-none placeholder:text-muted-foreground/72 sm:h-7.5 sm:leading-7.5 [transition:background-color_5000000s_ease-in-out_0s]',
+        'h-8.5 w-full min-w-0 rounded-[inherit] px-[calc(--spacing(3)-1px)] leading-8.5 outline-none placeholder:text-muted-foreground/72 sm:h-7.5 sm:leading-7.5 [transition:background-color_5000000s_ease-in-out_0s] autofill:[-webkit-text-fill-color:var(--foreground)]',
         startAddon &&
           size !== 'sm' &&
           'ps-[calc(--spacing(8.5)-1px)] sm:ps-[calc(--spacing(8)-1px)]',
@@ -72,9 +73,14 @@
         (showTrigger || showClear) && (size === 'sm' ? 'pe-6.5' : 'pe-7'),
         size === 'sm' && 'h-7.5 px-[calc(--spacing(2.5)-1px)] leading-7.5 sm:h-6.5 sm:leading-6.5',
         size === 'lg' && 'h-9.5 leading-9.5 sm:h-8.5 sm:leading-8.5',
+        type === 'search' &&
+          '[&::-webkit-search-cancel-button]:appearance-none [&::-webkit-search-decoration]:appearance-none [&::-webkit-search-results-button]:appearance-none [&::-webkit-search-results-decoration]:appearance-none',
+        type === 'file' &&
+          'text-muted-foreground file:me-3 file:bg-transparent file:font-medium file:text-foreground file:text-sm',
         className
       )}
       autocomplete="off"
+      {type}
       {...restProps as Record<string, unknown>}
     />
   </span>
@@ -96,4 +102,4 @@
       {...clearPropsRest}
     />
   {/if}
-</div>
+</AutocompletePrimitive.InputGroup>

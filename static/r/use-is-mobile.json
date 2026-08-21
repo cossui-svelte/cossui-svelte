@@ -8,7 +8,7 @@
 			"type": "registry:hook",
 			"path": "use-is-mobile.svelte.ts",
 			"target": "$lib/hooks/use-is-mobile.svelte.ts",
-			"content": "import { MediaQuery } from 'svelte/reactivity';\n\nconst MOBILE_BREAKPOINT = 768;\n\nexport class IsMobile extends MediaQuery {\n  constructor() {\n    super(`max-width: ${MOBILE_BREAKPOINT - 1}px`);\n  }\n}\n"
+			"content": "import { MediaQuery } from 'svelte/reactivity';\n\nconst MOBILE_BREAKPOINT = 800;\n\nexport class IsMobile extends MediaQuery {\n  constructor() {\n    super(`max-width: ${MOBILE_BREAKPOINT - 1}px`);\n  }\n}\n"
 		}
 	],
 	"registryDependencies": [],

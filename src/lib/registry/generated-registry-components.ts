@@ -185,7 +185,7 @@ const allComponents: RegistryUiData = {
     isnew: false,
     istodo: false,
     npmDependencies: ['@lucide/svelte', '@shardsui/svelte'],
-    registryDependencies: []
+    registryDependencies: ['scroll-area']
   },
   command: {
     name: 'Command',
@@ -196,7 +196,7 @@ const allComponents: RegistryUiData = {
     isnew: false,
     istodo: false,
     npmDependencies: ['@lucide/svelte', '@shardsui/svelte'],
-    registryDependencies: ['dialog', 'scroll-area']
+    registryDependencies: ['autocomplete', 'dialog', 'scroll-area']
   },
   'context-menu': {
     name: 'Context Menu',
@@ -541,7 +541,7 @@ const allComponents: RegistryUiData = {
     isnew: false,
     istodo: false,
     npmDependencies: ['@lucide/svelte', '@shardsui/svelte'],
-    registryDependencies: []
+    registryDependencies: ['button']
   },
   sidebar: {
     name: 'Sidebar',
