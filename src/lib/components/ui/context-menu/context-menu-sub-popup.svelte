@@ -30,7 +30,9 @@
     {align}
     alignOffset={alignOffset ?? defaultAlignOffset}
     {sideOffset}
+    side="inline-end"
     class="z-50"
+    data-slot="context-menu-positioner"
   >
     <ContextMenuPrimitive.Popup
       bind:ref

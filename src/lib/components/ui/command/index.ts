@@ -25,6 +25,6 @@ export { CommandCollection };
 export const CommandDialogPortal = CommandDialogPrimitive.Portal;
 export const CommandDialogBackdrop = CommandDialogPrimitive.Backdrop;
 export const CommandDialogViewport = CommandDialogPrimitive.Viewport;
-export const CommandCreateHandle = CommandDialogPrimitive.Handle;
+export const CommandCreateHandle = () => new CommandDialogPrimitive.Handle();
 
 export { CommandDialogPrimitive };

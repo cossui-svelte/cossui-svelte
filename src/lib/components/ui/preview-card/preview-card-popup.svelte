@@ -37,6 +37,7 @@
     {alignOffset}
     anchor={customAnchor}
     class="z-50"
+    data-slot="preview-card-positioner"
   >
     <PreviewCardPrimitive.Popup
       bind:ref
@@ -44,7 +45,7 @@
         'relative flex w-64 origin-(--transform-origin) text-balance rounded-lg border bg-popover not-dark:bg-clip-padding p-4 text-popover-foreground text-sm shadow-lg/5 transition-[scale,opacity] data-starting-style:scale-98 data-starting-style:opacity-0 data-ending-style:scale-98 data-ending-style:opacity-0 before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-lg)-1px)] before:shadow-[0_1px_--theme(--color-black/4%)] dark:before:shadow-[0_-1px_--theme(--color-white/6%)]',
         className
       )}
-      data-slot="preview-card-popup"
+      data-slot="preview-card-content"
       {...restProps}
     >
       {@render children?.()}

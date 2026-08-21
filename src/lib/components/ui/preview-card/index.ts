@@ -1,9 +1,12 @@
+import { PreviewCard as PreviewCardPrimitive } from '@shardsui/svelte/preview-card';
+
 export { default as PreviewCard, default as HoverCard } from './preview-card.svelte';
 export {
   default as PreviewCardPopup,
-  default as LinkPreviewContent
+  default as HoverCardContent
 } from './preview-card-popup.svelte';
 export {
   default as PreviewCardTrigger,
-  default as LinkPreviewTrigger
+  default as HoverCardTrigger
 } from './preview-card-trigger.svelte';
+export { PreviewCardPrimitive };

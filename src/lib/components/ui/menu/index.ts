@@ -36,5 +36,5 @@ export { default as MenuTrigger, default as DropdownMenuTrigger } from './menu-t
 
 export const MenuPortal = MenuPrimitive.Portal;
 export const DropdownMenuPortal = MenuPrimitive.Portal;
-export const MenuCreateHandle = MenuPrimitive.Handle;
-export const DropdownMenuCreateHandle = MenuPrimitive.Handle;
+export const MenuCreateHandle = () => new MenuPrimitive.Handle();
+export const DropdownMenuCreateHandle = () => new MenuPrimitive.Handle();

@@ -11,7 +11,7 @@
 </script>
 
 <MeterPrimitive.Track
-  class={cn('block h-2 w-full overflow-hidden rounded-full bg-input', className)}
+  class={cn('block h-2 w-full overflow-hidden bg-input', className)}
   data-slot="meter-track"
   {...restProps}
 >

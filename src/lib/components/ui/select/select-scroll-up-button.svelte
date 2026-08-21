@@ -14,10 +14,10 @@
 <SelectPrimitive.ScrollUpArrow
   bind:ref
   class={cn(
-    'inset-x-0 top-0 z-50 flex h-6 w-full cursor-default items-center justify-center before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-[200%] before:rounded-t-[calc(var(--radius-lg)-1px)] before:bg-linear-to-b before:from-50% before:from-popover',
+    'top-0 z-50 flex h-6 w-full cursor-default items-center justify-center before:pointer-events-none before:absolute before:inset-x-px before:top-px before:h-[200%] before:rounded-t-[calc(var(--radius-lg)-1px)] before:bg-linear-to-b before:from-50% before:from-popover',
     className
   )}
-  data-slot="select-scroll-up-button"
+  data-slot="select-scroll-up-arrow"
   {...restProps}
 >
   <ChevronUp class="relative size-4.5 sm:size-4" />

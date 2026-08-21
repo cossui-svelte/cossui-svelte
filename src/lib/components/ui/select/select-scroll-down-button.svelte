@@ -14,10 +14,10 @@
 <SelectPrimitive.ScrollDownArrow
   bind:ref
   class={cn(
-    'inset-x-0 bottom-0 z-50 flex h-6 w-full cursor-default items-center justify-center before:pointer-events-none before:absolute before:inset-x-0 before:bottom-0 before:h-[200%] before:rounded-b-[calc(var(--radius-lg)-1px)] before:bg-linear-to-t before:from-50% before:from-popover',
+    'bottom-0 z-50 flex h-6 w-full cursor-default items-center justify-center before:pointer-events-none before:absolute before:inset-x-px before:bottom-px before:h-[200%] before:rounded-b-[calc(var(--radius-lg)-1px)] before:bg-linear-to-t before:from-50% before:from-popover',
     className
   )}
-  data-slot="select-scroll-down-button"
+  data-slot="select-scroll-down-arrow"
   {...restProps}
 >
   <ChevronDown class="relative size-4.5 sm:size-4" />

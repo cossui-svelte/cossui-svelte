@@ -10,7 +10,7 @@
 </script>
 
 <SelectPrimitive.Value
-  class={cn('flex-1 truncate data-placeholder:text-muted-foreground/72', className)}
+  class={cn('flex-1 truncate data-placeholder:text-muted-foreground', className)}
   data-slot="select-value"
   {...restProps}
 />

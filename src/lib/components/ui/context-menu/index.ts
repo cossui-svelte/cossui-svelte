@@ -1,3 +1,5 @@
+import { ContextMenu as ContextMenuPrimitive } from '@shardsui/svelte/context-menu';
+
 export { default as ContextMenu } from './context-menu.svelte';
 export { default as ContextMenuCheckboxItem } from './context-menu-checkbox-item.svelte';
 export { default as ContextMenuGroup } from './context-menu-group.svelte';
@@ -13,3 +15,7 @@ export { default as ContextMenuSub } from './context-menu-sub.svelte';
 export { default as ContextMenuSubPopup } from './context-menu-sub-popup.svelte';
 export { default as ContextMenuSubTrigger } from './context-menu-sub-trigger.svelte';
 export { default as ContextMenuTrigger } from './context-menu-trigger.svelte';
+
+export const ContextMenuPortal = ContextMenuPrimitive.Portal;
+
+export { ContextMenuPrimitive };

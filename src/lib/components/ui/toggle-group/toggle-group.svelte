@@ -13,7 +13,13 @@
   }
 
   export function getToggleGroupCtx() {
-    return getContext<Required<ToggleGroupProps>>('toggleGroup');
+    return (
+      getContext<Required<ToggleGroupProps>>('toggleGroup') ?? {
+        orientation: 'horizontal',
+        size: 'default',
+        variant: 'default'
+      }
+    );
   }
 </script>
 

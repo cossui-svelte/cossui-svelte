@@ -25,4 +25,4 @@ export { default as DrawerTitle } from './drawer-title.svelte';
 export { default as DrawerTrigger } from './drawer-trigger.svelte';
 export { default as DrawerViewport } from './drawer-viewport.svelte';
 
-export const DrawerCreateHandle = DrawerPrimitive.Handle;
+export const DrawerCreateHandle = () => new DrawerPrimitive.Handle();

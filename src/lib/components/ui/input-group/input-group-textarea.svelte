@@ -10,11 +10,4 @@
   }: ComponentProps<typeof Textarea> = $props();
 </script>
 
-<Textarea
-  bind:ref
-  data-slot="input-group-control"
-  class={className}
-  unstyled
-  bind:value
-  {...props}
-/>
+<Textarea bind:ref class={className} unstyled bind:value {...props} />

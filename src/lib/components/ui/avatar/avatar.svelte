@@ -13,6 +13,9 @@
 <AvatarPrimitive.Root
   bind:ref
   data-slot="avatar"
-  class={cn('relative flex size-8 shrink-0 overflow-hidden rounded-full', className)}
+  class={cn(
+    'inline-flex size-8 shrink-0 select-none items-center justify-center overflow-hidden rounded-full bg-background align-middle font-medium text-xs',
+    className
+  )}
   {...restProps}
 />

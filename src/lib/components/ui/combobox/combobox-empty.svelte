@@ -7,7 +7,7 @@
 </script>
 
 <ComboboxPrimitive.Empty
-  class={cn('p-2 text-center text-base text-muted-foreground sm:text-sm', className)}
+  class={cn('not-empty:p-2 text-center text-base text-muted-foreground sm:text-sm', className)}
   data-slot="combobox-empty"
   {...restProps}
 />
