@@ -1,6 +1,7 @@
 <script lang="ts">
   import ChevronUpIcon from '@lucide/svelte/icons/chevron-up';
   import { Menu, MenuItem, MenuPopup, MenuTrigger } from '$lib/components/ui/menu';
+  import { cn } from '$lib/utils';
   import {
     Sidebar,
     SidebarContent,
@@ -30,7 +31,10 @@
                 {#snippet child({ props })}
                   <MenuTrigger
                     {...props}
-                    class="data-popup-open:bg-sidebar-accent data-popup-open:text-sidebar-accent-foreground"
+                    class={cn(
+                      props.class as string,
+                      'data-popup-open:bg-sidebar-accent data-popup-open:text-sidebar-accent-foreground'
+                    )}
                   >
                     Username
                     <ChevronUpIcon class="ms-auto" />

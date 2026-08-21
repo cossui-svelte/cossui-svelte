@@ -1,6 +1,7 @@
 <script lang="ts">
   import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
   import { Menu, MenuItem, MenuPopup, MenuTrigger } from '$lib/components/ui/menu';
+  import { cn } from '$lib/utils';
   import {
     Sidebar,
     SidebarContent,
@@ -27,7 +28,10 @@
                 {#snippet child({ props })}
                   <MenuTrigger
                     {...props}
-                    class="data-popup-open:bg-sidebar-accent data-popup-open:text-sidebar-accent-foreground"
+                    class={cn(
+                      props.class as string,
+                      'data-popup-open:bg-sidebar-accent data-popup-open:text-sidebar-accent-foreground'
+                    )}
                   >
                     Select Workspace
                     <ChevronDownIcon class="ms-auto" />

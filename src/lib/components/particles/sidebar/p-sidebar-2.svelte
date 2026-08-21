@@ -4,6 +4,7 @@
   import SearchIcon from '@lucide/svelte/icons/search';
   import { Label } from '$lib/components/ui/label';
   import { Menu, MenuItem, MenuPopup, MenuTrigger } from '$lib/components/ui/menu';
+  import { cn } from '$lib/utils';
   import {
     Sidebar,
     SidebarContent,
@@ -92,7 +93,10 @@
                 {#snippet child({ props })}
                   <MenuTrigger
                     {...props}
-                    class="data-popup-open:bg-sidebar-accent data-popup-open:text-sidebar-accent-foreground"
+                    class={cn(
+                      props.class as string,
+                      'data-popup-open:bg-sidebar-accent data-popup-open:text-sidebar-accent-foreground'
+                    )}
                   >
                     <div class="flex flex-col gap-0.5 leading-none">
                       <span class="font-medium">Documentation</span>
