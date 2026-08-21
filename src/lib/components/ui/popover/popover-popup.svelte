@@ -46,7 +46,7 @@
       class={cn(
         'relative flex h-(--popup-height,auto) w-(--popup-width,auto) rounded-lg border bg-popover not-dark:bg-clip-padding text-popover-foreground shadow-lg/5 outline-none',
         'origin-(--transform-origin)',
-        'transition-[width,height,scale,opacity] duration-150 ease-out data-starting-style:scale-98 data-starting-style:opacity-0 data-ending-style:scale-98 data-ending-style:opacity-0',
+        'transition-[width,height,scale,opacity] data-starting-style:scale-98 data-starting-style:opacity-0',
         'before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-lg)-1px)] before:shadow-[0_1px_--theme(--color-black/4%)] dark:before:shadow-[0_-1px_--theme(--color-white/6%)]',
         'has-data-[slot=calendar]:rounded-xl has-data-[slot=calendar]:before:rounded-[calc(var(--radius-xl)-1px)]',
         tooltipStyle &&

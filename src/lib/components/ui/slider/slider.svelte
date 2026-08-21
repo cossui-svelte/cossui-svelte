@@ -9,7 +9,7 @@
     orientation = 'horizontal',
     ref = $bindable(null),
     showTooltip = false,
-    thumbCollisionBehavior = 'swap',
+    thumbCollisionBehavior = 'push',
     tooltipContent,
     value = $bindable(),
     ...restProps
@@ -18,8 +18,8 @@
     orientation?: 'horizontal' | 'vertical';
     ref?: HTMLElement | null;
     showTooltip?: boolean;
-    /** Whether thumbs swap position (push past one another) or can overlap/cross when dragged into each other. */
-    thumbCollisionBehavior?: 'swap' | 'none';
+    /** How adjacent thumbs behave when dragged into each other: `push` moves the other thumb along, `swap` exchanges their positions, `none` allows them to overlap/cross. */
+    thumbCollisionBehavior?: 'push' | 'swap' | 'none';
     tooltipContent?: (value: number) => number | string;
     value?: number | number[];
     [key: string]: unknown;
@@ -70,7 +70,7 @@
   bind:ref
   bind:value
   thumbAlignment="edge"
-  thumbCollisionBehavior={thumbCollisionBehavior === 'none' ? 'none' : 'push'}
+  {thumbCollisionBehavior}
   {orientation}
   class={cn('data-[orientation=horizontal]:w-full', className)}
   data-slot="slider"

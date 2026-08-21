@@ -196,7 +196,7 @@ const allComponents: RegistryUiData = {
     isnew: false,
     istodo: false,
     npmDependencies: ['@lucide/svelte', '@shardsui/svelte'],
-    registryDependencies: ['autocomplete', 'dialog', 'scroll-area']
+    registryDependencies: ['autocomplete', 'scroll-area']
   },
   'context-menu': {
     name: 'Context Menu',

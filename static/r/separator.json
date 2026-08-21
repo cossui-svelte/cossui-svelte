@@ -9,7 +9,7 @@
 			"type": "registry:ui",
 			"path": "separator/index.ts",
 			"target": "$lib/components/ui/separator/index.ts",
-			"content": "export { default as Separator } from './separator.svelte';\n"
+			"content": "import { Separator as SeparatorPrimitive } from '@shardsui/svelte/separator';\n\nexport { default as Separator } from './separator.svelte';\nexport { SeparatorPrimitive };\n"
 		},
 		{
 			"type": "registry:ui",

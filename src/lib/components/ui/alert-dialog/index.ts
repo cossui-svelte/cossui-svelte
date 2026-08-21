@@ -15,5 +15,6 @@ export { default as AlertDialogOverlay } from './alert-dialog-overlay.svelte';
 export { default as AlertDialogPortal } from './alert-dialog-portal.svelte';
 export { default as AlertDialogTitle } from './alert-dialog-title.svelte';
 export { default as AlertDialogTrigger } from './alert-dialog-trigger.svelte';
+export { default as AlertDialogViewport } from './alert-dialog-viewport.svelte';
 
 export const AlertDialogCreateHandle = () => new AlertDialogPrimitive.Handle();

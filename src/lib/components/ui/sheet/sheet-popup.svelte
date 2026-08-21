@@ -4,6 +4,8 @@
   import type { ComponentProps, Snippet } from 'svelte';
   import { buttonVariants } from '$lib/components/ui/button/button-variants';
   import { cn, type WithoutChildren } from '$lib/utils';
+  import SheetBackdrop from './sheet-backdrop.svelte';
+  import SheetViewport from './sheet-viewport.svelte';
 
   type Props = Omit<ComponentProps<typeof SheetPrimitive.Popup>, 'children'> & {
     children?: Snippet;
@@ -28,34 +30,20 @@
 </script>
 
 <SheetPrimitive.Portal {...portalProps}>
-  <SheetPrimitive.Backdrop
-    class="fixed inset-0 z-50 bg-black/32 backdrop-blur-sm transition-opacity duration-200 data-ending-style:opacity-0 data-starting-style:opacity-0"
-    data-slot="sheet-backdrop"
-  />
-  <div
-    class={cn(
-      'pointer-events-none fixed inset-0 z-50',
-      side === 'bottom' && 'flex flex-col justify-end pt-12',
-      side === 'top' && 'flex flex-col pb-12',
-      side === 'left' && 'flex justify-start',
-      side === 'right' && 'flex justify-end',
-      variant === 'inset' && 'sm:p-4'
-    )}
-    data-slot="sheet-viewport"
-  >
+  <SheetBackdrop />
+  <SheetViewport {side} {variant}>
     <SheetPrimitive.Popup
       bind:ref
       class={cn(
-        'pointer-events-auto relative flex max-h-full min-h-0 w-full min-w-0 flex-col bg-popover not-dark:bg-clip-padding text-popover-foreground shadow-lg/5 outline-none transition-[opacity,translate] duration-200 ease-in-out will-change-transform before:pointer-events-none before:absolute before:inset-0 before:shadow-[0_1px_--theme(--color-black/4%)] max-sm:before:hidden dark:before:shadow-[0_-1px_--theme(--color-white/6%)]',
-        'data-starting-style:opacity-0 data-ending-style:opacity-0',
+        'relative flex max-h-full min-h-0 w-full min-w-0 flex-col bg-popover not-dark:bg-clip-padding text-popover-foreground shadow-lg/5 transition-[opacity,translate] duration-200 ease-in-out will-change-transform before:pointer-events-none before:absolute before:inset-0 before:shadow-[0_1px_--theme(--color-black/4%)] data-ending-style:opacity-0 data-starting-style:opacity-0 max-sm:before:hidden dark:before:shadow-[0_-1px_--theme(--color-white/6%)]',
         side === 'bottom' &&
-          'border-t data-starting-style:translate-y-8 data-ending-style:translate-y-8',
+          'row-start-2 border-t data-ending-style:translate-y-8 data-starting-style:translate-y-8',
         side === 'top' &&
-          'border-b data-starting-style:-translate-y-8 data-ending-style:-translate-y-8',
+          'border-b data-ending-style:-translate-y-8 data-starting-style:-translate-y-8',
         side === 'left' &&
-          'w-[calc(100%-3rem)] max-w-md border-e data-starting-style:-translate-x-8 data-ending-style:-translate-x-8',
+          'w-[calc(100%-(--spacing(12)))] max-w-md border-e data-ending-style:-translate-x-8 data-starting-style:-translate-x-8',
         side === 'right' &&
-          'w-[calc(100%-3rem)] max-w-md border-s data-starting-style:translate-x-8 data-ending-style:translate-x-8',
+          'col-start-2 w-[calc(100%-(--spacing(12)))] max-w-md border-s data-ending-style:translate-x-8 data-starting-style:translate-x-8',
         variant === 'inset' &&
           'before:hidden sm:rounded-2xl sm:border sm:before:rounded-[calc(var(--radius-2xl)-1px)] sm:**:data-[slot=sheet-footer]:rounded-b-[calc(var(--radius-2xl)-1px)]',
         className
@@ -75,5 +63,5 @@
         </SheetPrimitive.Close>
       {/if}
     </SheetPrimitive.Popup>
-  </div>
+  </SheetViewport>
 </SheetPrimitive.Portal>

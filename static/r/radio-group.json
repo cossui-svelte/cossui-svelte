@@ -9,7 +9,7 @@
 			"type": "registry:ui",
 			"path": "radio-group/index.ts",
 			"target": "$lib/components/ui/radio-group/index.ts",
-			"content": "export { default as RadioGroup } from './radio-group.svelte';\nexport { default as RadioGroupItem, default as Radio } from './radio-group-item.svelte';\n"
+			"content": "import { Radio as RadioPrimitive } from '@shardsui/svelte/radio';\nimport { RadioGroup as RadioGroupPrimitive } from '@shardsui/svelte/radio-group';\n\nexport { default as RadioGroup } from './radio-group.svelte';\nexport { default as RadioGroupItem, default as Radio } from './radio-group-item.svelte';\nexport { RadioGroupPrimitive, RadioPrimitive };\n"
 		},
 		{
 			"type": "registry:ui",

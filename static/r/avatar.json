@@ -9,19 +9,19 @@
 			"type": "registry:ui",
 			"path": "avatar/avatar-fallback.svelte",
 			"target": "$lib/components/ui/avatar/avatar-fallback.svelte",
-			"content": "<script lang=\"ts\">\n  import { Avatar as AvatarPrimitive } from '@shardsui/svelte/avatar';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof AvatarPrimitive.Fallback> = $props();\n</script>\n\n<AvatarPrimitive.Fallback\n  bind:ref\n  class={cn(\n    'flex size-full items-center justify-center rounded-[inherit] bg-secondary text-xs',\n    className\n  )}\n  data-slot=\"avatar-fallback\"\n  {...restProps}\n></AvatarPrimitive.Fallback>\n"
+			"content": "<script lang=\"ts\">\n  import { Avatar as AvatarPrimitive } from '@shardsui/svelte/avatar';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof AvatarPrimitive.Fallback> = $props();\n</script>\n\n<AvatarPrimitive.Fallback\n  bind:ref\n  class={cn('flex size-full items-center justify-center rounded-full bg-muted', className)}\n  data-slot=\"avatar-fallback\"\n  {...restProps}\n></AvatarPrimitive.Fallback>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "avatar/avatar-image.svelte",
 			"target": "$lib/components/ui/avatar/avatar-image.svelte",
-			"content": "<script lang=\"ts\">\n  import { Avatar as AvatarPrimitive } from '@shardsui/svelte/avatar';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof AvatarPrimitive.Image> = $props();\n</script>\n\n<AvatarPrimitive.Image\n  bind:ref\n  class={cn('aspect-square size-full object-cover', className)}\n  data-slot=\"avatar-image\"\n  {...restProps}\n/>\n"
+			"content": "<script lang=\"ts\">\n  import { Avatar as AvatarPrimitive } from '@shardsui/svelte/avatar';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof AvatarPrimitive.Image> = $props();\n</script>\n\n<AvatarPrimitive.Image\n  bind:ref\n  class={cn('size-full object-cover', className)}\n  data-slot=\"avatar-image\"\n  {...restProps}\n/>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "avatar/avatar.svelte",
 			"target": "$lib/components/ui/avatar/avatar.svelte",
-			"content": "<script lang=\"ts\">\n  import { Avatar as AvatarPrimitive } from '@shardsui/svelte/avatar';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof AvatarPrimitive.Root> = $props();\n</script>\n\n<AvatarPrimitive.Root\n  bind:ref\n  data-slot=\"avatar\"\n  class={cn('relative flex size-8 shrink-0 overflow-hidden rounded-full', className)}\n  {...restProps}\n/>\n"
+			"content": "<script lang=\"ts\">\n  import { Avatar as AvatarPrimitive } from '@shardsui/svelte/avatar';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof AvatarPrimitive.Root> = $props();\n</script>\n\n<AvatarPrimitive.Root\n  bind:ref\n  data-slot=\"avatar\"\n  class={cn(\n    'inline-flex size-8 shrink-0 select-none items-center justify-center overflow-hidden rounded-full bg-background align-middle font-medium text-xs',\n    className\n  )}\n  {...restProps}\n/>\n"
 		},
 		{
 			"type": "registry:ui",

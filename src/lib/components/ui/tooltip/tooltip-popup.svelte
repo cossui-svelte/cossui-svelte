@@ -42,9 +42,9 @@
     <TooltipPrimitive.Popup
       bind:ref
       class={cn(
-        'relative flex h-(--popup-height,auto) w-(--popup-width,auto) max-w-70 rounded-md border bg-popover not-dark:bg-clip-padding text-popover-foreground text-xs',
+        'relative flex h-(--popup-height,auto) w-(--popup-width,auto) rounded-md border bg-popover not-dark:bg-clip-padding text-popover-foreground text-xs',
         'origin-(--transform-origin) text-balance shadow-md/5',
-        'transition-[width,height,scale,opacity] duration-150 ease-out data-starting-style:scale-95 data-starting-style:opacity-0 data-ending-style:scale-95 data-ending-style:opacity-0 data-instant:duration-0',
+        'transition-[width,height,scale,opacity] data-starting-style:scale-98 data-starting-style:opacity-0 data-ending-style:scale-98 data-ending-style:opacity-0 data-instant:duration-0',
         'before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-md)-1px)] before:shadow-[0_1px_--theme(--color-black/4%)] dark:before:shadow-[0_-1px_--theme(--color-white/6%)]',
         className
       )}

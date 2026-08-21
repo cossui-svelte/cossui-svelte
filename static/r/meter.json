@@ -9,7 +9,7 @@
 			"type": "registry:ui",
 			"path": "meter/index.ts",
 			"target": "$lib/components/ui/meter/index.ts",
-			"content": "export { default as Meter } from './meter.svelte';\nexport { default as MeterIndicator } from './meter-indicator.svelte';\nexport { default as MeterLabel } from './meter-label.svelte';\nexport { default as MeterTrack } from './meter-track.svelte';\nexport { default as MeterValue } from './meter-value.svelte';\n"
+			"content": "import { Meter as MeterPrimitive } from '@shardsui/svelte/meter';\n\nexport { default as Meter } from './meter.svelte';\nexport { default as MeterIndicator } from './meter-indicator.svelte';\nexport { default as MeterLabel } from './meter-label.svelte';\nexport { default as MeterTrack } from './meter-track.svelte';\nexport { default as MeterValue } from './meter-value.svelte';\nexport { MeterPrimitive };\n"
 		},
 		{
 			"type": "registry:ui",
@@ -27,7 +27,7 @@
 			"type": "registry:ui",
 			"path": "meter/meter-track.svelte",
 			"target": "$lib/components/ui/meter/meter-track.svelte",
-			"content": "<script lang=\"ts\">\n  import { Meter as MeterPrimitive } from '@shardsui/svelte/meter';\n  import type { ComponentProps, Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  type Props = Omit<ComponentProps<typeof MeterPrimitive.Track>, 'children'> & {\n    children?: Snippet;\n  };\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<MeterPrimitive.Track\n  class={cn('block h-2 w-full overflow-hidden rounded-full bg-input', className)}\n  data-slot=\"meter-track\"\n  {...restProps}\n>\n  {@render children?.()}\n</MeterPrimitive.Track>\n"
+			"content": "<script lang=\"ts\">\n  import { Meter as MeterPrimitive } from '@shardsui/svelte/meter';\n  import type { ComponentProps, Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  type Props = Omit<ComponentProps<typeof MeterPrimitive.Track>, 'children'> & {\n    children?: Snippet;\n  };\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<MeterPrimitive.Track\n  class={cn('block h-2 w-full overflow-hidden bg-input', className)}\n  data-slot=\"meter-track\"\n  {...restProps}\n>\n  {@render children?.()}\n</MeterPrimitive.Track>\n"
 		},
 		{
 			"type": "registry:ui",

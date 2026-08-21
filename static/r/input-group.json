@@ -39,7 +39,7 @@
 			"type": "registry:ui",
 			"path": "input-group/input-group-textarea.svelte",
 			"target": "$lib/components/ui/input-group/input-group-textarea.svelte",
-			"content": "<script lang=\"ts\">\n  import type { ComponentProps } from 'svelte';\n  import { Textarea } from '$lib/components/ui/textarea';\n\n  let {\n    ref = $bindable(null),\n    value = $bindable(),\n    class: className,\n    ...props\n  }: ComponentProps<typeof Textarea> = $props();\n</script>\n\n<Textarea\n  bind:ref\n  data-slot=\"input-group-control\"\n  class={className}\n  unstyled\n  bind:value\n  {...props}\n/>\n"
+			"content": "<script lang=\"ts\">\n  import type { ComponentProps } from 'svelte';\n  import { Textarea } from '$lib/components/ui/textarea';\n\n  let {\n    ref = $bindable(null),\n    value = $bindable(),\n    class: className,\n    ...props\n  }: ComponentProps<typeof Textarea> = $props();\n</script>\n\n<Textarea bind:ref class={className} unstyled bind:value {...props} />\n"
 		},
 		{
 			"type": "registry:ui",

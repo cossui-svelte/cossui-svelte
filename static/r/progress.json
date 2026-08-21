@@ -9,7 +9,7 @@
 			"type": "registry:ui",
 			"path": "progress/index.ts",
 			"target": "$lib/components/ui/progress/index.ts",
-			"content": "export { default as Progress } from './progress.svelte';\nexport { default as ProgressIndicator } from './progress-indicator.svelte';\nexport { default as ProgressLabel } from './progress-label.svelte';\nexport { default as ProgressTrack } from './progress-track.svelte';\nexport { default as ProgressValue } from './progress-value.svelte';\n"
+			"content": "import { Progress as ProgressPrimitive } from '@shardsui/svelte/progress';\n\nexport { default as Progress } from './progress.svelte';\nexport { default as ProgressIndicator } from './progress-indicator.svelte';\nexport { default as ProgressLabel } from './progress-label.svelte';\nexport { default as ProgressTrack } from './progress-track.svelte';\nexport { default as ProgressValue } from './progress-value.svelte';\nexport { ProgressPrimitive };\n"
 		},
 		{
 			"type": "registry:ui",

@@ -26,3 +26,5 @@ export { default as DrawerTrigger } from './drawer-trigger.svelte';
 export { default as DrawerViewport } from './drawer-viewport.svelte';
 
 export const DrawerCreateHandle = () => new DrawerPrimitive.Handle();
+
+export { DrawerPrimitive };

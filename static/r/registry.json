@@ -151,6 +151,11 @@
 				},
 				{
 					"type": "registry:ui",
+					"path": "alert-dialog/alert-dialog-viewport.svelte",
+					"target": "$lib/components/ui/alert-dialog/alert-dialog-viewport.svelte"
+				},
+				{
+					"type": "registry:ui",
 					"path": "alert-dialog/alert-dialog.svelte",
 					"target": "$lib/components/ui/alert-dialog/alert-dialog.svelte"
 				},
@@ -925,6 +930,11 @@
 			"files": [
 				{
 					"type": "registry:ui",
+					"path": "combobox/combobox-chip-remove.svelte",
+					"target": "$lib/components/ui/combobox/combobox-chip-remove.svelte"
+				},
+				{
+					"type": "registry:ui",
 					"path": "combobox/combobox-chip.svelte",
 					"target": "$lib/components/ui/combobox/combobox-chip.svelte"
 				},
@@ -1025,11 +1035,15 @@
 			],
 			"registryDependencies": [
 				"autocomplete",
-				"dialog",
 				"scroll-area",
 				"utils"
 			],
 			"files": [
+				{
+					"type": "registry:ui",
+					"path": "command/command-dialog-backdrop.svelte",
+					"target": "$lib/components/ui/command/command-dialog-backdrop.svelte"
+				},
 				{
 					"type": "registry:ui",
 					"path": "command/command-dialog-popup.svelte",
@@ -1039,6 +1053,11 @@
 					"type": "registry:ui",
 					"path": "command/command-dialog-trigger.svelte",
 					"target": "$lib/components/ui/command/command-dialog-trigger.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "command/command-dialog-viewport.svelte",
+					"target": "$lib/components/ui/command/command-dialog-viewport.svelte"
 				},
 				{
 					"type": "registry:ui",
@@ -1327,6 +1346,11 @@
 					"type": "registry:ui",
 					"path": "dialog/dialog-trigger.svelte",
 					"target": "$lib/components/ui/dialog/dialog-trigger.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "dialog/dialog-viewport.svelte",
+					"target": "$lib/components/ui/dialog/dialog-viewport.svelte"
 				},
 				{
 					"type": "registry:ui",
@@ -2727,6 +2751,11 @@
 				},
 				{
 					"type": "registry:ui",
+					"path": "sheet/sheet-backdrop.svelte",
+					"target": "$lib/components/ui/sheet/sheet-backdrop.svelte"
+				},
+				{
+					"type": "registry:ui",
 					"path": "sheet/sheet-close.svelte",
 					"target": "$lib/components/ui/sheet/sheet-close.svelte"
 				},
@@ -2764,6 +2793,11 @@
 					"type": "registry:ui",
 					"path": "sheet/sheet-trigger.svelte",
 					"target": "$lib/components/ui/sheet/sheet-trigger.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "sheet/sheet-viewport.svelte",
+					"target": "$lib/components/ui/sheet/sheet-viewport.svelte"
 				},
 				{
 					"type": "registry:ui",

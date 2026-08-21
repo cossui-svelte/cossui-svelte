@@ -11,5 +11,6 @@ export { default as DialogPanel } from './dialog-panel.svelte';
 export { default as DialogPortal } from './dialog-portal.svelte';
 export { default as DialogTitle } from './dialog-title.svelte';
 export { default as DialogTrigger } from './dialog-trigger.svelte';
+export { default as DialogViewport } from './dialog-viewport.svelte';
 
 export const DialogCreateHandle = () => new DialogPrimitive.Handle();

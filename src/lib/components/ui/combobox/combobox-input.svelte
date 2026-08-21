@@ -1,5 +1,6 @@
 <script lang="ts">
   import ChevronsUpDown from '@lucide/svelte/icons/chevrons-up-down';
+  import X from '@lucide/svelte/icons/x';
   import { Combobox as ComboboxPrimitive } from '@shardsui/svelte/combobox';
   import type { Snippet } from 'svelte';
   import type { HTMLButtonAttributes, HTMLInputAttributes } from 'svelte/elements';
@@ -96,6 +97,8 @@
         clearPropsClass
       )}
       {...clearPropsRest}
-    />
+    >
+      <X />
+    </ComboboxClear>
   {/if}
 </ComboboxPrimitive.InputGroup>

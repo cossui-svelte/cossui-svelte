@@ -4,6 +4,7 @@ import { Combobox as ComboboxPrimitive } from '@shardsui/svelte/combobox';
 
 export { default as Combobox } from './combobox.svelte';
 export { default as ComboboxChip } from './combobox-chip.svelte';
+export { default as ComboboxChipRemove } from './combobox-chip-remove.svelte';
 export { default as ComboboxChips } from './combobox-chips.svelte';
 export { default as ComboboxChipsInput } from './combobox-chips-input.svelte';
 export { default as ComboboxClear } from './combobox-clear.svelte';
@@ -20,6 +21,6 @@ export { default as ComboboxStatus } from './combobox-status.svelte';
 export { default as ComboboxTrigger } from './combobox-trigger.svelte';
 export { default as ComboboxValue } from './combobox-value.svelte';
 
-const { Collection: ComboboxCollection } = ComboboxPrimitive;
+const { Collection: ComboboxCollection, createFilter: useComboboxFilter } = ComboboxPrimitive;
 
-export { ComboboxCollection };
+export { ComboboxCollection, ComboboxPrimitive, useComboboxFilter };

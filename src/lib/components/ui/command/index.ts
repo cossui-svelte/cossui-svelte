@@ -5,8 +5,10 @@ import { Dialog as CommandDialogPrimitive } from '@shardsui/svelte/dialog';
 
 export { default as Command } from './command.svelte';
 export { default as CommandDialog } from './command-dialog.svelte';
+export { default as CommandDialogBackdrop } from './command-dialog-backdrop.svelte';
 export { default as CommandDialogPopup } from './command-dialog-popup.svelte';
 export { default as CommandDialogTrigger } from './command-dialog-trigger.svelte';
+export { default as CommandDialogViewport } from './command-dialog-viewport.svelte';
 export { default as CommandEmpty } from './command-empty.svelte';
 export { default as CommandFooter } from './command-footer.svelte';
 export { default as CommandGroup } from './command-group.svelte';
@@ -23,8 +25,6 @@ const { Collection: CommandCollection } = AutocompletePrimitive;
 export { CommandCollection };
 
 export const CommandDialogPortal = CommandDialogPrimitive.Portal;
-export const CommandDialogBackdrop = CommandDialogPrimitive.Backdrop;
-export const CommandDialogViewport = CommandDialogPrimitive.Viewport;
 export const CommandCreateHandle = () => new CommandDialogPrimitive.Handle();
 
 export { CommandDialogPrimitive };
