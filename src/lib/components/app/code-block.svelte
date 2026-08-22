@@ -120,12 +120,12 @@
 
     :global(
       [data-rehype-pretty-code-figure]:has([data-rehype-pretty-code-title])
-        [data-slot='copy-button']
+        [data-slot="copy-button"]
     ) {
       top: calc(var(--spacing) * 1.5);
     }
 
-    :global(*[data-tab='code'] [data-rehype-pretty-code-figure]) {
+    :global(*[data-tab="code"] [data-rehype-pretty-code-figure]) {
       border-width: 0;
     }
 

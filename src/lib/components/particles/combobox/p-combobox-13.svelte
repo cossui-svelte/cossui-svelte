@@ -26,7 +26,9 @@
 
 <Combobox {items}>
   <ComboboxInput aria-label="Search items" placeholder="Search items…">
-    {#snippet startAddon()}<Search />{/snippet}
+    {#snippet startAddon()}
+      <Search />
+    {/snippet}
   </ComboboxInput>
   <ComboboxPopup>
     <ComboboxEmpty>No items found.</ComboboxEmpty>

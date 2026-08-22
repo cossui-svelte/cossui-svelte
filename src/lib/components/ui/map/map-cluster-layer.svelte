@@ -1,28 +1,28 @@
 <script lang="ts" generics="P extends GeoJSON.GeoJsonProperties">
-  import { getContext, untrack } from 'svelte';
-  import type * as MapLibreGL from 'maplibre-gl';
   import type * as GeoJSON from 'geojson';
+  import type * as MapLibreGL from 'maplibre-gl';
+  import { getContext, untrack } from 'svelte';
 
   interface Props {
-    /** GeoJSON FeatureCollection data or URL to fetch GeoJSON from */
-    data: string | GeoJSON.FeatureCollection<GeoJSON.Point, P>;
+    /** Colors for cluster circles: [small, medium, large] based on point count (default: ["#3b82f6", "#1d4ed8", "#1e3a8a"]) */
+    clusterColors?: [string, string, string];
     /** Maximum zoom level to cluster points on (default: 14) */
     clusterMaxZoom?: number;
     /** Radius of each cluster when clustering points in pixels (default: 50) */
     clusterRadius?: number;
-    /** Colors for cluster circles: [small, medium, large] based on point count (default: ["#3b82f6", "#1d4ed8", "#1e3a8a"]) */
-    clusterColors?: [string, string, string];
     /** Point count thresholds for color/size steps: [medium, large] (default: [100, 750]) */
     clusterThresholds?: [number, number];
-    /** Color for unclustered individual points (default: "#3b82f6") */
-    pointColor?: string;
+    /** GeoJSON FeatureCollection data or URL to fetch GeoJSON from */
+    data: string | GeoJSON.FeatureCollection<GeoJSON.Point, P>;
+    /** Callback when a cluster is clicked. If not provided, zooms into the cluster */
+    onclusterclick?: (clusterId: number, coordinates: [number, number], pointCount: number) => void;
     /** Callback when an unclustered point is clicked */
     onpointclick?: (
       feature: GeoJSON.Feature<GeoJSON.Point, P>,
       coordinates: [number, number]
     ) => void;
-    /** Callback when a cluster is clicked. If not provided, zooms into the cluster */
-    onclusterclick?: (clusterId: number, coordinates: [number, number], pointCount: number) => void;
+    /** Color for unclustered individual points (default: "#3b82f6") */
+    pointColor?: string;
   }
 
   const DEFAULT_CLUSTER_COLORS: [string, string, string] = ['#3b82f6', '#1d4ed8', '#1e3a8a'];

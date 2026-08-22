@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { page } from '$app/state';
   import { PROJECT_NAME, SITE_URL } from '$lib/config';
+  import { page } from '$app/state';
 
   interface Props {
     description: string;
@@ -35,23 +35,23 @@
 
 <svelte:head>
   <title>{title}</title>
-  <meta name="description" content={description} />
-  <link rel="canonical" href={canonical} />
+  <meta name="description" content={description}>
+  <link rel="canonical" href={canonical}>
   {#if noindex}
-    <meta name="robots" content="noindex, nofollow" />
+    <meta name="robots" content="noindex, nofollow">
   {/if}
 
-  <meta property="og:type" content={type} />
-  <meta property="og:site_name" content={PROJECT_NAME} />
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={description} />
-  <meta property="og:url" content={canonical} />
-  <meta property="og:image" content={ogImage} />
+  <meta property="og:type" content={type}>
+  <meta property="og:site_name" content={PROJECT_NAME}>
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:url" content={canonical}>
+  <meta property="og:image" content={ogImage}>
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content={title} />
-  <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={ogImage} />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content={title}>
+  <meta name="twitter:description" content={description}>
+  <meta name="twitter:image" content={ogImage}>
 
   {#if jsonLd}
     <!-- eslint-disable-next-line svelte/no-at-html-tags -- jsonLd is escaped via serializeJsonLd to prevent script-tag breakout -->

@@ -1,12 +1,12 @@
 <script lang="ts">
+  import type { DateValue } from '@internationalized/date';
   import { watch } from 'runed';
   import { boxWith, mergeProps } from 'svelte-toolbelt';
-  import type { DateValue } from '@internationalized/date';
   import { CalendarRootState } from '../calendar-state.svelte';
-  import type { CalendarRootProps } from '../types';
-  import { useId } from '../ids';
   import { getDefaultDate } from '../date-utils';
+  import { useId } from '../ids';
   import { resolveLocaleProp } from '../prop-resolvers';
+  import type { CalendarRootProps } from '../types';
 
   const noop = () => {};
 

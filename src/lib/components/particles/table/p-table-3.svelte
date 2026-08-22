@@ -93,7 +93,9 @@
           <TableCell class="font-medium">{row.project}</TableCell>
           <TableCell>
             <Badge variant="outline">
-              <span aria-hidden="true" class={`size-1.5 rounded-full ${getStatusColor(row.status)}`}
+              <span
+                aria-hidden="true"
+                class={`size-1.5 rounded-full ${getStatusColor(row.status)}`}
               ></span>
               {row.status}
             </Badge>

@@ -26,12 +26,12 @@
 </script>
 
 <script lang="ts">
+  import type { ComponentProps, Snippet } from 'svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
   import { mergeProps } from 'svelte-toolbelt';
   import { Tooltip, TooltipContent } from '$lib/components/ui/tooltip/';
   import { cn, type WithElementRef, type WithoutChildrenOrChild } from '$lib/utils.js';
   import { useSidebar } from './context.svelte.js';
-  import type { ComponentProps, Snippet } from 'svelte';
-  import type { HTMLAttributes } from 'svelte/elements';
 
   let {
     ref = $bindable(null),

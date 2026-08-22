@@ -55,7 +55,9 @@
         placeholder="e.g. Europe/London"
         showTrigger={false}
       >
-        {#snippet startAddon()}<Search />{/snippet}
+        {#snippet startAddon()}
+          <Search />
+        {/snippet}
       </ComboboxInput>
     </div>
     <ComboboxEmpty>No timezones found.</ComboboxEmpty>

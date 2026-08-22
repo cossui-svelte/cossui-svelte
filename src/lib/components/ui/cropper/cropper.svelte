@@ -11,7 +11,7 @@ Example:
   </CropperDescription>
   ...
 </Cropper>
-`;
+  `;
 </script>
 
 <script lang="ts">
@@ -81,7 +81,6 @@ Example:
   });
 </script>
 
-<!-- biome-ignore lint/a11y/useAriaPropsSupportedByRole: role="application" is used so the widget can define its own custom interaction model, and aria-value* mirrors the same pattern as native sliders to expose zoom level -->
 <div
   bind:this={containerEl}
   use:cropper.container

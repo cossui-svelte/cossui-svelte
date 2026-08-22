@@ -1,13 +1,13 @@
 <script lang="ts">
+  import Truck from '@lucide/svelte/icons/truck';
   import {
     Map,
     MapMarker,
+    MapRoute,
     MarkerContent,
     MarkerLabel,
-    MarkerTooltip,
-    MapRoute
+    MarkerTooltip
   } from '$lib/components/ui/map';
-  import Truck from '@lucide/svelte/icons/truck';
 
   const store = { lng: -0.14, lat: 51.5154 };
   const home = { lng: -0.07, lat: 51.51 };

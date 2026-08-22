@@ -22,7 +22,8 @@
       <DialogDescription>
         Watch <a class="text-foreground hover:underline" href="#">tutorials</a>, read coss.com's
         <a class="text-foreground hover:underline" href="#">documentation</a>, or join our
-        <a class="text-foreground hover:underline" href="#">Discord</a> for community help.
+        <a class="text-foreground hover:underline" href="#">Discord</a>
+        for community help.
       </DialogDescription>
     </DialogHeader>
     <DialogPanel class="flex flex-col gap-5">

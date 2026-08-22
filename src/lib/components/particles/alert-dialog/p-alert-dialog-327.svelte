@@ -72,7 +72,7 @@
       </div>
       <Button class="w-full">Send invites</Button>
 
-      <hr class="my-1 border-t" />
+      <hr class="my-1 border-t">
 
       <div class="flex flex-col gap-2">
         <Label for={id}>Invite via magic link</Label>

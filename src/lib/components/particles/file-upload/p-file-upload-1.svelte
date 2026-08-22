@@ -22,7 +22,7 @@
           height={32}
           src={previewUrl}
           width={32}
-        />
+        >
       {:else}
         <div aria-hidden="true">
           <CircleUserRound class="opacity-60" size={16} />
@@ -39,7 +39,7 @@
         aria-label="Upload image file"
         class="sr-only"
         tabindex={-1}
-      />
+      >
     </div>
   </div>
   {#if fileName}

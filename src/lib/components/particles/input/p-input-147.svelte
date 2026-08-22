@@ -1,13 +1,12 @@
 <script lang="ts">
-  import type { CountryCode } from 'svelte-tel-input/types';
   import { countries, TelInput } from 'svelte-tel-input';
+  import type { CountryCode } from 'svelte-tel-input/types';
   import 'svelte-tel-input/styles/flags.css';
 
+  import Phone from '@lucide/svelte/icons/phone';
   import { Group, GroupSeparator } from '$lib/components/ui/group';
   import { Label } from '$lib/components/ui/label';
   import { Select, SelectItem, SelectPopup, SelectTrigger } from '$lib/components/ui/select';
-
-  import Phone from '@lucide/svelte/icons/phone';
 
   let selectedCountry = $state<CountryCode | null>(null);
   let value = $state('');

@@ -18,6 +18,4 @@
   } = $props();
 </script>
 
-<Button bind:ref {type} class={cn(className)} {...restProps}>
-  {@render children?.()}
-</Button>
+<Button bind:ref {type} class={cn(className)} {...restProps}> {@render children?.()} </Button>

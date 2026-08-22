@@ -6,11 +6,11 @@
   import ZoomOut from '@lucide/svelte/icons/zoom-out';
   import { Button } from '$lib/components/ui/button';
   import {
+    type Area,
     Cropper,
     CropperCropArea,
     CropperDescription,
-    CropperImage,
-    type Area
+    CropperImage
   } from '$lib/components/ui/cropper';
   import {
     Dialog,
@@ -177,7 +177,7 @@
           src={finalImageUrl}
           style="object-fit: cover;"
           width={64}
-        />
+        >
       {:else}
         <div aria-hidden="true">
           <CircleUserRound class="size-4 opacity-60" />
@@ -201,7 +201,7 @@
       aria-label="Upload image file"
       class="sr-only"
       tabindex={-1}
-    />
+    >
   </div>
 
   <!-- Cropper Dialog -->

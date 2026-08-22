@@ -33,14 +33,14 @@
         {...fileUpload.inputProps}
         aria-label="Upload image file"
         class="sr-only"
-      />
+      >
       {#if previewUrl}
         <div class="absolute inset-0 flex items-center justify-center p-4">
           <img
             alt={fileUpload.files[0]?.file?.name || 'Uploaded image'}
             class="mx-auto max-h-full rounded object-contain"
             src={previewUrl}
-          />
+          >
         </div>
       {:else}
         <div class="flex flex-col items-center justify-center px-4 py-3 text-center">

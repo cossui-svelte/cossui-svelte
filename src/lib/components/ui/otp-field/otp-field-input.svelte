@@ -1,7 +1,7 @@
 <script lang="ts">
+  import { cn } from '$lib/utils';
   import PinInputCell from './internal/primitives/pin-input-cell.svelte';
   import type { PinInputCellProps } from './internal/types';
-  import { cn } from '$lib/utils';
 
   let {
     ref = $bindable(null),

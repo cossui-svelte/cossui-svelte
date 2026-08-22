@@ -1,8 +1,8 @@
 <script lang="ts">
+  import CodeBlockCommand from '$lib/components/app/code-block-command.svelte';
   import PageHeader from '$lib/components/app/page-header.svelte';
   import PageHeaderDescription from '$lib/components/app/page-header-description.svelte';
   import PageHeaderHeading from '$lib/components/app/page-header-heading.svelte';
-  import CodeBlockCommand from '$lib/components/app/code-block-command.svelte';
 </script>
 
 <div class="container w-full">

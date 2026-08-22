@@ -1,15 +1,15 @@
 <script lang="ts">
-  import { Map, MapMarker, MarkerContent, MarkerTooltip } from '$lib/components/ui/map';
   import Zap from '@lucide/svelte/icons/zap';
+  import { Map, MapMarker, MarkerContent, MarkerTooltip } from '$lib/components/ui/map';
 
   type Status = 'available' | 'in-use' | 'offline';
 
   interface ChargingStation {
-    name: string;
-    lng: number;
-    lat: number;
-    status: Status;
     detail: string;
+    lat: number;
+    lng: number;
+    name: string;
+    status: Status;
   }
 
   const stations: ChargingStation[] = [

@@ -3,9 +3,9 @@
   import type { Snippet } from 'svelte';
   import type { ButtonVariant } from '$lib/components/ui/button';
   import type { RenameTypeToMode, WithoutChildrenOrChild } from '$lib/utils';
-  import type * as CalendarPrimitiveTypes from './internal';
   import type * as RangeCalendarPrimitiveTypes from '../range-calendar/internal';
   import type { DateRange } from '../range-calendar/internal/types';
+  import type * as CalendarPrimitiveTypes from './internal';
 
   export type CalendarMode = 'single' | 'multiple' | 'range';
   export type { DateRange };
@@ -39,12 +39,12 @@
 
 <script lang="ts">
   import { isEqualMonth } from '@internationalized/date';
-  import * as CalendarPrimitive from './internal';
+  import { cn } from '$lib/utils';
   import * as RangeCalendarPrimitive from '../range-calendar/internal';
   import RangeCalendarCell from '../range-calendar/range-calendar-cell.svelte';
   import RangeCalendarDay from '../range-calendar/range-calendar-day.svelte';
-  import { cn } from '$lib/utils';
   import * as Calendar from './index.js';
+  import * as CalendarPrimitive from './internal';
 
   let {
     ref = $bindable(null),

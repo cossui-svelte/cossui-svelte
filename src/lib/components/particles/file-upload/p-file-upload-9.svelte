@@ -1,7 +1,7 @@
 <script lang="ts">
   import AlertCircle from '@lucide/svelte/icons/alert-circle';
-  import FileArchive from '@lucide/svelte/icons/file-archive';
   import File from '@lucide/svelte/icons/file';
+  import FileArchive from '@lucide/svelte/icons/file-archive';
   import FileSpreadsheet from '@lucide/svelte/icons/file-spreadsheet';
   import FileText from '@lucide/svelte/icons/file-text';
   import FileUp from '@lucide/svelte/icons/file-up';
@@ -86,7 +86,7 @@
       {...fileUpload.inputProps}
       aria-label="Upload files"
       class="sr-only"
-    />
+    >
 
     <div class="flex flex-col items-center justify-center text-center">
       <div

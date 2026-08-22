@@ -117,7 +117,7 @@
       <Button disabled={!croppedAreaPixels} onclick={handleCrop}>Crop preview</Button>
       <div class="aspect-square w-full shrink-0 overflow-hidden rounded-lg border">
         {#if croppedImageUrl}
-          <img alt="Cropped result" class="h-full w-full object-cover" src={croppedImageUrl} />
+          <img alt="Cropped result" class="h-full w-full object-cover" src={croppedImageUrl}>
         {:else}
           <div
             class="flex h-full w-full items-center justify-center bg-muted p-2 text-center text-muted-foreground/80 text-xs"

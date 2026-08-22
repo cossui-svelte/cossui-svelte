@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { resolve } from '$app/paths';
   import { Badge } from '$lib/components/ui/badge';
   import { Button } from '$lib/components/ui/button';
   import {
@@ -17,6 +16,7 @@
   import { allComponents, type RegistryUIEntry } from '$lib/registry/generated-registry-components';
   import { allParticles } from '$lib/registry/registry-particles';
   import type { PageData } from './$types';
+  import { resolve } from '$app/paths';
 
   let { data }: { data: PageData } = $props();
 

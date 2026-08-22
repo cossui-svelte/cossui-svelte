@@ -12,6 +12,4 @@
   } = $props();
 </script>
 
-<phantom-ui data-slot="skeleton" {...restProps}>
-  {@render children?.()}
-</phantom-ui>
+<phantom-ui data-slot="skeleton" {...restProps}> {@render children?.()} </phantom-ui>

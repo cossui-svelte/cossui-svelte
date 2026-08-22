@@ -16,7 +16,9 @@
     <CalendarIcon aria-hidden="true" />
     {#if value?.start}
       {#if value.end}
-        {df.format(value.start.toDate(getLocalTimeZone()))} - {df.format(
+        {df.format(value.start.toDate(getLocalTimeZone()))}
+        -
+        {df.format(
           value.end.toDate(getLocalTimeZone())
         )}
       {:else}

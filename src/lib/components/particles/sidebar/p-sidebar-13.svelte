@@ -69,9 +69,7 @@
           <span>{open ? 'Close' : 'Open'} Sidebar</span>
         </Button>
       </header>
-      <div class="p-4 text-muted-foreground text-sm">
-        Sidebar is {open ? 'open' : 'closed'}
-      </div>
+      <div class="p-4 text-muted-foreground text-sm">Sidebar is {open ? 'open' : 'closed'}</div>
     </SidebarInset>
   </SidebarProvider>
 </div>

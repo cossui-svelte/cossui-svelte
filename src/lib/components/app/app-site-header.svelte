@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { resolve } from '$app/paths';
   import { Button } from '$lib/components/ui/button';
   import { Separator } from '$lib/components/ui/separator';
   import MainNav from './main-nav.svelte';
   import SiteHeaderBase from './site-header.svelte';
+  import { resolve } from '$app/paths';
 
   interface PageNode {
     name: string | unknown;
@@ -40,7 +40,7 @@
 
 <SiteHeaderBase {currentProduct} {products}>
   {#snippet mobileNav()}
-    <!--  BUG TODO: If you activate this line, the page is unresponsive
+  <!--  BUG TODO: If you activate this line, the page is unresponsive
   <MobileNav class="flex lg:hidden" items={navItems} {tree} /> -->
   {/snippet}
 

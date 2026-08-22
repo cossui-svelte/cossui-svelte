@@ -174,6 +174,6 @@
     </span>
   {/each}
   {#if name}
-    <input {disabled} {name} type="hidden" {value} />
+    <input {disabled} {name} type="hidden" {value}>
   {/if}
 </div>

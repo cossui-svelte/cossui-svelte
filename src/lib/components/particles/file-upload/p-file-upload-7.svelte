@@ -60,7 +60,7 @@
       {...fileUpload.inputProps}
       aria-label="Upload image file"
       class="sr-only"
-    />
+    >
     <div class="flex flex-col items-center justify-center px-4 py-3 text-center">
       <div
         aria-hidden="true"
@@ -97,7 +97,7 @@
                 alt={file.file.name}
                 class="size-10 rounded-[inherit] object-cover"
                 src={file.preview}
-              />
+              >
             </div>
             <div class="flex min-w-0 flex-col gap-0.5">
               <p class="truncate font-medium text-[13px]">{file.file.name}</p>

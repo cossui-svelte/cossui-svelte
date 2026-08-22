@@ -1,22 +1,22 @@
 <script lang="ts">
-  import { getContext } from 'svelte';
-  import type * as MapLibreGL from 'maplibre-gl';
-  import type { HTMLAttributes } from 'svelte/elements';
-  import { cn } from '$lib/utils.js';
-  import Plus from '@lucide/svelte/icons/plus';
-  import Minus from '@lucide/svelte/icons/minus';
+  import Loader2 from '@lucide/svelte/icons/loader-2';
   import Locate from '@lucide/svelte/icons/locate';
   import Maximize from '@lucide/svelte/icons/maximize';
-  import Loader2 from '@lucide/svelte/icons/loader-2';
+  import Minus from '@lucide/svelte/icons/minus';
+  import Plus from '@lucide/svelte/icons/plus';
+  import type * as MapLibreGL from 'maplibre-gl';
+  import { getContext } from 'svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
+  import { cn } from '$lib/utils.js';
 
   interface Props extends Omit<HTMLAttributes<HTMLDivElement>, 'class'> {
-    position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
-    showZoom?: boolean;
-    showCompass?: boolean;
-    showLocate?: boolean;
-    showFullscreen?: boolean;
     class?: string;
     onlocate?: (coords: { longitude: number; latitude: number }) => void;
+    position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
+    showCompass?: boolean;
+    showFullscreen?: boolean;
+    showLocate?: boolean;
+    showZoom?: boolean;
   }
 
   let {

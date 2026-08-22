@@ -67,7 +67,7 @@
       {...fileUpload.inputProps}
       aria-label="Upload image file"
       class="sr-only"
-    />
+    >
     {#if fileUpload.files.length > 0}
       <div class="flex w-full flex-col gap-3">
         <div class="flex items-center justify-between gap-2">
@@ -90,7 +90,7 @@
                 alt={file.file.name}
                 class="size-full rounded-[inherit] object-cover"
                 src={file.preview}
-              />
+              >
               <Button
                 aria-label="Remove image"
                 class="absolute -top-2 -right-2 size-6 rounded-full border-2 border-background shadow-none focus-visible:border-background"

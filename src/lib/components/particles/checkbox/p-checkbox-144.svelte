@@ -11,9 +11,8 @@
   <Checkbox aria-describedby="{id}-description" class="order-1 after:absolute after:inset-0" {id} />
   <div class="grid grow gap-2">
     <Label for={id}>
-      Label <span class="font-normal text-muted-foreground text-xs leading-[inherit]"
-        >(Sublabel)</span
-      >
+      Label
+      <span class="font-normal text-muted-foreground text-xs leading-[inherit]">(Sublabel)</span>
     </Label>
     <p class="text-muted-foreground text-xs" id="{id}-description">
       A short description goes here.

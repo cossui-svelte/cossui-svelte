@@ -32,7 +32,11 @@
           class={buttonVariants({ size: 'icon-xs', variant: 'ghost' })}
           onclick={copyToClipboard}
         >
-          {#if isCopied}<Check />{:else}<Copy />{/if}
+          {#if isCopied}
+            <Check />
+          {:else}
+            <Copy />
+          {/if}
         </TooltipTrigger>
         <TooltipPopup>
           <p>Copy to clipboard</p>

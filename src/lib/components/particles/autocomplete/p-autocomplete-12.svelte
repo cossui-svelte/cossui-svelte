@@ -90,7 +90,9 @@
             Movie or year "{searchValue}" does not exist in the Top 100 IMDb movies
           </span>
         {:else}
-          {searchResults.length} result{searchResults.length === 1 ? '' : 's'} found
+          {searchResults.length}
+          result{searchResults.length === 1 ? '' : 's'}
+          found
         {/if}
       </AutocompleteStatus>
       <AutocompleteList>

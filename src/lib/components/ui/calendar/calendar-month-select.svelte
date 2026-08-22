@@ -1,7 +1,7 @@
 <script lang="ts">
   import ChevronDown from '@lucide/svelte/icons/chevron-down';
-  import * as CalendarPrimitive from './internal';
   import { cn, type WithoutChildrenOrChild } from '$lib/utils';
+  import * as CalendarPrimitive from './internal';
 
   let {
     ref = $bindable(null),

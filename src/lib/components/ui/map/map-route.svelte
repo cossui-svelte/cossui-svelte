@@ -1,28 +1,28 @@
 <script lang="ts">
-  import { getContext, untrack } from 'svelte';
   import type * as MapLibreGL from 'maplibre-gl';
+  import { getContext, untrack } from 'svelte';
 
   interface Props {
-    /** Optional unique identifier for the route layer */
-    id?: string;
-    /** Array of [longitude, latitude] coordinate pairs defining the route */
-    coordinates: [number, number][];
     /** Line color as CSS color value (default: "#4285F4") */
     color?: string;
-    /** Line width in pixels (default: 3) */
-    width?: number;
-    /** Line opacity from 0 to 1 (default: 0.8) */
-    opacity?: number;
+    /** Array of [longitude, latitude] coordinate pairs defining the route */
+    coordinates: [number, number][];
     /** Dash pattern [dash length, gap length] for dashed lines */
     dashArray?: [number, number];
+    /** Optional unique identifier for the route layer */
+    id?: string;
+    /** Whether the route is interactive - shows pointer cursor on hover (default: true) */
+    interactive?: boolean;
     /** Callback when the route line is clicked */
     onclick?: () => void;
     /** Callback when mouse enters the route line */
     onmouseenter?: () => void;
     /** Callback when mouse leaves the route line */
     onmouseleave?: () => void;
-    /** Whether the route is interactive - shows pointer cursor on hover (default: true) */
-    interactive?: boolean;
+    /** Line opacity from 0 to 1 (default: 0.8) */
+    opacity?: number;
+    /** Line width in pixels (default: 3) */
+    width?: number;
   }
 
   let {

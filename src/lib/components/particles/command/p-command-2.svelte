@@ -243,7 +243,8 @@ You can customize project settings at any time by clicking the settings icon in 
   onclick={() => {
     open = true;
   }}
-  variant="outline">Cmdk with AI</Button
+  variant="outline"
+  >Cmdk with AI</Button
 >
 
 <CommandDialog {open} onOpenChange={handleOpenChange}>
@@ -285,7 +286,7 @@ You can customize project settings at any time by clicking the settings icon in 
                   <p>No results found.</p>
                   <p>
                     Press <Kbd>Enter</Kbd> to ask AI about:
-                    <br />
+                    <br>
                     <strong class="font-medium text-foreground">{searchQuery}</strong>
                   </p>
                 </div>

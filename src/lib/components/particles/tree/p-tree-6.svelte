@@ -91,7 +91,7 @@
                     {...attacher}
                     {...rest}
                     class="border-input bg-background text-foreground placeholder:text-muted-foreground/70 focus-visible:border-ring focus-visible:ring-ring/20 flex h-6 w-full rounded-lg border px-1 py-0 text-sm shadow-sm shadow-black/5 transition-shadow focus-visible:ring-[3px] focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50"
-                  />
+                  >
                 {:else}
                   {item.getItemName()}
                 {/if}

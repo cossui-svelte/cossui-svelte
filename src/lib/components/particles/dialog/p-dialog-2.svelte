@@ -20,7 +20,8 @@
     <MenuItem
       onclick={() => {
         dialogOpen = true;
-      }}>Open dialog</MenuItem
+      }}
+      >Open dialog</MenuItem
     >
   </MenuPopup>
 </Menu>

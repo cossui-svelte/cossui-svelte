@@ -1,6 +1,6 @@
 <script lang="ts" module>
-  import type * as MapLibreGL from 'maplibre-gl';
   import type * as GeoJSON from 'geojson';
+  import type * as MapLibreGL from 'maplibre-gl';
 
   export type MapGeoJSONData<P extends GeoJSON.GeoJsonProperties = GeoJSON.GeoJsonProperties> =
     | GeoJSON.FeatureCollection<GeoJSON.Geometry, P>
@@ -36,8 +36,8 @@
 </script>
 
 <script lang="ts" generics="P extends GeoJSON.GeoJsonProperties = GeoJSON.GeoJsonProperties">
-  import { useMap } from './use-map.svelte.js';
   import { untrack } from 'svelte';
+  import { useMap } from './use-map.svelte.js';
 
   let {
     data,

@@ -1,8 +1,5 @@
 <script lang="ts">
   import CheckIcon from '@lucide/svelte/icons/check';
-  import PageHeader from '$lib/components/app/page-header.svelte';
-  import PageHeaderDescription from '$lib/components/app/page-header-description.svelte';
-  import PageHeaderHeading from '$lib/components/app/page-header-heading.svelte';
   import {
     Timeline,
     TimelineContent,
@@ -13,6 +10,9 @@
     TimelineSeparator,
     TimelineTitle
   } from '$lib/components/ui/timeline';
+  import PageHeader from '$lib/components/app/page-header.svelte';
+  import PageHeaderDescription from '$lib/components/app/page-header-description.svelte';
+  import PageHeaderHeading from '$lib/components/app/page-header-heading.svelte';
 
   const changelog = [
     {
@@ -99,11 +99,11 @@
   <PageHeader>
     <PageHeaderHeading>DOCS: COMING SOON</PageHeaderHeading>
     <PageHeaderDescription>
-      I’ve been wondering: in the age of AI, is documentation still necessary?<br /> You can point
-      your assistant to the product and ask questions to get instant answers.<br />It appears that
-      the days where developers read full documentation are gone.<br /><br />Let’s prioritize on the
-      AI experience over traditional documentation.<br />If you have questions or need help, feel
-      free to reach out to me directly. I’m here to help.
+      I’ve been wondering: in the age of AI, is documentation still necessary?<br>
+      You can point your assistant to the product and ask questions to get instant answers.<br>It
+      appears that the days where developers read full documentation are gone.<br><br>Let’s
+      prioritize on the AI experience over traditional documentation.<br>If you have questions or
+      need help, feel free to reach out to me directly. I’m here to help.
     </PageHeaderDescription>
   </PageHeader>
 
@@ -112,24 +112,25 @@
   <main class="m-8">
     <ul class="space-y-3 text-muted-foreground">
       <li>
-        <strong class="font-semibold text-foreground">Modern look</strong> — Clean, contemporary styling
-        with layered shadows and softly rounded surfaces.
+        <strong class="font-semibold text-foreground">Modern look</strong>
+        — Clean, contemporary styling with layered shadows and softly rounded surfaces.
       </li>
       <li>
-        <strong class="font-semibold text-foreground">Mobile ready</strong> — Responsive layouts that
-        adapt to any screen size, with swipe and touch gestures built in.
+        <strong class="font-semibold text-foreground">Mobile ready</strong>
+        — Responsive layouts that adapt to any screen size, with swipe and touch gestures built in.
       </li>
       <li>
-        <strong class="font-semibold text-foreground">Batteries included</strong> — 70 components and
-        700+ blocks and particules, including forms, fieldset and skeletons. Now you can focus on your
-        application logic instead of reinventing the wheel.
+        <strong class="font-semibold text-foreground">Batteries included</strong>
+        — 70 components and 700+ blocks and particules, including forms, fieldset and skeletons. Now
+        you can focus on your application logic instead of reinventing the wheel.
       </li>
       <li>
-        <strong class="font-semibold text-foreground">Built on Base UI</strong> — Powered by Shards UI,
-        a Svelte port of Base UI.
+        <strong class="font-semibold text-foreground">Built on Base UI</strong>
+        — Powered by Shards UI, a Svelte port of Base UI.
       </li>
       <li>
-        <strong class="font-semibold text-foreground">Svelte 5 native</strong> — Intuitiveness by default.
+        <strong class="font-semibold text-foreground">Svelte 5 native</strong>
+        — Intuitiveness by default.
       </li>
     </ul>
   </main>

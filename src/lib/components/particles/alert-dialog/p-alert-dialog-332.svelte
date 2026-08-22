@@ -1,6 +1,5 @@
 <script lang="ts">
   import ArrowRightIcon from '@lucide/svelte/icons/arrow-right';
-  import dialogContentImg from '$lib/assets/dialog-content.png';
   import { Button, buttonVariants } from '$lib/components/ui/button';
   import {
     Dialog,
@@ -12,6 +11,7 @@
     DialogTitle,
     DialogTrigger
   } from '$lib/components/ui/dialog';
+  import dialogContentImg from '$lib/assets/dialog-content.png';
   import { cn } from '$lib/utils';
 
   const stepContent = [
@@ -55,7 +55,7 @@
   <DialogTrigger class={buttonVariants({ variant: 'outline' })}>Onboarding</DialogTrigger>
   <DialogPopup class="gap-0 p-0" showCloseButton={false}>
     <div class="p-2">
-      <img alt="dialog" class="w-full rounded-md" height={216} src={dialogContentImg} width={382} />
+      <img alt="dialog" class="w-full rounded-md" height={216} src={dialogContentImg} width={382}>
     </div>
     <div class="flex flex-col gap-6 px-6 pt-3 pb-6">
       <DialogHeader class="p-0">

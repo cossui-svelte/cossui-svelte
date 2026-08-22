@@ -2,13 +2,12 @@
   import PageHeader from '$lib/components/app/page-header.svelte';
   import PageHeaderDescription from '$lib/components/app/page-header-description.svelte';
   import PageHeaderHeading from '$lib/components/app/page-header-heading.svelte';
-
   import { isValidRegistryCategory, type RegistryCategory } from '$lib/registry/registry-tags.js';
+  import type { PageData } from './$types';
   import ParticlesDisplay from './particles-display.svelte';
   import SearchContainer from './search-container.svelte';
   import { browser } from '$app/env';
   import { page } from '$app/state';
-  import type { PageData } from './$types';
 
   let { data }: { data: PageData } = $props();
 

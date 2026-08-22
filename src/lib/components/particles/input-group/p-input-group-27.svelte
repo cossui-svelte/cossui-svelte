@@ -66,7 +66,11 @@
           class={buttonVariants({ size: 'icon-sm', variant: 'ghost' })}
           onclick={handleCopy}
         >
-          {#if copied}<Check />{:else}<Copy />{/if}
+          {#if copied}
+            <Check />
+          {:else}
+            <Copy />
+          {/if}
         </TooltipTrigger>
         <TooltipPopup>
           {copied ? 'Copied!' : 'Copy to clipboard'}

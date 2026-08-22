@@ -93,7 +93,9 @@
     onValueChange={() => (open = false)}
   >
     <ComboboxInput aria-label="Add team members" placeholder="Add team members…">
-      {#snippet startAddon()}<Search />{/snippet}
+      {#snippet startAddon()}
+        <Search />
+      {/snippet}
     </ComboboxInput>
     <ComboboxPopup>
       <ComboboxEmpty>No team members found.</ComboboxEmpty>

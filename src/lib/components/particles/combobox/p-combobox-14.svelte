@@ -34,7 +34,9 @@
 
 <Combobox multiple bind:value {items}>
   <ComboboxChips>
-    {#snippet startAddon()}<Search />{/snippet}
+    {#snippet startAddon()}
+      <Search />
+    {/snippet}
     {#each value as v (v)}
       <ComboboxChip aria-label={getLabel(v)}>
         {getLabel(v)}

@@ -1,8 +1,8 @@
 <script lang="ts">
   import { boxWith, mergeProps } from 'svelte-toolbelt';
+  import { createId } from '../ids';
   import { PinInputRootState } from '../pin-input-state.svelte';
   import type { PinInputRootProps } from '../types';
-  import { createId } from '../ids';
 
   const noop = () => {};
   const uid = $props.id();
@@ -66,6 +66,6 @@
   {@render children?.(rootState.snippetProps)}
 
   <div {...mergedInputWrapperProps}>
-    <input {...mergedInputProps} />
+    <input {...mergedInputProps}>
   </div>
 </div>

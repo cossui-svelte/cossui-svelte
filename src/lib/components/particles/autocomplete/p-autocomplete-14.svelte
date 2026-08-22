@@ -26,7 +26,9 @@
 
 <Autocomplete {items}>
   <AutocompleteInput aria-label="Search items" placeholder="Search items…">
-    {#snippet startAddon()}<Search />{/snippet}
+    {#snippet startAddon()}
+      <Search />
+    {/snippet}
   </AutocompleteInput>
   <AutocompletePopup>
     <AutocompleteEmpty>No items found.</AutocompleteEmpty>

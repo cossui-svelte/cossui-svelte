@@ -250,7 +250,9 @@
         placeholder="e.g. United Kingdom"
         showTrigger={false}
       >
-        {#snippet startAddon()}<Search />{/snippet}
+        {#snippet startAddon()}
+          <Search />
+        {/snippet}
       </ComboboxInput>
     </div>
     <ComboboxEmpty>No countries found.</ComboboxEmpty>

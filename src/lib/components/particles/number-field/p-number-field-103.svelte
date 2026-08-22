@@ -1,6 +1,7 @@
 <script lang="ts">
+  import ChevronDown from '@lucide/svelte/icons/chevron-down';
+  import ChevronUp from '@lucide/svelte/icons/chevron-up';
   import { Label } from '$lib/components/ui/label';
-  import { createCurrencyFormat } from '$lib/hooks/use-currency-input';
   import {
     NumberField,
     NumberFieldDecrement,
@@ -8,9 +9,7 @@
     NumberFieldIncrement,
     NumberFieldInput
   } from '$lib/components/ui/number-field';
-
-  import ChevronDown from '@lucide/svelte/icons/chevron-down';
-  import ChevronUp from '@lucide/svelte/icons/chevron-up';
+  import { createCurrencyFormat } from '$lib/hooks/use-currency-input';
 
   const uid = $props.id();
   const { format, parse } = createCurrencyFormat();

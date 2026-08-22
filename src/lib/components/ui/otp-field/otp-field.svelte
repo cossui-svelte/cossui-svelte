@@ -1,7 +1,7 @@
 <script lang="ts">
+  import { cn } from '$lib/utils';
   import PinInputRoot from './internal/primitives/pin-input-root.svelte';
   import type { PinInputRootProps } from './internal/types';
-  import { cn } from '$lib/utils';
 
   let {
     ref = $bindable(null),

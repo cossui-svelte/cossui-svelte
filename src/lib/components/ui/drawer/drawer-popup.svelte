@@ -1,12 +1,12 @@
 <script lang="ts">
   import XIcon from '@lucide/svelte/icons/x';
   import { Drawer as DrawerPrimitive } from '@shardsui/svelte/drawer';
-  import { getContext } from 'svelte';
   import type { ComponentProps, Snippet } from 'svelte';
+  import { getContext } from 'svelte';
   import { buttonVariants } from '$lib/components/ui/button/button-variants';
   import { cn, type WithoutChildren } from '$lib/utils';
-  import DrawerBar from './drawer-bar.svelte';
   import DrawerBackdrop from './drawer-backdrop.svelte';
+  import DrawerBar from './drawer-bar.svelte';
   import DrawerClose from './drawer-close.svelte';
   import DrawerPortal from './drawer-portal.svelte';
   import DrawerViewport from './drawer-viewport.svelte';

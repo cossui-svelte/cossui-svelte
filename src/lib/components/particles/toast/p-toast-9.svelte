@@ -81,9 +81,7 @@
 <Button disabled={isGenerating} onclick={handleDownload} variant="outline">
   {#if isGenerating}
     Loading…
-    <span class="tabular-nums">
-      {progress.toString().padStart(2, ' ')}%
-    </span>
+    <span class="tabular-nums"> {progress.toString().padStart(2, ' ')}% </span>
   {:else}
     <DownloadIcon />
     Download

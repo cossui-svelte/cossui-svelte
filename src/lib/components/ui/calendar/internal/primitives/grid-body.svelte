@@ -1,8 +1,8 @@
 <script lang="ts">
   import { boxWith, mergeProps } from 'svelte-toolbelt';
   import { CalendarGridBodyState } from '../calendar-state.svelte';
-  import type { CalendarGridBodyProps } from '../types';
   import { createId } from '../ids';
+  import type { CalendarGridBodyProps } from '../types';
 
   const uid = $props.id();
 

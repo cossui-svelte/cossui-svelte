@@ -3,13 +3,13 @@
   import { mergeProps } from 'svelte-toolbelt';
 
   interface AspectRatioProps extends HTMLAttributes<HTMLDivElement> {
-    ref?: HTMLDivElement | null;
     /**
      * The aspect ratio of the content.
      *
      * @defaultValue 1
      */
     ratio?: number;
+    ref?: HTMLDivElement | null;
   }
 
   let { ref = $bindable(null), ratio = 1, children, ...restProps }: AspectRatioProps = $props();

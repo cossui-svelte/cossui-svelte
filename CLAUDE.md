@@ -15,20 +15,21 @@ Package manager is **pnpm** (not npm/yarn) — `packageManager: pnpm@11.22.0`.
 - `pnpm check` — svelte-kit sync + svelte-check across the workspace (type/template errors)
 - `pnpm lint:typecheck` — `tsc --noEmit`
 - `pnpm lint:audit` — knip unused-code/dependency audit (`knip.ts`)
-- `pnpm format` — runs biome (fix), eslint (fix), then prettier on `**/*.svelte`, in that order
+- `pnpm format` — runs biome (fix) then eslint (fix), in that order
 - `pnpm gen:registry` — regenerate component/particle registries, rebuild static registry JSON, then reformat (see Registry generation below)
 - `pnpm cf:deploy` — build then `wrangler deploy`
 - `pnpm cf:typegen` — regenerate `src/worker-configuration.d.ts` from `wrangler.jsonc`
 - `pnpm migrate` — biome config migration + wrangler typegen + Lucide import transform (one-off maintenance script)
 - Tests: `vitest` is a dependency but there is no `test` script wired up in `package.json`; run `pnpm vitest` / `pnpm vitest run <path>` directly if you add or run tests.
 
-### Formatting/linting split (important — three tools, each with a distinct scope)
+### Formatting/linting split (two tools, each with a distinct scope)
 
-- **Biome** (`biome.json`) formats and lints `.ts`/`.js`/`.json`/config files — but is explicitly scoped via `files.includes` and does **not** touch `.svelte` files. It also owns import organization (custom group order: framework packages → `$lib/components/ui/**` → `$lib/**` → `@lucide/**` → relative) and interface-member sorting.
-- **ESLint** (`eslint.config.js`) lints `.svelte` / `.svelte.ts` / `.svelte.js` using `svelte-eslint-parser` + `typescript-eslint` + `eslint-plugin-svelte` + `eslint-plugin-better-tailwindcss` (Tailwind class validation, entry point `src/app.css`). Several svelte rules are deliberately downgraded to `warn` rather than fixed mechanically — see the comments in that file before "fixing" them.
-- **Prettier** + `prettier-plugin-svelte` formats `.svelte` files only (Biome can't format Svelte). Config: single quotes, no trailing commas, printWidth 100.
+- **Biome** (`biome.json`) formats and lints `.ts`/`.js`/`.json`/config files **and** `.svelte` files (via Biome's HTML-superset support, `html.experimentalFullSupportEnabled` + `indentScriptAndStyle: true`) — everything except `**/*.svelte.ts` / `**/*.svelte.js`, which ESLint owns instead (see below). It also owns import organization (custom group order: framework packages → `$lib/components/ui/**` → `$lib/**` → `@lucide/**` → relative) and interface-member sorting. There is no standalone Prettier step anymore — Biome replaced `prettier`/`prettier-plugin-svelte` for `.svelte` formatting (verified byte-identical output on representative components before the cutover). Several a11y rules are turned off repo-wide rather than fixed mechanically (`biome.json` → `linter.rules.a11y`) — this project doesn't enforce strict a11y linting; don't re-enable them without discussion.
+- **ESLint** (`eslint.config.js`) lints `.svelte` / `.svelte.ts` / `.svelte.js` using `svelte-eslint-parser` + `typescript-eslint` + `eslint-plugin-svelte` + `eslint-plugin-better-tailwindcss` (Tailwind class validation, entry point `src/app.css`) — i.e. the Svelte-semantic and Tailwind-aware rules Biome doesn't have. Several svelte rules are deliberately downgraded to `warn` rather than fixed mechanically — see the comments in that file before "fixing" them.
 
-Do not introduce a fourth formatter/linter or try to make one tool cover another's file type without checking whether that gap is intentional (it is, per the above).
+Biome's Svelte support is labeled experimental upstream and its embedded-language lint rules can produce false positives at file-type boundaries — if `biome check` flags something that looks wrong for a `.svelte` file specifically (as opposed to a real bug), prefer a scoped `overrides` entry in `biome.json` over a blanket rule change. One known gap: `biome-ignore` comments aren't recognized inside Svelte template markup (only inside `<script>` blocks) — suppress template-level false positives via a path-scoped override in `biome.json` instead (see the `seo-head.svelte` entry for the pattern — the `</script>` string split there needs `style/useTemplate` off, not fixed, or the tag closes early in the rendered HTML).
+
+Do not introduce a third formatter/linter or try to make one tool cover another's file type without checking whether that gap is intentional (it is, per the above).
 
 ## Architecture
 

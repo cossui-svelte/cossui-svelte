@@ -1,8 +1,8 @@
 <script lang="ts">
-  import PlusIcon from '@lucide/svelte/icons/plus';
-  import XIcon from '@lucide/svelte/icons/x';
   import { hueyColor } from '@hueycolor/core';
   import { useHueyContext } from '@hueycolor/svelte';
+  import PlusIcon from '@lucide/svelte/icons/plus';
+  import XIcon from '@lucide/svelte/icons/x';
 
   let { swatches = $bindable(), editable = true }: { swatches: string[]; editable?: boolean } =
     $props();

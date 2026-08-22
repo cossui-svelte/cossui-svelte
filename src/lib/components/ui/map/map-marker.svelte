@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { getContext, setContext, untrack } from 'svelte';
-  import * as MapLibreGL from 'maplibre-gl';
   import type { MarkerOptions } from 'maplibre-gl';
+  import * as MapLibreGL from 'maplibre-gl';
+  import { getContext, setContext, untrack } from 'svelte';
 
   type Anchor =
     | 'center'
@@ -15,20 +15,20 @@
     | 'bottom-right';
 
   interface Props {
-    longitude: number;
-    latitude: number;
+    anchor?: Anchor;
     children?: import('svelte').Snippet;
+    draggable?: boolean;
+    latitude: number;
+    longitude: number;
+    offset?: MarkerOptions['offset'];
     onclick?: (e: MouseEvent) => void;
-    onmouseenter?: (e: MouseEvent) => void;
-    onmouseleave?: (e: MouseEvent) => void;
-    ondragstart?: (lngLat: { lng: number; lat: number }) => void;
     ondrag?: (lngLat: { lng: number; lat: number }) => void;
     ondragend?: (lngLat: { lng: number; lat: number }) => void;
-    draggable?: boolean;
-    anchor?: Anchor;
-    offset?: MarkerOptions['offset'];
-    rotation?: number;
+    ondragstart?: (lngLat: { lng: number; lat: number }) => void;
+    onmouseenter?: (e: MouseEvent) => void;
+    onmouseleave?: (e: MouseEvent) => void;
     pitchAlignment?: MarkerOptions['pitchAlignment'];
+    rotation?: number;
     rotationAlignment?: MarkerOptions['rotationAlignment'];
   }
 

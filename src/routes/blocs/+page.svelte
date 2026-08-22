@@ -1,8 +1,8 @@
 <script lang="ts">
+  import { Button } from '$lib/components/ui/button';
   import PageHeader from '$lib/components/app/page-header.svelte';
   import PageHeaderDescription from '$lib/components/app/page-header-description.svelte';
   import PageHeaderHeading from '$lib/components/app/page-header-heading.svelte';
-  import { Button } from '$lib/components/ui/button';
 </script>
 
 <div class="container w-full">

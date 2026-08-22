@@ -1,12 +1,12 @@
 <script lang="ts">
+  import type { DateValue } from '@internationalized/date';
   import { watch } from 'runed';
   import { boxWith, mergeProps } from 'svelte-toolbelt';
-  import type { DateValue } from '@internationalized/date';
+  import { getDefaultDate } from '$lib/components/ui/calendar/internal/date-utils';
+  import { createId } from '$lib/components/ui/calendar/internal/ids';
+  import { resolveLocaleProp } from '$lib/components/ui/calendar/internal/prop-resolvers';
   import { RangeCalendarRootState } from '../range-calendar-state.svelte';
   import type { RangeCalendarRootProps } from '../types';
-  import { getDefaultDate } from '$lib/components/ui/calendar/internal/date-utils';
-  import { resolveLocaleProp } from '$lib/components/ui/calendar/internal/prop-resolvers';
-  import { createId } from '$lib/components/ui/calendar/internal/ids';
 
   const noop = () => {};
   const uid = $props.id();

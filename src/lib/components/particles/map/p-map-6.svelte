@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Map, MapMarker, MarkerContent, MapRoute } from '$lib/components/ui/map';
   import Bike from '@lucide/svelte/icons/bike';
+  import { Map, MapMarker, MapRoute, MarkerContent } from '$lib/components/ui/map';
 
   const trailCoordinates: [number, number][] = [
     [-73.95846730810143, 40.80035246904919],

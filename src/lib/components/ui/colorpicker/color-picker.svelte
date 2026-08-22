@@ -1,5 +1,4 @@
 <script lang="ts">
-  import PipetteIcon from '@lucide/svelte/icons/pipette';
   import { type HueyColor } from '@hueycolor/core';
   import {
     AlphaInput,
@@ -16,6 +15,7 @@
     SaturationArea,
     SaturationInput
   } from '@hueycolor/svelte';
+  import PipetteIcon from '@lucide/svelte/icons/pipette';
   import { Popover, PopoverPopup, PopoverTrigger } from '$lib/components/ui/popover';
   import ColorPickerSwatches from './color-picker-swatches.svelte';
 
@@ -147,12 +147,8 @@
 {/snippet}
 
 <Popover>
-  <PopoverTrigger>
-    {@render marker(color)}
-  </PopoverTrigger>
+  <PopoverTrigger> {@render marker(color)} </PopoverTrigger>
   <PopoverPopup class="w-70 p-0">
-    <HueyRoot bind:color>
-      {@render child()}
-    </HueyRoot>
+    <HueyRoot bind:color> {@render child()} </HueyRoot>
   </PopoverPopup>
 </Popover>

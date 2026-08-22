@@ -40,7 +40,8 @@
         <div class="mb-3">
           <PopoverTitle class="text-sm">Confirm occurrences</PopoverTitle>
           <PopoverDescription class="text-xs">
-            {occurrences.length} pending for this booking
+            {occurrences.length}
+            pending for this booking
           </PopoverDescription>
         </div>
         <CheckboxGroup

@@ -2,8 +2,8 @@
   import AlertCircle from '@lucide/svelte/icons/alert-circle';
   import CloudUpload from '@lucide/svelte/icons/cloud-upload';
   import Download from '@lucide/svelte/icons/download';
-  import FileArchive from '@lucide/svelte/icons/file-archive';
   import File from '@lucide/svelte/icons/file';
+  import FileArchive from '@lucide/svelte/icons/file-archive';
   import FileSpreadsheet from '@lucide/svelte/icons/file-spreadsheet';
   import FileText from '@lucide/svelte/icons/file-text';
   import Headphones from '@lucide/svelte/icons/headphones';
@@ -94,7 +94,7 @@
       {...fileUpload.inputProps}
       aria-label="Upload files"
       class="sr-only"
-    />
+    >
     <div class="flex flex-col items-center justify-center text-center">
       <div
         aria-hidden="true"

@@ -1,11 +1,11 @@
 <script lang="ts">
   import { Button } from '$lib/components/ui/button';
   import {
+    type Area,
     Cropper,
     CropperCropArea,
     CropperDescription,
-    CropperImage,
-    type Area
+    CropperImage
   } from '$lib/components/ui/cropper';
 
   const RATIOS = [
@@ -126,13 +126,18 @@
   {/key}
 
   <p class="text-center text-muted-foreground text-xs">
-    Image: {IMAGE_WIDTH} × {IMAGE_HEIGHT}px • Zoom: {zoomPercent}% • Crop: {crop
+    Image: {IMAGE_WIDTH} × {IMAGE_HEIGHT}px • Zoom: {zoomPercent}% • Crop:
+    {crop
       ? `${crop.width} × ${crop.height}px`
-      : '—'} • Ratio: {selectedRatio.label}
+      : '—'}
+    • Ratio: {selectedRatio.label}
   </p>
 
   <div class="rounded-md bg-muted px-4 py-2 text-center font-mono text-foreground/80 text-xs">
-    Selection: x:{crop?.x ?? 0} y:{crop?.y ?? 0} w:{crop?.width ?? 0} h:{crop?.height ?? 0}
+    Selection: x:{crop?.x ?? 0}
+    y:{crop?.y ?? 0}
+    w:{crop?.width ?? 0}
+    h:{crop?.height ?? 0}
   </div>
 
   <div class="flex items-center justify-end gap-3">
@@ -141,7 +146,7 @@
         alt="Selected crop preview"
         class="size-9 shrink-0 rounded-md border object-cover"
         src={selectedImageUrl}
-      />
+      >
     {/if}
     <Button class="rounded-full" disabled={!crop} onclick={handleSelect}>Select</Button>
   </div>

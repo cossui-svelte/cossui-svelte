@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Drawer as DrawerPrimitive } from '@shardsui/svelte/drawer';
-  import { getContext } from 'svelte';
   import type { ComponentProps } from 'svelte';
+  import { getContext } from 'svelte';
   import { cn } from '$lib/utils';
 
   type DrawerPosition = 'right' | 'left' | 'top' | 'bottom';

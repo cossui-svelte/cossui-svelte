@@ -4,7 +4,6 @@
   import SearchIcon from '@lucide/svelte/icons/search';
   import { Label } from '$lib/components/ui/label';
   import { Menu, MenuItem, MenuPopup, MenuTrigger } from '$lib/components/ui/menu';
-  import { cn } from '$lib/utils';
   import {
     Sidebar,
     SidebarContent,
@@ -21,6 +20,7 @@
     SidebarRail,
     SidebarTrigger
   } from '$lib/components/ui/sidebar';
+  import { cn } from '$lib/utils';
 
   const data = {
     versions: ['1.0.1', '1.1.0-alpha', '2.0.0-beta1'],

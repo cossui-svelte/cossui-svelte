@@ -212,7 +212,7 @@
           class="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground"
           placeholder="Search documentation…"
           type="text"
-        />
+        >
       </div>
 
       <!-- Results -->
@@ -243,7 +243,7 @@
                   {/if}
                   <span class="flex-1">{item.label}</span>
                 </a>
-                <!-- eslint-enable svelte/no-navigation-without-resolve -->
+              <!-- eslint-enable svelte/no-navigation-without-resolve -->
               {/each}
             </div>
           {/each}

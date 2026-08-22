@@ -9,6 +9,4 @@
   let { children, ...restProps }: Props = $props();
 </script>
 
-<MenuPrimitive.SubmenuRoot {...restProps}>
-  {@render children?.()}
-</MenuPrimitive.SubmenuRoot>
+<MenuPrimitive.SubmenuRoot {...restProps}> {@render children?.()} </MenuPrimitive.SubmenuRoot>

@@ -4,12 +4,12 @@
 
   import '../app.css';
 
-  import { page } from '$app/state';
   import { ModeWatcher } from 'mode-watcher';
   import { AnchoredToastProvider, ToastProvider } from '$lib/components/ui/toast';
-  import SeoHead from '$lib/components/app/seo-head.svelte';
   import SiteHeader from '$lib/components/app/app-site-header.svelte';
+  import SeoHead from '$lib/components/app/seo-head.svelte';
   import SiteFooter from '$lib/components/app/site-footer.svelte';
+  import { page } from '$app/state';
 
   const DEFAULT_SEO = {
     description:

@@ -1,8 +1,0 @@
-node_modules
-dist
-build
-.svelte-kit
-pnpm-lock.yaml
-pnpm-workspace.yaml
-*.log
-*.old

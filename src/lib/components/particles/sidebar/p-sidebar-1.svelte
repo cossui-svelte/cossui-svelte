@@ -10,9 +10,9 @@
     SidebarGroup,
     SidebarGroupContent,
     SidebarGroupLabel,
+    SidebarInset,
     SidebarMenu,
     SidebarMenuButton,
-    SidebarInset,
     SidebarMenuItem,
     SidebarProvider,
     SidebarTrigger

@@ -1,16 +1,16 @@
 <script lang="ts">
-  import { getContext } from 'svelte';
-  import * as MapLibreGL from 'maplibre-gl';
   import type { PopupOptions } from 'maplibre-gl';
+  import * as MapLibreGL from 'maplibre-gl';
+  import { getContext } from 'svelte';
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '$lib/utils.js';
 
   interface Props extends Omit<HTMLAttributes<HTMLDivElement>, 'children' | 'class'> {
+    anchor?: PopupOptions['anchor'];
     children?: import('svelte').Snippet;
     class?: string;
-    offset?: PopupOptions['offset'];
-    anchor?: PopupOptions['anchor'];
     maxWidth?: string;
+    offset?: PopupOptions['offset'];
   }
 
   let { children, class: className, offset = 16, anchor, maxWidth, ...restProps }: Props = $props();

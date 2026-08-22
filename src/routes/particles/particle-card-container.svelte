@@ -25,8 +25,6 @@
         {@render children()}
       </CardPanel>
     </Card>
-    <CardFrameFooter class="flex items-center gap-3 p-2">
-      {@render footer()}
-    </CardFrameFooter>
+    <CardFrameFooter class="flex items-center gap-3 p-2"> {@render footer()} </CardFrameFooter>
   </CardFrame>
 </div>

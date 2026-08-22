@@ -3,5 +3,5 @@
 </script>
 
 <AspectRatio ratio={1 / 1} class="rounded-15px scale-[0.3] bg-transparent">
-  <img src="/img/abstract.png" alt="abstract" class="h-full w-full rounded-lg object-cover" />
+  <img src="/img/abstract.png" alt="abstract" class="h-full w-full rounded-lg object-cover">
 </AspectRatio>

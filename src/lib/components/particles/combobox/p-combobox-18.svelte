@@ -40,7 +40,9 @@
         placeholder="Search fruits..."
         showTrigger={false}
       >
-        {#snippet startAddon()}<Search />{/snippet}
+        {#snippet startAddon()}
+          <Search />
+        {/snippet}
       </ComboboxInput>
     </div>
     <ComboboxEmpty>No items found.</ComboboxEmpty>

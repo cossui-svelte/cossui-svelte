@@ -29,7 +29,11 @@
             showPassword = !showPassword;
           }}
         >
-          {#if showPassword}<EyeOff />{:else}<Eye />{/if}
+          {#if showPassword}
+            <EyeOff />
+          {:else}
+            <Eye />
+          {/if}
         </TooltipTrigger>
         <TooltipPopup>
           {showPassword ? 'Hide password' : 'Show password'}

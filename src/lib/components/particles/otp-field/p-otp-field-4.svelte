@@ -14,7 +14,5 @@
       {/each}
     {/snippet}
   </OTPField>
-  <p class="text-muted-foreground text-xs">
-    Enter the {OTP_LENGTH}-digit code sent to your email.
-  </p>
+  <p class="text-muted-foreground text-xs">Enter the {OTP_LENGTH}-digit code sent to your email.</p>
 </div>

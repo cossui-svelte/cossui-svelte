@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { getContext } from 'svelte';
   import type * as MapLibreGL from 'maplibre-gl';
+  import { getContext } from 'svelte';
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '$lib/utils.js';
 
@@ -30,7 +30,9 @@
 
     // Store and move children to marker element
     movedContent = Array.from(wrapperElement.childNodes);
-    movedContent.forEach((child) => element.appendChild(child));
+    movedContent.forEach((child) => {
+      element.appendChild(child);
+    });
 
     return () => {
       // Move content back on cleanup

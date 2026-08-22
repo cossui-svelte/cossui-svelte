@@ -1,12 +1,12 @@
 <script lang="ts">
+  import { formatNumeral, NumeralThousandGroupStyles } from 'cleave-zen';
+  import type { Attachment } from 'svelte/attachments';
   import {
     InputGroup,
     InputGroupAddon,
     InputGroupInput,
     InputGroupText
   } from '$lib/components/ui/input-group';
-  import { formatNumeral, NumeralThousandGroupStyles } from 'cleave-zen';
-  import type { Attachment } from 'svelte/attachments';
 
   const currencyAttachment: Attachment<HTMLInputElement> = (input) => {
     const handleInput = (event: Event) => {

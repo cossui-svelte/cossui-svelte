@@ -1,9 +1,9 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
-  import { resolve } from '$app/paths';
   import GithubLink from './github-link.svelte';
   import ModeSwitcher from './mode-switcher.svelte';
   import ProductLabel from './product-label.svelte';
+  import { resolve } from '$app/paths';
 
   // import ProductsDropdown from "./products-dropdown.svelte";
 

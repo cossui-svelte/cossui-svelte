@@ -168,7 +168,9 @@
           oninput={handleInput}
           placeholder="HH:mm"
         >
-          {#snippet startAddon()}<ClockIcon aria-hidden="true" />{/snippet}
+          {#snippet startAddon()}
+            <ClockIcon aria-hidden="true" />
+          {/snippet}
         </AutocompleteInput>
         <AutocompletePopup class={matchingTimes.length === 0 ? 'hidden' : undefined}>
           <AutocompleteList>

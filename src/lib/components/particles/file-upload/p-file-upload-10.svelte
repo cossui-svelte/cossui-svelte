@@ -1,7 +1,7 @@
 <script lang="ts">
   import AlertCircle from '@lucide/svelte/icons/alert-circle';
-  import FileArchive from '@lucide/svelte/icons/file-archive';
   import File from '@lucide/svelte/icons/file';
+  import FileArchive from '@lucide/svelte/icons/file-archive';
   import FileSpreadsheet from '@lucide/svelte/icons/file-spreadsheet';
   import FileText from '@lucide/svelte/icons/file-text';
   import Headphones from '@lucide/svelte/icons/headphones';
@@ -85,7 +85,7 @@
       {...fileUpload.inputProps}
       aria-label="Upload files"
       class="sr-only"
-    />
+    >
 
     {#if fileUpload.files.length > 0}
       <div class="flex w-full flex-col gap-3">

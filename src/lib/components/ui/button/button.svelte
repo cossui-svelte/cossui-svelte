@@ -52,7 +52,7 @@
       <Spinner class="pointer-events-none absolute" data-slot="button-loading-indicator" />
     {/if}
   </a>
-  <!-- eslint-enable svelte/no-navigation-without-resolve -->
+<!-- eslint-enable svelte/no-navigation-without-resolve -->
 {:else}
   <ButtonPrimitive
     bind:ref

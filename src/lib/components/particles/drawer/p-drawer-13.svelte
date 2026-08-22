@@ -9,7 +9,6 @@
   import {
     Drawer,
     DrawerClose,
-    drawerMenuItemClass,
     DrawerMenu,
     DrawerMenuCheckboxItem,
     DrawerMenuGroup,
@@ -20,7 +19,8 @@
     DrawerMenuTrigger,
     DrawerPanel,
     DrawerPopup,
-    DrawerTrigger
+    DrawerTrigger,
+    drawerMenuItemClass
   } from '$lib/components/ui/drawer';
   import {
     Menu,

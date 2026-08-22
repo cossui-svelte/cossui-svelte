@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { resolve } from '$app/paths';
   import {
     ContextMenu,
     ContextMenuLinkItem,
     ContextMenuPopup,
     ContextMenuTrigger
   } from '$lib/components/ui/context-menu';
+  import { resolve } from '$app/paths';
 </script>
 
 <ContextMenu>

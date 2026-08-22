@@ -100,7 +100,9 @@
     <ComboboxPopup aria-label="Select member">
       <div class="border-b p-2">
         <ComboboxInput placeholder="Search members..." showTrigger={false}>
-          {#snippet startAddon()}<Search aria-hidden />{/snippet}
+          {#snippet startAddon()}
+            <Search aria-hidden />
+          {/snippet}
         </ComboboxInput>
       </div>
       <ComboboxEmpty>No members found.</ComboboxEmpty>

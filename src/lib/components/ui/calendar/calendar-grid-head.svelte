@@ -1,6 +1,6 @@
 <script lang="ts">
-  import * as CalendarPrimitive from './internal';
   import { cn } from '$lib/utils';
+  import * as CalendarPrimitive from './internal';
 
   let {
     ref = $bindable(null),

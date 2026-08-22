@@ -22,7 +22,5 @@
 {#if child}
   {@render child({ props: mergedProps })}
 {:else}
-  <time bind:this={ref} {...mergedProps}>
-    {@render children?.()}
-  </time>
+  <time bind:this={ref} {...mergedProps}> {@render children?.()} </time>
 {/if}

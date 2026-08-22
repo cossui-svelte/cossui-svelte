@@ -76,7 +76,7 @@
               height={96}
               src={bgPreview}
               width={512}
-            />
+            >
           {/if}
           <div class="absolute inset-0 flex items-center justify-center gap-2">
             <button
@@ -104,7 +104,7 @@
           {...bgUpload.inputProps}
           aria-label="Upload image file"
           class="sr-only"
-        />
+        >
       </div>
 
       <div class="-mt-10 px-6">
@@ -118,7 +118,7 @@
               height={80}
               src={avatarPreview}
               width={80}
-            />
+            >
           {/if}
           <button
             aria-label="Change profile picture"
@@ -133,7 +133,7 @@
             {...avatarUpload.inputProps}
             aria-label="Upload profile picture"
             class="sr-only"
-          />
+          >
         </div>
       </div>
 

@@ -43,7 +43,7 @@
       aria-label="Upload file"
       class="sr-only"
       disabled={Boolean(file)}
-    />
+    >
 
     <div class="flex flex-col items-center justify-center text-center">
       <div

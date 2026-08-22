@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Map, MapMarker, MarkerContent, MarkerTooltip } from '$lib/components/ui/map';
   import Flame from '@lucide/svelte/icons/flame';
   import TrendingUp from '@lucide/svelte/icons/trending-up';
+  import { Map, MapMarker, MarkerContent, MarkerTooltip } from '$lib/components/ui/map';
 </script>
 
 <Map class="h-80" center={[-73.99, 40.735]} zoom={10}>

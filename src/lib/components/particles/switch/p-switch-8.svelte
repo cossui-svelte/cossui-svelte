@@ -207,7 +207,9 @@
                             showTrigger={false}
                             size="sm"
                           >
-                            {#snippet startAddon()}<SearchIcon />{/snippet}
+                            {#snippet startAddon()}
+                              <SearchIcon />
+                            {/snippet}
                           </ComboboxInput>
                         </div>
                         <ComboboxEmpty>No times found.</ComboboxEmpty>
@@ -249,7 +251,9 @@
                             showTrigger={false}
                             size="sm"
                           >
-                            {#snippet startAddon()}<SearchIcon />{/snippet}
+                            {#snippet startAddon()}
+                              <SearchIcon />
+                            {/snippet}
                           </ComboboxInput>
                         </div>
                         <ComboboxEmpty>No times found.</ComboboxEmpty>

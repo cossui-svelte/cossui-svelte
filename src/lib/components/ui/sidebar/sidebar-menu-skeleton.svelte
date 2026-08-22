@@ -1,7 +1,7 @@
 <script lang="ts">
+  import type { HTMLAttributes } from 'svelte/elements';
   import { Skeleton } from '$lib/components/ui/skeleton';
   import { cn, type WithElementRef } from '$lib/utils.js';
-  import type { HTMLAttributes } from 'svelte/elements';
 
   let {
     ref = $bindable(null),
@@ -24,9 +24,7 @@
   class={cn('flex h-8 items-center gap-2 rounded-md px-2', className)}
   {...restProps}
 >
-  <Skeleton>
-    {@render children?.()}
-  </Skeleton>
+  <Skeleton> {@render children?.()} </Skeleton>
   <!-- {#if showIcon}
     <Skeleton class="size-4 rounded-md" data-sidebar="menu-skeleton-icon" />
   {/if}

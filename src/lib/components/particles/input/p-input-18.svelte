@@ -14,6 +14,7 @@
     bind:value={charLimit.value}
   />
   <p class="text-muted-foreground text-xs">
-    <span class="tabular-nums">{charLimit.maxLength - charLimit.characterCount}</span> characters left
+    <span class="tabular-nums">{charLimit.maxLength - charLimit.characterCount}</span>
+    characters left
   </p>
 </div>

@@ -1,6 +1,6 @@
 <script lang="ts" module>
-  import type * as MapLibreGL from 'maplibre-gl';
   import type * as GeoJSON from 'geojson';
+  import type * as MapLibreGL from 'maplibre-gl';
 
   export type MapArcDatum = {
     /** Unique identifier for this arc. Required for hover state tracking. */
@@ -54,8 +54,8 @@
 </script>
 
 <script lang="ts" generics="T extends MapArcDatum = MapArcDatum">
-  import { useMap } from './use-map.svelte.js';
   import { untrack } from 'svelte';
+  import { useMap } from './use-map.svelte.js';
 
   let {
     data,

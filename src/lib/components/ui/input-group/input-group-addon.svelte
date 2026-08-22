@@ -50,7 +50,6 @@
   }
 </script>
 
-<!-- biome-ignore lint/a11y/noStaticElementInteractions: mousedown delegates focus to the inner input -->
 <div
   bind:this={ref}
   class={cn(inputGroupAddonVariants({ align }), className)}

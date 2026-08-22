@@ -1,8 +1,8 @@
 <script lang="ts">
   import ChevronRight from '@lucide/svelte/icons/chevron-right';
-  import * as CalendarPrimitive from './internal';
   import { type ButtonVariant, buttonVariants } from '$lib/components/ui/button';
   import { cn } from '$lib/utils';
+  import * as CalendarPrimitive from './internal';
 
   let {
     ref = $bindable(null),

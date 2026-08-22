@@ -11,13 +11,13 @@
 </script>
 
 <script lang="ts">
-  import { onMount, onDestroy, setContext, untrack } from 'svelte';
   import * as MapLibreGL from 'maplibre-gl';
+  import { onDestroy, onMount, setContext, untrack } from 'svelte';
   import 'maplibre-gl/dist/maplibre-gl.css';
   import type { HTMLAttributes } from 'svelte/elements';
-  import { browser } from '$app/environment';
   import { cn } from '$lib/utils.js';
   import { resolveMapTheme } from './theme';
+  import { browser } from '$app/environment';
 
   const blankMapStyle: MapLibreGL.StyleSpecification = {
     version: 8,
@@ -66,47 +66,47 @@
   };
 
   interface Props extends Omit<HTMLAttributes<HTMLDivElement>, 'children' | 'class'> {
-    children?: import('svelte').Snippet;
-    class?: string;
-    styles?: {
-      light?: MapStyleOption;
-      dark?: MapStyleOption;
-    };
     /**
      * Use a transparent, tile-less basemap instead of the default Carto style.
      * Useful for visualizations where child layers provide all geography.
      * Ignored when an explicit `styles` prop is provided.
      */
     blank?: boolean;
-    theme?: 'light' | 'dark';
-    /** Map projection type. Use `{ type: "globe" }` for 3D globe view. */
-    projection?: MapLibreGL.ProjectionSpecification;
     center?: [number, number];
-    zoom?: number;
-    options?: Omit<MapLibreGL.MapOptions, 'container' | 'style'>;
+    children?: import('svelte').Snippet;
+    class?: string;
+    /** Show a loading indicator on top of the map. */
+    loading?: boolean;
     /**
      * Bindable reference to the underlying MapLibre map instance.
      * Useful for calling map methods imperatively from the parent.
      */
     map?: MapLibreGL.Map | null;
     /**
-     * Controlled viewport. When provided with onViewportChange,
-     * the map becomes controlled and viewport is driven by this prop.
+     * Callback fired after each style load completes (initial load and subsequent style changes).
+     * Runs after any viewport restoration, so it's safe to call map methods here.
      */
-    viewport?: Partial<MapViewport>;
+    onstyleloaded?: () => void;
     /**
      * Callback fired continuously as the viewport changes (pan, zoom, rotate, pitch).
      * Can be used standalone to observe changes, or with `viewport` prop
      * to enable controlled mode where the map viewport is driven by your state.
      */
     onviewportchange?: (viewport: MapViewport) => void;
+    options?: Omit<MapLibreGL.MapOptions, 'container' | 'style'>;
+    /** Map projection type. Use `{ type: "globe" }` for 3D globe view. */
+    projection?: MapLibreGL.ProjectionSpecification;
+    styles?: {
+      light?: MapStyleOption;
+      dark?: MapStyleOption;
+    };
+    theme?: 'light' | 'dark';
     /**
-     * Callback fired after each style load completes (initial load and subsequent style changes).
-     * Runs after any viewport restoration, so it's safe to call map methods here.
+     * Controlled viewport. When provided with onViewportChange,
+     * the map becomes controlled and viewport is driven by this prop.
      */
-    onstyleloaded?: () => void;
-    /** Show a loading indicator on top of the map. */
-    loading?: boolean;
+    viewport?: Partial<MapViewport>;
+    zoom?: number;
   }
 
   const defaultStyles = {

@@ -4,8 +4,6 @@
 </script>
 
 <div class="flex flex-col gap-2">
-  <Label for="message-7">
-    Message <span class="text-destructive">*</span>
-  </Label>
+  <Label for="message-7"> Message <span class="text-destructive">*</span> </Label>
   <Textarea id="message-7" placeholder="Type your message here" required />
 </div>

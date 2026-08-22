@@ -22,6 +22,6 @@
       data-slot="cropper-image"
       class={cn('pointer-events-none h-full w-full object-cover', className)}
       {...restProps}
-    />
+    >
   </div>
 {/if}

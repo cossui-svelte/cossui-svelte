@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Toast as ToastPrimitive } from '@shardsui/svelte/toast';
   import type { ComponentProps, Snippet } from 'svelte';
-  import { toastManager, type ToastPosition } from './toast-manager';
+  import { type ToastPosition, toastManager } from './toast-manager';
   import Toasts from './toasts.svelte';
 
   let {

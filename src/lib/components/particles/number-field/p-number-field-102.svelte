@@ -1,7 +1,7 @@
 <script lang="ts">
+  import VolumeIcon from '@lucide/svelte/icons/volume';
   import Volume1Icon from '@lucide/svelte/icons/volume-1';
   import Volume2Icon from '@lucide/svelte/icons/volume-2';
-  import VolumeIcon from '@lucide/svelte/icons/volume';
   import VolumeXIcon from '@lucide/svelte/icons/volume-x';
   import {
     NumberField,
