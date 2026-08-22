@@ -78,7 +78,7 @@
     "cf:typegen": "wrangler types src/worker-configuration.d.ts",
     "check": "svelte-kit sync && svelte-check --workspace .",
     "cz": "tsx ./node_modules/cz-customizable/standalone.js",
-    "dev": "vite dev --open --host",
+    "dev": "vite dev --host",
     "dev:registry": "jsrepo build --watch",
     "format": "biome check . --fix --diagnostic-level=error && eslint --fix",
     "gen:registry": "tsx scripts/generateComponentRegistry.ts -w src/lib/registry/generated-registry-components.ts && tsx scripts/generateParticleRegistry.ts && rm -f static/r/*.json && jsrepo build && pnpm format",
