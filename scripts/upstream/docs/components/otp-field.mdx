@@ -1,0 +1,149 @@
+---
+title: OTP Field
+description: A segmented input for one-time passwords and verification codes.
+
+links:
+  doc: https://base-ui.com/react/components/otp-field
+---
+
+<ComponentPreview name="p-otp-field-1" />
+
+This component wraps [Base UI OTP Field](https://base-ui.com/react/components/otp-field).
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @coss/otp-field
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @base-ui/react lucide-react
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="otp-field" title="components/ui/otp-field.tsx" />
+<ComponentSource name="separator" title="components/ui/separator.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import {
+  OTPField,
+  OTPFieldInput,
+  OTPFieldSeparator,
+} from "@/components/ui/otp-field"
+```
+
+```tsx
+<OTPField aria-label="Verification code" length={6}>
+  <OTPFieldInput />
+  <OTPFieldInput aria-label="Character 2 of 6" />
+  <OTPFieldInput aria-label="Character 3 of 6" />
+  <OTPFieldSeparator />
+  <OTPFieldInput aria-label="Character 4 of 6" />
+  <OTPFieldInput aria-label="Character 5 of 6" />
+  <OTPFieldInput aria-label="Character 6 of 6" />
+</OTPField>
+```
+
+## API Reference
+
+This component is built on [Base UI OTP Field](https://base-ui.com/react/components/otp-field). Each slot is a real `<input>`; order in the tree must match `length` on the root.
+
+### OTPField
+
+Root component. Accepts the same props as `OTPField.Root`; `className` is merged with the default layout styles.
+
+Use **`length`** (required) for the number of characters. The previous `maxLength` prop from the legacy `input-otp` package is not used.
+
+| Prop   | Type                  | Default     | Description                          |
+| ------ | --------------------- | ----------- | ------------------------------------ |
+| `size` | `"default" \| "lg"` | `"default"` | Size applied to all slots in the field |
+| `validationType` | `"numeric" \| "alpha" \| "alphanumeric" \| "none"` | `numeric` | Which characters are accepted; see [Base UI OTP Field](https://base-ui.com/react/components/otp-field) |
+| `mask` | `boolean` | `false` | When `true`, masks entered characters in each slot |
+
+### OTPFieldInput
+
+Renders one OTP character input (Base UI `OTPField.Input`). Slots are ordered by **DOM order** in the tree (no `index` prop).
+
+| Prop    | Type     | Description                                      |
+| ------- | -------- | ------------------------------------------------ |
+| `className` | `string` | Merged with the default slot styles              |
+| `placeholder` | `string` | Native placeholder; pair with `focus-visible:placeholder:text-transparent` if hints should hide when typing |
+
+Label the OTP control on the root (`OTPField`) with `aria-label` or a visible `<label>`/`FieldLabel`. In Base UI 1.6+, the first `OTPFieldInput` should inherit that field label, while subsequent slots can use `aria-label` (for example, `Character 2 of 6`).
+
+### OTPFieldSeparator
+
+Visual separator between slot groups. Uses the design-system `Separator` inside `OTPField.Separator` for layout and accessibility.
+
+## Examples
+
+### Large
+
+<ComponentPreview name="p-otp-field-2" />
+
+### With Separator
+
+<ComponentPreview name="p-otp-field-3" />
+
+### With Label
+
+<ComponentPreview name="p-otp-field-4" />
+
+### Custom normalization
+
+Set `validationType="none"` with `normalizeValue` when you need to normalize pasted input before it reaches state, or to enforce custom character rules. Use `inputMode` for the virtual keyboard hint, and `onValueInvalid` when you want to react to characters that were rejected after normalization.
+
+<ComponentPreview name="p-otp-field-6" />
+
+### Auto Validation
+
+<ComponentPreview name="p-otp-field-7" />
+
+### Alphanumeric
+
+Use `validationType="alphanumeric"` for recovery, backup, or invite codes that mix letters and numbers.
+
+<ComponentPreview name="p-otp-field-8" />
+
+### Placeholder hints
+
+Each slot is a real `<input>`, so `placeholder` and CSS behave as usual. Hide the placeholder on focus when the active slot should not show a hint.
+
+<ComponentPreview name="p-otp-field-9" />
+
+### Masked entry
+
+Pass `mask` on the root when the code should be obscured while it is typed (e.g. shared screens).
+
+<ComponentPreview name="p-otp-field-10" />
+
+## Changelog
+
+- [Apr 14, 2026](/ui/docs/changelog#otp-field) — `input-otp.tsx` removed in favor of `otp-field.tsx` (`@coss/otp-field`)

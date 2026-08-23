@@ -33,7 +33,7 @@
 			"type": "registry:ui",
 			"path": "toast/toast-provider.svelte",
 			"target": "$lib/components/ui/toast/toast-provider.svelte",
-			"content": "<script lang=\"ts\">\n  import { Toast as ToastPrimitive } from '@shardsui/svelte/toast';\n  import type { ComponentProps, Snippet } from 'svelte';\n  import { toastManager, type ToastPosition } from './toast-manager';\n  import Toasts from './toasts.svelte';\n\n  let {\n    children,\n    position = 'bottom-right',\n    portalProps,\n    ...restProps\n  }: Omit<ComponentProps<typeof ToastPrimitive.Provider>, 'toastManager' | 'children'> & {\n    position?: ToastPosition;\n    portalProps?: ComponentProps<typeof ToastPrimitive.Portal>;\n    children?: Snippet;\n  } = $props();\n</script>\n\n<ToastPrimitive.Provider {toastManager} {...restProps}>\n  {@render children?.()}\n  <Toasts {position} {portalProps} />\n</ToastPrimitive.Provider>\n"
+			"content": "<script lang=\"ts\">\n  import { Toast as ToastPrimitive } from '@shardsui/svelte/toast';\n  import type { ComponentProps, Snippet } from 'svelte';\n  import { type ToastPosition, toastManager } from './toast-manager';\n  import Toasts from './toasts.svelte';\n\n  let {\n    children,\n    position = 'bottom-right',\n    portalProps,\n    ...restProps\n  }: Omit<ComponentProps<typeof ToastPrimitive.Provider>, 'toastManager' | 'children'> & {\n    position?: ToastPosition;\n    portalProps?: ComponentProps<typeof ToastPrimitive.Portal>;\n    children?: Snippet;\n  } = $props();\n</script>\n\n<ToastPrimitive.Provider {toastManager} {...restProps}>\n  {@render children?.()}\n  <Toasts {position} {portalProps} />\n</ToastPrimitive.Provider>\n"
 		},
 		{
 			"type": "registry:ui",

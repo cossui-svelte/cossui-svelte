@@ -9,7 +9,7 @@
 			"type": "registry:block",
 			"path": "p-input-18.svelte",
 			"target": "$lib/components/particles/input/p-input-18.svelte",
-			"content": "<script lang=\"ts\">\n  import { Input } from '$lib/components/ui/input';\n  import { useCharacterLimit } from '$lib/hooks/use-character-limit.svelte';\n\n  const charLimit = useCharacterLimit(14);\n</script>\n\n<div class=\"flex flex-col items-start gap-2\">\n  <Input\n    aria-label=\"Code\"\n    maxlength={charLimit.maxLength}\n    placeholder=\"Enter code\"\n    type=\"text\"\n    bind:value={charLimit.value}\n  />\n  <p class=\"text-muted-foreground text-xs\">\n    <span class=\"tabular-nums\">{charLimit.maxLength - charLimit.characterCount}</span> characters left\n  </p>\n</div>\n"
+			"content": "<script lang=\"ts\">\n  import { Input } from '$lib/components/ui/input';\n  import { useCharacterLimit } from '$lib/hooks/use-character-limit.svelte';\n\n  const charLimit = useCharacterLimit(14);\n</script>\n\n<div class=\"flex flex-col items-start gap-2\">\n  <Input\n    aria-label=\"Code\"\n    maxlength={charLimit.maxLength}\n    placeholder=\"Enter code\"\n    type=\"text\"\n    bind:value={charLimit.value}\n  />\n  <p class=\"text-muted-foreground text-xs\">\n    <span class=\"tabular-nums\">{charLimit.maxLength - charLimit.characterCount}</span>\n    characters left\n  </p>\n</div>\n"
 		}
 	],
 	"registryDependencies": [

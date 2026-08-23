@@ -87,7 +87,7 @@
 			"type": "registry:ui",
 			"path": "menu/menu-sub.svelte",
 			"target": "$lib/components/ui/menu/menu-sub.svelte",
-			"content": "<script lang=\"ts\">\n  import { Menu as MenuPrimitive } from '@shardsui/svelte/menu';\n  import type { ComponentProps, Snippet } from 'svelte';\n\n  type Props = Omit<ComponentProps<typeof MenuPrimitive.SubmenuRoot>, 'children'> & {\n    children?: Snippet;\n  };\n\n  let { children, ...restProps }: Props = $props();\n</script>\n\n<MenuPrimitive.SubmenuRoot {...restProps}>\n  {@render children?.()}\n</MenuPrimitive.SubmenuRoot>\n"
+			"content": "<script lang=\"ts\">\n  import { Menu as MenuPrimitive } from '@shardsui/svelte/menu';\n  import type { ComponentProps, Snippet } from 'svelte';\n\n  type Props = Omit<ComponentProps<typeof MenuPrimitive.SubmenuRoot>, 'children'> & {\n    children?: Snippet;\n  };\n\n  let { children, ...restProps }: Props = $props();\n</script>\n\n<MenuPrimitive.SubmenuRoot {...restProps}> {@render children?.()} </MenuPrimitive.SubmenuRoot>\n"
 		},
 		{
 			"type": "registry:ui",

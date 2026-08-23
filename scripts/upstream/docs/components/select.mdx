@@ -1,0 +1,204 @@
+---
+title: Select
+description: A common form component for choosing a predefined value in a dropdown menu.
+
+links:
+  doc: https://base-ui.com/react/components/select#api-reference
+---
+
+<ComponentPreview name="p-select-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @coss/select
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @base-ui/react
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="select" title="components/ui/select.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import {
+  Select,
+  SelectItem,
+  SelectPopup,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+```
+
+```tsx
+const items = [
+  { label: "Select framework", value: null },
+  { label: "Next.js", value: "next" },
+  { label: "Vite", value: "vite" },
+  { label: "Astro", value: "astro" },
+]
+
+<Select items={items}>
+  <SelectTrigger>
+    <SelectValue />
+  </SelectTrigger>
+  <SelectPopup>
+    <SelectLabel>Frameworks</SelectLabel>
+    {items.map((item) => (
+      <SelectItem key={item.value} value={item}>
+        {item.label}
+      </SelectItem>
+    ))}
+  </SelectPopup>
+  </Select>
+```
+
+## API Reference
+
+### Select
+
+Root component. Alias for `Select.Root` from Base UI.
+
+### SelectTrigger
+
+Trigger button that opens the select dropdown. Styled wrapper for `Select.Trigger` from Base UI.
+
+| Prop   | Type                        | Default     | Description                                      |
+| ------ | --------------------------- | ----------- | ------------------------------------------------ |
+| `size` | `"sm" \| "default" \| "lg"` | `"default"` | Controls the size of the trigger                 |
+
+### SelectValue
+
+Displays the selected value. Styled wrapper for `Select.Value` from Base UI.
+
+### SelectPopup
+
+Popup container for select options. Also exported as `SelectContent`.
+
+| Prop                   | Type                    | Default | Description                                                                                         |
+| ---------------------- | ----------------------- | ------- | --------------------------------------------------------------------------------------------------- |
+| `alignItemWithTrigger` | `boolean`               | `true`  | Aligns the selected item with the trigger                                                           |
+| `sideOffset`           | `number`                | `4`     | Distance from the trigger in pixels                                                                   |
+| `portalProps`          | `Select.Portal.Props`   | -       | Props forwarded to the internal portal (`keepMounted`, `container`, etc.); see Base UI Select portal API |
+
+### SelectItem
+
+Individual select option. Styled wrapper for `Select.Item` from Base UI with built-in indicator.
+
+### SelectGroup
+
+Groups related select items. Alias for `Select.Group` from Base UI.
+
+### SelectLabel
+
+Label for all options in the popup. Styled wrapper for `Select.Label` from Base UI. Clicking it focuses the select trigger without opening the popup.
+
+### SelectGroupLabel
+
+Label for a select group. Styled wrapper for `Select.GroupLabel` from Base UI.
+
+### SelectSeparator
+
+Visual separator between items. Styled wrapper for `Select.Separator` from Base UI.
+
+### SelectButton
+
+A standalone button styled like a `SelectTrigger`. Use it as a `render` prop on other trigger components (e.g., `ComboboxTrigger`, `MenuTrigger`) to give them select-like appearance.
+
+| Prop   | Type                        | Default     | Description                                      |
+| ------ | --------------------------- | ----------- | ------------------------------------------------ |
+| `size` | `"sm" \| "default" \| "lg"` | `"default"` | Controls the size of the button                 |
+
+```tsx
+import { SelectButton } from "@/components/ui/select"
+```
+
+```tsx
+<ComboboxTrigger render={<SelectButton />}>
+  <ComboboxValue placeholder="Select a fruit" />
+</ComboboxTrigger>
+```
+
+## Examples
+
+For accessible labelling and validation, prefer using the `Field` component to wrap selects. See the related example: [Select field](/ui/docs/components/field#select-field).
+
+### Small Size
+
+<ComponentPreview name="p-select-2" />
+
+### Large Size
+
+<ComponentPreview name="p-select-3" />
+
+### Disabled
+
+<ComponentPreview name="p-select-4" />
+
+### Without Item Alignment
+
+<ComponentPreview name="p-select-5" />
+
+### With Groups
+
+<ComponentPreview name="p-select-6" />
+
+### With Label
+
+<ComponentPreview name="p-select-23" />
+
+### Multiple Selection
+
+<ComponentPreview name="p-select-7" />
+
+### With Icon
+
+<ComponentPreview name="p-select-8" />
+
+### Options with Icon
+
+<ComponentPreview name="p-select-9" />
+
+### With Object Values
+
+<ComponentPreview name="p-select-10" />
+
+### SelectButton with Combobox
+
+Use `SelectButton` as a `render` prop on `ComboboxTrigger` to create a combobox that looks like a select.
+
+<ComponentPreview name="p-combobox-18" />
+
+### Form Integration
+
+<ComponentPreview name="p-select-11" />
+

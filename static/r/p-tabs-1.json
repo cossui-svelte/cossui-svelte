@@ -2,7 +2,7 @@
 	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
 	"name": "p-tabs-1",
 	"title": "Tabs 1",
-	"description": "Basic tabs",
+	"description": "Segmented control built with tabs",
 	"type": "registry:block",
 	"files": [
 		{

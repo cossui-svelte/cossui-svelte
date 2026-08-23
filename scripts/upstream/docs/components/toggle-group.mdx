@@ -1,0 +1,115 @@
+---
+title: Toggle Group
+description: Provides a shared state to a series of toggle buttons.
+---
+
+<ComponentPreview name="p-toggle-group-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @coss/toggle-group
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @base-ui/react
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="toggle-group" title="components/ui/toggle-group.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
+```
+
+```tsx
+<ToggleGroup>
+  <ToggleGroupItem>Bold</ToggleGroupItem>
+  <ToggleGroupItem>Italic</ToggleGroupItem>
+  <ToggleGroupItem>Underline</ToggleGroupItem>
+</ToggleGroup>
+```
+
+## API Reference
+
+### ToggleGroup
+
+Root component. Styled wrapper for `ToggleGroup.Root` from Base UI. Provides shared variant and size to child toggles via context.
+
+| Prop      | Type                          | Default     | Description                                      |
+| --------- | ----------------------------- | ----------- | ------------------------------------------------ |
+| `variant` | `"default" \| "outline"`      | `"default"` | Controls the styling of all child toggles        |
+| `size`    | `"default" \| "sm" \| "lg"`   | `"default"` | Controls the size of all child toggles           |
+
+### ToggleGroupItem
+
+Individual toggle button within the group. Styled wrapper for `Toggle` from Base UI. Inherits variant and size from parent ToggleGroup context.
+
+### ToggleGroupSeparator
+
+Visual separator between toggle buttons.
+
+## Examples
+
+### Small Toggles
+
+<ComponentPreview name="p-toggle-group-2" />
+
+### Large Toggles
+
+<ComponentPreview name="p-toggle-group-3" />
+
+### With Outline Toggles
+
+<ComponentPreview name="p-toggle-group-4" />
+
+### Vertical
+
+<ComponentPreview name="p-toggle-group-5" />
+
+### Disabled
+
+<ComponentPreview name="p-toggle-group-6" />
+
+### With Disabled Toggle
+
+<ComponentPreview name="p-toggle-group-7" />
+
+### Multiple selection
+
+<ComponentPreview name="p-toggle-group-8" />
+
+### With Tooltips
+
+<ComponentPreview name="p-toggle-group-9" />
+
+## Changelog
+
+- [Mar 20, 2026](/ui/docs/changelog#toggle-group) — `Toggle` renamed to `ToggleGroupItem`

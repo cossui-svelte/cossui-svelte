@@ -9,7 +9,7 @@
 			"type": "registry:block",
 			"path": "p-colorpicker-3.svelte",
 			"target": "$lib/components/particles/colorpicker/p-colorpicker-3.svelte",
-			"content": "<script lang=\"ts\">\n  import { ColorPicker } from '$lib/components/ui/colorpicker';\n  import { hueyColor } from '@hueycolor/core';\n\n  // generate a random color\n  let color = $state(hueyColor('#999').randomize());\n</script>\n\n<ColorPicker\n  bind:color\n  showInputs={false}\n  showColorDropper={false}\n  showSaturationArea={false}\n  showColorSliders={false}\n  swatchesEditable={false}\n  swatches={['#ef4444', '#f97316', '#eab308', '#22c55e', '#4f46e5', '#a855f7']}\n/>\n"
+			"content": "<script lang=\"ts\">\n  import { hueyColor } from '@hueycolor/core';\n  import { ColorPicker } from '$lib/components/ui/colorpicker';\n\n  // generate a random color\n  let color = $state(hueyColor('#999').randomize());\n</script>\n\n<ColorPicker\n  bind:color\n  showInputs={false}\n  showColorDropper={false}\n  showSaturationArea={false}\n  showColorSliders={false}\n  swatchesEditable={false}\n  swatches={['#ef4444', '#f97316', '#eab308', '#22c55e', '#4f46e5', '#a855f7']}\n/>\n"
 		}
 	],
 	"registryDependencies": [

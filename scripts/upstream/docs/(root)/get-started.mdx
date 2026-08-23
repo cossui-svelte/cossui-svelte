@@ -1,0 +1,146 @@
+---
+title: Get Started
+description: A quick guide to adding your first component.
+---
+
+This guide provides the essentials for adding **coss ui** components to your React application.
+
+## Prerequisites
+
+Our components are built with [Tailwind CSS v4](https://tailwindcss.com). Before you begin, make sure you have a React project set up with Tailwind CSS.
+
+## Adding Components
+
+You can add components **automatically with the shadcn CLI** or **manually by copying the files**. Both methods work for primitives, particles, and atoms.
+
+### With the CLI
+
+Each component page provides a command to add it to your project automatically. The CLI will create the necessary files and install any dependencies for you.
+
+### New Project Setup (Recommended)
+
+For new projects, use the **coss style** preset to initialize everything in one command:
+
+```bash
+npx shadcn@latest init @coss/style
+```
+
+This installs all UI components, the neutral color system, sidebar variables, and base styles. It also installs **Inter** (`--font-sans`, `--font-heading`) and **Geist Mono** (`--font-mono`) as default fonts, automatically configured in your `layout.tsx`.
+
+### Existing Projects
+
+To add components to an existing project:
+
+```bash
+npx shadcn@latest add @coss/ui
+```
+
+This adds all UI primitives (button, card, avatar, dialog, tabs, and more). For the full theme including colors, sidebar, and fonts:
+
+```bash
+npx shadcn@latest add @coss/style
+```
+
+Or add only the color tokens:
+
+```bash
+npx shadcn@latest add @coss/ui @coss/colors-neutral
+```
+
+See the [Styling](/ui/docs/styling) guide for more details.
+
+### Manually
+
+1.  **Find a component** on the [Components](/ui/docs) or [Particles](/ui/particles) pages.
+2.  **Copy the code** from the **Code** tab.
+3.  **Create a new file** in your project (e.g., `components/ui/button.tsx`) and paste the code.
+4.  **Install any dependencies** listed on the component's page.
+5.  **Import and use** the component in your app.
+
+## Styling
+
+Components are styled with the design token system we use at **Cal.com**, which is defined by CSS variables and implemented with Tailwind CSS.
+
+The variables are the same as shadcn/ui, and are fully customizable. You can modify them in your global stylesheet (e.g., `app/globals.css`) to match your design system.
+
+We've introduced a few additional tokens to provide more granular control:
+
+- `--destructive-foreground`: Used for destructive-outline buttons, destructive menu items, badges, and field errors
+- `--info` and `--info-foreground`: Commonly used for info-colored badges, toast types, and alerts
+- `--success` and `--success-foreground`: Used for success-colored badges, toast types, and alerts
+- `--warning` and `--warning-foreground`: Used for warning-colored badges, toast types, and alerts
+
+**Important**: If you manually import components, you must also import these additional tokens in your CSS file (e.g., `app/globals.css`). However, if you use the CLI to import components, these tokens will be automatically imported and configured for you.
+
+## Fonts
+
+coss components use three CSS custom properties for typography:
+
+- `--font-sans` — Body text, buttons, labels, and most UI elements
+- `--font-mono` — Code blocks, `<kbd>`, monospace text
+- `--font-heading` — Dialog and AlertDialog titles (`--font-heading: var(--font-sans)` in theme)
+
+When you use `@coss/style`, `@coss/fonts` is installed automatically — Inter for `--font-sans` and `--font-heading`, Geist Mono for `--font-mono` — all wired in your `layout.tsx`.
+
+coss.com uses **Cal Sans 2.0** variable from `@coss/ui/fonts` for both body and headings. By default the theme aliases `--font-heading` to `--font-sans`, so one `--font-sans` variable is enough. You can wire a separate `--font-heading` when titles should use a different family — see [Styling — Font Variables](/ui/docs/styling#font-variables).
+
+### Custom fonts
+
+To use different fonts, ensure the `variable` option in your `next/font` configuration matches the expected CSS variables:
+
+```tsx
+import { Inter } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
+
+const inter = Inter({ variable: "--font-sans", subsets: ["latin"] });
+const jetbrainsMono = JetBrains_Mono({ variable: "--font-mono", subsets: ["latin"] });
+```
+
+When sans and heading share one family, only `--font-sans` needs to be set — the theme aliases `--font-heading` to it.
+
+For a separate heading font, add `--font-heading` in your layout and update the theme token:
+
+```tsx
+const interDisplay = Inter({ variable: "--font-heading", subsets: ["latin"], weight: "700" });
+
+<body className={`${inter.variable} ${interDisplay.variable} ${jetbrainsMono.variable} font-sans`}>
+```
+
+```css
+@theme inline {
+  --font-heading: var(--font-heading);
+}
+```
+
+**Note:** Next.js starters default to variable names like `--font-geist-sans`, which don't match coss's expected `--font-sans`. If fonts appear broken after setup, check that the variable names match.
+
+## Primitive exports
+
+Components that wrap Base UI primitives re-export the underlying primitive. Use the styled component when our defaults work, or the primitive when you need different compositions or styling. In a monorepo with a shared UI package, apps import from that package—Base UI stays in one place, no need to add it to each app.
+
+```tsx
+import { Slider, SliderValue, SliderPrimitive } from "@coss/ui/components/slider";
+```
+
+## Base UI Re-exports
+
+When you only need `useRender`, `mergeProps`, `CSPProvider`, or `DirectionProvider`, import them from `@coss/ui/base-ui/*` instead of adding `@base-ui/react` as a direct dependency:
+
+- `@coss/ui/base-ui/use-render`
+- `@coss/ui/base-ui/merge-props`
+- `@coss/ui/base-ui/csp-provider`
+- `@coss/ui/base-ui/direction-provider`
+
+This is especially useful in **monorepos**: apps and packages that already depend on `@coss/ui` can use these utilities without adding `@base-ui/react` as another dependency. You avoid duplicate installs, keep versions in sync, and simplify your dependency tree—`@base-ui/react` lives in one place (`@coss/ui`), and everything else imports through it.
+
+## Migration from Radix UI
+
+For developers migrating from **Radix UI**, many of our **UI primitives** include instructions and examples for translating equivalent Radix components to Base UI. This ensures a smooth transition while preserving accessibility, behaviors, and API patterns.
+
+## Working with LLMs
+
+We structure the documentation to make the components **AI-friendly**, so language models can understand, reason about, and modify them. To support this, we include:
+
+- **[Agent Skills](/ui/docs/skills)** — Install coss knowledge directly into your AI assistant with `npx skills add cosscom/coss`. Covers all 53 primitives, styling conventions, migration patterns, and particle examples.
+- A [llms.txt](/ui/llms.txt) file that provides a map of the documentation and component structure for your AI agent.
+- A **Copy Markdown** button on every page, so you can easily share content or feed it to your AI workflows.

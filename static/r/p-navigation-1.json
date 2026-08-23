@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-navigation-1",
+	"title": "Navigation 1",
+	"description": "Segmented navigation built with links",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-navigation-1.svelte",
+			"target": "$lib/components/particles/navigation/p-navigation-1.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    segmentedControlItemVariants,\n    segmentedControlRootClassName\n  } from '$lib/components/ui/tabs/segmented-control';\n\n  const itemClassName = segmentedControlItemVariants({ state: 'current' });\n</script>\n\n<nav aria-label=\"Project sections\">\n  <div class={segmentedControlRootClassName}>\n    <a aria-current=\"page\" class={itemClassName} href=\"#overview\">Overview</a>\n    <a class={itemClassName} href=\"#activity\">Activity</a>\n    <a class={itemClassName} href=\"#settings\">Settings</a>\n  </div>\n</nav>\n"
+		}
+	],
+	"registryDependencies": [
+		"tabs"
+	],
+	"dependencies": []
+}

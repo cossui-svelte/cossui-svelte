@@ -2,13 +2,15 @@
   import { getContext, setContext } from 'svelte';
   import type { SegmentedControlSize } from '$lib/components/ui/tabs/segmented-control';
 
+  export type TabsVariant = 'default' | 'underline';
+
   export function setTabsListSize(getSize: () => SegmentedControlSize) {
     setContext('tabsListSize', getSize);
   }
 
-  export function getTabsListSize(): SegmentedControlSize {
+  export function getTabsListSize(): () => SegmentedControlSize {
     const getSize = getContext<(() => SegmentedControlSize) | undefined>('tabsListSize');
-    return getSize?.() ?? 'default';
+    return () => getSize?.() ?? 'default';
   }
 </script>
 
@@ -17,8 +19,6 @@
   import type { ComponentProps, Snippet } from 'svelte';
   import { cn } from '$lib/utils';
   import TabsIndicator from './tabs-indicator.svelte';
-
-  type TabsVariant = 'default' | 'underline';
 
   type Props = Omit<ComponentProps<typeof TabsPrimitive.List>, 'children'> & {
     children?: Snippet;

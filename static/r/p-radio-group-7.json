@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-radio-group-7",
+	"title": "Radio group 7",
+	"description": "Small segmented control built with a radio group",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-radio-group-7.svelte",
+			"target": "$lib/components/particles/radio-group/p-radio-group-7.svelte",
+			"content": "<script lang=\"ts\">\n  import { Radio, RadioGroup } from '$lib/components/ui/radio-group';\n  import {\n    segmentedControlItemVariants,\n    segmentedControlRootClassName\n  } from '$lib/components/ui/tabs/segmented-control';\n\n  const itemClassName = segmentedControlItemVariants({\n    className: 'grow',\n    size: 'sm',\n    state: 'checked'\n  });\n</script>\n\n<RadioGroup aria-label=\"Billing period\" class={segmentedControlRootClassName} value=\"monthly\">\n  <Radio class={itemClassName} value=\"monthly\">Monthly</Radio>\n  <Radio class={itemClassName} value=\"yearly\">Yearly</Radio>\n</RadioGroup>\n"
+		}
+	],
+	"registryDependencies": [
+		"radio-group",
+		"tabs"
+	],
+	"dependencies": []
+}

@@ -1916,8 +1916,8 @@
 			"description": "An interactive map with markers, popups, tooltips, and routes, powered by MapLibre GL.",
 			"type": "registry:ui",
 			"dependencies": [
-				"maplibre-gl@^6.4.1",
-				"geojson"
+				"geojson",
+				"maplibre-gl@^6.5.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -2516,8 +2516,8 @@
 			"type": "registry:ui",
 			"dependencies": [
 				"svelte-toolbelt@^0.10.6",
-				"runed@0.37.1",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.3",
+				"runed@0.37.1"
 			],
 			"registryDependencies": [
 				"button",
@@ -3220,7 +3220,10 @@
 			"description": "A component for toggling between related panels on the same page.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.0",
+				"tailwind-variants@^3.3.1",
+				"@base-ui/react",
+				"react"
 			],
 			"registryDependencies": [
 				"utils"
@@ -3260,6 +3263,11 @@
 					"type": "registry:ui",
 					"path": "tabs/tabs.svelte",
 					"target": "$lib/components/ui/tabs/tabs.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "tabs/tabs.tsx",
+					"target": "$lib/components/ui/tabs/tabs.tsx"
 				}
 			]
 		},
@@ -11788,7 +11796,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"maplibre-gl",
-				"maplibre-gl@^6.4.1"
+				"maplibre-gl@^6.5.0"
 			],
 			"registryDependencies": [
 				"button",
@@ -12103,6 +12111,57 @@
 					"type": "registry:block",
 					"path": "p-meter-4.svelte",
 					"target": "$lib/components/particles/meter/p-meter-4.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-navigation-1",
+			"title": "Navigation 1",
+			"description": "Segmented navigation built with links",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": [
+				"tabs"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-navigation-1.svelte",
+					"target": "$lib/components/particles/navigation/p-navigation-1.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-navigation-2",
+			"title": "Navigation 2",
+			"description": "Small segmented navigation built with links",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": [
+				"tabs"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-navigation-2.svelte",
+					"target": "$lib/components/particles/navigation/p-navigation-2.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-navigation-3",
+			"title": "Navigation 3",
+			"description": "Large segmented navigation built with links",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": [
+				"tabs"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-navigation-3.svelte",
+					"target": "$lib/components/particles/navigation/p-navigation-3.svelte"
 				}
 			]
 		},
@@ -12872,6 +12931,60 @@
 			]
 		},
 		{
+			"name": "p-radio-group-7",
+			"title": "Radio group 7",
+			"description": "Small segmented control built with a radio group",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": [
+				"radio-group",
+				"tabs"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-radio-group-7.svelte",
+					"target": "$lib/components/particles/radio-group/p-radio-group-7.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-radio-group-8",
+			"title": "Radio group 8",
+			"description": "Segmented control built with a radio group",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": [
+				"radio-group",
+				"tabs"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-radio-group-8.svelte",
+					"target": "$lib/components/particles/radio-group/p-radio-group-8.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-radio-group-9",
+			"title": "Radio group 9",
+			"description": "Large segmented control built with a radio group",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": [
+				"radio-group",
+				"tabs"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-radio-group-9.svelte",
+					"target": "$lib/components/particles/radio-group/p-radio-group-9.svelte"
+				}
+			]
+		},
+		{
 			"name": "p-rich-editor-1",
 			"title": "Rich editor 1",
 			"description": "Basic rich editor examples",
@@ -13555,7 +13668,8 @@
 			"registryDependencies": [
 				"label",
 				"menu",
-				"sidebar"
+				"sidebar",
+				"utils"
 			],
 			"files": [
 				{
@@ -13575,7 +13689,8 @@
 			],
 			"registryDependencies": [
 				"menu",
-				"sidebar"
+				"sidebar",
+				"utils"
 			],
 			"files": [
 				{
@@ -13595,7 +13710,8 @@
 			],
 			"registryDependencies": [
 				"menu",
-				"sidebar"
+				"sidebar",
+				"utils"
 			],
 			"files": [
 				{
@@ -14970,7 +15086,7 @@
 		{
 			"name": "p-tabs-1",
 			"title": "Tabs 1",
-			"description": "Basic tabs",
+			"description": "Segmented control built with tabs",
 			"type": "registry:block",
 			"dependencies": [],
 			"registryDependencies": [
@@ -15058,6 +15174,40 @@
 					"type": "registry:block",
 					"path": "p-tabs-13.svelte",
 					"target": "$lib/components/particles/tabs/p-tabs-13.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-tabs-14",
+			"title": "Tabs 14",
+			"description": "Small segmented control built with tabs",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": [
+				"tabs"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-tabs-14.svelte",
+					"target": "$lib/components/particles/tabs/p-tabs-14.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-tabs-15",
+			"title": "Tabs 15",
+			"description": "Large segmented control built with tabs",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": [
+				"tabs"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-tabs-15.svelte",
+					"target": "$lib/components/particles/tabs/p-tabs-15.svelte"
 				}
 			]
 		},

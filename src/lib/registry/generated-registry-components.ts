@@ -649,7 +649,7 @@ const allComponents: RegistryUiData = {
     folder: 'tabs',
     isnew: false,
     istodo: false,
-    npmDependencies: ['@shardsui/svelte'],
+    npmDependencies: ['@shardsui/svelte', 'tailwind-variants'],
     registryDependencies: []
   },
   textarea: {

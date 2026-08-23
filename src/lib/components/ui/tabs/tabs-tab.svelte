@@ -4,6 +4,7 @@
   import { cn } from '$lib/utils';
   import {
     type SegmentedControlSize,
+    segmentedControlItemLayoutClassName,
     segmentedControlItemSizeClassNames
   } from './segmented-control';
   import { getTabsListSize } from './tabs-list.svelte';
@@ -15,15 +16,18 @@
 
   let { ref = $bindable(null), class: className, size, children, ...restProps }: Props = $props();
 
-  const resolvedSize = $derived(size ?? getTabsListSize());
+  const tabsListSize = getTabsListSize();
+  const resolvedSize = $derived(size ?? tabsListSize());
 </script>
 
 <TabsPrimitive.Tab
   bind:ref
   class={cn(
-    "[&_svg]:-mx-0.5 relative flex shrink-0 grow cursor-pointer items-center justify-center gap-1.5 whitespace-nowrap rounded-md border border-transparent font-medium text-base outline-none transition-[color,background-color,box-shadow] hover:text-muted-foreground focus-visible:ring-2 focus-visible:ring-ring data-disabled:pointer-events-none data-[orientation=vertical]:w-full data-[orientation=vertical]:justify-start data-active:text-foreground data-disabled:opacity-64 sm:text-sm [&_svg:not([class*='size-'])]:size-4.5 sm:[&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+    "relative flex shrink-0 grow cursor-pointer items-center justify-center whitespace-nowrap rounded-md border border-transparent font-medium text-base outline-none transition-[color,background-color,box-shadow] hover:text-muted-foreground focus-visible:ring-2 focus-visible:ring-ring data-disabled:pointer-events-none data-[orientation=vertical]:w-full data-[orientation=vertical]:justify-start data-active:text-foreground data-disabled:opacity-64 sm:text-sm",
+    segmentedControlItemLayoutClassName,
     segmentedControlItemSizeClassNames[resolvedSize],
-    className
+
+    className,
   )}
   data-size={resolvedSize}
   data-slot="tabs-tab"

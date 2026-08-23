@@ -9,7 +9,7 @@
 			"type": "registry:block",
 			"path": "p-textarea-7.svelte",
 			"target": "$lib/components/particles/textarea/p-textarea-7.svelte",
-			"content": "<script lang=\"ts\">\n  import { Label } from '$lib/components/ui/label';\n  import { Textarea } from '$lib/components/ui/textarea';\n</script>\n\n<div class=\"flex flex-col gap-2\">\n  <Label for=\"message-7\">\n    Message <span class=\"text-destructive\">*</span>\n  </Label>\n  <Textarea id=\"message-7\" placeholder=\"Type your message here\" required />\n</div>\n"
+			"content": "<script lang=\"ts\">\n  import { Label } from '$lib/components/ui/label';\n  import { Textarea } from '$lib/components/ui/textarea';\n</script>\n\n<div class=\"flex flex-col gap-2\">\n  <Label for=\"message-7\"> Message <span class=\"text-destructive\">*</span> </Label>\n  <Textarea id=\"message-7\" placeholder=\"Type your message here\" required />\n</div>\n"
 		}
 	],
 	"registryDependencies": [

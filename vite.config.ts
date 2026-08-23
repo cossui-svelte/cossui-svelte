@@ -62,7 +62,7 @@ export default defineConfig({
     ]
   },
   server: {
-    // only applies to vite dev/vite preview 
+    // only applies to vite dev/vite preview
     open: true,
     watch: {
       ignored: ['**/*.old', '**/*.old/**']

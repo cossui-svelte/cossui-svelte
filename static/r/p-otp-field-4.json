@@ -9,7 +9,7 @@
 			"type": "registry:block",
 			"path": "p-otp-field-4.svelte",
 			"target": "$lib/components/particles/otp-field/p-otp-field-4.svelte",
-			"content": "<script lang=\"ts\">\n  import { Label } from '$lib/components/ui/label';\n  import { OTPField, OTPFieldInput } from '$lib/components/ui/otp-field';\n\n  const OTP_LENGTH = 4;\n</script>\n\n<div class=\"flex flex-col items-center gap-2\">\n  <Label>Verification code</Label>\n  <OTPField maxlength={OTP_LENGTH}>\n    {#snippet children({ cells })}\n      {#each cells as cell, i (i)}\n        <OTPFieldInput aria-label={`Character ${i + 1} of ${OTP_LENGTH}`} {cell} />\n      {/each}\n    {/snippet}\n  </OTPField>\n  <p class=\"text-muted-foreground text-xs\">\n    Enter the {OTP_LENGTH}-digit code sent to your email.\n  </p>\n</div>\n"
+			"content": "<script lang=\"ts\">\n  import { Label } from '$lib/components/ui/label';\n  import { OTPField, OTPFieldInput } from '$lib/components/ui/otp-field';\n\n  const OTP_LENGTH = 4;\n</script>\n\n<div class=\"flex flex-col items-center gap-2\">\n  <Label>Verification code</Label>\n  <OTPField maxlength={OTP_LENGTH}>\n    {#snippet children({ cells })}\n      {#each cells as cell, i (i)}\n        <OTPFieldInput aria-label={`Character ${i + 1} of ${OTP_LENGTH}`} {cell} />\n      {/each}\n    {/snippet}\n  </OTPField>\n  <p class=\"text-muted-foreground text-xs\">Enter the {OTP_LENGTH}-digit code sent to your email.</p>\n</div>\n"
 		}
 	],
 	"registryDependencies": [

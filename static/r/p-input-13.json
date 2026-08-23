@@ -9,7 +9,7 @@
 			"type": "registry:block",
 			"path": "p-input-13.svelte",
 			"target": "$lib/components/particles/input/p-input-13.svelte",
-			"content": "<script lang=\"ts\">\n  import { Input } from '$lib/components/ui/input';\n  import { Label } from '$lib/components/ui/label';\n</script>\n\n<div class=\"flex flex-col gap-2\">\n  <Label for=\"email-13\">\n    Email <span class=\"text-destructive\">*</span>\n  </Label>\n  <Input id=\"email-13\" placeholder=\"Email\" required type=\"email\" />\n</div>\n"
+			"content": "<script lang=\"ts\">\n  import { Input } from '$lib/components/ui/input';\n  import { Label } from '$lib/components/ui/label';\n</script>\n\n<div class=\"flex flex-col gap-2\">\n  <Label for=\"email-13\"> Email <span class=\"text-destructive\">*</span> </Label>\n  <Input id=\"email-13\" placeholder=\"Email\" required type=\"email\" />\n</div>\n"
 		}
 	],
 	"registryDependencies": [

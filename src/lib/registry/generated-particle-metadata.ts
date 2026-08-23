@@ -2245,6 +2245,24 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     registryDependencies: ['number-field'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
+  'p-navigation-1': {
+    description: 'Segmented navigation built with links',
+    tags: ['navigation', 'segmented-control'],
+    registryDependencies: ['tabs'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-navigation-2': {
+    description: 'Small segmented navigation built with links',
+    tags: ['navigation', 'segmented-control'],
+    registryDependencies: ['tabs'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-navigation-3': {
+    description: 'Large segmented navigation built with links',
+    tags: ['navigation', 'segmented-control'],
+    registryDependencies: ['tabs'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
   'p-pagination-1': {
     description: 'Pagination example',
     tags: ['pagination'],
@@ -2358,6 +2376,24 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     tags: ['radio-group', 'form'],
     registryDependencies: ['field', 'fieldset', 'form', 'radio-group'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-[320px]' }
+  },
+  'p-radio-group-7': {
+    description: 'Small segmented control built with a radio group',
+    tags: ['radio-group', 'segmented-control'],
+    registryDependencies: ['radio-group', 'tabs'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-radio-group-8': {
+    description: 'Segmented control built with a radio group',
+    tags: ['radio-group', 'segmented-control'],
+    registryDependencies: ['radio-group', 'tabs'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-radio-group-9': {
+    description: 'Large segmented control built with a radio group',
+    tags: ['radio-group', 'segmented-control'],
+    registryDependencies: ['radio-group', 'tabs'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-scroll-area-1': {
     description: 'Basic scroll area',
@@ -2857,7 +2893,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-tabs-1': {
-    description: 'Basic tabs',
+    description: 'Segmented control built with tabs',
     tags: ['tabs'],
     registryDependencies: ['tabs'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
@@ -2939,6 +2975,18 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     tags: ['tabs', 'tooltip'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['tabs', 'tooltip'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-tabs-14': {
+    description: 'Small segmented control built with tabs',
+    tags: ['tabs'],
+    registryDependencies: ['tabs'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-tabs-15': {
+    description: 'Large segmented control built with tabs',
+    tags: ['tabs'],
+    registryDependencies: ['tabs'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-textarea-1': {
