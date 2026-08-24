@@ -304,7 +304,7 @@ export const COMPONENT_DEPENDENCIES: Record<string, string[]> = {
   slider: ['@shardsui/svelte'],
   starrating: ['tailwind-variants'],
   switch: ['@shardsui/svelte'],
-  tabs: ['@shardsui/svelte', 'tailwind-variants', '@base-ui/react', 'react'],
+  tabs: ['@shardsui/svelte', 'tailwind-variants'],
   textarea: ['@shardsui/svelte'],
   toast: ['@shardsui/svelte'],
   toggle: ['@shardsui/svelte', 'tailwind-variants'],

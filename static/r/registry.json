@@ -3221,9 +3221,7 @@
 			"type": "registry:ui",
 			"dependencies": [
 				"@shardsui/svelte@0.1.0-beta.0",
-				"tailwind-variants@^3.3.1",
-				"@base-ui/react",
-				"react"
+				"tailwind-variants@^3.3.1"
 			],
 			"registryDependencies": [
 				"utils"
@@ -3263,11 +3261,6 @@
 					"type": "registry:ui",
 					"path": "tabs/tabs.svelte",
 					"target": "$lib/components/ui/tabs/tabs.svelte"
-				},
-				{
-					"type": "registry:ui",
-					"path": "tabs/tabs.tsx",
-					"target": "$lib/components/ui/tabs/tabs.tsx"
 				}
 			]
 		},

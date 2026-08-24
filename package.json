@@ -61,7 +61,7 @@
   },
   "license": "MIT",
   "name": "cossui-svelte",
-  "packageManager": "pnpm@11.22.0",
+  "packageManager": "pnpm@11.23.0",
   "peerDependencies": {
     "svelte": "^5.56.10"
   },

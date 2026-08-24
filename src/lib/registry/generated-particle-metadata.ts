@@ -3992,7 +3992,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   },
   'p-places-autocomplete-1': {
     description: 'Address validation powered by the Google Places API',
-    tags: ['async', 'map', 'places-autocomplete'],
+    tags: ['async', 'map', 'autocomplete', 'places-autocomplete'],
     registryDependencies: ['places-autocomplete', 'toast'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },

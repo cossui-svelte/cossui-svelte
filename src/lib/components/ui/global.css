@@ -176,7 +176,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-
   :where(.animate-toast-success-odd,
     .animate-toast-success-even,
     .animate-toast-error-odd,

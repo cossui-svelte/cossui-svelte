@@ -318,7 +318,7 @@ export const custom_particle_metadata = {
   },
   'p-places-autocomplete-1': {
     description: 'Address validation powered by the Google Places API',
-    tags: ['async', 'map']
+    tags: ['async', 'map', 'autocomplete']
   },
   'p-rich-editor-1': {
     description: 'Basic rich editor examples',
