@@ -1,28 +1,28 @@
-/* Mono */
+/* Headings for titles and section headers */
 @font-face {
-  font-family: "PaperMono";
-  src: url("/fonts/PaperMono-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-
-}
-
-/* Sans (Variable Font) */
-@font-face {
-  font-family: "CalSansUI";
-  src: url("/fonts/CalSansUI-Variable.woff2") format("woff2");
-  font-weight: 300 700;
-  font-style: normal;
-
-}
-
-/* Heading */
-@font-face {
+  display: optional;
   font-family: "CalSansHeading";
   src: url("/fonts/CalSans-Regular.woff2") format("woff2");
   font-weight: 400 600;
   font-style: normal;
+}
 
+/* Sans (Variable Font for contents) */
+@font-face {
+  display: optional;
+  font-family: "CalSansUI";
+  src: url("/fonts/CalSansVF.woff2") format("woff2");
+  font-weight: 300 700;
+  font-style: normal;
+}
+
+/* Mono for code */
+@font-face {
+  display: optional;
+  font-family: "PaperMono";
+  src: url("/fonts/PaperMono-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
 }
 
 :root {
@@ -34,6 +34,7 @@
 @import "$lib/components/ui/global.css";
 
 @layer base {
+
   a:active,
   button:active {
     @apply opacity-72 md:opacity-100;
