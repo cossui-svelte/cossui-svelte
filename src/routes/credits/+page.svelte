@@ -15,7 +15,7 @@
         rel="noopener noreferrer"
         >Svelte port of Origin UI</a
       >
-      and liked its look and feel. Later, I learned that Origin UI was acquired by Coss UI and that
+      and liked its look and feel. Later, I learned that Origin UI was acquired by coss.com and that
       an updated component library existed, but only for React.
     </p>
 
