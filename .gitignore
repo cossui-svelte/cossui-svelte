@@ -14,3 +14,4 @@ stats.html
 .dev.vars
 .playwright-mcp
 .svelte-doctor/*
+.agents

@@ -86,7 +86,7 @@
     "lint:typecheck": "tsc --noEmit",
     "mrproper": "rm -rf node_modules dist build .svelte-kit",
     "migrate": "biome migrate --write && wrangler types src/worker-configuration.d.ts && tsx ./scripts/transformLucideImports.ts",
-    "prepare": "husky && svelte-kit sync || echo ''",
+    "prepare": "pnpx -y skills@latest experimental_install 2>&1 && husky && svelte-kit sync || echo ''",
     "release": "commit-and-tag-version",
     "release:dry": "commit-and-tag-version --dry-run"
   },
