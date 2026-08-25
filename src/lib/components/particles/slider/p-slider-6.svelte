@@ -2,7 +2,7 @@
   import { Slider } from '$lib/components/ui/slider';
 </script>
 
-<div>
+<div class="w-full">
   <div
     aria-hidden="true"
     class="mb-3 flex w-full items-center justify-between gap-2 font-medium text-muted-foreground text-xs"

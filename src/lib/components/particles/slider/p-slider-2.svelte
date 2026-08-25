@@ -4,7 +4,7 @@
   let value = $state(50);
 </script>
 
-<div>
+<div class="w-full">
   <div class="mb-2 flex items-center justify-between gap-1">
     <span class="font-medium text-sm">Opacity</span>
     <span class="tabular-nums text-sm">{value}</span>

@@ -7,7 +7,7 @@
   const ticks = Array.from({ length: max + 1 }, (_, i) => i);
 </script>
 
-<div>
+<div class="w-full">
   <Slider aria-label="Value selector" value={5} {max} />
   <div
     aria-label="Value scale from 0 to 12"

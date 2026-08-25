@@ -2,7 +2,7 @@
   import { Slider } from '$lib/components/ui/slider';
 </script>
 
-<div>
+<div class="w-full">
   <Slider aria-label="Storage size in GB" value={15} max={35} min={5} />
   <div
     aria-label="Storage size reference values"
