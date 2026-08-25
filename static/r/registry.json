@@ -1917,7 +1917,7 @@
 			"type": "registry:ui",
 			"dependencies": [
 				"geojson",
-				"maplibre-gl@^6.5.0"
+				"maplibre-gl@^6.6.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -11789,7 +11789,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"maplibre-gl",
-				"maplibre-gl@^6.5.0"
+				"maplibre-gl@^6.6.0"
 			],
 			"registryDependencies": [
 				"button",

@@ -101,6 +101,6 @@
 	],
 	"dependencies": [
 		"geojson",
-		"maplibre-gl@^6.5.0"
+		"maplibre-gl@^6.6.0"
 	]
 }
