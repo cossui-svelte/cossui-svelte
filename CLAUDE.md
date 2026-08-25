@@ -58,8 +58,8 @@ SvelteKit routes under `src/routes/`: `docs/[...slug]` (component docs), `partic
 
 1. Ensure the component has a `src/lib/components/ui/<COMPONENT>/index.ts` file
 2. If the component is not in `scripts/upstream/registry.json` add it to `src/lib/components/ui/custom-component-metadata.ts`. `registry.json` must stay untouched, any incremental change should be made to `custom-component-metadata.ts`
-2. Ensure `src/lib/components/app/category-thumbnails.svelte` has a matching thumbnail for component <COMPONENT>. if not, generate one.
-2. run `pnpm gen:registry`
+3. Ensure `src/lib/components/app/category-thumbnails.svelte` has a matching thumbnail for component <COMPONENT>. if not, generate one.
+4. run `pnpm gen:registry`
 
 ### Adding a new Particle
 
