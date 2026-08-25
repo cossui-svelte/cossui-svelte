@@ -3,7 +3,7 @@ allowBuilds:
   sharp: true
   workerd: true
 minimumReleaseAgeExclude:
-  - '@types/node@25.9.0 || 25.9.1 || 26.1.2'
+  - '@types/node@25.9.0 || 25.9.1 || 26.1.2 || 26.3.0'
   - tsx@4.22.2 || 4.22.3
   - svelte@5.55.8 || 5.56.6 || 5.56.7 || 5.56.10
   - '@shikijs/core@4.1.0 || 4.4.2 || 4.4.3'
@@ -47,19 +47,19 @@ minimumReleaseAgeExclude:
   - vite@8.2.0 || 8.2.1 || 8.2.2
   - workerd@1.20260730.1 || 1.20260820.1
   - '@aejkatappaja/phantom-ui@1.5.0'
-  - '@typescript-eslint/eslint-plugin@8.66.0 || 8.67.0'
-  - '@typescript-eslint/parser@8.66.0 || 8.67.0'
-  - '@typescript-eslint/project-service@8.66.0 || 8.67.0'
-  - '@typescript-eslint/scope-manager@8.66.0 || 8.67.0'
-  - '@typescript-eslint/types@8.66.0 || 8.67.0'
-  - '@typescript-eslint/typescript-estree@8.66.0 || 8.67.0'
-  - '@typescript-eslint/utils@8.66.0 || 8.67.0'
-  - '@typescript-eslint/visitor-keys@8.66.0 || 8.67.0'
-  - typescript-eslint@8.66.0 || 8.67.0
-  - '@typescript-eslint/tsconfig-utils@8.67.0'
-  - '@typescript-eslint/type-utils@8.67.0'
-  - maplibre-gl@6.3.0 || 6.5.0
+  - '@typescript-eslint/eslint-plugin@8.66.0 || 8.67.0 || 8.68.0'
+  - '@typescript-eslint/parser@8.66.0 || 8.67.0 || 8.68.0'
+  - '@typescript-eslint/project-service@8.66.0 || 8.67.0 || 8.68.0'
+  - '@typescript-eslint/scope-manager@8.66.0 || 8.67.0 || 8.68.0'
+  - '@typescript-eslint/types@8.66.0 || 8.67.0 || 8.68.0'
+  - '@typescript-eslint/typescript-estree@8.66.0 || 8.67.0 || 8.68.0'
+  - '@typescript-eslint/utils@8.66.0 || 8.67.0 || 8.68.0'
+  - '@typescript-eslint/visitor-keys@8.66.0 || 8.67.0 || 8.68.0'
+  - typescript-eslint@8.66.0 || 8.67.0 || 8.68.0
+  - '@typescript-eslint/tsconfig-utils@8.67.0 || 8.68.0'
+  - '@typescript-eslint/type-utils@8.67.0 || 8.68.0'
+  - maplibre-gl@6.3.0 || 6.5.0 || 6.6.0
   - '@layerstack/utils@2.0.0-next.19'
   - bits-ui@2.18.2
   - '@types/d3-shape@3.2.0'
-  - eslint@10.9.0
+  - eslint@10.9.0 || 10.9.1
