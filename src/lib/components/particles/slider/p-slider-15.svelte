@@ -12,7 +12,7 @@
 </script>
 
 <fieldset class="flex w-full flex-col gap-3 border-0 p-0 m-0">
-  <legend class="tabular-nums text-sm font-medium">
+  <legend class="tabular-nums text-sm font-medium mb-2">
     From {formatPrice(values[0] ?? min)} to {formatPrice(values[1] ?? max)}
   </legend>
   <Slider
