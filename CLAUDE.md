@@ -54,6 +54,19 @@ See `scripts/README.md` for the step-by-step for updating from upstream Coss UI 
 
 SvelteKit routes under `src/routes/`: `docs/[...slug]` (component docs), `particle/[id]` and `particles` (particle showcase/search), `blocs`, `credits`, `ai`, `api` (including `api/source`). Path aliases: `$lib` → `src/lib`, `$assets` → `src/lib/assets`, `$data` → `src/lib/data` (defined in both `svelte.config.js` and `vite.config.ts` — keep them in sync if changed).
 
+### Adding a new Component
+
+1. Ensure the component has a `src/lib/components/ui/<COMPONENT>/index.ts` file
+2. If the component is not in `scripts/upstream/registry.json` add it to `src/lib/components/ui/custom-component-metadata.ts`. `registry.json` must stay untouched, any incremental change should be made to `custom-component-metadata.ts`
+2. Ensure `src/lib/components/app/category-thumbnails.svelte` has a matching thumbnail for component <COMPONENT>. if not, generate one.
+2. run `pnpm gen:registry`
+
+### Adding a new Particle
+
+1. create the particle in `$lib/components/particles/<COMPONENT>/p-<PARTICLE>-<INDEX>.svelte`
+2. If the particle is not in `scripts/upstream/registry.json` add it to `src/lib/components/particles/custom-particle-metadata.ts` with the proper metadata (tags, description). `registry.json` must stay untouched, any incremental change should be made to `custom-particle-metadata.ts`
+3. run `pnpm gen:registry`
+
 ### Deployment
 
 Cloudflare Workers via `@sveltejs/adapter-cloudflare` + `wrangler.jsonc`. `nodejs_compat` is enabled; SPA fallback (`not_found_handling: single-page-application`) with `/api/*` and `_app/env*` routed to the worker first.
