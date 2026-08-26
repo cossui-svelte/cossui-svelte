@@ -2,6 +2,43 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.9.22](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.21...v0.9.22) (2026-08-26)
+
+### ✨ Features
+
+* another pass at upstream alignment ([2750326](https://github.com/cossui-svelte/cossui-svelte/commit/275032675d851f97d569fdbcea3673ce7241aba1))
+* font updates from upstream ([4ef13bb](https://github.com/cossui-svelte/cossui-svelte/commit/4ef13bb0c9420235dabdb3f3e23918bee86f89ef))
+* segmented control and docs ([be7a2f5](https://github.com/cossui-svelte/cossui-svelte/commit/be7a2f55b59e97d1f297e3d6fc65ba16c8389d56))
+* turn on SSR ([9cbd723](https://github.com/cossui-svelte/cossui-svelte/commit/9cbd72319c7fd1f35bd80f9f46901d5e33b4ef12))
+* update CLAUDE.md with instructions to add component and particle ([a915779](https://github.com/cossui-svelte/cossui-svelte/commit/a915779cc5707dc62f2ebbf540c3e41e16c72686))
+
+### 🐛 Bug Fixes
+
+* alignment with upstream take 3 ([fea1ead](https://github.com/cossui-svelte/cossui-svelte/commit/fea1ead62f22d2a4e150244e1ef378e58c83204b))
+* alignment with upstream take 4 ([44513d6](https://github.com/cossui-svelte/cossui-svelte/commit/44513d68e58e4a1d2ed341e73e701e7156e21fea))
+* alignment with upstream take 5 ([93c3f5d](https://github.com/cossui-svelte/cossui-svelte/commit/93c3f5dba6a5b08c4f11e73ec904b2adbf015744))
+* claude.md ([3931ea8](https://github.com/cossui-svelte/cossui-svelte/commit/3931ea8865fd805579797038350aee849016c602))
+* cleanup the tsx, conversion completed ([d410d86](https://github.com/cossui-svelte/cossui-svelte/commit/d410d86d5688e6350ed8ecf9fd0fc9b772166826))
+* combobox height cap ([a19ca09](https://github.com/cossui-svelte/cossui-svelte/commit/a19ca09349d198cf756ec5f8ee2e3d26e89acb79))
+* p-slider-15 gap ([560c865](https://github.com/cossui-svelte/cossui-svelte/commit/560c865976c66ac619e86b4d41151a9141e60c16))
+* registry updates ([81c6715](https://github.com/cossui-svelte/cossui-svelte/commit/81c671557a703db438a7684458d6bd17b844e858))
+* repo generation ([17a85ad](https://github.com/cossui-svelte/cossui-svelte/commit/17a85ad5608d96b578f61f546dcf8f3a0e6937ae))
+* sidebar layout issues ([6297f3c](https://github.com/cossui-svelte/cossui-svelte/commit/6297f3cf90985340456ec16f337ec92522ffba15))
+* slider particule width mismatch ([256fe2e](https://github.com/cossui-svelte/cossui-svelte/commit/256fe2ed92fdec20afcf381ee735207663780155))
+* ssr rendering - exposed entries ([00b63c4](https://github.com/cossui-svelte/cossui-svelte/commit/00b63c4763dae876fa310ba472d2a92a8104d4e5))
+
+### 📝 Documentation
+
+* readme updates ([2d638cb](https://github.com/cossui-svelte/cossui-svelte/commit/2d638cbb7dc49d9dd0e25f410e6ee2889df5e798))
+
+### 🚚 Chores
+
+* deps ([be5bfd7](https://github.com/cossui-svelte/cossui-svelte/commit/be5bfd7b61b66c8a395888efe354b48bc6c07e81))
+* deps ([91f4932](https://github.com/cossui-svelte/cossui-svelte/commit/91f4932f018fb1403157bc5568f034b2fcf574c1))
+* fix browser open in dev mode ([e46d81e](https://github.com/cossui-svelte/cossui-svelte/commit/e46d81e6f8b85c4ea2f5d2c718db993bb9baba67))
+* install default skills ([6dea0c7](https://github.com/cossui-svelte/cossui-svelte/commit/6dea0c75f8d362cf3ea7d080f39e22a3814c01db))
+* switch prettier for biome ([cc9febc](https://github.com/cossui-svelte/cossui-svelte/commit/cc9febc9bdc80a3b814308bf212df7bdf4d259e2))
+* upstream files before transformation ([024f2bb](https://github.com/cossui-svelte/cossui-svelte/commit/024f2bbdcf878ce570267ddeb59e046b5f24d831))
 ## [0.9.21](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.19...v0.9.21) (2026-08-20)
 
 ### ✨ Features
