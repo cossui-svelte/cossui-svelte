@@ -22,7 +22,7 @@
         {@const Icon = toast.type ? TOAST_ICONS[toast.type as keyof typeof TOAST_ICONS] : null}
         {@const tooltipStyle = toast.data?.tooltipStyle ?? false}
         <ToastPrimitive.Positioner
-          class="z-50 max-w-[min(--spacing(64),var(--available-width))]"
+          class="z-60 max-w-[min(--spacing(64),var(--available-width))]"
           data-slot="toast-positioner"
           sideOffset={toast.positionerProps.sideOffset ?? 4}
           {toast}
