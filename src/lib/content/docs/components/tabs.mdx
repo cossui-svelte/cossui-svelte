@@ -1,0 +1,125 @@
+---
+title: Tabs
+description: A component for toggling between related panels on the same page.
+
+links:
+  doc: https://base-ui.com/react/components/tabs#api-reference
+---
+
+<ComponentPreview name="p-tabs-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @coss/tabs
+```
+
+The CLI installs the shared `@coss/segmented-control` registry dependency automatically.
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @base-ui/react class-variance-authority
+```
+
+<Step>Copy the shared segmented control styling into your project.</Step>
+
+<ComponentSource name="segmented-control" title="lib/segmented-control.ts" />
+
+<Step>Copy and paste the Tabs component into your project.</Step>
+
+<ComponentSource name="tabs" title="components/ui/tabs.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { Tabs, TabsList, TabsPanel, TabsTab } from "@/components/ui/tabs"
+```
+
+```tsx
+<Tabs defaultValue="tab-1">
+  <TabsList>
+    <TabsTab value="tab-1">Tab 1</TabsTab>
+    <TabsTab value="tab-2">Tab 2</TabsTab>
+    <TabsTab value="tab-3">Tab 3</TabsTab>
+  </TabsList>
+  <TabsPanel value="tab-1">Tab 1 content</TabsPanel>
+  <TabsPanel value="tab-2">Tab 2 content</TabsPanel>
+  <TabsPanel value="tab-3">Tab 3 content</TabsPanel>
+</Tabs>
+```
+
+## API Reference
+
+### Tabs
+
+Root component. Styled wrapper for `Tabs.Root` from Base UI.
+
+### TabsList
+
+Container for tab triggers. Styled wrapper for `Tabs.List` from Base UI.
+
+| Prop      | Type                       | Default     | Description                         |
+| --------- | -------------------------- | ----------- | ----------------------------------- |
+| `size`    | `"sm" \| "default" \| "lg"` | `"default"` | Controls the size of all tab items. |
+| `variant` | `"default" \| "underline"` | `"default"` | Controls the tabs styling.          |
+
+### TabsTab
+
+Individual tab trigger. Styled wrapper for `Tabs.Tab` from Base UI.
+
+### TabsPanel
+
+Content panel for each tab. Styled wrapper for `Tabs.Panel` from Base UI.
+
+### TabsIndicator
+
+Visual indicator for the active tab. Styled wrapper for `Tabs.Indicator` from Base UI.
+
+## Examples
+
+For guidance on choosing between Tabs, Radio Group, Toggle Group, and navigation links, see the [Segmented Control](/docs/components/segmented-control) pattern.
+
+Tabs use the same optical sizing as segmented controls. The default surface is slightly taller than a Button of the same size so its inset active indicator remains visually balanced alongside adjacent controls.
+
+### Small
+
+<ComponentPreview name="p-tabs-14" />
+
+### Large
+
+<ComponentPreview name="p-tabs-15" />
+
+### Underline Variant
+
+<ComponentPreview name="p-tabs-2" />
+
+### Vertical Orientation
+
+<ComponentPreview name="p-tabs-3" />
+
+### Underline with Vertical Orientation
+
+<ComponentPreview name="p-tabs-4" />

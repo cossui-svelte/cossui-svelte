@@ -1,26 +1,11 @@
 <script lang="ts">
   import { Button } from '$lib/components/ui/button';
   import { Separator } from '$lib/components/ui/separator';
+  import { componentNavTree, type NavTree, PAGES_NEW } from '$lib/docs';
   import MainNav from './main-nav.svelte';
+  import MobileNav from './mobile-nav.svelte';
   import SiteHeaderBase from './site-header.svelte';
   import { resolve } from '$app/paths';
-
-  interface PageNode {
-    name: string | unknown;
-    type: 'page';
-    url: string;
-  }
-
-  interface FolderNode {
-    $id?: string;
-    children: (PageNode | FolderNode)[];
-    name: string | unknown;
-    type: 'folder';
-  }
-
-  interface NavTree {
-    children: (PageNode | FolderNode)[];
-  }
 
   interface ProductItem {
     href: string;
@@ -35,30 +20,34 @@
     tree?: NavTree;
   }
 
-  let { navItems = [], currentProduct = 'ui', products = [] }: Props = $props();
+  let {
+    navItems = [],
+    currentProduct = 'ui',
+    products = [],
+    tree = componentNavTree
+  }: Props = $props();
 </script>
 
 <SiteHeaderBase {currentProduct} {products}>
   {#snippet mobileNav()}
-  <!--  BUG TODO: If you activate this line, the page is unresponsive
-  <MobileNav class="flex lg:hidden" items={navItems} {tree} /> -->
+    <MobileNav class="flex lg:hidden" items={navItems} pagesNew={PAGES_NEW} {tree} />
   {/snippet}
 
   <div class="flex gap-2">
     <Button variant="ghost">
-      <a href={resolve('/')}>Components</a>
+      <a href={resolve("/")}>Components</a>
     </Button>
     <Button variant="ghost">
-      <a href={resolve('/particles')}>Particles</a>
+      <a href={resolve("/particles")}>Particles</a>
     </Button>
     <Button variant="ghost">
-      <a href={resolve('/blocs')}>Blocs</a>
+      <a href={resolve("/blocs")}>Blocs</a>
     </Button>
     <Button variant="ghost">
-      <a href={resolve('/ai')}>Registry & AI</a>
+      <a href={resolve("/ai")}>Registry & AI</a>
     </Button>
     <Button variant="ghost">
-      <a href={resolve('/docs')}>Docs</a>
+      <a href={resolve("/docs")}>Docs</a>
     </Button>
   </div>
 

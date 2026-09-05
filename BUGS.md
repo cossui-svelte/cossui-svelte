@@ -1,10 +1,11 @@
-* IMPROVEMENT - Drawer nested, do not stack properly on top of each others, the position is off
 * TODO: Bring origin tables 12-20, + 9-11
-* TODO: Add origin input-29
 * Firefox - p-map-* don't show round corners
-* some sliders are broken
-* tooltip css style is off - shadows
 
+* DONE: on Mobile, we need a menu to browse the pages
+* DONE: Add origin input-29
+* DONE - Drawer nested, do not stack properly on top of each others, the position is off
+* DONE tooltip css style is off - shadows
+* DONE some sliders are broken
 * DONE Border style is off - p-input-147  phone input
 * DONE: migrate maplibre-gl 5->6 https://maplibre.org/maplibre-gl-js/docs/guides/v5-to-v6-migration-guide/
 * DONE p-group-14 css bug

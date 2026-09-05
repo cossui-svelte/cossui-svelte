@@ -1,0 +1,100 @@
+---
+title: Radio Group
+description: A set of checkable buttons where no more than one of the buttons can be checked at a time.
+
+links:
+  doc: https://base-ui.com/react/components/radio#api-reference
+---
+
+<ComponentPreview name="p-radio-group-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @coss/radio-group
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @base-ui/react
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="radio-group" title="components/ui/radio-group.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { Label } from "@/components/ui/label"
+import { Radio, RadioGroup } from "@/components/ui/radio-group"
+```
+
+```tsx
+<RadioGroup defaultValue="next">
+  <Label>
+    <Radio value="next" /> Next.js
+  </Label>
+  <Label>
+    <Radio value="vite" /> Vite
+  </Label>
+  <Label>
+    <Radio value="astro" /> Astro
+  </Label>
+</RadioGroup>
+```
+
+## API Reference
+
+### RadioGroup
+
+Root component. Styled wrapper for `RadioGroup.Root` from Base UI with flex column layout.
+
+### Radio
+
+Individual radio button. Styled wrapper for `Radio.Root` from Base UI with built-in indicator. Also exported as `RadioGroupItem`.
+
+## Examples
+
+For accessible labelling and validation, prefer using the `Field` component to wrap radio buttons. See the related example: [Radio Group field](/docs/components/field#radio-group-field).
+
+For tabs-style mutually exclusive choices, see the [Segmented Control](/docs/components/segmented-control) pattern.
+
+### Disabled
+
+<ComponentPreview name="p-radio-group-2" />
+
+### With Description
+
+<ComponentPreview name="p-radio-group-3" />
+
+### Card Style
+
+<ComponentPreview name="p-radio-group-4" />
+
+### Form Integration
+
+<ComponentPreview name="p-radio-group-5" />

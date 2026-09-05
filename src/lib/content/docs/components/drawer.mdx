@@ -1,0 +1,288 @@
+---
+title: Drawer
+description: A panel that slides in from the edge of the screen with swipe gestures, snap points, and nested drawer support.
+
+links:
+  doc: https://base-ui.com/react/components/drawer
+---
+
+<ComponentPreview name="p-drawer-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @coss/drawer
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @base-ui/react
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="drawer" title="components/ui/drawer.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import {
+  Drawer,
+  DrawerCreateHandle,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerMenu,
+  DrawerMenuCheckboxItem,
+  DrawerMenuGroup,
+  DrawerMenuGroupLabel,
+  DrawerMenuItem,
+  DrawerMenuRadioGroup,
+  DrawerMenuRadioItem,
+  DrawerMenuSeparator,
+  DrawerPanel,
+  DrawerPopup,
+  DrawerMenuTrigger,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer"
+```
+
+```tsx
+<Drawer>
+  <DrawerTrigger>Open</DrawerTrigger>
+  <DrawerPopup>
+    <DrawerHeader>
+      <DrawerTitle>Drawer Title</DrawerTitle>
+      <DrawerDescription>Drawer Description</DrawerDescription>
+    </DrawerHeader>
+    <DrawerPanel>Content</DrawerPanel>
+    <DrawerFooter>
+      <DrawerClose>Close</DrawerClose>
+    </DrawerFooter>
+  </DrawerPopup>
+</Drawer>
+```
+
+## API Reference
+
+### Drawer
+
+Root component. Wraps `Drawer.Root` from Base UI with automatic `swipeDirection` mapping based on `position`.
+
+| Prop             | Type                                     | Default   | Description                                      |
+| ---------------- | ---------------------------------------- | --------- | ------------------------------------------------ |
+| `position`       | `"right" \| "left" \| "top" \| "bottom"` | `"bottom"` | Controls which edge the drawer opens from. Sets the swipe direction automatically and flows to child components via context |
+| `swipeDirection` | `"up" \| "down" \| "left" \| "right"`   | derived   | Overrides the swipe direction derived from `position`. Use when you need different swipe behavior |
+
+All other props from `Drawer.Root` are supported, including `open`, `onOpenChange`, `modal`, `snapPoints`, `snapPoint`, `onSnapPointChange`, and `snapToSequentialPoints`. Note: Snap points only work for bottom drawers.
+
+### DrawerCreateHandle
+
+Creates a handle for detached drawer triggers. Use it when triggers and drawer content need to be coordinated across different parts of the tree.
+
+### DrawerTrigger
+
+Trigger button that opens the drawer. Alias for `Drawer.Trigger` from Base UI.
+
+### DrawerPopup
+
+Popup container that displays the drawer content.
+
+| Prop              | Type                                      | Default     | Description                                      |
+| ----------------- | ----------------------------------------- | ----------- | ------------------------------------------------ |
+| `variant`         | `"default" \| "straight" \| "inset"`     | `"default"` | Controls the drawer style. `straight` removes rounded corners, `inset` adds spacing around the drawer on desktop screens |
+| `showCloseButton` | `boolean`                                 | `false`     | When true, displays a close button in the top-right corner |
+| `showBar`         | `boolean`                                 | `false`     | When true, displays a drag bar indicator |
+| `portalProps`     | `Drawer.Portal.Props`                     | -           | Props forwarded to the internal portal (`keepMounted`, `container`, etc.); see Base UI Drawer portal API |
+
+**Example:**
+
+```tsx
+// Bottom drawer (default)
+<Drawer>
+  <DrawerPopup>...</DrawerPopup>
+</Drawer>
+
+// Right side drawer
+<Drawer position="right">
+  <DrawerPopup>...</DrawerPopup>
+</Drawer>
+
+// Left side drawer
+<Drawer position="left">
+  <DrawerPopup>...</DrawerPopup>
+</Drawer>
+
+// Drawer with inset variant
+<Drawer position="right">
+  <DrawerPopup variant="inset">...</DrawerPopup>
+</Drawer>
+```
+
+### DrawerHeader
+
+Container for the drawer title and description. Supports the `render` prop for polymorphic composition (e.g. `render={<header />}`).
+
+| Prop           | Type      | Default | Description                                      |
+| -------------- | --------- | ------- | ------------------------------------------------ |
+| `allowSelection` | `boolean` | `false` | When true, wraps the header in `DrawerContent` to reduce swipe interference during mouse text selection |
+
+### DrawerFooter
+
+Footer section for action buttons. Supports the `render` prop for polymorphic composition.
+
+| Prop           | Type                     | Default     | Description                                      |
+| -------------- | ------------------------ | ----------- | ------------------------------------------------ |
+| `variant`      | `"default" \| "bare"`    | `"default"` | Controls the footer styling. `default` includes border and background, `bare` removes them |
+| `allowSelection` | `boolean`              | `true`      | When true, wraps the footer in `DrawerContent` to reduce swipe interference during mouse text selection |
+
+### DrawerTitle
+
+Title component. Alias for `Drawer.Title` from Base UI.
+
+### DrawerDescription
+
+Description component. Alias for `Drawer.Description` from Base UI.
+
+### DrawerPanel
+
+Content container. When `scrollable` is true (default), wraps content in a `ScrollArea` component. Supports the `render` prop for polymorphic composition.
+
+| Prop           | Type      | Default | Description                                      |
+| -------------- | --------- | ------- | ------------------------------------------------ |
+| `scrollable`   | `boolean` | `true`  | When true, wraps content in a `ScrollArea`. Set to false for non-scrollable content |
+| `scrollFade`   | `boolean` | `true`  | When true, shows a fade effect at scroll edges (only applies when `scrollable` is true) |
+| `allowSelection` | `boolean` | `true` | When true, wraps the panel in `DrawerContent` to reduce swipe interference during mouse text selection |
+
+### DrawerMenu
+
+Container for drawer menu items. Use with `DrawerMenuItem`, `DrawerMenuSeparator`, `DrawerMenuGroup`, `DrawerMenuGroupLabel`, `DrawerMenuCheckboxItem`, `DrawerMenuRadioGroup`, `DrawerMenuRadioItem`, and `DrawerMenuTrigger` to build menus that mirror the Menu component API. Supports the `render` prop for polymorphic composition.
+
+### DrawerMenuItem
+
+Styled menu item that matches `MenuItem` appearance. Does not close the drawer — wrap with `DrawerClose` when close-on-click is needed. Supports the `render` prop for polymorphic composition.
+
+| Prop      | Type                                | Default     | Description                                      |
+| --------- | ----------------------------------- | ----------- | ------------------------------------------------ |
+| `variant` | `"default" \| "destructive"`        | `"default"` | When `destructive`, uses destructive text color  |
+| `disabled`| `boolean`                           | —           | When true, disables the item                     |
+
+**Example:** Use with `DrawerClose` for close-on-click: `<DrawerClose render={<DrawerMenuItem />}>Edit</DrawerClose>`
+
+### DrawerMenuSeparator
+
+Horizontal separator between menu items or groups. Supports the `render` prop for polymorphic composition.
+
+### DrawerMenuGroup
+
+Container for grouping related menu items. Use with `DrawerMenuGroupLabel` for labeled sections. Supports the `render` prop for polymorphic composition.
+
+### DrawerMenuGroupLabel
+
+Label for a `DrawerMenuGroup` section. Renders muted, smaller text above a group of items. In nested drawers, use as a section title at the top of the menu (no back button needed — swipe to go back). Supports the `render` prop for polymorphic composition.
+
+### DrawerMenuTrigger
+
+Trigger that opens a nested drawer. Styled like a menu item with a trailing chevron. Use for menu items that open nested drawers (e.g. "Add to Playlist" → nested drawer with playlist options). Wraps `DrawerTrigger` internally.
+
+**Example:** `<DrawerMenuTrigger>Add to Playlist</DrawerMenuTrigger>` opens a nested drawer when tapped.
+
+### DrawerMenuCheckboxItem
+
+Checkbox menu item for independent toggles. Supports `variant="switch"` for toggle-style switches. For selection groups, use `DrawerMenuRadioGroup` with `DrawerMenuRadioItem`.
+
+### DrawerMenuRadioGroup
+
+Container for radio menu items. Use with `DrawerMenuRadioItem` for mutually exclusive options (e.g. "Sort by" with Artist, Album, Title).
+
+### DrawerMenuRadioItem
+
+Radio menu item. Must be used inside `DrawerMenuRadioGroup` with a `value` prop.
+
+### DrawerClose
+
+Close button component. Alias for `Drawer.Close` from Base UI.
+
+### DrawerPortal
+
+Portal component for rendering outside the DOM hierarchy. Alias for `Drawer.Portal` from Base UI.
+
+### DrawerBackdrop
+
+Backdrop/overlay component. Alias for `Drawer.Backdrop` from Base UI.
+
+### DrawerViewport
+
+Viewport component for positioning. Alias for `Drawer.Viewport` from Base UI. Typically not used directly — `DrawerPopup` renders it internally.
+
+### DrawerBar
+
+Drag handle indicator shown when `showBar` is true on `DrawerPopup`. Typically not used directly.
+
+### DrawerContent
+
+Primitive content wrapper used for polymorphic composition with the `render` prop. Alias for `Drawer.Content` from Base UI.
+
+## Examples
+
+### Inset variant
+
+<ComponentPreview name="p-drawer-4" />
+
+### Straight variant
+
+<ComponentPreview name="p-drawer-5" />
+
+### Scrollable content
+
+<ComponentPreview name="p-drawer-6" />
+
+### Nested drawers
+
+<ComponentPreview name="p-drawer-7" />
+
+### Snap points
+
+<ComponentPreview name="p-drawer-9" />
+
+### Mobile menu
+
+<ComponentPreview name="p-drawer-11" />
+
+### Responsive dialog
+
+Use `Drawer` on small screens and `Dialog` on larger ones to show the same content in a modal on desktop and a bottom sheet on mobile.
+
+<ComponentPreview name="p-drawer-12" />
+
+### Responsive menu
+
+Pair `Drawer` with `Menu` so actions appear in a dropdown on desktop and a swipe-up sheet on mobile. Use `DrawerMenuTrigger` for items that open nested drawers on mobile. Nested drawers use `DrawerMenuGroupLabel` as section titles; swipe to go back.
+
+<ComponentPreview name="p-drawer-13" />

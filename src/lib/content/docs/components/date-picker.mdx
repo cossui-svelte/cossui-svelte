@@ -1,0 +1,114 @@
+---
+title: Date Picker
+description: A date picker component built with Calendar and Popover.
+---
+
+<ComponentPreview name="p-date-picker-1" />
+
+## About
+
+The Date Picker is built using a composition of the `<Calendar>` and `<Popover>` components.
+
+## Installation
+
+The Date Picker is a composition pattern, not a standalone component. Install the required components:
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @coss/calendar @coss/popover @coss/button
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @daypicker/react date-fns lucide-react @base-ui/react
+```
+
+<Step>Copy the Calendar, Popover, and Button components to your project.</Step>
+
+See the [Calendar](/docs/components/calendar), [Popover](/docs/components/popover), and [Button](/docs/components/button) documentation for installation instructions.
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { format } from "date-fns"
+import { CalendarIcon } from "lucide-react"
+import { useState } from "react"
+
+import { Button } from "@/components/ui/button"
+import { Calendar } from "@/components/ui/calendar"
+import {
+  Popover,
+  PopoverPopup,
+  PopoverTrigger,
+} from "@/components/ui/popover"
+```
+
+```tsx
+const [date, setDate] = useState<Date>()
+
+return (
+  <Popover>
+    <PopoverTrigger
+      render={
+        <Button
+          className="w-[280px] justify-start text-left font-normal"
+          variant="outline"
+        />
+      }
+    >
+      <CalendarIcon />
+      {date ? format(date, "PPP") : <span>Pick a date</span>}
+    </PopoverTrigger>
+    <PopoverPopup align="start" className="w-auto p-0">
+      <Calendar mode="single" selected={date} onSelect={setDate} />
+    </PopoverPopup>
+  </Popover>
+)
+```
+
+## Examples
+
+### Date Range Picker
+
+<ComponentPreview name="p-date-picker-2" />
+
+### With Dropdown Navigation
+
+Use `captionLayout="dropdown"` for date of birth or historical date selection:
+
+<ComponentPreview name="p-date-picker-3" />
+
+### With Presets
+
+<ComponentPreview name="p-date-picker-4" />
+
+### With Input
+
+<ComponentPreview name="p-date-picker-5" />
+
+### Close on Select
+
+Control the popover state to close it when a date is selected:
+
+<ComponentPreview name="p-date-picker-6" />
+
