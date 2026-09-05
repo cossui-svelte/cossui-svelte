@@ -294,7 +294,7 @@
 		"range-calendar"
 	],
 	"dependencies": [
-		"@internationalized/date@^3.12.3",
+		"@internationalized/date@^3.12.4",
 		"svelte-toolbelt@^0.10.6",
 		"runed@0.37.1"
 	]

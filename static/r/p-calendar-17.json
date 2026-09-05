@@ -22,6 +22,6 @@
 	"dependencies": [
 		"@internationalized/date",
 		"@lucide/svelte",
-		"@internationalized/date@^3.12.3"
+		"@internationalized/date@^3.12.4"
 	]
 }

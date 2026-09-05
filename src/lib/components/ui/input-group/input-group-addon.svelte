@@ -36,13 +36,17 @@
   } = $props();
 
   function handleMouseDown(e: MouseEvent) {
-    const target = e.target as HTMLElement;
+    const currentTarget = e.currentTarget as HTMLElement | null;
+    const target = e.target as HTMLDivElement;
+
+    if (!currentTarget?.contains(target)) return;
+
     const isInteractive = target.closest(
       "button, a, input, select, textarea, [role='button'], [role='combobox'], [role='listbox'], [data-slot='select-trigger']"
     );
     if (isInteractive) return;
     e.preventDefault();
-    const parent = (e.currentTarget as HTMLElement).parentElement;
+    const parent = currentTarget.parentElement;
     const input = parent?.querySelector<HTMLInputElement | HTMLTextAreaElement>('input, textarea');
     if (input && !parent?.querySelector('input:focus, textarea:focus')) {
       input.focus();

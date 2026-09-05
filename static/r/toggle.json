@@ -28,7 +28,7 @@
 		"utils"
 	],
 	"dependencies": [
-		"@shardsui/svelte@0.1.0-beta.0",
+		"@shardsui/svelte@0.1.0-beta.1",
 		"tailwind-variants@^3.3.1"
 	]
 }

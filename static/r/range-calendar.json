@@ -73,7 +73,7 @@
 	],
 	"dependencies": [
 		"svelte-toolbelt@^0.10.6",
-		"@internationalized/date@^3.12.3",
+		"@internationalized/date@^3.12.4",
 		"runed@0.37.1"
 	]
 }

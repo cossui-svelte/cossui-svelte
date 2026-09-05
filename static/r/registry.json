@@ -9,7 +9,7 @@
 			"description": "A set of collapsible panels with headings and content.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [
 				"utils"
@@ -87,7 +87,7 @@
 			"description": "A dialog that requires user response to proceed.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [
 				"button",
@@ -194,7 +194,7 @@
 			"description": "An input that suggests options as you type.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [
 				"scroll-area",
@@ -284,7 +284,7 @@
 			"description": "An image element with a fallback for representing the user.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [
 				"utils"
@@ -400,7 +400,7 @@
 			"type": "registry:ui",
 			"dependencies": [
 				"tailwind-variants@^3.3.1",
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [
 				"spinner",
@@ -430,7 +430,7 @@
 			"description": "A date picker component with range and multi-select support.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@internationalized/date@^3.12.3",
+				"@internationalized/date@^3.12.4",
 				"svelte-toolbelt@^0.10.6",
 				"runed@0.37.1"
 			],
@@ -765,7 +765,7 @@
 			"description": "A chart component for visualizing data in various formats.",
 			"type": "registry:ui",
 			"dependencies": [
-				"layerchart@^2.3.0"
+				"layerchart@^2.4.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -804,7 +804,7 @@
 			"description": "A control allowing the user to toggle between checked and not checked.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [
 				"utils"
@@ -828,7 +828,7 @@
 			"description": "Provides shared state to a series of checkboxes.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [
 				"utils"
@@ -857,7 +857,7 @@
 			"description": "A collapsible panel controlled by a button trigger.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [
 				"utils"
@@ -921,7 +921,7 @@
 			"description": "An input combined with a list of predefined items to select.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [
 				"scroll-area",
@@ -1031,7 +1031,7 @@
 			"description": "A command palette component built with Dialog and Autocomplete for searching and executing commands.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [
 				"autocomplete",
@@ -1132,7 +1132,7 @@
 			"description": "A menu that opens on right-click, providing contextual actions.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [
 				"kbd",
@@ -1289,7 +1289,7 @@
 			"description": "A popup that opens on top of the entire page.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [
 				"button",
@@ -1370,7 +1370,7 @@
 			"description": "A panel that slides in from the edge of the screen with swipe gestures, snap points, and nested drawer support.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [
 				"button",
@@ -1560,7 +1560,7 @@
 			"description": "A component that provides labelling and validation for form controls.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [
 				"utils"
@@ -1604,7 +1604,7 @@
 			"description": "A native fieldset element with a legend.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [
 				"utils"
@@ -1648,7 +1648,7 @@
 			"description": "A form wrapper component that simplifies validation and submission.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [],
 			"files": [
@@ -1757,7 +1757,7 @@
 			"description": "A native input element.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [
 				"utils"
@@ -1882,7 +1882,7 @@
 			"description": "A popup that appears when an element is hovered, showing preview information.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [
 				"utils"
@@ -1917,7 +1917,7 @@
 			"type": "registry:ui",
 			"dependencies": [
 				"geojson",
-				"maplibre-gl@^6.6.0"
+				"maplibre-gl@^6.7.0"
 			],
 			"registryDependencies": [
 				"utils"
@@ -2006,7 +2006,7 @@
 			"description": "A list of actions in a dropdown, enhanced with keyboard navigation.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [
 				"utils"
@@ -2100,7 +2100,7 @@
 			"description": "A graphical display of a numeric value within a range.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [
 				"utils"
@@ -2204,7 +2204,7 @@
 			"dependencies": [
 				"runed@0.37.1",
 				"svelte-toolbelt@^0.10.6",
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [
 				"utils"
@@ -2359,7 +2359,7 @@
 			"description": "An accessible popup anchored to a button.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [
 				"utils"
@@ -2408,7 +2408,7 @@
 			"description": "A popup that appears when a link is hovered, showing a preview for sighted users.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [
 				"utils"
@@ -2442,7 +2442,7 @@
 			"description": "Displays the status of a task that takes a long time.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [
 				"utils"
@@ -2486,7 +2486,7 @@
 			"description": "A set of checkable buttons where no more than one of the buttons can be checked at a time.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [
 				"utils"
@@ -2516,7 +2516,7 @@
 			"type": "registry:ui",
 			"dependencies": [
 				"svelte-toolbelt@^0.10.6",
-				"@internationalized/date@^3.12.3",
+				"@internationalized/date@^3.12.4",
 				"runed@0.37.1"
 			],
 			"registryDependencies": [
@@ -2598,7 +2598,7 @@
 			"description": "A native scroll container with custom scrollbars.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [
 				"utils"
@@ -2627,7 +2627,7 @@
 			"description": "A common form component for choosing a predefined value in a dropdown menu.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0",
+				"@shardsui/svelte@0.1.0-beta.1",
 				"tailwind-variants@^3.3.1"
 			],
 			"registryDependencies": [
@@ -2712,7 +2712,7 @@
 			"description": "A separator element accessible to screen readers.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [
 				"utils"
@@ -2736,7 +2736,7 @@
 			"description": "A flyout that opens from the side of the screen, based on the dialog component.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [
 				"button",
@@ -2986,7 +2986,7 @@
 			"description": "An input where the user selects a value from within a given range.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [
 				"tooltip",
@@ -3139,7 +3139,7 @@
 			"description": "A control that indicates whether a setting is on or off.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [
 				"utils"
@@ -3220,7 +3220,7 @@
 			"description": "A component for toggling between related panels on the same page.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0",
+				"@shardsui/svelte@0.1.0-beta.1",
 				"tailwind-variants@^3.3.1"
 			],
 			"registryDependencies": [
@@ -3270,7 +3270,7 @@
 			"description": "A native textarea element for multi-line text input.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [
 				"utils"
@@ -3356,7 +3356,7 @@
 			"description": "A temporary notification that appears on screen to inform users.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [
 				"button",
@@ -3406,7 +3406,7 @@
 			"description": "A two-state button that can be toggled on or off.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0",
+				"@shardsui/svelte@0.1.0-beta.1",
 				"tailwind-variants@^3.3.1"
 			],
 			"registryDependencies": [
@@ -3436,7 +3436,7 @@
 			"description": "Provides a shared state to a series of toggle buttons.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [
 				"separator",
@@ -3472,7 +3472,7 @@
 			"description": "A container for grouping a set of buttons and controls.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [
 				"utils"
@@ -3521,7 +3521,7 @@
 			"description": "A popup that appears when an element is hovered or focused, showing a hint for sighted users.",
 			"type": "registry:ui",
 			"dependencies": [
-				"@shardsui/svelte@0.1.0-beta.0"
+				"@shardsui/svelte@0.1.0-beta.1"
 			],
 			"registryDependencies": [
 				"utils"
@@ -6469,7 +6469,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"@internationalized/date",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.4"
 			],
 			"registryDependencies": [
 				"calendar"
@@ -6489,7 +6489,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"@internationalized/date",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.4"
 			],
 			"registryDependencies": [
 				"range-calendar"
@@ -6509,7 +6509,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"@internationalized/date",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.4"
 			],
 			"registryDependencies": [
 				"calendar"
@@ -6529,7 +6529,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"@internationalized/date",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.4"
 			],
 			"registryDependencies": [
 				"calendar"
@@ -6549,7 +6549,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"@internationalized/date",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.4"
 			],
 			"registryDependencies": [
 				"calendar"
@@ -6569,7 +6569,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"@internationalized/date",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.4"
 			],
 			"registryDependencies": [
 				"calendar"
@@ -6589,7 +6589,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"@internationalized/date",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.4"
 			],
 			"registryDependencies": [
 				"button",
@@ -6610,7 +6610,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"@internationalized/date",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.4"
 			],
 			"registryDependencies": [
 				"button",
@@ -6632,7 +6632,7 @@
 			"dependencies": [
 				"@internationalized/date",
 				"@lucide/svelte",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.4"
 			],
 			"registryDependencies": [
 				"button",
@@ -6657,7 +6657,7 @@
 			"dependencies": [
 				"@internationalized/date",
 				"@lucide/svelte",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.4"
 			],
 			"registryDependencies": [
 				"button",
@@ -6681,7 +6681,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"@internationalized/date",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.4"
 			],
 			"registryDependencies": [
 				"calendar",
@@ -6703,7 +6703,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"@internationalized/date",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.4"
 			],
 			"registryDependencies": [
 				"calendar"
@@ -6723,7 +6723,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"@internationalized/date",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.4"
 			],
 			"registryDependencies": [
 				"button",
@@ -6744,7 +6744,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"@internationalized/date",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.4"
 			],
 			"registryDependencies": [
 				"button",
@@ -6765,7 +6765,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"@internationalized/date",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.4"
 			],
 			"registryDependencies": [
 				"range-calendar"
@@ -6785,7 +6785,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"@internationalized/date",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.4"
 			],
 			"registryDependencies": [
 				"range-calendar"
@@ -6805,7 +6805,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"@internationalized/date",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.4"
 			],
 			"registryDependencies": [
 				"calendar",
@@ -6827,7 +6827,7 @@
 			"dependencies": [
 				"@internationalized/date",
 				"@lucide/svelte",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.4"
 			],
 			"registryDependencies": [
 				"autocomplete",
@@ -6851,7 +6851,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"@internationalized/date",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.4"
 			],
 			"registryDependencies": [
 				"range-calendar"
@@ -6871,7 +6871,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"@internationalized/date",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.4"
 			],
 			"registryDependencies": [
 				"calendar"
@@ -6891,7 +6891,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"@internationalized/date",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.4"
 			],
 			"registryDependencies": [
 				"calendar"
@@ -6911,7 +6911,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"@internationalized/date",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.4"
 			],
 			"registryDependencies": [
 				"calendar"
@@ -6931,7 +6931,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"@internationalized/date",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.4"
 			],
 			"registryDependencies": [
 				"range-calendar"
@@ -6951,7 +6951,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"@internationalized/date",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.4"
 			],
 			"registryDependencies": [
 				"calendar"
@@ -6971,7 +6971,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"@internationalized/date",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.4"
 			],
 			"registryDependencies": [
 				"calendar"
@@ -7247,7 +7247,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"layerchart",
-				"layerchart@^2.3.0"
+				"layerchart@^2.4.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -7269,7 +7269,7 @@
 				"d3-scale",
 				"layerchart",
 				"d3-scale@^4.0.2",
-				"layerchart@^2.3.0"
+				"layerchart@^2.4.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -7289,7 +7289,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"layerchart",
-				"layerchart@^2.3.0"
+				"layerchart@^2.4.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -7311,7 +7311,7 @@
 				"d3-scale",
 				"layerchart",
 				"d3-scale@^4.0.2",
-				"layerchart@^2.3.0"
+				"layerchart@^2.4.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -7335,7 +7335,7 @@
 				"layerchart",
 				"d3-scale@^4.0.2",
 				"d3-shape@^3.2.0",
-				"layerchart@^2.3.0"
+				"layerchart@^2.4.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -7359,7 +7359,7 @@
 				"layerchart",
 				"d3-scale@^4.0.2",
 				"d3-shape@^3.2.0",
-				"layerchart@^2.3.0"
+				"layerchart@^2.4.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -7383,7 +7383,7 @@
 				"layerchart",
 				"d3-scale@^4.0.2",
 				"d3-shape@^3.2.0",
-				"layerchart@^2.3.0"
+				"layerchart@^2.4.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -7403,7 +7403,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"layerchart",
-				"layerchart@^2.3.0"
+				"layerchart@^2.4.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -7423,7 +7423,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"layerchart",
-				"layerchart@^2.3.0"
+				"layerchart@^2.4.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -7445,7 +7445,7 @@
 				"d3-scale",
 				"layerchart",
 				"d3-scale@^4.0.2",
-				"layerchart@^2.3.0"
+				"layerchart@^2.4.0"
 			],
 			"registryDependencies": [
 				"chart"
@@ -8698,7 +8698,7 @@
 			"dependencies": [
 				"@internationalized/date",
 				"@lucide/svelte",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.4"
 			],
 			"registryDependencies": [
 				"button",
@@ -8722,7 +8722,7 @@
 			"dependencies": [
 				"@internationalized/date",
 				"@lucide/svelte",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.4"
 			],
 			"registryDependencies": [
 				"button",
@@ -8746,7 +8746,7 @@
 			"dependencies": [
 				"@internationalized/date",
 				"@lucide/svelte",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.4"
 			],
 			"registryDependencies": [
 				"button",
@@ -8770,7 +8770,7 @@
 			"dependencies": [
 				"@internationalized/date",
 				"@lucide/svelte",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.4"
 			],
 			"registryDependencies": [
 				"button",
@@ -8794,7 +8794,7 @@
 			"dependencies": [
 				"@internationalized/date",
 				"@lucide/svelte",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.4"
 			],
 			"registryDependencies": [
 				"button",
@@ -8818,7 +8818,7 @@
 			"dependencies": [
 				"@internationalized/date",
 				"@lucide/svelte",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.4"
 			],
 			"registryDependencies": [
 				"button",
@@ -8842,7 +8842,7 @@
 			"dependencies": [
 				"@internationalized/date",
 				"@lucide/svelte",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.4"
 			],
 			"registryDependencies": [
 				"badge",
@@ -8867,7 +8867,7 @@
 			"dependencies": [
 				"@internationalized/date",
 				"@lucide/svelte",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.4"
 			],
 			"registryDependencies": [
 				"calendar",
@@ -8891,7 +8891,7 @@
 			"dependencies": [
 				"@internationalized/date",
 				"@lucide/svelte",
-				"@internationalized/date@^3.12.3"
+				"@internationalized/date@^3.12.4"
 			],
 			"registryDependencies": [
 				"button",
@@ -10011,7 +10011,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"zod",
-				"zod@^4.4.3"
+				"zod@^4.5.4"
 			],
 			"registryDependencies": [
 				"button",
@@ -11789,7 +11789,7 @@
 			"type": "registry:block",
 			"dependencies": [
 				"maplibre-gl",
-				"maplibre-gl@^6.6.0"
+				"maplibre-gl@^6.7.0"
 			],
 			"registryDependencies": [
 				"button",

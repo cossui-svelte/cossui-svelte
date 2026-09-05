@@ -41,7 +41,7 @@
   <ScrollAreaPrimitive.Viewport
     bind:ref={viewportRef}
     class={cn(
-      'min-h-0 flex-1 rounded-[inherit] outline-none transition-shadows focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background',
+      'min-h-0 flex-1 rounded-[inherit] outline-none transition-shadow focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background',
       overscrollContain &&
         'data-has-overflow-y:overscroll-y-contain data-has-overflow-x:overscroll-x-contain',
       scrollFade &&
