@@ -66,18 +66,6 @@
       <!-- eslint-enable svelte/no-navigation-without-resolve -->
       <!-- eslint-enable svelte/no-navigation-without-resolve -->
       <!-- eslint-enable svelte/no-navigation-without-resolve -->
-      <!-- eslint-enable svelte/no-navigation-without-resolve -->
-      <!-- eslint-enable svelte/no-navigation-without-resolve -->
-      <!-- eslint-enable svelte/no-navigation-without-resolve -->
-      <!-- eslint-enable svelte/no-navigation-without-resolve -->
-      <!-- eslint-enable svelte/no-navigation-without-resolve -->
-      <!-- eslint-enable svelte/no-navigation-without-resolve -->
-      <!-- eslint-enable svelte/no-navigation-without-resolve -->
-      <!-- eslint-enable svelte/no-navigation-without-resolve -->
-      <!-- eslint-enable svelte/no-navigation-without-resolve -->
-      <!-- eslint-enable svelte/no-navigation-without-resolve -->
-      <!-- eslint-enable svelte/no-navigation-without-resolve -->
-      <!-- eslint-enable svelte/no-navigation-without-resolve -->
     </div>
   </div>
 {/if}
