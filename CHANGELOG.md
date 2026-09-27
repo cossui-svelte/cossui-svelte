@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.9.23](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.22...v0.9.23) (2026-09-27)
+
+### ✨ Features
+
+* claude please bring all the blocs from shadcn-svelte, update the components ([149c8ae](https://github.com/cossui-svelte/cossui-svelte/commit/149c8ae9577e9918001bfd612191df19a4dd6325))
+* documentation is getting there, almost working ([b93e9d3](https://github.com/cossui-svelte/cossui-svelte/commit/b93e9d3493a9f2fa9acd5163929c3fad96d0bfd7))
+
+### 🐛 Bug Fixes
+
+* p-accordion-4 bug ([3972770](https://github.com/cossui-svelte/cossui-svelte/commit/39727701ca854701de915e855c90223e2231b6d6))
+* updates from upstream ([c920d6a](https://github.com/cossui-svelte/cossui-svelte/commit/c920d6a87d6ad85671ff6d42da1f57505dc8c464))
+* upstream changed up to 705cb73 ([f7a0e12](https://github.com/cossui-svelte/cossui-svelte/commit/f7a0e12b1b0e061b53cc55f40473b729125026e7))
+
+### 🚚 Chores
+
+* deps ([36eccbb](https://github.com/cossui-svelte/cossui-svelte/commit/36eccbb2ce6d6cddfd12b655dab5b2d84d8208ec))
+* deps ([db5138c](https://github.com/cossui-svelte/cossui-svelte/commit/db5138c871db4bdcfabd8dd54ce36002a453e756))
+* deps ([cbb1612](https://github.com/cossui-svelte/cossui-svelte/commit/cbb16123f4c263b926bd73d1be315855a5b2b3f6))
+* deps ([084edd9](https://github.com/cossui-svelte/cossui-svelte/commit/084edd9ee2f13b8bd87aaf5e1f12a7832e46f67b))
+* formatting ([c759753](https://github.com/cossui-svelte/cossui-svelte/commit/c7597539500103b764345758351c3a505c4b74d1))
+* internal migration ([c308907](https://github.com/cossui-svelte/cossui-svelte/commit/c308907d12ea3d280d5dacdaa3221fc41c7e3680))
+* migrate ([29f05a1](https://github.com/cossui-svelte/cossui-svelte/commit/29f05a1c57bc4c03625cf26bed0f5b1f17efc54b))
+
 ## [0.9.22](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.21...v0.9.22) (2026-08-26)
 
 ### ✨ Features
