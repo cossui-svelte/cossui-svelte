@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { Component } from 'svelte';
   import ChevronsUpDownIcon from '@lucide/svelte/icons/chevrons-up-down';
   import PlusIcon from '@lucide/svelte/icons/plus';
+  import type { Component } from 'svelte';
   import {
     Menu,
     MenuGroup,
@@ -18,6 +18,7 @@
     SidebarMenuItem,
     useSidebar
   } from '$lib/components/ui/sidebar';
+
   let { teams }: { teams: { name: string; logo: Component; plan: string }[] } = $props();
   const sidebar = useSidebar();
 
@@ -32,7 +33,9 @@
         size="lg"
         class="data-popup-open:bg-sidebar-accent data-popup-open:text-sidebar-accent-foreground"
       >
-        {#snippet child({ props })}
+        {#snippet child({
+    props
+  })}
           <MenuTrigger {...props}>
             <div
               class="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground"

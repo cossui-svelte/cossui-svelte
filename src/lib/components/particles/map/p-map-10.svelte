@@ -20,13 +20,13 @@
       clusterRadius={50}
       clusterMaxZoom={14}
       onpointclick={(feature, coordinates) => {
-        if (feature.properties) {
-          selectedPoint = {
-            coordinates,
-            properties: feature.properties as EarthquakeProperties
-          };
-        }
-      }}
+    if (feature.properties) {
+      selectedPoint = {
+        coordinates,
+        properties: feature.properties as EarthquakeProperties
+      };
+    }
+  }}
     />
 
     {#if selectedPoint}

@@ -50,10 +50,15 @@
   const fileUpload = useFileUpload({ initialFiles, maxFiles, maxSize, multiple: true });
 </script>
 
-{#snippet fileIcon(file: FileWithPreview)}
+{#snippet fileIcon(
+    file: FileWithPreview
+  )}
   {@const fileType = file.file.type}
   {@const fileName = file.file.name}
-  {#if fileType.includes('zip') || fileType.includes('archive') || fileName.endsWith('.zip') || fileName.endsWith('.rar')}
+  {#if fileType.includes('zip') ||
+    fileType.includes('archive') ||
+    fileName.endsWith('.zip') ||
+    fileName.endsWith('.rar')}
     <FileArchive class="size-5 opacity-60" />
   {:else if fileType.includes('audio/')}
     <Headphones class="size-5 opacity-60" />
@@ -61,7 +66,11 @@
     <FileSpreadsheet class="size-5 opacity-60" />
   {:else if fileType.startsWith('image/')}
     <Image class="size-5 opacity-60" />
-  {:else if fileType.includes('pdf') || fileName.endsWith('.pdf') || fileType.includes('word') || fileName.endsWith('.doc') || fileName.endsWith('.docx')}
+  {:else if fileType.includes('pdf') ||
+    fileName.endsWith('.pdf') ||
+    fileType.includes('word') ||
+    fileName.endsWith('.doc') ||
+    fileName.endsWith('.docx')}
     <FileText class="size-5 opacity-60" />
   {:else if fileType.includes('video/')}
     <Video class="size-5 opacity-60" />
@@ -70,7 +79,9 @@
   {/if}
 {/snippet}
 
-{#snippet filePreview(file: FileWithPreview)}
+{#snippet filePreview(
+    file: FileWithPreview
+  )}
   <div
     class="flex aspect-square items-center justify-center overflow-hidden rounded-t-[inherit] bg-accent"
   >

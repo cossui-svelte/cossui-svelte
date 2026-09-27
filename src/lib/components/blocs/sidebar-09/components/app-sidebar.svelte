@@ -170,7 +170,9 @@
       <SidebarMenu>
         <SidebarMenuItem>
           <SidebarMenuButton size="lg" class="md:h-8 md:p-0">
-            {#snippet child({ props })}
+            {#snippet child({
+    props
+  })}
               <a href="##" {...props}>
                 <div
                   class="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground"

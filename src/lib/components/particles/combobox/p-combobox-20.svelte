@@ -101,7 +101,9 @@
       <ComboboxEmpty>No team members found.</ComboboxEmpty>
       <ComboboxList>
         <ComboboxCollection>
-          {#snippet children(item: TeamMember)}
+          {#snippet children(
+    item: TeamMember
+  )}
             <ComboboxItem value={item.value} label={item.label}>{item.label}</ComboboxItem>
           {/snippet}
         </ComboboxCollection>

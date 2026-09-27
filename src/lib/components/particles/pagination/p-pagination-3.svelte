@@ -67,9 +67,9 @@
           href="#"
           isDisabled={currentPage === 1}
           onclick={(e: MouseEvent) => {
-            e.preventDefault();
-            if (currentPage > 1) selectedRange = String(currentPage - 1);
-          }}
+    e.preventDefault();
+    if (currentPage > 1) selectedRange = String(currentPage - 1);
+  }}
         />
       </PaginationItem>
       <PaginationItem>
@@ -78,9 +78,9 @@
           href="#"
           isDisabled={currentPage === totalPages}
           onclick={(e: MouseEvent) => {
-            e.preventDefault();
-            if (currentPage < totalPages) selectedRange = String(currentPage + 1);
-          }}
+    e.preventDefault();
+    if (currentPage < totalPages) selectedRange = String(currentPage + 1);
+  }}
         />
       </PaginationItem>
     </PaginationContent>

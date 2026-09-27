@@ -73,7 +73,9 @@
                 {#each data.nav as item (item.name)}
                   <SidebarMenuItem>
                     <SidebarMenuButton isActive={item.name === 'Messages & media'}>
-                      {#snippet child({ props })}
+                      {#snippet child({
+    props
+  })}
                         <a href="##" {...props}>
                           <item.icon />
                           <span>{item.name}</span>

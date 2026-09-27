@@ -19,16 +19,12 @@
       class="size-9 rounded-full border border-input bg-popover px-0 shadow-xs/5 hover:bg-accent/50 sm:size-8"
     />
     <NumberFieldValue aria-live="polite" class="px-3">
-      {#snippet children({ value })}
+      {#snippet children({
+    value
+  })}
         {@const volume = value ?? 0}
         {@const Icon =
-          volume === 0
-            ? VolumeXIcon
-            : volume < 3
-              ? VolumeIcon
-              : volume < 5
-                ? Volume1Icon
-                : Volume2Icon}
+    volume === 0 ? VolumeXIcon : volume < 3 ? VolumeIcon : volume < 5 ? Volume1Icon : Volume2Icon}
         <Icon aria-hidden="true" class="opacity-60" size={16} />
         <span aria-label={`Current volume is ${volume}`} class="ms-2">{volume}</span>
       {/snippet}

@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { Component } from 'svelte';
   import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
   import PlusIcon from '@lucide/svelte/icons/plus';
+  import type { Component } from 'svelte';
   import {
     Menu,
     MenuGroup,
@@ -32,7 +32,9 @@
   <SidebarMenuItem>
     <Menu>
       <SidebarMenuButton class="w-fit px-1.5">
-        {#snippet child({ props })}
+        {#snippet child({
+    props
+  })}
           <MenuTrigger {...props}>
             <div
               class="flex aspect-square size-5 items-center justify-center rounded-md bg-sidebar-primary text-sidebar-primary-foreground"

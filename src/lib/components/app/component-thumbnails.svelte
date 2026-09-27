@@ -51,58 +51,76 @@
 
 <!-- ── Primitive snippets ──────────────────────────────────────────────────── -->
 
-{#snippet iconSnip(IconComp: Component, cls?: string)}
+{#snippet iconSnip(
+    IconComp: Component,
+    cls?: string
+  )}
   <IconComp class={cn('size-4 text-muted-foreground/88', cls)} />
 {/snippet}
 
-{#snippet textSnip(cls?: string, variant: 'main' | 'secondary' = 'main')}
+{#snippet textSnip(
+    cls?: string,
+    variant: 'main' | 'secondary' = 'main'
+  )}
   <div
     class={cn(
-      'h-1.5 rounded-full',
-      variant === 'main' ? 'bg-muted-foreground/40' : 'bg-muted-foreground/20',
-      cls
-    )}
+    'h-1.5 rounded-full',
+    variant === 'main' ? 'bg-muted-foreground/40' : 'bg-muted-foreground/20',
+    cls
+  )}
   ></div>
 {/snippet}
 
-{#snippet btnSnip(variant: 'primary' | 'secondary' = 'secondary', cls?: string)}
+{#snippet btnSnip(
+    variant: 'primary' | 'secondary' = 'secondary',
+    cls?: string
+  )}
   <div
     class={cn(
-      variant === 'primary' ? 'h-4' : 'h-1.5',
-      'w-7 rounded-sm',
-      variant === 'primary'
-        ? 'bg-linear-to-b from-(--btn-from) to-(--btn-to)'
-        : 'bg-muted-foreground/20',
-      cls
-    )}
+    variant === 'primary' ? 'h-4' : 'h-1.5',
+    'w-7 rounded-sm',
+    variant === 'primary'
+      ? 'bg-linear-to-b from-(--btn-from) to-(--btn-to)'
+      : 'bg-muted-foreground/20',
+    cls
+  )}
   ></div>
 {/snippet}
 
-{#snippet checkboxItem(checked = false, cls?: string)}
+{#snippet checkboxItem(
+    checked = false,
+    cls?: string
+  )}
   <div class={cn('flex items-center gap-2', cls)}>
     <div
       class={cn(
-        'size-4 shrink-0 rounded',
-        checked ? 'bg-linear-to-b from-(--btn-from) to-(--btn-to)' : 'bg-muted-foreground/20'
-      )}
+    'size-4 shrink-0 rounded',
+    checked ? 'bg-linear-to-b from-(--btn-from) to-(--btn-to)' : 'bg-muted-foreground/20'
+  )}
     ></div>
     {@render textSnip('w-full', 'secondary')}
   </div>
 {/snippet}
 
-{#snippet radioItem(checked = false, cls?: string)}
+{#snippet radioItem(
+    checked = false,
+    cls?: string
+  )}
   <div class={cn('flex items-center gap-2', cls)}>
     <div
       class={cn(
-        'size-4 shrink-0 rounded-full',
-        checked ? 'bg-linear-to-b from-(--btn-from) to-(--btn-to)' : 'bg-muted-foreground/20'
-      )}
+    'size-4 shrink-0 rounded-full',
+    checked ? 'bg-linear-to-b from-(--btn-from) to-(--btn-to)' : 'bg-muted-foreground/20'
+  )}
     ></div>
     {@render textSnip('w-full', 'secondary')}
   </div>
 {/snippet}
 
-{#snippet formField(labelWidth = 'w-16', showError = false)}
+{#snippet formField(
+    labelWidth = 'w-16',
+    showError = false
+  )}
   <div class="flex flex-col gap-2">
     {@render textSnip(labelWidth)}
     <div class={cardCls('[--radius-2xl:10px]', false)}>
@@ -114,7 +132,9 @@
   </div>
 {/snippet}
 
-{#snippet tableRow(showCheckbox = true)}
+{#snippet tableRow(
+    showCheckbox = true
+  )}
   <div class="flex items-center gap-2 p-3">
     {#if showCheckbox}
       {@render textSnip('size-2.5 rounded-xs')}
@@ -232,9 +252,9 @@
 {:else if slug === 'button'}
   <div
     class={cardCls(
-      'max-w-24 border-none bg-linear-to-b from-(--btn-from) to-(--btn-to) [--radius-2xl:14px]',
-      false
-    )}
+    'max-w-24 border-none bg-linear-to-b from-(--btn-from) to-(--btn-to) [--radius-2xl:14px]',
+    false
+  )}
   >
     <div class={cpCls('px-6 py-4')}>
       {@render textSnip('bg-primary-foreground/40')}
@@ -455,10 +475,7 @@
   <div class="flex max-w-50 flex-1 flex-col gap-4">
     {@render formField()}
     <div
-      class={cardCls(
-        'border-none bg-linear-to-b from-(--btn-from) to-(--btn-to) [--radius-2xl:10px]',
-        false
-      )}
+      class={cardCls('border-none bg-linear-to-b from-(--btn-from) to-(--btn-to) [--radius-2xl:10px]', false)}
     >
       <div class={cpCls('py-3.5')}></div>
     </div>
@@ -574,9 +591,7 @@
 {:else if slug === 'context-menu'}
   <div class="flex max-w-50 flex-1 flex-col">
     <div
-      class={cardCls(
-        'border-input border-dashed bg-none shadow-none [--radius-2xl:10px] before:hidden'
-      )}
+      class={cardCls('border-input border-dashed bg-none shadow-none [--radius-2xl:10px] before:hidden')}
     >
       <div class={cpCls('min-h-20')}></div>
     </div>
@@ -679,9 +694,9 @@
         <div class="relative flex flex-col items-center">
           <div class="absolute bottom-0.5 h-1.5 w-4 rounded-full bg-foreground/25 blur-[2px]"></div>
           {@render iconSnip(
-            MapPin,
-            'relative size-9 fill-current text-foreground/55 stroke-foreground/20 drop-shadow-sm'
-          )}
+    MapPin,
+    'relative size-9 fill-current text-foreground/55 stroke-foreground/20 drop-shadow-sm'
+  )}
         </div>
       </div>
     </div>

@@ -23,9 +23,9 @@
       <Button
         class="w-full justify-start"
         onclick={() => {
-          date = todayValue;
-          placeholder = todayValue;
-        }}
+    date = todayValue;
+    placeholder = todayValue;
+  }}
         size="sm"
         variant="ghost"
       >
@@ -34,9 +34,9 @@
       <Button
         class="w-full justify-start"
         onclick={() => {
-          date = yesterday;
-          placeholder = yesterday;
-        }}
+    date = yesterday;
+    placeholder = yesterday;
+  }}
         size="sm"
         variant="ghost"
       >
@@ -45,9 +45,9 @@
       <Button
         class="w-full justify-start"
         onclick={() => {
-          date = lastWeek;
-          placeholder = lastWeek;
-        }}
+    date = lastWeek;
+    placeholder = lastWeek;
+  }}
         size="sm"
         variant="ghost"
       >
@@ -56,9 +56,9 @@
       <Button
         class="w-full justify-start"
         onclick={() => {
-          date = lastMonth;
-          placeholder = lastMonth;
-        }}
+    date = lastMonth;
+    placeholder = lastMonth;
+  }}
         size="sm"
         variant="ghost"
       >
@@ -67,9 +67,9 @@
       <Button
         class="w-full justify-start"
         onclick={() => {
-          date = lastYear;
-          placeholder = lastYear;
-        }}
+    date = lastYear;
+    placeholder = lastYear;
+  }}
         size="sm"
         variant="ghost"
       >

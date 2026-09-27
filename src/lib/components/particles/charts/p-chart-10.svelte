@@ -36,22 +36,22 @@
     rule={false}
     axis="y"
     props={{
-      bars: {
-        stroke: 'none',
-        radius: 5,
-        rounded: 'all',
-        motion: { type: 'tween', duration: 500, easing: cubicInOut }
-      },
-      highlight: { area: { fill: 'none' } },
-      yAxis: {
-        format: (d) => chartConfig[d as keyof typeof chartConfig].label,
-        tickLabelProps: {
-          svgProps: {
-            x: -16
-          }
+    bars: {
+      stroke: 'none',
+      radius: 5,
+      rounded: 'all',
+      motion: { type: 'tween', duration: 500, easing: cubicInOut }
+    },
+    highlight: { area: { fill: 'none' } },
+    yAxis: {
+      format: (d) => chartConfig[d as keyof typeof chartConfig].label,
+      tickLabelProps: {
+        svgProps: {
+          x: -16
         }
       }
-    }}
+    }
+  }}
   >
     {#snippet tooltip()}
       <ChartTooltip hideLabel nameKey="visitors" />

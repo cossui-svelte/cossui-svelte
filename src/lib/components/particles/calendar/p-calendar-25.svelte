@@ -175,7 +175,10 @@
         <AutocompletePopup class={matchingTimes.length === 0 ? 'hidden' : undefined}>
           <AutocompleteList>
             <AutocompleteCollection>
-              {#snippet children(item: { label: string; value: string })}
+              {#snippet children(item: {
+    label: string;
+    value: string;
+  })}
                 <AutocompleteItem value={item} onclick={() => handleValueChange(item.value)}>
                   {item.label}
                 </AutocompleteItem>

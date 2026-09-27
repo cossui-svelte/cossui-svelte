@@ -74,7 +74,9 @@
     <Tree {indent} {tree}>
       {#each tree.current.getItems() as item (item.getId())}
         <TreeItem {item}>
-          {#snippet child({ props })}
+          {#snippet child({
+    props
+  })}
             <TreeLabel {...props}>
               <span class="flex items-center gap-2">
                 {#if item.isFolder()}

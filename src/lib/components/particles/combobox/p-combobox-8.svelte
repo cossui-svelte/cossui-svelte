@@ -85,7 +85,9 @@
         <ComboboxGroup items={group.items}>
           <ComboboxGroupLabel>{group.value}</ComboboxGroupLabel>
           <ComboboxCollection>
-            {#snippet children(tag: Tag)}
+            {#snippet children(
+    tag: Tag
+  )}
               <ComboboxItem value={tag.id} label={tag.label}>{tag.label}</ComboboxItem>
             {/snippet}
           </ComboboxCollection>

@@ -33,8 +33,8 @@
   <InputGroupAddon align="inline-end">
     <Button
       onclick={() => {
-        isFavorite = !isFavorite;
-      }}
+    isFavorite = !isFavorite;
+  }}
       size="icon-xs"
       variant="ghost"
     >

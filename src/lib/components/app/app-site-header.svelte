@@ -35,19 +35,19 @@
 
   <div class="flex gap-2">
     <Button variant="ghost">
-      <a href={resolve("/")}>Components</a>
+      <a href={resolve('/')}>Components</a>
     </Button>
     <Button variant="ghost">
-      <a href={resolve("/particles")}>Particles</a>
+      <a href={resolve('/particles')}>Particles</a>
     </Button>
     <Button variant="ghost">
-      <a href={resolve("/blocs")}>Blocs</a>
+      <a href={resolve('/blocs')}>Blocs</a>
     </Button>
     <Button variant="ghost">
-      <a href={resolve("/ai")}>Registry & AI</a>
+      <a href={resolve('/ai')}>Registry & AI</a>
     </Button>
     <Button variant="ghost">
-      <a href={resolve("/docs")}>Docs</a>
+      <a href={resolve('/docs')}>Docs</a>
     </Button>
   </div>
 

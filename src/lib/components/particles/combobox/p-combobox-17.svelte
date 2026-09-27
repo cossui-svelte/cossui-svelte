@@ -63,7 +63,10 @@
     <ComboboxEmpty>No timezones found.</ComboboxEmpty>
     <ComboboxList>
       <ComboboxCollection>
-        {#snippet children(tz: { label: string; value: string })}
+        {#snippet children(tz: {
+    label: string;
+    value: string;
+  })}
           <ComboboxItem value={tz.value} label={tz.label}>{tz.label}</ComboboxItem>
         {/snippet}
       </ComboboxCollection>

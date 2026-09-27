@@ -17,7 +17,9 @@
   }
 </script>
 
-{#snippet themePreviews(v)}
+{#snippet themePreviews(
+    v
+  )}
   {#if v === 'dark'}
     <svg
       aria-hidden

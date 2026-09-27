@@ -76,7 +76,9 @@
               {#each items as item (item.title)}
                 <SidebarMenuItem>
                   <SidebarMenuButton>
-                    {#snippet child({ props })}
+                    {#snippet child({
+    props
+  })}
                       <a href={item.url} {...props}>
                         <span>{item.title}</span>
                       </a>
@@ -86,7 +88,9 @@
                     {#each item.items as subItem (subItem.title)}
                       <SidebarMenuSubItem>
                         <SidebarMenuSubButton>
-                          {#snippet child({ props })}
+                          {#snippet child({
+    props
+  })}
                             <a href={subItem.url} {...props}>
                               <span>{subItem.title}</span>
                             </a>

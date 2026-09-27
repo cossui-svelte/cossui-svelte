@@ -57,7 +57,10 @@
   {yearFormat}
   {...restProps}
 >
-  {#snippet children({ months, weekdays })}
+  {#snippet children({
+    months,
+    weekdays
+  })}
     <Calendar.Months>
       <Calendar.Nav>
         <Calendar.PrevButton variant={buttonVariant} />
@@ -95,9 +98,9 @@
                     <RangeCalendarCell {date} month={month.value}>
                       {#if day}
                         {@render day({
-                          day: date,
-                          outsideMonth: !isEqualMonth(date, month.value)
-                        })}
+    day: date,
+    outsideMonth: !isEqualMonth(date, month.value)
+  })}
                       {:else}
                         <RangeCalendarDay />
                       {/if}

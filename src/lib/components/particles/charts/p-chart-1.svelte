@@ -30,26 +30,32 @@
     range={[180, -180]}
     maxValue={Math.max(...chartData.map((d) => d.visitors)) + 0}
     series={chartData.map((d) => ({
-      color: d.color,
-      data: [d],
-      key: d.browser,
-      label: d.browser
-    }))}
+    color: d.color,
+    data: [d],
+    key: d.browser,
+    label: d.browser
+  }))}
     props={{
-      arc: { motion: 'tween', track: { fill: 'var(--muted)' } },
-      tooltip: { context: { hideDelay: 350 } }
-    }}
+    arc: { motion: 'tween', track: { fill: 'var(--muted)' } },
+    tooltip: { context: { hideDelay: 350 } }
+  }}
   >
     {#snippet tooltip()}
       <ChartTooltip hideLabel nameKey="browser" />
     {/snippet}
-    {#snippet arc({ props, seriesIndex, context })}
+    {#snippet arc({
+    props,
+    seriesIndex,
+    context
+  })}
       <Arc {...props}>
-        {#snippet children({ getTrackTextProps })}
+        {#snippet children({
+    getTrackTextProps
+  })}
           <Text
             {...getTrackTextProps('middle', {
-              startOffset: '1%'
-            })}
+    startOffset: '1%'
+  })}
             class="pointer-events-none capitalize select-none"
             value={context.series.visibleSeries[seriesIndex].label}
             fill="white"

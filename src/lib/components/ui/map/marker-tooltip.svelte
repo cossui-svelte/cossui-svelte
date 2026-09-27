@@ -96,10 +96,10 @@
   <div
     data-slot="marker-tooltip"
     class={cn(
-      'bg-foreground text-background pointer-events-none rounded-md px-2 py-1 text-xs text-balance shadow-md',
-      'animate-in fade-in-0 zoom-in-95 duration-200 ease-out',
-      className
-    )}
+    'bg-foreground text-background pointer-events-none rounded-md px-2 py-1 text-xs text-balance shadow-md',
+    'animate-in fade-in-0 zoom-in-95 duration-200 ease-out',
+    className
+  )}
     {...restProps}
   >
     {@render children?.()}

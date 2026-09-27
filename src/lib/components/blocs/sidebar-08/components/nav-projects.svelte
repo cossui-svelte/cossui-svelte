@@ -1,9 +1,9 @@
 <script lang="ts">
-  import type { Component } from 'svelte';
   import EllipsisIcon from '@lucide/svelte/icons/ellipsis';
   import FolderIcon from '@lucide/svelte/icons/folder';
   import ShareIcon from '@lucide/svelte/icons/share';
   import Trash2Icon from '@lucide/svelte/icons/trash-2';
+  import type { Component } from 'svelte';
   import { Menu, MenuItem, MenuPopup, MenuSeparator, MenuTrigger } from '$lib/components/ui/menu';
   import {
     SidebarGroup,
@@ -34,7 +34,9 @@
     {#each projects as item (item.name)}
       <SidebarMenuItem>
         <SidebarMenuButton>
-          {#snippet child({ props })}
+          {#snippet child({
+    props
+  })}
             <a href={item.url} {...props}>
               <item.icon />
               <span>{item.name}</span>
@@ -43,7 +45,9 @@
         </SidebarMenuButton>
         <Menu>
           <SidebarMenuAction showOnHover>
-            {#snippet child({ props })}
+            {#snippet child({
+    props
+  })}
               <MenuTrigger {...props}>
                 <EllipsisIcon />
                 <span class="sr-only">More</span>

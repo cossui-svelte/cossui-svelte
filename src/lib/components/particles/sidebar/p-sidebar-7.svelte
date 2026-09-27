@@ -33,7 +33,9 @@
             <SidebarGroupLabel
               class="text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
             >
-              {#snippet child({ props })}
+              {#snippet child({
+    props
+  })}
                 <CollapsibleTrigger {...props}>
                   Help
                   <ChevronDownIcon

@@ -25,11 +25,7 @@
 
 <Drawer bind:open position="left">
   <DrawerTrigger
-    class={cn(
-      buttonVariants({ size: "icon", variant: "ghost" }),
-      "-ms-1.5 relative size-8",
-      className,
-    )}
+    class={cn(buttonVariants({ size: 'icon', variant: 'ghost' }), '-ms-1.5 relative size-8', className)}
   >
     <Menu class="size-5" strokeWidth={2} />
     <span class="sr-only">Toggle Menu</span>
@@ -41,7 +37,7 @@
         <div class="flex flex-col gap-1">
           <a
             class="flex items-center gap-2 py-1.5 text-muted-foreground"
-            href={resolve("/")}
+            href={resolve('/')}
             onclick={closeNav}
           >
             Home
@@ -62,12 +58,12 @@
       {#if tree}
         <div class="flex flex-col gap-8">
           {#each tree.children as group ((group as FolderNode).$id ?? String(group.name))}
-            {#if group.type === "folder"}
+            {#if group.type === 'folder'}
               <div class="flex flex-col gap-3">
                 <div class="font-medium text-sm">{group.name}</div>
                 <div class="flex flex-col gap-0.5">
-                  {#each group.children as item (item.type === "page" ? item.url : String(item.name))}
-                    {#if item.type === "page"}
+                  {#each group.children as item (item.type === 'page' ? item.url : String(item.name))}
+                    {#if item.type === 'page'}
                       <!-- eslint-disable svelte/no-navigation-without-resolve -- item.url is caller-supplied nav data, already app-relative -->
                       <a
                         class="flex items-center gap-2 py-1.5 text-muted-foreground"

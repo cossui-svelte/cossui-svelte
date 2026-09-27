@@ -16,10 +16,7 @@
     <!-- eslint-disable svelte/no-navigation-without-resolve -- item.href is caller-supplied nav data, already app-relative -->
     <a
       href={item.href}
-      class={cn(
-        buttonVariants({ variant: 'ghost' }),
-        page.url.pathname.includes(item.href) && 'text-primary'
-      )}
+      class={cn(buttonVariants({ variant: 'ghost' }), page.url.pathname.includes(item.href) && 'text-primary')}
       data-pressed={page.url.pathname.includes(item.href) || undefined}
     >
       {item.label}

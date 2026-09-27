@@ -154,8 +154,8 @@
           <button
             class="text-sm underline hover:no-underline"
             onclick={() => {
-              showCouponInput = true;
-            }}
+    showCouponInput = true;
+  }}
             type="button"
           >
             + Add coupon

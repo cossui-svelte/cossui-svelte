@@ -29,7 +29,9 @@
   data-slot="combobox-item"
   {...restProps}
 >
-  {#snippet children(state)}
+  {#snippet children(
+    state
+  )}
     <span class="col-start-1 flex items-center justify-center">
       <ComboboxPrimitive.ItemIndicator>
         <Check size={24} />

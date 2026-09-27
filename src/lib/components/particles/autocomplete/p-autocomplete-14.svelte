@@ -34,7 +34,10 @@
     <AutocompleteEmpty>No items found.</AutocompleteEmpty>
     <AutocompleteList>
       <AutocompleteCollection>
-        {#snippet children(item: { label: string; value: string })}
+        {#snippet children(item: {
+    label: string;
+    value: string;
+  })}
           <AutocompleteItem value={item}>{item.label}</AutocompleteItem>
         {/snippet}
       </AutocompleteCollection>

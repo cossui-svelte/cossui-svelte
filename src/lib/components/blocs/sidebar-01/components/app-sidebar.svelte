@@ -167,7 +167,9 @@
             {#each group.items as item (item.title)}
               <SidebarMenuItem>
                 <SidebarMenuButton isActive={item.isActive}>
-                  {#snippet child({ props })}
+                  {#snippet child({
+    props
+  })}
                     <a href={item.url} {...props}>{item.title}</a>
                   {/snippet}
                 </SidebarMenuButton>

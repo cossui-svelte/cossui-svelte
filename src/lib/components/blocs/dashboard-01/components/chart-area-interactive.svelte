@@ -218,7 +218,9 @@
     yAxis: { format: () => '' }
   }}
       >
-        {#snippet marks({ context })}
+        {#snippet marks({
+    context
+  })}
           <defs>
             <linearGradient id="fillDesktop" x1="0" y1="0" x2="0" y2="1">
               <stop offset="5%" stop-color="var(--color-desktop)" stop-opacity={1.0} />

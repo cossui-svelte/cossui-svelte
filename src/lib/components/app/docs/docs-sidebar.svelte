@@ -46,7 +46,9 @@
                       class="ps-3.5 hover:bg-transparent active:bg-transparent"
                       isActive={item.url === page.url.pathname}
                     >
-                      {#snippet child({ props })}
+                      {#snippet child({
+    props
+  })}
                         <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- item.url is caller-supplied nav data, already app-relative -->
                         <a href={item.url} {...props}>
                           {item.name}

@@ -49,12 +49,21 @@
   const fileUpload = useFileUpload({ initialFiles, maxFiles, maxSize, multiple: true });
 </script>
 
-{#snippet fileIcon(file: FileWithPreview)}
+{#snippet fileIcon(
+    file: FileWithPreview
+  )}
   {@const fileType = file.file.type}
   {@const fileName = file.file.name}
-  {#if fileType.includes('pdf') || fileName.endsWith('.pdf') || fileType.includes('word') || fileName.endsWith('.doc') || fileName.endsWith('.docx')}
+  {#if fileType.includes('pdf') ||
+    fileName.endsWith('.pdf') ||
+    fileType.includes('word') ||
+    fileName.endsWith('.doc') ||
+    fileName.endsWith('.docx')}
     <FileText class="size-4 opacity-60" />
-  {:else if fileType.includes('zip') || fileType.includes('archive') || fileName.endsWith('.zip') || fileName.endsWith('.rar')}
+  {:else if fileType.includes('zip') ||
+    fileType.includes('archive') ||
+    fileName.endsWith('.zip') ||
+    fileName.endsWith('.rar')}
     <FileArchive class="size-4 opacity-60" />
   {:else if fileType.includes('excel') || fileName.endsWith('.xls') || fileName.endsWith('.xlsx')}
     <FileSpreadsheet class="size-4 opacity-60" />

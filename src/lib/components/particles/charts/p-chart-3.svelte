@@ -32,16 +32,18 @@
     axis="x"
     rule={false}
     props={{
-      xAxis: {
-        format: (d) => chartConfig[d as keyof typeof chartConfig].label
-      },
-      highlight: { area: { fill: 'none' } }
-    }}
+    xAxis: {
+      format: (d) => chartConfig[d as keyof typeof chartConfig].label
+    },
+    highlight: { area: { fill: 'none' } }
+  }}
   >
     {#snippet tooltip()}
       <ChartTooltip hideLabel nameKey="visitors" />
     {/snippet}
-    {#snippet marks({ context })}
+    {#snippet marks({
+    context
+  })}
       {@const s = context.series.visibleSeries[0]}
       {#each chartData as data, i (i)}
         {#if i === 2}

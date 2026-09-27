@@ -71,8 +71,8 @@
         position="right"
         open={drawerOpen}
         onOpenChange={(v) => {
-          if (!v) closeDrawer();
-        }}
+    if (!v) closeDrawer();
+  }}
       >
         <DrawerPopup class="max-w-4xl" showBar showCloseButton={false} variant="straight">
           <div>

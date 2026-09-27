@@ -34,7 +34,9 @@
     {#each projects as item (item.name)}
       <SidebarMenuItem>
         <SidebarMenuButton>
-          {#snippet child({ props })}
+          {#snippet child({
+    props
+  })}
             <a href={item.url} {...props}>
               <item.icon />
               <span>{item.name}</span>
@@ -43,7 +45,9 @@
         </SidebarMenuButton>
         <Menu>
           <SidebarMenuAction showOnHover>
-            {#snippet child({ props })}
+            {#snippet child({
+    props
+  })}
               <MenuTrigger {...props}>
                 <EllipsisIcon />
                 <span class="sr-only">More</span>

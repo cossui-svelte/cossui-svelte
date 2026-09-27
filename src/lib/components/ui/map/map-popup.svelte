@@ -154,10 +154,10 @@
   <div
     data-slot="map-popup"
     class={cn(
-      'bg-popover text-popover-foreground relative max-w-62 rounded-md border p-3 shadow-md',
-      'animate-in fade-in-0 zoom-in-95 duration-200 ease-out',
-      className
-    )}
+    'bg-popover text-popover-foreground relative max-w-62 rounded-md border p-3 shadow-md',
+    'animate-in fade-in-0 zoom-in-95 duration-200 ease-out',
+    className
+  )}
     {...restProps}
   >
     {#if closeButton}

@@ -27,21 +27,25 @@
   pagedNavigation
   mode="single"
 >
-  {#snippet day({ day: date })}
+  {#snippet day({
+    day: date
+  })}
     {@const price = mockPriceData[date.toString()]}
     {@const isGoodPrice = price !== undefined && price < GOOD_PRICE_THRESHOLD}
     <Day class="size-12">
-      {#snippet children({ day: dayLabel })}
+      {#snippet children({
+    day: dayLabel
+  })}
         <span class="flex flex-col">
           {dayLabel}
           {#if price}
             <span
               class={cn(
-                'font-normal text-xs',
-                isGoodPrice
-                  ? 'text-emerald-500'
-                  : 'in-data-selected:text-primary-foreground/70 text-muted-foreground'
-              )}
+    'font-normal text-xs',
+    isGoodPrice
+      ? 'text-emerald-500'
+      : 'in-data-selected:text-primary-foreground/70 text-muted-foreground'
+  )}
             >
               ${price}
             </span>

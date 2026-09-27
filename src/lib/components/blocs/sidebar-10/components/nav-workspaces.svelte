@@ -42,7 +42,9 @@
         <Collapsible>
           <SidebarMenuItem>
             <SidebarMenuButton>
-              {#snippet child({ props })}
+              {#snippet child({
+    props
+  })}
                 <a href="##" {...props}>
                   <span>{workspace.emoji}</span>
                   <span>{workspace.name}</span>
@@ -53,7 +55,9 @@
               class="start-2 bg-sidebar-accent text-sidebar-accent-foreground data-panel-open:rotate-90"
               showOnHover
             >
-              {#snippet child({ props })}
+              {#snippet child({
+    props
+  })}
                 <CollapsibleTrigger {...props}>
                   <ChevronRightIcon />
                 </CollapsibleTrigger>
@@ -67,7 +71,9 @@
                 {#each workspace.pages as page (page.name)}
                   <SidebarMenuSubItem>
                     <SidebarMenuSubButton>
-                      {#snippet child({ props })}
+                      {#snippet child({
+    props
+  })}
                         <a href="##" {...props}>
                           <span>{page.emoji}</span>
                           <span>{page.name}</span>

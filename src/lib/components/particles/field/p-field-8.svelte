@@ -46,7 +46,10 @@
         <ComboboxEmpty>No results found.</ComboboxEmpty>
         <ComboboxList>
           <ComboboxCollection>
-            {#snippet children(item: { label: string; value: string })}
+            {#snippet children(item: {
+    label: string;
+    value: string;
+  })}
               <ComboboxItem label={item.label} value={item.value}>{item.label}</ComboboxItem>
             {/snippet}
           </ComboboxCollection>

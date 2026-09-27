@@ -28,10 +28,10 @@
   <MapArc
     data={arcs}
     paint={{
-      'line-color': '#3b82f6',
-      'line-opacity': 0.9,
-      'line-dasharray': [2, 2]
-    }}
+    'line-color': '#3b82f6',
+    'line-opacity': 0.9,
+    'line-dasharray': [2, 2]
+  }}
     interactive={false}
   />
 

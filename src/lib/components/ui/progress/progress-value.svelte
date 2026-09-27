@@ -11,7 +11,9 @@
   data-slot="progress-value"
   {...restProps}
 >
-  {#snippet children(formatted)}
+  {#snippet children(
+    formatted
+  )}
     {formatted === 'indeterminate' ? '—' : formatted}
   {/snippet}
 </ProgressPrimitive.Value>

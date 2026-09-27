@@ -44,8 +44,8 @@
   <Button
     class="w-full"
     onclick={() => {
-      values = { ...defaultValues };
-    }}
+    values = { ...defaultValues };
+  }}
     variant="outline"
   >
     <RotateCcwIcon aria-hidden="true" class="-ms-1 opacity-60" />

@@ -20,9 +20,9 @@
     bind:value
     spellcheck={false}
     class={cn(
-      'flex items-center gap-2 has-disabled:opacity-64 has-disabled:**:data-[slot=otp-field-input]:shadow-none has-disabled:**:data-[slot=otp-field-input]:before:shadow-none!',
-      className
-    )}
+    'flex items-center gap-2 has-disabled:opacity-64 has-disabled:**:data-[slot=otp-field-input]:shadow-none has-disabled:**:data-[slot=otp-field-input]:before:shadow-none!',
+    className
+  )}
     {...restProps}
   />
 </div>

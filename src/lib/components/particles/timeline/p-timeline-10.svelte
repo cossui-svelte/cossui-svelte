@@ -3,7 +3,7 @@
 
   type ActionType = 'create' | 'edit' | 'post' | 'reply';
 
-  import type { Icon as IconType } from '@lucide/svelte';
+  import type { LucideIcon } from '@lucide/svelte';
   import BookOpenIcon from '@lucide/svelte/icons/book-open';
   import MessageCircleIcon from '@lucide/svelte/icons/message-circle';
   import PencilIcon from '@lucide/svelte/icons/pencil';
@@ -47,8 +47,8 @@
     }
   ];
 
-  function getActionIcon(action: ActionType): typeof IconType {
-    const icons: Record<ActionType, typeof IconType> = {
+  function getActionIcon(action: ActionType): LucideIcon {
+    const icons: Record<ActionType, LucideIcon> = {
       create: PlusIcon,
       edit: PencilIcon,
       post: BookOpenIcon,

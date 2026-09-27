@@ -18,9 +18,7 @@
       {#if value.end}
         {df.format(value.start.toDate(getLocalTimeZone()))}
         -
-        {df.format(
-          value.end.toDate(getLocalTimeZone())
-        )}
+        {df.format(value.end.toDate(getLocalTimeZone()))}
       {:else}
         {df.format(value.start.toDate(getLocalTimeZone()))}
       {/if}

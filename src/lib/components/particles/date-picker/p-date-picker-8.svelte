@@ -14,10 +14,7 @@
 <Popover>
   <PopoverTrigger class={selectTriggerVariants()}>
     <span
-      class={cn(
-        'pointer-events-none flex-1 truncate text-left',
-        !value && 'text-muted-foreground/72'
-      )}
+      class={cn('pointer-events-none flex-1 truncate text-left', !value && 'text-muted-foreground/72')}
     >
       {value ? df.format(value.toDate(getLocalTimeZone())) : 'Pick a date'}
     </span>

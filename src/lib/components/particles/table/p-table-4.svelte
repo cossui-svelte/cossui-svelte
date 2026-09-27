@@ -472,11 +472,11 @@
                 class="flex h-full cursor-pointer select-none items-center justify-between gap-2"
                 onclick={() => toggleSort(col.id as SortId)}
                 onkeydown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    toggleSort(col.id as SortId);
-                  }
-                }}
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleSort(col.id as SortId);
+    }
+  }}
                 role="button"
                 tabindex={0}
               >
@@ -512,9 +512,9 @@
           <TableCell>
             <div
               class={cn(
-                'flex items-center gap-1.5 font-normal tabular-nums',
-                flight.status === 'Cancelled' && 'text-muted-foreground line-through opacity-50'
-              )}
+    'flex items-center gap-1.5 font-normal tabular-nums',
+    flight.status === 'Cancelled' && 'text-muted-foreground line-through opacity-50'
+  )}
             >
               <div class={flight.status === 'Delayed' ? 'text-warning-foreground' : undefined}>
                 {flight.departureTime}
@@ -585,9 +585,9 @@
               href="#"
               isDisabled={!canPreviousPage}
               onclick={(e: MouseEvent) => {
-                e.preventDefault();
-                if (canPreviousPage) goToPage(pageIndex - 1);
-              }}
+    e.preventDefault();
+    if (canPreviousPage) goToPage(pageIndex - 1);
+  }}
               size="sm"
             />
           </PaginationItem>
@@ -597,9 +597,9 @@
               href="#"
               isDisabled={!canNextPage}
               onclick={(e: MouseEvent) => {
-                e.preventDefault();
-                if (canNextPage) goToPage(pageIndex + 1);
-              }}
+    e.preventDefault();
+    if (canNextPage) goToPage(pageIndex + 1);
+  }}
               size="sm"
             />
           </PaginationItem>

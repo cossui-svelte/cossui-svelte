@@ -20,7 +20,9 @@
       <Field>
         <FieldLabel class="sr-only">Verification code</FieldLabel>
         <OTPField maxlength={6} required>
-          {#snippet children({ cells })}
+          {#snippet children({
+    cells
+  })}
             {#each cells.slice(0, 2) as cell (cell)}
               <OTPFieldInput {cell} />
             {/each}

@@ -176,7 +176,9 @@
     <SidebarMenu>
       <SidebarMenuItem>
         <SidebarMenuButton size="lg">
-          {#snippet child({ props })}
+          {#snippet child({
+    props
+  })}
             <a href="##" {...props}>
               <div
                 class="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground"
@@ -201,7 +203,9 @@
           <Collapsible open={index === 1} class="group/collapsible">
             <SidebarMenuItem>
               <SidebarMenuButton>
-                {#snippet child({ props })}
+                {#snippet child({
+    props
+  })}
                   <CollapsibleTrigger {...props}>
                     {item.title}
                     <PlusIcon class="ms-auto group-data-open/collapsible:hidden" />
@@ -215,7 +219,9 @@
                     {#each item.items as subItem (subItem.title)}
                       <SidebarMenuSubItem>
                         <SidebarMenuSubButton isActive={subItem.isActive}>
-                          {#snippet child({ props })}
+                          {#snippet child({
+    props
+  })}
                             <a href={subItem.url} {...props}>{subItem.title}</a>
                           {/snippet}
                         </SidebarMenuSubButton>

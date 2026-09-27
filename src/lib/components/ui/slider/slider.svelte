@@ -56,7 +56,10 @@
   });
 </script>
 
-{#snippet thumb(index: number, extra?: Record<string, unknown>)}
+{#snippet thumb(
+    index: number,
+    extra?: Record<string, unknown>
+  )}
   <SliderPrimitive.Thumb
     {index}
     bind:ref={thumbRefs[index]}
@@ -76,7 +79,9 @@
   data-slot="slider"
   {...restProps as Record<string, unknown>}
 >
-  {#snippet children(state)}
+  {#snippet children(
+    state
+  )}
     <SliderPrimitive.Control
       class="flex touch-none select-none data-disabled:pointer-events-none data-[orientation=horizontal]:w-full data-[orientation=horizontal]:min-w-44 data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:flex-col data-disabled:opacity-64"
       data-slot="slider-control"

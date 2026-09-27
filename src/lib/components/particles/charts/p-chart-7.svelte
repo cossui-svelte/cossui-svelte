@@ -34,14 +34,14 @@
     value="desktop"
     c="color"
     props={{
-      pie: {
-        sort: (a, b) => {
-          const monthOrder = ['january', 'february', 'march', 'april', 'may'];
-          return monthOrder.indexOf(a.month) - monthOrder.indexOf(b.month);
-        },
-        motion: 'tween'
-      }
-    }}
+    pie: {
+      sort: (a, b) => {
+        const monthOrder = ['january', 'february', 'march', 'april', 'may'];
+        return monthOrder.indexOf(a.month) - monthOrder.indexOf(b.month);
+      },
+      motion: 'tween'
+    }
+  }}
     innerRadius={60}
     padding={29}
   >
@@ -61,7 +61,10 @@
         dy={22}
       />
     {/snippet}
-    {#snippet arc({ props, index })}
+    {#snippet arc({
+    props,
+    index
+  })}
       {@const isActive = index === activeIndex}
       {@const arcProps = isActive ? { ...props, outerRadius: 60, innerRadius: 105 } : props}
 
@@ -80,8 +83,8 @@
         nameKey="month"
         indicator="line"
         labelFormatter={(_, payload) => {
-          return chartConfig[payload?.[0].key as keyof typeof chartConfig].label;
-        }}
+    return chartConfig[payload?.[0].key as keyof typeof chartConfig].label;
+  }}
       />
     {/snippet}
   </PieChart>

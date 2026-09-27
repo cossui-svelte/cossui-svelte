@@ -23,7 +23,9 @@
           <Field>
             <FieldLabel class="sr-only">Verification code</FieldLabel>
             <OTPField maxlength={6} required class="gap-4">
-              {#snippet children({ cells })}
+              {#snippet children({
+    cells
+  })}
                 {#each cells.slice(0, 3) as cell (cell)}
                   <OTPFieldInput {cell} />
                 {/each}

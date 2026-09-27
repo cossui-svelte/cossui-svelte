@@ -10,8 +10,8 @@
   <InputGroupInput
     aria-label="Text input with clear button"
     oninput={(e) => {
-      value = (e.currentTarget as HTMLInputElement).value;
-    }}
+    value = (e.currentTarget as HTMLInputElement).value;
+  }}
     placeholder="Enter text"
     type="text"
     {value}
@@ -21,8 +21,8 @@
       <Button
         aria-label="Clear input"
         onclick={() => {
-          value = '';
-        }}
+    value = '';
+  }}
         size="icon-xs"
         variant="ghost"
       >

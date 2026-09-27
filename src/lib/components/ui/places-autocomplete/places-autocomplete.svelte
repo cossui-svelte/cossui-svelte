@@ -83,8 +83,8 @@
     items={autocompleteState.suggestions}
     itemToStringValue={(suggestion: AddressSuggestion) => suggestion.label}
     onOpenChange={(next) => {
-      autocompleteState.open = next && autocompleteState.suggestions.length > 0;
-    }}
+    autocompleteState.open = next && autocompleteState.suggestions.length > 0;
+  }}
     open={autocompleteState.open}
     value={inputValue}
   >
@@ -93,10 +93,10 @@
         class={cn(showPoweredByGoogle && 'pr-28', inputClass)}
         disabled={disabled || !googlePlacesScript.hasApiKey}
         oninput={(event) => {
-          const nextValue = event.currentTarget.value;
-          setInputValue(nextValue);
-          autocompleteState.queueFetchSuggestions(nextValue);
-        }}
+    const nextValue = event.currentTarget.value;
+    setInputValue(nextValue);
+    autocompleteState.queueFetchSuggestions(nextValue);
+  }}
         {placeholder}
       >
         {#snippet startAddon()}
@@ -115,7 +115,9 @@
     <AutocompletePopup>
       <AutocompleteList>
         <AutocompleteCollection>
-          {#snippet children(suggestion: AddressSuggestion)}
+          {#snippet children(
+    suggestion: AddressSuggestion
+  )}
             {@const [primary, ...secondaryParts] = suggestion.label.split(',')}
             {@const secondary = secondaryParts.join(',').trim()}
             <AutocompleteItem

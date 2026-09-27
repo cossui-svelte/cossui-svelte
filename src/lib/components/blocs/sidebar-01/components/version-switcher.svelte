@@ -18,7 +18,9 @@
         size="lg"
         class="data-popup-open:bg-sidebar-accent data-popup-open:text-sidebar-accent-foreground"
       >
-        {#snippet child({ props })}
+        {#snippet child({
+    props
+  })}
           <MenuTrigger {...props}>
             <div
               class="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground"

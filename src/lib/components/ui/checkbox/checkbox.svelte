@@ -23,7 +23,10 @@
   data-slot="checkbox"
   {...restProps}
 >
-  {#snippet children({ checked, indeterminate })}
+  {#snippet children({
+    checked,
+    indeterminate
+  })}
     <span
       class="absolute -inset-px flex items-center justify-center rounded-[.25rem] text-primary-foreground data-unchecked:hidden data-checked:bg-primary data-indeterminate:text-foreground"
       data-slot="checkbox-indicator"

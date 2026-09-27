@@ -181,7 +181,9 @@
           <SidebarGroupLabel
             class="group/label text-sm text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
           >
-            {#snippet child({ props })}
+            {#snippet child({
+    props
+  })}
               <CollapsibleTrigger {...props}>
                 {item.title}
                 <ChevronRightIcon
@@ -196,7 +198,9 @@
                 {#each item.items as subItem (subItem.title)}
                   <SidebarMenuItem>
                     <SidebarMenuButton isActive={subItem.isActive}>
-                      {#snippet child({ props })}
+                      {#snippet child({
+    props
+  })}
                         <a href={subItem.url} {...props}>{subItem.title}</a>
                       {/snippet}
                     </SidebarMenuButton>

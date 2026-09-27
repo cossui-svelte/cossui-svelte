@@ -43,9 +43,9 @@
           aria-label={`Remove ${swatchColor}`}
           class="absolute -top-1.5 -right-1.5 hidden size-3.5 items-center justify-center rounded-full border border-border bg-popover text-muted-foreground opacity-0 shadow-xs transition-opacity group-hover:flex group-hover:opacity-100 group-focus-within:flex group-focus-within:opacity-100 hover:border-destructive hover:bg-destructive hover:text-white focus-visible:flex focus-visible:opacity-100 focus-visible:outline-none"
           onclick={(e) => {
-            e.stopPropagation();
-            removeSwatch(swatchColor);
-          }}
+    e.stopPropagation();
+    removeSwatch(swatchColor);
+  }}
         >
           <XIcon class="size-2.5" />
         </button>

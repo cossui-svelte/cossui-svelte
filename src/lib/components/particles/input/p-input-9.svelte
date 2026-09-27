@@ -26,8 +26,8 @@
           aria-label={showPassword ? 'Hide password' : 'Show password'}
           class={buttonVariants({ size: 'icon-xs', variant: 'ghost' })}
           onclick={() => {
-            showPassword = !showPassword;
-          }}
+    showPassword = !showPassword;
+  }}
         >
           {#if showPassword}
             <EyeOff />

@@ -127,9 +127,7 @@
 
   <p class="text-center text-muted-foreground text-xs">
     Image: {IMAGE_WIDTH} × {IMAGE_HEIGHT}px • Zoom: {zoomPercent}% • Crop:
-    {crop
-      ? `${crop.width} × ${crop.height}px`
-      : '—'}
+    {crop ? `${crop.width} × ${crop.height}px` : '—'}
     • Ratio: {selectedRatio.label}
   </p>
 

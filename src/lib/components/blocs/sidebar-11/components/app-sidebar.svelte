@@ -96,7 +96,11 @@
   <SidebarRail />
 </Sidebar>
 
-{#snippet Tree({ item }: { item: TreeItem })}
+{#snippet Tree({
+    item
+  }: {
+    item: TreeItem;
+  })}
   {@const [name, ...items] = Array.isArray(item) ? item : [item]}
   {#if !items.length}
     <SidebarMenuButton
@@ -113,7 +117,9 @@
         open={name === 'lib' || name === 'components'}
       >
         <SidebarMenuButton>
-          {#snippet child({ props })}
+          {#snippet child({
+    props
+  })}
             <CollapsibleTrigger {...props}>
               <ChevronRightIcon class="transition-transform" />
               <FolderIcon />

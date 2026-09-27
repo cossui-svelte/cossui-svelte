@@ -29,7 +29,10 @@
     <ComboboxEmpty>No results found.</ComboboxEmpty>
     <ComboboxList>
       <ComboboxCollection>
-        {#snippet children(item: { label: string; value: string })}
+        {#snippet children(item: {
+    label: string;
+    value: string;
+  })}
           <ComboboxItem value={item.value} label={item.label}>{item.label}</ComboboxItem>
         {/snippet}
       </ComboboxCollection>

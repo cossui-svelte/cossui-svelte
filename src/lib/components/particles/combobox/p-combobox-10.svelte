@@ -258,7 +258,10 @@
     <ComboboxEmpty>No countries found.</ComboboxEmpty>
     <ComboboxList>
       <ComboboxCollection>
-        {#snippet children(country: { label: string; value: string })}
+        {#snippet children(country: {
+    label: string;
+    value: string;
+  })}
           <ComboboxItem value={country.value} label={country.label}>{country.label}</ComboboxItem>
         {/snippet}
       </ComboboxCollection>

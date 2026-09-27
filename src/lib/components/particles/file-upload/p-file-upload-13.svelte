@@ -145,10 +145,15 @@
   });
 </script>
 
-{#snippet fileIcon(file: FileWithPreview)}
+{#snippet fileIcon(
+    file: FileWithPreview
+  )}
   {@const fileType = file.file.type}
   {@const fileName = file.file.name}
-  {#if fileType.includes('zip') || fileType.includes('archive') || fileName.endsWith('.zip') || fileName.endsWith('.rar')}
+  {#if fileType.includes('zip') ||
+    fileType.includes('archive') ||
+    fileName.endsWith('.zip') ||
+    fileName.endsWith('.rar')}
     <FileArchive class="size-5 opacity-60" />
   {:else if fileType.includes('audio/')}
     <Headphones class="size-5 opacity-60" />
@@ -156,7 +161,11 @@
     <FileSpreadsheet class="size-5 opacity-60" />
   {:else if fileType.startsWith('image/')}
     <Image class="size-5 opacity-60" />
-  {:else if fileType.includes('pdf') || fileName.endsWith('.pdf') || fileType.includes('word') || fileName.endsWith('.doc') || fileName.endsWith('.docx')}
+  {:else if fileType.includes('pdf') ||
+    fileName.endsWith('.pdf') ||
+    fileType.includes('word') ||
+    fileName.endsWith('.doc') ||
+    fileName.endsWith('.docx')}
     <FileText class="size-5 opacity-60" />
   {:else if fileType.includes('video/')}
     <Video class="size-5 opacity-60" />
@@ -193,9 +202,9 @@
             </Button>
             <Button
               onclick={() => {
-                uploadProgress = [];
-                fileUpload.clearFiles();
-              }}
+    uploadProgress = [];
+    fileUpload.clearFiles();
+  }}
               size="sm"
               variant="outline"
             >
@@ -231,9 +240,9 @@
                   aria-label="Remove file"
                   class="-me-2 size-8 text-muted-foreground/80 hover:bg-transparent hover:text-foreground"
                   onclick={() => {
-                    handleFileRemoved(file.id);
-                    fileUpload.removeFile(file.id);
-                  }}
+    handleFileRemoved(file.id);
+    fileUpload.removeFile(file.id);
+  }}
                   size="icon"
                   variant="ghost"
                 >

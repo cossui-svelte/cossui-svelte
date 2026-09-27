@@ -83,16 +83,20 @@
         <CommandEmpty>No results found.</CommandEmpty>
         <CommandList>
           <CommandCollection>
-            {#snippet children(group: Group)}
+            {#snippet children(
+    group: Group
+  )}
               <CommandGroup items={group.items}>
                 <CommandGroupLabel>{group.value}</CommandGroupLabel>
                 <CommandCollection>
-                  {#snippet children(item: Item)}
+                  {#snippet children(
+    item: Item
+  )}
                     <CommandItem
                       value={item}
                       onclick={() => {
-                        open = false;
-                      }}
+    open = false;
+  }}
                     >
                       <span class="flex-1">{item.label}</span>
                       {#if item.shortcut}

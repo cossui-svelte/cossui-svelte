@@ -19,9 +19,9 @@
     bind:this={ref}
     data-slot="sheet-panel"
     class={cn(
-      'p-6 in-[[data-slot=sheet-popup]:has([data-slot=sheet-header])]:pt-1 in-[[data-slot=sheet-popup]:has([data-slot=sheet-footer]:not(.border-t))]:pb-1',
-      className
-    )}
+    'p-6 in-[[data-slot=sheet-popup]:has([data-slot=sheet-header])]:pt-1 in-[[data-slot=sheet-popup]:has([data-slot=sheet-footer]:not(.border-t))]:pb-1',
+    className
+  )}
     {...restProps}
   >
     {@render children?.()}

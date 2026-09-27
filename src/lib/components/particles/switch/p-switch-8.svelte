@@ -187,15 +187,12 @@
                       autoHighlight
                       value={range.start}
                       onValueChange={(v) => {
-                        if (typeof v === 'string') updateStart(day, range.id, v);
-                      }}
+    if (typeof v === 'string') updateStart(day, range.id, v);
+  }}
                     >
                       <ComboboxTrigger
                         aria-label={`${day} start time`}
-                        class={cn(
-                          buttonVariants({ size: 'sm', variant: 'outline' }),
-                          'w-24 font-normal tabular-nums'
-                        )}
+                        class={cn(buttonVariants({ size: 'sm', variant: 'outline' }), 'w-24 font-normal tabular-nums')}
                       >
                         <ComboboxValue />
                       </ComboboxTrigger>
@@ -231,15 +228,12 @@
                       autoHighlight
                       value={range.end}
                       onValueChange={(v) => {
-                        if (typeof v === 'string') updateEnd(day, range.id, v);
-                      }}
+    if (typeof v === 'string') updateEnd(day, range.id, v);
+  }}
                     >
                       <ComboboxTrigger
                         aria-label={`${day} end time`}
-                        class={cn(
-                          buttonVariants({ size: 'sm', variant: 'outline' }),
-                          'w-24 font-normal tabular-nums'
-                        )}
+                        class={cn(buttonVariants({ size: 'sm', variant: 'outline' }), 'w-24 font-normal tabular-nums')}
                       >
                         <ComboboxValue />
                       </ComboboxTrigger>
@@ -314,8 +308,8 @@
                       aria-label={`Copy ${day} times to`}
                       value={copySelectedDays[day]}
                       onValueChange={(v) => {
-                        copySelectedDays[day] = v;
-                      }}
+    copySelectedDays[day] = v;
+  }}
                     >
                       {#each days.filter((target) => target !== day) as target (target)}
                         <Label>
