@@ -1,21 +1,8 @@
 <script lang="ts">
-  import { Button } from '$lib/components/ui/button';
-  import PageHeader from '$lib/components/app/page-header.svelte';
-  import PageHeaderDescription from '$lib/components/app/page-header-description.svelte';
-  import PageHeaderHeading from '$lib/components/app/page-header-heading.svelte';
+  import BlocViewer from '$lib/components/app/bloc-viewer.svelte';
+  import { blocMetadata, FEATURED_BLOCS } from '$lib/components/blocs/bloc-metadata';
 </script>
 
-<div class="container w-full">
-  <PageHeader>
-    <PageHeaderHeading>BLOCS</PageHeaderHeading>
-    <PageHeaderDescription>
-      Reusable, ready-made parts of your application, available in just a few clicks.
-    </PageHeaderDescription>
-  </PageHeader>
-
-  <Button class="rounded-full">Authentication</Button>
-  <Button class="rounded-full">Dashboards</Button>
-  <Button class="rounded-full">Landing</Button>
-  <Button class="rounded-full">Sidebar</Button>
-  <Button class="rounded-full">SignUp</Button>
-</div>
+{#each FEATURED_BLOCS as name (name)}
+  <BlocViewer {name} meta={blocMetadata[name]} />
+{/each}

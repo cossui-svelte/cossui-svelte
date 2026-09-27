@@ -69,12 +69,15 @@ export default tseslint.config(
 		},
 	},
 	{
-		// Particles are self-contained demo snippets whose source is shown
+		// Particles and blocs are self-contained demo snippets whose source is shown
 		// verbatim in the docs. Their links are placeholder "#" fragments fed
 		// from a local demo array, so the rule can't see through `href={item.url}`
 		// even though there is no route to resolve. Off here rather than
 		// scattering eslint-disable comments through the displayed source.
-		files: ["src/lib/components/particles/**/*.svelte"],
+		files: [
+			"src/lib/components/particles/**/*.svelte",
+			"src/lib/components/blocs/**/*.svelte",
+		],
 		rules: {
 			"svelte/no-navigation-without-resolve": "off",
 		},
