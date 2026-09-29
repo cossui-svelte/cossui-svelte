@@ -50,6 +50,14 @@
   },
   "overrides": [
     {
+      // Ported bits-ui primitives: `id` props are typed `string | null` and
+      // the `boxWith(() => id!)` assertions mirror upstream bits-ui.
+      "files": ["src/lib/components/ui/*/internal/primitives/**"],
+      "rules": {
+        "typescript/no-non-null-assertion": "off"
+      }
+    },
+    {
       // The `</script>` string split there must stay a concatenation, or
       // the tag closes early in the rendered HTML.
       "files": ["src/lib/components/app/seo-head.svelte"],

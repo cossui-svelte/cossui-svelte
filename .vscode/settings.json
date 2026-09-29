@@ -1,0 +1,24 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.jj": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true
+    },
+    "hide-files.files": [],
+
+    // oxlint via the Oxc extension (uses node_modules/.bin/oxlint + .oxlintrc.json)
+    "oxc.enable.oxlint": true,
+    "oxc.lint.run": "onType",
+    "oxc.configPath": ".oxlintrc.json",
+    "oxc.requireConfig": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.oxc": "explicit"
+    },
+
+    // The project moved off ESLint/Biome; keep their extensions quiet here.
+    "eslint.enable": false,
+    "biome.enabled": false
+}

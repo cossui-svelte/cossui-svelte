@@ -352,9 +352,10 @@ export class PinInputRootState {
    * a value the browser (or a mobile IME/virtual keyboard) already committed.
    */
   #filterToPattern(text: string): string {
-    if (!this.#regexPattern) return text;
+    const pattern = this.#regexPattern;
+    if (!pattern) return text;
     return Array.from(text)
-      .filter((char) => this.#regexPattern!.test(char))
+      .filter((char) => pattern.test(char))
       .join('');
   }
 

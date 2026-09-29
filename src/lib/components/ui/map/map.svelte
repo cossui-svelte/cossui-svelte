@@ -302,7 +302,7 @@
     }
 
     internalUpdate = true;
-    map!.once('moveend', () => {
+    map.once('moveend', () => {
       internalUpdate = false;
     });
     map.jumpTo(next);
@@ -363,7 +363,7 @@
     const [lng, lat] = center;
 
     untrack(() => {
-      map!.easeTo({ center: [lng, lat], zoom });
+      map?.easeTo({ center: [lng, lat], zoom });
     });
   });
 

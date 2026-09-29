@@ -68,14 +68,15 @@
   } satisfies ChartConfig;
 
   const filteredData = $derived.by(() => {
-    if (!value?.start || !value?.end) return chartData;
+    const start = value?.start;
+    const end = value?.end;
+    if (!start || !end) return chartData;
+    const startDate = start.toDate(getLocalTimeZone());
+    const endDate = end.toDate(getLocalTimeZone());
+    // set end date to end of day to include the full day
+    endDate.setHours(23, 59, 59, 999);
     return chartData.filter(({ date }) => {
       const dateObj = new Date(date);
-      if (!value) return true;
-      const startDate = value.start!.toDate(getLocalTimeZone());
-      const endDate = value.end!.toDate(getLocalTimeZone());
-      // set end date to end of day to include the full day
-      endDate.setHours(23, 59, 59, 999);
       return dateObj >= startDate && dateObj <= endDate;
     });
   });

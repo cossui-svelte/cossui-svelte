@@ -22,7 +22,7 @@
     title?: string;
   }
 
-  let { code, language, title, html, copyButton = true }: Props = $props();
+  let { code, language, title, html, copyButton = true, showLineNumbers = true }: Props = $props();
 
   let isCopied = $state(false);
   let timeoutId: ReturnType<typeof setTimeout> | undefined;
