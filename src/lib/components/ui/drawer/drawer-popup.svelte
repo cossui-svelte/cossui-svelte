@@ -93,7 +93,7 @@
       {#if showCloseButton}
         <DrawerClose
           aria-label="Close"
-          class={cn(buttonVariants({ size: 'icon', variant: 'ghost' }), 'absolute end-2 top-2')}
+          class={cn(buttonVariants({ size: 'icon', variant: 'ghost' }), 'absolute end-2 top-2 z-1')}
         >
           <XIcon />
         </DrawerClose>
