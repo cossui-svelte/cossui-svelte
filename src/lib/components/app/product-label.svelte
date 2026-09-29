@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Badge } from '$lib/components/ui/badge';
   import { page } from '$app/state';
+  import { Badge } from '$lib/components/ui/badge';
 
   interface ProductItem {
     href: string;

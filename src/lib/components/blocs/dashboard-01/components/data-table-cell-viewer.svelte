@@ -72,38 +72,38 @@
             xScale={scaleUtc()}
             yDomain={[0, 600]}
             series={[
-    {
-      key: 'mobile',
-      label: 'Mobile',
-      color: chartConfig.mobile.color
-    },
-    {
-      key: 'desktop',
-      label: 'Desktop',
-      color: chartConfig.desktop.color
-    }
-  ]}
+              {
+                key: 'mobile',
+                label: 'Mobile',
+                color: chartConfig.mobile.color
+              },
+              {
+                key: 'desktop',
+                label: 'Desktop',
+                color: chartConfig.desktop.color
+              }
+            ]}
             seriesLayout="stack"
             props={{
-    area: {
-      curve: curveNatural,
-      fillOpacity: 0.4,
-      line: { class: 'stroke-1' },
-      motion: 'tween'
-    },
-    xAxis: {
-      format: (v) => v.toLocaleDateString('en-US', { month: 'short' })
-    },
-    yAxis: { ticks: [0, 300, 600] }
-  }}
+              area: {
+                curve: curveNatural,
+                fillOpacity: 0.4,
+                line: { class: 'stroke-1' },
+                motion: 'tween'
+              },
+              xAxis: {
+                format: (v) => v.toLocaleDateString('en-US', { month: 'short' })
+              },
+              yAxis: { ticks: [0, 300, 600] }
+            }}
           >
             {#snippet tooltip()}
               <ChartTooltip
                 labelFormatter={(v) => {
-    return (v as Date).toLocaleDateString('en-US', {
-      month: 'long'
-    });
-  }}
+                  return (v as Date).toLocaleDateString('en-US', {
+                    month: 'long'
+                  });
+                }}
                 indicator="dot"
               />
             {/snippet}

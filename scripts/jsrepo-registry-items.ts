@@ -5,7 +5,7 @@
  * `pnpm generate:registry`), sourced from `src/lib/components/ui`.
  * Used by jsrepo.config.ts (dynamic registry) — run `pnpm exec jsrepo build`.
  */
-import { readdir, readFile, stat } from 'node:fs/promises';
+import { readdir, stat } from 'node:fs/promises';
 import { resolve, relative, join } from 'node:path';
 import type { RegistryItem } from 'jsrepo/config';
 

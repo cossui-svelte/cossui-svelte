@@ -48,18 +48,18 @@
     <TimelineItem
       step={item.id}
       class={[
-    'w-[calc(50%-1.5rem)]',
-    'group-data-[orientation=vertical]/timeline:odd:ms-auto',
-    'group-data-[orientation=vertical]/timeline:even:text-right',
-    'group-data-[orientation=vertical]/timeline:even:ml-0',
-    'group-data-[orientation=vertical]/timeline:even:mr-8',
-    'group-data-[orientation=vertical]/timeline:even:**:data-[slot=timeline-indicator]:-right-6',
-    'group-data-[orientation=vertical]/timeline:even:**:data-[slot=timeline-indicator]:left-auto',
-    'group-data-[orientation=vertical]/timeline:even:**:data-[slot=timeline-indicator]:translate-x-1/2',
-    'group-data-[orientation=vertical]/timeline:even:**:data-[slot=timeline-separator]:-right-6',
-    'group-data-[orientation=vertical]/timeline:even:**:data-[slot=timeline-separator]:left-auto',
-    'group-data-[orientation=vertical]/timeline:even:**:data-[slot=timeline-separator]:translate-x-1/2'
-  ]}
+        'w-[calc(50%-1.5rem)]',
+        'group-data-[orientation=vertical]/timeline:odd:ms-auto',
+        'group-data-[orientation=vertical]/timeline:even:text-right',
+        'group-data-[orientation=vertical]/timeline:even:ml-0',
+        'group-data-[orientation=vertical]/timeline:even:mr-8',
+        'group-data-[orientation=vertical]/timeline:even:**:data-[slot=timeline-indicator]:-right-6',
+        'group-data-[orientation=vertical]/timeline:even:**:data-[slot=timeline-indicator]:left-auto',
+        'group-data-[orientation=vertical]/timeline:even:**:data-[slot=timeline-indicator]:translate-x-1/2',
+        'group-data-[orientation=vertical]/timeline:even:**:data-[slot=timeline-separator]:-right-6',
+        'group-data-[orientation=vertical]/timeline:even:**:data-[slot=timeline-separator]:left-auto',
+        'group-data-[orientation=vertical]/timeline:even:**:data-[slot=timeline-separator]:translate-x-1/2'
+      ]}
     >
       <TimelineHeader>
         <TimelineSeparator />

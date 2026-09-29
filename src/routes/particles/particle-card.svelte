@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { goto } from '$app/navigation';
+  import { resolve } from '$app/paths';
   import FileBraces from '@lucide/svelte/icons/file-braces';
   import Info from '@lucide/svelte/icons/info';
   import ScanEye from '@lucide/svelte/icons/scan-eye';
@@ -16,8 +18,6 @@
   import type { RegistryParticuleEntry } from '$lib/registry/registry-particles';
   import { cn } from '$lib/utils';
   import ParticleCardContainer from './particle-card-container.svelte';
-  import { goto } from '$app/navigation';
-  import { resolve } from '$app/paths';
 
   let {
     particle,
@@ -71,8 +71,8 @@
         position="right"
         open={drawerOpen}
         onOpenChange={(v) => {
-    if (!v) closeDrawer();
-  }}
+          if (!v) closeDrawer();
+        }}
       >
         <DrawerPopup class="max-w-4xl" showBar showCloseButton={false} variant="straight">
           <div>

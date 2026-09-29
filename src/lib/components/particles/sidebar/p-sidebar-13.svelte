@@ -44,9 +44,7 @@
               {#each projects as project (project.name)}
                 <SidebarMenuItem>
                   <SidebarMenuButton>
-                    {#snippet child({
-    props
-  })}
+                    {#snippet child({ props })}
                       <a href={project.url} {...props}>
                         <project.icon />
                         <span>{project.name}</span>

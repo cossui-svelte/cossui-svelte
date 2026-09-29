@@ -4,8 +4,8 @@
   import { getContext } from 'svelte';
   import type { HTMLButtonAttributes } from 'svelte/elements';
   import { cn } from '$lib/utils';
-  import { NUMBER_FIELD_CONTEXT_KEY, type NumberFieldContext } from './number-field.svelte';
   import { createPressRepeat } from './number-field-press-repeat.svelte';
+  import { NUMBER_FIELD_CONTEXT_KEY, type NumberFieldContext } from './number-field.svelte';
 
   type Props = Omit<HTMLButtonAttributes, 'type' | 'disabled' | 'onclick'> & {
     /** Custom rendering for the icon, defaults to a minus icon. */

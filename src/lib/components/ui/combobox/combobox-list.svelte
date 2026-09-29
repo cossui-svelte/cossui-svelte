@@ -14,7 +14,10 @@
 <ScrollArea overscrollContain scrollFade scrollbarGutter>
   <ComboboxPrimitive.List
     bind:ref
-    class={cn('not-empty:scroll-py-1 not-empty:px-1 not-empty:py-1 in-data-has-overflow-y:pe-3', className)}
+    class={cn(
+      'not-empty:scroll-py-1 not-empty:px-1 not-empty:py-1 in-data-has-overflow-y:pe-3',
+      className
+    )}
     data-slot="combobox-list"
     {...restProps}
   >

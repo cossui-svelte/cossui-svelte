@@ -15,12 +15,10 @@
     maxlength={OTP_LENGTH}
     bind:value
     onValueChange={(v) => {
-    invalid = v.length === OTP_LENGTH ? v !== '123456' : false;
-  }}
+      invalid = v.length === OTP_LENGTH ? v !== '123456' : false;
+    }}
   >
-    {#snippet children({
-    cells
-  })}
+    {#snippet children({ cells })}
       {#each cells as cell, i (i)}
         <OTPFieldInput
           aria-invalid={invalid || undefined}

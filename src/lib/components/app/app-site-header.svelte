@@ -1,11 +1,11 @@
 <script lang="ts">
+  import { resolve } from '$app/paths';
   import { Button } from '$lib/components/ui/button';
   import { Separator } from '$lib/components/ui/separator';
   import { componentNavTree, type NavTree, PAGES_NEW } from '$lib/docs';
   import MainNav from './main-nav.svelte';
   import MobileNav from './mobile-nav.svelte';
   import SiteHeaderBase from './site-header.svelte';
-  import { resolve } from '$app/paths';
 
   interface ProductItem {
     href: string;

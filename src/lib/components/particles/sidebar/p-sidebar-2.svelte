@@ -90,15 +90,13 @@
           <SidebarMenuItem>
             <Menu>
               <SidebarMenuButton size="lg">
-                {#snippet child({
-    props
-  })}
+                {#snippet child({ props })}
                   <MenuTrigger
                     {...props}
                     class={cn(
-    props.class as string,
-    'data-popup-open:bg-sidebar-accent data-popup-open:text-sidebar-accent-foreground'
-  )}
+                      props.class as string,
+                      'data-popup-open:bg-sidebar-accent data-popup-open:text-sidebar-accent-foreground'
+                    )}
                   >
                     <div class="flex flex-col gap-0.5 leading-none">
                       <span class="font-medium">Documentation</span>
@@ -142,9 +140,7 @@
                 {#each item.items as subItem (subItem.title)}
                   <SidebarMenuItem>
                     <SidebarMenuButton isActive={subItem.isActive}>
-                      {#snippet child({
-    props
-  })}
+                      {#snippet child({ props })}
                         <a href={subItem.url} {...props}>{subItem.title}</a>
                       {/snippet}
                     </SidebarMenuButton>

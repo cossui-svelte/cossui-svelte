@@ -1,10 +1,10 @@
 /// <reference types="vitest" />
 /// <reference types="node" />
 
-import path from 'node:path';
 import { enhancedImages } from '@sveltejs/enhanced-img';
 import { sveltekit } from '@sveltejs/kit/vite';
 import tailwindcss from '@tailwindcss/vite';
+import path from 'node:path';
 // import { visualizer } from 'rollup-plugin-visualizer';
 import { createLogger, defineConfig } from 'vite';
 import pkg from './package.json' with { type: 'json' };

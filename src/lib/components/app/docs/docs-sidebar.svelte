@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { page } from '$app/state';
   import { Badge } from '$lib/components/ui/badge';
   import {
     Sidebar,
@@ -12,7 +13,6 @@
   } from '$lib/components/ui/sidebar';
   import { type FolderNode, type NavTree, PAGES_NEW } from '$lib/docs';
   import { cn } from '$lib/utils';
-  import { page } from '$app/state';
 
   interface Props {
     class?: string;
@@ -46,9 +46,7 @@
                       class="ps-3.5 hover:bg-transparent active:bg-transparent"
                       isActive={item.url === page.url.pathname}
                     >
-                      {#snippet child({
-    props
-  })}
+                      {#snippet child({ props })}
                         <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- item.url is caller-supplied nav data, already app-relative -->
                         <a href={item.url} {...props}>
                           {item.name}

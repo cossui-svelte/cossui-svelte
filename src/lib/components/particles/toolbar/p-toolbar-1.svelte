@@ -106,8 +106,8 @@
       <Select
         value={selected}
         onValueChange={(v) => {
-    selected = v;
-  }}
+          selected = v;
+        }}
       >
         <Tooltip bind:open={fontSelectTipOpen}>
           <SelectTrigger

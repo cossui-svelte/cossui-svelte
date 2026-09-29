@@ -44,10 +44,10 @@
         bind:value
         captionLayout="dropdown"
         onValueChange={(v) => {
-    if (v) {
-      open = false;
-    }
-  }}
+          if (v) {
+            open = false;
+          }
+        }}
         class="mx-auto [--cell-size:clamp(0px,calc(100vw/7.5),52px)]"
       />
     </DrawerPopup>

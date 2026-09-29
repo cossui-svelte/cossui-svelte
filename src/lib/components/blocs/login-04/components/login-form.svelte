@@ -81,7 +81,7 @@
           src="/placeholder.svg"
           alt="placeholder"
           class="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
-        >
+        />
       </div>
     </CardPanel>
   </Card>

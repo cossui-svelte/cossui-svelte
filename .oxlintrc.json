@@ -1,0 +1,81 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "unicorn", "oxc", "import"],
+  "jsPlugins": ["oxlint-tailwindcss"],
+  "categories": {
+    "correctness": "error"
+  },
+  "settings": {
+    "tailwindcss": {
+      "entryPoint": "src/app.css"
+    }
+  },
+  "ignorePatterns": [
+    ".svelte-kit/**",
+    "dist/**",
+    "build/**",
+    "static/**",
+    "src/worker-configuration.d.ts"
+  ],
+  "rules": {
+    // This codebase's convention for an intentionally-unused
+    // parameter/variable is a leading underscore (e.g. `_payload`).
+    "no-unused-vars": [
+      "error",
+      {
+        "args": "all",
+        "argsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+
+    // Ported from biome.json's tuned rule set.
+    "no-param-reassign": "error",
+    "prefer-template": "error",
+    "import/no-cycle": "error",
+    "typescript/array-type": ["error", { "default": "array" }],
+    "typescript/no-explicit-any": "warn",
+    "typescript/no-non-null-assertion": "warn",
+    "typescript/no-unnecessary-type-constraint": "error",
+
+    // Not-yet-ported components keep an empty index.ts placeholder so the
+    // registry generator still picks them up.
+    "unicorn/no-empty-file": "off",
+
+    // Tailwind class checks. Note: oxlint only hands JS plugins the
+    // <script> block of .svelte files, so classes in markup aren't linted.
+    "tailwindcss/no-duplicate-classes": "warn",
+    "tailwindcss/no-unnecessary-whitespace": "warn"
+  },
+  "overrides": [
+    {
+      // Ported bits-ui primitives: `id` props are typed `string | null` and
+      // the `boxWith(() => id!)` assertions mirror upstream bits-ui.
+      "files": ["src/lib/components/ui/*/internal/primitives/**"],
+      "rules": {
+        "typescript/no-non-null-assertion": "off"
+      }
+    },
+    {
+      // The `</script>` string split there must stay a concatenation, or
+      // the tag closes early in the rendered HTML.
+      "files": ["src/lib/components/app/seo-head.svelte"],
+      "rules": {
+        "prefer-template": "off"
+      }
+    },
+    {
+      // calendar.svelte renders its parts through its own barrel
+      // (`import * as Calendar from './index.js'`), the shadcn-svelte pattern.
+      // The cycle is harmless for Svelte components.
+      "files": [
+        "src/lib/components/ui/calendar/calendar.svelte",
+        "src/lib/components/ui/calendar/index.ts"
+      ],
+      "rules": {
+        "import/no-cycle": "off"
+      }
+    }
+  ]
+}

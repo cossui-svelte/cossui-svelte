@@ -170,9 +170,7 @@
       <SidebarMenu>
         <SidebarMenuItem>
           <SidebarMenuButton size="lg" class="md:h-8 md:p-0">
-            {#snippet child({
-    props
-  })}
+            {#snippet child({ props })}
               <a href="##" {...props}>
                 <div
                   class="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground"
@@ -197,14 +195,14 @@
               <SidebarMenuItem>
                 <SidebarMenuButton
                   tooltipContentProps={{
-    hidden: false
-  }}
+                    hidden: false
+                  }}
                   onclick={() => {
-    activeItem = item;
-    const mail = data.mails.sort(() => Math.random() - 0.5);
-    mails = mail.slice(0, Math.max(5, Math.floor(Math.random() * 10) + 1));
-    sidebar.setOpen(true);
-  }}
+                    activeItem = item;
+                    const mail = data.mails.sort(() => Math.random() - 0.5);
+                    mails = mail.slice(0, Math.max(5, Math.floor(Math.random() * 10) + 1));
+                    sidebar.setOpen(true);
+                  }}
                   isActive={activeItem.title === item.title}
                   class="px-2.5 md:px-2"
                 >

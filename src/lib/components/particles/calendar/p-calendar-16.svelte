@@ -14,9 +14,9 @@
   <Calendar bind:placeholder bind:value mode="single" />
   <Button
     onclick={() => {
-    value = todayValue;
-    placeholder = todayValue;
-  }}
+      value = todayValue;
+      placeholder = todayValue;
+    }}
     size="sm"
     variant="outline"
   >

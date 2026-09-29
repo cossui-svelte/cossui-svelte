@@ -42,8 +42,8 @@
   <DialogTrigger
     class={buttonVariants({ variant: 'outline' })}
     onclick={() => {
-    dialogOpen = true;
-  }}
+      dialogOpen = true;
+    }}
   >
     Compose
   </DialogTrigger>
@@ -62,9 +62,9 @@
         <DialogClose class={buttonVariants({ variant: 'ghost' })}>Cancel</DialogClose>
         <Button
           onclick={() => {
-    value = '';
-    dialogOpen = false;
-  }}
+            value = '';
+            dialogOpen = false;
+          }}
         >
           Send
         </Button>
@@ -86,10 +86,10 @@
       <Button
         variant="destructive"
         onclick={() => {
-    value = '';
-    confirmOpen = false;
-    dialogOpen = false;
-  }}
+          value = '';
+          confirmOpen = false;
+          dialogOpen = false;
+        }}
       >
         Discard
       </Button>

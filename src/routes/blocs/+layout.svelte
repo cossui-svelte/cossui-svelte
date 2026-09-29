@@ -1,13 +1,13 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
-  import { buttonVariants } from '$lib/components/ui/button';
-  import PageHeader from '$lib/components/app/page-header.svelte';
-  import PageHeaderDescription from '$lib/components/app/page-header-description.svelte';
-  import PageHeaderHeading from '$lib/components/app/page-header-heading.svelte';
-  import { blocCategories } from '$lib/components/blocs/bloc-metadata';
-  import { cn } from '$lib/utils';
   import { resolve } from '$app/paths';
   import { page } from '$app/state';
+  import type { Snippet } from 'svelte';
+  import { buttonVariants } from '$lib/components/ui/button';
+  import PageHeaderDescription from '$lib/components/app/page-header-description.svelte';
+  import PageHeaderHeading from '$lib/components/app/page-header-heading.svelte';
+  import PageHeader from '$lib/components/app/page-header.svelte';
+  import { blocCategories } from '$lib/components/blocs/bloc-metadata';
+  import { cn } from '$lib/utils';
 
   let { children }: { children: Snippet } = $props();
 
@@ -29,9 +29,12 @@
       <a
         href={resolve('/blocs')}
         class={cn(
-    buttonVariants({ size: 'sm', variant: page.route.id === '/blocs' ? 'default' : 'outline' }),
-    'rounded-full'
-  )}
+          buttonVariants({
+            size: 'sm',
+            variant: page.route.id === '/blocs' ? 'default' : 'outline'
+          }),
+          'rounded-full'
+        )}
       >
         Featured
       </a>
@@ -39,12 +42,12 @@
         <a
           href={resolve('/blocs/[category]', { category: category.slug })}
           class={cn(
-    buttonVariants({
-      size: 'sm',
-      variant: page.params.category === category.slug ? 'default' : 'outline'
-    }),
-    'rounded-full'
-  )}
+            buttonVariants({
+              size: 'sm',
+              variant: page.params.category === category.slug ? 'default' : 'outline'
+            }),
+            'rounded-full'
+          )}
         >
           {category.name}
         </a>

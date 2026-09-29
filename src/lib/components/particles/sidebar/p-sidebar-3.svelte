@@ -25,15 +25,13 @@
           <SidebarMenuItem>
             <Menu>
               <SidebarMenuButton>
-                {#snippet child({
-    props
-  })}
+                {#snippet child({ props })}
                   <MenuTrigger
                     {...props}
                     class={cn(
-    props.class as string,
-    'data-popup-open:bg-sidebar-accent data-popup-open:text-sidebar-accent-foreground'
-  )}
+                      props.class as string,
+                      'data-popup-open:bg-sidebar-accent data-popup-open:text-sidebar-accent-foreground'
+                    )}
                   >
                     Select Workspace
                     <ChevronDownIcon class="ms-auto" />

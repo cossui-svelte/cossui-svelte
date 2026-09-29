@@ -28,29 +28,23 @@
     cRange={chartData.map((d) => d.color)}
     c="color"
     props={{
-    pie: {
-      motion: 'tween'
-    }
-  }}
+      pie: {
+        motion: 'tween'
+      }
+    }}
   >
     {#snippet tooltip()}
       <ChartTooltip hideLabel />
     {/snippet}
-    {#snippet arc({
-    props,
-    visibleData,
-    index
-  })}
+    {#snippet arc({ props, visibleData, index })}
       <Arc {...props}>
-        {#snippet children({
-    getArcTextProps
-  })}
+        {#snippet children({ getArcTextProps })}
           <Text
             value={visibleData[index].visitors}
             {...getArcTextProps('outer', {
-    startOffset: '50%',
-    outerPadding: 10
-  })}
+              startOffset: '50%',
+              outerPadding: 10
+            })}
             class="fill-foreground"
           />
         {/snippet}

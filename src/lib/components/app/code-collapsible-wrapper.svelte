@@ -1,9 +1,9 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import Button from '$lib/components/ui/button/button.svelte';
-  import Collapsible from '$lib/components/ui/collapsible/collapsible.svelte';
   import CollapsiblePanel from '$lib/components/ui/collapsible/collapsible-panel.svelte';
   import CollapsibleTrigger from '$lib/components/ui/collapsible/collapsible-trigger.svelte';
+  import Collapsible from '$lib/components/ui/collapsible/collapsible.svelte';
   import Separator from '$lib/components/ui/separator/separator.svelte';
   import { cn } from '$lib/utils';
 

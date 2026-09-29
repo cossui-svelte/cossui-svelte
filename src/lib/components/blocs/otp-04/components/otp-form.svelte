@@ -23,9 +23,7 @@
           <Field>
             <FieldLabel class="sr-only">Verification code</FieldLabel>
             <OTPField maxlength={6} required class="gap-4">
-              {#snippet children({
-    cells
-  })}
+              {#snippet children({ cells })}
                 {#each cells.slice(0, 3) as cell (cell)}
                   <OTPFieldInput {cell} />
                 {/each}
@@ -54,7 +52,7 @@
           src="/placeholder.svg"
           alt=""
           class="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
-        >
+        />
       </div>
     </CardPanel>
   </Card>

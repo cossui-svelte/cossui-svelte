@@ -212,7 +212,7 @@
           class="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground"
           placeholder="Search documentation…"
           type="text"
-        >
+        />
       </div>
 
       <!-- Results -->
@@ -231,8 +231,8 @@
                   href={item.url}
                   class="flex w-full items-center gap-2 rounded-md px-2 py-2 text-sm transition-colors hover:bg-accent focus:bg-accent focus:outline-none"
                   onclick={() => {
-    open = false;
-  }}
+                    open = false;
+                  }}
                   onmouseenter={() => handleItemHighlight(item)}
                   onfocus={() => handleItemHighlight(item)}
                 >
@@ -243,7 +243,7 @@
                   {/if}
                   <span class="flex-1">{item.label}</span>
                 </a>
-              <!-- eslint-enable svelte/no-navigation-without-resolve -->
+                <!-- eslint-enable svelte/no-navigation-without-resolve -->
               {/each}
             </div>
           {/each}

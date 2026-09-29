@@ -23,67 +23,64 @@
   <LineChart
     data={chartData}
     series={[
-    {
-      key: 'desktop',
-      label: 'Desktop',
-      color: chartConfig.desktop.color,
-      props: {
-        fill: chartConfig.desktop.color,
-        fillOpacity: 0.6
+      {
+        key: 'desktop',
+        label: 'Desktop',
+        color: chartConfig.desktop.color,
+        props: {
+          fill: chartConfig.desktop.color,
+          fillOpacity: 0.6
+        }
+      },
+      {
+        key: 'mobile',
+        label: 'Mobile',
+        color: chartConfig.mobile.color,
+        props: {
+          fill: chartConfig.mobile.color
+        }
       }
-    },
-    {
-      key: 'mobile',
-      label: 'Mobile',
-      color: chartConfig.mobile.color,
-      props: {
-        fill: chartConfig.mobile.color
-      }
-    }
-  ]}
+    ]}
     radial
     x="month"
     xScale={scaleBand()}
     padding={12}
     props={{
-    spline: {
-      curve: curveLinearClosed,
-      stroke: '0',
-      motion: 'tween'
-    },
-    xAxis: {
-      tickLength: 0
-    },
-    yAxis: {
-      format: () => ''
-    },
-    grid: {
-      radialY: 'linear'
-    },
-    tooltip: {
-      context: {
-        mode: 'voronoi'
+      spline: {
+        curve: curveLinearClosed,
+        stroke: '0',
+        motion: 'tween'
+      },
+      xAxis: {
+        tickLength: 0
+      },
+      yAxis: {
+        format: () => ''
+      },
+      grid: {
+        radialY: 'linear'
+      },
+      tooltip: {
+        context: {
+          mode: 'voronoi'
+        }
+      },
+      highlight: {
+        lines: false,
+        points: { r: 4 }
       }
-    },
-    highlight: {
-      lines: false,
-      points: { r: 4 }
-    }
-  }}
+    }}
   >
     {#snippet axis()}
       <Axis placement="angle" tickLength={0}>
-        {#snippet tickLabel({
-    props,
-    index
-  })}
+        {#snippet tickLabel({ props, index })}
           {@const y = props.y
-    ? typeof props.y === 'number'
-      ? props.y
-      : typeof props.y === 'string'
-        ? Number.parseInt(props.y, 10)
-        : 0
-    : 0}
+            ? typeof props.y === 'number'
+              ? props.y
+              : typeof props.y === 'string'
+                ? Number.parseInt(props.y, 10)
+                : 0
+            : 0}
           {@const data = chartData[index]}
           <Text {...props} {y} value="{data.desktop} / {data.mobile}" class="fill-foreground" />
           <Text {...props} y={y + 14} />

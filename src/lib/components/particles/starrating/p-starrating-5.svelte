@@ -13,13 +13,7 @@
   ];
 </script>
 
-{#snippet icon({
-    index,
-    state
-  }: {
-    index: number;
-    state: StarRatingState;
-  })}
+{#snippet icon({ index, state }: { index: number; state: StarRatingState })}
   <Star class="text-muted-foreground" />
   <span
     class="absolute inset-0 overflow-hidden"

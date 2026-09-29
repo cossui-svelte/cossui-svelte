@@ -97,9 +97,7 @@
       </AutocompleteStatus>
       <AutocompleteList>
         <AutocompleteCollection>
-          {#snippet children(
-    movie: Movie
-  )}
+          {#snippet children(movie: Movie)}
             <AutocompleteItem value={movie}>
               <div class="flex w-full flex-col gap-1">
                 <div class="font-medium">{movie.title}</div>

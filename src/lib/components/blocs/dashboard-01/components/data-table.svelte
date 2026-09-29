@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { RestrictToVerticalAxis } from '@dnd-kit/abstract/modifiers';
-  import { move } from '@dnd-kit/helpers';
   import { DragDropProvider } from '@dnd-kit-svelte/svelte';
   import { useSortable } from '@dnd-kit-svelte/svelte/sortable';
+  import { RestrictToVerticalAxis } from '@dnd-kit/abstract/modifiers';
+  import { move } from '@dnd-kit/helpers';
   import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
   import ChevronLeftIcon from '@lucide/svelte/icons/chevron-left';
   import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
@@ -191,7 +191,9 @@
           <ChevronDownIcon />
         </MenuTrigger>
         <MenuPopup align="end" class="w-56">
-          {#each table.getAllColumns().filter((col) => typeof col.accessorFn !== 'undefined' && col.getCanHide()) as column (column.id)}
+          {#each table
+            .getAllColumns()
+            .filter((col) => typeof col.accessorFn !== 'undefined' && col.getCanHide()) as column (column.id)}
             <MenuCheckboxItem
               class="capitalize"
               checked={column.getIsVisible()}
@@ -235,9 +237,7 @@
               {/each}
             {:else}
               <TableRow>
-                <TableCell colspan={columns.length} class="h-24 text-center">
-                  No results.
-                </TableCell>
+                <TableCell colspan={columns.length} class="h-24 text-center">No results.</TableCell>
               </TableRow>
             {/if}
           </TableBody>
@@ -329,11 +329,7 @@
   </TabsPanel>
 </Tabs>
 
-{#snippet DraggableRow({
-    row
-  }: {
-    row: Row<DashboardTableFeatures, Schema>;
-  })}
+{#snippet DraggableRow({ row }: { row: Row<DashboardTableFeatures, Schema> })}
   {@const { ref, isDragging, handleRef } = useSortable({
     id: row.original.id,
     index: () => row.index

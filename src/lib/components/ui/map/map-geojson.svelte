@@ -86,12 +86,12 @@
   }
 
   const mergedFillPaint = $derived(
-    mergeHoverPaint({ 'fill-color': defaults.fill, ...(fillPaint || {}) }, fillHoverPaint)
+    mergeHoverPaint({ 'fill-color': defaults.fill, ...fillPaint }, fillHoverPaint)
   );
   const mergedLinePaint = $derived({
     'line-color': defaults.line,
     'line-width': 0.5,
-    ...(linePaint || {})
+    ...linePaint
   });
 
   let hoveredId: string | number | null = null;

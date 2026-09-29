@@ -22,8 +22,8 @@
       class={cn(buttonVariants({ variant: 'outline' }), 'w-56 justify-between font-normal')}
     >
       {value?.start && value?.end
-    ? `${value.start.toDate(getLocalTimeZone()).toLocaleDateString()} - ${value.end.toDate(getLocalTimeZone()).toLocaleDateString()}`
-    : 'Select date'}
+        ? `${value.start.toDate(getLocalTimeZone()).toLocaleDateString()} - ${value.end.toDate(getLocalTimeZone()).toLocaleDateString()}`
+        : 'Select date'}
       <ChevronDownIcon />
     </PopoverTrigger>
     <PopoverPopup class="w-auto overflow-hidden p-0" align="start">

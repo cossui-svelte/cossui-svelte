@@ -1,12 +1,15 @@
-import { type DateValue, getLocalTimeZone, isSameDay, isSameMonth, isToday } from '@internationalized/date';
-import { onMount, untrack } from 'svelte';
+import {
+  type DateValue,
+  getLocalTimeZone,
+  isSameDay,
+  isSameMonth,
+  isToday
+} from '@internationalized/date';
 import { Context, watch } from 'runed';
+import { onMount, untrack } from 'svelte';
 import { DOMContext, type ReadableBox, type WritableBox, attachRef } from 'svelte-toolbelt';
-import { CalendarRootContext, type CalendarRootState } from '$lib/components/ui/calendar/internal/calendar-state.svelte';
-import { boolToEmptyStrOrUndef, boolToStr } from '$lib/components/ui/calendar/internal/attrs';
 import { getAnnouncer } from '$lib/components/ui/calendar/internal/announcer';
-import { createFormatter, type Formatter } from '$lib/components/ui/calendar/internal/formatter';
-import { useId } from '$lib/components/ui/calendar/internal/ids';
+import { boolToEmptyStrOrUndef, boolToStr } from '$lib/components/ui/calendar/internal/attrs';
 import {
   calendarAttrs,
   createMonths,
@@ -25,6 +28,10 @@ import {
   useMonthViewPlaceholderSync
 } from '$lib/components/ui/calendar/internal/calendar-helpers.svelte';
 import {
+  CalendarRootContext,
+  type CalendarRootState
+} from '$lib/components/ui/calendar/internal/calendar-state.svelte';
+import {
   areAllDaysBetweenValid,
   getDateValueType,
   isAfter,
@@ -32,6 +39,8 @@ import {
   isBetweenInclusive,
   toDate
 } from '$lib/components/ui/calendar/internal/date-utils';
+import { createFormatter, type Formatter } from '$lib/components/ui/calendar/internal/formatter';
+import { useId } from '$lib/components/ui/calendar/internal/ids';
 import type { DateMatcher, Month, WeekStartsOn } from '$lib/components/ui/calendar/internal/types';
 import type { DateRange } from './types';
 
@@ -70,7 +79,9 @@ const RangeCalendarCellContext = new Context<RangeCalendarCellState>('RangeCalen
 
 export class RangeCalendarRootState {
   static create(opts: RangeCalendarRootStateOpts) {
-    return CalendarRootContext.set(new RangeCalendarRootState(opts) as unknown as CalendarRootState);
+    return CalendarRootContext.set(
+      new RangeCalendarRootState(opts) as unknown as CalendarRootState
+    );
   }
 
   opts: RangeCalendarRootStateOpts;
@@ -85,38 +96,64 @@ export class RangeCalendarRootState {
   domContext: DOMContext;
 
   weekdays = $derived.by(() => {
-    return getWeekdays({ months: this.months, formatter: this.formatter, weekdayFormat: this.opts.weekdayFormat.current });
+    return getWeekdays({
+      months: this.months,
+      formatter: this.formatter,
+      weekdayFormat: this.opts.weekdayFormat.current
+    });
   });
 
   isStartInvalid = $derived.by(() => {
     if (!this.opts.startValue.current) return false;
-    return this.isDateUnavailable(this.opts.startValue.current) || this.isDateDisabled(this.opts.startValue.current);
+    return (
+      this.isDateUnavailable(this.opts.startValue.current) ||
+      this.isDateDisabled(this.opts.startValue.current)
+    );
   });
 
   isEndInvalid = $derived.by(() => {
     if (!this.opts.endValue.current) return false;
-    return this.isDateUnavailable(this.opts.endValue.current) || this.isDateDisabled(this.opts.endValue.current);
+    return (
+      this.isDateUnavailable(this.opts.endValue.current) ||
+      this.isDateDisabled(this.opts.endValue.current)
+    );
   });
 
   isInvalid = $derived.by(() => {
     if (this.isStartInvalid || this.isEndInvalid) return true;
-    if (this.opts.endValue.current && this.opts.startValue.current && isBefore(this.opts.endValue.current, this.opts.startValue.current))
+    if (
+      this.opts.endValue.current &&
+      this.opts.startValue.current &&
+      isBefore(this.opts.endValue.current, this.opts.startValue.current)
+    )
       return true;
     return false;
   });
 
   isNextButtonDisabled = $derived.by(() =>
-    getIsNextButtonDisabled({ maxValue: this.opts.maxValue.current, months: this.months, disabled: this.opts.disabled.current })
+    getIsNextButtonDisabled({
+      maxValue: this.opts.maxValue.current,
+      months: this.months,
+      disabled: this.opts.disabled.current
+    })
   );
 
   isPrevButtonDisabled = $derived.by(() =>
-    getIsPrevButtonDisabled({ minValue: this.opts.minValue.current, months: this.months, disabled: this.opts.disabled.current })
+    getIsPrevButtonDisabled({
+      minValue: this.opts.minValue.current,
+      months: this.months,
+      disabled: this.opts.disabled.current
+    })
   );
 
   headingValue = $derived.by(() => {
     void this.opts.monthFormat.current;
     void this.opts.yearFormat.current;
-    return getCalendarHeadingValue({ months: this.months, formatter: this.formatter, locale: this.opts.locale.current });
+    return getCalendarHeadingValue({
+      months: this.months,
+      formatter: this.formatter,
+      locale: this.opts.locale.current
+    });
   });
 
   fullCalendarLabel = $derived.by(() => `${this.opts.calendarLabel.current} ${this.headingValue}`);
@@ -138,7 +175,11 @@ export class RangeCalendarRootState {
 
   initialPlaceholderYear = $derived.by(() => untrack(() => this.opts.placeholder.current.year));
   defaultYears = $derived.by(() =>
-    getDefaultYears({ minValue: this.opts.minValue.current, maxValue: this.opts.maxValue.current, placeholderYear: this.initialPlaceholderYear })
+    getDefaultYears({
+      minValue: this.opts.minValue.current,
+      maxValue: this.opts.maxValue.current,
+      placeholderYear: this.initialPlaceholderYear
+    })
   );
 
   constructor(opts: RangeCalendarRootStateOpts) {
@@ -220,7 +261,11 @@ export class RangeCalendarRootState {
     );
 
     watch(
-      [() => this.opts.startValue.current, () => this.opts.endValue.current, () => this.opts.excludeDisabled.current],
+      [
+        () => this.opts.startValue.current,
+        () => this.opts.endValue.current,
+        () => this.opts.excludeDisabled.current
+      ],
       ([startValue, endValue, excludeDisabled]) => {
         if (!excludeDisabled || !startValue || !endValue) return;
         if (this.#hasDisabledDatesInRange(startValue, endValue)) {
@@ -231,37 +276,48 @@ export class RangeCalendarRootState {
       }
     );
 
-    watch([() => this.opts.startValue.current, () => this.opts.endValue.current], ([startValue, endValue]) => {
-      if (this.opts.value.current && this.opts.value.current.start === startValue && this.opts.value.current.end === endValue) {
-        return;
-      }
-      if (startValue && endValue) {
-        this.#updateValue((prev) => {
-          if (prev.start === startValue && prev.end === endValue) return prev;
-          if (isBefore(endValue, startValue)) {
-            const start = startValue;
-            const end = endValue;
-            this.#setStartValue(end);
-            this.#setEndValue(start);
-            if (!this.#isRangeValid(endValue, startValue)) {
-              this.#setStartValue(startValue);
-              this.#setEndValue(undefined);
-              return { start: startValue, end: undefined };
+    watch(
+      [() => this.opts.startValue.current, () => this.opts.endValue.current],
+      ([startValue, endValue]) => {
+        if (
+          this.opts.value.current &&
+          this.opts.value.current.start === startValue &&
+          this.opts.value.current.end === endValue
+        ) {
+          return;
+        }
+        if (startValue && endValue) {
+          this.#updateValue((prev) => {
+            if (prev.start === startValue && prev.end === endValue) return prev;
+            if (isBefore(endValue, startValue)) {
+              const start = startValue;
+              const end = endValue;
+              this.#setStartValue(end);
+              this.#setEndValue(start);
+              if (!this.#isRangeValid(endValue, startValue)) {
+                this.#setStartValue(startValue);
+                this.#setEndValue(undefined);
+                return { start: startValue, end: undefined };
+              }
+              return { start: endValue, end: startValue };
             }
-            return { start: endValue, end: startValue };
-          }
-          if (!this.#isRangeValid(startValue, endValue)) {
-            this.#setStartValue(endValue);
-            this.#setEndValue(undefined);
-            return { start: endValue, end: undefined };
-          }
-          return { start: startValue, end: endValue };
-        });
-      } else if (this.opts.value.current && this.opts.value.current.start && this.opts.value.current.end) {
-        this.opts.value.current.start = undefined;
-        this.opts.value.current.end = undefined;
+            if (!this.#isRangeValid(startValue, endValue)) {
+              this.#setStartValue(endValue);
+              this.#setEndValue(undefined);
+              return { start: endValue, end: undefined };
+            }
+            return { start: startValue, end: endValue };
+          });
+        } else if (
+          this.opts.value.current &&
+          this.opts.value.current.start &&
+          this.opts.value.current.end
+        ) {
+          this.opts.value.current.start = undefined;
+          this.opts.value.current.end = undefined;
+        }
       }
-    });
+    );
 
     useEnsureNonDisabledPlaceholder({
       placeholder: opts.placeholder,
@@ -296,7 +352,8 @@ export class RangeCalendarRootState {
     this.months = months;
   };
 
-  isOutsideVisibleMonths = (date: DateValue) => !this.visibleMonths.some((month) => isSameMonth(date, month));
+  isOutsideVisibleMonths = (date: DateValue) =>
+    !this.visibleMonths.some((month) => isSameMonth(date, month));
 
   isDateDisabled = (date: DateValue) => {
     if (this.opts.isDateDisabled.current(date) || this.opts.disabled.current) return true;
@@ -341,7 +398,11 @@ export class RangeCalendarRootState {
     const daysInRange = daysDifference + 1;
     if (this.opts.minDays.current && daysInRange < this.opts.minDays.current) return false;
     if (this.opts.maxDays.current && daysInRange > this.opts.maxDays.current) return false;
-    if (this.opts.excludeDisabled.current && this.#hasDisabledDatesInRange(orderedStart, orderedEnd)) return false;
+    if (
+      this.opts.excludeDisabled.current &&
+      this.#hasDisabledDatesInRange(orderedStart, orderedEnd)
+    )
+      return false;
     return true;
   }
 
@@ -379,7 +440,11 @@ export class RangeCalendarRootState {
     this.lastPressedDateValue = date;
 
     if (this.opts.startValue.current && this.highlightedRange === null) {
-      if (isSameDay(this.opts.startValue.current, date) && !this.opts.preventDeselect.current && !this.opts.endValue.current) {
+      if (
+        isSameDay(this.opts.startValue.current, date) &&
+        !this.opts.preventDeselect.current &&
+        !this.opts.endValue.current
+      ) {
         this.#setStartValue(undefined);
         this.opts.placeholder.current = date;
         this.#announceEmpty();
@@ -508,7 +573,11 @@ export class RangeCalendarRootState {
   );
 
   #hasDisabledDatesInRange(start: DateValue, end: DateValue): boolean {
-    for (let date = start; isBefore(date, end) || isSameDay(date, end); date = date.add({ days: 1 })) {
+    for (
+      let date = start;
+      isBefore(date, end) || isSameDay(date, end);
+      date = date.add({ days: 1 })
+    ) {
       if (this.isDateDisabled(date)) return true;
     }
     return false;
@@ -524,7 +593,12 @@ export type RangeCalendarCellStateOpts = {
 
 export class RangeCalendarCellState {
   static create(opts: RangeCalendarCellStateOpts) {
-    return RangeCalendarCellContext.set(new RangeCalendarCellState(opts, CalendarRootContext.get() as unknown as RangeCalendarRootState));
+    return RangeCalendarCellContext.set(
+      new RangeCalendarCellState(
+        opts,
+        CalendarRootContext.get() as unknown as RangeCalendarRootState
+      )
+    );
   }
 
   opts: RangeCalendarCellStateOpts;
@@ -534,12 +608,20 @@ export class RangeCalendarCellState {
   cellDate = $derived.by(() => toDate(this.opts.date.current));
   isOutsideMonth = $derived.by(() => !isSameMonth(this.opts.date.current, this.opts.month.current));
   isDisabled = $derived.by(
-    () => this.root.isDateDisabled(this.opts.date.current) || (this.isOutsideMonth && this.root.opts.disableDaysOutsideMonth.current)
+    () =>
+      this.root.isDateDisabled(this.opts.date.current) ||
+      (this.isOutsideMonth && this.root.opts.disableDaysOutsideMonth.current)
   );
-  isUnavailable = $derived.by(() => this.root.opts.isDateUnavailable.current(this.opts.date.current));
+  isUnavailable = $derived.by(() =>
+    this.root.opts.isDateUnavailable.current(this.opts.date.current)
+  );
   isDateToday = $derived.by(() => isToday(this.opts.date.current, getLocalTimeZone()));
-  isOutsideVisibleMonths = $derived.by(() => this.root.isOutsideVisibleMonths(this.opts.date.current));
-  isFocusedDate = $derived.by(() => isSameDay(this.opts.date.current, this.root.opts.placeholder.current));
+  isOutsideVisibleMonths = $derived.by(() =>
+    this.root.isOutsideVisibleMonths(this.opts.date.current)
+  );
+  isFocusedDate = $derived.by(() =>
+    isSameDay(this.opts.date.current, this.root.opts.placeholder.current)
+  );
   isSelectedDate = $derived.by(() => this.root.isSelected(this.opts.date.current));
   isSelectionStart = $derived.by(() => this.root.isSelectionStart(this.opts.date.current));
   isRangeStart = $derived.by(() => this.root.isSelectionStart(this.opts.date.current));
@@ -548,15 +630,26 @@ export class RangeCalendarCellState {
     return this.root.isSelectionEnd(this.opts.date.current);
   });
   isSelectionEnd = $derived.by(() => this.root.isSelectionEnd(this.opts.date.current));
-  isSelectionMiddle = $derived.by(() => this.isSelectedDate && !this.isSelectionStart && !this.isSelectionEnd);
+  isSelectionMiddle = $derived.by(
+    () => this.isSelectedDate && !this.isSelectionStart && !this.isSelectionEnd
+  );
   isRangeMiddle = $derived.by(() => this.isSelectionMiddle);
   isHighlighted = $derived.by(() =>
     this.root.highlightedRange
-      ? isBetweenInclusive(this.opts.date.current, this.root.highlightedRange.start, this.root.highlightedRange.end)
+      ? isBetweenInclusive(
+          this.opts.date.current,
+          this.root.highlightedRange.start,
+          this.root.highlightedRange.end
+        )
       : false
   );
   labelText = $derived.by(() =>
-    this.root.formatter.custom(this.cellDate, { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })
+    this.root.formatter.custom(this.cellDate, {
+      weekday: 'long',
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric'
+    })
   );
 
   constructor(opts: RangeCalendarCellStateOpts, root: RangeCalendarRootState) {
@@ -565,10 +658,17 @@ export class RangeCalendarCellState {
     this.attachment = attachRef(opts.ref);
   }
 
-  snippetProps = $derived.by(() => ({ disabled: this.isDisabled, unavailable: this.isUnavailable, selected: this.isSelectedDate }));
+  snippetProps = $derived.by(() => ({
+    disabled: this.isDisabled,
+    unavailable: this.isUnavailable,
+    selected: this.isSelectedDate
+  }));
 
   ariaDisabled = $derived.by(
-    () => this.isDisabled || (this.isOutsideMonth && this.root.opts.disableDaysOutsideMonth.current) || this.isUnavailable
+    () =>
+      this.isDisabled ||
+      (this.isOutsideMonth && this.root.opts.disableDaysOutsideMonth.current) ||
+      this.isUnavailable
   );
 
   sharedDataAttrs = $derived.by(() => ({
@@ -586,7 +686,9 @@ export class RangeCalendarCellState {
     'data-selected': boolToEmptyStrOrUndef(this.isSelectedDate),
     'data-value': this.opts.date.current.toString(),
     'data-type': getDateValueType(this.opts.date.current),
-    'data-disabled': boolToEmptyStrOrUndef(this.isDisabled || (this.isOutsideMonth && this.root.opts.disableDaysOutsideMonth.current))
+    'data-disabled': boolToEmptyStrOrUndef(
+      this.isDisabled || (this.isOutsideMonth && this.root.opts.disableDaysOutsideMonth.current)
+    )
   }));
 
   props = $derived.by(() => ({
@@ -621,7 +723,8 @@ export class RangeCalendarDayState {
   }
 
   #tabindex = $derived.by(() =>
-    (this.cell.isOutsideMonth && this.cell.root.opts.disableDaysOutsideMonth.current) || this.cell.isDisabled
+    (this.cell.isOutsideMonth && this.cell.root.opts.disableDaysOutsideMonth.current) ||
+    this.cell.isDisabled
       ? undefined
       : this.cell.isFocusedDate
         ? 0

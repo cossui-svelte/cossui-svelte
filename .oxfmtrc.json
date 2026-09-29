@@ -1,0 +1,60 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "useTabs": false,
+  "tabWidth": 2,
+  "printWidth": 100,
+  "endOfLine": "lf",
+  "singleQuote": true,
+  "jsxSingleQuote": false,
+  "quoteProps": "as-needed",
+  "trailingComma": "none",
+  "semi": true,
+  "arrowParens": "always",
+  "bracketSameLine": false,
+  "bracketSpacing": true,
+  "singleAttributePerLine": false,
+  "svelte": {
+    "indentScriptAndStyle": true
+  },
+  "sortImports": {
+    "newlinesBetween": false,
+    "customGroups": [
+      { "groupName": "sveltekit", "elementNamePattern": ["$app/**", "$env/**"] },
+      {
+        "groupName": "lib-ui",
+        "elementNamePattern": ["$lib/components/ui", "$lib/components/ui/**"]
+      },
+      { "groupName": "lib", "elementNamePattern": ["$lib", "$lib/**", "$assets/**", "$data/**"] }
+    ],
+    "groups": [
+      ["builtin", "external", "sveltekit"],
+      "lib-ui",
+      "lib",
+      ["internal", "subpath", "parent", "sibling", "index"],
+      "unknown"
+    ]
+  },
+  "ignorePatterns": [
+    "node_modules",
+    "dist",
+    "build",
+    ".svelte-kit",
+    "static",
+    "design",
+    "scripts",
+    ".husky",
+    "**/*.md",
+    "**/*.mdx",
+    "**/*.css",
+    "**/*.html",
+    "**/*.yaml",
+    "**/*.cjs",
+    "**/*.log",
+    "**/*.old",
+    "src/worker-configuration.d.ts",
+    "jsrepo.config.ts",
+    "mdsvex.config.js",
+    "wrangler.jsonc",
+    "skills-lock.json"
+  ]
+}

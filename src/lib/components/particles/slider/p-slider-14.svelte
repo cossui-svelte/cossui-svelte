@@ -18,8 +18,8 @@
       aria-label="Decrease value"
       disabled={value === min}
       onclick={() => {
-    value = Math.max(min, value - step);
-  }}
+        value = Math.max(min, value - step);
+      }}
       size="icon"
       variant="outline"
     >
@@ -30,8 +30,8 @@
       aria-label="Increase value"
       disabled={value === max}
       onclick={() => {
-    value = Math.min(max, value + step);
-  }}
+        value = Math.min(max, value + step);
+      }}
       size="icon"
       variant="outline"
     >

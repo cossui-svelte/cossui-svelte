@@ -1,6 +1,6 @@
 import { DateFormatter, type DateValue } from '@internationalized/date';
 import type { ReadableBox } from 'svelte-toolbelt';
-import { hasTime, isZonedDateTime, toDate } from './date-utils';
+import { hasTime, toDate } from './date-utils';
 
 type MonthFormatOpt = Intl.DateTimeFormatOptions['month'] | ((month: number) => string);
 type YearFormatOpt = Intl.DateTimeFormatOptions['year'] | ((year: number) => string);

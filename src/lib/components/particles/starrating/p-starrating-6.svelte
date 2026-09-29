@@ -5,12 +5,7 @@
   let value = $state(3);
 </script>
 
-{#snippet icon({
-    state
-  }: {
-    index: number;
-    state: StarRatingState;
-  })}
+{#snippet icon({ state }: { index: number; state: StarRatingState })}
   <Heart class="text-muted-foreground" />
   <span
     class="absolute inset-0 overflow-hidden"

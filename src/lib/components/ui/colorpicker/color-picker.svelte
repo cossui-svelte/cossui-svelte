@@ -46,9 +46,7 @@
   const inputAlpha = `${inputBase} border-l-2 border-l-popover rounded-r w-12 shrink-0`;
 </script>
 
-{#snippet marker(
-    selectedColor
-  )}
+{#snippet marker(selectedColor)}
   <span
     class="inline-block size-4 shrink-0 rounded-full ring-2 ring-offset-2 ring-offset-background transition duration-200 hover:ring-[--marker-ring-color]"
     style:background={selectedColor.toString()}
@@ -149,8 +147,8 @@
 {/snippet}
 
 <Popover>
-  <PopoverTrigger> {@render marker(color)} </PopoverTrigger>
+  <PopoverTrigger>{@render marker(color)}</PopoverTrigger>
   <PopoverPopup class="w-70 p-0">
-    <HueyRoot bind:color> {@render child()} </HueyRoot>
+    <HueyRoot bind:color>{@render child()}</HueyRoot>
   </PopoverPopup>
 </Popover>

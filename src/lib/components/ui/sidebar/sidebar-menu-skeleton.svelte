@@ -24,7 +24,7 @@
   class={cn('flex h-8 items-center gap-2 rounded-md px-2', className)}
   {...restProps}
 >
-  <Skeleton> {@render children?.()} </Skeleton>
+  <Skeleton>{@render children?.()}</Skeleton>
   <!-- {#if showIcon}
     <Skeleton class="size-4 rounded-md" data-sidebar="menu-skeleton-icon" />
   {/if}

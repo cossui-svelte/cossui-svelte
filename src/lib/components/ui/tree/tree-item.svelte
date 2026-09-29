@@ -1,11 +1,11 @@
 <!-- eslint-disable-next-line @typescript-eslint/no-explicit-any -->
 <script lang="ts" generics="T = any">
   import type { Snippet } from 'svelte';
-  import type { HTMLAttributes } from 'svelte/elements';
   import { mergeProps } from 'svelte-toolbelt';
+  import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '$lib/utils';
-  import { useTreeContext } from './tree-context.svelte';
   import TreeContextProvider from './tree-context-provider.svelte';
+  import { useTreeContext } from './tree-context.svelte';
   import type { ReactiveItemInstance } from './use-tree.svelte';
 
   interface TreeItemProps<T = unknown> extends HTMLAttributes<HTMLElement> {

@@ -41,9 +41,7 @@
       <Collapsible open={mainItem.isActive}>
         <SidebarMenuItem>
           <SidebarMenuButton tooltipContent={mainItem.title}>
-            {#snippet child({
-    props
-  })}
+            {#snippet child({ props })}
               <a href={mainItem.url} {...props}>
                 <mainItem.icon />
                 <span>{mainItem.title}</span>
@@ -52,9 +50,7 @@
           </SidebarMenuButton>
           {#if mainItem.items?.length}
             <SidebarMenuAction class="data-panel-open:rotate-90">
-              {#snippet child({
-    props
-  })}
+              {#snippet child({ props })}
                 <CollapsibleTrigger {...props}>
                   <ChevronRightIcon />
                   <span class="sr-only">Toggle</span>

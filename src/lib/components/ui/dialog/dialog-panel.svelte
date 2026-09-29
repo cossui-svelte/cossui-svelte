@@ -15,9 +15,9 @@
 <ScrollArea class="flex-1" overscrollContain {scrollFade}>
   <div
     class={cn(
-    'p-6 in-[[data-slot=dialog-popup]:has([data-slot=dialog-header])]:pt-1 in-[[data-slot=dialog-popup]:has([data-slot=dialog-footer]:not(.border-t))]:pb-1',
-    className
-  )}
+      'p-6 in-[[data-slot=dialog-popup]:has([data-slot=dialog-header])]:pt-1 in-[[data-slot=dialog-popup]:has([data-slot=dialog-footer]:not(.border-t))]:pb-1',
+      className
+    )}
     data-slot="dialog-panel"
     {...restProps}
   >

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { resolve } from '$app/paths';
   import Code from '@lucide/svelte/icons/code';
   import Eye from '@lucide/svelte/icons/eye';
   import FileCode from '@lucide/svelte/icons/file-code';
@@ -14,7 +15,6 @@
   import { type BlocMeta, DEFAULT_IFRAME_HEIGHT } from '$lib/components/blocs/bloc-metadata';
   import { cn } from '$lib/utils';
   import type { BlocSourceResponse } from '../../../routes/api/bloc-source/[name]/+server';
-  import { resolve } from '$app/paths';
 
   let { name, meta }: { name: string; meta: BlocMeta } = $props();
 
@@ -52,8 +52,8 @@
       bind:value={
         () => [view],
         (v) => {
-    if (v[0]) setView(v[0] as View);
-  }
+          if (v[0]) setView(v[0] as View);
+        }
       }
     >
       <ToggleGroupItem value="preview" aria-label="Preview"><Eye />Preview</ToggleGroupItem>
@@ -72,8 +72,8 @@
           bind:value={
             () => [size],
             (v) => {
-    if (v[0]) size = v[0] as Size;
-  }
+              if (v[0]) size = v[0] as Size;
+            }
           }
         >
           <ToggleGroupItem value="100" aria-label="Desktop"><Monitor /></ToggleGroupItem>
@@ -96,7 +96,10 @@
   {#if view === 'preview'}
     <div class="overflow-hidden rounded-xl border bg-muted/40">
       <div
-        class={['mx-auto bg-background transition-[width] duration-300', size !== '100' && 'border-x']}
+        class={[
+          'mx-auto bg-background transition-[width] duration-300',
+          size !== '100' && 'border-x'
+        ]}
         style:width="{size}%"
       >
         <iframe
@@ -120,9 +123,9 @@
               <button
                 type="button"
                 class={cn(
-    'flex items-center gap-2 truncate rounded-md px-2 py-1.5 text-start text-sm hover:bg-accent',
-    file.path === current.path && 'bg-accent font-medium'
-  )}
+                  'flex items-center gap-2 truncate rounded-md px-2 py-1.5 text-start text-sm hover:bg-accent',
+                  file.path === current.path && 'bg-accent font-medium'
+                )}
                 onclick={() => (selectedPath = file.path)}
               >
                 <FileCode class="size-4 shrink-0 opacity-70" />

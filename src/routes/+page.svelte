@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { resolve } from '$app/paths';
   import { Badge } from '$lib/components/ui/badge';
   import { Button } from '$lib/components/ui/button';
   import {
@@ -10,13 +11,12 @@
     CardPanel
   } from '$lib/components/ui/card';
   import CategoryThumbnail from '$lib/components/app/component-thumbnails.svelte';
-  import PageHeader from '$lib/components/app/page-header.svelte';
   import PageHeaderDescription from '$lib/components/app/page-header-description.svelte';
   import PageHeaderHeading from '$lib/components/app/page-header-heading.svelte';
+  import PageHeader from '$lib/components/app/page-header.svelte';
   import { allComponents, type RegistryUIEntry } from '$lib/registry/generated-registry-components';
   import { allParticles } from '$lib/registry/registry-particles';
   import type { PageData } from './$types';
-  import { resolve } from '$app/paths';
 
   let { data }: { data: PageData } = $props();
 
@@ -25,10 +25,7 @@
   const particleCount = Object.keys(allParticles).length;
 </script>
 
-{#snippet categoryCard(
-    slug: string,
-    meta: RegistryUIEntry
-  )}
+{#snippet categoryCard(slug: string, meta: RegistryUIEntry)}
   <CardFrame
     class="after:-inset-1.25 after:-z-1 w-full after:pointer-events-none after:absolute after:rounded-[calc(var(--radius-xl)+4px)] after:border after:border-border/64"
   >

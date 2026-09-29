@@ -68,14 +68,15 @@
   } satisfies ChartConfig;
 
   const filteredData = $derived.by(() => {
-    if (!value?.start || !value?.end) return chartData;
+    const start = value?.start;
+    const end = value?.end;
+    if (!start || !end) return chartData;
+    const startDate = start.toDate(getLocalTimeZone());
+    const endDate = end.toDate(getLocalTimeZone());
+    // set end date to end of day to include the full day
+    endDate.setHours(23, 59, 59, 999);
     return chartData.filter(({ date }) => {
       const dateObj = new Date(date);
-      if (!value) return true;
-      const startDate = value.start!.toDate(getLocalTimeZone());
-      const endDate = value.end!.toDate(getLocalTimeZone());
-      // set end date to end of day to include the full day
-      endDate.setHours(23, 59, 59, 999);
       return dateObj >= startDate && dateObj <= endDate;
     });
   });
@@ -90,8 +91,8 @@
         <PopoverTrigger class={cn(buttonVariants({ variant: 'outline' }))}>
           <CalendarIcon />
           {value?.start && value?.end
-    ? `${value.start.toDate(getLocalTimeZone()).toLocaleDateString()} - ${value.end.toDate(getLocalTimeZone()).toLocaleDateString()}`
-    : 'June 2025'}
+            ? `${value.start.toDate(getLocalTimeZone()).toLocaleDateString()} - ${value.end.toDate(getLocalTimeZone()).toLocaleDateString()}`
+            : 'June 2025'}
         </PopoverTrigger>
         <PopoverPopup class="w-auto overflow-hidden p-0" align="end">
           <RangeCalendar
@@ -114,14 +115,14 @@
         axis="x"
         y="visitors"
         props={{
-    bars: {
-      stroke: 'none',
-      rounded: 'all',
-      radius: 4,
-      motion: { type: 'tween', duration: 500, easing: cubicInOut }
-    },
-    xAxis: { format: (d) => d.toLocaleDateString('en-US', { day: 'numeric' }) }
-  }}
+          bars: {
+            stroke: 'none',
+            rounded: 'all',
+            radius: 4,
+            motion: { type: 'tween', duration: 500, easing: cubicInOut }
+          },
+          xAxis: { format: (d) => d.toLocaleDateString('en-US', { day: 'numeric' }) }
+        }}
       >
         {#snippet belowMarks()}
           <Highlight area={{ class: 'fill-muted' }} />
@@ -131,11 +132,11 @@
             class="w-[150px]"
             nameKey="visitors"
             labelFormatter={(d) =>
-    (d as Date).toLocaleDateString('en-US', {
-      month: 'short',
-      day: 'numeric',
-      year: 'numeric'
-    })}
+              (d as Date).toLocaleDateString('en-US', {
+                month: 'short',
+                day: 'numeric',
+                year: 'numeric'
+              })}
           />
         {/snippet}
       </BarChart>

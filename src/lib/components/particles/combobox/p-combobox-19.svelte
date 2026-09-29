@@ -76,7 +76,9 @@
 
   let open = $state(false);
   let selectedValues = $state<string[]>(teamMembers.slice(0, 2).map((m) => m.value));
-  const selected = $derived(selectedValues.map((v) => teamMembers.find((m) => m.value === v)!));
+  const selected = $derived(
+    selectedValues.flatMap((v) => teamMembers.find((m) => m.value === v) ?? [])
+  );
 
   function removeMember(value: string) {
     selectedValues = selectedValues.filter((v) => v !== value);
@@ -101,9 +103,7 @@
       <ComboboxEmpty>No team members found.</ComboboxEmpty>
       <ComboboxList>
         <ComboboxCollection>
-          {#snippet children(
-    item: TeamMember
-  )}
+          {#snippet children(item: TeamMember)}
             <ComboboxItem value={item.value} label={item.label}>{item.label}</ComboboxItem>
           {/snippet}
         </ComboboxCollection>

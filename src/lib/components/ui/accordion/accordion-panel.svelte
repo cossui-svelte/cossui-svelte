@@ -17,9 +17,7 @@
   data-slot="accordion-panel"
   {...restProps}
 >
-  {#snippet children(
-    state
-  )}
+  {#snippet children(state)}
     <div class={cn('pt-0 pb-4', className)}>
       {@render childrenProp?.(state)}
     </div>

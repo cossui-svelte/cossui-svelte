@@ -22,16 +22,14 @@
     class="dark:bg-popover dark:text-popover-foreground absolute inset-0 opacity-0"
     {...restProps}
   >
-    {#snippet child({
-    props,
-    yearItems,
-    selectedYearItem
-  })}
+    {#snippet child({ props, yearItems, selectedYearItem })}
       <select {...props} {value}>
         {#each yearItems as yearItem (yearItem.value)}
           <option
             value={yearItem.value}
-            selected={value !== undefined ? yearItem.value === value : yearItem.value === selectedYearItem.value}
+            selected={value !== undefined
+              ? yearItem.value === value
+              : yearItem.value === selectedYearItem.value}
           >
             {yearItem.label}
           </option>

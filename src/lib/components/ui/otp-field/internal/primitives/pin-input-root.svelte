@@ -39,11 +39,11 @@
       (v) => (inputRef = v)
     ),
     inputId: boxWith(() => inputId),
-    autocomplete: boxWith(() => autocomplete!),
+    autocomplete: boxWith(() => autocomplete),
     maxLength: boxWith(() => maxlength),
     textAlign: boxWith(() => textalign),
     disabled: boxWith(() => disabled),
-    inputmode: boxWith(() => inputmode!),
+    inputmode: boxWith(() => inputmode),
     pattern: boxWith(() => pattern),
     onComplete: boxWith(() => onComplete),
     value: boxWith(
@@ -66,6 +66,6 @@
   {@render children?.(rootState.snippetProps)}
 
   <div {...mergedInputWrapperProps}>
-    <input {...mergedInputProps}>
+    <input {...mergedInputProps} />
   </div>
 </div>

@@ -105,7 +105,7 @@ You can customize project settings at any time by clicking the settings icon in 
     isGenerating: boolean;
     mode: boolean;
     query: string;
-    referenceLinks: Array<{ title: string; url: string }>;
+    referenceLinks: { title: string; url: string }[];
     response: string;
     submittedQuery: string;
   }
@@ -243,8 +243,7 @@ You can customize project settings at any time by clicking the settings icon in 
   onclick={() => {
     open = true;
   }}
-  variant="outline"
-  >Cmdk with AI</Button
+  variant="outline">Cmdk with AI</Button
 >
 
 <CommandDialog {open} onOpenChange={handleOpenChange}>
@@ -256,15 +255,15 @@ You can customize project settings at any time by clicking the settings icon in 
             <CommandInput
               bind:ref={searchInputEl}
               onkeydown={(e) => {
-    if (e.key === 'Tab') {
-      e.preventDefault();
-      handleAskAI();
-    }
-    if (e.key === 'Enter' && !hasResults && searchQuery.trim()) {
-      e.preventDefault();
-      handleAskAI();
-    }
-  }}
+                if (e.key === 'Tab') {
+                  e.preventDefault();
+                  handleAskAI();
+                }
+                if (e.key === 'Enter' && !hasResults && searchQuery.trim()) {
+                  e.preventDefault();
+                  handleAskAI();
+                }
+              }}
               placeholder="Type a command or search..."
             />
             <Button
@@ -286,7 +285,7 @@ You can customize project settings at any time by clicking the settings icon in 
                   <p>No results found.</p>
                   <p>
                     Press <Kbd>Enter</Kbd> to ask AI about:
-                    <br>
+                    <br />
                     <strong class="font-medium text-foreground">{searchQuery}</strong>
                   </p>
                 </div>
@@ -294,15 +293,11 @@ You can customize project settings at any time by clicking the settings icon in 
             </CommandEmpty>
             <CommandList>
               <CommandCollection>
-                {#snippet children(
-    group: Group
-  )}
+                {#snippet children(group: Group)}
                   <CommandGroup items={group.items}>
                     <CommandGroupLabel>{group.value}</CommandGroupLabel>
                     <CommandCollection>
-                      {#snippet children(
-    item: Item
-  )}
+                      {#snippet children(item: Item)}
                         <CommandItem value={item} onclick={handleItemClick}>
                           <span class="flex-1">{item.label}</span>
                           {#if item.shortcut}
@@ -362,15 +357,15 @@ You can customize project settings at any time by clicking the settings icon in 
                 class="border-transparent! bg-transparent! shadow-none before:hidden has-focus-visible:ring-0 *:data-[slot=input]:ps-[calc(--spacing(8.5)-1px)] sm:*:data-[slot=input]:ps-[calc(--spacing(8)-1px)]"
                 disabled={aiState.isGenerating}
                 oninput={(e) => {
-    aiState = { ...aiState, query: (e.currentTarget as HTMLInputElement).value };
-  }}
+                  aiState = { ...aiState, query: (e.currentTarget as HTMLInputElement).value };
+                }}
                 onkeydown={(e) => {
-    if (e.key === 'Enter' && !aiState.isGenerating) handleGenerateAI();
-    if (e.key === 'Escape') {
-      e.preventDefault();
-      handleBackToSearch();
-    }
-  }}
+                  if (e.key === 'Enter' && !aiState.isGenerating) handleGenerateAI();
+                  if (e.key === 'Escape') {
+                    e.preventDefault();
+                    handleBackToSearch();
+                  }
+                }}
                 placeholder="Ask AI anything…"
                 size="lg"
                 value={aiState.query}

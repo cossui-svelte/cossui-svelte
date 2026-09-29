@@ -37,16 +37,16 @@
         {item.description}
         <TimelineDate class="mt-1">
           {item.date.toLocaleDateString('en-US', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric'
-  })}
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+          })}
           at
           {item.date.toLocaleTimeString('en-US', {
-    hour: 'numeric',
-    hour12: true,
-    minute: '2-digit'
-  })}
+            hour: 'numeric',
+            hour12: true,
+            minute: '2-digit'
+          })}
         </TimelineDate>
       </TimelineContent>
     </TimelineItem>

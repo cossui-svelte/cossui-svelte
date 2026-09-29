@@ -48,8 +48,10 @@ export function usePasswordManagerBadge({
     const elementToCompare = container;
     // get the top right-center point of the container, where most
     // password managers place their badge
-    const rightCornerX = elementToCompare.getBoundingClientRect().left + elementToCompare.offsetWidth;
-    const centeredY = elementToCompare.getBoundingClientRect().top + elementToCompare.offsetHeight / 2;
+    const rightCornerX =
+      elementToCompare.getBoundingClientRect().left + elementToCompare.offsetWidth;
+    const centeredY =
+      elementToCompare.getBoundingClientRect().top + elementToCompare.offsetHeight / 2;
     const x = rightCornerX - PWM_BADGE_MARGIN_RIGHT;
     const y = centeredY;
 

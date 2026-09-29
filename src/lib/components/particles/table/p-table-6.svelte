@@ -93,9 +93,7 @@
           <TableCell class="font-medium">{row.project}</TableCell>
           <TableCell>
             <Badge variant="outline">
-              <span
-                aria-hidden="true"
-                class={`size-1.5 rounded-full ${getStatusColor(row.status)}`}
+              <span aria-hidden="true" class={`size-1.5 rounded-full ${getStatusColor(row.status)}`}
               ></span>
               {row.status}
             </Badge>
@@ -103,11 +101,11 @@
           <TableCell>{row.team}</TableCell>
           <TableCell class="text-right">
             {new Intl.NumberFormat('en-US', {
-    currency: 'USD',
-    maximumFractionDigits: 0,
-    minimumFractionDigits: 0,
-    style: 'currency'
-  }).format(row.budget)}
+              currency: 'USD',
+              maximumFractionDigits: 0,
+              minimumFractionDigits: 0,
+              style: 'currency'
+            }).format(row.budget)}
           </TableCell>
         </TableRow>
       {/each}

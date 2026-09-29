@@ -78,9 +78,7 @@
   <Card class="@container/card">
     <CardHeader>
       <CardDescription>Growth Rate</CardDescription>
-      <CardTitle class="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-        4.5%
-      </CardTitle>
+      <CardTitle class="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">4.5%</CardTitle>
       <CardAction>
         <Badge variant="outline">
           <TrendingUpIcon />

@@ -88,12 +88,12 @@
 </script>
 
 {#snippet monthsBody({
-    months,
-    weekdays
-  }: {
-    months: { value: DateValue; weeks: DateValue[][] }[];
-    weekdays: string[];
-  })}
+  months,
+  weekdays
+}: {
+  months: { value: DateValue; weeks: DateValue[][] }[];
+  weekdays: string[];
+})}
   <Calendar.Months>
     <Calendar.Nav>
       <Calendar.PrevButton variant={buttonVariant} />
@@ -161,9 +161,7 @@
     {yearFormat}
     {...restProps as Record<string, unknown>}
   >
-    {#snippet children(
-    snippetProps
-  )}
+    {#snippet children(snippetProps)}
       {@render monthsBody(snippetProps)}
     {/snippet}
   </RangeCalendarPrimitive.Root>
@@ -185,9 +183,7 @@
     {yearFormat}
     {...restProps as Record<string, unknown>}
   >
-    {#snippet children(
-    snippetProps
-  )}
+    {#snippet children(snippetProps)}
       {@render monthsBody(snippetProps)}
     {/snippet}
   </CalendarPrimitive.Root>

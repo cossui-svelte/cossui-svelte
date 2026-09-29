@@ -32,9 +32,7 @@
   <SidebarMenuItem>
     <Menu>
       <SidebarMenuButton class="w-fit px-1.5">
-        {#snippet child({
-    props
-  })}
+        {#snippet child({ props })}
           <MenuTrigger {...props}>
             <div
               class="flex aspect-square size-5 items-center justify-center rounded-md bg-sidebar-primary text-sidebar-primary-foreground"

@@ -169,9 +169,15 @@ for (const id of fileById.keys()) {
   }
 }
 
+function getEntry(name: string): MergedEntry {
+  const entry = entriesByName.get(name);
+  if (!entry) throw new Error(`No registry entry for particle ${name}`);
+  return entry;
+}
+
 for (const name of orderedNames) {
   const filePath = fileById.get(name);
-  const entry = entriesByName.get(name)!;
+  const entry = getEntry(name);
   const deps = filePath
     ? await discoverDeps(filePath)
     : fallbackDeps((cossuiRegistry.items as RegistryItem[]).find((i) => i.name === name) ?? { name });
@@ -205,12 +211,12 @@ for (const [name, item] of Object.entries(custom_particle_metadata as Record<str
 // (e.g. coss-only particles that aren't in registry.json).
 for (const name of orderedNames) {
   const slugTag = name.replace(/^p-/, '').replace(/-\d+$/, '');
-  const entry = entriesByName.get(name)!;
+  const entry = getEntry(name);
   entry.tags = mergeList(entry.tags, [slugTag]);
   if (!entry.meta?.class) entry.meta = { ...DEFAULT_META, ...entry.meta };
 }
 
-const body = orderedNames.map((name) => renderEntry(name, entriesByName.get(name)!)).join(',\n');
+const body = orderedNames.map((name) => renderEntry(name, getEntry(name))).join(',\n');
 
 const output = `// this file is generated from one of the /scripts/
 import type { ParticleMetaDefinition } from './registry-particles';

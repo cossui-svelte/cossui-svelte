@@ -83,9 +83,7 @@
                 <Collapsible class="group/collapsible" open={index === 0}>
                   <SidebarMenuItem>
                     <SidebarMenuButton>
-                      {#snippet child({
-    props
-  })}
+                      {#snippet child({ props })}
                         <CollapsibleTrigger {...props}>
                           <span>{item.title}</span>
                           <ChevronRightIcon
@@ -99,9 +97,7 @@
                         {#each item.items as subItem (subItem.title)}
                           <SidebarMenuSubItem>
                             <SidebarMenuSubButton>
-                              {#snippet child({
-    props
-  })}
+                              {#snippet child({ props })}
                                 <a href={subItem.url} {...props}>
                                   <span>{subItem.title}</span>
                                 </a>

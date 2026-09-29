@@ -15,6 +15,6 @@
       height={1080}
       src="/placeholder.svg"
       width={1920}
-    >
+    />
   </div>
 </div>

@@ -19,9 +19,7 @@
         <Field>
           <FieldLabel class="sr-only">Verification code</FieldLabel>
           <OTPField maxlength={6} required>
-            {#snippet children({
-    cells
-  })}
+            {#snippet children({ cells })}
               {#each cells as cell (cell)}
                 <OTPFieldInput {cell} />
               {/each}

@@ -14,11 +14,11 @@ function toW3CDate(date: Date): string {
 // ---------------------------------------------------------------------------
 // Static routes — edit slug, changefreq and priority to suit your site.
 // ---------------------------------------------------------------------------
-const STATIC_URLS: Array<{
+const STATIC_URLS: {
   slug: string;
   changefreq: string;
   priority: string;
-}> = [
+}[] = [
   { changefreq: 'monthly', priority: '1.0', slug: '' }, // home
   { changefreq: 'monthly', priority: '0.9', slug: 'particles' },
   { changefreq: 'monthly', priority: '0.8', slug: 'docs' }

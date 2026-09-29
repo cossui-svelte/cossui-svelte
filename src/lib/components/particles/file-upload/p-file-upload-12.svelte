@@ -50,15 +50,10 @@
   const fileUpload = useFileUpload({ initialFiles, maxFiles, maxSize, multiple: true });
 </script>
 
-{#snippet fileIcon(
-    file: FileWithPreview
-  )}
+{#snippet fileIcon(file: FileWithPreview)}
   {@const fileType = file.file.type}
   {@const fileName = file.file.name}
-  {#if fileType.includes('zip') ||
-    fileType.includes('archive') ||
-    fileName.endsWith('.zip') ||
-    fileName.endsWith('.rar')}
+  {#if fileType.includes('zip') || fileType.includes('archive') || fileName.endsWith('.zip') || fileName.endsWith('.rar')}
     <FileArchive class="size-5 opacity-60" />
   {:else if fileType.includes('audio/')}
     <Headphones class="size-5 opacity-60" />
@@ -66,11 +61,7 @@
     <FileSpreadsheet class="size-5 opacity-60" />
   {:else if fileType.startsWith('image/')}
     <Image class="size-5 opacity-60" />
-  {:else if fileType.includes('pdf') ||
-    fileName.endsWith('.pdf') ||
-    fileType.includes('word') ||
-    fileName.endsWith('.doc') ||
-    fileName.endsWith('.docx')}
+  {:else if fileType.includes('pdf') || fileName.endsWith('.pdf') || fileType.includes('word') || fileName.endsWith('.doc') || fileName.endsWith('.docx')}
     <FileText class="size-5 opacity-60" />
   {:else if fileType.includes('video/')}
     <Video class="size-5 opacity-60" />
@@ -79,9 +70,7 @@
   {/if}
 {/snippet}
 
-{#snippet filePreview(
-    file: FileWithPreview
-  )}
+{#snippet filePreview(file: FileWithPreview)}
   <div
     class="flex aspect-square items-center justify-center overflow-hidden rounded-t-[inherit] bg-accent"
   >
@@ -90,7 +79,7 @@
         alt={file.file.name}
         class="size-full rounded-t-[inherit] object-cover"
         src={file.preview}
-      >
+      />
     {:else}
       {@render fileIcon(file)}
     {/if}
@@ -113,7 +102,7 @@
       {...fileUpload.inputProps}
       aria-label="Upload image file"
       class="sr-only"
-    >
+    />
     {#if fileUpload.files.length > 0}
       <div class="flex w-full flex-col gap-3">
         <div class="flex items-center justify-between gap-2">

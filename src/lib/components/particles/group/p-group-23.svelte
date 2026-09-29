@@ -75,9 +75,9 @@
   <Combobox multiple bind:value={selectedIds} items={members as never}>
     <ComboboxTrigger
       class={cn(
-    buttonVariants({ size: 'sm', variant: 'outline' }),
-    selectedIds.length > 0 ? undefined : 'justify-between'
-  )}
+        buttonVariants({ size: 'sm', variant: 'outline' }),
+        selectedIds.length > 0 ? undefined : 'justify-between'
+      )}
     >
       {#if selectedIds.length === 0}
         Select
@@ -108,9 +108,7 @@
       <ComboboxEmpty>No members found.</ComboboxEmpty>
       <ComboboxList>
         <ComboboxCollection>
-          {#snippet children(
-    member: Member
-  )}
+          {#snippet children(member: Member)}
             <ComboboxItem value={member.id}>
               <Avatar class="size-5">
                 {#if member.avatar}
@@ -131,8 +129,8 @@
   <Button
     aria-label="Remove filter"
     onclick={() => {
-    selectedIds = [];
-  }}
+      selectedIds = [];
+    }}
     size="icon-sm"
     variant="outline"
   >

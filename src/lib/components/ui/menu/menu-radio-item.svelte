@@ -18,11 +18,7 @@
   data-slot="menu-radio-item"
   {...restProps}
 >
-  {#snippet children({
-    checked
-  }: {
-    checked: boolean;
-  })}
+  {#snippet children({ checked }: { checked: boolean })}
     <span class="-ms-0.5 col-start-1 flex items-center justify-center">
       {#if checked}
         <svg

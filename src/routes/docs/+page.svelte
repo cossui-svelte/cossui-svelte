@@ -10,9 +10,9 @@
     TimelineSeparator,
     TimelineTitle
   } from '$lib/components/ui/timeline';
-  import PageHeader from '$lib/components/app/page-header.svelte';
   import PageHeaderDescription from '$lib/components/app/page-header-description.svelte';
   import PageHeaderHeading from '$lib/components/app/page-header-heading.svelte';
+  import PageHeader from '$lib/components/app/page-header.svelte';
 
   const changelog = [
     {
@@ -99,10 +99,10 @@
   <PageHeader>
     <PageHeaderHeading>DOCS: COMING SOON</PageHeaderHeading>
     <PageHeaderDescription>
-      I’ve been wondering: in the age of AI, is documentation still necessary?<br>
-      You can point your assistant to the product and ask questions to get instant answers.<br>It
-      appears that the days where developers read full documentation are gone.<br><br>Let’s
-      prioritize on the AI experience over traditional documentation.<br>If you have questions or
+      I’ve been wondering: in the age of AI, is documentation still necessary?<br />
+      You can point your assistant to the product and ask questions to get instant answers.<br />It
+      appears that the days where developers read full documentation are gone.<br /><br />Let’s
+      prioritize on the AI experience over traditional documentation.<br />If you have questions or
       need help, feel free to reach out to me directly. I’m here to help.
     </PageHeaderDescription>
   </PageHeader>
@@ -121,8 +121,8 @@
       </li>
       <li>
         <strong class="font-semibold text-foreground">Batteries included</strong>
-        — 70 components and 700+ blocks and particules, including forms, fieldset and skeletons. Now
-        you can focus on your application logic instead of reinventing the wheel.
+        — 70 components and 700+ blocks and particules, including forms, fieldset and skeletons. Now you
+        can focus on your application logic instead of reinventing the wheel.
       </li>
       <li>
         <strong class="font-semibold text-foreground">Built on Base UI</strong>
