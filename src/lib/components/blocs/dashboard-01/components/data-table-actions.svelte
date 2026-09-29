@@ -8,9 +8,9 @@
 <Menu>
   <MenuTrigger
     class={cn(
-    buttonVariants({ variant: 'ghost', size: 'icon' }),
-    'flex size-8 text-muted-foreground data-popup-open:bg-muted'
-  )}
+      buttonVariants({ variant: 'ghost', size: 'icon' }),
+      'flex size-8 text-muted-foreground data-popup-open:bg-muted'
+    )}
   >
     <DotsVerticalIcon />
     <span class="sr-only">Open menu</span>

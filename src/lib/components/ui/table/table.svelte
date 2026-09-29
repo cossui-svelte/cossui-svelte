@@ -16,9 +16,9 @@
 <div class="relative w-full overflow-x-auto" data-slot="table-container" data-variant={variant}>
   <table
     class={cn(
-    'w-full caption-bottom in-data-[variant=card]:border-separate in-data-[variant=card]:border-spacing-0 text-sm',
-    className
-  )}
+      'w-full caption-bottom in-data-[variant=card]:border-separate in-data-[variant=card]:border-spacing-0 text-sm',
+      className
+    )}
     data-slot="table"
     {...restProps}
   >

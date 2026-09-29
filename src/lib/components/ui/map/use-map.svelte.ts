@@ -1,5 +1,5 @@
-import { getContext } from 'svelte';
 import type * as MapLibreGL from 'maplibre-gl';
+import { getContext } from 'svelte';
 
 type MapContext = {
   getMap: () => MapLibreGL.Map | null;

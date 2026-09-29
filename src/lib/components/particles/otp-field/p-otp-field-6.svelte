@@ -31,17 +31,15 @@
     bind:value
     onValueChange={handleValueChange}
   >
-    {#snippet children({
-    cells
-  })}
+    {#snippet children({ cells })}
       {#each cells as cell, i (i)}
         <OTPFieldInput
           aria-invalid={(invalidPulse > 0 && focusedIndex === i) || undefined}
           aria-label={`Character ${i + 1} of ${OTP_LENGTH}`}
           {cell}
           onfocus={() => {
-    focusedIndex = i;
-  }}
+            focusedIndex = i;
+          }}
         />
       {/each}
     {/snippet}

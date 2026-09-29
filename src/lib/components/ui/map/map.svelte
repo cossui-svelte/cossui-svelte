@@ -11,13 +11,13 @@
 </script>
 
 <script lang="ts">
+  import { browser } from '$app/environment';
   import * as MapLibreGL from 'maplibre-gl';
-  import { onDestroy, onMount, setContext, untrack } from 'svelte';
   import 'maplibre-gl/dist/maplibre-gl.css';
+  import { onDestroy, onMount, setContext, untrack } from 'svelte';
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '$lib/utils.js';
   import { resolveMapTheme } from './theme';
-  import { browser } from '$app/environment';
 
   const blankMapStyle: MapLibreGL.StyleSpecification = {
     version: 8,

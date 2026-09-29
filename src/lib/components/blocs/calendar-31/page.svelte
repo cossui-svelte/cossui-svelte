@@ -35,10 +35,10 @@
     <div class="flex w-full items-center justify-between px-1">
       <div class="text-sm font-medium">
         {value?.toDate(getLocalTimeZone()).toLocaleDateString('en-US', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric'
-  })}
+          day: 'numeric',
+          month: 'long',
+          year: 'numeric'
+        })}
       </div>
       <Button variant="ghost" size="icon" class="size-6" title="Add Event">
         <PlusIcon />

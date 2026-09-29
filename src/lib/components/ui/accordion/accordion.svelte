@@ -30,8 +30,8 @@
   bind:value={
     () => internalValue,
     (next: string[]) => {
-    value = multiple ? next : next[0];
-  }
+      value = multiple ? next : next[0];
+    }
   }
   class={className}
   data-slot="accordion"

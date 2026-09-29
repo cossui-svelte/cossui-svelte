@@ -57,8 +57,8 @@
         <Button
           aria-label={isVisible ? 'Hide password' : 'Show password'}
           onclick={() => {
-    isVisible = !isVisible;
-  }}
+            isVisible = !isVisible;
+          }}
           size="icon-xs"
           variant="ghost"
         >

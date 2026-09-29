@@ -8,9 +8,7 @@
 <div class="flex flex-col items-center gap-2">
   <Label>Verification code</Label>
   <OTPField maxlength={OTP_LENGTH}>
-    {#snippet children({
-    cells
-  })}
+    {#snippet children({ cells })}
       {#each cells as cell, i (i)}
         <OTPFieldInput aria-label={`Character ${i + 1} of ${OTP_LENGTH}`} {cell} />
       {/each}

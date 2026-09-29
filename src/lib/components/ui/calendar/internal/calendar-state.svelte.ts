@@ -1,10 +1,15 @@
-import { type DateValue, getLocalTimeZone, isSameDay, isSameMonth, isToday } from '@internationalized/date';
+import {
+  type DateValue,
+  getLocalTimeZone,
+  isSameDay,
+  isSameMonth,
+  isToday
+} from '@internationalized/date';
 import { Context, watch } from 'runed';
-import { DOMContext, type ReadableBox, type WritableBox, attachRef } from 'svelte-toolbelt';
 import { onMount, untrack } from 'svelte';
-import { boolToEmptyStrOrUndef, boolToStr, boolToStrTrueOrUndef } from './attrs';
+import { DOMContext, type ReadableBox, type WritableBox, attachRef } from 'svelte-toolbelt';
 import { getAnnouncer } from './announcer';
-import { createFormatter, type Formatter } from './formatter';
+import { boolToEmptyStrOrUndef, boolToStr, boolToStrTrueOrUndef } from './attrs';
 import {
   calendarAttrs,
   createAccessibleHeading,
@@ -25,6 +30,7 @@ import {
   useMonthViewPlaceholderSync
 } from './calendar-helpers.svelte';
 import { getDateValueType, isBefore, toDate } from './date-utils';
+import { createFormatter, type Formatter } from './formatter';
 import { useId } from './ids';
 import type { DateMatcher, Month, WeekStartsOn } from './types';
 
@@ -59,7 +65,9 @@ export type CalendarRootStateOpts = {
   onDateSelect?: () => void;
 };
 
-export const CalendarRootContext = new Context<CalendarRootState>('Calendar.Root | RangeCalendar.Root');
+export const CalendarRootContext = new Context<CalendarRootState>(
+  'Calendar.Root | RangeCalendar.Root'
+);
 
 export class CalendarRootState {
   static create(opts: CalendarRootStateOpts) {
@@ -337,7 +345,11 @@ export class CalendarRootState {
   }
 
   handleCellClick = (_: Event, date: DateValue) => {
-    if (this.opts.readonly.current || this.opts.isDateDisabled.current?.(date) || this.opts.isDateUnavailable.current?.(date)) {
+    if (
+      this.opts.readonly.current ||
+      this.opts.isDateDisabled.current?.(date) ||
+      this.opts.isDateUnavailable.current?.(date)
+    ) {
       return;
     }
     const prev = this.opts.value.current;
@@ -351,7 +363,10 @@ export class CalendarRootState {
       if (!next) {
         this.announcer.announce('Selected date is now empty.', 'polite', 5000);
       } else {
-        this.announcer.announce(`Selected Date: ${this.formatter.selectedDate(next, false)}`, 'polite');
+        this.announcer.announce(
+          `Selected Date: ${this.formatter.selectedDate(next, false)}`,
+          'polite'
+        );
       }
       this.opts.value.current = getDateWithPreviousTime(next, prev);
       if (next !== undefined) {
@@ -360,7 +375,10 @@ export class CalendarRootState {
     }
   };
 
-  handleMultipleUpdate = (prev: DateValue[] | undefined, date: DateValue): DateValue[] | undefined => {
+  handleMultipleUpdate = (
+    prev: DateValue[] | undefined,
+    date: DateValue
+  ): DateValue[] | undefined => {
     if (!prev) {
       const newSelection = [date];
       return this.#isMultipleSelectionValid(newSelection) ? newSelection : [date];
@@ -467,7 +485,9 @@ export type CalendarCellStateOpts = {
   month: ReadableBox<DateValue>;
 };
 
-export const CalendarCellContext = new Context<CalendarCellState>('Calendar.Cell | RangeCalendar.Cell');
+export const CalendarCellContext = new Context<CalendarCellState>(
+  'Calendar.Cell | RangeCalendar.Cell'
+);
 
 export class CalendarCellState {
   static create(opts: CalendarCellStateOpts) {
@@ -479,17 +499,30 @@ export class CalendarCellState {
   attachment: ReturnType<typeof attachRef<HTMLElement>>;
 
   cellDate = $derived.by(() => toDate(this.opts.date.current));
-  isUnavailable = $derived.by(() => this.root.opts.isDateUnavailable.current(this.opts.date.current));
+  isUnavailable = $derived.by(() =>
+    this.root.opts.isDateUnavailable.current(this.opts.date.current)
+  );
   isDateToday = $derived.by(() => isToday(this.opts.date.current, getLocalTimeZone()));
   isOutsideMonth = $derived.by(() => !isSameMonth(this.opts.date.current, this.opts.month.current));
-  isOutsideVisibleMonths = $derived.by(() => this.root.isOutsideVisibleMonths(this.opts.date.current));
-  isDisabled = $derived.by(
-    () => this.root.isDateDisabled(this.opts.date.current) || (this.isOutsideMonth && this.root.opts.disableDaysOutsideMonth.current)
+  isOutsideVisibleMonths = $derived.by(() =>
+    this.root.isOutsideVisibleMonths(this.opts.date.current)
   );
-  isFocusedDate = $derived.by(() => isSameDay(this.opts.date.current, this.root.opts.placeholder.current));
+  isDisabled = $derived.by(
+    () =>
+      this.root.isDateDisabled(this.opts.date.current) ||
+      (this.isOutsideMonth && this.root.opts.disableDaysOutsideMonth.current)
+  );
+  isFocusedDate = $derived.by(() =>
+    isSameDay(this.opts.date.current, this.root.opts.placeholder.current)
+  );
   isSelectedDate = $derived.by(() => this.root.isDateSelected(this.opts.date.current));
   labelText = $derived.by(() =>
-    this.root.formatter.custom(this.cellDate, { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })
+    this.root.formatter.custom(this.cellDate, {
+      weekday: 'long',
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric'
+    })
   );
 
   constructor(opts: CalendarCellStateOpts, root: CalendarRootState) {
@@ -506,7 +539,11 @@ export class CalendarCellState {
   }));
 
   ariaDisabled = $derived.by(() => {
-    return this.isDisabled || (this.isOutsideMonth && this.root.opts.disableDaysOutsideMonth.current) || this.isUnavailable;
+    return (
+      this.isDisabled ||
+      (this.isOutsideMonth && this.root.opts.disableDaysOutsideMonth.current) ||
+      this.isUnavailable
+    );
   });
 
   sharedDataAttrs = $derived.by(() => ({
@@ -518,7 +555,9 @@ export class CalendarCellState {
     'data-selected': boolToEmptyStrOrUndef(this.isSelectedDate),
     'data-value': this.opts.date.current.toString(),
     'data-type': getDateValueType(this.opts.date.current),
-    'data-disabled': boolToEmptyStrOrUndef(this.isDisabled || (this.isOutsideMonth && this.root.opts.disableDaysOutsideMonth.current))
+    'data-disabled': boolToEmptyStrOrUndef(
+      this.isDisabled || (this.isOutsideMonth && this.root.opts.disableDaysOutsideMonth.current)
+    )
   }));
 
   props = $derived.by(() => ({
@@ -553,7 +592,8 @@ export class CalendarDayState {
   }
 
   #tabindex = $derived.by(() =>
-    (this.cell.isOutsideMonth && this.cell.root.opts.disableDaysOutsideMonth.current) || this.cell.isDisabled
+    (this.cell.isOutsideMonth && this.cell.root.opts.disableDaysOutsideMonth.current) ||
+    this.cell.isDisabled
       ? undefined
       : this.cell.isFocusedDate
         ? 0
@@ -674,7 +714,7 @@ type SimplePartStateOpts = {
 function createSimplePartState(part: string) {
   return class {
     static create(opts: SimplePartStateOpts) {
-      // biome-ignore lint/complexity/noThisInStatic: mirrors the class pattern used throughout this file
+      // `new this` mirrors the class pattern used throughout this file
       return new this(opts, CalendarRootContext.get());
     }
 
@@ -732,11 +772,13 @@ export class CalendarMonthSelectState {
     void this.root.opts.locale.current;
     const monthNumbers = this.opts.months.current;
     const monthFormat = this.opts.monthFormat.current;
-    const months: Array<{ value: number; label: string }> = [];
+    const months: { value: number; label: string }[] = [];
     for (const month of monthNumbers) {
       const date = this.root.opts.placeholder.current.set({ month });
       const label =
-        typeof monthFormat === 'function' ? monthFormat(month) : this.root.formatter.custom(toDate(date), { month: monthFormat });
+        typeof monthFormat === 'function'
+          ? monthFormat(month)
+          : this.root.formatter.custom(toDate(date), { month: monthFormat });
       months.push({ value: month, label });
     }
     return months;
@@ -747,7 +789,10 @@ export class CalendarMonthSelectState {
 
   snippetProps = $derived.by(() => ({
     monthItems: this.monthItems,
-    selectedMonthItem: this.monthItems.find((month) => month.value === this.currentMonth) as { value: number; label: string }
+    selectedMonthItem: this.monthItems.find((month) => month.value === this.currentMonth) as {
+      value: number;
+      label: string;
+    }
   }));
 
   onchange = (event: Event & { currentTarget: HTMLSelectElement }) => {
@@ -800,10 +845,13 @@ export class CalendarYearSelectState {
   yearItems = $derived.by(() => {
     void this.root.opts.locale.current;
     const yearFormat = this.opts.yearFormat.current;
-    const localYears: Array<{ value: number; label: string }> = [];
+    const localYears: { value: number; label: string }[] = [];
     for (const year of this.years) {
       const date = this.root.opts.placeholder.current.set({ year });
-      const label = typeof yearFormat === 'function' ? yearFormat(year) : this.root.formatter.custom(toDate(date), { year: yearFormat });
+      const label =
+        typeof yearFormat === 'function'
+          ? yearFormat(year)
+          : this.root.formatter.custom(toDate(date), { year: yearFormat });
       localYears.push({ value: year, label });
     }
     return localYears;
@@ -814,7 +862,10 @@ export class CalendarYearSelectState {
 
   snippetProps = $derived.by(() => ({
     yearItems: this.yearItems,
-    selectedYearItem: this.yearItems.find((year) => year.value === this.currentYear) as { value: number; label: string }
+    selectedYearItem: this.yearItems.find((year) => year.value === this.currentYear) as {
+      value: number;
+      label: string;
+    }
   }));
 
   onchange = (event: Event & { currentTarget: HTMLSelectElement }) => {

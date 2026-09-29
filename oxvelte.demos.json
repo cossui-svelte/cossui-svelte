@@ -1,0 +1,19 @@
+{
+  "rules": {
+    "svelte/no-navigation-without-resolve": "off",
+    "svelte/require-each-key": "warn",
+    "svelte/prefer-svelte-reactivity": "warn",
+    "svelte/prefer-writable-derived": "warn",
+    "svelte/no-at-html-tags": "warn",
+    "svelte/no-dom-manipulating": "off"
+  },
+  "settings": {
+    "svelte": {
+      "kit": {
+        "files": {
+          "routes": "src/routes"
+        }
+      }
+    }
+  }
+}

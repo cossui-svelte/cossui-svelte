@@ -15,10 +15,7 @@
   monthFormat="long"
   captionLayout="dropdown"
 >
-  {#snippet day({
-    day,
-    outsideMonth
-  })}
+  {#snippet day({ day, outsideMonth })}
     {@const dayIsWeekend = isWeekend(day, 'en-US')}
     <RangeCalendarDay class="flex flex-col items-center">
       {day.day}

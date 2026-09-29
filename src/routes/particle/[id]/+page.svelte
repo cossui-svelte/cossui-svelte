@@ -1,7 +1,7 @@
 <script lang="ts">
-  import PageHeader from '$lib/components/app/page-header.svelte';
   import PageHeaderDescription from '$lib/components/app/page-header-description.svelte';
   import PageHeaderHeading from '$lib/components/app/page-header-heading.svelte';
+  import PageHeader from '$lib/components/app/page-header.svelte';
   import { allParticles } from '$lib/registry/registry-particles';
   import ParticleCard from '../../particles/particle-card.svelte';
   import type { PageData } from './$types';

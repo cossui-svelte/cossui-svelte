@@ -210,5 +210,5 @@
     </InputGroup>
   </div>
 
-  <Button class="w-full" variant="outline"> Show {countItemsInRange()} items </Button>
+  <Button class="w-full" variant="outline">Show {countItemsInRange()} items</Button>
 </div>

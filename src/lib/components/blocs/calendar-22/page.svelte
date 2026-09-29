@@ -29,8 +29,8 @@
         bind:value
         captionLayout="dropdown"
         onValueChange={() => {
-    open = false;
-  }}
+          open = false;
+        }}
         maxValue={today(getLocalTimeZone())}
       />
     </PopoverPopup>

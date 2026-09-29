@@ -34,9 +34,7 @@
         size="lg"
         class="data-popup-open:bg-sidebar-accent data-popup-open:text-sidebar-accent-foreground"
       >
-        {#snippet child({
-    props
-  })}
+        {#snippet child({ props })}
           <MenuTrigger {...props}>
             <Avatar class="size-8 rounded-lg">
               <AvatarImage src={user.avatar} alt={user.name} />

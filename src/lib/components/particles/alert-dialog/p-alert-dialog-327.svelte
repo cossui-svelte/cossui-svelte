@@ -72,7 +72,7 @@
       </div>
       <Button class="w-full">Send invites</Button>
 
-      <hr class="my-1 border-t">
+      <hr class="my-1 border-t" />
 
       <div class="flex flex-col gap-2">
         <Label for={id}>Invite via magic link</Label>
@@ -87,12 +87,18 @@
                 onclick={handleCopy}
               >
                 <div
-                  class={cn('transition-all', copied ? 'scale-100 opacity-100' : 'scale-0 opacity-0')}
+                  class={cn(
+                    'transition-all',
+                    copied ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
+                  )}
                 >
                   <CheckIcon aria-hidden="true" class="stroke-emerald-500" size={16} />
                 </div>
                 <div
-                  class={cn('absolute transition-all', copied ? 'scale-0 opacity-0' : 'scale-100 opacity-100')}
+                  class={cn(
+                    'absolute transition-all',
+                    copied ? 'scale-0 opacity-0' : 'scale-100 opacity-100'
+                  )}
                 >
                   <CopyIcon aria-hidden="true" size={16} />
                 </div>

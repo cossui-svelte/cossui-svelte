@@ -1,11 +1,11 @@
 <script lang="ts">
+  import { resolve } from '$app/paths';
   import Menu from '@lucide/svelte/icons/menu';
   import { Badge } from '$lib/components/ui/badge';
   import { buttonVariants } from '$lib/components/ui/button';
   import { Drawer, DrawerPanel, DrawerPopup, DrawerTrigger } from '$lib/components/ui/drawer';
   import type { FolderNode, NavTree } from '$lib/docs';
   import { cn } from '$lib/utils';
-  import { resolve } from '$app/paths';
 
   interface Props {
     class?: string;
@@ -25,7 +25,11 @@
 
 <Drawer bind:open position="left">
   <DrawerTrigger
-    class={cn(buttonVariants({ size: 'icon', variant: 'ghost' }), '-ms-1.5 relative size-8', className)}
+    class={cn(
+      buttonVariants({ size: 'icon', variant: 'ghost' }),
+      '-ms-1.5 relative size-8',
+      className
+    )}
   >
     <Menu class="size-5" strokeWidth={2} />
     <span class="sr-only">Toggle Menu</span>
@@ -51,7 +55,7 @@
             >
               {item.label}
             </a>
-          <!-- eslint-enable svelte/no-navigation-without-resolve -->
+            <!-- eslint-enable svelte/no-navigation-without-resolve -->
           {/each}
         </div>
       </div>
@@ -75,7 +79,7 @@
                           <Badge variant="info">New</Badge>
                         {/if}
                       </a>
-                    <!-- eslint-enable svelte/no-navigation-without-resolve -->
+                      <!-- eslint-enable svelte/no-navigation-without-resolve -->
                     {/if}
                   {/each}
                 </div>

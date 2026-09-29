@@ -40,9 +40,7 @@
       <Collapsible open={item.isActive} class="group/collapsible">
         <SidebarMenuItem>
           <SidebarMenuButton tooltipContent={item.title}>
-            {#snippet child({
-    props
-  })}
+            {#snippet child({ props })}
               <CollapsibleTrigger {...props}>
                 {#if item.icon}
                   <item.icon />
@@ -59,9 +57,7 @@
               {#each item.items ?? [] as subItem (subItem.title)}
                 <SidebarMenuSubItem>
                   <SidebarMenuSubButton>
-                    {#snippet child({
-    props
-  })}
+                    {#snippet child({ props })}
                       <a href={subItem.url} {...props}>
                         <span>{subItem.title}</span>
                       </a>

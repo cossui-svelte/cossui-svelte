@@ -168,9 +168,7 @@
           {#each data.navMain as item (item.title)}
             <SidebarMenuItem>
               <SidebarMenuButton class="font-medium">
-                {#snippet child({
-    props
-  })}
+                {#snippet child({ props })}
                   <a href={item.url} {...props}>
                     {item.title}
                   </a>

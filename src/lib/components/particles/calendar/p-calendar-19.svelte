@@ -42,10 +42,10 @@
     class="max-sm:pb-3 sm:pe-5"
     {isDateDisabled}
     onValueChange={(newDate) => {
-    if (newDate) {
-      time = [];
-    }
-  }}
+      if (newDate) {
+        time = [];
+      }
+    }}
     mode="single"
   />
   <div class="relative w-full max-sm:h-48 sm:w-40">

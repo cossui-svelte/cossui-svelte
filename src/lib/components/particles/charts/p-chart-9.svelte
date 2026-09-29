@@ -26,22 +26,22 @@
     x="month"
     axis="x"
     series={[
-    { key: 'desktop', label: 'Desktop', color: chartConfig.desktop.color },
-    { key: 'mobile', label: 'Mobile', color: chartConfig.mobile.color }
-  ]}
+      { key: 'desktop', label: 'Desktop', color: chartConfig.desktop.color },
+      { key: 'mobile', label: 'Mobile', color: chartConfig.mobile.color }
+    ]}
     x1Scale={scaleBand().paddingInner(0.2)}
     seriesLayout="group"
     rule={false}
     props={{
-    bars: {
-      stroke: 'none',
-      strokeWidth: 0,
-      rounded: 'all',
-      motion: { type: 'tween', duration: 500, easing: cubicInOut }
-    },
-    highlight: { area: { fill: 'none' } },
-    xAxis: { format: (d) => d.slice(0, 3) }
-  }}
+      bars: {
+        stroke: 'none',
+        strokeWidth: 0,
+        rounded: 'all',
+        motion: { type: 'tween', duration: 500, easing: cubicInOut }
+      },
+      highlight: { area: { fill: 'none' } },
+      xAxis: { format: (d) => d.slice(0, 3) }
+    }}
   >
     {#snippet tooltip()}
       <ChartTooltip indicator="dashed" />

@@ -29,13 +29,7 @@
   data-slot="menu-checkbox-item"
   {...restProps}
 >
-  {#snippet children({
-    checked
-  }: {
-    checked: boolean;
-    highlighted: boolean;
-    disabled: boolean;
-  })}
+  {#snippet children({ checked }: { checked: boolean; highlighted: boolean; disabled: boolean })}
     {#if variant === 'switch'}
       <span class="wrap-anywhere col-start-1 min-w-0">{@render userContent?.()}</span>
       <span

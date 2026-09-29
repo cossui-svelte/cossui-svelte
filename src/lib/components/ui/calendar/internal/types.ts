@@ -146,7 +146,7 @@ export type CalendarPrevButtonProps = CalendarPrevButtonPropsWithoutHTML &
   Omit<HTMLButtonAttributes, keyof CalendarPrevButtonPropsWithoutHTML>;
 
 export type CalendarMonthSelectSnippetProps = {
-  monthItems: Array<{ value: number; label: string }>;
+  monthItems: { value: number; label: string }[];
   selectedMonthItem: { value: number; label: string };
 };
 export type CalendarMonthSelectPropsWithoutHTML = WithChild<
@@ -160,7 +160,7 @@ export type CalendarMonthSelectProps = CalendarMonthSelectPropsWithoutHTML &
   Omit<HTMLSelectAttributes, keyof CalendarMonthSelectPropsWithoutHTML>;
 
 export type CalendarYearSelectSnippetProps = {
-  yearItems: Array<{ value: number; label: string }>;
+  yearItems: { value: number; label: string }[];
   selectedYearItem: { value: number; label: string };
 };
 export type CalendarYearSelectPropsWithoutHTML = WithChild<

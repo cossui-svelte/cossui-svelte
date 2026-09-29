@@ -20,14 +20,10 @@
 </script>
 
 <Calendar bind:value fixedWeeks mode="single">
-  {#snippet day({
-    day: date
-  })}
+  {#snippet day({ day: date })}
     {@const isWeekStart = getDayOfWeek(date, 'en-US') === 0}
     <Day class="relative">
-      {#snippet children({
-    day: dayLabel
-  })}
+      {#snippet children({ day: dayLabel })}
         {dayLabel}
         {#if isWeekStart}
           <span

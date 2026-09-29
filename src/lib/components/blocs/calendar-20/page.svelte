@@ -49,10 +49,10 @@
         Your meeting is booked for
         <span class="font-medium">
           {value.toDate(getLocalTimeZone()).toLocaleDateString('en-US', {
-    weekday: 'long',
-    day: 'numeric',
-    month: 'short'
-  })}
+            weekday: 'long',
+            day: 'numeric',
+            month: 'short'
+          })}
         </span>
         at <span class="font-medium">{selectedTime}</span>.
       {:else}

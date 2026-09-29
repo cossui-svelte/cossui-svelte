@@ -106,9 +106,9 @@
   <div
     bind:this={ref}
     class={cn(
-    'border-border/50 bg-background grid min-w-[9rem] items-start gap-1.5 rounded-lg border px-2.5 py-1.5 text-xs shadow-xl',
-    className
-  )}
+      'border-border/50 bg-background grid min-w-[9rem] items-start gap-1.5 rounded-lg border px-2.5 py-1.5 text-xs shadow-xl',
+      className
+    )}
     {...restProps}
   >
     {#if !nestLabel}
@@ -117,22 +117,27 @@
     <div class="grid gap-1.5">
       {#each visibleSeries as item, i (item.key + i)}
         {@const key = `${nameKey || item.key || item.label || 'value'}`}
-        {@const itemConfig = getPayloadConfigFromPayload(chart.config, item, key, chartCtx.tooltip.data)}
+        {@const itemConfig = getPayloadConfigFromPayload(
+          chart.config,
+          item,
+          key,
+          chartCtx.tooltip.data
+        )}
         {@const indicatorColor = color || item.config?.color || item.color}
         <div
           class={cn(
-    '[&>svg]:text-muted-foreground flex w-full flex-wrap items-stretch gap-2 [&>svg]:size-2.5',
-    indicator === 'dot' && 'items-center'
-  )}
+            '[&>svg]:text-muted-foreground flex w-full flex-wrap items-stretch gap-2 [&>svg]:size-2.5',
+            indicator === 'dot' && 'items-center'
+          )}
         >
           {#if formatter && item.value !== undefined && item.label}
             {@render formatter({
-    index: i,
-    item,
-    name: item.label,
-    payload: visibleSeries,
-    value: item.value
-  })}
+              index: i,
+              item,
+              name: item.label,
+              payload: visibleSeries,
+              value: item.value
+            })}
           {:else}
             {#if itemConfig?.icon}
               <itemConfig.icon />
@@ -140,15 +145,18 @@
               <div
                 style="--color-bg: {indicatorColor}; --color-border: {indicatorColor};"
                 class={cn('shrink-0 rounded-[2px] border-(--color-border) bg-(--color-bg)', {
-    'h-full w-1': indicator === 'line',
-    'my-0.5': nestLabel && indicator === 'dashed',
-    'size-2.5': indicator === 'dot',
-    'w-0 border-[1.5px] border-dashed bg-transparent': indicator === 'dashed'
-  })}
+                  'h-full w-1': indicator === 'line',
+                  'my-0.5': nestLabel && indicator === 'dashed',
+                  'size-2.5': indicator === 'dot',
+                  'w-0 border-[1.5px] border-dashed bg-transparent': indicator === 'dashed'
+                })}
               ></div>
             {/if}
             <div
-              class={cn('flex flex-1 shrink-0 justify-between leading-none', nestLabel ? 'items-end' : 'items-center')}
+              class={cn(
+                'flex flex-1 shrink-0 justify-between leading-none',
+                nestLabel ? 'items-end' : 'items-center'
+              )}
             >
               <div class="grid gap-1.5">
                 {#if nestLabel}

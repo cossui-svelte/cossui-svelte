@@ -21,14 +21,14 @@
     maxValue={300}
     cornerRadius={20}
     series={chartData.map((d) => ({
-    color: d.color,
-    data: [d],
-    key: d.browser
-  }))}
+      color: d.color,
+      data: [d],
+      key: d.browser
+    }))}
     props={{
-    arc: { motion: 'tween', track: { fill: 'var(--muted)' } },
-    tooltip: { context: { hideDelay: 350 } }
-  }}
+      arc: { motion: 'tween', track: { fill: 'var(--muted)' } },
+      tooltip: { context: { hideDelay: 350 } }
+    }}
     tooltipContext={false}
   >
     {#snippet belowMarks()}

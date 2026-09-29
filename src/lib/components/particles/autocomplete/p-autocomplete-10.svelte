@@ -73,15 +73,11 @@
     <AutocompleteEmpty>No tags found.</AutocompleteEmpty>
     <AutocompleteList>
       <AutocompleteCollection>
-        {#snippet children(
-    group: (typeof groupedTags)[number]
-  )}
+        {#snippet children(group: (typeof groupedTags)[number])}
           <AutocompleteGroup>
             <AutocompleteGroupLabel>{group.value}</AutocompleteGroupLabel>
             <AutocompleteCollection>
-              {#snippet children(
-    tag: Tag
-  )}
+              {#snippet children(tag: Tag)}
                 <AutocompleteItem value={tag}>{tag.label}</AutocompleteItem>
               {/snippet}
             </AutocompleteCollection>

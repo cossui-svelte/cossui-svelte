@@ -19,9 +19,8 @@
   <MenuPopup align="start">
     <MenuItem
       onclick={() => {
-    dialogOpen = true;
-  }}
-      >Open dialog</MenuItem
+        dialogOpen = true;
+      }}>Open dialog</MenuItem
     >
   </MenuPopup>
 </Menu>

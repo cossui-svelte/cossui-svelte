@@ -1,4 +1,4 @@
-import { defineConfig, Config } from 'jsrepo';
+import { defineConfig } from 'jsrepo';
 import shadcn from "@jsrepo/shadcn"; 
 
 import { componentDependenciesOutput } from './scripts/jsrepo-component-dependencies-output.ts';

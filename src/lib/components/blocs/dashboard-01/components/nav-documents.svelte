@@ -26,9 +26,7 @@
     {#each items as item (item.name)}
       <SidebarMenuItem>
         <SidebarMenuButton>
-          {#snippet child({
-    props
-  })}
+          {#snippet child({ props })}
             <a {...props} href={item.url}>
               <item.icon />
               <span>{item.name}</span>
@@ -37,9 +35,7 @@
         </SidebarMenuButton>
         <Menu>
           <SidebarMenuAction showOnHover class="rounded-sm data-popup-open:bg-accent">
-            {#snippet child({
-    props
-  })}
+            {#snippet child({ props })}
               <MenuTrigger {...props}>
                 <DotsIcon />
                 <span class="sr-only">More</span>

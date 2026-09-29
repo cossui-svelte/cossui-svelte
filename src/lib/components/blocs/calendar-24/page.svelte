@@ -31,8 +31,8 @@
           mode="single"
           bind:value
           onValueChange={() => {
-    open = false;
-  }}
+            open = false;
+          }}
           captionLayout="dropdown"
         />
       </PopoverPopup>

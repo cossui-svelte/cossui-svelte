@@ -66,6 +66,6 @@
   {@render children?.(rootState.snippetProps)}
 
   <div {...mergedInputWrapperProps}>
-    <input {...mergedInputProps}>
+    <input {...mergedInputProps} />
   </div>
 </div>

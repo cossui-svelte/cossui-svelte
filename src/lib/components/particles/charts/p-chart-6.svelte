@@ -27,32 +27,32 @@
     axis="x"
     xScale={scaleUtc()}
     series={[
-    {
-      key: 'desktop',
-      label: 'Desktop',
-      color: chartConfig.desktop.color
-    }
-  ]}
-    props={{
-    spline: { curve: curveNatural, motion: 'tween', strokeWidth: 2 },
-    highlight: {
-      points: {
-        motion: 'none',
-        r: 6
+      {
+        key: 'desktop',
+        label: 'Desktop',
+        color: chartConfig.desktop.color
       }
-    },
-    xAxis: {
-      format: (v: Date) => v.toLocaleDateString('en-US', { month: 'short' })
-    }
-  }}
+    ]}
+    props={{
+      spline: { curve: curveNatural, motion: 'tween', strokeWidth: 2 },
+      highlight: {
+        points: {
+          motion: 'none',
+          r: 6
+        }
+      },
+      xAxis: {
+        format: (v: Date) => v.toLocaleDateString('en-US', { month: 'short' })
+      }
+    }}
   >
     {#snippet tooltip()}
       <ChartTooltip
         labelFormatter={(v) => {
-    return (v as Date).toLocaleDateString('en-US', {
-      month: 'long'
-    });
-  }}
+          return (v as Date).toLocaleDateString('en-US', {
+            month: 'long'
+          });
+        }}
         indicator="line"
       />
     {/snippet}

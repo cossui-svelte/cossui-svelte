@@ -12,11 +12,10 @@
         href="https://github.com/max-got/originui-svelte"
         class="text-foreground underline underline-offset-4 hover:text-foreground/70 transition-colors"
         target="_blank"
-        rel="noopener noreferrer"
-        >Svelte port of Origin UI</a
+        rel="noopener noreferrer">Svelte port of Origin UI</a
       >
-      and liked its look and feel. Later, I learned that Origin UI was acquired by coss.com and that
-      an updated component library existed, but only for React.
+      and liked its look and feel. Later, I learned that Origin UI was acquired by coss.com and that an
+      updated component library existed, but only for React.
     </p>
 
     <p class="text-base/7 text-muted-foreground">
@@ -49,8 +48,7 @@
           href="https://cossui.com/"
           class="text-foreground underline underline-offset-4 hover:text-foreground/70 transition-colors"
           target="_blank"
-          rel="noopener noreferrer"
-          >Coss UI</a
+          rel="noopener noreferrer">Coss UI</a
         >
         - The original project that this Svelte version is copied from
       </li>
@@ -59,8 +57,7 @@
           href="https://shardsui.com/"
           class="text-foreground underline underline-offset-4 hover:text-foreground/70 transition-colors"
           target="_blank"
-          rel="noopener noreferrer"
-          >Shards UI</a
+          rel="noopener noreferrer">Shards UI</a
         >
         - A Svelte port of Base UI
       </li>
@@ -69,8 +66,7 @@
           href="https://tailwindcss.com"
           class="text-foreground underline underline-offset-4 hover:text-foreground/70 transition-colors"
           target="_blank"
-          rel="noopener noreferrer"
-          >TailwindCSS v4</a
+          rel="noopener noreferrer">TailwindCSS v4</a
         >
         - An easy to use CSS framework with beautiful UI
       </li>
@@ -79,8 +75,7 @@
           href="https://github.com/Aejkatappaja/phantom-ui"
           class="text-foreground underline underline-offset-4 hover:text-foreground/70 transition-colors"
           target="_blank"
-          rel="noopener noreferrer"
-          >Phantom-UI</a
+          rel="noopener noreferrer">Phantom-UI</a
         >
         - An elegant structure-aware skeleton loader
       </li>
@@ -89,8 +84,7 @@
           href="https://github.com/gurbaaz27/shadcn-google-maps"
           class="text-foreground underline underline-offset-4 hover:text-foreground/70 transition-colors"
           target="_blank"
-          rel="noopener noreferrer"
-          >Places autocomplete</a
+          rel="noopener noreferrer">Places autocomplete</a
         >
         - Address validation based on gmap
       </li>
@@ -121,8 +115,7 @@
           href="https://svelte.dev"
           class="text-foreground underline underline-offset-4 hover:text-foreground/70 transition-colors"
           target="_blank"
-          rel="noopener noreferrer"
-          >Svelte/SvelteKit</a
+          rel="noopener noreferrer">Svelte/SvelteKit</a
         >
         - A quite intuitive web framework
       </li>
@@ -139,8 +132,7 @@
           href="https://www.shadcn-svelte.com/"
           class="text-foreground underline underline-offset-4 hover:text-foreground/70 transition-colors"
           target="_blank"
-          rel="noopener noreferrer"
-          >ShadCN Svelte</a
+          rel="noopener noreferrer">ShadCN Svelte</a
         >
       </li>
       <li>
@@ -148,8 +140,7 @@
           href="https://bits-ui.com"
           class="text-foreground underline underline-offset-4 hover:text-foreground/70 transition-colors"
           target="_blank"
-          rel="noopener noreferrer"
-          >Bits UI</a
+          rel="noopener noreferrer">Bits UI</a
         >
         - The foundational headless UI library
       </li>
@@ -158,8 +149,7 @@
           href="https://github.com/max-got/originui-svelte"
           class="text-foreground underline underline-offset-4 hover:text-foreground/70 transition-colors"
           target="_blank"
-          rel="noopener noreferrer"
-          >Unofficial port of Origin UI</a
+          rel="noopener noreferrer">Unofficial port of Origin UI</a
         >
       </li>
     </ul>

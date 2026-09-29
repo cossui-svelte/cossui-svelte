@@ -41,9 +41,9 @@
       <Button
         class="w-full justify-start"
         onclick={() => {
-    date = { end: todayValue, start: todayValue };
-    placeholder = todayValue;
-  }}
+          date = { end: todayValue, start: todayValue };
+          placeholder = todayValue;
+        }}
         size="sm"
         variant="ghost"
       >
@@ -52,9 +52,9 @@
       <Button
         class="w-full justify-start"
         onclick={() => {
-    date = yesterday;
-    placeholder = yesterday.end;
-  }}
+          date = yesterday;
+          placeholder = yesterday.end;
+        }}
         size="sm"
         variant="ghost"
       >
@@ -63,9 +63,9 @@
       <Button
         class="w-full justify-start"
         onclick={() => {
-    date = last7Days;
-    placeholder = last7Days.end;
-  }}
+          date = last7Days;
+          placeholder = last7Days.end;
+        }}
         size="sm"
         variant="ghost"
       >
@@ -74,9 +74,9 @@
       <Button
         class="w-full justify-start"
         onclick={() => {
-    date = last30Days;
-    placeholder = last30Days.end;
-  }}
+          date = last30Days;
+          placeholder = last30Days.end;
+        }}
         size="sm"
         variant="ghost"
       >
@@ -85,9 +85,9 @@
       <Button
         class="w-full justify-start"
         onclick={() => {
-    date = monthToDate;
-    placeholder = monthToDate.end;
-  }}
+          date = monthToDate;
+          placeholder = monthToDate.end;
+        }}
         size="sm"
         variant="ghost"
       >
@@ -96,9 +96,9 @@
       <Button
         class="w-full justify-start"
         onclick={() => {
-    date = lastMonth;
-    placeholder = lastMonth.end;
-  }}
+          date = lastMonth;
+          placeholder = lastMonth.end;
+        }}
         size="sm"
         variant="ghost"
       >
@@ -107,9 +107,9 @@
       <Button
         class="w-full justify-start"
         onclick={() => {
-    date = yearToDate;
-    placeholder = yearToDate.end;
-  }}
+          date = yearToDate;
+          placeholder = yearToDate.end;
+        }}
         size="sm"
         variant="ghost"
       >
@@ -118,9 +118,9 @@
       <Button
         class="w-full justify-start"
         onclick={() => {
-    date = lastYear;
-    placeholder = lastYear.end;
-  }}
+          date = lastYear;
+          placeholder = lastYear.end;
+        }}
         size="sm"
         variant="ghost"
       >

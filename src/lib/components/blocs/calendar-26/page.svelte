@@ -27,12 +27,12 @@
           class={cn(buttonVariants({ variant: 'outline' }), 'w-full justify-between font-normal')}
         >
           {valueFrom
-    ? valueFrom.toDate(getLocalTimeZone()).toLocaleDateString('en-US', {
-        day: '2-digit',
-        month: 'short',
-        year: 'numeric'
-      })
-    : 'Select date'}
+            ? valueFrom.toDate(getLocalTimeZone()).toLocaleDateString('en-US', {
+                day: '2-digit',
+                month: 'short',
+                year: 'numeric'
+              })
+            : 'Select date'}
           <ChevronDownIcon />
         </PopoverTrigger>
         <PopoverPopup class="w-auto overflow-hidden p-0" align="start">
@@ -41,8 +41,8 @@
             bind:value={valueFrom}
             captionLayout="dropdown"
             onValueChange={() => {
-    openFrom = false;
-  }}
+              openFrom = false;
+            }}
           />
         </PopoverPopup>
       </Popover>
@@ -67,12 +67,12 @@
           class={cn(buttonVariants({ variant: 'outline' }), 'w-full justify-between font-normal')}
         >
           {valueTo
-    ? valueTo.toDate(getLocalTimeZone()).toLocaleDateString('en-US', {
-        day: '2-digit',
-        month: 'short',
-        year: 'numeric'
-      })
-    : 'Select date'}
+            ? valueTo.toDate(getLocalTimeZone()).toLocaleDateString('en-US', {
+                day: '2-digit',
+                month: 'short',
+                year: 'numeric'
+              })
+            : 'Select date'}
           <ChevronDownIcon />
         </PopoverTrigger>
         <PopoverPopup class="w-auto overflow-hidden p-0" align="start">
@@ -81,11 +81,11 @@
             bind:value={valueTo}
             captionLayout="dropdown"
             onValueChange={() => {
-    openTo = false;
-  }}
+              openTo = false;
+            }}
             isDateDisabled={(date) => {
-    return (valueFrom && date.compare(valueFrom) < 0) ?? false;
-  }}
+              return (valueFrom && date.compare(valueFrom) < 0) ?? false;
+            }}
           />
         </PopoverPopup>
       </Popover>

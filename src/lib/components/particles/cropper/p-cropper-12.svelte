@@ -144,7 +144,7 @@
         alt="Selected crop preview"
         class="size-9 shrink-0 rounded-md border object-cover"
         src={selectedImageUrl}
-      >
+      />
     {/if}
     <Button class="rounded-full" disabled={!crop} onclick={handleSelect}>Select</Button>
   </div>

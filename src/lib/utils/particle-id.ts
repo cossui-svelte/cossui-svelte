@@ -5,12 +5,9 @@ export function idToName(id: string): string {
   const match = id.match(/^p-(.*)-(\d+)$/);
   if (!match) return id;
   const [, category, num] = match;
-  return (
-    category
-      .split('-')
-      .map((w, i) => (i === 0 ? w[0].toUpperCase() + w.slice(1) : w))
-      .join(' ') +
-    ' ' +
-    num
-  );
+  const name = category
+    .split('-')
+    .map((w, i) => (i === 0 ? w[0].toUpperCase() + w.slice(1) : w))
+    .join(' ');
+  return `${name} ${num}`;
 }

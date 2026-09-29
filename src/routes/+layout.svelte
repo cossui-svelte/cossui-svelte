@@ -1,15 +1,14 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
-  import type { LayoutData } from './$types';
-
+  import { page } from '$app/state';
+  import { ModeWatcher } from 'mode-watcher';
   import '../app.css';
 
-  import { ModeWatcher } from 'mode-watcher';
+  import type { Snippet } from 'svelte';
   import { AnchoredToastProvider, ToastProvider } from '$lib/components/ui/toast';
   import SiteHeader from '$lib/components/app/app-site-header.svelte';
   import SeoHead from '$lib/components/app/seo-head.svelte';
   import SiteFooter from '$lib/components/app/site-footer.svelte';
-  import { page } from '$app/state';
+  import type { LayoutData } from './$types';
 
   const DEFAULT_SEO = {
     description:

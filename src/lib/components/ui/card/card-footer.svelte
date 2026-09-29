@@ -12,7 +12,10 @@
 
 <div
   bind:this={ref}
-  class={cn('flex items-center p-6 in-[[data-slot=card]:has(>[data-slot=card-panel])]:pt-4', className)}
+  class={cn(
+    'flex items-center p-6 in-[[data-slot=card]:has(>[data-slot=card-panel])]:pt-4',
+    className
+  )}
   data-slot="card-footer"
   {...restProps}
 >

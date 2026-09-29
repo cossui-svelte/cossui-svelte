@@ -43,9 +43,7 @@
               {#each projects as project (project.name)}
                 <SidebarMenuItem>
                   <SidebarMenuButton class="group-has-data-popup-open/menu-item:bg-sidebar-accent">
-                    {#snippet child({
-    props
-  })}
+                    {#snippet child({ props })}
                       <a href={project.url} {...props}>
                         <project.icon />
                         <span>{project.name}</span>
@@ -54,9 +52,7 @@
                   </SidebarMenuButton>
                   <Menu>
                     <SidebarMenuAction>
-                      {#snippet child({
-    props
-  })}
+                      {#snippet child({ props })}
                         <MenuTrigger {...props}>
                           <EllipsisIcon />
                           <span class="sr-only">More</span>

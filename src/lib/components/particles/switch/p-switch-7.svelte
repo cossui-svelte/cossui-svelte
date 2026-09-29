@@ -185,8 +185,8 @@
                     autoHighlight
                     value={range.start}
                     onValueChange={(v) => {
-    if (typeof v === 'string') updateStart(day, range.id, v);
-  }}
+                      if (typeof v === 'string') updateStart(day, range.id, v);
+                    }}
                   >
                     <ComboboxTrigger
                       aria-label={`${day} start time`}
@@ -222,8 +222,8 @@
                     autoHighlight
                     value={range.end}
                     onValueChange={(v) => {
-    if (typeof v === 'string') updateEnd(day, range.id, v);
-  }}
+                      if (typeof v === 'string') updateEnd(day, range.id, v);
+                    }}
                   >
                     <ComboboxTrigger
                       aria-label={`${day} end time`}
@@ -301,8 +301,8 @@
                       aria-label={`Copy ${day} times to`}
                       value={copySelectedDays[day]}
                       onValueChange={(v) => {
-    copySelectedDays[day] = v;
-  }}
+                        copySelectedDays[day] = v;
+                      }}
                     >
                       {#each days.filter((target) => target !== day) as target (target)}
                         <Label>

@@ -35,9 +35,7 @@
           <SidebarMenuButton
             class="data-popup-open:bg-sidebar-accent data-popup-open:text-sidebar-accent-foreground"
           >
-            {#snippet child({
-    props
-  })}
+            {#snippet child({ props })}
               <MenuTrigger {...props}>
                 {item.title}
                 <EllipsisIcon class="ms-auto" />

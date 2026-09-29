@@ -1,9 +1,9 @@
 <script lang="ts">
   import { DateFormatter, type DateValue, getLocalTimeZone } from '@internationalized/date';
   import type { ComponentProps } from 'svelte';
-  import type Calendar from './calendar.svelte';
   import CalendarMonthSelect from './calendar-month-select.svelte';
   import CalendarYearSelect from './calendar-year-select.svelte';
+  import type Calendar from './calendar.svelte';
 
   let {
     captionLayout,
@@ -46,11 +46,11 @@
     {monthFormat}
     value={month.month}
     onchange={(e) => {
-    if (!placeholder) return;
-    const v = Number.parseInt(e.currentTarget.value, 10);
-    const newPlaceholder = placeholder.set({ month: v });
-    placeholder = newPlaceholder.subtract({ months: monthIndex });
-  }}
+      if (!placeholder) return;
+      const v = Number.parseInt(e.currentTarget.value, 10);
+      const newPlaceholder = placeholder.set({ month: v });
+      placeholder = newPlaceholder.subtract({ months: monthIndex });
+    }}
   />
 {/snippet}
 

@@ -29,9 +29,7 @@
   data-slot="select-item"
   {...restProps}
 >
-  {#snippet children(
-    state
-  )}
+  {#snippet children(state)}
     <span class="col-start-1 flex items-center justify-center">
       <SelectPrimitive.ItemIndicator>
         <Check size={24} />

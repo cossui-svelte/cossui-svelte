@@ -2,6 +2,8 @@ const config = {
   compilers: {
     svelte: (text: string) => [...text.matchAll(/import[^;]+/gu)].join('\n')
   },
+  // oxvelte isn't published to npm; it's installed with `cargo install`.
+  ignoreBinaries: ['oxvelte'],
   ignoreIssues: {
     'src/lib/components/ui/**': ['exports', 'types', 'files']
   },

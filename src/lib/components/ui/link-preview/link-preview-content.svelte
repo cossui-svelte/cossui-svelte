@@ -32,9 +32,9 @@
     <PreviewCardPrimitive.Popup
       bind:ref
       class={cn(
-    'origin-(--transform-origin) z-50 w-64 rounded-lg border border-border bg-popover p-4 text-popover-foreground shadow-black/5 shadow-lg outline-hidden transition-[scale,opacity] duration-150 ease-out data-starting-style:scale-98 data-starting-style:opacity-0 data-ending-style:scale-98 data-ending-style:opacity-0',
-    className
-  )}
+        'origin-(--transform-origin) z-50 w-64 rounded-lg border border-border bg-popover p-4 text-popover-foreground shadow-black/5 shadow-lg outline-hidden transition-[scale,opacity] duration-150 ease-out data-starting-style:scale-98 data-starting-style:opacity-0 data-ending-style:scale-98 data-ending-style:opacity-0',
+        className
+      )}
       data-slot="link-preview-content"
       {...restProps}
     >

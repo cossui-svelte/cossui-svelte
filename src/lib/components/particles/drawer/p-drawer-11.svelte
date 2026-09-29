@@ -25,8 +25,8 @@
           href="#"
           variant="ghost"
           onclick={() => {
-    open = false;
-  }}
+            open = false;
+          }}
         >
           Home
         </Button>
@@ -35,8 +35,8 @@
           href="#"
           variant="ghost"
           onclick={() => {
-    open = false;
-  }}
+            open = false;
+          }}
         >
           Profile
         </Button>
@@ -45,8 +45,8 @@
           href="#"
           variant="ghost"
           onclick={() => {
-    open = false;
-  }}
+            open = false;
+          }}
         >
           Settings
         </Button>
@@ -55,8 +55,8 @@
           href="#"
           variant="ghost"
           onclick={() => {
-    open = false;
-  }}
+            open = false;
+          }}
         >
           Sign out
         </Button>

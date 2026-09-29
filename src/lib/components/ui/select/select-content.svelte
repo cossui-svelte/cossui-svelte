@@ -48,9 +48,9 @@
       <SelectScrollUpButton />
       <div
         class={cn(
-    'relative max-h-[min(24rem,var(--available-height))] min-w-(--anchor-width,8rem) overflow-clip rounded-lg border border-input bg-popover shadow-black/5 shadow-lg **:[[role=group]]:py-1',
-    className
-  )}
+          'relative max-h-[min(24rem,var(--available-height))] min-w-(--anchor-width,8rem) overflow-clip rounded-lg border border-input bg-popover shadow-black/5 shadow-lg **:[[role=group]]:py-1',
+          className
+        )}
       >
         <SelectPrimitive.List
           class="max-h-[min(24rem,var(--available-height))] overflow-y-auto p-1"

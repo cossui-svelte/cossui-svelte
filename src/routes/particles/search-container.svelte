@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { allParticles } from '$lib/registry/registry-particles';
-  import SearchField, { type SearchItem } from './search-field.svelte';
   import { browser } from '$app/env';
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
+  import { allParticles } from '$lib/registry/registry-particles';
+  import SearchField, { type SearchItem } from './search-field.svelte';
 
   const uniqueCategories = Array.from(
     // new Set(particles.flatMap((p) => p.categories ?? [])),

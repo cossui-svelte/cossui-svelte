@@ -41,26 +41,29 @@
       bind:value={
         () => inputValue,
         (v) => {
-    inputValue = v;
-    const date = parseDate(v);
-    if (date) {
-      value = new CalendarDate(date.getFullYear(), date.getMonth() + 1, date.getDate());
-    }
-  }
+          inputValue = v;
+          const date = parseDate(v);
+          if (date) {
+            value = new CalendarDate(date.getFullYear(), date.getMonth() + 1, date.getDate());
+          }
+        }
       }
       placeholder="Tomorrow or next week"
       class="bg-background pe-10"
       onkeydown={(e) => {
-    if (e.key === 'ArrowDown') {
-      e.preventDefault();
-      open = true;
-    }
-  }}
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          open = true;
+        }
+      }}
     />
     <Popover bind:open>
       <PopoverTrigger
         id="{id}-date-picker"
-        class={cn(buttonVariants({ variant: 'ghost' }), 'absolute end-2 top-1/2 size-6 -translate-y-1/2')}
+        class={cn(
+          buttonVariants({ variant: 'ghost' }),
+          'absolute end-2 top-1/2 size-6 -translate-y-1/2'
+        )}
       >
         <CalendarIcon class="size-3.5" />
         <span class="sr-only">Select date</span>
@@ -71,9 +74,9 @@
           bind:value
           captionLayout="dropdown"
           onValueChange={(v) => {
-    inputValue = formatDate(v);
-    open = false;
-  }}
+            inputValue = formatDate(v);
+            open = false;
+          }}
         />
       </PopoverPopup>
     </Popover>

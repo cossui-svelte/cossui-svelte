@@ -18,9 +18,7 @@
   data-slot="command-item"
   {...restProps}
 >
-  {#snippet children(
-    state
-  )}
+  {#snippet children(state)}
     {@render childrenProp?.(state)}
   {/snippet}
 </AutocompletePrimitive.Item>

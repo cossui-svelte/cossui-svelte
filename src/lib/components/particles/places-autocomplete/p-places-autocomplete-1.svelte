@@ -1,7 +1,7 @@
 <script lang="ts">
+  import { GOOGLE_MAPS_API_KEY } from '$app/env/public';
   import { PlacesAutocomplete, type SelectedPlace } from '$lib/components/ui/places-autocomplete';
   import { toastManager } from '$lib/components/ui/toast';
-  import { GOOGLE_MAPS_API_KEY } from '$app/env/public';
 
   const countryCode = 'us';
   let selected = $state<SelectedPlace | null>(null);
@@ -13,18 +13,20 @@
       // use your own Google Maps API key here, or set it in your environment variables as VITE_GOOGLE_MAPS_API_KEY
       apiKey={GOOGLE_MAPS_API_KEY}
       {countryCode}
-      placeholder={countryCode ? `Search addresses in ${countryCode.toUpperCase()}` : 'Start typing an address'}
+      placeholder={countryCode
+        ? `Search addresses in ${countryCode.toUpperCase()}`
+        : 'Start typing an address'}
       onPlaceSelect={(place) => {
-    selected = place;
-    toastManager.add({
-      description:
-        place.lat != null && place.lng != null
-          ? `${place.address} (${place.lat.toFixed(5)}, ${place.lng.toFixed(5)})`
-          : place.address,
-      title: 'Place selected',
-      type: 'success'
-    });
-  }}
+        selected = place;
+        toastManager.add({
+          description:
+            place.lat != null && place.lng != null
+              ? `${place.address} (${place.lat.toFixed(5)}, ${place.lng.toFixed(5)})`
+              : place.address,
+          title: 'Place selected',
+          type: 'success'
+        });
+      }}
     />
   </div>
   {#if selected}

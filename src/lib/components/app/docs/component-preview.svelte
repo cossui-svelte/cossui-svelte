@@ -25,9 +25,9 @@
     <TabsPanel value="preview">
       <div
         class={cn(
-    'flex min-h-56 items-center rounded-xl border p-8',
-    align === 'start' ? 'justify-start' : 'justify-center'
-  )}
+          'flex min-h-56 items-center rounded-xl border p-8',
+          align === 'start' ? 'justify-start' : 'justify-center'
+        )}
       >
         {#await particle.component()}
           <Spinner />

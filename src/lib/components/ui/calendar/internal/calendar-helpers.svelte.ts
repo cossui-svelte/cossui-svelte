@@ -1,13 +1,15 @@
-import { type DateValue, endOfMonth, isSameDay, isSameMonth, startOfMonth } from '@internationalized/date';
+import {
+  type DateValue,
+  endOfMonth,
+  isSameDay,
+  isSameMonth,
+  startOfMonth
+} from '@internationalized/date';
 import { watch } from 'runed';
 import { afterTick, getDocument, isHTMLElement, styleToString } from 'svelte-toolbelt';
 import type { ReadableBox, WritableBox } from 'svelte-toolbelt';
-import type { Month } from './types';
-import { boolToEmptyStrOrUndef, createBitsAttrs } from './attrs';
 import { chunk, isValidIndex } from './arrays';
-import { isBrowser } from './is';
-import { kbd } from './kbd';
-import type { Formatter } from './formatter';
+import { boolToEmptyStrOrUndef, createBitsAttrs } from './attrs';
 import {
   type DateValueType,
   getDaysInMonth,
@@ -20,6 +22,10 @@ import {
   parseStringToDateValue,
   toDate
 } from './date-utils';
+import type { Formatter } from './formatter';
+import { isBrowser } from './is';
+import { kbd } from './kbd';
+import type { Month } from './types';
 
 /**
  * Checks if a given node is a calendar cell element.
@@ -125,7 +131,9 @@ export function createMonths(
 export function getSelectableCells(calendarNode: HTMLElement | null): HTMLElement[] {
   if (!calendarNode) return [];
   const selectableSelector = `[data-bits-day]:not([data-disabled]):not([data-outside-visible-months])`;
-  return Array.from(calendarNode.querySelectorAll(selectableSelector)).filter((el) => isHTMLElement(el));
+  return Array.from(calendarNode.querySelectorAll(selectableSelector)).filter((el) =>
+    isHTMLElement(el)
+  );
 }
 
 /**
@@ -515,7 +523,9 @@ export function getCalendarElementProps({
 
 export function getFirstNonDisabledDateInView(calendarRef: HTMLElement): DateValue | undefined {
   if (!isBrowser) return;
-  const daysInView = Array.from(calendarRef.querySelectorAll('[data-bits-day]:not([aria-disabled=true])'));
+  const daysInView = Array.from(
+    calendarRef.querySelectorAll('[data-bits-day]:not([aria-disabled=true])')
+  );
   if (daysInView.length === 0) return;
   const element = daysInView[0];
   const value = element?.getAttribute('data-value');

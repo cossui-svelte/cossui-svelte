@@ -60,8 +60,8 @@
         </DialogTitle>
         <DialogDescription class="sm:text-center">
           {hasGuessed
-    ? 'Your code has been successfully verified.'
-    : `Check your email and enter the code - Try ${CORRECT_CODE}`}
+            ? 'Your code has been successfully verified.'
+            : `Check your email and enter the code - Try ${CORRECT_CODE}`}
         </DialogDescription>
       </DialogHeader>
     </div>
@@ -80,9 +80,7 @@
               onValueChange={handleValueChange}
               bind:value
             >
-              {#snippet children({
-    cells
-  })}
+              {#snippet children({ cells })}
                 {#each cells as cell, i (i)}
                   <OTPFieldInput aria-label={`Digit ${i + 1} of ${OTP_LENGTH}`} {cell} />
                 {/each}

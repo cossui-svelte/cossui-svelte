@@ -90,8 +90,8 @@
         <PopoverTrigger class={cn(buttonVariants({ variant: 'outline' }))}>
           <CalendarIcon />
           {value?.start && value?.end
-    ? `${value.start.toDate(getLocalTimeZone()).toLocaleDateString()} - ${value.end.toDate(getLocalTimeZone()).toLocaleDateString()}`
-    : 'June 2025'}
+            ? `${value.start.toDate(getLocalTimeZone()).toLocaleDateString()} - ${value.end.toDate(getLocalTimeZone()).toLocaleDateString()}`
+            : 'June 2025'}
         </PopoverTrigger>
         <PopoverPopup class="w-auto overflow-hidden p-0" align="end">
           <RangeCalendar
@@ -114,14 +114,14 @@
         axis="x"
         y="visitors"
         props={{
-    bars: {
-      stroke: 'none',
-      rounded: 'all',
-      radius: 4,
-      motion: { type: 'tween', duration: 500, easing: cubicInOut }
-    },
-    xAxis: { format: (d) => d.toLocaleDateString('en-US', { day: 'numeric' }) }
-  }}
+          bars: {
+            stroke: 'none',
+            rounded: 'all',
+            radius: 4,
+            motion: { type: 'tween', duration: 500, easing: cubicInOut }
+          },
+          xAxis: { format: (d) => d.toLocaleDateString('en-US', { day: 'numeric' }) }
+        }}
       >
         {#snippet belowMarks()}
           <Highlight area={{ class: 'fill-muted' }} />
@@ -131,11 +131,11 @@
             class="w-[150px]"
             nameKey="visitors"
             labelFormatter={(d) =>
-    (d as Date).toLocaleDateString('en-US', {
-      month: 'short',
-      day: 'numeric',
-      year: 'numeric'
-    })}
+              (d as Date).toLocaleDateString('en-US', {
+                month: 'short',
+                day: 'numeric',
+                year: 'numeric'
+              })}
           />
         {/snippet}
       </BarChart>

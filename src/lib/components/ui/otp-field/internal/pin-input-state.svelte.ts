@@ -1,7 +1,5 @@
 import { Previous, watch } from 'runed';
 import { onMount } from 'svelte';
-import { on } from 'svelte/events';
-import type { HTMLInputAttributes } from 'svelte/elements';
 import {
   attachRef,
   DOMContext,
@@ -9,8 +7,10 @@ import {
   type ReadableBox,
   type WritableBox
 } from 'svelte-toolbelt';
-import { usePasswordManagerBadge } from './use-password-manager.svelte';
+import type { HTMLInputAttributes } from 'svelte/elements';
+import { on } from 'svelte/events';
 import type { PinInputCell } from './types';
+import { usePasswordManagerBadge } from './use-password-manager.svelte';
 
 export const REGEXP_ONLY_DIGITS = '^\\d+$';
 export const REGEXP_ONLY_CHARS = '^[a-zA-Z]+$';
@@ -100,8 +100,7 @@ export class PinInputRootState {
 
     this.#initialLoad = {
       value: this.opts.value,
-      isIOS:
-        typeof window !== 'undefined' && window?.CSS?.supports('-webkit-touch-callout', 'none')
+      isIOS: typeof window !== 'undefined' && window?.CSS?.supports('-webkit-touch-callout', 'none')
     };
 
     this.#pwmb = usePasswordManagerBadge({
@@ -127,9 +126,14 @@ export class PinInputRootState {
         (input.selectionDirection as SelectionDirection) ?? 'none'
       ];
 
-      const unsub = on(this.domContext.getDocument(), 'selectionchange', this.#onDocumentSelectionChange, {
-        capture: true
-      });
+      const unsub = on(
+        this.domContext.getDocument(),
+        'selectionchange',
+        this.#onDocumentSelectionChange,
+        {
+          capture: true
+        }
+      );
       this.#onDocumentSelectionChange();
 
       if (this.domContext.getActiveElement() === input) {
@@ -226,7 +230,9 @@ export class PinInputRootState {
     width: this.#pwmb.willPushPwmBadge
       ? `calc(100% + ${this.#pwmb.PWM_BADGE_SPACE_WIDTH})`
       : '100%',
-    clipPath: this.#pwmb.willPushPwmBadge ? `inset(0 ${this.#pwmb.PWM_BADGE_SPACE_WIDTH} 0 0)` : undefined,
+    clipPath: this.#pwmb.willPushPwmBadge
+      ? `inset(0 ${this.#pwmb.PWM_BADGE_SPACE_WIDTH} 0 0)`
+      : undefined,
     height: '100%',
     display: 'flex',
     textAlign: this.opts.textAlign.current,
@@ -258,14 +264,20 @@ export class PinInputRootState {
         '[data-pin-input-input]::selection { background: transparent !important; color: transparent !important; }'
       );
       safeInsertRule(styleEl.sheet, `[data-pin-input-input]:autofill { ${autoFillStyles} }`);
-      safeInsertRule(styleEl.sheet, `[data-pin-input-input]:-webkit-autofill { ${autoFillStyles} }`);
+      safeInsertRule(
+        styleEl.sheet,
+        `[data-pin-input-input]:-webkit-autofill { ${autoFillStyles} }`
+      );
       // iOS
       safeInsertRule(
         styleEl.sheet,
         `@supports (-webkit-touch-callout: none) { [data-pin-input-input] { letter-spacing: -.6em !important; font-weight: 100 !important; font-stretch: ultra-condensed; font-optical-sizing: none !important; left: -1px !important; right: 1px !important; } }`
       );
       // password manager badges
-      safeInsertRule(styleEl.sheet, `[data-pin-input-input] + * { pointer-events: all !important; }`);
+      safeInsertRule(
+        styleEl.sheet,
+        `[data-pin-input-input] + * { pointer-events: all !important; }`
+      );
     }
   }
 
@@ -397,7 +409,9 @@ export class PinInputRootState {
     };
 
     const isValueInvalid = (newValue: string) => {
-      return Boolean(newValue.length > 0 && this.#regexPattern && !this.#regexPattern.test(newValue));
+      return Boolean(
+        newValue.length > 0 && this.#regexPattern && !this.#regexPattern.test(newValue)
+      );
     };
 
     if (
@@ -493,7 +507,8 @@ export class PinInputRootState {
         this.#isFocused.current &&
         this.#mirrorSelectionStart !== null &&
         this.#mirrorSelectionEnd !== null &&
-        ((this.#mirrorSelectionStart === this.#mirrorSelectionEnd && idx === this.#mirrorSelectionStart) ||
+        ((this.#mirrorSelectionStart === this.#mirrorSelectionEnd &&
+          idx === this.#mirrorSelectionStart) ||
           (idx >= this.#mirrorSelectionStart && idx < this.#mirrorSelectionEnd));
       const char = this.opts.value.current[idx] !== undefined ? this.opts.value.current[idx] : null;
       return {

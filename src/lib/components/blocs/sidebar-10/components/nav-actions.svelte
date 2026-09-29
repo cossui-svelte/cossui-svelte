@@ -110,7 +110,10 @@
   </Button>
   <Popover bind:open>
     <PopoverTrigger
-      class={cn(buttonVariants({ variant: 'ghost', size: 'icon' }), 'size-7 data-popup-open:bg-accent')}
+      class={cn(
+        buttonVariants({ variant: 'ghost', size: 'icon' }),
+        'size-7 data-popup-open:bg-accent'
+      )}
     >
       <EllipsisIcon />
     </PopoverTrigger>

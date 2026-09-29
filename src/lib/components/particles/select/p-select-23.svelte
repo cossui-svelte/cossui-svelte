@@ -16,8 +16,8 @@
   <Select
     value={selected}
     onValueChange={(v) => {
-    selected = v;
-  }}
+      selected = v;
+    }}
   >
     <SelectTrigger aria-label="Select fruit">
       <span class="flex-1 truncate">{selectedLabel}</span>

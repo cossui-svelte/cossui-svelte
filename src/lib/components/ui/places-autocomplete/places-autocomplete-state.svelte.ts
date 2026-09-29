@@ -1,7 +1,4 @@
-import type {
-  GoogleAutocompleteSessionToken,
-  GooglePlacePrediction,
-} from "./places-types.js";
+import type { GoogleAutocompleteSessionToken, GooglePlacePrediction } from './places-types.js';
 
 export type SelectedPlace = {
   address: string;
@@ -82,7 +79,7 @@ export class PlacesAutocompleteState {
 
     try {
       const { AutocompleteSessionToken, AutocompleteSuggestion } =
-        await window.google.maps.importLibrary("places");
+        await window.google.maps.importLibrary('places');
 
       if (!AutocompleteSuggestion || requestId !== this.#requestId) {
         return;
@@ -97,8 +94,8 @@ export class PlacesAutocompleteState {
         await AutocompleteSuggestion.fetchAutocompleteSuggestions({
           input: trimmedInput,
           includedRegionCodes: countryCode ? [countryCode] : [],
-          region: countryCode ?? "",
-          sessionToken: this.#sessionToken,
+          region: countryCode ?? '',
+          sessionToken: this.#sessionToken
         });
 
       if (requestId !== this.#requestId) {
@@ -117,7 +114,7 @@ export class PlacesAutocompleteState {
           return {
             id: `${prediction.placeId ?? label}-${index}`,
             label,
-            prediction,
+            prediction
           };
         })
         .filter((suggestion): suggestion is AddressSuggestion => Boolean(suggestion));
@@ -153,25 +150,25 @@ export class PlacesAutocompleteState {
           address: suggestion.label,
           lat: null,
           lng: null,
-          placeId: prediction.placeId ?? null,
+          placeId: prediction.placeId ?? null
         });
         return;
       }
 
-      await place.fetchFields({ fields: ["formattedAddress", "location"] });
+      await place.fetchFields({ fields: ['formattedAddress', 'location'] });
 
       this.#options.onPlaceSelect({
         address: place.formattedAddress ?? suggestion.label,
         lat: place.location?.lat() ?? null,
         lng: place.location?.lng() ?? null,
-        placeId: prediction.placeId ?? null,
+        placeId: prediction.placeId ?? null
       });
     } catch {
       this.#options.onPlaceSelect({
         address: suggestion.label,
         lat: null,
         lng: null,
-        placeId: prediction.placeId ?? null,
+        placeId: prediction.placeId ?? null
       });
     } finally {
       this.#sessionToken = null;

@@ -157,8 +157,8 @@
         bind:value={
           () => [timeRange],
           (v) => {
-    if (v[0]) timeRange = v[0];
-  }
+            if (v[0]) timeRange = v[0];
+          }
         }
         variant="outline"
         class="hidden *:data-[slot=toggle-group-item]:!px-4 @[767px]/card:flex"
@@ -193,34 +193,32 @@
         x="date"
         xScale={scaleUtc()}
         series={[
-    {
-      key: 'mobile',
-      label: 'Mobile',
-      color: chartConfig.mobile.color
-    },
-    {
-      key: 'desktop',
-      label: 'Desktop',
-      color: chartConfig.desktop.color
-    }
-  ]}
+          {
+            key: 'mobile',
+            label: 'Mobile',
+            color: chartConfig.mobile.color
+          },
+          {
+            key: 'desktop',
+            label: 'Desktop',
+            color: chartConfig.desktop.color
+          }
+        ]}
         seriesLayout="stack"
         props={{
-    xAxis: {
-      ticks: timeRange === '7d' ? 7 : undefined,
-      format: (v) => {
-        return v.toLocaleDateString('en-US', {
-          month: 'short',
-          day: 'numeric'
-        });
-      }
-    },
-    yAxis: { format: () => '' }
-  }}
+          xAxis: {
+            ticks: timeRange === '7d' ? 7 : undefined,
+            format: (v) => {
+              return v.toLocaleDateString('en-US', {
+                month: 'short',
+                day: 'numeric'
+              });
+            }
+          },
+          yAxis: { format: () => '' }
+        }}
       >
-        {#snippet marks({
-    context
-  })}
+        {#snippet marks({ context })}
           <defs>
             <linearGradient id="fillDesktop" x1="0" y1="0" x2="0" y2="1">
               <stop offset="5%" stop-color="var(--color-desktop)" stop-opacity={1.0} />
@@ -246,11 +244,11 @@
         {#snippet tooltip()}
           <ChartTooltip
             labelFormatter={(v) => {
-    return (v as Date).toLocaleDateString('en-US', {
-      month: 'short',
-      day: 'numeric'
-    });
-  }}
+              return (v as Date).toLocaleDateString('en-US', {
+                month: 'short',
+                day: 'numeric'
+              });
+            }}
             indicator="line"
           />
         {/snippet}
