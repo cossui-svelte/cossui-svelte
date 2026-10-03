@@ -27,10 +27,10 @@
 
 {#snippet categoryCard(slug: string, meta: RegistryUIEntry)}
   <CardFrame
-    class="after:-inset-1.25 after:-z-1 w-full after:pointer-events-none after:absolute after:rounded-[calc(var(--radius-xl)+4px)] after:border after:border-border/64"
+    class="w-full after:pointer-events-none after:absolute after:-inset-[5px] after:-z-1 after:rounded-[calc(var(--radius-xl)+4px)] after:border after:border-border/64"
   >
     <CardFrameHeader class="static grid grid-rows-[auto_1fr]">
-      <CardFrameTitle class="font-heading text-base">
+      <CardFrameTitle class="font-bold font-heading text-base [font-variation-settings:'GEOM'_50,'opsz'_32]">
         <h2>
           <a class="before:absolute before:inset-0" href={resolve(`/particles?tags=${slug}`)}
             >{meta.name}</a
@@ -45,9 +45,9 @@
       class="pointer-events-none min-h-55 flex-1 flex-col flex-wrap overflow-x-auto bg-[color-mix(in_srgb,var(--color-card),var(--color-sidebar))] dark:bg-background"
     >
       {#if meta.istodo}
-        <Badge class="absolute inset-e-3 top-3" variant="warning">To do</Badge>
+        <Badge class="absolute end-3 top-3" variant="warning">To do</Badge>
       {:else if meta.isnew}
-        <Badge class="absolute inset-e-3 top-3" variant="info">New</Badge>
+        <Badge class="absolute end-3 top-3" variant="info">New</Badge>
       {/if}
       <CardPanel
         class="flex flex-1 items-center justify-center px-8 [--border:--alpha(var(--color-black)/7%)] [--btn-from:--alpha(var(--color-primary)/90%)] [--btn-to:var(--color-primary)] in-[[data-slot=card-frame]:has(a:not(:hover))]:*:translate-y-0.5 *:transition-transform *:duration-200 dark:[--border:--alpha(var(--color-white)/3%)] dark:[--btn-from:var(--color-primary)] dark:[--btn-to:--alpha(var(--color-primary)/90%)]"

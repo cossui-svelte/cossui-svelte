@@ -1,24 +1,32 @@
 /* Headings for titles and section headers */
 @font-face {
-  display: optional;
+  font-display: swap;
   font-family: "CalSansHeading";
-  src: url("/fonts/CalSans-Regular.woff2") format("woff2");
-  font-weight: 400 600;
+  src: url("/fonts/CalSansVF.woff2") format("woff2");
+  font-weight: 700;
   font-style: normal;
 }
 
 /* Sans (Variable Font for contents) */
 @font-face {
-  display: optional;
+  font-display: swap;
   font-family: "CalSansUI";
   src: url("/fonts/CalSansVF.woff2") format("woff2");
-  font-weight: 300 700;
+  font-weight: 400 700;
   font-style: normal;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "CalSansUI";
+  src: url("/fonts/CalSansVF-italic.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: italic;
 }
 
 /* Mono for code */
 @font-face {
-  display: optional;
+  font-display: swap;
   font-family: "PaperMono";
   src: url("/fonts/PaperMono-Regular.woff2") format("woff2");
   font-weight: 400;

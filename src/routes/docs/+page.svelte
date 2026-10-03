@@ -16,8 +16,20 @@
 
   const changelog = [
     {
+      date: '27 Sep 2026',
+      description:
+        'Blocs ported from shadcn-svelte, component documentation pages, and components synced with upstream CossUI.',
+      title: '0.9.23 — Blocs & docs'
+    },
+    {
+      date: '26 Aug 2026',
+      description:
+        'Server-side rendering enabled, new Segmented Control component, TSX conversion completed, plus slider and registry fixes.',
+      title: '0.9.22 — SSR & Segmented Control'
+    },
+    {
       date: '20 Aug 2026',
-      description: 'ShardsUI is a good port of BaseUI, it better aligns with upstream CossUI.',
+      description: 'Switched to ShardsUI. It is a good port of BaseUI and better aligns with upstream CossUI.',
       title: '0.9.21 — Switched to ShardsUI'
     },
     {
@@ -125,7 +137,7 @@
         can focus on your application logic instead of reinventing the wheel.
       </li>
       <li>
-        <strong class="font-semibold text-foreground">Built on Base UI</strong>
+        <strong class="font-semibold text-foreground">Built on "BaseUI"</strong>
         — Powered by Shards UI, a Svelte port of Base UI.
       </li>
       <li>
