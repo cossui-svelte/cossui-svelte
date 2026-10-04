@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.9.24](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.23...v0.9.24) (2026-10-04)
+
+### 🐛 Bug Fixes
+
+* **upstream:** keep drawer close button above drag bar ([28ae286](https://github.com/cossui-svelte/cossui-svelte/commit/28ae28633c0d75ac0f635e49f4389a3869cc4155))
+* **upstream:** bring new fonts and adjust char spacing ([fa199ff](https://github.com/cossui-svelte/cossui-svelte/commit/fa199ff631b25e5a3a59fefac2114dd4175618e5))
+
+### 🚚 Chores
+
+* deps ([0b797be](https://github.com/cossui-svelte/cossui-svelte/commit/0b797be72d5c4065c8697b362f0b0558c891fa97))
+* fix linting and vsc integration ([8d332ca](https://github.com/cossui-svelte/cossui-svelte/commit/8d332cab01045533c207ff155ad45e0068e34f04))
+* switch to oxc ([73b5825](https://github.com/cossui-svelte/cossui-svelte/commit/73b5825caec4967f99f90942a09f45174e9b78ef))
+
 ## [0.9.23](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.22...v0.9.23) (2026-09-27)
 
 ### ✨ Features
