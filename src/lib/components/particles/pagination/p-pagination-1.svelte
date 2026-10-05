@@ -7,7 +7,7 @@
     PaginationLink,
     PaginationNext,
     PaginationPrevious
-  } from '$lib/components/ui/pagination';
+  } from '#lib/components/ui/pagination/index.js';
 </script>
 
 <Pagination>

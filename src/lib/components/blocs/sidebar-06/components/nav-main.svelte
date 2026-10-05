@@ -1,13 +1,13 @@
 <script lang="ts">
   import EllipsisIcon from '@lucide/svelte/icons/ellipsis';
-  import { Menu, MenuLinkItem, MenuPopup, MenuTrigger } from '$lib/components/ui/menu';
+  import { Menu, MenuLinkItem, MenuPopup, MenuTrigger } from '#lib/components/ui/menu/index.js';
   import {
     SidebarGroup,
     SidebarMenu,
     SidebarMenuButton,
     SidebarMenuItem,
     useSidebar
-  } from '$lib/components/ui/sidebar';
+  } from '#lib/components/ui/sidebar/index.js';
 
   let {
     items

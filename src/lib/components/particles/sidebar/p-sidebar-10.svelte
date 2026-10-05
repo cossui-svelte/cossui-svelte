@@ -17,7 +17,7 @@
     SidebarMenuItem,
     SidebarProvider,
     SidebarTrigger
-  } from '$lib/components/ui/sidebar';
+  } from '#lib/components/ui/sidebar/index.js';
 
   const projects = [
     { name: 'Design Engineering', url: '#', icon: FrameIcon, badge: '24' },

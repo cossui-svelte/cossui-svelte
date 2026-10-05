@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { setContext } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   let {
     step = $bindable(1),

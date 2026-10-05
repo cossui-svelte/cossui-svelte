@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
+  import { Avatar, AvatarFallback, AvatarImage } from '#lib/components/ui/avatar/index.js';
   import {
     Select,
     SelectGroup,
@@ -7,7 +7,7 @@
     SelectItem,
     SelectPopup,
     SelectTrigger
-  } from '$lib/components/ui/select';
+  } from '#lib/components/ui/select/index.js';
 
   const users = [
     {

@@ -2,7 +2,7 @@
   import ChevronUp from '@lucide/svelte/icons/chevron-up';
   import { Select as SelectPrimitive } from '@shardsui/svelte/select';
   import type { ComponentProps } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   let {
     ref = $bindable(null),

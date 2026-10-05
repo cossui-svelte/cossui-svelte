@@ -1,6 +1,11 @@
 <script lang="ts">
   import CableIcon from '@lucide/svelte/icons/cable';
-  import { Select, SelectItem, SelectPopup, SelectTrigger } from '$lib/components/ui/select';
+  import {
+    Select,
+    SelectItem,
+    SelectPopup,
+    SelectTrigger
+  } from '#lib/components/ui/select/index.js';
 
   const items = [
     { label: 'Next.js', value: 'next' },

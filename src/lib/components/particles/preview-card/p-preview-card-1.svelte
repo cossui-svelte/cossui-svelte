@@ -1,12 +1,12 @@
 <script lang="ts">
   import CornerUpLeft from '@lucide/svelte/icons/corner-up-left';
   import Star from '@lucide/svelte/icons/star';
-  import { buttonVariants } from '$lib/components/ui/button';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
   import {
     PreviewCard,
     PreviewCardPopup,
     PreviewCardTrigger
-  } from '$lib/components/ui/preview-card';
+  } from '#lib/components/ui/preview-card/index.js';
 </script>
 
 <PreviewCard>

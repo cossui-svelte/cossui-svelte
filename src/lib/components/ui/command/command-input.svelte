@@ -3,8 +3,8 @@
   import Search from '@lucide/svelte/icons/search';
   import { Autocomplete as AutocompletePrimitive } from '@shardsui/svelte/autocomplete';
   import type { HTMLButtonAttributes, HTMLInputAttributes } from 'svelte/elements';
-  import { AutocompleteClear, AutocompleteTrigger } from '$lib/components/ui/autocomplete';
-  import { cn } from '$lib/utils';
+  import { AutocompleteClear, AutocompleteTrigger } from '#lib/components/ui/autocomplete/index.js';
+  import { cn } from '#lib/utils.js';
 
   interface Props extends Omit<HTMLInputAttributes, 'size'> {
     clearProps?: Omit<HTMLButtonAttributes, 'class'> & { class?: string };

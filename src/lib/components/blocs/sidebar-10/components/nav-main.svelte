@@ -1,6 +1,10 @@
 <script lang="ts">
   import type { Component } from 'svelte';
-  import { SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '$lib/components/ui/sidebar';
+  import {
+    SidebarMenu,
+    SidebarMenuButton,
+    SidebarMenuItem
+  } from '#lib/components/ui/sidebar/index.js';
 
   let {
     items

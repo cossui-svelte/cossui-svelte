@@ -3,9 +3,9 @@
   import Filter from '@lucide/svelte/icons/filter';
   import Search from '@lucide/svelte/icons/search';
   import X from '@lucide/svelte/icons/x';
-  import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
-  import { Badge } from '$lib/components/ui/badge';
-  import { Button, buttonVariants } from '$lib/components/ui/button';
+  import { Avatar, AvatarFallback, AvatarImage } from '#lib/components/ui/avatar/index.js';
+  import { Badge } from '#lib/components/ui/badge/index.js';
+  import { Button, buttonVariants } from '#lib/components/ui/button/index.js';
   import {
     Combobox,
     ComboboxCollection,
@@ -15,9 +15,9 @@
     ComboboxList,
     ComboboxPopup,
     ComboboxTrigger
-  } from '$lib/components/ui/combobox';
-  import { Group, GroupSeparator, GroupText } from '$lib/components/ui/group';
-  import { cn } from '$lib/utils';
+  } from '#lib/components/ui/combobox/index.js';
+  import { Group, GroupSeparator, GroupText } from '#lib/components/ui/group/index.js';
+  import { cn } from '#lib/utils.js';
 
   type Member = { id: string; label: string; avatar?: string };
 

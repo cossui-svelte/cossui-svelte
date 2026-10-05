@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Tabs, TabsList, TabsPanel, TabsTab } from '$lib/components/ui/tabs';
+  import { Tabs, TabsList, TabsPanel, TabsTab } from '#lib/components/ui/tabs/index.js';
 </script>
 
 <Tabs value="tab-1">

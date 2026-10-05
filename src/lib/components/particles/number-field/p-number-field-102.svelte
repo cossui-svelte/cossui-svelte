@@ -8,7 +8,7 @@
     NumberFieldDecrement,
     NumberFieldIncrement,
     NumberFieldValue
-  } from '$lib/components/ui/number-field';
+  } from '#lib/components/ui/number-field/index.js';
 </script>
 
 <NumberField class="w-auto" max={6} min={0} value={3}>

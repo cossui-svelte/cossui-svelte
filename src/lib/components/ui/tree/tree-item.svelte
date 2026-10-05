@@ -3,7 +3,7 @@
   import type { Snippet } from 'svelte';
   import { mergeProps } from 'svelte-toolbelt';
   import type { HTMLAttributes } from 'svelte/elements';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
   import TreeContextProvider from './tree-context-provider.svelte';
   import { useTreeContext } from './tree-context.svelte';
   import type { ReactiveItemInstance } from './use-tree.svelte';

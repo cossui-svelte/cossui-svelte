@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Combobox as ComboboxPrimitive } from '@shardsui/svelte/combobox';
   import type { ComponentProps, Snippet } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
   import ComboboxChipRemove from './combobox-chip-remove.svelte';
 
   interface Props extends Omit<ComponentProps<typeof ComboboxPrimitive.Chip>, 'children'> {

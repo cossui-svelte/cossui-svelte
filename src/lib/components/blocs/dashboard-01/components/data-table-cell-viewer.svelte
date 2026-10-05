@@ -3,8 +3,8 @@
   import { scaleUtc } from 'd3-scale';
   import { curveNatural } from 'd3-shape';
   import { AreaChart } from 'layerchart';
-  import { Button, buttonVariants } from '$lib/components/ui/button';
-  import { Chart, type ChartConfig, ChartTooltip } from '$lib/components/ui/chart';
+  import { Button, buttonVariants } from '#lib/components/ui/button/index.js';
+  import { Chart, type ChartConfig, ChartTooltip } from '#lib/components/ui/chart/index.js';
   import {
     Drawer,
     DrawerClose,
@@ -14,13 +14,18 @@
     DrawerPopup,
     DrawerTitle,
     DrawerTrigger
-  } from '$lib/components/ui/drawer';
-  import { Input } from '$lib/components/ui/input';
-  import { Label } from '$lib/components/ui/label';
-  import { Select, SelectItem, SelectPopup, SelectTrigger } from '$lib/components/ui/select';
-  import { Separator } from '$lib/components/ui/separator';
-  import { IsMobile } from '$lib/hooks/use-is-mobile.svelte';
-  import { cn } from '$lib/utils';
+  } from '#lib/components/ui/drawer/index.js';
+  import { Input } from '#lib/components/ui/input/index.js';
+  import { Label } from '#lib/components/ui/label/index.js';
+  import {
+    Select,
+    SelectItem,
+    SelectPopup,
+    SelectTrigger
+  } from '#lib/components/ui/select/index.js';
+  import { Separator } from '#lib/components/ui/separator/index.js';
+  import { IsMobile } from '#lib/hooks/use-is-mobile.svelte.js';
+  import { cn } from '#lib/utils.js';
   import type { Schema } from './schemas.js';
 
   const chartData = [

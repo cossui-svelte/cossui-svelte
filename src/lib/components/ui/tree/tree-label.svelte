@@ -3,7 +3,7 @@
   import type { ItemInstance } from '@headless-tree/core';
   import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
   import type { HTMLAttributes } from 'svelte/elements';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
   import { useTreeContext } from './tree-context.svelte';
 
   interface TreeItemLabelProps<T = unknown> extends HTMLAttributes<HTMLElement> {

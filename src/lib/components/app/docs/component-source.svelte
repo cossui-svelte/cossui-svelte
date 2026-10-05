@@ -1,7 +1,7 @@
 <script lang="ts">
-  import CodeBlock from '$lib/components/app/code-block.svelte';
-  import CodeCollapsibleWrapper from '$lib/components/app/code-collapsible-wrapper.svelte';
-  import { cn } from '$lib/utils';
+  import CodeBlock from '#lib/components/app/code-block.svelte';
+  import CodeCollapsibleWrapper from '#lib/components/app/code-collapsible-wrapper.svelte';
+  import { cn } from '#lib/utils.js';
   import type { ComponentSourceFile } from '../../../../routes/api/component-source/[name]/+server';
 
   interface Props {

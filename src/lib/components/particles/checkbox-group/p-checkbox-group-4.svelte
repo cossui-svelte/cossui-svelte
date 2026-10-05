@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Checkbox } from '$lib/components/ui/checkbox';
-  import { CheckboxGroup } from '$lib/components/ui/checkbox-group';
-  import { Label } from '$lib/components/ui/label';
+  import { CheckboxGroup } from '#lib/components/ui/checkbox-group/index.js';
+  import { Checkbox } from '#lib/components/ui/checkbox/index.js';
+  import { Label } from '#lib/components/ui/label/index.js';
 
   const mainPermissions = [
     { id: 'view-dashboard', name: 'View Dashboard' },

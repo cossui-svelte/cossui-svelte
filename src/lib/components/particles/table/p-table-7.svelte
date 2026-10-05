@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Badge } from '$lib/components/ui/badge';
-  import { CardFrame } from '$lib/components/ui/card';
+  import { Badge } from '#lib/components/ui/badge/index.js';
+  import { CardFrame } from '#lib/components/ui/card/index.js';
   import {
     Table,
     TableBody,
@@ -9,7 +9,7 @@
     TableHead,
     TableHeader,
     TableRow
-  } from '$lib/components/ui/table';
+  } from '#lib/components/ui/table/index.js';
 </script>
 
 <CardFrame class="w-full">

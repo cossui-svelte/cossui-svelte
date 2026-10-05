@@ -1,8 +1,8 @@
 <script lang="ts">
   import { Combobox as ComboboxPrimitive } from '@shardsui/svelte/combobox';
   import type { ComponentProps, Snippet } from 'svelte';
-  import { ScrollArea } from '$lib/components/ui/scroll-area';
-  import { cn } from '$lib/utils';
+  import { ScrollArea } from '#lib/components/ui/scroll-area/index.js';
+  import { cn } from '#lib/utils.js';
 
   type Props = Omit<ComponentProps<typeof ComboboxPrimitive.List>, 'children'> & {
     children?: Snippet;

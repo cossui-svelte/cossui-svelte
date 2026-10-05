@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { StarRating, StarRatingValue } from '$lib/components/ui/starrating';
+  import { StarRating, StarRatingValue } from '#lib/components/ui/starrating/index.js';
 
   let value = $state(3.5);
 </script>

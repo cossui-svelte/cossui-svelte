@@ -1,7 +1,7 @@
 <script lang="ts">
   import TrendingDownIcon from '@lucide/svelte/icons/trending-down';
   import TrendingUpIcon from '@lucide/svelte/icons/trending-up';
-  import { Badge } from '$lib/components/ui/badge';
+  import { Badge } from '#lib/components/ui/badge/index.js';
   import {
     Card,
     CardAction,
@@ -9,7 +9,7 @@
     CardFooter,
     CardHeader,
     CardTitle
-  } from '$lib/components/ui/card';
+  } from '#lib/components/ui/card/index.js';
 </script>
 
 <div

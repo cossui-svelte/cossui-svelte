@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Button } from '$lib/components/ui/button';
-  import { Label } from '$lib/components/ui/label';
-  import { Radio, RadioGroup } from '$lib/components/ui/radio-group';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import { Label } from '#lib/components/ui/label/index.js';
+  import { Radio, RadioGroup } from '#lib/components/ui/radio-group/index.js';
 
   let loading = $state(false);
 

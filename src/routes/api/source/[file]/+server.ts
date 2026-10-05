@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit';
-import { highlighter } from '$lib/components/app/shiki';
-import { allParticles } from '$lib/registry/registry-particles';
+import { highlighter } from '#lib/components/app/shiki.js';
+import { allParticles } from '#lib/registry/registry-particles.js';
 import type { RequestHandler } from './$types';
 
 export type SourceResponse = { html: string; raw: string };

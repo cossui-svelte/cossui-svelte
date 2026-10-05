@@ -7,10 +7,15 @@
     AutocompleteItem,
     AutocompleteList,
     AutocompletePopup
-  } from '$lib/components/ui/autocomplete';
-  import { Button } from '$lib/components/ui/button';
-  import { Field, FieldDescription, FieldError, FieldLabel } from '$lib/components/ui/field';
-  import { Form } from '$lib/components/ui/form';
+  } from '#lib/components/ui/autocomplete/index.js';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import {
+    Field,
+    FieldDescription,
+    FieldError,
+    FieldLabel
+  } from '#lib/components/ui/field/index.js';
+  import { Form } from '#lib/components/ui/form/index.js';
 
   const items = [
     { label: 'Apple', value: 'apple' },

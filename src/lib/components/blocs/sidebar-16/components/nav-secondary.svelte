@@ -6,7 +6,7 @@
     SidebarMenu,
     SidebarMenuButton,
     SidebarMenuItem
-  } from '$lib/components/ui/sidebar';
+  } from '#lib/components/ui/sidebar/index.js';
 
   let {
     items,

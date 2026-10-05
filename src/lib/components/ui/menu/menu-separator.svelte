@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Menu as MenuPrimitive } from '@shardsui/svelte/menu';
   import type { ComponentProps } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   let { class: className, ...restProps }: ComponentProps<typeof MenuPrimitive.Separator> = $props();
 </script>

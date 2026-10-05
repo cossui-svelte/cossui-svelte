@@ -1,6 +1,6 @@
 <script lang="ts">
   import CircleCheck from '@lucide/svelte/icons/circle-check';
-  import { Alert, AlertDescription, AlertTitle } from '$lib/components/ui/alert';
+  import { Alert, AlertDescription, AlertTitle } from '#lib/components/ui/alert/index.js';
 </script>
 
 <Alert variant="success">

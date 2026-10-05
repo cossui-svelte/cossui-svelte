@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Arc, ArcChart, Text } from 'layerchart';
-  import { Chart, type ChartConfig, ChartTooltip } from '$lib/components/ui/chart';
+  import { Chart, type ChartConfig, ChartTooltip } from '#lib/components/ui/chart/index.js';
 
   const chartData = [
     { browser: 'other', color: 'var(--color-other)', visitors: 90 },

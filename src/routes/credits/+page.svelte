@@ -38,7 +38,7 @@
     <p class="pt-2 font-heading text-lg font-medium italic text-foreground">
       "A full set of good looking components, for the most intuitive web framework."
     </p>
-    <p align="right"><i>Olivier refalo</i></p>
+    <p class="text-right"><i>Olivier refalo</i></p>
     <h2 class="font-heading text-3xl font-semibold tracking-tight">
       Thanks to the following projects for their open source contributions:
     </h2>

@@ -4,7 +4,7 @@
   import ChevronRight from '@lucide/svelte/icons/chevron-right';
   import ChevronUp from '@lucide/svelte/icons/chevron-up';
   import Circle from '@lucide/svelte/icons/circle';
-  import { Button } from '$lib/components/ui/button';
+  import { Button } from '#lib/components/ui/button/index.js';
 </script>
 
 <div class="inline-grid w-fit grid-cols-3 gap-1">

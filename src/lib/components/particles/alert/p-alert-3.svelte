@@ -1,7 +1,12 @@
 <script lang="ts">
   import Info from '@lucide/svelte/icons/info';
-  import { Alert, AlertAction, AlertDescription, AlertTitle } from '$lib/components/ui/alert';
-  import { Button } from '$lib/components/ui/button';
+  import {
+    Alert,
+    AlertAction,
+    AlertDescription,
+    AlertTitle
+  } from '#lib/components/ui/alert/index.js';
+  import { Button } from '#lib/components/ui/button/index.js';
 </script>
 
 <Alert>

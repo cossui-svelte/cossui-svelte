@@ -1,8 +1,8 @@
 <script lang="ts">
   import { type DateValue, getLocalTimeZone } from '@internationalized/date';
   import CalendarPlusIcon from '@lucide/svelte/icons/calendar-plus';
-  import { buttonVariants } from '$lib/components/ui/button';
-  import { Calendar } from '$lib/components/ui/calendar';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
+  import { Calendar } from '#lib/components/ui/calendar/index.js';
   import {
     Drawer,
     DrawerDescription,
@@ -10,9 +10,9 @@
     DrawerPopup,
     DrawerTitle,
     DrawerTrigger
-  } from '$lib/components/ui/drawer';
-  import { Label } from '$lib/components/ui/label';
-  import { cn } from '$lib/utils';
+  } from '#lib/components/ui/drawer/index.js';
+  import { Label } from '#lib/components/ui/label/index.js';
+  import { cn } from '#lib/utils.js';
 
   let open = $state(false);
   let value = $state<DateValue | undefined>();

@@ -3,7 +3,7 @@
   import type { Snippet } from 'svelte';
   import { getContext } from 'svelte';
   import type { HTMLButtonAttributes } from 'svelte/elements';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
   import { createPressRepeat } from './number-field-press-repeat.svelte';
   import { NUMBER_FIELD_CONTEXT_KEY, type NumberFieldContext } from './number-field.svelte';
 

@@ -4,8 +4,8 @@
     AccordionItem,
     AccordionPanel,
     AccordionTrigger
-  } from '$lib/components/ui/accordion';
-  import { Button } from '$lib/components/ui/button';
+  } from '#lib/components/ui/accordion/index.js';
+  import { Button } from '#lib/components/ui/button/index.js';
 
   let value = $state<string[]>([]);
 </script>

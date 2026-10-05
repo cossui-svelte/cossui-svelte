@@ -4,8 +4,8 @@
     CropperCropArea,
     CropperDescription,
     CropperImage
-  } from '$lib/components/ui/cropper';
-  import { Slider } from '$lib/components/ui/slider';
+  } from '#lib/components/ui/cropper/index.js';
+  import { Slider } from '#lib/components/ui/slider/index.js';
 
   let zoom = $state(1);
 </script>

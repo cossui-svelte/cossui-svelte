@@ -1,4 +1,4 @@
-import { allParticles } from '$lib/registry/registry-particles';
+import { allParticles } from '#lib/registry/registry-particles.js';
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = () => {

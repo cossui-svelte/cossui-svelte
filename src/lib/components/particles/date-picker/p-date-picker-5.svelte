@@ -1,10 +1,14 @@
 <script lang="ts">
   import { type DateValue, getLocalTimeZone, parseDate, today } from '@internationalized/date';
   import CalendarIcon from '@lucide/svelte/icons/calendar';
-  import { buttonVariants } from '$lib/components/ui/button';
-  import { Calendar } from '$lib/components/ui/calendar';
-  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';
-  import { Popover, PopoverPopup, PopoverTrigger } from '$lib/components/ui/popover';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
+  import { Calendar } from '#lib/components/ui/calendar/index.js';
+  import {
+    InputGroup,
+    InputGroupAddon,
+    InputGroupInput
+  } from '#lib/components/ui/input-group/index.js';
+  import { Popover, PopoverPopup, PopoverTrigger } from '#lib/components/ui/popover/index.js';
 
   let value = $state<DateValue | undefined>(undefined);
   let placeholder = $state<DateValue>(today(getLocalTimeZone()));

@@ -2,8 +2,8 @@
   import XIcon from '@lucide/svelte/icons/x';
   import { Dialog as DialogPrimitive } from '@shardsui/svelte/dialog';
   import type { ComponentProps, Snippet } from 'svelte';
-  import { buttonVariants } from '$lib/components/ui/button';
-  import { cn, type WithoutChildren } from '$lib/utils';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
+  import { cn, type WithoutChildren } from '#lib/utils.js';
   import DialogOverlay from './dialog-backdrop.svelte';
   import DialogPortal from './dialog-portal.svelte';
   import DialogViewport from './dialog-viewport.svelte';

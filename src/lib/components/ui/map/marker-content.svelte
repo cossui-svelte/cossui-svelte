@@ -2,7 +2,7 @@
   import type * as MapLibreGL from 'maplibre-gl';
   import { getContext } from 'svelte';
   import type { HTMLAttributes } from 'svelte/elements';
-  import { cn } from '$lib/utils.js';
+  import { cn } from '#lib/utils.js';
 
   interface Props extends Omit<HTMLAttributes<HTMLDivElement>, 'children' | 'class'> {
     children?: import('svelte').Snippet;

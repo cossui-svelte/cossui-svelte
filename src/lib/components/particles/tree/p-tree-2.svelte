@@ -1,6 +1,6 @@
 <script lang="ts">
   import { hotkeysCoreFeature, syncDataLoaderFeature } from '@headless-tree/core';
-  import { Tree, TreeItem, TreeLabel, useTree } from '$lib/components/ui/tree';
+  import { Tree, TreeItem, TreeLabel, useTree } from '#lib/components/ui/tree/index.js';
 
   interface Item {
     children?: string[];

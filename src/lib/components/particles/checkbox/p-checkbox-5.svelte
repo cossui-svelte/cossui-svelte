@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { Button } from '$lib/components/ui/button';
-  import { Checkbox } from '$lib/components/ui/checkbox';
-  import { Field, FieldLabel } from '$lib/components/ui/field';
-  import { Form } from '$lib/components/ui/form';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import { Checkbox } from '#lib/components/ui/checkbox/index.js';
+  import { Field, FieldLabel } from '#lib/components/ui/field/index.js';
+  import { Form } from '#lib/components/ui/form/index.js';
 
   let loading = $state(false);
 

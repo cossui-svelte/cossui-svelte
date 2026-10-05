@@ -2,8 +2,8 @@
   import AlertCircle from '@lucide/svelte/icons/alert-circle';
   import ImageUp from '@lucide/svelte/icons/image-up';
   import X from '@lucide/svelte/icons/x';
-  import { Button } from '$lib/components/ui/button';
-  import { useFileUpload } from '$lib/hooks/use-file-upload.svelte';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import { useFileUpload } from '#lib/hooks/use-file-upload.svelte.js';
 
   const maxSizeMB = 5;
   const maxSize = maxSizeMB * 1024 * 1024; // 5MB default

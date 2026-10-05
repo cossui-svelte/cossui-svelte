@@ -1,7 +1,7 @@
 <script lang="ts">
   import { ScrollArea as ScrollAreaPrimitive } from '@shardsui/svelte/scroll-area';
   import type { ComponentProps } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   let {
     ref = $bindable(null),

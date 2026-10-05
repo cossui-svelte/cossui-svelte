@@ -1,6 +1,6 @@
 <script lang="ts">
   import Download from '@lucide/svelte/icons/download';
-  import { Button } from '$lib/components/ui/button';
+  import { Button } from '#lib/components/ui/button/index.js';
 </script>
 
 <Button>

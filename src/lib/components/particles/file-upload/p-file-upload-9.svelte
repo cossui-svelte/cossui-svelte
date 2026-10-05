@@ -9,13 +9,13 @@
   import Image from '@lucide/svelte/icons/image';
   import Video from '@lucide/svelte/icons/video';
   import X from '@lucide/svelte/icons/x';
-  import { Button } from '$lib/components/ui/button';
+  import { Button } from '#lib/components/ui/button/index.js';
   import {
     type FileMetadata,
     type FileWithPreview,
     formatBytes,
     useFileUpload
-  } from '$lib/hooks/use-file-upload.svelte';
+  } from '#lib/hooks/use-file-upload.svelte.js';
 
   // Create some dummy initial files
   const initialFiles: FileMetadata[] = [

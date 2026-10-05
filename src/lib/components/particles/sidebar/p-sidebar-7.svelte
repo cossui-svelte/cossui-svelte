@@ -6,7 +6,7 @@
     Collapsible,
     CollapsiblePanel,
     CollapsibleTrigger
-  } from '$lib/components/ui/collapsible';
+  } from '#lib/components/ui/collapsible/index.js';
   import {
     Sidebar,
     SidebarContent,
@@ -19,7 +19,7 @@
     SidebarMenuItem,
     SidebarProvider,
     SidebarTrigger
-  } from '$lib/components/ui/sidebar';
+  } from '#lib/components/ui/sidebar/index.js';
 </script>
 
 <!-- transform-gpu makes this box the containing block for the sidebar's `fixed`

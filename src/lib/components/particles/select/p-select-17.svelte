@@ -7,7 +7,7 @@
     SelectPopup,
     SelectSeparator,
     SelectTrigger
-  } from '$lib/components/ui/select';
+  } from '#lib/components/ui/select/index.js';
 
   const countries = [
     {

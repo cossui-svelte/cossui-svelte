@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Slider as SliderPrimitive } from '@shardsui/svelte/slider';
   import type { ComponentProps } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   let { class: className, ...restProps }: ComponentProps<typeof SliderPrimitive.Value> = $props();
 </script>

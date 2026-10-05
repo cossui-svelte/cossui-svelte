@@ -1,7 +1,7 @@
 <script lang="ts">
   import GripVerticalIcon from '@lucide/svelte/icons/grip-vertical';
   import type { Attachment } from 'svelte/attachments';
-  import { Button } from '$lib/components/ui/button';
+  import { Button } from '#lib/components/ui/button/index.js';
 
   let { attach }: { attach?: Attachment } = $props();
 </script>

@@ -1,7 +1,10 @@
 <script lang="ts">
   import { GOOGLE_MAPS_API_KEY } from '$app/env/public';
-  import { PlacesAutocomplete, type SelectedPlace } from '$lib/components/ui/places-autocomplete';
-  import { toastManager } from '$lib/components/ui/toast';
+  import {
+    PlacesAutocomplete,
+    type SelectedPlace
+  } from '#lib/components/ui/places-autocomplete/index.js';
+  import { toastManager } from '#lib/components/ui/toast/index.js';
 
   const countryCode = 'us';
   let selected = $state<SelectedPlace | null>(null);

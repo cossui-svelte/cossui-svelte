@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { buttonVariants } from '$lib/components/ui/button';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
   import {
     Dialog,
     DialogClose,
@@ -9,8 +9,8 @@
     DialogPopup,
     DialogTitle,
     DialogTrigger
-  } from '$lib/components/ui/dialog';
-  import { OTPField, OTPFieldInput } from '$lib/components/ui/otp-field';
+  } from '#lib/components/ui/dialog/index.js';
+  import { OTPField, OTPFieldInput } from '#lib/components/ui/otp-field/index.js';
 
   const CORRECT_CODE = '6548';
   const OTP_LENGTH = 4;

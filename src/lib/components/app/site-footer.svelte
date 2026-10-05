@@ -25,7 +25,8 @@
       </p>
       <p class="italic">
         v{version}, This project is not affiliated with coss.com.
-        <a class="font-heading text-foreground" href={resolve('/credits')}>full credits</a>
+
+        <a class="font-heading text-foreground" href={resolve('credits')}>full credits</a>
       </p>
     </div>
   </div>

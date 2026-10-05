@@ -1,8 +1,8 @@
 <script lang="ts">
   import type { HTMLAttributes } from 'svelte/elements';
-  import CodeBlock from '$lib/components/app/code-block.svelte';
-  import CodeCollapsibleWrapper from '$lib/components/app/code-collapsible-wrapper.svelte';
-  import { cn } from '$lib/utils';
+  import CodeBlock from '#lib/components/app/code-block.svelte';
+  import CodeCollapsibleWrapper from '#lib/components/app/code-collapsible-wrapper.svelte';
+  import { cn } from '#lib/utils.js';
   import type { SourceResponse } from '../../../routes/api/source/[file]/+server';
 
   interface Props extends HTMLAttributes<HTMLDivElement> {

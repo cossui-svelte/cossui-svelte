@@ -1,8 +1,8 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
-  import SidebarProvider from '$lib/components/ui/sidebar/sidebar-provider.svelte';
-  import DocsSidebar from '$lib/components/app/docs/docs-sidebar.svelte';
-  import { componentNavTree } from '$lib/docs';
+  import DocsSidebar from '#lib/components/app/docs/docs-sidebar.svelte';
+  import SidebarProvider from '#lib/components/ui/sidebar/sidebar-provider.svelte';
+  import { componentNavTree } from '#lib/docs.js';
 
   let { children }: { children: Snippet } = $props();
 </script>

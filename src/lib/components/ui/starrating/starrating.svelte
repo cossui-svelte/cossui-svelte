@@ -24,7 +24,7 @@
   import Star from '@lucide/svelte/icons/star';
   import type { Snippet } from 'svelte';
   import type { HTMLAttributes } from 'svelte/elements';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   interface Props extends Omit<HTMLAttributes<HTMLDivElement>, 'onchange'> {
     /** Whether the value can land on half-star increments. */

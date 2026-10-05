@@ -1,11 +1,16 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
   import Menu from '@lucide/svelte/icons/menu';
-  import { Badge } from '$lib/components/ui/badge';
-  import { buttonVariants } from '$lib/components/ui/button';
-  import { Drawer, DrawerPanel, DrawerPopup, DrawerTrigger } from '$lib/components/ui/drawer';
-  import type { FolderNode, NavTree } from '$lib/docs';
-  import { cn } from '$lib/utils';
+  import { Badge } from '#lib/components/ui/badge/index.js';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
+  import {
+    Drawer,
+    DrawerPanel,
+    DrawerPopup,
+    DrawerTrigger
+  } from '#lib/components/ui/drawer/index.js';
+  import type { FolderNode, NavTree } from '#lib/docs.js';
+  import { cn } from '#lib/utils.js';
 
   interface Props {
     class?: string;

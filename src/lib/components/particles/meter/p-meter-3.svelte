@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Meter, MeterIndicator, MeterLabel, MeterTrack } from '$lib/components/ui/meter';
+  import { Meter, MeterIndicator, MeterLabel, MeterTrack } from '#lib/components/ui/meter/index.js';
 </script>
 
 <Meter max={5} value={3}>

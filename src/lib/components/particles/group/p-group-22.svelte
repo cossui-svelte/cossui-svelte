@@ -1,7 +1,11 @@
 <script lang="ts">
-  import { Group, GroupSeparator } from '$lib/components/ui/group';
-  import { Label } from '$lib/components/ui/label';
-  import { NumberField, NumberFieldGroup, NumberFieldInput } from '$lib/components/ui/number-field';
+  import { Group, GroupSeparator } from '#lib/components/ui/group/index.js';
+  import { Label } from '#lib/components/ui/label/index.js';
+  import {
+    NumberField,
+    NumberFieldGroup,
+    NumberFieldInput
+  } from '#lib/components/ui/number-field/index.js';
 </script>
 
 <div class="flex flex-col gap-2">

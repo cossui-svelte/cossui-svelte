@@ -2,8 +2,8 @@
   import CheckIcon from '@lucide/svelte/icons/check';
   import ChevronsUpDownIcon from '@lucide/svelte/icons/chevrons-up-down';
   import SearchIcon from '@lucide/svelte/icons/search';
-  import { Label } from '$lib/components/ui/label';
-  import { Menu, MenuItem, MenuPopup, MenuTrigger } from '$lib/components/ui/menu';
+  import { Label } from '#lib/components/ui/label/index.js';
+  import { Menu, MenuItem, MenuPopup, MenuTrigger } from '#lib/components/ui/menu/index.js';
   import {
     Sidebar,
     SidebarContent,
@@ -19,8 +19,8 @@
     SidebarProvider,
     SidebarRail,
     SidebarTrigger
-  } from '$lib/components/ui/sidebar';
-  import { cn } from '$lib/utils';
+  } from '#lib/components/ui/sidebar/index.js';
+  import { cn } from '#lib/utils.js';
 
   const data = {
     versions: ['1.0.1', '1.1.0-alpha', '2.0.0-beta1'],

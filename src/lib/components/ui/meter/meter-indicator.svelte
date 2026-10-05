@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Meter as MeterPrimitive } from '@shardsui/svelte/meter';
   import type { ComponentProps, Snippet } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   type Props = Omit<ComponentProps<typeof MeterPrimitive.Indicator>, 'children'> & {
     children?: Snippet;

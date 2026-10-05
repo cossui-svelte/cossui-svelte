@@ -1,9 +1,13 @@
 <script lang="ts">
   import SearchIcon from '@lucide/svelte/icons/search';
   import type { HTMLFormAttributes } from 'svelte/elements';
-  import { Label } from '$lib/components/ui/label';
-  import { SidebarGroup, SidebarGroupContent, SidebarInput } from '$lib/components/ui/sidebar';
-  import type { WithElementRef } from '$lib/utils';
+  import { Label } from '#lib/components/ui/label/index.js';
+  import {
+    SidebarGroup,
+    SidebarGroupContent,
+    SidebarInput
+  } from '#lib/components/ui/sidebar/index.js';
+  import type { WithElementRef } from '#lib/utils.js';
 
   let { ref = $bindable(null), ...restProps }: WithElementRef<HTMLFormAttributes> = $props();
 </script>

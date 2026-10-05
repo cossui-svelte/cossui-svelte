@@ -6,8 +6,8 @@
     SheetDescription,
     SheetHeader,
     SheetTitle
-  } from '$lib/components/ui/sheet';
-  import { cn, type WithElementRef } from '$lib/utils.js';
+  } from '#lib/components/ui/sheet/index.js';
+  import { cn, type WithElementRef } from '#lib/utils.js';
   import { SIDEBAR_WIDTH_MOBILE } from './constants.js';
   import { useSidebar } from './context.svelte.js';
 

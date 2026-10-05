@@ -8,8 +8,8 @@
     AlertDialogPopup,
     AlertDialogTitle,
     AlertDialogTrigger
-  } from '$lib/components/ui/alert-dialog';
-  import { Button, buttonVariants } from '$lib/components/ui/button';
+  } from '#lib/components/ui/alert-dialog/index.js';
+  import { Button, buttonVariants } from '#lib/components/ui/button/index.js';
 </script>
 
 <AlertDialog>

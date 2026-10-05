@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Field as FieldPrimitive } from '@shardsui/svelte/field';
   import type { ComponentProps } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   let {
     ref = $bindable(null),

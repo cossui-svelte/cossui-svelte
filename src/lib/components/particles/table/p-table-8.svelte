@@ -2,23 +2,23 @@
   import ChevronDown from '@lucide/svelte/icons/chevron-down';
   import ChevronUp from '@lucide/svelte/icons/chevron-up';
   import PlaneTakeoff from '@lucide/svelte/icons/plane-takeoff';
-  import { Badge } from '$lib/components/ui/badge';
-  import { CardFrame, CardFrameFooter } from '$lib/components/ui/card';
-  import { Checkbox } from '$lib/components/ui/checkbox';
+  import { Badge } from '#lib/components/ui/badge/index.js';
+  import { CardFrame, CardFrameFooter } from '#lib/components/ui/card/index.js';
+  import { Checkbox } from '#lib/components/ui/checkbox/index.js';
   import {
     Pagination,
     PaginationContent,
     PaginationItem,
     PaginationNext,
     PaginationPrevious
-  } from '$lib/components/ui/pagination';
+  } from '#lib/components/ui/pagination/index.js';
   import {
     Select,
     SelectItem,
     SelectPopup,
     SelectTrigger,
     SelectValue
-  } from '$lib/components/ui/select';
+  } from '#lib/components/ui/select/index.js';
   import {
     Table,
     TableBody,
@@ -26,8 +26,8 @@
     TableHead,
     TableHeader,
     TableRow
-  } from '$lib/components/ui/table';
-  import { cn } from '$lib/utils';
+  } from '#lib/components/ui/table/index.js';
+  import { cn } from '#lib/utils.js';
 
   type FlightStatus = 'On Time' | 'Delayed' | 'Cancelled' | 'Boarding';
 

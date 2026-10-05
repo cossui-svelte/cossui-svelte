@@ -7,10 +7,10 @@
     BreadcrumbList,
     BreadcrumbPage,
     BreadcrumbSeparator
-  } from '$lib/components/ui/breadcrumb';
-  import { Button } from '$lib/components/ui/button';
-  import { Separator } from '$lib/components/ui/separator';
-  import { useSidebar } from '$lib/components/ui/sidebar';
+  } from '#lib/components/ui/breadcrumb/index.js';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import { Separator } from '#lib/components/ui/separator/index.js';
+  import { useSidebar } from '#lib/components/ui/sidebar/index.js';
   import SearchForm from './search-form.svelte';
 
   const sidebar = useSidebar();

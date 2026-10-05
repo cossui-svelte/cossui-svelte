@@ -1,6 +1,6 @@
 <script lang="ts">
   import CircleAlert from '@lucide/svelte/icons/circle-alert';
-  import { Button } from '$lib/components/ui/button';
+  import { Button } from '#lib/components/ui/button/index.js';
   import {
     Card,
     CardDescription,
@@ -9,17 +9,17 @@
     CardHeader,
     CardPanel,
     CardTitle
-  } from '$lib/components/ui/card';
-  import { Field, FieldLabel } from '$lib/components/ui/field';
-  import { Form } from '$lib/components/ui/form';
-  import { Input } from '$lib/components/ui/input';
+  } from '#lib/components/ui/card/index.js';
+  import { Field, FieldLabel } from '#lib/components/ui/field/index.js';
+  import { Form } from '#lib/components/ui/form/index.js';
+  import { Input } from '#lib/components/ui/input/index.js';
   import {
     Select,
     SelectItem,
     SelectPopup,
     SelectTrigger,
     SelectValue
-  } from '$lib/components/ui/select';
+  } from '#lib/components/ui/select/index.js';
 
   const frameworkOptions = [
     { label: 'Next.js', value: 'next' },

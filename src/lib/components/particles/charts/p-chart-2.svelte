@@ -1,6 +1,6 @@
 <script lang="ts">
   import { ArcChart, Text } from 'layerchart';
-  import { Chart, type ChartConfig } from '$lib/components/ui/chart';
+  import { Chart, type ChartConfig } from '#lib/components/ui/chart/index.js';
 
   const chartData = [{ browser: 'safari', color: 'var(--color-safari)', visitors: 200 }];
 

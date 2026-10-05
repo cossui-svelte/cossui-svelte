@@ -2,7 +2,7 @@
   import Check from '@lucide/svelte/icons/check';
   import { Select as SelectPrimitive } from '@shardsui/svelte/select';
   import type { ComponentProps, Snippet } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   type Props = Omit<ComponentProps<typeof SelectPrimitive.Item>, 'children'> & {
     label?: string;

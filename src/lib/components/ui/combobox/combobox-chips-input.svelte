@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Combobox as ComboboxPrimitive } from '@shardsui/svelte/combobox';
   import type { ComponentProps } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   interface Props extends Omit<ComponentProps<typeof ComboboxPrimitive.Input>, 'size'> {
     size?: 'sm' | 'default' | 'lg';

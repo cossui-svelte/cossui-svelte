@@ -1,13 +1,13 @@
 <script lang="ts">
-  import Field from '$lib/components/ui/field/field.svelte';
-  import { Fieldset, FieldsetLegend } from '$lib/components/ui/fieldset';
-  import { RadioGroup, RadioPrimitive } from '$lib/components/ui/radio-group';
+  import Field from '#lib/components/ui/field/field.svelte';
+  import { Fieldset, FieldsetLegend } from '#lib/components/ui/fieldset/index.js';
+  import { RadioGroup, RadioPrimitive } from '#lib/components/ui/radio-group/index.js';
   import {
     Tooltip,
     TooltipPopup,
     TooltipProvider,
     TooltipTrigger
-  } from '$lib/components/ui/tooltip';
+  } from '#lib/components/ui/tooltip/index.js';
 
   const palettes = [
     { label: 'Mono', value: 'mono', colors: ['#18181B', '#A1A1AA', '#FAFAFA'] },

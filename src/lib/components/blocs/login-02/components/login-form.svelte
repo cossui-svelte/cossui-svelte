@@ -1,10 +1,10 @@
 <script lang="ts">
   import type { HTMLFormAttributes } from 'svelte/elements';
-  import { Button } from '$lib/components/ui/button';
-  import { Field, FieldLabel } from '$lib/components/ui/field';
-  import { Input } from '$lib/components/ui/input';
-  import { Separator } from '$lib/components/ui/separator';
-  import { cn, type WithElementRef } from '$lib/utils';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import { Field, FieldLabel } from '#lib/components/ui/field/index.js';
+  import { Input } from '#lib/components/ui/input/index.js';
+  import { Separator } from '#lib/components/ui/separator/index.js';
+  import { cn, type WithElementRef } from '#lib/utils.js';
 
   let {
     ref = $bindable(null),

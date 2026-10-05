@@ -3,9 +3,14 @@
   import { countries, TelInput } from 'svelte-tel-input';
   import 'svelte-tel-input/styles/flags.css';
   import type { CountryCode } from 'svelte-tel-input/types';
-  import { Group, GroupSeparator } from '$lib/components/ui/group';
-  import { Label } from '$lib/components/ui/label';
-  import { Select, SelectItem, SelectPopup, SelectTrigger } from '$lib/components/ui/select';
+  import { Group, GroupSeparator } from '#lib/components/ui/group/index.js';
+  import { Label } from '#lib/components/ui/label/index.js';
+  import {
+    Select,
+    SelectItem,
+    SelectPopup,
+    SelectTrigger
+  } from '#lib/components/ui/select/index.js';
 
   let selectedCountry = $state<CountryCode | null>(null);
   let value = $state('');

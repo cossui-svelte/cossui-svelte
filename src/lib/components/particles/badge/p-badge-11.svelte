@@ -1,6 +1,6 @@
 <script lang="ts">
   import Check from '@lucide/svelte/icons/check';
-  import { Badge } from '$lib/components/ui/badge';
+  import { Badge } from '#lib/components/ui/badge/index.js';
 </script>
 
 <Badge variant="outline">

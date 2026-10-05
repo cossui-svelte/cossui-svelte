@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Group, GroupSeparator, GroupText } from '$lib/components/ui/group';
-  import { Input } from '$lib/components/ui/input';
+  import { Group, GroupSeparator, GroupText } from '#lib/components/ui/group/index.js';
+  import { Input } from '#lib/components/ui/input/index.js';
 </script>
 
 <Group aria-label="Domain input">

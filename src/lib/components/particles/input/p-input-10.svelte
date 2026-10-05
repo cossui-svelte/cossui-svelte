@@ -1,15 +1,19 @@
 <script lang="ts">
   import Info from '@lucide/svelte/icons/info';
   import Star from '@lucide/svelte/icons/star';
-  import { Button, buttonVariants } from '$lib/components/ui/button';
-  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';
+  import { Button, buttonVariants } from '#lib/components/ui/button/index.js';
+  import {
+    InputGroup,
+    InputGroupAddon,
+    InputGroupInput
+  } from '#lib/components/ui/input-group/index.js';
   import {
     Popover,
     PopoverDescription,
     PopoverPopup,
     PopoverTitle,
     PopoverTrigger
-  } from '$lib/components/ui/popover';
+  } from '#lib/components/ui/popover/index.js';
 
   let isFavorite = $state(false);
 </script>

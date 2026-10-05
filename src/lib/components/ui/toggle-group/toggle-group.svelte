@@ -1,6 +1,6 @@
 <script lang="ts" module>
   import { getContext, setContext } from 'svelte';
-  import { type ToggleSize, type ToggleVariant } from '$lib/components/ui/toggle';
+  import { type ToggleSize, type ToggleVariant } from '#lib/components/ui/toggle/index.js';
 
   interface ToggleGroupProps {
     orientation?: 'horizontal' | 'vertical';
@@ -26,7 +26,7 @@
 <script lang="ts">
   import { ToggleGroup as ToggleGroupPrimitive } from '@shardsui/svelte/toggle-group';
   import type { ComponentProps } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   let {
     ref = $bindable(null),

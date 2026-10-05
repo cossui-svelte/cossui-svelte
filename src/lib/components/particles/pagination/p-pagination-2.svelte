@@ -1,6 +1,10 @@
 <script lang="ts">
-  import { Button } from '$lib/components/ui/button';
-  import { Pagination, PaginationContent, PaginationItem } from '$lib/components/ui/pagination';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import {
+    Pagination,
+    PaginationContent,
+    PaginationItem
+  } from '#lib/components/ui/pagination/index.js';
 
   interface Props {
     currentPage?: number;

@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { buttonVariants } from '$lib/components/ui/button';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
   import {
     Tooltip,
     TooltipPopup,
     TooltipProvider,
     TooltipTrigger
-  } from '$lib/components/ui/tooltip';
+  } from '#lib/components/ui/tooltip/index.js';
 </script>
 
 <TooltipProvider>

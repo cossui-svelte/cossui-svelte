@@ -5,7 +5,7 @@
     ContextMenuRadioGroup,
     ContextMenuRadioItem,
     ContextMenuTrigger
-  } from '$lib/components/ui/context-menu';
+  } from '#lib/components/ui/context-menu/index.js';
 
   let theme = $state('system');
 </script>

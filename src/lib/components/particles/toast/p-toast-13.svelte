@@ -1,13 +1,13 @@
 <script lang="ts">
   import SaveIcon from '@lucide/svelte/icons/save';
-  import { buttonVariants } from '$lib/components/ui/button';
-  import { anchoredToastManager } from '$lib/components/ui/toast';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
+  import { anchoredToastManager } from '#lib/components/ui/toast/index.js';
   import {
     Tooltip,
     TooltipPopup,
     TooltipProvider,
     TooltipTrigger
-  } from '$lib/components/ui/tooltip';
+  } from '#lib/components/ui/tooltip/index.js';
 
   const ANCHORED_SAVE_ERROR_TOAST_ID = 'coss-demo-anchored-save-error-toast';
   const toastTimeout = 2000;

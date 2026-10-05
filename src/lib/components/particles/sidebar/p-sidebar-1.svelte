@@ -16,7 +16,7 @@
     SidebarMenuItem,
     SidebarProvider,
     SidebarTrigger
-  } from '$lib/components/ui/sidebar';
+  } from '#lib/components/ui/sidebar/index.js';
 
   // Menu items.
   const items = [

@@ -1,7 +1,13 @@
 <script lang="ts">
-  import { Button } from '$lib/components/ui/button';
-  import { Card, CardDescription, CardHeader, CardPanel, CardTitle } from '$lib/components/ui/card';
-  import { SidebarInput } from '$lib/components/ui/sidebar';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import {
+    Card,
+    CardDescription,
+    CardHeader,
+    CardPanel,
+    CardTitle
+  } from '#lib/components/ui/card/index.js';
+  import { SidebarInput } from '#lib/components/ui/sidebar/index.js';
 </script>
 
 <Card class="gap-2 py-4 shadow-none">

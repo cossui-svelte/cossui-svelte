@@ -10,7 +10,7 @@
     ComboboxList,
     ComboboxPopup,
     ComboboxSeparator
-  } from '$lib/components/ui/combobox';
+  } from '#lib/components/ui/combobox/index.js';
 
   type Tag = { id: string; label: string; group: 'Status' | 'Priority' | 'Team' };
   type TagGroup = { value: string; items: Tag[] };

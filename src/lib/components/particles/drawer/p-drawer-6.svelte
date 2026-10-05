@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { buttonVariants } from '$lib/components/ui/button';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
   import {
     Drawer,
     DrawerClose,
@@ -9,7 +9,7 @@
     DrawerPopup,
     DrawerTitle,
     DrawerTrigger
-  } from '$lib/components/ui/drawer';
+  } from '#lib/components/ui/drawer/index.js';
 
   const boxes = Array.from({ length: 48 }, (_, i) => i);
 </script>

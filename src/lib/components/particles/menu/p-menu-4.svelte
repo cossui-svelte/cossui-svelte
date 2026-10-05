@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { buttonVariants } from '$lib/components/ui/button';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
   import {
     Menu,
     MenuPopup,
     MenuRadioGroup,
     MenuRadioItem,
     MenuTrigger
-  } from '$lib/components/ui/menu';
+  } from '#lib/components/ui/menu/index.js';
 
   let theme = $state('system');
 </script>

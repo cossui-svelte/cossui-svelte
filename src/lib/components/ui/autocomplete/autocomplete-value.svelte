@@ -2,7 +2,7 @@
   import { Autocomplete as AutocompletePrimitive } from '@shardsui/svelte/autocomplete';
   import type { Snippet } from 'svelte';
   import type { HTMLAttributes } from 'svelte/elements';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   interface Props extends Omit<HTMLAttributes<HTMLSpanElement>, 'children'> {
     children?: Snippet<[string]>;

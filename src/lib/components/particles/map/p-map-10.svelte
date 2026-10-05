@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Map, MapClusterLayer, MapControls, MapPopup } from '$lib/components/ui/map';
+  import { Map, MapClusterLayer, MapControls, MapPopup } from '#lib/components/ui/map/index.js';
 
   interface EarthquakeProperties {
     mag: number;

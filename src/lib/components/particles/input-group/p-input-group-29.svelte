@@ -1,19 +1,19 @@
 <script lang="ts">
   import ArrowRight from '@lucide/svelte/icons/arrow-right';
   import Mic from '@lucide/svelte/icons/mic';
-  import { buttonVariants } from '$lib/components/ui/button';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
   import {
     InputGroup,
     InputGroupAddon,
     InputGroupText,
     InputGroupTextarea
-  } from '$lib/components/ui/input-group';
+  } from '#lib/components/ui/input-group/index.js';
   import {
     Tooltip,
     TooltipPopup,
     TooltipProvider,
     TooltipTrigger
-  } from '$lib/components/ui/tooltip';
+  } from '#lib/components/ui/tooltip/index.js';
 </script>
 
 <TooltipProvider>

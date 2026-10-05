@@ -7,8 +7,8 @@
     AutocompleteItem,
     AutocompleteList,
     AutocompletePopup
-  } from '$lib/components/ui/autocomplete';
-  import { Label } from '$lib/components/ui/label';
+  } from '#lib/components/ui/autocomplete/index.js';
+  import { Label } from '#lib/components/ui/label/index.js';
 
   const items = [
     { label: 'Apple', value: 'apple' },

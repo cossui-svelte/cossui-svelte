@@ -1,7 +1,7 @@
 <script lang="ts" generics="Value = unknown">
   import { Autocomplete as AutocompletePrimitive } from '@shardsui/svelte/autocomplete';
   import type { ComponentProps } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   type Props = ComponentProps<typeof AutocompletePrimitive.Root<Value>> & { class?: string };
 

@@ -5,7 +5,7 @@
     SelectLabel,
     SelectPopup,
     SelectTrigger
-  } from '$lib/components/ui/select';
+  } from '#lib/components/ui/select/index.js';
 
   const palettes = [
     { label: 'Mono', value: 'mono', colors: ['#18181B', '#A1A1AA', '#FAFAFA'] },

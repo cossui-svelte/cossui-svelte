@@ -2,7 +2,7 @@
   import { Combobox as ComboboxPrimitive } from '@shardsui/svelte/combobox';
   import type { Snippet } from 'svelte';
   import type { HTMLButtonAttributes } from 'svelte/elements';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   interface Props extends HTMLButtonAttributes {
     children?: Snippet;

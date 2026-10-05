@@ -2,7 +2,7 @@
   import ChevronRight from '@lucide/svelte/icons/chevron-right';
   import { ContextMenu as ContextMenuPrimitive } from '@shardsui/svelte/context-menu';
   import type { ComponentProps, Snippet } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   type Props = Omit<ComponentProps<typeof ContextMenuPrimitive.SubmenuTrigger>, 'children'> & {
     children?: Snippet;

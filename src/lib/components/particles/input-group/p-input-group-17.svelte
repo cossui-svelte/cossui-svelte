@@ -1,20 +1,20 @@
 <script lang="ts">
   import ArrowUp from '@lucide/svelte/icons/arrow-up';
   import Plus from '@lucide/svelte/icons/plus';
-  import { buttonVariants } from '$lib/components/ui/button';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
   import {
     InputGroup,
     InputGroupAddon,
     InputGroupText,
     InputGroupTextarea
-  } from '$lib/components/ui/input-group';
-  import { Menu, MenuItem, MenuPopup, MenuTrigger } from '$lib/components/ui/menu';
+  } from '#lib/components/ui/input-group/index.js';
+  import { Menu, MenuItem, MenuPopup, MenuTrigger } from '#lib/components/ui/menu/index.js';
   import {
     Tooltip,
     TooltipPopup,
     TooltipProvider,
     TooltipTrigger
-  } from '$lib/components/ui/tooltip';
+  } from '#lib/components/ui/tooltip/index.js';
 </script>
 
 <TooltipProvider>

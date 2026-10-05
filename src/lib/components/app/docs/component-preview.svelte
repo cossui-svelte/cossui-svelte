@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { Spinner } from '$lib/components/ui/spinner';
-  import { Tabs, TabsList, TabsPanel, TabsTab } from '$lib/components/ui/tabs';
-  import ParticleSource from '$lib/components/app/particle-source.svelte';
-  import { allParticles } from '$lib/registry/registry-particles';
-  import { cn } from '$lib/utils';
+  import ParticleSource from '#lib/components/app/particle-source.svelte';
+  import { Spinner } from '#lib/components/ui/spinner/index.js';
+  import { Tabs, TabsList, TabsPanel, TabsTab } from '#lib/components/ui/tabs/index.js';
+  import { allParticles } from '#lib/registry/registry-particles.js';
+  import { cn } from '#lib/utils.js';
 
   interface Props {
     align?: 'center' | 'start';

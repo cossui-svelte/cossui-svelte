@@ -4,7 +4,7 @@
     AccordionItem,
     AccordionPanel,
     AccordionTrigger
-  } from '$lib/components/ui/accordion';
+  } from '#lib/components/ui/accordion/index.js';
 
   const items = [
     {

@@ -2,8 +2,8 @@
   import HouseIcon from '@lucide/svelte/icons/house';
   import InboxIcon from '@lucide/svelte/icons/inbox';
   import SettingsIcon from '@lucide/svelte/icons/settings';
-  import { Badge } from '$lib/components/ui/badge';
-  import { Tabs, TabsList, TabsPanel, TabsTab } from '$lib/components/ui/tabs';
+  import { Badge } from '#lib/components/ui/badge/index.js';
+  import { Tabs, TabsList, TabsPanel, TabsTab } from '#lib/components/ui/tabs/index.js';
 </script>
 
 <Tabs class="items-center" value="tab-1">

@@ -2,7 +2,7 @@
   import Check from '@lucide/svelte/icons/check';
   import { Combobox as ComboboxPrimitive } from '@shardsui/svelte/combobox';
   import type { ComponentProps, Snippet } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   type Props = Omit<ComponentProps<typeof ComboboxPrimitive.Item>, 'children'> & {
     label?: string;

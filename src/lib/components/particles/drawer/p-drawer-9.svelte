@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { buttonVariants } from '$lib/components/ui/button';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
   import {
     Drawer,
     DrawerDescription,
@@ -8,7 +8,7 @@
     DrawerPopup,
     DrawerTitle,
     DrawerTrigger
-  } from '$lib/components/ui/drawer';
+  } from '#lib/components/ui/drawer/index.js';
 
   const snapPoints = ['300px', 1] as const;
   let snapPoint = $state<(typeof snapPoints)[number] | null>(snapPoints[0]);

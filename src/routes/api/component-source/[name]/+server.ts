@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit';
-import { highlighter } from '$lib/components/app/shiki';
-import { allComponents } from '$lib/registry/generated-registry-components';
+import { highlighter } from '#lib/components/app/shiki.js';
+import { allComponents } from '#lib/registry/generated-registry-components.js';
 import type { RequestHandler } from './$types';
 
 export type ComponentSourceFile = { filename: string; html: string; raw: string };

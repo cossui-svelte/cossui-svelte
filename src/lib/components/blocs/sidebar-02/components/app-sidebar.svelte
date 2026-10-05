@@ -149,7 +149,7 @@
     Collapsible,
     CollapsiblePanel,
     CollapsibleTrigger
-  } from '$lib/components/ui/collapsible';
+  } from '#lib/components/ui/collapsible/index.js';
   import {
     Sidebar,
     SidebarContent,
@@ -161,7 +161,7 @@
     SidebarMenuButton,
     SidebarMenuItem,
     SidebarRail
-  } from '$lib/components/ui/sidebar';
+  } from '#lib/components/ui/sidebar/index.js';
   import SearchForm from './search-form.svelte';
   import VersionSwitcher from './version-switcher.svelte';
 

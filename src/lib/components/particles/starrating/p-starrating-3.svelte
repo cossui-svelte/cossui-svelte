@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { StarRating } from '$lib/components/ui/starrating';
+  import { StarRating } from '#lib/components/ui/starrating/index.js';
 </script>
 
 <div class="flex items-center gap-2">

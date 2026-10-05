@@ -1,7 +1,7 @@
 <script lang="ts">
   import { ContextMenu as ContextMenuPrimitive } from '@shardsui/svelte/context-menu';
   import type { ComponentProps } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   let { class: className, ...restProps }: ComponentProps<typeof ContextMenuPrimitive.Separator> =
     $props();

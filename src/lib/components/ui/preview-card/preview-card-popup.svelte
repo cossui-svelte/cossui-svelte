@@ -1,7 +1,7 @@
 <script lang="ts">
   import { PreviewCard as PreviewCardPrimitive } from '@shardsui/svelte/preview-card';
   import type { ComponentProps, Snippet } from 'svelte';
-  import { cn, type WithoutChildren } from '$lib/utils';
+  import { cn, type WithoutChildren } from '#lib/utils.js';
 
   type Props = Omit<ComponentProps<typeof PreviewCardPrimitive.Popup>, 'children'> & {
     children?: Snippet;

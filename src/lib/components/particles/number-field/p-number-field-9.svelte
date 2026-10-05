@@ -6,7 +6,7 @@
     NumberFieldIncrement,
     NumberFieldInput,
     NumberFieldScrubArea
-  } from '$lib/components/ui/number-field';
+  } from '#lib/components/ui/number-field/index.js';
 </script>
 
 <div class="flex flex-col gap-6">

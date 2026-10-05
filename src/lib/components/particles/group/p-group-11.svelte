@@ -1,16 +1,16 @@
 <script lang="ts">
   import ChevronDown from '@lucide/svelte/icons/chevron-down';
   import GitFork from '@lucide/svelte/icons/git-fork';
-  import { Badge } from '$lib/components/ui/badge';
-  import { Button, buttonVariants } from '$lib/components/ui/button';
-  import { Group, GroupSeparator } from '$lib/components/ui/group';
+  import { Badge } from '#lib/components/ui/badge/index.js';
+  import { Button, buttonVariants } from '#lib/components/ui/button/index.js';
+  import { Group, GroupSeparator } from '#lib/components/ui/group/index.js';
   import {
     Popover,
     PopoverDescription,
     PopoverPopup,
     PopoverTitle,
     PopoverTrigger
-  } from '$lib/components/ui/popover';
+  } from '#lib/components/ui/popover/index.js';
 </script>
 
 <Group aria-label="Repository actions">

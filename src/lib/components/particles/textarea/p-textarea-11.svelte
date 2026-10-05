@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Field, FieldDescription, FieldLabel } from '$lib/components/ui/field';
-  import { Textarea } from '$lib/components/ui/textarea';
+  import { Field, FieldDescription, FieldLabel } from '#lib/components/ui/field/index.js';
+  import { Textarea } from '#lib/components/ui/textarea/index.js';
 
   const maxlength = 280;
 

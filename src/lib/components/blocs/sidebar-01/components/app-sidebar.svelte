@@ -145,7 +145,7 @@
     SidebarMenuButton,
     SidebarMenuItem,
     SidebarRail
-  } from '$lib/components/ui/sidebar';
+  } from '#lib/components/ui/sidebar/index.js';
   import SearchForm from './search-form.svelte';
   import VersionSwitcher from './version-switcher.svelte';
 

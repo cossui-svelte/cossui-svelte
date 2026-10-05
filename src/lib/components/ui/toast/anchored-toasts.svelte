@@ -1,8 +1,8 @@
 <script lang="ts">
   import { Toast as ToastPrimitive } from '@shardsui/svelte/toast';
   import type { ComponentProps } from 'svelte';
-  import { buttonVariants } from '$lib/components/ui/button';
-  import { cn } from '$lib/utils';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
+  import { cn } from '#lib/utils.js';
   import type { ToastData } from './toast-manager';
   import { TOAST_ICONS, upsertReplayClassName } from './toast-utils';
 

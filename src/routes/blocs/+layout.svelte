@@ -2,12 +2,12 @@
   import { resolve } from '$app/paths';
   import { page } from '$app/state';
   import type { Snippet } from 'svelte';
-  import { buttonVariants } from '$lib/components/ui/button';
-  import PageHeaderDescription from '$lib/components/app/page-header-description.svelte';
-  import PageHeaderHeading from '$lib/components/app/page-header-heading.svelte';
-  import PageHeader from '$lib/components/app/page-header.svelte';
-  import { blocCategories } from '$lib/components/blocs/bloc-metadata';
-  import { cn } from '$lib/utils';
+  import PageHeaderDescription from '#lib/components/app/page-header-description.svelte';
+  import PageHeaderHeading from '#lib/components/app/page-header-heading.svelte';
+  import PageHeader from '#lib/components/app/page-header.svelte';
+  import { blocCategories } from '#lib/components/blocs/bloc-metadata.js';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
+  import { cn } from '#lib/utils.js';
 
   let { children }: { children: Snippet } = $props();
 
@@ -27,7 +27,7 @@
 
     <nav class="flex flex-wrap justify-center gap-2 pb-10">
       <a
-        href={resolve('/blocs')}
+        href={resolve('blocs')}
         class={cn(
           buttonVariants({
             size: 'sm',

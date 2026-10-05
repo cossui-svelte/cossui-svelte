@@ -6,9 +6,9 @@
   import Pencil from '@lucide/svelte/icons/pencil';
   import Share from '@lucide/svelte/icons/share';
   import Trash from '@lucide/svelte/icons/trash';
-  import { Button, buttonVariants } from '$lib/components/ui/button';
-  import { Group, GroupSeparator } from '$lib/components/ui/group';
-  import { Menu, MenuItem, MenuPopup, MenuTrigger } from '$lib/components/ui/menu';
+  import { Button, buttonVariants } from '#lib/components/ui/button/index.js';
+  import { Group, GroupSeparator } from '#lib/components/ui/group/index.js';
+  import { Menu, MenuItem, MenuPopup, MenuTrigger } from '#lib/components/ui/menu/index.js';
 </script>
 
 <Group aria-label="File actions">

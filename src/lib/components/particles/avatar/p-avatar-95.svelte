@@ -1,7 +1,7 @@
 <script lang="ts">
   import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
-  import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
-  import { Button } from '$lib/components/ui/button';
+  import { Avatar, AvatarFallback, AvatarImage } from '#lib/components/ui/avatar/index.js';
+  import { Button } from '#lib/components/ui/button/index.js';
 </script>
 
 <Button class="h-auto p-0 hover:bg-transparent" variant="ghost">

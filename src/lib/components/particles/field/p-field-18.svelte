@@ -1,16 +1,21 @@
 <script lang="ts">
-  import { Button } from '$lib/components/ui/button';
-  import { Checkbox } from '$lib/components/ui/checkbox';
-  import { Field, FieldDescription, FieldError, FieldLabel } from '$lib/components/ui/field';
-  import { Form } from '$lib/components/ui/form';
-  import { Input } from '$lib/components/ui/input';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import { Checkbox } from '#lib/components/ui/checkbox/index.js';
+  import {
+    Field,
+    FieldDescription,
+    FieldError,
+    FieldLabel
+  } from '#lib/components/ui/field/index.js';
+  import { Form } from '#lib/components/ui/form/index.js';
+  import { Input } from '#lib/components/ui/input/index.js';
   import {
     Select,
     SelectContent,
     SelectItem,
     SelectTrigger,
     SelectValue
-  } from '$lib/components/ui/select';
+  } from '#lib/components/ui/select/index.js';
 
   let loading = $state(false);
 

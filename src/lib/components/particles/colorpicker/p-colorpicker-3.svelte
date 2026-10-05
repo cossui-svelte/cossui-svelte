@@ -1,6 +1,6 @@
 <script lang="ts">
   import { hueyColor } from '@hueycolor/core';
-  import { ColorPicker } from '$lib/components/ui/colorpicker';
+  import { ColorPicker } from '#lib/components/ui/colorpicker/index.js';
 
   // generate a random color
   let color = $state(hueyColor('#999').randomize());

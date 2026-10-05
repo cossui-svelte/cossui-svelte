@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Button } from '$lib/components/ui/button';
-  import { toastManager } from '$lib/components/ui/toast';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import { toastManager } from '#lib/components/ui/toast/index.js';
 
   const DEDUP_ID = 'coss-demo-dedup-toast';
 </script>

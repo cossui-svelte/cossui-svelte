@@ -11,12 +11,12 @@
 </script>
 
 <script lang="ts">
-  import { browser } from '$app/environment';
+  import { browser } from '$app/env';
   import * as MapLibreGL from 'maplibre-gl';
   import 'maplibre-gl/dist/maplibre-gl.css';
   import { onDestroy, onMount, setContext, untrack } from 'svelte';
   import type { HTMLAttributes } from 'svelte/elements';
-  import { cn } from '$lib/utils.js';
+  import { cn } from '#lib/utils.js';
   import { resolveMapTheme } from './theme';
 
   const blankMapStyle: MapLibreGL.StyleSpecification = {
@@ -158,6 +158,7 @@
 
   const mapStyles = $derived({
     dark: styles ? (styles.dark ?? defaultStyles.dark) : blank ? blankMapStyle : defaultStyles.dark,
+
     light: styles
       ? (styles.light ?? defaultStyles.light)
       : blank
@@ -171,7 +172,6 @@
   const currentStyleKey = $derived(
     typeof currentStyle === 'string' ? currentStyle : (JSON.stringify(currentStyle) ?? '')
   );
-
   const isReady = $derived(isMounted && isLoaded && isStyleLoaded);
 
   setContext('map', {
@@ -397,6 +397,7 @@
       >
         <div class="flex gap-1">
           <span class="bg-muted-foreground/60 size-1.5 animate-pulse rounded-full"></span>
+
           <span
             class="bg-muted-foreground/60 size-1.5 animate-pulse rounded-full [animation-delay:150ms]"
           ></span>

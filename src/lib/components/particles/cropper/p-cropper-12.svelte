@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { Button } from '$lib/components/ui/button';
+  import { Button } from '#lib/components/ui/button/index.js';
   import {
     type Area,
     Cropper,
     CropperCropArea,
     CropperDescription,
     CropperImage
-  } from '$lib/components/ui/cropper';
+  } from '#lib/components/ui/cropper/index.js';
 
   const RATIOS = [
     { label: '1:1 Square', value: 1 },

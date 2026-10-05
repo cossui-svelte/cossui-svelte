@@ -6,7 +6,7 @@
     TimelineItem,
     TimelineSeparator,
     TimelineTitle
-  } from '$lib/components/ui/timeline';
+  } from '#lib/components/ui/timeline/index.js';
 
   const items = [
     {

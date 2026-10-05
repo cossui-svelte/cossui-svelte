@@ -1,13 +1,13 @@
 <script lang="ts">
-  import { buttonVariants } from '$lib/components/ui/button';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
   import {
     Dialog,
     DialogClose,
     DialogPopup,
     DialogTitle,
     DialogTrigger
-  } from '$lib/components/ui/dialog';
-  import { ScrollArea } from '$lib/components/ui/scroll-area';
+  } from '#lib/components/ui/dialog/index.js';
+  import { ScrollArea } from '#lib/components/ui/scroll-area/index.js';
 </script>
 
 <Dialog>

@@ -2,9 +2,9 @@
   import { CalendarDate, type DateValue, getLocalTimeZone } from '@internationalized/date';
   import PlusIcon from '@lucide/svelte/icons/plus';
   import { formatDateRange } from 'little-date';
-  import { Button } from '$lib/components/ui/button';
-  import { Calendar } from '$lib/components/ui/calendar';
-  import { Card, CardFooter, CardPanel } from '$lib/components/ui/card';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import { Calendar } from '#lib/components/ui/calendar/index.js';
+  import { Card, CardFooter, CardPanel } from '#lib/components/ui/card/index.js';
 
   const events = [
     {

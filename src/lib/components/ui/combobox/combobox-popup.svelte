@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Combobox as ComboboxPrimitive } from '@shardsui/svelte/combobox';
   import type { ComponentProps, Snippet } from 'svelte';
-  import { cn, type WithoutChildren } from '$lib/utils';
+  import { cn, type WithoutChildren } from '#lib/utils.js';
   import { getComboboxChipsRefCtx } from './combobox.svelte';
 
   type Props = Omit<ComponentProps<typeof ComboboxPrimitive.Popup>, 'children'> & {

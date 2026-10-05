@@ -2,7 +2,7 @@
   import CheckIcon from '@lucide/svelte/icons/check';
   import LoaderCircleIcon from '@lucide/svelte/icons/loader-circle';
   import { getContext, type Snippet } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   type StepState = 'active' | 'completed' | 'inactive' | 'loading';
 

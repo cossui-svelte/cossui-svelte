@@ -10,8 +10,8 @@
     ComboboxPopup,
     ComboboxTrigger,
     ComboboxValue
-  } from '$lib/components/ui/combobox';
-  import { selectTriggerVariants } from '$lib/components/ui/select';
+  } from '#lib/components/ui/combobox/index.js';
+  import { selectTriggerVariants } from '#lib/components/ui/select/index.js';
 
   const items = [
     { label: 'Apple', value: 'apple' },

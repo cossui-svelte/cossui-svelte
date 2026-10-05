@@ -1,9 +1,15 @@
 <script lang="ts">
   import type { ComponentProps } from 'svelte';
-  import { Button } from '$lib/components/ui/button';
-  import { Card, CardDescription, CardHeader, CardPanel, CardTitle } from '$lib/components/ui/card';
-  import { Field, FieldDescription, FieldLabel } from '$lib/components/ui/field';
-  import { Input } from '$lib/components/ui/input';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import {
+    Card,
+    CardDescription,
+    CardHeader,
+    CardPanel,
+    CardTitle
+  } from '#lib/components/ui/card/index.js';
+  import { Field, FieldDescription, FieldLabel } from '#lib/components/ui/field/index.js';
+  import { Input } from '#lib/components/ui/input/index.js';
 
   let { ...restProps }: ComponentProps<typeof Card> = $props();
 </script>

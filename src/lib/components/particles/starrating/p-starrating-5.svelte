@@ -1,6 +1,6 @@
 <script lang="ts">
   import Star from '@lucide/svelte/icons/star';
-  import { StarRating, type StarRatingState } from '$lib/components/ui/starrating';
+  import { StarRating, type StarRatingState } from '#lib/components/ui/starrating/index.js';
 
   let value = $state(4);
 

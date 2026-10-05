@@ -1,7 +1,12 @@
 <script lang="ts">
   import type { Row } from '@tanstack/svelte-table';
-  import { Label } from '$lib/components/ui/label';
-  import { Select, SelectItem, SelectPopup, SelectTrigger } from '$lib/components/ui/select';
+  import { Label } from '#lib/components/ui/label/index.js';
+  import {
+    Select,
+    SelectItem,
+    SelectPopup,
+    SelectTrigger
+  } from '#lib/components/ui/select/index.js';
   import type { DashboardTableFeatures } from './data-table-features.js';
   import type { Schema } from './schemas.js';
 

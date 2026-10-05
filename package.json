@@ -7,6 +7,12 @@
     "url": "git+https://github.com/cossui-svelte/cossui-svelte.git"
   },
   "type": "module",
+  "imports": {
+    "#lib": "./src/lib/index.js",
+    "#lib/*": "./src/lib/*",
+    "#assets/*": "./src/lib/assets/*",
+    "#data/*": "./src/lib/data/*"
+  },
   "publishConfig": {
     "access": "public"
   },
@@ -42,7 +48,7 @@
     "@shardsui/svelte": "0.1.0-beta.2",
     "@shikijs/langs": "^4.5.0",
     "@shikijs/themes": "^4.5.0",
-    "@tanstack/svelte-table": "^9.2.4",
+    "@tanstack/svelte-table": "^9.2.6",
     "chrono-node": "^2.10.2",
     "cleave-zen": "^0.0.17",
     "clsx": "^2.1.1",
@@ -51,7 +57,7 @@
     "jsrepo": "^3.8.1",
     "layerchart": "^2.5.1",
     "little-date": "^1.2.1",
-    "maplibre-gl": "^6.11.2",
+    "maplibre-gl": "^6.12.0",
     "mode-watcher": "^1.1.0",
     "runed": "0.37.1",
     "shiki": "^4.5.0",
@@ -65,10 +71,10 @@
     "@commitlint/cli": "^21.2.3",
     "@commitlint/config-conventional": "^21.2.3",
     "@jsrepo/shadcn": "^8.0.1",
-    "@lucide/svelte": "^1.51.0",
+    "@lucide/svelte": "^1.52.0",
     "@sveltejs/adapter-cloudflare": "^8.0.0",
     "@sveltejs/enhanced-img": "^1.0.0",
-    "@sveltejs/kit": "^2.70.3",
+    "@sveltejs/kit": "^3.0.0",
     "@sveltejs/vite-plugin-svelte": "^7.3.1",
     "@tailwindcss/vite": "^4.3.3",
     "@types/d3-shape": "^3.2.0",
@@ -79,7 +85,7 @@
     "github-slugger": "^2.0.0",
     "husky": "^9.1.7",
     "mdsvex": "^0.12.8",
-    "oxfmt": "^0.71.0",
+    "oxfmt": "^0.72.0",
     "oxlint": "^1.86.0",
     "oxlint-tailwindcss": "^1.14.0",
     "remark-gfm": "^4.0.1",

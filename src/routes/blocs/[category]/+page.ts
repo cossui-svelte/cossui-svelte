@@ -3,7 +3,7 @@ import {
   type BlocCategory,
   blocCategories,
   blocsInCategory
-} from '$lib/components/blocs/bloc-metadata';
+} from '#lib/components/blocs/bloc-metadata.js';
 import type { EntryGenerator, PageLoad } from './$types';
 
 export const entries: EntryGenerator = () => blocCategories.map(({ slug }) => ({ category: slug }));

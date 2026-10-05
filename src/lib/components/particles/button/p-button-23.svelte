@@ -1,6 +1,6 @@
 <script lang="ts">
   import ThumbsUp from '@lucide/svelte/icons/thumbs-up';
-  import { Button } from '$lib/components/ui/button';
+  import { Button } from '#lib/components/ui/button/index.js';
 </script>
 
 <Button class="pe-0" variant="outline">

@@ -1,9 +1,9 @@
 <script lang="ts">
   import Search from '@lucide/svelte/icons/search';
   import X from '@lucide/svelte/icons/x';
-  import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
-  import { Badge } from '$lib/components/ui/badge';
-  import { Button } from '$lib/components/ui/button';
+  import { Avatar, AvatarFallback, AvatarImage } from '#lib/components/ui/avatar/index.js';
+  import { Badge } from '#lib/components/ui/badge/index.js';
+  import { Button } from '#lib/components/ui/button/index.js';
   import {
     Combobox,
     ComboboxCollection,
@@ -12,7 +12,7 @@
     ComboboxItem,
     ComboboxList,
     ComboboxPopup
-  } from '$lib/components/ui/combobox';
+  } from '#lib/components/ui/combobox/index.js';
 
   type TeamMember = {
     avatar: string;

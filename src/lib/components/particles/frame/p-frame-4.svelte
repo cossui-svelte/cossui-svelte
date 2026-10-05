@@ -5,8 +5,8 @@
     FrameHeader,
     FramePanel,
     FrameTitle
-  } from '$lib/components/ui/frame';
-  import { Separator } from '$lib/components/ui/separator';
+  } from '#lib/components/ui/frame/index.js';
+  import { Separator } from '#lib/components/ui/separator/index.js';
 </script>
 
 <Frame class="w-full">

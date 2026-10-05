@@ -1,6 +1,6 @@
 <script lang="ts" module>
   import { getContext, setContext } from 'svelte';
-  import type { SegmentedControlSize } from '$lib/components/ui/tabs/segmented-control';
+  import type { SegmentedControlSize } from '#lib/components/ui/tabs/segmented-control.js';
 
   export type TabsVariant = 'default' | 'underline';
 
@@ -17,7 +17,7 @@
 <script lang="ts">
   import { Tabs as TabsPrimitive } from '@shardsui/svelte/tabs';
   import type { ComponentProps, Snippet } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
   import TabsIndicator from './tabs-indicator.svelte';
 
   type Props = Omit<ComponentProps<typeof TabsPrimitive.List>, 'children'> & {

@@ -3,8 +3,12 @@
   import Image from '@lucide/svelte/icons/image';
   import Upload from '@lucide/svelte/icons/upload';
   import X from '@lucide/svelte/icons/x';
-  import { Button } from '$lib/components/ui/button';
-  import { type FileMetadata, formatBytes, useFileUpload } from '$lib/hooks/use-file-upload.svelte';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import {
+    type FileMetadata,
+    formatBytes,
+    useFileUpload
+  } from '#lib/hooks/use-file-upload.svelte.js';
 
   // Create some dummy initial files
   const initialFiles: FileMetadata[] = [

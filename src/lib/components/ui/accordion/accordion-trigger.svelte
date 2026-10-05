@@ -2,7 +2,7 @@
   import ChevronDown from '@lucide/svelte/icons/chevron-down';
   import { Accordion as AccordionPrimitive } from '@shardsui/svelte/accordion';
   import type { ComponentProps } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   let {
     ref = $bindable(null),

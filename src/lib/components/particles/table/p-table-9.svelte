@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Table, TableBody, TableCell, TableRow } from '$lib/components/ui/table';
+  import { Table, TableBody, TableCell, TableRow } from '#lib/components/ui/table/index.js';
 </script>
 
 <div class="mx-auto max-w-lg">

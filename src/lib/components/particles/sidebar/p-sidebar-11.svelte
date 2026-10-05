@@ -13,7 +13,7 @@
     SidebarMenuSubItem,
     SidebarProvider,
     SidebarTrigger
-  } from '$lib/components/ui/sidebar';
+  } from '#lib/components/ui/sidebar/index.js';
 
   const items = [
     {

@@ -11,13 +11,13 @@
     MenuSeparator,
     MenuShortcut,
     MenuTrigger
-  } from '$lib/components/ui/menu';
+  } from '#lib/components/ui/menu/index.js';
   import {
     SidebarMenu,
     SidebarMenuButton,
     SidebarMenuItem,
     useSidebar
-  } from '$lib/components/ui/sidebar';
+  } from '#lib/components/ui/sidebar/index.js';
 
   let { teams }: { teams: { name: string; logo: Component; plan: string }[] } = $props();
   const sidebar = useSidebar();

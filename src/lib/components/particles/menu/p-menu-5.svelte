@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { buttonVariants } from '$lib/components/ui/button';
-  import { Menu, MenuLinkItem, MenuPopup, MenuTrigger } from '$lib/components/ui/menu';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
+  import { Menu, MenuLinkItem, MenuPopup, MenuTrigger } from '#lib/components/ui/menu/index.js';
 </script>
 
 <Menu>

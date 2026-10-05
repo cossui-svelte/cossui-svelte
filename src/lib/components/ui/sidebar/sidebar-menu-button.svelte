@@ -29,8 +29,8 @@
   import type { ComponentProps, Snippet } from 'svelte';
   import { mergeProps } from 'svelte-toolbelt';
   import type { HTMLAttributes } from 'svelte/elements';
-  import { Tooltip, TooltipContent } from '$lib/components/ui/tooltip/';
-  import { cn, type WithElementRef, type WithoutChildrenOrChild } from '$lib/utils.js';
+  import { Tooltip, TooltipContent } from '#lib/components/ui/tooltip//index.js';
+  import { cn, type WithElementRef, type WithoutChildrenOrChild } from '#lib/utils.js';
   import { useSidebar } from './context.svelte.js';
 
   let {

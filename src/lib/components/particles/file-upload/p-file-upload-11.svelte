@@ -11,7 +11,7 @@
   import Trash2 from '@lucide/svelte/icons/trash-2';
   import Upload from '@lucide/svelte/icons/upload';
   import Video from '@lucide/svelte/icons/video';
-  import { Button } from '$lib/components/ui/button';
+  import { Button } from '#lib/components/ui/button/index.js';
   import {
     Table,
     TableBody,
@@ -19,13 +19,13 @@
     TableHead,
     TableHeader,
     TableRow
-  } from '$lib/components/ui/table';
+  } from '#lib/components/ui/table/index.js';
   import {
     type FileMetadata,
     type FileWithPreview,
     formatBytes,
     useFileUpload
-  } from '$lib/hooks/use-file-upload.svelte';
+  } from '#lib/hooks/use-file-upload.svelte.js';
 
   // Create some dummy initial files
   const initialFiles: FileMetadata[] = [

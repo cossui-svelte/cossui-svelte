@@ -1,5 +1,11 @@
 <script lang="ts">
-  import { Map, MapArc, MapMarker, MarkerContent, MarkerLabel } from '$lib/components/ui/map';
+  import {
+    Map,
+    MapArc,
+    MapMarker,
+    MarkerContent,
+    MarkerLabel
+  } from '#lib/components/ui/map/index.js';
 
   const hub = { name: 'London', lng: -0.1276, lat: 51.5074 };
 

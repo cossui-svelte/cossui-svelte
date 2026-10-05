@@ -1,7 +1,7 @@
 <script lang="ts">
   import ChevronRight from '@lucide/svelte/icons/chevron-right';
   import type { ComponentProps, Snippet } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
   import DrawerTrigger from './drawer-trigger.svelte';
 
   type Props = Omit<ComponentProps<typeof DrawerTrigger>, 'children'> & { children?: Snippet };

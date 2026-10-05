@@ -5,7 +5,7 @@
   import Pencil from '@lucide/svelte/icons/pencil';
   import Share from '@lucide/svelte/icons/share';
   import Trash from '@lucide/svelte/icons/trash';
-  import { buttonVariants } from '$lib/components/ui/button';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
   import {
     Drawer,
     DrawerClose,
@@ -21,7 +21,7 @@
     DrawerPopup,
     DrawerTrigger,
     drawerMenuItemClass
-  } from '$lib/components/ui/drawer';
+  } from '#lib/components/ui/drawer/index.js';
   import {
     Menu,
     MenuCheckboxItem,
@@ -36,7 +36,7 @@
     MenuSubPopup,
     MenuSubTrigger,
     MenuTrigger
-  } from '$lib/components/ui/menu';
+  } from '#lib/components/ui/menu/index.js';
 
   let isMobile = $state(false);
 

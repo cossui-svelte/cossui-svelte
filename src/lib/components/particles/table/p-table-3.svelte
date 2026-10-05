@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Badge } from '$lib/components/ui/badge';
-  import { Checkbox } from '$lib/components/ui/checkbox';
-  import { Frame } from '$lib/components/ui/frame';
+  import { Badge } from '#lib/components/ui/badge/index.js';
+  import { Checkbox } from '#lib/components/ui/checkbox/index.js';
+  import { Frame } from '#lib/components/ui/frame/index.js';
   import {
     Table,
     TableBody,
@@ -10,7 +10,7 @@
     TableHead,
     TableHeader,
     TableRow
-  } from '$lib/components/ui/table';
+  } from '#lib/components/ui/table/index.js';
 
   type Status = 'Paid' | 'Unpaid' | 'Pending' | 'Failed';
 

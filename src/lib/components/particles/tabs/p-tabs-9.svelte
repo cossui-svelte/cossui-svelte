@@ -2,7 +2,7 @@
   import BoxIcon from '@lucide/svelte/icons/box';
   import HouseIcon from '@lucide/svelte/icons/house';
   import PanelsTopLeftIcon from '@lucide/svelte/icons/panels-top-left';
-  import { Tabs, TabsList, TabsPanel, TabsTab } from '$lib/components/ui/tabs';
+  import { Tabs, TabsList, TabsPanel, TabsTab } from '#lib/components/ui/tabs/index.js';
 </script>
 
 <Tabs class="items-center" value="tab-1">

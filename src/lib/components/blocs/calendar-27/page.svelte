@@ -4,8 +4,8 @@
   import { scaleBand } from 'd3-scale';
   import { BarChart, Highlight } from 'layerchart';
   import { cubicInOut } from 'svelte/easing';
-  import { buttonVariants } from '$lib/components/ui/button';
-  import { type DateRange } from '$lib/components/ui/calendar';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
+  import { type DateRange } from '#lib/components/ui/calendar/index.js';
   import {
     Card,
     CardAction,
@@ -14,11 +14,11 @@
     CardHeader,
     CardPanel,
     CardTitle
-  } from '$lib/components/ui/card';
-  import { Chart, type ChartConfig, ChartTooltip } from '$lib/components/ui/chart';
-  import { Popover, PopoverPopup, PopoverTrigger } from '$lib/components/ui/popover';
-  import { RangeCalendar } from '$lib/components/ui/range-calendar';
-  import { cn } from '$lib/utils';
+  } from '#lib/components/ui/card/index.js';
+  import { Chart, type ChartConfig, ChartTooltip } from '#lib/components/ui/chart/index.js';
+  import { Popover, PopoverPopup, PopoverTrigger } from '#lib/components/ui/popover/index.js';
+  import { RangeCalendar } from '#lib/components/ui/range-calendar/index.js';
+  import { cn } from '#lib/utils.js';
 
   let value = $state<DateRange | undefined>({
     start: new CalendarDate(2025, 6, 5),

@@ -4,7 +4,7 @@
     InputGroupAddon,
     InputGroupInput,
     InputGroupText
-  } from '$lib/components/ui/input-group';
+  } from '#lib/components/ui/input-group/index.js';
 </script>
 
 <InputGroup>

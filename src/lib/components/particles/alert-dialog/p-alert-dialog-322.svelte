@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, buttonVariants } from '$lib/components/ui/button';
+  import { Button, buttonVariants } from '#lib/components/ui/button/index.js';
   import {
     Dialog,
     DialogDescription,
@@ -8,8 +8,8 @@
     DialogPopup,
     DialogTitle,
     DialogTrigger
-  } from '$lib/components/ui/dialog';
-  import { Textarea } from '$lib/components/ui/textarea';
+  } from '#lib/components/ui/dialog/index.js';
+  import { Textarea } from '#lib/components/ui/textarea/index.js';
 
   let feedback = $state('');
 </script>

@@ -3,8 +3,8 @@
   import Image from '@lucide/svelte/icons/image';
   import Upload from '@lucide/svelte/icons/upload';
   import X from '@lucide/svelte/icons/x';
-  import { Button } from '$lib/components/ui/button';
-  import { useFileUpload } from '$lib/hooks/use-file-upload.svelte';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import { useFileUpload } from '#lib/hooks/use-file-upload.svelte.js';
 
   const maxSizeMB = 2;
   const maxSize = maxSizeMB * 1024 * 1024; // 2MB default

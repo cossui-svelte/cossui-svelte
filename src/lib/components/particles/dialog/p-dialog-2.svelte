@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { buttonVariants } from '$lib/components/ui/button';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
   import {
     Dialog,
     DialogClose,
@@ -8,8 +8,8 @@
     DialogHeader,
     DialogPopup,
     DialogTitle
-  } from '$lib/components/ui/dialog';
-  import { Menu, MenuItem, MenuPopup, MenuTrigger } from '$lib/components/ui/menu';
+  } from '#lib/components/ui/dialog/index.js';
+  import { Menu, MenuItem, MenuPopup, MenuTrigger } from '#lib/components/ui/menu/index.js';
 
   let dialogOpen = $state(false);
 </script>

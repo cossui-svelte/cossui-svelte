@@ -1,9 +1,13 @@
 <script lang="ts">
   import Info from '@lucide/svelte/icons/info';
-  import { buttonVariants } from '$lib/components/ui/button';
-  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';
-  import { Label } from '$lib/components/ui/label';
-  import { Popover, PopoverPopup, PopoverTrigger } from '$lib/components/ui/popover';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
+  import {
+    InputGroup,
+    InputGroupAddon,
+    InputGroupInput
+  } from '#lib/components/ui/input-group/index.js';
+  import { Label } from '#lib/components/ui/label/index.js';
+  import { Popover, PopoverPopup, PopoverTrigger } from '#lib/components/ui/popover/index.js';
 </script>
 
 <InputGroup>

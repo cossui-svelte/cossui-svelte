@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit';
-import { highlighter } from '$lib/components/app/shiki';
-import { blocMetadata } from '$lib/components/blocs/bloc-metadata';
+import { highlighter } from '#lib/components/app/shiki.js';
+import { blocMetadata } from '#lib/components/blocs/bloc-metadata.js';
 import type { RequestHandler } from './$types';
 
 export type BlocSourceFile = { path: string; html: string; raw: string };

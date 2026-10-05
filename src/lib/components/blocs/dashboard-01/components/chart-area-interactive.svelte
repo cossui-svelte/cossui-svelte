@@ -9,10 +9,15 @@
     CardHeader,
     CardPanel,
     CardTitle
-  } from '$lib/components/ui/card';
-  import { Chart, type ChartConfig, ChartTooltip } from '$lib/components/ui/chart';
-  import { Select, SelectItem, SelectPopup, SelectTrigger } from '$lib/components/ui/select';
-  import { ToggleGroup, ToggleGroupItem } from '$lib/components/ui/toggle-group';
+  } from '#lib/components/ui/card/index.js';
+  import { Chart, type ChartConfig, ChartTooltip } from '#lib/components/ui/chart/index.js';
+  import {
+    Select,
+    SelectItem,
+    SelectPopup,
+    SelectTrigger
+  } from '#lib/components/ui/select/index.js';
+  import { ToggleGroup, ToggleGroupItem } from '#lib/components/ui/toggle-group/index.js';
 
   const chartData = [
     { date: new Date('2024-04-01'), desktop: 222, mobile: 150 },

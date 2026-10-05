@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button } from '$lib/components/ui/button';
+  import { Button } from '#lib/components/ui/button/index.js';
   import {
     NumberField,
     NumberFieldDecrement,
@@ -7,7 +7,7 @@
     NumberFieldIncrement,
     NumberFieldInput,
     NumberFieldScrubArea
-  } from '$lib/components/ui/number-field';
+  } from '#lib/components/ui/number-field/index.js';
 
   let quantity = $state(1);
   let loading = $state(false);

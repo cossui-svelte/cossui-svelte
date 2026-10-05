@@ -2,7 +2,7 @@
   import { Input as InputPrimitive } from '@shardsui/svelte/input';
   import type { ComponentProps } from 'svelte';
   import type { HTMLInputAttributes } from 'svelte/elements';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   type Props = Omit<HTMLInputAttributes, 'size'> & {
     ref?: HTMLInputElement | null;

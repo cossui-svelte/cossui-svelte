@@ -7,12 +7,12 @@ links:
 ---
 
 <script lang="ts">
-  import ComponentPreview from '$lib/components/app/docs/component-preview.svelte';
-  import ComponentSource from '$lib/components/app/docs/component-source.svelte';
-  import CodeTabs from '$lib/components/app/docs/code-tabs.svelte';
-  import Steps from '$lib/components/app/docs/steps.svelte';
-  import Step from '$lib/components/app/docs/step.svelte';
-  import { TabsList, TabsTab, TabsPanel } from '$lib/components/ui/tabs';
+  import ComponentPreview from '#lib/components/app/docs/component-preview.svelte';
+  import ComponentSource from '#lib/components/app/docs/component-source.svelte';
+  import CodeTabs from '#lib/components/app/docs/code-tabs.svelte';
+  import Steps from '#lib/components/app/docs/steps.svelte';
+  import Step from '#lib/components/app/docs/step.svelte';
+  import { TabsList, TabsTab, TabsPanel } from '#lib/components/ui/tabs/index.js';
 </script>
 
 <ComponentPreview name="p-accordion-1" align="start" />
@@ -60,7 +60,7 @@ npm install @base-ui/react
 
 ```svelte
 <script lang="ts">
-  import { Accordion, AccordionItem, AccordionPanel, AccordionTrigger } from '$lib/components/ui/accordion';
+  import { Accordion, AccordionItem, AccordionPanel, AccordionTrigger } from '#lib/components/ui/accordion/index.js';
 </script>
 ```
 

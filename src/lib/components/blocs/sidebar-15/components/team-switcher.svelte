@@ -11,8 +11,12 @@
     MenuSeparator,
     MenuShortcut,
     MenuTrigger
-  } from '$lib/components/ui/menu';
-  import { SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '$lib/components/ui/sidebar';
+  } from '#lib/components/ui/menu/index.js';
+  import {
+    SidebarMenu,
+    SidebarMenuButton,
+    SidebarMenuItem
+  } from '#lib/components/ui/sidebar/index.js';
 
   let {
     teams

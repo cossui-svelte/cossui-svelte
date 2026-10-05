@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { buttonVariants } from '$lib/components/ui/button';
-  import { Menu, MenuCheckboxItem, MenuPopup, MenuTrigger } from '$lib/components/ui/menu';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
+  import { Menu, MenuCheckboxItem, MenuPopup, MenuTrigger } from '#lib/components/ui/menu/index.js';
 
   let autoSave = $state(true);
   let notifications = $state(false);

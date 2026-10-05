@@ -2,8 +2,8 @@
   import X from '@lucide/svelte/icons/x';
   import { Dialog as SheetPrimitive } from '@shardsui/svelte/dialog';
   import type { ComponentProps, Snippet } from 'svelte';
-  import { buttonVariants } from '$lib/components/ui/button/button-variants';
-  import { cn, type WithoutChildren } from '$lib/utils';
+  import { buttonVariants } from '#lib/components/ui/button/button-variants.js';
+  import { cn, type WithoutChildren } from '#lib/utils.js';
   import SheetBackdrop from './sheet-backdrop.svelte';
   import SheetViewport from './sheet-viewport.svelte';
 

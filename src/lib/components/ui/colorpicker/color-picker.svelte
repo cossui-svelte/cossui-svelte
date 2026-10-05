@@ -16,7 +16,7 @@
     SaturationInput
   } from '@hueycolor/svelte';
   import PipetteIcon from '@lucide/svelte/icons/pipette';
-  import { Popover, PopoverPopup, PopoverTrigger } from '$lib/components/ui/popover';
+  import { Popover, PopoverPopup, PopoverTrigger } from '#lib/components/ui/popover/index.js';
   import ColorPickerSwatches from './color-picker-swatches.svelte';
 
   let {

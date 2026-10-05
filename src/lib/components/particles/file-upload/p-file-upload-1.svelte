@@ -1,7 +1,7 @@
 <script lang="ts">
   import CircleUserRound from '@lucide/svelte/icons/circle-user-round';
-  import { Button } from '$lib/components/ui/button';
-  import { useFileUpload } from '$lib/hooks/use-file-upload.svelte';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import { useFileUpload } from '#lib/hooks/use-file-upload.svelte.js';
 
   const fileUpload = useFileUpload({ accept: 'image/*' });
 

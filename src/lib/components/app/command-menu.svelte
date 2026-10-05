@@ -3,17 +3,17 @@
   import BookOpen from '@lucide/svelte/icons/book-open';
   import CornerDownLeft from '@lucide/svelte/icons/corner-down-left';
   import Search from '@lucide/svelte/icons/search';
-  import { buttonVariants } from '$lib/components/ui/button';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
   import {
     Dialog,
     DialogContent,
     DialogOverlay,
     DialogPortal,
     DialogTrigger
-  } from '$lib/components/ui/dialog';
-  import { Kbd, KbdGroup } from '$lib/components/ui/kbd';
-  import { useIsMac } from '$lib/hooks/use-is-mac.svelte';
-  import { cn } from '$lib/utils';
+  } from '#lib/components/ui/dialog/index.js';
+  import { Kbd, KbdGroup } from '#lib/components/ui/kbd/index.js';
+  import { useIsMac } from '#lib/hooks/use-is-mac.svelte.js';
+  import { cn } from '#lib/utils.js';
 
   interface PageItem {
     isComponent: boolean;

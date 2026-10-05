@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Dialog as DialogPrimitive } from '@shardsui/svelte/dialog';
   import type { ComponentProps, Snippet } from 'svelte';
-  import { cn, type WithoutChildren } from '$lib/utils';
+  import { cn, type WithoutChildren } from '#lib/utils.js';
   import CommandDialogBackdrop from './command-dialog-backdrop.svelte';
   import CommandDialogViewport from './command-dialog-viewport.svelte';
 

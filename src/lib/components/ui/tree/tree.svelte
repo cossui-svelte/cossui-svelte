@@ -2,7 +2,7 @@
 <script lang="ts" generics="T = any">
   import { mergeProps } from 'svelte-toolbelt';
   import type { HTMLAttributes } from 'svelte/elements';
-  import { cn } from '$lib/utils.js';
+  import { cn } from '#lib/utils.js';
   import { treeContext } from './tree-context.svelte';
   import type { ReactiveTree } from './use-tree.svelte';
 

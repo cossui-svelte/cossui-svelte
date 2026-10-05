@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Toggle as TogglePrimitive } from '@shardsui/svelte/toggle';
   import type { ComponentProps } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
   import { type ToggleSize, type ToggleVariant, toggleVariants } from './toggle-variants';
 
   type ToggleProps = ComponentProps<typeof TogglePrimitive> & {

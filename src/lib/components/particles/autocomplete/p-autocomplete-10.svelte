@@ -10,7 +10,7 @@
     AutocompleteList,
     AutocompletePopup,
     AutocompleteSeparator
-  } from '$lib/components/ui/autocomplete';
+  } from '#lib/components/ui/autocomplete/index.js';
 
   type Tag = { id: string; label: string; group: 'Status' | 'Priority' | 'Team' };
 

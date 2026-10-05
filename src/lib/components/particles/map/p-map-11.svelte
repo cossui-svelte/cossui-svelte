@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Button } from '$lib/components/ui/button';
-  import { Map, MapPopup } from '$lib/components/ui/map';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import { Map, MapPopup } from '#lib/components/ui/map/index.js';
 
   let showPopup = $state(true);
 </script>

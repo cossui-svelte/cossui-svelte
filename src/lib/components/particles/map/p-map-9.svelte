@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Map, MapGeoJSON } from '$lib/components/ui/map';
+  import { Map, MapGeoJSON } from '#lib/components/ui/map/index.js';
 
   const area: GeoJSON.FeatureCollection = {
     type: 'FeatureCollection',

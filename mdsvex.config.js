@@ -13,13 +13,13 @@ import { visit } from 'unist-util-visit';
  */
 function remarkInjectDocsComponents() {
   const script = `<script>
-  import { Alert, AlertDescription, AlertTitle } from '$lib/components/ui/alert';
-  import { TabsList, TabsPanel, TabsTab } from '$lib/components/ui/tabs';
-  import CodeTabs from '$lib/components/app/docs/code-tabs.svelte';
-  import ComponentPreview from '$lib/components/app/docs/component-preview.svelte';
-  import ComponentSource from '$lib/components/app/docs/component-source.svelte';
-  import Step from '$lib/components/app/docs/step.svelte';
-  import Steps from '$lib/components/app/docs/steps.svelte';
+  import { Alert, AlertDescription, AlertTitle } from '#lib/components/ui/alert/index.js';
+  import { TabsList, TabsPanel, TabsTab } from '#lib/components/ui/tabs/index.js';
+  import CodeTabs from '#lib/components/app/docs/code-tabs.svelte';
+  import ComponentPreview from '#lib/components/app/docs/component-preview.svelte';
+  import ComponentSource from '#lib/components/app/docs/component-source.svelte';
+  import Step from '#lib/components/app/docs/step.svelte';
+  import Steps from '#lib/components/app/docs/steps.svelte';
   import InfoIcon from '@lucide/svelte/icons/info';
 </script>
 `;
@@ -76,11 +76,17 @@ function escapeTextNodesForSvelte(html) {
   );
 }
 
-/** Build-time only (runs while Vite processes .svx files) — mirrors the static parts of code-block.svelte's markup so highlighted fences look consistent, minus the interactive copy button. */
-async function highlighter(code, lang = 'text', meta = '') {
+/**
+ * Build-time only (runs while Vite processes .svx files) — mirrors the static parts of code-block.svelte's markup so highlighted fences look consistent, minus the interactive copy button.
+ *
+ * @param {string} code
+ * @param {string | null} [lang]
+ * @param {string | null} [meta]
+ */
+async function highlighter(code, lang, meta) {
   const html = escapeTextNodesForSvelte(
     await codeToHtml(code, {
-      lang,
+      lang: lang || 'text',
       themes: { dark: 'github-dark-default', light: 'github-light-default' }
     })
   );

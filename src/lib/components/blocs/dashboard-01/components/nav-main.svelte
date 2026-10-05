@@ -2,14 +2,14 @@
   import CirclePlusFilledIcon from '@lucide/svelte/icons/circle-plus';
   import MailIcon from '@lucide/svelte/icons/mail';
   import type { Component } from 'svelte';
-  import { Button } from '$lib/components/ui/button';
+  import { Button } from '#lib/components/ui/button/index.js';
   import {
     SidebarGroup,
     SidebarGroupContent,
     SidebarMenu,
     SidebarMenuButton,
     SidebarMenuItem
-  } from '$lib/components/ui/sidebar';
+  } from '#lib/components/ui/sidebar/index.js';
 
   let { items }: { items: { title: string; url: string; icon?: Component }[] } = $props();
 </script>

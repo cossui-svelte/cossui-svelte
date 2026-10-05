@@ -1,6 +1,6 @@
 <script lang="ts">
   import { CalendarDate, getLocalTimeZone, today } from '@internationalized/date';
-  import { Calendar } from '$lib/components/ui/calendar';
+  import { Calendar } from '#lib/components/ui/calendar/index.js';
 
   let value = $state(today(getLocalTimeZone()));
 

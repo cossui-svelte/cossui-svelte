@@ -4,16 +4,21 @@
   import AlignRightIcon from '@lucide/svelte/icons/align-right';
   import DollarSignIcon from '@lucide/svelte/icons/dollar-sign';
   import PercentIcon from '@lucide/svelte/icons/percent';
-  import { Button, buttonVariants } from '$lib/components/ui/button';
-  import { Select, SelectItem, SelectPopup, SelectTrigger } from '$lib/components/ui/select';
-  import { ToggleGroup, ToggleGroupItem } from '$lib/components/ui/toggle-group';
-  import { Toolbar, ToolbarGroup, ToolbarSeparator } from '$lib/components/ui/toolbar';
+  import { Button, buttonVariants } from '#lib/components/ui/button/index.js';
+  import {
+    Select,
+    SelectItem,
+    SelectPopup,
+    SelectTrigger
+  } from '#lib/components/ui/select/index.js';
+  import { ToggleGroup, ToggleGroupItem } from '#lib/components/ui/toggle-group/index.js';
+  import { Toolbar, ToolbarGroup, ToolbarSeparator } from '#lib/components/ui/toolbar/index.js';
   import {
     Tooltip,
     TooltipPopup,
     TooltipProvider,
     TooltipTrigger
-  } from '$lib/components/ui/tooltip';
+  } from '#lib/components/ui/tooltip/index.js';
 
   const items = [
     { label: 'Helvetica', value: 'helvetica' },

@@ -1,9 +1,13 @@
 <script lang="ts">
   import ArrowRight from '@lucide/svelte/icons/arrow-right';
-  import { Button } from '$lib/components/ui/button';
-  import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';
-  import { Form } from '$lib/components/ui/form';
-  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import { Field, FieldError, FieldLabel } from '#lib/components/ui/field/index.js';
+  import { Form } from '#lib/components/ui/form/index.js';
+  import {
+    InputGroup,
+    InputGroupAddon,
+    InputGroupInput
+  } from '#lib/components/ui/input-group/index.js';
 
   let loading = $state(false);
 

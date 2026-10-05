@@ -1,6 +1,6 @@
 <script lang="ts">
   import Star from '@lucide/svelte/icons/star';
-  import { Button } from '$lib/components/ui/button';
+  import { Button } from '#lib/components/ui/button/index.js';
 
   let isStarred = $state(false);
   let count = $derived(isStarred ? 730 : 729);

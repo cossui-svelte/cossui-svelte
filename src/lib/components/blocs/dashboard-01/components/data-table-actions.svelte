@@ -1,8 +1,14 @@
 <script lang="ts">
   import DotsVerticalIcon from '@lucide/svelte/icons/ellipsis-vertical';
-  import { buttonVariants } from '$lib/components/ui/button';
-  import { Menu, MenuItem, MenuPopup, MenuSeparator, MenuTrigger } from '$lib/components/ui/menu';
-  import { cn } from '$lib/utils';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
+  import {
+    Menu,
+    MenuItem,
+    MenuPopup,
+    MenuSeparator,
+    MenuTrigger
+  } from '#lib/components/ui/menu/index.js';
+  import { cn } from '#lib/utils.js';
 </script>
 
 <Menu>

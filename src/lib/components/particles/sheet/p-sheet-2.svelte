@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { Button, buttonVariants } from '$lib/components/ui/button';
-  import { Field } from '$lib/components/ui/field';
-  import { Form } from '$lib/components/ui/form';
-  import { Input } from '$lib/components/ui/input';
-  import { Label } from '$lib/components/ui/label';
+  import { Button, buttonVariants } from '#lib/components/ui/button/index.js';
+  import { Field } from '#lib/components/ui/field/index.js';
+  import { Form } from '#lib/components/ui/form/index.js';
+  import { Input } from '#lib/components/ui/input/index.js';
+  import { Label } from '#lib/components/ui/label/index.js';
   import {
     Sheet,
     SheetClose,
@@ -14,7 +14,7 @@
     SheetPopup,
     SheetTitle,
     SheetTrigger
-  } from '$lib/components/ui/sheet';
+  } from '#lib/components/ui/sheet/index.js';
 </script>
 
 <Sheet>

@@ -4,9 +4,13 @@
     BreadcrumbItem,
     BreadcrumbList,
     BreadcrumbPage
-  } from '$lib/components/ui/breadcrumb';
-  import { Separator } from '$lib/components/ui/separator';
-  import { SidebarInset, SidebarProvider, SidebarTrigger } from '$lib/components/ui/sidebar';
+  } from '#lib/components/ui/breadcrumb/index.js';
+  import { Separator } from '#lib/components/ui/separator/index.js';
+  import {
+    SidebarInset,
+    SidebarProvider,
+    SidebarTrigger
+  } from '#lib/components/ui/sidebar/index.js';
   import AppSidebar from './components/app-sidebar.svelte';
   import NavActions from './components/nav-actions.svelte';
 </script>

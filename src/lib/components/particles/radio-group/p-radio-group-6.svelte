@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { Field, FieldItem, FieldLabel } from '$lib/components/ui/field';
-  import { Fieldset, FieldsetLegend } from '$lib/components/ui/fieldset';
-  import Form from '$lib/components/ui/form/form.svelte';
-  import { Radio, RadioGroup } from '$lib/components/ui/radio-group';
+  import { Field, FieldItem, FieldLabel } from '#lib/components/ui/field/index.js';
+  import { Fieldset, FieldsetLegend } from '#lib/components/ui/fieldset/index.js';
+  import Form from '#lib/components/ui/form/form.svelte';
+  import { Radio, RadioGroup } from '#lib/components/ui/radio-group/index.js';
 
   const items = [
     { label: 'System', value: 'system' },

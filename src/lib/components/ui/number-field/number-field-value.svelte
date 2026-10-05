@@ -2,7 +2,7 @@
   import type { Snippet } from 'svelte';
   import { getContext } from 'svelte';
   import type { HTMLAttributes } from 'svelte/elements';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
   import { NUMBER_FIELD_CONTEXT_KEY, type NumberFieldContext } from './number-field.svelte';
 
   interface Props extends Omit<HTMLAttributes<HTMLSpanElement>, 'children'> {

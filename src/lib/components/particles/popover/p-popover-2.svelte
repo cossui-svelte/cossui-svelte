@@ -1,6 +1,6 @@
 <script lang="ts">
   import X from '@lucide/svelte/icons/x';
-  import { buttonVariants } from '$lib/components/ui/button';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
   import {
     Popover,
     PopoverClose,
@@ -8,8 +8,8 @@
     PopoverPopup,
     PopoverTitle,
     PopoverTrigger
-  } from '$lib/components/ui/popover';
-  import { cn } from '$lib/utils';
+  } from '#lib/components/ui/popover/index.js';
+  import { cn } from '#lib/utils.js';
 </script>
 
 <Popover>

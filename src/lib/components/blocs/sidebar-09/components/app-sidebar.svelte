@@ -132,7 +132,7 @@
 <script lang="ts">
   import CommandIcon from '@lucide/svelte/icons/command';
   import type { ComponentProps } from 'svelte';
-  import { Label } from '$lib/components/ui/label';
+  import { Label } from '#lib/components/ui/label/index.js';
   import {
     Sidebar,
     SidebarContent,
@@ -145,8 +145,8 @@
     SidebarMenuButton,
     SidebarMenuItem,
     useSidebar
-  } from '$lib/components/ui/sidebar';
-  import { Switch } from '$lib/components/ui/switch';
+  } from '#lib/components/ui/sidebar/index.js';
+  import { Switch } from '#lib/components/ui/switch/index.js';
   import NavUser from './nav-user.svelte';
 
   let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar> = $props();

@@ -2,7 +2,7 @@
   import CircleCheckFilledIcon from '@lucide/svelte/icons/circle-check';
   import LoaderIcon from '@lucide/svelte/icons/loader';
   import type { Row } from '@tanstack/svelte-table';
-  import { Badge } from '$lib/components/ui/badge';
+  import { Badge } from '#lib/components/ui/badge/index.js';
   import type { DashboardTableFeatures } from './data-table-features.js';
   import type { Schema } from './schemas.js';
 

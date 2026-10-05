@@ -4,7 +4,7 @@
     Collapsible,
     CollapsiblePanel,
     CollapsibleTrigger
-  } from '$lib/components/ui/collapsible';
+  } from '#lib/components/ui/collapsible/index.js';
   import {
     Sidebar,
     SidebarContent,
@@ -19,7 +19,7 @@
     SidebarMenuSubItem,
     SidebarProvider,
     SidebarTrigger
-  } from '$lib/components/ui/sidebar';
+  } from '#lib/components/ui/sidebar/index.js';
 
   const items = [
     {

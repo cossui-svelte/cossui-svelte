@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Badge } from '$lib/components/ui/badge';
+  import { Badge } from '#lib/components/ui/badge/index.js';
   import {
     Table,
     TableBody,
@@ -9,7 +9,7 @@
     TableHead,
     TableHeader,
     TableRow
-  } from '$lib/components/ui/table';
+  } from '#lib/components/ui/table/index.js';
 </script>
 
 <Table>

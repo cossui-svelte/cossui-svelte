@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { Button } from '$lib/components/ui/button';
-  import { Checkbox } from '$lib/components/ui/checkbox';
-  import { CheckboxGroup } from '$lib/components/ui/checkbox-group';
-  import { Field, FieldError, FieldItem, FieldLabel } from '$lib/components/ui/field';
-  import { Fieldset, FieldsetLegend } from '$lib/components/ui/fieldset';
-  import { Form } from '$lib/components/ui/form';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import { CheckboxGroup } from '#lib/components/ui/checkbox-group/index.js';
+  import { Checkbox } from '#lib/components/ui/checkbox/index.js';
+  import { Field, FieldError, FieldItem, FieldLabel } from '#lib/components/ui/field/index.js';
+  import { Fieldset, FieldsetLegend } from '#lib/components/ui/fieldset/index.js';
+  import { Form } from '#lib/components/ui/form/index.js';
 
   let loading = $state(false);
 

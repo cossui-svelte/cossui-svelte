@@ -5,7 +5,7 @@ import type {
   OnChangeFn,
   WeekStartsOn,
   WithChild
-} from '$lib/components/ui/calendar/internal/types';
+} from '#lib/components/ui/calendar/internal/types.js';
 
 export type {
   CalendarCellProps as RangeCalendarCellProps,
@@ -21,7 +21,7 @@ export type {
   CalendarNextButtonProps as RangeCalendarNextButtonProps,
   CalendarPrevButtonProps as RangeCalendarPrevButtonProps,
   CalendarYearSelectProps as RangeCalendarYearSelectProps
-} from '$lib/components/ui/calendar/internal/types';
+} from '#lib/components/ui/calendar/internal/types.js';
 
 export type DateRange = {
   start: DateValue | undefined;

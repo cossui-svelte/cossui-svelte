@@ -8,7 +8,7 @@
   } from '@headless-tree/core';
   import FolderIcon from '@lucide/svelte/icons/folder';
   import FolderOpenIcon from '@lucide/svelte/icons/folder-open';
-  import { Tree, TreeItem, TreeLabel, useTree } from '$lib/components/ui/tree';
+  import { Tree, TreeItem, TreeLabel, useTree } from '#lib/components/ui/tree/index.js';
 
   interface Item {
     children?: string[];

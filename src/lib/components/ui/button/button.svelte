@@ -2,8 +2,8 @@
   import { Button as ButtonPrimitive } from '@shardsui/svelte/button';
   import type { ComponentProps, Snippet } from 'svelte';
   import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';
-  import { Spinner } from '$lib/components/ui/spinner';
-  import { cn } from '$lib/utils';
+  import { Spinner } from '#lib/components/ui/spinner/index.js';
+  import { cn } from '#lib/utils.js';
   import { type ButtonSize, type ButtonVariant, buttonVariants } from './button-variants';
 
   type ButtonElementProps = HTMLButtonAttributes & { href?: never };

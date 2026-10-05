@@ -12,8 +12,8 @@
     ComboboxList,
     ComboboxPopup,
     ComboboxSeparator
-  } from '$lib/components/ui/combobox';
-  import { allParticles } from '$lib/registry/registry-particles';
+  } from '#lib/components/ui/combobox/index.js';
+  import { allParticles } from '#lib/registry/registry-particles.js';
 
   export interface SearchItem {
     label: string;

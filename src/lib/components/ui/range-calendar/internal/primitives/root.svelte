@@ -2,9 +2,9 @@
   import type { DateValue } from '@internationalized/date';
   import { watch } from 'runed';
   import { boxWith, mergeProps } from 'svelte-toolbelt';
-  import { getDefaultDate } from '$lib/components/ui/calendar/internal/date-utils';
-  import { createId } from '$lib/components/ui/calendar/internal/ids';
-  import { resolveLocaleProp } from '$lib/components/ui/calendar/internal/prop-resolvers';
+  import { getDefaultDate } from '#lib/components/ui/calendar/internal/date-utils.js';
+  import { createId } from '#lib/components/ui/calendar/internal/ids.js';
+  import { resolveLocaleProp } from '#lib/components/ui/calendar/internal/prop-resolvers.js';
   import { RangeCalendarRootState } from '../range-calendar-state.svelte';
   import type { RangeCalendarRootProps } from '../types';
 

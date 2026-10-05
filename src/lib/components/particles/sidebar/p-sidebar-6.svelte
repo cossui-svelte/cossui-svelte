@@ -16,8 +16,8 @@
     SidebarMenuItem,
     SidebarProvider,
     SidebarTrigger
-  } from '$lib/components/ui/sidebar';
-  import { toastManager } from '$lib/components/ui/toast';
+  } from '#lib/components/ui/sidebar/index.js';
+  import { toastManager } from '#lib/components/ui/toast/index.js';
 
   const projects = [
     { name: 'Design Engineering', url: '#', icon: FrameIcon },

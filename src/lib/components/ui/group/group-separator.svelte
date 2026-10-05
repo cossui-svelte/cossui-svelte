@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Separator } from '$lib/components/ui/separator';
-  import { cn, type WithElementRef } from '$lib/utils';
+  import { Separator } from '#lib/components/ui/separator/index.js';
+  import { cn, type WithElementRef } from '#lib/utils.js';
 
   let {
     ref = $bindable(null),

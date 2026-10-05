@@ -1,6 +1,6 @@
 <script lang="ts">
   import TrendingUp from '@lucide/svelte/icons/trending-up';
-  import { Map, MapMarker, MarkerContent, MarkerTooltip } from '$lib/components/ui/map';
+  import { Map, MapMarker, MarkerContent, MarkerTooltip } from '#lib/components/ui/map/index.js';
 
   const analyticsData = [
     { lng: -74.006, lat: 40.7128, city: 'New York', users: 847, size: 14 },

@@ -8,11 +8,11 @@
     AutocompleteItem,
     AutocompleteList,
     AutocompletePopup
-  } from '$lib/components/ui/autocomplete';
-  import { Button } from '$lib/components/ui/button';
-  import { Calendar } from '$lib/components/ui/calendar';
-  import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';
-  import { Form } from '$lib/components/ui/form';
+  } from '#lib/components/ui/autocomplete/index.js';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import { Calendar } from '#lib/components/ui/calendar/index.js';
+  import { Field, FieldError, FieldLabel } from '#lib/components/ui/field/index.js';
+  import { Form } from '#lib/components/ui/form/index.js';
 
   const times = Array.from({ length: 96 }, (_, i) => {
     const hours = String(Math.floor(i / 4)).padStart(2, '0');

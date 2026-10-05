@@ -1,6 +1,6 @@
 <script lang="ts">
   import CircleAlertIcon from '@lucide/svelte/icons/circle-alert';
-  import { Button, buttonVariants } from '$lib/components/ui/button';
+  import { Button, buttonVariants } from '#lib/components/ui/button/index.js';
   import {
     Dialog,
     DialogClose,
@@ -11,10 +11,10 @@
     DialogPopup,
     DialogTitle,
     DialogTrigger
-  } from '$lib/components/ui/dialog';
-  import { Input } from '$lib/components/ui/input';
-  import { Label } from '$lib/components/ui/label';
-  import { cn } from '$lib/utils';
+  } from '#lib/components/ui/dialog/index.js';
+  import { Input } from '#lib/components/ui/input/index.js';
+  import { Label } from '#lib/components/ui/label/index.js';
+  import { cn } from '#lib/utils.js';
 
   const PROJECT_NAME = 'coss-ui';
   const id = $props.id();

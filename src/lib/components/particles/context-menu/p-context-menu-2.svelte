@@ -5,7 +5,7 @@
     ContextMenuLinkItem,
     ContextMenuPopup,
     ContextMenuTrigger
-  } from '$lib/components/ui/context-menu';
+  } from '#lib/components/ui/context-menu/index.js';
 </script>
 
 <ContextMenu>
@@ -15,7 +15,7 @@
     Right click here
   </ContextMenuTrigger>
   <ContextMenuPopup>
-    <ContextMenuLinkItem href={resolve('/docs')}>Docs</ContextMenuLinkItem>
-    <ContextMenuLinkItem href={resolve('/particles')}>Particles</ContextMenuLinkItem>
+    <ContextMenuLinkItem href={resolve('docs')}>Docs</ContextMenuLinkItem>
+    <ContextMenuLinkItem href={resolve('particles')}>Particles</ContextMenuLinkItem>
   </ContextMenuPopup>
 </ContextMenu>

@@ -1,9 +1,9 @@
 <script lang="ts">
   import UserRoundPlusIcon from '@lucide/svelte/icons/user-round-plus';
   import UsersRoundIcon from '@lucide/svelte/icons/users-round';
-  import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
-  import { Button } from '$lib/components/ui/button';
-  import { Skeleton } from '$lib/components/ui/skeleton';
+  import { Avatar, AvatarFallback, AvatarImage } from '#lib/components/ui/avatar/index.js';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import { Skeleton } from '#lib/components/ui/skeleton/index.js';
 
   const users = [
     {

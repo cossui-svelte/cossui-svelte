@@ -2,7 +2,7 @@
   import ChevronRight from '@lucide/svelte/icons/chevron-right';
   import { Menu as MenuPrimitive } from '@shardsui/svelte/menu';
   import type { ComponentProps, Snippet } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   type Props = Omit<ComponentProps<typeof MenuPrimitive.SubmenuTrigger>, 'children'> & {
     children?: Snippet;

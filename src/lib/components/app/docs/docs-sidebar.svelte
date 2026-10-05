@@ -1,6 +1,6 @@
 <script lang="ts">
   import { page } from '$app/state';
-  import { Badge } from '$lib/components/ui/badge';
+  import { Badge } from '#lib/components/ui/badge/index.js';
   import {
     Sidebar,
     SidebarContent,
@@ -10,9 +10,9 @@
     SidebarMenu,
     SidebarMenuButton,
     SidebarMenuItem
-  } from '$lib/components/ui/sidebar';
-  import { type FolderNode, type NavTree, PAGES_NEW } from '$lib/docs';
-  import { cn } from '$lib/utils';
+  } from '#lib/components/ui/sidebar/index.js';
+  import { type FolderNode, type NavTree, PAGES_NEW } from '#lib/docs.js';
+  import { cn } from '#lib/utils.js';
 
   interface Props {
     class?: string;

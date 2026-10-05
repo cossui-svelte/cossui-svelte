@@ -1,13 +1,13 @@
 <script lang="ts">
-  import { Button, buttonVariants } from '$lib/components/ui/button';
+  import { Button, buttonVariants } from '#lib/components/ui/button/index.js';
   import {
     Popover,
     PopoverDescription,
     PopoverPopup,
     PopoverTitle,
     PopoverTrigger
-  } from '$lib/components/ui/popover';
-  import { Textarea } from '$lib/components/ui/textarea';
+  } from '#lib/components/ui/popover/index.js';
+  import { Textarea } from '#lib/components/ui/textarea/index.js';
 </script>
 
 <Popover>

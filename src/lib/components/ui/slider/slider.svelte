@@ -1,8 +1,8 @@
 <script lang="ts">
   import { Slider as SliderPrimitive } from '@shardsui/svelte/slider';
   import { on } from 'svelte/events';
-  import { Tooltip, TooltipContent } from '$lib/components/ui/tooltip';
-  import { cn } from '$lib/utils';
+  import { Tooltip, TooltipContent } from '#lib/components/ui/tooltip/index.js';
+  import { cn } from '#lib/utils.js';
 
   let {
     class: className,

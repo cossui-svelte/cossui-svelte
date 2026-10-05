@@ -1,7 +1,7 @@
 <script lang="ts">
   import type * as MapLibreGL from 'maplibre-gl';
-  import { Button } from '$lib/components/ui/button';
-  import { Map, MapMarker, MarkerContent } from '$lib/components/ui/map';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import { Map, MapMarker, MarkerContent } from '#lib/components/ui/map/index.js';
 
   const destinations = [
     { name: 'New York', center: [-74.006, 40.7128] as [number, number] },

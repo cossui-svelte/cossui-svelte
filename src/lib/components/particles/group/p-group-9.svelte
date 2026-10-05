@@ -1,8 +1,8 @@
 <script lang="ts">
   import ZoomIn from '@lucide/svelte/icons/zoom-in';
   import ZoomOut from '@lucide/svelte/icons/zoom-out';
-  import { Button } from '$lib/components/ui/button';
-  import { Group, GroupSeparator } from '$lib/components/ui/group';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import { Group, GroupSeparator } from '#lib/components/ui/group/index.js';
 </script>
 
 <Group aria-label="Zoom controls" orientation="vertical">

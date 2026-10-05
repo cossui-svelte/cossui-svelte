@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { docEntries, loadDocPage } from '$lib/docs-content';
+import { docEntries, loadDocPage } from '#lib/docs-content.js';
 import type { EntryGenerator, PageLoad } from './$types';
 
 export const entries: EntryGenerator = () => docEntries();

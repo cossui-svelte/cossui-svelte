@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Popover as PopoverPrimitive } from '@shardsui/svelte/popover';
   import type { ComponentProps, Snippet } from 'svelte';
-  import { cn, type WithoutChildren } from '$lib/utils';
+  import { cn, type WithoutChildren } from '#lib/utils.js';
 
   type Props = Omit<ComponentProps<typeof PopoverPrimitive.Popup>, 'children'> & {
     children?: Snippet;

@@ -2,17 +2,17 @@
   import Check from '@lucide/svelte/icons/check';
   import Copy from '@lucide/svelte/icons/copy';
   import Terminal from '@lucide/svelte/icons/terminal';
-  import { buttonVariants } from '$lib/components/ui/button';
-  import { ScrollArea } from '$lib/components/ui/scroll-area';
-  import { Tabs, TabsList, TabsPanel, TabsTab } from '$lib/components/ui/tabs';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
+  import { ScrollArea } from '#lib/components/ui/scroll-area/index.js';
+  import { Tabs, TabsList, TabsPanel, TabsTab } from '#lib/components/ui/tabs/index.js';
   import {
     Tooltip,
     TooltipPopup,
     TooltipProvider,
     TooltipTrigger
-  } from '$lib/components/ui/tooltip';
-  import { config } from '$lib/hooks/use-pkgmgr-config.svelte';
-  import { cn } from '$lib/utils';
+  } from '#lib/components/ui/tooltip/index.js';
+  import { config } from '#lib/hooks/use-pkgmgr-config.svelte.js';
+  import { cn } from '#lib/utils.js';
 
   interface Props {
     __bun__?: string;

@@ -1,10 +1,10 @@
 <script lang="ts">
   import { CalendarDate } from '@internationalized/date';
   import Clock2Icon from '@lucide/svelte/icons/clock-2';
-  import { Calendar } from '$lib/components/ui/calendar';
-  import { Card, CardFooter, CardPanel } from '$lib/components/ui/card';
-  import { Input } from '$lib/components/ui/input';
-  import { Label } from '$lib/components/ui/label';
+  import { Calendar } from '#lib/components/ui/calendar/index.js';
+  import { Card, CardFooter, CardPanel } from '#lib/components/ui/card/index.js';
+  import { Input } from '#lib/components/ui/input/index.js';
+  import { Label } from '#lib/components/ui/label/index.js';
 
   let value = $state<CalendarDate | undefined>(new CalendarDate(2025, 6, 12));
 </script>

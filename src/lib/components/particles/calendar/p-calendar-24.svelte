@@ -1,7 +1,7 @@
 <script lang="ts">
   import { type DateValue, getLocalTimeZone, today } from '@internationalized/date';
-  import { Calendar, Day } from '$lib/components/ui/calendar';
-  import { cn } from '$lib/utils';
+  import { Calendar, Day } from '#lib/components/ui/calendar/index.js';
+  import { cn } from '#lib/utils.js';
 
   const GOOD_PRICE_THRESHOLD = 100;
 

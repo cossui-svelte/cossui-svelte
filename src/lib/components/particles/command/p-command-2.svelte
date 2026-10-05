@@ -6,7 +6,7 @@
   import CornerDownLeft from '@lucide/svelte/icons/corner-down-left';
   import Search from '@lucide/svelte/icons/search';
   import Sparkles from '@lucide/svelte/icons/sparkles';
-  import { Button } from '$lib/components/ui/button';
+  import { Button } from '#lib/components/ui/button/index.js';
   import {
     Command,
     CommandCollection,
@@ -22,12 +22,12 @@
     CommandPanel,
     CommandSeparator,
     CommandShortcut
-  } from '$lib/components/ui/command';
-  import { EmptyMedia } from '$lib/components/ui/empty';
-  import { Input } from '$lib/components/ui/input';
-  import { Kbd, KbdGroup } from '$lib/components/ui/kbd';
-  import { ScrollArea } from '$lib/components/ui/scroll-area';
-  import { Spinner } from '$lib/components/ui/spinner';
+  } from '#lib/components/ui/command/index.js';
+  import { EmptyMedia } from '#lib/components/ui/empty/index.js';
+  import { Input } from '#lib/components/ui/input/index.js';
+  import { Kbd, KbdGroup } from '#lib/components/ui/kbd/index.js';
+  import { ScrollArea } from '#lib/components/ui/scroll-area/index.js';
+  import { Spinner } from '#lib/components/ui/spinner/index.js';
 
   interface Item {
     keywords?: string[];

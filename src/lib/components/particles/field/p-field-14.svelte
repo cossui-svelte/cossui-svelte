@@ -1,8 +1,13 @@
 <script lang="ts">
-  import { Field, FieldDescription, FieldItem, FieldLabel } from '$lib/components/ui/field';
-  import { Fieldset, FieldsetLegend } from '$lib/components/ui/fieldset';
-  import { Form } from '$lib/components/ui/form';
-  import { Radio, RadioGroup } from '$lib/components/ui/radio-group';
+  import {
+    Field,
+    FieldDescription,
+    FieldItem,
+    FieldLabel
+  } from '#lib/components/ui/field/index.js';
+  import { Fieldset, FieldsetLegend } from '#lib/components/ui/fieldset/index.js';
+  import { Form } from '#lib/components/ui/form/index.js';
+  import { Radio, RadioGroup } from '#lib/components/ui/radio-group/index.js';
 </script>
 
 <Field name="plan" class="gap-2">

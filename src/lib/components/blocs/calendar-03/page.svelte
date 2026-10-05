@@ -1,6 +1,6 @@
 <script lang="ts">
   import { CalendarDate, type DateValue } from '@internationalized/date';
-  import { Calendar } from '$lib/components/ui/calendar';
+  import { Calendar } from '#lib/components/ui/calendar/index.js';
 
   let value = $state<CalendarDate[]>([
     new CalendarDate(2025, 6, 12),

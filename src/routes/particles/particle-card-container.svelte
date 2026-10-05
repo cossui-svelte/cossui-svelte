@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
-  import { Card, CardFrame, CardFrameFooter, CardPanel } from '$lib/components/ui/card';
-  import { cn } from '$lib/utils';
+  import { Card, CardFrame, CardFrameFooter, CardPanel } from '#lib/components/ui/card/index.js';
+  import { cn } from '#lib/utils.js';
 
   let {
     children,

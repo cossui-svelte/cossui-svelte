@@ -1,9 +1,14 @@
 <script lang="ts">
   import { CalendarDate } from '@internationalized/date';
   import type { ComponentProps } from 'svelte';
-  import { Calendar } from '$lib/components/ui/calendar';
-  import { Label } from '$lib/components/ui/label';
-  import { Select, SelectItem, SelectPopup, SelectTrigger } from '$lib/components/ui/select';
+  import { Calendar } from '#lib/components/ui/calendar/index.js';
+  import { Label } from '#lib/components/ui/label/index.js';
+  import {
+    Select,
+    SelectItem,
+    SelectPopup,
+    SelectTrigger
+  } from '#lib/components/ui/select/index.js';
 
   let value = $state<CalendarDate>(new CalendarDate(2025, 6, 12));
   let dropdown = $state<ComponentProps<typeof Calendar>['captionLayout']>('dropdown');

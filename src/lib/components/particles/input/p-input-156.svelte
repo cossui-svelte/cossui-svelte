@@ -1,8 +1,8 @@
 <script lang="ts">
   import { formatTime, registerCursorTracker } from 'cleave-zen';
   import type { Attachment } from 'svelte/attachments';
-  import { Input } from '$lib/components/ui/input';
-  import { Label } from '$lib/components/ui/label';
+  import { Input } from '#lib/components/ui/input/index.js';
+  import { Label } from '#lib/components/ui/label/index.js';
 
   const timestampAttachment: Attachment<HTMLInputElement> = (input) => {
     const unregisterCursorTracker = registerCursorTracker({

@@ -8,8 +8,8 @@ import {
 import { Context, watch } from 'runed';
 import { onMount, untrack } from 'svelte';
 import { DOMContext, type ReadableBox, type WritableBox, attachRef } from 'svelte-toolbelt';
-import { getAnnouncer } from '$lib/components/ui/calendar/internal/announcer';
-import { boolToEmptyStrOrUndef, boolToStr } from '$lib/components/ui/calendar/internal/attrs';
+import { getAnnouncer } from '#lib/components/ui/calendar/internal/announcer.js';
+import { boolToEmptyStrOrUndef, boolToStr } from '#lib/components/ui/calendar/internal/attrs.js';
 import {
   calendarAttrs,
   createMonths,
@@ -26,11 +26,11 @@ import {
   useEnsureNonDisabledPlaceholder,
   useMonthViewOptionsSync,
   useMonthViewPlaceholderSync
-} from '$lib/components/ui/calendar/internal/calendar-helpers.svelte';
+} from '#lib/components/ui/calendar/internal/calendar-helpers.svelte.js';
 import {
   CalendarRootContext,
   type CalendarRootState
-} from '$lib/components/ui/calendar/internal/calendar-state.svelte';
+} from '#lib/components/ui/calendar/internal/calendar-state.svelte.js';
 import {
   areAllDaysBetweenValid,
   getDateValueType,
@@ -38,10 +38,14 @@ import {
   isBefore,
   isBetweenInclusive,
   toDate
-} from '$lib/components/ui/calendar/internal/date-utils';
-import { createFormatter, type Formatter } from '$lib/components/ui/calendar/internal/formatter';
-import { useId } from '$lib/components/ui/calendar/internal/ids';
-import type { DateMatcher, Month, WeekStartsOn } from '$lib/components/ui/calendar/internal/types';
+} from '#lib/components/ui/calendar/internal/date-utils.js';
+import { createFormatter, type Formatter } from '#lib/components/ui/calendar/internal/formatter.js';
+import { useId } from '#lib/components/ui/calendar/internal/ids.js';
+import type {
+  DateMatcher,
+  Month,
+  WeekStartsOn
+} from '#lib/components/ui/calendar/internal/types.js';
 import type { DateRange } from './types';
 
 export type RangeCalendarRootStateOpts = {

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Badge } from '$lib/components/ui/badge';
-  import { Frame } from '$lib/components/ui/frame';
+  import { Badge } from '#lib/components/ui/badge/index.js';
+  import { Frame } from '#lib/components/ui/frame/index.js';
   import {
     Table,
     TableBody,
@@ -9,7 +9,7 @@
     TableHead,
     TableHeader,
     TableRow
-  } from '$lib/components/ui/table';
+  } from '#lib/components/ui/table/index.js';
 </script>
 
 <Frame class="w-full">

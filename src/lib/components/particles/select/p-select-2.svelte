@@ -5,7 +5,7 @@
     SelectPopup,
     SelectTrigger,
     SelectValue
-  } from '$lib/components/ui/select';
+  } from '#lib/components/ui/select/index.js';
 
   const items = [
     { label: 'Next.js', value: 'next' },

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Combobox as ComboboxPrimitive } from '@shardsui/svelte/combobox';
   import type { ComponentProps } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   let { class: className, ...restProps }: ComponentProps<typeof ComboboxPrimitive.GroupLabel> =
     $props();

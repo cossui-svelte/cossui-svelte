@@ -1,6 +1,6 @@
 <script lang="ts">
   import { CalendarDate } from '@internationalized/date';
-  import { type DateRange } from '$lib/components/ui/calendar';
+  import { type DateRange } from '#lib/components/ui/calendar/index.js';
   import {
     Card,
     CardAction,
@@ -8,9 +8,14 @@
     CardHeader,
     CardPanel,
     CardTitle
-  } from '$lib/components/ui/card';
-  import { RangeCalendar } from '$lib/components/ui/range-calendar';
-  import { Select, SelectItem, SelectPopup, SelectTrigger } from '$lib/components/ui/select';
+  } from '#lib/components/ui/card/index.js';
+  import { RangeCalendar } from '#lib/components/ui/range-calendar/index.js';
+  import {
+    Select,
+    SelectItem,
+    SelectPopup,
+    SelectTrigger
+  } from '#lib/components/ui/select/index.js';
 
   let value = $state<DateRange | undefined>({
     start: new CalendarDate(2025, 9, 9),

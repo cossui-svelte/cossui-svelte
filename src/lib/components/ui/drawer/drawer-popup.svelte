@@ -3,8 +3,8 @@
   import { Drawer as DrawerPrimitive } from '@shardsui/svelte/drawer';
   import type { ComponentProps, Snippet } from 'svelte';
   import { getContext } from 'svelte';
-  import { buttonVariants } from '$lib/components/ui/button/button-variants';
-  import { cn, type WithoutChildren } from '$lib/utils';
+  import { buttonVariants } from '#lib/components/ui/button/button-variants.js';
+  import { cn, type WithoutChildren } from '#lib/utils.js';
   import DrawerBackdrop from './drawer-backdrop.svelte';
   import DrawerBar from './drawer-bar.svelte';
   import DrawerClose from './drawer-close.svelte';

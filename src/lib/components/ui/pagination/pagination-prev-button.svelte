@@ -1,6 +1,6 @@
 <script lang="ts">
   import ChevronLeft from '@lucide/svelte/icons/chevron-left';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
   import PaginationLink, { type Props as PaginationLinkProps } from './pagination-link.svelte';
 
   let {

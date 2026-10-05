@@ -1,14 +1,14 @@
 <script lang="ts">
   import Bell from '@lucide/svelte/icons/bell';
   import User from '@lucide/svelte/icons/user';
-  import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
-  import { Button, buttonVariants } from '$lib/components/ui/button';
+  import { Avatar, AvatarFallback, AvatarImage } from '#lib/components/ui/avatar/index.js';
+  import { Button, buttonVariants } from '#lib/components/ui/button/index.js';
   import {
     Popover,
     PopoverDescription,
     PopoverPopup,
     PopoverTitle
-  } from '$lib/components/ui/popover';
+  } from '#lib/components/ui/popover/index.js';
 
   type ActivePanel = 'notifications' | 'profile' | null;
 

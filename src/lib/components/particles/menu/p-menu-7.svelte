@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { buttonVariants } from '$lib/components/ui/button';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
   import {
     Menu,
     MenuItem,
@@ -8,7 +8,7 @@
     MenuSubPopup,
     MenuSubTrigger,
     MenuTrigger
-  } from '$lib/components/ui/menu';
+  } from '#lib/components/ui/menu/index.js';
 </script>
 
 <Menu>

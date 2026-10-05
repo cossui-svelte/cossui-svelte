@@ -7,7 +7,7 @@
     BreadcrumbList,
     BreadcrumbPage,
     BreadcrumbSeparator
-  } from '$lib/components/ui/breadcrumb';
+  } from '#lib/components/ui/breadcrumb/index.js';
 </script>
 
 <Breadcrumb>

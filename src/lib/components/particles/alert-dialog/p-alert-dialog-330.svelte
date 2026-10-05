@@ -1,7 +1,7 @@
 <script lang="ts">
   import CheckIcon from '@lucide/svelte/icons/check';
   import RefreshCcwIcon from '@lucide/svelte/icons/refresh-ccw';
-  import { Button, buttonVariants } from '$lib/components/ui/button';
+  import { Button, buttonVariants } from '#lib/components/ui/button/index.js';
   import {
     Dialog,
     DialogClose,
@@ -11,9 +11,9 @@
     DialogPopup,
     DialogTitle,
     DialogTrigger
-  } from '$lib/components/ui/dialog';
-  import { Label } from '$lib/components/ui/label';
-  import { Radio, RadioGroup } from '$lib/components/ui/radio-group';
+  } from '#lib/components/ui/dialog/index.js';
+  import { Label } from '#lib/components/ui/label/index.js';
+  import { Radio, RadioGroup } from '#lib/components/ui/radio-group/index.js';
 
   const id = $props.id();
 

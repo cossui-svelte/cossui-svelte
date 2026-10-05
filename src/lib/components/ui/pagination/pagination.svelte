@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import type { SvelteHTMLElements } from 'svelte/elements';
-  import { cn, type WithElementRef } from '$lib/utils';
+  import { cn, type WithElementRef } from '#lib/utils.js';
 
   type Props = WithElementRef<SvelteHTMLElements['nav']> & {
     children: Snippet;

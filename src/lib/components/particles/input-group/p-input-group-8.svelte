@@ -1,14 +1,18 @@
 <script lang="ts">
   import Check from '@lucide/svelte/icons/check';
   import Copy from '@lucide/svelte/icons/copy';
-  import { buttonVariants } from '$lib/components/ui/button';
-  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
+  import {
+    InputGroup,
+    InputGroupAddon,
+    InputGroupInput
+  } from '#lib/components/ui/input-group/index.js';
   import {
     Tooltip,
     TooltipPopup,
     TooltipProvider,
     TooltipTrigger
-  } from '$lib/components/ui/tooltip';
+  } from '#lib/components/ui/tooltip/index.js';
 
   let inputValue = $state('https://coss.com');
   let isCopied = $state(false);

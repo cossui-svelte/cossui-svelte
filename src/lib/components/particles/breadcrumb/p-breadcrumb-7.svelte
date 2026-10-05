@@ -6,14 +6,14 @@
     BreadcrumbLink,
     BreadcrumbList,
     BreadcrumbSeparator
-  } from '$lib/components/ui/breadcrumb';
+  } from '#lib/components/ui/breadcrumb/index.js';
   import {
     Select,
     SelectItem,
     SelectPopup,
     SelectTrigger,
     SelectValue
-  } from '$lib/components/ui/select';
+  } from '#lib/components/ui/select/index.js';
 
   const items = [
     { label: 'Orion', value: 'Orion' },

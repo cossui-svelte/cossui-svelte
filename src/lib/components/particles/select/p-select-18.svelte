@@ -1,5 +1,10 @@
 <script lang="ts">
-  import { Select, SelectItem, SelectPopup, SelectTrigger } from '$lib/components/ui/select';
+  import {
+    Select,
+    SelectItem,
+    SelectPopup,
+    SelectTrigger
+  } from '#lib/components/ui/select/index.js';
 
   const items = [
     { description: 'Ideal for individuals', label: 'Standard Plan', value: 'standard' },

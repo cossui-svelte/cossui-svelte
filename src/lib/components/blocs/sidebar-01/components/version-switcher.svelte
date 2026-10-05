@@ -2,8 +2,12 @@
   import CheckIcon from '@lucide/svelte/icons/check';
   import ChevronsUpDownIcon from '@lucide/svelte/icons/chevrons-up-down';
   import GalleryVerticalEndIcon from '@lucide/svelte/icons/gallery-vertical-end';
-  import { Menu, MenuItem, MenuPopup, MenuTrigger } from '$lib/components/ui/menu';
-  import { SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '$lib/components/ui/sidebar';
+  import { Menu, MenuItem, MenuPopup, MenuTrigger } from '#lib/components/ui/menu/index.js';
+  import {
+    SidebarMenu,
+    SidebarMenuButton,
+    SidebarMenuItem
+  } from '#lib/components/ui/sidebar/index.js';
 
   let { versions, defaultVersion }: { versions: string[]; defaultVersion: string } = $props();
 

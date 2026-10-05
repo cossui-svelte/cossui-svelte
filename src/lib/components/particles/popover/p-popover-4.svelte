@@ -1,11 +1,11 @@
 <script lang="ts">
   import ChevronDown from '@lucide/svelte/icons/chevron-down';
-  import { Badge } from '$lib/components/ui/badge';
-  import { Button, buttonVariants } from '$lib/components/ui/button';
-  import { Checkbox } from '$lib/components/ui/checkbox';
-  import { CheckboxGroup } from '$lib/components/ui/checkbox-group';
-  import { Group, GroupSeparator } from '$lib/components/ui/group';
-  import { Label } from '$lib/components/ui/label';
+  import { Badge } from '#lib/components/ui/badge/index.js';
+  import { Button, buttonVariants } from '#lib/components/ui/button/index.js';
+  import { CheckboxGroup } from '#lib/components/ui/checkbox-group/index.js';
+  import { Checkbox } from '#lib/components/ui/checkbox/index.js';
+  import { Group, GroupSeparator } from '#lib/components/ui/group/index.js';
+  import { Label } from '#lib/components/ui/label/index.js';
   import {
     Popover,
     PopoverClose,
@@ -13,7 +13,7 @@
     PopoverPopup,
     PopoverTitle,
     PopoverTrigger
-  } from '$lib/components/ui/popover';
+  } from '#lib/components/ui/popover/index.js';
 
   const occurrences = [
     { date: 'Wed, Jul 15', id: 'occurrence-1', time: '9:00 – 9:30am' },

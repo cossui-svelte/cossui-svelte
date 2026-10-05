@@ -5,7 +5,7 @@
     MeterLabel,
     MeterTrack,
     MeterValue
-  } from '$lib/components/ui/meter';
+  } from '#lib/components/ui/meter/index.js';
 </script>
 
 <Meter value={75}>

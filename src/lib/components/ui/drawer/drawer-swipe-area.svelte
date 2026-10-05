@@ -2,7 +2,7 @@
   import { Drawer as DrawerPrimitive } from '@shardsui/svelte/drawer';
   import type { ComponentProps } from 'svelte';
   import { getContext } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   type DrawerPosition = 'right' | 'left' | 'top' | 'bottom';
 

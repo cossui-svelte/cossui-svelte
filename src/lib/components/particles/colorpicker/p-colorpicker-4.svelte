@@ -1,5 +1,5 @@
 <script>
-  import { ColorPicker } from '$lib/components/ui/colorpicker';
+  import { ColorPicker } from '#lib/components/ui/colorpicker/index.js';
 
   let color = $state('#1d916bb8');
 </script>

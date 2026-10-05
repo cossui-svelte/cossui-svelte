@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Dialog as SheetPrimitive } from '@shardsui/svelte/dialog';
   import type { ComponentProps } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   type Props = ComponentProps<typeof SheetPrimitive.Viewport> & {
     side?: 'right' | 'left' | 'top' | 'bottom';

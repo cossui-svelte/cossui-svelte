@@ -1,6 +1,6 @@
 <script lang="ts">
   import { getContext, onMount, type Snippet, setContext } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   type StepState = 'active' | 'completed' | 'inactive' | 'loading';
 

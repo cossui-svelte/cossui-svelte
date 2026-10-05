@@ -152,7 +152,7 @@
     Collapsible,
     CollapsiblePanel,
     CollapsibleTrigger
-  } from '$lib/components/ui/collapsible';
+  } from '#lib/components/ui/collapsible/index.js';
   import {
     Sidebar,
     SidebarContent,
@@ -165,7 +165,7 @@
     SidebarMenuSubButton,
     SidebarMenuSubItem,
     SidebarRail
-  } from '$lib/components/ui/sidebar';
+  } from '#lib/components/ui/sidebar/index.js';
   import SearchForm from './search-form.svelte';
 
   let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar> = $props();

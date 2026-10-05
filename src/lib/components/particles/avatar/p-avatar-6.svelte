@@ -1,6 +1,6 @@
 <script lang="ts">
   import User from '@lucide/svelte/icons/user';
-  import { Avatar, AvatarFallback } from '$lib/components/ui/avatar';
+  import { Avatar, AvatarFallback } from '#lib/components/ui/avatar/index.js';
 </script>
 
 <Avatar>

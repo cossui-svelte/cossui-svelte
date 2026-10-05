@@ -1,5 +1,8 @@
 {
-  "compilerOptions": { "noImplicitAny": false, "skipLibCheck": true },
-  "exclude": ["**/*.old", "**/*.old/**"],
-  "extends": "./.svelte-kit/tsconfig.json"
+  "compilerOptions": {
+    "noImplicitAny": false
+  },
+  "exclude": ["**/*.old", "**/*.old/**", ".svelte-kit"],
+  "extends": "$app/tsconfig",
+  "include": ["src", "vite.config.ts"]
 }

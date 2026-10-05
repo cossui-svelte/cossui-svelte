@@ -1,7 +1,7 @@
 <script lang="ts">
   import { CalendarDate, isWeekend } from '@internationalized/date';
-  import { type DateRange } from '$lib/components/ui/calendar';
-  import { RangeCalendar } from '$lib/components/ui/range-calendar';
+  import { type DateRange } from '#lib/components/ui/calendar/index.js';
+  import { RangeCalendar } from '#lib/components/ui/range-calendar/index.js';
 
   let value = $state<DateRange>({
     start: new CalendarDate(2025, 6, 17),

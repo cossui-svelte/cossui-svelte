@@ -1,8 +1,13 @@
 <script lang="ts">
-  import { Button } from '$lib/components/ui/button';
-  import { Field, FieldDescription, FieldError, FieldLabel } from '$lib/components/ui/field';
-  import { Form } from '$lib/components/ui/form';
-  import { Slider } from '$lib/components/ui/slider';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import {
+    Field,
+    FieldDescription,
+    FieldError,
+    FieldLabel
+  } from '#lib/components/ui/field/index.js';
+  import { Form } from '#lib/components/ui/form/index.js';
+  import { Slider } from '#lib/components/ui/slider/index.js';
 
   let loading = $state(false);
 

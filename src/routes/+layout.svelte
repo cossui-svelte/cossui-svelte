@@ -4,10 +4,10 @@
   import '../app.css';
 
   import type { Snippet } from 'svelte';
-  import { AnchoredToastProvider, ToastProvider } from '$lib/components/ui/toast';
-  import SiteHeader from '$lib/components/app/app-site-header.svelte';
-  import SeoHead from '$lib/components/app/seo-head.svelte';
-  import SiteFooter from '$lib/components/app/site-footer.svelte';
+  import SiteHeader from '#lib/components/app/app-site-header.svelte';
+  import SeoHead from '#lib/components/app/seo-head.svelte';
+  import SiteFooter from '#lib/components/app/site-footer.svelte';
+  import { AnchoredToastProvider, ToastProvider } from '#lib/components/ui/toast/index.js';
   import type { LayoutData } from './$types';
 
   const DEFAULT_SEO = {

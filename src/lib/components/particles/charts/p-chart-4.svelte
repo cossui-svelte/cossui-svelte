@@ -2,7 +2,7 @@
   import { scaleBand } from 'd3-scale';
   import { curveLinearClosed } from 'd3-shape';
   import { Axis, LineChart, Text } from 'layerchart';
-  import { Chart, type ChartConfig, ChartTooltip } from '$lib/components/ui/chart';
+  import { Chart, type ChartConfig, ChartTooltip } from '#lib/components/ui/chart/index.js';
 
   const chartData = [
     { desktop: 186, mobile: 80, month: 'January' },

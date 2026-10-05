@@ -2,7 +2,7 @@
   import ChevronsUpDown from '@lucide/svelte/icons/chevrons-up-down';
   import type { Snippet } from 'svelte';
   import type { HTMLButtonAttributes } from 'svelte/elements';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
   import { type SelectTriggerVariants, selectTriggerVariants } from './select-trigger-variants';
 
   type Props = HTMLButtonAttributes & {

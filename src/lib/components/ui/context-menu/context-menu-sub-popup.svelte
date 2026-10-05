@@ -1,7 +1,7 @@
 <script lang="ts">
   import { ContextMenu as ContextMenuPrimitive } from '@shardsui/svelte/context-menu';
   import type { ComponentProps, Snippet } from 'svelte';
-  import { cn, type WithoutChildren } from '$lib/utils';
+  import { cn, type WithoutChildren } from '#lib/utils.js';
 
   type Props = Omit<ComponentProps<typeof ContextMenuPrimitive.Popup>, 'children'> & {
     children?: Snippet;

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { FOLLOWER_COUNT, GITHUB_PROJECT } from '$lib/config';
+  import { FOLLOWER_COUNT, GITHUB_PROJECT } from '#lib/config.js';
   import { Button } from '../ui/button';
 
   export const FALLBACK_STAR_COUNT = 8000;

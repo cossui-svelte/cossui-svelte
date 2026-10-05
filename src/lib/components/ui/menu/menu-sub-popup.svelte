@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Menu as MenuPrimitive } from '@shardsui/svelte/menu';
   import type { ComponentProps, Snippet } from 'svelte';
-  import { cn, type WithoutChildren } from '$lib/utils';
+  import { cn, type WithoutChildren } from '#lib/utils.js';
 
   type Props = Omit<ComponentProps<typeof MenuPrimitive.Popup>, 'children'> & {
     children?: Snippet;

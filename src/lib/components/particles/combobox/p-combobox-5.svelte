@@ -7,8 +7,8 @@
     ComboboxItem,
     ComboboxList,
     ComboboxPopup
-  } from '$lib/components/ui/combobox';
-  import { Label } from '$lib/components/ui/label';
+  } from '#lib/components/ui/combobox/index.js';
+  import { Label } from '#lib/components/ui/label/index.js';
 
   const id = $props.id();
 

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Slider } from '$lib/components/ui/slider';
-  import { cn } from '$lib/utils';
+  import { Slider } from '#lib/components/ui/slider/index.js';
+  import { cn } from '#lib/utils.js';
 
   const max = 12;
   const skipInterval = 2;

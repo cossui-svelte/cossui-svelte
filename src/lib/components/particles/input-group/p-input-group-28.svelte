@@ -1,14 +1,18 @@
 <script lang="ts">
   import Image from '@lucide/svelte/icons/image';
   import Paperclip from '@lucide/svelte/icons/paperclip';
-  import { Button, buttonVariants } from '$lib/components/ui/button';
-  import { InputGroup, InputGroupAddon, InputGroupTextarea } from '$lib/components/ui/input-group';
+  import { Button, buttonVariants } from '#lib/components/ui/button/index.js';
+  import {
+    InputGroup,
+    InputGroupAddon,
+    InputGroupTextarea
+  } from '#lib/components/ui/input-group/index.js';
   import {
     Tooltip,
     TooltipPopup,
     TooltipProvider,
     TooltipTrigger
-  } from '$lib/components/ui/tooltip';
+  } from '#lib/components/ui/tooltip/index.js';
 </script>
 
 <InputGroup>

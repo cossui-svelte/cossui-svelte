@@ -1,11 +1,11 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
   import { page } from '$app/state';
-  import { Button } from '$lib/components/ui/button';
-  import PageHeaderDescription from '$lib/components/app/page-header-description.svelte';
-  import PageHeaderHeading from '$lib/components/app/page-header-heading.svelte';
-  import PageHeader from '$lib/components/app/page-header.svelte';
-  import RiArrowLeftLine from '$lib/icons/ArrowLeftLineArrows.svelte';
+  import PageHeaderDescription from '#lib/components/app/page-header-description.svelte';
+  import PageHeaderHeading from '#lib/components/app/page-header-heading.svelte';
+  import PageHeader from '#lib/components/app/page-header.svelte';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import RiArrowLeftLine from '#lib/icons/ArrowLeftLineArrows.svelte';
 </script>
 
 <svelte:head>

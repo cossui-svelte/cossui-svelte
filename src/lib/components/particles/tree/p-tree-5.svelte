@@ -16,7 +16,7 @@
     TreeItem,
     TreeLabel,
     useTree
-  } from '$lib/components/ui/tree';
+  } from '#lib/components/ui/tree/index.js';
 
   interface Item {
     children?: string[];

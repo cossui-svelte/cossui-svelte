@@ -17,7 +17,7 @@ Example:
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import type { HTMLAttributes } from 'svelte/elements';
-  import { cn } from '$lib/utils.js';
+  import { cn } from '#lib/utils.js';
   import { setCropperContext } from './cropper-context.js';
   import { type Area, CropperState } from './cropper-state.svelte.js';
 

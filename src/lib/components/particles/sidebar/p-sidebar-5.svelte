@@ -13,7 +13,7 @@
     SidebarMenuItem,
     SidebarProvider,
     SidebarTrigger
-  } from '$lib/components/ui/sidebar';
+  } from '#lib/components/ui/sidebar/index.js';
 </script>
 
 <!-- transform-gpu makes this box the containing block for the sidebar's `fixed`

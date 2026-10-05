@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Progress as ProgressPrimitive } from '@shardsui/svelte/progress';
   import type { ComponentProps, Snippet } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   type Props = Omit<ComponentProps<typeof ProgressPrimitive.Track>, 'children'> & {
     children?: Snippet;

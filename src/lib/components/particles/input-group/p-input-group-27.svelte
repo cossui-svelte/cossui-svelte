@@ -1,21 +1,25 @@
 <script lang="ts">
   import Check from '@lucide/svelte/icons/check';
   import Copy from '@lucide/svelte/icons/copy';
-  import { buttonVariants } from '$lib/components/ui/button';
-  import { InputGroup, InputGroupAddon, InputGroupTextarea } from '$lib/components/ui/input-group';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
+  import {
+    InputGroup,
+    InputGroupAddon,
+    InputGroupTextarea
+  } from '#lib/components/ui/input-group/index.js';
   import {
     Select,
     SelectItem,
     SelectPopup,
     SelectTrigger,
     SelectValue
-  } from '$lib/components/ui/select';
+  } from '#lib/components/ui/select/index.js';
   import {
     Tooltip,
     TooltipPopup,
     TooltipProvider,
     TooltipTrigger
-  } from '$lib/components/ui/tooltip';
+  } from '#lib/components/ui/tooltip/index.js';
 
   const languages = [
     { label: 'JavaScript', value: 'javascript' },

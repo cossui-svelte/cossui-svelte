@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button } from '$lib/components/ui/button';
+  import { Button } from '#lib/components/ui/button/index.js';
   import {
     Combobox,
     ComboboxCollection,
@@ -8,9 +8,14 @@
     ComboboxItem,
     ComboboxList,
     ComboboxPopup
-  } from '$lib/components/ui/combobox';
-  import { Field, FieldDescription, FieldError, FieldLabel } from '$lib/components/ui/field';
-  import { Form } from '$lib/components/ui/form';
+  } from '#lib/components/ui/combobox/index.js';
+  import {
+    Field,
+    FieldDescription,
+    FieldError,
+    FieldLabel
+  } from '#lib/components/ui/field/index.js';
+  import { Form } from '#lib/components/ui/form/index.js';
 
   const items = [
     { label: 'Apple', value: 'apple' },

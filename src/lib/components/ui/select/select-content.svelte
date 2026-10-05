@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Select as SelectPrimitive } from '@shardsui/svelte/select';
   import type { ComponentProps, Snippet } from 'svelte';
-  import { cn, type WithoutChildren } from '$lib/utils';
+  import { cn, type WithoutChildren } from '#lib/utils.js';
   import SelectScrollDownButton from './select-scroll-down-button.svelte';
   import SelectScrollUpButton from './select-scroll-up-button.svelte';
 

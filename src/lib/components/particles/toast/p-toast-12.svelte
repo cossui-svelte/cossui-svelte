@@ -1,9 +1,9 @@
 <script lang="ts">
   import SaveIcon from '@lucide/svelte/icons/save';
-  import { buttonVariants } from '$lib/components/ui/button';
-  import { anchoredToastManager } from '$lib/components/ui/toast';
-  import { Tooltip, TooltipPopup, TooltipTrigger } from '$lib/components/ui/tooltip';
-  import TooltipProvider from '$lib/components/ui/tooltip/tooltip-provider.svelte';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
+  import { anchoredToastManager } from '#lib/components/ui/toast/index.js';
+  import { Tooltip, TooltipPopup, TooltipTrigger } from '#lib/components/ui/tooltip/index.js';
+  import TooltipProvider from '#lib/components/ui/tooltip/tooltip-provider.svelte';
 
   const ANCHORED_SAVE_TOAST_ID = 'coss-demo-anchored-save-toast';
   const toastTimeout = 2000;

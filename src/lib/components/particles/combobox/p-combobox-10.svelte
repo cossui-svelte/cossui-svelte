@@ -1,7 +1,7 @@
 <script lang="ts">
   import ChevronsUpDown from '@lucide/svelte/icons/chevrons-up-down';
   import Search from '@lucide/svelte/icons/search';
-  import { buttonVariants } from '$lib/components/ui/button';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
   import {
     Combobox,
     ComboboxCollection,
@@ -12,7 +12,7 @@
     ComboboxPopup,
     ComboboxTrigger,
     ComboboxValue
-  } from '$lib/components/ui/combobox';
+  } from '#lib/components/ui/combobox/index.js';
 
   interface Country {
     code: string;

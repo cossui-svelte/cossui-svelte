@@ -6,7 +6,7 @@
   import PanelLeftCloseIcon from '@lucide/svelte/icons/panel-left-close';
   import PanelLeftOpenIcon from '@lucide/svelte/icons/panel-left-open';
   import SendIcon from '@lucide/svelte/icons/send';
-  import { Button } from '$lib/components/ui/button';
+  import { Button } from '#lib/components/ui/button/index.js';
   import {
     Sidebar,
     SidebarContent,
@@ -18,7 +18,7 @@
     SidebarMenuButton,
     SidebarMenuItem,
     SidebarProvider
-  } from '$lib/components/ui/sidebar';
+  } from '#lib/components/ui/sidebar/index.js';
 
   const projects = [
     { name: 'Design Engineering', url: '#', icon: FrameIcon },

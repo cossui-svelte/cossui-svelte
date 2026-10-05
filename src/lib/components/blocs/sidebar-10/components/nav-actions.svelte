@@ -81,8 +81,8 @@
   import EllipsisIcon from '@lucide/svelte/icons/ellipsis';
   import StarIcon from '@lucide/svelte/icons/star';
   import { untrack } from 'svelte';
-  import { Button, buttonVariants } from '$lib/components/ui/button';
-  import { Popover, PopoverPopup, PopoverTrigger } from '$lib/components/ui/popover';
+  import { Button, buttonVariants } from '#lib/components/ui/button/index.js';
+  import { Popover, PopoverPopup, PopoverTrigger } from '#lib/components/ui/popover/index.js';
   import {
     Sidebar,
     SidebarContent,
@@ -91,8 +91,8 @@
     SidebarMenu,
     SidebarMenuButton,
     SidebarMenuItem
-  } from '$lib/components/ui/sidebar';
-  import { cn } from '$lib/utils';
+  } from '#lib/components/ui/sidebar/index.js';
+  import { cn } from '#lib/utils.js';
 
   let open = $state(false);
 

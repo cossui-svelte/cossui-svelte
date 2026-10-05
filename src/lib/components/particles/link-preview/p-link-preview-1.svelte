@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { buttonVariants } from '$lib/components/ui/button';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
   import {
     LinkPreviewCard,
     LinkPreviewContent,
     LinkPreviewTrigger
-  } from '$lib/components/ui/link-preview';
+  } from '#lib/components/ui/link-preview/index.js';
 </script>
 
 <LinkPreviewCard>

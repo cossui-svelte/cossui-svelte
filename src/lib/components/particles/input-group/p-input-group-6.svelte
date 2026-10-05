@@ -6,7 +6,7 @@
     InputGroupAddon,
     InputGroupInput,
     InputGroupText
-  } from '$lib/components/ui/input-group';
+  } from '#lib/components/ui/input-group/index.js';
 
   const currencyAttachment: Attachment<HTMLInputElement> = (input) => {
     const handleInput = (event: Event) => {

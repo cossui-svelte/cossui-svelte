@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Button } from '$lib/components/ui/button';
-  import { Spinner } from '$lib/components/ui/spinner';
-  import { anchoredToastManager } from '$lib/components/ui/toast';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import { Spinner } from '#lib/components/ui/spinner/index.js';
+  import { anchoredToastManager } from '#lib/components/ui/toast/index.js';
 
   let isSubmitting = $state(false);
   let toastId: string | null = null;

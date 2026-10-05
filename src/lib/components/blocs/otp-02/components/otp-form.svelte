@@ -1,9 +1,13 @@
 <script lang="ts">
   import type { HTMLAttributes } from 'svelte/elements';
-  import { Button } from '$lib/components/ui/button';
-  import { Field, FieldDescription, FieldLabel } from '$lib/components/ui/field';
-  import { OTPField, OTPFieldInput, OTPFieldSeparator } from '$lib/components/ui/otp-field';
-  import { cn } from '$lib/utils';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import { Field, FieldDescription, FieldLabel } from '#lib/components/ui/field/index.js';
+  import {
+    OTPField,
+    OTPFieldInput,
+    OTPFieldSeparator
+  } from '#lib/components/ui/otp-field/index.js';
+  import { cn } from '#lib/utils.js';
 
   let { class: className, ...restProps }: HTMLAttributes<HTMLDivElement> = $props();
 </script>

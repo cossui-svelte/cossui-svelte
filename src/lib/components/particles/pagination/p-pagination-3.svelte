@@ -5,14 +5,14 @@
     PaginationItem,
     PaginationNext,
     PaginationPrevious
-  } from '$lib/components/ui/pagination';
+  } from '#lib/components/ui/pagination/index.js';
   import {
     Select,
     SelectItem,
     SelectPopup,
     SelectTrigger,
     SelectValue
-  } from '$lib/components/ui/select';
+  } from '#lib/components/ui/select/index.js';
 
   interface Props {
     currentPage?: number;

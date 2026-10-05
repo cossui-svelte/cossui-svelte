@@ -1,7 +1,7 @@
 <script lang="ts">
   import { CheckboxGroup as CheckboxGroupPrimitive } from '@shardsui/svelte/checkbox-group';
   import type { ComponentProps } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   let {
     ref = $bindable(null),

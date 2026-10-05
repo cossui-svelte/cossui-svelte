@@ -1,7 +1,7 @@
 <script lang="ts">
   import DownloadIcon from '@lucide/svelte/icons/download';
-  import { Button } from '$lib/components/ui/button';
-  import { toastManager } from '$lib/components/ui/toast';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import { toastManager } from '#lib/components/ui/toast/index.js';
 
   let isGenerating = $state(false);
   let progress = $state(0);

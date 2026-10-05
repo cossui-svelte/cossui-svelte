@@ -1,15 +1,15 @@
 <script lang="ts">
   import ChevronDown from '@lucide/svelte/icons/chevron-down';
   import ChevronUp from '@lucide/svelte/icons/chevron-up';
-  import { Label } from '$lib/components/ui/label';
+  import { Label } from '#lib/components/ui/label/index.js';
   import {
     NumberField,
     NumberFieldDecrement,
     NumberFieldGroup,
     NumberFieldIncrement,
     NumberFieldInput
-  } from '$lib/components/ui/number-field';
-  import { createCurrencyFormat } from '$lib/hooks/use-currency-input';
+  } from '#lib/components/ui/number-field/index.js';
+  import { createCurrencyFormat } from '#lib/hooks/use-currency-input.js';
 
   const uid = $props.id();
   const { format, parse } = createCurrencyFormat();

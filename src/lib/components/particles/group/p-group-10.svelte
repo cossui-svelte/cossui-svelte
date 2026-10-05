@@ -1,8 +1,8 @@
 <script lang="ts">
   import ArrowLeft from '@lucide/svelte/icons/arrow-left';
   import ArrowRight from '@lucide/svelte/icons/arrow-right';
-  import { Button } from '$lib/components/ui/button';
-  import { Group, GroupSeparator } from '$lib/components/ui/group';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import { Group, GroupSeparator } from '#lib/components/ui/group/index.js';
 </script>
 
 <Group aria-label="Pagination">

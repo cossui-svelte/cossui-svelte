@@ -3,7 +3,7 @@
   import { Autocomplete as AutocompletePrimitive } from '@shardsui/svelte/autocomplete';
   import type { Snippet } from 'svelte';
   import type { HTMLButtonAttributes, HTMLInputAttributes } from 'svelte/elements';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
   import AutocompleteClear from './autocomplete-clear.svelte';
   import AutocompleteTrigger from './autocomplete-trigger.svelte';
 

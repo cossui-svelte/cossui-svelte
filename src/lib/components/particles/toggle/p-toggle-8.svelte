@@ -1,8 +1,8 @@
 <script lang="ts">
   import BookmarkIcon from '@lucide/svelte/icons/bookmark';
-  import { anchoredToastManager } from '$lib/components/ui/toast';
-  import { Toggle } from '$lib/components/ui/toggle';
-  import { Tooltip, TooltipPopup, TooltipProvider } from '$lib/components/ui/tooltip';
+  import { anchoredToastManager } from '#lib/components/ui/toast/index.js';
+  import { Toggle } from '#lib/components/ui/toggle/index.js';
+  import { Tooltip, TooltipPopup, TooltipProvider } from '#lib/components/ui/tooltip/index.js';
 
   let bookmarked = $state(false);
   let toggleEl: HTMLElement | null = null;

@@ -1,7 +1,7 @@
 <script lang="ts">
   import Book from '@lucide/svelte/icons/book';
   import Route from '@lucide/svelte/icons/route';
-  import { Button } from '$lib/components/ui/button';
+  import { Button } from '#lib/components/ui/button/index.js';
   import {
     Empty,
     EmptyContent,
@@ -9,7 +9,7 @@
     EmptyHeader,
     EmptyMedia,
     EmptyTitle
-  } from '$lib/components/ui/empty';
+  } from '#lib/components/ui/empty/index.js';
 </script>
 
 <Empty>

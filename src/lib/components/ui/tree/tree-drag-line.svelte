@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { HTMLAttributes } from 'svelte/elements';
-  import type { WithElementRef } from '$lib/utils';
-  import { cn } from '$lib/utils';
+  import type { WithElementRef } from '#lib/utils.js';
+  import { cn } from '#lib/utils.js';
   import { useTreeContext } from './tree-context.svelte';
 
   type TreeDragLineProps = WithElementRef<HTMLAttributes<HTMLDivElement>>;

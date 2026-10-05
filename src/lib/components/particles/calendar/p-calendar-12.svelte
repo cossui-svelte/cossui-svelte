@@ -1,7 +1,7 @@
 <script lang="ts">
   import { type DateValue, getDayOfWeek, getLocalTimeZone, today } from '@internationalized/date';
   import { SvelteDate } from 'svelte/reactivity';
-  import { Calendar, Day } from '$lib/components/ui/calendar';
+  import { Calendar, Day } from '#lib/components/ui/calendar/index.js';
 
   let value = $state(today(getLocalTimeZone()));
 

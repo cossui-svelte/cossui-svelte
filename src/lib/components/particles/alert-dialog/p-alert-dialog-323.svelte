@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, buttonVariants } from '$lib/components/ui/button';
+  import { Button, buttonVariants } from '#lib/components/ui/button/index.js';
   import {
     Dialog,
     DialogHeader,
@@ -7,10 +7,10 @@
     DialogPopup,
     DialogTitle,
     DialogTrigger
-  } from '$lib/components/ui/dialog';
-  import { Label } from '$lib/components/ui/label';
-  import { Radio, RadioGroup } from '$lib/components/ui/radio-group';
-  import { Textarea } from '$lib/components/ui/textarea';
+  } from '#lib/components/ui/dialog/index.js';
+  import { Label } from '#lib/components/ui/label/index.js';
+  import { Radio, RadioGroup } from '#lib/components/ui/radio-group/index.js';
+  import { Textarea } from '#lib/components/ui/textarea/index.js';
 
   const ratings = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 

@@ -2,7 +2,7 @@
   import ChevronsUpDown from '@lucide/svelte/icons/chevrons-up-down';
   import { Select as SelectPrimitive } from '@shardsui/svelte/select';
   import type { ComponentProps, Snippet } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
   import { type SelectTriggerVariants, selectTriggerVariants } from './select-trigger-variants';
 
   type Props = Omit<ComponentProps<typeof SelectPrimitive.Trigger>, 'children'> & {

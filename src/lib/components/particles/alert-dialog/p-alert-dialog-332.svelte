@@ -1,6 +1,7 @@
 <script lang="ts">
   import ArrowRightIcon from '@lucide/svelte/icons/arrow-right';
-  import { Button, buttonVariants } from '$lib/components/ui/button';
+  import dialogContentImg from '#lib/assets/dialog-content.png';
+  import { Button, buttonVariants } from '#lib/components/ui/button/index.js';
   import {
     Dialog,
     DialogClose,
@@ -10,9 +11,8 @@
     DialogPopup,
     DialogTitle,
     DialogTrigger
-  } from '$lib/components/ui/dialog';
-  import dialogContentImg from '$lib/assets/dialog-content.png';
-  import { cn } from '$lib/utils';
+  } from '#lib/components/ui/dialog/index.js';
+  import { cn } from '#lib/utils.js';
 
   const stepContent = [
     {

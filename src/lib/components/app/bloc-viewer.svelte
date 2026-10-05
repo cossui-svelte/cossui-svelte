@@ -7,13 +7,13 @@
   import Monitor from '@lucide/svelte/icons/monitor';
   import Smartphone from '@lucide/svelte/icons/smartphone';
   import Tablet from '@lucide/svelte/icons/tablet';
-  import { buttonVariants } from '$lib/components/ui/button';
-  import { Separator } from '$lib/components/ui/separator';
-  import { Spinner } from '$lib/components/ui/spinner';
-  import { ToggleGroup, ToggleGroupItem } from '$lib/components/ui/toggle-group';
-  import CodeBlock from '$lib/components/app/code-block.svelte';
-  import { type BlocMeta, DEFAULT_IFRAME_HEIGHT } from '$lib/components/blocs/bloc-metadata';
-  import { cn } from '$lib/utils';
+  import CodeBlock from '#lib/components/app/code-block.svelte';
+  import { type BlocMeta, DEFAULT_IFRAME_HEIGHT } from '#lib/components/blocs/bloc-metadata.js';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
+  import { Separator } from '#lib/components/ui/separator/index.js';
+  import { Spinner } from '#lib/components/ui/spinner/index.js';
+  import { ToggleGroup, ToggleGroupItem } from '#lib/components/ui/toggle-group/index.js';
+  import { cn } from '#lib/utils.js';
   import type { BlocSourceResponse } from '../../../routes/api/bloc-source/[name]/+server';
 
   let { name, meta }: { name: string; meta: BlocMeta } = $props();

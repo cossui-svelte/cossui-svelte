@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Toolbar as ToolbarPrimitive } from '@shardsui/svelte/toolbar';
   import type { ComponentProps } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   let { class: className, ...restProps }: ComponentProps<typeof ToolbarPrimitive.Separator> =
     $props();

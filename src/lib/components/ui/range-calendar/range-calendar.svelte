@@ -2,9 +2,9 @@
   import type { DateValue } from '@internationalized/date';
   import { isEqualMonth } from '@internationalized/date';
   import type { Snippet } from 'svelte';
-  import type { ButtonVariant } from '$lib/components/ui/button';
-  import * as Calendar from '$lib/components/ui/calendar';
-  import { cn, type WithoutChildrenOrChild } from '$lib/utils';
+  import type { ButtonVariant } from '#lib/components/ui/button/index.js';
+  import * as Calendar from '#lib/components/ui/calendar/index.js';
+  import { cn, type WithoutChildrenOrChild } from '#lib/utils.js';
   import * as RangeCalendarPrimitive from './internal';
   import RangeCalendarCell from './range-calendar-cell.svelte';
   import RangeCalendarDay from './range-calendar-day.svelte';

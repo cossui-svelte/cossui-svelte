@@ -7,7 +7,7 @@
     ComboboxItem,
     ComboboxList,
     ComboboxPopup
-  } from '$lib/components/ui/combobox';
+  } from '#lib/components/ui/combobox/index.js';
 
   const items = [
     { label: 'Apple', value: 'apple' },

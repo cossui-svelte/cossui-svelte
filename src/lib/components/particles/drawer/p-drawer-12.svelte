@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, buttonVariants } from '$lib/components/ui/button';
+  import { Button, buttonVariants } from '#lib/components/ui/button/index.js';
   import {
     Dialog,
     DialogClose,
@@ -10,7 +10,7 @@
     DialogPopup,
     DialogTitle,
     DialogTrigger
-  } from '$lib/components/ui/dialog';
+  } from '#lib/components/ui/dialog/index.js';
   import {
     Drawer,
     DrawerClose,
@@ -21,10 +21,10 @@
     DrawerPopup,
     DrawerTitle,
     DrawerTrigger
-  } from '$lib/components/ui/drawer';
-  import { Field, FieldLabel } from '$lib/components/ui/field';
-  import { Form } from '$lib/components/ui/form';
-  import { Input } from '$lib/components/ui/input';
+  } from '#lib/components/ui/drawer/index.js';
+  import { Field, FieldLabel } from '#lib/components/ui/field/index.js';
+  import { Form } from '#lib/components/ui/form/index.js';
+  import { Input } from '#lib/components/ui/input/index.js';
 
   let isMobile = $state(false);
 

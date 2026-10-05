@@ -3,8 +3,8 @@
   import EraserIcon from '@lucide/svelte/icons/eraser';
   import ScissorsIcon from '@lucide/svelte/icons/scissors';
   import SwatchBookIcon from '@lucide/svelte/icons/swatch-book';
-  import { Checkbox } from '$lib/components/ui/checkbox';
-  import { Label } from '$lib/components/ui/label';
+  import { Checkbox } from '#lib/components/ui/checkbox/index.js';
+  import { Label } from '#lib/components/ui/label/index.js';
 
   const id = $props.id();
 

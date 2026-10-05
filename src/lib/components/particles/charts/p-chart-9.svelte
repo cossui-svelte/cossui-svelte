@@ -2,7 +2,7 @@
   import { scaleBand } from 'd3-scale';
   import { BarChart } from 'layerchart';
   import { cubicInOut } from 'svelte/easing';
-  import { Chart, type ChartConfig, ChartTooltip } from '$lib/components/ui/chart';
+  import { Chart, type ChartConfig, ChartTooltip } from '#lib/components/ui/chart/index.js';
 
   const chartData = [
     { desktop: 186, mobile: 80, month: 'January' },

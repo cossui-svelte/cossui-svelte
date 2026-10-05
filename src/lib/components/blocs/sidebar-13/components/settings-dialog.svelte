@@ -18,15 +18,15 @@
     BreadcrumbList,
     BreadcrumbPage,
     BreadcrumbSeparator
-  } from '$lib/components/ui/breadcrumb';
-  import { buttonVariants } from '$lib/components/ui/button';
+  } from '#lib/components/ui/breadcrumb/index.js';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
   import {
     Dialog,
     DialogDescription,
     DialogPopup,
     DialogTitle,
     DialogTrigger
-  } from '$lib/components/ui/dialog';
+  } from '#lib/components/ui/dialog/index.js';
   import {
     Sidebar,
     SidebarContent,
@@ -36,8 +36,8 @@
     SidebarMenuButton,
     SidebarMenuItem,
     SidebarProvider
-  } from '$lib/components/ui/sidebar';
-  import { cn } from '$lib/utils';
+  } from '#lib/components/ui/sidebar/index.js';
+  import { cn } from '#lib/utils.js';
 
   const data = {
     nav: [

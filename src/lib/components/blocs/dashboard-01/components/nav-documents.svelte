@@ -4,7 +4,13 @@
   import Share3Icon from '@lucide/svelte/icons/share';
   import TrashIcon from '@lucide/svelte/icons/trash';
   import type { Component } from 'svelte';
-  import { Menu, MenuItem, MenuPopup, MenuSeparator, MenuTrigger } from '$lib/components/ui/menu';
+  import {
+    Menu,
+    MenuItem,
+    MenuPopup,
+    MenuSeparator,
+    MenuTrigger
+  } from '#lib/components/ui/menu/index.js';
   import {
     SidebarGroup,
     SidebarGroupLabel,
@@ -13,7 +19,7 @@
     SidebarMenuButton,
     SidebarMenuItem,
     useSidebar
-  } from '$lib/components/ui/sidebar';
+  } from '#lib/components/ui/sidebar/index.js';
 
   let { items }: { items: { name: string; url: string; icon: Component }[] } = $props();
 

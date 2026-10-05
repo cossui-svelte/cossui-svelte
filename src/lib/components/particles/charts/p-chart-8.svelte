@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Arc, PieChart, Text } from 'layerchart';
-  import { Chart, type ChartConfig, ChartTooltip } from '$lib/components/ui/chart';
+  import { Chart, type ChartConfig, ChartTooltip } from '#lib/components/ui/chart/index.js';
 
   const chartData = [
     { browser: 'chrome', color: 'var(--color-chrome)', visitors: 275 },

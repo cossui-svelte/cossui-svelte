@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Tooltip as TooltipPrimitive } from '@shardsui/svelte/tooltip';
   import type { ComponentProps, Snippet } from 'svelte';
-  import { cn, type WithoutChildren } from '$lib/utils';
+  import { cn, type WithoutChildren } from '#lib/utils.js';
 
   type Props = Omit<ComponentProps<typeof TooltipPrimitive.Popup>, 'children'> & {
     children?: Snippet;

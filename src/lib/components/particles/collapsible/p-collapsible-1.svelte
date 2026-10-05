@@ -4,7 +4,7 @@
     Collapsible,
     CollapsiblePanel,
     CollapsibleTrigger
-  } from '$lib/components/ui/collapsible';
+  } from '#lib/components/ui/collapsible/index.js';
 </script>
 
 <Collapsible>

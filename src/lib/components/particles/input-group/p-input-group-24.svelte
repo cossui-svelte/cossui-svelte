@@ -4,8 +4,8 @@
     InputGroupAddon,
     InputGroupInput,
     InputGroupText
-  } from '$lib/components/ui/input-group';
-  import { useCharacterLimit } from '$lib/hooks/use-character-limit.svelte';
+  } from '#lib/components/ui/input-group/index.js';
+  import { useCharacterLimit } from '#lib/hooks/use-character-limit.svelte.js';
 
   const charLimit = useCharacterLimit(14);
 </script>

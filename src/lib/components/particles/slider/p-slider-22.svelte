@@ -1,8 +1,12 @@
 <script lang="ts">
-  import { Button } from '$lib/components/ui/button';
-  import { InputGroup, InputGroupAddon, InputGroupText } from '$lib/components/ui/input-group';
-  import { NumberField, NumberFieldInput } from '$lib/components/ui/number-field';
-  import { Slider } from '$lib/components/ui/slider';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import {
+    InputGroup,
+    InputGroupAddon,
+    InputGroupText
+  } from '#lib/components/ui/input-group/index.js';
+  import { NumberField, NumberFieldInput } from '#lib/components/ui/number-field/index.js';
+  import { Slider } from '#lib/components/ui/slider/index.js';
 
   const items = [
     { id: 1, price: 80 },

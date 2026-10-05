@@ -5,7 +5,7 @@
     StepperItem,
     StepperSeparator,
     StepperTrigger
-  } from '$lib/components/ui/stepper';
+  } from '#lib/components/ui/stepper/index.js';
 
   const steps = [1, 2, 3, 4];
 </script>

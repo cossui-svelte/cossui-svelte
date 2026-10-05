@@ -4,14 +4,14 @@
   import X from '@lucide/svelte/icons/x';
   import ZoomIn from '@lucide/svelte/icons/zoom-in';
   import ZoomOut from '@lucide/svelte/icons/zoom-out';
-  import { Button } from '$lib/components/ui/button';
+  import { Button } from '#lib/components/ui/button/index.js';
   import {
     type Area,
     Cropper,
     CropperCropArea,
     CropperDescription,
     CropperImage
-  } from '$lib/components/ui/cropper';
+  } from '#lib/components/ui/cropper/index.js';
   import {
     Dialog,
     DialogDescription,
@@ -19,9 +19,9 @@
     DialogHeader,
     DialogPopup,
     DialogTitle
-  } from '$lib/components/ui/dialog';
-  import { Slider } from '$lib/components/ui/slider';
-  import { useFileUpload } from '$lib/hooks/use-file-upload.svelte';
+  } from '#lib/components/ui/dialog/index.js';
+  import { Slider } from '#lib/components/ui/slider/index.js';
+  import { useFileUpload } from '#lib/hooks/use-file-upload.svelte.js';
 
   // Helper function to create a cropped image blob
   const createImage = (url: string): Promise<HTMLImageElement> =>

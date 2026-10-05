@@ -2,7 +2,7 @@
   import { scaleUtc } from 'd3-scale';
   import { curveNatural } from 'd3-shape';
   import { LineChart } from 'layerchart';
-  import { Chart, type ChartConfig, ChartTooltip } from '$lib/components/ui/chart';
+  import { Chart, type ChartConfig, ChartTooltip } from '#lib/components/ui/chart/index.js';
 
   const chartData = [
     { date: new Date('2024-01-01'), desktop: 186 },

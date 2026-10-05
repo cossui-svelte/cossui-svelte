@@ -1,7 +1,7 @@
 <script lang="ts">
   import Bell from '@lucide/svelte/icons/bell';
-  import { Badge } from '$lib/components/ui/badge';
-  import { Button } from '$lib/components/ui/button';
+  import { Badge } from '#lib/components/ui/badge/index.js';
+  import { Button } from '#lib/components/ui/button/index.js';
 
   let count = $state(3);
 </script>

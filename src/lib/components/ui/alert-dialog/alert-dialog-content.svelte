@@ -1,7 +1,7 @@
 <script lang="ts">
   import { AlertDialog as AlertDialogPrimitive } from '@shardsui/svelte/alert-dialog';
   import type { ComponentProps } from 'svelte';
-  import { cn, type WithoutChildrenOrChild } from '$lib/utils';
+  import { cn, type WithoutChildrenOrChild } from '#lib/utils.js';
   import AlertDialogOverlay from './alert-dialog-overlay.svelte';
   import AlertDialogPortal from './alert-dialog-portal.svelte';
   import AlertDialogViewport from './alert-dialog-viewport.svelte';

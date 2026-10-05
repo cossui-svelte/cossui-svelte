@@ -6,7 +6,7 @@
     ToggleGroup,
     ToggleGroupItem,
     ToggleGroupSeparator
-  } from '$lib/components/ui/toggle-group';
+  } from '#lib/components/ui/toggle-group/index.js';
 </script>
 
 <ToggleGroup value={['bold']} variant="outline">

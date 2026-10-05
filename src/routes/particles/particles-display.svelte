@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { allParticles } from '$lib/registry/registry-particles.js';
-  import type { RegistryCategory } from '$lib/registry/registry-tags.js';
+  import { allParticles } from '#lib/registry/registry-particles.js';
+  import type { RegistryCategory } from '#lib/registry/registry-tags.js';
   import ParticleCard from './particle-card.svelte';
 
   interface Props {

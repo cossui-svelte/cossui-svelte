@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Progress as ProgressPrimitive } from '@shardsui/svelte/progress';
   import type { ComponentProps, Snippet } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
   import ProgressIndicator from './progress-indicator.svelte';
   import ProgressTrack from './progress-track.svelte';
 

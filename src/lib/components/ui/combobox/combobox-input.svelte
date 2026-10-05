@@ -4,7 +4,7 @@
   import { Combobox as ComboboxPrimitive } from '@shardsui/svelte/combobox';
   import type { Snippet } from 'svelte';
   import type { HTMLButtonAttributes, HTMLInputAttributes } from 'svelte/elements';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
   import ComboboxClear from './combobox-clear.svelte';
   import ComboboxTrigger from './combobox-trigger.svelte';
 

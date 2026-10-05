@@ -1,13 +1,13 @@
 <script lang="ts">
-  import { Group, GroupSeparator } from '$lib/components/ui/group';
-  import { Input } from '$lib/components/ui/input';
+  import { Group, GroupSeparator } from '#lib/components/ui/group/index.js';
+  import { Input } from '#lib/components/ui/input/index.js';
   import {
     Select,
     SelectItem,
     SelectPopup,
     SelectTrigger,
     SelectValue
-  } from '$lib/components/ui/select';
+  } from '#lib/components/ui/select/index.js';
 
   const domains = [
     { label: '.com', value: 'com' },

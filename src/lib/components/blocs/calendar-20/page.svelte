@@ -1,8 +1,8 @@
 <script lang="ts">
   import { CalendarDate, getLocalTimeZone } from '@internationalized/date';
-  import { Button } from '$lib/components/ui/button';
-  import { Calendar } from '$lib/components/ui/calendar';
-  import { Card, CardFooter, CardPanel } from '$lib/components/ui/card';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import { Calendar } from '#lib/components/ui/calendar/index.js';
+  import { Card, CardFooter, CardPanel } from '#lib/components/ui/card/index.js';
 
   let value = $state<CalendarDate | undefined>(new CalendarDate(2025, 6, 12));
   let selectedTime = $state<string | null>('10:00');

@@ -19,11 +19,16 @@
     type RowSelectionState,
     renderComponent
   } from '@tanstack/svelte-table';
-  import { Badge } from '$lib/components/ui/badge';
-  import { Button, buttonVariants } from '$lib/components/ui/button';
-  import { Label } from '$lib/components/ui/label';
-  import { Menu, MenuCheckboxItem, MenuPopup, MenuTrigger } from '$lib/components/ui/menu';
-  import { Select, SelectItem, SelectPopup, SelectTrigger } from '$lib/components/ui/select';
+  import { Badge } from '#lib/components/ui/badge/index.js';
+  import { Button, buttonVariants } from '#lib/components/ui/button/index.js';
+  import { Label } from '#lib/components/ui/label/index.js';
+  import { Menu, MenuCheckboxItem, MenuPopup, MenuTrigger } from '#lib/components/ui/menu/index.js';
+  import {
+    Select,
+    SelectItem,
+    SelectPopup,
+    SelectTrigger
+  } from '#lib/components/ui/select/index.js';
   import {
     Table,
     TableBody,
@@ -31,9 +36,9 @@
     TableHead,
     TableHeader,
     TableRow
-  } from '$lib/components/ui/table';
-  import { Tabs, TabsList, TabsPanel, TabsTab } from '$lib/components/ui/tabs';
-  import { cn } from '$lib/utils';
+  } from '#lib/components/ui/table/index.js';
+  import { Tabs, TabsList, TabsPanel, TabsTab } from '#lib/components/ui/tabs/index.js';
+  import { cn } from '#lib/utils.js';
   import DataTableActions from './data-table-actions.svelte';
   import DataTableCellViewer from './data-table-cell-viewer.svelte';
   import DataTableCheckbox from './data-table-checkbox.svelte';
@@ -213,8 +218,9 @@
   <TabsPanel value="outline" class="relative flex flex-col gap-4 overflow-auto px-4 lg:px-6">
     <div class="overflow-hidden rounded-lg border">
       <DragDropProvider
-        modifiers={[RestrictToVerticalAxis]}
-        onDragEnd={(e) => (data = move(data, e))}
+        // @dnd-kit packages resolve to duplicate type versions, hence the casts
+        modifiers={[RestrictToVerticalAxis] as never}
+        onDragEnd={(e) => (data = move(data, e as never))}
       >
         <Table>
           <TableHeader class="sticky top-0 z-10 bg-muted">

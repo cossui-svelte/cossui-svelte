@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Toolbar as ToolbarPrimitive } from '@shardsui/svelte/toolbar';
   import type { ComponentProps, Snippet } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   type Props = Omit<ComponentProps<typeof ToolbarPrimitive.Button>, 'children'> & {
     children?: Snippet;

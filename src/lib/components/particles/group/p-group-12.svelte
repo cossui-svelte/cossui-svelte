@@ -1,15 +1,19 @@
 <script lang="ts">
   import Mic from '@lucide/svelte/icons/mic';
   import Paperclip from '@lucide/svelte/icons/paperclip';
-  import { Button, buttonVariants } from '$lib/components/ui/button';
-  import { Group } from '$lib/components/ui/group';
-  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';
+  import { Button, buttonVariants } from '#lib/components/ui/button/index.js';
+  import { Group } from '#lib/components/ui/group/index.js';
+  import {
+    InputGroup,
+    InputGroupAddon,
+    InputGroupInput
+  } from '#lib/components/ui/input-group/index.js';
   import {
     Tooltip,
     TooltipContent,
     TooltipProvider,
     TooltipTrigger
-  } from '$lib/components/ui/tooltip';
+  } from '#lib/components/ui/tooltip/index.js';
 </script>
 
 <TooltipProvider>

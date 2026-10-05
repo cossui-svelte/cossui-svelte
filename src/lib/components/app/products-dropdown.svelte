@@ -1,8 +1,8 @@
 <script lang="ts">
   import ChevronDown from '@lucide/svelte/icons/chevron-down';
-  import { Badge } from '$lib/components/ui/badge';
-  import { buttonVariants } from '$lib/components/ui/button';
-  import { Menu, MenuLinkItem, MenuPopup, MenuTrigger } from '$lib/components/ui/menu';
+  import { Badge } from '#lib/components/ui/badge/index.js';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
+  import { Menu, MenuLinkItem, MenuPopup, MenuTrigger } from '#lib/components/ui/menu/index.js';
 
   interface ProductItem {
     href: string;

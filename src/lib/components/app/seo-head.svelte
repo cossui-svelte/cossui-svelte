@@ -1,6 +1,6 @@
 <script lang="ts">
   import { page } from '$app/state';
-  import { PROJECT_NAME, SITE_URL } from '$lib/config';
+  import { PROJECT_NAME, SITE_URL } from '#lib/config.js';
 
   interface Props {
     description: string;

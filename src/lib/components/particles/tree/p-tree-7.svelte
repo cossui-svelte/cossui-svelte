@@ -11,8 +11,8 @@
   import FolderOpenIcon from '@lucide/svelte/icons/folder-open';
   import SearchIcon from '@lucide/svelte/icons/search';
   import type { ChangeEventHandler } from 'svelte/elements';
-  import { Input } from '$lib/components/ui/input';
-  import { Tree, TreeItem, TreeLabel, useTree } from '$lib/components/ui/tree';
+  import { Input } from '#lib/components/ui/input/index.js';
+  import { Tree, TreeItem, TreeLabel, useTree } from '#lib/components/ui/tree/index.js';
 
   interface Item {
     children?: string[];

@@ -1,7 +1,7 @@
 // This file contains extra meta-data, to add into the registry
 // it is edited manually
 
-import type { RegistryUIEntry } from '$lib/registry/generated-registry-components';
+import type { RegistryUIEntry } from '#lib/registry/generated-registry-components.js';
 
 export const custom_components_metadata: Record<string, Partial<RegistryUIEntry>> = {
   accordion: {

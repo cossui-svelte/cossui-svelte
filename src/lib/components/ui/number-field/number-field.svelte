@@ -19,7 +19,7 @@
   import type { Snippet } from 'svelte';
   import { setContext } from 'svelte';
   import type { HTMLAttributes } from 'svelte/elements';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   interface Props extends Omit<HTMLAttributes<HTMLDivElement>, 'id'> {
     children?: Snippet;

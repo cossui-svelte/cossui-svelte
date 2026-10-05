@@ -6,8 +6,8 @@
     SidebarMenu,
     SidebarMenuButton,
     SidebarMenuItem
-  } from '$lib/components/ui/sidebar';
-  import type { WithoutChildren } from '$lib/utils';
+  } from '#lib/components/ui/sidebar/index.js';
+  import type { WithoutChildren } from '#lib/utils.js';
 
   let {
     items,

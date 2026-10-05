@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Slider } from '$lib/components/ui/slider';
+  import { Slider } from '#lib/components/ui/slider/index.js';
 
   const bands = [
     { label: '60 Hz', value: 2 },

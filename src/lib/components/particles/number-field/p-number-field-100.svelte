@@ -7,7 +7,7 @@
     NumberFieldGroup,
     NumberFieldIncrement,
     NumberFieldValue
-  } from '$lib/components/ui/number-field';
+  } from '#lib/components/ui/number-field/index.js';
 </script>
 
 <NumberField class="w-auto" value={235}>

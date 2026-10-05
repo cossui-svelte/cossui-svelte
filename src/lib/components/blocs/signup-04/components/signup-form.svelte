@@ -1,11 +1,11 @@
 <script lang="ts">
   import type { HTMLAttributes } from 'svelte/elements';
-  import { Button } from '$lib/components/ui/button';
-  import { Card, CardPanel } from '$lib/components/ui/card';
-  import { Field, FieldDescription, FieldLabel } from '$lib/components/ui/field';
-  import { Input } from '$lib/components/ui/input';
-  import { Separator } from '$lib/components/ui/separator';
-  import { cn } from '$lib/utils';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import { Card, CardPanel } from '#lib/components/ui/card/index.js';
+  import { Field, FieldDescription, FieldLabel } from '#lib/components/ui/field/index.js';
+  import { Input } from '#lib/components/ui/input/index.js';
+  import { Separator } from '#lib/components/ui/separator/index.js';
+  import { cn } from '#lib/utils.js';
 
   let { class: className, ...restProps }: HTMLAttributes<HTMLDivElement> = $props();
 </script>

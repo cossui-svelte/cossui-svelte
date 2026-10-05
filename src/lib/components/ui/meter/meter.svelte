@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Meter as MeterPrimitive } from '@shardsui/svelte/meter';
   import type { ComponentProps, Snippet } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
   import MeterIndicator from './meter-indicator.svelte';
   import MeterTrack from './meter-track.svelte';
 

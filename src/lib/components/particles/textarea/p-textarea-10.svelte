@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Textarea } from '$lib/components/ui/textarea';
+  import { Textarea } from '#lib/components/ui/textarea/index.js';
 
   const id = $props.id();
 </script>

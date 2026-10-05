@@ -1,10 +1,10 @@
 <script lang="ts">
   import { DateFormatter, type DateValue, getLocalTimeZone } from '@internationalized/date';
   import CalendarIcon from '@lucide/svelte/icons/calendar';
-  import { buttonVariants } from '$lib/components/ui/button';
-  import { Popover, PopoverPopup, PopoverTrigger } from '$lib/components/ui/popover';
-  import { RangeCalendar } from '$lib/components/ui/range-calendar';
-  import { cn } from '$lib/utils';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
+  import { Popover, PopoverPopup, PopoverTrigger } from '#lib/components/ui/popover/index.js';
+  import { RangeCalendar } from '#lib/components/ui/range-calendar/index.js';
+  import { cn } from '#lib/utils.js';
 
   const df = new DateFormatter('en-US', { dateStyle: 'medium' });
 

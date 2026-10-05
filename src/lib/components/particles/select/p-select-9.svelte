@@ -3,7 +3,12 @@
   import GlobeIcon from '@lucide/svelte/icons/globe';
   import LayersIcon from '@lucide/svelte/icons/layers';
   import ZapIcon from '@lucide/svelte/icons/zap';
-  import { Select, SelectItem, SelectPopup, SelectTrigger } from '$lib/components/ui/select';
+  import {
+    Select,
+    SelectItem,
+    SelectPopup,
+    SelectTrigger
+  } from '#lib/components/ui/select/index.js';
 
   const items = [
     { icon: LayersIcon, label: 'Components', value: 'components' },

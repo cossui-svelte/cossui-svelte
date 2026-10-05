@@ -1,8 +1,8 @@
 <script module lang="ts">
   import type { DateValue } from '@internationalized/date';
   import type { Snippet } from 'svelte';
-  import type { ButtonVariant } from '$lib/components/ui/button';
-  import type { RenameTypeToMode, WithoutChildrenOrChild } from '$lib/utils';
+  import type { ButtonVariant } from '#lib/components/ui/button/index.js';
+  import type { RenameTypeToMode, WithoutChildrenOrChild } from '#lib/utils.js';
   import type * as RangeCalendarPrimitiveTypes from '../range-calendar/internal';
   import type { DateRange } from '../range-calendar/internal/types';
   import type * as CalendarPrimitiveTypes from './internal';
@@ -39,7 +39,7 @@
 
 <script lang="ts">
   import { isEqualMonth } from '@internationalized/date';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
   import * as RangeCalendarPrimitive from '../range-calendar/internal';
   import RangeCalendarCell from '../range-calendar/range-calendar-cell.svelte';
   import RangeCalendarDay from '../range-calendar/range-calendar-day.svelte';

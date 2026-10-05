@@ -2,9 +2,13 @@
   import Bold from '@lucide/svelte/icons/bold';
   import Italic from '@lucide/svelte/icons/italic';
   import Link from '@lucide/svelte/icons/link';
-  import { Button } from '$lib/components/ui/button';
-  import { InputGroup, InputGroupAddon, InputGroupTextarea } from '$lib/components/ui/input-group';
-  import { Toggle } from '$lib/components/ui/toggle';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import {
+    InputGroup,
+    InputGroupAddon,
+    InputGroupTextarea
+  } from '#lib/components/ui/input-group/index.js';
+  import { Toggle } from '#lib/components/ui/toggle/index.js';
 </script>
 
 <InputGroup>

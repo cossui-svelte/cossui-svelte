@@ -4,19 +4,19 @@
   import FileBraces from '@lucide/svelte/icons/file-braces';
   import Info from '@lucide/svelte/icons/info';
   import ScanEye from '@lucide/svelte/icons/scan-eye';
-  import { Button, buttonVariants } from '$lib/components/ui/button';
-  import { Drawer, DrawerPopup } from '$lib/components/ui/drawer';
-  import { Spinner } from '$lib/components/ui/spinner';
+  import CodeBlockCommand from '#lib/components/app/code-block-command.svelte';
+  import ComponentSource from '#lib/components/app/particle-source.svelte';
+  import { Button, buttonVariants } from '#lib/components/ui/button/index.js';
+  import { Drawer, DrawerPopup } from '#lib/components/ui/drawer/index.js';
+  import { Spinner } from '#lib/components/ui/spinner/index.js';
   import {
     Tooltip,
     TooltipPopup,
     TooltipProvider,
     TooltipTrigger
-  } from '$lib/components/ui/tooltip';
-  import CodeBlockCommand from '$lib/components/app/code-block-command.svelte';
-  import ComponentSource from '$lib/components/app/particle-source.svelte';
-  import type { RegistryParticuleEntry } from '$lib/registry/registry-particles';
-  import { cn } from '$lib/utils';
+  } from '#lib/components/ui/tooltip/index.js';
+  import type { RegistryParticuleEntry } from '#lib/registry/registry-particles.js';
+  import { cn } from '#lib/utils.js';
   import ParticleCardContainer from './particle-card-container.svelte';
 
   let {

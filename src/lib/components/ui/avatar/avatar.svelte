@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Avatar as AvatarPrimitive } from '@shardsui/svelte/avatar';
   import type { ComponentProps } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   let {
     ref = $bindable(null),

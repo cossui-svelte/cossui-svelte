@@ -1,10 +1,10 @@
 <script lang="ts">
   import ExternalLink from '@lucide/svelte/icons/external-link';
-  import { Button } from '$lib/components/ui/button';
-  import { Card, CardFrame, CardPanel } from '$lib/components/ui/card';
-  import { ScrollArea } from '$lib/components/ui/scroll-area';
-  import DocsCopyPage from '$lib/components/app/docs/docs-copy-page.svelte';
-  import DocsToc from '$lib/components/app/docs/docs-toc.svelte';
+  import DocsCopyPage from '#lib/components/app/docs/docs-copy-page.svelte';
+  import DocsToc from '#lib/components/app/docs/docs-toc.svelte';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import { Card, CardFrame, CardPanel } from '#lib/components/ui/card/index.js';
+  import { ScrollArea } from '#lib/components/ui/scroll-area/index.js';
   import type { PageData } from './$types';
 
   let { data }: { data: PageData } = $props();

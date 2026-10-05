@@ -4,7 +4,7 @@
   import SkipBack from '@lucide/svelte/icons/skip-back';
   import SkipForward from '@lucide/svelte/icons/skip-forward';
   import Trash from '@lucide/svelte/icons/trash';
-  import { buttonVariants } from '$lib/components/ui/button';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
   import {
     Menu,
     MenuCheckboxItem,
@@ -20,7 +20,7 @@
     MenuSubPopup,
     MenuSubTrigger,
     MenuTrigger
-  } from '$lib/components/ui/menu';
+  } from '#lib/components/ui/menu/index.js';
 
   let shuffle = $state(false);
   let repeat = $state(false);

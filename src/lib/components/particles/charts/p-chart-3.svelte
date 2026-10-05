@@ -1,7 +1,7 @@
 <script lang="ts">
   import { scaleBand } from 'd3-scale';
   import { Bar, BarChart } from 'layerchart';
-  import { Chart, type ChartConfig, ChartTooltip } from '$lib/components/ui/chart';
+  import { Chart, type ChartConfig, ChartTooltip } from '#lib/components/ui/chart/index.js';
 
   const chartData = [
     { browser: 'chrome', visitors: 187, color: 'var(--color-chrome)' },

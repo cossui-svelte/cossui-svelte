@@ -7,9 +7,9 @@
     BreadcrumbList,
     BreadcrumbPage,
     BreadcrumbSeparator
-  } from '$lib/components/ui/breadcrumb';
-  import { buttonVariants } from '$lib/components/ui/button';
-  import { Menu, MenuLinkItem, MenuPopup, MenuTrigger } from '$lib/components/ui/menu';
+  } from '#lib/components/ui/breadcrumb/index.js';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
+  import { Menu, MenuLinkItem, MenuPopup, MenuTrigger } from '#lib/components/ui/menu/index.js';
 </script>
 
 <Breadcrumb>

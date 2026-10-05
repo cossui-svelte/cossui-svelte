@@ -8,7 +8,7 @@
     AutocompleteList,
     AutocompletePopup,
     AutocompleteStatus
-  } from '$lib/components/ui/autocomplete';
+  } from '#lib/components/ui/autocomplete/index.js';
 
   const limit = 7;
 

@@ -2,15 +2,15 @@
   import Check from '@lucide/svelte/icons/check';
   import Copy from '@lucide/svelte/icons/copy';
   import FileCode from '@lucide/svelte/icons/file-code';
-  import { buttonVariants } from '$lib/components/ui/button';
-  import { ScrollArea } from '$lib/components/ui/scroll-area';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
+  import { ScrollArea } from '#lib/components/ui/scroll-area/index.js';
   import {
     Tooltip,
     TooltipPopup,
     TooltipProvider,
     TooltipTrigger
-  } from '$lib/components/ui/tooltip';
-  import { cn } from '$lib/utils';
+  } from '#lib/components/ui/tooltip/index.js';
+  import { cn } from '#lib/utils.js';
 
   interface Props {
     code: string;
@@ -28,7 +28,7 @@
   let timeoutId: ReturnType<typeof setTimeout> | undefined;
 
   async function getHighlightedCode(src: string, lang: string): Promise<string> {
-    const { highlighter } = await import('$lib/components/app/shiki');
+    const { highlighter } = await import('#lib/components/app/shiki.js');
     const hl = await highlighter;
     return hl.codeToHtml(src, {
       lang,

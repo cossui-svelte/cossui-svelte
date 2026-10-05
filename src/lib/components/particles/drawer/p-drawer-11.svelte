@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, buttonVariants } from '$lib/components/ui/button';
+  import { Button, buttonVariants } from '#lib/components/ui/button/index.js';
   import {
     Drawer,
     DrawerHeader,
@@ -7,7 +7,7 @@
     DrawerPopup,
     DrawerTitle,
     DrawerTrigger
-  } from '$lib/components/ui/drawer';
+  } from '#lib/components/ui/drawer/index.js';
 
   let open = $state(false);
 </script>

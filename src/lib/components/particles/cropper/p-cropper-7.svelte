@@ -4,7 +4,7 @@
     CropperCropArea,
     CropperDescription,
     CropperImage
-  } from '$lib/components/ui/cropper';
+  } from '#lib/components/ui/cropper/index.js';
 </script>
 
 <div class="flex w-full flex-col items-center gap-2">

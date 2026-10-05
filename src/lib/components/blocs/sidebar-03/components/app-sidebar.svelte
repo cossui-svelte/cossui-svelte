@@ -156,7 +156,7 @@
     SidebarMenuSubButton,
     SidebarMenuSubItem,
     SidebarRail
-  } from '$lib/components/ui/sidebar';
+  } from '#lib/components/ui/sidebar/index.js';
 
   let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar> = $props();
 </script>

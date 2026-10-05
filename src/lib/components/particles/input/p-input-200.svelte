@@ -1,8 +1,8 @@
 <script lang="ts">
   import { registerCursorTracker } from 'cleave-zen';
   import type { Attachment } from 'svelte/attachments';
-  import { Input } from '$lib/components/ui/input';
-  import { Label } from '$lib/components/ui/label';
+  import { Input } from '#lib/components/ui/input/index.js';
+  import { Label } from '#lib/components/ui/label/index.js';
 
   // Groups digits into up to 4 dot-separated octets, capping each at 255 by
   // rolling any digit that would overflow it into the start of the next octet.

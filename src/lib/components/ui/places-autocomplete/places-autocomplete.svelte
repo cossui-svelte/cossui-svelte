@@ -8,8 +8,8 @@
     AutocompleteList,
     AutocompletePopup,
     AutocompleteStatus
-  } from '$lib/components/ui/autocomplete';
-  import { cn } from '$lib/utils';
+  } from '#lib/components/ui/autocomplete/index.js';
+  import { cn } from '#lib/utils.js';
   import {
     type AddressSuggestion,
     PlacesAutocompleteState,

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ScrollArea } from '$lib/components/ui/scroll-area';
+  import { ScrollArea } from '#lib/components/ui/scroll-area/index.js';
 
   const items = Array.from({ length: 20 }, (_, i) => i);
 </script>

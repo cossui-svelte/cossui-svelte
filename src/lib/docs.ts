@@ -1,4 +1,7 @@
-import { allComponents, type RegistryUIEntry } from '$lib/registry/generated-registry-components';
+import {
+  allComponents,
+  type RegistryUIEntry
+} from '#lib/registry/generated-registry-components.js';
 
 export interface PageNode {
   name: string;

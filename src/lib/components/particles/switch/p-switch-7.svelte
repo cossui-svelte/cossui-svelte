@@ -3,9 +3,9 @@
   import PlusIcon from '@lucide/svelte/icons/plus';
   import SearchIcon from '@lucide/svelte/icons/search';
   import XIcon from '@lucide/svelte/icons/x';
-  import { Button, buttonVariants } from '$lib/components/ui/button';
-  import { Checkbox } from '$lib/components/ui/checkbox';
-  import { CheckboxGroup } from '$lib/components/ui/checkbox-group';
+  import { Button, buttonVariants } from '#lib/components/ui/button/index.js';
+  import { CheckboxGroup } from '#lib/components/ui/checkbox-group/index.js';
+  import { Checkbox } from '#lib/components/ui/checkbox/index.js';
   import {
     Combobox,
     ComboboxEmpty,
@@ -15,18 +15,18 @@
     ComboboxPopup,
     ComboboxTrigger,
     ComboboxValue
-  } from '$lib/components/ui/combobox';
-  import { Label } from '$lib/components/ui/label';
-  import { Popover, PopoverPopup, PopoverTrigger } from '$lib/components/ui/popover';
-  import { selectTriggerVariants } from '$lib/components/ui/select';
-  import { Switch } from '$lib/components/ui/switch';
+  } from '#lib/components/ui/combobox/index.js';
+  import { Label } from '#lib/components/ui/label/index.js';
+  import { Popover, PopoverPopup, PopoverTrigger } from '#lib/components/ui/popover/index.js';
+  import { selectTriggerVariants } from '#lib/components/ui/select/index.js';
+  import { Switch } from '#lib/components/ui/switch/index.js';
   import {
     Tooltip,
     TooltipPopup,
     TooltipProvider,
     TooltipTrigger
-  } from '$lib/components/ui/tooltip';
-  import { cn } from '$lib/utils';
+  } from '#lib/components/ui/tooltip/index.js';
+  import { cn } from '#lib/utils.js';
 
   const days = [
     'Monday',

@@ -2,7 +2,7 @@
   import CheckIcon from '@lucide/svelte/icons/check';
   import ImagePlusIcon from '@lucide/svelte/icons/image-plus';
   import XIcon from '@lucide/svelte/icons/x';
-  import { buttonVariants } from '$lib/components/ui/button';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
   import {
     Dialog,
     DialogClose,
@@ -11,12 +11,12 @@
     DialogPopup,
     DialogTitle,
     DialogTrigger
-  } from '$lib/components/ui/dialog';
-  import { Input } from '$lib/components/ui/input';
-  import { Label } from '$lib/components/ui/label';
-  import { Textarea } from '$lib/components/ui/textarea';
-  import { useCharacterLimit } from '$lib/hooks/use-character-limit.svelte';
-  import { useFileUpload } from '$lib/hooks/use-file-upload.svelte';
+  } from '#lib/components/ui/dialog/index.js';
+  import { Input } from '#lib/components/ui/input/index.js';
+  import { Label } from '#lib/components/ui/label/index.js';
+  import { Textarea } from '#lib/components/ui/textarea/index.js';
+  import { useCharacterLimit } from '#lib/hooks/use-character-limit.svelte.js';
+  import { useFileUpload } from '#lib/hooks/use-file-upload.svelte.js';
 
   const id = $props.id();
 

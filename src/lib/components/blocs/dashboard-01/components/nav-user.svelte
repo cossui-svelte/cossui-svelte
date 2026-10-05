@@ -4,7 +4,7 @@
   import CreditCardIcon from '@lucide/svelte/icons/credit-card';
   import DotsVerticalIcon from '@lucide/svelte/icons/ellipsis-vertical';
   import LogoutIcon from '@lucide/svelte/icons/log-out';
-  import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
+  import { Avatar, AvatarFallback, AvatarImage } from '#lib/components/ui/avatar/index.js';
   import {
     Menu,
     MenuGroup,
@@ -13,13 +13,13 @@
     MenuPopup,
     MenuSeparator,
     MenuTrigger
-  } from '$lib/components/ui/menu';
+  } from '#lib/components/ui/menu/index.js';
   import {
     SidebarMenu,
     SidebarMenuButton,
     SidebarMenuItem,
     useSidebar
-  } from '$lib/components/ui/sidebar';
+  } from '#lib/components/ui/sidebar/index.js';
 
   let { user }: { user: { name: string; email: string; avatar: string } } = $props();
 

@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Field, FieldDescription, FieldLabel } from '$lib/components/ui/field';
-  import { Fieldset, FieldsetLegend } from '$lib/components/ui/fieldset';
-  import { Input } from '$lib/components/ui/input';
+  import { Field, FieldDescription, FieldLabel } from '#lib/components/ui/field/index.js';
+  import { Fieldset, FieldsetLegend } from '#lib/components/ui/fieldset/index.js';
+  import { Input } from '#lib/components/ui/input/index.js';
 </script>
 
 <Fieldset class="flex w-full flex-col gap-6">

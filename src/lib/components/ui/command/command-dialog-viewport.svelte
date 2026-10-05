@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Dialog as CommandDialogPrimitive } from '@shardsui/svelte/dialog';
   import type { ComponentProps } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   let { class: className, ...restProps }: ComponentProps<typeof CommandDialogPrimitive.Viewport> =
     $props();

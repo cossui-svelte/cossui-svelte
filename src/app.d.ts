@@ -1,7 +1,7 @@
 // See https://svelte.dev/docs/kit/types#app.d.ts
 // for information about these interfaces
 
-import type { RequestClient } from '$data/api/helpers/RequestClient';
+import type { RequestClient } from '#data/api/helpers/RequestClient.js';
 
 declare global {
   namespace App {

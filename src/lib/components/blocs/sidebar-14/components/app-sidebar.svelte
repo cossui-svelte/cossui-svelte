@@ -13,7 +13,7 @@
     SidebarMenuSubButton,
     SidebarMenuSubItem,
     SidebarRail
-  } from '$lib/components/ui/sidebar';
+  } from '#lib/components/ui/sidebar/index.js';
 
   // This is sample data.
   const data = {

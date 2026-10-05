@@ -1,5 +1,8 @@
 <script lang="ts">
   import CheckIcon from '@lucide/svelte/icons/check';
+  import PageHeaderDescription from '#lib/components/app/page-header-description.svelte';
+  import PageHeaderHeading from '#lib/components/app/page-header-heading.svelte';
+  import PageHeader from '#lib/components/app/page-header.svelte';
   import {
     Timeline,
     TimelineContent,
@@ -9,10 +12,7 @@
     TimelineItem,
     TimelineSeparator,
     TimelineTitle
-  } from '$lib/components/ui/timeline';
-  import PageHeaderDescription from '$lib/components/app/page-header-description.svelte';
-  import PageHeaderHeading from '$lib/components/app/page-header-heading.svelte';
-  import PageHeader from '$lib/components/app/page-header.svelte';
+  } from '#lib/components/ui/timeline/index.js';
 
   const changelog = [
     {

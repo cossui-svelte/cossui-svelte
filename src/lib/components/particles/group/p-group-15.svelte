@@ -1,15 +1,15 @@
 <script lang="ts">
   import Search from '@lucide/svelte/icons/search';
-  import { Button } from '$lib/components/ui/button';
-  import { Group, GroupSeparator } from '$lib/components/ui/group';
-  import { Input } from '$lib/components/ui/input';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import { Group, GroupSeparator } from '#lib/components/ui/group/index.js';
+  import { Input } from '#lib/components/ui/input/index.js';
   import {
     Select,
     SelectItem,
     SelectPopup,
     SelectTrigger,
     SelectValue
-  } from '$lib/components/ui/select';
+  } from '#lib/components/ui/select/index.js';
 
   const protocols = [
     { label: 'http', value: 'http' },

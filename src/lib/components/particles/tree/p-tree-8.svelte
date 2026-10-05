@@ -13,8 +13,8 @@
   import FolderOpenIcon from '@lucide/svelte/icons/folder-open';
   import type { ChangeEventHandler, FocusEventHandler } from 'svelte/elements';
   import { SvelteSet } from 'svelte/reactivity';
-  import { Input } from '$lib/components/ui/input';
-  import { Tree, TreeItem, TreeLabel, useTree } from '$lib/components/ui/tree';
+  import { Input } from '#lib/components/ui/input/index.js';
+  import { Tree, TreeItem, TreeLabel, useTree } from '#lib/components/ui/tree/index.js';
 
   interface Item {
     children?: string[];

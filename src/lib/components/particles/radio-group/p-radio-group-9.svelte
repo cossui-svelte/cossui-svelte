@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { RadioGroup, RadioPrimitive } from '$lib/components/ui/radio-group';
+  import { RadioGroup, RadioPrimitive } from '#lib/components/ui/radio-group/index.js';
   import {
     segmentedControlItemVariants,
     segmentedControlRootClassName
-  } from '$lib/components/ui/tabs/segmented-control';
+  } from '#lib/components/ui/tabs/segmented-control.js';
 
   const itemClassName = segmentedControlItemVariants({
     className: 'grow',

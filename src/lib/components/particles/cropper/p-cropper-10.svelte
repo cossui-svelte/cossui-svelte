@@ -4,7 +4,7 @@
     CropperCropArea,
     CropperDescription,
     CropperImage
-  } from '$lib/components/ui/cropper';
+  } from '#lib/components/ui/cropper/index.js';
 
   type Area = { x: number; y: number; width: number; height: number };
 

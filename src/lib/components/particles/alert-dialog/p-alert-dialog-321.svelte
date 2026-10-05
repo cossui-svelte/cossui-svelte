@@ -1,6 +1,6 @@
 <script lang="ts">
   import MailIcon from '@lucide/svelte/icons/mail';
-  import { Button, buttonVariants } from '$lib/components/ui/button';
+  import { Button, buttonVariants } from '#lib/components/ui/button/index.js';
   import {
     Dialog,
     DialogDescription,
@@ -9,8 +9,8 @@
     DialogPopup,
     DialogTitle,
     DialogTrigger
-  } from '$lib/components/ui/dialog';
-  import { Input } from '$lib/components/ui/input';
+  } from '#lib/components/ui/dialog/index.js';
+  import { Input } from '#lib/components/ui/input/index.js';
 
   let email = $state('');
 </script>

@@ -1,9 +1,9 @@
 <script lang="ts">
   import { z } from 'zod';
-  import { Button } from '$lib/components/ui/button';
-  import { Field, FieldError, FieldLabel } from '$lib/components/ui/field';
-  import { Form, type FormErrors } from '$lib/components/ui/form';
-  import { Input } from '$lib/components/ui/input';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import { Field, FieldError, FieldLabel } from '#lib/components/ui/field/index.js';
+  import { Form, type FormErrors } from '#lib/components/ui/form/index.js';
+  import { Input } from '#lib/components/ui/input/index.js';
 
   const schema = z.object({
     age: z.coerce

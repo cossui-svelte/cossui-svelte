@@ -2,7 +2,7 @@
   import ArrowDown from '@lucide/svelte/icons/arrow-down';
   import ArrowUp from '@lucide/svelte/icons/arrow-up';
   import CornerDownLeft from '@lucide/svelte/icons/corner-down-left';
-  import { buttonVariants } from '$lib/components/ui/button';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
   import {
     Command,
     CommandCollection,
@@ -19,8 +19,8 @@
     CommandPanel,
     CommandSeparator,
     CommandShortcut
-  } from '$lib/components/ui/command';
-  import { Kbd, KbdGroup } from '$lib/components/ui/kbd';
+  } from '#lib/components/ui/command/index.js';
+  import { Kbd, KbdGroup } from '#lib/components/ui/kbd/index.js';
 
   interface Item {
     label: string;

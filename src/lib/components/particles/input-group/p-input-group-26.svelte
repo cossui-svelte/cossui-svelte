@@ -3,9 +3,13 @@
   import Eye from '@lucide/svelte/icons/eye';
   import EyeOff from '@lucide/svelte/icons/eye-off';
   import X from '@lucide/svelte/icons/x';
-  import { Button } from '$lib/components/ui/button';
-  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';
-  import { Label } from '$lib/components/ui/label';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import {
+    InputGroup,
+    InputGroupAddon,
+    InputGroupInput
+  } from '#lib/components/ui/input-group/index.js';
+  import { Label } from '#lib/components/ui/label/index.js';
 
   const requirements = [
     { regex: /.{8,}/, text: 'At least 8 characters' },

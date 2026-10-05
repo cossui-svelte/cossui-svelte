@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Label } from '$lib/components/ui/label';
-  import { OTPField, OTPFieldInput } from '$lib/components/ui/otp-field';
+  import { Label } from '#lib/components/ui/label/index.js';
+  import { OTPField, OTPFieldInput } from '#lib/components/ui/otp-field/index.js';
 
   const OTP_LENGTH = 6;
 </script>

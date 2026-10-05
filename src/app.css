@@ -39,7 +39,7 @@
   --font-mono: "PaperMono", monospace;
 }
 
-@import "$lib/components/ui/global.css";
+@import "#lib/components/ui/global.css";
 
 @layer base {
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Map, MapControls } from '$lib/components/ui/map';
+  import { Map, MapControls } from '#lib/components/ui/map/index.js';
 </script>
 
 <div class="h-[420px] w-full">

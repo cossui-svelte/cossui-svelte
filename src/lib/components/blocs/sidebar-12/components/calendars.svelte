@@ -5,7 +5,7 @@
     Collapsible,
     CollapsiblePanel,
     CollapsibleTrigger
-  } from '$lib/components/ui/collapsible';
+  } from '#lib/components/ui/collapsible/index.js';
   import {
     SidebarGroup,
     SidebarGroupContent,
@@ -14,7 +14,7 @@
     SidebarMenuButton,
     SidebarMenuItem,
     SidebarSeparator
-  } from '$lib/components/ui/sidebar';
+  } from '#lib/components/ui/sidebar/index.js';
 
   let {
     calendars

@@ -1,8 +1,8 @@
 <script lang="ts">
   import type { Row } from '@tanstack/svelte-table';
-  import { Input } from '$lib/components/ui/input';
-  import { Label } from '$lib/components/ui/label';
-  import { toastManager } from '$lib/components/ui/toast';
+  import { Input } from '#lib/components/ui/input/index.js';
+  import { Label } from '#lib/components/ui/label/index.js';
+  import { toastManager } from '#lib/components/ui/toast/index.js';
   import type { DashboardTableFeatures } from './data-table-features.js';
   import type { Schema } from './schemas.js';
 

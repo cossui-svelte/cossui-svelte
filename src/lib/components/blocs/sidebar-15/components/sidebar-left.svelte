@@ -11,7 +11,12 @@
   import SparklesIcon from '@lucide/svelte/icons/sparkles';
   import Trash2Icon from '@lucide/svelte/icons/trash-2';
   import type { ComponentProps } from 'svelte';
-  import { Sidebar, SidebarContent, SidebarHeader, SidebarRail } from '$lib/components/ui/sidebar';
+  import {
+    Sidebar,
+    SidebarContent,
+    SidebarHeader,
+    SidebarRail
+  } from '#lib/components/ui/sidebar/index.js';
   import NavFavorites from './nav-favorites.svelte';
   import NavMain from './nav-main.svelte';
   import NavSecondary from './nav-secondary.svelte';

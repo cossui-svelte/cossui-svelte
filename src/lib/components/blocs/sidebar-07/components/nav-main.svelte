@@ -5,7 +5,7 @@
     Collapsible,
     CollapsiblePanel,
     CollapsibleTrigger
-  } from '$lib/components/ui/collapsible';
+  } from '#lib/components/ui/collapsible/index.js';
   import {
     SidebarGroup,
     SidebarGroupLabel,
@@ -15,7 +15,7 @@
     SidebarMenuSub,
     SidebarMenuSubButton,
     SidebarMenuSubItem
-  } from '$lib/components/ui/sidebar';
+  } from '#lib/components/ui/sidebar/index.js';
 
   let {
     items

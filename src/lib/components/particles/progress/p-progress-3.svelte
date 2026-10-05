@@ -4,7 +4,7 @@
     ProgressIndicator,
     ProgressLabel,
     ProgressTrack
-  } from '$lib/components/ui/progress';
+  } from '#lib/components/ui/progress/index.js';
 
   const value = 502;
   const max = 512;

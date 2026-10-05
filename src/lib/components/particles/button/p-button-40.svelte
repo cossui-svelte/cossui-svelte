@@ -1,16 +1,16 @@
 <script lang="ts">
   import Download from '@lucide/svelte/icons/download';
   import X from '@lucide/svelte/icons/x';
-  import { Button, buttonVariants } from '$lib/components/ui/button';
-  import { Group, GroupSeparator, GroupText } from '$lib/components/ui/group';
-  import { Spinner } from '$lib/components/ui/spinner';
-  import { toastManager } from '$lib/components/ui/toast';
+  import { Button, buttonVariants } from '#lib/components/ui/button/index.js';
+  import { Group, GroupSeparator, GroupText } from '#lib/components/ui/group/index.js';
+  import { Spinner } from '#lib/components/ui/spinner/index.js';
+  import { toastManager } from '#lib/components/ui/toast/index.js';
   import {
     Tooltip,
     TooltipPopup,
     TooltipProvider,
     TooltipTrigger
-  } from '$lib/components/ui/tooltip';
+  } from '#lib/components/ui/tooltip/index.js';
 
   let isDownloading = $state(false);
   let progress = $state(0);

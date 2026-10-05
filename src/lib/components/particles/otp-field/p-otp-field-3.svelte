@@ -1,5 +1,9 @@
 <script lang="ts">
-  import { OTPField, OTPFieldInput, OTPFieldSeparator } from '$lib/components/ui/otp-field';
+  import {
+    OTPField,
+    OTPFieldInput,
+    OTPFieldSeparator
+  } from '#lib/components/ui/otp-field/index.js';
 
   const OTP_LENGTH = 6;
   const GROUP_LENGTH = 3;

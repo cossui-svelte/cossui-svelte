@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
   import PinInputRoot from './internal/primitives/pin-input-root.svelte';
   import type { PinInputRootProps } from './internal/types';
 

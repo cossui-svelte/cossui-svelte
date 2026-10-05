@@ -1,14 +1,14 @@
 <script lang="ts">
   import CheckIcon from '@lucide/svelte/icons/check';
   import CopyIcon from '@lucide/svelte/icons/copy';
-  import { buttonVariants } from '$lib/components/ui/button';
-  import { anchoredToastManager } from '$lib/components/ui/toast';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
+  import { anchoredToastManager } from '#lib/components/ui/toast/index.js';
   import {
     Tooltip,
     TooltipPopup,
     TooltipProvider,
     TooltipTrigger
-  } from '$lib/components/ui/tooltip';
+  } from '#lib/components/ui/tooltip/index.js';
 
   const toastTimeout = 2000;
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Textarea } from '$lib/components/ui/textarea';
+  import { Textarea } from '#lib/components/ui/textarea/index.js';
 </script>
 
 <Textarea class="*:field-sizing-fixed *:min-h-0" placeholder="Type your message here" rows={2} />

@@ -8,7 +8,7 @@
     SelectSeparator,
     SelectTrigger,
     SelectValue
-  } from '$lib/components/ui/select';
+  } from '#lib/components/ui/select/index.js';
 
   const frontend = [
     { label: 'Next.js', value: 'next' },

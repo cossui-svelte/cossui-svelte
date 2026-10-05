@@ -10,8 +10,8 @@
     registerCursorTracker
   } from 'cleave-zen';
   import type { Attachment } from 'svelte/attachments';
-  import { Badge } from '$lib/components/ui/badge';
-  import { Button, buttonVariants } from '$lib/components/ui/button';
+  import { Badge } from '#lib/components/ui/badge/index.js';
+  import { Button, buttonVariants } from '#lib/components/ui/button/index.js';
   import {
     Dialog,
     DialogDescription,
@@ -20,10 +20,10 @@
     DialogPopup,
     DialogTitle,
     DialogTrigger
-  } from '$lib/components/ui/dialog';
-  import { Input } from '$lib/components/ui/input';
-  import { Label } from '$lib/components/ui/label';
-  import { Radio, RadioGroup } from '$lib/components/ui/radio-group';
+  } from '#lib/components/ui/dialog/index.js';
+  import { Input } from '#lib/components/ui/input/index.js';
+  import { Label } from '#lib/components/ui/label/index.js';
+  import { Radio, RadioGroup } from '#lib/components/ui/radio-group/index.js';
 
   const id = $props.id();
 

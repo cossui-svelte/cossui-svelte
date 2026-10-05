@@ -1,6 +1,6 @@
 <script lang="ts">
   import Zap from '@lucide/svelte/icons/zap';
-  import { Map, MapMarker, MarkerContent, MarkerTooltip } from '$lib/components/ui/map';
+  import { Map, MapMarker, MarkerContent, MarkerTooltip } from '#lib/components/ui/map/index.js';
 
   type Status = 'available' | 'in-use' | 'offline';
 

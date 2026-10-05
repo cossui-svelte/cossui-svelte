@@ -1,6 +1,6 @@
 <script lang="ts">
   import ChevronUpIcon from '@lucide/svelte/icons/chevron-up';
-  import { Menu, MenuItem, MenuPopup, MenuTrigger } from '$lib/components/ui/menu';
+  import { Menu, MenuItem, MenuPopup, MenuTrigger } from '#lib/components/ui/menu/index.js';
   import {
     Sidebar,
     SidebarContent,
@@ -12,8 +12,8 @@
     SidebarMenuItem,
     SidebarProvider,
     SidebarTrigger
-  } from '$lib/components/ui/sidebar';
-  import { cn } from '$lib/utils';
+  } from '#lib/components/ui/sidebar/index.js';
+  import { cn } from '#lib/utils.js';
 </script>
 
 <!-- transform-gpu makes this box the containing block for the sidebar's `fixed`

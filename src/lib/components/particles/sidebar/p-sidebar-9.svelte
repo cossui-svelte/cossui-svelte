@@ -5,7 +5,7 @@
   import LifeBuoyIcon from '@lucide/svelte/icons/life-buoy';
   import MapIcon from '@lucide/svelte/icons/map';
   import SendIcon from '@lucide/svelte/icons/send';
-  import { Menu, MenuItem, MenuPopup, MenuTrigger } from '$lib/components/ui/menu';
+  import { Menu, MenuItem, MenuPopup, MenuTrigger } from '#lib/components/ui/menu/index.js';
   import {
     Sidebar,
     SidebarContent,
@@ -19,7 +19,7 @@
     SidebarMenuItem,
     SidebarProvider,
     SidebarTrigger
-  } from '$lib/components/ui/sidebar';
+  } from '#lib/components/ui/sidebar/index.js';
 
   const projects = [
     { name: 'Design Engineering', url: '#', icon: FrameIcon },

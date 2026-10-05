@@ -1,7 +1,7 @@
 <script lang="ts">
   import Folder from '@lucide/svelte/icons/folder';
   import Plus from '@lucide/svelte/icons/plus';
-  import { Button } from '$lib/components/ui/button';
+  import { Button } from '#lib/components/ui/button/index.js';
   import {
     Card,
     CardFrame,
@@ -10,14 +10,14 @@
     CardFrameHeader,
     CardFrameTitle,
     CardPanel
-  } from '$lib/components/ui/card';
+  } from '#lib/components/ui/card/index.js';
   import {
     Empty,
     EmptyDescription,
     EmptyHeader,
     EmptyMedia,
     EmptyTitle
-  } from '$lib/components/ui/empty';
+  } from '#lib/components/ui/empty/index.js';
 </script>
 
 <CardFrame class="w-full">

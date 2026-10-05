@@ -2,14 +2,14 @@
   import LinkIcon from '@lucide/svelte/icons/link';
   import MailIcon from '@lucide/svelte/icons/mail';
   import Share2Icon from '@lucide/svelte/icons/share-2';
-  import { buttonVariants } from '$lib/components/ui/button';
-  import { Group, GroupSeparator } from '$lib/components/ui/group';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
+  import { Group, GroupSeparator } from '#lib/components/ui/group/index.js';
   import {
     Tooltip,
     TooltipPopup,
     TooltipProvider,
     TooltipTrigger
-  } from '$lib/components/ui/tooltip';
+  } from '#lib/components/ui/tooltip/index.js';
 </script>
 
 <TooltipProvider>

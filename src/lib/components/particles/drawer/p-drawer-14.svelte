@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { Button } from '$lib/components/ui/button';
+  import { Button } from '#lib/components/ui/button/index.js';
   import {
     Drawer,
     DrawerHeader,
     DrawerPanel,
     DrawerPopup,
     DrawerTitle
-  } from '$lib/components/ui/drawer';
+  } from '#lib/components/ui/drawer/index.js';
 </script>
 
 <div class="relative min-h-80 w-full overflow-hidden rounded-xl border">

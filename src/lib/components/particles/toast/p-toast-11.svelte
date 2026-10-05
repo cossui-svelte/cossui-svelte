@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Button } from '$lib/components/ui/button';
-  import { toastManager } from '$lib/components/ui/toast';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import { toastManager } from '#lib/components/ui/toast/index.js';
 
   const ERROR_TOAST_ID = 'coss-demo-error-upsert';
 </script>

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Radio as RadioPrimitive } from '@shardsui/svelte/radio';
   import type { ComponentProps, Snippet } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   type Props = Omit<ComponentProps<typeof RadioPrimitive.Root>, 'children'> & {
     children?: Snippet;

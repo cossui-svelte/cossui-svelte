@@ -1,7 +1,11 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
-  import { Badge } from '$lib/components/ui/badge';
-  import { Button } from '$lib/components/ui/button';
+  import CategoryThumbnail from '#lib/components/app/component-thumbnails.svelte';
+  import PageHeaderDescription from '#lib/components/app/page-header-description.svelte';
+  import PageHeaderHeading from '#lib/components/app/page-header-heading.svelte';
+  import PageHeader from '#lib/components/app/page-header.svelte';
+  import { Badge } from '#lib/components/ui/badge/index.js';
+  import { Button } from '#lib/components/ui/button/index.js';
   import {
     Card,
     CardFrame,
@@ -9,13 +13,12 @@
     CardFrameHeader,
     CardFrameTitle,
     CardPanel
-  } from '$lib/components/ui/card';
-  import CategoryThumbnail from '$lib/components/app/component-thumbnails.svelte';
-  import PageHeaderDescription from '$lib/components/app/page-header-description.svelte';
-  import PageHeaderHeading from '$lib/components/app/page-header-heading.svelte';
-  import PageHeader from '$lib/components/app/page-header.svelte';
-  import { allComponents, type RegistryUIEntry } from '$lib/registry/generated-registry-components';
-  import { allParticles } from '$lib/registry/registry-particles';
+  } from '#lib/components/ui/card/index.js';
+  import {
+    allComponents,
+    type RegistryUIEntry
+  } from '#lib/registry/generated-registry-components.js';
+  import { allParticles } from '#lib/registry/registry-particles.js';
   import type { PageData } from './$types';
 
   let { data }: { data: PageData } = $props();
@@ -34,7 +37,7 @@
         class="font-bold font-heading text-base [font-variation-settings:'GEOM'_50,'opsz'_32]"
       >
         <h2>
-          <a class="before:absolute before:inset-0" href={resolve(`/particles?tags=${slug}`)}
+          <a class="before:absolute before:inset-0" href={resolve(`particles?tags=${slug}`)}
             >{meta.name}</a
           >
         </h2>
@@ -53,9 +56,8 @@
       {/if}
       <CardPanel
         class="flex flex-1 items-center justify-center px-8 [--border:--alpha(var(--color-black)/7%)] [--btn-from:--alpha(var(--color-primary)/90%)] [--btn-to:var(--color-primary)] in-[[data-slot=card-frame]:has(a:not(:hover))]:*:translate-y-0.5 *:transition-transform *:duration-200 dark:[--border:--alpha(var(--color-white)/3%)] dark:[--btn-from:var(--color-primary)] dark:[--btn-to:--alpha(var(--color-primary)/90%)]"
+        ><CategoryThumbnail {slug} /></CardPanel
       >
-        <CategoryThumbnail {slug} />
-      </CardPanel>
     </Card>
   </CardFrame>
 {/snippet}
@@ -67,12 +69,10 @@
     </PageHeaderHeading>
     <PageHeaderDescription>{description}</PageHeaderDescription>
     <div class="mt-2 flex gap-2">
-      <Button size="lg">
-        <a href={resolve('/docs')}>Get started</a>
-      </Button>
-      <Button size="lg" variant="outline">
-        <a href={resolve('/particles')}>Browse {particleCount} particles</a>
-      </Button>
+      <Button size="lg"><a href={resolve('docs')}>Get started</a></Button>
+      <Button size="lg" variant="outline"
+        ><a href={resolve('particles')}>Browse {particleCount} particles</a></Button
+      >
     </div>
   </PageHeader>
 </div>

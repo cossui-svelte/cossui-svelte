@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Checkbox as CheckboxPrimitive } from '@shardsui/svelte/checkbox';
   import type { ComponentProps } from 'svelte';
-  import { cn } from '$lib/utils.js';
+  import { cn } from '#lib/utils.js';
 
   let {
     checked = $bindable(false),

@@ -1,8 +1,8 @@
 <script lang="ts">
   import { DateFormatter, type DateValue, getLocalTimeZone, today } from '@internationalized/date';
-  import { Calendar } from '$lib/components/ui/calendar';
-  import { ScrollArea } from '$lib/components/ui/scroll-area';
-  import { ToggleGroup, ToggleGroupItem } from '$lib/components/ui/toggle-group';
+  import { Calendar } from '#lib/components/ui/calendar/index.js';
+  import { ScrollArea } from '#lib/components/ui/scroll-area/index.js';
+  import { ToggleGroup, ToggleGroupItem } from '#lib/components/ui/toggle-group/index.js';
 
   const todayValue = today(getLocalTimeZone());
   let date = $state<DateValue>(todayValue);

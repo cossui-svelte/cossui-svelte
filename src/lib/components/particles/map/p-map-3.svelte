@@ -7,7 +7,7 @@
     MarkerContent,
     MarkerLabel,
     MarkerTooltip
-  } from '$lib/components/ui/map';
+  } from '#lib/components/ui/map/index.js';
 
   const store = { lng: -0.14, lat: 51.5154 };
   const home = { lng: -0.07, lat: 51.51 };

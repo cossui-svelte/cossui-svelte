@@ -5,7 +5,7 @@
     StepperItem,
     StepperTitle,
     StepperTrigger
-  } from '$lib/components/ui/stepper';
+  } from '#lib/components/ui/stepper/index.js';
 
   const steps = [
     {

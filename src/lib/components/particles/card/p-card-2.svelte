@@ -1,9 +1,15 @@
 <script lang="ts">
-  import { Button } from '$lib/components/ui/button';
-  import { Card, CardAction, CardHeader, CardPanel, CardTitle } from '$lib/components/ui/card';
-  import { Field, FieldLabel } from '$lib/components/ui/field';
-  import { Form } from '$lib/components/ui/form';
-  import { Input } from '$lib/components/ui/input';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import {
+    Card,
+    CardAction,
+    CardHeader,
+    CardPanel,
+    CardTitle
+  } from '#lib/components/ui/card/index.js';
+  import { Field, FieldLabel } from '#lib/components/ui/field/index.js';
+  import { Form } from '#lib/components/ui/form/index.js';
+  import { Input } from '#lib/components/ui/input/index.js';
 </script>
 
 <Card class="w-full max-w-xs">

@@ -1,8 +1,8 @@
 <script lang="ts">
   import { Dialog as DialogPrimitive } from '@shardsui/svelte/dialog';
   import type { HTMLAttributes } from 'svelte/elements';
-  import { buttonVariants } from '$lib/components/ui/button';
-  import { cn, type WithElementRef } from '$lib/utils';
+  import { buttonVariants } from '#lib/components/ui/button/index.js';
+  import { cn, type WithElementRef } from '#lib/utils.js';
 
   let {
     ref = $bindable(null),

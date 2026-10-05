@@ -1,14 +1,19 @@
 <script lang="ts">
-  import { Button } from '$lib/components/ui/button';
-  import { Field, FieldDescription, FieldError, FieldLabel } from '$lib/components/ui/field';
-  import { Form } from '$lib/components/ui/form';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import {
+    Field,
+    FieldDescription,
+    FieldError,
+    FieldLabel
+  } from '#lib/components/ui/field/index.js';
+  import { Form } from '#lib/components/ui/form/index.js';
   import {
     Select,
     SelectContent,
     SelectItem,
     SelectTrigger,
     SelectValue
-  } from '$lib/components/ui/select';
+  } from '#lib/components/ui/select/index.js';
 
   let loading = $state(false);
 

@@ -143,7 +143,7 @@
     SidebarMenuButton,
     SidebarMenuItem,
     SidebarRail
-  } from '$lib/components/ui/sidebar';
+  } from '#lib/components/ui/sidebar/index.js';
   import NavMain from './nav-main.svelte';
   import SidebarOptInForm from './sidebar-opt-in-form.svelte';
 

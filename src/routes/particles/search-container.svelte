@@ -2,7 +2,7 @@
   import { browser } from '$app/env';
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
-  import { allParticles } from '$lib/registry/registry-particles';
+  import { allParticles } from '#lib/registry/registry-particles.js';
   import SearchField, { type SearchItem } from './search-field.svelte';
 
   const uniqueCategories = Array.from(
@@ -30,7 +30,7 @@
       ? `${page.url.pathname}?tags=${encodeURIComponent(tags)}`
       : page.url.pathname;
     // eslint-disable-next-line svelte/no-navigation-without-resolve -- newUrl is built from the current page's already-resolved pathname, not a static route literal, so it can't be passed through resolve()
-    goto(newUrl, { noScroll: true });
+    goto(newUrl, { reset: false });
   }
 </script>
 

@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Button } from '$lib/components/ui/button';
-  import { Separator } from '$lib/components/ui/separator';
-  import { SidebarTrigger } from '$lib/components/ui/sidebar';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import { Separator } from '#lib/components/ui/separator/index.js';
+  import { SidebarTrigger } from '#lib/components/ui/sidebar/index.js';
 </script>
 
 <header

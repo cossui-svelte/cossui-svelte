@@ -1,8 +1,8 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
-  import { Button } from '$lib/components/ui/button';
-  import { Separator } from '$lib/components/ui/separator';
-  import { componentNavTree, type NavTree, PAGES_NEW } from '$lib/docs';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import { Separator } from '#lib/components/ui/separator/index.js';
+  import { componentNavTree, type NavTree, PAGES_NEW } from '#lib/docs.js';
   import MainNav from './main-nav.svelte';
   import MobileNav from './mobile-nav.svelte';
   import SiteHeaderBase from './site-header.svelte';
@@ -34,21 +34,11 @@
   {/snippet}
 
   <div class="flex gap-2">
-    <Button variant="ghost">
-      <a href={resolve('/')}>Components</a>
-    </Button>
-    <Button variant="ghost">
-      <a href={resolve('/particles')}>Particles</a>
-    </Button>
-    <Button variant="ghost">
-      <a href={resolve('/blocs')}>Blocs</a>
-    </Button>
-    <Button variant="ghost">
-      <a href={resolve('/ai')}>Registry & AI</a>
-    </Button>
-    <Button variant="ghost">
-      <a href={resolve('/docs')}>Docs</a>
-    </Button>
+    <Button variant="ghost"><a href={resolve('/')}>Components</a></Button>
+    <Button variant="ghost"><a href={resolve('particles')}>Particles</a></Button>
+    <Button variant="ghost"><a href={resolve('blocs')}>Blocs</a></Button>
+    <Button variant="ghost"><a href={resolve('ai')}>Registry & AI</a></Button>
+    <Button variant="ghost"><a href={resolve('docs')}>Docs</a></Button>
   </div>
 
   <MainNav class="hidden lg:flex" items={navItems} />

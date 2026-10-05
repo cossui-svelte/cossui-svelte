@@ -2,7 +2,7 @@
   import {
     segmentedControlItemVariants,
     segmentedControlRootClassName
-  } from '$lib/components/ui/tabs/segmented-control';
+  } from '#lib/components/ui/tabs/segmented-control.js';
 
   const itemClassName = segmentedControlItemVariants({ state: 'current' });
 </script>

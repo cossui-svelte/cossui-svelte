@@ -8,8 +8,8 @@
     startOfYear,
     today
   } from '@internationalized/date';
-  import { Button } from '$lib/components/ui/button';
-  import { RangeCalendar } from '$lib/components/ui/range-calendar';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import { RangeCalendar } from '#lib/components/ui/range-calendar/index.js';
 
   const todayValue = today(getLocalTimeZone());
   const yesterday = {

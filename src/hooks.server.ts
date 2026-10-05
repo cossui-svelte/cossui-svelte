@@ -1,5 +1,5 @@
-import { type Handle } from '@sveltejs/kit';
-import { RequestClient } from '$data/api/helpers/RequestClient';
+import type { Handle } from '@sveltejs/kit/hooks';
+import { RequestClient } from '#data/api/helpers/RequestClient.js';
 
 // this will configure the global fetcher
 const typedServerFetch: Handle = async ({ event, resolve }) => {

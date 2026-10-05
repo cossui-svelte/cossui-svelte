@@ -7,8 +7,8 @@
     AutocompleteList,
     AutocompletePopup,
     AutocompleteStatus
-  } from '$lib/components/ui/autocomplete';
-  import { Spinner } from '$lib/components/ui/spinner';
+  } from '#lib/components/ui/autocomplete/index.js';
+  import { Spinner } from '#lib/components/ui/spinner/index.js';
 
   type Movie = { id: string; title: string; year: number };
 
