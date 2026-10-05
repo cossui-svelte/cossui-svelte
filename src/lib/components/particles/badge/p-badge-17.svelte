@@ -3,6 +3,6 @@
 </script>
 
 <Badge variant="outline">
-  <span aria-hidden="true" class="size-1.5 rounded-full bg-amber-500" />
+  <span aria-hidden="true" class="size-1.5 rounded-full bg-amber-500"></span>
   Pending
 </Badge>
