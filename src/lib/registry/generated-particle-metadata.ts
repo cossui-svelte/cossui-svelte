@@ -1468,7 +1468,7 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-field-14': {
     description: 'Field with radio group',
     tags: ['field', 'fieldset', 'label', 'radio-group'],
-    registryDependencies: ['button', 'field', 'fieldset', 'form', 'radio-group'],
+    registryDependencies: ['field', 'fieldset', 'form', 'radio-group'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
   },
   'p-field-15': {
@@ -2395,6 +2395,12 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     registryDependencies: ['radio-group', 'tabs'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
+  'p-radio-group-10': {
+    description: 'Color palette radio cards in a four-column grid',
+    tags: ['radio-group', 'tooltip'],
+    registryDependencies: ['field', 'fieldset', 'radio-group', 'tooltip'],
+    meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-96' }
+  },
   'p-scroll-area-1': {
     description: 'Basic scroll area',
     tags: ['scroll-area'],
@@ -2555,6 +2561,12 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   },
   'p-select-23': {
     description: 'Select with label',
+    tags: ['select'],
+    registryDependencies: ['select'],
+    meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }
+  },
+  'p-select-24': {
+    description: 'Color palette select with three-color swatches',
     tags: ['select'],
     registryDependencies: ['select'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64' }

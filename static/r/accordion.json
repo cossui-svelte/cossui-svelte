@@ -27,7 +27,7 @@
 			"type": "registry:ui",
 			"path": "accordion/accordion.svelte",
 			"target": "$lib/components/ui/accordion/accordion.svelte",
-			"content": "<script lang=\"ts\">\n  import { Accordion as AccordionPrimitive } from '@shardsui/svelte/accordion';\n  import type { HTMLAttributes } from 'svelte/elements';\n\n  let {\n    ref = $bindable(null),\n    value = $bindable(),\n    class: className,\n    multiple = false,\n    disabled = false,\n    ...restProps\n  }: HTMLAttributes<HTMLDivElement> & {\n    ref?: HTMLElement | null;\n    value?: string | string[];\n    multiple?: boolean;\n    disabled?: boolean;\n  } = $props();\n\n  const internalValue = $derived.by((): string[] => {\n    if (multiple) return Array.isArray(value) ? value : value != null ? [value] : [];\n    const single = Array.isArray(value) ? value[0] : value;\n    return single != null ? [single] : [];\n  });\n</script>\n\n<AccordionPrimitive.Root\n  bind:ref\n  {disabled}\n  {multiple}\n  value={internalValue}\n  class={className}\n  data-slot=\"accordion\"\n  onValueChange={(next: string[]) => {\n    value = multiple ? next : next[0];\n  }}\n  {...restProps as Record<string, unknown>}\n/>\n"
+			"content": "<script lang=\"ts\">\n  import { Accordion as AccordionPrimitive } from '@shardsui/svelte/accordion';\n  import type { HTMLAttributes } from 'svelte/elements';\n\n  let {\n    ref = $bindable(null),\n    value = $bindable(),\n    class: className,\n    multiple = false,\n    disabled = false,\n    ...restProps\n  }: HTMLAttributes<HTMLDivElement> & {\n    ref?: HTMLElement | null;\n    value?: string | string[];\n    multiple?: boolean;\n    disabled?: boolean;\n  } = $props();\n\n  const internalValue = $derived.by((): string[] => {\n    if (multiple) return Array.isArray(value) ? value : value != null ? [value] : [];\n    const single = Array.isArray(value) ? value[0] : value;\n    return single != null ? [single] : [];\n  });\n</script>\n\n<AccordionPrimitive.Root\n  bind:ref\n  {disabled}\n  {multiple}\n  bind:value={\n    () => internalValue,\n    (next: string[]) => {\n      value = multiple ? next : next[0];\n    }\n  }\n  class={className}\n  data-slot=\"accordion\"\n  {...restProps as Record<string, unknown>}\n/>\n"
 		},
 		{
 			"type": "registry:ui",
@@ -40,6 +40,6 @@
 		"utils"
 	],
 	"dependencies": [
-		"@shardsui/svelte@0.1.0-beta.1"
+		"@shardsui/svelte@0.1.0-beta.2"
 	]
 }

@@ -21,7 +21,7 @@
 			"type": "registry:ui",
 			"path": "input-group/input-group-button.svelte",
 			"target": "$lib/components/ui/input-group/input-group-button.svelte",
-			"content": "<script lang=\"ts\">\n  import type { Snippet } from 'svelte';\n  import type { HTMLButtonAttributes } from 'svelte/elements';\n  import { Button } from '$lib/components/ui/button';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    type = 'button',\n    ...restProps\n  }: Omit<HTMLButtonAttributes, 'type'> & {\n    ref?: HTMLElement | null;\n    type?: HTMLButtonAttributes['type'];\n    children?: Snippet;\n    loading?: boolean;\n  } = $props();\n</script>\n\n<Button bind:ref {type} class={cn(className)} {...restProps}> {@render children?.()} </Button>\n"
+			"content": "<script lang=\"ts\">\n  import type { Snippet } from 'svelte';\n  import type { HTMLButtonAttributes } from 'svelte/elements';\n  import { Button } from '$lib/components/ui/button';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    type = 'button',\n    ...restProps\n  }: Omit<HTMLButtonAttributes, 'type'> & {\n    ref?: HTMLElement | null;\n    type?: HTMLButtonAttributes['type'];\n    children?: Snippet;\n    loading?: boolean;\n  } = $props();\n</script>\n\n<Button bind:ref {type} class={cn(className)} {...restProps}>{@render children?.()}</Button>\n"
 		},
 		{
 			"type": "registry:ui",

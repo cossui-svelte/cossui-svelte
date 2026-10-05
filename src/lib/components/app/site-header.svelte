@@ -29,7 +29,9 @@
     class="container relative flex h-(--header-height) w-full items-center justify-between gap-2 px-4 sm:px-6"
   >
     {@render mobileNav?.()}
-    <div class="flex shrink-0 items-center gap-1.5 font-bold font-heading text-[1.375em] [font-variation-settings:'GEOM'_50,'opsz'_32] sm:text-2xl">
+    <div
+      class="flex shrink-0 items-center gap-1.5 font-bold font-heading text-[1.375em] [font-variation-settings:'GEOM'_50,'opsz'_32] sm:text-2xl"
+    >
       <a aria-label="Home" href={resolve('/')}
         >coss<span class="text-muted-foreground/64">.ui</span>
         <span class="text-rose-400">svelte (unofficial)</span>

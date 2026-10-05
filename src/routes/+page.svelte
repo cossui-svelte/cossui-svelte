@@ -30,7 +30,9 @@
     class="w-full after:pointer-events-none after:absolute after:-inset-[5px] after:-z-1 after:rounded-[calc(var(--radius-xl)+4px)] after:border after:border-border/64"
   >
     <CardFrameHeader class="static grid grid-rows-[auto_1fr]">
-      <CardFrameTitle class="font-bold font-heading text-base [font-variation-settings:'GEOM'_50,'opsz'_32]">
+      <CardFrameTitle
+        class="font-bold font-heading text-base [font-variation-settings:'GEOM'_50,'opsz'_32]"
+      >
         <h2>
           <a class="before:absolute before:inset-0" href={resolve(`/particles?tags=${slug}`)}
             >{meta.name}</a

@@ -9,7 +9,7 @@
 			"type": "registry:block",
 			"path": "p-radio-group-9.svelte",
 			"target": "$lib/components/particles/radio-group/p-radio-group-9.svelte",
-			"content": "<script lang=\"ts\">\n  import { Radio, RadioGroup } from '$lib/components/ui/radio-group';\n  import {\n    segmentedControlItemVariants,\n    segmentedControlRootClassName\n  } from '$lib/components/ui/tabs/segmented-control';\n\n  const itemClassName = segmentedControlItemVariants({\n    className: 'grow',\n    size: 'lg',\n    state: 'checked'\n  });\n</script>\n\n<RadioGroup aria-label=\"Billing period\" class={segmentedControlRootClassName} value=\"monthly\">\n  <Radio class={itemClassName} value=\"monthly\">Monthly</Radio>\n  <Radio class={itemClassName} value=\"yearly\">Yearly</Radio>\n</RadioGroup>\n"
+			"content": "<script lang=\"ts\">\n  import { RadioGroup, RadioPrimitive } from '$lib/components/ui/radio-group';\n  import {\n    segmentedControlItemVariants,\n    segmentedControlRootClassName\n  } from '$lib/components/ui/tabs/segmented-control';\n\n  const itemClassName = segmentedControlItemVariants({\n    className: 'grow',\n    size: 'lg',\n    state: 'checked'\n  });\n</script>\n\n<RadioGroup aria-label=\"Billing period\" class={segmentedControlRootClassName} value=\"monthly\">\n  <RadioPrimitive.Root class={itemClassName} value=\"monthly\">Monthly</RadioPrimitive.Root>\n  <RadioPrimitive.Root class={itemClassName} value=\"yearly\">Yearly</RadioPrimitive.Root>\n</RadioGroup>\n"
 		}
 	],
 	"registryDependencies": [

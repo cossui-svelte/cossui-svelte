@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Radio, RadioGroup } from '$lib/components/ui/radio-group';
+  import { RadioGroup, RadioPrimitive } from '$lib/components/ui/radio-group';
   import {
     segmentedControlItemVariants,
     segmentedControlRootClassName
@@ -12,6 +12,6 @@
 </script>
 
 <RadioGroup aria-label="Billing period" class={segmentedControlRootClassName} value="monthly">
-  <Radio class={itemClassName} value="monthly">Monthly</Radio>
-  <Radio class={itemClassName} value="yearly">Yearly</Radio>
+  <RadioPrimitive.Root class={itemClassName} value="monthly">Monthly</RadioPrimitive.Root>
+  <RadioPrimitive.Root class={itemClassName} value="yearly">Yearly</RadioPrimitive.Root>
 </RadioGroup>

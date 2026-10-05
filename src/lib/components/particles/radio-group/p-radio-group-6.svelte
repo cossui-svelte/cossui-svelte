@@ -84,11 +84,11 @@
             <FieldLabel class="cursor-pointer flex-col">
               <Radio class="peer sr-only absolute" value={item.value} />
               <span
-                class="relative block h-[70px] w-[88px] overflow-hidden rounded-lg not-peer-data-[state=checked]:opacity-80 shadow-xs transition-shadow peer-data-disabled:cursor-not-allowed peer-data-disabled:opacity-64 peer-data-[state=checked]:ring-2 peer-data-[state=checked]:ring-primary/48 peer-data-[state=checked]:ring-offset-1 peer-data-[state=checked]:ring-offset-background"
+                class="relative block h-[70px] w-[88px] overflow-hidden rounded-lg not-peer-data-checked:opacity-80 shadow-xs transition-shadow peer-data-disabled:cursor-not-allowed peer-data-disabled:opacity-64 peer-data-checked:ring-2 peer-data-checked:ring-primary/48 peer-data-checked:ring-offset-1 peer-data-checked:ring-offset-background"
               >
                 {@render themePreviews(item.value)}
               </span>
-              <span class="not-peer-data-[state=checked]:text-muted-foreground/70">
+              <span class="not-peer-data-checked:text-muted-foreground/70">
                 {item.label}
               </span>
             </FieldLabel>

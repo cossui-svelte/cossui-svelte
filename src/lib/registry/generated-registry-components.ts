@@ -5,12 +5,12 @@
  * !!!!!!!!!!
  */
 export interface RegistryUIEntry {
-  category: 'ui' | 'origin-ui' | 'bits-ui' | 'shadcn-ui' | 'extra'; // for now, just a simple category to separate "core" UI components from extra ones
+  name: string;
   description: string;
   folder: string; // relative to src/lib/components/ui/
+  category: 'ui' | 'origin-ui' | 'bits-ui' | 'shadcn-ui' | 'extra'; // for now, just a simple category to separate "core" UI components from extra ones
   isnew: boolean; // whether this is a new component that should be highlighted in the UI
   istodo: boolean; // wether this is an identified component that needs to be worked on
-  name: string;
   npmDependencies: string[];
   registryDependencies: string[];
 }
@@ -734,5 +734,4 @@ const allComponents: RegistryUiData = {
     registryDependencies: []
   }
 };
-
 export { allComponents };

@@ -9,7 +9,7 @@ export const segmentedControlItemSizeClassNames: Record<SegmentedControlSize, st
 };
 
 export const segmentedControlRootClassName =
-  'relative z-0 flex w-fit items-center justify-center gap-0.5 rounded-lg bg-muted p-0.5';
+  'relative z-0 flex flex-row w-fit items-center justify-center gap-0.5 rounded-lg bg-muted p-0.5';
 
 export const segmentedControlItemLayoutClassName =
   "gap-1.5 [&_svg:not([class*='opacity-'])]:opacity-80 [&_svg:not([class*='size-'])]:size-4.5 sm:[&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:-mx-0.5 [&_svg]:shrink-0";

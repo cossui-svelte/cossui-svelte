@@ -9,7 +9,7 @@
 			"type": "registry:ui",
 			"path": "table/index.ts",
 			"target": "$lib/components/ui/table/index.ts",
-			"content": "/* eslint-disable perfectionist/sort-named-exports */\n\nimport Table from './table.svelte';\nimport Body from './table-body.svelte';\nimport Caption from './table-caption.svelte';\nimport Cell from './table-cell.svelte';\nimport Footer from './table-footer.svelte';\nimport Head from './table-head.svelte';\nimport Header from './table-header.svelte';\nimport Row from './table-row.svelte';\n\nexport type { TableVariant } from './table.svelte';\nexport {\n  Body as TableBody,\n  Caption as TableCaption,\n  Cell as TableCell,\n  Footer as TableFooter,\n  Head as TableHead,\n  Header as TableHeader,\n  Row as TableRow,\n  Table\n};\n"
+			"content": "/* eslint-disable perfectionist/sort-named-exports */\n\nimport Body from './table-body.svelte';\nimport Caption from './table-caption.svelte';\nimport Cell from './table-cell.svelte';\nimport Footer from './table-footer.svelte';\nimport Head from './table-head.svelte';\nimport Header from './table-header.svelte';\nimport Row from './table-row.svelte';\nimport Table from './table.svelte';\n\nexport type { TableVariant } from './table.svelte';\nexport {\n  Body as TableBody,\n  Caption as TableCaption,\n  Cell as TableCell,\n  Footer as TableFooter,\n  Head as TableHead,\n  Header as TableHeader,\n  Row as TableRow,\n  Table\n};\n"
 		},
 		{
 			"type": "registry:ui",
@@ -39,7 +39,7 @@
 			"type": "registry:ui",
 			"path": "table/table-head.svelte",
 			"target": "$lib/components/ui/table/table-head.svelte",
-			"content": "<script lang=\"ts\">\n  import type { Snippet } from 'svelte';\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn } from '$lib/utils';\n\n  interface Props extends HTMLAttributes<HTMLTableCellElement> {\n    children?: Snippet;\n  }\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<th\n  class={cn(\n    'h-10 whitespace-nowrap px-2.5 text-left align-middle font-medium text-muted-foreground leading-none has-[[role=checkbox]]:w-px last:has-[[role=checkbox]]:ps-0 first:has-[[role=checkbox]]:pe-0',\n    className\n  )}\n  data-slot=\"table-head\"\n  {...restProps}\n>\n  {@render children?.()}\n</th>\n"
+			"content": "<script lang=\"ts\">\n  import type { Snippet } from 'svelte';\n  import type { HTMLThAttributes } from 'svelte/elements';\n  import { cn } from '$lib/utils';\n\n  interface Props extends HTMLThAttributes {\n    children?: Snippet;\n  }\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<th\n  class={cn(\n    'h-10 whitespace-nowrap px-2.5 text-left align-middle font-medium text-muted-foreground leading-none has-[[role=checkbox]]:w-px last:has-[[role=checkbox]]:ps-0 first:has-[[role=checkbox]]:pe-0',\n    className\n  )}\n  data-slot=\"table-head\"\n  {...restProps}\n>\n  {@render children?.()}\n</th>\n"
 		},
 		{
 			"type": "registry:ui",

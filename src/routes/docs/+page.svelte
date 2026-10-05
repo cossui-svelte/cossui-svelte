@@ -29,7 +29,8 @@
     },
     {
       date: '20 Aug 2026',
-      description: 'Switched to ShardsUI. It is a good port of BaseUI and better aligns with upstream CossUI.',
+      description:
+        'Switched to ShardsUI. It is a good port of BaseUI and better aligns with upstream CossUI.',
       title: '0.9.21 — Switched to ShardsUI'
     },
     {

@@ -8826,6 +8826,28 @@
     },
     {
       "categories": [
+        "radio group",
+        "tooltip"
+      ],
+      "description": "Color palette radio cards in a four-column grid",
+      "files": [
+        {
+          "path": "registry/default/particles/p-radio-group-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-96"
+      },
+      "name": "p-radio-group-10",
+      "registryDependencies": [
+        "@coss/radio-group",
+        "@coss/tooltip"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "scroll area"
       ],
       "description": "Basic scroll area",
@@ -9360,6 +9382,26 @@
         "className": "**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64"
       },
       "name": "p-select-23",
+      "registryDependencies": [
+        "@coss/select"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "select"
+      ],
+      "description": "Color palette select with three-color swatches",
+      "files": [
+        {
+          "path": "registry/default/particles/p-select-24.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64"
+      },
+      "name": "p-select-24",
       "registryDependencies": [
         "@coss/select"
       ],
