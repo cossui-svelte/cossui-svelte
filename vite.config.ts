@@ -50,7 +50,19 @@ export default defineConfig({
     sveltekit({
       compilerOptions: {
         warningFilter: (warning) => {
-          return !(warning.code === 'a11y_img_redundant_alt');
+          if (warning.code === 'a11y_img_redundant_alt') {
+            return false;
+          }
+
+          // Shiki emits `<pre tabindex="0">` so scrollable code blocks stay keyboard-reachable.
+          if (warning.code === 'a11y_no_noninteractive_tabindex' && warning.filename?.endsWith('.mdx')) {
+            return false;
+          }
+
+          // Particles are verbatim demo snippets with placeholder `#` links (see oxvelte.demos.json).
+          return !(
+            warning.code.startsWith('a11y_') && warning.filename?.includes('/components/particles/')
+          );
         }
       },
       extensions: ['.svelte', '.mdx'],

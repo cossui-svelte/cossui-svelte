@@ -41,6 +41,7 @@
   } = $props();
 
   // Uncontrolled seed: only applies when the consumer hasn't already bound `value`.
+  // svelte-ignore state_referenced_locally
   if (value === undefined && defaultValue !== undefined) {
     value = typeof defaultValue === 'string' ? defaultValue : defaultValue.value;
   }

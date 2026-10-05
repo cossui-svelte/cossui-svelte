@@ -36,6 +36,7 @@
     })
   );
 
+  // svelte-ignore state_referenced_locally
   let selectedRange = $state(String(initialPage));
 
   let currentPage = $derived(Number(selectedRange));

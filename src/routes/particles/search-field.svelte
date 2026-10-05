@@ -31,6 +31,7 @@
   } = $props();
 
   let inputValue = $state('');
+  // svelte-ignore state_referenced_locally
   let isOpen = $state(selectedItems.length === 0);
 
   $effect(() => {

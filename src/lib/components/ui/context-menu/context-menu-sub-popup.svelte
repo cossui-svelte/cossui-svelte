@@ -22,7 +22,7 @@
     ...restProps
   }: Props = $props();
 
-  const defaultAlignOffset = align !== 'center' ? -5 : undefined;
+  const defaultAlignOffset = $derived(align !== 'center' ? -5 : undefined);
 </script>
 
 <ContextMenuPrimitive.Portal {...portalProps}>

@@ -85,6 +85,7 @@
         ...state
       };
     },
+    // svelte-ignore state_referenced_locally
     state: treeState
   });
 

@@ -42,6 +42,7 @@
     ...restProps
   }: CalendarRootProps = $props();
 
+  // svelte-ignore state_referenced_locally
   const defaultPlaceholder = getDefaultDate({ defaultValue: value, minValue, maxValue });
 
   function handleDefaultPlaceholder() {

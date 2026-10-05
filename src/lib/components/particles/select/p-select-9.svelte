@@ -29,7 +29,7 @@
 >
   <SelectTrigger aria-label="Select category">
     <span class="flex items-center gap-2">
-      <svelte:component this={selectedItem.icon} />
+      <selectedItem.icon />
       <span class="truncate">{selectedItem.label}</span>
     </span>
   </SelectTrigger>
@@ -37,7 +37,7 @@
     {#each items as item (item.value)}
       <SelectItem value={item.value}>
         <span class="flex items-center gap-2">
-          <svelte:component this={item.icon} />
+          <item.icon />
           <span class="truncate">{item.label}</span>
         </span>
       </SelectItem>

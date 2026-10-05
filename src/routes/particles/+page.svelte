@@ -11,7 +11,7 @@
 
   let { data }: { data: PageData } = $props();
 
-  const description = data.SEO.description;
+  const description = $derived(data.SEO.description);
 
   const selectedCategories = $derived.by(() => {
     if (!browser) return { hasInvalid: false, valid: [] };

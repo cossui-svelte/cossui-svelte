@@ -39,6 +39,7 @@
   const checkedNodes = new SvelteSet<string>();
 
   // Initialize checked nodes (Self-invoking function)
+  // svelte-ignore state_referenced_locally
   (function initializeCheckedNodes(node: CheckBoxTreeNode) {
     if (node.defaultChecked) {
       checkedNodes.add(node.id);

@@ -17,11 +17,13 @@
     ...restProps
   }: Props = $props();
 
-  const textareaClassName = cn(
+  const textareaClassName = $derived(
+    cn(
     'field-sizing-content min-h-17.5 w-full rounded-[inherit] px-[calc(--spacing(3)-1px)] py-[calc(--spacing(1.5)-1px)] text-foreground outline-none placeholder:text-muted-foreground/72 max-sm:min-h-20.5',
     size === 'sm' &&
       'min-h-16.5 px-[calc(--spacing(2.5)-1px)] py-[calc(--spacing(1)-1px)] max-sm:min-h-19.5',
     size === 'lg' && 'min-h-18.5 py-[calc(--spacing(2)-1px)] max-sm:min-h-21.5'
+    )
   );
 </script>
 

@@ -20,7 +20,7 @@
 {#snippet themePreviews(v)}
   {#if v === 'dark'}
     <svg
-      aria-hidden
+      aria-hidden="true"
       class="size-full"
       fill="none"
       viewBox="0 0 88 70"
@@ -35,7 +35,7 @@
     </svg>
   {:else if v === 'light'}
     <svg
-      aria-hidden
+      aria-hidden="true"
       class="size-full"
       fill="none"
       viewBox="0 0 88 70"
@@ -50,7 +50,7 @@
     </svg>
   {:else}
     <svg
-      aria-hidden
+      aria-hidden="true"
       class="size-full"
       fill="none"
       viewBox="0 0 88 70"

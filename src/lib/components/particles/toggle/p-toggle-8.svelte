@@ -5,7 +5,7 @@
   import { Tooltip, TooltipPopup, TooltipProvider } from '#lib/components/ui/tooltip/index.js';
 
   let bookmarked = $state(false);
-  let toggleEl: HTMLElement | null = null;
+  let toggleEl = $state<HTMLElement | null>(null);
   let toastId: string | null = null;
   const toastTimeout = 2000;
   let tipOpen = $state(false);

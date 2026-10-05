@@ -48,6 +48,7 @@
   let startValue = $state<DateValue | undefined>(value?.start);
   let endValue = $state<DateValue | undefined>(value?.end);
 
+  // svelte-ignore state_referenced_locally
   const defaultPlaceholder = getDefaultDate({ defaultValue: value?.start, minValue, maxValue });
 
   function handleDefaultPlaceholder() {

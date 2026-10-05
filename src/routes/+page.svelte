@@ -23,7 +23,7 @@
 
   let { data }: { data: PageData } = $props();
 
-  const description = data.SEO.description;
+  const description = $derived(data.SEO.description);
 
   const particleCount = Object.keys(allParticles).length;
 </script>

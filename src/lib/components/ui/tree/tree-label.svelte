@@ -18,11 +18,13 @@
   }: TreeItemLabelProps<T> = $props();
 
   const ctx = useTreeContext<T>();
-  const item = propItem || ctx.currentItem;
+  const item = $derived(propItem || ctx.currentItem);
 
-  if (!item) {
-    console.warn('TreeItemLabel: No item provided via props or context');
-  }
+  $effect(() => {
+    if (!item) {
+      console.warn('TreeItemLabel: No item provided via props or context');
+    }
+  });
 </script>
 
 {#if item}

@@ -14,8 +14,12 @@
   let { children, class: className, indent = 20, tree, ...props }: TreeProps = $props();
 
   treeContext.set({
-    indent,
-    tree: tree as unknown as ReactiveTree<unknown> | undefined
+    get indent() {
+      return indent;
+    },
+    get tree() {
+      return tree as unknown as ReactiveTree<unknown> | undefined;
+    }
   });
 
   const containerProps = $derived.by(() =>

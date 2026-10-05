@@ -49,6 +49,7 @@
     value = $bindable()
   }: Props = $props();
 
+  // svelte-ignore state_referenced_locally
   let internalValue = $state(defaultValue);
   const isControlled = $derived(value !== undefined);
   const inputValue = $derived(isControlled ? (value ?? '') : internalValue);
@@ -69,6 +70,7 @@
     countryCode: () => countryCode,
     debounceMs: () => debounceMs,
     isLoaded: () => googlePlacesScript.isLoaded,
+    // svelte-ignore state_referenced_locally
     onPlaceSelect,
     onValueChange: setInputValue
   });

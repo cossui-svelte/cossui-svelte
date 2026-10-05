@@ -20,6 +20,7 @@
     ...restProps
   }: TimelineProps = $props();
 
+  // svelte-ignore state_referenced_locally
   let activeStep = $state(defaultValue);
 
   function setActiveStep(step: number) {
@@ -33,7 +34,9 @@
   const currentStep = $derived(value ?? activeStep);
 
   setTimelineContext({
-    activeStep: currentStep,
+    get activeStep() {
+      return currentStep;
+    },
     setActiveStep
   });
 </script>

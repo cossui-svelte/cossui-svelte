@@ -81,6 +81,7 @@ Example:
   });
 </script>
 
+<!-- svelte-ignore a11y_no_noninteractive_tabindex, a11y_role_supports_aria_props -->
 <div
   bind:this={containerEl}
   use:cropper.container

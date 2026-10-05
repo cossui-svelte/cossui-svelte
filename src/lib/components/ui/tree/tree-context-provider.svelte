@@ -8,6 +8,7 @@
 
   const { children, ...props }: TreeContextProviderProps = $props();
 
+  // svelte-ignore state_referenced_locally
   treeContext.set(props);
 </script>
 

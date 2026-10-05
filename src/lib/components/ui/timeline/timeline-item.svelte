@@ -8,7 +8,7 @@
   };
   let { children, class: className, ref = $bindable(null), step, ...restProps }: Props = $props();
 
-  const { activeStep } = useTimeline();
+  const timeline = useTimeline();
 </script>
 
 <div
@@ -19,7 +19,7 @@
     className
   )}
   data-slot="timeline-item"
-  data-completed={step <= activeStep || undefined}
+  data-completed={step <= timeline.activeStep || undefined}
   {...restProps}
 >
   {@render children?.()}

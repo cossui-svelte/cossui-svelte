@@ -40,6 +40,7 @@
     throw new Error('StepperItem must be used within a Stepper');
   }
 
+  // svelte-ignore state_referenced_locally
   let itemStep = $state(explicitStep ?? 0);
   let itemState = $state<StepState>('inactive');
   let itemIsLoading = $state(false);
