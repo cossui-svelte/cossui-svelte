@@ -71,7 +71,7 @@ SvelteKit routes under `src/routes/`: `docs/[...slug]` (component docs), `partic
 
 ### Deployment
 
-Cloudflare Workers via `@sveltejs/adapter-cloudflare` + `wrangler.jsonc`. `nodejs_compat` is enabled; SPA fallback (`not_found_handling: single-page-application`) with `/api/*` and `_app/env*` routed to the worker first.
+Cloudflare Workers via `@sveltejs/adapter-cloudflare` + `wrangler.jsonc`. `nodejs_compat` is enabled; `/api/*` and `_app/env*` are routed to the worker first. Don't set `not_found_handling: single-page-application` — the adapter would overwrite the prerendered `index.html` with a fallback shell (`adapter_fallback_overwrites` warning).
 
 ## Known open issues
 
