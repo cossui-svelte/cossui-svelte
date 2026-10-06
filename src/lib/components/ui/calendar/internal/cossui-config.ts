@@ -10,10 +10,10 @@ type ConfigOpts = {
  * `defaultLocale` option is vendored here, as it's the only one used by
  * the Calendar/RangeCalendar components.
  */
-class BitsConfigState {
+class CossuiConfigState {
   opts: { defaultLocale: ReadableBox<string | undefined> };
 
-  constructor(parent: BitsConfigState | null, opts: ConfigOpts) {
+  constructor(parent: CossuiConfigState | null, opts: ConfigOpts) {
     this.opts = {
       defaultLocale: boxWith<string | undefined>(() => {
         const value = opts.defaultLocale?.current;
@@ -25,13 +25,13 @@ class BitsConfigState {
   }
 }
 
-const BitsConfigContext = new Context<BitsConfigState>('BitsConfig');
+const CossuiConfigContext = new Context<CossuiConfigState>('CossuiConfig');
 
 /**
- * Gets the current Bits configuration state from the context.
+ * Gets the current CossUI configuration state from the context.
  * Returns a default configuration if no configuration is found.
  */
-export function getBitsConfig() {
-  const fallback = new BitsConfigState(null, {});
-  return BitsConfigContext.getOr(fallback).opts;
+export function getCossuiConfig() {
+  const fallback = new CossuiConfigState(null, {});
+  return CossuiConfigContext.getOr(fallback).opts;
 }

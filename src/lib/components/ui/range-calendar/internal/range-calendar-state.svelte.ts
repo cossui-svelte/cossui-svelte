@@ -554,7 +554,7 @@ export class RangeCalendarRootState {
     this.opts.placeholder.current = this.opts.placeholder.current.set({ month });
   };
 
-  getBitsAttr = (part: string) => {
+  getCossuiAttr = (part: string) => {
     return calendarAttrs.getAttr(part, 'range-calendar');
   };
 
@@ -570,7 +570,7 @@ export class RangeCalendarRootState {
           disabled: this.opts.disabled.current,
           readonly: this.opts.readonly.current
         }),
-        [this.getBitsAttr('root')]: '',
+        [this.getCossuiAttr('root')]: '',
         onkeydown: this.onkeydown,
         ...this.attachment
       }) as Record<string, unknown>
@@ -701,7 +701,7 @@ export class RangeCalendarCellState {
     'aria-selected': boolToStr(this.isSelectedDate),
     'aria-disabled': boolToStr(this.ariaDisabled),
     ...this.sharedDataAttrs,
-    [this.root.getBitsAttr('cell')]: '',
+    [this.root.getCossuiAttr('cell')]: '',
     ...this.attachment
   }));
 }
@@ -764,8 +764,8 @@ export class RangeCalendarDayState {
     'aria-disabled': boolToStr(this.cell.ariaDisabled),
     ...this.cell.sharedDataAttrs,
     tabindex: this.#tabindex,
-    [this.cell.root.getBitsAttr('day')]: '',
-    'data-bits-day': '',
+    [this.cell.root.getCossuiAttr('day')]: '',
+    'data-cossui-day': '',
     onclick: this.onclick,
     onmouseenter: this.onmouseenter,
     onfocusin: this.onfocusin,

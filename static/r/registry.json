@@ -552,11 +552,6 @@
 				},
 				{
 					"type": "registry:ui",
-					"path": "calendar/internal/bits-config.ts",
-					"target": "$lib/components/ui/calendar/internal/bits-config.ts"
-				},
-				{
-					"type": "registry:ui",
 					"path": "calendar/internal/calendar-helpers.svelte.ts",
 					"target": "$lib/components/ui/calendar/internal/calendar-helpers.svelte.ts"
 				},
@@ -564,6 +559,11 @@
 					"type": "registry:ui",
 					"path": "calendar/internal/calendar-state.svelte.ts",
 					"target": "$lib/components/ui/calendar/internal/calendar-state.svelte.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "calendar/internal/cossui-config.ts",
+					"target": "$lib/components/ui/calendar/internal/cossui-config.ts"
 				},
 				{
 					"type": "registry:ui",

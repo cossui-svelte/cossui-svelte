@@ -8,7 +8,7 @@ type AnnouncementKind = 'assertive' | 'polite';
  */
 function initAnnouncer(doc: Document | null) {
   if (!isBrowser || !doc) return null;
-  let el = doc.querySelector('[data-bits-announcer]');
+  let el = doc.querySelector('[data-cossui-announcer]');
 
   const createLog = (kind: AnnouncementKind) => {
     const log = doc.createElement('div');
@@ -21,7 +21,7 @@ function initAnnouncer(doc: Document | null) {
   if (!isHTMLElement(el)) {
     const div = doc.createElement('div');
     div.style.cssText = srOnlyStylesString;
-    div.setAttribute('data-bits-announcer', '');
+    div.setAttribute('data-cossui-announcer', '');
     div.appendChild(createLog('assertive'));
     div.appendChild(createLog('polite'));
     el = div;

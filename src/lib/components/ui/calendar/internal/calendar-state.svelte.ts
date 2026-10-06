@@ -427,7 +427,7 @@ export class CalendarRootState {
     weekdays: this.weekdays
   }));
 
-  getBitsAttr = (part: string) => {
+  getCossuiAttr = (part: string) => {
     return calendarAttrs.getAttr(part);
   };
 
@@ -441,7 +441,7 @@ export class CalendarRootState {
           disabled: this.opts.disabled.current,
           readonly: this.opts.readonly.current
         }),
-        [this.getBitsAttr('root')]: '',
+        [this.getCossuiAttr('root')]: '',
         onkeydown: this.onkeydown,
         ...this.attachment
       }) as Record<string, unknown>
@@ -473,7 +473,7 @@ export class CalendarHeadingState {
     'aria-hidden': boolToStrTrueOrUndef(true),
     'data-disabled': boolToEmptyStrOrUndef(this.root.opts.disabled.current),
     'data-readonly': boolToEmptyStrOrUndef(this.root.opts.readonly.current),
-    [this.root.getBitsAttr('heading')]: '',
+    [this.root.getCossuiAttr('heading')]: '',
     ...this.attachment
   }));
 }
@@ -566,7 +566,7 @@ export class CalendarCellState {
     'aria-selected': boolToStr(this.isSelectedDate),
     'aria-disabled': boolToStr(this.ariaDisabled),
     ...this.sharedDataAttrs,
-    [this.root.getBitsAttr('cell')]: '',
+    [this.root.getCossuiAttr('cell')]: '',
     ...this.attachment
   }));
 }
@@ -619,8 +619,8 @@ export class CalendarDayState {
     'aria-disabled': boolToStr(this.cell.ariaDisabled),
     ...this.cell.sharedDataAttrs,
     tabindex: this.#tabindex,
-    [this.cell.root.getBitsAttr('day')]: '',
-    'data-bits-day': '',
+    [this.cell.root.getCossuiAttr('day')]: '',
+    'data-cossui-day': '',
     onclick: this.onclick,
     ...this.attachment
   }));
@@ -660,7 +660,7 @@ export class CalendarNextButtonState {
     'aria-disabled': boolToStr(this.isDisabled),
     'data-disabled': boolToEmptyStrOrUndef(this.isDisabled),
     disabled: this.isDisabled,
-    [this.root.getBitsAttr('next-button')]: '',
+    [this.root.getCossuiAttr('next-button')]: '',
     onclick: this.onclick,
     ...this.attachment
   }));
@@ -700,7 +700,7 @@ export class CalendarPrevButtonState {
     'aria-disabled': boolToStr(this.isDisabled),
     'data-disabled': boolToEmptyStrOrUndef(this.isDisabled),
     disabled: this.isDisabled,
-    [this.root.getBitsAttr('prev-button')]: '',
+    [this.root.getCossuiAttr('prev-button')]: '',
     onclick: this.onclick,
     ...this.attachment
   }));
@@ -732,7 +732,7 @@ function createSimplePartState(part: string) {
       id: this.opts.id.current,
       'data-disabled': boolToEmptyStrOrUndef(this.root.opts.disabled.current),
       'data-readonly': boolToEmptyStrOrUndef(this.root.opts.readonly.current),
-      [this.root.getBitsAttr(part)]: '',
+      [this.root.getCossuiAttr(part)]: '',
       ...this.attachment
     }));
   };
@@ -808,7 +808,7 @@ export class CalendarMonthSelectState {
     value: this.currentMonth,
     disabled: this.isDisabled,
     'data-disabled': boolToEmptyStrOrUndef(this.isDisabled),
-    [this.root.getBitsAttr('month-select')]: '',
+    [this.root.getCossuiAttr('month-select')]: '',
     onchange: this.onchange,
     ...this.attachment
   }));
@@ -881,7 +881,7 @@ export class CalendarYearSelectState {
     value: this.currentYear,
     disabled: this.isDisabled,
     'data-disabled': boolToEmptyStrOrUndef(this.isDisabled),
-    [this.root.getBitsAttr('year-select')]: '',
+    [this.root.getCossuiAttr('year-select')]: '',
     onchange: this.onchange,
     ...this.attachment
   }));

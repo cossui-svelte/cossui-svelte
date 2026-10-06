@@ -1,5 +1,5 @@
 import { boxWith } from 'svelte-toolbelt';
-import { getBitsConfig } from './bits-config';
+import { getCossuiConfig } from './cossui-config';
 
 /**
  * Resolves the `locale` prop using a standard priority chain:
@@ -11,7 +11,7 @@ export function resolveLocaleProp(getProp: () => string | undefined) {
   return boxWith(() => {
     const propValue = getProp();
     if (propValue !== undefined) return propValue;
-    const option = getBitsConfig().defaultLocale.current;
+    const option = getCossuiConfig().defaultLocale.current;
     if (option !== undefined) return option;
     return 'en';
   });

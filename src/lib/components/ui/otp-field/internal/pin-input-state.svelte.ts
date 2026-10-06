@@ -146,7 +146,7 @@ export class PinInputRootState {
 
       const updateRootHeight = () => {
         if (container) {
-          container.style.setProperty('--bits-pin-input-root-height', `${input.clientHeight}px`);
+          container.style.setProperty('--cossui-pin-input-root-height', `${input.clientHeight}px`);
         }
       };
       updateRootHeight();
@@ -246,7 +246,7 @@ export class PinInputRootState {
     boxShadow: 'none',
     lineHeight: '1',
     letterSpacing: '-.5em',
-    fontSize: 'var(--bits-pin-input-root-height)',
+    fontSize: 'var(--cossui-pin-input-root-height)',
     fontFamily: 'monospace',
     fontVariantNumeric: 'tabular-nums'
   }));

@@ -42,7 +42,6 @@
 @import "#lib/components/ui/global.css";
 
 @layer base {
-
   a:active,
   button:active {
     @apply opacity-72 md:opacity-100;

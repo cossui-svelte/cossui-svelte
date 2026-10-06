@@ -10,7 +10,7 @@ export function boolToEmptyStrOrUndef(condition: boolean): '' | undefined {
   return condition ? '' : undefined;
 }
 
-class BitsAttrs<T extends readonly string[]> {
+class CossuiAttrs<T extends readonly string[]> {
   #prefix: string;
   attrs: Record<T[number], string>;
 
@@ -28,13 +28,13 @@ class BitsAttrs<T extends readonly string[]> {
   }
 }
 
-export function createBitsAttrs<T extends readonly string[]>(config: {
+export function createCossuiAttrs<T extends readonly string[]>(config: {
   component: string;
   parts: T;
 }) {
-  const bitsAttrs = new BitsAttrs(config);
+  const cossuiAttrs = new CossuiAttrs(config);
   return {
-    ...bitsAttrs.attrs,
-    getAttr: bitsAttrs.getAttr
+    ...cossuiAttrs.attrs,
+    getAttr: cossuiAttrs.getAttr
   };
 }

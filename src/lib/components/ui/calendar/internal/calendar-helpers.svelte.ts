@@ -9,7 +9,7 @@ import { watch } from 'runed';
 import { afterTick, getDocument, isHTMLElement, styleToString } from 'svelte-toolbelt';
 import type { ReadableBox, WritableBox } from 'svelte-toolbelt';
 import { chunk, isValidIndex } from './arrays';
-import { boolToEmptyStrOrUndef, createBitsAttrs } from './attrs';
+import { boolToEmptyStrOrUndef, createCossuiAttrs } from './attrs';
 import {
   type DateValueType,
   getDaysInMonth,
@@ -32,7 +32,7 @@ import type { Month } from './types';
  */
 export function isCalendarDayNode(node: unknown): node is HTMLElement {
   if (!isHTMLElement(node)) return false;
-  if (!node.hasAttribute('data-bits-day')) return false;
+  if (!node.hasAttribute('data-cossui-day')) return false;
   return true;
 }
 
@@ -130,7 +130,7 @@ export function createMonths(
 
 export function getSelectableCells(calendarNode: HTMLElement | null): HTMLElement[] {
   if (!calendarNode) return [];
-  const selectableSelector = `[data-bits-day]:not([data-disabled]):not([data-outside-visible-months])`;
+  const selectableSelector = `[data-cossui-day]:not([data-disabled]):not([data-outside-visible-months])`;
   return Array.from(calendarNode.querySelectorAll(selectableSelector)).filter((el) =>
     isHTMLElement(el)
   );
@@ -524,7 +524,7 @@ export function getCalendarElementProps({
 export function getFirstNonDisabledDateInView(calendarRef: HTMLElement): DateValue | undefined {
   if (!isBrowser) return;
   const daysInView = Array.from(
-    calendarRef.querySelectorAll('[data-bits-day]:not([aria-disabled=true])')
+    calendarRef.querySelectorAll('[data-cossui-day]:not([aria-disabled=true])')
   );
   if (daysInView.length === 0) return;
   const element = daysInView[0];
@@ -588,7 +588,7 @@ export function getDateWithPreviousTime(date: DateValue | undefined, prev: DateV
   return date;
 }
 
-export const calendarAttrs = createBitsAttrs({
+export const calendarAttrs = createCossuiAttrs({
   component: 'calendar',
   parts: [
     'root',
