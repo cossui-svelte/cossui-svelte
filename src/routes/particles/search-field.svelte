@@ -154,16 +154,18 @@
             <ComboboxGroupLabel>Filter particles</ComboboxGroupLabel>
             {#each groupedItems.enabled as item (item.value)}
               <ComboboxItem value={item.value} label={item.label}>
-                <Tag class="size-3.5 opacity-80" strokeWidth={2} />
-                <span>
-                  {#each matchParts(item.label) as part, i (i)}
-                    {#if part.match}
-                      <mark class="rounded-xs bg-primary/20 text-inherit">{part.text}</mark>
-                    {:else}
-                      {part.text}
-                    {/if}
-                  {/each}
-                </span>
+                <div class="flex items-center gap-2">
+                  <Tag class="size-3.5 shrink-0 opacity-80" strokeWidth={2} />
+                  <span>
+                    {#each matchParts(item.label) as part, i (i)}
+                      {#if part.match}
+                        <mark class="rounded-xs bg-primary/20 text-inherit">{part.text}</mark>
+                      {:else}
+                        {part.text}
+                      {/if}
+                    {/each}
+                  </span>
+                </div>
               </ComboboxItem>
             {/each}
           </ComboboxGroup>
@@ -175,16 +177,18 @@
             <ComboboxGroupLabel>No matches</ComboboxGroupLabel>
             {#each groupedItems.disabled as item (item.value)}
               <ComboboxItem value={item.value} label={item.label} disabled>
-                <Tag class="size-3.5 opacity-80" strokeWidth={2} />
-                <span>
-                  {#each matchParts(item.label) as part, i (i)}
-                    {#if part.match}
-                      <mark class="rounded-xs bg-primary/20 text-inherit">{part.text}</mark>
-                    {:else}
-                      {part.text}
-                    {/if}
-                  {/each}
-                </span>
+                <div class="flex items-center gap-2">
+                  <Tag class="size-3.5 shrink-0 opacity-80" strokeWidth={2} />
+                  <span>
+                    {#each matchParts(item.label) as part, i (i)}
+                      {#if part.match}
+                        <mark class="rounded-xs bg-primary/20 text-inherit">{part.text}</mark>
+                      {:else}
+                        {part.text}
+                      {/if}
+                    {/each}
+                  </span>
+                </div>
               </ComboboxItem>
             {/each}
           </ComboboxGroup>
