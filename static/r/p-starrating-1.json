@@ -9,11 +9,13 @@
 			"type": "registry:block",
 			"path": "p-starrating-1.svelte",
 			"target": "$lib/components/particles/starrating/p-starrating-1.svelte",
-			"content": "<script lang=\"ts\">\n  import { StarRating } from '$lib/components/ui/starrating';\n\n  let value = $state(3);\n</script>\n\n<StarRating bind:value aria-label=\"Rate this product\" />\n"
+			"content": "<script lang=\"ts\">\n  import { StarRating } from '#lib/components/ui/starrating/index.js';\n\n  let value = $state(3);\n</script>\n\n<StarRating bind:value aria-label=\"Rate this product\" />\n"
 		}
 	],
 	"registryDependencies": [
 		"starrating"
 	],
-	"dependencies": []
+	"dependencies": [
+		"#lib"
+	]
 }

@@ -15,37 +15,37 @@
 			"type": "registry:ui",
 			"path": "toolbar/toolbar-button.svelte",
 			"target": "$lib/components/ui/toolbar/toolbar-button.svelte",
-			"content": "<script lang=\"ts\">\n  import { Toolbar as ToolbarPrimitive } from '@shardsui/svelte/toolbar';\n  import type { ComponentProps, Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  type Props = Omit<ComponentProps<typeof ToolbarPrimitive.Button>, 'children'> & {\n    children?: Snippet;\n  };\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<ToolbarPrimitive.Button class={cn(className)} data-slot=\"toolbar-button\" {...restProps}>\n  {@render children?.()}\n</ToolbarPrimitive.Button>\n"
+			"content": "<script lang=\"ts\">\n  import { Toolbar as ToolbarPrimitive } from '@shardsui/svelte/toolbar';\n  import type { ComponentProps, Snippet } from 'svelte';\n  import { cn } from '#lib/utils.js';\n\n  type Props = Omit<ComponentProps<typeof ToolbarPrimitive.Button>, 'children'> & {\n    children?: Snippet;\n  };\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<ToolbarPrimitive.Button class={cn(className)} data-slot=\"toolbar-button\" {...restProps}>\n  {@render children?.()}\n</ToolbarPrimitive.Button>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "toolbar/toolbar-group.svelte",
 			"target": "$lib/components/ui/toolbar/toolbar-group.svelte",
-			"content": "<script lang=\"ts\">\n  import { Toolbar as ToolbarPrimitive } from '@shardsui/svelte/toolbar';\n  import type { ComponentProps, Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  type Props = Omit<ComponentProps<typeof ToolbarPrimitive.Group>, 'children'> & {\n    children?: Snippet;\n  };\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<ToolbarPrimitive.Group\n  class={cn('flex items-center gap-1', className)}\n  data-slot=\"toolbar-group\"\n  {...restProps}\n>\n  {@render children?.()}\n</ToolbarPrimitive.Group>\n"
+			"content": "<script lang=\"ts\">\n  import { Toolbar as ToolbarPrimitive } from '@shardsui/svelte/toolbar';\n  import type { ComponentProps, Snippet } from 'svelte';\n  import { cn } from '#lib/utils.js';\n\n  type Props = Omit<ComponentProps<typeof ToolbarPrimitive.Group>, 'children'> & {\n    children?: Snippet;\n  };\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<ToolbarPrimitive.Group\n  class={cn('flex items-center gap-1', className)}\n  data-slot=\"toolbar-group\"\n  {...restProps}\n>\n  {@render children?.()}\n</ToolbarPrimitive.Group>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "toolbar/toolbar-input.svelte",
 			"target": "$lib/components/ui/toolbar/toolbar-input.svelte",
-			"content": "<script lang=\"ts\">\n  import { Toolbar as ToolbarPrimitive } from '@shardsui/svelte/toolbar';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let { class: className, ...restProps }: ComponentProps<typeof ToolbarPrimitive.Input> = $props();\n</script>\n\n<ToolbarPrimitive.Input class={cn(className)} data-slot=\"toolbar-input\" {...restProps} />\n"
+			"content": "<script lang=\"ts\">\n  import { Toolbar as ToolbarPrimitive } from '@shardsui/svelte/toolbar';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '#lib/utils.js';\n\n  let { class: className, ...restProps }: ComponentProps<typeof ToolbarPrimitive.Input> = $props();\n</script>\n\n<ToolbarPrimitive.Input class={cn(className)} data-slot=\"toolbar-input\" {...restProps} />\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "toolbar/toolbar-link.svelte",
 			"target": "$lib/components/ui/toolbar/toolbar-link.svelte",
-			"content": "<script lang=\"ts\">\n  import { Toolbar as ToolbarPrimitive } from '@shardsui/svelte/toolbar';\n  import type { ComponentProps, Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  type Props = Omit<ComponentProps<typeof ToolbarPrimitive.Link>, 'children'> & {\n    children?: Snippet;\n  };\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<ToolbarPrimitive.Link class={cn(className)} data-slot=\"toolbar-link\" {...restProps}>\n  {@render children?.()}\n</ToolbarPrimitive.Link>\n"
+			"content": "<script lang=\"ts\">\n  import { Toolbar as ToolbarPrimitive } from '@shardsui/svelte/toolbar';\n  import type { ComponentProps, Snippet } from 'svelte';\n  import { cn } from '#lib/utils.js';\n\n  type Props = Omit<ComponentProps<typeof ToolbarPrimitive.Link>, 'children'> & {\n    children?: Snippet;\n  };\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<ToolbarPrimitive.Link class={cn(className)} data-slot=\"toolbar-link\" {...restProps}>\n  {@render children?.()}\n</ToolbarPrimitive.Link>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "toolbar/toolbar-separator.svelte",
 			"target": "$lib/components/ui/toolbar/toolbar-separator.svelte",
-			"content": "<script lang=\"ts\">\n  import { Toolbar as ToolbarPrimitive } from '@shardsui/svelte/toolbar';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let { class: className, ...restProps }: ComponentProps<typeof ToolbarPrimitive.Separator> =\n    $props();\n</script>\n\n<ToolbarPrimitive.Separator\n  class={cn(\n    \"shrink-0 bg-border data-[orientation=horizontal]:my-0.5 data-[orientation=vertical]:my-1.5 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px data-[orientation=vertical]:not-[[class^='h-']]:not-[[class*='_h-']]:self-stretch\",\n    className\n  )}\n  data-slot=\"toolbar-separator\"\n  {...restProps}\n/>\n"
+			"content": "<script lang=\"ts\">\n  import { Toolbar as ToolbarPrimitive } from '@shardsui/svelte/toolbar';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '#lib/utils.js';\n\n  let { class: className, ...restProps }: ComponentProps<typeof ToolbarPrimitive.Separator> =\n    $props();\n</script>\n\n<ToolbarPrimitive.Separator\n  class={cn(\n    \"shrink-0 bg-border data-[orientation=horizontal]:my-0.5 data-[orientation=vertical]:my-1.5 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px data-[orientation=vertical]:not-[[class^='h-']]:not-[[class*='_h-']]:self-stretch\",\n    className\n  )}\n  data-slot=\"toolbar-separator\"\n  {...restProps}\n/>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "toolbar/toolbar.svelte",
 			"target": "$lib/components/ui/toolbar/toolbar.svelte",
-			"content": "<script lang=\"ts\">\n  import { Toolbar as ToolbarPrimitive } from '@shardsui/svelte/toolbar';\n  import type { ComponentProps, Snippet } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  type Props = Omit<ComponentProps<typeof ToolbarPrimitive.Root>, 'children'> & {\n    children?: Snippet;\n  };\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<ToolbarPrimitive.Root\n  class={cn(\n    'relative flex gap-2 rounded-xl border bg-card not-dark:bg-clip-padding p-1 text-card-foreground',\n    className\n  )}\n  data-slot=\"toolbar\"\n  {...restProps}\n>\n  {@render children?.()}\n</ToolbarPrimitive.Root>\n"
+			"content": "<script lang=\"ts\">\n  import { Toolbar as ToolbarPrimitive } from '@shardsui/svelte/toolbar';\n  import type { ComponentProps, Snippet } from 'svelte';\n  import { cn } from '#lib/utils.js';\n\n  type Props = Omit<ComponentProps<typeof ToolbarPrimitive.Root>, 'children'> & {\n    children?: Snippet;\n  };\n\n  let { class: className, children, ...restProps }: Props = $props();\n</script>\n\n<ToolbarPrimitive.Root\n  class={cn(\n    'relative flex gap-2 rounded-xl border bg-card not-dark:bg-clip-padding p-1 text-card-foreground',\n    className\n  )}\n  data-slot=\"toolbar\"\n  {...restProps}\n>\n  {@render children?.()}\n</ToolbarPrimitive.Root>\n"
 		}
 	],
 	"registryDependencies": [

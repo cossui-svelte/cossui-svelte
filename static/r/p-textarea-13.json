@@ -9,11 +9,13 @@
 			"type": "registry:block",
 			"path": "p-textarea-13.svelte",
 			"target": "$lib/components/particles/textarea/p-textarea-13.svelte",
-			"content": "<script lang=\"ts\">\n  import { Textarea } from '$lib/components/ui/textarea';\n</script>\n\n<Textarea class=\"*:field-sizing-fixed *:min-h-0\" placeholder=\"Type your message here\" rows={2} />\n"
+			"content": "<script lang=\"ts\">\n  import { Textarea } from '#lib/components/ui/textarea/index.js';\n</script>\n\n<Textarea class=\"*:field-sizing-fixed *:min-h-0\" placeholder=\"Type your message here\" rows={2} />\n"
 		}
 	],
 	"registryDependencies": [
 		"textarea"
 	],
-	"dependencies": []
+	"dependencies": [
+		"#lib"
+	]
 }

@@ -55,7 +55,10 @@ export default defineConfig({
           }
 
           // Shiki emits `<pre tabindex="0">` so scrollable code blocks stay keyboard-reachable.
-          if (warning.code === 'a11y_no_noninteractive_tabindex' && warning.filename?.endsWith('.mdx')) {
+          if (
+            warning.code === 'a11y_no_noninteractive_tabindex' &&
+            warning.filename?.endsWith('.mdx')
+          ) {
             return false;
           }
 

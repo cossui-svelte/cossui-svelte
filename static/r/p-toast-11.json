@@ -9,12 +9,14 @@
 			"type": "registry:block",
 			"path": "p-toast-11.svelte",
 			"target": "$lib/components/particles/toast/p-toast-11.svelte",
-			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n  import { toastManager } from '$lib/components/ui/toast';\n\n  const ERROR_TOAST_ID = 'coss-demo-error-upsert';\n</script>\n\n<Button\n  onclick={() => {\n    toastManager.add({\n      description: 'Repeated clicks update this toast; errors use a shake animation.',\n      id: ERROR_TOAST_ID,\n      title: 'Something went wrong',\n      type: 'error'\n    });\n  }}\n  variant=\"outline\"\n>\n  One Error Toast\n</Button>\n"
+			"content": "<script lang=\"ts\">\n  import { Button } from '#lib/components/ui/button/index.js';\n  import { toastManager } from '#lib/components/ui/toast/index.js';\n\n  const ERROR_TOAST_ID = 'coss-demo-error-upsert';\n</script>\n\n<Button\n  onclick={() => {\n    toastManager.add({\n      description: 'Repeated clicks update this toast; errors use a shake animation.',\n      id: ERROR_TOAST_ID,\n      title: 'Something went wrong',\n      type: 'error'\n    });\n  }}\n  variant=\"outline\"\n>\n  One Error Toast\n</Button>\n"
 		}
 	],
 	"registryDependencies": [
 		"button",
 		"toast"
 	],
-	"dependencies": []
+	"dependencies": [
+		"#lib"
+	]
 }

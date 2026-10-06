@@ -21,7 +21,7 @@
 			"type": "registry:ui",
 			"path": "toggle/toggle.svelte",
 			"target": "$lib/components/ui/toggle/toggle.svelte",
-			"content": "<script lang=\"ts\">\n  import { Toggle as TogglePrimitive } from '@shardsui/svelte/toggle';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n  import { type ToggleSize, type ToggleVariant, toggleVariants } from './toggle-variants';\n\n  type ToggleProps = ComponentProps<typeof TogglePrimitive> & {\n    variant?: ToggleVariant;\n    size?: ToggleSize;\n  };\n\n  let {\n    ref = $bindable(null),\n    pressed = $bindable(false),\n    class: className,\n    size = 'default',\n    variant = 'default',\n    ...restProps\n  }: ToggleProps = $props();\n</script>\n\n<TogglePrimitive\n  bind:ref\n  bind:pressed\n  data-slot=\"toggle\"\n  class={cn(toggleVariants({ size, variant }), className)}\n  {...restProps}\n/>\n"
+			"content": "<script lang=\"ts\">\n  import { Toggle as TogglePrimitive } from '@shardsui/svelte/toggle';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '#lib/utils.js';\n  import { type ToggleSize, type ToggleVariant, toggleVariants } from './toggle-variants';\n\n  type ToggleProps = ComponentProps<typeof TogglePrimitive> & {\n    variant?: ToggleVariant;\n    size?: ToggleSize;\n  };\n\n  let {\n    ref = $bindable(null),\n    pressed = $bindable(false),\n    class: className,\n    size = 'default',\n    variant = 'default',\n    ...restProps\n  }: ToggleProps = $props();\n</script>\n\n<TogglePrimitive\n  bind:ref\n  bind:pressed\n  data-slot=\"toggle\"\n  class={cn(toggleVariants({ size, variant }), className)}\n  {...restProps}\n/>\n"
 		}
 	],
 	"registryDependencies": [

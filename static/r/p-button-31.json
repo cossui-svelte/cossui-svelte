@@ -9,7 +9,7 @@
 			"type": "registry:block",
 			"path": "p-button-31.svelte",
 			"target": "$lib/components/particles/button/p-button-31.svelte",
-			"content": "<script lang=\"ts\">\n  import Printer from '@lucide/svelte/icons/printer';\n  import { Button } from '$lib/components/ui/button';\n  import { Kbd, KbdGroup } from '$lib/components/ui/kbd';\n</script>\n\n<Button variant=\"outline\">\n  <Printer aria-hidden=\"true\" />\n  Print\n  <KbdGroup class=\"-me-1\">\n    <Kbd>&#8984;</Kbd>\n    <Kbd>P</Kbd>\n  </KbdGroup>\n</Button>\n"
+			"content": "<script lang=\"ts\">\n  import Printer from '@lucide/svelte/icons/printer';\n  import { Button } from '#lib/components/ui/button/index.js';\n  import { Kbd, KbdGroup } from '#lib/components/ui/kbd/index.js';\n</script>\n\n<Button variant=\"outline\">\n  <Printer aria-hidden=\"true\" />\n  Print\n  <KbdGroup class=\"-me-1\">\n    <Kbd>&#8984;</Kbd>\n    <Kbd>P</Kbd>\n  </KbdGroup>\n</Button>\n"
 		}
 	],
 	"registryDependencies": [
@@ -17,6 +17,7 @@
 		"kbd"
 	],
 	"dependencies": [
+		"#lib",
 		"@lucide/svelte"
 	]
 }

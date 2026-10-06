@@ -9,12 +9,14 @@
 			"type": "registry:block",
 			"path": "p-switch-1.svelte",
 			"target": "$lib/components/particles/switch/p-switch-1.svelte",
-			"content": "<script lang=\"ts\">\n  import { Label } from '$lib/components/ui/label';\n  import { Switch } from '$lib/components/ui/switch';\n</script>\n\n<Label>\n  <Switch />\n  Marketing emails\n</Label>\n"
+			"content": "<script lang=\"ts\">\n  import { Label } from '#lib/components/ui/label/index.js';\n  import { Switch } from '#lib/components/ui/switch/index.js';\n</script>\n\n<Label>\n  <Switch />\n  Marketing emails\n</Label>\n"
 		}
 	],
 	"registryDependencies": [
 		"label",
 		"switch"
 	],
-	"dependencies": []
+	"dependencies": [
+		"#lib"
+	]
 }

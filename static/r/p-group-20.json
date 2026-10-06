@@ -9,7 +9,7 @@
 			"type": "registry:block",
 			"path": "p-group-20.svelte",
 			"target": "$lib/components/particles/group/p-group-20.svelte",
-			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n  import { Group, GroupSeparator } from '$lib/components/ui/group';\n  import { Input } from '$lib/components/ui/input';\n</script>\n\n<Group aria-label=\"Email subscription\">\n  <Input aria-label=\"Email\" placeholder=\"Email\" type=\"email\" />\n  <GroupSeparator />\n  <Button variant=\"outline\">Subscribe</Button>\n</Group>\n"
+			"content": "<script lang=\"ts\">\n  import { Button } from '#lib/components/ui/button/index.js';\n  import { Group, GroupSeparator } from '#lib/components/ui/group/index.js';\n  import { Input } from '#lib/components/ui/input/index.js';\n</script>\n\n<Group aria-label=\"Email subscription\">\n  <Input aria-label=\"Email\" placeholder=\"Email\" type=\"email\" />\n  <GroupSeparator />\n  <Button variant=\"outline\">Subscribe</Button>\n</Group>\n"
 		}
 	],
 	"registryDependencies": [
@@ -17,5 +17,7 @@
 		"group",
 		"input"
 	],
-	"dependencies": []
+	"dependencies": [
+		"#lib"
+	]
 }

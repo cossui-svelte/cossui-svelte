@@ -9,13 +9,14 @@
 			"type": "registry:block",
 			"path": "p-calendar-2.svelte",
 			"target": "$lib/components/particles/calendar/p-calendar-2.svelte",
-			"content": "<script lang=\"ts\">\n  import { getLocalTimeZone, today } from '@internationalized/date';\n  import { Calendar } from '$lib/components/ui/calendar';\n\n  let value = $state(today(getLocalTimeZone()));\n</script>\n\n<Calendar\n  bind:value\n  class=\"[--cell-size:--spacing(11)] sm:[--cell-size:--spacing(10)]\"\n  mode=\"single\"\n/>\n"
+			"content": "<script lang=\"ts\">\n  import { getLocalTimeZone, today } from '@internationalized/date';\n  import { Calendar } from '#lib/components/ui/calendar/index.js';\n\n  let value = $state(today(getLocalTimeZone()));\n</script>\n\n<Calendar\n  bind:value\n  class=\"[--cell-size:--spacing(11)] sm:[--cell-size:--spacing(10)]\"\n  mode=\"single\"\n/>\n"
 		}
 	],
 	"registryDependencies": [
 		"calendar"
 	],
 	"dependencies": [
+		"#lib",
 		"@internationalized/date",
 		"@internationalized/date@^3.12.4"
 	]

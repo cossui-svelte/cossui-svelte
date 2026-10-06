@@ -9,11 +9,13 @@
 			"type": "registry:block",
 			"path": "p-textarea-10.svelte",
 			"target": "$lib/components/particles/textarea/p-textarea-10.svelte",
-			"content": "<script lang=\"ts\">\n  import { Textarea } from '$lib/components/ui/textarea';\n\n  const id = $props.id();\n</script>\n\n<Textarea {id} class=\"read-only:bg-muted\" value=\"This is a read-only textarea\" readonly />\n"
+			"content": "<script lang=\"ts\">\n  import { Textarea } from '#lib/components/ui/textarea/index.js';\n\n  const id = $props.id();\n</script>\n\n<Textarea {id} class=\"read-only:bg-muted\" value=\"This is a read-only textarea\" readonly />\n"
 		}
 	],
 	"registryDependencies": [
 		"textarea"
 	],
-	"dependencies": []
+	"dependencies": [
+		"#lib"
+	]
 }

@@ -9,11 +9,13 @@
 			"type": "registry:block",
 			"path": "p-switch-6.svelte",
 			"target": "$lib/components/particles/switch/p-switch-6.svelte",
-			"content": "<script lang=\"ts\">\n  import { Switch } from '$lib/components/ui/switch';\n</script>\n\n<Switch class=\"[--thumb-size:--spacing(4)] sm:[--thumb-size:--spacing(3)]\" />\n"
+			"content": "<script lang=\"ts\">\n  import { Switch } from '#lib/components/ui/switch/index.js';\n</script>\n\n<Switch class=\"[--thumb-size:--spacing(4)] sm:[--thumb-size:--spacing(3)]\" />\n"
 		}
 	],
 	"registryDependencies": [
 		"switch"
 	],
-	"dependencies": []
+	"dependencies": [
+		"#lib"
+	]
 }

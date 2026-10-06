@@ -9,11 +9,13 @@
 			"type": "registry:block",
 			"path": "p-starrating-3.svelte",
 			"target": "$lib/components/particles/starrating/p-starrating-3.svelte",
-			"content": "<script lang=\"ts\">\n  import { StarRating } from '$lib/components/ui/starrating';\n</script>\n\n<div class=\"flex items-center gap-2\">\n  <StarRating allowHalf readonly value={4.5} />\n  <span class=\"text-sm text-muted-foreground\">4.5 (128 reviews)</span>\n</div>\n"
+			"content": "<script lang=\"ts\">\n  import { StarRating } from '#lib/components/ui/starrating/index.js';\n</script>\n\n<div class=\"flex items-center gap-2\">\n  <StarRating allowHalf readonly value={4.5} />\n  <span class=\"text-sm text-muted-foreground\">4.5 (128 reviews)</span>\n</div>\n"
 		}
 	],
 	"registryDependencies": [
 		"starrating"
 	],
-	"dependencies": []
+	"dependencies": [
+		"#lib"
+	]
 }

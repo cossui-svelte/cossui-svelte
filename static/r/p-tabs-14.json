@@ -9,11 +9,13 @@
 			"type": "registry:block",
 			"path": "p-tabs-14.svelte",
 			"target": "$lib/components/particles/tabs/p-tabs-14.svelte",
-			"content": "<script lang=\"ts\">\n  import { Tabs, TabsList, TabsPanel, TabsTab } from '$lib/components/ui/tabs';\n</script>\n\n<Tabs value=\"tab-1\">\n  <TabsList size=\"sm\">\n    <TabsTab value=\"tab-1\">Tab 1</TabsTab>\n    <TabsTab value=\"tab-2\">Tab 2</TabsTab>\n    <TabsTab value=\"tab-3\">Tab 3</TabsTab>\n  </TabsList>\n  <TabsPanel value=\"tab-1\">\n    <p class=\"p-4 text-center text-muted-foreground text-xs\">Tab 1 content</p>\n  </TabsPanel>\n  <TabsPanel value=\"tab-2\">\n    <p class=\"p-4 text-center text-muted-foreground text-xs\">Tab 2 content</p>\n  </TabsPanel>\n  <TabsPanel value=\"tab-3\">\n    <p class=\"p-4 text-center text-muted-foreground text-xs\">Tab 3 content</p>\n  </TabsPanel>\n</Tabs>\n"
+			"content": "<script lang=\"ts\">\n  import { Tabs, TabsList, TabsPanel, TabsTab } from '#lib/components/ui/tabs/index.js';\n</script>\n\n<Tabs value=\"tab-1\">\n  <TabsList size=\"sm\">\n    <TabsTab value=\"tab-1\">Tab 1</TabsTab>\n    <TabsTab value=\"tab-2\">Tab 2</TabsTab>\n    <TabsTab value=\"tab-3\">Tab 3</TabsTab>\n  </TabsList>\n  <TabsPanel value=\"tab-1\">\n    <p class=\"p-4 text-center text-muted-foreground text-xs\">Tab 1 content</p>\n  </TabsPanel>\n  <TabsPanel value=\"tab-2\">\n    <p class=\"p-4 text-center text-muted-foreground text-xs\">Tab 2 content</p>\n  </TabsPanel>\n  <TabsPanel value=\"tab-3\">\n    <p class=\"p-4 text-center text-muted-foreground text-xs\">Tab 3 content</p>\n  </TabsPanel>\n</Tabs>\n"
 		}
 	],
 	"registryDependencies": [
 		"tabs"
 	],
-	"dependencies": []
+	"dependencies": [
+		"#lib"
+	]
 }

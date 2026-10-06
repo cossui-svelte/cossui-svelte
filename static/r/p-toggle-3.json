@@ -9,13 +9,14 @@
 			"type": "registry:block",
 			"path": "p-toggle-3.svelte",
 			"target": "$lib/components/particles/toggle/p-toggle-3.svelte",
-			"content": "<script lang=\"ts\">\n  import BoldIcon from '@lucide/svelte/icons/bold';\n  import { Toggle } from '$lib/components/ui/toggle';\n</script>\n\n<Toggle aria-label=\"Toggle bold\" variant=\"outline\">\n  <BoldIcon />\n</Toggle>\n"
+			"content": "<script lang=\"ts\">\n  import BoldIcon from '@lucide/svelte/icons/bold';\n  import { Toggle } from '#lib/components/ui/toggle/index.js';\n</script>\n\n<Toggle aria-label=\"Toggle bold\" variant=\"outline\">\n  <BoldIcon />\n</Toggle>\n"
 		}
 	],
 	"registryDependencies": [
 		"toggle"
 	],
 	"dependencies": [
+		"#lib",
 		"@lucide/svelte"
 	]
 }

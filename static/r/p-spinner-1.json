@@ -9,11 +9,13 @@
 			"type": "registry:block",
 			"path": "p-spinner-1.svelte",
 			"target": "$lib/components/particles/spinner/p-spinner-1.svelte",
-			"content": "<script lang=\"ts\">\n  import { Spinner } from '$lib/components/ui/spinner';\n</script>\n\n<Spinner />\n"
+			"content": "<script lang=\"ts\">\n  import { Spinner } from '#lib/components/ui/spinner/index.js';\n</script>\n\n<Spinner />\n"
 		}
 	],
 	"registryDependencies": [
 		"spinner"
 	],
-	"dependencies": []
+	"dependencies": [
+		"#lib"
+	]
 }

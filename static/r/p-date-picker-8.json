@@ -9,7 +9,7 @@
 			"type": "registry:block",
 			"path": "p-date-picker-8.svelte",
 			"target": "$lib/components/particles/date-picker/p-date-picker-8.svelte",
-			"content": "<script lang=\"ts\">\n  import { DateFormatter, type DateValue, getLocalTimeZone } from '@internationalized/date';\n  import ChevronsUpDown from '@lucide/svelte/icons/chevrons-up-down';\n  import { Calendar } from '$lib/components/ui/calendar';\n  import { Popover, PopoverPopup, PopoverTrigger } from '$lib/components/ui/popover';\n  import { selectTriggerVariants } from '$lib/components/ui/select';\n  import { cn } from '$lib/utils';\n\n  const df = new DateFormatter('en-US', { dateStyle: 'long' });\n\n  let value = $state<DateValue | undefined>(undefined);\n</script>\n\n<Popover>\n  <PopoverTrigger class={selectTriggerVariants()}>\n    <span\n      class={cn(\n        'pointer-events-none flex-1 truncate text-left',\n        !value && 'text-muted-foreground/72'\n      )}\n    >\n      {value ? df.format(value.toDate(getLocalTimeZone())) : 'Pick a date'}\n    </span>\n    <ChevronsUpDown class=\"-me-1 size-4.5 opacity-80 sm:size-4\" />\n  </PopoverTrigger>\n  <PopoverPopup>\n    <Calendar bind:value mode=\"single\" />\n  </PopoverPopup>\n</Popover>\n"
+			"content": "<script lang=\"ts\">\n  import { DateFormatter, type DateValue, getLocalTimeZone } from '@internationalized/date';\n  import ChevronsUpDown from '@lucide/svelte/icons/chevrons-up-down';\n  import { Calendar } from '#lib/components/ui/calendar/index.js';\n  import { Popover, PopoverPopup, PopoverTrigger } from '#lib/components/ui/popover/index.js';\n  import { selectTriggerVariants } from '#lib/components/ui/select/index.js';\n  import { cn } from '#lib/utils.js';\n\n  const df = new DateFormatter('en-US', { dateStyle: 'long' });\n\n  let value = $state<DateValue | undefined>(undefined);\n</script>\n\n<Popover>\n  <PopoverTrigger class={selectTriggerVariants()}>\n    <span\n      class={cn(\n        'pointer-events-none flex-1 truncate text-left',\n        !value && 'text-muted-foreground/72'\n      )}\n    >\n      {value ? df.format(value.toDate(getLocalTimeZone())) : 'Pick a date'}\n    </span>\n    <ChevronsUpDown class=\"-me-1 size-4.5 opacity-80 sm:size-4\" />\n  </PopoverTrigger>\n  <PopoverPopup>\n    <Calendar bind:value mode=\"single\" />\n  </PopoverPopup>\n</Popover>\n"
 		}
 	],
 	"registryDependencies": [
@@ -19,6 +19,7 @@
 		"utils"
 	],
 	"dependencies": [
+		"#lib",
 		"@internationalized/date",
 		"@lucide/svelte",
 		"@internationalized/date@^3.12.4"

@@ -9,11 +9,13 @@
 			"type": "registry:block",
 			"path": "p-slider-18.svelte",
 			"target": "$lib/components/particles/slider/p-slider-18.svelte",
-			"content": "<script lang=\"ts\">\n  import { Slider } from '$lib/components/ui/slider';\n</script>\n\n<div class=\"flex h-40 items-center justify-center\">\n  <Slider value={[25, 75]} orientation=\"vertical\" />\n</div>\n"
+			"content": "<script lang=\"ts\">\n  import { Slider } from '#lib/components/ui/slider/index.js';\n</script>\n\n<div class=\"flex h-40 items-center justify-center\">\n  <Slider value={[25, 75]} orientation=\"vertical\" />\n</div>\n"
 		}
 	],
 	"registryDependencies": [
 		"slider"
 	],
-	"dependencies": []
+	"dependencies": [
+		"#lib"
+	]
 }

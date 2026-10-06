@@ -9,11 +9,13 @@
 			"type": "registry:block",
 			"path": "p-avatar-2.svelte",
 			"target": "$lib/components/particles/avatar/p-avatar-2.svelte",
-			"content": "<script lang=\"ts\">\n  import { Avatar, AvatarFallback } from '$lib/components/ui/avatar';\n</script>\n\n<Avatar>\n  <AvatarFallback>LT</AvatarFallback>\n</Avatar>\n"
+			"content": "<script lang=\"ts\">\n  import { Avatar, AvatarFallback } from '#lib/components/ui/avatar/index.js';\n</script>\n\n<Avatar>\n  <AvatarFallback>LT</AvatarFallback>\n</Avatar>\n"
 		}
 	],
 	"registryDependencies": [
 		"avatar"
 	],
-	"dependencies": []
+	"dependencies": [
+		"#lib"
+	]
 }

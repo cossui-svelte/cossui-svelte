@@ -9,12 +9,14 @@
 			"type": "registry:block",
 			"path": "p-checkbox-1.svelte",
 			"target": "$lib/components/particles/checkbox/p-checkbox-1.svelte",
-			"content": "<script lang=\"ts\">\n  import { Checkbox } from '$lib/components/ui/checkbox';\n  import { Label } from '$lib/components/ui/label';\n</script>\n\n<Label>\n  <Checkbox />\n  Accept terms and conditions\n</Label>\n"
+			"content": "<script lang=\"ts\">\n  import { Checkbox } from '#lib/components/ui/checkbox/index.js';\n  import { Label } from '#lib/components/ui/label/index.js';\n</script>\n\n<Label>\n  <Checkbox />\n  Accept terms and conditions\n</Label>\n"
 		}
 	],
 	"registryDependencies": [
 		"checkbox",
 		"label"
 	],
-	"dependencies": []
+	"dependencies": [
+		"#lib"
+	]
 }

@@ -9,11 +9,13 @@
 			"type": "registry:block",
 			"path": "p-input-19.svelte",
 			"target": "$lib/components/particles/input/p-input-19.svelte",
-			"content": "<script lang=\"ts\">\n  import { Input } from '$lib/components/ui/input';\n</script>\n\n<Input\n  aria-label=\"Enter text\"\n  class=\"[--radius-lg:9999px] [--radius:9999px]\"\n  placeholder=\"Enter text\"\n  type=\"text\"\n/>\n"
+			"content": "<script lang=\"ts\">\n  import { Input } from '#lib/components/ui/input/index.js';\n</script>\n\n<Input\n  aria-label=\"Enter text\"\n  class=\"[--radius-lg:9999px] [--radius:9999px]\"\n  placeholder=\"Enter text\"\n  type=\"text\"\n/>\n"
 		}
 	],
 	"registryDependencies": [
 		"input"
 	],
-	"dependencies": []
+	"dependencies": [
+		"#lib"
+	]
 }

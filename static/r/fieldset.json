@@ -9,7 +9,7 @@
 			"type": "registry:ui",
 			"path": "fieldset/fieldset-legend.svelte",
 			"target": "$lib/components/ui/fieldset/fieldset-legend.svelte",
-			"content": "<script lang=\"ts\">\n  import { Fieldset as FieldsetPrimitive } from '@shardsui/svelte/fieldset';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof FieldsetPrimitive.Legend> = $props();\n</script>\n\n<FieldsetPrimitive.Legend\n  bind:ref\n  class={cn('font-semibold text-foreground', className)}\n  data-slot=\"fieldset-legend\"\n  {...restProps}\n/>\n"
+			"content": "<script lang=\"ts\">\n  import { Fieldset as FieldsetPrimitive } from '@shardsui/svelte/fieldset';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '#lib/utils.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof FieldsetPrimitive.Legend> = $props();\n</script>\n\n<FieldsetPrimitive.Legend\n  bind:ref\n  class={cn('font-semibold text-foreground', className)}\n  data-slot=\"fieldset-legend\"\n  {...restProps}\n/>\n"
 		},
 		{
 			"type": "registry:ui",

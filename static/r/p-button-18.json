@@ -9,12 +9,14 @@
 			"type": "registry:block",
 			"path": "p-button-18.svelte",
 			"target": "$lib/components/particles/button/p-button-18.svelte",
-			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n  import { Spinner } from '$lib/components/ui/spinner';\n</script>\n\n<Button disabled>\n  <Spinner />\n  Loading...\n</Button>\n"
+			"content": "<script lang=\"ts\">\n  import { Button } from '#lib/components/ui/button/index.js';\n  import { Spinner } from '#lib/components/ui/spinner/index.js';\n</script>\n\n<Button disabled>\n  <Spinner />\n  Loading...\n</Button>\n"
 		}
 	],
 	"registryDependencies": [
 		"button",
 		"spinner"
 	],
-	"dependencies": []
+	"dependencies": [
+		"#lib"
+	]
 }

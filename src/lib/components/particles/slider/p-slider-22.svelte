@@ -178,7 +178,7 @@
           <span
             class="mx-px size-full bg-primary/20 data-[selected=true]:bg-primary/50"
             data-selected={isBarInSelectedRange(i)}
-         ></span>
+          ></span>
         </div>
       {/each}
     </div>

@@ -9,11 +9,13 @@
 			"type": "registry:block",
 			"path": "p-toggle-6.svelte",
 			"target": "$lib/components/particles/toggle/p-toggle-6.svelte",
-			"content": "<script lang=\"ts\">\n  import { Toggle } from '$lib/components/ui/toggle';\n</script>\n\n<Toggle disabled variant=\"outline\">Disabled</Toggle>\n"
+			"content": "<script lang=\"ts\">\n  import { Toggle } from '#lib/components/ui/toggle/index.js';\n</script>\n\n<Toggle disabled variant=\"outline\">Disabled</Toggle>\n"
 		}
 	],
 	"registryDependencies": [
 		"toggle"
 	],
-	"dependencies": []
+	"dependencies": [
+		"#lib"
+	]
 }

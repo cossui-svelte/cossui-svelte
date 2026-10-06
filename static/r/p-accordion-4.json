@@ -9,12 +9,14 @@
 			"type": "registry:block",
 			"path": "p-accordion-4.svelte",
 			"target": "$lib/components/particles/accordion/p-accordion-4.svelte",
-			"content": "<script lang=\"ts\">\n  import {\n    Accordion,\n    AccordionItem,\n    AccordionPanel,\n    AccordionTrigger\n  } from '$lib/components/ui/accordion';\n  import { Button } from '$lib/components/ui/button';\n\n  let value = $state<string[]>([]);\n</script>\n\n<div class=\"flex w-full flex-col gap-4\">\n  <Accordion class=\"w-full\" multiple bind:value>\n    <AccordionItem value=\"item-1\">\n      <AccordionTrigger>What is Base UI?</AccordionTrigger>\n      <AccordionPanel>\n        Base UI is a library of high-quality unstyled React components for design systems and web\n        apps.\n      </AccordionPanel>\n    </AccordionItem>\n    <AccordionItem value=\"item-2\">\n      <AccordionTrigger>How do I get started?</AccordionTrigger>\n      <AccordionPanel>\n        Head to the \"Quick start\" guide in the docs. If you've used unstyled libraries before,\n        you'll feel at home.\n      </AccordionPanel>\n    </AccordionItem>\n    <AccordionItem value=\"item-3\">\n      <AccordionTrigger>Can I use it for my project?</AccordionTrigger>\n      <AccordionPanel>Of course! Base UI is free and open source.</AccordionPanel>\n    </AccordionItem>\n  </Accordion>\n\n  <div class=\"flex flex-col items-start gap-4\">\n    <Button onclick={() => (value = ['item-1', 'item-2'])} variant=\"outline\">Open First Two</Button>\n    <p class=\"text-muted-foreground text-sm\">\n      Open items: {value.length > 0 ? value.join(', ') : 'None'}\n    </p>\n  </div>\n</div>\n"
+			"content": "<script lang=\"ts\">\n  import {\n    Accordion,\n    AccordionItem,\n    AccordionPanel,\n    AccordionTrigger\n  } from '#lib/components/ui/accordion/index.js';\n  import { Button } from '#lib/components/ui/button/index.js';\n\n  let value = $state<string[]>([]);\n</script>\n\n<div class=\"flex w-full flex-col gap-4\">\n  <Accordion class=\"w-full\" multiple bind:value>\n    <AccordionItem value=\"item-1\">\n      <AccordionTrigger>What is Base UI?</AccordionTrigger>\n      <AccordionPanel>\n        Base UI is a library of high-quality unstyled React components for design systems and web\n        apps.\n      </AccordionPanel>\n    </AccordionItem>\n    <AccordionItem value=\"item-2\">\n      <AccordionTrigger>How do I get started?</AccordionTrigger>\n      <AccordionPanel>\n        Head to the \"Quick start\" guide in the docs. If you've used unstyled libraries before,\n        you'll feel at home.\n      </AccordionPanel>\n    </AccordionItem>\n    <AccordionItem value=\"item-3\">\n      <AccordionTrigger>Can I use it for my project?</AccordionTrigger>\n      <AccordionPanel>Of course! Base UI is free and open source.</AccordionPanel>\n    </AccordionItem>\n  </Accordion>\n\n  <div class=\"flex flex-col items-start gap-4\">\n    <Button onclick={() => (value = ['item-1', 'item-2'])} variant=\"outline\">Open First Two</Button>\n    <p class=\"text-muted-foreground text-sm\">\n      Open items: {value.length > 0 ? value.join(', ') : 'None'}\n    </p>\n  </div>\n</div>\n"
 		}
 	],
 	"registryDependencies": [
 		"accordion",
 		"button"
 	],
-	"dependencies": []
+	"dependencies": [
+		"#lib"
+	]
 }

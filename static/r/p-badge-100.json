@@ -9,7 +9,7 @@
 			"type": "registry:block",
 			"path": "p-badge-100.svelte",
 			"target": "$lib/components/particles/badge/p-badge-100.svelte",
-			"content": "<script lang=\"ts\">\n  import Bell from '@lucide/svelte/icons/bell';\n  import { Badge } from '$lib/components/ui/badge';\n  import { Button } from '$lib/components/ui/button';\n\n  let count = $state(3);\n</script>\n\n<Button\n  aria-label=\"Notifications\"\n  class=\"relative\"\n  onclick={() => (count = 0)}\n  size=\"icon\"\n  type=\"button\"\n  variant=\"outline\"\n>\n  <Bell aria-hidden=\"true\" />\n  {#if count > 0}\n    <Badge class=\"-top-2 -translate-x-1/2 absolute left-full min-w-5 px-1\">\n      {count > 99 ? '99+' : count}\n    </Badge>\n  {/if}\n</Button>\n"
+			"content": "<script lang=\"ts\">\n  import Bell from '@lucide/svelte/icons/bell';\n  import { Badge } from '#lib/components/ui/badge/index.js';\n  import { Button } from '#lib/components/ui/button/index.js';\n\n  let count = $state(3);\n</script>\n\n<Button\n  aria-label=\"Notifications\"\n  class=\"relative\"\n  onclick={() => (count = 0)}\n  size=\"icon\"\n  type=\"button\"\n  variant=\"outline\"\n>\n  <Bell aria-hidden=\"true\" />\n  {#if count > 0}\n    <Badge class=\"-top-2 -translate-x-1/2 absolute left-full min-w-5 px-1\">\n      {count > 99 ? '99+' : count}\n    </Badge>\n  {/if}\n</Button>\n"
 		}
 	],
 	"registryDependencies": [
@@ -17,6 +17,7 @@
 		"button"
 	],
 	"dependencies": [
+		"#lib",
 		"@lucide/svelte"
 	]
 }

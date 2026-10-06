@@ -9,11 +9,13 @@
 			"type": "registry:block",
 			"path": "p-cropper-2.svelte",
 			"target": "$lib/components/particles/cropper/p-cropper-2.svelte",
-			"content": "<script lang=\"ts\">\n  import {\n    Cropper,\n    CropperCropArea,\n    CropperDescription,\n    CropperImage\n  } from '$lib/components/ui/cropper';\n</script>\n\n<div class=\"flex w-full flex-col items-center gap-2\">\n  <Cropper class=\"h-80\" image=\"/img/cropper/cropper-01_bcxaic.jpg\">\n    <CropperDescription />\n    <CropperImage />\n    <CropperCropArea />\n  </Cropper>\n</div>\n"
+			"content": "<script lang=\"ts\">\n  import {\n    Cropper,\n    CropperCropArea,\n    CropperDescription,\n    CropperImage\n  } from '#lib/components/ui/cropper/index.js';\n</script>\n\n<div class=\"flex w-full flex-col items-center gap-2\">\n  <Cropper class=\"h-80\" image=\"/img/cropper/cropper-01_bcxaic.jpg\">\n    <CropperDescription />\n    <CropperImage />\n    <CropperCropArea />\n  </Cropper>\n</div>\n"
 		}
 	],
 	"registryDependencies": [
 		"cropper"
 	],
-	"dependencies": []
+	"dependencies": [
+		"#lib"
+	]
 }

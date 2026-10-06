@@ -9,31 +9,31 @@
 			"type": "registry:ui",
 			"path": "field/field-description.svelte",
 			"target": "$lib/components/ui/field/field-description.svelte",
-			"content": "<script lang=\"ts\">\n  import { Field as FieldPrimitive } from '@shardsui/svelte/field';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof FieldPrimitive.Description> = $props();\n</script>\n\n<FieldPrimitive.Description\n  bind:ref\n  class={cn('text-muted-foreground text-xs', className)}\n  data-slot=\"field-description\"\n  {...restProps}\n/>\n"
+			"content": "<script lang=\"ts\">\n  import { Field as FieldPrimitive } from '@shardsui/svelte/field';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '#lib/utils.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof FieldPrimitive.Description> = $props();\n</script>\n\n<FieldPrimitive.Description\n  bind:ref\n  class={cn('text-muted-foreground text-xs', className)}\n  data-slot=\"field-description\"\n  {...restProps}\n/>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "field/field-error.svelte",
 			"target": "$lib/components/ui/field/field-error.svelte",
-			"content": "<script lang=\"ts\">\n  import { Field as FieldPrimitive } from '@shardsui/svelte/field';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof FieldPrimitive.Error> = $props();\n</script>\n\n<FieldPrimitive.Error\n  bind:ref\n  class={cn('text-destructive-foreground text-xs', className)}\n  data-slot=\"field-error\"\n  {...restProps}\n/>\n"
+			"content": "<script lang=\"ts\">\n  import { Field as FieldPrimitive } from '@shardsui/svelte/field';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '#lib/utils.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof FieldPrimitive.Error> = $props();\n</script>\n\n<FieldPrimitive.Error\n  bind:ref\n  class={cn('text-destructive-foreground text-xs', className)}\n  data-slot=\"field-error\"\n  {...restProps}\n/>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "field/field-item.svelte",
 			"target": "$lib/components/ui/field/field-item.svelte",
-			"content": "<script lang=\"ts\">\n  import { Field as FieldPrimitive } from '@shardsui/svelte/field';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof FieldPrimitive.Item> = $props();\n</script>\n\n<FieldPrimitive.Item bind:ref class={cn('flex', className)} data-slot=\"field-item\" {...restProps} />\n"
+			"content": "<script lang=\"ts\">\n  import { Field as FieldPrimitive } from '@shardsui/svelte/field';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '#lib/utils.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof FieldPrimitive.Item> = $props();\n</script>\n\n<FieldPrimitive.Item bind:ref class={cn('flex', className)} data-slot=\"field-item\" {...restProps} />\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "field/field-label.svelte",
 			"target": "$lib/components/ui/field/field-label.svelte",
-			"content": "<script lang=\"ts\">\n  import { Field as FieldPrimitive } from '@shardsui/svelte/field';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof FieldPrimitive.Label> = $props();\n</script>\n\n<FieldPrimitive.Label\n  bind:ref\n  class={cn(\n    'inline-flex items-center gap-2 font-medium text-base/4.5 text-foreground data-disabled:opacity-64 sm:text-sm/4',\n    className\n  )}\n  data-slot=\"field-label\"\n  {...restProps}\n/>\n"
+			"content": "<script lang=\"ts\">\n  import { Field as FieldPrimitive } from '@shardsui/svelte/field';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '#lib/utils.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof FieldPrimitive.Label> = $props();\n</script>\n\n<FieldPrimitive.Label\n  bind:ref\n  class={cn(\n    'inline-flex items-center gap-2 font-medium text-base/4.5 text-foreground data-disabled:opacity-64 sm:text-sm/4',\n    className\n  )}\n  data-slot=\"field-label\"\n  {...restProps}\n/>\n"
 		},
 		{
 			"type": "registry:ui",
 			"path": "field/field.svelte",
 			"target": "$lib/components/ui/field/field.svelte",
-			"content": "<script lang=\"ts\">\n  import { Field as FieldPrimitive } from '@shardsui/svelte/field';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof FieldPrimitive.Root> = $props();\n</script>\n\n<FieldPrimitive.Root\n  bind:ref\n  class={cn('flex flex-col items-start gap-2', className)}\n  data-slot=\"field\"\n  {...restProps}\n/>\n"
+			"content": "<script lang=\"ts\">\n  import { Field as FieldPrimitive } from '@shardsui/svelte/field';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '#lib/utils.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof FieldPrimitive.Root> = $props();\n</script>\n\n<FieldPrimitive.Root\n  bind:ref\n  class={cn('flex flex-col items-start gap-2', className)}\n  data-slot=\"field\"\n  {...restProps}\n/>\n"
 		},
 		{
 			"type": "registry:ui",

@@ -9,12 +9,14 @@
 			"type": "registry:block",
 			"path": "p-textarea-14.svelte",
 			"target": "$lib/components/particles/textarea/p-textarea-14.svelte",
-			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n  import { Textarea } from '$lib/components/ui/textarea';\n</script>\n\n<div class=\"flex flex-col gap-2\">\n  <Textarea placeholder=\"Type your message here\" />\n  <Button class=\"self-end\">Send</Button>\n</div>\n"
+			"content": "<script lang=\"ts\">\n  import { Button } from '#lib/components/ui/button/index.js';\n  import { Textarea } from '#lib/components/ui/textarea/index.js';\n</script>\n\n<div class=\"flex flex-col gap-2\">\n  <Textarea placeholder=\"Type your message here\" />\n  <Button class=\"self-end\">Send</Button>\n</div>\n"
 		}
 	],
 	"registryDependencies": [
 		"button",
 		"textarea"
 	],
-	"dependencies": []
+	"dependencies": [
+		"#lib"
+	]
 }

@@ -9,11 +9,13 @@
 			"type": "registry:block",
 			"path": "p-button-4.svelte",
 			"target": "$lib/components/particles/button/p-button-4.svelte",
-			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n</script>\n\n<Button variant=\"destructive\">Delete</Button>\n"
+			"content": "<script lang=\"ts\">\n  import { Button } from '#lib/components/ui/button/index.js';\n</script>\n\n<Button variant=\"destructive\">Delete</Button>\n"
 		}
 	],
 	"registryDependencies": [
 		"button"
 	],
-	"dependencies": []
+	"dependencies": [
+		"#lib"
+	]
 }

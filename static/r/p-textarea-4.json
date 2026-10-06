@@ -9,11 +9,13 @@
 			"type": "registry:block",
 			"path": "p-textarea-4.svelte",
 			"target": "$lib/components/particles/textarea/p-textarea-4.svelte",
-			"content": "<script lang=\"ts\">\n  import { Textarea } from '$lib/components/ui/textarea';\n</script>\n\n<Textarea disabled placeholder=\"Can't type here\" />\n"
+			"content": "<script lang=\"ts\">\n  import { Textarea } from '#lib/components/ui/textarea/index.js';\n</script>\n\n<Textarea disabled placeholder=\"Can't type here\" />\n"
 		}
 	],
 	"registryDependencies": [
 		"textarea"
 	],
-	"dependencies": []
+	"dependencies": [
+		"#lib"
+	]
 }

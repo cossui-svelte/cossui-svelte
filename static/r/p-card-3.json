@@ -9,7 +9,7 @@
 			"type": "registry:block",
 			"path": "p-card-3.svelte",
 			"target": "$lib/components/particles/card/p-card-3.svelte",
-			"content": "<script lang=\"ts\">\n  import ShieldAlert from '@lucide/svelte/icons/shield-alert';\n  import { Button } from '$lib/components/ui/button';\n  import {\n    Card,\n    CardDescription,\n    CardFooter,\n    CardHeader,\n    CardPanel,\n    CardTitle\n  } from '$lib/components/ui/card';\n  import { Field, FieldLabel } from '$lib/components/ui/field';\n  import { Form } from '$lib/components/ui/form';\n  import { Input } from '$lib/components/ui/input';\n</script>\n\n<Card class=\"w-full max-w-xs\">\n  <CardHeader class=\"border-b\">\n    <CardTitle>Login to your account</CardTitle>\n    <CardDescription>Enter email and password to login</CardDescription>\n  </CardHeader>\n  <CardPanel>\n    <Form class=\"flex w-full flex-col gap-4\">\n      <Field>\n        <FieldLabel>Email</FieldLabel>\n        <Input placeholder=\"Enter your email\" type=\"email\" />\n      </Field>\n      <Field>\n        <FieldLabel>Password</FieldLabel>\n        <Input placeholder=\"Enter your password\" type=\"password\" />\n      </Field>\n      <Button class=\"w-full\" type=\"submit\">Login</Button>\n    </Form>\n  </CardPanel>\n  <CardFooter class=\"border-t\">\n    <div class=\"flex gap-1 text-muted-foreground text-xs\">\n      <ShieldAlert class=\"size-3 h-lh shrink-0\" />\n      <p>The information you enter is encrypted and stored securely.</p>\n    </div>\n  </CardFooter>\n</Card>\n"
+			"content": "<script lang=\"ts\">\n  import ShieldAlert from '@lucide/svelte/icons/shield-alert';\n  import { Button } from '#lib/components/ui/button/index.js';\n  import {\n    Card,\n    CardDescription,\n    CardFooter,\n    CardHeader,\n    CardPanel,\n    CardTitle\n  } from '#lib/components/ui/card/index.js';\n  import { Field, FieldLabel } from '#lib/components/ui/field/index.js';\n  import { Form } from '#lib/components/ui/form/index.js';\n  import { Input } from '#lib/components/ui/input/index.js';\n</script>\n\n<Card class=\"w-full max-w-xs\">\n  <CardHeader class=\"border-b\">\n    <CardTitle>Login to your account</CardTitle>\n    <CardDescription>Enter email and password to login</CardDescription>\n  </CardHeader>\n  <CardPanel>\n    <Form class=\"flex w-full flex-col gap-4\">\n      <Field>\n        <FieldLabel>Email</FieldLabel>\n        <Input placeholder=\"Enter your email\" type=\"email\" />\n      </Field>\n      <Field>\n        <FieldLabel>Password</FieldLabel>\n        <Input placeholder=\"Enter your password\" type=\"password\" />\n      </Field>\n      <Button class=\"w-full\" type=\"submit\">Login</Button>\n    </Form>\n  </CardPanel>\n  <CardFooter class=\"border-t\">\n    <div class=\"flex gap-1 text-muted-foreground text-xs\">\n      <ShieldAlert class=\"size-3 h-lh shrink-0\" />\n      <p>The information you enter is encrypted and stored securely.</p>\n    </div>\n  </CardFooter>\n</Card>\n"
 		}
 	],
 	"registryDependencies": [
@@ -20,6 +20,7 @@
 		"input"
 	],
 	"dependencies": [
+		"#lib",
 		"@lucide/svelte"
 	]
 }

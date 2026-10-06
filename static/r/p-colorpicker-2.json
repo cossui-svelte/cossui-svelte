@@ -9,11 +9,13 @@
 			"type": "registry:block",
 			"path": "p-colorpicker-2.svelte",
 			"target": "$lib/components/particles/colorpicker/p-colorpicker-2.svelte",
-			"content": "<script lang=\"ts\">\n  import { ColorPicker } from '$lib/components/ui/colorpicker';\n\n  let color = $state('#4f46e5');\n</script>\n\n<ColorPicker bind:color showInputs={false} showColorDropper={false} />\n"
+			"content": "<script lang=\"ts\">\n  import { ColorPicker } from '#lib/components/ui/colorpicker/index.js';\n\n  let color = $state('#4f46e5');\n</script>\n\n<ColorPicker bind:color showInputs={false} showColorDropper={false} />\n"
 		}
 	],
 	"registryDependencies": [
 		"colorpicker"
 	],
-	"dependencies": []
+	"dependencies": [
+		"#lib"
+	]
 }

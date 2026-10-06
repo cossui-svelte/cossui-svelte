@@ -9,12 +9,14 @@
 			"type": "registry:block",
 			"path": "p-toast-2.svelte",
 			"target": "$lib/components/particles/toast/p-toast-2.svelte",
-			"content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button';\n  import { toastManager } from '$lib/components/ui/toast';\n</script>\n\n<div class=\"flex flex-wrap gap-2\">\n  <Button\n    onclick={() => {\n      toastManager.add({\n        description: 'Your changes have been saved.',\n        title: 'Success!',\n        type: 'success'\n      });\n    }}\n    variant=\"outline\"\n  >\n    Success Toast\n  </Button>\n  <Button\n    onclick={() => {\n      toastManager.add({\n        description: 'There was a problem with your request.',\n        title: 'Uh oh! Something went wrong.',\n        type: 'error'\n      });\n    }}\n    variant=\"outline\"\n  >\n    Error Toast\n  </Button>\n  <Button\n    onclick={() => {\n      toastManager.add({\n        description: 'You can add components to your app using the cli.',\n        title: 'Heads up!',\n        type: 'info'\n      });\n    }}\n    variant=\"outline\"\n  >\n    Info Toast\n  </Button>\n  <Button\n    onclick={() => {\n      toastManager.add({\n        description: 'Your session is about to expire.',\n        title: 'Warning!',\n        type: 'warning'\n      });\n    }}\n    variant=\"outline\"\n  >\n    Warning Toast\n  </Button>\n</div>\n"
+			"content": "<script lang=\"ts\">\n  import { Button } from '#lib/components/ui/button/index.js';\n  import { toastManager } from '#lib/components/ui/toast/index.js';\n</script>\n\n<div class=\"flex flex-wrap gap-2\">\n  <Button\n    onclick={() => {\n      toastManager.add({\n        description: 'Your changes have been saved.',\n        title: 'Success!',\n        type: 'success'\n      });\n    }}\n    variant=\"outline\"\n  >\n    Success Toast\n  </Button>\n  <Button\n    onclick={() => {\n      toastManager.add({\n        description: 'There was a problem with your request.',\n        title: 'Uh oh! Something went wrong.',\n        type: 'error'\n      });\n    }}\n    variant=\"outline\"\n  >\n    Error Toast\n  </Button>\n  <Button\n    onclick={() => {\n      toastManager.add({\n        description: 'You can add components to your app using the cli.',\n        title: 'Heads up!',\n        type: 'info'\n      });\n    }}\n    variant=\"outline\"\n  >\n    Info Toast\n  </Button>\n  <Button\n    onclick={() => {\n      toastManager.add({\n        description: 'Your session is about to expire.',\n        title: 'Warning!',\n        type: 'warning'\n      });\n    }}\n    variant=\"outline\"\n  >\n    Warning Toast\n  </Button>\n</div>\n"
 		}
 	],
 	"registryDependencies": [
 		"button",
 		"toast"
 	],
-	"dependencies": []
+	"dependencies": [
+		"#lib"
+	]
 }

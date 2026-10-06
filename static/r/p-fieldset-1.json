@@ -9,7 +9,7 @@
 			"type": "registry:block",
 			"path": "p-fieldset-1.svelte",
 			"target": "$lib/components/particles/fieldset/p-fieldset-1.svelte",
-			"content": "<script lang=\"ts\">\n  import { Field, FieldDescription, FieldLabel } from '$lib/components/ui/field';\n  import { Fieldset, FieldsetLegend } from '$lib/components/ui/fieldset';\n  import { Input } from '$lib/components/ui/input';\n</script>\n\n<Fieldset class=\"flex w-full flex-col gap-6\">\n  <FieldsetLegend>Billing Details</FieldsetLegend>\n  <Field>\n    <FieldLabel>Company</FieldLabel>\n    <Input placeholder=\"Enter company name\" type=\"text\" />\n    <FieldDescription>The name that will appear on invoices.</FieldDescription>\n  </Field>\n\n  <Field>\n    <FieldLabel>Tax ID</FieldLabel>\n    <Input placeholder=\"Enter tax identification number\" type=\"text\" />\n    <FieldDescription>Your business tax identification number.</FieldDescription>\n  </Field>\n</Fieldset>\n"
+			"content": "<script lang=\"ts\">\n  import { Field, FieldDescription, FieldLabel } from '#lib/components/ui/field/index.js';\n  import { Fieldset, FieldsetLegend } from '#lib/components/ui/fieldset/index.js';\n  import { Input } from '#lib/components/ui/input/index.js';\n</script>\n\n<Fieldset class=\"flex w-full flex-col gap-6\">\n  <FieldsetLegend>Billing Details</FieldsetLegend>\n  <Field>\n    <FieldLabel>Company</FieldLabel>\n    <Input placeholder=\"Enter company name\" type=\"text\" />\n    <FieldDescription>The name that will appear on invoices.</FieldDescription>\n  </Field>\n\n  <Field>\n    <FieldLabel>Tax ID</FieldLabel>\n    <Input placeholder=\"Enter tax identification number\" type=\"text\" />\n    <FieldDescription>Your business tax identification number.</FieldDescription>\n  </Field>\n</Fieldset>\n"
 		}
 	],
 	"registryDependencies": [
@@ -17,5 +17,7 @@
 		"fieldset",
 		"input"
 	],
-	"dependencies": []
+	"dependencies": [
+		"#lib"
+	]
 }

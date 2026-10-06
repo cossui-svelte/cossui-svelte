@@ -9,11 +9,13 @@
 			"type": "registry:block",
 			"path": "p-meter-2.svelte",
 			"target": "$lib/components/particles/meter/p-meter-2.svelte",
-			"content": "<script lang=\"ts\">\n  import { Meter } from '$lib/components/ui/meter';\n</script>\n\n<Meter value={50} />\n"
+			"content": "<script lang=\"ts\">\n  import { Meter } from '#lib/components/ui/meter/index.js';\n</script>\n\n<Meter value={50} />\n"
 		}
 	],
 	"registryDependencies": [
 		"meter"
 	],
-	"dependencies": []
+	"dependencies": [
+		"#lib"
+	]
 }

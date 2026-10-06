@@ -9,11 +9,13 @@
 			"type": "registry:block",
 			"path": "p-breadcrumb-2.svelte",
 			"target": "$lib/components/particles/breadcrumb/p-breadcrumb-2.svelte",
-			"content": "<script lang=\"ts\">\n  import {\n    Breadcrumb,\n    BreadcrumbItem,\n    BreadcrumbLink,\n    BreadcrumbList,\n    BreadcrumbPage,\n    BreadcrumbSeparator\n  } from '$lib/components/ui/breadcrumb';\n</script>\n\n<Breadcrumb>\n  <BreadcrumbList>\n    <BreadcrumbItem>\n      <BreadcrumbLink href=\"/\">Home</BreadcrumbLink>\n    </BreadcrumbItem>\n    <BreadcrumbSeparator>/</BreadcrumbSeparator>\n    <BreadcrumbItem>\n      <BreadcrumbLink href=\"/docs/\">Components</BreadcrumbLink>\n    </BreadcrumbItem>\n    <BreadcrumbSeparator>/</BreadcrumbSeparator>\n    <BreadcrumbItem>\n      <BreadcrumbPage>Breadcrumb</BreadcrumbPage>\n    </BreadcrumbItem>\n  </BreadcrumbList>\n</Breadcrumb>\n"
+			"content": "<script lang=\"ts\">\n  import {\n    Breadcrumb,\n    BreadcrumbItem,\n    BreadcrumbLink,\n    BreadcrumbList,\n    BreadcrumbPage,\n    BreadcrumbSeparator\n  } from '#lib/components/ui/breadcrumb/index.js';\n</script>\n\n<Breadcrumb>\n  <BreadcrumbList>\n    <BreadcrumbItem>\n      <BreadcrumbLink href=\"/\">Home</BreadcrumbLink>\n    </BreadcrumbItem>\n    <BreadcrumbSeparator>/</BreadcrumbSeparator>\n    <BreadcrumbItem>\n      <BreadcrumbLink href=\"/docs/\">Components</BreadcrumbLink>\n    </BreadcrumbItem>\n    <BreadcrumbSeparator>/</BreadcrumbSeparator>\n    <BreadcrumbItem>\n      <BreadcrumbPage>Breadcrumb</BreadcrumbPage>\n    </BreadcrumbItem>\n  </BreadcrumbList>\n</Breadcrumb>\n"
 		}
 	],
 	"registryDependencies": [
 		"breadcrumb"
 	],
-	"dependencies": []
+	"dependencies": [
+		"#lib"
+	]
 }

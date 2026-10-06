@@ -9,11 +9,13 @@
 			"type": "registry:block",
 			"path": "p-slider-7.svelte",
 			"target": "$lib/components/particles/slider/p-slider-7.svelte",
-			"content": "<script lang=\"ts\">\n  import { Slider } from '$lib/components/ui/slider';\n</script>\n\n<Slider value={[25, 75]} />\n"
+			"content": "<script lang=\"ts\">\n  import { Slider } from '#lib/components/ui/slider/index.js';\n</script>\n\n<Slider value={[25, 75]} />\n"
 		}
 	],
 	"registryDependencies": [
 		"slider"
 	],
-	"dependencies": []
+	"dependencies": [
+		"#lib"
+	]
 }

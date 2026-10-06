@@ -9,11 +9,13 @@
 			"type": "registry:block",
 			"path": "p-badge-15.svelte",
 			"target": "$lib/components/particles/badge/p-badge-15.svelte",
-			"content": "<script lang=\"ts\">\n  import { Badge } from '$lib/components/ui/badge';\n</script>\n\n<Badge variant=\"outline\">\n  Notifications\n  <span class=\"ms-1 font-semibold text-primary\">5</span>\n</Badge>\n"
+			"content": "<script lang=\"ts\">\n  import { Badge } from '#lib/components/ui/badge/index.js';\n</script>\n\n<Badge variant=\"outline\">\n  Notifications\n  <span class=\"ms-1 font-semibold text-primary\">5</span>\n</Badge>\n"
 		}
 	],
 	"registryDependencies": [
 		"badge"
 	],
-	"dependencies": []
+	"dependencies": [
+		"#lib"
+	]
 }

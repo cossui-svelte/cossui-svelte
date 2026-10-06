@@ -9,7 +9,7 @@
 			"type": "registry:block",
 			"path": "p-group-9.svelte",
 			"target": "$lib/components/particles/group/p-group-9.svelte",
-			"content": "<script lang=\"ts\">\n  import ZoomIn from '@lucide/svelte/icons/zoom-in';\n  import ZoomOut from '@lucide/svelte/icons/zoom-out';\n  import { Button } from '$lib/components/ui/button';\n  import { Group, GroupSeparator } from '$lib/components/ui/group';\n</script>\n\n<Group aria-label=\"Zoom controls\" orientation=\"vertical\">\n  <Button aria-label=\"Zoom in\" size=\"icon\" variant=\"outline\">\n    <ZoomIn aria-hidden />\n  </Button>\n  <GroupSeparator orientation=\"horizontal\" />\n  <Button aria-label=\"Zoom Out\" size=\"icon\" variant=\"outline\">\n    <ZoomOut aria-hidden />\n  </Button>\n</Group>\n"
+			"content": "<script lang=\"ts\">\n  import ZoomIn from '@lucide/svelte/icons/zoom-in';\n  import ZoomOut from '@lucide/svelte/icons/zoom-out';\n  import { Button } from '#lib/components/ui/button/index.js';\n  import { Group, GroupSeparator } from '#lib/components/ui/group/index.js';\n</script>\n\n<Group aria-label=\"Zoom controls\" orientation=\"vertical\">\n  <Button aria-label=\"Zoom in\" size=\"icon\" variant=\"outline\">\n    <ZoomIn aria-hidden />\n  </Button>\n  <GroupSeparator orientation=\"horizontal\" />\n  <Button aria-label=\"Zoom Out\" size=\"icon\" variant=\"outline\">\n    <ZoomOut aria-hidden />\n  </Button>\n</Group>\n"
 		}
 	],
 	"registryDependencies": [
@@ -17,6 +17,7 @@
 		"group"
 	],
 	"dependencies": [
+		"#lib",
 		"@lucide/svelte"
 	]
 }

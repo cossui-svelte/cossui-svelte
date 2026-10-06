@@ -9,7 +9,7 @@
 			"type": "registry:block",
 			"path": "p-alert-3.svelte",
 			"target": "$lib/components/particles/alert/p-alert-3.svelte",
-			"content": "<script lang=\"ts\">\n  import Info from '@lucide/svelte/icons/info';\n  import { Alert, AlertAction, AlertDescription, AlertTitle } from '$lib/components/ui/alert';\n  import { Button } from '$lib/components/ui/button';\n</script>\n\n<Alert>\n  <Info />\n  <AlertTitle>Heads up!</AlertTitle>\n  <AlertDescription>Describe what can be done about it here.</AlertDescription>\n  <AlertAction>\n    <Button size=\"xs\" variant=\"ghost\">Dismiss</Button>\n    <Button size=\"xs\">Ok</Button>\n  </AlertAction>\n</Alert>\n"
+			"content": "<script lang=\"ts\">\n  import Info from '@lucide/svelte/icons/info';\n  import {\n    Alert,\n    AlertAction,\n    AlertDescription,\n    AlertTitle\n  } from '#lib/components/ui/alert/index.js';\n  import { Button } from '#lib/components/ui/button/index.js';\n</script>\n\n<Alert>\n  <Info />\n  <AlertTitle>Heads up!</AlertTitle>\n  <AlertDescription>Describe what can be done about it here.</AlertDescription>\n  <AlertAction>\n    <Button size=\"xs\" variant=\"ghost\">Dismiss</Button>\n    <Button size=\"xs\">Ok</Button>\n  </AlertAction>\n</Alert>\n"
 		}
 	],
 	"registryDependencies": [
@@ -17,6 +17,7 @@
 		"button"
 	],
 	"dependencies": [
+		"#lib",
 		"@lucide/svelte"
 	]
 }

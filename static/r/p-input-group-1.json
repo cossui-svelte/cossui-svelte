@@ -9,13 +9,14 @@
 			"type": "registry:block",
 			"path": "p-input-group-1.svelte",
 			"target": "$lib/components/particles/input-group/p-input-group-1.svelte",
-			"content": "<script lang=\"ts\">\n  import Search from '@lucide/svelte/icons/search';\n  import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';\n</script>\n\n<InputGroup>\n  <InputGroupInput aria-label=\"Search\" placeholder=\"Search\" type=\"search\" />\n  <InputGroupAddon>\n    <Search aria-hidden=\"true\" />\n  </InputGroupAddon>\n</InputGroup>\n"
+			"content": "<script lang=\"ts\">\n  import Search from '@lucide/svelte/icons/search';\n  import {\n    InputGroup,\n    InputGroupAddon,\n    InputGroupInput\n  } from '#lib/components/ui/input-group/index.js';\n</script>\n\n<InputGroup>\n  <InputGroupInput aria-label=\"Search\" placeholder=\"Search\" type=\"search\" />\n  <InputGroupAddon>\n    <Search aria-hidden=\"true\" />\n  </InputGroupAddon>\n</InputGroup>\n"
 		}
 	],
 	"registryDependencies": [
 		"input-group"
 	],
 	"dependencies": [
+		"#lib",
 		"@lucide/svelte"
 	]
 }

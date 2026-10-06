@@ -9,11 +9,13 @@
 			"type": "registry:block",
 			"path": "p-alert-1.svelte",
 			"target": "$lib/components/particles/alert/p-alert-1.svelte",
-			"content": "<script lang=\"ts\">\n  import { Alert, AlertDescription, AlertTitle } from '$lib/components/ui/alert';\n</script>\n\n<Alert>\n  <AlertTitle>Heads up!</AlertTitle>\n  <AlertDescription>\n    <p>Describe what can be done about it here.</p>\n  </AlertDescription>\n</Alert>\n"
+			"content": "<script lang=\"ts\">\n  import { Alert, AlertDescription, AlertTitle } from '#lib/components/ui/alert/index.js';\n</script>\n\n<Alert>\n  <AlertTitle>Heads up!</AlertTitle>\n  <AlertDescription>\n    <p>Describe what can be done about it here.</p>\n  </AlertDescription>\n</Alert>\n"
 		}
 	],
 	"registryDependencies": [
 		"alert"
 	],
-	"dependencies": []
+	"dependencies": [
+		"#lib"
+	]
 }

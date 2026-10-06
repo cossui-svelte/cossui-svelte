@@ -9,12 +9,14 @@
 			"type": "registry:block",
 			"path": "p-drawer-1.svelte",
 			"target": "$lib/components/particles/drawer/p-drawer-1.svelte",
-			"content": "<script lang=\"ts\">\n  import { buttonVariants } from '$lib/components/ui/button';\n  import {\n    Drawer,\n    DrawerClose,\n    DrawerDescription,\n    DrawerFooter,\n    DrawerHeader,\n    DrawerPopup,\n    DrawerTitle,\n    DrawerTrigger\n  } from '$lib/components/ui/drawer';\n</script>\n\n<Drawer>\n  <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Open drawer</DrawerTrigger>\n  <DrawerPopup showBar>\n    <DrawerHeader class=\"text-center\">\n      <DrawerTitle>Notifications</DrawerTitle>\n      <DrawerDescription>This is the description of the drawer.</DrawerDescription>\n    </DrawerHeader>\n    <DrawerFooter variant=\"bare\" class=\"justify-center sm:justify-center\">\n      <DrawerClose class={buttonVariants({ variant: 'outline' })}>Close</DrawerClose>\n    </DrawerFooter>\n  </DrawerPopup>\n</Drawer>\n"
+			"content": "<script lang=\"ts\">\n  import { buttonVariants } from '#lib/components/ui/button/index.js';\n  import {\n    Drawer,\n    DrawerClose,\n    DrawerDescription,\n    DrawerFooter,\n    DrawerHeader,\n    DrawerPopup,\n    DrawerTitle,\n    DrawerTrigger\n  } from '#lib/components/ui/drawer/index.js';\n</script>\n\n<Drawer>\n  <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Open drawer</DrawerTrigger>\n  <DrawerPopup showBar>\n    <DrawerHeader class=\"text-center\">\n      <DrawerTitle>Notifications</DrawerTitle>\n      <DrawerDescription>This is the description of the drawer.</DrawerDescription>\n    </DrawerHeader>\n    <DrawerFooter variant=\"bare\" class=\"justify-center sm:justify-center\">\n      <DrawerClose class={buttonVariants({ variant: 'outline' })}>Close</DrawerClose>\n    </DrawerFooter>\n  </DrawerPopup>\n</Drawer>\n"
 		}
 	],
 	"registryDependencies": [
 		"button",
 		"drawer"
 	],
-	"dependencies": []
+	"dependencies": [
+		"#lib"
+	]
 }

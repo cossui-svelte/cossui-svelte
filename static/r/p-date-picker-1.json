@@ -9,7 +9,7 @@
 			"type": "registry:block",
 			"path": "p-date-picker-1.svelte",
 			"target": "$lib/components/particles/date-picker/p-date-picker-1.svelte",
-			"content": "<script lang=\"ts\">\n  import { DateFormatter, type DateValue, getLocalTimeZone } from '@internationalized/date';\n  import CalendarIcon from '@lucide/svelte/icons/calendar';\n  import { buttonVariants } from '$lib/components/ui/button';\n  import { Calendar } from '$lib/components/ui/calendar';\n  import { Popover, PopoverPopup, PopoverTrigger } from '$lib/components/ui/popover';\n  import { cn } from '$lib/utils';\n\n  const df = new DateFormatter('en-US', { dateStyle: 'long' });\n\n  let value = $state<DateValue | undefined>(undefined);\n</script>\n\n<Popover>\n  <PopoverTrigger class={cn(buttonVariants({ variant: 'outline' }), 'w-full justify-start')}>\n    <CalendarIcon aria-hidden=\"true\" />\n    {value ? df.format(value.toDate(getLocalTimeZone())) : 'Pick a date'}\n  </PopoverTrigger>\n  <PopoverPopup>\n    <Calendar bind:value mode=\"single\" />\n  </PopoverPopup>\n</Popover>\n"
+			"content": "<script lang=\"ts\">\n  import { DateFormatter, type DateValue, getLocalTimeZone } from '@internationalized/date';\n  import CalendarIcon from '@lucide/svelte/icons/calendar';\n  import { buttonVariants } from '#lib/components/ui/button/index.js';\n  import { Calendar } from '#lib/components/ui/calendar/index.js';\n  import { Popover, PopoverPopup, PopoverTrigger } from '#lib/components/ui/popover/index.js';\n  import { cn } from '#lib/utils.js';\n\n  const df = new DateFormatter('en-US', { dateStyle: 'long' });\n\n  let value = $state<DateValue | undefined>(undefined);\n</script>\n\n<Popover>\n  <PopoverTrigger class={cn(buttonVariants({ variant: 'outline' }), 'w-full justify-start')}>\n    <CalendarIcon aria-hidden=\"true\" />\n    {value ? df.format(value.toDate(getLocalTimeZone())) : 'Pick a date'}\n  </PopoverTrigger>\n  <PopoverPopup>\n    <Calendar bind:value mode=\"single\" />\n  </PopoverPopup>\n</Popover>\n"
 		}
 	],
 	"registryDependencies": [
@@ -19,6 +19,7 @@
 		"utils"
 	],
 	"dependencies": [
+		"#lib",
 		"@internationalized/date",
 		"@lucide/svelte",
 		"@internationalized/date@^3.12.4"

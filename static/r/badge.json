@@ -9,7 +9,7 @@
 			"type": "registry:ui",
 			"path": "badge/badge.svelte",
 			"target": "$lib/components/ui/badge/badge.svelte",
-			"content": "<script lang=\"ts\">\n  import type { HTMLAnchorAttributes } from 'svelte/elements';\n  import { cn, type WithElementRef } from '$lib/utils';\n  import { type BadgeVariants, badgeVariants } from './badgeVariants';\n\n  let {\n    ref = $bindable(null),\n    href,\n    class: className,\n    variant = 'default',\n    size,\n\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAnchorAttributes> & {\n    variant?: BadgeVariants['variant'];\n    size?: BadgeVariants['size'];\n    href?: string;\n  } = $props();\n</script>\n\n<svelte:element\n  this={href ? 'a' : 'span'}\n  bind:this={ref}\n  data-slot=\"badge\"\n  {href}\n  class={cn(badgeVariants({ size, variant }), className)}\n  {...restProps}\n>\n  {@render children?.()}\n</svelte:element>\n"
+			"content": "<script lang=\"ts\">\n  import type { HTMLAnchorAttributes } from 'svelte/elements';\n  import { cn, type WithElementRef } from '#lib/utils.js';\n  import { type BadgeVariants, badgeVariants } from './badgeVariants';\n\n  let {\n    ref = $bindable(null),\n    href,\n    class: className,\n    variant = 'default',\n    size,\n\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAnchorAttributes> & {\n    variant?: BadgeVariants['variant'];\n    size?: BadgeVariants['size'];\n    href?: string;\n  } = $props();\n</script>\n\n<svelte:element\n  this={href ? 'a' : 'span'}\n  bind:this={ref}\n  data-slot=\"badge\"\n  {href}\n  class={cn(badgeVariants({ size, variant }), className)}\n  {...restProps}\n>\n  {@render children?.()}\n</svelte:element>\n"
 		},
 		{
 			"type": "registry:ui",

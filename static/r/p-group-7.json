@@ -9,12 +9,14 @@
 			"type": "registry:block",
 			"path": "p-group-7.svelte",
 			"target": "$lib/components/particles/group/p-group-7.svelte",
-			"content": "<script lang=\"ts\">\n  import { Group, GroupSeparator, GroupText } from '$lib/components/ui/group';\n  import { Input } from '$lib/components/ui/input';\n</script>\n\n<Group aria-label=\"Domain input\">\n  <GroupText>https://</GroupText>\n  <GroupSeparator />\n  <Input aria-label=\"Domain\" id=\"domain\" value=\"coss.com\" type=\"text\" />\n</Group>\n"
+			"content": "<script lang=\"ts\">\n  import { Group, GroupSeparator, GroupText } from '#lib/components/ui/group/index.js';\n  import { Input } from '#lib/components/ui/input/index.js';\n</script>\n\n<Group aria-label=\"Domain input\">\n  <GroupText>https://</GroupText>\n  <GroupSeparator />\n  <Input aria-label=\"Domain\" id=\"domain\" value=\"coss.com\" type=\"text\" />\n</Group>\n"
 		}
 	],
 	"registryDependencies": [
 		"group",
 		"input"
 	],
-	"dependencies": []
+	"dependencies": [
+		"#lib"
+	]
 }

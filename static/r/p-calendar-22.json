@@ -9,13 +9,14 @@
 			"type": "registry:block",
 			"path": "p-calendar-22.svelte",
 			"target": "$lib/components/particles/calendar/p-calendar-22.svelte",
-			"content": "<script lang=\"ts\">\n  import { getLocalTimeZone, today } from '@internationalized/date';\n  import { RangeCalendar } from '$lib/components/ui/range-calendar';\n\n  const todayValue = today(getLocalTimeZone());\n  let value = $state({ end: todayValue.add({ days: 25 }), start: todayValue });\n</script>\n\n<RangeCalendar\n  bind:value\n  class=\"**:data-outside-month:invisible [&>div]:gap-8\"\n  numberOfMonths={2}\n  pagedNavigation\n/>\n"
+			"content": "<script lang=\"ts\">\n  import { getLocalTimeZone, today } from '@internationalized/date';\n  import { RangeCalendar } from '#lib/components/ui/range-calendar/index.js';\n\n  const todayValue = today(getLocalTimeZone());\n  let value = $state({ end: todayValue.add({ days: 25 }), start: todayValue });\n</script>\n\n<RangeCalendar\n  bind:value\n  class=\"**:data-outside-month:invisible [&>div]:gap-8\"\n  numberOfMonths={2}\n  pagedNavigation\n/>\n"
 		}
 	],
 	"registryDependencies": [
 		"range-calendar"
 	],
 	"dependencies": [
+		"#lib",
 		"@internationalized/date",
 		"@internationalized/date@^3.12.4"
 	]

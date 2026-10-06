@@ -9,7 +9,7 @@
 			"type": "registry:block",
 			"path": "p-button-27.svelte",
 			"target": "$lib/components/particles/button/p-button-27.svelte",
-			"content": "<script lang=\"ts\">\n  import QrCode from '@lucide/svelte/icons/qr-code';\n  import { Button } from '$lib/components/ui/button';\n  import { Group, GroupSeparator } from '$lib/components/ui/group';\n</script>\n\n<Group>\n  <Button aria-label=\"QR code\" size=\"icon\">\n    <QrCode aria-hidden=\"true\" />\n  </Button>\n  <GroupSeparator class=\"bg-primary/72\" />\n  <Button>Sign in</Button>\n</Group>\n"
+			"content": "<script lang=\"ts\">\n  import QrCode from '@lucide/svelte/icons/qr-code';\n  import { Button } from '#lib/components/ui/button/index.js';\n  import { Group, GroupSeparator } from '#lib/components/ui/group/index.js';\n</script>\n\n<Group>\n  <Button aria-label=\"QR code\" size=\"icon\">\n    <QrCode aria-hidden=\"true\" />\n  </Button>\n  <GroupSeparator class=\"bg-primary/72\" />\n  <Button>Sign in</Button>\n</Group>\n"
 		}
 	],
 	"registryDependencies": [
@@ -17,6 +17,7 @@
 		"group"
 	],
 	"dependencies": [
+		"#lib",
 		"@lucide/svelte"
 	]
 }

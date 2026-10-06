@@ -9,12 +9,14 @@
 			"type": "registry:block",
 			"path": "p-textarea-11.svelte",
 			"target": "$lib/components/particles/textarea/p-textarea-11.svelte",
-			"content": "<script lang=\"ts\">\n  import { Field, FieldDescription, FieldLabel } from '$lib/components/ui/field';\n  import { Textarea } from '$lib/components/ui/textarea';\n\n  const maxlength = 280;\n\n  let value = $state('');\n</script>\n\n<Field name=\"message\">\n  <FieldLabel class=\"sr-only\">Message</FieldLabel>\n  <Textarea {maxlength} bind:value placeholder=\"Type your message here\" />\n  <FieldDescription>\n    <span class=\"tabular-nums\">{maxlength - value.length}</span>\n    characters left\n  </FieldDescription>\n</Field>\n"
+			"content": "<script lang=\"ts\">\n  import { Field, FieldDescription, FieldLabel } from '#lib/components/ui/field/index.js';\n  import { Textarea } from '#lib/components/ui/textarea/index.js';\n\n  const maxlength = 280;\n\n  let value = $state('');\n</script>\n\n<Field name=\"message\">\n  <FieldLabel class=\"sr-only\">Message</FieldLabel>\n  <Textarea {maxlength} bind:value placeholder=\"Type your message here\" />\n  <FieldDescription>\n    <span class=\"tabular-nums\">{maxlength - value.length}</span>\n    characters left\n  </FieldDescription>\n</Field>\n"
 		}
 	],
 	"registryDependencies": [
 		"field",
 		"textarea"
 	],
-	"dependencies": []
+	"dependencies": [
+		"#lib"
+	]
 }

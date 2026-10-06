@@ -9,11 +9,13 @@
 			"type": "registry:block",
 			"path": "p-badge-4.svelte",
 			"target": "$lib/components/particles/badge/p-badge-4.svelte",
-			"content": "<script lang=\"ts\">\n  import { Badge } from '$lib/components/ui/badge';\n</script>\n\n<Badge variant=\"destructive\">Badge</Badge>\n"
+			"content": "<script lang=\"ts\">\n  import { Badge } from '#lib/components/ui/badge/index.js';\n</script>\n\n<Badge variant=\"destructive\">Badge</Badge>\n"
 		}
 	],
 	"registryDependencies": [
 		"badge"
 	],
-	"dependencies": []
+	"dependencies": [
+		"#lib"
+	]
 }

@@ -9,11 +9,13 @@
 			"type": "registry:block",
 			"path": "p-input-group-4.svelte",
 			"target": "$lib/components/particles/input-group/p-input-group-4.svelte",
-			"content": "<script lang=\"ts\">\n  import {\n    InputGroup,\n    InputGroupAddon,\n    InputGroupInput,\n    InputGroupText\n  } from '$lib/components/ui/input-group';\n</script>\n\n<InputGroup>\n  <InputGroupInput aria-label=\"Choose a username\" placeholder=\"Choose a username\" type=\"text\" />\n  <InputGroupAddon align=\"inline-end\">\n    <InputGroupText>@coss.com</InputGroupText>\n  </InputGroupAddon>\n</InputGroup>\n"
+			"content": "<script lang=\"ts\">\n  import {\n    InputGroup,\n    InputGroupAddon,\n    InputGroupInput,\n    InputGroupText\n  } from '#lib/components/ui/input-group/index.js';\n</script>\n\n<InputGroup>\n  <InputGroupInput aria-label=\"Choose a username\" placeholder=\"Choose a username\" type=\"text\" />\n  <InputGroupAddon align=\"inline-end\">\n    <InputGroupText>@coss.com</InputGroupText>\n  </InputGroupAddon>\n</InputGroup>\n"
 		}
 	],
 	"registryDependencies": [
 		"input-group"
 	],
-	"dependencies": []
+	"dependencies": [
+		"#lib"
+	]
 }
