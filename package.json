@@ -55,9 +55,9 @@
     "d3-scale": "^4.0.2",
     "d3-shape": "^3.2.0",
     "jsrepo": "^3.8.1",
-    "layerchart": "^2.5.1",
+    "layerchart": "^2.5.2",
     "little-date": "^1.2.1",
-    "maplibre-gl": "^6.12.0",
+    "maplibre-gl": "^6.13.0",
     "mode-watcher": "^1.1.0",
     "runed": "0.37.1",
     "shiki": "^4.5.0",
@@ -71,7 +71,7 @@
     "@commitlint/cli": "^21.2.3",
     "@commitlint/config-conventional": "^21.2.3",
     "@jsrepo/shadcn": "^8.0.1",
-    "@lucide/svelte": "^1.52.0",
+    "@lucide/svelte": "^1.53.0",
     "@sveltejs/adapter-cloudflare": "^8.0.0",
     "@sveltejs/enhanced-img": "^1.0.0",
     "@sveltejs/kit": "^3.0.1",
@@ -96,15 +96,15 @@
     "unist-util-visit": "^5.1.0",
     "vite": "^8.3.3",
     "vitest": "^5.0.3",
-    "wrangler": "^4.147.0"
+    "wrangler": "^4.148.0"
   },
   "peerDependencies": {
-    "svelte": "^5.57.1"
+    "svelte": "^5.57.2"
   },
   "config": {
     "cz-customizable": {
       "config": ".cz-config.cjs"
     }
   },
-  "packageManager": "pnpm@12.9.1"
+  "packageManager": "pnpm@12.10.1"
 }
