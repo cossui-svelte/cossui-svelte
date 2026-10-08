@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.9.25](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.24...v0.9.25) (2026-10-08)
+
+### ✨ Features
+
+* migration to sveltekit 3 ([a0351dd](https://github.com/cossui-svelte/cossui-svelte/commit/a0351dd26558b3a3aef1f33c6cdd172f58588ed0))
+* **upstream:** bring latest particules from upstream ([dae534b](https://github.com/cossui-svelte/cossui-svelte/commit/dae534ba8d8c76bf3f7222b8355fd77d09c1fd74))
+
+### 🐛 Bug Fixes
+
+* background color issue in top level template ([ae9f08f](https://github.com/cossui-svelte/cossui-svelte/commit/ae9f08f096e4d10c2daab4a5248667cd871bb4eb))
+* browseparticule's popup icon/lable misalignment ([993b3af](https://github.com/cossui-svelte/cossui-svelte/commit/993b3af168a56093a6dfde9fe271b3344d6817b1))
+* fonts were overlapping in the top level template ([56b25fd](https://github.com/cossui-svelte/cossui-svelte/commit/56b25fda296f5837fa65af18aa530ead7044e625))
+* no more self closing tags ([4c44a79](https://github.com/cossui-svelte/cossui-svelte/commit/4c44a7987e84242ceea643c8682d2afe8538a421))
+* pnpm build issues too many warnings ([6fcce60](https://github.com/cossui-svelte/cossui-svelte/commit/6fcce602502217a318d1e7d4b8b8c981e4b110fc))
+* remove bits namings to avoid confusions ([6d2a62b](https://github.com/cossui-svelte/cossui-svelte/commit/6d2a62b51648caacab8da841f729712c32699ebd))
+* remove single page overwrite from wrangler files ([978deb7](https://github.com/cossui-svelte/cossui-svelte/commit/978deb73f0ca5004174f11953c15e529182fd7cb))
+* **upstream:** resize textarea wrapper for WebKit placeholder sizing ([#856](https://github.com/cossui-svelte/cossui-svelte/issues/856)) ([6956d1c](https://github.com/cossui-svelte/cossui-svelte/commit/6956d1c00e93f5c78f7e4d51060fb55fdc646224))
+
+### 🚚 Chores
+
+* deps ([8b3fd56](https://github.com/cossui-svelte/cossui-svelte/commit/8b3fd56b37d76c7f7b95f1b58fd31e34c24bbf1d))
+* deps + registry gen ([b9c457b](https://github.com/cossui-svelte/cossui-svelte/commit/b9c457b5abc1ddf60e00025b1f564b958712d228))
+* linting ([af2dfbd](https://github.com/cossui-svelte/cossui-svelte/commit/af2dfbdaf6d0b57bd1a3fcc99ed6268afe698d04))
+
 ## [0.9.24](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.23...v0.9.24) (2026-10-04)
 
 ### 🐛 Bug Fixes
