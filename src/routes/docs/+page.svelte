@@ -16,6 +16,18 @@
 
   const changelog = [
     {
+      date: '8 Oct 2026',
+      description:
+        'Migrated to SvelteKit 3, brought the latest particles from upstream, and fixed top-level template fonts and background, particle browser popup alignment, and the textarea placeholder sizing in WebKit.',
+      title: '0.9.25 — SvelteKit 3'
+    },
+    {
+      date: '4 Oct 2026',
+      description:
+        'Switched the lint and format toolchain to Oxc, brought new upstream fonts, and fixed the drawer close button sitting under the drag bar.',
+      title: '0.9.24 — Oxc toolchain & upstream fonts'
+    },
+    {
       date: '27 Sep 2026',
       description:
         'Blocs ported from shadcn-svelte, component documentation pages, and components synced with upstream CossUI.',
