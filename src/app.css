@@ -19,7 +19,7 @@
 @font-face {
   font-display: swap;
   font-family: "CalSansUI";
-  src: url("/fonts/CalSansVF-italic.woff2") format("woff2");
+  src: url("/fonts/CalSansVF-Italic.woff2") format("woff2");
   font-weight: 400 700;
   font-style: italic;
 }
