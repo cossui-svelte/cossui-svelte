@@ -2,7 +2,7 @@
 // Each bloc's entry point is `<name>/page.svelte`, rendered full-page at `/blocs/view/<name>`.
 // Ported from shadcn-svelte blocks (https://shadcn-svelte.com/blocks).
 
-export type BlocCategory = 'sidebar' | 'dashboard' | 'login' | 'signup' | 'otp' | 'calendar';
+export type BlocCategory = 'sidebar' | 'dashboard' | 'login' | 'signup' | 'otp' | 'calendar' | 'apps';
 
 export interface BlocMeta {
   category: BlocCategory;
@@ -21,10 +21,11 @@ export const blocCategories: { slug: BlocCategory; name: string }[] = [
   { slug: 'login', name: 'Login' },
   { slug: 'signup', name: 'Signup' },
   { slug: 'otp', name: 'OTP' },
-  { slug: 'calendar', name: 'Calendar' }
+  { slug: 'calendar', name: 'Calendar' },
+  { slug: 'apps', name: 'Apps' }
 ];
 
-export const FEATURED_BLOCS = ['dashboard-01', 'sidebar-07', 'sidebar-03', 'login-03', 'login-04'];
+export const FEATURED_BLOCS = ['app-calcom', 'dashboard-01'];
 
 const CALENDAR_CONTAINER =
   'flex min-h-svh w-full min-w-0 items-start justify-center bg-background px-6 py-12 md:pt-20 xl:py-24';
@@ -64,6 +65,12 @@ export const blocMetadata: Record<string, BlocMeta> = {
   'sidebar-14': { category: 'sidebar', description: 'A sidebar on the right.' },
   'sidebar-15': { category: 'sidebar', description: 'A left and right sidebar.' },
   'sidebar-16': { category: 'sidebar', description: 'A sidebar with a sticky site header.' },
+  'app-calcom': {
+    category: 'apps',
+    description:
+      'A full Cal.com style app: icon-collapsing sidebar, bookings, event types, members and settings.',
+    iframeHeight: '930px'
+  },
 
   'login-01': { category: 'login', description: 'A simple login form.' },
   'login-02': { category: 'login', description: 'A two column login page with a cover image.' },
@@ -83,14 +90,12 @@ export const blocMetadata: Record<string, BlocMeta> = {
   'otp-04': { category: 'otp', description: 'An OTP page with form and image.' },
   'otp-05': { category: 'otp', description: 'A simple OTP form with social providers.' },
 
-  'calendar-01': calendar('A simple calendar.'),
   'calendar-02': calendar('Multiple months with single selection.'),
   'calendar-03': calendar('Multiple months with multiple selection.'),
   'calendar-04': calendar('Single month with range selection.'),
   'calendar-05': calendar('Multiple months with range selection.'),
   'calendar-06': calendar('Range selection with minimum days.'),
   'calendar-07': calendar('Range selection with minimum and maximum days.'),
-  'calendar-08': calendar('Calendar with disabled days.'),
   'calendar-09': calendar('Calendar with disabled weekends.'),
   'calendar-10': calendar('Today button.'),
   'calendar-11': calendar('Start and end of month.'),
