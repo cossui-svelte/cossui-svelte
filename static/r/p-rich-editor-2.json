@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-rich-editor-2",
+	"title": "Rich editor 2",
+	"description": "Notion-like block editor with table of contents and drag handles",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-rich-editor-2.svelte",
+			"target": "$lib/components/particles/rich-editor/p-rich-editor-2.svelte",
+			"content": "<script lang=\"ts\">\n  import {\n    createEditor,\n    RichEditor,\n    type JSONContent\n  } from '#lib/components/ui/rich-editor/index.ts';\n\n  const initialContent: JSONContent = {\n    type: 'doc',\n    content: [\n      {\n        type: 'heading',\n        attrs: { level: 1 },\n        content: [{ type: 'text', text: 'Notion Like' }]\n      },\n      {\n        type: 'paragraph',\n        content: [\n          {\n            type: 'text',\n            text: 'Start writing, or press \"/\" for commands. This editor is built for focused, block-based writing.'\n          }\n        ]\n      },\n      {\n        type: 'heading',\n        attrs: { level: 2 },\n        content: [{ type: 'text', text: 'Getting started' }]\n      },\n      {\n        type: 'paragraph',\n        content: [\n          {\n            type: 'text',\n            text: 'Drag blocks by the handle on the left. Select text to format it, or type \"/\" to insert new blocks.'\n          }\n        ]\n      },\n      {\n        type: 'bulletList',\n        content: [\n          {\n            type: 'listItem',\n            content: [\n              {\n                type: 'paragraph',\n                content: [{ type: 'text', text: 'Drag and drop to reorder blocks' }]\n              }\n            ]\n          },\n          {\n            type: 'listItem',\n            content: [\n              {\n                type: 'paragraph',\n                content: [\n                  {\n                    type: 'text',\n                    text: 'Use the table of contents on the right to navigate'\n                  }\n                ]\n              }\n            ]\n          },\n          {\n            type: 'listItem',\n            content: [\n              {\n                type: 'paragraph',\n                content: [\n                  {\n                    type: 'text',\n                    text: 'Hover a block for its handle and menu'\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      {\n        type: 'heading',\n        attrs: { level: 2 },\n        content: [{ type: 'text', text: 'Notes' }]\n      },\n      {\n        type: 'paragraph',\n        content: [\n          {\n            type: 'text',\n            text: 'Keep this page focused. The table of contents updates as you add headings.'\n          }\n        ]\n      }\n    ]\n  };\n\n  const editor = createEditor({});\n\n  if (editor) {\n    editor.commands.setContent(initialContent, { emitUpdate: false });\n  }\n</script>\n\n<RichEditor {editor}>\n  <div class=\"mx-auto w-full max-w-3xl px-6 py-12 sm:px-10 sm:py-16\">\n    <RichEditor.Content class=\"*:outline-none\" />\n  </div>\n\n  <RichEditor.BubbleMenu />\n  <RichEditor.DragHandleExtended />\n  <RichEditor.ToC />\n</RichEditor>\n"
+		}
+	],
+	"registryDependencies": [
+		"rich-editor"
+	],
+	"dependencies": []
+}

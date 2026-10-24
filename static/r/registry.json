@@ -2852,13 +2852,431 @@
 			"title": "Rich Editor",
 			"description": "A rich text editor component with formatting options.",
 			"type": "registry:ui",
-			"dependencies": [],
-			"registryDependencies": [],
+			"dependencies": [
+				"@tiptap/core@^3.32.0",
+				"@tiptap/pm@^3.32.0",
+				"@floating-ui/dom@^1.8.0",
+				"@tiptap/extension-drag-handle@^3.32.0",
+				"mermaid@^12.2.0",
+				"@tiptap/extension-table-of-contents@^3.32.0",
+				"@tiptap/extension-highlight@^3.32.0",
+				"@tiptap/extension-list@^3.32.0",
+				"@tiptap/extension-mathematics@^3.32.0",
+				"@tiptap/extension-subscript@^3.32.0",
+				"@tiptap/extension-superscript@^3.32.0",
+				"@tiptap/extension-text-align@^3.32.0",
+				"@tiptap/extension-text-style@^3.32.0",
+				"@tiptap/extension-typography@^3.32.0",
+				"@tiptap/extensions@^3.32.0",
+				"@tiptap/markdown@^3.32.0",
+				"@tiptap/starter-kit@^3.32.0",
+				"katex@^0.17.0",
+				"mode-watcher@^1.1.0",
+				"@tiptap/extension-code-block-lowlight@^3.32.0",
+				"lowlight@^3.3.0",
+				"@tiptap/extension-bubble-menu@^3.32.0",
+				"@tiptap/extension-image@^3.32.0",
+				"@tiptap/suggestion@^3.32.0",
+				"@tiptap/extension-table@^3.32.0"
+			],
+			"registryDependencies": [
+				"button",
+				"combobox",
+				"input",
+				"kbd",
+				"menu",
+				"popover",
+				"separator",
+				"tabs",
+				"textarea",
+				"tooltip",
+				"utils"
+			],
 			"files": [
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/.DS_Store",
+					"target": "$lib/components/ui/rich-editor/.DS_Store"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/commands/commands.ts",
+					"target": "$lib/components/ui/rich-editor/commands/commands.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/commands/index.ts",
+					"target": "$lib/components/ui/rich-editor/commands/index.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/components/.DS_Store",
+					"target": "$lib/components/ui/rich-editor/components/.DS_Store"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/components/Callout.svelte",
+					"target": "$lib/components/ui/rich-editor/components/Callout.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/components/CodeBlock.svelte",
+					"target": "$lib/components/ui/rich-editor/components/CodeBlock.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/components/DragHandle.svelte",
+					"target": "$lib/components/ui/rich-editor/components/DragHandle.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/components/DragHandleExtended.svelte",
+					"target": "$lib/components/ui/rich-editor/components/DragHandleExtended.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/components/IFrame.svelte",
+					"target": "$lib/components/ui/rich-editor/components/IFrame.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/components/ImageExtended.svelte",
+					"target": "$lib/components/ui/rich-editor/components/ImageExtended.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/components/MediaExtended.svelte",
+					"target": "$lib/components/ui/rich-editor/components/MediaExtended.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/components/MediaPlaceHolder.svelte",
+					"target": "$lib/components/ui/rich-editor/components/MediaPlaceHolder.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/components/Mermaid.svelte",
+					"target": "$lib/components/ui/rich-editor/components/Mermaid.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/components/SlashCommand.svelte",
+					"target": "$lib/components/ui/rich-editor/components/SlashCommand.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/components/ToC.svelte",
+					"target": "$lib/components/ui/rich-editor/components/ToC.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/components/Toolbar.svelte",
+					"target": "$lib/components/ui/rich-editor/components/Toolbar.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/components/Tooltip.svelte",
+					"target": "$lib/components/ui/rich-editor/components/Tooltip.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/components/VideoExtended.svelte",
+					"target": "$lib/components/ui/rich-editor/components/VideoExtended.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/components/menu/BubbleMenu.svelte",
+					"target": "$lib/components/ui/rich-editor/components/menu/BubbleMenu.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/components/menu/Link.svelte",
+					"target": "$lib/components/ui/rich-editor/components/menu/Link.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/components/menu/MathBlock.svelte",
+					"target": "$lib/components/ui/rich-editor/components/menu/MathBlock.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/components/menu/MathInline.svelte",
+					"target": "$lib/components/ui/rich-editor/components/menu/MathInline.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/components/menu/TableCol.svelte",
+					"target": "$lib/components/ui/rich-editor/components/menu/TableCol.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/components/menu/TableRow.svelte",
+					"target": "$lib/components/ui/rich-editor/components/menu/TableRow.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/components/menu/index.ts",
+					"target": "$lib/components/ui/rich-editor/components/menu/index.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/components/tools/AlignMent.svelte",
+					"target": "$lib/components/ui/rich-editor/components/tools/AlignMent.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/components/tools/Colors.svelte",
+					"target": "$lib/components/ui/rich-editor/components/tools/Colors.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/components/tools/Export.svelte",
+					"target": "$lib/components/ui/rich-editor/components/tools/Export.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/components/tools/FontSize.svelte",
+					"target": "$lib/components/ui/rich-editor/components/tools/FontSize.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/components/tools/Link.svelte",
+					"target": "$lib/components/ui/rich-editor/components/tools/Link.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/components/tools/Lists.svelte",
+					"target": "$lib/components/ui/rich-editor/components/tools/Lists.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/default-extensions.ts",
+					"target": "$lib/components/ui/rich-editor/default-extensions.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/editor.css",
+					"target": "$lib/components/ui/rich-editor/editor.css"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/editor.svelte",
+					"target": "$lib/components/ui/rich-editor/editor.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/editor.ts",
+					"target": "$lib/components/ui/rich-editor/editor.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/helpers.ts",
+					"target": "$lib/components/ui/rich-editor/helpers.ts"
+				},
 				{
 					"type": "registry:ui",
 					"path": "rich-editor/index.ts",
 					"target": "$lib/components/ui/rich-editor/index.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/onedark.css",
+					"target": "$lib/components/ui/rich-editor/onedark.css"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/.DS_Store",
+					"target": "$lib/components/ui/rich-editor/tiptap/.DS_Store"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/Editor.ts",
+					"target": "$lib/components/ui/rich-editor/tiptap/Editor.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/components/EditorContent.svelte",
+					"target": "$lib/components/ui/rich-editor/tiptap/components/EditorContent.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/components/MarkViewContent.svelte",
+					"target": "$lib/components/ui/rich-editor/tiptap/components/MarkViewContent.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/components/MarkViewFrame.svelte",
+					"target": "$lib/components/ui/rich-editor/tiptap/components/MarkViewFrame.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/components/NodeViewContent.svelte",
+					"target": "$lib/components/ui/rich-editor/tiptap/components/NodeViewContent.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/components/NodeViewFrame.svelte",
+					"target": "$lib/components/ui/rich-editor/tiptap/components/NodeViewFrame.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/components/NodeViewWrapper.svelte",
+					"target": "$lib/components/ui/rich-editor/tiptap/components/NodeViewWrapper.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/components/Tiptap.svelte",
+					"target": "$lib/components/ui/rich-editor/tiptap/components/Tiptap.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/components/TiptapContent.svelte",
+					"target": "$lib/components/ui/rich-editor/tiptap/components/TiptapContent.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/components/editorContext.ts",
+					"target": "$lib/components/ui/rich-editor/tiptap/components/editorContext.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/components/menus/BubbleMenu.svelte",
+					"target": "$lib/components/ui/rich-editor/tiptap/components/menus/BubbleMenu.svelte"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/components/menus/index.ts",
+					"target": "$lib/components/ui/rich-editor/tiptap/components/menus/index.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/extensions/.DS_Store",
+					"target": "$lib/components/ui/rich-editor/tiptap/extensions/.DS_Store"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/extensions/Callout.ts",
+					"target": "$lib/components/ui/rich-editor/tiptap/extensions/Callout.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/extensions/ColorHighlighter.ts",
+					"target": "$lib/components/ui/rich-editor/tiptap/extensions/ColorHighlighter.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/extensions/MediaPlaceHolder.ts",
+					"target": "$lib/components/ui/rich-editor/tiptap/extensions/MediaPlaceHolder.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/extensions/SelectAcrossAtoms.ts",
+					"target": "$lib/components/ui/rich-editor/tiptap/extensions/SelectAcrossAtoms.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/extensions/audio/index.ts",
+					"target": "$lib/components/ui/rich-editor/tiptap/extensions/audio/index.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/extensions/iframe/index.ts",
+					"target": "$lib/components/ui/rich-editor/tiptap/extensions/iframe/index.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/extensions/image/ImageExtended.ts",
+					"target": "$lib/components/ui/rich-editor/tiptap/extensions/image/ImageExtended.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/extensions/index.ts",
+					"target": "$lib/components/ui/rich-editor/tiptap/extensions/index.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/extensions/mermaid/index.ts",
+					"target": "$lib/components/ui/rich-editor/tiptap/extensions/mermaid/index.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/extensions/slash/index.ts",
+					"target": "$lib/components/ui/rich-editor/tiptap/extensions/slash/index.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/extensions/table/index.ts",
+					"target": "$lib/components/ui/rich-editor/tiptap/extensions/table/index.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/extensions/table/table-cell.ts",
+					"target": "$lib/components/ui/rich-editor/tiptap/extensions/table/table-cell.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/extensions/table/table-header.ts",
+					"target": "$lib/components/ui/rich-editor/tiptap/extensions/table/table-header.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/extensions/table/table-row.ts",
+					"target": "$lib/components/ui/rich-editor/tiptap/extensions/table/table-row.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/extensions/table/table.ts",
+					"target": "$lib/components/ui/rich-editor/tiptap/extensions/table/table.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/extensions/table/utils.ts",
+					"target": "$lib/components/ui/rich-editor/tiptap/extensions/table/utils.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/extensions/video/Video.ts",
+					"target": "$lib/components/ui/rich-editor/tiptap/extensions/video/Video.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/extensions/video/VideoExtended.ts",
+					"target": "$lib/components/ui/rich-editor/tiptap/extensions/video/VideoExtended.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/hooks/useEditor.svelte.ts",
+					"target": "$lib/components/ui/rich-editor/tiptap/hooks/useEditor.svelte.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/hooks/useEditorState.svelte.ts",
+					"target": "$lib/components/ui/rich-editor/tiptap/hooks/useEditorState.svelte.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/hooks/useEditorTransaction.svelte.ts",
+					"target": "$lib/components/ui/rich-editor/tiptap/hooks/useEditorTransaction.svelte.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/index.ts",
+					"target": "$lib/components/ui/rich-editor/tiptap/index.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/renderers/SvelteMarkViewRenderer.ts",
+					"target": "$lib/components/ui/rich-editor/tiptap/renderers/SvelteMarkViewRenderer.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/renderers/SvelteNodeViewRenderer.ts",
+					"target": "$lib/components/ui/rich-editor/tiptap/renderers/SvelteNodeViewRenderer.ts"
+				},
+				{
+					"type": "registry:ui",
+					"path": "rich-editor/tiptap/renderers/SvelteRenderer.svelte.ts",
+					"target": "$lib/components/ui/rich-editor/tiptap/renderers/SvelteRenderer.svelte.ts"
 				}
 			]
 		},
@@ -13648,13 +14066,37 @@
 			"title": "Rich editor 1",
 			"description": "Basic rich editor examples",
 			"type": "registry:block",
-			"dependencies": [],
-			"registryDependencies": [],
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [
+				"avatar",
+				"badge",
+				"button",
+				"rich-editor"
+			],
 			"files": [
 				{
 					"type": "registry:block",
 					"path": "p-rich-editor-1.svelte",
 					"target": "$lib/components/particles/rich-editor/p-rich-editor-1.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-rich-editor-2",
+			"title": "Rich editor 2",
+			"description": "Notion-like block editor with table of contents and drag handles",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": [
+				"rich-editor"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-rich-editor-2.svelte",
+					"target": "$lib/components/particles/rich-editor/p-rich-editor-2.svelte"
 				}
 			]
 		},

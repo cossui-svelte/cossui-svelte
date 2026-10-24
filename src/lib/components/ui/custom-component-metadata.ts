@@ -220,7 +220,8 @@ export const custom_components_metadata: Record<string, Partial<RegistryUIEntry>
   'rich-editor': {
     description: 'A rich text editor component with formatting options.',
     category: 'extra',
-    istodo: true
+    istodo: false,
+    isnew: true
   },
   'scroll-area': {
     description: 'A native scroll container with custom scrollbars.',
