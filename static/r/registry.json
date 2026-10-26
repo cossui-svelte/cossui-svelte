@@ -2895,11 +2895,6 @@
 			"files": [
 				{
 					"type": "registry:ui",
-					"path": "rich-editor/.DS_Store",
-					"target": "$lib/components/ui/rich-editor/.DS_Store"
-				},
-				{
-					"type": "registry:ui",
 					"path": "rich-editor/commands/commands.ts",
 					"target": "$lib/components/ui/rich-editor/commands/commands.ts"
 				},
@@ -2907,11 +2902,6 @@
 					"type": "registry:ui",
 					"path": "rich-editor/commands/index.ts",
 					"target": "$lib/components/ui/rich-editor/commands/index.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "rich-editor/components/.DS_Store",
-					"target": "$lib/components/ui/rich-editor/components/.DS_Store"
 				},
 				{
 					"type": "registry:ui",
@@ -3085,11 +3075,6 @@
 				},
 				{
 					"type": "registry:ui",
-					"path": "rich-editor/tiptap/.DS_Store",
-					"target": "$lib/components/ui/rich-editor/tiptap/.DS_Store"
-				},
-				{
-					"type": "registry:ui",
 					"path": "rich-editor/tiptap/Editor.ts",
 					"target": "$lib/components/ui/rich-editor/tiptap/Editor.ts"
 				},
@@ -3147,11 +3132,6 @@
 					"type": "registry:ui",
 					"path": "rich-editor/tiptap/components/menus/index.ts",
 					"target": "$lib/components/ui/rich-editor/tiptap/components/menus/index.ts"
-				},
-				{
-					"type": "registry:ui",
-					"path": "rich-editor/tiptap/extensions/.DS_Store",
-					"target": "$lib/components/ui/rich-editor/tiptap/extensions/.DS_Store"
 				},
 				{
 					"type": "registry:ui",
@@ -14097,6 +14077,72 @@
 					"type": "registry:block",
 					"path": "p-rich-editor-2.svelte",
 					"target": "$lib/components/particles/rich-editor/p-rich-editor-2.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-rich-editor-3",
+			"title": "Rich editor 3",
+			"description": "Compact comment box with a bold, italic, strikethrough and code toolbar",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [
+				"rich-editor",
+				"toggle"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-rich-editor-3.svelte",
+					"target": "$lib/components/particles/rich-editor/p-rich-editor-3.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-rich-editor-4",
+			"title": "Rich editor 4",
+			"description": "Rich editor with a top toolbar of dropdown menus for text style, color, lists and inserts",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [
+				"button",
+				"menu",
+				"rich-editor",
+				"separator",
+				"utils"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-rich-editor-4.svelte",
+					"target": "$lib/components/particles/rich-editor/p-rich-editor-4.svelte"
+				}
+			]
+		},
+		{
+			"name": "p-rich-editor-5",
+			"title": "Rich editor 5",
+			"description": "Rich editor with a full outlined button toolbar for formatting, lists and blocks",
+			"type": "registry:block",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"registryDependencies": [
+				"button",
+				"menu",
+				"rich-editor",
+				"separator",
+				"utils"
+			],
+			"files": [
+				{
+					"type": "registry:block",
+					"path": "p-rich-editor-5.svelte",
+					"target": "$lib/components/particles/rich-editor/p-rich-editor-5.svelte"
 				}
 			]
 		},

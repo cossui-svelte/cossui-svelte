@@ -333,6 +333,19 @@ export const custom_particle_metadata = {
     description: 'Notion-like block editor with table of contents and drag handles',
     tags: ['input', 'editor', 'rich-editor']
   },
+  'p-rich-editor-3': {
+    description: 'Compact comment box with a bold, italic, strikethrough and code toolbar',
+    tags: ['input', 'editor', 'rich-editor']
+  },
+  'p-rich-editor-4': {
+    description:
+      'Rich editor with a top toolbar of dropdown menus for text style, color, lists and inserts',
+    tags: ['input', 'editor', 'rich-editor']
+  },
+  'p-rich-editor-5': {
+    description: 'Rich editor with a full outlined button toolbar for formatting, lists and blocks',
+    tags: ['input', 'editor', 'rich-editor']
+  },
   'p-sidebar-1': {
     description: 'Basic application sidebar with a navigation menu',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }

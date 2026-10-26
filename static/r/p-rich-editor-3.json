@@ -1,0 +1,22 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "p-rich-editor-3",
+	"title": "Rich editor 3",
+	"description": "Compact comment box with a bold, italic, strikethrough and code toolbar",
+	"type": "registry:block",
+	"files": [
+		{
+			"type": "registry:block",
+			"path": "p-rich-editor-3.svelte",
+			"target": "$lib/components/particles/rich-editor/p-rich-editor-3.svelte",
+			"content": "<script lang=\"ts\">\n  import Bold from '@lucide/svelte/icons/bold';\n  import Code from '@lucide/svelte/icons/code-xml';\n  import Italic from '@lucide/svelte/icons/italic';\n  import Strikethrough from '@lucide/svelte/icons/strikethrough';\n  import { createEditor, RichEditor } from '#lib/components/ui/rich-editor/index.ts';\n  import { useEditorTransaction } from '#lib/components/ui/rich-editor/tiptap/index.ts';\n  import { Toggle } from '#lib/components/ui/toggle/index.js';\n\n  const editor = createEditor({});\n  const transaction = editor ? useEditorTransaction(editor) : undefined;\n\n  const marks = [\n    {\n      name: 'bold',\n      label: 'Bold',\n      icon: Bold,\n      toggle: () => editor?.chain().focus().toggleBold().run()\n    },\n    {\n      name: 'italic',\n      label: 'Italic',\n      icon: Italic,\n      toggle: () => editor?.chain().focus().toggleItalic().run()\n    },\n    {\n      name: 'strike',\n      label: 'Strikethrough',\n      icon: Strikethrough,\n      toggle: () => editor?.chain().focus().toggleStrike().run()\n    },\n    {\n      name: 'code',\n      label: 'Code',\n      icon: Code,\n      toggle: () => editor?.chain().focus().toggleCode().run()\n    }\n  ];\n\n  function isActive(name: string): boolean {\n    void transaction?.version;\n    return editor?.isActive(name) ?? false;\n  }\n</script>\n\n<RichEditor {editor}>\n  <div class=\"comment-editor w-full max-w-sm overflow-hidden rounded-2xl border bg-card shadow-xs\">\n    <div class=\"h-40 overflow-y-auto px-4 py-3 text-sm\">\n      <RichEditor.Content class=\"*:outline-none\" />\n    </div>\n    <div class=\"flex items-center gap-1 border-t px-2 py-2\">\n      {#each marks as mark (mark.name)}\n        <Toggle\n          aria-label={mark.label}\n          pressed={isActive(mark.name)}\n          size=\"sm\"\n          onmousedown={(e: MouseEvent) => e.preventDefault()}\n          onclick={mark.toggle}\n        >\n          <mark.icon />\n        </Toggle>\n      {/each}\n    </div>\n  </div>\n</RichEditor>\n\n<style>\n  :global(.comment-editor .tiptap) {\n    min-height: 100%;\n  }\n\n  :global(.comment-editor .tiptap > p) {\n    margin: 0;\n  }\n\n  :global(.comment-editor .tiptap p.is-empty::before) {\n    content: 'Comment here...';\n  }\n</style>\n"
+		}
+	],
+	"registryDependencies": [
+		"rich-editor",
+		"toggle"
+	],
+	"dependencies": [
+		"@lucide/svelte"
+	]
+}
