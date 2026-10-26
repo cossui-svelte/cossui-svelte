@@ -15,7 +15,7 @@
   }: RangeCalendarDayProps = $props();
 
   const dayState = RangeCalendarDayState.create({
-    id: boxWith(() => id!),
+    id: boxWith(() => id as string),
     ref: boxWith(
       () => ref,
       (v) => (ref = v)

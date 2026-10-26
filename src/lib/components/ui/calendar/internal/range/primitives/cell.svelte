@@ -17,7 +17,7 @@
   }: RangeCalendarCellProps = $props();
 
   const cellState = RangeCalendarCellState.create({
-    id: boxWith(() => id!),
+    id: boxWith(() => id as string),
     ref: boxWith(
       () => ref,
       (v) => (ref = v)

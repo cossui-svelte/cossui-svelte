@@ -6,7 +6,7 @@
   import { createId } from '#lib/components/ui/calendar/internal/ids.js';
   import { resolveLocaleProp } from '#lib/components/ui/calendar/internal/prop-resolvers.js';
   import { RangeCalendarRootState } from '../range-calendar-state.svelte';
-  import type { RangeCalendarRootProps } from '../types';
+  import type { DateRange, RangeCalendarRootProps } from '../types';
 
   const noop = () => {};
   const uid = $props.id();
@@ -76,13 +76,13 @@
   );
 
   const rootState = RangeCalendarRootState.create({
-    id: boxWith(() => id!),
+    id: boxWith(() => id as string),
     ref: boxWith(
       () => ref,
       (v) => (ref = v)
     ),
     value: boxWith(
-      () => value!,
+      () => value as DateRange,
       (v) => {
         value = v;
         onValueChange(v);
