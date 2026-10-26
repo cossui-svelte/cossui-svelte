@@ -329,6 +329,10 @@ export const custom_particle_metadata = {
     description: 'Basic rich editor examples',
     tags: ['input', 'editor']
   },
+  'p-rich-editor-2': {
+    description: 'Notion-like block editor with table of contents and drag handles',
+    tags: ['input', 'editor', 'rich-editor']
+  },
   'p-sidebar-1': {
     description: 'Basic application sidebar with a navigation menu',
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }

@@ -4128,6 +4128,14 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-rich-editor-1': {
     description: 'Basic rich editor examples',
     tags: ['input', 'editor', 'rich-editor'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['avatar', 'badge', 'button', 'rich-editor'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
+  'p-rich-editor-2': {
+    description: 'Notion-like block editor with table of contents and drag handles',
+    tags: ['input', 'editor', 'rich-editor'],
+    registryDependencies: ['rich-editor'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-sidebar-1': {
