@@ -5,6 +5,8 @@
 
   let { editor, children }: { editor: Editor | undefined; children?: Snippet } = $props();
 
+  // Context is read once by descendants at init, so the initial editor is what we want to share.
+  // svelte-ignore state_referenced_locally
   if (editor) {
     setEditor(editor);
   }

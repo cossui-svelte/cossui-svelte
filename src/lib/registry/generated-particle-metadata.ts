@@ -4126,35 +4126,34 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-rich-editor-1': {
-    description: 'Basic rich editor examples',
+    description: 'A rich example!',
     tags: ['input', 'editor', 'rich-editor'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['avatar', 'badge', 'button', 'rich-editor'],
-    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-4xl', colSpan: 2 }
   },
   'p-rich-editor-2': {
-    description: 'Notion-like block editor with table of contents and drag handles',
+    description: 'Notion-like block editor with drag handles',
     tags: ['input', 'editor', 'rich-editor'],
     registryDependencies: ['rich-editor'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-rich-editor-3': {
-    description: 'Compact comment box with a bold, italic, strikethrough and code toolbar',
+    description: 'Compact comment box',
     tags: ['input', 'editor', 'rich-editor'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['rich-editor', 'toggle'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-rich-editor-4': {
-    description:
-      'Rich editor with a top toolbar of dropdown menus for text style, color, lists and inserts',
+    description: 'Rich editor with a top toolbar',
     tags: ['input', 'editor', 'rich-editor'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'menu', 'rich-editor', 'separator'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-rich-editor-5': {
-    description: 'Rich editor with a full outlined button toolbar for formatting, lists and blocks',
+    description: 'Rich editor with a full outlined button toolbar',
     tags: ['input', 'editor', 'rich-editor'],
     npmDependencies: ['@lucide/svelte'],
     registryDependencies: ['button', 'menu', 'rich-editor', 'separator'],

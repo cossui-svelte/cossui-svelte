@@ -2,7 +2,7 @@
 	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
 	"name": "p-rich-editor-5",
 	"title": "Rich editor 5",
-	"description": "Rich editor with a full outlined button toolbar for formatting, lists and blocks",
+	"description": "Rich editor with a full outlined button toolbar",
 	"type": "registry:block",
 	"files": [
 		{

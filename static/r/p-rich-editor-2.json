@@ -2,7 +2,7 @@
 	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
 	"name": "p-rich-editor-2",
 	"title": "Rich editor 2",
-	"description": "Notion-like block editor with table of contents and drag handles",
+	"description": "Notion-like block editor with drag handles",
 	"type": "registry:block",
 	"files": [
 		{

@@ -442,7 +442,7 @@
 			"dependencies": [
 				"@internationalized/date@^3.12.4",
 				"svelte-toolbelt@^0.10.6",
-				"runed@0.37.1"
+				"runed@0.38.0"
 			],
 			"registryDependencies": [
 				"button",
@@ -2540,7 +2540,7 @@
 			"description": "A segmented input for one-time passwords and verification codes.",
 			"type": "registry:ui",
 			"dependencies": [
-				"runed@0.37.1",
+				"runed@0.38.0",
 				"svelte-toolbelt@^0.10.6",
 				"@shardsui/svelte@0.1.0-beta.2"
 			],
@@ -4229,7 +4229,7 @@
 			"type": "registry:ui",
 			"dependencies": [
 				"@headless-tree/core@^1.8.0",
-				"runed@0.37.1",
+				"runed@0.38.0",
 				"svelte-toolbelt@^0.10.6"
 			],
 			"registryDependencies": [
@@ -14044,7 +14044,7 @@
 		{
 			"name": "p-rich-editor-1",
 			"title": "Rich editor 1",
-			"description": "Basic rich editor examples",
+			"description": "A rich example!",
 			"type": "registry:block",
 			"dependencies": [
 				"@lucide/svelte"
@@ -14066,7 +14066,7 @@
 		{
 			"name": "p-rich-editor-2",
 			"title": "Rich editor 2",
-			"description": "Notion-like block editor with table of contents and drag handles",
+			"description": "Notion-like block editor with drag handles",
 			"type": "registry:block",
 			"dependencies": [],
 			"registryDependencies": [
@@ -14083,7 +14083,7 @@
 		{
 			"name": "p-rich-editor-3",
 			"title": "Rich editor 3",
-			"description": "Compact comment box with a bold, italic, strikethrough and code toolbar",
+			"description": "Compact comment box",
 			"type": "registry:block",
 			"dependencies": [
 				"@lucide/svelte"
@@ -14103,7 +14103,7 @@
 		{
 			"name": "p-rich-editor-4",
 			"title": "Rich editor 4",
-			"description": "Rich editor with a top toolbar of dropdown menus for text style, color, lists and inserts",
+			"description": "Rich editor with a top toolbar",
 			"type": "registry:block",
 			"dependencies": [
 				"@lucide/svelte"
@@ -14126,7 +14126,7 @@
 		{
 			"name": "p-rich-editor-5",
 			"title": "Rich editor 5",
-			"description": "Rich editor with a full outlined button toolbar for formatting, lists and blocks",
+			"description": "Rich editor with a full outlined button toolbar",
 			"type": "registry:block",
 			"dependencies": [
 				"@lucide/svelte"

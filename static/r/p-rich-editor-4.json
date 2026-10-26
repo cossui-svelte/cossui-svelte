@@ -2,7 +2,7 @@
 	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
 	"name": "p-rich-editor-4",
 	"title": "Rich editor 4",
-	"description": "Rich editor with a top toolbar of dropdown menus for text style, color, lists and inserts",
+	"description": "Rich editor with a top toolbar",
 	"type": "registry:block",
 	"files": [
 		{

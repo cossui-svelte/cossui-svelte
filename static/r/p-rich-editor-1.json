@@ -2,7 +2,7 @@
 	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
 	"name": "p-rich-editor-1",
 	"title": "Rich editor 1",
-	"description": "Basic rich editor examples",
+	"description": "A rich example!",
 	"type": "registry:block",
 	"files": [
 		{

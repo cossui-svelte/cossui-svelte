@@ -267,7 +267,7 @@
 			"type": "registry:ui",
 			"path": "rich-editor/tiptap/components/Tiptap.svelte",
 			"target": "$lib/components/ui/rich-editor/tiptap/components/Tiptap.svelte",
-			"content": "<script lang=\"ts\">\n  import { type Snippet } from 'svelte';\n  import type { Editor } from '../Editor.ts';\n  import { setEditor } from './editorContext.js';\n\n  let { editor, children }: { editor: Editor | undefined; children?: Snippet } = $props();\n\n  if (editor) {\n    setEditor(editor);\n  }\n</script>\n\n{#if editor && children}\n  {@render children()}\n{/if}\n"
+			"content": "<script lang=\"ts\">\n  import { type Snippet } from 'svelte';\n  import type { Editor } from '../Editor.ts';\n  import { setEditor } from './editorContext.js';\n\n  let { editor, children }: { editor: Editor | undefined; children?: Snippet } = $props();\n\n  // Context is read once by descendants at init, so the initial editor is what we want to share.\n  // svelte-ignore state_referenced_locally\n  if (editor) {\n    setEditor(editor);\n  }\n</script>\n\n{#if editor && children}\n  {@render children()}\n{/if}\n"
 		},
 		{
 			"type": "registry:ui",
