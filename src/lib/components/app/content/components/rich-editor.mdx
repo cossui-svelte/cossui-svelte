@@ -1,0 +1,138 @@
+---
+title: Rich Editor
+description: A block-based rich text editor built on Tiptap, with a toolbar, bubble menu, slash commands and drag handles.
+---
+
+<ComponentPreview name="p-rich-editor-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn-svelte@latest add https://cossui-svelte.com/r/rich-editor.json
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @tiptap/core @tiptap/pm @tiptap/starter-kit @tiptap/extensions @tiptap/markdown @tiptap/suggestion @tiptap/extension-bubble-menu @tiptap/extension-drag-handle @tiptap/extension-code-block-lowlight @tiptap/extension-highlight @tiptap/extension-image @tiptap/extension-list @tiptap/extension-mathematics @tiptap/extension-subscript @tiptap/extension-superscript @tiptap/extension-table @tiptap/extension-table-of-contents @tiptap/extension-text-align @tiptap/extension-text-style @tiptap/extension-typography @floating-ui/dom lowlight katex mermaid mode-watcher
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="rich-editor" title="components/ui/rich-editor" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+Create an editor with `createEditor`, then pass it to `RichEditor` and compose the parts you need as children.
+
+```svelte
+<script lang="ts">
+  import { createEditor, RichEditor } from '#lib/components/ui/rich-editor';
+
+  const editor = createEditor({
+    onUpdate: () => console.log(editor?.getJSON())
+  });
+</script>
+
+<RichEditor {editor}>
+  <RichEditor.Toolbar />
+  <RichEditor.Content />
+  <RichEditor.BubbleMenu />
+  <RichEditor.DragHandle />
+</RichEditor>
+```
+
+`createEditor` returns `undefined` during SSR, so guard any direct use of `editor` (for example `editor?.commands.setContent(...)`).
+
+## API Reference
+
+### createEditor
+
+Creates a Tiptap editor preconfigured with the default extensions (starter kit, tables, task lists, math, mermaid, code blocks, callouts, media and slash commands).
+
+| Option          | Type                              | Default | Description                                                              |
+| --------------- | --------------------------------- | ------- | ------------------------------------------------------------------------ |
+| `extensions`    | `Extensions`                      | `[]`    | Extra Tiptap extensions appended to the defaults                         |
+| `onUpdate`      | `() => void`                      | -       | Called whenever the document changes                                     |
+| `collaborative` | `boolean`                         | `false` | Disables built-in history so Yjs collaboration can manage undo and redo  |
+| `onFileUpload`  | `(file: File) => Promise<string>` | -       | Uploads a dropped, pasted or selected media file and returns its URL     |
+
+### RichEditor
+
+Provides the editor to its children through context.
+
+| Prop     | Type                | Default | Description              |
+| -------- | ------------------- | ------- | ------------------------ |
+| `editor` | `Editor`            | -       | The editor from `createEditor` |
+
+### RichEditor.Content
+
+Renders the editable document, plus the link, math and table menus.
+
+### RichEditor.Toolbar
+
+A ready-made toolbar with undo/redo, headings, formatting, alignment, lists, media, colors and export.
+
+### RichEditor.BubbleMenu
+
+A floating menu shown when text is selected.
+
+### RichEditor.DragHandle / RichEditor.DragHandleExtended
+
+Block drag handles. The extended variant adds a block menu.
+
+### RichEditor.ToC
+
+A table of contents that updates as headings are added.
+
+### Custom toolbars
+
+The toolbar actions are exported as `commands` from `#lib/components/ui/rich-editor/commands`, each with an `onClick`, `isActive` and `clickable` function. Use them with `useEditorTransaction` to build your own toolbar, as the examples below do.
+
+## Examples
+
+### Notion-like
+
+Block-based editing with a table of contents and extended drag handles.
+
+<ComponentPreview name="p-rich-editor-2" />
+
+### Comment Box
+
+A compact editor with a bottom toolbar for bold, italic, strikethrough and code.
+
+<ComponentPreview name="p-rich-editor-3" />
+
+### Menu Toolbar
+
+A top toolbar built from dropdown menus for text style, color, lists and inserts.
+
+<ComponentPreview name="p-rich-editor-4" />
+
+### Outlined Toolbar
+
+A full toolbar of outlined buttons.
+
+<ComponentPreview name="p-rich-editor-5" />
