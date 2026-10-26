@@ -80,6 +80,7 @@
   }
 
   function handleGrantToggle(rowId: RowId, grantId: string, checked: boolean) {
+    // eslint-disable-next-line svelte/prefer-svelte-reactivity -- local copy, not reactive state
     const current = new Set(grantSelection[rowId]);
     if (checked) current.add(grantId);
     else current.delete(grantId);

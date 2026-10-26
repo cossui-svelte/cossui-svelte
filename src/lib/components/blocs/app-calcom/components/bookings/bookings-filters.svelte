@@ -15,6 +15,7 @@
   }
 
   function getUniqueEventTypes(bookings: Booking[]): { id: string; label: string }[] {
+    // eslint-disable-next-line svelte/prefer-svelte-reactivity -- local accumulator, not reactive state
     const eventTypeMap = new Map<string, { id: string; label: string }>();
     for (const booking of bookings) {
       if (booking.eventType) {
@@ -33,6 +34,7 @@
   function getUniqueMembers(
     bookings: Booking[]
   ): { avatar: string | null; id: string; label: string }[] {
+    // eslint-disable-next-line svelte/prefer-svelte-reactivity -- local accumulator, not reactive state
     const memberMap = new Map<string, { avatar: string | null; id: string; label: string }>();
     for (const booking of bookings) {
       if (booking.user?.name) {

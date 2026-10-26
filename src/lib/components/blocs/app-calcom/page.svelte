@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import AppCommand from './components/app-command/app-command.svelte';
   import DashboardLayout from './components/dashboard-layout.svelte';
   import RouteNotFound from './components/route-not-found.svelte';
@@ -13,7 +14,7 @@
 
   // The command dialog (handle-based) touches `requestAnimationFrame`, so it only mounts in the browser.
   let mounted = $state(false);
-  $effect(() => {
+  onMount(() => {
     mounted = true;
   });
 

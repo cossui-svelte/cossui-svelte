@@ -10,18 +10,21 @@
   };
 
   function subDays(date: Date, days: number): Date {
+    // eslint-disable-next-line svelte/prefer-svelte-reactivity -- plain date math, not reactive state
     const next = new Date(date);
     next.setDate(next.getDate() - days);
     return next;
   }
 
   function startOfDay(date: Date): Date {
+    // eslint-disable-next-line svelte/prefer-svelte-reactivity -- plain date math, not reactive state
     const d = new Date(date);
     d.setHours(0, 0, 0, 0);
     return d;
   }
 
   function endOfDay(date: Date): Date {
+    // eslint-disable-next-line svelte/prefer-svelte-reactivity -- plain date math, not reactive state
     const d = new Date(date);
     d.setHours(23, 59, 59, 999);
     return d;
@@ -37,6 +40,7 @@
 
   function endOfWeekMonday(date: Date): Date {
     const start = startOfWeekMonday(date);
+    // eslint-disable-next-line svelte/prefer-svelte-reactivity -- plain date math, not reactive state
     const end = new Date(start);
     end.setDate(start.getDate() + 6);
     return endOfDay(end);

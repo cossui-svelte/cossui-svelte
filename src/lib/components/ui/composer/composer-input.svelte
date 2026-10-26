@@ -65,6 +65,7 @@
     const input = editor?.inputElement;
     if (!scroll || !input) return;
     const frame = scroll.closest<HTMLElement>('[data-slot="composer"]');
+    // eslint-disable-next-line svelte/prefer-svelte-reactivity -- local to the effect, not reactive state
     const controls = new Set<HTMLElement>();
     let animationFrame: number | null = null;
 
@@ -161,6 +162,7 @@
   });
 
   // --- tokens: mount the token renderer into each host span inside the editable ---
+  // eslint-disable-next-line svelte/prefer-svelte-reactivity -- bookkeeping for mounted token hosts, intentionally non-reactive
   const mounted = new Map<HTMLElement, Record<string, unknown>>();
 
   function readToken(node: HTMLElement): ComposerTokenPart {

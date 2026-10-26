@@ -27,6 +27,7 @@
   };
 
   export function getUniqueUsers(webhooks: WebhookItem[]): UserFilterOption[] {
+    // eslint-disable-next-line svelte/prefer-svelte-reactivity -- local accumulator, not reactive state
     const userMap = new Map<string, UserFilterOption>();
 
     for (const webhook of webhooks) {
@@ -70,6 +71,7 @@
   }
 
   function groupWebhooksByUser(webhooks: WebhookItem[]) {
+    // eslint-disable-next-line svelte/prefer-svelte-reactivity -- local accumulator, not reactive state
     const groups = new Map<string, WebhookItem[]>();
     for (const webhook of webhooks) {
       const existing = groups.get(webhook.userId) ?? [];
