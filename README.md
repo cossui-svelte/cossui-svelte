@@ -32,7 +32,12 @@ This work is not affiliated with coss.com and therefore unofficial.
 
 ## Contributors
 
-[![Contributors](https://contrib.rocks/image?repo=cossui-svelte/cossui-svelte)](https://github.com/cossui-svelte/cossui-svelte/graphs/contributors)
+<p>
+  <a href="https://github.com/orefalo" title="Olivier Refalo"><img src="https://github.com/orefalo.png?size=96" width="48" height="48" alt="Olivier Refalo" style="border-radius:50%" /></a>
+  <a href="https://github.com/Tsuzat" title="Tsuzat"><img src="https://github.com/Tsuzat.png?size=96" width="48" height="48" alt="Tsuzat" style="border-radius:50%" /></a>
+</p>
+
+See all [contributors](https://github.com/cossui-svelte/cossui-svelte/graphs/contributors) on GitHub.
 
 ## Acknowledgements
 
@@ -43,6 +48,7 @@ This work is not affiliated with coss.com and therefore unofficial.
 - [FormSnap & Superforms](https://superforms.rocks/) - A full featured headless validation framework
 - [Places Autocomplete](https://github.com/gurbaaz27/shadcn-google-maps) - Address validation based on gmap
 - [Huey ColorPicker](https://hueycolor.pages.dev/) - A modular color picker
+- [Edra](https://github.com/Tsuzat/Edra) - A rich text editor for Svelte
 - [MapCN-Svelte](https://mapcn-svelte.vercel.app/) - A modular map component
 - [Svelte/SvelteKit](https://svelte.dev) - A quite intuitive web framework
 
