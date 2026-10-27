@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.1.0](https://github.com/cossui-svelte/cossui-svelte/compare/v1.0.0...v1.1.0) (2026-10-27)
+
+### ✨ Features
+
+* new rich-text particules ([cda789b](https://github.com/cossui-svelte/cossui-svelte/commit/cda789b8d58653f08800cb5b4b2e0a9786f1caba))
+* **rich-editor:** add complete rich editor implementation ([5f7a415](https://github.com/cossui-svelte/cossui-svelte/commit/5f7a415a2cea1861ccdbe9f42037978dfbcb2620))
+* **rich-editor:** add p-rich-editor-2 and refine editor components ([71778a4](https://github.com/cossui-svelte/cossui-svelte/commit/71778a43c0bced440a37448930683edfd6d1e2c2))
+
+### 🐛 Bug Fixes
+
+* cosmetics ([31277ca](https://github.com/cossui-svelte/cossui-svelte/commit/31277ca59bbb17059610020556f58ce05bd08ae1))
+* lazy load the mermaid dependency ([6be048a](https://github.com/cossui-svelte/cossui-svelte/commit/6be048a3460df51fa9fe0f9bb6a0ef06fba37185))
+* lint error msgs ([44dcbc7](https://github.com/cossui-svelte/cossui-svelte/commit/44dcbc78064b2827e6451fd81c818b979f2bf6b7))
+* pnpm format warnings ([2a83dcd](https://github.com/cossui-svelte/cossui-svelte/commit/2a83dcd368c12d1882c4747e2912b456d3f7ef99))
+* **rich-editor:** replace combobox with native select for code block ([9fbb084](https://github.com/cossui-svelte/cossui-svelte/commit/9fbb084262892eefa8c55ace647a1580e1709aee))
+* **rich-editor:** stabilize node-view popups and editor interactions ([68b91c2](https://github.com/cossui-svelte/cossui-svelte/commit/68b91c2434af9503e1a93edc7da98834d1417a32))
+* **rich-editor:** update $app/environment import to isBrowser helper ([9f3f50d](https://github.com/cossui-svelte/cossui-svelte/commit/9f3f50d65ab3b3b473af706b93d3ad9483e870c8))
+
+### 📝 Documentation
+
+* generate rich-editor doc page ([a40a526](https://github.com/cossui-svelte/cossui-svelte/commit/a40a52658081d6c0449138e01345c5508877c996))
+* give credits ([4d0d2db](https://github.com/cossui-svelte/cossui-svelte/commit/4d0d2dbab0abe074d223d2fb2d2ee6c86eca75d7))
+
+### 🚚 Chores
+
+* update BUGS.md ([d3bb540](https://github.com/cossui-svelte/cossui-svelte/commit/d3bb54059a4c9ab30c5e5ecef0182bf85c921fce))
+
 ## [1.0.0](https://github.com/cossui-svelte/cossui-svelte/compare/v0.9.30...v1.0.0) (2026-10-20)
 
 ### 🐛 Bug Fixes
