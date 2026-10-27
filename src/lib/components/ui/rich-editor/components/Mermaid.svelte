@@ -9,7 +9,7 @@
   import TriangleAlert from '@lucide/svelte/icons/triangle-alert';
   import Workflow from '@lucide/svelte/icons/workflow';
   import type { NodeViewProps } from '@tiptap/core';
-  import mermaid from 'mermaid';
+  import { mode as themeMode } from 'mode-watcher';
   import { onMount, onDestroy, tick } from 'svelte';
   import { Button } from '#lib/components/ui/button/index.js';
   import { Tabs, TabsList, TabsTab } from '#lib/components/ui/tabs/index.js';
@@ -50,6 +50,13 @@
 
     const id = `mermaid-${crypto.randomUUID().slice(0, 8)}`;
     try {
+      const { default: mermaid } = await import('mermaid');
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: themeMode.current === 'dark' ? 'dark' : 'default',
+        securityLevel: 'loose',
+        fontFamily: 'inherit'
+      });
       const { svg, bindFunctions } = await mermaid.render(id, source);
       // Stale check — discard if a newer render was triggered
       if (thisRender !== renderCounter) return;

@@ -1,7 +1,5 @@
 <script lang="ts">
-  import mermaid from 'mermaid';
   import './editor.css';
-  import { mode } from 'mode-watcher';
   import { cn } from '#lib/utils.js';
   import {
     MathBlock,
@@ -16,13 +14,6 @@
     class?: string;
   }
   const { class: className = '' }: Props = $props();
-
-  mermaid.initialize({
-    startOnLoad: false,
-    theme: mode.current === 'dark' ? 'dark' : 'default',
-    securityLevel: 'loose',
-    fontFamily: 'inherit'
-  });
 </script>
 
 <Link />
