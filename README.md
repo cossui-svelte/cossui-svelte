@@ -22,13 +22,7 @@ This work is not affiliated with coss.com and therefore unofficial.
 
 ## Star History
 
-<a href="https://www.star-history.com/?repos=cossui-svelte%2Fcossui-svelte&type=date&legend=top-left">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=cossui-svelte/cossui-svelte&type=date&theme=dark&legend=top-left&sealed_token=M4HW4n7KguTD-r4cBbHMPrZT4oaFlxwETtAy3jUbKCnw51EfXwPyssIn8ceVDumXFo75rSiF0drTvAiFw7fGdvzu8RsiSSMgWW2X1Zm2Ay8cGdu3_WzI7A" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=cossui-svelte/cossui-svelte&type=date&legend=top-left&sealed_token=M4HW4n7KguTD-r4cBbHMPrZT4oaFlxwETtAy3jUbKCnw51EfXwPyssIn8ceVDumXFo75rSiF0drTvAiFw7fGdvzu8RsiSSMgWW2X1Zm2Ay8cGdu3_WzI7A" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=cossui-svelte/cossui-svelte&type=date&legend=top-left&sealed_token=M4HW4n7KguTD-r4cBbHMPrZT4oaFlxwETtAy3jUbKCnw51EfXwPyssIn8ceVDumXFo75rSiF0drTvAiFw7fGdvzu8RsiSSMgWW2X1Zm2Ay8cGdu3_WzI7A" />
- </picture>
-</a>
+[![Star History of cossui-svelte/cossui-svelte](https://starhistory.link/cossui-svelte/cossui-svelte.svg?theme=mono&style=space)](https://starhistory.link/cossui-svelte/cossui-svelte)
 
 ## Contributors
 
