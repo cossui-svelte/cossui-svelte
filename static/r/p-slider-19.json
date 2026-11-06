@@ -1,20 +1,20 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "p-slider-19",
-	"title": "Slider 19",
-	"description": "Vertical slider with input",
-	"type": "registry:block",
-	"files": [
-		{
-			"type": "registry:block",
-			"path": "p-slider-19.svelte",
-			"target": "$lib/components/particles/slider/p-slider-19.svelte",
-			"content": "<script lang=\"ts\">\n  import {\n    NumberField,\n    NumberFieldGroup,\n    NumberFieldInput\n  } from '#lib/components/ui/number-field/index.js';\n  import { Slider } from '#lib/components/ui/slider/index.js';\n\n  const min = 0;\n  const max = 100;\n\n  let value = $state(25);\n</script>\n\n<div class=\"flex flex-col items-center justify-center gap-4\">\n  <Slider getAriaLabel={() => 'Slider value'} {max} {min} orientation=\"vertical\" bind:value />\n  <NumberField class=\"w-16\" {max} {min} bind:value size=\"sm\">\n    <NumberFieldGroup>\n      <NumberFieldInput aria-label=\"Enter slider value\" />\n    </NumberFieldGroup>\n  </NumberField>\n</div>\n"
-		}
-	],
-	"registryDependencies": [
-		"number-field",
-		"slider"
-	],
-	"dependencies": []
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-slider-19",
+  "title": "Slider 19",
+  "description": "Vertical slider with input",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-slider-19.svelte",
+      "target": "particles/slider/p-slider-19.svelte",
+      "content": "<script lang=\"ts\">\n  import {\n    NumberField,\n    NumberFieldGroup,\n    NumberFieldInput\n  } from '$lib/components/ui/number-field/index.js';\n  import { Slider } from '$lib/components/ui/slider/index.js';\n\n  const min = 0;\n  const max = 100;\n\n  let value = $state(25);\n</script>\n\n<div class=\"flex flex-col items-center justify-center gap-4\">\n  <Slider getAriaLabel={() => 'Slider value'} {max} {min} orientation=\"vertical\" bind:value />\n  <NumberField class=\"w-16\" {max} {min} bind:value size=\"sm\">\n    <NumberFieldGroup>\n      <NumberFieldInput aria-label=\"Enter slider value\" />\n    </NumberFieldGroup>\n  </NumberField>\n</div>\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/number-field.json",
+    "https://cossui-svelte.com/r/slider.json"
+  ],
+  "dependencies": []
 }

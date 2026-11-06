@@ -1,19 +1,19 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "p-meter-2",
-	"title": "Meter 2",
-	"description": "Simple meter",
-	"type": "registry:block",
-	"files": [
-		{
-			"type": "registry:block",
-			"path": "p-meter-2.svelte",
-			"target": "$lib/components/particles/meter/p-meter-2.svelte",
-			"content": "<script lang=\"ts\">\n  import { Meter } from '#lib/components/ui/meter/index.js';\n</script>\n\n<Meter aria-label=\"Storage usage\" value={50} />\n"
-		}
-	],
-	"registryDependencies": [
-		"meter"
-	],
-	"dependencies": []
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-meter-2",
+  "title": "Meter 2",
+  "description": "Simple meter",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-meter-2.svelte",
+      "target": "particles/meter/p-meter-2.svelte",
+      "content": "<script lang=\"ts\">\n  import { Meter } from '$lib/components/ui/meter/index.js';\n</script>\n\n<Meter aria-label=\"Storage usage\" value={50} />\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/meter.json"
+  ],
+  "dependencies": []
 }

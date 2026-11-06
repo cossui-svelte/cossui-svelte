@@ -1,22 +1,22 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "p-composer-9",
-	"title": "Composer 9",
-	"description": "Rounded adaptive composer with circular actions",
-	"type": "registry:block",
-	"files": [
-		{
-			"type": "registry:block",
-			"path": "p-composer-9.svelte",
-			"target": "$lib/components/particles/composer/p-composer-9.svelte",
-			"content": "<script lang=\"ts\">\n  import ArrowUp from '@lucide/svelte/icons/arrow-up';\n  import Plus from '@lucide/svelte/icons/plus';\n  import { Button } from '#lib/components/ui/button/index.js';\n  import {\n    Composer,\n    ComposerActionGroup,\n    ComposerActions,\n    ComposerInput,\n    ComposerSubmit,\n    getComposerText,\n    type ComposerValue\n  } from '#lib/components/ui/composer/index.js';\n\n  let value = $state<ComposerValue>([]);\n  let notice = $state('');\n</script>\n\n<div class=\"flex w-full max-w-xl flex-col gap-2\">\n  <Composer\n    class=\"rounded-[calc(--spacing(6.5)+1px)] before:rounded-[--spacing(6.5)] sm:rounded-[calc(--spacing(6)+1px)] sm:before:rounded-[--spacing(6)]\"\n    layout=\"adaptive\"\n    bind:value\n    onSubmit={(draft) => {\n      notice = `Sent: ${getComposerText(draft)}`;\n      value = [];\n    }}\n  >\n    <ComposerInput aria-label=\"Message\" placeholder=\"Write a message…\" />\n    <ComposerActions>\n      <ComposerActionGroup>\n        <Button\n          aria-label=\"Add an attachment\"\n          class=\"rounded-full\"\n          size=\"icon\"\n          type=\"button\"\n          variant=\"ghost\"\n          onclick={() => (notice = 'Add an attachment')}\n        >\n          <Plus aria-hidden=\"true\" />\n        </Button>\n      </ComposerActionGroup>\n      <ComposerActionGroup align=\"end\">\n        <ComposerSubmit aria-label=\"Send message\" class=\"rounded-full\" size=\"icon\">\n          <ArrowUp aria-hidden=\"true\" />\n        </ComposerSubmit>\n      </ComposerActionGroup>\n    </ComposerActions>\n  </Composer>\n  <p class=\"min-h-5 text-muted-foreground text-sm\" role=\"status\">{notice}</p>\n</div>\n"
-		}
-	],
-	"registryDependencies": [
-		"button",
-		"composer"
-	],
-	"dependencies": [
-		"@lucide/svelte"
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-composer-9",
+  "title": "Composer 9",
+  "description": "Rounded adaptive composer with circular actions",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-composer-9.svelte",
+      "target": "particles/composer/p-composer-9.svelte",
+      "content": "<script lang=\"ts\">\n  import ArrowUp from '@lucide/svelte/icons/arrow-up';\n  import Plus from '@lucide/svelte/icons/plus';\n  import { Button } from '$lib/components/ui/button/index.js';\n  import {\n    Composer,\n    ComposerActionGroup,\n    ComposerActions,\n    ComposerInput,\n    ComposerSubmit,\n    getComposerText,\n    type ComposerValue\n  } from '$lib/components/ui/composer/index.js';\n\n  let value = $state<ComposerValue>([]);\n  let notice = $state('');\n</script>\n\n<div class=\"flex w-full max-w-xl flex-col gap-2\">\n  <Composer\n    class=\"rounded-[calc(--spacing(6.5)+1px)] before:rounded-[--spacing(6.5)] sm:rounded-[calc(--spacing(6)+1px)] sm:before:rounded-[--spacing(6)]\"\n    layout=\"adaptive\"\n    bind:value\n    onSubmit={(draft) => {\n      notice = `Sent: ${getComposerText(draft)}`;\n      value = [];\n    }}\n  >\n    <ComposerInput aria-label=\"Message\" placeholder=\"Write a message…\" />\n    <ComposerActions>\n      <ComposerActionGroup>\n        <Button\n          aria-label=\"Add an attachment\"\n          class=\"rounded-full\"\n          size=\"icon\"\n          type=\"button\"\n          variant=\"ghost\"\n          onclick={() => (notice = 'Add an attachment')}\n        >\n          <Plus aria-hidden=\"true\" />\n        </Button>\n      </ComposerActionGroup>\n      <ComposerActionGroup align=\"end\">\n        <ComposerSubmit aria-label=\"Send message\" class=\"rounded-full\" size=\"icon\">\n          <ArrowUp aria-hidden=\"true\" />\n        </ComposerSubmit>\n      </ComposerActionGroup>\n    </ComposerActions>\n  </Composer>\n  <p class=\"min-h-5 text-muted-foreground text-sm\" role=\"status\">{notice}</p>\n</div>\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/button.json",
+    "https://cossui-svelte.com/r/composer.json"
+  ],
+  "dependencies": [
+    "@lucide/svelte"
+  ]
 }

@@ -1,19 +1,19 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "p-avatar-17",
-	"title": "Avatar 17",
-	"description": "Avatar rendered as a button",
-	"type": "registry:block",
-	"files": [
-		{
-			"type": "registry:block",
-			"path": "p-avatar-17.svelte",
-			"target": "$lib/components/particles/avatar/p-avatar-17.svelte",
-			"content": "<script lang=\"ts\">\n  import { Avatar, AvatarFallback, AvatarImage } from '#lib/components/ui/avatar/index.js';\n</script>\n\n<Avatar\n  as=\"button\"\n  type=\"button\"\n  aria-label=\"Open Frida Kahlo's profile\"\n  class=\"cursor-pointer outline-offset-2 focus-visible:outline-2 focus-visible:outline-ring\"\n>\n  <AvatarImage\n    alt=\"Frida Kahlo\"\n    src=\"https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?w=96&h=96&dpr=2&q=80\"\n  />\n  <AvatarFallback>FK</AvatarFallback>\n</Avatar>\n"
-		}
-	],
-	"registryDependencies": [
-		"avatar"
-	],
-	"dependencies": []
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-avatar-17",
+  "title": "Avatar 17",
+  "description": "Avatar rendered as a button",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-avatar-17.svelte",
+      "target": "particles/avatar/p-avatar-17.svelte",
+      "content": "<script lang=\"ts\">\n  import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar/index.js';\n</script>\n\n<Avatar\n  as=\"button\"\n  type=\"button\"\n  aria-label=\"Open Frida Kahlo's profile\"\n  class=\"cursor-pointer outline-offset-2 focus-visible:outline-2 focus-visible:outline-ring\"\n>\n  <AvatarImage\n    alt=\"Frida Kahlo\"\n    src=\"https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?w=96&h=96&dpr=2&q=80\"\n  />\n  <AvatarFallback>FK</AvatarFallback>\n</Avatar>\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/avatar.json"
+  ],
+  "dependencies": []
 }

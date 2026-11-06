@@ -1,27 +1,27 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "separator",
-	"title": "Separator",
-	"description": "A separator element accessible to screen readers.",
-	"type": "registry:ui",
-	"files": [
-		{
-			"type": "registry:ui",
-			"path": "separator/index.ts",
-			"target": "$lib/components/ui/separator/index.ts",
-			"content": "import { Separator as SeparatorPrimitive } from '@shardsui/svelte/separator';\n\nexport { default as Separator } from './separator.svelte';\nexport { SeparatorPrimitive };\n"
-		},
-		{
-			"type": "registry:ui",
-			"path": "separator/separator.svelte",
-			"target": "$lib/components/ui/separator/separator.svelte",
-			"content": "<script lang=\"ts\">\n  import { Separator as SeparatorPrimitive } from '@shardsui/svelte/separator';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '#lib/utils.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    orientation = 'horizontal',\n    ...restProps\n  }: ComponentProps<typeof SeparatorPrimitive> = $props();\n</script>\n\n<SeparatorPrimitive\n  bind:ref\n  class={cn(\n    \"shrink-0 bg-border data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px data-[orientation=vertical]:not-[[class^='h-']]:not-[[class*='_h-']]:self-stretch\",\n    className\n  )}\n  data-slot=\"separator\"\n  {orientation}\n  {...restProps}\n/>\n"
-		}
-	],
-	"registryDependencies": [
-		"utils"
-	],
-	"dependencies": [
-		"@shardsui/svelte@0.1.0-beta.2"
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "separator",
+  "title": "Separator",
+  "description": "A separator element accessible to screen readers.",
+  "type": "registry:ui",
+  "files": [
+    {
+      "type": "registry:ui",
+      "path": "separator/index.ts",
+      "target": "separator/index.ts",
+      "content": "import { Separator as SeparatorPrimitive } from '@shardsui/svelte/separator';\n\nexport { default as Separator } from './separator.svelte';\nexport { SeparatorPrimitive };\n"
+    },
+    {
+      "type": "registry:ui",
+      "path": "separator/separator.svelte",
+      "target": "separator/separator.svelte",
+      "content": "<script lang=\"ts\">\n  import { Separator as SeparatorPrimitive } from '@shardsui/svelte/separator';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    orientation = 'horizontal',\n    ...restProps\n  }: ComponentProps<typeof SeparatorPrimitive> = $props();\n</script>\n\n<SeparatorPrimitive\n  bind:ref\n  class={cn(\n    \"shrink-0 bg-border data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px data-[orientation=vertical]:not-[[class^='h-']]:not-[[class*='_h-']]:self-stretch\",\n    className\n  )}\n  data-slot=\"separator\"\n  {orientation}\n  {...restProps}\n/>\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/utils.json"
+  ],
+  "dependencies": [
+    "@shardsui/svelte@0.1.0-beta.2"
+  ]
 }

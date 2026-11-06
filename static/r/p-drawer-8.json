@@ -1,23 +1,23 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "p-drawer-8",
-	"title": "Drawer 8",
-	"description": "Nested right drawers with inset variant",
-	"type": "registry:block",
-	"files": [
-		{
-			"type": "registry:block",
-			"path": "p-drawer-8.svelte",
-			"target": "$lib/components/particles/drawer/p-drawer-8.svelte",
-			"content": "<script lang=\"ts\">\n  import { Button, buttonVariants } from '#lib/components/ui/button/index.js';\n  import {\n    Drawer,\n    DrawerClose,\n    DrawerDescription,\n    DrawerFooter,\n    DrawerHeader,\n    DrawerPanel,\n    DrawerPopup,\n    DrawerTitle,\n    DrawerTrigger\n  } from '#lib/components/ui/drawer/index.js';\n  import { Field, FieldLabel } from '#lib/components/ui/field/index.js';\n  import { Form } from '#lib/components/ui/form/index.js';\n  import { Input } from '#lib/components/ui/input/index.js';\n</script>\n\n<Drawer position=\"right\">\n  <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Nested inset drawers</DrawerTrigger>\n  <DrawerPopup variant=\"inset\">\n    <DrawerHeader>\n      <DrawerTitle>Manage team member</DrawerTitle>\n      <DrawerDescription>View and manage a user in your team.</DrawerDescription>\n    </DrawerHeader>\n    <DrawerPanel class=\"grid gap-4\">\n      <div class=\"grid gap-1\">\n        <p class=\"text-muted-foreground text-sm\">Name</p>\n        <p class=\"font-medium text-sm\">Bora Baloglu</p>\n      </div>\n      <div class=\"grid gap-1\">\n        <p class=\"text-muted-foreground text-sm\">Email</p>\n        <p class=\"font-medium text-sm\">bora@example.com</p>\n      </div>\n    </DrawerPanel>\n    <DrawerFooter>\n      <Drawer position=\"right\">\n        <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Edit details</DrawerTrigger>\n        <DrawerPopup variant=\"inset\">\n          <DrawerHeader>\n            <DrawerTitle>Edit details</DrawerTitle>\n            <DrawerDescription>Make changes to the member's information.</DrawerDescription>\n          </DrawerHeader>\n          <Form class=\"contents\">\n            <DrawerPanel class=\"grid gap-4\">\n              <Field>\n                <FieldLabel>Name</FieldLabel>\n                <Input type=\"text\" value=\"Bora Baloglu\" />\n              </Field>\n              <Field>\n                <FieldLabel>Email</FieldLabel>\n                <Input type=\"email\" value=\"bora@example.com\" />\n              </Field>\n            </DrawerPanel>\n            <DrawerFooter>\n              <DrawerClose class={buttonVariants({ variant: 'ghost' })}>Cancel</DrawerClose>\n              <Button type=\"submit\">Save changes</Button>\n            </DrawerFooter>\n          </Form>\n        </DrawerPopup>\n      </Drawer>\n    </DrawerFooter>\n  </DrawerPopup>\n</Drawer>\n"
-		}
-	],
-	"registryDependencies": [
-		"button",
-		"drawer",
-		"field",
-		"form",
-		"input"
-	],
-	"dependencies": []
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-drawer-8",
+  "title": "Drawer 8",
+  "description": "Nested right drawers with inset variant",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-drawer-8.svelte",
+      "target": "particles/drawer/p-drawer-8.svelte",
+      "content": "<script lang=\"ts\">\n  import { Button, buttonVariants } from '$lib/components/ui/button/index.js';\n  import {\n    Drawer,\n    DrawerClose,\n    DrawerDescription,\n    DrawerFooter,\n    DrawerHeader,\n    DrawerPanel,\n    DrawerPopup,\n    DrawerTitle,\n    DrawerTrigger\n  } from '$lib/components/ui/drawer/index.js';\n  import { Field, FieldLabel } from '$lib/components/ui/field/index.js';\n  import { Form } from '$lib/components/ui/form/index.js';\n  import { Input } from '$lib/components/ui/input/index.js';\n</script>\n\n<Drawer position=\"right\">\n  <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Nested inset drawers</DrawerTrigger>\n  <DrawerPopup variant=\"inset\">\n    <DrawerHeader>\n      <DrawerTitle>Manage team member</DrawerTitle>\n      <DrawerDescription>View and manage a user in your team.</DrawerDescription>\n    </DrawerHeader>\n    <DrawerPanel class=\"grid gap-4\">\n      <div class=\"grid gap-1\">\n        <p class=\"text-muted-foreground text-sm\">Name</p>\n        <p class=\"font-medium text-sm\">Bora Baloglu</p>\n      </div>\n      <div class=\"grid gap-1\">\n        <p class=\"text-muted-foreground text-sm\">Email</p>\n        <p class=\"font-medium text-sm\">bora@example.com</p>\n      </div>\n    </DrawerPanel>\n    <DrawerFooter>\n      <Drawer position=\"right\">\n        <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Edit details</DrawerTrigger>\n        <DrawerPopup variant=\"inset\">\n          <DrawerHeader>\n            <DrawerTitle>Edit details</DrawerTitle>\n            <DrawerDescription>Make changes to the member's information.</DrawerDescription>\n          </DrawerHeader>\n          <Form class=\"contents\">\n            <DrawerPanel class=\"grid gap-4\">\n              <Field>\n                <FieldLabel>Name</FieldLabel>\n                <Input type=\"text\" value=\"Bora Baloglu\" />\n              </Field>\n              <Field>\n                <FieldLabel>Email</FieldLabel>\n                <Input type=\"email\" value=\"bora@example.com\" />\n              </Field>\n            </DrawerPanel>\n            <DrawerFooter>\n              <DrawerClose class={buttonVariants({ variant: 'ghost' })}>Cancel</DrawerClose>\n              <Button type=\"submit\">Save changes</Button>\n            </DrawerFooter>\n          </Form>\n        </DrawerPopup>\n      </Drawer>\n    </DrawerFooter>\n  </DrawerPopup>\n</Drawer>\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/button.json",
+    "https://cossui-svelte.com/r/drawer.json",
+    "https://cossui-svelte.com/r/field.json",
+    "https://cossui-svelte.com/r/form.json",
+    "https://cossui-svelte.com/r/input.json"
+  ],
+  "dependencies": []
 }

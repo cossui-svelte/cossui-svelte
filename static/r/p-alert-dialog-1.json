@@ -1,20 +1,20 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "p-alert-dialog-1",
-	"title": "Alert dialog 1",
-	"description": "Alert dialog",
-	"type": "registry:block",
-	"files": [
-		{
-			"type": "registry:block",
-			"path": "p-alert-dialog-1.svelte",
-			"target": "$lib/components/particles/alert-dialog/p-alert-dialog-1.svelte",
-			"content": "<script lang=\"ts\">\n  import {\n    AlertDialog,\n    AlertDialogClose,\n    AlertDialogDescription,\n    AlertDialogFooter,\n    AlertDialogHeader,\n    AlertDialogPopup,\n    AlertDialogTitle,\n    AlertDialogTrigger\n  } from '#lib/components/ui/alert-dialog/index.js';\n  import { buttonVariants } from '#lib/components/ui/button/index.js';\n</script>\n\n<AlertDialog>\n  <AlertDialogTrigger class={buttonVariants({ variant: 'destructive-outline' })}>\n    Delete Account\n  </AlertDialogTrigger>\n  <AlertDialogPopup>\n    <AlertDialogHeader>\n      <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>\n      <AlertDialogDescription>\n        This action cannot be undone. This will permanently delete your account and remove your data\n        from our servers.\n      </AlertDialogDescription>\n    </AlertDialogHeader>\n    <AlertDialogFooter>\n      <AlertDialogClose class={buttonVariants({ variant: 'ghost' })}>Cancel</AlertDialogClose>\n      <AlertDialogClose class={buttonVariants({ variant: 'destructive' })}>\n        Delete Account\n      </AlertDialogClose>\n    </AlertDialogFooter>\n  </AlertDialogPopup>\n</AlertDialog>\n"
-		}
-	],
-	"registryDependencies": [
-		"alert-dialog",
-		"button"
-	],
-	"dependencies": []
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-alert-dialog-1",
+  "title": "Alert dialog 1",
+  "description": "Alert dialog",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-alert-dialog-1.svelte",
+      "target": "particles/alert-dialog/p-alert-dialog-1.svelte",
+      "content": "<script lang=\"ts\">\n  import {\n    AlertDialog,\n    AlertDialogClose,\n    AlertDialogDescription,\n    AlertDialogFooter,\n    AlertDialogHeader,\n    AlertDialogPopup,\n    AlertDialogTitle,\n    AlertDialogTrigger\n  } from '$lib/components/ui/alert-dialog/index.js';\n  import { buttonVariants } from '$lib/components/ui/button/index.js';\n</script>\n\n<AlertDialog>\n  <AlertDialogTrigger class={buttonVariants({ variant: 'destructive-outline' })}>\n    Delete Account\n  </AlertDialogTrigger>\n  <AlertDialogPopup>\n    <AlertDialogHeader>\n      <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>\n      <AlertDialogDescription>\n        This action cannot be undone. This will permanently delete your account and remove your data\n        from our servers.\n      </AlertDialogDescription>\n    </AlertDialogHeader>\n    <AlertDialogFooter>\n      <AlertDialogClose class={buttonVariants({ variant: 'ghost' })}>Cancel</AlertDialogClose>\n      <AlertDialogClose class={buttonVariants({ variant: 'destructive' })}>\n        Delete Account\n      </AlertDialogClose>\n    </AlertDialogFooter>\n  </AlertDialogPopup>\n</AlertDialog>\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/alert-dialog.json",
+    "https://cossui-svelte.com/r/button.json"
+  ],
+  "dependencies": []
 }

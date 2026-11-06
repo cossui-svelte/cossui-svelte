@@ -1,20 +1,20 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "p-group-17",
-	"title": "Group 17",
-	"description": "Group with input and currency text",
-	"type": "registry:block",
-	"files": [
-		{
-			"type": "registry:block",
-			"path": "p-group-17.svelte",
-			"target": "$lib/components/particles/group/p-group-17.svelte",
-			"content": "<script lang=\"ts\">\n  import { Group, GroupSeparator, GroupText } from '#lib/components/ui/group/index.js';\n  import { Input } from '#lib/components/ui/input/index.js';\n</script>\n\n<Group aria-label=\"Price input\">\n  <Input aria-label=\"Enter the amount\" class=\"text-right\" id=\"amount\" value=\"100\" type=\"text\" />\n  <GroupSeparator />\n  <GroupText>USD</GroupText>\n</Group>\n"
-		}
-	],
-	"registryDependencies": [
-		"group",
-		"input"
-	],
-	"dependencies": []
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-group-17",
+  "title": "Group 17",
+  "description": "Group with input and currency text",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-group-17.svelte",
+      "target": "particles/group/p-group-17.svelte",
+      "content": "<script lang=\"ts\">\n  import { Group, GroupSeparator, GroupText } from '$lib/components/ui/group/index.js';\n  import { Input } from '$lib/components/ui/input/index.js';\n</script>\n\n<Group aria-label=\"Price input\">\n  <Input aria-label=\"Enter the amount\" class=\"text-right\" id=\"amount\" value=\"100\" type=\"text\" />\n  <GroupSeparator />\n  <GroupText>USD</GroupText>\n</Group>\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/group.json",
+    "https://cossui-svelte.com/r/input.json"
+  ],
+  "dependencies": []
 }

@@ -1,22 +1,22 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "p-field-4",
-	"title": "Field 4",
-	"description": "Field showing validation error",
-	"type": "registry:block",
-	"files": [
-		{
-			"type": "registry:block",
-			"path": "p-field-4.svelte",
-			"target": "$lib/components/particles/field/p-field-4.svelte",
-			"content": "<script lang=\"ts\">\n  import { Button } from '#lib/components/ui/button/index.js';\n  import { Field, FieldError, FieldLabel } from '#lib/components/ui/field/index.js';\n  import { Form } from '#lib/components/ui/form/index.js';\n  import { Input } from '#lib/components/ui/input/index.js';\n\n  let loading = $state(false);\n\n  async function handleSubmit(event: SubmitEvent) {\n    event.preventDefault();\n    const formData = new FormData(event.currentTarget as HTMLFormElement);\n    loading = true;\n    await new Promise((r) => setTimeout(r, 800));\n    loading = false;\n    alert(`Email: ${formData.get('email') ?? ''}`);\n  }\n</script>\n\n<Form class=\"flex w-full flex-col gap-4\" onsubmit={handleSubmit}>\n  <Field name=\"email\">\n    <FieldLabel>Email</FieldLabel>\n    <Input placeholder=\"Enter your email\" required type=\"email\" />\n    <FieldError>Please enter a valid email address.</FieldError>\n  </Field>\n  <Button {loading} type=\"submit\">Submit</Button>\n</Form>\n"
-		}
-	],
-	"registryDependencies": [
-		"button",
-		"field",
-		"form",
-		"input"
-	],
-	"dependencies": []
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-field-4",
+  "title": "Field 4",
+  "description": "Field showing validation error",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-field-4.svelte",
+      "target": "particles/field/p-field-4.svelte",
+      "content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button/index.js';\n  import { Field, FieldError, FieldLabel } from '$lib/components/ui/field/index.js';\n  import { Form } from '$lib/components/ui/form/index.js';\n  import { Input } from '$lib/components/ui/input/index.js';\n\n  let loading = $state(false);\n\n  async function handleSubmit(event: SubmitEvent) {\n    event.preventDefault();\n    const formData = new FormData(event.currentTarget as HTMLFormElement);\n    loading = true;\n    await new Promise((r) => setTimeout(r, 800));\n    loading = false;\n    alert(`Email: ${formData.get('email') ?? ''}`);\n  }\n</script>\n\n<Form class=\"flex w-full flex-col gap-4\" onsubmit={handleSubmit}>\n  <Field name=\"email\">\n    <FieldLabel>Email</FieldLabel>\n    <Input placeholder=\"Enter your email\" required type=\"email\" />\n    <FieldError>Please enter a valid email address.</FieldError>\n  </Field>\n  <Button {loading} type=\"submit\">Submit</Button>\n</Form>\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/button.json",
+    "https://cossui-svelte.com/r/field.json",
+    "https://cossui-svelte.com/r/form.json",
+    "https://cossui-svelte.com/r/input.json"
+  ],
+  "dependencies": []
 }

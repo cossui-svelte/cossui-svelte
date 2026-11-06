@@ -1,20 +1,20 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "p-toast-4",
-	"title": "Toast 4",
-	"description": "Stacked toast with primary action (undo)",
-	"type": "registry:block",
-	"files": [
-		{
-			"type": "registry:block",
-			"path": "p-toast-4.svelte",
-			"target": "$lib/components/particles/toast/p-toast-4.svelte",
-			"content": "<script lang=\"ts\">\n  import { Button } from '#lib/components/ui/button/index.js';\n  import { toastManager } from '#lib/components/ui/toast/index.js';\n</script>\n\n<Button\n  onclick={() => {\n    const id = toastManager.add({\n      actionProps: {\n        children: 'Undo',\n        onclick: () => {\n          toastManager.close(id);\n          toastManager.add({\n            description: 'The action has been reverted.',\n            title: 'Action undone',\n            type: 'info'\n          });\n        }\n      },\n      description: 'You can undo this action.',\n      timeout: 1000000,\n      title: 'Action performed',\n      type: 'success'\n    });\n  }}\n  variant=\"outline\"\n>\n  Perform Action\n</Button>\n"
-		}
-	],
-	"registryDependencies": [
-		"button",
-		"toast"
-	],
-	"dependencies": []
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-toast-4",
+  "title": "Toast 4",
+  "description": "Stacked toast with primary action (undo)",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-toast-4.svelte",
+      "target": "particles/toast/p-toast-4.svelte",
+      "content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button/index.js';\n  import { toastManager } from '$lib/components/ui/toast/index.js';\n</script>\n\n<Button\n  onclick={() => {\n    const id = toastManager.add({\n      actionProps: {\n        children: 'Undo',\n        onclick: () => {\n          toastManager.close(id);\n          toastManager.add({\n            description: 'The action has been reverted.',\n            title: 'Action undone',\n            type: 'info'\n          });\n        }\n      },\n      description: 'You can undo this action.',\n      timeout: 1000000,\n      title: 'Action performed',\n      type: 'success'\n    });\n  }}\n  variant=\"outline\"\n>\n  Perform Action\n</Button>\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/button.json",
+    "https://cossui-svelte.com/r/toast.json"
+  ],
+  "dependencies": []
 }

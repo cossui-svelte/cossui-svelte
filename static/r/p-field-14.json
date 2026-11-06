@@ -1,22 +1,22 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "p-field-14",
-	"title": "Field 14",
-	"description": "Field with radio group",
-	"type": "registry:block",
-	"files": [
-		{
-			"type": "registry:block",
-			"path": "p-field-14.svelte",
-			"target": "$lib/components/particles/field/p-field-14.svelte",
-			"content": "<script lang=\"ts\">\n  import {\n    Field,\n    FieldDescription,\n    FieldItem,\n    FieldLabel\n  } from '#lib/components/ui/field/index.js';\n  import { Fieldset, FieldsetLegend } from '#lib/components/ui/fieldset/index.js';\n  import { Form } from '#lib/components/ui/form/index.js';\n  import { Radio, RadioGroup } from '#lib/components/ui/radio-group/index.js';\n</script>\n\n<Field name=\"plan\" class=\"gap-2\">\n  <Fieldset>\n    <FieldsetLegend class=\"font-medium text-sm\">Choose Plan</FieldsetLegend>\n    <RadioGroup name=\"plan\" value=\"free\">\n      <FieldItem>\n        <FieldLabel><Radio value=\"free\" /> Free</FieldLabel>\n      </FieldItem>\n      <FieldItem>\n        <FieldLabel><Radio value=\"pro\" /> Pro</FieldLabel>\n      </FieldItem>\n      <FieldItem>\n        <FieldLabel><Radio value=\"enterprise\" /> Enterprise</FieldLabel>\n      </FieldItem>\n    </RadioGroup>\n    <FieldDescription>Select the plan that fits your needs.</FieldDescription>\n  </Fieldset>\n</Field>\n"
-		}
-	],
-	"registryDependencies": [
-		"field",
-		"fieldset",
-		"form",
-		"radio-group"
-	],
-	"dependencies": []
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-field-14",
+  "title": "Field 14",
+  "description": "Field with radio group",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-field-14.svelte",
+      "target": "particles/field/p-field-14.svelte",
+      "content": "<script lang=\"ts\">\n  import {\n    Field,\n    FieldDescription,\n    FieldItem,\n    FieldLabel\n  } from '$lib/components/ui/field/index.js';\n  import { Fieldset, FieldsetLegend } from '$lib/components/ui/fieldset/index.js';\n  import { Form } from '$lib/components/ui/form/index.js';\n  import { Radio, RadioGroup } from '$lib/components/ui/radio-group/index.js';\n</script>\n\n<Field name=\"plan\" class=\"gap-2\">\n  <Fieldset>\n    <FieldsetLegend class=\"font-medium text-sm\">Choose Plan</FieldsetLegend>\n    <RadioGroup name=\"plan\" value=\"free\">\n      <FieldItem>\n        <FieldLabel><Radio value=\"free\" /> Free</FieldLabel>\n      </FieldItem>\n      <FieldItem>\n        <FieldLabel><Radio value=\"pro\" /> Pro</FieldLabel>\n      </FieldItem>\n      <FieldItem>\n        <FieldLabel><Radio value=\"enterprise\" /> Enterprise</FieldLabel>\n      </FieldItem>\n    </RadioGroup>\n    <FieldDescription>Select the plan that fits your needs.</FieldDescription>\n  </Fieldset>\n</Field>\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/field.json",
+    "https://cossui-svelte.com/r/fieldset.json",
+    "https://cossui-svelte.com/r/form.json",
+    "https://cossui-svelte.com/r/radio-group.json"
+  ],
+  "dependencies": []
 }

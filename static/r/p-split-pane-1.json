@@ -1,17 +1,17 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "p-split-pane-1",
-	"title": "Split pane 1",
-	"description": "Split pane with resizable panels",
-	"type": "registry:block",
-	"files": [
-		{
-			"type": "registry:block",
-			"path": "p-split-pane-1.svelte",
-			"target": "$lib/components/particles/split-pane/p-split-pane-1.svelte",
-			"content": "TO DO\n"
-		}
-	],
-	"registryDependencies": [],
-	"dependencies": []
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-split-pane-1",
+  "title": "Split pane 1",
+  "description": "Split pane with resizable panels",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-split-pane-1.svelte",
+      "target": "particles/split-pane/p-split-pane-1.svelte",
+      "content": "TO DO\n"
+    }
+  ],
+  "registryDependencies": [],
+  "dependencies": []
 }

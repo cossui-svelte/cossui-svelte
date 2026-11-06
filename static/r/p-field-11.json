@@ -1,22 +1,22 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "p-field-11",
-	"title": "Field 11",
-	"description": "Field with select",
-	"type": "registry:block",
-	"files": [
-		{
-			"type": "registry:block",
-			"path": "p-field-11.svelte",
-			"target": "$lib/components/particles/field/p-field-11.svelte",
-			"content": "<script lang=\"ts\">\n  import { Button } from '#lib/components/ui/button/index.js';\n  import {\n    Field,\n    FieldDescription,\n    FieldError,\n    FieldLabel\n  } from '#lib/components/ui/field/index.js';\n  import { Form } from '#lib/components/ui/form/index.js';\n  import {\n    Select,\n    SelectContent,\n    SelectItem,\n    SelectTrigger,\n    SelectValue\n  } from '#lib/components/ui/select/index.js';\n\n  let loading = $state(false);\n\n  async function handleSubmit(event: SubmitEvent) {\n    event.preventDefault();\n    const formData = new FormData(event.currentTarget as HTMLFormElement);\n    loading = true;\n    await new Promise((r) => setTimeout(r, 800));\n    loading = false;\n    alert(`Country: ${formData.get('country') ?? 'none'}`);\n  }\n</script>\n\n<Form class=\"flex w-full flex-col gap-4\" onsubmit={handleSubmit}>\n  <Field name=\"country\">\n    <FieldLabel>Country</FieldLabel>\n    <Select>\n      <SelectTrigger>\n        <SelectValue placeholder=\"Select a country\" />\n      </SelectTrigger>\n      <SelectContent>\n        <SelectItem value=\"us\">United States</SelectItem>\n        <SelectItem value=\"uk\">United Kingdom</SelectItem>\n        <SelectItem value=\"ca\">Canada</SelectItem>\n        <SelectItem value=\"au\">Australia</SelectItem>\n      </SelectContent>\n    </Select>\n    <FieldDescription>This is an optional field</FieldDescription>\n    <FieldError />\n  </Field>\n  <Button {loading} type=\"submit\">Submit</Button>\n</Form>\n"
-		}
-	],
-	"registryDependencies": [
-		"button",
-		"field",
-		"form",
-		"select"
-	],
-	"dependencies": []
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-field-11",
+  "title": "Field 11",
+  "description": "Field with select",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-field-11.svelte",
+      "target": "particles/field/p-field-11.svelte",
+      "content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button/index.js';\n  import {\n    Field,\n    FieldDescription,\n    FieldError,\n    FieldLabel\n  } from '$lib/components/ui/field/index.js';\n  import { Form } from '$lib/components/ui/form/index.js';\n  import {\n    Select,\n    SelectContent,\n    SelectItem,\n    SelectTrigger,\n    SelectValue\n  } from '$lib/components/ui/select/index.js';\n\n  let loading = $state(false);\n\n  async function handleSubmit(event: SubmitEvent) {\n    event.preventDefault();\n    const formData = new FormData(event.currentTarget as HTMLFormElement);\n    loading = true;\n    await new Promise((r) => setTimeout(r, 800));\n    loading = false;\n    alert(`Country: ${formData.get('country') ?? 'none'}`);\n  }\n</script>\n\n<Form class=\"flex w-full flex-col gap-4\" onsubmit={handleSubmit}>\n  <Field name=\"country\">\n    <FieldLabel>Country</FieldLabel>\n    <Select>\n      <SelectTrigger>\n        <SelectValue placeholder=\"Select a country\" />\n      </SelectTrigger>\n      <SelectContent>\n        <SelectItem value=\"us\">United States</SelectItem>\n        <SelectItem value=\"uk\">United Kingdom</SelectItem>\n        <SelectItem value=\"ca\">Canada</SelectItem>\n        <SelectItem value=\"au\">Australia</SelectItem>\n      </SelectContent>\n    </Select>\n    <FieldDescription>This is an optional field</FieldDescription>\n    <FieldError />\n  </Field>\n  <Button {loading} type=\"submit\">Submit</Button>\n</Form>\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/button.json",
+    "https://cossui-svelte.com/r/field.json",
+    "https://cossui-svelte.com/r/form.json",
+    "https://cossui-svelte.com/r/select.json"
+  ],
+  "dependencies": []
 }

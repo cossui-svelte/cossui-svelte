@@ -1,22 +1,22 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "p-button-38",
-	"title": "Button 38",
-	"description": "Social login buttons (Google, X, GitHub)",
-	"type": "registry:block",
-	"files": [
-		{
-			"type": "registry:block",
-			"path": "p-button-38.svelte",
-			"target": "$lib/components/particles/button/p-button-38.svelte",
-			"content": "<script lang=\"ts\">\n  import { Button } from '#lib/components/ui/button/index.js';\n  import RiGithubFill from '#lib/components/icons/GithubFillLogos.svelte';\n  import RiGoogleFill from '#lib/components/icons/GoogleFillLogos.svelte';\n  import RiTwitterXFill from '#lib/components/icons/TwitterXFillLogos.svelte';\n</script>\n\n<div class=\"flex flex-col gap-2\">\n  <Button variant=\"outline\">\n    <RiGoogleFill aria-hidden=\"true\" />\n    <span class=\"flex-1\">Login with Google</span>\n  </Button>\n  <Button variant=\"outline\">\n    <RiTwitterXFill aria-hidden=\"true\" />\n    <span class=\"flex-1\">Login with X</span>\n  </Button>\n  <Button variant=\"outline\">\n    <RiGithubFill aria-hidden=\"true\" />\n    <span class=\"flex-1\">Login with GitHub</span>\n  </Button>\n</div>\n"
-		}
-	],
-	"registryDependencies": [
-		"button",
-		"GithubFillLogos",
-		"GoogleFillLogos",
-		"TwitterXFillLogos"
-	],
-	"dependencies": []
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-button-38",
+  "title": "Button 38",
+  "description": "Social login buttons (Google, X, GitHub)",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-button-38.svelte",
+      "target": "particles/button/p-button-38.svelte",
+      "content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button/index.js';\n  import RiGithubFill from '$lib/components/icons/GithubFillLogos.svelte';\n  import RiGoogleFill from '$lib/components/icons/GoogleFillLogos.svelte';\n  import RiTwitterXFill from '$lib/components/icons/TwitterXFillLogos.svelte';\n</script>\n\n<div class=\"flex flex-col gap-2\">\n  <Button variant=\"outline\">\n    <RiGoogleFill aria-hidden=\"true\" />\n    <span class=\"flex-1\">Login with Google</span>\n  </Button>\n  <Button variant=\"outline\">\n    <RiTwitterXFill aria-hidden=\"true\" />\n    <span class=\"flex-1\">Login with X</span>\n  </Button>\n  <Button variant=\"outline\">\n    <RiGithubFill aria-hidden=\"true\" />\n    <span class=\"flex-1\">Login with GitHub</span>\n  </Button>\n</div>\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/button.json",
+    "https://cossui-svelte.com/r/GithubFillLogos.json",
+    "https://cossui-svelte.com/r/GoogleFillLogos.json",
+    "https://cossui-svelte.com/r/TwitterXFillLogos.json"
+  ],
+  "dependencies": []
 }

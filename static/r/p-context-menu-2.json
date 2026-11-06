@@ -1,19 +1,19 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "p-context-menu-2",
-	"title": "Context menu 2",
-	"description": "Context menu with link items",
-	"type": "registry:block",
-	"files": [
-		{
-			"type": "registry:block",
-			"path": "p-context-menu-2.svelte",
-			"target": "$lib/components/particles/context-menu/p-context-menu-2.svelte",
-			"content": "<script lang=\"ts\">\n  import { resolve } from '$app/paths';\n  import {\n    ContextMenu,\n    ContextMenuLinkItem,\n    ContextMenuPopup,\n    ContextMenuTrigger\n  } from '#lib/components/ui/context-menu/index.js';\n</script>\n\n<ContextMenu>\n  <ContextMenuTrigger\n    class=\"flex h-32 w-full max-w-sm items-center justify-center rounded-lg border border-dashed text-muted-foreground text-sm\"\n  >\n    Right click here\n  </ContextMenuTrigger>\n  <ContextMenuPopup>\n    <ContextMenuLinkItem href={resolve('docs')}>Docs</ContextMenuLinkItem>\n    <ContextMenuLinkItem href={resolve('particles')}>Particles</ContextMenuLinkItem>\n  </ContextMenuPopup>\n</ContextMenu>\n"
-		}
-	],
-	"registryDependencies": [
-		"context-menu"
-	],
-	"dependencies": []
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-context-menu-2",
+  "title": "Context menu 2",
+  "description": "Context menu with link items",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-context-menu-2.svelte",
+      "target": "particles/context-menu/p-context-menu-2.svelte",
+      "content": "<script lang=\"ts\">\n  import { resolve } from '$app/paths';\n  import {\n    ContextMenu,\n    ContextMenuLinkItem,\n    ContextMenuPopup,\n    ContextMenuTrigger\n  } from '$lib/components/ui/context-menu/index.js';\n</script>\n\n<ContextMenu>\n  <ContextMenuTrigger\n    class=\"flex h-32 w-full max-w-sm items-center justify-center rounded-lg border border-dashed text-muted-foreground text-sm\"\n  >\n    Right click here\n  </ContextMenuTrigger>\n  <ContextMenuPopup>\n    <ContextMenuLinkItem href={resolve('docs')}>Docs</ContextMenuLinkItem>\n    <ContextMenuLinkItem href={resolve('particles')}>Particles</ContextMenuLinkItem>\n  </ContextMenuPopup>\n</ContextMenu>\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/context-menu.json"
+  ],
+  "dependencies": []
 }

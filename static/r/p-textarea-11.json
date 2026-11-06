@@ -1,20 +1,20 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "p-textarea-11",
-	"title": "Textarea 11",
-	"description": "Textarea with characters remaining counter",
-	"type": "registry:block",
-	"files": [
-		{
-			"type": "registry:block",
-			"path": "p-textarea-11.svelte",
-			"target": "$lib/components/particles/textarea/p-textarea-11.svelte",
-			"content": "<script lang=\"ts\">\n  import { Field, FieldDescription, FieldLabel } from '#lib/components/ui/field/index.js';\n  import { Textarea } from '#lib/components/ui/textarea/index.js';\n\n  const maxlength = 280;\n\n  let value = $state('');\n</script>\n\n<Field name=\"message\">\n  <FieldLabel class=\"sr-only\">Message</FieldLabel>\n  <Textarea {maxlength} bind:value placeholder=\"Type your message here\" />\n  <FieldDescription>\n    <span class=\"tabular-nums\">{maxlength - value.length}</span>\n    characters left\n  </FieldDescription>\n</Field>\n"
-		}
-	],
-	"registryDependencies": [
-		"field",
-		"textarea"
-	],
-	"dependencies": []
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-textarea-11",
+  "title": "Textarea 11",
+  "description": "Textarea with characters remaining counter",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-textarea-11.svelte",
+      "target": "particles/textarea/p-textarea-11.svelte",
+      "content": "<script lang=\"ts\">\n  import { Field, FieldDescription, FieldLabel } from '$lib/components/ui/field/index.js';\n  import { Textarea } from '$lib/components/ui/textarea/index.js';\n\n  const maxlength = 280;\n\n  let value = $state('');\n</script>\n\n<Field name=\"message\">\n  <FieldLabel class=\"sr-only\">Message</FieldLabel>\n  <Textarea {maxlength} bind:value placeholder=\"Type your message here\" />\n  <FieldDescription>\n    <span class=\"tabular-nums\">{maxlength - value.length}</span>\n    characters left\n  </FieldDescription>\n</Field>\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/field.json",
+    "https://cossui-svelte.com/r/textarea.json"
+  ],
+  "dependencies": []
 }

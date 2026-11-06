@@ -1,23 +1,23 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "p-input-group-21",
-	"title": "Input group 21",
-	"description": "Input group with start tooltip",
-	"type": "registry:block",
-	"files": [
-		{
-			"type": "registry:block",
-			"path": "p-input-group-21.svelte",
-			"target": "$lib/components/particles/input-group/p-input-group-21.svelte",
-			"content": "<script lang=\"ts\">\n  import Info from '@lucide/svelte/icons/info';\n  import { buttonVariants } from '#lib/components/ui/button/index.js';\n  import {\n    InputGroup,\n    InputGroupAddon,\n    InputGroupInput\n  } from '#lib/components/ui/input-group/index.js';\n  import {\n    Tooltip,\n    TooltipPopup,\n    TooltipProvider,\n    TooltipTrigger\n  } from '#lib/components/ui/tooltip/index.js';\n</script>\n\n<TooltipProvider>\n  <InputGroup>\n    <InputGroupAddon>\n      <Tooltip>\n        <TooltipTrigger\n          aria-label=\"More information\"\n          class={buttonVariants({ size: 'icon-xs', variant: 'ghost' })}\n        >\n          <Info />\n        </TooltipTrigger>\n        <TooltipPopup>Enter your username</TooltipPopup>\n      </Tooltip>\n    </InputGroupAddon>\n    <InputGroupInput aria-label=\"Username\" placeholder=\"Username\" type=\"text\" />\n  </InputGroup>\n</TooltipProvider>\n"
-		}
-	],
-	"registryDependencies": [
-		"button",
-		"input-group",
-		"tooltip"
-	],
-	"dependencies": [
-		"@lucide/svelte"
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-input-group-21",
+  "title": "Input group 21",
+  "description": "Input group with start tooltip",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-input-group-21.svelte",
+      "target": "particles/input-group/p-input-group-21.svelte",
+      "content": "<script lang=\"ts\">\n  import Info from '@lucide/svelte/icons/info';\n  import { buttonVariants } from '$lib/components/ui/button/index.js';\n  import {\n    InputGroup,\n    InputGroupAddon,\n    InputGroupInput\n  } from '$lib/components/ui/input-group/index.js';\n  import {\n    Tooltip,\n    TooltipPopup,\n    TooltipProvider,\n    TooltipTrigger\n  } from '$lib/components/ui/tooltip/index.js';\n</script>\n\n<TooltipProvider>\n  <InputGroup>\n    <InputGroupAddon>\n      <Tooltip>\n        <TooltipTrigger\n          aria-label=\"More information\"\n          class={buttonVariants({ size: 'icon-xs', variant: 'ghost' })}\n        >\n          <Info />\n        </TooltipTrigger>\n        <TooltipPopup>Enter your username</TooltipPopup>\n      </Tooltip>\n    </InputGroupAddon>\n    <InputGroupInput aria-label=\"Username\" placeholder=\"Username\" type=\"text\" />\n  </InputGroup>\n</TooltipProvider>\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/button.json",
+    "https://cossui-svelte.com/r/input-group.json",
+    "https://cossui-svelte.com/r/tooltip.json"
+  ],
+  "dependencies": [
+    "@lucide/svelte"
+  ]
 }

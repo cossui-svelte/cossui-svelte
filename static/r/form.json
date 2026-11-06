@@ -1,25 +1,25 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "form",
-	"title": "Form",
-	"description": "A form wrapper component that simplifies validation and submission.",
-	"type": "registry:ui",
-	"files": [
-		{
-			"type": "registry:ui",
-			"path": "form/form.svelte",
-			"target": "$lib/components/ui/form/form.svelte",
-			"content": "<script lang=\"ts\">\n  import { Form as FormPrimitive } from '@shardsui/svelte/form';\n  import type { ComponentProps } from 'svelte';\n\n  let { ref = $bindable(null), ...restProps }: ComponentProps<typeof FormPrimitive> = $props();\n</script>\n\n<FormPrimitive bind:ref data-slot=\"form\" {...restProps} />\n"
-		},
-		{
-			"type": "registry:ui",
-			"path": "form/index.ts",
-			"target": "$lib/components/ui/form/index.ts",
-			"content": "export type { FormErrors, FormValidationMode } from '@shardsui/svelte/form';\nexport { Form as FormPrimitive } from '@shardsui/svelte/form';\nexport { default as Form } from './form.svelte';\n"
-		}
-	],
-	"registryDependencies": [],
-	"dependencies": [
-		"@shardsui/svelte@0.1.0-beta.2"
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form",
+  "title": "Form",
+  "description": "A form wrapper component that simplifies validation and submission.",
+  "type": "registry:ui",
+  "files": [
+    {
+      "type": "registry:ui",
+      "path": "form/form.svelte",
+      "target": "form/form.svelte",
+      "content": "<script lang=\"ts\">\n  import { Form as FormPrimitive } from '@shardsui/svelte/form';\n  import type { ComponentProps } from 'svelte';\n\n  let { ref = $bindable(null), ...restProps }: ComponentProps<typeof FormPrimitive> = $props();\n</script>\n\n<FormPrimitive bind:ref data-slot=\"form\" {...restProps} />\n"
+    },
+    {
+      "type": "registry:ui",
+      "path": "form/index.ts",
+      "target": "form/index.ts",
+      "content": "export type { FormErrors, FormValidationMode } from '@shardsui/svelte/form';\nexport { Form as FormPrimitive } from '@shardsui/svelte/form';\nexport { default as Form } from './form.svelte';\n"
+    }
+  ],
+  "registryDependencies": [],
+  "dependencies": [
+    "@shardsui/svelte@0.1.0-beta.2"
+  ]
 }

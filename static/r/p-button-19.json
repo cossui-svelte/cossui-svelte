@@ -1,21 +1,21 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "p-button-19",
-	"title": "Button 19",
-	"description": "Expandable show more/less toggle button",
-	"type": "registry:block",
-	"files": [
-		{
-			"type": "registry:block",
-			"path": "p-button-19.svelte",
-			"target": "$lib/components/particles/button/p-button-19.svelte",
-			"content": "<script lang=\"ts\">\n  import ChevronDown from '@lucide/svelte/icons/chevron-down';\n  import ChevronUp from '@lucide/svelte/icons/chevron-up';\n  import { Button } from '#lib/components/ui/button/index.js';\n\n  let isExpanded = $state(false);\n</script>\n\n<Button class=\"gap-1\" onclick={() => (isExpanded = !isExpanded)} variant=\"ghost\">\n  {isExpanded ? 'Show less' : 'Show more'}\n  {#if isExpanded}\n    <ChevronUp aria-hidden=\"true\" class=\"-me-1\" />\n  {:else}\n    <ChevronDown aria-hidden=\"true\" class=\"-me-1\" />\n  {/if}\n</Button>\n"
-		}
-	],
-	"registryDependencies": [
-		"button"
-	],
-	"dependencies": [
-		"@lucide/svelte"
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-button-19",
+  "title": "Button 19",
+  "description": "Expandable show more/less toggle button",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-button-19.svelte",
+      "target": "particles/button/p-button-19.svelte",
+      "content": "<script lang=\"ts\">\n  import ChevronDown from '@lucide/svelte/icons/chevron-down';\n  import ChevronUp from '@lucide/svelte/icons/chevron-up';\n  import { Button } from '$lib/components/ui/button/index.js';\n\n  let isExpanded = $state(false);\n</script>\n\n<Button class=\"gap-1\" onclick={() => (isExpanded = !isExpanded)} variant=\"ghost\">\n  {isExpanded ? 'Show less' : 'Show more'}\n  {#if isExpanded}\n    <ChevronUp aria-hidden=\"true\" class=\"-me-1\" />\n  {:else}\n    <ChevronDown aria-hidden=\"true\" class=\"-me-1\" />\n  {/if}\n</Button>\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/button.json"
+  ],
+  "dependencies": [
+    "@lucide/svelte"
+  ]
 }

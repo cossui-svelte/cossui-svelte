@@ -48,7 +48,8 @@ Both trees have a hand-maintained metadata file (`custom-component-metadata.ts` 
 1. `scripts/generateComponentRegistry.ts` → `src/lib/registry/generated-registry-components.ts`
 2. `scripts/generateParticleRegistry.ts` → particle metadata
 3. clears `static/r/*.json`, then `jsrepo build` regenerates the static registry JSON consumed by the CLI/docs
-4. `pnpm format`
+4. `scripts/postprocessRegistry.ts` rewrites that JSON for `shadcn-svelte add <url>`: bare `registryDependencies` → absolute URLs, `$lib/...` targets → paths relative to the CLI alias of the item type, `#lib`/`#assets` imports → `$lib`. Don't hand-edit `static/r`; change the script instead
+5. `pnpm format`
 
 See `scripts/upstream/README.md` for the step-by-step for updating from upstream Coss UI (`registry.json`). Any new UI component also needs a thumbnail entry in `#lib/components/app/component-thumbnails.svelte`.
 

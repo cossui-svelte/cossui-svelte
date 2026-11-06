@@ -1,23 +1,23 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "p-card-2",
-	"title": "Card 2",
-	"description": "Authentication card with actions",
-	"type": "registry:block",
-	"files": [
-		{
-			"type": "registry:block",
-			"path": "p-card-2.svelte",
-			"target": "$lib/components/particles/card/p-card-2.svelte",
-			"content": "<script lang=\"ts\">\n  import { Button } from '#lib/components/ui/button/index.js';\n  import {\n    Card,\n    CardAction,\n    CardHeader,\n    CardPanel,\n    CardTitle\n  } from '#lib/components/ui/card/index.js';\n  import { Field, FieldLabel } from '#lib/components/ui/field/index.js';\n  import { Form } from '#lib/components/ui/form/index.js';\n  import { Input } from '#lib/components/ui/input/index.js';\n</script>\n\n<Card class=\"w-full max-w-xs\">\n  <CardHeader>\n    <CardTitle>Login to your account</CardTitle>\n    <CardAction>\n      <a class=\"text-muted-foreground text-sm leading-4.5 hover:underline\" href=\"#\"> Sign up </a>\n    </CardAction>\n  </CardHeader>\n  <CardPanel>\n    <Form class=\"flex w-full flex-col gap-4\" onsubmit={(event) => event.preventDefault()}>\n      <Field>\n        <FieldLabel>Email</FieldLabel>\n        <Input placeholder=\"Enter your email\" type=\"email\" />\n      </Field>\n      <Field>\n        <FieldLabel>Password</FieldLabel>\n        <Input placeholder=\"Enter your password\" type=\"password\" />\n      </Field>\n      <Button class=\"w-full\" type=\"submit\">Login</Button>\n    </Form>\n  </CardPanel>\n</Card>\n"
-		}
-	],
-	"registryDependencies": [
-		"button",
-		"card",
-		"field",
-		"form",
-		"input"
-	],
-	"dependencies": []
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-card-2",
+  "title": "Card 2",
+  "description": "Authentication card with actions",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-card-2.svelte",
+      "target": "particles/card/p-card-2.svelte",
+      "content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button/index.js';\n  import {\n    Card,\n    CardAction,\n    CardHeader,\n    CardPanel,\n    CardTitle\n  } from '$lib/components/ui/card/index.js';\n  import { Field, FieldLabel } from '$lib/components/ui/field/index.js';\n  import { Form } from '$lib/components/ui/form/index.js';\n  import { Input } from '$lib/components/ui/input/index.js';\n</script>\n\n<Card class=\"w-full max-w-xs\">\n  <CardHeader>\n    <CardTitle>Login to your account</CardTitle>\n    <CardAction>\n      <a class=\"text-muted-foreground text-sm leading-4.5 hover:underline\" href=\"#\"> Sign up </a>\n    </CardAction>\n  </CardHeader>\n  <CardPanel>\n    <Form class=\"flex w-full flex-col gap-4\" onsubmit={(event) => event.preventDefault()}>\n      <Field>\n        <FieldLabel>Email</FieldLabel>\n        <Input placeholder=\"Enter your email\" type=\"email\" />\n      </Field>\n      <Field>\n        <FieldLabel>Password</FieldLabel>\n        <Input placeholder=\"Enter your password\" type=\"password\" />\n      </Field>\n      <Button class=\"w-full\" type=\"submit\">Login</Button>\n    </Form>\n  </CardPanel>\n</Card>\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/button.json",
+    "https://cossui-svelte.com/r/card.json",
+    "https://cossui-svelte.com/r/field.json",
+    "https://cossui-svelte.com/r/form.json",
+    "https://cossui-svelte.com/r/input.json"
+  ],
+  "dependencies": []
 }

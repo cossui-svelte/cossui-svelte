@@ -1,20 +1,20 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "p-link-preview-1",
-	"title": "Link preview 1",
-	"description": "A component that displays a preview of a link on mouse hover",
-	"type": "registry:block",
-	"files": [
-		{
-			"type": "registry:block",
-			"path": "p-link-preview-1.svelte",
-			"target": "$lib/components/particles/link-preview/p-link-preview-1.svelte",
-			"content": "<script lang=\"ts\">\n  import { buttonVariants } from '#lib/components/ui/button/index.js';\n  import {\n    LinkPreviewCard,\n    LinkPreviewContent,\n    LinkPreviewTrigger\n  } from '#lib/components/ui/link-preview/index.js';\n</script>\n\n<LinkPreviewCard>\n  <LinkPreviewTrigger delay={10} closeDelay={100} class={buttonVariants({ variant: 'link' })}>\n    Link (Please mouse hover)\n  </LinkPreviewTrigger>\n  <LinkPreviewContent class=\"flex w-64 flex-col gap-0.5\">\n    <div class=\"font-semibold\">@svelte</div>\n    <div>The Svelte Framework – created and maintained by @vercel.</div>\n    <div class=\"mt-1 text-xs text-muted-foreground\">Joined December 2021</div>\n  </LinkPreviewContent>\n</LinkPreviewCard>\n"
-		}
-	],
-	"registryDependencies": [
-		"button",
-		"link-preview"
-	],
-	"dependencies": []
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-link-preview-1",
+  "title": "Link preview 1",
+  "description": "A component that displays a preview of a link on mouse hover",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-link-preview-1.svelte",
+      "target": "particles/link-preview/p-link-preview-1.svelte",
+      "content": "<script lang=\"ts\">\n  import { buttonVariants } from '$lib/components/ui/button/index.js';\n  import {\n    LinkPreviewCard,\n    LinkPreviewContent,\n    LinkPreviewTrigger\n  } from '$lib/components/ui/link-preview/index.js';\n</script>\n\n<LinkPreviewCard>\n  <LinkPreviewTrigger delay={10} closeDelay={100} class={buttonVariants({ variant: 'link' })}>\n    Link (Please mouse hover)\n  </LinkPreviewTrigger>\n  <LinkPreviewContent class=\"flex w-64 flex-col gap-0.5\">\n    <div class=\"font-semibold\">@svelte</div>\n    <div>The Svelte Framework – created and maintained by @vercel.</div>\n    <div class=\"mt-1 text-xs text-muted-foreground\">Joined December 2021</div>\n  </LinkPreviewContent>\n</LinkPreviewCard>\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/button.json",
+    "https://cossui-svelte.com/r/link-preview.json"
+  ],
+  "dependencies": []
 }

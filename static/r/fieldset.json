@@ -1,33 +1,33 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "fieldset",
-	"title": "Fieldset",
-	"description": "A native fieldset element with a legend.",
-	"type": "registry:ui",
-	"files": [
-		{
-			"type": "registry:ui",
-			"path": "fieldset/fieldset-legend.svelte",
-			"target": "$lib/components/ui/fieldset/fieldset-legend.svelte",
-			"content": "<script lang=\"ts\">\n  import { Fieldset as FieldsetPrimitive } from '@shardsui/svelte/fieldset';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '#lib/utils.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof FieldsetPrimitive.Legend> = $props();\n</script>\n\n<FieldsetPrimitive.Legend\n  bind:ref\n  class={cn('font-semibold text-foreground', className)}\n  data-slot=\"fieldset-legend\"\n  {...restProps}\n/>\n"
-		},
-		{
-			"type": "registry:ui",
-			"path": "fieldset/fieldset.svelte",
-			"target": "$lib/components/ui/fieldset/fieldset.svelte",
-			"content": "<script lang=\"ts\">\n  import { Fieldset as FieldsetPrimitive } from '@shardsui/svelte/fieldset';\n  import type { ComponentProps } from 'svelte';\n\n  let { ref = $bindable(null), ...restProps }: ComponentProps<typeof FieldsetPrimitive.Root> =\n    $props();\n</script>\n\n<FieldsetPrimitive.Root bind:ref data-slot=\"fieldset\" {...restProps} />\n"
-		},
-		{
-			"type": "registry:ui",
-			"path": "fieldset/index.ts",
-			"target": "$lib/components/ui/fieldset/index.ts",
-			"content": "import { Fieldset as FieldsetPrimitive } from '@shardsui/svelte/fieldset';\n\nexport { default as Fieldset } from './fieldset.svelte';\nexport { default as FieldsetLegend } from './fieldset-legend.svelte';\nexport { FieldsetPrimitive };\n"
-		}
-	],
-	"registryDependencies": [
-		"utils"
-	],
-	"dependencies": [
-		"@shardsui/svelte@0.1.0-beta.2"
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "fieldset",
+  "title": "Fieldset",
+  "description": "A native fieldset element with a legend.",
+  "type": "registry:ui",
+  "files": [
+    {
+      "type": "registry:ui",
+      "path": "fieldset/fieldset-legend.svelte",
+      "target": "fieldset/fieldset-legend.svelte",
+      "content": "<script lang=\"ts\">\n  import { Fieldset as FieldsetPrimitive } from '@shardsui/svelte/fieldset';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof FieldsetPrimitive.Legend> = $props();\n</script>\n\n<FieldsetPrimitive.Legend\n  bind:ref\n  class={cn('font-semibold text-foreground', className)}\n  data-slot=\"fieldset-legend\"\n  {...restProps}\n/>\n"
+    },
+    {
+      "type": "registry:ui",
+      "path": "fieldset/fieldset.svelte",
+      "target": "fieldset/fieldset.svelte",
+      "content": "<script lang=\"ts\">\n  import { Fieldset as FieldsetPrimitive } from '@shardsui/svelte/fieldset';\n  import type { ComponentProps } from 'svelte';\n\n  let { ref = $bindable(null), ...restProps }: ComponentProps<typeof FieldsetPrimitive.Root> =\n    $props();\n</script>\n\n<FieldsetPrimitive.Root bind:ref data-slot=\"fieldset\" {...restProps} />\n"
+    },
+    {
+      "type": "registry:ui",
+      "path": "fieldset/index.ts",
+      "target": "fieldset/index.ts",
+      "content": "import { Fieldset as FieldsetPrimitive } from '@shardsui/svelte/fieldset';\n\nexport { default as Fieldset } from './fieldset.svelte';\nexport { default as FieldsetLegend } from './fieldset-legend.svelte';\nexport { FieldsetPrimitive };\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/utils.json"
+  ],
+  "dependencies": [
+    "@shardsui/svelte@0.1.0-beta.2"
+  ]
 }

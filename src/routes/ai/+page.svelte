@@ -24,4 +24,22 @@
       />
     </figure>
   </div>
+  <div class="mt-10">
+    <h2 class="mb-4 font-heading font-semibold text-xl">Using it from your project</h2>
+    <p class="mb-4 text-muted-foreground text-sm">
+      Run the command from the root of a project that has a <code>components.json</code>. Registry
+      dependencies (such as <code>utils</code> or <code>spinner</code>) are resolved from this
+      registry automatically, imports are rewritten to your <code>$lib</code> alias, and files land
+      in the folders configured in your aliases. Add <code>--overwrite</code> to replace existing
+      files without being prompted, and <code>--yes</code> to skip confirmations.
+    </p>
+    <figure data-rehype-pretty-code-figure>
+      <CodeBlockCommand
+        __bun__="bunx --bun shadcn-svelte@latest add https://cossui-svelte.com/r/button.json --yes --overwrite"
+        __npm__="npx shadcn-svelte@latest add https://cossui-svelte.com/r/button.json --yes --overwrite"
+        __pnpm__="pnpm dlx shadcn-svelte@latest add https://cossui-svelte.com/r/button.json --yes --overwrite"
+        __yarn__="yarn dlx shadcn-svelte@latest add https://cossui-svelte.com/r/button.json --yes --overwrite"
+      />
+    </figure>
+  </div>
 </div>

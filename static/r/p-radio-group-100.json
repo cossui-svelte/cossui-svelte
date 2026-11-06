@@ -1,21 +1,21 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "p-radio-group-100",
-	"title": "Radio group 100",
-	"description": "Membership plan radio cards with price and free trial badge",
-	"type": "registry:block",
-	"files": [
-		{
-			"type": "registry:block",
-			"path": "p-radio-group-100.svelte",
-			"target": "$lib/components/particles/radio-group/p-radio-group-100.svelte",
-			"content": "<script lang=\"ts\">\n  import { Badge } from '#lib/components/ui/badge/index.js';\n  import { Label } from '#lib/components/ui/label/index.js';\n  import { Radio, RadioGroup } from '#lib/components/ui/radio-group/index.js';\n\n  const plans = [\n    {\n      value: 'monthly',\n      name: 'Monthly',\n      price: '$12.50/Month',\n      trial: '5 day free trial',\n      note: 'after that $12.50 monthly. Stop whenever.'\n    },\n    {\n      value: 'yearly',\n      name: 'Yearly',\n      price: '$99.00/Year',\n      trial: '10 day free trial',\n      note: 'after that $99.00 yearly. Stop whenever.'\n    }\n  ];\n</script>\n\n<RadioGroup class=\"w-full gap-3\" value=\"monthly\">\n  {#each plans as plan (plan.value)}\n    <Label\n      class=\"flex items-start justify-between gap-4 rounded-xl border p-4 hover:bg-accent/50 has-data-checked:border-primary has-data-checked:ring-1 has-data-checked:ring-primary\"\n    >\n      <div class=\"flex flex-col items-start gap-2\">\n        <p class=\"font-medium text-muted-foreground text-xs uppercase tracking-widest\">\n          {plan.name}\n        </p>\n        <p class=\"font-semibold text-xl\">{plan.price}</p>\n        <Badge variant=\"success\" size=\"lg\" class=\"rounded-full\">{plan.trial}</Badge>\n        <p class=\"text-muted-foreground text-xs\">{plan.note}</p>\n      </div>\n      <Radio value={plan.value} />\n    </Label>\n  {/each}\n</RadioGroup>\n"
-		}
-	],
-	"registryDependencies": [
-		"badge",
-		"label",
-		"radio-group"
-	],
-	"dependencies": []
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-radio-group-100",
+  "title": "Radio group 100",
+  "description": "Membership plan radio cards with price and free trial badge",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-radio-group-100.svelte",
+      "target": "particles/radio-group/p-radio-group-100.svelte",
+      "content": "<script lang=\"ts\">\n  import { Badge } from '$lib/components/ui/badge/index.js';\n  import { Label } from '$lib/components/ui/label/index.js';\n  import { Radio, RadioGroup } from '$lib/components/ui/radio-group/index.js';\n\n  const plans = [\n    {\n      value: 'monthly',\n      name: 'Monthly',\n      price: '$12.50/Month',\n      trial: '5 day free trial',\n      note: 'after that $12.50 monthly. Stop whenever.'\n    },\n    {\n      value: 'yearly',\n      name: 'Yearly',\n      price: '$99.00/Year',\n      trial: '10 day free trial',\n      note: 'after that $99.00 yearly. Stop whenever.'\n    }\n  ];\n</script>\n\n<RadioGroup class=\"w-full gap-3\" value=\"monthly\">\n  {#each plans as plan (plan.value)}\n    <Label\n      class=\"flex items-start justify-between gap-4 rounded-xl border p-4 hover:bg-accent/50 has-data-checked:border-primary has-data-checked:ring-1 has-data-checked:ring-primary\"\n    >\n      <div class=\"flex flex-col items-start gap-2\">\n        <p class=\"font-medium text-muted-foreground text-xs uppercase tracking-widest\">\n          {plan.name}\n        </p>\n        <p class=\"font-semibold text-xl\">{plan.price}</p>\n        <Badge variant=\"success\" size=\"lg\" class=\"rounded-full\">{plan.trial}</Badge>\n        <p class=\"text-muted-foreground text-xs\">{plan.note}</p>\n      </div>\n      <Radio value={plan.value} />\n    </Label>\n  {/each}\n</RadioGroup>\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/badge.json",
+    "https://cossui-svelte.com/r/label.json",
+    "https://cossui-svelte.com/r/radio-group.json"
+  ],
+  "dependencies": []
 }

@@ -1,22 +1,22 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "p-composer-2",
-	"title": "Composer 2",
-	"description": "Composer with asynchronous mention suggestions",
-	"type": "registry:block",
-	"files": [
-		{
-			"type": "registry:block",
-			"path": "p-composer-2.svelte",
-			"target": "$lib/components/particles/composer/p-composer-2.svelte",
-			"content": "<script lang=\"ts\">\n  import ArrowUp from '@lucide/svelte/icons/arrow-up';\n  import {\n    Composer,\n    ComposerActionGroup,\n    ComposerActions,\n    ComposerInput,\n    ComposerItem,\n    ComposerList,\n    ComposerPopup,\n    ComposerStatus,\n    ComposerSubmit,\n    useComposerFilter,\n    type ComposerQuery,\n    type ComposerValue\n  } from '#lib/components/ui/composer/index.js';\n  import { Spinner } from '#lib/components/ui/spinner/index.js';\n\n  const people = [\n    { id: 'alex', label: 'Alex Morgan', description: 'Design' },\n    { id: 'sam', label: 'Sam Rivera', description: 'Engineering' },\n    { id: 'taylor', label: 'Taylor Kim', description: 'Product' }\n  ];\n\n  let value = $state<ComposerValue>([]);\n  let queryText = $state<string | null>(null);\n  let resultsFor = $state<string>();\n  let items = $state<typeof people>([]);\n  let status = $state<'ready' | 'loading'>('ready');\n  const { contains } = useComposerFilter();\n\n  $effect(() => {\n    const text = queryText;\n    if (text === null) return;\n    const timer = window.setTimeout(() => {\n      items = people.filter(\n        (person) => contains(person.label, text) || contains(person.description, text)\n      );\n      resultsFor = text;\n      status = 'ready';\n    }, 500);\n    return () => window.clearTimeout(timer);\n  });\n\n  function onQueryChange(query: ComposerQuery | null) {\n    queryText = query?.text ?? null;\n    status = query ? 'loading' : 'ready';\n  }\n</script>\n\n<div class=\"flex w-full max-w-xl flex-col gap-3\">\n  <Composer\n    bind:value\n    onSubmit={() => (value = [])}\n    {onQueryChange}\n    triggers={[{ character: '@', items, itemsFor: resultsFor, filter: null, status }]}\n  >\n    <ComposerInput aria-label=\"Message\" placeholder=\"Mention someone…\" />\n    <ComposerPopup aria-busy={status === 'loading' || undefined}>\n      {#if status === 'loading'}\n        <ComposerStatus>\n          <span class=\"flex items-center justify-between gap-2 text-muted-foreground\">\n            Searching...\n            <Spinner class=\"size-4.5 sm:size-4\" />\n          </span>\n        </ComposerStatus>\n      {/if}\n      <ComposerList>\n        {#snippet children(item)}\n          <ComposerItem value={item}>\n            <span class=\"min-w-0\">\n              <span class=\"block truncate\">{item.label}</span>\n              {#if item.description}\n                <span class=\"block truncate text-muted-foreground text-xs\">{item.description}</span>\n              {/if}\n            </span>\n          </ComposerItem>\n        {/snippet}\n      </ComposerList>\n    </ComposerPopup>\n    <ComposerActions>\n      <ComposerActionGroup align=\"end\">\n        <ComposerSubmit aria-label=\"Send message\" size=\"icon\">\n          <ArrowUp aria-hidden=\"true\" />\n        </ComposerSubmit>\n      </ComposerActionGroup>\n    </ComposerActions>\n  </Composer>\n\n  <p class=\"text-muted-foreground text-sm\">\n    Search by name or team. Try @design, or @zz for no menu.\n  </p>\n</div>\n"
-		}
-	],
-	"registryDependencies": [
-		"composer",
-		"spinner"
-	],
-	"dependencies": [
-		"@lucide/svelte"
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-composer-2",
+  "title": "Composer 2",
+  "description": "Composer with asynchronous mention suggestions",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-composer-2.svelte",
+      "target": "particles/composer/p-composer-2.svelte",
+      "content": "<script lang=\"ts\">\n  import ArrowUp from '@lucide/svelte/icons/arrow-up';\n  import {\n    Composer,\n    ComposerActionGroup,\n    ComposerActions,\n    ComposerInput,\n    ComposerItem,\n    ComposerList,\n    ComposerPopup,\n    ComposerStatus,\n    ComposerSubmit,\n    useComposerFilter,\n    type ComposerQuery,\n    type ComposerValue\n  } from '$lib/components/ui/composer/index.js';\n  import { Spinner } from '$lib/components/ui/spinner/index.js';\n\n  const people = [\n    { id: 'alex', label: 'Alex Morgan', description: 'Design' },\n    { id: 'sam', label: 'Sam Rivera', description: 'Engineering' },\n    { id: 'taylor', label: 'Taylor Kim', description: 'Product' }\n  ];\n\n  let value = $state<ComposerValue>([]);\n  let queryText = $state<string | null>(null);\n  let resultsFor = $state<string>();\n  let items = $state<typeof people>([]);\n  let status = $state<'ready' | 'loading'>('ready');\n  const { contains } = useComposerFilter();\n\n  $effect(() => {\n    const text = queryText;\n    if (text === null) return;\n    const timer = window.setTimeout(() => {\n      items = people.filter(\n        (person) => contains(person.label, text) || contains(person.description, text)\n      );\n      resultsFor = text;\n      status = 'ready';\n    }, 500);\n    return () => window.clearTimeout(timer);\n  });\n\n  function onQueryChange(query: ComposerQuery | null) {\n    queryText = query?.text ?? null;\n    status = query ? 'loading' : 'ready';\n  }\n</script>\n\n<div class=\"flex w-full max-w-xl flex-col gap-3\">\n  <Composer\n    bind:value\n    onSubmit={() => (value = [])}\n    {onQueryChange}\n    triggers={[{ character: '@', items, itemsFor: resultsFor, filter: null, status }]}\n  >\n    <ComposerInput aria-label=\"Message\" placeholder=\"Mention someone…\" />\n    <ComposerPopup aria-busy={status === 'loading' || undefined}>\n      {#if status === 'loading'}\n        <ComposerStatus>\n          <span class=\"flex items-center justify-between gap-2 text-muted-foreground\">\n            Searching...\n            <Spinner class=\"size-4.5 sm:size-4\" />\n          </span>\n        </ComposerStatus>\n      {/if}\n      <ComposerList>\n        {#snippet children(item)}\n          <ComposerItem value={item}>\n            <span class=\"min-w-0\">\n              <span class=\"block truncate\">{item.label}</span>\n              {#if item.description}\n                <span class=\"block truncate text-muted-foreground text-xs\">{item.description}</span>\n              {/if}\n            </span>\n          </ComposerItem>\n        {/snippet}\n      </ComposerList>\n    </ComposerPopup>\n    <ComposerActions>\n      <ComposerActionGroup align=\"end\">\n        <ComposerSubmit aria-label=\"Send message\" size=\"icon\">\n          <ArrowUp aria-hidden=\"true\" />\n        </ComposerSubmit>\n      </ComposerActionGroup>\n    </ComposerActions>\n  </Composer>\n\n  <p class=\"text-muted-foreground text-sm\">\n    Search by name or team. Try @design, or @zz for no menu.\n  </p>\n</div>\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/composer.json",
+    "https://cossui-svelte.com/r/spinner.json"
+  ],
+  "dependencies": [
+    "@lucide/svelte"
+  ]
 }

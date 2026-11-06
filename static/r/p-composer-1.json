@@ -1,21 +1,21 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "p-composer-1",
-	"title": "Composer 1",
-	"description": "Composer with people, teams, and slash suggestions",
-	"type": "registry:block",
-	"files": [
-		{
-			"type": "registry:block",
-			"path": "p-composer-1.svelte",
-			"target": "$lib/components/particles/composer/p-composer-1.svelte",
-			"content": "<script lang=\"ts\">\n  import ArrowUp from '@lucide/svelte/icons/arrow-up';\n  import Sparkles from '@lucide/svelte/icons/sparkles';\n  import UserRound from '@lucide/svelte/icons/user-round';\n  import UsersRound from '@lucide/svelte/icons/users-round';\n  import {\n    Composer,\n    ComposerActionGroup,\n    ComposerActions,\n    ComposerInput,\n    ComposerItem,\n    ComposerList,\n    ComposerPopup,\n    ComposerSubmit,\n    getComposerText,\n    type ComposerTrigger,\n    type ComposerValue\n  } from '#lib/components/ui/composer/index.js';\n\n  const people = [\n    { id: 'alex', label: 'Alex Morgan', kind: 'person' },\n    { id: 'sam', label: 'Sam Rivera', kind: 'person' }\n  ];\n\n  const teams = [\n    { id: 'design', label: 'Design team', kind: 'team' },\n    { id: 'engineering', label: 'Engineering team', kind: 'team' }\n  ];\n\n  const actions = [\n    { id: 'summarize', label: 'Summarize', type: 'action' as const },\n    { id: 'rewrite', label: 'Rewrite', type: 'action' as const }\n  ];\n\n  const triggers: ComposerTrigger[] = [\n    { character: '@', items: [...people, ...teams] },\n    { character: '/', items: actions }\n  ];\n\n  let value = $state<ComposerValue>([]);\n  let notice = $state('');\n</script>\n\n<div class=\"flex w-full max-w-xl flex-col gap-3\">\n  <Composer\n    bind:value\n    {triggers}\n    onSubmit={(draft) => {\n      notice = `Sent: ${getComposerText(draft)}`;\n      value = [];\n    }}\n  >\n    <ComposerInput aria-label=\"Message\" placeholder=\"Write a message…\" />\n    <ComposerPopup>\n      <ComposerList>\n        {#snippet children(item)}\n          <ComposerItem value={item}>\n            {#if item.type === 'action'}\n              <Sparkles aria-hidden=\"true\" class=\"size-4 opacity-80\" />\n            {:else if item.kind === 'team'}\n              <UsersRound aria-hidden=\"true\" class=\"size-4 opacity-80\" />\n            {:else}\n              <UserRound aria-hidden=\"true\" class=\"size-4 opacity-80\" />\n            {/if}\n            <span class=\"truncate\">{item.label}</span>\n          </ComposerItem>\n        {/snippet}\n      </ComposerList>\n    </ComposerPopup>\n    <ComposerActions>\n      <ComposerActionGroup align=\"end\">\n        <ComposerSubmit aria-label=\"Send message\" size=\"icon\">\n          <ArrowUp aria-hidden=\"true\" />\n        </ComposerSubmit>\n      </ComposerActionGroup>\n    </ComposerActions>\n  </Composer>\n  <p class=\"min-h-5 text-muted-foreground text-sm\" role=\"status\">{notice}</p>\n</div>\n"
-		}
-	],
-	"registryDependencies": [
-		"composer"
-	],
-	"dependencies": [
-		"@lucide/svelte"
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-composer-1",
+  "title": "Composer 1",
+  "description": "Composer with people, teams, and slash suggestions",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-composer-1.svelte",
+      "target": "particles/composer/p-composer-1.svelte",
+      "content": "<script lang=\"ts\">\n  import ArrowUp from '@lucide/svelte/icons/arrow-up';\n  import Sparkles from '@lucide/svelte/icons/sparkles';\n  import UserRound from '@lucide/svelte/icons/user-round';\n  import UsersRound from '@lucide/svelte/icons/users-round';\n  import {\n    Composer,\n    ComposerActionGroup,\n    ComposerActions,\n    ComposerInput,\n    ComposerItem,\n    ComposerList,\n    ComposerPopup,\n    ComposerSubmit,\n    getComposerText,\n    type ComposerTrigger,\n    type ComposerValue\n  } from '$lib/components/ui/composer/index.js';\n\n  const people = [\n    { id: 'alex', label: 'Alex Morgan', kind: 'person' },\n    { id: 'sam', label: 'Sam Rivera', kind: 'person' }\n  ];\n\n  const teams = [\n    { id: 'design', label: 'Design team', kind: 'team' },\n    { id: 'engineering', label: 'Engineering team', kind: 'team' }\n  ];\n\n  const actions = [\n    { id: 'summarize', label: 'Summarize', type: 'action' as const },\n    { id: 'rewrite', label: 'Rewrite', type: 'action' as const }\n  ];\n\n  const triggers: ComposerTrigger[] = [\n    { character: '@', items: [...people, ...teams] },\n    { character: '/', items: actions }\n  ];\n\n  let value = $state<ComposerValue>([]);\n  let notice = $state('');\n</script>\n\n<div class=\"flex w-full max-w-xl flex-col gap-3\">\n  <Composer\n    bind:value\n    {triggers}\n    onSubmit={(draft) => {\n      notice = `Sent: ${getComposerText(draft)}`;\n      value = [];\n    }}\n  >\n    <ComposerInput aria-label=\"Message\" placeholder=\"Write a message…\" />\n    <ComposerPopup>\n      <ComposerList>\n        {#snippet children(item)}\n          <ComposerItem value={item}>\n            {#if item.type === 'action'}\n              <Sparkles aria-hidden=\"true\" class=\"size-4 opacity-80\" />\n            {:else if item.kind === 'team'}\n              <UsersRound aria-hidden=\"true\" class=\"size-4 opacity-80\" />\n            {:else}\n              <UserRound aria-hidden=\"true\" class=\"size-4 opacity-80\" />\n            {/if}\n            <span class=\"truncate\">{item.label}</span>\n          </ComposerItem>\n        {/snippet}\n      </ComposerList>\n    </ComposerPopup>\n    <ComposerActions>\n      <ComposerActionGroup align=\"end\">\n        <ComposerSubmit aria-label=\"Send message\" size=\"icon\">\n          <ArrowUp aria-hidden=\"true\" />\n        </ComposerSubmit>\n      </ComposerActionGroup>\n    </ComposerActions>\n  </Composer>\n  <p class=\"min-h-5 text-muted-foreground text-sm\" role=\"status\">{notice}</p>\n</div>\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/composer.json"
+  ],
+  "dependencies": [
+    "@lucide/svelte"
+  ]
 }

@@ -24,7 +24,7 @@
     "dev": "vite dev --host",
     "dev:registry": "jsrepo build --watch",
     "format": "oxlint --fix && oxfmt",
-    "gen:registry": "tsx scripts/generateComponentRegistry.ts -w src/lib/registry/generated-registry-components.ts && tsx scripts/generateParticleRegistry.ts && rm -f static/r/*.json && jsrepo build && pnpm format",
+    "gen:registry": "tsx scripts/generateComponentRegistry.ts -w src/lib/registry/generated-registry-components.ts && tsx scripts/generateParticleRegistry.ts && rm -f static/r/*.json && jsrepo build && tsx scripts/postprocessRegistry.ts && pnpm format",
     "lint": "oxlint && pnpm lint:svelte",
     "lint:audit": "pnpx knip --max-show-issues 20",
     "lint:svelte": "oxvelte lint src/routes src/lib/components/app src/lib/components/ui src/lib/hooks src/lib/components/icons && oxvelte lint --config oxvelte.demos.json src/lib/components/particles src/lib/components/blocs",

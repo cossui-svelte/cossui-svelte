@@ -1,20 +1,20 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "p-toast-5",
-	"title": "Toast 5",
-	"description": "Promise-based stacked toast",
-	"type": "registry:block",
-	"files": [
-		{
-			"type": "registry:block",
-			"path": "p-toast-5.svelte",
-			"target": "$lib/components/particles/toast/p-toast-5.svelte",
-			"content": "<script lang=\"ts\">\n  import { Button } from '#lib/components/ui/button/index.js';\n  import { toastManager } from '#lib/components/ui/toast/index.js';\n\n  async function runPromise() {\n    try {\n      await toastManager.promise(\n        new Promise<string>((resolve, reject) => {\n          const shouldSucceed = Math.random() > 0.3;\n          setTimeout(() => {\n            if (shouldSucceed) {\n              resolve('Data loaded successfully');\n            } else {\n              reject(new Error('Failed to load data'));\n            }\n          }, 2000);\n        }),\n        {\n          error: () => ({\n            description: 'Please try again.',\n            title: 'Something went wrong'\n          }),\n          loading: {\n            description: 'The promise is loading.',\n            title: 'Loading…'\n          },\n          success: (data: string) => ({\n            description: `Success: ${data}`,\n            title: 'This is a success toast!'\n          })\n        }\n      );\n    } catch {\n      // The promise toast already presents the failure.\n    }\n  }\n</script>\n\n<Button onclick={runPromise} variant=\"outline\">Run Promise</Button>\n"
-		}
-	],
-	"registryDependencies": [
-		"button",
-		"toast"
-	],
-	"dependencies": []
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-toast-5",
+  "title": "Toast 5",
+  "description": "Promise-based stacked toast",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-toast-5.svelte",
+      "target": "particles/toast/p-toast-5.svelte",
+      "content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button/index.js';\n  import { toastManager } from '$lib/components/ui/toast/index.js';\n\n  async function runPromise() {\n    try {\n      await toastManager.promise(\n        new Promise<string>((resolve, reject) => {\n          const shouldSucceed = Math.random() > 0.3;\n          setTimeout(() => {\n            if (shouldSucceed) {\n              resolve('Data loaded successfully');\n            } else {\n              reject(new Error('Failed to load data'));\n            }\n          }, 2000);\n        }),\n        {\n          error: () => ({\n            description: 'Please try again.',\n            title: 'Something went wrong'\n          }),\n          loading: {\n            description: 'The promise is loading.',\n            title: 'Loading…'\n          },\n          success: (data: string) => ({\n            description: `Success: ${data}`,\n            title: 'This is a success toast!'\n          })\n        }\n      );\n    } catch {\n      // The promise toast already presents the failure.\n    }\n  }\n</script>\n\n<Button onclick={runPromise} variant=\"outline\">Run Promise</Button>\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/button.json",
+    "https://cossui-svelte.com/r/toast.json"
+  ],
+  "dependencies": []
 }

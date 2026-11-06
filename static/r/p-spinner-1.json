@@ -1,19 +1,19 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "p-spinner-1",
-	"title": "Spinner 1",
-	"description": "Basic spinner",
-	"type": "registry:block",
-	"files": [
-		{
-			"type": "registry:block",
-			"path": "p-spinner-1.svelte",
-			"target": "$lib/components/particles/spinner/p-spinner-1.svelte",
-			"content": "<script lang=\"ts\">\n  import { Spinner } from '#lib/components/ui/spinner/index.js';\n</script>\n\n<Spinner />\n"
-		}
-	],
-	"registryDependencies": [
-		"spinner"
-	],
-	"dependencies": []
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-spinner-1",
+  "title": "Spinner 1",
+  "description": "Basic spinner",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-spinner-1.svelte",
+      "target": "particles/spinner/p-spinner-1.svelte",
+      "content": "<script lang=\"ts\">\n  import { Spinner } from '$lib/components/ui/spinner/index.js';\n</script>\n\n<Spinner />\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/spinner.json"
+  ],
+  "dependencies": []
 }

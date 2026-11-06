@@ -1,22 +1,22 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "p-field-8",
-	"title": "Field 8",
-	"description": "Field with combobox",
-	"type": "registry:block",
-	"files": [
-		{
-			"type": "registry:block",
-			"path": "p-field-8.svelte",
-			"target": "$lib/components/particles/field/p-field-8.svelte",
-			"content": "<script lang=\"ts\">\n  import { Button } from '#lib/components/ui/button/index.js';\n  import {\n    Combobox,\n    ComboboxCollection,\n    ComboboxEmpty,\n    ComboboxInput,\n    ComboboxItem,\n    ComboboxList,\n    ComboboxPopup\n  } from '#lib/components/ui/combobox/index.js';\n  import {\n    Field,\n    FieldDescription,\n    FieldError,\n    FieldLabel\n  } from '#lib/components/ui/field/index.js';\n  import { Form } from '#lib/components/ui/form/index.js';\n\n  const items = [\n    { label: 'Apple', value: 'apple' },\n    { label: 'Banana', value: 'banana' },\n    { label: 'Grape', value: 'grape' },\n    { label: 'Kiwi', value: 'kiwi' },\n    { label: 'Mango', value: 'mango' },\n    { label: 'Orange', value: 'orange' },\n    { label: 'Peach', value: 'peach' },\n    { label: 'Pear', value: 'pear' },\n    { label: 'Pineapple', value: 'pineapple' },\n    { label: 'Strawberry', value: 'strawberry' }\n  ];\n\n  let loading = $state(false);\n\n  async function handleSubmit(event: SubmitEvent) {\n    event.preventDefault();\n    const formData = new FormData(event.currentTarget as HTMLFormElement);\n    loading = true;\n    await new Promise((r) => setTimeout(r, 800));\n    loading = false;\n    alert(`Fruit: ${formData.get('fruit') ?? ''}`);\n  }\n</script>\n\n<Form class=\"flex w-full flex-col gap-4\" onsubmit={handleSubmit}>\n  <Field name=\"fruit\">\n    <FieldLabel>Fruits</FieldLabel>\n    <Combobox {items}>\n      <ComboboxInput aria-label=\"Select an item\" placeholder=\"Select an item...\" />\n      <ComboboxPopup>\n        <ComboboxEmpty>No results found.</ComboboxEmpty>\n        <ComboboxList>\n          <ComboboxCollection>\n            {#snippet children(item: { label: string; value: string })}\n              <ComboboxItem label={item.label} value={item.value}>{item.label}</ComboboxItem>\n            {/snippet}\n          </ComboboxCollection>\n        </ComboboxList>\n      </ComboboxPopup>\n    </Combobox>\n    <FieldDescription>Select a item.</FieldDescription>\n    <FieldError>Please select a fruit.</FieldError>\n  </Field>\n  <Button {loading} type=\"submit\">Submit</Button>\n</Form>\n"
-		}
-	],
-	"registryDependencies": [
-		"button",
-		"combobox",
-		"field",
-		"form"
-	],
-	"dependencies": []
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-field-8",
+  "title": "Field 8",
+  "description": "Field with combobox",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-field-8.svelte",
+      "target": "particles/field/p-field-8.svelte",
+      "content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button/index.js';\n  import {\n    Combobox,\n    ComboboxCollection,\n    ComboboxEmpty,\n    ComboboxInput,\n    ComboboxItem,\n    ComboboxList,\n    ComboboxPopup\n  } from '$lib/components/ui/combobox/index.js';\n  import {\n    Field,\n    FieldDescription,\n    FieldError,\n    FieldLabel\n  } from '$lib/components/ui/field/index.js';\n  import { Form } from '$lib/components/ui/form/index.js';\n\n  const items = [\n    { label: 'Apple', value: 'apple' },\n    { label: 'Banana', value: 'banana' },\n    { label: 'Grape', value: 'grape' },\n    { label: 'Kiwi', value: 'kiwi' },\n    { label: 'Mango', value: 'mango' },\n    { label: 'Orange', value: 'orange' },\n    { label: 'Peach', value: 'peach' },\n    { label: 'Pear', value: 'pear' },\n    { label: 'Pineapple', value: 'pineapple' },\n    { label: 'Strawberry', value: 'strawberry' }\n  ];\n\n  let loading = $state(false);\n\n  async function handleSubmit(event: SubmitEvent) {\n    event.preventDefault();\n    const formData = new FormData(event.currentTarget as HTMLFormElement);\n    loading = true;\n    await new Promise((r) => setTimeout(r, 800));\n    loading = false;\n    alert(`Fruit: ${formData.get('fruit') ?? ''}`);\n  }\n</script>\n\n<Form class=\"flex w-full flex-col gap-4\" onsubmit={handleSubmit}>\n  <Field name=\"fruit\">\n    <FieldLabel>Fruits</FieldLabel>\n    <Combobox {items}>\n      <ComboboxInput aria-label=\"Select an item\" placeholder=\"Select an item...\" />\n      <ComboboxPopup>\n        <ComboboxEmpty>No results found.</ComboboxEmpty>\n        <ComboboxList>\n          <ComboboxCollection>\n            {#snippet children(item: { label: string; value: string })}\n              <ComboboxItem label={item.label} value={item.value}>{item.label}</ComboboxItem>\n            {/snippet}\n          </ComboboxCollection>\n        </ComboboxList>\n      </ComboboxPopup>\n    </Combobox>\n    <FieldDescription>Select a item.</FieldDescription>\n    <FieldError>Please select a fruit.</FieldError>\n  </Field>\n  <Button {loading} type=\"submit\">Submit</Button>\n</Form>\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/button.json",
+    "https://cossui-svelte.com/r/combobox.json",
+    "https://cossui-svelte.com/r/field.json",
+    "https://cossui-svelte.com/r/form.json"
+  ],
+  "dependencies": []
 }

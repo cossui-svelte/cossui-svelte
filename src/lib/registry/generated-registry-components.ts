@@ -546,7 +546,6 @@ const allComponents: RegistryUiData = {
       '@tiptap/starter-kit',
       '@tiptap/suggestion',
       'lowlight',
-      'mermaid',
       'mode-watcher'
     ],
     registryDependencies: [

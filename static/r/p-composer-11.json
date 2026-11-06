@@ -1,21 +1,21 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "p-composer-11",
-	"title": "Composer 11",
-	"description": "Compact rounded adaptive composer with a circular send button",
-	"type": "registry:block",
-	"files": [
-		{
-			"type": "registry:block",
-			"path": "p-composer-11.svelte",
-			"target": "$lib/components/particles/composer/p-composer-11.svelte",
-			"content": "<script lang=\"ts\">\n  import ArrowUp from '@lucide/svelte/icons/arrow-up';\n  import {\n    Composer,\n    ComposerActionGroup,\n    ComposerActions,\n    ComposerInput,\n    ComposerSubmit,\n    getComposerText,\n    type ComposerValue\n  } from '#lib/components/ui/composer/index.js';\n\n  let value = $state<ComposerValue>([]);\n  let notice = $state('');\n</script>\n\n<div class=\"flex w-full max-w-xl flex-col gap-2\">\n  <Composer\n    class=\"rounded-[calc(--spacing(5.5)+1px)] [--composer-padding:--spacing(1)] before:rounded-[--spacing(5.5)] data-[layout=adaptive]:not-data-multiline:px-[calc(--spacing(1)-1px)] sm:rounded-[calc(--spacing(5)+1px)] sm:before:rounded-[--spacing(5)]\"\n    layout=\"adaptive\"\n    bind:value\n    onSubmit={(draft) => {\n      notice = `Sent: ${getComposerText(draft)}`;\n      value = [];\n    }}\n  >\n    <ComposerInput aria-label=\"Message\" class=\"px-2\" placeholder=\"Write a message…\" />\n    <ComposerActions class=\"mx-[calc(--spacing(1)-1px)]\">\n      <ComposerActionGroup align=\"end\">\n        <ComposerSubmit aria-label=\"Send message\" class=\"rounded-full\" size=\"icon\">\n          <ArrowUp aria-hidden=\"true\" />\n        </ComposerSubmit>\n      </ComposerActionGroup>\n    </ComposerActions>\n  </Composer>\n  <p class=\"min-h-5 text-muted-foreground text-sm\" role=\"status\">{notice}</p>\n</div>\n"
-		}
-	],
-	"registryDependencies": [
-		"composer"
-	],
-	"dependencies": [
-		"@lucide/svelte"
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-composer-11",
+  "title": "Composer 11",
+  "description": "Compact rounded adaptive composer with a circular send button",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-composer-11.svelte",
+      "target": "particles/composer/p-composer-11.svelte",
+      "content": "<script lang=\"ts\">\n  import ArrowUp from '@lucide/svelte/icons/arrow-up';\n  import {\n    Composer,\n    ComposerActionGroup,\n    ComposerActions,\n    ComposerInput,\n    ComposerSubmit,\n    getComposerText,\n    type ComposerValue\n  } from '$lib/components/ui/composer/index.js';\n\n  let value = $state<ComposerValue>([]);\n  let notice = $state('');\n</script>\n\n<div class=\"flex w-full max-w-xl flex-col gap-2\">\n  <Composer\n    class=\"rounded-[calc(--spacing(5.5)+1px)] [--composer-padding:--spacing(1)] before:rounded-[--spacing(5.5)] data-[layout=adaptive]:not-data-multiline:px-[calc(--spacing(1)-1px)] sm:rounded-[calc(--spacing(5)+1px)] sm:before:rounded-[--spacing(5)]\"\n    layout=\"adaptive\"\n    bind:value\n    onSubmit={(draft) => {\n      notice = `Sent: ${getComposerText(draft)}`;\n      value = [];\n    }}\n  >\n    <ComposerInput aria-label=\"Message\" class=\"px-2\" placeholder=\"Write a message…\" />\n    <ComposerActions class=\"mx-[calc(--spacing(1)-1px)]\">\n      <ComposerActionGroup align=\"end\">\n        <ComposerSubmit aria-label=\"Send message\" class=\"rounded-full\" size=\"icon\">\n          <ArrowUp aria-hidden=\"true\" />\n        </ComposerSubmit>\n      </ComposerActionGroup>\n    </ComposerActions>\n  </Composer>\n  <p class=\"min-h-5 text-muted-foreground text-sm\" role=\"status\">{notice}</p>\n</div>\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/composer.json"
+  ],
+  "dependencies": [
+    "@lucide/svelte"
+  ]
 }

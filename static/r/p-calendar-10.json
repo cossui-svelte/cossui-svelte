@@ -1,22 +1,22 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "p-calendar-10",
-	"title": "Calendar 10",
-	"description": "Calendar with rounded range selection style",
-	"type": "registry:block",
-	"files": [
-		{
-			"type": "registry:block",
-			"path": "p-calendar-10.svelte",
-			"target": "$lib/components/particles/calendar/p-calendar-10.svelte",
-			"content": "<script lang=\"ts\">\n  import { getLocalTimeZone, today } from '@internationalized/date';\n  import { Calendar } from '#lib/components/ui/calendar/index.js';\n\n  const todayValue = today(getLocalTimeZone());\n  let value = $state({ end: todayValue.add({ days: 3 }), start: todayValue });\n</script>\n\n<Calendar bind:value class=\"[--cell-radius:9999px]\" mode=\"range\" />\n"
-		}
-	],
-	"registryDependencies": [
-		"calendar"
-	],
-	"dependencies": [
-		"@internationalized/date",
-		"@internationalized/date@^3.12.4"
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-calendar-10",
+  "title": "Calendar 10",
+  "description": "Calendar with rounded range selection style",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-calendar-10.svelte",
+      "target": "particles/calendar/p-calendar-10.svelte",
+      "content": "<script lang=\"ts\">\n  import { getLocalTimeZone, today } from '@internationalized/date';\n  import { Calendar } from '$lib/components/ui/calendar/index.js';\n\n  const todayValue = today(getLocalTimeZone());\n  let value = $state({ end: todayValue.add({ days: 3 }), start: todayValue });\n</script>\n\n<Calendar bind:value class=\"[--cell-radius:9999px]\" mode=\"range\" />\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/calendar.json"
+  ],
+  "dependencies": [
+    "@internationalized/date",
+    "@internationalized/date@^3.12.4"
+  ]
 }

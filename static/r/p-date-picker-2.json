@@ -1,26 +1,26 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "p-date-picker-2",
-	"title": "Date picker 2",
-	"description": "Date range picker",
-	"type": "registry:block",
-	"files": [
-		{
-			"type": "registry:block",
-			"path": "p-date-picker-2.svelte",
-			"target": "$lib/components/particles/date-picker/p-date-picker-2.svelte",
-			"content": "<script lang=\"ts\">\n  import { DateFormatter, type DateValue, getLocalTimeZone } from '@internationalized/date';\n  import CalendarIcon from '@lucide/svelte/icons/calendar';\n  import { buttonVariants } from '#lib/components/ui/button/index.js';\n  import { Calendar } from '#lib/components/ui/calendar/index.js';\n  import { Popover, PopoverPopup, PopoverTrigger } from '#lib/components/ui/popover/index.js';\n  import { cn } from '#lib/utils.js';\n\n  const df = new DateFormatter('en-US', { dateStyle: 'medium' });\n\n  let value = $state<{ end: DateValue; start: DateValue } | undefined>(undefined);\n</script>\n\n<Popover>\n  <PopoverTrigger class={cn(buttonVariants({ variant: 'outline' }), 'w-full justify-start')}>\n    <CalendarIcon aria-hidden=\"true\" />\n    {#if value?.start}\n      {#if value.end}\n        {df.format(value.start.toDate(getLocalTimeZone()))}\n        -\n        {df.format(value.end.toDate(getLocalTimeZone()))}\n      {:else}\n        {df.format(value.start.toDate(getLocalTimeZone()))}\n      {/if}\n    {:else}\n      <span>Pick a date range</span>\n    {/if}\n  </PopoverTrigger>\n  <PopoverPopup>\n    <Calendar mode=\"range\" bind:value />\n  </PopoverPopup>\n</Popover>\n"
-		}
-	],
-	"registryDependencies": [
-		"button",
-		"calendar",
-		"popover",
-		"utils"
-	],
-	"dependencies": [
-		"@internationalized/date",
-		"@lucide/svelte",
-		"@internationalized/date@^3.12.4"
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-date-picker-2",
+  "title": "Date picker 2",
+  "description": "Date range picker",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-date-picker-2.svelte",
+      "target": "particles/date-picker/p-date-picker-2.svelte",
+      "content": "<script lang=\"ts\">\n  import { DateFormatter, type DateValue, getLocalTimeZone } from '@internationalized/date';\n  import CalendarIcon from '@lucide/svelte/icons/calendar';\n  import { buttonVariants } from '$lib/components/ui/button/index.js';\n  import { Calendar } from '$lib/components/ui/calendar/index.js';\n  import { Popover, PopoverPopup, PopoverTrigger } from '$lib/components/ui/popover/index.js';\n  import { cn } from '$lib/utils.js';\n\n  const df = new DateFormatter('en-US', { dateStyle: 'medium' });\n\n  let value = $state<{ end: DateValue; start: DateValue } | undefined>(undefined);\n</script>\n\n<Popover>\n  <PopoverTrigger class={cn(buttonVariants({ variant: 'outline' }), 'w-full justify-start')}>\n    <CalendarIcon aria-hidden=\"true\" />\n    {#if value?.start}\n      {#if value.end}\n        {df.format(value.start.toDate(getLocalTimeZone()))}\n        -\n        {df.format(value.end.toDate(getLocalTimeZone()))}\n      {:else}\n        {df.format(value.start.toDate(getLocalTimeZone()))}\n      {/if}\n    {:else}\n      <span>Pick a date range</span>\n    {/if}\n  </PopoverTrigger>\n  <PopoverPopup>\n    <Calendar mode=\"range\" bind:value />\n  </PopoverPopup>\n</Popover>\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/button.json",
+    "https://cossui-svelte.com/r/calendar.json",
+    "https://cossui-svelte.com/r/popover.json",
+    "https://cossui-svelte.com/r/utils.json"
+  ],
+  "dependencies": [
+    "@internationalized/date",
+    "@lucide/svelte",
+    "@internationalized/date@^3.12.4"
+  ]
 }

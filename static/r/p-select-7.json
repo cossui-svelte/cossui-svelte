@@ -1,19 +1,19 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "p-select-7",
-	"title": "Select 7",
-	"description": "Multiple select",
-	"type": "registry:block",
-	"files": [
-		{
-			"type": "registry:block",
-			"path": "p-select-7.svelte",
-			"target": "$lib/components/particles/select/p-select-7.svelte",
-			"content": "<script lang=\"ts\">\n  import {\n    Select,\n    SelectItem,\n    SelectPopup,\n    SelectTrigger\n  } from '#lib/components/ui/select/index.js';\n\n  const languages: Record<string, string> = {\n    cpp: 'C++',\n    csharp: 'C#',\n    go: 'Go',\n    java: 'Java',\n    javascript: 'JavaScript',\n    php: 'PHP',\n    python: 'Python',\n    rust: 'Rust',\n    swift: 'Swift',\n    typescript: 'TypeScript'\n  };\n\n  const values = Object.keys(languages);\n  const items = values.map((value) => ({ label: languages[value], value }));\n\n  let selected = $state<string[]>(['javascript', 'typescript']);\n\n  const summary = $derived.by(() => {\n    if (selected.length === 0) return 'Select languages…';\n    const first = languages[selected[0]];\n    return selected.length === 1 ? first : `${first} (+${selected.length - 1} more)`;\n  });\n</script>\n\n<Select bind:value={selected} {items} multiple>\n  <SelectTrigger aria-label=\"Select languages\">\n    <span class=\"flex-1 truncate\">{summary}</span>\n  </SelectTrigger>\n  <SelectPopup>\n    {#each values as value (value)}\n      <SelectItem {value}>{languages[value]}</SelectItem>\n    {/each}\n  </SelectPopup>\n</Select>\n"
-		}
-	],
-	"registryDependencies": [
-		"select"
-	],
-	"dependencies": []
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-select-7",
+  "title": "Select 7",
+  "description": "Multiple select",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-select-7.svelte",
+      "target": "particles/select/p-select-7.svelte",
+      "content": "<script lang=\"ts\">\n  import {\n    Select,\n    SelectItem,\n    SelectPopup,\n    SelectTrigger\n  } from '$lib/components/ui/select/index.js';\n\n  const languages: Record<string, string> = {\n    cpp: 'C++',\n    csharp: 'C#',\n    go: 'Go',\n    java: 'Java',\n    javascript: 'JavaScript',\n    php: 'PHP',\n    python: 'Python',\n    rust: 'Rust',\n    swift: 'Swift',\n    typescript: 'TypeScript'\n  };\n\n  const values = Object.keys(languages);\n  const items = values.map((value) => ({ label: languages[value], value }));\n\n  let selected = $state<string[]>(['javascript', 'typescript']);\n\n  const summary = $derived.by(() => {\n    if (selected.length === 0) return 'Select languages…';\n    const first = languages[selected[0]];\n    return selected.length === 1 ? first : `${first} (+${selected.length - 1} more)`;\n  });\n</script>\n\n<Select bind:value={selected} {items} multiple>\n  <SelectTrigger aria-label=\"Select languages\">\n    <span class=\"flex-1 truncate\">{summary}</span>\n  </SelectTrigger>\n  <SelectPopup>\n    {#each values as value (value)}\n      <SelectItem {value}>{languages[value]}</SelectItem>\n    {/each}\n  </SelectPopup>\n</Select>\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/select.json"
+  ],
+  "dependencies": []
 }

@@ -1,23 +1,23 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "p-button-24",
-	"title": "Button 24",
-	"description": "Social login icon buttons",
-	"type": "registry:block",
-	"files": [
-		{
-			"type": "registry:block",
-			"path": "p-button-24.svelte",
-			"target": "$lib/components/particles/button/p-button-24.svelte",
-			"content": "<script lang=\"ts\">\n  import { Button } from '#lib/components/ui/button/index.js';\n  import RiFacebookFill from '#lib/components/icons/FacebookFillLogos.svelte';\n  import RiGithubFill from '#lib/components/icons/GithubFillLogos.svelte';\n  import RiGoogleFill from '#lib/components/icons/GoogleFillLogos.svelte';\n  import RiTwitterXFill from '#lib/components/icons/TwitterXFillLogos.svelte';\n</script>\n\n<div class=\"inline-flex flex-wrap gap-2\">\n  <Button aria-label=\"Login with Google\" size=\"icon\" variant=\"outline\">\n    <RiGoogleFill aria-hidden=\"true\" />\n  </Button>\n  <Button aria-label=\"Login with Facebook\" size=\"icon\" variant=\"outline\">\n    <RiFacebookFill aria-hidden=\"true\" />\n  </Button>\n  <Button aria-label=\"Login with X\" size=\"icon\" variant=\"outline\">\n    <RiTwitterXFill aria-hidden=\"true\" />\n  </Button>\n  <Button aria-label=\"Login with GitHub\" size=\"icon\" variant=\"outline\">\n    <RiGithubFill aria-hidden=\"true\" />\n  </Button>\n</div>\n"
-		}
-	],
-	"registryDependencies": [
-		"button",
-		"FacebookFillLogos",
-		"GithubFillLogos",
-		"GoogleFillLogos",
-		"TwitterXFillLogos"
-	],
-	"dependencies": []
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-button-24",
+  "title": "Button 24",
+  "description": "Social login icon buttons",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-button-24.svelte",
+      "target": "particles/button/p-button-24.svelte",
+      "content": "<script lang=\"ts\">\n  import { Button } from '$lib/components/ui/button/index.js';\n  import RiFacebookFill from '$lib/components/icons/FacebookFillLogos.svelte';\n  import RiGithubFill from '$lib/components/icons/GithubFillLogos.svelte';\n  import RiGoogleFill from '$lib/components/icons/GoogleFillLogos.svelte';\n  import RiTwitterXFill from '$lib/components/icons/TwitterXFillLogos.svelte';\n</script>\n\n<div class=\"inline-flex flex-wrap gap-2\">\n  <Button aria-label=\"Login with Google\" size=\"icon\" variant=\"outline\">\n    <RiGoogleFill aria-hidden=\"true\" />\n  </Button>\n  <Button aria-label=\"Login with Facebook\" size=\"icon\" variant=\"outline\">\n    <RiFacebookFill aria-hidden=\"true\" />\n  </Button>\n  <Button aria-label=\"Login with X\" size=\"icon\" variant=\"outline\">\n    <RiTwitterXFill aria-hidden=\"true\" />\n  </Button>\n  <Button aria-label=\"Login with GitHub\" size=\"icon\" variant=\"outline\">\n    <RiGithubFill aria-hidden=\"true\" />\n  </Button>\n</div>\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/button.json",
+    "https://cossui-svelte.com/r/FacebookFillLogos.json",
+    "https://cossui-svelte.com/r/GithubFillLogos.json",
+    "https://cossui-svelte.com/r/GoogleFillLogos.json",
+    "https://cossui-svelte.com/r/TwitterXFillLogos.json"
+  ],
+  "dependencies": []
 }

@@ -1,20 +1,20 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "p-avatar-20",
-	"title": "Avatar 20",
-	"description": "Avatar with a tooltip",
-	"type": "registry:block",
-	"files": [
-		{
-			"type": "registry:block",
-			"path": "p-avatar-20.svelte",
-			"target": "$lib/components/particles/avatar/p-avatar-20.svelte",
-			"content": "<script lang=\"ts\">\n  import { Avatar, AvatarFallback, AvatarImage } from '#lib/components/ui/avatar/index.js';\n  import { Tooltip, TooltipPopup, TooltipTrigger } from '#lib/components/ui/tooltip/index.js';\n</script>\n\n<Tooltip>\n  <TooltipTrigger\n    class=\"inline-flex rounded-full outline-offset-2 focus-visible:outline-2 focus-visible:outline-ring\"\n  >\n    <Avatar>\n      <AvatarImage\n        alt=\"Frida Kahlo\"\n        src=\"https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?w=96&h=96&dpr=2&q=80\"\n      />\n      <AvatarFallback>FK</AvatarFallback>\n    </Avatar>\n  </TooltipTrigger>\n  <TooltipPopup>Frida Kahlo</TooltipPopup>\n</Tooltip>\n"
-		}
-	],
-	"registryDependencies": [
-		"avatar",
-		"tooltip"
-	],
-	"dependencies": []
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-avatar-20",
+  "title": "Avatar 20",
+  "description": "Avatar with a tooltip",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-avatar-20.svelte",
+      "target": "particles/avatar/p-avatar-20.svelte",
+      "content": "<script lang=\"ts\">\n  import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar/index.js';\n  import { Tooltip, TooltipPopup, TooltipTrigger } from '$lib/components/ui/tooltip/index.js';\n</script>\n\n<Tooltip>\n  <TooltipTrigger\n    class=\"inline-flex rounded-full outline-offset-2 focus-visible:outline-2 focus-visible:outline-ring\"\n  >\n    <Avatar>\n      <AvatarImage\n        alt=\"Frida Kahlo\"\n        src=\"https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?w=96&h=96&dpr=2&q=80\"\n      />\n      <AvatarFallback>FK</AvatarFallback>\n    </Avatar>\n  </TooltipTrigger>\n  <TooltipPopup>Frida Kahlo</TooltipPopup>\n</Tooltip>\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/avatar.json",
+    "https://cossui-svelte.com/r/tooltip.json"
+  ],
+  "dependencies": []
 }

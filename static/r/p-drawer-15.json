@@ -1,23 +1,23 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "p-drawer-15",
-	"title": "Drawer 15",
-	"description": "Composer pinned below scrollable drawer content in a bottom drawer",
-	"type": "registry:block",
-	"files": [
-		{
-			"type": "registry:block",
-			"path": "p-drawer-15.svelte",
-			"target": "$lib/components/particles/drawer/p-drawer-15.svelte",
-			"content": "<script lang=\"ts\">\n  import ArrowUp from '@lucide/svelte/icons/arrow-up';\n  import { buttonVariants } from '#lib/components/ui/button/index.js';\n  import {\n    Composer,\n    ComposerActionGroup,\n    ComposerActions,\n    ComposerInput,\n    ComposerItem,\n    ComposerList,\n    ComposerPopup,\n    ComposerSubmit,\n    type ComposerTrigger,\n    type ComposerValue\n  } from '#lib/components/ui/composer/index.js';\n  import {\n    Drawer,\n    DrawerHeader,\n    DrawerPanel,\n    DrawerPopup,\n    DrawerTitle,\n    DrawerTrigger\n  } from '#lib/components/ui/drawer/index.js';\n\n  const blocks = Array.from({ length: 32 }, (_, index) => `block-${index}`);\n\n  const people = [\n    { id: 'alex', label: 'Alex Morgan' },\n    { id: 'sam', label: 'Sam Rivera' }\n  ];\n\n  const actions = [\n    { id: 'summarize', label: 'Summarize', type: 'action' as const },\n    { id: 'rewrite', label: 'Rewrite', type: 'action' as const }\n  ];\n\n  const triggers: ComposerTrigger[] = [\n    { character: '@', items: people },\n    { character: '/', items: actions }\n  ];\n\n  let value = $state<ComposerValue>([]);\n</script>\n\n<Drawer>\n  <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Open chat drawer</DrawerTrigger>\n  <DrawerPopup class=\"[--drawer-height:calc(100dvh-3rem)]\" showBar>\n    <DrawerHeader>\n      <DrawerTitle>Chat</DrawerTitle>\n    </DrawerHeader>\n    <div class=\"min-h-0 flex-1\">\n      <DrawerPanel>\n        <div aria-hidden=\"true\" class=\"flex flex-col gap-2\">\n          {#each blocks as key (key)}\n            <div class=\"h-12 shrink-0 rounded-xl bg-muted\"></div>\n          {/each}\n        </div>\n      </DrawerPanel>\n    </div>\n    <Composer class=\"mx-3 mb-3\" bind:value {triggers} onSubmit={() => (value = [])}>\n      <ComposerInput aria-label=\"Message\" placeholder=\"Write a message…\" />\n      <ComposerPopup>\n        <ComposerList>\n          {#snippet children(item)}\n            <ComposerItem value={item}>{item.label}</ComposerItem>\n          {/snippet}\n        </ComposerList>\n      </ComposerPopup>\n      <ComposerActions>\n        <ComposerActionGroup align=\"end\">\n          <ComposerSubmit aria-label=\"Send message\" size=\"icon\">\n            <ArrowUp aria-hidden=\"true\" />\n          </ComposerSubmit>\n        </ComposerActionGroup>\n      </ComposerActions>\n    </Composer>\n  </DrawerPopup>\n</Drawer>\n"
-		}
-	],
-	"registryDependencies": [
-		"button",
-		"composer",
-		"drawer"
-	],
-	"dependencies": [
-		"@lucide/svelte"
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-drawer-15",
+  "title": "Drawer 15",
+  "description": "Composer pinned below scrollable drawer content in a bottom drawer",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-drawer-15.svelte",
+      "target": "particles/drawer/p-drawer-15.svelte",
+      "content": "<script lang=\"ts\">\n  import ArrowUp from '@lucide/svelte/icons/arrow-up';\n  import { buttonVariants } from '$lib/components/ui/button/index.js';\n  import {\n    Composer,\n    ComposerActionGroup,\n    ComposerActions,\n    ComposerInput,\n    ComposerItem,\n    ComposerList,\n    ComposerPopup,\n    ComposerSubmit,\n    type ComposerTrigger,\n    type ComposerValue\n  } from '$lib/components/ui/composer/index.js';\n  import {\n    Drawer,\n    DrawerHeader,\n    DrawerPanel,\n    DrawerPopup,\n    DrawerTitle,\n    DrawerTrigger\n  } from '$lib/components/ui/drawer/index.js';\n\n  const blocks = Array.from({ length: 32 }, (_, index) => `block-${index}`);\n\n  const people = [\n    { id: 'alex', label: 'Alex Morgan' },\n    { id: 'sam', label: 'Sam Rivera' }\n  ];\n\n  const actions = [\n    { id: 'summarize', label: 'Summarize', type: 'action' as const },\n    { id: 'rewrite', label: 'Rewrite', type: 'action' as const }\n  ];\n\n  const triggers: ComposerTrigger[] = [\n    { character: '@', items: people },\n    { character: '/', items: actions }\n  ];\n\n  let value = $state<ComposerValue>([]);\n</script>\n\n<Drawer>\n  <DrawerTrigger class={buttonVariants({ variant: 'outline' })}>Open chat drawer</DrawerTrigger>\n  <DrawerPopup class=\"[--drawer-height:calc(100dvh-3rem)]\" showBar>\n    <DrawerHeader>\n      <DrawerTitle>Chat</DrawerTitle>\n    </DrawerHeader>\n    <div class=\"min-h-0 flex-1\">\n      <DrawerPanel>\n        <div aria-hidden=\"true\" class=\"flex flex-col gap-2\">\n          {#each blocks as key (key)}\n            <div class=\"h-12 shrink-0 rounded-xl bg-muted\"></div>\n          {/each}\n        </div>\n      </DrawerPanel>\n    </div>\n    <Composer class=\"mx-3 mb-3\" bind:value {triggers} onSubmit={() => (value = [])}>\n      <ComposerInput aria-label=\"Message\" placeholder=\"Write a message…\" />\n      <ComposerPopup>\n        <ComposerList>\n          {#snippet children(item)}\n            <ComposerItem value={item}>{item.label}</ComposerItem>\n          {/snippet}\n        </ComposerList>\n      </ComposerPopup>\n      <ComposerActions>\n        <ComposerActionGroup align=\"end\">\n          <ComposerSubmit aria-label=\"Send message\" size=\"icon\">\n            <ArrowUp aria-hidden=\"true\" />\n          </ComposerSubmit>\n        </ComposerActionGroup>\n      </ComposerActions>\n    </Composer>\n  </DrawerPopup>\n</Drawer>\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/button.json",
+    "https://cossui-svelte.com/r/composer.json",
+    "https://cossui-svelte.com/r/drawer.json"
+  ],
+  "dependencies": [
+    "@lucide/svelte"
+  ]
 }

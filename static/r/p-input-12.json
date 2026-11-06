@@ -1,20 +1,20 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "p-input-12",
-	"title": "Input 12",
-	"description": "Input group with start loading spinner",
-	"type": "registry:block",
-	"files": [
-		{
-			"type": "registry:block",
-			"path": "p-input-12.svelte",
-			"target": "$lib/components/particles/input/p-input-12.svelte",
-			"content": "<script lang=\"ts\">\n  import {\n    InputGroup,\n    InputGroupAddon,\n    InputGroupInput\n  } from '#lib/components/ui/input-group/index.js';\n  import { Spinner } from '#lib/components/ui/spinner/index.js';\n</script>\n\n<InputGroup>\n  <InputGroupInput disabled placeholder=\"Processing…\" type=\"search\" />\n  <InputGroupAddon>\n    <Spinner />\n  </InputGroupAddon>\n</InputGroup>\n"
-		}
-	],
-	"registryDependencies": [
-		"input-group",
-		"spinner"
-	],
-	"dependencies": []
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-input-12",
+  "title": "Input 12",
+  "description": "Input group with start loading spinner",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-input-12.svelte",
+      "target": "particles/input/p-input-12.svelte",
+      "content": "<script lang=\"ts\">\n  import {\n    InputGroup,\n    InputGroupAddon,\n    InputGroupInput\n  } from '$lib/components/ui/input-group/index.js';\n  import { Spinner } from '$lib/components/ui/spinner/index.js';\n</script>\n\n<InputGroup>\n  <InputGroupInput disabled placeholder=\"Processing…\" type=\"search\" />\n  <InputGroupAddon>\n    <Spinner />\n  </InputGroupAddon>\n</InputGroup>\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/input-group.json",
+    "https://cossui-svelte.com/r/spinner.json"
+  ],
+  "dependencies": []
 }

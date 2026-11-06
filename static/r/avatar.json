@@ -1,51 +1,51 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "avatar",
-	"title": "Avatar",
-	"description": "An image element with a fallback for representing the user.",
-	"type": "registry:ui",
-	"files": [
-		{
-			"type": "registry:ui",
-			"path": "avatar/avatar-fallback.svelte",
-			"target": "$lib/components/ui/avatar/avatar-fallback.svelte",
-			"content": "<script lang=\"ts\">\n  import { Avatar as AvatarPrimitive } from '@shardsui/svelte/avatar';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '#lib/utils.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof AvatarPrimitive.Fallback> = $props();\n</script>\n\n<AvatarPrimitive.Fallback\n  bind:ref\n  class={cn('flex size-full items-center justify-center rounded-[inherit] bg-border', className)}\n  data-slot=\"avatar-fallback\"\n  {...restProps}\n></AvatarPrimitive.Fallback>\n"
-		},
-		{
-			"type": "registry:ui",
-			"path": "avatar/avatar-group-count.svelte",
-			"target": "$lib/components/ui/avatar/avatar-group-count.svelte",
-			"content": "<script lang=\"ts\">\n  import type { Avatar as AvatarPrimitive } from '@shardsui/svelte/avatar';\n  import type { ComponentProps, Snippet } from 'svelte';\n  import { cn } from '#lib/utils.js';\n  import AvatarFallback from './avatar-fallback.svelte';\n  import Avatar from './avatar.svelte';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: Omit<ComponentProps<typeof AvatarPrimitive.Root>, 'children'> & {\n    children?: Snippet;\n  } = $props();\n</script>\n\n<Avatar\n  bind:ref\n  class={cn('text-muted-foreground', className)}\n  data-slot=\"avatar-group-count\"\n  {...restProps}\n>\n  <AvatarFallback>{@render children?.()}</AvatarFallback>\n</Avatar>\n"
-		},
-		{
-			"type": "registry:ui",
-			"path": "avatar/avatar-group.svelte",
-			"target": "$lib/components/ui/avatar/avatar-group.svelte",
-			"content": "<script lang=\"ts\" module>\n  import type { HTMLAttributes } from 'svelte/elements';\n  import type { WithElementRef } from '#lib/utils.js';\n\n  export type AvatarGroupProps = WithElementRef<HTMLAttributes<HTMLDivElement>> & {\n    /** Which end of the stack stays a whole circle. */\n    topmost?: 'first' | 'last';\n  };\n\n  const AVATAR_GROUP_CUT =\n    \"url(\\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2 2'%3E%3Ccircle cx='1' cy='1' r='1'/%3E%3C/svg%3E\\\")\";\n</script>\n\n<script lang=\"ts\">\n  import { cn } from '#lib/utils.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    style,\n    topmost = 'first',\n    children,\n    ...restProps\n  }: AvatarGroupProps = $props();\n</script>\n\n<div\n  bind:this={ref}\n  class={cn(\n    'flex w-fit items-center',\n    '[--avatar-group-size:var(--avatar-size,--spacing(8))]',\n    '[--avatar-group-gap:var(--avatar-gap,calc(var(--avatar-group-size)/16))]',\n    '[--avatar-group-overlap:var(--avatar-overlap,calc(var(--avatar-group-size)*0.3))]',\n    '[--avatar-group-cut-end:calc(var(--avatar-group-size)*1.5-var(--avatar-group-overlap))]',\n    '[--avatar-group-cut-radius:calc(var(--avatar-group-size)/2+var(--avatar-group-gap))]',\n    '[--avatar-group-cut-start:calc(var(--avatar-group-overlap)-var(--avatar-group-size)/2)]',\n    '[--avatar-group-mask-position:0_0,calc(var(--avatar-group-cut-x)-var(--avatar-group-cut-radius))_50%]',\n    '[--avatar-group-mask-size:100%_100%,calc(var(--avatar-group-cut-radius)*2)_calc(var(--avatar-group-cut-radius)*2)]',\n    '[--avatar-group-mask:none]',\n    'supports-[mask-composite:subtract]:[--avatar-group-mask:var(--avatar-group-cut-image),var(--avatar-group-cut-image)]',\n    '[--avatar-group-nudge:var(--avatar-nudge,calc((var(--avatar-group-overlap)+var(--avatar-group-gap))*0.3))]',\n    '*:not-first:-ms-(--avatar-group-overlap)',\n    topmost === 'first'\n      ? '*:not-first:mask-(--avatar-group-mask) *:not-first:mask-subtract *:not-first:mask-position-(--avatar-group-mask-position) *:not-first:mask-no-repeat *:not-first:mask-size-(--avatar-group-mask-size) [--avatar-group-cut-x:var(--avatar-group-cut-start)] *:not-first:*:data-[slot=avatar-fallback]:ps-[calc(var(--avatar-group-nudge)*2)] supports-[mask-composite:subtract]:*:not-first:rounded-none rtl:[--avatar-group-cut-x:var(--avatar-group-cut-end)]'\n      : '*:not-last:mask-(--avatar-group-mask) *:not-last:mask-subtract *:not-last:mask-position-(--avatar-group-mask-position) *:not-last:mask-no-repeat *:not-last:mask-size-(--avatar-group-mask-size) [--avatar-group-cut-x:var(--avatar-group-cut-end)] *:not-last:*:data-[slot=avatar-fallback]:pe-[calc(var(--avatar-group-nudge)*2)] supports-[mask-composite:subtract]:*:not-last:rounded-none rtl:[--avatar-group-cut-x:var(--avatar-group-cut-start)]',\n    className\n  )}\n  data-slot=\"avatar-group\"\n  data-topmost={topmost}\n  style=\"--avatar-group-cut-image: {AVATAR_GROUP_CUT};{style ?? ''}\"\n  {...restProps}\n>\n  {@render children?.()}\n</div>\n"
-		},
-		{
-			"type": "registry:ui",
-			"path": "avatar/avatar-image.svelte",
-			"target": "$lib/components/ui/avatar/avatar-image.svelte",
-			"content": "<script lang=\"ts\">\n  import { Avatar as AvatarPrimitive } from '@shardsui/svelte/avatar';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '#lib/utils.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof AvatarPrimitive.Image> = $props();\n</script>\n\n<AvatarPrimitive.Image\n  bind:ref\n  class={cn('size-full rounded-[inherit] object-cover', className)}\n  data-slot=\"avatar-image\"\n  {...restProps}\n/>\n"
-		},
-		{
-			"type": "registry:ui",
-			"path": "avatar/avatar.svelte",
-			"target": "$lib/components/ui/avatar/avatar.svelte",
-			"content": "<script lang=\"ts\">\n  import { Avatar as AvatarPrimitive } from '@shardsui/svelte/avatar';\n  import type { ComponentProps } from 'svelte';\n  import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';\n  import { cn } from '#lib/utils.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof AvatarPrimitive.Root> &\n    // Attributes for `as=\"a\"` / `as=\"button\"` avatars, spread onto the rendered element.\n    Pick<HTMLAnchorAttributes, 'href' | 'rel' | 'target'> &\n    Pick<HTMLButtonAttributes, 'disabled' | 'type'> = $props();\n</script>\n\n<AvatarPrimitive.Root\n  bind:ref\n  data-slot=\"avatar\"\n  class={cn(\n    'relative isolate inline-flex size-(--avatar-size,--spacing(8)) shrink-0 select-none items-center justify-center overflow-hidden rounded-full align-middle font-medium text-[calc(var(--avatar-size,--spacing(8))*0.375)]/none',\n    className\n  )}\n  {...restProps}\n/>\n"
-		},
-		{
-			"type": "registry:ui",
-			"path": "avatar/index.ts",
-			"target": "$lib/components/ui/avatar/index.ts",
-			"content": "import { Avatar as AvatarPrimitive } from '@shardsui/svelte/avatar';\n\nexport { default as Avatar } from './avatar.svelte';\nexport { default as AvatarFallback } from './avatar-fallback.svelte';\nexport { default as AvatarGroup, type AvatarGroupProps } from './avatar-group.svelte';\nexport { default as AvatarGroupCount } from './avatar-group-count.svelte';\nexport { default as AvatarImage } from './avatar-image.svelte';\nexport { AvatarPrimitive };\n"
-		}
-	],
-	"registryDependencies": [
-		"utils"
-	],
-	"dependencies": [
-		"@shardsui/svelte@0.1.0-beta.2"
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar",
+  "title": "Avatar",
+  "description": "An image element with a fallback for representing the user.",
+  "type": "registry:ui",
+  "files": [
+    {
+      "type": "registry:ui",
+      "path": "avatar/avatar-fallback.svelte",
+      "target": "avatar/avatar-fallback.svelte",
+      "content": "<script lang=\"ts\">\n  import { Avatar as AvatarPrimitive } from '@shardsui/svelte/avatar';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof AvatarPrimitive.Fallback> = $props();\n</script>\n\n<AvatarPrimitive.Fallback\n  bind:ref\n  class={cn('flex size-full items-center justify-center rounded-[inherit] bg-border', className)}\n  data-slot=\"avatar-fallback\"\n  {...restProps}\n></AvatarPrimitive.Fallback>\n"
+    },
+    {
+      "type": "registry:ui",
+      "path": "avatar/avatar-group-count.svelte",
+      "target": "avatar/avatar-group-count.svelte",
+      "content": "<script lang=\"ts\">\n  import type { Avatar as AvatarPrimitive } from '@shardsui/svelte/avatar';\n  import type { ComponentProps, Snippet } from 'svelte';\n  import { cn } from '$lib/utils.js';\n  import AvatarFallback from './avatar-fallback.svelte';\n  import Avatar from './avatar.svelte';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: Omit<ComponentProps<typeof AvatarPrimitive.Root>, 'children'> & {\n    children?: Snippet;\n  } = $props();\n</script>\n\n<Avatar\n  bind:ref\n  class={cn('text-muted-foreground', className)}\n  data-slot=\"avatar-group-count\"\n  {...restProps}\n>\n  <AvatarFallback>{@render children?.()}</AvatarFallback>\n</Avatar>\n"
+    },
+    {
+      "type": "registry:ui",
+      "path": "avatar/avatar-group.svelte",
+      "target": "avatar/avatar-group.svelte",
+      "content": "<script lang=\"ts\" module>\n  import type { HTMLAttributes } from 'svelte/elements';\n  import type { WithElementRef } from '$lib/utils.js';\n\n  export type AvatarGroupProps = WithElementRef<HTMLAttributes<HTMLDivElement>> & {\n    /** Which end of the stack stays a whole circle. */\n    topmost?: 'first' | 'last';\n  };\n\n  const AVATAR_GROUP_CUT =\n    \"url(\\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2 2'%3E%3Ccircle cx='1' cy='1' r='1'/%3E%3C/svg%3E\\\")\";\n</script>\n\n<script lang=\"ts\">\n  import { cn } from '$lib/utils.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    style,\n    topmost = 'first',\n    children,\n    ...restProps\n  }: AvatarGroupProps = $props();\n</script>\n\n<div\n  bind:this={ref}\n  class={cn(\n    'flex w-fit items-center',\n    '[--avatar-group-size:var(--avatar-size,--spacing(8))]',\n    '[--avatar-group-gap:var(--avatar-gap,calc(var(--avatar-group-size)/16))]',\n    '[--avatar-group-overlap:var(--avatar-overlap,calc(var(--avatar-group-size)*0.3))]',\n    '[--avatar-group-cut-end:calc(var(--avatar-group-size)*1.5-var(--avatar-group-overlap))]',\n    '[--avatar-group-cut-radius:calc(var(--avatar-group-size)/2+var(--avatar-group-gap))]',\n    '[--avatar-group-cut-start:calc(var(--avatar-group-overlap)-var(--avatar-group-size)/2)]',\n    '[--avatar-group-mask-position:0_0,calc(var(--avatar-group-cut-x)-var(--avatar-group-cut-radius))_50%]',\n    '[--avatar-group-mask-size:100%_100%,calc(var(--avatar-group-cut-radius)*2)_calc(var(--avatar-group-cut-radius)*2)]',\n    '[--avatar-group-mask:none]',\n    'supports-[mask-composite:subtract]:[--avatar-group-mask:var(--avatar-group-cut-image),var(--avatar-group-cut-image)]',\n    '[--avatar-group-nudge:var(--avatar-nudge,calc((var(--avatar-group-overlap)+var(--avatar-group-gap))*0.3))]',\n    '*:not-first:-ms-(--avatar-group-overlap)',\n    topmost === 'first'\n      ? '*:not-first:mask-(--avatar-group-mask) *:not-first:mask-subtract *:not-first:mask-position-(--avatar-group-mask-position) *:not-first:mask-no-repeat *:not-first:mask-size-(--avatar-group-mask-size) [--avatar-group-cut-x:var(--avatar-group-cut-start)] *:not-first:*:data-[slot=avatar-fallback]:ps-[calc(var(--avatar-group-nudge)*2)] supports-[mask-composite:subtract]:*:not-first:rounded-none rtl:[--avatar-group-cut-x:var(--avatar-group-cut-end)]'\n      : '*:not-last:mask-(--avatar-group-mask) *:not-last:mask-subtract *:not-last:mask-position-(--avatar-group-mask-position) *:not-last:mask-no-repeat *:not-last:mask-size-(--avatar-group-mask-size) [--avatar-group-cut-x:var(--avatar-group-cut-end)] *:not-last:*:data-[slot=avatar-fallback]:pe-[calc(var(--avatar-group-nudge)*2)] supports-[mask-composite:subtract]:*:not-last:rounded-none rtl:[--avatar-group-cut-x:var(--avatar-group-cut-start)]',\n    className\n  )}\n  data-slot=\"avatar-group\"\n  data-topmost={topmost}\n  style=\"--avatar-group-cut-image: {AVATAR_GROUP_CUT};{style ?? ''}\"\n  {...restProps}\n>\n  {@render children?.()}\n</div>\n"
+    },
+    {
+      "type": "registry:ui",
+      "path": "avatar/avatar-image.svelte",
+      "target": "avatar/avatar-image.svelte",
+      "content": "<script lang=\"ts\">\n  import { Avatar as AvatarPrimitive } from '@shardsui/svelte/avatar';\n  import type { ComponentProps } from 'svelte';\n  import { cn } from '$lib/utils.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof AvatarPrimitive.Image> = $props();\n</script>\n\n<AvatarPrimitive.Image\n  bind:ref\n  class={cn('size-full rounded-[inherit] object-cover', className)}\n  data-slot=\"avatar-image\"\n  {...restProps}\n/>\n"
+    },
+    {
+      "type": "registry:ui",
+      "path": "avatar/avatar.svelte",
+      "target": "avatar/avatar.svelte",
+      "content": "<script lang=\"ts\">\n  import { Avatar as AvatarPrimitive } from '@shardsui/svelte/avatar';\n  import type { ComponentProps } from 'svelte';\n  import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';\n  import { cn } from '$lib/utils.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: ComponentProps<typeof AvatarPrimitive.Root> &\n    // Attributes for `as=\"a\"` / `as=\"button\"` avatars, spread onto the rendered element.\n    Pick<HTMLAnchorAttributes, 'href' | 'rel' | 'target'> &\n    Pick<HTMLButtonAttributes, 'disabled' | 'type'> = $props();\n</script>\n\n<AvatarPrimitive.Root\n  bind:ref\n  data-slot=\"avatar\"\n  class={cn(\n    'relative isolate inline-flex size-(--avatar-size,--spacing(8)) shrink-0 select-none items-center justify-center overflow-hidden rounded-full align-middle font-medium text-[calc(var(--avatar-size,--spacing(8))*0.375)]/none',\n    className\n  )}\n  {...restProps}\n/>\n"
+    },
+    {
+      "type": "registry:ui",
+      "path": "avatar/index.ts",
+      "target": "avatar/index.ts",
+      "content": "import { Avatar as AvatarPrimitive } from '@shardsui/svelte/avatar';\n\nexport { default as Avatar } from './avatar.svelte';\nexport { default as AvatarFallback } from './avatar-fallback.svelte';\nexport { default as AvatarGroup, type AvatarGroupProps } from './avatar-group.svelte';\nexport { default as AvatarGroupCount } from './avatar-group-count.svelte';\nexport { default as AvatarImage } from './avatar-image.svelte';\nexport { AvatarPrimitive };\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/utils.json"
+  ],
+  "dependencies": [
+    "@shardsui/svelte@0.1.0-beta.2"
+  ]
 }

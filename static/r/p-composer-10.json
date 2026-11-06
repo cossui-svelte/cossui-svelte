@@ -1,22 +1,22 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "p-composer-10",
-	"title": "Composer 10",
-	"description": "Composer with leading buttons for mentions and slash actions",
-	"type": "registry:block",
-	"files": [
-		{
-			"type": "registry:block",
-			"path": "p-composer-10.svelte",
-			"target": "$lib/components/particles/composer/p-composer-10.svelte",
-			"content": "<script lang=\"ts\">\n  import ArrowUp from '@lucide/svelte/icons/arrow-up';\n  import AtSign from '@lucide/svelte/icons/at-sign';\n  import SquareSlash from '@lucide/svelte/icons/square-slash';\n  import { Button } from '#lib/components/ui/button/index.js';\n  import {\n    Composer,\n    ComposerActionGroup,\n    ComposerActions,\n    ComposerInput,\n    ComposerItem,\n    ComposerList,\n    ComposerPopup,\n    ComposerSubmit,\n    type ComposerTrigger,\n    type ComposerValue\n  } from '#lib/components/ui/composer/index.js';\n\n  const triggers: ComposerTrigger[] = [\n    {\n      character: '@',\n      items: [\n        { id: 'alex', label: 'Alex Morgan' },\n        { id: 'sam', label: 'Sam Rivera' }\n      ]\n    },\n    {\n      character: '/',\n      items: [\n        { id: 'summarize', label: 'Summarize', type: 'action' },\n        { id: 'rewrite', label: 'Rewrite', type: 'action' }\n      ]\n    }\n  ];\n\n  let value = $state<ComposerValue>([]);\n</script>\n\n<Composer class=\"w-full max-w-xl\" bind:value onSubmit={() => (value = [])} {triggers}>\n  {#snippet children(composer)}\n    <ComposerInput aria-label=\"Message\" placeholder=\"Write a message…\" />\n    <ComposerPopup>\n      <ComposerList>\n        {#snippet children(item)}\n          <ComposerItem value={item}>{item.label}</ComposerItem>\n        {/snippet}\n      </ComposerList>\n    </ComposerPopup>\n    <ComposerActions>\n      <ComposerActionGroup>\n        <Button\n          aria-label=\"Mention someone\"\n          disabled={composer.disabled || composer.readOnly}\n          size=\"icon\"\n          type=\"button\"\n          variant=\"ghost\"\n          onclick={() => composer.insertTrigger('@')}\n        >\n          <AtSign aria-hidden=\"true\" />\n        </Button>\n        <Button\n          aria-label=\"Insert an action\"\n          disabled={composer.disabled || composer.readOnly}\n          size=\"icon\"\n          type=\"button\"\n          variant=\"ghost\"\n          onclick={() => composer.insertTrigger('/')}\n        >\n          <SquareSlash aria-hidden=\"true\" />\n        </Button>\n      </ComposerActionGroup>\n      <ComposerActionGroup align=\"end\">\n        <ComposerSubmit aria-label=\"Send message\" size=\"icon\">\n          <ArrowUp aria-hidden=\"true\" />\n        </ComposerSubmit>\n      </ComposerActionGroup>\n    </ComposerActions>\n  {/snippet}\n</Composer>\n"
-		}
-	],
-	"registryDependencies": [
-		"button",
-		"composer"
-	],
-	"dependencies": [
-		"@lucide/svelte"
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-composer-10",
+  "title": "Composer 10",
+  "description": "Composer with leading buttons for mentions and slash actions",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-composer-10.svelte",
+      "target": "particles/composer/p-composer-10.svelte",
+      "content": "<script lang=\"ts\">\n  import ArrowUp from '@lucide/svelte/icons/arrow-up';\n  import AtSign from '@lucide/svelte/icons/at-sign';\n  import SquareSlash from '@lucide/svelte/icons/square-slash';\n  import { Button } from '$lib/components/ui/button/index.js';\n  import {\n    Composer,\n    ComposerActionGroup,\n    ComposerActions,\n    ComposerInput,\n    ComposerItem,\n    ComposerList,\n    ComposerPopup,\n    ComposerSubmit,\n    type ComposerTrigger,\n    type ComposerValue\n  } from '$lib/components/ui/composer/index.js';\n\n  const triggers: ComposerTrigger[] = [\n    {\n      character: '@',\n      items: [\n        { id: 'alex', label: 'Alex Morgan' },\n        { id: 'sam', label: 'Sam Rivera' }\n      ]\n    },\n    {\n      character: '/',\n      items: [\n        { id: 'summarize', label: 'Summarize', type: 'action' },\n        { id: 'rewrite', label: 'Rewrite', type: 'action' }\n      ]\n    }\n  ];\n\n  let value = $state<ComposerValue>([]);\n</script>\n\n<Composer class=\"w-full max-w-xl\" bind:value onSubmit={() => (value = [])} {triggers}>\n  {#snippet children(composer)}\n    <ComposerInput aria-label=\"Message\" placeholder=\"Write a message…\" />\n    <ComposerPopup>\n      <ComposerList>\n        {#snippet children(item)}\n          <ComposerItem value={item}>{item.label}</ComposerItem>\n        {/snippet}\n      </ComposerList>\n    </ComposerPopup>\n    <ComposerActions>\n      <ComposerActionGroup>\n        <Button\n          aria-label=\"Mention someone\"\n          disabled={composer.disabled || composer.readOnly}\n          size=\"icon\"\n          type=\"button\"\n          variant=\"ghost\"\n          onclick={() => composer.insertTrigger('@')}\n        >\n          <AtSign aria-hidden=\"true\" />\n        </Button>\n        <Button\n          aria-label=\"Insert an action\"\n          disabled={composer.disabled || composer.readOnly}\n          size=\"icon\"\n          type=\"button\"\n          variant=\"ghost\"\n          onclick={() => composer.insertTrigger('/')}\n        >\n          <SquareSlash aria-hidden=\"true\" />\n        </Button>\n      </ComposerActionGroup>\n      <ComposerActionGroup align=\"end\">\n        <ComposerSubmit aria-label=\"Send message\" size=\"icon\">\n          <ArrowUp aria-hidden=\"true\" />\n        </ComposerSubmit>\n      </ComposerActionGroup>\n    </ComposerActions>\n  {/snippet}\n</Composer>\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/button.json",
+    "https://cossui-svelte.com/r/composer.json"
+  ],
+  "dependencies": [
+    "@lucide/svelte"
+  ]
 }
