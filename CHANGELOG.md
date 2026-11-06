@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.1.1](https://github.com/cossui-svelte/cossui-svelte/compare/v1.1.0...v1.1.1) (2026-11-06)
+
+### 🐛 Bug Fixes
+
+* registry .json location was off, forcing AI clients to correct paths ([ee11acd](https://github.com/cossui-svelte/cossui-svelte/commit/ee11acd92741123cfdcbb57b3ae255a64c71edc7))
+
+### 📝 Documentation
+
+* replace the starhistory renderer ([2c17a37](https://github.com/cossui-svelte/cossui-svelte/commit/2c17a3727255a6d435c36932734856e9dca43d88))
+
 ## [1.1.0](https://github.com/cossui-svelte/cossui-svelte/compare/v1.0.0...v1.1.0) (2026-10-27)
 
 ### ✨ Features
