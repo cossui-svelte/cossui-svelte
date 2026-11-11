@@ -181,6 +181,7 @@ export const COMPONENT_DEPENDENCIES: Record<string, string[]> = {
   'p-frame-2': ['@lucide/svelte'],
   'p-group-1': ['@lucide/svelte'],
   'p-group-10': ['@lucide/svelte'],
+  'p-group-100': ['@lucide/svelte'],
   'p-group-11': ['@lucide/svelte'],
   'p-group-12': ['@lucide/svelte'],
   'p-group-13': ['@lucide/svelte'],

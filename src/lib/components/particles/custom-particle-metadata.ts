@@ -200,6 +200,10 @@ export const custom_particle_metadata = {
   'p-cropper-12': {
     description: 'Cropper with aspect ratio switcher and grid overlay'
   },
+  'p-group-100': {
+    description: 'Copy agent prompt split button with stacked agent icons and a copy-options menu',
+    tags: ['button', 'menu', 'avatar', 'copy', 'ai']
+  },
   'p-empty-1': {
     // remove empty-state, it is redundant with empty
     tags: ['-empty-state']

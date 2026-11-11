@@ -3951,6 +3951,13 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     registryDependencies: ['button', 'use-file-upload'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
+  'p-group-100': {
+    description: 'Copy agent prompt split button with stacked agent icons and a copy-options menu',
+    tags: ['button', 'menu', 'avatar', 'copy', 'ai', 'group'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['avatar', 'button', 'group', 'menu'],
+    meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
+  },
   'p-input-100': {
     description: 'Credit card number input with auto-formatting',
     tags: ['input'],

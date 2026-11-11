@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-group-100",
+  "title": "Group 100",
+  "description": "Copy agent prompt split button with stacked agent icons and a copy-options menu",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-group-100.svelte",
+      "target": "particles/group/p-group-100.svelte",
+      "content": "<script lang=\"ts\">\n  import ChevronDown from '@lucide/svelte/icons/chevron-down';\n  import MessageSquareText from '@lucide/svelte/icons/message-square-text';\n  import Plug from '@lucide/svelte/icons/plug';\n  import SquareTerminal from '@lucide/svelte/icons/square-terminal';\n  import { Avatar, AvatarFallback } from '$lib/components/ui/avatar/index.js';\n  import { Button, buttonVariants } from '$lib/components/ui/button/index.js';\n  import { Group, GroupSeparator } from '$lib/components/ui/group/index.js';\n  import { Menu, MenuItem, MenuPopup, MenuTrigger } from '$lib/components/ui/menu/index.js';\n  import RiClaudeFill from '$lib/components/icons/ClaudeFillLogos.svelte';\n  import CursorFill from '$lib/components/icons/CursorFillLogos.svelte';\n  import RiOpenaiFill from '$lib/components/icons/OpenaiFillLogos.svelte';\n\n  const prompt = `Install the Button component from cossui-svelte:\nnpx shadcn-svelte@latest add https://cossui-svelte.com/r/button.json`;\n\n  const agents = [\n    { icon: CursorFill, label: 'Cursor' },\n    { icon: RiClaudeFill, label: 'Claude' },\n    { icon: RiOpenaiFill, label: 'ChatGPT' }\n  ];\n\n  let isCopied = $state(false);\n  let timeout: ReturnType<typeof setTimeout> | undefined;\n\n  const mcpUrl = 'https://cossui-svelte.com/mcp';\n  const skillCommand = 'npx skills add cossui-svelte/cossui-svelte';\n\n  async function writeToClipboard(text: string) {\n    await navigator.clipboard.writeText(text);\n    isCopied = true;\n    clearTimeout(timeout);\n    timeout = setTimeout(() => {\n      isCopied = false;\n    }, 2000);\n  }\n\n  function copyPrompt() {\n    return writeToClipboard(prompt);\n  }\n\n  function copyMcpUrl() {\n    return writeToClipboard(mcpUrl);\n  }\n\n  function copySkillCommand() {\n    return writeToClipboard(skillCommand);\n  }\n\n  const copyOptions = [\n    { icon: MessageSquareText, label: 'Copy prompt', onclick: copyPrompt },\n    { icon: Plug, label: 'Copy remote MCP url', onclick: copyMcpUrl },\n    { icon: SquareTerminal, label: 'Copy npm skill command', onclick: copySkillCommand }\n  ];\n</script>\n\n<Group aria-label=\"Agent prompt actions\">\n  <Button variant=\"outline\" onclick={copyPrompt}>\n    <!-- plain overlap rather than AvatarGroup: its crescent mask would cut the bordered circles -->\n    <div class=\"flex items-center *:not-first:-ms-1.5\" aria-hidden=\"true\">\n      {#each agents as agent (agent.label)}\n        <Avatar class=\"border border-foreground/32 bg-background [--avatar-size:--spacing(5)]\">\n          <AvatarFallback class=\"bg-transparent\">\n            <agent.icon size=\"12\" aria-hidden=\"true\" />\n          </AvatarFallback>\n        </Avatar>\n      {/each}\n    </div>\n    <span aria-live=\"polite\">{isCopied ? 'Copied!' : 'Copy agent prompt'}</span>\n  </Button>\n  <GroupSeparator />\n  <Menu>\n    <MenuTrigger\n      aria-label=\"More prompt options\"\n      class={buttonVariants({ size: 'icon', variant: 'outline' })}\n    >\n      <ChevronDown class=\"size-4\" aria-hidden />\n    </MenuTrigger>\n    <MenuPopup align=\"end\">\n      {#each copyOptions as option (option.label)}\n        <MenuItem onclick={option.onclick}>\n          <option.icon aria-hidden />\n          {option.label}\n        </MenuItem>\n      {/each}\n    </MenuPopup>\n  </Menu>\n</Group>\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/avatar.json",
+    "https://cossui-svelte.com/r/button.json",
+    "https://cossui-svelte.com/r/group.json",
+    "https://cossui-svelte.com/r/menu.json",
+    "https://cossui-svelte.com/r/ClaudeFillLogos.json",
+    "https://cossui-svelte.com/r/CursorFillLogos.json",
+    "https://cossui-svelte.com/r/OpenaiFillLogos.json"
+  ],
+  "dependencies": [
+    "@lucide/svelte"
+  ]
+}
