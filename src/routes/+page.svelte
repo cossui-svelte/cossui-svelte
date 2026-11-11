@@ -10,6 +10,7 @@
     CardFrameTitle,
     CardPanel
   } from '#lib/components/ui/card/index.js';
+  import AgentPromptButton from '#lib/components/app/agent-prompt-button.svelte';
   import PrimitivesBlueprint from '#lib/components/app/blueprint/primitives-blueprint.svelte';
   import PrimitivesMotion from '#lib/components/app/blueprint/primitives-motion.svelte';
   import CategoryThumbnail from '#lib/components/app/component-thumbnails.svelte';
@@ -79,6 +80,7 @@
     <PageHeaderDescription>{description}</PageHeaderDescription>
     <div class="mt-1 flex flex-wrap gap-2">
       <Button size="lg"><a href={resolve('docs')}>Get started</a></Button>
+      <AgentPromptButton />
       <Button size="lg" variant="outline"
         ><a href={resolve('particles')}>Browse {particleCount} particles</a></Button
       >
