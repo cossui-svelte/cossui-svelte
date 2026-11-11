@@ -17,6 +17,7 @@
     type ComposerValue
   } from '#lib/components/ui/composer/index.js';
   import { Tooltip, TooltipPopup } from '#lib/components/ui/tooltip/index.js';
+  import { searchEmoji } from '#lib/data/emoji.js';
   import { cn } from '#lib/utils.js';
   import ChatDemoMemberAvatar from './chat-demo-member-avatar.svelte';
   import { CHAT_MEMBERS, type MemberId } from './chat-demo-state';
@@ -61,12 +62,15 @@
     return item.label.toLocaleLowerCase().startsWith(query.toLocaleLowerCase());
   }
 
+  let emoji = $state<ComposerItemValue[]>([]);
+
   const triggers = $derived<ComposerTrigger[]>([
     {
       character: '@',
       filter: mentionMatchesHandle,
       items: mentionMembers.map((id) => ({ id, label: CHAT_MEMBERS[id].handle }))
-    }
+    },
+    { character: ':', items: emoji, filter: null }
   ]);
 </script>
 
@@ -83,6 +87,9 @@
     submitOnEnter="desktop"
     {triggers}
     bind:value
+    onQueryChange={(query) => {
+      emoji = query?.character === ':' ? searchEmoji(query.text) : [];
+    }}
     onSubmit={onSend}
   >
     <ComposerInput
@@ -95,7 +102,12 @@
     <ComposerPopup>
       <ComposerList>
         {#snippet children(item)}
-          {#if isMemberId(item.id)}
+          {#if item.type === 'text'}
+            <ComposerItem value={item}>
+              <span class="shrink-0 text-xl/none">{item.text}</span>
+              <span class="truncate text-muted-foreground">:{item.label}:</span>
+            </ComposerItem>
+          {:else if isMemberId(item.id)}
             <ComposerItem value={item}>
               <ChatDemoMemberAvatar class="size-4 text-[0.5rem]" member={item.id} />
               <span class="min-w-0 truncate">{CHAT_MEMBERS[item.id].name}</span>

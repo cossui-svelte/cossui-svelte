@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-composer-12",
+  "title": "Composer 12",
+  "description": "Composer with colon emoji suggestions that insert plain text",
+  "type": "registry:block",
+  "files": [
+    {
+      "type": "registry:block",
+      "path": "p-composer-12.svelte",
+      "target": "particles/composer/p-composer-12.svelte",
+      "content": "<script lang=\"ts\">\n  import ArrowUp from '@lucide/svelte/icons/arrow-up';\n  import {\n    Composer,\n    ComposerActionGroup,\n    ComposerActions,\n    ComposerInput,\n    ComposerItem,\n    type ComposerItemValue,\n    ComposerList,\n    ComposerPopup,\n    ComposerSubmit,\n    type ComposerValue,\n    getComposerText\n  } from '$lib/components/ui/composer/index.js';\n  import { searchEmoji } from '$lib/data/emoji.js';\n\n  let value = $state<ComposerValue>([]);\n  let emoji = $state<ComposerItemValue[]>([]);\n  let notice = $state('');\n</script>\n\n<div class=\"flex w-full max-w-xl flex-col gap-3\">\n  <Composer\n    bind:value\n    onQueryChange={(query) => {\n      emoji = query?.character === ':' ? searchEmoji(query.text) : [];\n    }}\n    triggers={[{ character: ':', items: emoji, filter: null }]}\n    onSubmit={(draft) => {\n      notice = `Sent: ${getComposerText(draft)}`;\n      value = [];\n    }}\n  >\n    <ComposerInput aria-label=\"Message\" placeholder=\"Type :thu for 👍\" />\n    <ComposerPopup>\n      <ComposerList>\n        {#snippet children(item)}\n          <ComposerItem value={item}>\n            <span class=\"shrink-0 text-xl/none\">{item.text}</span>\n            <span class=\"truncate text-muted-foreground\">:{item.label}:</span>\n          </ComposerItem>\n        {/snippet}\n      </ComposerList>\n    </ComposerPopup>\n    <ComposerActions>\n      <ComposerActionGroup align=\"end\">\n        <ComposerSubmit aria-label=\"Send message\" size=\"icon\">\n          <ArrowUp aria-hidden=\"true\" />\n        </ComposerSubmit>\n      </ComposerActionGroup>\n    </ComposerActions>\n  </Composer>\n  <p aria-live=\"polite\" class=\"text-muted-foreground text-sm\">{notice}</p>\n</div>\n"
+    }
+  ],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/composer.json",
+    "https://cossui-svelte.com/r/emoji.json"
+  ],
+  "dependencies": [
+    "@lucide/svelte"
+  ]
+}

@@ -196,6 +196,15 @@ export async function getRegistryItems(cwd: string): Promise<RegistryItem[]> {
     files: [{ path: 'src/lib/assets', target: '$assets' }]
   });
 
+  items.push({
+    name: 'emoji',
+    type: 'lib',
+    title: 'Emoji',
+    description:
+      'Curated emoji list with shortcode/keyword search, used by the ":" composer suggestions.',
+    files: [{ path: 'src/lib/data/emoji.ts', target: '$lib/data/emoji.ts' }]
+  });
+
   items.push(...(await getHookItems(cwd)));
   items.push(...(await getIconItems(cwd)));
   items.push(...(await getParticleBlockItems(cwd)));

@@ -20,7 +20,7 @@ type ComposerItemValue = {
   label: string;
   disabled?: boolean;
   description?: string;
-  type?: 'mention' | 'action';
+  type?: 'mention' | 'action' | 'text';
   kind?: string;
   data?: string;
   text?: string;
@@ -317,23 +317,26 @@ function insertItem(
   selection?.removeAllRanges();
   selection?.addRange(range);
   input.focus({ preventScroll: true });
-  const token = createToken({
-    type: suggestion.type ?? 'mention',
-    id: suggestion.id,
-    label: suggestion.label,
-    trigger: query.character,
-    ...(suggestion.kind ? { kind: suggestion.kind } : {}),
-    ...(suggestion.data !== undefined ? { data: suggestion.data } : {}),
-    ...(suggestion.text !== undefined ? { text: suggestion.text } : {})
-  });
+  const node =
+    suggestion.type === 'text'
+      ? document.createTextNode(suggestion.text ?? suggestion.label)
+      : createToken({
+          type: suggestion.type ?? 'mention',
+          id: suggestion.id,
+          label: suggestion.label,
+          trigger: query.character,
+          ...(suggestion.kind ? { kind: suggestion.kind } : {}),
+          ...(suggestion.data !== undefined ? { data: suggestion.data } : {}),
+          ...(suggestion.text !== undefined ? { text: suggestion.text } : {})
+        });
   const hasSeparator = /^\s/u.test(query.node.data.slice(query.end));
   const trailingSpace = hasSeparator ? '' : ' ';
   range.deleteContents();
   const space = trailingSpace ? document.createTextNode(trailingSpace) : null;
   if (space) range.insertNode(space);
-  range.insertNode(token);
+  range.insertNode(node);
   if (space) range.setStart(space, 1);
-  else range.setStartAfter(token);
+  else range.setStartAfter(node);
   range.collapse(true);
   selection?.removeAllRanges();
   selection?.addRange(range);

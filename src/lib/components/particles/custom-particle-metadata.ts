@@ -640,5 +640,9 @@ export const custom_particle_metadata = {
   },
   'p-composer-11': {
     description: 'Compact rounded adaptive composer with a circular send button'
+  },
+  // The emoji list lives in #lib/data/emoji.ts, shipped as its own `emoji` lib registry item.
+  'p-composer-12': {
+    registryDependencies: ['emoji']
   }
 };
