@@ -102,7 +102,7 @@ Tooltips on items — ShardsUI has no trigger composition (`render`/`asChild`), 
 </TooltipProvider>
 ```
 
-Read [segmented-control.md](../segmented-control.md) before applying segmented styling to a reversible mode.
+Read [segmented-control.md](segmented-control.md) before rendering a reversible mode as a segmented control.
 
 ## Common pitfalls
 

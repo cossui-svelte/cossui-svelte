@@ -1,6 +1,6 @@
 <script lang="ts" module>
   import { getContext, setContext } from 'svelte';
-  import type { SegmentedControlSize } from '#lib/components/ui/tabs/segmented-control.js';
+  import type { SegmentedControlSize } from '#lib/components/ui/segmented-control/index.js';
 
   export type TabsVariant = 'default' | 'underline';
 
@@ -17,6 +17,7 @@
 <script lang="ts">
   import { Tabs as TabsPrimitive } from '@shardsui/svelte/tabs';
   import type { ComponentProps, Snippet } from 'svelte';
+  import { segmentedControlIndicatorSurfaceClassName } from '#lib/components/ui/segmented-control/index.js';
   import { cn } from '#lib/utils.js';
   import TabsIndicator from './tabs-indicator.svelte';
 
@@ -53,10 +54,10 @@
   {@render children?.()}
   <TabsIndicator
     class={cn(
-      'absolute bottom-0 left-0 h-(--active-tab-height) w-(--active-tab-width) translate-x-(--active-tab-left) -translate-y-(--active-tab-bottom) transition-[width,translate] duration-200 ease-in-out',
+      'absolute bottom-0 left-0 h-(--active-tab-height) w-(--active-tab-width) translate-x-(--active-tab-left) -translate-y-(--active-tab-bottom) transition-[width,translate] duration-200 ease-in-out motion-reduce:transition-none',
       variant === 'underline'
         ? 'z-10 bg-primary data-[orientation=horizontal]:h-0.5 data-[orientation=vertical]:w-0.5 data-[orientation=vertical]:-translate-x-px data-[orientation=horizontal]:translate-y-px'
-        : '-z-1 rounded-md bg-background shadow-sm/5 dark:bg-input'
+        : cn('-z-1', segmentedControlIndicatorSurfaceClassName)
     )}
     data-slot="tab-indicator"
   />

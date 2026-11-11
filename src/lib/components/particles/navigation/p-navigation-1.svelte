@@ -1,16 +1,32 @@
 <script lang="ts">
   import {
-    segmentedControlItemVariants,
-    segmentedControlRootClassName
-  } from '#lib/components/ui/tabs/segmented-control.js';
+    SegmentedControl,
+    SegmentedControlItem
+  } from '#lib/components/ui/segmented-control/index.js';
 
-  const itemClassName = segmentedControlItemVariants({ state: 'current' });
+  const links = [
+    { href: '#overview', label: 'Overview' },
+    { href: '#activity', label: 'Activity' },
+    { href: '#settings', label: 'Settings' }
+  ];
+
+  let current = $state('#overview');
 </script>
 
-<nav aria-label="Project sections">
-  <div class={segmentedControlRootClassName}>
-    <a aria-current="page" class={itemClassName} href="#overview">Overview</a>
-    <a class={itemClassName} href="#activity">Activity</a>
-    <a class={itemClassName} href="#settings">Settings</a>
-  </div>
-</nav>
+<SegmentedControl aria-label="Project sections">
+  {#snippet child({ props, content })}
+    <nav {...props}>{@render content()}</nav>
+  {/snippet}
+  {#each links as link (link.href)}
+    <SegmentedControlItem>
+      {#snippet child({ props })}
+        <a
+          {...props}
+          aria-current={link.href === current ? 'page' : undefined}
+          href={link.href}
+          onclick={() => (current = link.href)}>{link.label}</a
+        >
+      {/snippet}
+    </SegmentedControlItem>
+  {/each}
+</SegmentedControl>

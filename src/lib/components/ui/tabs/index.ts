@@ -1,5 +1,5 @@
 export { Tabs as TabsPrimitive } from '@shardsui/svelte/tabs';
-export type { SegmentedControlSize as TabsSize } from './segmented-control';
+export type { SegmentedControlSize as TabsSize } from '#lib/components/ui/segmented-control/index.js';
 export { default as Tabs } from './tabs.svelte';
 export { default as TabsIndicator } from './tabs-indicator.svelte';
 export { default as TabsList, type TabsVariant } from './tabs-list.svelte';

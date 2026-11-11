@@ -7,7 +7,7 @@ description: A visual pattern for presenting related choices, navigation destina
 
 ## About
 
-A segmented control is a visual pattern, not a standalone behavior. Coss UI uses the same presentation across several components while preserving the semantics, keyboard interactions, and state model of each underlying primitive.
+A segmented control is a visual pattern, not a standalone behavior. `SegmentedControl` and `SegmentedControlItem` provide the presentation and the sliding indicator; the element you render through their `child` snippet provides the semantics, keyboard interactions, and state model.
 
 ## Choose the right primitive
 
@@ -18,58 +18,132 @@ A segmented control is a visual pattern, not a standalone behavior. Coss UI uses
 | Apply an exclusive filter or mode | [Toggle Group](/docs/toggle-group) | Represents the pressed state of an action that may be cleared. |
 | Switch between related panels | [Tabs](/docs/tabs) | Connects each tab to an associated content panel. |
 
-Choose the primitive from the interaction first, then apply the segmented-control styling. Visual similarity alone is not a reason to use Tabs or Toggle Group.
+Choose the primitive from the interaction first, then render it through the segmented control. Visual similarity alone is not a reason to use Tabs or Toggle Group.
 
 ## Installation
 
-Segmented controls are provided as particles. Install the implementation and size that match your interaction:
+<CodeTabs>
 
-| Implementation | Small | Default | Large |
-| -------------- | ----- | ------- | ----- |
-| Radio Group | `p-radio-group-7` | `p-radio-group-8` | `p-radio-group-9` |
-| Navigation | `p-navigation-2` | `p-navigation-1` | `p-navigation-3` |
-
-For example, install the default Radio Group version with:
+<TabsList>
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
 
 ```bash
-npx shadcn-svelte@latest add https://cossui-svelte.com/r/p-radio-group-8.json
+npx shadcn-svelte@latest add https://cossui-svelte.com/r/segmented-control.json
 ```
 
-The CLI installs the required primitive and the shared styling module automatically.
+</TabsPanel>
 
-## Shared styling
+<TabsPanel value="manual">
 
-The shared styling ships with the Tabs component (`components/ui/tabs/segmented-control.ts`), so installing `tabs` also gives you the module for custom compositions. It exports a root class, an item recipe, and a shared item layout class for icons:
+<Steps>
 
-```ts
-import {
-  segmentedControlItemLayoutClassName,
-  segmentedControlItemVariants,
-  segmentedControlRootClassName
-} from '#lib/components/ui/tabs/segmented-control';
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="segmented-control" title="components/ui/segmented-control" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```svelte
+<script lang="ts">
+  import { RadioGroupPrimitive, RadioPrimitive } from '#lib/components/ui/radio-group';
+  import { SegmentedControl, SegmentedControlItem } from '#lib/components/ui/segmented-control';
+</script>
+
+<SegmentedControl aria-label="Billing period">
+  {#snippet child({ props, content })}
+    <RadioGroupPrimitive {...props} value="monthly">{@render content()}</RadioGroupPrimitive>
+  {/snippet}
+  <SegmentedControlItem>
+    {#snippet child({ props })}
+      <RadioPrimitive.Root {...props} value="monthly">Monthly</RadioPrimitive.Root>
+    {/snippet}
+  </SegmentedControlItem>
+  <SegmentedControlItem>
+    {#snippet child({ props })}
+      <RadioPrimitive.Root {...props} value="yearly">Yearly</RadioPrimitive.Root>
+    {/snippet}
+  </SegmentedControlItem>
+</SegmentedControl>
 ```
 
-```ts
-const itemClassName = segmentedControlItemVariants({
-  size: 'default',
-  state: 'checked'
-});
+Spread `props` on your element and put behavior props such as `value`, `onValueChange`, or `href` on it. On the root, render `content` inside your element: it holds the items plus the sliding indicator. Use the Radio Group primitives rather than `RadioGroup` and `Radio`, so the native radio indicator is not rendered.
+
+The same composition works for navigation links:
+
+```svelte
+<SegmentedControl aria-label="Project sections">
+  {#snippet child({ props, content })}
+    <nav {...props}>{@render content()}</nav>
+  {/snippet}
+  <SegmentedControlItem>
+    {#snippet child({ props })}
+      <a {...props} aria-current="page" href="/overview">Overview</a>
+    {/snippet}
+  </SegmentedControlItem>
+  <SegmentedControlItem>
+    {#snippet child({ props })}
+      <a {...props} href="/activity">Activity</a>
+    {/snippet}
+  </SegmentedControlItem>
+</SegmentedControl>
 ```
 
-| Option | Values | Description |
-| ------ | ------ | ----------- |
-| `size` | `"sm" \| "default" \| "lg"` | Controls item height and horizontal padding. |
-| `state` | `"checked" \| "current" \| "pressed"` | Selects the state attribute used by the underlying element. |
+And for an exclusive filter that may be cleared:
 
-Use `checked` with Radio Group, `current` with navigation links, and `pressed` with Toggle Group. Tabs retain their own animated indicator and do not use the shared state recipe. They reuse `segmentedControlItemLayoutClassName` so icons match the other segmented implementations.
+```svelte
+<SegmentedControl>
+  {#snippet child({ props, content })}
+    <ToggleGroupPrimitive {...props} aria-label="Status">{@render content()}</ToggleGroupPrimitive>
+  {/snippet}
+  <SegmentedControlItem>
+    {#snippet child({ props })}
+      <TogglePrimitive {...props} value="open">Open</TogglePrimitive>
+    {/snippet}
+  </SegmentedControlItem>
+  <SegmentedControlItem>
+    {#snippet child({ props })}
+      <TogglePrimitive {...props} value="closed">Closed</TogglePrimitive>
+    {/snippet}
+  </SegmentedControlItem>
+</SegmentedControl>
+```
 
-At the outside edges, the item padding and the surface's `p-0.5` inset combine to match the horizontal padding of the corresponding Button size. The outer segmented surface is slightly taller than that Button to optically balance its inset selected item when the controls appear next to each other.
+## API Reference
 
-<ComponentSource name="tabs" title="components/ui/tabs" />
+### SegmentedControl
 
-## Radio options
+The segmented surface. Renders a `<div>` by default and appends the sliding indicator after its children. Provides the size to its items via context.
 
-Use Radio Group when the selected segment represents a mutually exclusive value, especially in forms.
+| Prop    | Type                                                | Default     | Description                                                                                         |
+| ------- | --------------------------------------------------- | ----------- | --------------------------------------------------------------------------------------------------- |
+| `size`  | `"sm" \| "default" \| "lg"`                         | `"default"` | Controls the height and horizontal padding of every item                                            |
+| `child` | `Snippet<[{ props, content }]>`                     | —           | Replaces the rendered element, for example with a Radio Group primitive or `<nav>`. Render `content` inside it |
+
+### SegmentedControlItem
+
+A single segment. Renders a `<button type="button">` by default.
+
+| Prop    | Type                        | Default             | Description                                                       |
+| ------- | --------------------------- | ------------------- | ----------------------------------------------------------------- |
+| `size`  | `"sm" \| "default" \| "lg"` | Inherited from root | Overrides the size inherited from `SegmentedControl`              |
+| `child` | `Snippet<[{ props }]>`      | —                   | Replaces the rendered element, for example with a radio or a link |
+
+An item is active when it has `data-checked` (Radio Group), `aria-current="page"` (links), or `data-pressed` (Toggle Group). The indicator slides to the active item over 200ms with an ease-in-out curve, stays still when the user prefers reduced motion, and is hidden when no item is active. Before hydration or without JavaScript, the active item paints its own static pill instead. For navigation, the pill animates only when the control persists across route changes, such as in a shared layout; otherwise it appears in place on each page.
+
+At the outside edges, the item padding and the surface's inset combine to match the horizontal padding of the corresponding Button size. The surface is slightly taller than that Button to optically balance its inset selected item when the controls appear next to each other.
+
+## Examples
 
 ### Small Radio Group
 
@@ -82,10 +156,6 @@ Use Radio Group when the selected segment represents a mutually exclusive value,
 ### Large Radio Group
 
 <ComponentPreview name="p-radio-group-9" />
-
-## Navigation
-
-Use links when each segment points to a different destination. Apply `aria-current="page"` to the active link.
 
 ### Small Navigation
 
@@ -101,6 +171,6 @@ Use links when each segment points to a different destination. Apply `aria-curre
 
 ## Related content
 
-Use Tabs when each segment controls an associated content panel. Tabs share the visual language of segmented controls but keep their animated indicator, orientation support, and panel semantics.
+Use Tabs when each segment controls an associated content panel. Tabs keep ShardsUI's own indicator and add orientation support and panel semantics, but share the segmented control's sizes, icon layout, and indicator surface so both look the same.
 
 <ComponentPreview name="p-tabs-1" />

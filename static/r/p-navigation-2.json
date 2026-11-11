@@ -9,11 +9,11 @@
       "type": "registry:block",
       "path": "p-navigation-2.svelte",
       "target": "particles/navigation/p-navigation-2.svelte",
-      "content": "<script lang=\"ts\">\n  import {\n    segmentedControlItemVariants,\n    segmentedControlRootClassName\n  } from '$lib/components/ui/tabs/segmented-control.js';\n\n  const itemClassName = segmentedControlItemVariants({ size: 'sm', state: 'current' });\n</script>\n\n<nav aria-label=\"Project sections\">\n  <div class={segmentedControlRootClassName}>\n    <a aria-current=\"page\" class={itemClassName} href=\"#overview\">Overview</a>\n    <a class={itemClassName} href=\"#activity\">Activity</a>\n    <a class={itemClassName} href=\"#settings\">Settings</a>\n  </div>\n</nav>\n"
+      "content": "<script lang=\"ts\">\n  import {\n    SegmentedControl,\n    SegmentedControlItem\n  } from '$lib/components/ui/segmented-control/index.js';\n\n  const links = [\n    { href: '#overview', label: 'Overview' },\n    { href: '#activity', label: 'Activity' },\n    { href: '#settings', label: 'Settings' }\n  ];\n\n  let current = $state('#overview');\n</script>\n\n<SegmentedControl aria-label=\"Project sections\" size=\"sm\">\n  {#snippet child({ props, content })}\n    <nav {...props}>{@render content()}</nav>\n  {/snippet}\n  {#each links as link (link.href)}\n    <SegmentedControlItem>\n      {#snippet child({ props })}\n        <a\n          {...props}\n          aria-current={link.href === current ? 'page' : undefined}\n          href={link.href}\n          onclick={() => (current = link.href)}>{link.label}</a\n        >\n      {/snippet}\n    </SegmentedControlItem>\n  {/each}\n</SegmentedControl>\n"
     }
   ],
   "registryDependencies": [
-    "https://cossui-svelte.com/r/tabs.json"
+    "https://cossui-svelte.com/r/segmented-control.json"
   ],
   "dependencies": []
 }

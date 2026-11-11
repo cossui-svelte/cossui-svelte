@@ -7,7 +7,7 @@
 
 ## When NOT to use
 
-- For route navigation, form values, or filters — read [segmented-control.md](../segmented-control.md) and pick links, Radio Group, or Toggle Group.
+- For route navigation, form values, or filters — read [segmented-control.md](segmented-control.md) and pick links, Radio Group, or Toggle Group.
 
 ## Install
 
@@ -21,7 +21,7 @@ Manual deps from docs:
 npm install @shardsui/svelte tailwind-variants
 ```
 
-The tabs item ships `segmented-control.ts` (shared segmented sizing/recipes) in the same folder.
+The CLI installs the `segmented-control` component automatically (Tabs shares its sizes, icon layout, and indicator surface). For a manual installation, also copy `components/ui/segmented-control` before copying the Tabs component.
 
 ## Canonical imports
 

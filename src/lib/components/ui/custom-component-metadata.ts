@@ -246,6 +246,12 @@ export const custom_components_metadata: Record<string, Partial<RegistryUIEntry>
     category: 'shadcn-ui',
     isnew: true
   },
+  'segmented-control': {
+    description:
+      'A visual pattern for presenting related choices, navigation destinations, filters, or content views.',
+    category: 'ui',
+    isnew: true
+  },
   sheet: {
     description: 'A flyout that opens from the side of the screen, based on the dialog component.',
     category: 'ui'

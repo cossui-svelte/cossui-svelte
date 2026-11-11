@@ -19,6 +19,8 @@ description: A component for toggling between related panels on the same page.
 npx shadcn-svelte@latest add https://cossui-svelte.com/r/tabs.json
 ```
 
+The CLI installs the `segmented-control` component automatically, because Tabs shares its sizes, icon layout, and indicator surface.
+
 </TabsPanel>
 
 <TabsPanel value="manual">
@@ -31,7 +33,11 @@ npx shadcn-svelte@latest add https://cossui-svelte.com/r/tabs.json
 npm install @shardsui/svelte tailwind-variants
 ```
 
-<Step>Copy and paste the following code into your project. The shared segmented control styles (`segmented-control.ts`) are included.</Step>
+<Step>Copy the Segmented Control component into your project.</Step>
+
+<ComponentSource name="segmented-control" title="components/ui/segmented-control" />
+
+<Step>Copy and paste the Tabs component into your project.</Step>
 
 <ComponentSource name="tabs" title="components/ui/tabs" />
 
@@ -91,7 +97,7 @@ Visual indicator for the active tab. Styled wrapper for `Tabs.Indicator` from Sh
 
 ## Examples
 
-For guidance on choosing between Tabs, Radio Group, Toggle Group, and navigation links, see the [Segmented Control](/docs/segmented-control) pattern.
+For guidance on choosing between Tabs, Radio Group, Toggle Group, and navigation links, see [Segmented Control](/docs/segmented-control).
 
 Tabs use the same optical sizing as segmented controls. The default surface is slightly taller than a Button of the same size so its inset active indicator remains visually balanced alongside adjacent controls.
 

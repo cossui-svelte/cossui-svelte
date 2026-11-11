@@ -9,12 +9,12 @@
       "type": "registry:block",
       "path": "p-radio-group-7.svelte",
       "target": "particles/radio-group/p-radio-group-7.svelte",
-      "content": "<script lang=\"ts\">\n  import { RadioGroup, RadioPrimitive } from '$lib/components/ui/radio-group/index.js';\n  import {\n    segmentedControlItemVariants,\n    segmentedControlRootClassName\n  } from '$lib/components/ui/tabs/segmented-control.js';\n\n  const itemClassName = segmentedControlItemVariants({\n    className: 'grow',\n    size: 'sm',\n    state: 'checked'\n  });\n</script>\n\n<RadioGroup aria-label=\"Billing period\" class={segmentedControlRootClassName} value=\"monthly\">\n  <RadioPrimitive.Root class={itemClassName} value=\"monthly\">Monthly</RadioPrimitive.Root>\n  <RadioPrimitive.Root class={itemClassName} value=\"yearly\">Yearly</RadioPrimitive.Root>\n</RadioGroup>\n"
+      "content": "<script lang=\"ts\">\n  import { RadioGroupPrimitive, RadioPrimitive } from '$lib/components/ui/radio-group/index.js';\n  import {\n    SegmentedControl,\n    SegmentedControlItem\n  } from '$lib/components/ui/segmented-control/index.js';\n</script>\n\n<SegmentedControl aria-label=\"Billing period\" size=\"sm\">\n  {#snippet child({ props, content })}\n    <RadioGroupPrimitive {...props} value=\"monthly\">{@render content()}</RadioGroupPrimitive>\n  {/snippet}\n  <SegmentedControlItem class=\"grow\">\n    {#snippet child({ props })}\n      <RadioPrimitive.Root {...props} value=\"monthly\">Monthly</RadioPrimitive.Root>\n    {/snippet}\n  </SegmentedControlItem>\n  <SegmentedControlItem class=\"grow\">\n    {#snippet child({ props })}\n      <RadioPrimitive.Root {...props} value=\"yearly\">Yearly</RadioPrimitive.Root>\n    {/snippet}\n  </SegmentedControlItem>\n</SegmentedControl>\n"
     }
   ],
   "registryDependencies": [
     "https://cossui-svelte.com/r/radio-group.json",
-    "https://cossui-svelte.com/r/tabs.json"
+    "https://cossui-svelte.com/r/segmented-control.json"
   ],
   "dependencies": []
 }

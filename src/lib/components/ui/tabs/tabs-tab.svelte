@@ -1,12 +1,12 @@
 <script lang="ts">
   import { Tabs as TabsPrimitive } from '@shardsui/svelte/tabs';
   import type { ComponentProps, Snippet } from 'svelte';
-  import { cn } from '#lib/utils.js';
   import {
     type SegmentedControlSize,
     segmentedControlItemLayoutClassName,
     segmentedControlItemSizeClassNames
-  } from './segmented-control';
+  } from '#lib/components/ui/segmented-control/index.js';
+  import { cn } from '#lib/utils.js';
   import { getTabsListSize } from './tabs-list.svelte';
 
   type Props = Omit<ComponentProps<typeof TabsPrimitive.Tab>, 'children'> & {

@@ -66,12 +66,11 @@ Rule references (read on demand when the task touches these areas):
 - `./references/rules/forms.md` — Field composition, validation, input patterns
 - `./references/rules/composition.md` — Trigger/popup hierarchies, grouped controls
 - `./references/rules/migration.md` — shadcn-svelte/Bits UI and React (shadcn/Radix, coss) to cossui-svelte migration patterns
-- `./references/segmented-control.md` — choose Radio Group, links, Toggle Group, or Tabs before applying segmented-control styling
 - `./references/portal-props.md` — optional `portalProps` on composed popups and toast providers (`keepMounted`, `container`, which surfaces support it)
 
 ## Component discovery
 
-All 69 components (54 upstream primitives plus port-only ones such as Chart, Map, Tree, Cropper, Stepper, Timeline, Composer and Chat UI) have dedicated reference guides at `./references/primitives/<name>.md`. To find the right one for a task, consult the component registry index:
+All 70 components (55 upstream primitives plus port-only ones such as Chart, Map, Tree, Cropper, Stepper, Timeline, Composer and Chat UI) have dedicated reference guides at `./references/primitives/<name>.md`. To find the right one for a task, consult the component registry index:
 
 - `./references/component-registry.md`
 
