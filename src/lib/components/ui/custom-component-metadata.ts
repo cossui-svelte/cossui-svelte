@@ -107,7 +107,9 @@ export const custom_components_metadata: Record<string, Partial<RegistryUIEntry>
   },
   'date-picker': {
     description: 'A date picker component built with Calendar and Popover.',
-    category: 'ui'
+    category: 'ui',
+    // composition pattern: no code of its own, installs the pieces it is built from
+    registryDependencies: ['calendar', 'popover']
   },
   dialog: {
     description: 'A popup that opens on top of the entire page.',
@@ -133,7 +135,9 @@ export const custom_components_metadata: Record<string, Partial<RegistryUIEntry>
   'file-upload': {
     description: 'A component for uploading files with drag-and-drop support.',
     category: 'origin-ui',
-    isnew: true
+    isnew: true,
+    // composition pattern: no code of its own, installs the hook it is built on
+    registryDependencies: ['use-file-upload']
   },
   form: {
     description: 'A form wrapper component that simplifies validation and submission.',

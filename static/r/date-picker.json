@@ -9,9 +9,12 @@
       "type": "registry:ui",
       "path": "date-picker/index.ts",
       "target": "date-picker/index.ts",
-      "content": ""
+      "content": "// Date Picker is a composition pattern, not a standalone component: it is built\n// from Calendar inside a Popover. Installing it pulls in both; import from them directly:\n//   import { Calendar } from '$lib/components/ui/calendar/index.js';\n//   import { Popover, PopoverPopup, PopoverTrigger } from '$lib/components/ui/popover/index.js';\nexport {};\n"
     }
   ],
-  "registryDependencies": [],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/calendar.json",
+    "https://cossui-svelte.com/r/popover.json"
+  ],
   "dependencies": []
 }

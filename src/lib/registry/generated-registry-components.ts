@@ -258,7 +258,7 @@ const allComponents: RegistryUiData = {
     isnew: false,
     istodo: false,
     npmDependencies: [],
-    registryDependencies: []
+    registryDependencies: ['calendar', 'popover']
   },
   dialog: {
     name: 'Dialog',
@@ -319,7 +319,7 @@ const allComponents: RegistryUiData = {
     isnew: true,
     istodo: false,
     npmDependencies: [],
-    registryDependencies: []
+    registryDependencies: ['use-file-upload']
   },
   form: {
     name: 'Form',

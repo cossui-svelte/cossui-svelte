@@ -9,9 +9,11 @@
       "type": "registry:ui",
       "path": "file-upload/index.ts",
       "target": "file-upload/index.ts",
-      "content": ""
+      "content": "// File Upload is a composition pattern, not a standalone component: it is built\n// on the `use-file-upload` hook. Installing it pulls in the hook; import it directly:\n//   import { useFileUpload, formatBytes } from '$lib/hooks/use-file-upload.svelte.js';\nexport {};\n"
     }
   ],
-  "registryDependencies": [],
+  "registryDependencies": [
+    "https://cossui-svelte.com/r/use-file-upload.json"
+  ],
   "dependencies": []
 }
