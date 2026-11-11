@@ -10,10 +10,11 @@
     CardFrameTitle,
     CardPanel
   } from '#lib/components/ui/card/index.js';
+  import PrimitivesBlueprint from '#lib/components/app/blueprint/primitives-blueprint.svelte';
+  import PrimitivesMotion from '#lib/components/app/blueprint/primitives-motion.svelte';
   import CategoryThumbnail from '#lib/components/app/component-thumbnails.svelte';
   import PageHeaderDescription from '#lib/components/app/page-header-description.svelte';
   import PageHeaderHeading from '#lib/components/app/page-header-heading.svelte';
-  import PageHeader from '#lib/components/app/page-header.svelte';
   import {
     allComponents,
     type RegistryUIEntry
@@ -27,25 +28,7 @@
 
   const particleCount = Object.keys(allParticles).length;
 
-  // Visual patterns with docs and particles but no standalone ui/ folder,
-  // so they aren't in the generated component registry.
-  const patterns: Record<string, RegistryUIEntry> = {
-    'segmented-control': {
-      name: 'Segmented Control',
-      description:
-        'A visual pattern for presenting related choices, navigation destinations, filters, or content views.',
-      folder: 'tabs',
-      category: 'ui',
-      isnew: true,
-      istodo: false,
-      npmDependencies: [],
-      registryDependencies: []
-    }
-  };
-
-  const landingEntries = Object.entries({ ...allComponents, ...patterns }).sort(([a], [b]) =>
-    a.localeCompare(b)
-  );
+  const landingEntries = Object.entries(allComponents).sort(([a], [b]) => a.localeCompare(b));
 </script>
 
 {#snippet categoryCard(slug: string, meta: RegistryUIEntry)}
@@ -82,20 +65,31 @@
   </CardFrame>
 {/snippet}
 
-<div class="container w-full">
-  <PageHeader class="max-w-2xl *:items-start *:text-left">
-    <PageHeaderHeading>
-      A new, modern UI component library built on top of Shards UI.
+<section
+  class="container grid w-full items-center gap-6 py-10 md:py-14 lg:grid-cols-2 lg:gap-10 lg:py-28 xl:gap-16"
+>
+  <div
+    class="flex w-full min-w-0 max-w-xl flex-col items-start gap-5 [font-optical-sizing:auto] [font-synthesis:none]"
+  >
+    <PageHeaderHeading
+      class="text-balance text-[clamp(2.25rem,1.5rem+2.6vw,4rem)] leading-none [font-variation-settings:'GEOM'_50] lg:text-[clamp(2.25rem,1.5rem+2.6vw,4rem)]"
+    >
+      A modern Svelte UI component library.
     </PageHeaderHeading>
     <PageHeaderDescription>{description}</PageHeaderDescription>
-    <div class="mt-2 flex gap-2">
+    <div class="mt-1 flex flex-wrap gap-2">
       <Button size="lg"><a href={resolve('docs')}>Get started</a></Button>
       <Button size="lg" variant="outline"
         ><a href={resolve('particles')}>Browse {particleCount} particles</a></Button
       >
     </div>
-  </PageHeader>
-</div>
+  </div>
+  <div class="pointer-events-none mx-auto hidden w-full max-w-140 select-none lg:-my-24 lg:block">
+    <PrimitivesMotion>
+      <PrimitivesBlueprint />
+    </PrimitivesMotion>
+  </div>
+</section>
 <div class="relative before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-border/64">
   <!-- that decoration-->
   <div

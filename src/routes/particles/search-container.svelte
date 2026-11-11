@@ -34,6 +34,4 @@
   }
 </script>
 
-<div class="mb-8 md:mb-12 lg:mb-16">
-  <SearchField items={searchItems} {selectedItems} onItemsChange={updateSelectedItems} />
-</div>
+<SearchField items={searchItems} {selectedItems} onItemsChange={updateSelectedItems} />

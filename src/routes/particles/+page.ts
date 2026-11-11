@@ -6,8 +6,8 @@ export const load: PageLoad = () => {
 
   return {
     SEO: {
-      description: `Discover ${particleCount} ready-to-use particles, the building blocks of any application. Filter by category to find the perfect component for your project.`,
-      title: 'Browse Particles - coss ui'
+      description: `Explore ${particleCount} ready-to-use UI patterns built from coss ui components. Copy the code, customize the details, and make them part of your product.`,
+      title: 'Build more with Particles – coss ui'
     }
   };
 };

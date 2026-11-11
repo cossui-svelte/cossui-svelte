@@ -111,7 +111,7 @@
   }
 </script>
 
-<div class="mx-auto max-w-2xl">
+<div class="w-full max-w-xl">
   <Combobox
     multiple
     autoHighlight
