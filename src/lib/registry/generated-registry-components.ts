@@ -571,6 +571,17 @@ const allComponents: RegistryUiData = {
     npmDependencies: ['@shardsui/svelte'],
     registryDependencies: []
   },
+  'segmented-control': {
+    name: 'Segmented Control',
+    category: 'ui',
+    description:
+      'A visual pattern for presenting related choices, navigation destinations, filters, or content views.',
+    folder: 'segmented-control',
+    isnew: true,
+    istodo: false,
+    npmDependencies: [],
+    registryDependencies: []
+  },
   select: {
     name: 'Select',
     category: 'ui',
@@ -707,8 +718,8 @@ const allComponents: RegistryUiData = {
     folder: 'tabs',
     isnew: false,
     istodo: false,
-    npmDependencies: ['@shardsui/svelte', 'tailwind-variants'],
-    registryDependencies: []
+    npmDependencies: ['@shardsui/svelte'],
+    registryDependencies: ['segmented-control']
   },
   textarea: {
     name: 'Textarea',

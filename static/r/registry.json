@@ -3290,6 +3290,43 @@
       ]
     },
     {
+      "name": "segmented-control",
+      "title": "Segmented Control",
+      "description": "A visual pattern for presenting related choices, navigation destinations, filters, or content views.",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://cossui-svelte.com/r/utils.json"
+      ],
+      "files": [
+        {
+          "type": "registry:ui",
+          "path": "segmented-control/index.ts",
+          "target": "segmented-control/index.ts"
+        },
+        {
+          "type": "registry:ui",
+          "path": "segmented-control/segmented-control-indicator.svelte",
+          "target": "segmented-control/segmented-control-indicator.svelte"
+        },
+        {
+          "type": "registry:ui",
+          "path": "segmented-control/segmented-control-item.svelte",
+          "target": "segmented-control/segmented-control-item.svelte"
+        },
+        {
+          "type": "registry:ui",
+          "path": "segmented-control/segmented-control-variants.ts",
+          "target": "segmented-control/segmented-control-variants.ts"
+        },
+        {
+          "type": "registry:ui",
+          "path": "segmented-control/segmented-control.svelte",
+          "target": "segmented-control/segmented-control.svelte"
+        }
+      ]
+    },
+    {
       "name": "select",
       "title": "Select",
       "description": "A common form component for choosing a predefined value in a dropdown menu.",
@@ -3888,10 +3925,10 @@
       "description": "A component for toggling between related panels on the same page.",
       "type": "registry:ui",
       "dependencies": [
-        "@shardsui/svelte@0.1.0-beta.2",
-        "tailwind-variants@^3.3.1"
+        "@shardsui/svelte@0.1.0-beta.2"
       ],
       "registryDependencies": [
+        "https://cossui-svelte.com/r/segmented-control.json",
         "https://cossui-svelte.com/r/utils.json"
       ],
       "files": [
@@ -3899,11 +3936,6 @@
           "type": "registry:ui",
           "path": "tabs/index.ts",
           "target": "tabs/index.ts"
-        },
-        {
-          "type": "registry:ui",
-          "path": "tabs/segmented-control.ts",
-          "target": "tabs/segmented-control.ts"
         },
         {
           "type": "registry:ui",
@@ -4438,6 +4470,23 @@
           "type": "registry:lib",
           "path": "assets/ui-system.png",
           "target": "assets/ui-system.png"
+        }
+      ]
+    },
+    {
+      "name": "emoji",
+      "title": "Emoji",
+      "description": "Curated emoji list with shortcode/keyword search, used by the \":\" composer suggestions.",
+      "type": "registry:lib",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://cossui-svelte.com/r/composer.json"
+      ],
+      "files": [
+        {
+          "type": "registry:lib",
+          "path": "emoji.ts",
+          "target": "data/emoji.ts"
         }
       ]
     },
@@ -9187,6 +9236,26 @@
       ]
     },
     {
+      "name": "p-composer-12",
+      "title": "Composer 12",
+      "description": "Composer with colon emoji suggestions that insert plain text",
+      "type": "registry:block",
+      "dependencies": [
+        "@lucide/svelte"
+      ],
+      "registryDependencies": [
+        "https://cossui-svelte.com/r/composer.json",
+        "https://cossui-svelte.com/r/emoji.json"
+      ],
+      "files": [
+        {
+          "type": "registry:block",
+          "path": "p-composer-12.svelte",
+          "target": "particles/composer/p-composer-12.svelte"
+        }
+      ]
+    },
+    {
       "name": "p-composer-2",
       "title": "Composer 2",
       "description": "Composer with asynchronous mention suggestions",
@@ -13140,7 +13209,7 @@
       "type": "registry:block",
       "dependencies": [],
       "registryDependencies": [
-        "https://cossui-svelte.com/r/tabs.json"
+        "https://cossui-svelte.com/r/segmented-control.json"
       ],
       "files": [
         {
@@ -13157,7 +13226,7 @@
       "type": "registry:block",
       "dependencies": [],
       "registryDependencies": [
-        "https://cossui-svelte.com/r/tabs.json"
+        "https://cossui-svelte.com/r/segmented-control.json"
       ],
       "files": [
         {
@@ -13174,7 +13243,7 @@
       "type": "registry:block",
       "dependencies": [],
       "registryDependencies": [
-        "https://cossui-svelte.com/r/tabs.json"
+        "https://cossui-svelte.com/r/segmented-control.json"
       ],
       "files": [
         {
@@ -13995,7 +14064,7 @@
       "dependencies": [],
       "registryDependencies": [
         "https://cossui-svelte.com/r/radio-group.json",
-        "https://cossui-svelte.com/r/tabs.json"
+        "https://cossui-svelte.com/r/segmented-control.json"
       ],
       "files": [
         {
@@ -14013,7 +14082,7 @@
       "dependencies": [],
       "registryDependencies": [
         "https://cossui-svelte.com/r/radio-group.json",
-        "https://cossui-svelte.com/r/tabs.json"
+        "https://cossui-svelte.com/r/segmented-control.json"
       ],
       "files": [
         {
@@ -14031,7 +14100,7 @@
       "dependencies": [],
       "registryDependencies": [
         "https://cossui-svelte.com/r/radio-group.json",
-        "https://cossui-svelte.com/r/tabs.json"
+        "https://cossui-svelte.com/r/segmented-control.json"
       ],
       "files": [
         {

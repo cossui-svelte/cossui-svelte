@@ -1356,6 +1356,13 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     registryDependencies: ['composer'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-xl' }
   },
+  'p-composer-12': {
+    description: 'Composer with colon emoji suggestions that insert plain text',
+    tags: ['composer', 'text-editor'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['composer', 'emoji'],
+    meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-xl' }
+  },
   'p-command-1': {
     description: 'Command palette with dialog',
     tags: ['command', 'dialog'],
@@ -2367,19 +2374,19 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-navigation-1': {
     description: 'Segmented navigation built with links',
     tags: ['navigation', 'segmented-control'],
-    registryDependencies: ['tabs'],
+    registryDependencies: ['segmented-control'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-navigation-2': {
     description: 'Small segmented navigation built with links',
     tags: ['navigation', 'segmented-control'],
-    registryDependencies: ['tabs'],
+    registryDependencies: ['segmented-control'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-navigation-3': {
     description: 'Large segmented navigation built with links',
     tags: ['navigation', 'segmented-control'],
-    registryDependencies: ['tabs'],
+    registryDependencies: ['segmented-control'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-pagination-1': {
@@ -2491,19 +2498,19 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
   'p-radio-group-7': {
     description: 'Small segmented control built with a radio group',
     tags: ['radio-group', 'segmented-control'],
-    registryDependencies: ['radio-group', 'tabs'],
+    registryDependencies: ['radio-group', 'segmented-control'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-radio-group-8': {
     description: 'Segmented control built with a radio group',
     tags: ['radio-group', 'segmented-control'],
-    registryDependencies: ['radio-group', 'tabs'],
+    registryDependencies: ['radio-group', 'segmented-control'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-radio-group-9': {
     description: 'Large segmented control built with a radio group',
     tags: ['radio-group', 'segmented-control'],
-    registryDependencies: ['radio-group', 'tabs'],
+    registryDependencies: ['radio-group', 'segmented-control'],
     meta: { class: '**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]' }
   },
   'p-radio-group-10': {
