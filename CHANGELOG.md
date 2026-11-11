@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.2.0](https://github.com/cossui-svelte/cossui-svelte/compare/v1.1.1...v1.2.0) (2026-11-11)
+
+### ✨ Features
+
+* **composer:** ":" emoji suggestions with plain-text items ([81cd8b7](https://github.com/cossui-svelte/cossui-svelte/commit/81cd8b7986f08427e6c62409271f643774da10c1))
+* **segmented-control:** ship as a component with an animated indicator ([59fa6a3](https://github.com/cossui-svelte/cossui-svelte/commit/59fa6a3d126632f81a081e139b5129d42073d5c3)), references [#906](https://github.com/cossui-svelte/cossui-svelte/issues/906)
+* **site:** add Plotter blueprint animations to home, particles and 404 pages ([2f0774e](https://github.com/cossui-svelte/cossui-svelte/commit/2f0774ee2b885a81fbe6933ec436a10898cca894)), references [#921](https://github.com/cossui-svelte/cossui-svelte/issues/921)
+
+### 🐛 Bug Fixes
+
+* **composer:** show the default cursor when the composer is disabled ([1faba7f](https://github.com/cossui-svelte/cossui-svelte/commit/1faba7f6cd05a5d9fbf9675bc49d6644e5c8b509)), references [#909](https://github.com/cossui-svelte/cossui-svelte/issues/909)
+
+### 🚚 Chores
+
+* **ui:** drop the redundant trigger aria-label from autocomplete and combobox ([6ecd39b](https://github.com/cossui-svelte/cossui-svelte/commit/6ecd39b98107776d78f8ccbdfcdd9479dc47bbef)), references [#908](https://github.com/cossui-svelte/cossui-svelte/issues/908)
+* **upstream:** sync registry.json snapshot to fe6ffa81 and regenerate registry ([6f99419](https://github.com/cossui-svelte/cossui-svelte/commit/6f994196c45a491589cd9b75d9531954a7fb0353))
+
 ## [1.1.1](https://github.com/cossui-svelte/cossui-svelte/compare/v1.1.0...v1.1.1) (2026-11-06)
 
 ### 🐛 Bug Fixes
