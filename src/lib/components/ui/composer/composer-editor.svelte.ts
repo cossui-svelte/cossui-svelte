@@ -166,6 +166,19 @@ export class ComposerEditor {
     });
 
     $effect(() => {
+      const input = this.inputElement;
+      if (!input || input instanceof HTMLTextAreaElement || this.disabled || this.readOnly) return;
+      const initializeCaret = () => {
+        if (this.#composing || readValue(input).length > 0) return;
+        input.ownerDocument.getSelection()?.setBaseAndExtent(input, 0, input, 0);
+      };
+      // Initialize before focusin, while the drawer's temporary focus geometry is
+      // still applied, so Safari doesn't pan to reveal the empty editor's caret.
+      input.addEventListener('focus', initializeCaret);
+      return () => input.removeEventListener('focus', initializeCaret);
+    });
+
+    $effect(() => {
       const onSelectionChange = () => {
         const input = this.inputElement;
         if (input && document.activeElement === input && !this.#composing) {

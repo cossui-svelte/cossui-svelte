@@ -140,7 +140,7 @@
       window.clearTimeout(replyExitTimer);
       replyExitTimer = window.setTimeout(() => {
         replyFocus = null;
-        scroll.updatePosition();
+        if (replyDismissal.current === 'cancel') scroll.updatePosition();
       }, 380);
     }
   });

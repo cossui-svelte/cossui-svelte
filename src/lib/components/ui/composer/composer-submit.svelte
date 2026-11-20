@@ -17,6 +17,16 @@
   let { ref = $bindable(null), disabled, onclick, ...restProps }: Props = $props();
 
   const editor = useComposerEditorContext();
+
+  function preserveInputFocus(
+    event: MouseEvent & { currentTarget: EventTarget & HTMLButtonElement }
+  ) {
+    // Keep the caret in the input while pressing Send.
+    const input = editor?.inputElement;
+    if (event.button === 0 && input && input === event.currentTarget.ownerDocument.activeElement) {
+      event.preventDefault();
+    }
+  }
 </script>
 
 <Button
@@ -24,17 +34,9 @@
   data-slot="composer-submit"
   type="button"
   disabled={disabled ?? !editor?.canSubmit}
-  onpointerdown={(event: PointerEvent) => {
-    // Keep the caret in the input while pressing Send.
-    const input = editor?.inputElement;
-    if (
-      event.button === 0 &&
-      input &&
-      input === (event.currentTarget as HTMLElement).ownerDocument.activeElement
-    ) {
-      event.preventDefault();
-    }
-  }}
+  onpointerdown={preserveInputFocus}
+  // iOS can still move focus on compatibility mousedown after pointerdown is canceled.
+  onmousedown={preserveInputFocus}
   onclick={(event: MouseEvent & { currentTarget: EventTarget & HTMLButtonElement }) => {
     onclick?.(event);
     if (event.defaultPrevented || disabled) return;
