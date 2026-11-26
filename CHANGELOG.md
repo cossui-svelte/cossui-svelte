@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.3.0](https://github.com/cossui-svelte/cossui-svelte/compare/v1.2.0...v1.3.0) (2026-11-26)
+
+### ✨ Features
+
+* **particles:** add p-group-100 copy agent prompt split button ([2e882eb](https://github.com/cossui-svelte/cossui-svelte/commit/2e882eb29bd218cad0e7747726b0d15e5507add4))
+* **site:** add copy agent prompt button to the landing page ([7f42530](https://github.com/cossui-svelte/cossui-svelte/commit/7f4253061bf720bcbf6d27cb71ab926e6d875c42))
+* **upstream:** port coss ui [#922](https://github.com/cossui-svelte/cossui-svelte/issues/922)/[#925](https://github.com/cossui-svelte/cossui-svelte/issues/925) composer, drawer and chat reply fixes ([6fd391b](https://github.com/cossui-svelte/cossui-svelte/commit/6fd391b3dfdf546fb1ed1d08bc4cecd927ab2812))
+* **upstream:** port coss ui [#924](https://github.com/cossui-svelte/cossui-svelte/issues/924)/[#926](https://github.com/cossui-svelte/cossui-svelte/issues/926)/[#927](https://github.com/cossui-svelte/cossui-svelte/issues/927)/[#933](https://github.com/cossui-svelte/cossui-svelte/issues/933) composer, calendar and chat fixes ([b4db0ec](https://github.com/cossui-svelte/cossui-svelte/commit/b4db0ecb872882711ae49334cc9f0471c8bba3cf))
+
+### 🐛 Bug Fixes
+
+* **registry:** give date-picker and file-upload real registry dependencies ([18c78c6](https://github.com/cossui-svelte/cossui-svelte/commit/18c78c62e3783ad1a8d4d05aeb8a117cae5d1dba))
+
 ## [1.2.0](https://github.com/cossui-svelte/cossui-svelte/compare/v1.1.1...v1.2.0) (2026-11-11)
 
 ### ✨ Features
