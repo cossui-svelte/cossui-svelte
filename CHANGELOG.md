@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.3.1](https://github.com/cossui-svelte/cossui-svelte/compare/v1.3.0...v1.3.1) (2026-11-26)
+
+### 🚚 Chores
+
+* **deps:** update dependencies and migrate docs to mdsvex 1.x ([e084850](https://github.com/cossui-svelte/cossui-svelte/commit/e0848508cb96588509b478882b3a5f542a578ce5))
+
 ## [1.3.0](https://github.com/cossui-svelte/cossui-svelte/compare/v1.2.0...v1.3.0) (2026-11-26)
 
 ### ✨ Features
