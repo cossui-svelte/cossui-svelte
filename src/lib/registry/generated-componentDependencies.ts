@@ -140,6 +140,7 @@ export const COMPONENT_DEPENDENCIES: Record<string, string[]> = {
   'p-composer-10': ['@lucide/svelte'],
   'p-composer-11': ['@lucide/svelte'],
   'p-composer-12': ['@lucide/svelte'],
+  'p-composer-13': ['@lucide/svelte'],
   'p-composer-2': ['@lucide/svelte'],
   'p-composer-3': ['@lucide/svelte'],
   'p-composer-4': ['@lucide/svelte'],

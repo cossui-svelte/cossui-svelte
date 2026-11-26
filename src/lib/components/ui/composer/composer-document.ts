@@ -46,6 +46,7 @@ type ActiveQuery = ComposerQuery & {
   node: Text;
   start: number;
   end: number;
+  spaceAfter: boolean;
 };
 
 function pushText(parts: ComposerPart[], text: string): void {

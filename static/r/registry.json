@@ -9309,6 +9309,28 @@
       ]
     },
     {
+      "name": "p-composer-13",
+      "title": "Composer 13",
+      "description": "Composer mention list that can stay open to mention several people in a row",
+      "type": "registry:block",
+      "dependencies": [
+        "@lucide/svelte"
+      ],
+      "registryDependencies": [
+        "https://cossui-svelte.com/r/avatar.json",
+        "https://cossui-svelte.com/r/badge.json",
+        "https://cossui-svelte.com/r/composer.json",
+        "https://cossui-svelte.com/r/kbd.json"
+      ],
+      "files": [
+        {
+          "type": "registry:block",
+          "path": "p-composer-13.svelte",
+          "target": "particles/composer/p-composer-13.svelte"
+        }
+      ]
+    },
+    {
       "name": "p-composer-2",
       "title": "Composer 2",
       "description": "Composer with asynchronous mention suggestions",

@@ -27,7 +27,7 @@
 </script>
 
 <ScrollArea
-  class="h-auto! **:data-[slot=scroll-area-viewport]:h-auto! **:data-[slot=scroll-area-viewport]:max-h-[min(var(--available-height),16rem)]"
+  class="flex flex-col *:data-[slot=scroll-area-viewport]:max-h-64 *:data-[slot=scroll-area-viewport]:min-h-0"
   overscrollContain
   scrollbarGutter
   scrollFade
