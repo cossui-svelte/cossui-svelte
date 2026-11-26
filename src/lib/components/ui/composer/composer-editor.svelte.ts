@@ -24,6 +24,7 @@ import {
   restoreSelection,
   writeValue
 } from './composer-document';
+import { continuesPastQuery } from './composer-query';
 
 export type ComposerChangeDetails = {
   reason: 'input' | 'selection' | 'history' | 'reset';
@@ -80,6 +81,7 @@ type EventHandlers = {
   onkeydown: (event: KeyboardEvent) => void;
   onkeyup: (event: KeyboardEvent) => void;
   onclick: (event: MouseEvent) => void;
+  onfocus: (event: FocusEvent) => void;
   onblur: (event: FocusEvent) => void;
   oninput: (event: Event) => void;
   oncompositionstart: (event: CompositionEvent) => void;
@@ -251,13 +253,17 @@ export class ComposerEditor {
     return getFilteredItems(this.trigger, this.query, defaultFilter.contains);
   }
   get open(): boolean {
+    const query = this.query;
     return (
       !this.isTextarea &&
       !this.isComposing &&
       !this.disabled &&
       !this.readOnly &&
-      Boolean(this.query) &&
-      hasVisibleItems(this.trigger, this.items)
+      Boolean(query) &&
+      // After a space, stay open only while a suggestion's name carries on.
+      (query?.spaceAfter
+        ? this.items.some((item) => continuesPastQuery(item.label, query.text))
+        : hasVisibleItems(this.trigger, this.items))
     );
   }
   get canSubmit(): boolean {
@@ -617,10 +623,13 @@ export class ComposerEditor {
       if (!event.defaultPrevented && !this.#composing) this.#updateQuery();
     },
     onclick: () => this.#updateQuery(),
+    onfocus: () => this.#updateQuery(),
     onblur: () => {
       const input = this.inputElement;
       this.#lastSelection = (input && readSelection(input)) ?? this.#lastSelection;
-      this.#dismissSuggestions();
+      // Blur is not a dismissal: refocusing on a query reopens its suggestions.
+      this.#dismissedQuery = null;
+      this.query = null;
     },
     oninput: () => {
       if (this.#ignoreCompositionInput) return;

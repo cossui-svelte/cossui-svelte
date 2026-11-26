@@ -19,6 +19,9 @@
     value,
     disabled: disabledProp,
     children,
+    onpointermove,
+    onclick,
+    onmousedown,
     ...restProps
   }: Props = $props();
 
@@ -56,13 +59,17 @@
     'flex min-h-8 w-full cursor-default select-none items-center gap-2 rounded-sm px-2 py-1 text-start text-base outline-none data-disabled:pointer-events-none data-highlighted:bg-accent data-highlighted:text-accent-foreground data-disabled:opacity-64 sm:min-h-7 sm:text-sm',
     className
   )}
-  onpointermove={() => {
-    if (!disabled && value) suggestions?.highlightItem(value);
+  onpointermove={(event) => {
+    onpointermove?.(event);
+    if (!event.defaultPrevented && !disabled && value) suggestions?.highlightItem(value);
   }}
-  onclick={() => {
-    if (!disabled && value) suggestions?.selectItem(value);
+  onclick={(event) => {
+    onclick?.(event);
+    // `preventDefault()` in the caller's handler skips the default selection.
+    if (!event.defaultPrevented && !disabled && value) suggestions?.selectItem(value);
   }}
   onmousedown={(event) => {
+    onmousedown?.(event);
     if (suggestions) event.preventDefault();
   }}
   {...restProps}

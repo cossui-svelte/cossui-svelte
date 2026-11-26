@@ -1363,6 +1363,13 @@ export const metadata: Record<string, ParticleMetaDefinition> = {
     registryDependencies: ['composer', 'emoji'],
     meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-xl' }
   },
+  'p-composer-13': {
+    description: 'Composer mention list that can stay open to mention several people in a row',
+    tags: ['composer', 'avatar', 'badge', 'multiselect', 'tag'],
+    npmDependencies: ['@lucide/svelte'],
+    registryDependencies: ['avatar', 'badge', 'composer', 'kbd'],
+    meta: { class: '**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-xl' }
+  },
   'p-command-1': {
     description: 'Command palette with dialog',
     tags: ['command', 'dialog'],

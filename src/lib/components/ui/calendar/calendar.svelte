@@ -34,6 +34,8 @@
      * interactivity/styling of outside days without hiding them.
      */
     showOutsideDays?: boolean;
+    /** Keep six week rows so the height stays stable between months. Defaults to `true`. */
+    fixedWeeks?: boolean;
   };
 </script>
 
@@ -62,6 +64,7 @@
     day,
     disableDaysOutsideMonth = false,
     showOutsideDays = true,
+    fixedWeeks = true,
     mode,
     ...restProps
   }: Props = $props();
@@ -155,6 +158,7 @@
     bind:placeholder
     {weekdayFormat}
     {disableDaysOutsideMonth}
+    {fixedWeeks}
     class={rootClass}
     {locale}
     {monthFormat}
@@ -177,6 +181,7 @@
     type={mode as never}
     {weekdayFormat}
     {disableDaysOutsideMonth}
+    {fixedWeeks}
     class={rootClass}
     {locale}
     {monthFormat}

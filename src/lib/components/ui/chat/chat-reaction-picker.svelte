@@ -1,5 +1,5 @@
 <script lang="ts">
-  import HeartIcon from '@lucide/svelte/icons/heart';
+  import SmilePlusIcon from '@lucide/svelte/icons/smile-plus';
   import type { ComponentProps } from 'svelte';
   import { Button, buttonVariants } from '#lib/components/ui/button/index.js';
   import { Popover, PopoverPopup, PopoverTrigger } from '#lib/components/ui/popover/index.js';
@@ -52,7 +52,7 @@
       }}
       {...tip.props}
     >
-      <HeartIcon aria-hidden="true" class="size-3.5" />
+      <SmilePlusIcon aria-hidden="true" class="size-3.5" />
     </PopoverTrigger>
     <TooltipPopup customAnchor={trigger}>{triggerTooltip}</TooltipPopup>
   </Tooltip>
