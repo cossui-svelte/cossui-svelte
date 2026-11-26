@@ -8,7 +8,7 @@ import tailwindcss from '@tailwindcss/vite';
 import { mdsvex } from 'mdsvex';
 // import { visualizer } from 'rollup-plugin-visualizer';
 import { createLogger, defineConfig } from 'vite';
-import { mdsvexOptions } from './mdsvex.config.js';
+import { docsComponentImports, mdsvexOptions } from './mdsvex.config.js';
 import pkg from './package.json' with { type: 'json' };
 
 const logger = createLogger();
@@ -47,6 +47,8 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
     enhancedImages(),
+    docsComponentImports(),
+    mdsvex(mdsvexOptions),
     sveltekit({
       compilerOptions: {
         warningFilter: (warning) => {
@@ -68,8 +70,7 @@ export default defineConfig({
           );
         }
       },
-      extensions: ['.svelte', '.mdx'],
-      preprocess: [mdsvex(mdsvexOptions), vitePreprocess()],
+      preprocess: [vitePreprocess()],
       // vitePlugin: {
       //   exclude: [/\.old$/u /* files ending in .old */, /\.old\//u /* folders ending in .old */]
       // },

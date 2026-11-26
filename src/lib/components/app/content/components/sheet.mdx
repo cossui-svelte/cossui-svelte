@@ -92,15 +92,15 @@ Trigger button that opens the sheet. Wrapper for `Dialog.Trigger` from ShardsUI.
 
 Popup container that displays the sheet content, including the backdrop and viewport. Also exported as `SheetContent`.
 
-| Prop              | Type                                      | Default     | Description                                      |
-| ----------------- | ----------------------------------------- | ----------- | ------------------------------------------------ |
-| `side`            | `"right" \| "left" \| "top" \| "bottom"`  | `"right"`   | Controls which side of the screen the sheet opens from |
-| `variant`         | `"default" \| "inset"`                    | `"default"` | Controls the sheet style. `inset` adds spacing around the sheet on desktop screens |
-| `showCloseButton` | `boolean`                                 | `true`      | When true, displays a close button in the top-right corner |
-| `closeProps`      | `Dialog.Close` props                      | -           | Props forwarded to the internal close button, useful for overriding `aria-label` |
-| `portalProps`     | `Dialog.Portal` props                     | -           | Props forwarded to the internal portal (`keepMounted`, `container`, etc.) |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `side` | `"right" \| "left" \| "top" \| "bottom"` | `"right"` | Controls which side of the screen the sheet opens from |
+| `variant` | `"default" \| "inset"` | `"default"` | Controls the sheet style. `inset` adds spacing around the sheet on desktop screens |
+| `showCloseButton` | `boolean` | `true` | When true, displays a close button in the top-right corner |
+| `closeProps` | `Dialog.Close` props | - | Props forwarded to the internal close button, useful for overriding `aria-label` |
+| `portalProps` | `Dialog.Portal` props | - | Props forwarded to the internal portal (`keepMounted`, `container`, etc.) |
 
-**Example:**
+*Example:*
 
 ```svelte
 <!-- Right side sheet (default) -->
@@ -121,9 +121,9 @@ Container for the sheet title and description. Renders a `div` and accepts stand
 
 Footer section for action buttons. Renders a `div`.
 
-| Prop        | Type                     | Default     | Description                                      |
-| ----------- | ------------------------ | ----------- | ------------------------------------------------ |
-| `variant`   | `"default" \| "bare"`    | `"default"` | Controls the footer styling. `default` includes border and background, `bare` removes them |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `variant` | `"default" \| "bare"` | `"default"` | Controls the footer styling. `default` includes border and background, `bare` removes them |
 
 ### SheetTitle
 
@@ -137,11 +137,11 @@ Description component. Wrapper for `Dialog.Description` from ShardsUI.
 
 Scrollable content container. Automatically wraps content in a `ScrollArea` component. Renders a `div`.
 
-| Prop         | Type      | Default | Description                                      |
-| ------------ | --------- | ------- | ------------------------------------------------ |
-| `scrollFade` | `boolean` | `true`  | When true, shows a fade effect at scroll edges   |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `scrollFade` | `boolean` | `true` | When true, shows a fade effect at scroll edges |
 
-**Example:**
+*Example:*
 
 ```svelte
 <SheetPanel>

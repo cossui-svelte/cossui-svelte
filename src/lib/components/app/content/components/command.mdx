@@ -100,143 +100,143 @@ npm install @shardsui/svelte
 
 The root component that wraps the autocomplete functionality. Wraps `Autocomplete.Root` from ShardsUI with sensible defaults for command palette behavior: `autoHighlight="always"`, `keepHighlight`, and an always-open inline list.
 
-| Prop            | Type                                   | Default     | Description                                      |
-| --------------- | -------------------------------------- | ----------- | ------------------------------------------------ |
-| `items`         | `readonly unknown[]`                   | -           | The array of items to display in the command     |
-| `value`         | `string`                               | `""`        | The input text (`bind:value`)                    |
-| `autoHighlight` | `boolean \| "always"`                  | `"always"`  | Controls automatic highlighting of items         |
-| `keepHighlight` | `boolean`                              | `true`      | Whether to maintain highlight state              |
-| `...props`      | props of `Autocomplete.Root`             | -           | All ShardsUI Autocomplete props are supported     |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `items` | `readonly unknown[]` | - | The array of items to display in the command |
+| `value` | `string` | `""` | The input text (`bind:value`) |
+| `autoHighlight` | `boolean \| "always"` | `"always"` | Controls automatic highlighting of items |
+| `keepHighlight` | `boolean` | `true` | Whether to maintain highlight state |
+| `...props` | props of `Autocomplete.Root` | - | All ShardsUI Autocomplete props are supported |
 
 ### CommandDialog
 
 A wrapper component that provides the dialog root functionality. Wrapper for `Dialog.Root` from ShardsUI. `open` is bindable (`bind:open`).
 
-| Prop           | Type       | Description                                 |
-| -------------- | ---------- | ------------------------------------------- |
-| `open`         | `boolean`  | Controls whether the dialog is open (`bind:open`) |
-| `onOpenChange` | `(open: boolean) => void` | Callback fired when the open state changes  |
-| `...props`     | `Dialog.Root` props | All standard dialog attributes are supported |
+| Prop | Type | Description |
+| --- | --- | --- |
+| `open` | `boolean` | Controls whether the dialog is open (`bind:open`) |
+| `onOpenChange` | `(open: boolean) => void` | Callback fired when the open state changes |
+| `...props` | `Dialog.Root` props | All standard dialog attributes are supported |
 
 ### CommandDialogTrigger
 
 The trigger button that opens the command dialog. Renders as a button by default. Style it with `class` (for example `class={buttonVariants({ variant: 'outline' })}`) and change the rendered tag with `as`; ShardsUI parts have no `child` snippet or render prop, so don't nest a `Button` inside it.
 
-| Prop        | Type                                        | Description                                      |
-| ----------- | ------------------------------------------- | ------------------------------------------------ |
-| `class`     | `string`                                    | Additional CSS classes to apply to the component |
-| `...props`  | `Dialog.Trigger` props                | All standard dialog trigger attributes are supported |
+| Prop | Type | Description |
+| --- | --- | --- |
+| `class` | `string` | Additional CSS classes to apply to the component |
+| `...props` | `Dialog.Trigger` props | All standard dialog trigger attributes are supported |
 
 ### CommandDialogPopup
 
 The popup content container that displays the command palette inside a dialog.
 
-| Prop           | Type                         | Description                                      |
-| -------------- | ---------------------------- | ------------------------------------------------ |
-| `class`        | `string`                     | Additional CSS classes to apply to the component |
-| `portalProps`  | props of `Dialog.Portal`     | Props forwarded to the internal portal (`keepMounted`, `container`, etc.); see the ShardsUI Dialog portal API |
-| `...props`     | `Dialog.Popup` props   | All standard dialog popup attributes are supported |
+| Prop | Type | Description |
+| --- | --- | --- |
+| `class` | `string` | Additional CSS classes to apply to the component |
+| `portalProps` | props of `Dialog.Portal` | Props forwarded to the internal portal (`keepMounted`, `container`, etc.); see the ShardsUI Dialog portal API |
+| `...props` | `Dialog.Popup` props | All standard dialog popup attributes are supported |
 
 ### CommandInput
 
 The search input field with an integrated search icon. Automatically includes a search icon via `startAddon` and is sized to `lg` by default.
 
-| Prop          | Type                              | Description                                      |
-| ------------- | --------------------------------- | ------------------------------------------------ |
-| `placeholder` | `string`                          | The placeholder text for the input               |
-| `class`       | `string`                          | Additional CSS classes to apply to the component |
-| `...props`    | `Autocomplete.Input` props  | All standard autocomplete input attributes are supported |
+| Prop | Type | Description |
+| --- | --- | --- |
+| `placeholder` | `string` | The placeholder text for the input |
+| `class` | `string` | Additional CSS classes to apply to the component |
+| `...props` | `Autocomplete.Input` props | All standard autocomplete input attributes are supported |
 
 ### CommandList
 
 A scrollable container for command items. It wraps `Autocomplete.List` with scroll functionality.
 
-| Prop        | Type                              | Description                                      |
-| ----------- | --------------------------------- | ------------------------------------------------ |
-| `class`     | `string`                          | Additional CSS classes to apply to the component |
-| `...props`  | `Autocomplete.List` props   | All standard autocomplete list attributes are supported |
+| Prop | Type | Description |
+| --- | --- | --- |
+| `class` | `string` | Additional CSS classes to apply to the component |
+| `...props` | `Autocomplete.List` props | All standard autocomplete list attributes are supported |
 
 ### CommandPanel
 
 A container component that provides styling for command content outside of dialogs. Useful when building standalone command interfaces with a bordered, elevated appearance.
 
-| Prop        | Type                          | Description                                      |
-| ----------- | ----------------------------- | ------------------------------------------------ |
-| `class`     | `string`                      | Additional CSS classes to apply to the component |
-| `...props`  | `HTMLAttributes<HTMLDivElement>` | All standard div attributes are supported        |
+| Prop | Type | Description |
+| --- | --- | --- |
+| `class` | `string` | Additional CSS classes to apply to the component |
+| `...props` | `HTMLAttributes<HTMLDivElement>` | All standard div attributes are supported |
 
 ### CommandEmpty
 
 Displays a message when no results are found.
 
-| Prop        | Type                              | Description                                      |
-| ----------- | --------------------------------- | ------------------------------------------------ |
-| `class`     | `string`                          | Additional CSS classes to apply to the component |
-| `...props`  | `Autocomplete.Empty` props  | All standard autocomplete empty attributes are supported |
+| Prop | Type | Description |
+| --- | --- | --- |
+| `class` | `string` | Additional CSS classes to apply to the component |
+| `...props` | `Autocomplete.Empty` props | All standard autocomplete empty attributes are supported |
 
 ### CommandGroup
 
 Groups related command items together. Wraps `Autocomplete.Group`.
 
-| Prop        | Type                              | Description                                      |
-| ----------- | --------------------------------- | ------------------------------------------------ |
-| `items`     | `readonly unknown[]`              | The array of items in this group                 |
-| `class`     | `string`                          | Additional CSS classes to apply to the component |
-| `...props`  | `Autocomplete.Group` props  | All standard autocomplete group attributes are supported |
+| Prop | Type | Description |
+| --- | --- | --- |
+| `items` | `readonly unknown[]` | The array of items in this group |
+| `class` | `string` | Additional CSS classes to apply to the component |
+| `...props` | `Autocomplete.Group` props | All standard autocomplete group attributes are supported |
 
 ### CommandGroupLabel
 
 Displays a label for a command group.
 
-| Prop        | Type                                   | Description                                      |
-| ----------- | -------------------------------------- | ------------------------------------------------ |
-| `class`     | `string`                               | Additional CSS classes to apply to the component |
-| `...props`  | `Autocomplete.GroupLabel` props | All standard autocomplete group label attributes are supported |
+| Prop | Type | Description |
+| --- | --- | --- |
+| `class` | `string` | Additional CSS classes to apply to the component |
+| `...props` | `Autocomplete.GroupLabel` props | All standard autocomplete group label attributes are supported |
 
 ### CommandItem
 
 An individual selectable command item. Wraps `Autocomplete.Item`.
 
-| Prop        | Type                              | Description                                      |
-| ----------- | --------------------------------- | ------------------------------------------------ |
-| `value`     | `unknown`                         | The value of the item (typically the item object) |
-| `class`     | `string`                          | Additional CSS classes to apply to the component |
-| `...props`  | `Autocomplete.Item` props   | All standard autocomplete item attributes are supported |
+| Prop | Type | Description |
+| --- | --- | --- |
+| `value` | `unknown` | The value of the item (typically the item object) |
+| `class` | `string` | Additional CSS classes to apply to the component |
+| `...props` | `Autocomplete.Item` props | All standard autocomplete item attributes are supported |
 
 ### CommandSeparator
 
 A visual separator between command groups or items. Includes default vertical spacing with `my-2` class.
 
-| Prop        | Type                                   | Description                                      |
-| ----------- | -------------------------------------- | ------------------------------------------------ |
-| `class`     | `string`                               | Additional CSS classes to apply to the component (default includes `my-2`) |
-| `...props`  | `Autocomplete.Separator` props   | All standard autocomplete separator attributes are supported |
+| Prop | Type | Description |
+| --- | --- | --- |
+| `class` | `string` | Additional CSS classes to apply to the component (default includes `my-2`) |
+| `...props` | `Autocomplete.Separator` props | All standard autocomplete separator attributes are supported |
 
 ### CommandShortcut
 
 Displays keyboard shortcuts in a styled span element.
 
-| Prop        | Type                           | Description                                      |
-| ----------- | ------------------------------ | ------------------------------------------------ |
-| `class`     | `string`                       | Additional CSS classes to apply to the component |
-| `...props`  | `HTMLAttributes<HTMLSpanElement>` | All standard span attributes are supported       |
+| Prop | Type | Description |
+| --- | --- | --- |
+| `class` | `string` | Additional CSS classes to apply to the component |
+| `...props` | `HTMLAttributes<HTMLSpanElement>` | All standard span attributes are supported |
 
 ### CommandFooter
 
 A footer section for displaying hints or additional keyboard shortcuts. Renders as a styled `div` with padding and border.
 
-| Prop        | Type                          | Description                                      |
-| ----------- | ----------------------------- | ------------------------------------------------ |
-| `class`     | `string`                      | Additional CSS classes to apply to the component |
-| `...props`  | `HTMLAttributes<HTMLDivElement>` | All standard div attributes are supported        |
+| Prop | Type | Description |
+| --- | --- | --- |
+| `class` | `string` | Additional CSS classes to apply to the component |
+| `...props` | `HTMLAttributes<HTMLDivElement>` | All standard div attributes are supported |
 
 ### CommandCollection
 
 Renders the `children` snippet for each item in the list or, inside `CommandGroup`, for each item of the group. Alias for `Autocomplete.Collection` from ShardsUI. Its `children` snippet is rendered once per item.
 
-| Prop        | Type                                    | Description                                      |
-| ----------- | --------------------------------------- | ------------------------------------------------ |
-| `...props`  | `Autocomplete.Collection` props   | All standard autocomplete collection attributes are supported |
+| Prop | Type | Description |
+| --- | --- | --- |
+| `...props` | `Autocomplete.Collection` props | All standard autocomplete collection attributes are supported |
 
 ## Examples
 

@@ -3,7 +3,7 @@ title: Get Started
 description: A quick guide to adding your first component.
 ---
 
-This guide provides the essentials for adding **coss ui** components to your Svelte application.
+This guide provides the essentials for adding *coss ui* components to your Svelte application.
 
 ## Prerequisites
 
@@ -25,7 +25,7 @@ SvelteKit's built-in `$lib` alias points at the same folder, so existing `$lib` 
 
 ## Adding Components
 
-You can add components **automatically with the CLI** or **manually by copying the files**. Both methods work for primitives, particles, and blocs.
+You can add components *automatically with the CLI* or *manually by copying the files*. Both methods work for primitives, particles, and blocs.
 
 ### With the CLI
 
@@ -41,11 +41,11 @@ See the [Styling](/docs/styling) guide for the theme tokens used by the componen
 
 ### Manually
 
-1.  **Find a component** on the [Components](/docs), [Particles](/particles) or [Blocs](/blocs) pages.
-2.  **Copy the code** from the **Code** tab.
-3.  **Create a new file** in your project (e.g., `#lib/components/ui/button/button.svelte`) and paste the code.
-4.  **Install any dependencies** listed on the component's page.
-5.  **Import and use** the component in your app.
+1. *Find a component* on the [Components](/docs), [Particles](/particles) or [Blocs](/blocs) pages.
+2. *Copy the code* from the *Code* tab.
+3. *Create a new file* in your project (e.g., `#lib/components/ui/button/button.svelte`) and paste the code.
+4. *Install any dependencies* listed on the component's page.
+5. *Import and use* the component in your app.
 
 ```svelte
 <script lang="ts">
@@ -57,7 +57,7 @@ See the [Styling](/docs/styling) guide for the theme tokens used by the componen
 
 ## Styling
 
-Components are styled with the design token system from upstream **coss ui**, which is defined by CSS variables and implemented with Tailwind CSS.
+Components are styled with the design token system from upstream *coss ui*, which is defined by CSS variables and implemented with Tailwind CSS.
 
 The variables are the same as shadcn/ui, and are fully customizable. You can modify them in your global stylesheet (e.g., `src/app.css`) to match your design system.
 
@@ -68,7 +68,7 @@ We've introduced a few additional tokens to provide more granular control:
 - `--success` and `--success-foreground`: Used for success-colored badges, toast types, and alerts
 - `--warning` and `--warning-foreground`: Used for warning-colored badges, toast types, and alerts
 
-**Important**: If you manually import components, you must also add these additional tokens to your CSS file (e.g., `src/app.css`). If you use the CLI to add components, check the [Styling](/docs/styling) guide to confirm your theme includes them.
+*Important*: If you manually import components, you must also add these additional tokens to your CSS file (e.g., `src/app.css`). If you use the CLI to add components, check the [Styling](/docs/styling) guide to confirm your theme includes them.
 
 ## Fonts
 
@@ -118,8 +118,8 @@ The [Agent Skills](/docs/skills) include migration rules for moving shadcn-svelt
 
 ## Working with LLMs
 
-We structure the documentation to make the components **AI-friendly**, so language models can understand, reason about, and modify them. To support this, we include:
+We structure the documentation to make the components *AI-friendly*, so language models can understand, reason about, and modify them. To support this, we include:
 
-- **[Agent Skills](/docs/skills)** — Install coss knowledge directly into your AI assistant. Covers primitives, styling conventions, migration patterns, and particle examples.
+- *[Agent Skills](/docs/skills)* — Install coss knowledge directly into your AI assistant. Covers primitives, styling conventions, migration patterns, and particle examples.
 - A `llms.txt` file that provides a map of the documentation and component structure for your AI agent.
-- A **Copy Markdown** button on every page, so you can easily share content or feed it to your AI workflows.
+- A *Copy Markdown* button on every page, so you can easily share content or feed it to your AI workflows.

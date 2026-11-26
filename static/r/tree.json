@@ -64,8 +64,8 @@
     "https://cossui-svelte.com/r/utils.json"
   ],
   "dependencies": [
-    "@headless-tree/core@^1.8.0",
+    "@headless-tree/core@^1.8.1",
     "runed@0.38.0",
-    "svelte-toolbelt@^0.10.6"
+    "svelte-toolbelt@^0.13.0"
   ]
 }

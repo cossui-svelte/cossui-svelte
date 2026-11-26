@@ -79,7 +79,7 @@ Set it on the avatar, on a group, or on any ancestor:
 </div>
 ```
 
-A `size-*` utility still resizes a single avatar, because tailwind-merge replaces the base size utility. It does **not** update `--avatar-size`, so the font size and any group geometry stay at the inherited value. Prefer `--avatar-size` and reach for `size-*` only when you want the box to change and nothing else.
+A `size-*` utility still resizes a single avatar, because tailwind-merge replaces the base size utility. It does *not* update `--avatar-size`, so the font size and any group geometry stay at the inherited value. Prefer `--avatar-size` and reach for `size-*` only when you want the box to change and nothing else.
 
 <ComponentPreview name="p-avatar-3" />
 
@@ -106,17 +106,17 @@ An interactive avatar needs an accessible name. `AvatarImage`'s `alt` supplies o
 
 Image element. Styled wrapper for `Avatar.Image` from ShardsUI. It is mounted only once the image has loaded, and follows the root radius through `rounded-[inherit]`.
 
-| Prop                    | Type                                   | Default | Description                                                                       |
-| ----------------------- | -------------------------------------- | ------- | --------------------------------------------------------------------------------- |
-| `onLoadingStatusChange` | `(status: ImageLoadingStatus) => void` | -       | Fired when loading status changes: `"idle"`, `"loading"`, `"loaded"` or `"error"` |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `onLoadingStatusChange` | `(status: ImageLoadingStatus) => void` | - | Fired when loading status changes: `"idle"`, `"loading"`, `"loaded"` or `"error"` |
 
 ### AvatarFallback
 
 Shown while the image loads or when it fails, and whenever no image is given. ShardsUI unmounts it once the image loads.
 
-| Prop    | Type     | Default | Description                                      |
-| ------- | -------- | ------- | ------------------------------------------------ |
-| `delay` | `number` | `0`     | Milliseconds to wait before showing the fallback |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `delay` | `number` | `0` | Milliseconds to wait before showing the fallback |
 
 It inherits its font size from the avatar, so it scales automatically. Override it on the fallback when a specific size is needed:
 
@@ -126,19 +126,19 @@ It inherits its font size from the avatar, so it scales automatically. Override 
 
 ### AvatarGroup
 
-Lays out overlapping avatars. Each avatar is masked with a circle matching its neighbour, so the avatars are separated by a **transparent gap rather than a ring**. The stack therefore holds its shape on gradients, images and translucent panels, where a ring tinted with the page background would not.
+Lays out overlapping avatars. Each avatar is masked with a circle matching its neighbour, so the avatars are separated by a *transparent gap rather than a ring*. The stack therefore holds its shape on gradients, images and translucent panels, where a ring tinted with the page background would not.
 
-| Prop      | Type                | Default   | Description                                  |
-| --------- | ------------------- | --------- | -------------------------------------------- |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
 | `topmost` | `"first" \| "last"` | `"first"` | Which end of the stack stays a whole circle. |
 
 Geometry is derived from the inherited `--avatar-size`, so sizing a stack is the same gesture as sizing one avatar. Three further properties tune the layout, and all of them inherit:
 
-| Property           | Default                                                   | Description                                                                              |
-| ------------------ | --------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `--avatar-overlap` | `calc(var(--avatar-size) * 0.3)`                          | How far each avatar sits over the previous one.                                          |
-| `--avatar-gap`     | `calc(var(--avatar-size) / 16)`                           | Thickness of the transparent gap.                                                        |
-| `--avatar-nudge`   | `calc((var(--avatar-overlap) + var(--avatar-gap)) * 0.3)` | How far initials shift out of the clipped edge. Set to `0` to centre them geometrically. |
+| Property | Default | Description |
+| --- | --- | --- |
+| `--avatar-overlap` | `calc(var(--avatar-size) * 0.3)` | How far each avatar sits over the previous one. |
+| `--avatar-gap` | `calc(var(--avatar-size) / 16)` | Thickness of the transparent gap. |
+| `--avatar-nudge` | `calc((var(--avatar-overlap) + var(--avatar-gap)) * 0.3)` | How far initials shift out of the clipped edge. Set to `0` to centre them geometrically. |
 
 ```svelte
 <AvatarGroup class="[--avatar-size:--spacing(12)] [--avatar-overlap:--spacing(7)]">
@@ -146,7 +146,7 @@ Geometry is derived from the inherited `--avatar-size`, so sizing a stack is the
 </AvatarGroup>
 ```
 
-**Constraints worth knowing:**
+*Constraints worth knowing:*
 
 - Every avatar in a group must be the same size. The mask is positioned from the group's `--avatar-size`, so a per-avatar override misplaces the cut. Set the size on the group.
 - A status dot or badge on a clipped avatar is clipped with it, and is cropped to the circle. Put one on the avatar that stays whole — the first with `topmost="first"`, the last with `topmost="last"`.

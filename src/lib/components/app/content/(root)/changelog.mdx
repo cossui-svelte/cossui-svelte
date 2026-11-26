@@ -9,14 +9,14 @@ This port closely follows the changes from [upstream cossui](https://coss.com/ui
   {#each changelog as item, i (item.title)}
     <TimelineItem step={i + 1} class="group-data-[orientation=vertical]/timeline:sm:ms-32">
       <TimelineHeader>
-        <TimelineSeparator />
+        <TimelineSeparator/>
         <TimelineDate
           class="group-data-[orientation=vertical]/timeline:sm:absolute group-data-[orientation=vertical]/timeline:sm:-left-32 group-data-[orientation=vertical]/timeline:sm:w-20 group-data-[orientation=vertical]/timeline:sm:text-right"
         >
           {item.date}
         </TimelineDate>
         <TimelineTitle class="sm:-mt-0.5">{item.title}</TimelineTitle>
-        <TimelineIndicator />
+        <TimelineIndicator/>
       </TimelineHeader>
       <TimelineContent>{item.description}</TimelineContent>
     </TimelineItem>

@@ -88,22 +88,22 @@ Root component. Wrapper for `Select.Root` from ShardsUI. `value` is bindable (`b
 
 Trigger button that opens the select dropdown, with a built-in chevron icon. Styled wrapper for `Select.Trigger` from ShardsUI. Render the current label as its children.
 
-| Prop   | Type                        | Default     | Description                                      |
-| ------ | --------------------------- | ----------- | ------------------------------------------------ |
-| `size` | `"sm" \| "default" \| "lg"` | `"default"` | Controls the size of the trigger                 |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `size` | `"sm" \| "default" \| "lg"` | `"default"` | Controls the size of the trigger |
 
 ### SelectPopup
 
 Popup container for select options. Also exported as `SelectContent`.
 
-| Prop          | Type                                     | Default    | Description                                      |
-| ------------- | ---------------------------------------- | ---------- | ------------------------------------------------ |
-| `side`        | `"top" \| "bottom" \| "left" \| "right"` | `"bottom"` | Side of the trigger to position the popup        |
-| `align`       | `"start" \| "center" \| "end"`           | `"center"` | Alignment relative to the trigger                |
-| `sideOffset`  | `number`                                 | `4`        | Distance from the trigger in pixels              |
-| `alignOffset` | `number`                                 | `0`        | Offset along the alignment axis                  |
-| `anchor`      | `Element`                                | -          | Positions the popup against this element instead of the trigger |
-| `portalProps` | `Select.Portal` props                    | -          | Props forwarded to the internal portal (`keepMounted`, `container`, etc.) |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `side` | `"top" \| "bottom" \| "left" \| "right"` | `"bottom"` | Side of the trigger to position the popup |
+| `align` | `"start" \| "center" \| "end"` | `"center"` | Alignment relative to the trigger |
+| `sideOffset` | `number` | `4` | Distance from the trigger in pixels |
+| `alignOffset` | `number` | `0` | Offset along the alignment axis |
+| `anchor` | `Element` | - | Positions the popup against this element instead of the trigger |
+| `portalProps` | `Select.Portal` props | - | Props forwarded to the internal portal (`keepMounted`, `container`, etc.) |
 
 ### SelectItem
 
@@ -203,4 +203,3 @@ Pass `selectTriggerVariants()` as the `class` of `ComboboxTrigger` to create a c
 ### Form Integration
 
 <ComponentPreview name="p-select-11" />
-

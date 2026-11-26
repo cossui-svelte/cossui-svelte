@@ -138,13 +138,13 @@ Trigger button that opens the menu. Wrapper for `Menu.Trigger` from ShardsUI. Al
 
 Popup container that displays the menu content. Also exported as `DropdownMenuContent`.
 
-| Prop          | Type                                           | Default    | Description                                      |
-| ------------- | ---------------------------------------------- | ---------- | ------------------------------------------------ |
-| `side`        | `"top" \| "bottom" \| "left" \| "right"`       | `"bottom"` | Side of the trigger to position the popup        |
-| `align`       | `"start" \| "center" \| "end"`                 | `"center"` | Alignment relative to the trigger                |
-| `sideOffset`  | `number`                                       | `4`        | Distance from the trigger in pixels              |
-| `alignOffset` | `number`                                       | -          | Offset along the alignment axis                  |
-| `portalProps` | `PortalProps`                            | -          | Props forwarded to the internal portal (`keepMounted`, `container`, etc.) |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `side` | `"top" \| "bottom" \| "left" \| "right"` | `"bottom"` | Side of the trigger to position the popup |
+| `align` | `"start" \| "center" \| "end"` | `"center"` | Alignment relative to the trigger |
+| `sideOffset` | `number` | `4` | Distance from the trigger in pixels |
+| `alignOffset` | `number` | - | Offset along the alignment axis |
+| `portalProps` | `PortalProps` | - | Props forwarded to the internal portal (`keepMounted`, `container`, etc.) |
 
 ### MenuGroup
 
@@ -154,12 +154,12 @@ Groups related menu items. Wrapper for `Menu.Group` from ShardsUI. Also exported
 
 Individual menu item. Also exported as `DropdownMenuItem`.
 
-| Prop      | Type                          | Default     | Description                                      |
-| --------- | ----------------------------- | ----------- | ------------------------------------------------ |
-| `inset`   | `boolean`                     | -           | Adds left padding to align with items that have icons |
-| `variant` | `"default" \| "destructive"`  | `"default"` | Controls the item styling                        |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `inset` | `boolean` | - | Adds left padding to align with items that have icons |
+| `variant` | `"default" \| "destructive"` | `"default"` | Controls the item styling |
 
-**Using `inset`:** When mixing items with and without icons, use `inset` on icon-less items to maintain alignment:
+*Using `inset`:* When mixing items with and without icons, use `inset` on icon-less items to maintain alignment:
 
 ```svelte
 <MenuItem><PencilIcon /> Edit</MenuItem>
@@ -167,16 +167,15 @@ Individual menu item. Also exported as `DropdownMenuItem`.
 <MenuItem inset>Profile</MenuItem>  <!-- Aligns with icon items above -->
 ```
 
-
 ### MenuLinkItem
 
-Link menu item for navigation. Renders a native `<a>` when you pass `href`. Styled like **`MenuItem`**.
+Link menu item for navigation. Renders a native `<a>` when you pass `href`. Styled like *`MenuItem`*.
 
-| Prop           | Type                          | Default     | Description                                      |
-| -------------- | ----------------------------- | ----------- | ------------------------------------------------ |
-| `inset`        | `boolean`                     | -           | Adds left padding to align with items that have icons |
-| `variant`      | `"default" \| "destructive"`  | `"default"` | Controls the item styling                        |
-| `closeOnClick` | `boolean`                     | `true`      | Whether the menu closes when the link is clicked |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `inset` | `boolean` | - | Adds left padding to align with items that have icons |
+| `variant` | `"default" \| "destructive"` | `"default"` | Controls the item styling |
+| `closeOnClick` | `boolean` | `true` | Whether the menu closes when the link is clicked |
 
 Pass `href` for navigation. SvelteKit routes plain anchors on the client, so no link wrapper is needed (use `resolve()` from `$app/paths` for app routes):
 
@@ -188,9 +187,9 @@ Pass `href` for navigation. SvelteKit routes plain anchors on the client, so no 
 
 Checkbox menu item (`checked` is bindable). Also exported as `DropdownMenuCheckboxItem`.
 
-| Prop      | Type                       | Default     | Description                                      |
-| --------- | -------------------------- | ----------- | ------------------------------------------------ |
-| `variant` | `"default" \| "switch"`    | `"default"` | Display style - `switch` shows a toggle switch indicator |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `variant` | `"default" \| "switch"` | `"default"` | Display style - `switch` shows a toggle switch indicator |
 
 ### MenuRadioGroup
 
@@ -204,9 +203,9 @@ Radio menu item. Styled wrapper for `Menu.RadioItem` from ShardsUI. Also exporte
 
 Label for a menu group. Also exported as `DropdownMenuLabel`.
 
-| Prop    | Type      | Default | Description                                      |
-| ------- | --------- | ------- | ------------------------------------------------ |
-| `inset` | `boolean` | -       | Adds left padding to align with items that have icons |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `inset` | `boolean` | - | Adds left padding to align with items that have icons |
 
 ### MenuSeparator
 
@@ -224,19 +223,19 @@ Submenu container. Wrapper for `Menu.SubmenuRoot` from ShardsUI. Also exported a
 
 Trigger for opening a submenu. Also exported as `DropdownMenuSubTrigger`.
 
-| Prop    | Type      | Default | Description                                      |
-| ------- | --------- | ------- | ------------------------------------------------ |
-| `inset` | `boolean` | -       | Adds left padding to align with items that have icons |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `inset` | `boolean` | - | Adds left padding to align with items that have icons |
 
 ### MenuSubPopup
 
 Popup for submenu content. Also exported as `DropdownMenuSubContent`.
 
-| Prop          | Type                           | Default   | Description                                      |
-| ------------- | ------------------------------ | --------- | ------------------------------------------------ |
-| `align`       | `"start" \| "center" \| "end"` | `"start"` | Alignment relative to the trigger                |
-| `sideOffset`  | `number`                       | `0`       | Distance from the trigger in pixels              |
-| `alignOffset` | `number`                       | `-5`      | Offset along the alignment axis. Defaults to `-5` when `align` is not `"center"` |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `align` | `"start" \| "center" \| "end"` | `"start"` | Alignment relative to the trigger |
+| `sideOffset` | `number` | `0` | Distance from the trigger in pixels |
+| `alignOffset` | `number` | `-5` | Offset along the alignment axis. Defaults to `-5` when `align` is not `"center"` |
 
 ## Examples
 

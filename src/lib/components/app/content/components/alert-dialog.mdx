@@ -92,10 +92,10 @@ Trigger button that opens the alert dialog. Wraps `AlertDialog.Trigger` from Sha
 
 Popup container that displays the alert dialog content (renders the portal, backdrop and viewport for you). Also exported as `AlertDialogContent`.
 
-| Prop                  | Type                                  | Default | Description                                      |
-| --------------------- | ------------------------------------- | ------- | ------------------------------------------------ |
-| `bottomStickOnMobile` | `boolean`                             | `true`  | When true, sticks to the bottom of the screen on mobile devices |
-| `portalProps`         | `AlertDialogPortal` props             | -       | Props forwarded to the internal portal (`keepMounted`, `container`, etc.) |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `bottomStickOnMobile` | `boolean` | `true` | When true, sticks to the bottom of the screen on mobile devices |
+| `portalProps` | `AlertDialogPortal` props | - | Props forwarded to the internal portal (`keepMounted`, `container`, etc.) |
 
 ### AlertDialogHeader
 
@@ -107,11 +107,11 @@ Footer section for action buttons.
 
 Unlike [Dialog](/docs/dialog), alert dialog has no `AlertDialogPanel`. Put title and description in `AlertDialogHeader`, actions in `AlertDialogFooter`, and use a plain element with `class` if you need extra body content between them.
 
-| Prop        | Type                     | Default     | Description                                      |
-| ----------- | ------------------------ | ----------- | ------------------------------------------------ |
-| `variant`   | `"default" \| "bare"`    | `"default"` | Controls the footer styling. `default` includes border and background, `bare` removes them |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `variant` | `"default" \| "bare"` | `"default"` | Controls the footer styling. `default` includes border and background, `bare` removes them |
 
-**Example:**
+*Example:*
 
 ```svelte
 <!-- Default variant (with border and background) -->

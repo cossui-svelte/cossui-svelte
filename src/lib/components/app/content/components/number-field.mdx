@@ -77,15 +77,15 @@ A custom Svelte component (not a ShardsUI wrapper). State is shared with the par
 
 Root component.
 
-| Prop       | Type                        | Default     | Description                                      |
-| ---------- | --------------------------- | ----------- | ------------------------------------------------ |
-| `value`    | `number`                    | -           | Current value (bindable)                         |
-| `min`      | `number`                    | -           | Minimum value                                    |
-| `max`      | `number`                    | -           | Maximum value                                    |
-| `step`     | `number`                    | `1`         | Amount to change per increment, decrement or scrub unit |
-| `disabled` | `boolean`                   | `false`     | Disables the field                               |
-| `id`       | `string`                    | generated   | Id applied to the input                          |
-| `size`     | `"sm" \| "default" \| "lg"` | `"default"` | Controls the size of all child components        |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `value` | `number` | - | Current value (bindable) |
+| `min` | `number` | - | Minimum value |
+| `max` | `number` | - | Maximum value |
+| `step` | `number` | `1` | Amount to change per increment, decrement or scrub unit |
+| `disabled` | `boolean` | `false` | Disables the field |
+| `id` | `string` | generated | Id applied to the input |
+| `size` | `"sm" \| "default" \| "lg"` | `"default"` | Controls the size of all child components |
 
 ### NumberFieldGroup
 
@@ -95,10 +95,10 @@ Container for the input and buttons.
 
 Input element for the number value. Supports ArrowUp/ArrowDown, PageUp/PageDown (10 steps), Home and End.
 
-| Prop     | Type                                   | Description                                      |
-| -------- | -------------------------------------- | ------------------------------------------------ |
-| `format` | `(value: number) => string`            | Formats the value for display while the input is not focused |
-| `parse`  | `(display: string) => number \| undefined` | Parses the edited text back to a number (defaults to `parseFloat`) |
+| Prop | Type | Description |
+| --- | --- | --- |
+| `format` | `(value: number) => string` | Formats the value for display while the input is not focused |
+| `parse` | `(display: string) => number \| undefined` | Parses the edited text back to a number (defaults to `parseFloat`) |
 
 ### NumberFieldIncrement
 
@@ -112,9 +112,9 @@ Button to decrement the value. Renders a minus icon by default; pass children to
 
 Draggable area for scrubbing the value. Must be used inside `NumberField`.
 
-| Prop    | Type     | Default | Description                                      |
-| ------- | -------- | ------- | ------------------------------------------------ |
-| `label` | `string` | -       | Label text displayed in the scrub area           |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `label` | `string` | - | Label text displayed in the scrub area |
 
 ### NumberFieldValue
 

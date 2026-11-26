@@ -1,19 +1,17 @@
-import GithubSlugger from 'github-slugger';
-import { fileURLToPath } from 'node:url';
-import remarkGfm from 'remark-gfm';
-import { codeToHtml } from 'shiki';
-import { visit } from 'unist-util-visit';
+import { createHighlighter } from 'shiki';
 
 /**
- * mdsvex requires every custom component used in a .mdx file's markup to be
- * imported in that file's own instance script (see mdsvex README) — there's
- * no MDXProvider-style global registration. Rather than repeat the same
- * imports across every docs page, inject one shared instance-script block
- * covering every custom tag actually used live (outside code fences/inline
- * code) across src/lib/components/app/content/**\/*.mdx.
+ * mdsvex requires every capitalised component used in a .mdx file's markup to be
+ * imported in that file's own instance script — there's no MDXProvider-style
+ * global registration. Rather than repeat the same imports across every docs
+ * page, inject one shared instance-script block covering every custom tag
+ * actually used live (outside code fences/inline code) across
+ * src/lib/components/app/content/**\/*.mdx.
+ *
+ * mdsvex 1.0 has no remark plugins, so this runs as a Vite transform ahead of
+ * mdsvex's own (both are `enforce: 'pre'`; this one is listed first).
  */
-function remarkInjectDocsComponents() {
-  const script = `<script>
+const DOCS_SCRIPT = `<script>
   import { Alert, AlertDescription, AlertTitle } from '#lib/components/ui/alert/index.js';
   import { TabsList, TabsPanel, TabsTab } from '#lib/components/ui/tabs/index.js';
   import CodeBlockCommand from '#lib/components/app/code-block-command.svelte';
@@ -26,144 +24,81 @@ function remarkInjectDocsComponents() {
 </script>
 `;
 
-  return (tree) => {
-    const hasOwnScript = tree.children.some(
-      (node) => node.type === 'html' && /^<script[\s>]/.test(node.value)
-    );
-    if (hasOwnScript) return;
-    tree.children.unshift({ type: 'html', value: script });
-  };
-}
+const FRONTMATTER_RE = /^---\r?\n[\s\S]*?\r?\n---\r?\n/;
+const OWN_SCRIPT_RE = /^<script[\s>]/m;
+// Fenced code (``` or longer, ~~~ too) can hold `<script>` samples that aren't the document's own.
+const FENCE_RE = /^(`{3,}|~{3,})[^\n]*\n[\s\S]*?^\1[`~]*[ \t]*$/gm;
 
-const SHELL_LANGS = new Set(['bash', 'sh', 'shell']);
+/** @param {string} code */
+const hasOwnScript = (code) => OWN_SCRIPT_RE.test(code.replace(FENCE_RE, ''));
 
-/**
- * Expands one npm-family command into its npm/pnpm/yarn/bun equivalents, or
- * returns undefined when the command isn't an install or package-runner call.
- *
- * @param {string} command
- * @returns {{ npm: string, pnpm: string, yarn: string, bun: string } | undefined}
- */
-function toPackageManagerCommands(command) {
-  const install = command.match(/^npm (?:install|i)\b(.*)$/);
-  if (install) {
-    const args = install[1].replace(/(^|\s)--save-dev(?=\s|$)/, '$1-D');
-    if (!args.trim()) {
-      return { bun: 'bun install', npm: command, pnpm: 'pnpm install', yarn: 'yarn install' };
+/** @returns {import('vite').Plugin} */
+export function docsComponentImports() {
+  return {
+    enforce: 'pre',
+    name: 'docs-component-imports',
+    transform(code, id) {
+      // Only the compiled documents: `?raw` and other queried imports keep the source as written.
+      if (!id.endsWith('.mdx') || hasOwnScript(code)) return;
+
+      const frontmatter = code.match(FRONTMATTER_RE)?.[0] ?? '';
+      return { code: `${frontmatter}${DOCS_SCRIPT}\n${code.slice(frontmatter.length)}`, map: null };
     }
-    return { bun: `bun add${args}`, npm: command, pnpm: `pnpm add${args}`, yarn: `yarn add${args}` };
-  }
-
-  const run = command.match(/^(?:npx|pnpm dlx|pnpx|yarn dlx|bunx(?: --bun)?) (.+)$/);
-  if (run) {
-    const args = run[1];
-    return {
-      bun: `bunx --bun ${args}`,
-      npm: `npx ${args}`,
-      pnpm: `pnpm dlx ${args}`,
-      yarn: `yarn dlx ${args}`
-    };
-  }
-
-  return undefined;
-}
-
-/**
- * Renders single-line shell fences holding an install or package-runner
- * command (`npm install …`, `npx …`, `pnpm dlx …`) as `CodeBlockCommand`, so
- * readers get npm/pnpm/yarn/bun tabs that follow their saved package manager.
- * Runs before mdsvex's highlighter, which only sees the fences left untouched.
- */
-function remarkPackageManagerCommands() {
-  return (tree) => {
-    visit(tree, 'code', (node, index, parent) => {
-      if (!parent || index === undefined || !SHELL_LANGS.has(node.lang ?? '')) return;
-
-      const command = node.value.trim();
-      if (command.includes('\n')) return;
-
-      const commands = toPackageManagerCommands(command);
-      if (!commands) return;
-
-      const props = Object.entries(commands)
-        .map(([manager, value]) => `__${manager}__={${JSON.stringify(value)}}`)
-        .join(' ');
-      parent.children[index] = {
-        type: 'html',
-        value: `<figure data-rehype-pretty-code-figure><CodeBlockCommand ${props} /></figure>`
-      };
-    });
   };
 }
 
-/** Collects h2/h3 headings into `metadata.toc` and gives them matching `id`s, mirroring the TOC extraction `docs-toc.svelte` expects. */
-function remarkToc() {
-  return (tree, file) => {
-    const slugger = new GithubSlugger();
-    const toc = [];
-
-    visit(tree, 'heading', (node) => {
-      if (node.depth < 2 || node.depth > 3) return;
-
-      const title = node.children
-        .filter((child) => 'value' in child)
-        .map((child) => child.value)
-        .join('');
-      if (!title) return;
-
-      const id = slugger.slug(title);
-      node.data ??= {};
-      node.data.hProperties = { ...node.data.hProperties, id };
-      toc.push({ depth: node.depth, title, url: `#${id}` });
-    });
-
-    file.data.fm = { ...file.data.fm, toc };
-  };
-}
-
-const TITLE_META_RE = /title="([^"]+)"/;
-
 /**
- * mdsvex re-parses highlighted output as Svelte template source, which is
- * stricter than an HTML parser about two things Shiki's HTML renderer
- * doesn't fully escape in code content: Shiki escapes `<` but leaves `>`
- * bare (so a decoded `<Word>` sample, e.g. `<Accordion>`, reads as a real
- * component tag), and raw `{`/`}` are Svelte expression syntax (so a JS/TSX
- * sample like `Inter({ variable: ... })` reads as a template expression).
- * Escape all three in text-node content only, never inside a tag's own
- * markup, to keep highlighted code samples inert.
+ * Collects h2/h3 headings into `plugin_data.toc.items`, with the ids `heading_ids` gives them,
+ * mirroring the TOC extraction `docs-toc.svelte` expects.
  */
-function escapeTextNodesForSvelte(html) {
-  return html.replace(/(?<=>)([^<]*)(?=<)/g, (text) =>
-    text.replaceAll('>', '&gt;').replaceAll('{', '&lbrace;').replaceAll('}', '&rbrace;')
-  );
-}
+const toc = {
+  name: 'toc',
+  parse: {
+    heading: {
+      // Read on close, once `heading_ids` has given the heading its id.
+      parse: (node, ctx) => () => {
+        if (node.type !== 'heading' || node.depth < 2 || node.depth > 3) return;
+        const id = node.attrs.id;
+        const title = node.text_content.trim();
+        if (typeof id !== 'string' || !id || !title) return;
+        ctx.add('items', { depth: node.depth, title, url: `#${id}` });
+      }
+    }
+  }
+};
+
+const THEMES = { dark: 'github-dark-default', light: 'github-light-default' };
+
+// mdsvex 1.0 highlighters are synchronous, so every fence language is loaded up front.
+const shiki = await createHighlighter({
+  langs: ['bash', 'css', 'diff', 'html', 'javascript', 'json', 'svelte', 'tsx', 'typescript'],
+  themes: Object.values(THEMES)
+});
 
 /**
- * Build-time only (runs while Vite processes .svx files) — mirrors the static parts of code-block.svelte's markup so highlighted fences look consistent, minus the interactive copy button.
+ * Build-time only — returns the highlighted `<pre>`; the figure and title around it come from
+ * the `pre` replacement in mdx-layout.svelte. mdsvex escapes braces in what this returns itself.
  *
  * @param {string} code
- * @param {string | null} [lang]
- * @param {string | null} [meta]
+ * @param {{ lang: string, inline: boolean }} info
  */
-async function highlighter(code, lang, meta) {
-  const html = escapeTextNodesForSvelte(
-    await codeToHtml(code, {
-      lang: lang || 'text',
-      themes: { dark: 'github-dark-default', light: 'github-light-default' }
-    })
-  );
-  const title = meta?.match(TITLE_META_RE)?.[1];
-  const figcaption = title
-    ? `<figcaption data-rehype-pretty-code-title>${title}</figcaption>`
-    : '';
+function highlight(code, { lang, inline }) {
+  if (inline) return null;
 
-  return `<figure data-rehype-pretty-code-figure>${figcaption}<div class="overflow-x-auto">${html}</div></figure>`;
+  try {
+    return shiki.codeToHtml(code, { lang: lang || 'text', themes: THEMES });
+  } catch {
+    return shiki.codeToHtml(code, { lang: 'text', themes: THEMES });
+  }
 }
 
+/** @type {import('mdsvex').MdsvexOptions} */
 export const mdsvexOptions = {
   extensions: ['.mdx'],
-  layout: fileURLToPath(new URL('./src/lib/components/app/docs/mdx-layout.svelte', import.meta.url)),
-  highlight: { highlighter },
-  remarkPlugins: [remarkGfm, remarkInjectDocsComponents, remarkPackageManagerCommands, remarkToc]
+  heading_ids: true,
+  highlight,
+  plugins: [toc],
+  // 0.x curled quotes and made dashes by default; the documents were migrated with that on.
+  smart_punctuation: true,
+  templates: { default: '#lib/components/app/docs/mdx-layout.svelte' }
 };

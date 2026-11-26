@@ -9,9 +9,9 @@ Chat UI is a family of components for conversations in a drawer, a panel, or a p
 
 ## Start here
 
-- **Build a conversation:** install `chat` with `composer` and `avatar`, then use the [minimal example](#minimal-conversation).
-- **Adapt the full drawer:** open the [`chat-01` bloc](/blocs/view/chat-01) and copy its source, then read the [source map](#source-map) and [application responsibilities](#connect-your-application).
-- **Working as an agent:** the [chat registry source](/r/chat.json) includes file contents and dependencies. Use the exported TypeScript props as the API contract; the live example alone does not expose the implementation.
+- *Build a conversation:* install `chat` with `composer` and `avatar`, then use the [minimal example](#minimal-conversation).
+- *Adapt the full drawer:* open the [`chat-01` bloc](/blocs/view/chat-01) and copy its source, then read the [source map](#source-map) and [application responsibilities](#connect-your-application).
+- *Working as an agent:* the [chat registry source](/r/chat.json) includes file contents and dependencies. Use the exported TypeScript props as the API contract; the live example alone does not expose the implementation.
 
 ## Install
 
@@ -226,7 +226,7 @@ Keep the drawer's default initial focus. Focus the composer only after an explic
 
 ## State and moderation examples
 
-The drawer combines conversation states with membership and message actions. Its default conversation has no pin; select **Pinned message** to try it. **First message** begins with a join introduction and opens an empty conversation with a composer after joining.
+The drawer combines conversation states with membership and message actions. Its default conversation has no pin; select *Pinned message* to try it. *First message* begins with a join introduction and opens an empty conversation with a composer after joining.
 
 | State | Timeline and composer | Recovery |
 | --- | --- | --- |
@@ -252,13 +252,13 @@ Message and reaction-chip entrance animations are opt-in through `animateEntranc
 
 ## Connect your application
 
-1. **Map data:** stable message IDs, sender IDs, display names, timestamps, grouping, and attachment content.
-2. **Own delivery:** track sending, sent, delivered, read, and failed states from your transport. Pass the derived state to `ChatDeliveryIndicator`. Successful retries must replace stale recipient receipts as well as the aggregate status.
-3. **Own mutations:** wire send, retry, react, reply, pin, delete, and membership actions to your server. Preserve drafts on failures.
-4. **Authorize on the server:** the demo's host/co-host/guest rules are examples. Hide unavailable UI actions and recheck every mutation server-side.
-5. **Define access:** distinguish leaving/removal from bans according to your product. The example permits rejoining after removal, blocks rejoining while banned, and restores membership on unban. These are deliberate demo choices, not component-enforced rules.
-6. **Handle subscriptions:** remove listeners and pending operations when the room changes. Do not send or emit typing while muted or without access.
-7. **Supply copy:** localize component labels, descriptions, timestamps, and empty-state content in your application.
+1. *Map data:* stable message IDs, sender IDs, display names, timestamps, grouping, and attachment content.
+2. *Own delivery:* track sending, sent, delivered, read, and failed states from your transport. Pass the derived state to `ChatDeliveryIndicator`. Successful retries must replace stale recipient receipts as well as the aggregate status.
+3. *Own mutations:* wire send, retry, react, reply, pin, delete, and membership actions to your server. Preserve drafts on failures.
+4. *Authorize on the server:* the demo's host/co-host/guest rules are examples. Hide unavailable UI actions and recheck every mutation server-side.
+5. *Define access:* distinguish leaving/removal from bans according to your product. The example permits rejoining after removal, blocks rejoining while banned, and restores membership on unban. These are deliberate demo choices, not component-enforced rules.
+6. *Handle subscriptions:* remove listeners and pending operations when the room changes. Do not send or emit typing while muted or without access.
+7. *Supply copy:* localize component labels, descriptions, timestamps, and empty-state content in your application.
 
 ## Before shipping
 

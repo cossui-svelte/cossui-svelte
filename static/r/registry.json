@@ -48,7 +48,7 @@
       "description": "A callout for displaying important information.",
       "type": "registry:ui",
       "dependencies": [
-        "tailwind-variants@^3.3.1"
+        "tailwind-variants@^4.1.0"
       ],
       "registryDependencies": [
         "https://cossui-svelte.com/r/utils.json"
@@ -172,7 +172,7 @@
       "description": "Displays content within a desired ratio.",
       "type": "registry:ui",
       "dependencies": [
-        "svelte-toolbelt@^0.10.6"
+        "svelte-toolbelt@^0.13.0"
       ],
       "registryDependencies": [],
       "files": [
@@ -328,7 +328,7 @@
       "description": "A badge or a component that looks like a badge.",
       "type": "registry:ui",
       "dependencies": [
-        "tailwind-variants@^3.3.1"
+        "tailwind-variants@^4.1.0"
       ],
       "registryDependencies": [
         "https://cossui-svelte.com/r/utils.json"
@@ -409,7 +409,7 @@
       "description": "A button or a component that looks like a button.",
       "type": "registry:ui",
       "dependencies": [
-        "tailwind-variants@^3.3.1",
+        "tailwind-variants@^4.1.0",
         "@shardsui/svelte@0.1.0-beta.2"
       ],
       "registryDependencies": [
@@ -441,7 +441,7 @@
       "type": "registry:ui",
       "dependencies": [
         "@internationalized/date@^3.12.4",
-        "svelte-toolbelt@^0.10.6",
+        "svelte-toolbelt@^0.13.0",
         "runed@0.38.0"
       ],
       "registryDependencies": [
@@ -814,7 +814,7 @@
       "description": "A chart component for visualizing data in various formats.",
       "type": "registry:ui",
       "dependencies": [
-        "layerchart@^2.8.1"
+        "layerchart@^2.13.0"
       ],
       "registryDependencies": [
         "https://cossui-svelte.com/r/utils.json"
@@ -1852,7 +1852,7 @@
       "description": "A container for displaying empty state information.",
       "type": "registry:ui",
       "dependencies": [
-        "tailwind-variants@^3.3.1"
+        "tailwind-variants@^4.1.0"
       ],
       "registryDependencies": [
         "https://cossui-svelte.com/r/utils.json"
@@ -2060,7 +2060,7 @@
       "description": "A component for visually grouping a series of controls.",
       "type": "registry:ui",
       "dependencies": [
-        "tailwind-variants@^3.3.1"
+        "tailwind-variants@^4.1.0"
       ],
       "registryDependencies": [
         "https://cossui-svelte.com/r/separator.json",
@@ -2124,7 +2124,7 @@
       "description": "A flexible component for grouping inputs with addons, buttons, and other elements.",
       "type": "registry:ui",
       "dependencies": [
-        "tailwind-variants@^3.3.1"
+        "tailwind-variants@^4.1.0"
       ],
       "registryDependencies": [
         "https://cossui-svelte.com/r/button.json",
@@ -2260,7 +2260,7 @@
       "type": "registry:ui",
       "dependencies": [
         "geojson",
-        "maplibre-gl@^6.15.0"
+        "maplibre-gl@^6.19.0"
       ],
       "registryDependencies": [
         "https://cossui-svelte.com/r/utils.json"
@@ -2546,7 +2546,7 @@
       "type": "registry:ui",
       "dependencies": [
         "runed@0.38.0",
-        "svelte-toolbelt@^0.10.6",
+        "svelte-toolbelt@^0.13.0",
         "@shardsui/svelte@0.1.0-beta.2"
       ],
       "registryDependencies": [
@@ -2858,31 +2858,31 @@
       "description": "A rich text editor component with formatting options.",
       "type": "registry:ui",
       "dependencies": [
-        "@tiptap/core@^3.32.0",
-        "@tiptap/pm@^3.32.0",
+        "@tiptap/core@^3.35.0",
+        "@tiptap/pm@^3.35.0",
         "@floating-ui/dom@^1.8.0",
-        "@tiptap/extension-drag-handle@^3.32.0",
+        "@tiptap/extension-drag-handle@^3.35.0",
         "mode-watcher@^1.1.0",
-        "mermaid@^12.2.0",
-        "@tiptap/extension-table-of-contents@^3.32.0",
-        "@tiptap/extension-highlight@^3.32.0",
-        "@tiptap/extension-list@^3.32.0",
-        "@tiptap/extension-mathematics@^3.32.0",
-        "@tiptap/extension-subscript@^3.32.0",
-        "@tiptap/extension-superscript@^3.32.0",
-        "@tiptap/extension-text-align@^3.32.0",
-        "@tiptap/extension-text-style@^3.32.0",
-        "@tiptap/extension-typography@^3.32.0",
-        "@tiptap/extensions@^3.32.0",
-        "@tiptap/markdown@^3.32.0",
-        "@tiptap/starter-kit@^3.32.0",
-        "katex@^0.17.0",
-        "@tiptap/extension-code-block-lowlight@^3.32.0",
+        "mermaid@^12.3.0",
+        "@tiptap/extension-table-of-contents@^3.35.0",
+        "@tiptap/extension-highlight@^3.35.0",
+        "@tiptap/extension-list@^3.35.0",
+        "@tiptap/extension-mathematics@^3.35.0",
+        "@tiptap/extension-subscript@^3.35.0",
+        "@tiptap/extension-superscript@^3.35.0",
+        "@tiptap/extension-text-align@^3.35.0",
+        "@tiptap/extension-text-style@^3.35.0",
+        "@tiptap/extension-typography@^3.35.0",
+        "@tiptap/extensions@^3.35.0",
+        "@tiptap/markdown@^3.35.0",
+        "@tiptap/starter-kit@^3.35.0",
+        "katex@^0.19.1",
+        "@tiptap/extension-code-block-lowlight@^3.35.0",
         "lowlight@^3.3.0",
-        "@tiptap/extension-bubble-menu@^3.32.0",
-        "@tiptap/extension-image@^3.32.0",
-        "@tiptap/suggestion@^3.32.0",
-        "@tiptap/extension-table@^3.32.0"
+        "@tiptap/extension-bubble-menu@^3.35.0",
+        "@tiptap/extension-image@^3.35.0",
+        "@tiptap/suggestion@^3.35.0",
+        "@tiptap/extension-table@^3.35.0"
       ],
       "registryDependencies": [
         "https://cossui-svelte.com/r/button.json",
@@ -3338,7 +3338,7 @@
       "type": "registry:ui",
       "dependencies": [
         "@shardsui/svelte@0.1.0-beta.2",
-        "tailwind-variants@^3.3.1"
+        "tailwind-variants@^4.1.0"
       ],
       "registryDependencies": [
         "https://cossui-svelte.com/r/utils.json"
@@ -3522,8 +3522,8 @@
       "description": "A sidebar that can be toggled open and closed, providing navigation or additional content.",
       "type": "registry:ui",
       "dependencies": [
-        "tailwind-variants@^3.3.1",
-        "svelte-toolbelt@^0.10.6"
+        "tailwind-variants@^4.1.0",
+        "svelte-toolbelt@^0.13.0"
       ],
       "registryDependencies": [
         "https://cossui-svelte.com/r/button.json",
@@ -3768,7 +3768,7 @@
       "description": "A control for selecting or displaying a rating using stars.",
       "type": "registry:ui",
       "dependencies": [
-        "tailwind-variants@^3.3.1"
+        "tailwind-variants@^4.1.0"
       ],
       "registryDependencies": [
         "https://cossui-svelte.com/r/utils.json"
@@ -4112,7 +4112,7 @@
       "type": "registry:ui",
       "dependencies": [
         "@shardsui/svelte@0.1.0-beta.2",
-        "tailwind-variants@^3.3.1"
+        "tailwind-variants@^4.1.0"
       ],
       "registryDependencies": [
         "https://cossui-svelte.com/r/utils.json"
@@ -4265,9 +4265,9 @@
       "description": "A component for displaying a hierarchical tree of items.",
       "type": "registry:ui",
       "dependencies": [
-        "@headless-tree/core@^1.8.0",
+        "@headless-tree/core@^1.8.1",
         "runed@0.38.0",
-        "svelte-toolbelt@^0.10.6"
+        "svelte-toolbelt@^0.13.0"
       ],
       "registryDependencies": [
         "https://cossui-svelte.com/r/utils.json"
@@ -4327,7 +4327,7 @@
       "type": "registry:lib",
       "dependencies": [
         "clsx@^2.1.1",
-        "tailwind-merge@^3.7.0"
+        "tailwind-merge@^3.7.1"
       ],
       "registryDependencies": [],
       "files": [
@@ -8138,7 +8138,7 @@
       "type": "registry:block",
       "dependencies": [
         "layerchart",
-        "layerchart@^2.8.1"
+        "layerchart@^2.13.0"
       ],
       "registryDependencies": [
         "https://cossui-svelte.com/r/chart.json"
@@ -8159,8 +8159,8 @@
       "dependencies": [
         "d3-scale",
         "layerchart",
-        "d3-scale@^4.0.2",
-        "layerchart@^2.8.1"
+        "d3-scale@^4.0.3",
+        "layerchart@^2.13.0"
       ],
       "registryDependencies": [
         "https://cossui-svelte.com/r/chart.json"
@@ -8180,7 +8180,7 @@
       "type": "registry:block",
       "dependencies": [
         "layerchart",
-        "layerchart@^2.8.1"
+        "layerchart@^2.13.0"
       ],
       "registryDependencies": [
         "https://cossui-svelte.com/r/chart.json"
@@ -8201,8 +8201,8 @@
       "dependencies": [
         "d3-scale",
         "layerchart",
-        "d3-scale@^4.0.2",
-        "layerchart@^2.8.1"
+        "d3-scale@^4.0.3",
+        "layerchart@^2.13.0"
       ],
       "registryDependencies": [
         "https://cossui-svelte.com/r/chart.json"
@@ -8224,9 +8224,9 @@
         "d3-scale",
         "d3-shape",
         "layerchart",
-        "d3-scale@^4.0.2",
-        "d3-shape@^3.2.0",
-        "layerchart@^2.8.1"
+        "d3-scale@^4.0.3",
+        "d3-shape@^3.2.1",
+        "layerchart@^2.13.0"
       ],
       "registryDependencies": [
         "https://cossui-svelte.com/r/chart.json"
@@ -8248,9 +8248,9 @@
         "d3-scale",
         "d3-shape",
         "layerchart",
-        "d3-scale@^4.0.2",
-        "d3-shape@^3.2.0",
-        "layerchart@^2.8.1"
+        "d3-scale@^4.0.3",
+        "d3-shape@^3.2.1",
+        "layerchart@^2.13.0"
       ],
       "registryDependencies": [
         "https://cossui-svelte.com/r/chart.json"
@@ -8272,9 +8272,9 @@
         "d3-scale",
         "d3-shape",
         "layerchart",
-        "d3-scale@^4.0.2",
-        "d3-shape@^3.2.0",
-        "layerchart@^2.8.1"
+        "d3-scale@^4.0.3",
+        "d3-shape@^3.2.1",
+        "layerchart@^2.13.0"
       ],
       "registryDependencies": [
         "https://cossui-svelte.com/r/chart.json"
@@ -8294,7 +8294,7 @@
       "type": "registry:block",
       "dependencies": [
         "layerchart",
-        "layerchart@^2.8.1"
+        "layerchart@^2.13.0"
       ],
       "registryDependencies": [
         "https://cossui-svelte.com/r/chart.json"
@@ -8314,7 +8314,7 @@
       "type": "registry:block",
       "dependencies": [
         "layerchart",
-        "layerchart@^2.8.1"
+        "layerchart@^2.13.0"
       ],
       "registryDependencies": [
         "https://cossui-svelte.com/r/chart.json"
@@ -8335,8 +8335,8 @@
       "dependencies": [
         "d3-scale",
         "layerchart",
-        "d3-scale@^4.0.2",
-        "layerchart@^2.8.1"
+        "d3-scale@^4.0.3",
+        "layerchart@^2.13.0"
       ],
       "registryDependencies": [
         "https://cossui-svelte.com/r/chart.json"
@@ -12984,7 +12984,7 @@
       "type": "registry:block",
       "dependencies": [
         "maplibre-gl",
-        "maplibre-gl@^6.15.0"
+        "maplibre-gl@^6.19.0"
       ],
       "registryDependencies": [
         "https://cossui-svelte.com/r/button.json",
@@ -17838,7 +17838,7 @@
       "type": "registry:block",
       "dependencies": [
         "@headless-tree/core",
-        "@headless-tree/core@^1.8.0"
+        "@headless-tree/core@^1.8.1"
       ],
       "registryDependencies": [
         "https://cossui-svelte.com/r/tree.json"
@@ -17858,7 +17858,7 @@
       "type": "registry:block",
       "dependencies": [
         "@headless-tree/core",
-        "@headless-tree/core@^1.8.0"
+        "@headless-tree/core@^1.8.1"
       ],
       "registryDependencies": [
         "https://cossui-svelte.com/r/tree.json"
@@ -17879,7 +17879,7 @@
       "dependencies": [
         "@headless-tree/core",
         "@lucide/svelte",
-        "@headless-tree/core@^1.8.0"
+        "@headless-tree/core@^1.8.1"
       ],
       "registryDependencies": [
         "https://cossui-svelte.com/r/tree.json"
@@ -17900,7 +17900,7 @@
       "dependencies": [
         "@headless-tree/core",
         "@lucide/svelte",
-        "@headless-tree/core@^1.8.0"
+        "@headless-tree/core@^1.8.1"
       ],
       "registryDependencies": [
         "https://cossui-svelte.com/r/tree.json"
@@ -17921,7 +17921,7 @@
       "dependencies": [
         "@headless-tree/core",
         "@lucide/svelte",
-        "@headless-tree/core@^1.8.0"
+        "@headless-tree/core@^1.8.1"
       ],
       "registryDependencies": [
         "https://cossui-svelte.com/r/tree.json"
@@ -17942,7 +17942,7 @@
       "dependencies": [
         "@headless-tree/core",
         "@lucide/svelte",
-        "@headless-tree/core@^1.8.0"
+        "@headless-tree/core@^1.8.1"
       ],
       "registryDependencies": [
         "https://cossui-svelte.com/r/tree.json"
@@ -17963,7 +17963,7 @@
       "dependencies": [
         "@headless-tree/core",
         "@lucide/svelte",
-        "@headless-tree/core@^1.8.0"
+        "@headless-tree/core@^1.8.1"
       ],
       "registryDependencies": [
         "https://cossui-svelte.com/r/input.json",
@@ -17985,7 +17985,7 @@
       "dependencies": [
         "@headless-tree/core",
         "@lucide/svelte",
-        "@headless-tree/core@^1.8.0"
+        "@headless-tree/core@^1.8.1"
       ],
       "registryDependencies": [
         "https://cossui-svelte.com/r/input.json",

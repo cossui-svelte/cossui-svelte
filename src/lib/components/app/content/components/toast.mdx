@@ -90,7 +90,7 @@ toastManager.add({
 });
 ```
 
-By default, toasts appear in the **bottom-right** corner. You can change this by setting the `position` prop on the `ToastProvider`.
+By default, toasts appear in the *bottom-right* corner. You can change this by setting the `position` prop on the `ToastProvider`.
 
 Allowed values: `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `bottom-right`. For example:
 
@@ -149,18 +149,18 @@ anchoredToastManager.add({
 
 Provider component for stacked toasts. Wraps `Toast.Provider` from ShardsUI and renders the stacked toast viewport.
 
-| Prop          | Type                                                                                     | Default          | Description                                                                                            |
-| ------------- | ---------------------------------------------------------------------------------------- | ---------------- | ------------------------------------------------------------------------------------------------------ |
-| `position`    | `"top-left" \| "top-center" \| "top-right" \| "bottom-left" \| "bottom-center" \| "bottom-right"` | `"bottom-right"` | Position of the toast viewport                                                                         |
-| `portalProps` | `ComponentProps<typeof ToastPrimitive.Portal>`                                                                    | -                | Props forwarded to the internal portal (`container`, etc.); see the ShardsUI Toast portal API                |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `position` | `"top-left" \| "top-center" \| "top-right" \| "bottom-left" \| "bottom-center" \| "bottom-right"` | `"bottom-right"` | Position of the toast viewport |
+| `portalProps` | `ComponentProps<typeof ToastPrimitive.Portal>` | - | Props forwarded to the internal portal (`container`, etc.); see the ShardsUI Toast portal API |
 
 ### AnchoredToastProvider
 
 Provider component for toasts anchored to specific elements. Use with `anchoredToastManager`.
 
-| Prop          | Type                 | Default | Description                                                                             |
-| ------------- | -------------------- | ------- | --------------------------------------------------------------------------------------- |
-| `portalProps` | `ComponentProps<typeof ToastPrimitive.Portal>` | -       | Props forwarded to the internal portal (`container`, etc.); see the ShardsUI Toast portal API |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `portalProps` | `ComponentProps<typeof ToastPrimitive.Portal>` | - | Props forwarded to the internal portal (`container`, etc.); see the ShardsUI Toast portal API |
 
 ### toastManager
 

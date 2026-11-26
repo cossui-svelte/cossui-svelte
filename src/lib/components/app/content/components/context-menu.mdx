@@ -111,14 +111,14 @@ An area that opens the menu on right click or long press. Renders a `<div>` elem
 
 Popup container that displays the menu content at the pointer.
 
-| Prop          | Type                                           | Default    | Description                                      |
-| ------------- | ---------------------------------------------- | ---------- | ------------------------------------------------ |
-| `side`        | `"top" \| "bottom" \| "left" \| "right"`       | `"bottom"` | Side of the anchor to position the popup         |
-| `align`       | `"start" \| "center" \| "end"`                 | `"center"` | Alignment relative to the anchor                   |
-| `sideOffset`  | `number`                                       | `4`        | Distance from the anchor in pixels               |
-| `alignOffset` | `number`                                       | -          | Offset along the alignment axis                  |
-| `anchor`      | positioner `anchor`                            | -          | Custom anchor element for positioning            |
-| `portalProps` | props of `ContextMenu.Portal`                  | -          | Props forwarded to the internal portal (`keepMounted`, `container`, etc.); see the ShardsUI Context Menu portal API |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `side` | `"top" \| "bottom" \| "left" \| "right"` | `"bottom"` | Side of the anchor to position the popup |
+| `align` | `"start" \| "center" \| "end"` | `"center"` | Alignment relative to the anchor |
+| `sideOffset` | `number` | `4` | Distance from the anchor in pixels |
+| `alignOffset` | `number` | - | Offset along the alignment axis |
+| `anchor` | positioner `anchor` | - | Custom anchor element for positioning |
+| `portalProps` | props of `ContextMenu.Portal` | - | Props forwarded to the internal portal (`keepMounted`, `container`, etc.); see the ShardsUI Context Menu portal API |
 
 ### ContextMenuGroup
 
@@ -128,12 +128,12 @@ Groups related menu items. Wrapper for `ContextMenu.Group` from ShardsUI.
 
 Individual menu item.
 
-| Prop      | Type                          | Default     | Description                                      |
-| --------- | ----------------------------- | ----------- | ------------------------------------------------ |
-| `inset`   | `boolean`                     | -           | Adds left padding to align with items that have icons |
-| `variant` | `"default" \| "destructive"`  | `"default"` | Controls the item styling                        |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `inset` | `boolean` | - | Adds left padding to align with items that have icons |
+| `variant` | `"default" \| "destructive"` | `"default"` | Controls the item styling |
 
-**Using `inset`:** When mixing items with and without icons, use `inset` on icon-less items to maintain alignment:
+*Using `inset`:* When mixing items with and without icons, use `inset` on icon-less items to maintain alignment:
 
 ```svelte
 <ContextMenuItem><PencilIcon /> Edit</ContextMenuItem>
@@ -142,13 +142,13 @@ Individual menu item.
 
 ### ContextMenuLinkItem
 
-Link menu item for navigation. **`LinkItem`** renders a native **`<a>`** when you pass **`href`**. Styled like **`ContextMenuItem`**.
+Link menu item for navigation. *`LinkItem`* renders a native *`<a>`* when you pass *`href`*. Styled like *`ContextMenuItem`*.
 
-| Prop           | Type                          | Default     | Description                                      |
-| -------------- | ----------------------------- | ----------- | ------------------------------------------------ |
-| `inset`        | `boolean`                     | -           | Adds left padding to align with items that have icons |
-| `variant`      | `"default" \| "destructive"`  | `"default"` | Controls the item styling                        |
-| `closeOnClick` | `boolean`                     | `true`      | Whether the menu closes when the link is clicked |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `inset` | `boolean` | - | Adds left padding to align with items that have icons |
+| `variant` | `"default" \| "destructive"` | `"default"` | Controls the item styling |
+| `closeOnClick` | `boolean` | `true` | Whether the menu closes when the link is clicked |
 
 ```svelte
 <ContextMenuLinkItem href="/docs">Docs</ContextMenuLinkItem>
@@ -158,9 +158,9 @@ Link menu item for navigation. **`LinkItem`** renders a native **`<a>`** when yo
 
 Checkbox menu item. `checked` is bindable (`bind:checked`).
 
-| Prop      | Type                       | Default     | Description                                      |
-| --------- | -------------------------- | ----------- | ------------------------------------------------ |
-| `variant` | `"default" \| "switch"`    | `"default"` | Display style - `switch` shows a toggle switch indicator |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `variant` | `"default" \| "switch"` | `"default"` | Display style - `switch` shows a toggle switch indicator |
 
 ### ContextMenuRadioGroup
 
@@ -174,9 +174,9 @@ Radio menu item. Styled wrapper for `ContextMenu.RadioItem` from ShardsUI.
 
 Label for a menu group.
 
-| Prop    | Type      | Default | Description                                      |
-| ------- | --------- | ------- | ------------------------------------------------ |
-| `inset` | `boolean` | -       | Adds left padding to align with items that have icons |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `inset` | `boolean` | - | Adds left padding to align with items that have icons |
 
 ### ContextMenuSeparator
 
@@ -194,19 +194,19 @@ Submenu container. Wrapper for `ContextMenu.SubmenuRoot` from ShardsUI.
 
 Trigger for opening a submenu.
 
-| Prop    | Type      | Default | Description                                      |
-| ------- | --------- | ------- | ------------------------------------------------ |
-| `inset` | `boolean` | -       | Adds left padding to align with items that have icons |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `inset` | `boolean` | - | Adds left padding to align with items that have icons |
 
 ### ContextMenuSubPopup
 
 Popup for submenu content.
 
-| Prop          | Type                           | Default   | Description                                      |
-| ------------- | ------------------------------ | --------- | ------------------------------------------------ |
-| `align`       | `"start" \| "center" \| "end"` | `"start"` | Alignment relative to the trigger                |
-| `sideOffset`  | `number`                       | `0`       | Distance from the trigger in pixels              |
-| `alignOffset` | `number`                       | `-5`      | Offset along the alignment axis. Defaults to `-5` when `align` is not `"center"` |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `align` | `"start" \| "center" \| "end"` | `"start"` | Alignment relative to the trigger |
+| `sideOffset` | `number` | `0` | Distance from the trigger in pixels |
+| `alignOffset` | `number` | `-5` | Offset along the alignment axis. Defaults to `-5` when `align` is not `"center"` |
 
 ## Examples
 

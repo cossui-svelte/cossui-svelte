@@ -40,6 +40,6 @@
     "https://cossui-svelte.com/r/utils.json"
   ],
   "dependencies": [
-    "layerchart@^2.8.1"
+    "layerchart@^2.13.0"
   ]
 }

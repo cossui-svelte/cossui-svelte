@@ -87,40 +87,40 @@ npm install @shardsui/svelte
 
 The root autocomplete component. Wraps `Autocomplete.Root` from ShardsUI; manages state and provides context to child components. It renders no element of its own.
 
-| Prop       | Type                 | Description                                                      |
-| ---------- | -------------------- | ---------------------------------------------------------------- |
-| `items`    | `readonly unknown[]` | The array of items to display in the autocomplete                |
-| `value`    | `string`             | The input text. Bindable with `bind:value`                       |
-| `open`     | `boolean`            | Controls whether the popup is open. Bindable with `bind:open`    |
+| Prop | Type | Description |
+| --- | --- | --- |
+| `items` | `readonly unknown[]` | The array of items to display in the autocomplete |
+| `value` | `string` | The input text. Bindable with `bind:value` |
+| `open` | `boolean` | Controls whether the popup is open. Bindable with `bind:open` |
 | `...props` | ShardsUI `Autocomplete.Root` props | All other ShardsUI Autocomplete props are supported |
 
 ### AutocompleteInput
 
 The input field component with extended features for size variants and addon support.
 
-| Prop           | Type                              | Default     | Description                                                                                      |
-| -------------- | --------------------------------- | ----------- | ------------------------------------------------------------------------------------------------ |
-| `size`         | `"sm" \| "default" \| "lg"`       | `"default"` | The size variant of the input field                                                              |
-| `startAddon`   | `Snippet`                         | -           | Snippet rendered at the start (left side) of the input, such as an icon                          |
-| `showTrigger`  | `boolean`                         | `false`     | Whether to display a trigger button (chevron icon) on the right side of the input                |
-| `showClear`    | `boolean`                         | `false`     | Whether to display a clear button (X icon) on the right side of the input when there is a value |
-| `triggerProps` | button attributes                 | -           | Props forwarded to the internal trigger button, useful for overriding `aria-label`               |
-| `clearProps`   | button attributes                 | -           | Props forwarded to the internal clear button, useful for overriding `aria-label`                 |
-| `class`        | `string`                          | -           | Additional CSS classes to apply to the component                                                 |
-| `...props`     | `<input>` attributes              | -           | All standard input attributes are supported                                                      |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `size` | `"sm" \| "default" \| "lg"` | `"default"` | The size variant of the input field |
+| `startAddon` | `Snippet` | - | Snippet rendered at the start (left side) of the input, such as an icon |
+| `showTrigger` | `boolean` | `false` | Whether to display a trigger button (chevron icon) on the right side of the input |
+| `showClear` | `boolean` | `false` | Whether to display a clear button (X icon) on the right side of the input when there is a value |
+| `triggerProps` | button attributes | - | Props forwarded to the internal trigger button, useful for overriding `aria-label` |
+| `clearProps` | button attributes | - | Props forwarded to the internal clear button, useful for overriding `aria-label` |
+| `class` | `string` | - | Additional CSS classes to apply to the component |
+| `...props` | `<input>` attributes | - | All standard input attributes are supported |
 
 ### AutocompletePopup
 
 The popup container that displays the autocomplete suggestions. Renders the portal and positioner for you.
 
-| Prop           | Type                                          | Default    | Description                                      |
-| -------------- | --------------------------------------------- | ---------- | ------------------------------------------------ |
-| `side`         | `"top" \| "bottom" \| "left" \| "right"`    | `"bottom"` | Which side of the input the popup appears on     |
-| `align`        | `"start" \| "center" \| "end"`               | `"start"`  | Alignment relative to the input                  |
-| `sideOffset`   | `number`                                      | `4`        | Distance from the input                          |
-| `alignOffset`  | `number`                                      | `0`        | Offset along the alignment axis                  |
-| `portalProps`  | `Autocomplete.Portal` props                   | -          | Props forwarded to the internal portal (`keepMounted`, `container`, etc.) |
-| `class`        | `string`                                      | -          | Additional CSS classes to apply to the component |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `side` | `"top" \| "bottom" \| "left" \| "right"` | `"bottom"` | Which side of the input the popup appears on |
+| `align` | `"start" \| "center" \| "end"` | `"start"` | Alignment relative to the input |
+| `sideOffset` | `number` | `4` | Distance from the input |
+| `alignOffset` | `number` | `0` | Offset along the alignment axis |
+| `portalProps` | `Autocomplete.Portal` props | - | Props forwarded to the internal portal (`keepMounted`, `container`, etc.) |
+| `class` | `string` | - | Additional CSS classes to apply to the component |
 
 ### AutocompleteList
 
@@ -130,10 +130,10 @@ A scrollable container for autocomplete items. Wraps `Autocomplete.List` from Sh
 
 An individual selectable autocomplete item. Wraps `Autocomplete.Item` from ShardsUI. Its `children` snippet receives `{ highlighted, disabled }`.
 
-| Prop        | Type      | Description                                      |
-| ----------- | --------- | ------------------------------------------------ |
-| `value`     | `unknown` | The value of the item                            |
-| `class`     | `string`  | Additional CSS classes to apply to the component |
+| Prop | Type | Description |
+| --- | --- | --- |
+| `value` | `unknown` | The value of the item |
+| `class` | `string` | Additional CSS classes to apply to the component |
 
 ### AutocompleteEmpty
 

@@ -71,7 +71,7 @@
   ],
   "dependencies": [
     "runed@0.38.0",
-    "svelte-toolbelt@^0.10.6",
+    "svelte-toolbelt@^0.13.0",
     "@shardsui/svelte@0.1.0-beta.2"
   ]
 }

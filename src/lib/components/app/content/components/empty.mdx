@@ -69,15 +69,15 @@ npx shadcn-svelte@latest add https://cossui-svelte.com/r/empty.json
 
 ## API Reference
 
-The API design of this component is modeled after [shadcn/ui's empty component](https://ui.shadcn.com/docs/components/empty) to ensure familiarity and consistency for developers already using shadcn. This standardization makes it easier to adopt **coss ui** while maintaining API parity with the patterns developers already know and love.
+The API design of this component is modeled after [shadcn/ui's empty component](https://ui.shadcn.com/docs/components/empty) to ensure familiarity and consistency for developers already using shadcn. This standardization makes it easier to adopt *coss ui* while maintaining API parity with the patterns developers already know and love.
 
 ### Empty
 
 The main component of the empty state. Wraps the `EmptyHeader` and `EmptyContent` components.
 
-| Prop    | Type     | Default |
-| ------- | -------- | ------- |
-| `class` | `string` |         |
+| Prop | Type | Default |
+| --- | --- | --- |
+| `class` | `string` |  |
 
 ```svelte
 <Empty>
@@ -90,9 +90,9 @@ The main component of the empty state. Wraps the `EmptyHeader` and `EmptyContent
 
 The `EmptyHeader` component wraps the empty media, title, and description.
 
-| Prop    | Type     | Default |
-| ------- | -------- | ------- |
-| `class` | `string` |         |
+| Prop | Type | Default |
+| --- | --- | --- |
+| `class` | `string` |  |
 
 ```svelte
 <EmptyHeader>
@@ -106,10 +106,10 @@ The `EmptyHeader` component wraps the empty media, title, and description.
 
 Use the `EmptyMedia` component to display the media of the empty state such as an icon or an image. You can also use it to display other components such as an avatar.
 
-| Prop        | Type                  | Default   |
-| ----------- | --------------------- | --------- |
-| `variant`   | `"default" \| "icon"` | `default` |
-| `class`     | `string`              |           |
+| Prop | Type | Default |
+| --- | --- | --- |
+| `variant` | `"default" \| "icon"` | `default` |
+| `class` | `string` |  |
 
 ```svelte
 <EmptyMedia variant="icon">
@@ -130,9 +130,9 @@ Use the `EmptyMedia` component to display the media of the empty state such as a
 
 Use the `EmptyTitle` component to display the title of the empty state.
 
-| Prop    | Type     | Default |
-| ------- | -------- | ------- |
-| `class` | `string` |         |
+| Prop | Type | Default |
+| --- | --- | --- |
+| `class` | `string` |  |
 
 ```svelte
 <EmptyTitle>No data</EmptyTitle>
@@ -142,9 +142,9 @@ Use the `EmptyTitle` component to display the title of the empty state.
 
 Use the `EmptyDescription` component to display the description of the empty state.
 
-| Prop    | Type     | Default |
-| ------- | -------- | ------- |
-| `class` | `string` |         |
+| Prop | Type | Default |
+| --- | --- | --- |
+| `class` | `string` |  |
 
 ```svelte
 <EmptyDescription>You do not have any notifications.</EmptyDescription>
@@ -154,9 +154,9 @@ Use the `EmptyDescription` component to display the description of the empty sta
 
 Use the `EmptyContent` component to display the content of the empty state such as a button, input or a link.
 
-| Prop    | Type     | Default |
-| ------- | -------- | ------- |
-| `class` | `string` |         |
+| Prop | Type | Default |
+| --- | --- | --- |
+| `class` | `string` |  |
 
 ```svelte
 <EmptyContent>

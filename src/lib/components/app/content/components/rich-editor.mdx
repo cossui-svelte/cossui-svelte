@@ -72,20 +72,20 @@ Create an editor with `createEditor`, then pass it to `RichEditor` and compose t
 
 Creates a Tiptap editor preconfigured with the default extensions (starter kit, tables, task lists, math, mermaid, code blocks, callouts, media and slash commands).
 
-| Option          | Type                              | Default | Description                                                              |
-| --------------- | --------------------------------- | ------- | ------------------------------------------------------------------------ |
-| `extensions`    | `Extensions`                      | `[]`    | Extra Tiptap extensions appended to the defaults                         |
-| `onUpdate`      | `() => void`                      | -       | Called whenever the document changes                                     |
-| `collaborative` | `boolean`                         | `false` | Disables built-in history so Yjs collaboration can manage undo and redo  |
-| `onFileUpload`  | `(file: File) => Promise<string>` | -       | Uploads a dropped, pasted or selected media file and returns its URL     |
+| Option | Type | Default | Description |
+| --- | --- | --- | --- |
+| `extensions` | `Extensions` | `[]` | Extra Tiptap extensions appended to the defaults |
+| `onUpdate` | `() => void` | - | Called whenever the document changes |
+| `collaborative` | `boolean` | `false` | Disables built-in history so Yjs collaboration can manage undo and redo |
+| `onFileUpload` | `(file: File) => Promise<string>` | - | Uploads a dropped, pasted or selected media file and returns its URL |
 
 ### RichEditor
 
 Provides the editor to its children through context.
 
-| Prop     | Type                | Default | Description              |
-| -------- | ------------------- | ------- | ------------------------ |
-| `editor` | `Editor`            | -       | The editor from `createEditor` |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `editor` | `Editor` | - | The editor from `createEditor` |
 
 ### RichEditor.Content
 

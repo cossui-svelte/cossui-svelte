@@ -12,7 +12,7 @@ A segmented control is a visual pattern, not a standalone behavior. `SegmentedCo
 ## Choose the right primitive
 
 | Intent | Use | Why |
-| ------ | --- | --- |
+| --- | --- | --- |
 | Choose one value in a form | [Radio Group](/docs/radio-group) | Represents a mutually exclusive value and participates in form state. |
 | Navigate to another URL or route | Navigation links | Preserves link behavior, browser history, and `aria-current`. |
 | Apply an exclusive filter or mode | [Toggle Group](/docs/toggle-group) | Represents the pressed state of an action that may be cleared. |
@@ -125,19 +125,19 @@ And for an exclusive filter that may be cleared:
 
 The segmented surface. Renders a `<div>` by default and appends the sliding indicator after its children. Provides the size to its items via context.
 
-| Prop    | Type                                                | Default     | Description                                                                                         |
-| ------- | --------------------------------------------------- | ----------- | --------------------------------------------------------------------------------------------------- |
-| `size`  | `"sm" \| "default" \| "lg"`                         | `"default"` | Controls the height and horizontal padding of every item                                            |
-| `child` | `Snippet<[{ props, content }]>`                     | —           | Replaces the rendered element, for example with a Radio Group primitive or `<nav>`. Render `content` inside it |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `size` | `"sm" \| "default" \| "lg"` | `"default"` | Controls the height and horizontal padding of every item |
+| `child` | `Snippet<[{ props, content }]>` | — | Replaces the rendered element, for example with a Radio Group primitive or `<nav>`. Render `content` inside it |
 
 ### SegmentedControlItem
 
 A single segment. Renders a `<button type="button">` by default.
 
-| Prop    | Type                        | Default             | Description                                                       |
-| ------- | --------------------------- | ------------------- | ----------------------------------------------------------------- |
-| `size`  | `"sm" \| "default" \| "lg"` | Inherited from root | Overrides the size inherited from `SegmentedControl`              |
-| `child` | `Snippet<[{ props }]>`      | —                   | Replaces the rendered element, for example with a radio or a link |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `size` | `"sm" \| "default" \| "lg"` | Inherited from root | Overrides the size inherited from `SegmentedControl` |
+| `child` | `Snippet<[{ props }]>` | — | Replaces the rendered element, for example with a radio or a link |
 
 An item is active when it has `data-checked` (Radio Group), `aria-current="page"` (links), or `data-pressed` (Toggle Group). The indicator slides to the active item over 200ms with an ease-in-out curve, stays still when the user prefers reduced motion, and is hidden when no item is active. Before hydration or without JavaScript, the active item paints its own static pill instead. For navigation, the pill animates only when the control persists across route changes, such as in a shared layout; otherwise it appears in place on each page.
 

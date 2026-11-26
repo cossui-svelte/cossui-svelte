@@ -94,12 +94,12 @@ Returns a new `Dialog.Handle` from ShardsUI for detached dialog triggers. Use it
 
 Popup container that displays the dialog content. Wraps the portal, backdrop and viewport. Also exported as `DialogContent`.
 
-| Prop                  | Type                                | Default | Description                                      |
-| --------------------- | ----------------------------------- | ------- | ------------------------------------------------ |
-| `showCloseButton`     | `boolean`                           | `true`  | When true, displays a close button in the top-right corner |
-| `bottomStickOnMobile` | `boolean`                           | `true`  | When true, sticks to the bottom of the screen on mobile devices |
-| `closeProps`          | props of `Dialog.Close`             | -       | Props forwarded to the internal close button, useful for overriding `aria-label` |
-| `portalProps`         | props of `DialogPortal`             | -       | Props forwarded to the internal portal (`keepMounted`, `container`, etc.); see the ShardsUI Dialog portal API |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `showCloseButton` | `boolean` | `true` | When true, displays a close button in the top-right corner |
+| `bottomStickOnMobile` | `boolean` | `true` | When true, sticks to the bottom of the screen on mobile devices |
+| `closeProps` | props of `Dialog.Close` | - | Props forwarded to the internal close button, useful for overriding `aria-label` |
+| `portalProps` | props of `DialogPortal` | - | Props forwarded to the internal portal (`keepMounted`, `container`, etc.); see the ShardsUI Dialog portal API |
 
 ### DialogHeader
 
@@ -109,12 +109,12 @@ Container for the dialog title and description.
 
 Footer section for action buttons.
 
-| Prop              | Type                     | Default     | Description                                      |
-| ----------------- | ------------------------ | ----------- | ------------------------------------------------ |
-| `variant`         | `"default" \| "bare"`    | `"default"` | Controls the footer styling. `default` includes border and background, `bare` removes them |
-| `showCloseButton` | `boolean`                | `false`     | When true, renders a built-in outline "Close" button |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `variant` | `"default" \| "bare"` | `"default"` | Controls the footer styling. `default` includes border and background, `bare` removes them |
+| `showCloseButton` | `boolean` | `false` | When true, renders a built-in outline "Close" button |
 
-**Example:**
+*Example:*
 
 ```svelte
 <!-- Default variant (with border and background) -->
@@ -142,11 +142,11 @@ Description component. Wrapper for `Dialog.Description` from ShardsUI.
 
 Scrollable content container. Automatically wraps content in a `ScrollArea` component.
 
-| Prop         | Type      | Default | Description                                      |
-| ------------ | --------- | ------- | ------------------------------------------------ |
-| `scrollFade` | `boolean` | `true`  | When true, shows a fade effect at scroll edges   |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `scrollFade` | `boolean` | `true` | When true, shows a fade effect at scroll edges |
 
-**Example:**
+*Example:*
 
 ```svelte
 <DialogPanel>

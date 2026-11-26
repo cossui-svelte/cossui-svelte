@@ -17,6 +17,6 @@
   ],
   "dependencies": [
     "@headless-tree/core",
-    "@headless-tree/core@^1.8.0"
+    "@headless-tree/core@^1.8.1"
   ]
 }

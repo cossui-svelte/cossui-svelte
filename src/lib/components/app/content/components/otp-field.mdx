@@ -73,28 +73,28 @@ A custom Svelte component built on a single hidden input (not a ShardsUI wrapper
 
 Root component. Accepts standard input attributes; `class` is merged with the default layout styles.
 
-| Prop            | Type                                | Default         | Description                          |
-| --------------- | ----------------------------------- | --------------- | ------------------------------------ |
-| `maxlength`     | `number`                            | `6`             | Number of characters (cells)         |
-| `value`         | `string`                            | `""`            | Current value (bindable)             |
-| `onValueChange` | `(value: string) => void`           | -               | Called when the value changes        |
-| `onComplete`    | `(value: string) => void`           | -               | Called when all cells are filled     |
-| `size`          | `"default" \| "lg"`                 | `"default"`     | Size applied to all slots            |
-| `pattern`       | `string \| RegExp`                  | -               | Restricts accepted characters (for example `^[0-3]+$`) |
-| `inputmode`     | `string`                            | `"numeric"`     | Virtual keyboard hint                |
-| `disabled`      | `boolean`                           | `false`         | Disables the field                   |
-| `pasteTransformer` | `(text: string) => string`       | -               | Sanitizes pasted text before it is inserted |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `maxlength` | `number` | `6` | Number of characters (cells) |
+| `value` | `string` | `""` | Current value (bindable) |
+| `onValueChange` | `(value: string) => void` | - | Called when the value changes |
+| `onComplete` | `(value: string) => void` | - | Called when all cells are filled |
+| `size` | `"default" \| "lg"` | `"default"` | Size applied to all slots |
+| `pattern` | `string \| RegExp` | - | Restricts accepted characters (for example `^[0-3]+$`) |
+| `inputmode` | `string` | `"numeric"` | Virtual keyboard hint |
+| `disabled` | `boolean` | `false` | Disables the field |
+| `pasteTransformer` | `(text: string) => string` | - | Sanitizes pasted text before it is inserted |
 
 ### OTPFieldInput
 
 Renders one OTP character cell.
 
-| Prop          | Type      | Description                                      |
-| ------------- | --------- | ------------------------------------------------ |
-| `cell`        | `PinInputCell` | The cell from the `children` snippet (required) |
-| `class`       | `string`  | Merged with the default slot styles              |
-| `placeholder` | `string`  | Shown in empty slots                             |
-| `mask`        | `boolean` | When `true`, masks the entered character         |
+| Prop | Type | Description |
+| --- | --- | --- |
+| `cell` | `PinInputCell` | The cell from the `children` snippet (required) |
+| `class` | `string` | Merged with the default slot styles |
+| `placeholder` | `string` | Shown in empty slots |
+| `mask` | `boolean` | When `true`, masks the entered character |
 
 Label the OTP control on `OTPField` with `aria-label` or a visible `Label`, and give each slot an `aria-label` such as `Character 2 of 6`.
 

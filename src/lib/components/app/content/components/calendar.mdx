@@ -66,26 +66,26 @@ This is a custom Svelte component (with its own calendar state), not a ShardsUI 
 
 A calendar component for date selection.
 
-| Prop                      | Type                                                             | Default    | Description                                                          |
-| ------------------------- | ---------------------------------------------------------------- | ---------- | -------------------------------------------------------------------- |
-| `mode`                    | `"single" \| "multiple" \| "range"`                              | -          | Selection mode for the calendar                                      |
-| `value`                   | `DateValue \| DateValue[] \| DateRange`                           | -          | The selected date(s). Bindable with `bind:value`                     |
-| `onValueChange`           | `(value) => void`                                                | -          | Callback when the selection changes                                  |
-| `placeholder`             | `DateValue`                                                      | -          | The month shown when nothing is selected. Bindable                   |
-| `captionLayout`           | `"label" \| "dropdown" \| "dropdown-months" \| "dropdown-years"` | `"label"`  | Caption layout - use `"dropdown"` for month/year dropdowns           |
-| `minValue` / `maxValue`   | `DateValue`                                                      | -          | Earliest / latest selectable date                                    |
-| `years` / `months`        | `number[]`                                                       | -          | Options for the year / month dropdowns                               |
-| `numberOfMonths`          | `number`                                                         | -          | Number of months displayed                                           |
-| `showOutsideDays`         | `boolean`                                                        | `true`     | Render days from adjacent months                                     |
-| `fixedWeeks`              | `boolean`                                                        | `true`     | Keep six week rows so the height stays stable between months         |
-| `disableDaysOutsideMonth` | `boolean`                                                        | `false`    | Disable outside days instead of hiding them                          |
-| `isDateDisabled`          | `(date: DateValue) => boolean`                                   | -          | Matcher for disabled dates                                           |
-| `isDateUnavailable`       | `(date: DateValue) => boolean`                                   | -          | Matcher for unavailable dates                                        |
-| `weekStartsOn`            | `0 \| 1 \| 2 \| 3 \| 4 \| 5 \| 6`                                  | -          | First day of the week                                                |
-| `locale`                  | `string`                                                         | `"en-US"`  | Locale used for formatting                                           |
-| `buttonVariant`           | `ButtonVariant`                                                  | `"ghost"`  | Button variant for navigation buttons                                |
-| `day`                     | `Snippet<[{ day: DateValue; outsideMonth: boolean }]>`           | -          | Custom day cell content                                              |
-| `disabled` / `readonly`   | `boolean`                                                        | `false`    | Disable or lock the calendar                                         |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `mode` | `"single" \| "multiple" \| "range"` | - | Selection mode for the calendar |
+| `value` | `DateValue \| DateValue[] \| DateRange` | - | The selected date(s). Bindable with `bind:value` |
+| `onValueChange` | `(value) => void` | - | Callback when the selection changes |
+| `placeholder` | `DateValue` | - | The month shown when nothing is selected. Bindable |
+| `captionLayout` | `"label" \| "dropdown" \| "dropdown-months" \| "dropdown-years"` | `"label"` | Caption layout - use `"dropdown"` for month/year dropdowns |
+| `minValue` / `maxValue` | `DateValue` | - | Earliest / latest selectable date |
+| `years` / `months` | `number[]` | - | Options for the year / month dropdowns |
+| `numberOfMonths` | `number` | - | Number of months displayed |
+| `showOutsideDays` | `boolean` | `true` | Render days from adjacent months |
+| `fixedWeeks` | `boolean` | `true` | Keep six week rows so the height stays stable between months |
+| `disableDaysOutsideMonth` | `boolean` | `false` | Disable outside days instead of hiding them |
+| `isDateDisabled` | `(date: DateValue) => boolean` | - | Matcher for disabled dates |
+| `isDateUnavailable` | `(date: DateValue) => boolean` | - | Matcher for unavailable dates |
+| `weekStartsOn` | `0 \| 1 \| 2 \| 3 \| 4 \| 5 \| 6` | - | First day of the week |
+| `locale` | `string` | `"en-US"` | Locale used for formatting |
+| `buttonVariant` | `ButtonVariant` | `"ghost"` | Button variant for navigation buttons |
+| `day` | `Snippet<[{ day: DateValue; outsideMonth: boolean }]>` | - | Custom day cell content |
+| `disabled` / `readonly` | `boolean` | `false` | Disable or lock the calendar |
 
 ### Customizing Cell Size
 

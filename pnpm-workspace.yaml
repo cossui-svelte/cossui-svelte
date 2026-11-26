@@ -3,14 +3,14 @@ allowBuilds:
   sharp: true
   workerd: true
 minimumReleaseAgeExclude:
-  - '@lucide/svelte@1.59.0'
-  - '@sveltejs/kit@3.1.0'
+  - '@lucide/svelte@1.59.0 || 1.81.0'
+  - '@sveltejs/kit@3.1.0 || 3.4.1'
   - commit-and-tag-version@13.3.0
   - layerchart@2.8.1
   - '@layerstack/utils@2.0.0-next.19'
   - '@types/d3-shape@3.2.0'
   - '@headless-tree/core@1.8.0'
-  - '@sveltejs/adapter-cloudflare@8.0.1'
+  - '@sveltejs/adapter-cloudflare@8.0.1 || 9.0.1'
   - '@commitlint/cli@21.2.4'
   - '@commitlint/config-conventional@21.2.4'
   - '@commitlint/ensure@21.2.4'
@@ -21,3 +21,12 @@ minimumReleaseAgeExclude:
   - miniflare@5.20261023.0-beta
   - svelte@5.57.3
   - wrangler@4.153.0
+  - vite@8.4.0
+  - '@mdsvex/parse@1.1.0'
+  - '@mdsvex/render@1.1.0'
+  - '@types/node@26.6.11'
+  - mdsvex@1.1.0
+  - tailwind-variants@4.1.0
+permissions:
+  '@tanstack/svelte-table':
+    skills: [migrate-v8-to-v9, table-state]

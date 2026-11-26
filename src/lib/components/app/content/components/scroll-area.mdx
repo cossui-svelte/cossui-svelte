@@ -65,16 +65,16 @@ npm install @shardsui/svelte
 
 Root component. Styled wrapper for `ScrollArea.Root` from ShardsUI that renders the viewport, content wrapper, scrollbars and corner for you. `ref` and `viewportRef` are bindable.
 
-| Prop                    | Type                                      | Default  | Description                                      |
-| ----------------------- | ----------------------------------------- | -------- | ------------------------------------------------ |
-| `orientation`           | `"vertical" \| "horizontal" \| "both"`    | `"both"` | Which scrollbars to render                       |
-| `scrollbarXClasses`     | `string`                                  | `''`     | Extra classes for the horizontal scrollbar       |
-| `scrollbarYClasses`     | `string`                                  | `''`     | Extra classes for the vertical scrollbar         |
-| `scrollFade`            | `boolean`                                 | `false`  | Masks viewport edges so content fades in/out as you scroll |
-| `scrollbarGutter`       | `boolean`                                 | `false`  | Reserves space for the scrollbar to prevent layout shifts |
-| `fill`                  | `boolean`                                 | `false`  | Applies `size-full` to the scroll area content wrapper so flex layouts (e.g. `mt-auto` footers) can fill the viewport height |
-| `clampContentMinWidth`  | `boolean`                                 | `true`   | Sets `min-width: 0` on the content wrapper to avoid spurious horizontal scrollbars in vertical layouts |
-| `overscrollContain`     | `boolean`                                 | `false`  | Prevents scroll chaining into parent scrollers when the viewport overflows |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `orientation` | `"vertical" \| "horizontal" \| "both"` | `"both"` | Which scrollbars to render |
+| `scrollbarXClasses` | `string` | `''` | Extra classes for the horizontal scrollbar |
+| `scrollbarYClasses` | `string` | `''` | Extra classes for the vertical scrollbar |
+| `scrollFade` | `boolean` | `false` | Masks viewport edges so content fades in/out as you scroll |
+| `scrollbarGutter` | `boolean` | `false` | Reserves space for the scrollbar to prevent layout shifts |
+| `fill` | `boolean` | `false` | Applies `size-full` to the scroll area content wrapper so flex layouts (e.g. `mt-auto` footers) can fill the viewport height |
+| `clampContentMinWidth` | `boolean` | `true` | Sets `min-width: 0` on the content wrapper to avoid spurious horizontal scrollbars in vertical layouts |
+| `overscrollContain` | `boolean` | `false` | Prevents scroll chaining into parent scrollers when the viewport overflows |
 
 ### Scrollbar
 
@@ -104,7 +104,7 @@ Enable `scrollbarGutter` to reserve space for the scrollbar when overflow appear
 
 ### Fill viewport (flex layouts)
 
-Use `fill` when the scroll area wraps a flex column that should stretch to the full viewport height—for example, pinning a footer with `mt-auto` inside a sidebar. The built-in **`SidebarContent`** part already passes `fill`; opt in manually for custom layouts:
+Use `fill` when the scroll area wraps a flex column that should stretch to the full viewport height—for example, pinning a footer with `mt-auto` inside a sidebar. The built-in *`SidebarContent`* part already passes `fill`; opt in manually for custom layouts:
 
 ```svelte
 <ScrollArea class="flex-1 min-h-0" fill>
@@ -119,7 +119,7 @@ Leave `fill` at the default (`false`) for content-sized areas such as lists, com
 
 ### Overscroll contain
 
-Use **`overscrollContain`** to stop wheel/touch scrolling from chaining into a parent scroller once the viewport hits its edge. Dialog, sheet, drawer, combobox, autocomplete, and sidebar already opt in; pass it yourself for custom nested scroll surfaces.
+Use *`overscrollContain`* to stop wheel/touch scrolling from chaining into a parent scroller once the viewport hits its edge. Dialog, sheet, drawer, combobox, autocomplete, and sidebar already opt in; pass it yourself for custom nested scroll surfaces.
 
 ```svelte
 <ScrollArea class="h-64" overscrollContain>
@@ -131,6 +131,6 @@ Leave it at the default (`false`) for standalone scroll areas where natural scro
 
 ### Content min-width
 
-ShardsUI sets `min-width: fit-content` on the content wrapper, which often causes unwanted horizontal scroll in vertical lists and panels (dialogs, comboboxes, sidebars). **`clampContentMinWidth`** defaults to **`true`** and applies `minWidth: 0` to prevent that.
+ShardsUI sets `min-width: fit-content` on the content wrapper, which often causes unwanted horizontal scroll in vertical lists and panels (dialogs, comboboxes, sidebars). *`clampContentMinWidth`* defaults to *`true`* and applies `minWidth: 0` to prevent that.
 
-Horizontal scroll still works when children define their own width (e.g. `w-max`, table min-width). Set **`clampContentMinWidth={false}`** only if horizontal scroll stops working and the child has no explicit width—rare cases like certain flex chains or long unbreakable inline text without overflow handling.
+Horizontal scroll still works when children define their own width (e.g. `w-max`, table min-width). Set *`clampContentMinWidth={false}`* only if horizontal scroll stops working and the child has no explicit width—rare cases like certain flex chains or long unbreakable inline text without overflow handling.

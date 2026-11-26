@@ -13,6 +13,7 @@
   import Li from './mdx/li.svelte';
   import Ol from './mdx/ol.svelte';
   import P from './mdx/p.svelte';
+  import Pre from './mdx/pre.svelte';
   import Strong from './mdx/strong.svelte';
   import Table from './mdx/table.svelte';
   import Td from './mdx/td.svelte';
@@ -36,6 +37,7 @@
     Li as li,
     Ol as ol,
     P as p,
+    Pre as pre,
     Strong as strong,
     Table as table,
     Td as td,

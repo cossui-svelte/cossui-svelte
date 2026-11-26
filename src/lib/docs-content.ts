@@ -13,7 +13,12 @@ interface DocMetadata {
   toc?: DocTocItem[];
 }
 
-type DocModule = { default: Component; metadata: DocMetadata };
+type DocModule = {
+  default: Component;
+  metadata: Omit<DocMetadata, 'toc'>;
+  // Written by the `toc` plugin in mdsvex.config.js; absent on pages without h2/h3 headings.
+  plugin_data?: { toc?: { items?: DocTocItem[] } };
+};
 
 export interface DocPage {
   Component: Component;
@@ -51,5 +56,9 @@ export async function loadDocPage(slugParts: string[]): Promise<DocPage | undefi
 
   const [mod, raw] = await Promise.all([compiledPages[path](), rawPages[path]()]);
 
-  return { Component: mod.default, metadata: mod.metadata, raw: raw as string };
+  return {
+    Component: mod.default,
+    metadata: { ...mod.metadata, toc: mod.plugin_data?.toc?.items ?? [] },
+    raw: raw as string
+  };
 }

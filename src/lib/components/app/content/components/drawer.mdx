@@ -82,10 +82,10 @@ npm install @shardsui/svelte
 
 Root component. Wraps `Drawer.Root` from ShardsUI with automatic `swipeDirection` mapping based on `position`.
 
-| Prop             | Type                                     | Default   | Description                                      |
-| ---------------- | ---------------------------------------- | --------- | ------------------------------------------------ |
-| `position`       | `"right" \| "left" \| "top" \| "bottom"` | `"bottom"` | Controls which edge the drawer opens from. Sets the swipe direction automatically and flows to child components via context |
-| `swipeDirection` | `"up" \| "down" \| "left" \| "right"`   | derived   | Overrides the swipe direction derived from `position`. Use when you need different swipe behavior |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `position` | `"right" \| "left" \| "top" \| "bottom"` | `"bottom"` | Controls which edge the drawer opens from. Sets the swipe direction automatically and flows to child components via context |
+| `swipeDirection` | `"up" \| "down" \| "left" \| "right"` | derived | Overrides the swipe direction derived from `position`. Use when you need different swipe behavior |
 
 All other props from `Drawer.Root` are supported, including `open` and `snapPoint` (both bindable), `onOpenChange`, `modal`, `snapPoints`, `onSnapPointChange`, and `snapToSequentialPoints`. Note: Snap points only work for bottom drawers.
 
@@ -101,15 +101,15 @@ Trigger button that opens the drawer. Wrapper for `Drawer.Trigger` from ShardsUI
 
 Popup container that displays the drawer content.
 
-| Prop              | Type                                      | Default     | Description                                      |
-| ----------------- | ----------------------------------------- | ----------- | ------------------------------------------------ |
-| `variant`         | `"default" \| "straight" \| "inset"`     | `"default"` | Controls the drawer style. `straight` removes rounded corners, `inset` adds spacing around the drawer on desktop screens |
-| `showCloseButton` | `boolean`                                 | `false`     | When true, displays a close button in the top-right corner |
-| `showBar`         | `boolean`                                 | `false`     | When true, displays a drag bar indicator |
-| `position`        | `"right" \| "left" \| "top" \| "bottom"` | from `Drawer` | Overrides the position inherited from the `Drawer` root |
-| `portalProps`     | `Drawer.Portal.Props`                     | -           | Props forwarded to the internal portal (`keepMounted`, `container`, etc.); see ShardsUI Drawer portal API |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `variant` | `"default" \| "straight" \| "inset"` | `"default"` | Controls the drawer style. `straight` removes rounded corners, `inset` adds spacing around the drawer on desktop screens |
+| `showCloseButton` | `boolean` | `false` | When true, displays a close button in the top-right corner |
+| `showBar` | `boolean` | `false` | When true, displays a drag bar indicator |
+| `position` | `"right" \| "left" \| "top" \| "bottom"` | from `Drawer` | Overrides the position inherited from the `Drawer` root |
+| `portalProps` | `Drawer.Portal.Props` | - | Props forwarded to the internal portal (`keepMounted`, `container`, etc.); see ShardsUI Drawer portal API |
 
-**Example:**
+*Example:*
 
 ```svelte
 <!-- Bottom drawer (default) -->
@@ -137,18 +137,18 @@ Popup container that displays the drawer content.
 
 Container for the drawer title and description.
 
-| Prop           | Type      | Default | Description                                      |
-| -------------- | --------- | ------- | ------------------------------------------------ |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
 | `allowSelection` | `boolean` | `false` | When true, wraps the header in `DrawerContent` to reduce swipe interference during mouse text selection |
 
 ### DrawerFooter
 
 Footer section for action buttons.
 
-| Prop           | Type                     | Default     | Description                                      |
-| -------------- | ------------------------ | ----------- | ------------------------------------------------ |
-| `variant`      | `"default" \| "bare"`    | `"default"` | Controls the footer styling. `default` includes border and background, `bare` removes them |
-| `allowSelection` | `boolean`              | `true`      | When true, wraps the footer in `DrawerContent` to reduce swipe interference during mouse text selection |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `variant` | `"default" \| "bare"` | `"default"` | Controls the footer styling. `default` includes border and background, `bare` removes them |
+| `allowSelection` | `boolean` | `true` | When true, wraps the footer in `DrawerContent` to reduce swipe interference during mouse text selection |
 
 ### DrawerTitle
 
@@ -162,10 +162,10 @@ Description component. Wrapper for `Drawer.Description` from ShardsUI.
 
 Content container. When `scrollable` is true (default), wraps content in a `ScrollArea` component.
 
-| Prop           | Type      | Default | Description                                      |
-| -------------- | --------- | ------- | ------------------------------------------------ |
-| `scrollable`   | `boolean` | `true`  | When true, wraps content in a `ScrollArea`. Set to false for non-scrollable content |
-| `scrollFade`   | `boolean` | `true`  | When true, shows a fade effect at scroll edges (only applies when `scrollable` is true) |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `scrollable` | `boolean` | `true` | When true, wraps content in a `ScrollArea`. Set to false for non-scrollable content |
+| `scrollFade` | `boolean` | `true` | When true, shows a fade effect at scroll edges (only applies when `scrollable` is true) |
 | `allowSelection` | `boolean` | `true` | When true, wraps the panel in `DrawerContent` to reduce swipe interference during mouse text selection |
 
 ### DrawerMenu
@@ -176,12 +176,12 @@ Container for drawer menu items. Use with `DrawerMenuItem`, `DrawerMenuSeparator
 
 Styled menu item that matches `MenuItem` appearance. Does not close the drawer — wrap with `DrawerClose` when close-on-click is needed.
 
-| Prop      | Type                                | Default     | Description                                      |
-| --------- | ----------------------------------- | ----------- | ------------------------------------------------ |
-| `variant` | `"default" \| "destructive"`        | `"default"` | When `destructive`, uses destructive text color  |
-| `disabled`| `boolean`                           | —           | When true, disables the item                     |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `variant` | `"default" \| "destructive"` | `"default"` | When `destructive`, uses destructive text color |
+| `disabled` | `boolean` | — | When true, disables the item |
 
-**Example:** For close-on-click, use `DrawerClose` styled with the exported `drawerMenuItemClass`: `<DrawerClose class={drawerMenuItemClass}>Edit</DrawerClose>`
+*Example:* For close-on-click, use `DrawerClose` styled with the exported `drawerMenuItemClass`: `<DrawerClose class={drawerMenuItemClass}>Edit</DrawerClose>`
 
 ### DrawerMenuSeparator
 
@@ -199,7 +199,7 @@ Label for a `DrawerMenuGroup` section. Renders muted, smaller text above a group
 
 Trigger that opens a nested drawer. Styled like a menu item with a trailing chevron. Use for menu items that open nested drawers (e.g. "Add to Playlist" → nested drawer with playlist options). Wraps `DrawerTrigger` internally (accepts the same props).
 
-**Example:** `<DrawerMenuTrigger>Add to Playlist</DrawerMenuTrigger>` opens a nested drawer when tapped.
+*Example:* `<DrawerMenuTrigger>Add to Playlist</DrawerMenuTrigger>` opens a nested drawer when tapped.
 
 ### DrawerMenuCheckboxItem
 

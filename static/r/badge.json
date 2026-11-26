@@ -28,6 +28,6 @@
     "https://cossui-svelte.com/r/utils.json"
   ],
   "dependencies": [
-    "tailwind-variants@^3.3.1"
+    "tailwind-variants@^4.1.0"
   ]
 }

@@ -11,7 +11,7 @@ declare global {
     }
     interface PageData {
       SEO?: {
-        description: string;
+        description?: string;
         image?: string;
         title: string;
         type?: 'article' | 'website';

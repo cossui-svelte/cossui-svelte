@@ -61,13 +61,13 @@ npm install @shardsui/svelte
 
 Root component. Styled wrapper for `Slider.Root` from ShardsUI that renders the control, track, indicator and thumbs for you. `value` is bindable (a number, or an array of numbers for a range slider). `min`, `max`, `step`, `disabled`, `onValueChange` and the other root props are forwarded.
 
-| Prop                     | Type                              | Default        | Description                                      |
-| ------------------------ | --------------------------------- | -------------- | ------------------------------------------------ |
-| `orientation`            | `"horizontal" \| "vertical"`      | `"horizontal"` | Slider orientation                               |
-| `thumbCollisionBehavior` | `"push" \| "swap" \| "none"`      | `"push"`       | How adjacent thumbs behave when dragged into each other |
-| `showTooltip`            | `boolean`                         | `false`        | Shows a tooltip with the value above each thumb while dragging |
-| `tooltipContent`         | `(value: number) => number \| string` | -         | Formats the tooltip text                         |
-| `getAriaLabel`           | `(index: number) => string`       | -              | Accessible name for each generated thumb         |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | Slider orientation |
+| `thumbCollisionBehavior` | `"push" \| "swap" \| "none"` | `"push"` | How adjacent thumbs behave when dragged into each other |
+| `showTooltip` | `boolean` | `false` | Shows a tooltip with the value above each thumb while dragging |
+| `tooltipContent` | `(value: number) => number \| string` | - | Formats the tooltip text |
+| `getAriaLabel` | `(index: number) => string` | - | Accessible name for each generated thumb |
 
 Note: The component sets `thumbAlignment="edge"`, which aligns thumbs to the edge of the track rather than centering them.
 
